@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SynchronizationSchedule : IAdditionalDataHolder, IParsable {
+    public class SynchronizationSchedule : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Date and time when this job will expire. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? Expiration { get; set; }
+        public DateTimeOffset? Expiration {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(Expiration)); }
+            set { BackingStore?.Set(nameof(Expiration), value); }
+        }
         /// <summary>The interval between synchronization iterations.</summary>
-        public TimeSpan? Interval { get; set; }
+        public TimeSpan? Interval {
+            get { return BackingStore?.Get<TimeSpan?>(nameof(Interval)); }
+            set { BackingStore?.Set(nameof(Interval), value); }
+        }
         /// <summary>Possible values are: Active, Disabled.</summary>
-        public SynchronizationScheduleState? State { get; set; }
+        public SynchronizationScheduleState? State {
+            get { return BackingStore?.Get<SynchronizationScheduleState?>(nameof(State)); }
+            set { BackingStore?.Set(nameof(State), value); }
+        }
         /// <summary>
         /// Instantiates a new synchronizationSchedule and sets the default values.
         /// </summary>
         public SynchronizationSchedule() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

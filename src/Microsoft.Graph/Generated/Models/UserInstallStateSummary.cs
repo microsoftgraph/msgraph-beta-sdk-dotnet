@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Contains properties for the installation state summary for a user.</summary>
     public class UserInstallStateSummary : Entity, IParsable {
         /// <summary>The install state of the eBook.</summary>
-        public List<DeviceInstallState> DeviceStates { get; set; }
+        public List<DeviceInstallState> DeviceStates {
+            get { return BackingStore?.Get<List<DeviceInstallState>>(nameof(DeviceStates)); }
+            set { BackingStore?.Set(nameof(DeviceStates), value); }
+        }
         /// <summary>Failed Device Count.</summary>
-        public int? FailedDeviceCount { get; set; }
+        public int? FailedDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(FailedDeviceCount)); }
+            set { BackingStore?.Set(nameof(FailedDeviceCount), value); }
+        }
         /// <summary>Installed Device Count.</summary>
-        public int? InstalledDeviceCount { get; set; }
+        public int? InstalledDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(InstalledDeviceCount)); }
+            set { BackingStore?.Set(nameof(InstalledDeviceCount), value); }
+        }
         /// <summary>Not installed device count.</summary>
-        public int? NotInstalledDeviceCount { get; set; }
+        public int? NotInstalledDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(NotInstalledDeviceCount)); }
+            set { BackingStore?.Set(nameof(NotInstalledDeviceCount), value); }
+        }
         /// <summary>User name.</summary>
-        public string UserName { get; set; }
+        public string UserName {
+            get { return BackingStore?.Get<string>(nameof(UserName)); }
+            set { BackingStore?.Set(nameof(UserName), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

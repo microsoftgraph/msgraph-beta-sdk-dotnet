@@ -4,45 +4,103 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of orgContact entities.</summary>
     public class OrgContact : DirectoryObject, IParsable {
         /// <summary>Postal addresses for this organizational contact. For now a contact can only have one physical address.</summary>
-        public List<PhysicalOfficeAddress> Addresses { get; set; }
+        public List<PhysicalOfficeAddress> Addresses {
+            get { return BackingStore?.Get<List<PhysicalOfficeAddress>>(nameof(Addresses)); }
+            set { BackingStore?.Set(nameof(Addresses), value); }
+        }
         /// <summary>Name of the company that this organizational contact belong to. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
-        public string CompanyName { get; set; }
+        public string CompanyName {
+            get { return BackingStore?.Get<string>(nameof(CompanyName)); }
+            set { BackingStore?.Set(nameof(CompanyName), value); }
+        }
         /// <summary>The name for the department in which the contact works. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
-        public string Department { get; set; }
+        public string Department {
+            get { return BackingStore?.Get<string>(nameof(Department)); }
+            set { BackingStore?.Set(nameof(Department), value); }
+        }
         /// <summary>The contact&apos;s direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable. Supports $expand.</summary>
-        public List<DirectoryObject> DirectReports { get; set; }
+        public List<DirectoryObject> DirectReports {
+            get { return BackingStore?.Get<List<DirectoryObject>>(nameof(DirectReports)); }
+            set { BackingStore?.Set(nameof(DirectReports), value); }
+        }
         /// <summary>Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>First name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
-        public string GivenName { get; set; }
+        public string GivenName {
+            get { return BackingStore?.Get<string>(nameof(GivenName)); }
+            set { BackingStore?.Set(nameof(GivenName), value); }
+        }
         /// <summary>Job title for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
-        public string JobTitle { get; set; }
+        public string JobTitle {
+            get { return BackingStore?.Get<string>(nameof(JobTitle)); }
+            set { BackingStore?.Set(nameof(JobTitle), value); }
+        }
         /// <summary>The SMTP address for the contact, for example, &apos;jeff@contoso.onmicrosoft.com&apos;. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
-        public string Mail { get; set; }
+        public string Mail {
+            get { return BackingStore?.Get<string>(nameof(Mail)); }
+            set { BackingStore?.Set(nameof(Mail), value); }
+        }
         /// <summary>Email alias (portion of email address pre-pending the @ symbol) for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
-        public string MailNickname { get; set; }
+        public string MailNickname {
+            get { return BackingStore?.Get<string>(nameof(MailNickname)); }
+            set { BackingStore?.Set(nameof(MailNickname), value); }
+        }
         /// <summary>The user or contact that is this contact&apos;s manager. Read-only. Supports $expand.</summary>
-        public DirectoryObject Manager { get; set; }
+        public DirectoryObject Manager {
+            get { return BackingStore?.Get<DirectoryObject>(nameof(Manager)); }
+            set { BackingStore?.Set(nameof(Manager), value); }
+        }
         /// <summary>Groups that this contact is a member of. Read-only. Nullable. Supports $expand.</summary>
-        public List<DirectoryObject> MemberOf { get; set; }
+        public List<DirectoryObject> MemberOf {
+            get { return BackingStore?.Get<List<DirectoryObject>>(nameof(MemberOf)); }
+            set { BackingStore?.Set(nameof(MemberOf), value); }
+        }
         /// <summary>Date and time when this organizational contact was last synchronized from on-premises AD. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, not, ge, le, in).</summary>
-        public DateTimeOffset? OnPremisesLastSyncDateTime { get; set; }
+        public DateTimeOffset? OnPremisesLastSyncDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(OnPremisesLastSyncDateTime)); }
+            set { BackingStore?.Set(nameof(OnPremisesLastSyncDateTime), value); }
+        }
         /// <summary>List of any synchronization provisioning errors for this organizational contact. Supports $filter (eq, not).</summary>
-        public List<OnPremisesProvisioningError> OnPremisesProvisioningErrors { get; set; }
+        public List<OnPremisesProvisioningError> OnPremisesProvisioningErrors {
+            get { return BackingStore?.Get<List<OnPremisesProvisioningError>>(nameof(OnPremisesProvisioningErrors)); }
+            set { BackingStore?.Set(nameof(OnPremisesProvisioningErrors), value); }
+        }
         /// <summary>true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).  Supports $filter (eq, ne, not, in, and eq on null values).</summary>
-        public bool? OnPremisesSyncEnabled { get; set; }
+        public bool? OnPremisesSyncEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(OnPremisesSyncEnabled)); }
+            set { BackingStore?.Set(nameof(OnPremisesSyncEnabled), value); }
+        }
         /// <summary>List of phones for this organizational contact. Phone types can be mobile, business, and businessFax. Only one of each type can ever be present in the collection. Supports $filter (eq, ne, not, in).</summary>
-        public List<Phone> Phones { get; set; }
-        /// <summary>For example: &apos;SMTP: bob@contoso.com&apos;, &apos;smtp: bob@sales.contoso.com&apos;. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith).</summary>
-        public List<string> ProxyAddresses { get; set; }
+        public List<Phone> Phones {
+            get { return BackingStore?.Get<List<Phone>>(nameof(Phones)); }
+            set { BackingStore?.Set(nameof(Phones), value); }
+        }
+        /// <summary>For example: &apos;SMTP: bob@contoso.com&apos;, &apos;smtp: bob@sales.contoso.com&apos;. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).</summary>
+        public List<string> ProxyAddresses {
+            get { return BackingStore?.Get<List<string>>(nameof(ProxyAddresses)); }
+            set { BackingStore?.Set(nameof(ProxyAddresses), value); }
+        }
         /// <summary>Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)</summary>
-        public string Surname { get; set; }
+        public string Surname {
+            get { return BackingStore?.Get<string>(nameof(Surname)); }
+            set { BackingStore?.Set(nameof(Surname), value); }
+        }
         /// <summary>The transitiveMemberOf property</summary>
-        public List<DirectoryObject> TransitiveMemberOf { get; set; }
+        public List<DirectoryObject> TransitiveMemberOf {
+            get { return BackingStore?.Get<List<DirectoryObject>>(nameof(TransitiveMemberOf)); }
+            set { BackingStore?.Set(nameof(TransitiveMemberOf), value); }
+        }
         /// <summary>The transitive reports for a contact. Read-only.</summary>
-        public List<DirectoryObject> TransitiveReports { get; set; }
+        public List<DirectoryObject> TransitiveReports {
+            get { return BackingStore?.Get<List<DirectoryObject>>(nameof(TransitiveReports)); }
+            set { BackingStore?.Set(nameof(TransitiveReports), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

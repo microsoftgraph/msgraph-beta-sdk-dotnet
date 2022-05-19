@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
+    /// <summary>Provides operations to manage the collection of externalConnection entities.</summary>
     public class Schema : Entity, IParsable {
         /// <summary>Must be set to microsoft.graph.externalItem. Required.</summary>
-        public string BaseType { get; set; }
+        public string BaseType {
+            get { return BackingStore?.Get<string>(nameof(BaseType)); }
+            set { BackingStore?.Set(nameof(BaseType), value); }
+        }
         /// <summary>The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.</summary>
-        public List<Property> Properties { get; set; }
+        public List<Property> Properties {
+            get { return BackingStore?.Get<List<Property>>(nameof(Properties)); }
+            set { BackingStore?.Set(nameof(Properties), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

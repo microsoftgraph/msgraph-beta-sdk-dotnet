@@ -8,11 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provides operations to manage the searchEntity singleton.</summary>
     public class SearchEntity : Entity, IParsable {
         /// <summary>Administrative answer in Microsoft Search results to define common acronyms in a organization.</summary>
-        public List<Acronym> Acronyms { get; set; }
+        public List<Acronym> Acronyms {
+            get { return BackingStore?.Get<List<Acronym>>(nameof(Acronyms)); }
+            set { BackingStore?.Set(nameof(Acronyms), value); }
+        }
         /// <summary>Administrative answer in Microsoft Search results for common search queries in an organization.</summary>
-        public List<Bookmark> Bookmarks { get; set; }
+        public List<Bookmark> Bookmarks {
+            get { return BackingStore?.Get<List<Bookmark>>(nameof(Bookmarks)); }
+            set { BackingStore?.Set(nameof(Bookmarks), value); }
+        }
         /// <summary>Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.</summary>
-        public List<Qna> Qnas { get; set; }
+        public List<Qna> Qnas {
+            get { return BackingStore?.Get<List<Qna>>(nameof(Qnas)); }
+            set { BackingStore?.Set(nameof(Qnas), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

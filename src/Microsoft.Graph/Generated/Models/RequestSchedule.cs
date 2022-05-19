@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class RequestSchedule : IAdditionalDataHolder, IParsable {
+    public class RequestSchedule : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>When the access should expire.</summary>
-        public ExpirationPattern Expiration { get; set; }
+        public ExpirationPattern Expiration {
+            get { return BackingStore?.Get<ExpirationPattern>(nameof(Expiration)); }
+            set { BackingStore?.Set(nameof(Expiration), value); }
+        }
         /// <summary>For recurring access. Not used at present.</summary>
-        public PatternedRecurrence Recurrence { get; set; }
+        public PatternedRecurrence Recurrence {
+            get { return BackingStore?.Get<PatternedRecurrence>(nameof(Recurrence)); }
+            set { BackingStore?.Set(nameof(Recurrence), value); }
+        }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? StartDateTime { get; set; }
+        public DateTimeOffset? StartDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
+            set { BackingStore?.Set(nameof(StartDateTime), value); }
+        }
         /// <summary>
         /// Instantiates a new requestSchedule and sets the default values.
         /// </summary>
         public RequestSchedule() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

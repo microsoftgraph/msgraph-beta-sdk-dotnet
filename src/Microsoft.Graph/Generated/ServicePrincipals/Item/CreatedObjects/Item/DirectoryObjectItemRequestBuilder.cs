@@ -1,5 +1,6 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.CreatedObjects.Item.ServicePrincipal;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -15,6 +16,10 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.CreatedObjects.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The servicePrincipal property</summary>
+        public ServicePrincipalRequestBuilder ServicePrincipal { get =>
+            new ServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

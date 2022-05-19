@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class InformationProtection : Entity, IParsable {
         /// <summary>The bitlocker property</summary>
-        public Microsoft.Graph.Beta.Models.Bitlocker Bitlocker { get; set; }
+        public Microsoft.Graph.Beta.Models.Bitlocker Bitlocker {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Bitlocker>(nameof(Bitlocker)); }
+            set { BackingStore?.Set(nameof(Bitlocker), value); }
+        }
         /// <summary>The dataLossPreventionPolicies property</summary>
-        public List<DataLossPreventionPolicy> DataLossPreventionPolicies { get; set; }
+        public List<DataLossPreventionPolicy> DataLossPreventionPolicies {
+            get { return BackingStore?.Get<List<DataLossPreventionPolicy>>(nameof(DataLossPreventionPolicies)); }
+            set { BackingStore?.Set(nameof(DataLossPreventionPolicies), value); }
+        }
         /// <summary>The policy property</summary>
-        public InformationProtectionPolicy Policy { get; set; }
+        public InformationProtectionPolicy Policy {
+            get { return BackingStore?.Get<InformationProtectionPolicy>(nameof(Policy)); }
+            set { BackingStore?.Set(nameof(Policy), value); }
+        }
         /// <summary>The sensitivityLabels property</summary>
-        public List<SensitivityLabel> SensitivityLabels { get; set; }
+        public List<SensitivityLabel> SensitivityLabels {
+            get { return BackingStore?.Get<List<SensitivityLabel>>(nameof(SensitivityLabels)); }
+            set { BackingStore?.Set(nameof(SensitivityLabels), value); }
+        }
         /// <summary>The sensitivityPolicySettings property</summary>
-        public Microsoft.Graph.Beta.Models.SensitivityPolicySettings SensitivityPolicySettings { get; set; }
+        public Microsoft.Graph.Beta.Models.SensitivityPolicySettings SensitivityPolicySettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SensitivityPolicySettings>(nameof(SensitivityPolicySettings)); }
+            set { BackingStore?.Set(nameof(SensitivityPolicySettings), value); }
+        }
         /// <summary>The threatAssessmentRequests property</summary>
-        public List<ThreatAssessmentRequest> ThreatAssessmentRequests { get; set; }
+        public List<ThreatAssessmentRequest> ThreatAssessmentRequests {
+            get { return BackingStore?.Get<List<ThreatAssessmentRequest>>(nameof(ThreatAssessmentRequests)); }
+            set { BackingStore?.Set(nameof(ThreatAssessmentRequests), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class OutlookUser : Entity, IParsable {
         /// <summary>A list of categories defined for the user.</summary>
-        public List<OutlookCategory> MasterCategories { get; set; }
+        public List<OutlookCategory> MasterCategories {
+            get { return BackingStore?.Get<List<OutlookCategory>>(nameof(MasterCategories)); }
+            set { BackingStore?.Set(nameof(MasterCategories), value); }
+        }
         /// <summary>The taskFolders property</summary>
-        public List<OutlookTaskFolder> TaskFolders { get; set; }
+        public List<OutlookTaskFolder> TaskFolders {
+            get { return BackingStore?.Get<List<OutlookTaskFolder>>(nameof(TaskFolders)); }
+            set { BackingStore?.Set(nameof(TaskFolders), value); }
+        }
         /// <summary>The taskGroups property</summary>
-        public List<OutlookTaskGroup> TaskGroups { get; set; }
+        public List<OutlookTaskGroup> TaskGroups {
+            get { return BackingStore?.Get<List<OutlookTaskGroup>>(nameof(TaskGroups)); }
+            set { BackingStore?.Set(nameof(TaskGroups), value); }
+        }
         /// <summary>The tasks property</summary>
-        public List<OutlookTask> Tasks { get; set; }
+        public List<OutlookTask> Tasks {
+            get { return BackingStore?.Get<List<OutlookTask>>(nameof(Tasks)); }
+            set { BackingStore?.Set(nameof(Tasks), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

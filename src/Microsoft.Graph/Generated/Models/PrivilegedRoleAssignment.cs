@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of privilegedRoleAssignmentRequest entities.</summary>
     public class PrivilegedRoleAssignment : Entity, IParsable {
         /// <summary>The UTC DateTime when the temporary privileged role assignment will be expired. For permanent role assignment, the value is null.</summary>
-        public DateTimeOffset? ExpirationDateTime { get; set; }
+        public DateTimeOffset? ExpirationDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpirationDateTime)); }
+            set { BackingStore?.Set(nameof(ExpirationDateTime), value); }
+        }
         /// <summary>true if the role assignment is activated. false if the role assignment is deactivated.</summary>
-        public bool? IsElevated { get; set; }
+        public bool? IsElevated {
+            get { return BackingStore?.Get<bool?>(nameof(IsElevated)); }
+            set { BackingStore?.Set(nameof(IsElevated), value); }
+        }
         /// <summary>Result message set by the service.</summary>
-        public string ResultMessage { get; set; }
+        public string ResultMessage {
+            get { return BackingStore?.Get<string>(nameof(ResultMessage)); }
+            set { BackingStore?.Set(nameof(ResultMessage), value); }
+        }
         /// <summary>Role identifier. In GUID string format.</summary>
-        public string RoleId { get; set; }
+        public string RoleId {
+            get { return BackingStore?.Get<string>(nameof(RoleId)); }
+            set { BackingStore?.Set(nameof(RoleId), value); }
+        }
         /// <summary>Read-only. Nullable. The associated role information.</summary>
-        public PrivilegedRole RoleInfo { get; set; }
+        public PrivilegedRole RoleInfo {
+            get { return BackingStore?.Get<PrivilegedRole>(nameof(RoleInfo)); }
+            set { BackingStore?.Set(nameof(RoleInfo), value); }
+        }
         /// <summary>User identifier. In GUID string format.</summary>
-        public string UserId { get; set; }
+        public string UserId {
+            get { return BackingStore?.Get<string>(nameof(UserId)); }
+            set { BackingStore?.Set(nameof(UserId), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

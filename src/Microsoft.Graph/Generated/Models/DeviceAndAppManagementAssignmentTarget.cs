@@ -1,21 +1,34 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Base type for assignment targets.</summary>
-    public class DeviceAndAppManagementAssignmentTarget : IAdditionalDataHolder, IParsable {
+    public class DeviceAndAppManagementAssignmentTarget : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The Id of the filter for the target assignment.</summary>
-        public string DeviceAndAppManagementAssignmentFilterId { get; set; }
+        public string DeviceAndAppManagementAssignmentFilterId {
+            get { return BackingStore?.Get<string>(nameof(DeviceAndAppManagementAssignmentFilterId)); }
+            set { BackingStore?.Set(nameof(DeviceAndAppManagementAssignmentFilterId), value); }
+        }
         /// <summary>The type of filter of the target assignment i.e. Exclude or Include. Possible values are: none, include, exclude.</summary>
-        public Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilterType? DeviceAndAppManagementAssignmentFilterType { get; set; }
+        public Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilterType? DeviceAndAppManagementAssignmentFilterType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilterType?>(nameof(DeviceAndAppManagementAssignmentFilterType)); }
+            set { BackingStore?.Set(nameof(DeviceAndAppManagementAssignmentFilterType), value); }
+        }
         /// <summary>
         /// Instantiates a new deviceAndAppManagementAssignmentTarget and sets the default values.
         /// </summary>
         public DeviceAndAppManagementAssignmentTarget() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

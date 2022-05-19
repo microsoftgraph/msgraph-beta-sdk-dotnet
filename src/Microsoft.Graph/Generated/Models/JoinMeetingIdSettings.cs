@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class JoinMeetingIdSettings : IAdditionalDataHolder, IParsable {
+    public class JoinMeetingIdSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The isPasscodeRequired property</summary>
-        public bool? IsPasscodeRequired { get; set; }
+        public bool? IsPasscodeRequired {
+            get { return BackingStore?.Get<bool?>(nameof(IsPasscodeRequired)); }
+            set { BackingStore?.Set(nameof(IsPasscodeRequired), value); }
+        }
         /// <summary>The joinMeetingId property</summary>
-        public string JoinMeetingId { get; set; }
+        public string JoinMeetingId {
+            get { return BackingStore?.Get<string>(nameof(JoinMeetingId)); }
+            set { BackingStore?.Set(nameof(JoinMeetingId), value); }
+        }
         /// <summary>The passcode property</summary>
-        public string Passcode { get; set; }
+        public string Passcode {
+            get { return BackingStore?.Get<string>(nameof(Passcode)); }
+            set { BackingStore?.Set(nameof(Passcode), value); }
+        }
         /// <summary>
         /// Instantiates a new joinMeetingIdSettings and sets the default values.
         /// </summary>
         public JoinMeetingIdSettings() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

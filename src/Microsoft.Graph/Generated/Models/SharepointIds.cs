@@ -1,30 +1,58 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SharepointIds : IAdditionalDataHolder, IParsable {
+    public class SharepointIds : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The unique identifier (guid) for the item&apos;s list in SharePoint.</summary>
-        public string ListId { get; set; }
+        public string ListId {
+            get { return BackingStore?.Get<string>(nameof(ListId)); }
+            set { BackingStore?.Set(nameof(ListId), value); }
+        }
         /// <summary>An integer identifier for the item within the containing list.</summary>
-        public string ListItemId { get; set; }
+        public string ListItemId {
+            get { return BackingStore?.Get<string>(nameof(ListItemId)); }
+            set { BackingStore?.Set(nameof(ListItemId), value); }
+        }
         /// <summary>The unique identifier (guid) for the item within OneDrive for Business or a SharePoint site.</summary>
-        public string ListItemUniqueId { get; set; }
+        public string ListItemUniqueId {
+            get { return BackingStore?.Get<string>(nameof(ListItemUniqueId)); }
+            set { BackingStore?.Set(nameof(ListItemUniqueId), value); }
+        }
         /// <summary>The unique identifier (guid) for the item&apos;s site collection (SPSite).</summary>
-        public string SiteId { get; set; }
+        public string SiteId {
+            get { return BackingStore?.Get<string>(nameof(SiteId)); }
+            set { BackingStore?.Set(nameof(SiteId), value); }
+        }
         /// <summary>The SharePoint URL for the site that contains the item.</summary>
-        public string SiteUrl { get; set; }
+        public string SiteUrl {
+            get { return BackingStore?.Get<string>(nameof(SiteUrl)); }
+            set { BackingStore?.Set(nameof(SiteUrl), value); }
+        }
         /// <summary>The unique identifier (guid) for the tenancy.</summary>
-        public string TenantId { get; set; }
+        public string TenantId {
+            get { return BackingStore?.Get<string>(nameof(TenantId)); }
+            set { BackingStore?.Set(nameof(TenantId), value); }
+        }
         /// <summary>The unique identifier (guid) for the item&apos;s site (SPWeb).</summary>
-        public string WebId { get; set; }
+        public string WebId {
+            get { return BackingStore?.Get<string>(nameof(WebId)); }
+            set { BackingStore?.Set(nameof(WebId), value); }
+        }
         /// <summary>
         /// Instantiates a new sharepointIds and sets the default values.
         /// </summary>
         public SharepointIds() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

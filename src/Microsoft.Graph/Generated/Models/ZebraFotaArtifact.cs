@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Describes a single artifact for a specific device model.</summary>
     public class ZebraFotaArtifact : Entity, IParsable {
         /// <summary>The version of the Board Support Package.</summary>
-        public string BoardSupportPackageVersion { get; set; }
+        public string BoardSupportPackageVersion {
+            get { return BackingStore?.Get<string>(nameof(BoardSupportPackageVersion)); }
+            set { BackingStore?.Set(nameof(BoardSupportPackageVersion), value); }
+        }
         /// <summary>Artifact device model.</summary>
-        public string DeviceModel { get; set; }
+        public string DeviceModel {
+            get { return BackingStore?.Get<string>(nameof(DeviceModel)); }
+            set { BackingStore?.Set(nameof(DeviceModel), value); }
+        }
         /// <summary>Artifact OS version.</summary>
-        public string OsVersion { get; set; }
+        public string OsVersion {
+            get { return BackingStore?.Get<string>(nameof(OsVersion)); }
+            set { BackingStore?.Set(nameof(OsVersion), value); }
+        }
         /// <summary>Artifact patch version.</summary>
-        public string PatchVersion { get; set; }
+        public string PatchVersion {
+            get { return BackingStore?.Get<string>(nameof(PatchVersion)); }
+            set { BackingStore?.Set(nameof(PatchVersion), value); }
+        }
         /// <summary>Artifact release notes URL.</summary>
-        public string ReleaseNotesUrl { get; set; }
+        public string ReleaseNotesUrl {
+            get { return BackingStore?.Get<string>(nameof(ReleaseNotesUrl)); }
+            set { BackingStore?.Set(nameof(ReleaseNotesUrl), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

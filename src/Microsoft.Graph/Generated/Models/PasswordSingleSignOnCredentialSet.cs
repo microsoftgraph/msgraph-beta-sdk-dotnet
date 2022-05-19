@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class PasswordSingleSignOnCredentialSet : IAdditionalDataHolder, IParsable {
+    public class PasswordSingleSignOnCredentialSet : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>A list of credential objects that define the complete sign in flow.</summary>
-        public List<Credential> Credentials { get; set; }
+        public List<Credential> Credentials {
+            get { return BackingStore?.Get<List<Credential>>(nameof(Credentials)); }
+            set { BackingStore?.Set(nameof(Credentials), value); }
+        }
         /// <summary>The ID of the user or group this credential set belongs to.</summary>
-        public string Id { get; set; }
+        public string Id {
+            get { return BackingStore?.Get<string>(nameof(Id)); }
+            set { BackingStore?.Set(nameof(Id), value); }
+        }
         /// <summary>
-        /// Instantiates a new passwordSingleSignOnCredentialSet and sets the default values.
+        /// Instantiates a new PasswordSingleSignOnCredentialSet and sets the default values.
         /// </summary>
         public PasswordSingleSignOnCredentialSet() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

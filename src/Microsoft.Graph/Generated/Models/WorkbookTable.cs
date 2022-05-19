@@ -4,35 +4,78 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class WorkbookTable : Entity, IParsable {
         /// <summary>Represents a collection of all the columns in the table. Read-only.</summary>
-        public List<WorkbookTableColumn> Columns { get; set; }
+        public List<WorkbookTableColumn> Columns {
+            get { return BackingStore?.Get<List<WorkbookTableColumn>>(nameof(Columns)); }
+            set { BackingStore?.Set(nameof(Columns), value); }
+        }
         /// <summary>Indicates whether the first column contains special formatting.</summary>
-        public bool? HighlightFirstColumn { get; set; }
+        public bool? HighlightFirstColumn {
+            get { return BackingStore?.Get<bool?>(nameof(HighlightFirstColumn)); }
+            set { BackingStore?.Set(nameof(HighlightFirstColumn), value); }
+        }
         /// <summary>Indicates whether the last column contains special formatting.</summary>
-        public bool? HighlightLastColumn { get; set; }
+        public bool? HighlightLastColumn {
+            get { return BackingStore?.Get<bool?>(nameof(HighlightLastColumn)); }
+            set { BackingStore?.Set(nameof(HighlightLastColumn), value); }
+        }
         /// <summary>Legacy Id used in older Excle clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and should not be parsed to any other type. Read-only.</summary>
-        public string LegacyId { get; set; }
+        public string LegacyId {
+            get { return BackingStore?.Get<string>(nameof(LegacyId)); }
+            set { BackingStore?.Set(nameof(LegacyId), value); }
+        }
         /// <summary>Name of the table.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>Represents a collection of all the rows in the table. Read-only.</summary>
-        public List<WorkbookTableRow> Rows { get; set; }
+        public List<WorkbookTableRow> Rows {
+            get { return BackingStore?.Get<List<WorkbookTableRow>>(nameof(Rows)); }
+            set { BackingStore?.Set(nameof(Rows), value); }
+        }
         /// <summary>Indicates whether the columns show banded formatting in which odd columns are highlighted differently from even ones to make reading the table easier.</summary>
-        public bool? ShowBandedColumns { get; set; }
+        public bool? ShowBandedColumns {
+            get { return BackingStore?.Get<bool?>(nameof(ShowBandedColumns)); }
+            set { BackingStore?.Set(nameof(ShowBandedColumns), value); }
+        }
         /// <summary>Indicates whether the rows show banded formatting in which odd rows are highlighted differently from even ones to make reading the table easier.</summary>
-        public bool? ShowBandedRows { get; set; }
+        public bool? ShowBandedRows {
+            get { return BackingStore?.Get<bool?>(nameof(ShowBandedRows)); }
+            set { BackingStore?.Set(nameof(ShowBandedRows), value); }
+        }
         /// <summary>Indicates whether the filter buttons are visible at the top of each column header. Setting this is only allowed if the table contains a header row.</summary>
-        public bool? ShowFilterButton { get; set; }
+        public bool? ShowFilterButton {
+            get { return BackingStore?.Get<bool?>(nameof(ShowFilterButton)); }
+            set { BackingStore?.Set(nameof(ShowFilterButton), value); }
+        }
         /// <summary>Indicates whether the header row is visible or not. This value can be set to show or remove the header row.</summary>
-        public bool? ShowHeaders { get; set; }
+        public bool? ShowHeaders {
+            get { return BackingStore?.Get<bool?>(nameof(ShowHeaders)); }
+            set { BackingStore?.Set(nameof(ShowHeaders), value); }
+        }
         /// <summary>Indicates whether the total row is visible or not. This value can be set to show or remove the total row.</summary>
-        public bool? ShowTotals { get; set; }
+        public bool? ShowTotals {
+            get { return BackingStore?.Get<bool?>(nameof(ShowTotals)); }
+            set { BackingStore?.Set(nameof(ShowTotals), value); }
+        }
         /// <summary>Represents the sorting for the table. Read-only.</summary>
-        public WorkbookTableSort Sort { get; set; }
+        public WorkbookTableSort Sort {
+            get { return BackingStore?.Get<WorkbookTableSort>(nameof(Sort)); }
+            set { BackingStore?.Set(nameof(Sort), value); }
+        }
         /// <summary>Constant value that represents the Table style. Possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.</summary>
-        public string Style { get; set; }
+        public string Style {
+            get { return BackingStore?.Get<string>(nameof(Style)); }
+            set { BackingStore?.Set(nameof(Style), value); }
+        }
         /// <summary>The worksheet containing the current table. Read-only.</summary>
-        public WorkbookWorksheet Worksheet { get; set; }
+        public WorkbookWorksheet Worksheet {
+            get { return BackingStore?.Get<WorkbookWorksheet>(nameof(Worksheet)); }
+            set { BackingStore?.Set(nameof(Worksheet), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

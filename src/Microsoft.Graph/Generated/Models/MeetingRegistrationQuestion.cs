@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the commsApplication singleton.</summary>
     public class MeetingRegistrationQuestion : Entity, IParsable {
         /// <summary>Answer input type of the custom registration question.</summary>
-        public Microsoft.Graph.Beta.Models.AnswerInputType? AnswerInputType { get; set; }
+        public Microsoft.Graph.Beta.Models.AnswerInputType? AnswerInputType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AnswerInputType?>(nameof(AnswerInputType)); }
+            set { BackingStore?.Set(nameof(AnswerInputType), value); }
+        }
         /// <summary>Answer options when answerInputType is radioButton.</summary>
-        public List<string> AnswerOptions { get; set; }
+        public List<string> AnswerOptions {
+            get { return BackingStore?.Get<List<string>>(nameof(AnswerOptions)); }
+            set { BackingStore?.Set(nameof(AnswerOptions), value); }
+        }
         /// <summary>Display name of the custom registration question.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Indicates whether the question is required. Default value is false.</summary>
-        public bool? IsRequired { get; set; }
+        public bool? IsRequired {
+            get { return BackingStore?.Get<bool?>(nameof(IsRequired)); }
+            set { BackingStore?.Set(nameof(IsRequired), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

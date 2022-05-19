@@ -1,21 +1,33 @@
-using Microsoft.Graph.Beta.Models.Item;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ItemCollectionResponse : IAdditionalDataHolder, IParsable {
+    public class ItemCollectionResponse : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The nextLink property</summary>
-        public string NextLink { get; set; }
+        public string NextLink {
+            get { return BackingStore?.Get<string>(nameof(NextLink)); }
+            set { BackingStore?.Set(nameof(NextLink), value); }
+        }
         /// <summary>The value property</summary>
-        public List<Microsoft.Graph.Beta.Models.Item.Item> Value { get; set; }
+        public List<Item> Value {
+            get { return BackingStore?.Get<List<Item>>(nameof(Value)); }
+            set { BackingStore?.Set(nameof(Value), value); }
+        }
         /// <summary>
         /// Instantiates a new ItemCollectionResponse and sets the default values.
         /// </summary>
         public ItemCollectionResponse() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -32,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"@odata.nextLink", n => { NextLink = n.GetStringValue(); } },
-                {"value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Item.Item>(Microsoft.Graph.Beta.Models.Item.Item.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<Item>(Item.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>
@@ -42,7 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.nextLink", NextLink);
-            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Item.Item>("value", Value);
+            writer.WriteCollectionOfObjectValues<Item>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

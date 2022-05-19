@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class TeamworkConfiguredPeripheral : IAdditionalDataHolder, IParsable {
+    public class TeamworkConfiguredPeripheral : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>True if the current peripheral is optional. If set to false, this property is also used as part of the calculation of the health state for the device.</summary>
-        public bool? IsOptional { get; set; }
+        public bool? IsOptional {
+            get { return BackingStore?.Get<bool?>(nameof(IsOptional)); }
+            set { BackingStore?.Set(nameof(IsOptional), value); }
+        }
         /// <summary>The peripheral property</summary>
-        public TeamworkPeripheral Peripheral { get; set; }
+        public TeamworkPeripheral Peripheral {
+            get { return BackingStore?.Get<TeamworkPeripheral>(nameof(Peripheral)); }
+            set { BackingStore?.Set(nameof(Peripheral), value); }
+        }
         /// <summary>
         /// Instantiates a new teamworkConfiguredPeripheral and sets the default values.
         /// </summary>
         public TeamworkConfiguredPeripheral() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

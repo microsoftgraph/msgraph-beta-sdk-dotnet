@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.Notes.Item {
             return requestInfo;
         }
         /// <summary>
-        /// List of notes associcated with the request.
+        /// List of notes associated with the request.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<AuthoredNoteItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.Notes.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// List of notes associcated with the request.
+        /// List of notes associated with the request.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.Notes.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>List of notes associcated with the request.</summary>
+        /// <summary>List of notes associated with the request.</summary>
         public class AuthoredNoteItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

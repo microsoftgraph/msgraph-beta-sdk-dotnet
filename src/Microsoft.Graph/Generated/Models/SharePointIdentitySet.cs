@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class SharePointIdentitySet : IdentitySet, IParsable {
         /// <summary>The group associated with this action. Optional.</summary>
-        public Identity Group { get; set; }
+        public Identity Group {
+            get { return BackingStore?.Get<Identity>(nameof(Group)); }
+            set { BackingStore?.Set(nameof(Group), value); }
+        }
         /// <summary>The SharePoint group associated with this action. Optional.</summary>
-        public SharePointIdentity SiteGroup { get; set; }
+        public SharePointIdentity SiteGroup {
+            get { return BackingStore?.Get<SharePointIdentity>(nameof(SiteGroup)); }
+            set { BackingStore?.Set(nameof(SiteGroup), value); }
+        }
         /// <summary>The SharePoint user associated with this action. Optional.</summary>
-        public SharePointIdentity SiteUser { get; set; }
+        public SharePointIdentity SiteUser {
+            get { return BackingStore?.Get<SharePointIdentity>(nameof(SiteUser)); }
+            set { BackingStore?.Set(nameof(SiteUser), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

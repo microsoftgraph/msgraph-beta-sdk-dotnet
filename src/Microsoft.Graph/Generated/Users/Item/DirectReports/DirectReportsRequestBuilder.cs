@@ -2,6 +2,8 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Users.Item.DirectReports.Count;
 using Microsoft.Graph.Beta.Users.Item.DirectReports.Item;
+using Microsoft.Graph.Beta.Users.Item.DirectReports.OrgContact;
+using Microsoft.Graph.Beta.Users.Item.DirectReports.User;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -17,12 +19,20 @@ namespace Microsoft.Graph.Beta.Users.Item.DirectReports {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The orgContact property</summary>
+        public OrgContactRequestBuilder OrgContact { get =>
+            new OrgContactRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>The user property</summary>
+        public UserRequestBuilder User { get =>
+            new UserRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.directReports.item collection</summary>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

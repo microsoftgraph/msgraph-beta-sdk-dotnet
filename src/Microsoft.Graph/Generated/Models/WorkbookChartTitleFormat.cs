@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class WorkbookChartTitleFormat : Entity, IParsable {
         /// <summary>Represents the fill format of an object, which includes background formatting information. Read-only.</summary>
-        public WorkbookChartFill Fill { get; set; }
+        public WorkbookChartFill Fill {
+            get { return BackingStore?.Get<WorkbookChartFill>(nameof(Fill)); }
+            set { BackingStore?.Set(nameof(Fill), value); }
+        }
         /// <summary>Represents the font attributes (font name, font size, color, etc.) for the current object. Read-only.</summary>
-        public WorkbookChartFont Font { get; set; }
+        public WorkbookChartFont Font {
+            get { return BackingStore?.Get<WorkbookChartFont>(nameof(Font)); }
+            set { BackingStore?.Set(nameof(Font), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The user experience analytics metric history.</summary>
     public class UserExperienceAnalyticsMetricHistory : Entity, IParsable {
         /// <summary>The user experience analytics device id.</summary>
-        public string DeviceId { get; set; }
+        public string DeviceId {
+            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
+            set { BackingStore?.Set(nameof(DeviceId), value); }
+        }
         /// <summary>The user experience analytics metric date time.</summary>
-        public DateTimeOffset? MetricDateTime { get; set; }
+        public DateTimeOffset? MetricDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(MetricDateTime)); }
+            set { BackingStore?.Set(nameof(MetricDateTime), value); }
+        }
         /// <summary>The user experience analytics metric type.</summary>
-        public string MetricType { get; set; }
+        public string MetricType {
+            get { return BackingStore?.Get<string>(nameof(MetricType)); }
+            set { BackingStore?.Set(nameof(MetricType), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

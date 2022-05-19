@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of approvalWorkflowProvider entities.</summary>
     public class BusinessFlowSettings : AccessReviewSettings, IParsable {
         /// <summary>The durationInDays property</summary>
-        public int? DurationInDays { get; set; }
+        public int? DurationInDays {
+            get { return BackingStore?.Get<int?>(nameof(DurationInDays)); }
+            set { BackingStore?.Set(nameof(DurationInDays), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

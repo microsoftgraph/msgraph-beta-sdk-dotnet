@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of domain entities.</summary>
     public class SharedEmailDomainInvitation : Entity, IParsable {
         /// <summary>The expiryTime property</summary>
-        public DateTimeOffset? ExpiryTime { get; set; }
+        public DateTimeOffset? ExpiryTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpiryTime)); }
+            set { BackingStore?.Set(nameof(ExpiryTime), value); }
+        }
         /// <summary>The invitationDomain property</summary>
-        public string InvitationDomain { get; set; }
+        public string InvitationDomain {
+            get { return BackingStore?.Get<string>(nameof(InvitationDomain)); }
+            set { BackingStore?.Set(nameof(InvitationDomain), value); }
+        }
         /// <summary>The invitationStatus property</summary>
-        public string InvitationStatus { get; set; }
+        public string InvitationStatus {
+            get { return BackingStore?.Get<string>(nameof(InvitationStatus)); }
+            set { BackingStore?.Set(nameof(InvitationStatus), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

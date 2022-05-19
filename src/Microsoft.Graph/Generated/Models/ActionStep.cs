@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ActionStep : IAdditionalDataHolder, IParsable {
+    public class ActionStep : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The actionUrl property</summary>
-        public Microsoft.Graph.Beta.Models.ActionUrl ActionUrl { get; set; }
+        public Microsoft.Graph.Beta.Models.ActionUrl ActionUrl {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionUrl>(nameof(ActionUrl)); }
+            set { BackingStore?.Set(nameof(ActionUrl), value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The stepNumber property</summary>
-        public long? StepNumber { get; set; }
+        public long? StepNumber {
+            get { return BackingStore?.Get<long?>(nameof(StepNumber)); }
+            set { BackingStore?.Set(nameof(StepNumber), value); }
+        }
         /// <summary>The text property</summary>
-        public string Text { get; set; }
+        public string Text {
+            get { return BackingStore?.Get<string>(nameof(Text)); }
+            set { BackingStore?.Set(nameof(Text), value); }
+        }
         /// <summary>
         /// Instantiates a new actionStep and sets the default values.
         /// </summary>
         public ActionStep() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

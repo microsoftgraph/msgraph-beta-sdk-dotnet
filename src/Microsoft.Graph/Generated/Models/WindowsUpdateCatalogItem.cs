@@ -4,20 +4,35 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Windows update catalog item entity</summary>
     public class WindowsUpdateCatalogItem : Entity, IParsable {
         /// <summary>The display name for the catalog item.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The last supported date for a catalog item</summary>
-        public DateTimeOffset? EndOfSupportDate { get; set; }
+        public DateTimeOffset? EndOfSupportDate {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndOfSupportDate)); }
+            set { BackingStore?.Set(nameof(EndOfSupportDate), value); }
+        }
         /// <summary>The date the catalog item was released</summary>
-        public DateTimeOffset? ReleaseDateTime { get; set; }
+        public DateTimeOffset? ReleaseDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ReleaseDateTime)); }
+            set { BackingStore?.Set(nameof(ReleaseDateTime), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new WindowsUpdateCatalogItem CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsUpdateCatalogItem();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.windowsUpdateCatalogItem" => new WindowsUpdateCatalogItem(),
+                _ => new WindowsUpdateCatalogItem(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

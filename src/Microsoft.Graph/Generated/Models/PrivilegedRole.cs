@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of privilegedRoleAssignmentRequest entities.</summary>
     public class PrivilegedRole : Entity, IParsable {
         /// <summary>The assignments for this role. Read-only. Nullable.</summary>
-        public List<PrivilegedRoleAssignment> Assignments { get; set; }
+        public List<PrivilegedRoleAssignment> Assignments {
+            get { return BackingStore?.Get<List<PrivilegedRoleAssignment>>(nameof(Assignments)); }
+            set { BackingStore?.Set(nameof(Assignments), value); }
+        }
         /// <summary>Role name.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>The settings for this role. Read-only. Nullable.</summary>
-        public PrivilegedRoleSettings Settings { get; set; }
+        public PrivilegedRoleSettings Settings {
+            get { return BackingStore?.Get<PrivilegedRoleSettings>(nameof(Settings)); }
+            set { BackingStore?.Set(nameof(Settings), value); }
+        }
         /// <summary>The summary information for this role. Read-only. Nullable.</summary>
-        public PrivilegedRoleSummary Summary { get; set; }
+        public PrivilegedRoleSummary Summary {
+            get { return BackingStore?.Get<PrivilegedRoleSummary>(nameof(Summary)); }
+            set { BackingStore?.Set(nameof(Summary), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -1,32 +1,63 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ResourceVisualization : IAdditionalDataHolder, IParsable {
+    public class ResourceVisualization : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.</summary>
-        public string ContainerDisplayName { get; set; }
+        public string ContainerDisplayName {
+            get { return BackingStore?.Get<string>(nameof(ContainerDisplayName)); }
+            set { BackingStore?.Set(nameof(ContainerDisplayName), value); }
+        }
         /// <summary>Can be used for filtering by the type of container in which the file is stored. Such as Site or OneDriveBusiness.</summary>
-        public string ContainerType { get; set; }
+        public string ContainerType {
+            get { return BackingStore?.Get<string>(nameof(ContainerType)); }
+            set { BackingStore?.Set(nameof(ContainerType), value); }
+        }
         /// <summary>A path leading to the folder in which the item is stored.</summary>
-        public string ContainerWebUrl { get; set; }
+        public string ContainerWebUrl {
+            get { return BackingStore?.Get<string>(nameof(ContainerWebUrl)); }
+            set { BackingStore?.Set(nameof(ContainerWebUrl), value); }
+        }
         /// <summary>The item&apos;s media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.</summary>
-        public string MediaType { get; set; }
+        public string MediaType {
+            get { return BackingStore?.Get<string>(nameof(MediaType)); }
+            set { BackingStore?.Set(nameof(MediaType), value); }
+        }
         /// <summary>A URL leading to the preview image for the item.</summary>
-        public string PreviewImageUrl { get; set; }
+        public string PreviewImageUrl {
+            get { return BackingStore?.Get<string>(nameof(PreviewImageUrl)); }
+            set { BackingStore?.Set(nameof(PreviewImageUrl), value); }
+        }
         /// <summary>A preview text for the item.</summary>
-        public string PreviewText { get; set; }
+        public string PreviewText {
+            get { return BackingStore?.Get<string>(nameof(PreviewText)); }
+            set { BackingStore?.Set(nameof(PreviewText), value); }
+        }
         /// <summary>The item&apos;s title text.</summary>
-        public string Title { get; set; }
+        public string Title {
+            get { return BackingStore?.Get<string>(nameof(Title)); }
+            set { BackingStore?.Set(nameof(Title), value); }
+        }
         /// <summary>The item&apos;s media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.</summary>
-        public string Type { get; set; }
+        public string Type {
+            get { return BackingStore?.Get<string>(nameof(Type)); }
+            set { BackingStore?.Set(nameof(Type), value); }
+        }
         /// <summary>
         /// Instantiates a new resourceVisualization and sets the default values.
         /// </summary>
         public ResourceVisualization() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

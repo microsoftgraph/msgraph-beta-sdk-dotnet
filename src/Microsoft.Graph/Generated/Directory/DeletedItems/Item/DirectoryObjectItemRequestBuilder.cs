@@ -1,3 +1,6 @@
+using Microsoft.Graph.Beta.Directory.DeletedItems.Item.Application;
+using Microsoft.Graph.Beta.Directory.DeletedItems.Item.Group;
+using Microsoft.Graph.Beta.Directory.DeletedItems.Item.User;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -11,12 +14,24 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Directory.DeletedItems.Item {
     /// <summary>Provides operations to manage the deletedItems property of the microsoft.graph.directory entity.</summary>
     public class DirectoryObjectItemRequestBuilder {
+        /// <summary>The application property</summary>
+        public ApplicationRequestBuilder Application { get =>
+            new ApplicationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The group property</summary>
+        public GroupRequestBuilder Group { get =>
+            new GroupRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>The user property</summary>
+        public UserRequestBuilder User { get =>
+            new UserRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>

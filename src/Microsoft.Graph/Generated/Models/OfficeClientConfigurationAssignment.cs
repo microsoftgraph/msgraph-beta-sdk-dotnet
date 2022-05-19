@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the officeConfiguration singleton.</summary>
     public class OfficeClientConfigurationAssignment : Entity, IParsable {
         /// <summary>The target assignment defined by the admin.</summary>
-        public OfficeConfigurationAssignmentTarget Target { get; set; }
+        public OfficeConfigurationAssignmentTarget Target {
+            get { return BackingStore?.Get<OfficeConfigurationAssignmentTarget>(nameof(Target)); }
+            set { BackingStore?.Set(nameof(Target), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

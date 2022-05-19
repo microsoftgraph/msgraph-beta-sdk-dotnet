@@ -1,26 +1,48 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class LookupColumn : IAdditionalDataHolder, IParsable {
+    public class LookupColumn : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Indicates whether multiple values can be selected from the source.</summary>
-        public bool? AllowMultipleValues { get; set; }
+        public bool? AllowMultipleValues {
+            get { return BackingStore?.Get<bool?>(nameof(AllowMultipleValues)); }
+            set { BackingStore?.Set(nameof(AllowMultipleValues), value); }
+        }
         /// <summary>Indicates whether values in the column should be able to exceed the standard limit of 255 characters.</summary>
-        public bool? AllowUnlimitedLength { get; set; }
+        public bool? AllowUnlimitedLength {
+            get { return BackingStore?.Get<bool?>(nameof(AllowUnlimitedLength)); }
+            set { BackingStore?.Set(nameof(AllowUnlimitedLength), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The name of the lookup source column.</summary>
-        public string ColumnName { get; set; }
+        public string ColumnName {
+            get { return BackingStore?.Get<string>(nameof(ColumnName)); }
+            set { BackingStore?.Set(nameof(ColumnName), value); }
+        }
         /// <summary>The unique identifier of the lookup source list.</summary>
-        public string ListId { get; set; }
+        public string ListId {
+            get { return BackingStore?.Get<string>(nameof(ListId)); }
+            set { BackingStore?.Set(nameof(ListId), value); }
+        }
         /// <summary>If specified, this column is a secondary lookup, pulling an additional field from the list item looked up by the primary lookup. Use the list item looked up by the primary as the source for the column named here.</summary>
-        public string PrimaryLookupColumnId { get; set; }
+        public string PrimaryLookupColumnId {
+            get { return BackingStore?.Get<string>(nameof(PrimaryLookupColumnId)); }
+            set { BackingStore?.Set(nameof(PrimaryLookupColumnId), value); }
+        }
         /// <summary>
         /// Instantiates a new lookupColumn and sets the default values.
         /// </summary>
         public LookupColumn() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

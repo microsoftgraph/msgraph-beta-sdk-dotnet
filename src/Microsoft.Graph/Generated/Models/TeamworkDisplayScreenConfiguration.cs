@@ -1,26 +1,48 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class TeamworkDisplayScreenConfiguration : IAdditionalDataHolder, IParsable {
+    public class TeamworkDisplayScreenConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The brightness level on the device (0-100). Not applicable for Microsoft Teams Rooms devices.</summary>
-        public int? BacklightBrightness { get; set; }
+        public int? BacklightBrightness {
+            get { return BackingStore?.Get<int?>(nameof(BacklightBrightness)); }
+            set { BackingStore?.Set(nameof(BacklightBrightness), value); }
+        }
         /// <summary>Timeout for backlight (30-3600 secs). Not applicable for Teams Rooms devices.</summary>
-        public TimeSpan? BacklightTimeout { get; set; }
+        public TimeSpan? BacklightTimeout {
+            get { return BackingStore?.Get<TimeSpan?>(nameof(BacklightTimeout)); }
+            set { BackingStore?.Set(nameof(BacklightTimeout), value); }
+        }
         /// <summary>True if high contrast mode is enabled. Not applicable for Teams Rooms devices.</summary>
-        public bool? IsHighContrastEnabled { get; set; }
+        public bool? IsHighContrastEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(IsHighContrastEnabled)); }
+            set { BackingStore?.Set(nameof(IsHighContrastEnabled), value); }
+        }
         /// <summary>True if screensaver is enabled. Not applicable for Teams Rooms devices.</summary>
-        public bool? IsScreensaverEnabled { get; set; }
+        public bool? IsScreensaverEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(IsScreensaverEnabled)); }
+            set { BackingStore?.Set(nameof(IsScreensaverEnabled), value); }
+        }
         /// <summary>Screensaver timeout from 30 to 3600 secs. Not applicable for Teams Rooms devices.</summary>
-        public TimeSpan? ScreensaverTimeout { get; set; }
+        public TimeSpan? ScreensaverTimeout {
+            get { return BackingStore?.Get<TimeSpan?>(nameof(ScreensaverTimeout)); }
+            set { BackingStore?.Set(nameof(ScreensaverTimeout), value); }
+        }
         /// <summary>
         /// Instantiates a new teamworkDisplayScreenConfiguration and sets the default values.
         /// </summary>
         public TeamworkDisplayScreenConfiguration() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

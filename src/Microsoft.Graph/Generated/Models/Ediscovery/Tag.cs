@@ -4,21 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class Tag : Entity, IParsable {
         /// <summary>Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.</summary>
-        public Microsoft.Graph.Beta.Models.Ediscovery.ChildSelectability? ChildSelectability { get; set; }
+        public Microsoft.Graph.Beta.Models.Ediscovery.ChildSelectability? ChildSelectability {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.ChildSelectability?>(nameof(ChildSelectability)); }
+            set { BackingStore?.Set(nameof(ChildSelectability), value); }
+        }
         /// <summary>Returns the tags that are a child of a tag.</summary>
-        public List<Tag> ChildTags { get; set; }
+        public List<Tag> ChildTags {
+            get { return BackingStore?.Get<List<Tag>>(nameof(ChildTags)); }
+            set { BackingStore?.Set(nameof(ChildTags), value); }
+        }
         /// <summary>The user who created the tag.</summary>
-        public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy { get; set; }
+        public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>(nameof(CreatedBy)); }
+            set { BackingStore?.Set(nameof(CreatedBy), value); }
+        }
         /// <summary>The description for the tag.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Display name of the tag.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The date and time the tag was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>Returns the parent tag of the specified tag.</summary>
-        public Tag Parent { get; set; }
+        public Tag Parent {
+            get { return BackingStore?.Get<Tag>(nameof(Parent)); }
+            set { BackingStore?.Set(nameof(Parent), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

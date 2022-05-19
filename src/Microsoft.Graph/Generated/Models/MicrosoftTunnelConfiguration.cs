@@ -4,33 +4,73 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Entity that represents a collection of Microsoft Tunnel settings</summary>
     public class MicrosoftTunnelConfiguration : Entity, IParsable {
         /// <summary>Additional settings that may be applied to the server</summary>
-        public List<KeyValuePair> AdvancedSettings { get; set; }
+        public List<KeyValuePair> AdvancedSettings {
+            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(AdvancedSettings)); }
+            set { BackingStore?.Set(nameof(AdvancedSettings), value); }
+        }
         /// <summary>The Default Domain appendix that will be used by the clients</summary>
-        public string DefaultDomainSuffix { get; set; }
+        public string DefaultDomainSuffix {
+            get { return BackingStore?.Get<string>(nameof(DefaultDomainSuffix)); }
+            set { BackingStore?.Set(nameof(DefaultDomainSuffix), value); }
+        }
         /// <summary>The MicrosoftTunnelConfiguration&apos;s description</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to tansfer data.</summary>
-        public bool? DisableUdpConnections { get; set; }
+        public bool? DisableUdpConnections {
+            get { return BackingStore?.Get<bool?>(nameof(DisableUdpConnections)); }
+            set { BackingStore?.Set(nameof(DisableUdpConnections), value); }
+        }
         /// <summary>The MicrosoftTunnelConfiguration&apos;s display name</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The DNS servers that will be used by the clients</summary>
-        public List<string> DnsServers { get; set; }
+        public List<string> DnsServers {
+            get { return BackingStore?.Get<List<string>>(nameof(DnsServers)); }
+            set { BackingStore?.Set(nameof(DnsServers), value); }
+        }
         /// <summary>When the MicrosoftTunnelConfiguration was last updated</summary>
-        public DateTimeOffset? LastUpdateDateTime { get; set; }
+        public DateTimeOffset? LastUpdateDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastUpdateDateTime)); }
+            set { BackingStore?.Set(nameof(LastUpdateDateTime), value); }
+        }
         /// <summary>The port that both TCP and UPD will listen over on the server</summary>
-        public int? ListenPort { get; set; }
+        public int? ListenPort {
+            get { return BackingStore?.Get<int?>(nameof(ListenPort)); }
+            set { BackingStore?.Set(nameof(ListenPort), value); }
+        }
         /// <summary>The subnet that will be used to allocate virtual address for the clients</summary>
-        public string Network { get; set; }
+        public string Network {
+            get { return BackingStore?.Get<string>(nameof(Network)); }
+            set { BackingStore?.Set(nameof(Network), value); }
+        }
         /// <summary>List of Scope Tags for this Entity instance.</summary>
-        public List<string> RoleScopeTagIds { get; set; }
+        public List<string> RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTagIds)); }
+            set { BackingStore?.Set(nameof(RoleScopeTagIds), value); }
+        }
         /// <summary>Subsets of the routes that will not be routed by the server</summary>
-        public List<string> RoutesExclude { get; set; }
+        public List<string> RoutesExclude {
+            get { return BackingStore?.Get<List<string>>(nameof(RoutesExclude)); }
+            set { BackingStore?.Set(nameof(RoutesExclude), value); }
+        }
         /// <summary>The routs that will be routed by the server</summary>
-        public List<string> RoutesInclude { get; set; }
+        public List<string> RoutesInclude {
+            get { return BackingStore?.Get<List<string>>(nameof(RoutesInclude)); }
+            set { BackingStore?.Set(nameof(RoutesInclude), value); }
+        }
         /// <summary>The domains that will be resolved using the provided dns servers</summary>
-        public List<string> SplitDNS { get; set; }
+        public List<string> SplitDNS {
+            get { return BackingStore?.Get<List<string>>(nameof(SplitDNS)); }
+            set { BackingStore?.Set(nameof(SplitDNS), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

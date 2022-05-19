@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the identityContainer singleton.</summary>
     public class IdentityApiConnector : Entity, IParsable {
         /// <summary>The object which describes the authentication configuration details for calling the API. Basic and PKCS 12 client certificate are supported.</summary>
-        public ApiAuthenticationConfigurationBase AuthenticationConfiguration { get; set; }
+        public ApiAuthenticationConfigurationBase AuthenticationConfiguration {
+            get { return BackingStore?.Get<ApiAuthenticationConfigurationBase>(nameof(AuthenticationConfiguration)); }
+            set { BackingStore?.Set(nameof(AuthenticationConfiguration), value); }
+        }
         /// <summary>The name of the API connector.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The URL of the API endpoint to call.</summary>
-        public string TargetUrl { get; set; }
+        public string TargetUrl {
+            get { return BackingStore?.Get<string>(nameof(TargetUrl)); }
+            set { BackingStore?.Set(nameof(TargetUrl), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class AuditActivityInitiator : IAdditionalDataHolder, IParsable {
+    public class AuditActivityInitiator : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>If the actor initiating the activity is an app, this property indicates all its identification information including appId, displayName, servicePrincipalId, and servicePrincipalName.</summary>
-        public AppIdentity App { get; set; }
+        public AppIdentity App {
+            get { return BackingStore?.Get<AppIdentity>(nameof(App)); }
+            set { BackingStore?.Set(nameof(App), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>If the actor initiating the activity is a user, this property indicates their identification information including their id, displayName, and userPrincipalName.</summary>
-        public AuditUserIdentity User { get; set; }
+        public AuditUserIdentity User {
+            get { return BackingStore?.Get<AuditUserIdentity>(nameof(User)); }
+            set { BackingStore?.Set(nameof(User), value); }
+        }
         /// <summary>
         /// Instantiates a new auditActivityInitiator and sets the default values.
         /// </summary>
         public AuditActivityInitiator() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

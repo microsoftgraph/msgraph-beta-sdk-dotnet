@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SynchronizationJobApplicationParameters : IAdditionalDataHolder, IParsable {
+    public class SynchronizationJobApplicationParameters : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The identifier of the synchronizationRule to be applied. This rule ID is defined in the schema for a given synchronization job or template.</summary>
-        public string RuleId { get; set; }
+        public string RuleId {
+            get { return BackingStore?.Get<string>(nameof(RuleId)); }
+            set { BackingStore?.Set(nameof(RuleId), value); }
+        }
         /// <summary>The identifiers of one or more objects to which a synchronizationJob is to be applied.</summary>
-        public List<SynchronizationJobSubject> Subjects { get; set; }
+        public List<SynchronizationJobSubject> Subjects {
+            get { return BackingStore?.Get<List<SynchronizationJobSubject>>(nameof(Subjects)); }
+            set { BackingStore?.Set(nameof(Subjects), value); }
+        }
         /// <summary>
         /// Instantiates a new synchronizationJobApplicationParameters and sets the default values.
         /// </summary>
         public SynchronizationJobApplicationParameters() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

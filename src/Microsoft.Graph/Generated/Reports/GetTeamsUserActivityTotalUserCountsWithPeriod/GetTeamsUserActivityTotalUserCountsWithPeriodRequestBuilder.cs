@@ -68,9 +68,9 @@ namespace Microsoft.Graph.Beta.Reports.GetTeamsUserActivityTotalUserCountsWithPe
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<GetTeamsUserActivityTotalUserCountsWithPeriodResponse> GetAsync(Action<GetTeamsUserActivityTotalUserCountsWithPeriodRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> GetAsync(Action<GetTeamsUserActivityTotalUserCountsWithPeriodRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<GetTeamsUserActivityTotalUserCountsWithPeriodResponse>(requestInfo, GetTeamsUserActivityTotalUserCountsWithPeriodResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class GetTeamsUserActivityTotalUserCountsWithPeriodRequestBuilderGetRequestConfiguration {

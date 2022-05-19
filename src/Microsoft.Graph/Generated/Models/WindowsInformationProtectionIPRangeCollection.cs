@@ -1,21 +1,34 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Windows Information Protection IP Range Collection</summary>
-    public class WindowsInformationProtectionIPRangeCollection : IAdditionalDataHolder, IParsable {
+    public class WindowsInformationProtectionIPRangeCollection : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Display name</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Collection of ip ranges</summary>
-        public List<IpRange> Ranges { get; set; }
+        public List<IpRange> Ranges {
+            get { return BackingStore?.Get<List<IpRange>>(nameof(Ranges)); }
+            set { BackingStore?.Set(nameof(Ranges), value); }
+        }
         /// <summary>
         /// Instantiates a new windowsInformationProtectionIPRangeCollection and sets the default values.
         /// </summary>
         public WindowsInformationProtectionIPRangeCollection() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

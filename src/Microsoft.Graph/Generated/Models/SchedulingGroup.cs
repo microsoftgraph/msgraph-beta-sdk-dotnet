@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class SchedulingGroup : ChangeTrackedEntity, IParsable {
         /// <summary>The display name for the schedulingGroup. Required.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Indicates whether the schedulingGroup can be used when creating new entities or updating existing ones. Required.</summary>
-        public bool? IsActive { get; set; }
+        public bool? IsActive {
+            get { return BackingStore?.Get<bool?>(nameof(IsActive)); }
+            set { BackingStore?.Set(nameof(IsActive), value); }
+        }
         /// <summary>The list of user IDs that are a member of the schedulingGroup. Required.</summary>
-        public List<string> UserIds { get; set; }
+        public List<string> UserIds {
+            get { return BackingStore?.Get<List<string>>(nameof(UserIds)); }
+            set { BackingStore?.Set(nameof(UserIds), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class SiteSource : DataSource, IParsable {
         /// <summary>The site property</summary>
-        public Microsoft.Graph.Beta.Models.Site Site { get; set; }
+        public Microsoft.Graph.Beta.Models.Site Site {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Site>(nameof(Site)); }
+            set { BackingStore?.Set(nameof(Site), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

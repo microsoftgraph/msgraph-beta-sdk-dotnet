@@ -1,21 +1,34 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>This type represents the set of working hours in a single day of the week.</summary>
-    public class BookingWorkHours : IAdditionalDataHolder, IParsable {
+    public class BookingWorkHours : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The day of the week represented by this instance. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.</summary>
-        public DayOfWeek? Day { get; set; }
+        public DayOfWeek? Day {
+            get { return BackingStore?.Get<DayOfWeek?>(nameof(Day)); }
+            set { BackingStore?.Set(nameof(Day), value); }
+        }
         /// <summary>A list of start/end times during a day.</summary>
-        public List<BookingWorkTimeSlot> TimeSlots { get; set; }
+        public List<BookingWorkTimeSlot> TimeSlots {
+            get { return BackingStore?.Get<List<BookingWorkTimeSlot>>(nameof(TimeSlots)); }
+            set { BackingStore?.Set(nameof(TimeSlots), value); }
+        }
         /// <summary>
         /// Instantiates a new bookingWorkHours and sets the default values.
         /// </summary>
         public BookingWorkHours() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ChannelIdentity : IAdditionalDataHolder, IParsable {
+    public class ChannelIdentity : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The identity of the channel in which the message was posted.</summary>
-        public string ChannelId { get; set; }
+        public string ChannelId {
+            get { return BackingStore?.Get<string>(nameof(ChannelId)); }
+            set { BackingStore?.Set(nameof(ChannelId), value); }
+        }
         /// <summary>The identity of the team in which the message was posted.</summary>
-        public string TeamId { get; set; }
+        public string TeamId {
+            get { return BackingStore?.Get<string>(nameof(TeamId)); }
+            set { BackingStore?.Set(nameof(TeamId), value); }
+        }
         /// <summary>
         /// Instantiates a new channelIdentity and sets the default values.
         /// </summary>
         public ChannelIdentity() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

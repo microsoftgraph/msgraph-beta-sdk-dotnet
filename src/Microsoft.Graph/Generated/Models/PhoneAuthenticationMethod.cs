@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class PhoneAuthenticationMethod : AuthenticationMethod, IParsable {
         /// <summary>The phone number to text or call for authentication. Phone numbers use the format &apos;+&lt;country code&gt; &lt;number&gt;x&lt;extension&gt;&apos;, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating/updating if they do not match the required format.</summary>
-        public string PhoneNumber { get; set; }
+        public string PhoneNumber {
+            get { return BackingStore?.Get<string>(nameof(PhoneNumber)); }
+            set { BackingStore?.Set(nameof(PhoneNumber), value); }
+        }
         /// <summary>The type of this phone. Possible values are: mobile, alternateMobile, or office.</summary>
-        public AuthenticationPhoneType? PhoneType { get; set; }
+        public AuthenticationPhoneType? PhoneType {
+            get { return BackingStore?.Get<AuthenticationPhoneType?>(nameof(PhoneType)); }
+            set { BackingStore?.Set(nameof(PhoneType), value); }
+        }
         /// <summary>Whether a phone is ready to be used for SMS sign-in or not. Possible values are: notSupported, notAllowedByPolicy, notEnabled, phoneNumberNotUnique, ready, or notConfigured, unknownFutureValue.</summary>
-        public AuthenticationMethodSignInState? SmsSignInState { get; set; }
+        public AuthenticationMethodSignInState? SmsSignInState {
+            get { return BackingStore?.Get<AuthenticationMethodSignInState?>(nameof(SmsSignInState)); }
+            set { BackingStore?.Set(nameof(SmsSignInState), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

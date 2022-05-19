@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of certificateBasedAuthConfiguration entities.</summary>
     public class CertificateBasedAuthConfiguration : Entity, IParsable {
         /// <summary>Collection of certificate authorities which creates a trusted certificate chain.</summary>
-        public List<CertificateAuthority> CertificateAuthorities { get; set; }
+        public List<CertificateAuthority> CertificateAuthorities {
+            get { return BackingStore?.Get<List<CertificateAuthority>>(nameof(CertificateAuthorities)); }
+            set { BackingStore?.Set(nameof(CertificateAuthorities), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

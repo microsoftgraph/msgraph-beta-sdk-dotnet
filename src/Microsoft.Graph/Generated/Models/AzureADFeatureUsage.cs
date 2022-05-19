@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to call the getAzureADFeatureUsage method.</summary>
     public class AzureADFeatureUsage : Entity, IParsable {
         /// <summary>The featureName property</summary>
-        public string FeatureName { get; set; }
+        public string FeatureName {
+            get { return BackingStore?.Get<string>(nameof(FeatureName)); }
+            set { BackingStore?.Set(nameof(FeatureName), value); }
+        }
         /// <summary>The snapshotDateTime property</summary>
-        public DateTimeOffset? SnapshotDateTime { get; set; }
+        public DateTimeOffset? SnapshotDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(SnapshotDateTime)); }
+            set { BackingStore?.Set(nameof(SnapshotDateTime), value); }
+        }
         /// <summary>The usage property</summary>
-        public int? Usage { get; set; }
+        public int? Usage {
+            get { return BackingStore?.Get<int?>(nameof(Usage)); }
+            set { BackingStore?.Set(nameof(Usage), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

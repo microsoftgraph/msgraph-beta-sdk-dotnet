@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class DirectoryDefinition : Entity, IParsable {
         /// <summary>Read only value indicating what type of discovery the app supports. Possible values are: AttributeDataTypes, AttributeNames, AttributeReadOnly, None, ReferenceAttributes, UnknownFutureValue.</summary>
-        public DirectoryDefinitionDiscoverabilities? Discoverabilities { get; set; }
+        public DirectoryDefinitionDiscoverabilities? Discoverabilities {
+            get { return BackingStore?.Get<DirectoryDefinitionDiscoverabilities?>(nameof(Discoverabilities)); }
+            set { BackingStore?.Set(nameof(Discoverabilities), value); }
+        }
         /// <summary>Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? DiscoveryDateTime { get; set; }
+        public DateTimeOffset? DiscoveryDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DiscoveryDateTime)); }
+            set { BackingStore?.Set(nameof(DiscoveryDateTime), value); }
+        }
         /// <summary>Name of the directory. Must be unique within the synchronization schema. Not nullable.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>Collection of objects supported by the directory.</summary>
-        public List<ObjectDefinition> Objects { get; set; }
+        public List<ObjectDefinition> Objects {
+            get { return BackingStore?.Get<List<ObjectDefinition>>(nameof(Objects)); }
+            set { BackingStore?.Set(nameof(Objects), value); }
+        }
         /// <summary>The readOnly property</summary>
-        public bool? ReadOnly { get; set; }
+        public bool? ReadOnly {
+            get { return BackingStore?.Get<bool?>(nameof(ReadOnly)); }
+            set { BackingStore?.Set(nameof(ReadOnly), value); }
+        }
         /// <summary>Read only value that indicates version discovered. null if discovery has not yet occurred.</summary>
-        public string Version { get; set; }
+        public string Version {
+            get { return BackingStore?.Get<string>(nameof(Version)); }
+            set { BackingStore?.Set(nameof(Version), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

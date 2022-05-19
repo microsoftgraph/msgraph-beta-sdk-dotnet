@@ -1,33 +1,64 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>configuration Manager client enabled features</summary>
-    public class ConfigurationManagerClientEnabledFeatures : IAdditionalDataHolder, IParsable {
+    public class ConfigurationManagerClientEnabledFeatures : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Whether compliance policy is managed by Intune</summary>
-        public bool? CompliancePolicy { get; set; }
+        public bool? CompliancePolicy {
+            get { return BackingStore?.Get<bool?>(nameof(CompliancePolicy)); }
+            set { BackingStore?.Set(nameof(CompliancePolicy), value); }
+        }
         /// <summary>Whether device configuration is managed by Intune</summary>
-        public bool? DeviceConfiguration { get; set; }
+        public bool? DeviceConfiguration {
+            get { return BackingStore?.Get<bool?>(nameof(DeviceConfiguration)); }
+            set { BackingStore?.Set(nameof(DeviceConfiguration), value); }
+        }
         /// <summary>Whether Endpoint Protection is managed by Intune</summary>
-        public bool? EndpointProtection { get; set; }
+        public bool? EndpointProtection {
+            get { return BackingStore?.Get<bool?>(nameof(EndpointProtection)); }
+            set { BackingStore?.Set(nameof(EndpointProtection), value); }
+        }
         /// <summary>Whether inventory is managed by Intune</summary>
-        public bool? Inventory { get; set; }
+        public bool? Inventory {
+            get { return BackingStore?.Get<bool?>(nameof(Inventory)); }
+            set { BackingStore?.Set(nameof(Inventory), value); }
+        }
         /// <summary>Whether modern application is managed by Intune</summary>
-        public bool? ModernApps { get; set; }
+        public bool? ModernApps {
+            get { return BackingStore?.Get<bool?>(nameof(ModernApps)); }
+            set { BackingStore?.Set(nameof(ModernApps), value); }
+        }
         /// <summary>Whether Office application is managed by Intune</summary>
-        public bool? OfficeApps { get; set; }
+        public bool? OfficeApps {
+            get { return BackingStore?.Get<bool?>(nameof(OfficeApps)); }
+            set { BackingStore?.Set(nameof(OfficeApps), value); }
+        }
         /// <summary>Whether resource access is managed by Intune</summary>
-        public bool? ResourceAccess { get; set; }
+        public bool? ResourceAccess {
+            get { return BackingStore?.Get<bool?>(nameof(ResourceAccess)); }
+            set { BackingStore?.Set(nameof(ResourceAccess), value); }
+        }
         /// <summary>Whether Windows Update for Business is managed by Intune</summary>
-        public bool? WindowsUpdateForBusiness { get; set; }
+        public bool? WindowsUpdateForBusiness {
+            get { return BackingStore?.Get<bool?>(nameof(WindowsUpdateForBusiness)); }
+            set { BackingStore?.Set(nameof(WindowsUpdateForBusiness), value); }
+        }
         /// <summary>
         /// Instantiates a new configurationManagerClientEnabledFeatures and sets the default values.
         /// </summary>
         public ConfigurationManagerClientEnabledFeatures() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

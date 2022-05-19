@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The user experience analytics metric for work from anywhere report</summary>
     public class UserExperienceAnalyticsWorkFromAnywhereMetric : Entity, IParsable {
         /// <summary>The work from anywhere metric devices.</summary>
-        public List<UserExperienceAnalyticsWorkFromAnywhereDevice> MetricDevices { get; set; }
+        public List<UserExperienceAnalyticsWorkFromAnywhereDevice> MetricDevices {
+            get { return BackingStore?.Get<List<UserExperienceAnalyticsWorkFromAnywhereDevice>>(nameof(MetricDevices)); }
+            set { BackingStore?.Set(nameof(MetricDevices), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

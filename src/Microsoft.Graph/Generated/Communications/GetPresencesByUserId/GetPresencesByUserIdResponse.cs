@@ -1,20 +1,30 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Communications.GetPresencesByUserId {
     /// <summary>Provides operations to call the getPresencesByUserId method.</summary>
-    public class GetPresencesByUserIdResponse : IAdditionalDataHolder, IParsable {
+    public class GetPresencesByUserIdResponse : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The value property</summary>
-        public List<Microsoft.Graph.Beta.Models.Presence> Value { get; set; }
+        public List<Microsoft.Graph.Beta.Models.Presence> Value {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Presence>>(nameof(Value)); }
+            set { BackingStore?.Set(nameof(Value), value); }
+        }
         /// <summary>
         /// Instantiates a new getPresencesByUserIdResponse and sets the default values.
         /// </summary>
         public GetPresencesByUserIdResponse() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

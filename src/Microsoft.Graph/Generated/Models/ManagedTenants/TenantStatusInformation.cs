@@ -1,34 +1,68 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public class TenantStatusInformation : IAdditionalDataHolder, IParsable {
+    public class TenantStatusInformation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue. Optional. Read-only.</summary>
-        public Microsoft.Graph.Beta.Models.ManagedTenants.DelegatedPrivilegeStatus? DelegatedPrivilegeStatus { get; set; }
+        public Microsoft.Graph.Beta.Models.ManagedTenants.DelegatedPrivilegeStatus? DelegatedPrivilegeStatus {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.DelegatedPrivilegeStatus?>(nameof(DelegatedPrivilegeStatus)); }
+            set { BackingStore?.Set(nameof(DelegatedPrivilegeStatus), value); }
+        }
         /// <summary>The date and time the delegated admin privileges status was updated. Optional. Read-only.</summary>
-        public DateTimeOffset? LastDelegatedPrivilegeRefreshDateTime { get; set; }
+        public DateTimeOffset? LastDelegatedPrivilegeRefreshDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastDelegatedPrivilegeRefreshDateTime)); }
+            set { BackingStore?.Set(nameof(LastDelegatedPrivilegeRefreshDateTime), value); }
+        }
         /// <summary>The identifier for the account that offboarded the managed tenant. Optional. Read-only.</summary>
-        public string OffboardedByUserId { get; set; }
+        public string OffboardedByUserId {
+            get { return BackingStore?.Get<string>(nameof(OffboardedByUserId)); }
+            set { BackingStore?.Set(nameof(OffboardedByUserId), value); }
+        }
         /// <summary>The date and time when the managed tenant was offboarded. Optional. Read-only.</summary>
-        public DateTimeOffset? OffboardedDateTime { get; set; }
+        public DateTimeOffset? OffboardedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(OffboardedDateTime)); }
+            set { BackingStore?.Set(nameof(OffboardedDateTime), value); }
+        }
         /// <summary>The identifier for the account that onboarded the managed tenant. Optional. Read-only.</summary>
-        public string OnboardedByUserId { get; set; }
+        public string OnboardedByUserId {
+            get { return BackingStore?.Get<string>(nameof(OnboardedByUserId)); }
+            set { BackingStore?.Set(nameof(OnboardedByUserId), value); }
+        }
         /// <summary>The date and time when the managed tenant was onboarded. Optional. Read-only.</summary>
-        public DateTimeOffset? OnboardedDateTime { get; set; }
+        public DateTimeOffset? OnboardedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(OnboardedDateTime)); }
+            set { BackingStore?.Set(nameof(OnboardedDateTime), value); }
+        }
         /// <summary>The onboarding status for the managed tenant.. Possible values are: ineligible, inProcess, active, inactive, unknownFutureValue. Optional. Read-only.</summary>
-        public TenantOnboardingStatus? OnboardingStatus { get; set; }
+        public TenantOnboardingStatus? OnboardingStatus {
+            get { return BackingStore?.Get<TenantOnboardingStatus?>(nameof(OnboardingStatus)); }
+            set { BackingStore?.Set(nameof(OnboardingStatus), value); }
+        }
         /// <summary>Organization&apos;s onboarding eligibility reason in Microsoft 365 Lighthouse.. Possible values are: none, contractType, delegatedAdminPrivileges,usersCount,license and unknownFutureValue. Optional. Read-only.</summary>
-        public Microsoft.Graph.Beta.Models.ManagedTenants.TenantOnboardingEligibilityReason? TenantOnboardingEligibilityReason { get; set; }
+        public Microsoft.Graph.Beta.Models.ManagedTenants.TenantOnboardingEligibilityReason? TenantOnboardingEligibilityReason {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.TenantOnboardingEligibilityReason?>(nameof(TenantOnboardingEligibilityReason)); }
+            set { BackingStore?.Set(nameof(TenantOnboardingEligibilityReason), value); }
+        }
         /// <summary>The collection of workload statues for the managed tenant. Optional. Read-only.</summary>
-        public List<WorkloadStatus> WorkloadStatuses { get; set; }
+        public List<WorkloadStatus> WorkloadStatuses {
+            get { return BackingStore?.Get<List<WorkloadStatus>>(nameof(WorkloadStatuses)); }
+            set { BackingStore?.Set(nameof(WorkloadStatuses), value); }
+        }
         /// <summary>
         /// Instantiates a new tenantStatusInformation and sets the default values.
         /// </summary>
         public TenantStatusInformation() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

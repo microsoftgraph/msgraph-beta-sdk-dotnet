@@ -4,22 +4,40 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the identityContainer singleton.</summary>
     public class IdentityUserFlowAttribute : Entity, IParsable {
         /// <summary>The data type of the user flow attribute. This cannot be modified after the custom user flow attribute is created. The supported values for dataType are: string , boolean , int64 , stringCollection , dateTime.</summary>
-        public IdentityUserFlowAttributeDataType? DataType { get; set; }
+        public IdentityUserFlowAttributeDataType? DataType {
+            get { return BackingStore?.Get<IdentityUserFlowAttributeDataType?>(nameof(DataType)); }
+            set { BackingStore?.Set(nameof(DataType), value); }
+        }
         /// <summary>The description of the user flow attribute that&apos;s shown to the user at the time of sign-up.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The display name of the user flow attribute.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The type of the user flow attribute. This is a read-only attribute that is automatically set. Depending on the type of attribute, the values for this property will be builtIn, custom, or required.</summary>
-        public IdentityUserFlowAttributeType? UserFlowAttributeType { get; set; }
+        public IdentityUserFlowAttributeType? UserFlowAttributeType {
+            get { return BackingStore?.Get<IdentityUserFlowAttributeType?>(nameof(UserFlowAttributeType)); }
+            set { BackingStore?.Set(nameof(UserFlowAttributeType), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new IdentityUserFlowAttribute CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IdentityUserFlowAttribute();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.identityUserFlowAttribute" => new IdentityUserFlowAttribute(),
+                _ => new IdentityUserFlowAttribute(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

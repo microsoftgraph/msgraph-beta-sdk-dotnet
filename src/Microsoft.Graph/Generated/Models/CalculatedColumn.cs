@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class CalculatedColumn : IAdditionalDataHolder, IParsable {
+    public class CalculatedColumn : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.</summary>
-        public string Format { get; set; }
+        public string Format {
+            get { return BackingStore?.Get<string>(nameof(Format)); }
+            set { BackingStore?.Set(nameof(Format), value); }
+        }
         /// <summary>The formula used to compute the value for this column.</summary>
-        public string Formula { get; set; }
+        public string Formula {
+            get { return BackingStore?.Get<string>(nameof(Formula)); }
+            set { BackingStore?.Set(nameof(Formula), value); }
+        }
         /// <summary>The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.</summary>
-        public string OutputType { get; set; }
+        public string OutputType {
+            get { return BackingStore?.Get<string>(nameof(OutputType)); }
+            set { BackingStore?.Set(nameof(OutputType), value); }
+        }
         /// <summary>
         /// Instantiates a new calculatedColumn and sets the default values.
         /// </summary>
         public CalculatedColumn() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

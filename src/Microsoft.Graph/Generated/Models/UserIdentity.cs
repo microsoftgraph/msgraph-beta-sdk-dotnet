@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class UserIdentity : Identity, IParsable {
         /// <summary>Indicates the client IP address used by user performing the activity (audit log only).</summary>
-        public string IpAddress { get; set; }
+        public string IpAddress {
+            get { return BackingStore?.Get<string>(nameof(IpAddress)); }
+            set { BackingStore?.Set(nameof(IpAddress), value); }
+        }
         /// <summary>The userPrincipalName attribute of the user.</summary>
-        public string UserPrincipalName { get; set; }
+        public string UserPrincipalName {
+            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
+            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -1,34 +1,68 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class AssignmentReviewSettings : IAdditionalDataHolder, IParsable {
+    public class AssignmentReviewSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The default decision to apply if the request is not reviewed within the period specified in durationInDays. The possible values are: acceptAccessRecommendation, keepAccess, removeAccess, and unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.AccessReviewTimeoutBehavior? AccessReviewTimeoutBehavior { get; set; }
+        public Microsoft.Graph.Beta.Models.AccessReviewTimeoutBehavior? AccessReviewTimeoutBehavior {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessReviewTimeoutBehavior?>(nameof(AccessReviewTimeoutBehavior)); }
+            set { BackingStore?.Set(nameof(AccessReviewTimeoutBehavior), value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of days within which reviewers should provide input.</summary>
-        public int? DurationInDays { get; set; }
+        public int? DurationInDays {
+            get { return BackingStore?.Get<int?>(nameof(DurationInDays)); }
+            set { BackingStore?.Set(nameof(DurationInDays), value); }
+        }
         /// <summary>Specifies whether to display recommendations to the reviewer. The default value is true</summary>
-        public bool? IsAccessRecommendationEnabled { get; set; }
+        public bool? IsAccessRecommendationEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(IsAccessRecommendationEnabled)); }
+            set { BackingStore?.Set(nameof(IsAccessRecommendationEnabled), value); }
+        }
         /// <summary>Specifies whether the reviewer must provide justification for the approval. The default value is true.</summary>
-        public bool? IsApprovalJustificationRequired { get; set; }
+        public bool? IsApprovalJustificationRequired {
+            get { return BackingStore?.Get<bool?>(nameof(IsApprovalJustificationRequired)); }
+            set { BackingStore?.Set(nameof(IsApprovalJustificationRequired), value); }
+        }
         /// <summary>If true, access reviews are required for assignments from this policy.</summary>
-        public bool? IsEnabled { get; set; }
+        public bool? IsEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
+            set { BackingStore?.Set(nameof(IsEnabled), value); }
+        }
         /// <summary>The interval for recurrence, such as monthly or quarterly.</summary>
-        public string RecurrenceType { get; set; }
+        public string RecurrenceType {
+            get { return BackingStore?.Get<string>(nameof(RecurrenceType)); }
+            set { BackingStore?.Set(nameof(RecurrenceType), value); }
+        }
         /// <summary>If the reviewerType is Reviewers, this collection specifies the users who will be reviewers, either by ID or as members of a group, using a collection of singleUser and groupMembers.</summary>
-        public List<UserSet> Reviewers { get; set; }
+        public List<UserSet> Reviewers {
+            get { return BackingStore?.Get<List<UserSet>>(nameof(Reviewers)); }
+            set { BackingStore?.Set(nameof(Reviewers), value); }
+        }
         /// <summary>Who should be asked to do the review, either Self or Reviewers.</summary>
-        public string ReviewerType { get; set; }
+        public string ReviewerType {
+            get { return BackingStore?.Get<string>(nameof(ReviewerType)); }
+            set { BackingStore?.Set(nameof(ReviewerType), value); }
+        }
         /// <summary>When the first review should start.</summary>
-        public DateTimeOffset? StartDateTime { get; set; }
+        public DateTimeOffset? StartDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
+            set { BackingStore?.Set(nameof(StartDateTime), value); }
+        }
         /// <summary>
         /// Instantiates a new assignmentReviewSettings and sets the default values.
         /// </summary>
         public AssignmentReviewSettings() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

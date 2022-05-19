@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ConditionalAccessGrantControls : IAdditionalDataHolder, IParsable {
+    public class ConditionalAccessGrantControls : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.</summary>
-        public List<ConditionalAccessGrantControl?> BuiltInControls { get; set; }
+        public List<string> BuiltInControls {
+            get { return BackingStore?.Get<List<string>>(nameof(BuiltInControls)); }
+            set { BackingStore?.Set(nameof(BuiltInControls), value); }
+        }
         /// <summary>List of custom controls IDs required by the policy. To learn more about custom control, see Custom controls (preview).</summary>
-        public List<string> CustomAuthenticationFactors { get; set; }
+        public List<string> CustomAuthenticationFactors {
+            get { return BackingStore?.Get<List<string>>(nameof(CustomAuthenticationFactors)); }
+            set { BackingStore?.Set(nameof(CustomAuthenticationFactors), value); }
+        }
         /// <summary>Defines the relationship of the grant controls. Possible values: AND, OR.</summary>
-        public string Operator { get; set; }
+        public string Operator {
+            get { return BackingStore?.Get<string>(nameof(Operator)); }
+            set { BackingStore?.Set(nameof(Operator), value); }
+        }
         /// <summary>List of terms of use IDs required by the policy.</summary>
-        public List<string> TermsOfUse { get; set; }
+        public List<string> TermsOfUse {
+            get { return BackingStore?.Get<List<string>>(nameof(TermsOfUse)); }
+            set { BackingStore?.Set(nameof(TermsOfUse), value); }
+        }
         /// <summary>
         /// Instantiates a new conditionalAccessGrantControls and sets the default values.
         /// </summary>
         public ConditionalAccessGrantControls() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -34,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"builtInControls", n => { BuiltInControls = n.GetCollectionOfEnumValues<ConditionalAccessGrantControl>().ToList(); } },
+                {"builtInControls", n => { BuiltInControls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"customAuthenticationFactors", n => { CustomAuthenticationFactors = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"operator", n => { Operator = n.GetStringValue(); } },
                 {"termsOfUse", n => { TermsOfUse = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
@@ -46,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<ConditionalAccessGrantControl>("builtInControls", BuiltInControls);
+            writer.WriteCollectionOfPrimitiveValues<string>("builtInControls", BuiltInControls);
             writer.WriteCollectionOfPrimitiveValues<string>("customAuthenticationFactors", CustomAuthenticationFactors);
             writer.WriteStringValue("operator", Operator);
             writer.WriteCollectionOfPrimitiveValues<string>("termsOfUse", TermsOfUse);

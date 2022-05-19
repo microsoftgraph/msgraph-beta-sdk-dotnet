@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class EvaluateDynamicMembershipResult : IAdditionalDataHolder, IParsable {
+    public class EvaluateDynamicMembershipResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>If a group ID is provided, the value is the membership rule for the group. If a group ID is not provided, the value is the membership rule that was provided as a parameter. For more information, see Dynamic membership rules for groups in Azure Active Directory.</summary>
-        public string MembershipRule { get; set; }
+        public string MembershipRule {
+            get { return BackingStore?.Get<string>(nameof(MembershipRule)); }
+            set { BackingStore?.Set(nameof(MembershipRule), value); }
+        }
         /// <summary>Provides a detailed anaylsis of the membership evaluation result.</summary>
-        public ExpressionEvaluationDetails MembershipRuleEvaluationDetails { get; set; }
+        public ExpressionEvaluationDetails MembershipRuleEvaluationDetails {
+            get { return BackingStore?.Get<ExpressionEvaluationDetails>(nameof(MembershipRuleEvaluationDetails)); }
+            set { BackingStore?.Set(nameof(MembershipRuleEvaluationDetails), value); }
+        }
         /// <summary>The value is true if the user or device is a member of the group. The value can also be true if a membership rule was provided and the user or device passes the rule evaluation; otherwise false.</summary>
-        public bool? MembershipRuleEvaluationResult { get; set; }
+        public bool? MembershipRuleEvaluationResult {
+            get { return BackingStore?.Get<bool?>(nameof(MembershipRuleEvaluationResult)); }
+            set { BackingStore?.Set(nameof(MembershipRuleEvaluationResult), value); }
+        }
         /// <summary>
-        /// Instantiates a new evaluateDynamicMembershipResult and sets the default values.
+        /// Instantiates a new EvaluateDynamicMembershipResult and sets the default values.
         /// </summary>
         public EvaluateDynamicMembershipResult() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

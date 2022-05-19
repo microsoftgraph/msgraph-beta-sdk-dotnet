@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class CrossTenantAccessPolicyTarget : IAdditionalDataHolder, IParsable {
+    public class CrossTenantAccessPolicyTarget : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The unique identifier of the user, group, or application; one of the following keywords: AllUsers and AllApplications; or for targets that are applications, you may use reserved values.</summary>
-        public string Target { get; set; }
+        public string Target {
+            get { return BackingStore?.Get<string>(nameof(Target)); }
+            set { BackingStore?.Set(nameof(Target), value); }
+        }
         /// <summary>The type of resource that you want to target. The possible values are: user, group, application, unknownFutureValue.</summary>
-        public CrossTenantAccessPolicyTargetType? TargetType { get; set; }
+        public CrossTenantAccessPolicyTargetType? TargetType {
+            get { return BackingStore?.Get<CrossTenantAccessPolicyTargetType?>(nameof(TargetType)); }
+            set { BackingStore?.Set(nameof(TargetType), value); }
+        }
         /// <summary>
         /// Instantiates a new crossTenantAccessPolicyTarget and sets the default values.
         /// </summary>
         public CrossTenantAccessPolicyTarget() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

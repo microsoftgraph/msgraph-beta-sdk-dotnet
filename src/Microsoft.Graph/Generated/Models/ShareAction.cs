@@ -1,18 +1,28 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ShareAction : IAdditionalDataHolder, IParsable {
+    public class ShareAction : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The identities the item was shared with in this action.</summary>
-        public List<IdentitySet> Recipients { get; set; }
+        public List<IdentitySet> Recipients {
+            get { return BackingStore?.Get<List<IdentitySet>>(nameof(Recipients)); }
+            set { BackingStore?.Set(nameof(Recipients), value); }
+        }
         /// <summary>
         /// Instantiates a new shareAction and sets the default values.
         /// </summary>
         public ShareAction() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

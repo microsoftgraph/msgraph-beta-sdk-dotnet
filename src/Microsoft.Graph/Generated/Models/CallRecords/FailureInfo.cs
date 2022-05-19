@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.CallRecords {
-    public class FailureInfo : IAdditionalDataHolder, IParsable {
+    public class FailureInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Classification of why a call or portion of a call failed.</summary>
-        public string Reason { get; set; }
+        public string Reason {
+            get { return BackingStore?.Get<string>(nameof(Reason)); }
+            set { BackingStore?.Set(nameof(Reason), value); }
+        }
         /// <summary>The stage when the failure occurred. Possible values are: unknown, callSetup, midcall, unknownFutureValue.</summary>
-        public FailureStage? Stage { get; set; }
+        public FailureStage? Stage {
+            get { return BackingStore?.Get<FailureStage?>(nameof(Stage)); }
+            set { BackingStore?.Set(nameof(Stage), value); }
+        }
         /// <summary>
         /// Instantiates a new failureInfo and sets the default values.
         /// </summary>
         public FailureInfo() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

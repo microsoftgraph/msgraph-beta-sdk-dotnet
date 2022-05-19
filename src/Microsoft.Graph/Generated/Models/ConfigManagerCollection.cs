@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>A ConfigManager defined collection of devices or users.</summary>
     public class ConfigManagerCollection : Entity, IParsable {
         /// <summary>The collection identifier in SCCM.</summary>
-        public string CollectionIdentifier { get; set; }
+        public string CollectionIdentifier {
+            get { return BackingStore?.Get<string>(nameof(CollectionIdentifier)); }
+            set { BackingStore?.Set(nameof(CollectionIdentifier), value); }
+        }
         /// <summary>The created date.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>The DisplayName.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The Hierarchy Identifier.</summary>
-        public string HierarchyIdentifier { get; set; }
+        public string HierarchyIdentifier {
+            get { return BackingStore?.Get<string>(nameof(HierarchyIdentifier)); }
+            set { BackingStore?.Set(nameof(HierarchyIdentifier), value); }
+        }
         /// <summary>The HierarchyName.</summary>
-        public string HierarchyName { get; set; }
+        public string HierarchyName {
+            get { return BackingStore?.Get<string>(nameof(HierarchyName)); }
+            set { BackingStore?.Set(nameof(HierarchyName), value); }
+        }
         /// <summary>The last modified date.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

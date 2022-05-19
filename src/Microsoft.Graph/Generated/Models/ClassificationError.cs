@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
     public class ClassificationError : ClassifcationErrorBase, IParsable {
         /// <summary>The details property</summary>
-        public List<ClassifcationErrorBase> Details { get; set; }
+        public List<ClassifcationErrorBase> Details {
+            get { return BackingStore?.Get<List<ClassifcationErrorBase>>(nameof(Details)); }
+            set { BackingStore?.Set(nameof(Details), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

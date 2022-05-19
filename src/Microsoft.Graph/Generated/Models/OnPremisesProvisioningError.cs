@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class OnPremisesProvisioningError : IAdditionalDataHolder, IParsable {
+    public class OnPremisesProvisioningError : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Category of the provisioning error. Note: Currently, there is only one possible value. Possible value: PropertyConflict - indicates a property value is not unique. Other objects contain the same value for the property.</summary>
-        public string Category { get; set; }
+        public string Category {
+            get { return BackingStore?.Get<string>(nameof(Category)); }
+            set { BackingStore?.Set(nameof(Category), value); }
+        }
         /// <summary>The date and time at which the error occurred.</summary>
-        public DateTimeOffset? OccurredDateTime { get; set; }
+        public DateTimeOffset? OccurredDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(OccurredDateTime)); }
+            set { BackingStore?.Set(nameof(OccurredDateTime), value); }
+        }
         /// <summary>Name of the directory property causing the error. Current possible values: UserPrincipalName or ProxyAddress</summary>
-        public string PropertyCausingError { get; set; }
+        public string PropertyCausingError {
+            get { return BackingStore?.Get<string>(nameof(PropertyCausingError)); }
+            set { BackingStore?.Set(nameof(PropertyCausingError), value); }
+        }
         /// <summary>Value of the property causing the error.</summary>
-        public string Value { get; set; }
+        public string Value {
+            get { return BackingStore?.Get<string>(nameof(Value)); }
+            set { BackingStore?.Set(nameof(Value), value); }
+        }
         /// <summary>
         /// Instantiates a new onPremisesProvisioningError and sets the default values.
         /// </summary>
         public OnPremisesProvisioningError() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the alerts property of the microsoft.graph.security entity.</summary>
+    /// <summary>Provides operations to manage the security singleton.</summary>
     public enum AlertSeverity {
         Unknown,
         Informational,

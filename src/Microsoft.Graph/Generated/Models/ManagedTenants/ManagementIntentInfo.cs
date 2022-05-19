@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public class ManagementIntentInfo : IAdditionalDataHolder, IParsable {
+    public class ManagementIntentInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The display name for the management intent. Optional. Read-only.</summary>
-        public string ManagementIntentDisplayName { get; set; }
+        public string ManagementIntentDisplayName {
+            get { return BackingStore?.Get<string>(nameof(ManagementIntentDisplayName)); }
+            set { BackingStore?.Set(nameof(ManagementIntentDisplayName), value); }
+        }
         /// <summary>The identifier for the management intent. Required. Read-only.</summary>
-        public string ManagementIntentId { get; set; }
+        public string ManagementIntentId {
+            get { return BackingStore?.Get<string>(nameof(ManagementIntentId)); }
+            set { BackingStore?.Set(nameof(ManagementIntentId), value); }
+        }
         /// <summary>The collection of management template information associated with the management intent. Optional. Read-only.</summary>
-        public List<ManagementTemplateDetailedInfo> ManagementTemplates { get; set; }
+        public List<ManagementTemplateDetailedInfo> ManagementTemplates {
+            get { return BackingStore?.Get<List<ManagementTemplateDetailedInfo>>(nameof(ManagementTemplates)); }
+            set { BackingStore?.Set(nameof(ManagementTemplates), value); }
+        }
         /// <summary>
         /// Instantiates a new managementIntentInfo and sets the default values.
         /// </summary>
         public ManagementIntentInfo() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

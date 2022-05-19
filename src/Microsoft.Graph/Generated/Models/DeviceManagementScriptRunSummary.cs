@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Contains properties for the run summary of a device management script.</summary>
     public class DeviceManagementScriptRunSummary : Entity, IParsable {
         /// <summary>Error device count.</summary>
-        public int? ErrorDeviceCount { get; set; }
+        public int? ErrorDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(ErrorDeviceCount)); }
+            set { BackingStore?.Set(nameof(ErrorDeviceCount), value); }
+        }
         /// <summary>Error user count.</summary>
-        public int? ErrorUserCount { get; set; }
+        public int? ErrorUserCount {
+            get { return BackingStore?.Get<int?>(nameof(ErrorUserCount)); }
+            set { BackingStore?.Set(nameof(ErrorUserCount), value); }
+        }
         /// <summary>Success device count.</summary>
-        public int? SuccessDeviceCount { get; set; }
+        public int? SuccessDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(SuccessDeviceCount)); }
+            set { BackingStore?.Set(nameof(SuccessDeviceCount), value); }
+        }
         /// <summary>Success user count.</summary>
-        public int? SuccessUserCount { get; set; }
+        public int? SuccessUserCount {
+            get { return BackingStore?.Get<int?>(nameof(SuccessUserCount)); }
+            set { BackingStore?.Set(nameof(SuccessUserCount), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

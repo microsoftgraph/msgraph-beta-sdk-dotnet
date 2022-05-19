@@ -4,27 +4,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of privilegedRoleAssignmentRequest entities.</summary>
     public class PrivilegedRoleSettings : Entity, IParsable {
         /// <summary>true if the approval is required when activate the role. false if the approval is not required when activate the role.</summary>
-        public bool? ApprovalOnElevation { get; set; }
+        public bool? ApprovalOnElevation {
+            get { return BackingStore?.Get<bool?>(nameof(ApprovalOnElevation)); }
+            set { BackingStore?.Set(nameof(ApprovalOnElevation), value); }
+        }
         /// <summary>List of Approval ids, if approval is required for activation.</summary>
-        public List<string> ApproverIds { get; set; }
+        public List<string> ApproverIds {
+            get { return BackingStore?.Get<List<string>>(nameof(ApproverIds)); }
+            set { BackingStore?.Set(nameof(ApproverIds), value); }
+        }
         /// <summary>The duration when the role is activated.</summary>
-        public TimeSpan? ElevationDuration { get; set; }
+        public TimeSpan? ElevationDuration {
+            get { return BackingStore?.Get<TimeSpan?>(nameof(ElevationDuration)); }
+            set { BackingStore?.Set(nameof(ElevationDuration), value); }
+        }
         /// <summary>true if mfaOnElevation is configurable. false if mfaOnElevation is not configurable.</summary>
-        public bool? IsMfaOnElevationConfigurable { get; set; }
+        public bool? IsMfaOnElevationConfigurable {
+            get { return BackingStore?.Get<bool?>(nameof(IsMfaOnElevationConfigurable)); }
+            set { BackingStore?.Set(nameof(IsMfaOnElevationConfigurable), value); }
+        }
         /// <summary>Internal used only.</summary>
-        public bool? LastGlobalAdmin { get; set; }
+        public bool? LastGlobalAdmin {
+            get { return BackingStore?.Get<bool?>(nameof(LastGlobalAdmin)); }
+            set { BackingStore?.Set(nameof(LastGlobalAdmin), value); }
+        }
         /// <summary>Maximal duration for the activated role.</summary>
-        public TimeSpan? MaxElavationDuration { get; set; }
+        public TimeSpan? MaxElavationDuration {
+            get { return BackingStore?.Get<TimeSpan?>(nameof(MaxElavationDuration)); }
+            set { BackingStore?.Set(nameof(MaxElavationDuration), value); }
+        }
         /// <summary>true if MFA is required to activate the role. false if MFA is not required to activate the role.</summary>
-        public bool? MfaOnElevation { get; set; }
+        public bool? MfaOnElevation {
+            get { return BackingStore?.Get<bool?>(nameof(MfaOnElevation)); }
+            set { BackingStore?.Set(nameof(MfaOnElevation), value); }
+        }
         /// <summary>Minimal duration for the activated role.</summary>
-        public TimeSpan? MinElevationDuration { get; set; }
+        public TimeSpan? MinElevationDuration {
+            get { return BackingStore?.Get<TimeSpan?>(nameof(MinElevationDuration)); }
+            set { BackingStore?.Set(nameof(MinElevationDuration), value); }
+        }
         /// <summary>true if send notification to the end user when the role is activated. false if do not send notification when the role is activated.</summary>
-        public bool? NotificationToUserOnElevation { get; set; }
+        public bool? NotificationToUserOnElevation {
+            get { return BackingStore?.Get<bool?>(nameof(NotificationToUserOnElevation)); }
+            set { BackingStore?.Set(nameof(NotificationToUserOnElevation), value); }
+        }
         /// <summary>true if the ticketing information is required when activate the role. false if the ticketing information is not required when activate the role.</summary>
-        public bool? TicketingInfoOnElevation { get; set; }
+        public bool? TicketingInfoOnElevation {
+            get { return BackingStore?.Get<bool?>(nameof(TicketingInfoOnElevation)); }
+            set { BackingStore?.Set(nameof(TicketingInfoOnElevation), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -5,19 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class PersonAward : ItemFacet, IParsable {
         /// <summary>Descpription of the award or honor.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Name of the award or honor.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The date that the award or honor was granted.</summary>
-        public Date? IssuedDate { get; set; }
+        public Date? IssuedDate {
+            get { return BackingStore?.Get<Date?>(nameof(IssuedDate)); }
+            set { BackingStore?.Set(nameof(IssuedDate), value); }
+        }
         /// <summary>Authority which granted the award or honor.</summary>
-        public string IssuingAuthority { get; set; }
+        public string IssuingAuthority {
+            get { return BackingStore?.Get<string>(nameof(IssuingAuthority)); }
+            set { BackingStore?.Set(nameof(IssuingAuthority), value); }
+        }
         /// <summary>URL referencing a thumbnail of the award or honor.</summary>
-        public string ThumbnailUrl { get; set; }
+        public string ThumbnailUrl {
+            get { return BackingStore?.Get<string>(nameof(ThumbnailUrl)); }
+            set { BackingStore?.Set(nameof(ThumbnailUrl), value); }
+        }
         /// <summary>URL referencing the award or honor.</summary>
-        public string WebUrl { get; set; }
+        public string WebUrl {
+            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
+            set { BackingStore?.Set(nameof(WebUrl), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

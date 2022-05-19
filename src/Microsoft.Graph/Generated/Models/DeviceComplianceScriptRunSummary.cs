@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Contains properties for the run summary of a device management script.</summary>
     public class DeviceComplianceScriptRunSummary : Entity, IParsable {
         /// <summary>Number of devices on which the detection script execution encountered an error and did not complete. Valid values -2147483648 to 2147483647</summary>
-        public int? DetectionScriptErrorDeviceCount { get; set; }
+        public int? DetectionScriptErrorDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(DetectionScriptErrorDeviceCount)); }
+            set { BackingStore?.Set(nameof(DetectionScriptErrorDeviceCount), value); }
+        }
         /// <summary>Number of devices which have not yet run the latest version of the device compliance script. Valid values -2147483648 to 2147483647</summary>
-        public int? DetectionScriptPendingDeviceCount { get; set; }
+        public int? DetectionScriptPendingDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(DetectionScriptPendingDeviceCount)); }
+            set { BackingStore?.Set(nameof(DetectionScriptPendingDeviceCount), value); }
+        }
         /// <summary>Number of devices for which the detection script found an issue. Valid values -2147483648 to 2147483647</summary>
-        public int? IssueDetectedDeviceCount { get; set; }
+        public int? IssueDetectedDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(IssueDetectedDeviceCount)); }
+            set { BackingStore?.Set(nameof(IssueDetectedDeviceCount), value); }
+        }
         /// <summary>Last run time for the script across all devices</summary>
-        public DateTimeOffset? LastScriptRunDateTime { get; set; }
+        public DateTimeOffset? LastScriptRunDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastScriptRunDateTime)); }
+            set { BackingStore?.Set(nameof(LastScriptRunDateTime), value); }
+        }
         /// <summary>Number of devices for which the detection script did not find an issue and the device is healthy. Valid values -2147483648 to 2147483647</summary>
-        public int? NoIssueDetectedDeviceCount { get; set; }
+        public int? NoIssueDetectedDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(NoIssueDetectedDeviceCount)); }
+            set { BackingStore?.Set(nameof(NoIssueDetectedDeviceCount), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

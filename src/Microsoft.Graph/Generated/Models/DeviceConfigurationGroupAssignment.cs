@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Device configuration group assignment.</summary>
     public class DeviceConfigurationGroupAssignment : Entity, IParsable {
         /// <summary>The navigation link to the Device Configuration being targeted.</summary>
-        public Microsoft.Graph.Beta.Models.DeviceConfiguration DeviceConfiguration { get; set; }
+        public Microsoft.Graph.Beta.Models.DeviceConfiguration DeviceConfiguration {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceConfiguration>(nameof(DeviceConfiguration)); }
+            set { BackingStore?.Set(nameof(DeviceConfiguration), value); }
+        }
         /// <summary>Indicates if this group is should be excluded. Defaults that the group should be included</summary>
-        public bool? ExcludeGroup { get; set; }
+        public bool? ExcludeGroup {
+            get { return BackingStore?.Get<bool?>(nameof(ExcludeGroup)); }
+            set { BackingStore?.Set(nameof(ExcludeGroup), value); }
+        }
         /// <summary>The Id of the AAD group we are targeting the device configuration to.</summary>
-        public string TargetGroupId { get; set; }
+        public string TargetGroupId {
+            get { return BackingStore?.Get<string>(nameof(TargetGroupId)); }
+            set { BackingStore?.Set(nameof(TargetGroupId), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -1,28 +1,53 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ConditionalAccessUsers : IAdditionalDataHolder, IParsable {
+    public class ConditionalAccessUsers : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Group IDs excluded from scope of policy.</summary>
-        public List<string> ExcludeGroups { get; set; }
+        public List<string> ExcludeGroups {
+            get { return BackingStore?.Get<List<string>>(nameof(ExcludeGroups)); }
+            set { BackingStore?.Set(nameof(ExcludeGroups), value); }
+        }
         /// <summary>Role IDs excluded from scope of policy.</summary>
-        public List<string> ExcludeRoles { get; set; }
+        public List<string> ExcludeRoles {
+            get { return BackingStore?.Get<List<string>>(nameof(ExcludeRoles)); }
+            set { BackingStore?.Set(nameof(ExcludeRoles), value); }
+        }
         /// <summary>User IDs excluded from scope of policy and/or GuestsOrExternalUsers.</summary>
-        public List<string> ExcludeUsers { get; set; }
+        public List<string> ExcludeUsers {
+            get { return BackingStore?.Get<List<string>>(nameof(ExcludeUsers)); }
+            set { BackingStore?.Set(nameof(ExcludeUsers), value); }
+        }
         /// <summary>Group IDs in scope of policy unless explicitly excluded, or All.</summary>
-        public List<string> IncludeGroups { get; set; }
+        public List<string> IncludeGroups {
+            get { return BackingStore?.Get<List<string>>(nameof(IncludeGroups)); }
+            set { BackingStore?.Set(nameof(IncludeGroups), value); }
+        }
         /// <summary>Role IDs in scope of policy unless explicitly excluded, or All.</summary>
-        public List<string> IncludeRoles { get; set; }
+        public List<string> IncludeRoles {
+            get { return BackingStore?.Get<List<string>>(nameof(IncludeRoles)); }
+            set { BackingStore?.Set(nameof(IncludeRoles), value); }
+        }
         /// <summary>User IDs in scope of policy unless explicitly excluded, or None or All or GuestsOrExternalUsers.</summary>
-        public List<string> IncludeUsers { get; set; }
+        public List<string> IncludeUsers {
+            get { return BackingStore?.Get<List<string>>(nameof(IncludeUsers)); }
+            set { BackingStore?.Set(nameof(IncludeUsers), value); }
+        }
         /// <summary>
         /// Instantiates a new conditionalAccessUsers and sets the default values.
         /// </summary>
         public ConditionalAccessUsers() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

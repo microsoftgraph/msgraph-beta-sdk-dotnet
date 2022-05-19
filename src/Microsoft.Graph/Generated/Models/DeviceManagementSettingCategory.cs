@@ -4,20 +4,35 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Entity representing a setting category</summary>
     public class DeviceManagementSettingCategory : Entity, IParsable {
         /// <summary>The category name</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The category contains top level required setting</summary>
-        public bool? HasRequiredSetting { get; set; }
+        public bool? HasRequiredSetting {
+            get { return BackingStore?.Get<bool?>(nameof(HasRequiredSetting)); }
+            set { BackingStore?.Set(nameof(HasRequiredSetting), value); }
+        }
         /// <summary>The setting definitions this category contains</summary>
-        public List<DeviceManagementSettingDefinition> SettingDefinitions { get; set; }
+        public List<DeviceManagementSettingDefinition> SettingDefinitions {
+            get { return BackingStore?.Get<List<DeviceManagementSettingDefinition>>(nameof(SettingDefinitions)); }
+            set { BackingStore?.Set(nameof(SettingDefinitions), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new DeviceManagementSettingCategory CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementSettingCategory();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.deviceManagementSettingCategory" => new DeviceManagementSettingCategory(),
+                _ => new DeviceManagementSettingCategory(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

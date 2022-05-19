@@ -4,21 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Contains properties for device run state of the device compliance script.</summary>
     public class DeviceComplianceScriptDeviceState : Entity, IParsable {
         /// <summary>Detection state from the lastest device compliance script execution. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.</summary>
-        public RunState? DetectionState { get; set; }
+        public RunState? DetectionState {
+            get { return BackingStore?.Get<RunState?>(nameof(DetectionState)); }
+            set { BackingStore?.Set(nameof(DetectionState), value); }
+        }
         /// <summary>The next timestamp of when the device compliance script is expected to execute</summary>
-        public DateTimeOffset? ExpectedStateUpdateDateTime { get; set; }
+        public DateTimeOffset? ExpectedStateUpdateDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpectedStateUpdateDateTime)); }
+            set { BackingStore?.Set(nameof(ExpectedStateUpdateDateTime), value); }
+        }
         /// <summary>The last timestamp of when the device compliance script executed</summary>
-        public DateTimeOffset? LastStateUpdateDateTime { get; set; }
+        public DateTimeOffset? LastStateUpdateDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastStateUpdateDateTime)); }
+            set { BackingStore?.Set(nameof(LastStateUpdateDateTime), value); }
+        }
         /// <summary>The last time that Intune Managment Extension synced with Intune</summary>
-        public DateTimeOffset? LastSyncDateTime { get; set; }
+        public DateTimeOffset? LastSyncDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSyncDateTime)); }
+            set { BackingStore?.Set(nameof(LastSyncDateTime), value); }
+        }
         /// <summary>The managed device on which the device compliance script executed</summary>
-        public Microsoft.Graph.Beta.Models.ManagedDevice ManagedDevice { get; set; }
+        public Microsoft.Graph.Beta.Models.ManagedDevice ManagedDevice {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDevice>(nameof(ManagedDevice)); }
+            set { BackingStore?.Set(nameof(ManagedDevice), value); }
+        }
         /// <summary>Error from the detection script</summary>
-        public string ScriptError { get; set; }
+        public string ScriptError {
+            get { return BackingStore?.Get<string>(nameof(ScriptError)); }
+            set { BackingStore?.Set(nameof(ScriptError), value); }
+        }
         /// <summary>Output of the detection script</summary>
-        public string ScriptOutput { get; set; }
+        public string ScriptOutput {
+            get { return BackingStore?.Get<string>(nameof(ScriptOutput)); }
+            set { BackingStore?.Set(nameof(ScriptOutput), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

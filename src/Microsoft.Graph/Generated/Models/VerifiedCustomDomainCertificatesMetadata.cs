@@ -1,26 +1,48 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class VerifiedCustomDomainCertificatesMetadata : IAdditionalDataHolder, IParsable {
+    public class VerifiedCustomDomainCertificatesMetadata : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The expiry date of the custom domain certificate. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? ExpiryDate { get; set; }
+        public DateTimeOffset? ExpiryDate {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpiryDate)); }
+            set { BackingStore?.Set(nameof(ExpiryDate), value); }
+        }
         /// <summary>The issue date of the custom domain. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? IssueDate { get; set; }
+        public DateTimeOffset? IssueDate {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(IssueDate)); }
+            set { BackingStore?.Set(nameof(IssueDate), value); }
+        }
         /// <summary>The issuer name of the custom domain certificate.</summary>
-        public string IssuerName { get; set; }
+        public string IssuerName {
+            get { return BackingStore?.Get<string>(nameof(IssuerName)); }
+            set { BackingStore?.Set(nameof(IssuerName), value); }
+        }
         /// <summary>The subject name of the custom domain certificate.</summary>
-        public string SubjectName { get; set; }
+        public string SubjectName {
+            get { return BackingStore?.Get<string>(nameof(SubjectName)); }
+            set { BackingStore?.Set(nameof(SubjectName), value); }
+        }
         /// <summary>The thumbprint associated with the custom domain certificate.</summary>
-        public string Thumbprint { get; set; }
+        public string Thumbprint {
+            get { return BackingStore?.Get<string>(nameof(Thumbprint)); }
+            set { BackingStore?.Set(nameof(Thumbprint), value); }
+        }
         /// <summary>
         /// Instantiates a new verifiedCustomDomainCertificatesMetadata and sets the default values.
         /// </summary>
         public VerifiedCustomDomainCertificatesMetadata() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

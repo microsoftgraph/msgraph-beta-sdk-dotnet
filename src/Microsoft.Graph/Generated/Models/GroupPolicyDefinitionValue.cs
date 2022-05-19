@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The definition value entity stores the value for a single group policy definition.</summary>
     public class GroupPolicyDefinitionValue : Entity, IParsable {
         /// <summary>Specifies how the value should be configured. This can be either as a Policy or as a Preference. Possible values are: policy, preference.</summary>
-        public GroupPolicyConfigurationType? ConfigurationType { get; set; }
+        public GroupPolicyConfigurationType? ConfigurationType {
+            get { return BackingStore?.Get<GroupPolicyConfigurationType?>(nameof(ConfigurationType)); }
+            set { BackingStore?.Set(nameof(ConfigurationType), value); }
+        }
         /// <summary>The date and time the object was created.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>The associated group policy definition with the value.</summary>
-        public GroupPolicyDefinition Definition { get; set; }
+        public GroupPolicyDefinition Definition {
+            get { return BackingStore?.Get<GroupPolicyDefinition>(nameof(Definition)); }
+            set { BackingStore?.Set(nameof(Definition), value); }
+        }
         /// <summary>Enables or disables the associated group policy definition.</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled {
+            get { return BackingStore?.Get<bool?>(nameof(Enabled)); }
+            set { BackingStore?.Set(nameof(Enabled), value); }
+        }
         /// <summary>The date and time the entity was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>The associated group policy presentation values with the definition value.</summary>
-        public List<GroupPolicyPresentationValue> PresentationValues { get; set; }
+        public List<GroupPolicyPresentationValue> PresentationValues {
+            get { return BackingStore?.Get<List<GroupPolicyPresentationValue>>(nameof(PresentationValues)); }
+            set { BackingStore?.Set(nameof(PresentationValues), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -31,6 +31,7 @@ using Microsoft.Graph.Beta.DataClassification;
 using Microsoft.Graph.Beta.DataPolicyOperations;
 using Microsoft.Graph.Beta.DeviceAppManagement;
 using Microsoft.Graph.Beta.DeviceManagement;
+using Microsoft.Graph.Beta.DeviceRegistrationPolicy;
 using Microsoft.Graph.Beta.Devices;
 using Microsoft.Graph.Beta.Directory;
 using Microsoft.Graph.Beta.DirectoryObjects;
@@ -98,6 +99,7 @@ using Microsoft.Graph.Beta.ServicePrincipals;
 using Microsoft.Graph.Beta.Settings;
 using Microsoft.Graph.Beta.Shares;
 using Microsoft.Graph.Beta.Sites;
+using Microsoft.Graph.Beta.Storage;
 using Microsoft.Graph.Beta.SubscribedSkus;
 using Microsoft.Graph.Beta.Subscriptions;
 using Microsoft.Graph.Beta.Teams;
@@ -109,6 +111,7 @@ using Microsoft.Graph.Beta.TrustFramework;
 using Microsoft.Graph.Beta.Users;
 using Microsoft.Graph.Beta.Workbooks;
 using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Store;
 using Microsoft.Kiota.Serialization.Json;
 using Microsoft.Kiota.Serialization.Text;
 using System;
@@ -251,12 +254,16 @@ namespace Microsoft.Graph.Beta {
         public DeviceManagementRequestBuilder DeviceManagement { get =>
             new DeviceManagementRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The deviceRegistrationPolicy property</summary>
+        public DeviceRegistrationPolicyRequestBuilder DeviceRegistrationPolicy { get =>
+            new DeviceRegistrationPolicyRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The devices property</summary>
         public DevicesRequestBuilder Devices { get =>
             new DevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The directory property</summary>
-        public DirectoryRequestBuilder Directory { get =>
+        public DirectoryRequestBuilder DirectoryObject { get =>
             new DirectoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The directoryObjects property</summary>
@@ -523,6 +530,10 @@ namespace Microsoft.Graph.Beta {
         public SitesRequestBuilder Sites { get =>
             new SitesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The storage property</summary>
+        public StorageRequestBuilder Storage { get =>
+            new StorageRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The subscribedSkus property</summary>
         public SubscribedSkusRequestBuilder SubscribedSkus { get =>
             new SubscribedSkusRequestBuilder(PathParameters, RequestAdapter);
@@ -567,9 +578,10 @@ namespace Microsoft.Graph.Beta {
         }
         /// <summary>
         /// Instantiates a new BaseGraphServiceClient and sets the default values.
+        /// <param name="backingStore">The backing store to use for the models.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// </summary>
-        public BaseGraphServiceClient(IRequestAdapter requestAdapter) {
+        public BaseGraphServiceClient(IRequestAdapter requestAdapter, IBackingStoreFactory backingStore = default) {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             PathParameters = new Dictionary<string, object>();
             UrlTemplate = "{+baseurl}";
@@ -581,6 +593,7 @@ namespace Microsoft.Graph.Beta {
             if (string.IsNullOrEmpty(RequestAdapter.BaseUrl)) {
                 RequestAdapter.BaseUrl = "https://graph.microsoft.com/beta";
             }
+            RequestAdapter.EnableBackingStore(backingStore);
         }
     }
 }

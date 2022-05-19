@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the financials singleton.</summary>
     public class Currency : Entity, IParsable {
         /// <summary>The amountDecimalPlaces property</summary>
-        public string AmountDecimalPlaces { get; set; }
+        public string AmountDecimalPlaces {
+            get { return BackingStore?.Get<string>(nameof(AmountDecimalPlaces)); }
+            set { BackingStore?.Set(nameof(AmountDecimalPlaces), value); }
+        }
         /// <summary>The amountRoundingPrecision property</summary>
-        public decimal? AmountRoundingPrecision { get; set; }
+        public decimal? AmountRoundingPrecision {
+            get { return BackingStore?.Get<decimal?>(nameof(AmountRoundingPrecision)); }
+            set { BackingStore?.Set(nameof(AmountRoundingPrecision), value); }
+        }
         /// <summary>The code property</summary>
-        public string Code { get; set; }
+        public string Code {
+            get { return BackingStore?.Get<string>(nameof(Code)); }
+            set { BackingStore?.Set(nameof(Code), value); }
+        }
         /// <summary>The displayName property</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The lastModifiedDateTime property</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>The symbol property</summary>
-        public string Symbol { get; set; }
+        public string Symbol {
+            get { return BackingStore?.Get<string>(nameof(Symbol)); }
+            set { BackingStore?.Set(nameof(Symbol), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

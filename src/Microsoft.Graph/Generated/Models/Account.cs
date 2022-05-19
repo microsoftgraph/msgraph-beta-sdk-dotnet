@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the financials singleton.</summary>
     public class Account : Entity, IParsable {
         /// <summary>The blocked property</summary>
-        public bool? Blocked { get; set; }
+        public bool? Blocked {
+            get { return BackingStore?.Get<bool?>(nameof(Blocked)); }
+            set { BackingStore?.Set(nameof(Blocked), value); }
+        }
         /// <summary>The category property</summary>
-        public string Category { get; set; }
+        public string Category {
+            get { return BackingStore?.Get<string>(nameof(Category)); }
+            set { BackingStore?.Set(nameof(Category), value); }
+        }
         /// <summary>The displayName property</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The lastModifiedDateTime property</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>The number property</summary>
-        public string Number { get; set; }
+        public string Number {
+            get { return BackingStore?.Get<string>(nameof(Number)); }
+            set { BackingStore?.Set(nameof(Number), value); }
+        }
         /// <summary>The subCategory property</summary>
-        public string SubCategory { get; set; }
+        public string SubCategory {
+            get { return BackingStore?.Get<string>(nameof(SubCategory)); }
+            set { BackingStore?.Set(nameof(SubCategory), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

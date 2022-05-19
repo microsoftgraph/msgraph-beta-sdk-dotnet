@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to call the muteAll method.</summary>
     public class MuteParticipantsOperation : CommsOperation, IParsable {
         /// <summary>The participants property</summary>
-        public List<string> Participants { get; set; }
+        public List<string> Participants {
+            get { return BackingStore?.Get<List<string>>(nameof(Participants)); }
+            set { BackingStore?.Set(nameof(Participants), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

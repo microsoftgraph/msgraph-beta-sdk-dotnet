@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class TimeConstraint : IAdditionalDataHolder, IParsable {
+    public class TimeConstraint : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The nature of the activity, optional. Possible values are: work, personal, unrestricted, or unknown.</summary>
-        public Microsoft.Graph.Beta.Models.ActivityDomain? ActivityDomain { get; set; }
+        public Microsoft.Graph.Beta.Models.ActivityDomain? ActivityDomain {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActivityDomain?>(nameof(ActivityDomain)); }
+            set { BackingStore?.Set(nameof(ActivityDomain), value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The timeSlots property</summary>
-        public List<TimeSlot> TimeSlots { get; set; }
+        public List<TimeSlot> TimeSlots {
+            get { return BackingStore?.Get<List<TimeSlot>>(nameof(TimeSlots)); }
+            set { BackingStore?.Set(nameof(TimeSlots), value); }
+        }
         /// <summary>
         /// Instantiates a new timeConstraint and sets the default values.
         /// </summary>
         public TimeConstraint() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

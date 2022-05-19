@@ -1,21 +1,34 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class TimeRange : IAdditionalDataHolder, IParsable {
+    public class TimeRange : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>End time for the time range.</summary>
-        public Time? EndTime { get; set; }
+        public Time? EndTime {
+            get { return BackingStore?.Get<Time?>(nameof(EndTime)); }
+            set { BackingStore?.Set(nameof(EndTime), value); }
+        }
         /// <summary>Start time for the time range.</summary>
-        public Time? StartTime { get; set; }
+        public Time? StartTime {
+            get { return BackingStore?.Get<Time?>(nameof(StartTime)); }
+            set { BackingStore?.Set(nameof(StartTime), value); }
+        }
         /// <summary>
         /// Instantiates a new timeRange and sets the default values.
         /// </summary>
         public TimeRange() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

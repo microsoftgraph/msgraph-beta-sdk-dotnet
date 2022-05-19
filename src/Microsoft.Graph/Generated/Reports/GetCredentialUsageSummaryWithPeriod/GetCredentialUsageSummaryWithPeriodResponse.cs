@@ -1,20 +1,30 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Reports.GetCredentialUsageSummaryWithPeriod {
     /// <summary>Provides operations to call the getCredentialUsageSummary method.</summary>
-    public class GetCredentialUsageSummaryWithPeriodResponse : IAdditionalDataHolder, IParsable {
+    public class GetCredentialUsageSummaryWithPeriodResponse : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The value property</summary>
-        public List<CredentialUsageSummary> Value { get; set; }
+        public List<CredentialUsageSummary> Value {
+            get { return BackingStore?.Get<List<CredentialUsageSummary>>(nameof(Value)); }
+            set { BackingStore?.Set(nameof(Value), value); }
+        }
         /// <summary>
         /// Instantiates a new getCredentialUsageSummaryWithPeriodResponse and sets the default values.
         /// </summary>
         public GetCredentialUsageSummaryWithPeriodResponse() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

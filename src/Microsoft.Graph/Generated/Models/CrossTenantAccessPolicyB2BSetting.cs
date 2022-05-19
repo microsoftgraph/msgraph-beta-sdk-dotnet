@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class CrossTenantAccessPolicyB2BSetting : IAdditionalDataHolder, IParsable {
+    public class CrossTenantAccessPolicyB2BSetting : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>The list of applications targeted with your cross-tenant access policy.</summary>
-        public CrossTenantAccessPolicyTargetConfiguration Applications { get; set; }
+        public CrossTenantAccessPolicyTargetConfiguration Applications {
+            get { return BackingStore?.Get<CrossTenantAccessPolicyTargetConfiguration>(nameof(Applications)); }
+            set { BackingStore?.Set(nameof(Applications), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The list of users and groups targeted with your cross-tenant access policy.</summary>
-        public CrossTenantAccessPolicyTargetConfiguration UsersAndGroups { get; set; }
+        public CrossTenantAccessPolicyTargetConfiguration UsersAndGroups {
+            get { return BackingStore?.Get<CrossTenantAccessPolicyTargetConfiguration>(nameof(UsersAndGroups)); }
+            set { BackingStore?.Set(nameof(UsersAndGroups), value); }
+        }
         /// <summary>
         /// Instantiates a new crossTenantAccessPolicyB2BSetting and sets the default values.
         /// </summary>
         public CrossTenantAccessPolicyB2BSetting() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

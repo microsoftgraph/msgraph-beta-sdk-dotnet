@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class TenantCustomizedInformation : Entity, IParsable {
         /// <summary>The collection of contacts for the managed tenant. Optional.</summary>
-        public List<TenantContactInformation> Contacts { get; set; }
+        public List<TenantContactInformation> Contacts {
+            get { return BackingStore?.Get<List<TenantContactInformation>>(nameof(Contacts)); }
+            set { BackingStore?.Set(nameof(Contacts), value); }
+        }
         /// <summary>The display name for the managed tenant. Required. Read-only.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.</summary>
-        public string TenantId { get; set; }
+        public string TenantId {
+            get { return BackingStore?.Get<string>(nameof(TenantId)); }
+            set { BackingStore?.Set(nameof(TenantId), value); }
+        }
         /// <summary>The website for the managed tenant. Required.</summary>
-        public string Website { get; set; }
+        public string Website {
+            get { return BackingStore?.Get<string>(nameof(Website)); }
+            set { BackingStore?.Set(nameof(Website), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

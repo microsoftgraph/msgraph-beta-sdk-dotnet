@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to call the getCredentialUserRegistrationCount method.</summary>
     public class CredentialUserRegistrationCount : Entity, IParsable {
         /// <summary>Provides the total user count in the tenant.</summary>
-        public long? TotalUserCount { get; set; }
+        public long? TotalUserCount {
+            get { return BackingStore?.Get<long?>(nameof(TotalUserCount)); }
+            set { BackingStore?.Set(nameof(TotalUserCount), value); }
+        }
         /// <summary>A collection of registration count and status information for users in your tenant.</summary>
-        public List<UserRegistrationCount> UserRegistrationCounts { get; set; }
+        public List<UserRegistrationCount> UserRegistrationCounts {
+            get { return BackingStore?.Get<List<UserRegistrationCount>>(nameof(UserRegistrationCounts)); }
+            set { BackingStore?.Set(nameof(UserRegistrationCounts), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

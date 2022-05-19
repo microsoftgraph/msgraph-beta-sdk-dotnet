@@ -4,25 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>A new entity to represent driver inventories.</summary>
     public class WindowsDriverUpdateInventory : Entity, IParsable {
         /// <summary>The number of devices for which this driver is applicable.</summary>
-        public int? ApplicableDeviceCount { get; set; }
+        public int? ApplicableDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(ApplicableDeviceCount)); }
+            set { BackingStore?.Set(nameof(ApplicableDeviceCount), value); }
+        }
         /// <summary>The approval status for this driver. Possible values are: needsReview, declined, approved, suspended.</summary>
-        public DriverApprovalStatus? ApprovalStatus { get; set; }
+        public DriverApprovalStatus? ApprovalStatus {
+            get { return BackingStore?.Get<DriverApprovalStatus?>(nameof(ApprovalStatus)); }
+            set { BackingStore?.Set(nameof(ApprovalStatus), value); }
+        }
         /// <summary>The category for this driver. Possible values are: recommended, previouslyApproved, other.</summary>
-        public DriverCategory? Category { get; set; }
+        public DriverCategory? Category {
+            get { return BackingStore?.Get<DriverCategory?>(nameof(Category)); }
+            set { BackingStore?.Set(nameof(Category), value); }
+        }
         /// <summary>The date time when a driver should be deployed if approvalStatus is approved.</summary>
-        public DateTimeOffset? DeployDateTime { get; set; }
+        public DateTimeOffset? DeployDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DeployDateTime)); }
+            set { BackingStore?.Set(nameof(DeployDateTime), value); }
+        }
         /// <summary>The class of the driver.</summary>
-        public string DriverClass { get; set; }
+        public string DriverClass {
+            get { return BackingStore?.Get<string>(nameof(DriverClass)); }
+            set { BackingStore?.Set(nameof(DriverClass), value); }
+        }
         /// <summary>The manufacturer of the driver.</summary>
-        public string Manufacturer { get; set; }
+        public string Manufacturer {
+            get { return BackingStore?.Get<string>(nameof(Manufacturer)); }
+            set { BackingStore?.Set(nameof(Manufacturer), value); }
+        }
         /// <summary>The name of the driver.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>The release date time of the driver.</summary>
-        public DateTimeOffset? ReleaseDateTime { get; set; }
+        public DateTimeOffset? ReleaseDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ReleaseDateTime)); }
+            set { BackingStore?.Set(nameof(ReleaseDateTime), value); }
+        }
         /// <summary>The version of the driver.</summary>
-        public string Version { get; set; }
+        public string Version {
+            get { return BackingStore?.Get<string>(nameof(Version)); }
+            set { BackingStore?.Set(nameof(Version), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

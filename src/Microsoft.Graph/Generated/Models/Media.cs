@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class Media : IAdditionalDataHolder, IParsable {
+    public class Media : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>If a file has a transcript, this setting controls if the closed captions / transcription for the media file should be shown to people during viewing. Read-Write.</summary>
-        public bool? IsTranscriptionShown { get; set; }
+        public bool? IsTranscriptionShown {
+            get { return BackingStore?.Get<bool?>(nameof(IsTranscriptionShown)); }
+            set { BackingStore?.Set(nameof(IsTranscriptionShown), value); }
+        }
         /// <summary>Information about the source of media. Read-only.</summary>
-        public Microsoft.Graph.Beta.Models.MediaSource MediaSource { get; set; }
+        public Microsoft.Graph.Beta.Models.MediaSource MediaSource {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaSource>(nameof(MediaSource)); }
+            set { BackingStore?.Set(nameof(MediaSource), value); }
+        }
         /// <summary>
         /// Instantiates a new media and sets the default values.
         /// </summary>
         public Media() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

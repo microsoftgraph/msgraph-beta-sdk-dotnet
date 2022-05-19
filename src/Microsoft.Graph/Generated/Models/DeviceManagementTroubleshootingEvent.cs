@@ -4,24 +4,45 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Event representing an general failure.</summary>
     public class DeviceManagementTroubleshootingEvent : Entity, IParsable {
         /// <summary>A set of string key and string value pairs which provides additional information on the Troubleshooting event</summary>
-        public List<KeyValuePair> AdditionalInformation { get; set; }
+        public List<KeyValuePair> AdditionalInformation {
+            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(AdditionalInformation)); }
+            set { BackingStore?.Set(nameof(AdditionalInformation), value); }
+        }
         /// <summary>Id used for tracing the failure in the service.</summary>
-        public string CorrelationId { get; set; }
+        public string CorrelationId {
+            get { return BackingStore?.Get<string>(nameof(CorrelationId)); }
+            set { BackingStore?.Set(nameof(CorrelationId), value); }
+        }
         /// <summary>Time when the event occurred .</summary>
-        public DateTimeOffset? EventDateTime { get; set; }
+        public DateTimeOffset? EventDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EventDateTime)); }
+            set { BackingStore?.Set(nameof(EventDateTime), value); }
+        }
         /// <summary>Event Name corresponding to the Troubleshooting Event. It is an Optional field</summary>
-        public string EventName { get; set; }
+        public string EventName {
+            get { return BackingStore?.Get<string>(nameof(EventName)); }
+            set { BackingStore?.Set(nameof(EventName), value); }
+        }
         /// <summary>Object containing detailed information about the error and its remediation.</summary>
-        public DeviceManagementTroubleshootingErrorDetails TroubleshootingErrorDetails { get; set; }
+        public DeviceManagementTroubleshootingErrorDetails TroubleshootingErrorDetails {
+            get { return BackingStore?.Get<DeviceManagementTroubleshootingErrorDetails>(nameof(TroubleshootingErrorDetails)); }
+            set { BackingStore?.Set(nameof(TroubleshootingErrorDetails), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new DeviceManagementTroubleshootingEvent CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementTroubleshootingEvent();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.deviceManagementTroubleshootingEvent" => new DeviceManagementTroubleshootingEvent(),
+                _ => new DeviceManagementTroubleshootingEvent(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

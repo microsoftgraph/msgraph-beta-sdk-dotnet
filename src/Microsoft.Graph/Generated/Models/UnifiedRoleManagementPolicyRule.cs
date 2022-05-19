@@ -4,16 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class UnifiedRoleManagementPolicyRule : Entity, IParsable {
         /// <summary>The target for the policy rule.</summary>
-        public UnifiedRoleManagementPolicyRuleTarget Target { get; set; }
+        public UnifiedRoleManagementPolicyRuleTarget Target {
+            get { return BackingStore?.Get<UnifiedRoleManagementPolicyRuleTarget>(nameof(Target)); }
+            set { BackingStore?.Set(nameof(Target), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new UnifiedRoleManagementPolicyRule CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UnifiedRoleManagementPolicyRule();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.unifiedRoleManagementPolicyRule" => new UnifiedRoleManagementPolicyRule(),
+                _ => new UnifiedRoleManagementPolicyRule(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

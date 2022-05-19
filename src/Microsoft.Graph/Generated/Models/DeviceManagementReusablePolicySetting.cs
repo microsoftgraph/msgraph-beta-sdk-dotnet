@@ -4,25 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Graph model for a reusable setting</summary>
     public class DeviceManagementReusablePolicySetting : Entity, IParsable {
         /// <summary>reusable setting creation date and time. This property is read-only.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>reusable setting description supplied by user.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>reusable setting display name supplied by user.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>date and time when reusable setting was last modified. This property is read-only.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>configuration policies referencing the current reusable setting. This property is read-only.</summary>
-        public List<DeviceManagementConfigurationPolicy> ReferencingConfigurationPolicies { get; set; }
+        public List<DeviceManagementConfigurationPolicy> ReferencingConfigurationPolicies {
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationPolicy>>(nameof(ReferencingConfigurationPolicies)); }
+            set { BackingStore?.Set(nameof(ReferencingConfigurationPolicies), value); }
+        }
         /// <summary>count of configuration policies referencing the current reusable setting. Valid values 0 to 2147483647. This property is read-only.</summary>
-        public int? ReferencingConfigurationPolicyCount { get; set; }
+        public int? ReferencingConfigurationPolicyCount {
+            get { return BackingStore?.Get<int?>(nameof(ReferencingConfigurationPolicyCount)); }
+            set { BackingStore?.Set(nameof(ReferencingConfigurationPolicyCount), value); }
+        }
         /// <summary>setting definition id associated with this reusable setting.</summary>
-        public string SettingDefinitionId { get; set; }
+        public string SettingDefinitionId {
+            get { return BackingStore?.Get<string>(nameof(SettingDefinitionId)); }
+            set { BackingStore?.Set(nameof(SettingDefinitionId), value); }
+        }
         /// <summary>reusable setting configuration instance</summary>
-        public DeviceManagementConfigurationSettingInstance SettingInstance { get; set; }
+        public DeviceManagementConfigurationSettingInstance SettingInstance {
+            get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstance>(nameof(SettingInstance)); }
+            set { BackingStore?.Set(nameof(SettingInstance), value); }
+        }
         /// <summary>version number for reusable setting. Valid values 0 to 2147483647. This property is read-only.</summary>
-        public int? Version { get; set; }
+        public int? Version {
+            get { return BackingStore?.Get<int?>(nameof(Version)); }
+            set { BackingStore?.Set(nameof(Version), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

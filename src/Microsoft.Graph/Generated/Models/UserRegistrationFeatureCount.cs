@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class UserRegistrationFeatureCount : IAdditionalDataHolder, IParsable {
+    public class UserRegistrationFeatureCount : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Number of users registered or capable for Multi-Factor Authentication, Self-Service Password Reset and Passwordless Authentication. Possible values are: ssprRegistered, ssprEnabled, ssprCapable, passwordlessCapable, mfaCapable.</summary>
-        public AuthenticationMethodFeature? Feature { get; set; }
+        public AuthenticationMethodFeature? Feature {
+            get { return BackingStore?.Get<AuthenticationMethodFeature?>(nameof(Feature)); }
+            set { BackingStore?.Set(nameof(Feature), value); }
+        }
         /// <summary>Number of users.</summary>
-        public long? UserCount { get; set; }
+        public long? UserCount {
+            get { return BackingStore?.Get<long?>(nameof(UserCount)); }
+            set { BackingStore?.Set(nameof(UserCount), value); }
+        }
         /// <summary>
         /// Instantiates a new userRegistrationFeatureCount and sets the default values.
         /// </summary>
         public UserRegistrationFeatureCount() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

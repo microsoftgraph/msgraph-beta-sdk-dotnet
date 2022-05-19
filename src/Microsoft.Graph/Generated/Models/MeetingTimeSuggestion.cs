@@ -1,30 +1,58 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class MeetingTimeSuggestion : IAdditionalDataHolder, IParsable {
+    public class MeetingTimeSuggestion : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>An array that shows the availability status of each attendee for this meeting suggestion.</summary>
-        public List<Microsoft.Graph.Beta.Models.AttendeeAvailability> AttendeeAvailability { get; set; }
+        public List<Microsoft.Graph.Beta.Models.AttendeeAvailability> AttendeeAvailability {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AttendeeAvailability>>(nameof(AttendeeAvailability)); }
+            set { BackingStore?.Set(nameof(AttendeeAvailability), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>A percentage that represents the likelhood of all the attendees attending.</summary>
-        public double? Confidence { get; set; }
+        public double? Confidence {
+            get { return BackingStore?.Get<double?>(nameof(Confidence)); }
+            set { BackingStore?.Set(nameof(Confidence), value); }
+        }
         /// <summary>An array that specifies the name and geographic location of each meeting location for this meeting suggestion.</summary>
-        public List<Location> Locations { get; set; }
+        public List<Location> Locations {
+            get { return BackingStore?.Get<List<Location>>(nameof(Locations)); }
+            set { BackingStore?.Set(nameof(Locations), value); }
+        }
         /// <summary>A time period suggested for the meeting.</summary>
-        public TimeSlot MeetingTimeSlot { get; set; }
+        public TimeSlot MeetingTimeSlot {
+            get { return BackingStore?.Get<TimeSlot>(nameof(MeetingTimeSlot)); }
+            set { BackingStore?.Set(nameof(MeetingTimeSlot), value); }
+        }
         /// <summary>Order of meeting time suggestions sorted by their computed confidence value from high to low, then by chronology if there are suggestions with the same confidence.</summary>
-        public int? Order { get; set; }
+        public int? Order {
+            get { return BackingStore?.Get<int?>(nameof(Order)); }
+            set { BackingStore?.Set(nameof(Order), value); }
+        }
         /// <summary>Availability of the meeting organizer for this meeting suggestion. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.</summary>
-        public FreeBusyStatus? OrganizerAvailability { get; set; }
+        public FreeBusyStatus? OrganizerAvailability {
+            get { return BackingStore?.Get<FreeBusyStatus?>(nameof(OrganizerAvailability)); }
+            set { BackingStore?.Set(nameof(OrganizerAvailability), value); }
+        }
         /// <summary>Reason for suggesting the meeting time.</summary>
-        public string SuggestionReason { get; set; }
+        public string SuggestionReason {
+            get { return BackingStore?.Get<string>(nameof(SuggestionReason)); }
+            set { BackingStore?.Set(nameof(SuggestionReason), value); }
+        }
         /// <summary>
         /// Instantiates a new meetingTimeSuggestion and sets the default values.
         /// </summary>
         public MeetingTimeSuggestion() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

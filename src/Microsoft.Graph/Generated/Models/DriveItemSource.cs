@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class DriveItemSource : IAdditionalDataHolder, IParsable {
+    public class DriveItemSource : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Enumeration value that indicates the source application where the file was created.</summary>
-        public DriveItemSourceApplication? Application { get; set; }
+        public DriveItemSourceApplication? Application {
+            get { return BackingStore?.Get<DriveItemSourceApplication?>(nameof(Application)); }
+            set { BackingStore?.Set(nameof(Application), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The external identifier for the drive item from the source.</summary>
-        public string ExternalId { get; set; }
+        public string ExternalId {
+            get { return BackingStore?.Get<string>(nameof(ExternalId)); }
+            set { BackingStore?.Set(nameof(ExternalId), value); }
+        }
         /// <summary>
         /// Instantiates a new driveItemSource and sets the default values.
         /// </summary>
         public DriveItemSource() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

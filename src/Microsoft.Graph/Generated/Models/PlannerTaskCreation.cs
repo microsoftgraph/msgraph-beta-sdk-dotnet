@@ -1,18 +1,28 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class PlannerTaskCreation : IAdditionalDataHolder, IParsable {
+    public class PlannerTaskCreation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Information about the publication process that created this task. null value indicates that the task was not created by a publication process.</summary>
-        public PlannerTeamsPublicationInfo TeamsPublicationInfo { get; set; }
+        public PlannerTeamsPublicationInfo TeamsPublicationInfo {
+            get { return BackingStore?.Get<PlannerTeamsPublicationInfo>(nameof(TeamsPublicationInfo)); }
+            set { BackingStore?.Set(nameof(TeamsPublicationInfo), value); }
+        }
         /// <summary>
         /// Instantiates a new plannerTaskCreation and sets the default values.
         /// </summary>
         public PlannerTaskCreation() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

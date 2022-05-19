@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of messageRecipient entities.</summary>
     public class MessageEvent : Entity, IParsable {
         /// <summary>The dateTime property</summary>
-        public DateTimeOffset? DateTime { get; set; }
+        public DateTimeOffset? DateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DateTime)); }
+            set { BackingStore?.Set(nameof(DateTime), value); }
+        }
         /// <summary>The description property</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The eventType property</summary>
-        public MessageEventType? EventType { get; set; }
+        public MessageEventType? EventType {
+            get { return BackingStore?.Get<MessageEventType?>(nameof(EventType)); }
+            set { BackingStore?.Set(nameof(EventType), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

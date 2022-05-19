@@ -1,3 +1,6 @@
+using Microsoft.Graph.Beta.Me.Devices.Item.RegisteredUsers.Item.Endpoint;
+using Microsoft.Graph.Beta.Me.Devices.Item.RegisteredUsers.Item.ServicePrincipal;
+using Microsoft.Graph.Beta.Me.Devices.Item.RegisteredUsers.Item.User;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -11,12 +14,24 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Devices.Item.RegisteredUsers.Item {
     /// <summary>Provides operations to manage the registeredUsers property of the microsoft.graph.device entity.</summary>
     public class DirectoryObjectItemRequestBuilder {
+        /// <summary>The endpoint property</summary>
+        public EndpointRequestBuilder Endpoint { get =>
+            new EndpointRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The servicePrincipal property</summary>
+        public ServicePrincipalRequestBuilder ServicePrincipal { get =>
+            new ServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>The user property</summary>
+        public UserRequestBuilder User { get =>
+            new UserRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>

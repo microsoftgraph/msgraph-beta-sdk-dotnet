@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class WorkbookWorksheetProtection : Entity, IParsable {
         /// <summary>Sheet protection options. Read-only.</summary>
-        public WorkbookWorksheetProtectionOptions Options { get; set; }
+        public WorkbookWorksheetProtectionOptions Options {
+            get { return BackingStore?.Get<WorkbookWorksheetProtectionOptions>(nameof(Options)); }
+            set { BackingStore?.Set(nameof(Options), value); }
+        }
         /// <summary>Indicates if the worksheet is protected.  Read-only.</summary>
-        public bool? Protected { get; set; }
+        public bool? Protected {
+            get { return BackingStore?.Get<bool?>(nameof(Protected)); }
+            set { BackingStore?.Set(nameof(Protected), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

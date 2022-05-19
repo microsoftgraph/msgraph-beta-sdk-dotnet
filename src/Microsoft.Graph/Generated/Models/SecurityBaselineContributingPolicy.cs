@@ -1,23 +1,39 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>The security baseline compliance state of a setting for a device</summary>
-    public class SecurityBaselineContributingPolicy : IAdditionalDataHolder, IParsable {
+    public class SecurityBaselineContributingPolicy : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Name of the policy</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Unique identifier of the policy</summary>
-        public string SourceId { get; set; }
+        public string SourceId {
+            get { return BackingStore?.Get<string>(nameof(SourceId)); }
+            set { BackingStore?.Set(nameof(SourceId), value); }
+        }
         /// <summary>Authoring source of the policy. Possible values are: deviceConfiguration, deviceIntent.</summary>
-        public SecurityBaselinePolicySourceType? SourceType { get; set; }
+        public SecurityBaselinePolicySourceType? SourceType {
+            get { return BackingStore?.Get<SecurityBaselinePolicySourceType?>(nameof(SourceType)); }
+            set { BackingStore?.Set(nameof(SourceType), value); }
+        }
         /// <summary>
         /// Instantiates a new securityBaselineContributingPolicy and sets the default values.
         /// </summary>
         public SecurityBaselineContributingPolicy() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

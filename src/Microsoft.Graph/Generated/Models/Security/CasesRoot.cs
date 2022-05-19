@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the cases property of the microsoft.graph.security entity.</summary>
+    /// <summary>Provides operations to manage the security singleton.</summary>
     public class CasesRoot : Entity, IParsable {
         /// <summary>The ediscoveryCases property</summary>
-        public List<EdiscoveryCase> EdiscoveryCases { get; set; }
+        public List<EdiscoveryCase> EdiscoveryCases {
+            get { return BackingStore?.Get<List<EdiscoveryCase>>(nameof(EdiscoveryCases)); }
+            set { BackingStore?.Set(nameof(EdiscoveryCases), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

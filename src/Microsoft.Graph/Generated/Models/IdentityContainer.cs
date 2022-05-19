@@ -1,32 +1,63 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class IdentityContainer : IAdditionalDataHolder, IParsable {
+    public class IdentityContainer : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Represents entry point for API connectors.</summary>
-        public List<IdentityApiConnector> ApiConnectors { get; set; }
+        public List<IdentityApiConnector> ApiConnectors {
+            get { return BackingStore?.Get<List<IdentityApiConnector>>(nameof(ApiConnectors)); }
+            set { BackingStore?.Set(nameof(ApiConnectors), value); }
+        }
         /// <summary>Represents entry point for B2C identity userflows.</summary>
-        public List<B2cIdentityUserFlow> B2cUserFlows { get; set; }
+        public List<B2cIdentityUserFlow> B2cUserFlows {
+            get { return BackingStore?.Get<List<B2cIdentityUserFlow>>(nameof(B2cUserFlows)); }
+            set { BackingStore?.Set(nameof(B2cUserFlows), value); }
+        }
         /// <summary>Represents entry point for B2X and self-service sign-up identity userflows.</summary>
-        public List<B2xIdentityUserFlow> B2xUserFlows { get; set; }
+        public List<B2xIdentityUserFlow> B2xUserFlows {
+            get { return BackingStore?.Get<List<B2xIdentityUserFlow>>(nameof(B2xUserFlows)); }
+            set { BackingStore?.Set(nameof(B2xUserFlows), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>the entry point for the Conditional Access (CA) object model.</summary>
-        public ConditionalAccessRoot ConditionalAccess { get; set; }
+        public ConditionalAccessRoot ConditionalAccess {
+            get { return BackingStore?.Get<ConditionalAccessRoot>(nameof(ConditionalAccess)); }
+            set { BackingStore?.Set(nameof(ConditionalAccess), value); }
+        }
         /// <summary>Represents entry point for continuous access evaluation policy.</summary>
-        public Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy ContinuousAccessEvaluationPolicy { get; set; }
+        public Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy ContinuousAccessEvaluationPolicy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy>(nameof(ContinuousAccessEvaluationPolicy)); }
+            set { BackingStore?.Set(nameof(ContinuousAccessEvaluationPolicy), value); }
+        }
         /// <summary>Represents entry point for identity provider base.</summary>
-        public List<IdentityProviderBase> IdentityProviders { get; set; }
+        public List<IdentityProviderBase> IdentityProviders {
+            get { return BackingStore?.Get<List<IdentityProviderBase>>(nameof(IdentityProviders)); }
+            set { BackingStore?.Set(nameof(IdentityProviders), value); }
+        }
         /// <summary>Represents entry point for identity userflow attributes.</summary>
-        public List<IdentityUserFlowAttribute> UserFlowAttributes { get; set; }
+        public List<IdentityUserFlowAttribute> UserFlowAttributes {
+            get { return BackingStore?.Get<List<IdentityUserFlowAttribute>>(nameof(UserFlowAttributes)); }
+            set { BackingStore?.Set(nameof(UserFlowAttributes), value); }
+        }
         /// <summary>The userFlows property</summary>
-        public List<IdentityUserFlow> UserFlows { get; set; }
+        public List<IdentityUserFlow> UserFlows {
+            get { return BackingStore?.Get<List<IdentityUserFlow>>(nameof(UserFlows)); }
+            set { BackingStore?.Set(nameof(UserFlows), value); }
+        }
         /// <summary>
         /// Instantiates a new IdentityContainer and sets the default values.
         /// </summary>
         public IdentityContainer() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

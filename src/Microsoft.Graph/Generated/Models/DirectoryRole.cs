@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of directoryRole entities.</summary>
     public class DirectoryRole : DirectoryObject, IParsable {
         /// <summary>The description for the directory role. Read-only. Supports $filter (eq), $search, $select.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The display name for the directory role. Read-only. Supports $filter (eq), $search, $select.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.</summary>
-        public List<DirectoryObject> Members { get; set; }
+        public List<DirectoryObject> Members {
+            get { return BackingStore?.Get<List<DirectoryObject>>(nameof(Members)); }
+            set { BackingStore?.Set(nameof(Members), value); }
+        }
         /// <summary>The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.</summary>
-        public string RoleTemplateId { get; set; }
+        public string RoleTemplateId {
+            get { return BackingStore?.Get<string>(nameof(RoleTemplateId)); }
+            set { BackingStore?.Set(nameof(RoleTemplateId), value); }
+        }
         /// <summary>Members of this directory role that are scoped to administrative units. Read-only. Nullable.</summary>
-        public List<ScopedRoleMembership> ScopedMembers { get; set; }
+        public List<ScopedRoleMembership> ScopedMembers {
+            get { return BackingStore?.Get<List<ScopedRoleMembership>>(nameof(ScopedMembers)); }
+            set { BackingStore?.Set(nameof(ScopedMembers), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

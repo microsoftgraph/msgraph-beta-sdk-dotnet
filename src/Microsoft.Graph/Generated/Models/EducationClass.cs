@@ -4,47 +4,108 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the educationRoot singleton.</summary>
     public class EducationClass : Entity, IParsable {
         /// <summary>All categories associated with this class. Nullable.</summary>
-        public List<EducationCategory> AssignmentCategories { get; set; }
+        public List<EducationCategory> AssignmentCategories {
+            get { return BackingStore?.Get<List<EducationCategory>>(nameof(AssignmentCategories)); }
+            set { BackingStore?.Set(nameof(AssignmentCategories), value); }
+        }
         /// <summary>Specifies class-level defaults respected by new assignments created in the class.</summary>
-        public EducationAssignmentDefaults AssignmentDefaults { get; set; }
+        public EducationAssignmentDefaults AssignmentDefaults {
+            get { return BackingStore?.Get<EducationAssignmentDefaults>(nameof(AssignmentDefaults)); }
+            set { BackingStore?.Set(nameof(AssignmentDefaults), value); }
+        }
         /// <summary>All assignments associated with this class. Nullable.</summary>
-        public List<EducationAssignment> Assignments { get; set; }
+        public List<EducationAssignment> Assignments {
+            get { return BackingStore?.Get<List<EducationAssignment>>(nameof(Assignments)); }
+            set { BackingStore?.Set(nameof(Assignments), value); }
+        }
         /// <summary>Specifies class-level assignments settings.</summary>
-        public EducationAssignmentSettings AssignmentSettings { get; set; }
+        public EducationAssignmentSettings AssignmentSettings {
+            get { return BackingStore?.Get<EducationAssignmentSettings>(nameof(AssignmentSettings)); }
+            set { BackingStore?.Set(nameof(AssignmentSettings), value); }
+        }
         /// <summary>Class code used by the school to identify the class.</summary>
-        public string ClassCode { get; set; }
+        public string ClassCode {
+            get { return BackingStore?.Get<string>(nameof(ClassCode)); }
+            set { BackingStore?.Set(nameof(ClassCode), value); }
+        }
         /// <summary>Course information for the class.</summary>
-        public EducationCourse Course { get; set; }
+        public EducationCourse Course {
+            get { return BackingStore?.Get<EducationCourse>(nameof(Course)); }
+            set { BackingStore?.Set(nameof(Course), value); }
+        }
         /// <summary>Entity who created the class.</summary>
-        public IdentitySet CreatedBy { get; set; }
+        public IdentitySet CreatedBy {
+            get { return BackingStore?.Get<IdentitySet>(nameof(CreatedBy)); }
+            set { BackingStore?.Set(nameof(CreatedBy), value); }
+        }
         /// <summary>Description of the class.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Name of the class.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>ID of the class from the syncing system.</summary>
-        public string ExternalId { get; set; }
+        public string ExternalId {
+            get { return BackingStore?.Get<string>(nameof(ExternalId)); }
+            set { BackingStore?.Set(nameof(ExternalId), value); }
+        }
         /// <summary>Name of the class in the syncing system.</summary>
-        public string ExternalName { get; set; }
+        public string ExternalName {
+            get { return BackingStore?.Get<string>(nameof(ExternalName)); }
+            set { BackingStore?.Set(nameof(ExternalName), value); }
+        }
         /// <summary>The type of external source this resource was generated from (automatically determined from externalSourceDetail). Possible values are: sis, lms, or manual.</summary>
-        public EducationExternalSource? ExternalSource { get; set; }
+        public EducationExternalSource? ExternalSource {
+            get { return BackingStore?.Get<EducationExternalSource?>(nameof(ExternalSource)); }
+            set { BackingStore?.Set(nameof(ExternalSource), value); }
+        }
         /// <summary>The name of the external source this resources was generated from.</summary>
-        public string ExternalSourceDetail { get; set; }
+        public string ExternalSourceDetail {
+            get { return BackingStore?.Get<string>(nameof(ExternalSourceDetail)); }
+            set { BackingStore?.Set(nameof(ExternalSourceDetail), value); }
+        }
         /// <summary>Grade level of the class.</summary>
-        public string Grade { get; set; }
+        public string Grade {
+            get { return BackingStore?.Get<string>(nameof(Grade)); }
+            set { BackingStore?.Set(nameof(Grade), value); }
+        }
         /// <summary>The underlying Microsoft 365 group object.</summary>
-        public Microsoft.Graph.Beta.Models.Group Group { get; set; }
+        public Microsoft.Graph.Beta.Models.Group Group {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Group>(nameof(Group)); }
+            set { BackingStore?.Set(nameof(Group), value); }
+        }
         /// <summary>Mail name for sending email to all members, if this is enabled.</summary>
-        public string MailNickname { get; set; }
+        public string MailNickname {
+            get { return BackingStore?.Get<string>(nameof(MailNickname)); }
+            set { BackingStore?.Set(nameof(MailNickname), value); }
+        }
         /// <summary>All users in the class. Nullable.</summary>
-        public List<EducationUser> Members { get; set; }
+        public List<EducationUser> Members {
+            get { return BackingStore?.Get<List<EducationUser>>(nameof(Members)); }
+            set { BackingStore?.Set(nameof(Members), value); }
+        }
         /// <summary>All schools that this class is associated with. Nullable.</summary>
-        public List<EducationSchool> Schools { get; set; }
+        public List<EducationSchool> Schools {
+            get { return BackingStore?.Get<List<EducationSchool>>(nameof(Schools)); }
+            set { BackingStore?.Set(nameof(Schools), value); }
+        }
         /// <summary>All teachers in the class. Nullable.</summary>
-        public List<EducationUser> Teachers { get; set; }
+        public List<EducationUser> Teachers {
+            get { return BackingStore?.Get<List<EducationUser>>(nameof(Teachers)); }
+            set { BackingStore?.Set(nameof(Teachers), value); }
+        }
         /// <summary>Term for the class.</summary>
-        public EducationTerm Term { get; set; }
+        public EducationTerm Term {
+            get { return BackingStore?.Get<EducationTerm>(nameof(Term)); }
+            set { BackingStore?.Set(nameof(Term), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

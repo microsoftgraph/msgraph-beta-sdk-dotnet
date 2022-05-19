@@ -4,43 +4,98 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the security singleton.</summary>
     public class HostSecurityProfile : Entity, IParsable {
         /// <summary>The azureSubscriptionId property</summary>
-        public string AzureSubscriptionId { get; set; }
+        public string AzureSubscriptionId {
+            get { return BackingStore?.Get<string>(nameof(AzureSubscriptionId)); }
+            set { BackingStore?.Set(nameof(AzureSubscriptionId), value); }
+        }
         /// <summary>The azureTenantId property</summary>
-        public string AzureTenantId { get; set; }
+        public string AzureTenantId {
+            get { return BackingStore?.Get<string>(nameof(AzureTenantId)); }
+            set { BackingStore?.Set(nameof(AzureTenantId), value); }
+        }
         /// <summary>The firstSeenDateTime property</summary>
-        public DateTimeOffset? FirstSeenDateTime { get; set; }
+        public DateTimeOffset? FirstSeenDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(FirstSeenDateTime)); }
+            set { BackingStore?.Set(nameof(FirstSeenDateTime), value); }
+        }
         /// <summary>The fqdn property</summary>
-        public string Fqdn { get; set; }
+        public string Fqdn {
+            get { return BackingStore?.Get<string>(nameof(Fqdn)); }
+            set { BackingStore?.Set(nameof(Fqdn), value); }
+        }
         /// <summary>The isAzureAdJoined property</summary>
-        public bool? IsAzureAdJoined { get; set; }
+        public bool? IsAzureAdJoined {
+            get { return BackingStore?.Get<bool?>(nameof(IsAzureAdJoined)); }
+            set { BackingStore?.Set(nameof(IsAzureAdJoined), value); }
+        }
         /// <summary>The isAzureAdRegistered property</summary>
-        public bool? IsAzureAdRegistered { get; set; }
+        public bool? IsAzureAdRegistered {
+            get { return BackingStore?.Get<bool?>(nameof(IsAzureAdRegistered)); }
+            set { BackingStore?.Set(nameof(IsAzureAdRegistered), value); }
+        }
         /// <summary>The isHybridAzureDomainJoined property</summary>
-        public bool? IsHybridAzureDomainJoined { get; set; }
+        public bool? IsHybridAzureDomainJoined {
+            get { return BackingStore?.Get<bool?>(nameof(IsHybridAzureDomainJoined)); }
+            set { BackingStore?.Set(nameof(IsHybridAzureDomainJoined), value); }
+        }
         /// <summary>The lastSeenDateTime property</summary>
-        public DateTimeOffset? LastSeenDateTime { get; set; }
+        public DateTimeOffset? LastSeenDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSeenDateTime)); }
+            set { BackingStore?.Set(nameof(LastSeenDateTime), value); }
+        }
         /// <summary>The logonUsers property</summary>
-        public List<LogonUser> LogonUsers { get; set; }
+        public List<LogonUser> LogonUsers {
+            get { return BackingStore?.Get<List<LogonUser>>(nameof(LogonUsers)); }
+            set { BackingStore?.Set(nameof(LogonUsers), value); }
+        }
         /// <summary>The netBiosName property</summary>
-        public string NetBiosName { get; set; }
+        public string NetBiosName {
+            get { return BackingStore?.Get<string>(nameof(NetBiosName)); }
+            set { BackingStore?.Set(nameof(NetBiosName), value); }
+        }
         /// <summary>The networkInterfaces property</summary>
-        public List<NetworkInterface> NetworkInterfaces { get; set; }
+        public List<NetworkInterface> NetworkInterfaces {
+            get { return BackingStore?.Get<List<NetworkInterface>>(nameof(NetworkInterfaces)); }
+            set { BackingStore?.Set(nameof(NetworkInterfaces), value); }
+        }
         /// <summary>The os property</summary>
-        public string Os { get; set; }
+        public string Os {
+            get { return BackingStore?.Get<string>(nameof(Os)); }
+            set { BackingStore?.Set(nameof(Os), value); }
+        }
         /// <summary>The osVersion property</summary>
-        public string OsVersion { get; set; }
+        public string OsVersion {
+            get { return BackingStore?.Get<string>(nameof(OsVersion)); }
+            set { BackingStore?.Set(nameof(OsVersion), value); }
+        }
         /// <summary>The parentHost property</summary>
-        public string ParentHost { get; set; }
+        public string ParentHost {
+            get { return BackingStore?.Get<string>(nameof(ParentHost)); }
+            set { BackingStore?.Set(nameof(ParentHost), value); }
+        }
         /// <summary>The relatedHostIds property</summary>
-        public List<string> RelatedHostIds { get; set; }
+        public List<string> RelatedHostIds {
+            get { return BackingStore?.Get<List<string>>(nameof(RelatedHostIds)); }
+            set { BackingStore?.Set(nameof(RelatedHostIds), value); }
+        }
         /// <summary>The riskScore property</summary>
-        public string RiskScore { get; set; }
+        public string RiskScore {
+            get { return BackingStore?.Get<string>(nameof(RiskScore)); }
+            set { BackingStore?.Set(nameof(RiskScore), value); }
+        }
         /// <summary>The tags property</summary>
-        public List<string> Tags { get; set; }
+        public List<string> Tags {
+            get { return BackingStore?.Get<List<string>>(nameof(Tags)); }
+            set { BackingStore?.Set(nameof(Tags), value); }
+        }
         /// <summary>The vendorInformation property</summary>
-        public SecurityVendorInformation VendorInformation { get; set; }
+        public SecurityVendorInformation VendorInformation {
+            get { return BackingStore?.Get<SecurityVendorInformation>(nameof(VendorInformation)); }
+            set { BackingStore?.Set(nameof(VendorInformation), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

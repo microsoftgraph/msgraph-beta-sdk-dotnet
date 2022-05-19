@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ConvertIdResult : IAdditionalDataHolder, IParsable {
+    public class ConvertIdResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.</summary>
-        public GenericError ErrorDetails { get; set; }
+        public GenericError ErrorDetails {
+            get { return BackingStore?.Get<GenericError>(nameof(ErrorDetails)); }
+            set { BackingStore?.Set(nameof(ErrorDetails), value); }
+        }
         /// <summary>The identifier that was converted. This value is the original, un-converted identifier.</summary>
-        public string SourceId { get; set; }
+        public string SourceId {
+            get { return BackingStore?.Get<string>(nameof(SourceId)); }
+            set { BackingStore?.Set(nameof(SourceId), value); }
+        }
         /// <summary>The converted identifier. This value is not present if the conversion failed.</summary>
-        public string TargetId { get; set; }
+        public string TargetId {
+            get { return BackingStore?.Get<string>(nameof(TargetId)); }
+            set { BackingStore?.Set(nameof(TargetId), value); }
+        }
         /// <summary>
         /// Instantiates a new convertIdResult and sets the default values.
         /// </summary>
         public ConvertIdResult() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

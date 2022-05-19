@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class AccessReviewHistoryScheduleSettings : IAdditionalDataHolder, IParsable {
+    public class AccessReviewHistoryScheduleSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The recurrence property</summary>
-        public PatternedRecurrence Recurrence { get; set; }
+        public PatternedRecurrence Recurrence {
+            get { return BackingStore?.Get<PatternedRecurrence>(nameof(Recurrence)); }
+            set { BackingStore?.Set(nameof(Recurrence), value); }
+        }
         /// <summary>A duration string in ISO 8601 duration format specifying the lookback period of the generated review history data. For example, if a history definition is scheduled to run on the 1st of every month, the reportRange is P1M. In this case, on the first of every month, access review history data will be collected containing only the previous month&apos;s review data. Note: Only years, months, and days ISO 8601 properties are supported. Required.</summary>
-        public string ReportRange { get; set; }
+        public string ReportRange {
+            get { return BackingStore?.Get<string>(nameof(ReportRange)); }
+            set { BackingStore?.Set(nameof(ReportRange), value); }
+        }
         /// <summary>
         /// Instantiates a new accessReviewHistoryScheduleSettings and sets the default values.
         /// </summary>
         public AccessReviewHistoryScheduleSettings() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

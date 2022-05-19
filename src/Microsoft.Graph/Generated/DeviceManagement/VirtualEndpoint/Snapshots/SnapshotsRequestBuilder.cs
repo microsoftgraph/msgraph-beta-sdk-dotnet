@@ -1,4 +1,6 @@
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.Count;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSubscriptions;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.Item;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -109,6 +111,20 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CloudPcSnapshotCollectionResponse>(requestInfo, CloudPcSnapshotCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Provides operations to call the getStorageAccounts method.
+        /// <param name="subscriptionId">Usage: subscriptionId=&apos;{subscriptionId}&apos;</param>
+        /// </summary>
+        public GetStorageAccountsWithSubscriptionIdRequestBuilder GetStorageAccountsWithSubscriptionId(string subscriptionId) {
+            if(string.IsNullOrEmpty(subscriptionId)) throw new ArgumentNullException(nameof(subscriptionId));
+            return new GetStorageAccountsWithSubscriptionIdRequestBuilder(PathParameters, RequestAdapter, subscriptionId);
+        }
+        /// <summary>
+        /// Provides operations to call the getSubscriptions method.
+        /// </summary>
+        public GetSubscriptionsRequestBuilder GetSubscriptions() {
+            return new GetSubscriptionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Create new navigation property to snapshots for deviceManagement

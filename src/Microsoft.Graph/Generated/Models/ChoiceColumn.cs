@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ChoiceColumn : IAdditionalDataHolder, IParsable {
+    public class ChoiceColumn : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>If true, allows custom values that aren&apos;t in the configured choices.</summary>
-        public bool? AllowTextEntry { get; set; }
+        public bool? AllowTextEntry {
+            get { return BackingStore?.Get<bool?>(nameof(AllowTextEntry)); }
+            set { BackingStore?.Set(nameof(AllowTextEntry), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The list of values available for this column.</summary>
-        public List<string> Choices { get; set; }
+        public List<string> Choices {
+            get { return BackingStore?.Get<List<string>>(nameof(Choices)); }
+            set { BackingStore?.Set(nameof(Choices), value); }
+        }
         /// <summary>How the choices are to be presented in the UX. Must be one of checkBoxes, dropDownMenu, or radioButtons</summary>
-        public string DisplayAs { get; set; }
+        public string DisplayAs {
+            get { return BackingStore?.Get<string>(nameof(DisplayAs)); }
+            set { BackingStore?.Set(nameof(DisplayAs), value); }
+        }
         /// <summary>
         /// Instantiates a new choiceColumn and sets the default values.
         /// </summary>
         public ChoiceColumn() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

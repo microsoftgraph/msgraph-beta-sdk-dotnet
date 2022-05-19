@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoleTemplates.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get directoryRoleTemplate
+        /// Retrieve the properties and relationships of a directoryroletemplate object.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<DirectoryRoleTemplateItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -142,7 +142,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoleTemplates.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get directoryRoleTemplate
+        /// Retrieve the properties and relationships of a directoryroletemplate object.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -185,7 +185,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoleTemplates.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get directoryRoleTemplate</summary>
+        /// <summary>Retrieve the properties and relationships of a directoryroletemplate object.</summary>
         public class DirectoryRoleTemplateItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

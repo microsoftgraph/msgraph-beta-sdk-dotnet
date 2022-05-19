@@ -1,23 +1,39 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Represents diagnostics status.</summary>
-    public class ManagedAppDiagnosticStatus : IAdditionalDataHolder, IParsable {
+    public class ManagedAppDiagnosticStatus : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Instruction on how to mitigate a failed validation</summary>
-        public string MitigationInstruction { get; set; }
+        public string MitigationInstruction {
+            get { return BackingStore?.Get<string>(nameof(MitigationInstruction)); }
+            set { BackingStore?.Set(nameof(MitigationInstruction), value); }
+        }
         /// <summary>The state of the operation</summary>
-        public string State { get; set; }
+        public string State {
+            get { return BackingStore?.Get<string>(nameof(State)); }
+            set { BackingStore?.Set(nameof(State), value); }
+        }
         /// <summary>The validation friendly name</summary>
-        public string ValidationName { get; set; }
+        public string ValidationName {
+            get { return BackingStore?.Get<string>(nameof(ValidationName)); }
+            set { BackingStore?.Set(nameof(ValidationName), value); }
+        }
         /// <summary>
         /// Instantiates a new managedAppDiagnosticStatus and sets the default values.
         /// </summary>
         public ManagedAppDiagnosticStatus() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

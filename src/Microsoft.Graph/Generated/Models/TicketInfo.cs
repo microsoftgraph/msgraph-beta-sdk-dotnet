@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class TicketInfo : IAdditionalDataHolder, IParsable {
+    public class TicketInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Ticket number meta data</summary>
-        public string TicketNumber { get; set; }
+        public string TicketNumber {
+            get { return BackingStore?.Get<string>(nameof(TicketNumber)); }
+            set { BackingStore?.Set(nameof(TicketNumber), value); }
+        }
         /// <summary>Ticket system meta data</summary>
-        public string TicketSystem { get; set; }
+        public string TicketSystem {
+            get { return BackingStore?.Get<string>(nameof(TicketSystem)); }
+            set { BackingStore?.Set(nameof(TicketSystem), value); }
+        }
         /// <summary>
         /// Instantiates a new ticketInfo and sets the default values.
         /// </summary>
         public TicketInfo() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class RecentNotebook : IAdditionalDataHolder, IParsable {
+    public class RecentNotebook : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The name of the notebook.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
-        public DateTimeOffset? LastAccessedTime { get; set; }
+        public DateTimeOffset? LastAccessedTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastAccessedTime)); }
+            set { BackingStore?.Set(nameof(LastAccessedTime), value); }
+        }
         /// <summary>Links for opening the notebook. The oneNoteClientURL link opens the notebook in the OneNote client, if it&apos;s installed. The oneNoteWebURL link opens the notebook in OneNote on the web.</summary>
-        public RecentNotebookLinks Links { get; set; }
+        public RecentNotebookLinks Links {
+            get { return BackingStore?.Get<RecentNotebookLinks>(nameof(Links)); }
+            set { BackingStore?.Set(nameof(Links), value); }
+        }
         /// <summary>The backend store where the Notebook resides, either OneDriveForBusiness or OneDrive.</summary>
-        public OnenoteSourceService? SourceService { get; set; }
+        public OnenoteSourceService? SourceService {
+            get { return BackingStore?.Get<OnenoteSourceService?>(nameof(SourceService)); }
+            set { BackingStore?.Set(nameof(SourceService), value); }
+        }
         /// <summary>
         /// Instantiates a new recentNotebook and sets the default values.
         /// </summary>
         public RecentNotebook() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

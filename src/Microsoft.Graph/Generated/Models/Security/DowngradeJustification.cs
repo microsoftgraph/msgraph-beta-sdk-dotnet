@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public class DowngradeJustification : IAdditionalDataHolder, IParsable {
+    public class DowngradeJustification : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The isDowngradeJustified property</summary>
-        public bool? IsDowngradeJustified { get; set; }
+        public bool? IsDowngradeJustified {
+            get { return BackingStore?.Get<bool?>(nameof(IsDowngradeJustified)); }
+            set { BackingStore?.Set(nameof(IsDowngradeJustified), value); }
+        }
         /// <summary>The justificationMessage property</summary>
-        public string JustificationMessage { get; set; }
+        public string JustificationMessage {
+            get { return BackingStore?.Get<string>(nameof(JustificationMessage)); }
+            set { BackingStore?.Set(nameof(JustificationMessage), value); }
+        }
         /// <summary>
         /// Instantiates a new downgradeJustification and sets the default values.
         /// </summary>
         public DowngradeJustification() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

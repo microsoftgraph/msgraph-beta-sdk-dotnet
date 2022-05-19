@@ -24,10 +24,10 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.policies.crossTenantAccessPolicy.partners.item collection</summary>
-        public CrossTenantAccessPolicyConfigurationPartnerItemRequestBuilder this[string position] { get {
+        public CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("crossTenantAccessPolicyConfigurationPartner%2DtenantId", position);
-            return new CrossTenantAccessPolicyConfigurationPartnerItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PartnersRequestBuilder and sets the default values.

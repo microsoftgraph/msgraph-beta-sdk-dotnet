@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class OnenoteOperation : Operation, IParsable {
         /// <summary>The error returned by the operation.</summary>
-        public OnenoteOperationError Error { get; set; }
+        public OnenoteOperationError Error {
+            get { return BackingStore?.Get<OnenoteOperationError>(nameof(Error)); }
+            set { BackingStore?.Set(nameof(Error), value); }
+        }
         /// <summary>The operation percent complete if the operation is still in running status.</summary>
-        public string PercentComplete { get; set; }
+        public string PercentComplete {
+            get { return BackingStore?.Get<string>(nameof(PercentComplete)); }
+            set { BackingStore?.Set(nameof(PercentComplete), value); }
+        }
         /// <summary>The resource id.</summary>
-        public string ResourceId { get; set; }
+        public string ResourceId {
+            get { return BackingStore?.Get<string>(nameof(ResourceId)); }
+            set { BackingStore?.Set(nameof(ResourceId), value); }
+        }
         /// <summary>The resource URI for the object. For example, the resource URI for a copied page or section.</summary>
-        public string ResourceLocation { get; set; }
+        public string ResourceLocation {
+            get { return BackingStore?.Get<string>(nameof(ResourceLocation)); }
+            set { BackingStore?.Set(nameof(ResourceLocation), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

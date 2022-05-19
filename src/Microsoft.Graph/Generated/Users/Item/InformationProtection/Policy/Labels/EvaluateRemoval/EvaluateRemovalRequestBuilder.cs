@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels.Ev
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(EvaluateRemovalRequestBody body, Action<EvaluateRemovalRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation CreatePostRequestInformation(EvaluateRemovalPostRequestBody body, Action<EvaluateRemovalRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels.Ev
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<EvaluateRemovalResponse> PostAsync(EvaluateRemovalRequestBody body, Action<EvaluateRemovalRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<EvaluateRemovalResponse> PostAsync(EvaluateRemovalPostRequestBody body, Action<EvaluateRemovalRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<EvaluateRemovalResponse>(requestInfo, EvaluateRemovalResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);

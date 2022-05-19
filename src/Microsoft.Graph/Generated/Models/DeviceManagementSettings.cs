@@ -1,42 +1,88 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class DeviceManagementSettings : IAdditionalDataHolder, IParsable {
+    public class DeviceManagementSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>The property to determine if Android device administrator enrollment is enabled for this account.</summary>
-        public bool? AndroidDeviceAdministratorEnrollmentEnabled { get; set; }
+        public bool? AndroidDeviceAdministratorEnrollmentEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(AndroidDeviceAdministratorEnrollmentEnabled)); }
+            set { BackingStore?.Set(nameof(AndroidDeviceAdministratorEnrollmentEnabled), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The Derived Credential Provider to use for this account. Possible values are: notConfigured, entrustDataCard, purebred, xTec, intercede.</summary>
-        public DerivedCredentialProviderType? DerivedCredentialProvider { get; set; }
+        public DerivedCredentialProviderType? DerivedCredentialProvider {
+            get { return BackingStore?.Get<DerivedCredentialProviderType?>(nameof(DerivedCredentialProvider)); }
+            set { BackingStore?.Set(nameof(DerivedCredentialProvider), value); }
+        }
         /// <summary>The Derived Credential Provider self-service URI.</summary>
-        public string DerivedCredentialUrl { get; set; }
+        public string DerivedCredentialUrl {
+            get { return BackingStore?.Get<string>(nameof(DerivedCredentialUrl)); }
+            set { BackingStore?.Set(nameof(DerivedCredentialUrl), value); }
+        }
         /// <summary>The number of days a device is allowed to go without checking in to remain compliant.</summary>
-        public int? DeviceComplianceCheckinThresholdDays { get; set; }
+        public int? DeviceComplianceCheckinThresholdDays {
+            get { return BackingStore?.Get<int?>(nameof(DeviceComplianceCheckinThresholdDays)); }
+            set { BackingStore?.Set(nameof(DeviceComplianceCheckinThresholdDays), value); }
+        }
         /// <summary>When the device does not check in for specified number of days, the company data might be removed and the device will not be under management. Valid values 30 to 270</summary>
-        public int? DeviceInactivityBeforeRetirementInDay { get; set; }
+        public int? DeviceInactivityBeforeRetirementInDay {
+            get { return BackingStore?.Get<int?>(nameof(DeviceInactivityBeforeRetirementInDay)); }
+            set { BackingStore?.Set(nameof(DeviceInactivityBeforeRetirementInDay), value); }
+        }
         /// <summary>Determines whether the autopilot diagnostic feature is enabled or not.</summary>
-        public bool? EnableAutopilotDiagnostics { get; set; }
+        public bool? EnableAutopilotDiagnostics {
+            get { return BackingStore?.Get<bool?>(nameof(EnableAutopilotDiagnostics)); }
+            set { BackingStore?.Set(nameof(EnableAutopilotDiagnostics), value); }
+        }
         /// <summary>Determines whether the device group membership report feature is enabled or not.</summary>
-        public bool? EnableDeviceGroupMembershipReport { get; set; }
+        public bool? EnableDeviceGroupMembershipReport {
+            get { return BackingStore?.Get<bool?>(nameof(EnableDeviceGroupMembershipReport)); }
+            set { BackingStore?.Set(nameof(EnableDeviceGroupMembershipReport), value); }
+        }
         /// <summary>Determines whether the enhanced troubleshooting UX is enabled or not.</summary>
-        public bool? EnableEnhancedTroubleshootingExperience { get; set; }
+        public bool? EnableEnhancedTroubleshootingExperience {
+            get { return BackingStore?.Get<bool?>(nameof(EnableEnhancedTroubleshootingExperience)); }
+            set { BackingStore?.Set(nameof(EnableEnhancedTroubleshootingExperience), value); }
+        }
         /// <summary>Determines whether the log collection feature should be available for use.</summary>
-        public bool? EnableLogCollection { get; set; }
+        public bool? EnableLogCollection {
+            get { return BackingStore?.Get<bool?>(nameof(EnableLogCollection)); }
+            set { BackingStore?.Set(nameof(EnableLogCollection), value); }
+        }
         /// <summary>Is feature enabled or not for enhanced jailbreak detection.</summary>
-        public bool? EnhancedJailBreak { get; set; }
+        public bool? EnhancedJailBreak {
+            get { return BackingStore?.Get<bool?>(nameof(EnhancedJailBreak)); }
+            set { BackingStore?.Set(nameof(EnhancedJailBreak), value); }
+        }
         /// <summary>The property to determine whether to ignore unsupported compliance settings on certian models of devices.</summary>
-        public bool? IgnoreDevicesForUnsupportedSettingsEnabled { get; set; }
+        public bool? IgnoreDevicesForUnsupportedSettingsEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(IgnoreDevicesForUnsupportedSettingsEnabled)); }
+            set { BackingStore?.Set(nameof(IgnoreDevicesForUnsupportedSettingsEnabled), value); }
+        }
         /// <summary>Is feature enabled or not for scheduled action for rule.</summary>
-        public bool? IsScheduledActionEnabled { get; set; }
+        public bool? IsScheduledActionEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(IsScheduledActionEnabled)); }
+            set { BackingStore?.Set(nameof(IsScheduledActionEnabled), value); }
+        }
         /// <summary>Device should be noncompliant when there is no compliance policy targeted when this is true</summary>
-        public bool? SecureByDefault { get; set; }
+        public bool? SecureByDefault {
+            get { return BackingStore?.Get<bool?>(nameof(SecureByDefault)); }
+            set { BackingStore?.Set(nameof(SecureByDefault), value); }
+        }
         /// <summary>
         /// Instantiates a new deviceManagementSettings and sets the default values.
         /// </summary>
         public DeviceManagementSettings() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

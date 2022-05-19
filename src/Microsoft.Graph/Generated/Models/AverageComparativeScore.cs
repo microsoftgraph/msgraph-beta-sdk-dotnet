@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class AverageComparativeScore : IAdditionalDataHolder, IParsable {
+    public class AverageComparativeScore : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Average score within specified basis.</summary>
-        public double? AverageScore { get; set; }
+        public double? AverageScore {
+            get { return BackingStore?.Get<double?>(nameof(AverageScore)); }
+            set { BackingStore?.Set(nameof(AverageScore), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Scope type. The possible values are: AllTenants, TotalSeats, IndustryTypes.</summary>
-        public string Basis { get; set; }
+        public string Basis {
+            get { return BackingStore?.Get<string>(nameof(Basis)); }
+            set { BackingStore?.Set(nameof(Basis), value); }
+        }
         /// <summary>
         /// Instantiates a new averageComparativeScore and sets the default values.
         /// </summary>
         public AverageComparativeScore() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

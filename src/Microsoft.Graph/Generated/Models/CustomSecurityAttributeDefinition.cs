@@ -4,25 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the directory singleton.</summary>
     public class CustomSecurityAttributeDefinition : Entity, IParsable {
         /// <summary>Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.</summary>
-        public List<AllowedValue> AllowedValues { get; set; }
+        public List<AllowedValue> AllowedValues {
+            get { return BackingStore?.Get<List<AllowedValue>>(nameof(AllowedValues)); }
+            set { BackingStore?.Set(nameof(AllowedValues), value); }
+        }
         /// <summary>Name of the attribute set. Case insensitive.</summary>
-        public string AttributeSet { get; set; }
+        public string AttributeSet {
+            get { return BackingStore?.Get<string>(nameof(AttributeSet)); }
+            set { BackingStore?.Set(nameof(AttributeSet), value); }
+        }
         /// <summary>Description of the custom security attribute. Can be up to 128 characters long and include Unicode characters. Can be changed later.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Indicates whether multiple values can be assigned to the custom security attribute. Cannot be changed later. If type is set to Boolean, isCollection cannot be set to true.</summary>
-        public bool? IsCollection { get; set; }
+        public bool? IsCollection {
+            get { return BackingStore?.Get<bool?>(nameof(IsCollection)); }
+            set { BackingStore?.Set(nameof(IsCollection), value); }
+        }
         /// <summary>Indicates whether custom security attribute values will be indexed for searching on objects that are assigned attribute values. Cannot be changed later.</summary>
-        public bool? IsSearchable { get; set; }
+        public bool? IsSearchable {
+            get { return BackingStore?.Get<bool?>(nameof(IsSearchable)); }
+            set { BackingStore?.Set(nameof(IsSearchable), value); }
+        }
         /// <summary>Name of the custom security attribute. Must be unique within an attribute set. Can be up to 32 characters long and include Unicode characters. Cannot contain spaces or special characters. Cannot be changed later. Case insensitive.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>Specifies whether the custom security attribute is active or deactivated. Acceptable values are Available and Deprecated. Can be changed later.</summary>
-        public string Status { get; set; }
+        public string Status {
+            get { return BackingStore?.Get<string>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>Data type for the custom security attribute values. Supported types are Boolean, Integer, and String. Cannot be changed later.</summary>
-        public string Type { get; set; }
+        public string Type {
+            get { return BackingStore?.Get<string>(nameof(Type)); }
+            set { BackingStore?.Set(nameof(Type), value); }
+        }
         /// <summary>Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If type is set to Boolean, usePreDefinedValuesOnly cannot be set to true.</summary>
-        public bool? UsePreDefinedValuesOnly { get; set; }
+        public bool? UsePreDefinedValuesOnly {
+            get { return BackingStore?.Get<bool?>(nameof(UsePreDefinedValuesOnly)); }
+            set { BackingStore?.Set(nameof(UsePreDefinedValuesOnly), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

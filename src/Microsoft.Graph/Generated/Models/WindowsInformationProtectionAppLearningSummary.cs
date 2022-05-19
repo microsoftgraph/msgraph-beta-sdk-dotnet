@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Windows Information Protection AppLearning Summary entity.</summary>
     public class WindowsInformationProtectionAppLearningSummary : Entity, IParsable {
         /// <summary>Application Name</summary>
-        public string ApplicationName { get; set; }
+        public string ApplicationName {
+            get { return BackingStore?.Get<string>(nameof(ApplicationName)); }
+            set { BackingStore?.Set(nameof(ApplicationName), value); }
+        }
         /// <summary>Application Type. Possible values are: universal, desktop.</summary>
-        public Microsoft.Graph.Beta.Models.ApplicationType? ApplicationType { get; set; }
+        public Microsoft.Graph.Beta.Models.ApplicationType? ApplicationType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ApplicationType?>(nameof(ApplicationType)); }
+            set { BackingStore?.Set(nameof(ApplicationType), value); }
+        }
         /// <summary>Device Count</summary>
-        public int? DeviceCount { get; set; }
+        public int? DeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(DeviceCount)); }
+            set { BackingStore?.Set(nameof(DeviceCount), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

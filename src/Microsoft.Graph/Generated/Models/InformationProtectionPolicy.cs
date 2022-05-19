@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class InformationProtectionPolicy : Entity, IParsable {
         /// <summary>The labels property</summary>
-        public List<InformationProtectionLabel> Labels { get; set; }
+        public List<InformationProtectionLabel> Labels {
+            get { return BackingStore?.Get<List<InformationProtectionLabel>>(nameof(Labels)); }
+            set { BackingStore?.Set(nameof(Labels), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

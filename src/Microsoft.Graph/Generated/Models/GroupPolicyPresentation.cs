@@ -4,20 +4,35 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The base entity for the display presentation of any of the additional options in a group policy definition.</summary>
     public class GroupPolicyPresentation : Entity, IParsable {
         /// <summary>The group policy definition associated with the presentation.</summary>
-        public GroupPolicyDefinition Definition { get; set; }
+        public GroupPolicyDefinition Definition {
+            get { return BackingStore?.Get<GroupPolicyDefinition>(nameof(Definition)); }
+            set { BackingStore?.Set(nameof(Definition), value); }
+        }
         /// <summary>Localized text label for any presentation entity. The default value is empty.</summary>
-        public string Label { get; set; }
+        public string Label {
+            get { return BackingStore?.Get<string>(nameof(Label)); }
+            set { BackingStore?.Set(nameof(Label), value); }
+        }
         /// <summary>The date and time the entity was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new GroupPolicyPresentation CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GroupPolicyPresentation();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.groupPolicyPresentation" => new GroupPolicyPresentation(),
+                _ => new GroupPolicyPresentation(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

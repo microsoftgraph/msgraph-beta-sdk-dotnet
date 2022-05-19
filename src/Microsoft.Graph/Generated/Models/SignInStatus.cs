@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SignInStatus : IAdditionalDataHolder, IParsable {
+    public class SignInStatus : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Provides additional details on the sign-in activity</summary>
-        public string AdditionalDetails { get; set; }
+        public string AdditionalDetails {
+            get { return BackingStore?.Get<string>(nameof(AdditionalDetails)); }
+            set { BackingStore?.Set(nameof(AdditionalDetails), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Provides the 5-6 digit error code that&apos;s generated during a sign-in failure. Check out the list of error codes and messages.</summary>
-        public int? ErrorCode { get; set; }
+        public int? ErrorCode {
+            get { return BackingStore?.Get<int?>(nameof(ErrorCode)); }
+            set { BackingStore?.Set(nameof(ErrorCode), value); }
+        }
         /// <summary>Provides the error message or the reason for failure for the corresponding sign-in activity. Check out the list of error codes and messages.</summary>
-        public string FailureReason { get; set; }
+        public string FailureReason {
+            get { return BackingStore?.Get<string>(nameof(FailureReason)); }
+            set { BackingStore?.Set(nameof(FailureReason), value); }
+        }
         /// <summary>
         /// Instantiates a new signInStatus and sets the default values.
         /// </summary>
         public SignInStatus() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

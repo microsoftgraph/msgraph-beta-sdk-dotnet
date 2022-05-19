@@ -1,32 +1,63 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ItemReference : IAdditionalDataHolder, IParsable {
+    public class ItemReference : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Unique identifier of the drive instance that contains the item. Read-only.</summary>
-        public string DriveId { get; set; }
+        public string DriveId {
+            get { return BackingStore?.Get<string>(nameof(DriveId)); }
+            set { BackingStore?.Set(nameof(DriveId), value); }
+        }
         /// <summary>Identifies the type of drive. See [drive][] resource for values.</summary>
-        public string DriveType { get; set; }
+        public string DriveType {
+            get { return BackingStore?.Get<string>(nameof(DriveType)); }
+            set { BackingStore?.Set(nameof(DriveType), value); }
+        }
         /// <summary>Unique identifier of the item in the drive. Read-only.</summary>
-        public string Id { get; set; }
+        public string Id {
+            get { return BackingStore?.Get<string>(nameof(Id)); }
+            set { BackingStore?.Set(nameof(Id), value); }
+        }
         /// <summary>The name of the item being referenced. Read-only.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>Path that can be used to navigate to the item. Read-only.</summary>
-        public string Path { get; set; }
+        public string PathObject {
+            get { return BackingStore?.Get<string>(nameof(PathObject)); }
+            set { BackingStore?.Set(nameof(PathObject), value); }
+        }
         /// <summary>A unique identifier for a shared resource that can be accessed via the [Shares][] API.</summary>
-        public string ShareId { get; set; }
+        public string ShareId {
+            get { return BackingStore?.Get<string>(nameof(ShareId)); }
+            set { BackingStore?.Set(nameof(ShareId), value); }
+        }
         /// <summary>Returns identifiers useful for SharePoint REST compatibility. Read-only.</summary>
-        public Microsoft.Graph.Beta.Models.SharepointIds SharepointIds { get; set; }
+        public Microsoft.Graph.Beta.Models.SharepointIds SharepointIds {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharepointIds>(nameof(SharepointIds)); }
+            set { BackingStore?.Set(nameof(SharepointIds), value); }
+        }
         /// <summary>For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.</summary>
-        public string SiteId { get; set; }
+        public string SiteId {
+            get { return BackingStore?.Get<string>(nameof(SiteId)); }
+            set { BackingStore?.Set(nameof(SiteId), value); }
+        }
         /// <summary>
         /// Instantiates a new itemReference and sets the default values.
         /// </summary>
         public ItemReference() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -46,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"driveType", n => { DriveType = n.GetStringValue(); } },
                 {"id", n => { Id = n.GetStringValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
-                {"path", n => { Path = n.GetStringValue(); } },
+                {"path", n => { PathObject = n.GetStringValue(); } },
                 {"shareId", n => { ShareId = n.GetStringValue(); } },
                 {"sharepointIds", n => { SharepointIds = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharepointIds>(Microsoft.Graph.Beta.Models.SharepointIds.CreateFromDiscriminatorValue); } },
                 {"siteId", n => { SiteId = n.GetStringValue(); } },
@@ -62,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("driveType", DriveType);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("path", Path);
+            writer.WriteStringValue("path", PathObject);
             writer.WriteStringValue("shareId", ShareId);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SharepointIds>("sharepointIds", SharepointIds);
             writer.WriteStringValue("siteId", SiteId);

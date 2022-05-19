@@ -4,29 +4,63 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class Authentication : Entity, IParsable {
         /// <summary>Represents the email addresses registered to a user for authentication.</summary>
-        public List<EmailAuthenticationMethod> EmailMethods { get; set; }
+        public List<EmailAuthenticationMethod> EmailMethods {
+            get { return BackingStore?.Get<List<EmailAuthenticationMethod>>(nameof(EmailMethods)); }
+            set { BackingStore?.Set(nameof(EmailMethods), value); }
+        }
         /// <summary>Represents the FIDO2 security keys registered to a user for authentication.</summary>
-        public List<Fido2AuthenticationMethod> Fido2Methods { get; set; }
+        public List<Fido2AuthenticationMethod> Fido2Methods {
+            get { return BackingStore?.Get<List<Fido2AuthenticationMethod>>(nameof(Fido2Methods)); }
+            set { BackingStore?.Set(nameof(Fido2Methods), value); }
+        }
         /// <summary>Represents all authentication methods registered to a user.</summary>
-        public List<AuthenticationMethod> Methods { get; set; }
+        public List<AuthenticationMethod> Methods {
+            get { return BackingStore?.Get<List<AuthenticationMethod>>(nameof(Methods)); }
+            set { BackingStore?.Set(nameof(Methods), value); }
+        }
         /// <summary>The details of the Microsoft Authenticator app registered to a user for authentication.</summary>
-        public List<MicrosoftAuthenticatorAuthenticationMethod> MicrosoftAuthenticatorMethods { get; set; }
+        public List<MicrosoftAuthenticatorAuthenticationMethod> MicrosoftAuthenticatorMethods {
+            get { return BackingStore?.Get<List<MicrosoftAuthenticatorAuthenticationMethod>>(nameof(MicrosoftAuthenticatorMethods)); }
+            set { BackingStore?.Set(nameof(MicrosoftAuthenticatorMethods), value); }
+        }
         /// <summary>The operations property</summary>
-        public List<LongRunningOperation> Operations { get; set; }
+        public List<LongRunningOperation> Operations {
+            get { return BackingStore?.Get<List<LongRunningOperation>>(nameof(Operations)); }
+            set { BackingStore?.Set(nameof(Operations), value); }
+        }
         /// <summary>Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.</summary>
-        public List<PasswordlessMicrosoftAuthenticatorAuthenticationMethod> PasswordlessMicrosoftAuthenticatorMethods { get; set; }
+        public List<PasswordlessMicrosoftAuthenticatorAuthenticationMethod> PasswordlessMicrosoftAuthenticatorMethods {
+            get { return BackingStore?.Get<List<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>>(nameof(PasswordlessMicrosoftAuthenticatorMethods)); }
+            set { BackingStore?.Set(nameof(PasswordlessMicrosoftAuthenticatorMethods), value); }
+        }
         /// <summary>Represents the details of the password authentication method registered to a user for authentication.</summary>
-        public List<PasswordAuthenticationMethod> PasswordMethods { get; set; }
+        public List<PasswordAuthenticationMethod> PasswordMethods {
+            get { return BackingStore?.Get<List<PasswordAuthenticationMethod>>(nameof(PasswordMethods)); }
+            set { BackingStore?.Set(nameof(PasswordMethods), value); }
+        }
         /// <summary>Represents the phone registered to a user for authentication.</summary>
-        public List<PhoneAuthenticationMethod> PhoneMethods { get; set; }
+        public List<PhoneAuthenticationMethod> PhoneMethods {
+            get { return BackingStore?.Get<List<PhoneAuthenticationMethod>>(nameof(PhoneMethods)); }
+            set { BackingStore?.Set(nameof(PhoneMethods), value); }
+        }
         /// <summary>The softwareOathMethods property</summary>
-        public List<SoftwareOathAuthenticationMethod> SoftwareOathMethods { get; set; }
+        public List<SoftwareOathAuthenticationMethod> SoftwareOathMethods {
+            get { return BackingStore?.Get<List<SoftwareOathAuthenticationMethod>>(nameof(SoftwareOathMethods)); }
+            set { BackingStore?.Set(nameof(SoftwareOathMethods), value); }
+        }
         /// <summary>Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.</summary>
-        public List<TemporaryAccessPassAuthenticationMethod> TemporaryAccessPassMethods { get; set; }
+        public List<TemporaryAccessPassAuthenticationMethod> TemporaryAccessPassMethods {
+            get { return BackingStore?.Get<List<TemporaryAccessPassAuthenticationMethod>>(nameof(TemporaryAccessPassMethods)); }
+            set { BackingStore?.Set(nameof(TemporaryAccessPassMethods), value); }
+        }
         /// <summary>Represents the Windows Hello for Business authentication method registered to a user for authentication.</summary>
-        public List<WindowsHelloForBusinessAuthenticationMethod> WindowsHelloForBusinessMethods { get; set; }
+        public List<WindowsHelloForBusinessAuthenticationMethod> WindowsHelloForBusinessMethods {
+            get { return BackingStore?.Get<List<WindowsHelloForBusinessAuthenticationMethod>>(nameof(WindowsHelloForBusinessMethods)); }
+            set { BackingStore?.Set(nameof(WindowsHelloForBusinessMethods), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

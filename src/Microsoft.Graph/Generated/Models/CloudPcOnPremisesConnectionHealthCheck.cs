@@ -1,30 +1,58 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class CloudPcOnPremisesConnectionHealthCheck : IAdditionalDataHolder, IParsable {
+    public class CloudPcOnPremisesConnectionHealthCheck : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Additional details about the health check or the recommended action.</summary>
-        public string AdditionalDetails { get; set; }
+        public string AdditionalDetails {
+            get { return BackingStore?.Get<string>(nameof(AdditionalDetails)); }
+            set { BackingStore?.Set(nameof(AdditionalDetails), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The display name for this health check item.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The end time of the health check item. Read-only.</summary>
-        public DateTimeOffset? EndDateTime { get; set; }
+        public DateTimeOffset? EndDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
+            set { BackingStore?.Set(nameof(EndDateTime), value); }
+        }
         /// <summary>The type of error that occurred during this health check.</summary>
-        public CloudPcOnPremisesConnectionHealthCheckErrorType? ErrorType { get; set; }
+        public CloudPcOnPremisesConnectionHealthCheckErrorType? ErrorType {
+            get { return BackingStore?.Get<CloudPcOnPremisesConnectionHealthCheckErrorType?>(nameof(ErrorType)); }
+            set { BackingStore?.Set(nameof(ErrorType), value); }
+        }
         /// <summary>The recommended action to fix the corresponding error.</summary>
-        public string RecommendedAction { get; set; }
+        public string RecommendedAction {
+            get { return BackingStore?.Get<string>(nameof(RecommendedAction)); }
+            set { BackingStore?.Set(nameof(RecommendedAction), value); }
+        }
         /// <summary>The start time of the health check item. Read-only.</summary>
-        public DateTimeOffset? StartDateTime { get; set; }
+        public DateTimeOffset? StartDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
+            set { BackingStore?.Set(nameof(StartDateTime), value); }
+        }
         /// <summary>The status of the health check item. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.</summary>
-        public CloudPcOnPremisesConnectionStatus? Status { get; set; }
+        public CloudPcOnPremisesConnectionStatus? Status {
+            get { return BackingStore?.Get<CloudPcOnPremisesConnectionStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>
         /// Instantiates a new cloudPcOnPremisesConnectionHealthCheck and sets the default values.
         /// </summary>
         public CloudPcOnPremisesConnectionHealthCheck() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

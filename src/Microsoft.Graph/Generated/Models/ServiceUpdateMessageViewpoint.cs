@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ServiceUpdateMessageViewpoint : IAdditionalDataHolder, IParsable {
+    public class ServiceUpdateMessageViewpoint : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether the user archived the message.</summary>
-        public bool? IsArchived { get; set; }
+        public bool? IsArchived {
+            get { return BackingStore?.Get<bool?>(nameof(IsArchived)); }
+            set { BackingStore?.Set(nameof(IsArchived), value); }
+        }
         /// <summary>Indicates whether the user marked the message as favorite.</summary>
-        public bool? IsFavorited { get; set; }
+        public bool? IsFavorited {
+            get { return BackingStore?.Get<bool?>(nameof(IsFavorited)); }
+            set { BackingStore?.Set(nameof(IsFavorited), value); }
+        }
         /// <summary>Indicates whether the user read the message.</summary>
-        public bool? IsRead { get; set; }
+        public bool? IsRead {
+            get { return BackingStore?.Get<bool?>(nameof(IsRead)); }
+            set { BackingStore?.Set(nameof(IsRead), value); }
+        }
         /// <summary>
         /// Instantiates a new serviceUpdateMessageViewpoint and sets the default values.
         /// </summary>
         public ServiceUpdateMessageViewpoint() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Singleton entity which represents the Exchange OnPremises policy configured for a tenant.</summary>
     public class DeviceManagementExchangeOnPremisesPolicy : Entity, IParsable {
         /// <summary>The list of device access rules in Exchange. The access rules apply globally to the entire Exchange organization</summary>
-        public List<DeviceManagementExchangeAccessRule> AccessRules { get; set; }
+        public List<DeviceManagementExchangeAccessRule> AccessRules {
+            get { return BackingStore?.Get<List<DeviceManagementExchangeAccessRule>>(nameof(AccessRules)); }
+            set { BackingStore?.Set(nameof(AccessRules), value); }
+        }
         /// <summary>The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access</summary>
-        public OnPremisesConditionalAccessSettings ConditionalAccessSettings { get; set; }
+        public OnPremisesConditionalAccessSettings ConditionalAccessSettings {
+            get { return BackingStore?.Get<OnPremisesConditionalAccessSettings>(nameof(ConditionalAccessSettings)); }
+            set { BackingStore?.Set(nameof(ConditionalAccessSettings), value); }
+        }
         /// <summary>Default access state in Exchange. This rule applies globally to the entire Exchange organization. Possible values are: none, allow, block, quarantine.</summary>
-        public DeviceManagementExchangeAccessLevel? DefaultAccessLevel { get; set; }
+        public DeviceManagementExchangeAccessLevel? DefaultAccessLevel {
+            get { return BackingStore?.Get<DeviceManagementExchangeAccessLevel?>(nameof(DefaultAccessLevel)); }
+            set { BackingStore?.Set(nameof(DefaultAccessLevel), value); }
+        }
         /// <summary>The list of device classes known to Exchange</summary>
-        public List<DeviceManagementExchangeDeviceClass> KnownDeviceClasses { get; set; }
+        public List<DeviceManagementExchangeDeviceClass> KnownDeviceClasses {
+            get { return BackingStore?.Get<List<DeviceManagementExchangeDeviceClass>>(nameof(KnownDeviceClasses)); }
+            set { BackingStore?.Set(nameof(KnownDeviceClasses), value); }
+        }
         /// <summary>Notification text that will be sent to users quarantined by this policy. This is UTF8 encoded byte array HTML.</summary>
-        public byte[] NotificationContent { get; set; }
+        public byte[] NotificationContent {
+            get { return BackingStore?.Get<byte[]>(nameof(NotificationContent)); }
+            set { BackingStore?.Set(nameof(NotificationContent), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

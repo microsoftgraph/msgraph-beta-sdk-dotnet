@@ -1,26 +1,48 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ComanagementEligibleDevicesSummary : IAdditionalDataHolder, IParsable {
+    public class ComanagementEligibleDevicesSummary : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Count of devices already Co-Managed</summary>
-        public int? ComanagedCount { get; set; }
+        public int? ComanagedCount {
+            get { return BackingStore?.Get<int?>(nameof(ComanagedCount)); }
+            set { BackingStore?.Set(nameof(ComanagedCount), value); }
+        }
         /// <summary>Count of devices eligible for Co-Management but not yet joined to Azure Active Directory</summary>
-        public int? EligibleButNotAzureAdJoinedCount { get; set; }
+        public int? EligibleButNotAzureAdJoinedCount {
+            get { return BackingStore?.Get<int?>(nameof(EligibleButNotAzureAdJoinedCount)); }
+            set { BackingStore?.Set(nameof(EligibleButNotAzureAdJoinedCount), value); }
+        }
         /// <summary>Count of devices fully eligible for Co-Management</summary>
-        public int? EligibleCount { get; set; }
+        public int? EligibleCount {
+            get { return BackingStore?.Get<int?>(nameof(EligibleCount)); }
+            set { BackingStore?.Set(nameof(EligibleCount), value); }
+        }
         /// <summary>Count of devices ineligible for Co-Management</summary>
-        public int? IneligibleCount { get; set; }
+        public int? IneligibleCount {
+            get { return BackingStore?.Get<int?>(nameof(IneligibleCount)); }
+            set { BackingStore?.Set(nameof(IneligibleCount), value); }
+        }
         /// <summary>Count of devices that will be eligible for Co-Management after an OS update</summary>
-        public int? NeedsOsUpdateCount { get; set; }
+        public int? NeedsOsUpdateCount {
+            get { return BackingStore?.Get<int?>(nameof(NeedsOsUpdateCount)); }
+            set { BackingStore?.Set(nameof(NeedsOsUpdateCount), value); }
+        }
         /// <summary>
-        /// Instantiates a new comanagementEligibleDevicesSummary and sets the default values.
+        /// Instantiates a new ComanagementEligibleDevicesSummary and sets the default values.
         /// </summary>
         public ComanagementEligibleDevicesSummary() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

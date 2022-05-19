@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SensitivityLabelAssignment : IAdditionalDataHolder, IParsable {
+    public class SensitivityLabelAssignment : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Indicates whether the label assignment is done automatically, as a standard, or a privileged operation. The possible values are: standard, privileged, auto, unknownFutureValue.</summary>
-        public SensitivityLabelAssignmentMethod? AssignmentMethod { get; set; }
+        public SensitivityLabelAssignmentMethod? AssignmentMethod {
+            get { return BackingStore?.Get<SensitivityLabelAssignmentMethod?>(nameof(AssignmentMethod)); }
+            set { BackingStore?.Set(nameof(AssignmentMethod), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The unique identifier for the sensitivity label assigned to the file.</summary>
-        public string SensitivityLabelId { get; set; }
+        public string SensitivityLabelId {
+            get { return BackingStore?.Get<string>(nameof(SensitivityLabelId)); }
+            set { BackingStore?.Set(nameof(SensitivityLabelId), value); }
+        }
         /// <summary>The unique identifier for the tenant that hosts the file when this label is applied.</summary>
-        public string TenantId { get; set; }
+        public string TenantId {
+            get { return BackingStore?.Get<string>(nameof(TenantId)); }
+            set { BackingStore?.Set(nameof(TenantId), value); }
+        }
         /// <summary>
         /// Instantiates a new sensitivityLabelAssignment and sets the default values.
         /// </summary>
         public SensitivityLabelAssignment() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

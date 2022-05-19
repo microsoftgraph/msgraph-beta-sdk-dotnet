@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class OptionalClaims : IAdditionalDataHolder, IParsable {
+    public class OptionalClaims : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The optional claims returned in the JWT access token.</summary>
-        public List<OptionalClaim> AccessToken { get; set; }
+        public List<OptionalClaim> AccessToken {
+            get { return BackingStore?.Get<List<OptionalClaim>>(nameof(AccessToken)); }
+            set { BackingStore?.Set(nameof(AccessToken), value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The optional claims returned in the JWT ID token.</summary>
-        public List<OptionalClaim> IdToken { get; set; }
+        public List<OptionalClaim> IdToken {
+            get { return BackingStore?.Get<List<OptionalClaim>>(nameof(IdToken)); }
+            set { BackingStore?.Set(nameof(IdToken), value); }
+        }
         /// <summary>The optional claims returned in the SAML token.</summary>
-        public List<OptionalClaim> Saml2Token { get; set; }
+        public List<OptionalClaim> Saml2Token {
+            get { return BackingStore?.Get<List<OptionalClaim>>(nameof(Saml2Token)); }
+            set { BackingStore?.Set(nameof(Saml2Token), value); }
+        }
         /// <summary>
         /// Instantiates a new optionalClaims and sets the default values.
         /// </summary>
         public OptionalClaims() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

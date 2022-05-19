@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the commsApplication singleton.</summary>
     public class AudioRoutingGroup : Entity, IParsable {
         /// <summary>List of receiving participant ids.</summary>
-        public List<string> Receivers { get; set; }
+        public List<string> Receivers {
+            get { return BackingStore?.Get<List<string>>(nameof(Receivers)); }
+            set { BackingStore?.Set(nameof(Receivers), value); }
+        }
         /// <summary>Routing group mode.  Possible values are: oneToOne, multicast.</summary>
-        public Microsoft.Graph.Beta.Models.RoutingMode? RoutingMode { get; set; }
+        public Microsoft.Graph.Beta.Models.RoutingMode? RoutingMode {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RoutingMode?>(nameof(RoutingMode)); }
+            set { BackingStore?.Set(nameof(RoutingMode), value); }
+        }
         /// <summary>List of source participant ids.</summary>
-        public List<string> Sources { get; set; }
+        public List<string> Sources {
+            get { return BackingStore?.Get<List<string>>(nameof(Sources)); }
+            set { BackingStore?.Set(nameof(Sources), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -7,15 +7,30 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provides operations to manage the auditLogRoot singleton.</summary>
     public class AuditLogRoot : Entity, IParsable {
         /// <summary>Read-only. Nullable.</summary>
-        public List<DirectoryAudit> DirectoryAudits { get; set; }
+        public List<DirectoryAudit> DirectoryAudits {
+            get { return BackingStore?.Get<List<DirectoryAudit>>(nameof(DirectoryAudits)); }
+            set { BackingStore?.Set(nameof(DirectoryAudits), value); }
+        }
         /// <summary>The directoryProvisioning property</summary>
-        public List<ProvisioningObjectSummary> DirectoryProvisioning { get; set; }
+        public List<ProvisioningObjectSummary> DirectoryProvisioning {
+            get { return BackingStore?.Get<List<ProvisioningObjectSummary>>(nameof(DirectoryProvisioning)); }
+            set { BackingStore?.Set(nameof(DirectoryProvisioning), value); }
+        }
         /// <summary>The provisioning property</summary>
-        public List<ProvisioningObjectSummary> Provisioning { get; set; }
+        public List<ProvisioningObjectSummary> Provisioning {
+            get { return BackingStore?.Get<List<ProvisioningObjectSummary>>(nameof(Provisioning)); }
+            set { BackingStore?.Set(nameof(Provisioning), value); }
+        }
         /// <summary>The restrictedSignIns property</summary>
-        public List<RestrictedSignIn> RestrictedSignIns { get; set; }
+        public List<RestrictedSignIn> RestrictedSignIns {
+            get { return BackingStore?.Get<List<RestrictedSignIn>>(nameof(RestrictedSignIns)); }
+            set { BackingStore?.Set(nameof(RestrictedSignIns), value); }
+        }
         /// <summary>Read-only. Nullable.</summary>
-        public List<SignIn> SignIns { get; set; }
+        public List<SignIn> SignIns {
+            get { return BackingStore?.Get<List<SignIn>>(nameof(SignIns)); }
+            set { BackingStore?.Set(nameof(SignIns), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

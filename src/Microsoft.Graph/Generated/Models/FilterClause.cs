@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class FilterClause : IAdditionalDataHolder, IParsable {
+    public class FilterClause : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Name of the operator to be applied to the source and target operands. Must be one of the supported operators. Supported operators can be discovered.</summary>
-        public string OperatorName { get; set; }
+        public string OperatorName {
+            get { return BackingStore?.Get<string>(nameof(OperatorName)); }
+            set { BackingStore?.Set(nameof(OperatorName), value); }
+        }
         /// <summary>Name of source operand (the operand being tested). The source operand name must match one of the attribute names on the source object.</summary>
-        public string SourceOperandName { get; set; }
+        public string SourceOperandName {
+            get { return BackingStore?.Get<string>(nameof(SourceOperandName)); }
+            set { BackingStore?.Set(nameof(SourceOperandName), value); }
+        }
         /// <summary>Values that the source operand will be tested against.</summary>
-        public FilterOperand TargetOperand { get; set; }
+        public FilterOperand TargetOperand {
+            get { return BackingStore?.Get<FilterOperand>(nameof(TargetOperand)); }
+            set { BackingStore?.Set(nameof(TargetOperand), value); }
+        }
         /// <summary>
         /// Instantiates a new filterClause and sets the default values.
         /// </summary>
         public FilterClause() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

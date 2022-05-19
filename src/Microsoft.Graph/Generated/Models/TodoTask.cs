@@ -4,39 +4,88 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class TodoTask : Entity, IParsable {
         /// <summary>The task body that typically contains information about the task.</summary>
-        public ItemBody Body { get; set; }
+        public ItemBody Body {
+            get { return BackingStore?.Get<ItemBody>(nameof(Body)); }
+            set { BackingStore?.Set(nameof(Body), value); }
+        }
         /// <summary>The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: &apos;2020-01-01T00:00:00Z&apos;.</summary>
-        public DateTimeOffset? BodyLastModifiedDateTime { get; set; }
+        public DateTimeOffset? BodyLastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(BodyLastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(BodyLastModifiedDateTime), value); }
+        }
         /// <summary>The categories property</summary>
-        public List<string> Categories { get; set; }
+        public List<string> Categories {
+            get { return BackingStore?.Get<List<string>>(nameof(Categories)); }
+            set { BackingStore?.Set(nameof(Categories), value); }
+        }
         /// <summary>The checklistItems property</summary>
-        public List<ChecklistItem> ChecklistItems { get; set; }
+        public List<ChecklistItem> ChecklistItems {
+            get { return BackingStore?.Get<List<ChecklistItem>>(nameof(ChecklistItems)); }
+            set { BackingStore?.Set(nameof(ChecklistItems), value); }
+        }
         /// <summary>The date in the specified time zone that the task was finished.</summary>
-        public DateTimeTimeZone CompletedDateTime { get; set; }
+        public DateTimeTimeZone CompletedDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(CompletedDateTime)); }
+            set { BackingStore?.Set(nameof(CompletedDateTime), value); }
+        }
         /// <summary>The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: &apos;2020-01-01T00:00:00Z&apos;.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>The date in the specified time zone that the task is to be finished.</summary>
-        public DateTimeTimeZone DueDateTime { get; set; }
+        public DateTimeTimeZone DueDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(DueDateTime)); }
+            set { BackingStore?.Set(nameof(DueDateTime), value); }
+        }
         /// <summary>The collection of open extensions defined for the task. Nullable.</summary>
-        public List<Extension> Extensions { get; set; }
+        public List<Extension> Extensions {
+            get { return BackingStore?.Get<List<Extension>>(nameof(Extensions)); }
+            set { BackingStore?.Set(nameof(Extensions), value); }
+        }
         /// <summary>The importance of the task. Possible values are: low, normal, high.</summary>
-        public Microsoft.Graph.Beta.Models.Importance? Importance { get; set; }
+        public Microsoft.Graph.Beta.Models.Importance? Importance {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Importance?>(nameof(Importance)); }
+            set { BackingStore?.Set(nameof(Importance), value); }
+        }
         /// <summary>Set to true if an alert is set to remind the user of the task.</summary>
-        public bool? IsReminderOn { get; set; }
+        public bool? IsReminderOn {
+            get { return BackingStore?.Get<bool?>(nameof(IsReminderOn)); }
+            set { BackingStore?.Set(nameof(IsReminderOn), value); }
+        }
         /// <summary>The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: &apos;2020-01-01T00:00:00Z&apos;.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>A collection of resources linked to the task.</summary>
-        public List<LinkedResource> LinkedResources { get; set; }
+        public List<LinkedResource> LinkedResources {
+            get { return BackingStore?.Get<List<LinkedResource>>(nameof(LinkedResources)); }
+            set { BackingStore?.Set(nameof(LinkedResources), value); }
+        }
         /// <summary>The recurrence pattern for the task.</summary>
-        public PatternedRecurrence Recurrence { get; set; }
+        public PatternedRecurrence Recurrence {
+            get { return BackingStore?.Get<PatternedRecurrence>(nameof(Recurrence)); }
+            set { BackingStore?.Set(nameof(Recurrence), value); }
+        }
         /// <summary>The date and time for a reminder alert of the task to occur.</summary>
-        public DateTimeTimeZone ReminderDateTime { get; set; }
+        public DateTimeTimeZone ReminderDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(ReminderDateTime)); }
+            set { BackingStore?.Set(nameof(ReminderDateTime), value); }
+        }
         /// <summary>Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.</summary>
-        public TaskStatus? Status { get; set; }
+        public TaskStatus? Status {
+            get { return BackingStore?.Get<TaskStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>A brief description of the task.</summary>
-        public string Title { get; set; }
+        public string Title {
+            get { return BackingStore?.Get<string>(nameof(Title)); }
+            set { BackingStore?.Set(nameof(Title), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

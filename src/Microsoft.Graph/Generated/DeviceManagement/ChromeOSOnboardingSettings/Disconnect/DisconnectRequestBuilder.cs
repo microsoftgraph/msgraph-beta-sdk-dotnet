@@ -67,9 +67,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.Disco
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<DisconnectResponse> PostAsync(Action<DisconnectRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<ChromeOSOnboardingStatus?> PostAsync(Action<DisconnectRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<DisconnectResponse>(requestInfo, DisconnectResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendPrimitiveAsync<ChromeOSOnboardingStatus?>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class DisconnectRequestBuilderPostRequestConfiguration {
@@ -83,40 +83,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.Disco
             public DisconnectRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
                 Headers = new Dictionary<string, string>();
-            }
-        }
-        /// <summary>Union type wrapper for classes chromeOSOnboardingStatus</summary>
-        public class DisconnectResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type chromeOSOnboardingStatus</summary>
-            public Microsoft.Graph.Beta.Models.ChromeOSOnboardingStatus? ChromeOSOnboardingStatus { get; set; }
-            /// <summary>
-            /// Instantiates a new disconnectResponse and sets the default values.
-            /// </summary>
-            public DisconnectResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static DisconnectResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new DisconnectResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-                return new Dictionary<string, Action<IParseNode>> {
-                    {"chromeOSOnboardingStatus", n => { ChromeOSOnboardingStatus = n.GetEnumValue<ChromeOSOnboardingStatus>(); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteEnumValue<ChromeOSOnboardingStatus>("chromeOSOnboardingStatus", ChromeOSOnboardingStatus);
-                writer.WriteAdditionalData(AdditionalData);
             }
         }
     }

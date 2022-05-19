@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class UserAnalytics : Entity, IParsable {
         /// <summary>The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.</summary>
-        public List<Microsoft.Graph.Beta.Models.ActivityStatistics> ActivityStatistics { get; set; }
+        public List<Microsoft.Graph.Beta.Models.ActivityStatistics> ActivityStatistics {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ActivityStatistics>>(nameof(ActivityStatistics)); }
+            set { BackingStore?.Set(nameof(ActivityStatistics), value); }
+        }
         /// <summary>The current settings for a user to use the analytics API.</summary>
-        public Microsoft.Graph.Beta.Models.Settings Settings { get; set; }
+        public Microsoft.Graph.Beta.Models.Settings Settings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Settings>(nameof(Settings)); }
+            set { BackingStore?.Set(nameof(Settings), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

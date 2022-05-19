@@ -1,26 +1,48 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class PublicError : IAdditionalDataHolder, IParsable {
+    public class PublicError : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Represents the error code.</summary>
-        public string Code { get; set; }
+        public string Code {
+            get { return BackingStore?.Get<string>(nameof(Code)); }
+            set { BackingStore?.Set(nameof(Code), value); }
+        }
         /// <summary>Details of the error.</summary>
-        public List<PublicErrorDetail> Details { get; set; }
+        public List<PublicErrorDetail> Details {
+            get { return BackingStore?.Get<List<PublicErrorDetail>>(nameof(Details)); }
+            set { BackingStore?.Set(nameof(Details), value); }
+        }
         /// <summary>Details of the inner error.</summary>
-        public PublicInnerError InnerError { get; set; }
+        public PublicInnerError InnerError {
+            get { return BackingStore?.Get<PublicInnerError>(nameof(InnerError)); }
+            set { BackingStore?.Set(nameof(InnerError), value); }
+        }
         /// <summary>A non-localized message for the developer.</summary>
-        public string Message { get; set; }
+        public string Message {
+            get { return BackingStore?.Get<string>(nameof(Message)); }
+            set { BackingStore?.Set(nameof(Message), value); }
+        }
         /// <summary>The target of the error.</summary>
-        public string Target { get; set; }
+        public string Target {
+            get { return BackingStore?.Get<string>(nameof(Target)); }
+            set { BackingStore?.Set(nameof(Target), value); }
+        }
         /// <summary>
         /// Instantiates a new publicError and sets the default values.
         /// </summary>
         public PublicError() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

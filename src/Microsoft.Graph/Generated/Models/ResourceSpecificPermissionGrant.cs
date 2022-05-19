@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of chat entities.</summary>
     public class ResourceSpecificPermissionGrant : DirectoryObject, IParsable {
         /// <summary>ID of the service principal of the Azure AD app that has been granted access. Read-only.</summary>
-        public string ClientAppId { get; set; }
+        public string ClientAppId {
+            get { return BackingStore?.Get<string>(nameof(ClientAppId)); }
+            set { BackingStore?.Set(nameof(ClientAppId), value); }
+        }
         /// <summary>ID of the Azure AD app that has been granted access. Read-only.</summary>
-        public string ClientId { get; set; }
+        public string ClientId {
+            get { return BackingStore?.Get<string>(nameof(ClientId)); }
+            set { BackingStore?.Set(nameof(ClientId), value); }
+        }
         /// <summary>The name of the resource-specific permission. Read-only.</summary>
-        public string Permission { get; set; }
+        public string Permission {
+            get { return BackingStore?.Get<string>(nameof(Permission)); }
+            set { BackingStore?.Set(nameof(Permission), value); }
+        }
         /// <summary>The type of permission. Possible values are: Application, Delegated. Read-only.</summary>
-        public string PermissionType { get; set; }
+        public string PermissionType {
+            get { return BackingStore?.Get<string>(nameof(PermissionType)); }
+            set { BackingStore?.Set(nameof(PermissionType), value); }
+        }
         /// <summary>ID of the Azure AD app that is hosting the resource. Read-only.</summary>
-        public string ResourceAppId { get; set; }
+        public string ResourceAppId {
+            get { return BackingStore?.Get<string>(nameof(ResourceAppId)); }
+            set { BackingStore?.Set(nameof(ResourceAppId), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

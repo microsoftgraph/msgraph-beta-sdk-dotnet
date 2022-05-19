@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Contains properties used to assign a device management script to a group.</summary>
     public class DeviceHealthScriptAssignment : Entity, IParsable {
         /// <summary>Determine whether we want to run detection script only or run both detection script and remediation script</summary>
-        public bool? RunRemediationScript { get; set; }
+        public bool? RunRemediationScript {
+            get { return BackingStore?.Get<bool?>(nameof(RunRemediationScript)); }
+            set { BackingStore?.Set(nameof(RunRemediationScript), value); }
+        }
         /// <summary>Script run schedule for the target group</summary>
-        public DeviceHealthScriptRunSchedule RunSchedule { get; set; }
+        public DeviceHealthScriptRunSchedule RunSchedule {
+            get { return BackingStore?.Get<DeviceHealthScriptRunSchedule>(nameof(RunSchedule)); }
+            set { BackingStore?.Set(nameof(RunSchedule), value); }
+        }
         /// <summary>The Azure Active Directory group we are targeting the script to</summary>
-        public DeviceAndAppManagementAssignmentTarget Target { get; set; }
+        public DeviceAndAppManagementAssignmentTarget Target {
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>(nameof(Target)); }
+            set { BackingStore?.Set(nameof(Target), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

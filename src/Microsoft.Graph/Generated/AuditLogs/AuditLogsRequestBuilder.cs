@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.AuditLogs {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// auditLogRoot resource type
+        /// Contains different types of audit logs. This resources returns a singleton auditLog resource. It doesn&apos;t contain any usable properties.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<AuditLogsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.AuditLogs {
             return requestInfo;
         }
         /// <summary>
-        /// auditLogRoot resource type
+        /// Contains different types of audit logs. This resources returns a singleton auditLog resource. It doesn&apos;t contain any usable properties.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.AuditLogs {
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>auditLogRoot resource type</summary>
+        /// <summary>Contains different types of audit logs. This resources returns a singleton auditLog resource. It doesn&apos;t contain any usable properties.</summary>
         public class AuditLogsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

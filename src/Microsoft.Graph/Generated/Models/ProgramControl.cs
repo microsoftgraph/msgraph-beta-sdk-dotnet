@@ -4,25 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of programControl entities.</summary>
     public class ProgramControl : Entity, IParsable {
         /// <summary>The controlId of the control, in particular the identifier of an access review. Required on create.</summary>
-        public string ControlId { get; set; }
+        public string ControlId {
+            get { return BackingStore?.Get<string>(nameof(ControlId)); }
+            set { BackingStore?.Set(nameof(ControlId), value); }
+        }
         /// <summary>The programControlType identifies the type of program control - for example, a control linking to guest access reviews. Required on create.</summary>
-        public string ControlTypeId { get; set; }
+        public string ControlTypeId {
+            get { return BackingStore?.Get<string>(nameof(ControlTypeId)); }
+            set { BackingStore?.Set(nameof(ControlTypeId), value); }
+        }
         /// <summary>The creation date and time of the program control.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>The name of the control.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The user who created the program control.</summary>
-        public UserIdentity Owner { get; set; }
+        public UserIdentity Owner {
+            get { return BackingStore?.Get<UserIdentity>(nameof(Owner)); }
+            set { BackingStore?.Set(nameof(Owner), value); }
+        }
         /// <summary>The program this control is part of.</summary>
-        public Microsoft.Graph.Beta.Models.Program Program { get; set; }
+        public Microsoft.Graph.Beta.Models.Program Program {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Program>(nameof(Program)); }
+            set { BackingStore?.Set(nameof(Program), value); }
+        }
         /// <summary>The programId of the program this control is a part of. Required on create.</summary>
-        public string ProgramId { get; set; }
+        public string ProgramId {
+            get { return BackingStore?.Get<string>(nameof(ProgramId)); }
+            set { BackingStore?.Set(nameof(ProgramId), value); }
+        }
         /// <summary>The resource, a group or an app, targeted by this program control&apos;s access review.</summary>
-        public ProgramResource Resource { get; set; }
+        public ProgramResource Resource {
+            get { return BackingStore?.Get<ProgramResource>(nameof(Resource)); }
+            set { BackingStore?.Set(nameof(Resource), value); }
+        }
         /// <summary>The life cycle status of the control.</summary>
-        public string Status { get; set; }
+        public string Status {
+            get { return BackingStore?.Get<string>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

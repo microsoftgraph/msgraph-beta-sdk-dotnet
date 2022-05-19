@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Role Scope Tag</summary>
     public class RoleScopeTag : Entity, IParsable {
         /// <summary>The list of assignments for this Role Scope Tag.</summary>
-        public List<RoleScopeTagAutoAssignment> Assignments { get; set; }
+        public List<RoleScopeTagAutoAssignment> Assignments {
+            get { return BackingStore?.Get<List<RoleScopeTagAutoAssignment>>(nameof(Assignments)); }
+            set { BackingStore?.Set(nameof(Assignments), value); }
+        }
         /// <summary>Description of the Role Scope Tag.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The display or friendly name of the Role Scope Tag.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Description of the Role Scope Tag. This property is read-only.</summary>
-        public bool? IsBuiltIn { get; set; }
+        public bool? IsBuiltIn {
+            get { return BackingStore?.Get<bool?>(nameof(IsBuiltIn)); }
+            set { BackingStore?.Set(nameof(IsBuiltIn), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

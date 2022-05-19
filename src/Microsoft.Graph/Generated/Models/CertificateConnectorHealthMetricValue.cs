@@ -1,23 +1,39 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Metric snapshot value returned in response to a GetHealthMetricTimeSeries request.</summary>
-    public class CertificateConnectorHealthMetricValue : IAdditionalDataHolder, IParsable {
+    public class CertificateConnectorHealthMetricValue : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Timestamp for this metric data-point.</summary>
-        public DateTimeOffset? DateTime { get; set; }
+        public DateTimeOffset? DateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DateTime)); }
+            set { BackingStore?.Set(nameof(DateTime), value); }
+        }
         /// <summary>Count of failed requests/operations.</summary>
-        public long? FailureCount { get; set; }
+        public long? FailureCount {
+            get { return BackingStore?.Get<long?>(nameof(FailureCount)); }
+            set { BackingStore?.Set(nameof(FailureCount), value); }
+        }
         /// <summary>Count of successful requests/operations.</summary>
-        public long? SuccessCount { get; set; }
+        public long? SuccessCount {
+            get { return BackingStore?.Get<long?>(nameof(SuccessCount)); }
+            set { BackingStore?.Set(nameof(SuccessCount), value); }
+        }
         /// <summary>
         /// Instantiates a new certificateConnectorHealthMetricValue and sets the default values.
         /// </summary>
         public CertificateConnectorHealthMetricValue() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

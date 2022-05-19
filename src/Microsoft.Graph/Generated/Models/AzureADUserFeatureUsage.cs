@@ -4,21 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to call the getAzureADUserFeatureUsage method.</summary>
     public class AzureADUserFeatureUsage : Entity, IParsable {
         /// <summary>The featureUsageDetails property</summary>
-        public List<FeatureUsageDetail> FeatureUsageDetails { get; set; }
+        public List<FeatureUsageDetail> FeatureUsageDetails {
+            get { return BackingStore?.Get<List<FeatureUsageDetail>>(nameof(FeatureUsageDetails)); }
+            set { BackingStore?.Set(nameof(FeatureUsageDetails), value); }
+        }
         /// <summary>The lastUpdatedDateTime property</summary>
-        public DateTimeOffset? LastUpdatedDateTime { get; set; }
+        public DateTimeOffset? LastUpdatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastUpdatedDateTime)); }
+            set { BackingStore?.Set(nameof(LastUpdatedDateTime), value); }
+        }
         /// <summary>The licenseAssigned property</summary>
-        public AzureADLicenseType? LicenseAssigned { get; set; }
+        public AzureADLicenseType? LicenseAssigned {
+            get { return BackingStore?.Get<AzureADLicenseType?>(nameof(LicenseAssigned)); }
+            set { BackingStore?.Set(nameof(LicenseAssigned), value); }
+        }
         /// <summary>The licenseRecommended property</summary>
-        public AzureADLicenseType? LicenseRecommended { get; set; }
+        public AzureADLicenseType? LicenseRecommended {
+            get { return BackingStore?.Get<AzureADLicenseType?>(nameof(LicenseRecommended)); }
+            set { BackingStore?.Set(nameof(LicenseRecommended), value); }
+        }
         /// <summary>The userDisplayName property</summary>
-        public string UserDisplayName { get; set; }
+        public string UserDisplayName {
+            get { return BackingStore?.Get<string>(nameof(UserDisplayName)); }
+            set { BackingStore?.Set(nameof(UserDisplayName), value); }
+        }
         /// <summary>The userId property</summary>
-        public string UserId { get; set; }
+        public string UserId {
+            get { return BackingStore?.Get<string>(nameof(UserId)); }
+            set { BackingStore?.Set(nameof(UserId), value); }
+        }
         /// <summary>The userPrincipalName property</summary>
-        public string UserPrincipalName { get; set; }
+        public string UserPrincipalName {
+            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
+            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

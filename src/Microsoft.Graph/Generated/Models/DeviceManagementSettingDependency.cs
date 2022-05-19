@@ -1,21 +1,34 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Dependency information for a setting</summary>
-    public class DeviceManagementSettingDependency : IAdditionalDataHolder, IParsable {
+    public class DeviceManagementSettingDependency : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Collection of constraints for the dependency setting value</summary>
-        public List<DeviceManagementConstraint> Constraints { get; set; }
+        public List<DeviceManagementConstraint> Constraints {
+            get { return BackingStore?.Get<List<DeviceManagementConstraint>>(nameof(Constraints)); }
+            set { BackingStore?.Set(nameof(Constraints), value); }
+        }
         /// <summary>The setting definition ID of the setting depended on</summary>
-        public string DefinitionId { get; set; }
+        public string DefinitionId {
+            get { return BackingStore?.Get<string>(nameof(DefinitionId)); }
+            set { BackingStore?.Set(nameof(DefinitionId), value); }
+        }
         /// <summary>
         /// Instantiates a new deviceManagementSettingDependency and sets the default values.
         /// </summary>
         public DeviceManagementSettingDependency() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -1,26 +1,48 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class VerifiedDomain : IAdditionalDataHolder, IParsable {
+    public class VerifiedDomain : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>For example, Email, OfficeCommunicationsOnline.</summary>
-        public string Capabilities { get; set; }
+        public string Capabilities {
+            get { return BackingStore?.Get<string>(nameof(Capabilities)); }
+            set { BackingStore?.Set(nameof(Capabilities), value); }
+        }
         /// <summary>true if this is the default domain associated with the tenant; otherwise, false.</summary>
-        public bool? IsDefault { get; set; }
+        public bool? IsDefault {
+            get { return BackingStore?.Get<bool?>(nameof(IsDefault)); }
+            set { BackingStore?.Set(nameof(IsDefault), value); }
+        }
         /// <summary>true if this is the initial domain associated with the tenant; otherwise, false.</summary>
-        public bool? IsInitial { get; set; }
+        public bool? IsInitial {
+            get { return BackingStore?.Get<bool?>(nameof(IsInitial)); }
+            set { BackingStore?.Set(nameof(IsInitial), value); }
+        }
         /// <summary>The domain name; for example, contoso.onmicrosoft.com.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>For example, Managed.</summary>
-        public string Type { get; set; }
+        public string Type {
+            get { return BackingStore?.Get<string>(nameof(Type)); }
+            set { BackingStore?.Set(nameof(Type), value); }
+        }
         /// <summary>
         /// Instantiates a new verifiedDomain and sets the default values.
         /// </summary>
         public VerifiedDomain() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

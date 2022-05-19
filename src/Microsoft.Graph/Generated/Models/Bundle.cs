@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class Bundle : IAdditionalDataHolder, IParsable {
+    public class Bundle : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>If the bundle is an [album][], then the album property is included</summary>
-        public Microsoft.Graph.Beta.Models.Album Album { get; set; }
+        public Microsoft.Graph.Beta.Models.Album Album {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Album>(nameof(Album)); }
+            set { BackingStore?.Set(nameof(Album), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Number of children contained immediately within this container.</summary>
-        public int? ChildCount { get; set; }
+        public int? ChildCount {
+            get { return BackingStore?.Get<int?>(nameof(ChildCount)); }
+            set { BackingStore?.Set(nameof(ChildCount), value); }
+        }
         /// <summary>
         /// Instantiates a new bundle and sets the default values.
         /// </summary>
         public Bundle() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class InformationalUrls : IAdditionalDataHolder, IParsable {
+    public class InformationalUrls : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>The appSignUpUrl property</summary>
-        public string AppSignUpUrl { get; set; }
+        public string AppSignUpUrl {
+            get { return BackingStore?.Get<string>(nameof(AppSignUpUrl)); }
+            set { BackingStore?.Set(nameof(AppSignUpUrl), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The singleSignOnDocumentationUrl property</summary>
-        public string SingleSignOnDocumentationUrl { get; set; }
+        public string SingleSignOnDocumentationUrl {
+            get { return BackingStore?.Get<string>(nameof(SingleSignOnDocumentationUrl)); }
+            set { BackingStore?.Set(nameof(SingleSignOnDocumentationUrl), value); }
+        }
         /// <summary>
         /// Instantiates a new informationalUrls and sets the default values.
         /// </summary>
         public InformationalUrls() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

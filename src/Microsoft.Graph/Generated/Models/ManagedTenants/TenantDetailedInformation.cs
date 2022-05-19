@@ -4,27 +4,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class TenantDetailedInformation : Entity, IParsable {
         /// <summary>The city where the managed tenant is located. Optional. Read-only.</summary>
-        public string City { get; set; }
+        public string City {
+            get { return BackingStore?.Get<string>(nameof(City)); }
+            set { BackingStore?.Set(nameof(City), value); }
+        }
         /// <summary>The code for the country where the managed tenant is located. Optional. Read-only.</summary>
-        public string CountryCode { get; set; }
+        public string CountryCode {
+            get { return BackingStore?.Get<string>(nameof(CountryCode)); }
+            set { BackingStore?.Set(nameof(CountryCode), value); }
+        }
         /// <summary>The name for the country where the managed tenant is located. Optional. Read-only.</summary>
-        public string CountryName { get; set; }
+        public string CountryName {
+            get { return BackingStore?.Get<string>(nameof(CountryName)); }
+            set { BackingStore?.Set(nameof(CountryName), value); }
+        }
         /// <summary>The default domain name for the managed tenant. Optional. Read-only.</summary>
-        public string DefaultDomainName { get; set; }
+        public string DefaultDomainName {
+            get { return BackingStore?.Get<string>(nameof(DefaultDomainName)); }
+            set { BackingStore?.Set(nameof(DefaultDomainName), value); }
+        }
         /// <summary>The display name for the managed tenant.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The business industry associated with the managed tenant. Optional. Read-only.</summary>
-        public string IndustryName { get; set; }
+        public string IndustryName {
+            get { return BackingStore?.Get<string>(nameof(IndustryName)); }
+            set { BackingStore?.Set(nameof(IndustryName), value); }
+        }
         /// <summary>The region where the managed tenant is located. Optional. Read-only.</summary>
-        public string Region { get; set; }
+        public string Region {
+            get { return BackingStore?.Get<string>(nameof(Region)); }
+            set { BackingStore?.Set(nameof(Region), value); }
+        }
         /// <summary>The business segment associated with the managed tenant. Optional. Read-only.</summary>
-        public string SegmentName { get; set; }
+        public string SegmentName {
+            get { return BackingStore?.Get<string>(nameof(SegmentName)); }
+            set { BackingStore?.Set(nameof(SegmentName), value); }
+        }
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant.</summary>
-        public string TenantId { get; set; }
+        public string TenantId {
+            get { return BackingStore?.Get<string>(nameof(TenantId)); }
+            set { BackingStore?.Set(nameof(TenantId), value); }
+        }
         /// <summary>The vertical associated with the managed tenant. Optional. Read-only.</summary>
-        public string VerticalName { get; set; }
+        public string VerticalName {
+            get { return BackingStore?.Get<string>(nameof(VerticalName)); }
+            set { BackingStore?.Set(nameof(VerticalName), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

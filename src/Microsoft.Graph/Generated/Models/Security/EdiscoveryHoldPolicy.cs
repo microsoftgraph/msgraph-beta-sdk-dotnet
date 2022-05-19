@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
+    /// <summary>Provides operations to manage the security singleton.</summary>
     public class EdiscoveryHoldPolicy : PolicyBase, IParsable {
         /// <summary>The contentQuery property</summary>
-        public string ContentQuery { get; set; }
+        public string ContentQuery {
+            get { return BackingStore?.Get<string>(nameof(ContentQuery)); }
+            set { BackingStore?.Set(nameof(ContentQuery), value); }
+        }
         /// <summary>The errors property</summary>
-        public List<string> Errors { get; set; }
+        public List<string> Errors {
+            get { return BackingStore?.Get<List<string>>(nameof(Errors)); }
+            set { BackingStore?.Set(nameof(Errors), value); }
+        }
         /// <summary>The isEnabled property</summary>
-        public bool? IsEnabled { get; set; }
+        public bool? IsEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
+            set { BackingStore?.Set(nameof(IsEnabled), value); }
+        }
         /// <summary>The siteSources property</summary>
-        public List<SiteSource> SiteSources { get; set; }
+        public List<SiteSource> SiteSources {
+            get { return BackingStore?.Get<List<SiteSource>>(nameof(SiteSources)); }
+            set { BackingStore?.Set(nameof(SiteSources), value); }
+        }
         /// <summary>The userSources property</summary>
-        public List<UserSource> UserSources { get; set; }
+        public List<UserSource> UserSources {
+            get { return BackingStore?.Get<List<UserSource>>(nameof(UserSources)); }
+            set { BackingStore?.Set(nameof(UserSources), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

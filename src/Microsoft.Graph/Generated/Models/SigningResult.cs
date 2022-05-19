@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SigningResult : IAdditionalDataHolder, IParsable {
+    public class SigningResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The signature property</summary>
-        public byte[] Signature { get; set; }
+        public byte[] Signature {
+            get { return BackingStore?.Get<byte[]>(nameof(Signature)); }
+            set { BackingStore?.Set(nameof(Signature), value); }
+        }
         /// <summary>The signingKeyId property</summary>
-        public string SigningKeyId { get; set; }
+        public string SigningKeyId {
+            get { return BackingStore?.Get<string>(nameof(SigningKeyId)); }
+            set { BackingStore?.Set(nameof(SigningKeyId), value); }
+        }
         /// <summary>
-        /// Instantiates a new signingResult and sets the default values.
+        /// Instantiates a new SigningResult and sets the default values.
         /// </summary>
         public SigningResult() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -1,19 +1,29 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>The suggestedEnrollmentLimit resource represents the suggested enrollment limit when given an enrollment type.</summary>
-    public class SuggestedEnrollmentLimit : IAdditionalDataHolder, IParsable {
+    public class SuggestedEnrollmentLimit : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The suggested enrollment limit within a day</summary>
-        public int? SuggestedDailyLimit { get; set; }
+        public int? SuggestedDailyLimit {
+            get { return BackingStore?.Get<int?>(nameof(SuggestedDailyLimit)); }
+            set { BackingStore?.Set(nameof(SuggestedDailyLimit), value); }
+        }
         /// <summary>
-        /// Instantiates a new suggestedEnrollmentLimit and sets the default values.
+        /// Instantiates a new SuggestedEnrollmentLimit and sets the default values.
         /// </summary>
         public SuggestedEnrollmentLimit() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

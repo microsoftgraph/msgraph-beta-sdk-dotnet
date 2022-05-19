@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the identityContainer singleton.</summary>
     public class ContinuousAccessEvaluationPolicy : Entity, IParsable {
         /// <summary>Continuous access evaluation automatically blocks access to resources and applications in near real time when a user&apos;s access is removed or a client IP address changes. Read-only.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The value is always Continuous Access Evaluation. Read-only.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The collection of group identifiers in scope for evaluation. All groups are in scope when the collection is empty. Read-only.</summary>
-        public List<string> Groups { get; set; }
+        public List<string> Groups {
+            get { return BackingStore?.Get<List<string>>(nameof(Groups)); }
+            set { BackingStore?.Set(nameof(Groups), value); }
+        }
         /// <summary>true to indicate whether continuous access evaluation should be performed; otherwise false. Read-only.</summary>
-        public bool? IsEnabled { get; set; }
+        public bool? IsEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
+            set { BackingStore?.Set(nameof(IsEnabled), value); }
+        }
         /// <summary>true to indicate that the continuous access evaluation policy settings should be or has been migrated to the conditional access policy.</summary>
-        public bool? Migrate { get; set; }
+        public bool? Migrate {
+            get { return BackingStore?.Get<bool?>(nameof(Migrate)); }
+            set { BackingStore?.Set(nameof(Migrate), value); }
+        }
         /// <summary>The collection of user identifiers in scope for evaluation. All users are in scope when the collection is empty. Read-only.</summary>
-        public List<string> Users { get; set; }
+        public List<string> Users {
+            get { return BackingStore?.Get<List<string>>(nameof(Users)); }
+            set { BackingStore?.Set(nameof(Users), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

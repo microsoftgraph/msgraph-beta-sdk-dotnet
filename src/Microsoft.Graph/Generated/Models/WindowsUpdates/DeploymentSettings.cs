@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
-    public class DeploymentSettings : IAdditionalDataHolder, IParsable {
+    public class DeploymentSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Settings governing conditions to monitor and automated actions to take.</summary>
-        public MonitoringSettings Monitoring { get; set; }
+        public MonitoringSettings Monitoring {
+            get { return BackingStore?.Get<MonitoringSettings>(nameof(Monitoring)); }
+            set { BackingStore?.Set(nameof(Monitoring), value); }
+        }
         /// <summary>Settings governing how the content is rolled out.</summary>
-        public RolloutSettings Rollout { get; set; }
+        public RolloutSettings Rollout {
+            get { return BackingStore?.Get<RolloutSettings>(nameof(Rollout)); }
+            set { BackingStore?.Set(nameof(Rollout), value); }
+        }
         /// <summary>Settings governing safeguard holds on offering content.</summary>
-        public SafeguardSettings Safeguard { get; set; }
+        public SafeguardSettings Safeguard {
+            get { return BackingStore?.Get<SafeguardSettings>(nameof(Safeguard)); }
+            set { BackingStore?.Set(nameof(Safeguard), value); }
+        }
         /// <summary>
         /// Instantiates a new deploymentSettings and sets the default values.
         /// </summary>
         public DeploymentSettings() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

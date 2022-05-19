@@ -1,26 +1,48 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ParseExpressionResponse : IAdditionalDataHolder, IParsable {
+    public class ParseExpressionResponse : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Error details, if expression evaluation resulted in an error.</summary>
-        public PublicError Error { get; set; }
+        public PublicError Error {
+            get { return BackingStore?.Get<PublicError>(nameof(Error)); }
+            set { BackingStore?.Set(nameof(Error), value); }
+        }
         /// <summary>A collection of values produced by the evaluation of the expression.</summary>
-        public List<string> EvaluationResult { get; set; }
+        public List<string> EvaluationResult {
+            get { return BackingStore?.Get<List<string>>(nameof(EvaluationResult)); }
+            set { BackingStore?.Set(nameof(EvaluationResult), value); }
+        }
         /// <summary>true if the evaluation was successful.</summary>
-        public bool? EvaluationSucceeded { get; set; }
+        public bool? EvaluationSucceeded {
+            get { return BackingStore?.Get<bool?>(nameof(EvaluationSucceeded)); }
+            set { BackingStore?.Set(nameof(EvaluationSucceeded), value); }
+        }
         /// <summary>An attributeMappingSource object representing the parsed expression.</summary>
-        public AttributeMappingSource ParsedExpression { get; set; }
+        public AttributeMappingSource ParsedExpression {
+            get { return BackingStore?.Get<AttributeMappingSource>(nameof(ParsedExpression)); }
+            set { BackingStore?.Set(nameof(ParsedExpression), value); }
+        }
         /// <summary>true if the expression was parsed successfully.</summary>
-        public bool? ParsingSucceeded { get; set; }
+        public bool? ParsingSucceeded {
+            get { return BackingStore?.Get<bool?>(nameof(ParsingSucceeded)); }
+            set { BackingStore?.Set(nameof(ParsingSucceeded), value); }
+        }
         /// <summary>
-        /// Instantiates a new parseExpressionResponse and sets the default values.
+        /// Instantiates a new ParseExpressionResponse and sets the default values.
         /// </summary>
         public ParseExpressionResponse() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

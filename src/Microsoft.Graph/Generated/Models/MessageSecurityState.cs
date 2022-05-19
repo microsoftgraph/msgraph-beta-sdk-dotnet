@@ -1,34 +1,68 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class MessageSecurityState : IAdditionalDataHolder, IParsable {
+    public class MessageSecurityState : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The connectingIP property</summary>
-        public string ConnectingIP { get; set; }
+        public string ConnectingIP {
+            get { return BackingStore?.Get<string>(nameof(ConnectingIP)); }
+            set { BackingStore?.Set(nameof(ConnectingIP), value); }
+        }
         /// <summary>The deliveryAction property</summary>
-        public string DeliveryAction { get; set; }
+        public string DeliveryAction {
+            get { return BackingStore?.Get<string>(nameof(DeliveryAction)); }
+            set { BackingStore?.Set(nameof(DeliveryAction), value); }
+        }
         /// <summary>The deliveryLocation property</summary>
-        public string DeliveryLocation { get; set; }
+        public string DeliveryLocation {
+            get { return BackingStore?.Get<string>(nameof(DeliveryLocation)); }
+            set { BackingStore?.Set(nameof(DeliveryLocation), value); }
+        }
         /// <summary>The directionality property</summary>
-        public string Directionality { get; set; }
+        public string Directionality {
+            get { return BackingStore?.Get<string>(nameof(Directionality)); }
+            set { BackingStore?.Set(nameof(Directionality), value); }
+        }
         /// <summary>The internetMessageId property</summary>
-        public string InternetMessageId { get; set; }
+        public string InternetMessageId {
+            get { return BackingStore?.Get<string>(nameof(InternetMessageId)); }
+            set { BackingStore?.Set(nameof(InternetMessageId), value); }
+        }
         /// <summary>The messageFingerprint property</summary>
-        public string MessageFingerprint { get; set; }
+        public string MessageFingerprint {
+            get { return BackingStore?.Get<string>(nameof(MessageFingerprint)); }
+            set { BackingStore?.Set(nameof(MessageFingerprint), value); }
+        }
         /// <summary>The messageReceivedDateTime property</summary>
-        public DateTimeOffset? MessageReceivedDateTime { get; set; }
+        public DateTimeOffset? MessageReceivedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(MessageReceivedDateTime)); }
+            set { BackingStore?.Set(nameof(MessageReceivedDateTime), value); }
+        }
         /// <summary>The messageSubject property</summary>
-        public string MessageSubject { get; set; }
+        public string MessageSubject {
+            get { return BackingStore?.Get<string>(nameof(MessageSubject)); }
+            set { BackingStore?.Set(nameof(MessageSubject), value); }
+        }
         /// <summary>The networkMessageId property</summary>
-        public string NetworkMessageId { get; set; }
+        public string NetworkMessageId {
+            get { return BackingStore?.Get<string>(nameof(NetworkMessageId)); }
+            set { BackingStore?.Set(nameof(NetworkMessageId), value); }
+        }
         /// <summary>
         /// Instantiates a new messageSecurityState and sets the default values.
         /// </summary>
         public MessageSecurityState() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

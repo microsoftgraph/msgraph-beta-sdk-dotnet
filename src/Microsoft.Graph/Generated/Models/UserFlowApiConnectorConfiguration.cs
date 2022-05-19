@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class UserFlowApiConnectorConfiguration : IAdditionalDataHolder, IParsable {
+    public class UserFlowApiConnectorConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The postAttributeCollection property</summary>
-        public IdentityApiConnector PostAttributeCollection { get; set; }
+        public IdentityApiConnector PostAttributeCollection {
+            get { return BackingStore?.Get<IdentityApiConnector>(nameof(PostAttributeCollection)); }
+            set { BackingStore?.Set(nameof(PostAttributeCollection), value); }
+        }
         /// <summary>The postFederationSignup property</summary>
-        public IdentityApiConnector PostFederationSignup { get; set; }
+        public IdentityApiConnector PostFederationSignup {
+            get { return BackingStore?.Get<IdentityApiConnector>(nameof(PostFederationSignup)); }
+            set { BackingStore?.Set(nameof(PostFederationSignup), value); }
+        }
         /// <summary>The preTokenIssuance property</summary>
-        public IdentityApiConnector PreTokenIssuance { get; set; }
+        public IdentityApiConnector PreTokenIssuance {
+            get { return BackingStore?.Get<IdentityApiConnector>(nameof(PreTokenIssuance)); }
+            set { BackingStore?.Set(nameof(PreTokenIssuance), value); }
+        }
         /// <summary>
         /// Instantiates a new userFlowApiConnectorConfiguration and sets the default values.
         /// </summary>
         public UserFlowApiConnectorConfiguration() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

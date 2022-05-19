@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class ServicePrincipalCreationConditionSet : Entity, IParsable {
         /// <summary>The applicationIds property</summary>
-        public List<string> ApplicationIds { get; set; }
+        public List<string> ApplicationIds {
+            get { return BackingStore?.Get<List<string>>(nameof(ApplicationIds)); }
+            set { BackingStore?.Set(nameof(ApplicationIds), value); }
+        }
         /// <summary>The applicationPublisherIds property</summary>
-        public List<string> ApplicationPublisherIds { get; set; }
+        public List<string> ApplicationPublisherIds {
+            get { return BackingStore?.Get<List<string>>(nameof(ApplicationPublisherIds)); }
+            set { BackingStore?.Set(nameof(ApplicationPublisherIds), value); }
+        }
         /// <summary>The applicationsFromVerifiedPublisherOnly property</summary>
-        public bool? ApplicationsFromVerifiedPublisherOnly { get; set; }
+        public bool? ApplicationsFromVerifiedPublisherOnly {
+            get { return BackingStore?.Get<bool?>(nameof(ApplicationsFromVerifiedPublisherOnly)); }
+            set { BackingStore?.Set(nameof(ApplicationsFromVerifiedPublisherOnly), value); }
+        }
         /// <summary>The applicationTenantIds property</summary>
-        public List<string> ApplicationTenantIds { get; set; }
+        public List<string> ApplicationTenantIds {
+            get { return BackingStore?.Get<List<string>>(nameof(ApplicationTenantIds)); }
+            set { BackingStore?.Set(nameof(ApplicationTenantIds), value); }
+        }
         /// <summary>The certifiedApplicationsOnly property</summary>
-        public bool? CertifiedApplicationsOnly { get; set; }
+        public bool? CertifiedApplicationsOnly {
+            get { return BackingStore?.Get<bool?>(nameof(CertifiedApplicationsOnly)); }
+            set { BackingStore?.Set(nameof(CertifiedApplicationsOnly), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

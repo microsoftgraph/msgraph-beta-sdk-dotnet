@@ -1,30 +1,58 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ParticipantInfo : IAdditionalDataHolder, IParsable {
+    public class ParticipantInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The ISO 3166-1 Alpha-2 country code of the participant&apos;s best estimated physical location at the start of the call. Read-only.</summary>
-        public string CountryCode { get; set; }
+        public string CountryCode {
+            get { return BackingStore?.Get<string>(nameof(CountryCode)); }
+            set { BackingStore?.Set(nameof(CountryCode), value); }
+        }
         /// <summary>The type of endpoint the participant is using. Possible values are: default, skypeForBusiness, or skypeForBusinessVoipPhone. Read-only.</summary>
-        public Microsoft.Graph.Beta.Models.EndpointType? EndpointType { get; set; }
+        public Microsoft.Graph.Beta.Models.EndpointType? EndpointType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EndpointType?>(nameof(EndpointType)); }
+            set { BackingStore?.Set(nameof(EndpointType), value); }
+        }
         /// <summary>The identity property</summary>
-        public IdentitySet Identity { get; set; }
+        public IdentitySet Identity {
+            get { return BackingStore?.Get<IdentitySet>(nameof(Identity)); }
+            set { BackingStore?.Set(nameof(Identity), value); }
+        }
         /// <summary>The language culture string. Read-only.</summary>
-        public string LanguageId { get; set; }
+        public string LanguageId {
+            get { return BackingStore?.Get<string>(nameof(LanguageId)); }
+            set { BackingStore?.Set(nameof(LanguageId), value); }
+        }
         /// <summary>The participant ID of the participant. Read-only.</summary>
-        public string ParticipantId { get; set; }
+        public string ParticipantId {
+            get { return BackingStore?.Get<string>(nameof(ParticipantId)); }
+            set { BackingStore?.Set(nameof(ParticipantId), value); }
+        }
         /// <summary>The client platform ID of the participant. Read-only.</summary>
-        public string PlatformId { get; set; }
+        public string PlatformId {
+            get { return BackingStore?.Get<string>(nameof(PlatformId)); }
+            set { BackingStore?.Set(nameof(PlatformId), value); }
+        }
         /// <summary>The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant&apos;s current physical location, unlike countryCode. Read-only.</summary>
-        public string Region { get; set; }
+        public string Region {
+            get { return BackingStore?.Get<string>(nameof(Region)); }
+            set { BackingStore?.Set(nameof(Region), value); }
+        }
         /// <summary>
         /// Instantiates a new participantInfo and sets the default values.
         /// </summary>
         public ParticipantInfo() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class ConditionalAccessPolicyCoverage : Entity, IParsable {
         /// <summary>The state for the conditional access policy. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required. Read-only.</summary>
-        public string ConditionalAccessPolicyState { get; set; }
+        public string ConditionalAccessPolicyState {
+            get { return BackingStore?.Get<string>(nameof(ConditionalAccessPolicyState)); }
+            set { BackingStore?.Set(nameof(ConditionalAccessPolicyState), value); }
+        }
         /// <summary>The date and time the conditional access policy was last modified. Required. Read-only.</summary>
-        public DateTimeOffset? LatestPolicyModifiedDateTime { get; set; }
+        public DateTimeOffset? LatestPolicyModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LatestPolicyModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LatestPolicyModifiedDateTime), value); }
+        }
         /// <summary>A flag indicating whether the conditional access policy requires device compliance. Required. Read-only.</summary>
-        public bool? RequiresDeviceCompliance { get; set; }
+        public bool? RequiresDeviceCompliance {
+            get { return BackingStore?.Get<bool?>(nameof(RequiresDeviceCompliance)); }
+            set { BackingStore?.Set(nameof(RequiresDeviceCompliance), value); }
+        }
         /// <summary>The display name for the managed tenant. Required. Read-only.</summary>
-        public string TenantDisplayName { get; set; }
+        public string TenantDisplayName {
+            get { return BackingStore?.Get<string>(nameof(TenantDisplayName)); }
+            set { BackingStore?.Set(nameof(TenantDisplayName), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

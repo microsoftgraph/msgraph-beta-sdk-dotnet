@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class BookingQuestionAssignment : IAdditionalDataHolder, IParsable {
+    public class BookingQuestionAssignment : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether it is mandatory to answer the custom question.</summary>
-        public bool? IsRequired { get; set; }
+        public bool? IsRequired {
+            get { return BackingStore?.Get<bool?>(nameof(IsRequired)); }
+            set { BackingStore?.Set(nameof(IsRequired), value); }
+        }
         /// <summary>If it is mandatory to answer the custom question.</summary>
-        public string QuestionId { get; set; }
+        public string QuestionId {
+            get { return BackingStore?.Get<string>(nameof(QuestionId)); }
+            set { BackingStore?.Set(nameof(QuestionId), value); }
+        }
         /// <summary>
         /// Instantiates a new bookingQuestionAssignment and sets the default values.
         /// </summary>
         public BookingQuestionAssignment() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

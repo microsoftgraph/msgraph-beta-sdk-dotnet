@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class ShiftPreferences : ChangeTrackedEntity, IParsable {
         /// <summary>Availability of the user to be scheduled for work and its recurrence pattern.</summary>
-        public List<ShiftAvailability> Availability { get; set; }
+        public List<ShiftAvailability> Availability {
+            get { return BackingStore?.Get<List<ShiftAvailability>>(nameof(Availability)); }
+            set { BackingStore?.Set(nameof(Availability), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

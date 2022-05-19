@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ListInfo : IAdditionalDataHolder, IParsable {
+    public class ListInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>If true, indicates that content types are enabled for this list.</summary>
-        public bool? ContentTypesEnabled { get; set; }
+        public bool? ContentTypesEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(ContentTypesEnabled)); }
+            set { BackingStore?.Set(nameof(ContentTypesEnabled), value); }
+        }
         /// <summary>If true, indicates that the list is not normally visible in the SharePoint user experience.</summary>
-        public bool? Hidden { get; set; }
+        public bool? Hidden {
+            get { return BackingStore?.Get<bool?>(nameof(Hidden)); }
+            set { BackingStore?.Set(nameof(Hidden), value); }
+        }
         /// <summary>An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.</summary>
-        public string Template { get; set; }
+        public string Template {
+            get { return BackingStore?.Get<string>(nameof(Template)); }
+            set { BackingStore?.Set(nameof(Template), value); }
+        }
         /// <summary>
         /// Instantiates a new listInfo and sets the default values.
         /// </summary>
         public ListInfo() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

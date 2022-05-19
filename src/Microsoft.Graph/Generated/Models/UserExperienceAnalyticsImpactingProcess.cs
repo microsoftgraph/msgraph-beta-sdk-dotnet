@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The user experience analytics top impacting process entity.</summary>
     public class UserExperienceAnalyticsImpactingProcess : Entity, IParsable {
         /// <summary>The category of impacting process.</summary>
-        public string Category { get; set; }
+        public string Category {
+            get { return BackingStore?.Get<string>(nameof(Category)); }
+            set { BackingStore?.Set(nameof(Category), value); }
+        }
         /// <summary>The description of process.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The unique identifier of the impacted device.</summary>
-        public string DeviceId { get; set; }
+        public string DeviceId {
+            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
+            set { BackingStore?.Set(nameof(DeviceId), value); }
+        }
         /// <summary>The impact value of the process. Valid values 0 to 1.79769313486232E+308</summary>
-        public double? ImpactValue { get; set; }
+        public double? ImpactValue {
+            get { return BackingStore?.Get<double?>(nameof(ImpactValue)); }
+            set { BackingStore?.Set(nameof(ImpactValue), value); }
+        }
         /// <summary>The process name.</summary>
-        public string ProcessName { get; set; }
+        public string ProcessName {
+            get { return BackingStore?.Get<string>(nameof(ProcessName)); }
+            set { BackingStore?.Set(nameof(ProcessName), value); }
+        }
         /// <summary>The publisher of the process.</summary>
-        public string Publisher { get; set; }
+        public string Publisher {
+            get { return BackingStore?.Get<string>(nameof(Publisher)); }
+            set { BackingStore?.Set(nameof(Publisher), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

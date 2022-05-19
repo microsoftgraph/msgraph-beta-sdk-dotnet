@@ -4,21 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
     public class AccessPackageAssignmentResourceRole : Entity, IParsable {
         /// <summary>The access package assignments resulting in this role assignment. Read-only. Nullable.</summary>
-        public List<AccessPackageAssignment> AccessPackageAssignments { get; set; }
+        public List<AccessPackageAssignment> AccessPackageAssignments {
+            get { return BackingStore?.Get<List<AccessPackageAssignment>>(nameof(AccessPackageAssignments)); }
+            set { BackingStore?.Set(nameof(AccessPackageAssignments), value); }
+        }
         /// <summary>Read-only. Nullable.</summary>
-        public Microsoft.Graph.Beta.Models.AccessPackageResourceRole AccessPackageResourceRole { get; set; }
+        public Microsoft.Graph.Beta.Models.AccessPackageResourceRole AccessPackageResourceRole {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceRole>(nameof(AccessPackageResourceRole)); }
+            set { BackingStore?.Set(nameof(AccessPackageResourceRole), value); }
+        }
         /// <summary>Read-only. Nullable.</summary>
-        public Microsoft.Graph.Beta.Models.AccessPackageResourceScope AccessPackageResourceScope { get; set; }
+        public Microsoft.Graph.Beta.Models.AccessPackageResourceScope AccessPackageResourceScope {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceScope>(nameof(AccessPackageResourceScope)); }
+            set { BackingStore?.Set(nameof(AccessPackageResourceScope), value); }
+        }
         /// <summary>Read-only. Nullable. Supports $filter (eq) on objectId and $expand query parameters.</summary>
-        public Microsoft.Graph.Beta.Models.AccessPackageSubject AccessPackageSubject { get; set; }
+        public Microsoft.Graph.Beta.Models.AccessPackageSubject AccessPackageSubject {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageSubject>(nameof(AccessPackageSubject)); }
+            set { BackingStore?.Set(nameof(AccessPackageSubject), value); }
+        }
         /// <summary>A unique identifier relative to the origin system, corresponding to the originId property of the accessPackageResourceRole.</summary>
-        public string OriginId { get; set; }
+        public string OriginId {
+            get { return BackingStore?.Get<string>(nameof(OriginId)); }
+            set { BackingStore?.Set(nameof(OriginId), value); }
+        }
         /// <summary>The system where the role assignment is to be created or has been created for an access package assignment, such as SharePointOnline, AadGroup or AadApplication, corresponding to the originSystem property of the accessPackageResourceRole.</summary>
-        public string OriginSystem { get; set; }
+        public string OriginSystem {
+            get { return BackingStore?.Get<string>(nameof(OriginSystem)); }
+            set { BackingStore?.Set(nameof(OriginSystem), value); }
+        }
         /// <summary>The value is PendingFulfillment when the access package assignment has not yet been delivered to the origin system, and Fulfilled when the access package assignment has been delivered to the origin system.</summary>
-        public string Status { get; set; }
+        public string Status {
+            get { return BackingStore?.Get<string>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

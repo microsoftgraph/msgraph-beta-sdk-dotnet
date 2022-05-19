@@ -1,30 +1,58 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SubjectRightsRequestDetail : IAdditionalDataHolder, IParsable {
+    public class SubjectRightsRequestDetail : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Count of items that are excluded from the request.</summary>
-        public long? ExcludedItemCount { get; set; }
+        public long? ExcludedItemCount {
+            get { return BackingStore?.Get<long?>(nameof(ExcludedItemCount)); }
+            set { BackingStore?.Set(nameof(ExcludedItemCount), value); }
+        }
         /// <summary>Count of items per insight.</summary>
-        public List<KeyValuePair> InsightCounts { get; set; }
+        public List<KeyValuePair> InsightCounts {
+            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(InsightCounts)); }
+            set { BackingStore?.Set(nameof(InsightCounts), value); }
+        }
         /// <summary>Count of items found.</summary>
-        public long? ItemCount { get; set; }
+        public long? ItemCount {
+            get { return BackingStore?.Get<long?>(nameof(ItemCount)); }
+            set { BackingStore?.Set(nameof(ItemCount), value); }
+        }
         /// <summary>Count of item that need review.</summary>
-        public long? ItemNeedReview { get; set; }
+        public long? ItemNeedReview {
+            get { return BackingStore?.Get<long?>(nameof(ItemNeedReview)); }
+            set { BackingStore?.Set(nameof(ItemNeedReview), value); }
+        }
         /// <summary>Count of items per product, such as Exchange, SharePoint, OneDrive, and Teams.</summary>
-        public List<KeyValuePair> ProductItemCounts { get; set; }
+        public List<KeyValuePair> ProductItemCounts {
+            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(ProductItemCounts)); }
+            set { BackingStore?.Set(nameof(ProductItemCounts), value); }
+        }
         /// <summary>Count of items signed off by the administrator.</summary>
-        public long? SignedOffItemCount { get; set; }
+        public long? SignedOffItemCount {
+            get { return BackingStore?.Get<long?>(nameof(SignedOffItemCount)); }
+            set { BackingStore?.Set(nameof(SignedOffItemCount), value); }
+        }
         /// <summary>Total item size in bytes.</summary>
-        public long? TotalItemSize { get; set; }
+        public long? TotalItemSize {
+            get { return BackingStore?.Get<long?>(nameof(TotalItemSize)); }
+            set { BackingStore?.Set(nameof(TotalItemSize), value); }
+        }
         /// <summary>
         /// Instantiates a new subjectRightsRequestDetail and sets the default values.
         /// </summary>
         public SubjectRightsRequestDetail() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

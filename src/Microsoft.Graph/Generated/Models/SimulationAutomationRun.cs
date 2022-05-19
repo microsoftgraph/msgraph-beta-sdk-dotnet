@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the security singleton.</summary>
     public class SimulationAutomationRun : Entity, IParsable {
         /// <summary>Date and time when the run ends in an attack simulation automation.</summary>
-        public DateTimeOffset? EndDateTime { get; set; }
+        public DateTimeOffset? EndDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
+            set { BackingStore?.Set(nameof(EndDateTime), value); }
+        }
         /// <summary>Unique identifier for the attack simulation campaign initiated in the attack simulation automation run.</summary>
-        public string SimulationId { get; set; }
+        public string SimulationId {
+            get { return BackingStore?.Get<string>(nameof(SimulationId)); }
+            set { BackingStore?.Set(nameof(SimulationId), value); }
+        }
         /// <summary>Date and time when the run starts in an attack simulation automation.</summary>
-        public DateTimeOffset? StartDateTime { get; set; }
+        public DateTimeOffset? StartDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
+            set { BackingStore?.Set(nameof(StartDateTime), value); }
+        }
         /// <summary>Status of the run of an attack simulation automation. The possible values are: unknown, running, succeeded, failed, skipped, unknownFutureValue.</summary>
-        public SimulationAutomationRunStatus? Status { get; set; }
+        public SimulationAutomationRunStatus? Status {
+            get { return BackingStore?.Get<SimulationAutomationRunStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

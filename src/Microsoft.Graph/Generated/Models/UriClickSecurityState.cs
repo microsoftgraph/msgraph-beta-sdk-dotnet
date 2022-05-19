@@ -1,28 +1,53 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class UriClickSecurityState : IAdditionalDataHolder, IParsable {
+    public class UriClickSecurityState : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The clickAction property</summary>
-        public string ClickAction { get; set; }
+        public string ClickAction {
+            get { return BackingStore?.Get<string>(nameof(ClickAction)); }
+            set { BackingStore?.Set(nameof(ClickAction), value); }
+        }
         /// <summary>The clickDateTime property</summary>
-        public DateTimeOffset? ClickDateTime { get; set; }
+        public DateTimeOffset? ClickDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ClickDateTime)); }
+            set { BackingStore?.Set(nameof(ClickDateTime), value); }
+        }
         /// <summary>The id property</summary>
-        public string Id { get; set; }
+        public string Id {
+            get { return BackingStore?.Get<string>(nameof(Id)); }
+            set { BackingStore?.Set(nameof(Id), value); }
+        }
         /// <summary>The sourceId property</summary>
-        public string SourceId { get; set; }
+        public string SourceId {
+            get { return BackingStore?.Get<string>(nameof(SourceId)); }
+            set { BackingStore?.Set(nameof(SourceId), value); }
+        }
         /// <summary>The uriDomain property</summary>
-        public string UriDomain { get; set; }
+        public string UriDomain {
+            get { return BackingStore?.Get<string>(nameof(UriDomain)); }
+            set { BackingStore?.Set(nameof(UriDomain), value); }
+        }
         /// <summary>The verdict property</summary>
-        public string Verdict { get; set; }
+        public string Verdict {
+            get { return BackingStore?.Get<string>(nameof(Verdict)); }
+            set { BackingStore?.Set(nameof(Verdict), value); }
+        }
         /// <summary>
         /// Instantiates a new uriClickSecurityState and sets the default values.
         /// </summary>
         public UriClickSecurityState() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -4,41 +4,93 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the security singleton.</summary>
     public class CloudAppSecurityProfile : Entity, IParsable {
         /// <summary>The azureSubscriptionId property</summary>
-        public string AzureSubscriptionId { get; set; }
+        public string AzureSubscriptionId {
+            get { return BackingStore?.Get<string>(nameof(AzureSubscriptionId)); }
+            set { BackingStore?.Set(nameof(AzureSubscriptionId), value); }
+        }
         /// <summary>The azureTenantId property</summary>
-        public string AzureTenantId { get; set; }
+        public string AzureTenantId {
+            get { return BackingStore?.Get<string>(nameof(AzureTenantId)); }
+            set { BackingStore?.Set(nameof(AzureTenantId), value); }
+        }
         /// <summary>The createdDateTime property</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>The deploymentPackageUrl property</summary>
-        public string DeploymentPackageUrl { get; set; }
+        public string DeploymentPackageUrl {
+            get { return BackingStore?.Get<string>(nameof(DeploymentPackageUrl)); }
+            set { BackingStore?.Set(nameof(DeploymentPackageUrl), value); }
+        }
         /// <summary>The destinationServiceName property</summary>
-        public string DestinationServiceName { get; set; }
+        public string DestinationServiceName {
+            get { return BackingStore?.Get<string>(nameof(DestinationServiceName)); }
+            set { BackingStore?.Set(nameof(DestinationServiceName), value); }
+        }
         /// <summary>The isSigned property</summary>
-        public bool? IsSigned { get; set; }
+        public bool? IsSigned {
+            get { return BackingStore?.Get<bool?>(nameof(IsSigned)); }
+            set { BackingStore?.Set(nameof(IsSigned), value); }
+        }
         /// <summary>The lastModifiedDateTime property</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>The manifest property</summary>
-        public string Manifest { get; set; }
+        public string Manifest {
+            get { return BackingStore?.Get<string>(nameof(Manifest)); }
+            set { BackingStore?.Set(nameof(Manifest), value); }
+        }
         /// <summary>The name property</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>The permissionsRequired property</summary>
-        public ApplicationPermissionsRequired? PermissionsRequired { get; set; }
+        public ApplicationPermissionsRequired? PermissionsRequired {
+            get { return BackingStore?.Get<ApplicationPermissionsRequired?>(nameof(PermissionsRequired)); }
+            set { BackingStore?.Set(nameof(PermissionsRequired), value); }
+        }
         /// <summary>The platform property</summary>
-        public string Platform { get; set; }
+        public string Platform {
+            get { return BackingStore?.Get<string>(nameof(Platform)); }
+            set { BackingStore?.Set(nameof(Platform), value); }
+        }
         /// <summary>The policyName property</summary>
-        public string PolicyName { get; set; }
+        public string PolicyName {
+            get { return BackingStore?.Get<string>(nameof(PolicyName)); }
+            set { BackingStore?.Set(nameof(PolicyName), value); }
+        }
         /// <summary>The publisher property</summary>
-        public string Publisher { get; set; }
+        public string Publisher {
+            get { return BackingStore?.Get<string>(nameof(Publisher)); }
+            set { BackingStore?.Set(nameof(Publisher), value); }
+        }
         /// <summary>The riskScore property</summary>
-        public string RiskScore { get; set; }
+        public string RiskScore {
+            get { return BackingStore?.Get<string>(nameof(RiskScore)); }
+            set { BackingStore?.Set(nameof(RiskScore), value); }
+        }
         /// <summary>The tags property</summary>
-        public List<string> Tags { get; set; }
+        public List<string> Tags {
+            get { return BackingStore?.Get<List<string>>(nameof(Tags)); }
+            set { BackingStore?.Set(nameof(Tags), value); }
+        }
         /// <summary>The type property</summary>
-        public string Type { get; set; }
+        public string Type {
+            get { return BackingStore?.Get<string>(nameof(Type)); }
+            set { BackingStore?.Set(nameof(Type), value); }
+        }
         /// <summary>The vendorInformation property</summary>
-        public SecurityVendorInformation VendorInformation { get; set; }
+        public SecurityVendorInformation VendorInformation {
+            get { return BackingStore?.Get<SecurityVendorInformation>(nameof(VendorInformation)); }
+            set { BackingStore?.Set(nameof(VendorInformation), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

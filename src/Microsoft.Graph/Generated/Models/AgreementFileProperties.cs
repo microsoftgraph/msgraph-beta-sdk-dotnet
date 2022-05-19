@@ -4,28 +4,55 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
     public class AgreementFileProperties : Entity, IParsable {
         /// <summary>The date time representing when the file was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>Localized display name of the policy file of an agreement. The localized display name is shown to end users who view the agreement.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Data that represents the terms of use PDF document. Read-only.</summary>
-        public AgreementFileData FileData { get; set; }
+        public AgreementFileData FileData {
+            get { return BackingStore?.Get<AgreementFileData>(nameof(FileData)); }
+            set { BackingStore?.Set(nameof(FileData), value); }
+        }
         /// <summary>Name of the agreement file (for example, TOU.pdf). Read-only.</summary>
-        public string FileName { get; set; }
+        public string FileName {
+            get { return BackingStore?.Get<string>(nameof(FileName)); }
+            set { BackingStore?.Set(nameof(FileName), value); }
+        }
         /// <summary>If none of the languages matches the client preference, indicates whether this is the default agreement file . If none of the files are marked as default, the first one is treated as the default. Read-only.</summary>
-        public bool? IsDefault { get; set; }
+        public bool? IsDefault {
+            get { return BackingStore?.Get<bool?>(nameof(IsDefault)); }
+            set { BackingStore?.Set(nameof(IsDefault), value); }
+        }
         /// <summary>Indicates whether the agreement file is a major version update. Major version updates invalidate the agreement&apos;s acceptances on the corresponding language.</summary>
-        public bool? IsMajorVersion { get; set; }
+        public bool? IsMajorVersion {
+            get { return BackingStore?.Get<bool?>(nameof(IsMajorVersion)); }
+            set { BackingStore?.Set(nameof(IsMajorVersion), value); }
+        }
         /// <summary>The language of the agreement file in the format &apos;languagecode2-country/regioncode2&apos;. &apos;languagecode2&apos; is a lowercase two-letter code derived from ISO 639-1, while &apos;country/regioncode2&apos; is derived from ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag. For example, U.S. English is en-US. Read-only.</summary>
-        public string Language { get; set; }
+        public string Language {
+            get { return BackingStore?.Get<string>(nameof(Language)); }
+            set { BackingStore?.Set(nameof(Language), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new AgreementFileProperties CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AgreementFileProperties();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.agreementFileProperties" => new AgreementFileProperties(),
+                _ => new AgreementFileProperties(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

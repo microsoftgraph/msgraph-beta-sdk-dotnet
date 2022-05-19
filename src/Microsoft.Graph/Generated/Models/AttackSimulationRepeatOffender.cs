@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class AttackSimulationRepeatOffender : IAdditionalDataHolder, IParsable {
+    public class AttackSimulationRepeatOffender : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>User in an attack simulation and training campaign.</summary>
-        public Microsoft.Graph.Beta.Models.AttackSimulationUser AttackSimulationUser { get; set; }
+        public Microsoft.Graph.Beta.Models.AttackSimulationUser AttackSimulationUser {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttackSimulationUser>(nameof(AttackSimulationUser)); }
+            set { BackingStore?.Set(nameof(AttackSimulationUser), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Number of repeat offences of the user in attack simulation and training campaigns.</summary>
-        public int? RepeatOffenceCount { get; set; }
+        public int? RepeatOffenceCount {
+            get { return BackingStore?.Get<int?>(nameof(RepeatOffenceCount)); }
+            set { BackingStore?.Set(nameof(RepeatOffenceCount), value); }
+        }
         /// <summary>
         /// Instantiates a new attackSimulationRepeatOffender and sets the default values.
         /// </summary>
         public AttackSimulationRepeatOffender() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

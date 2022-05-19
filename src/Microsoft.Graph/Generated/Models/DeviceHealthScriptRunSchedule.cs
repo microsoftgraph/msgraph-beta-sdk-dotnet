@@ -1,19 +1,29 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Base type of Device health script run schedule.</summary>
-    public class DeviceHealthScriptRunSchedule : IAdditionalDataHolder, IParsable {
+    public class DeviceHealthScriptRunSchedule : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The x value of every x hours for hourly schedule, every x days for Daily Schedule, every x weeks for weekly schedule, every x months for Monthly Schedule. Valid values 1 to 23</summary>
-        public int? Interval { get; set; }
+        public int? Interval {
+            get { return BackingStore?.Get<int?>(nameof(Interval)); }
+            set { BackingStore?.Set(nameof(Interval), value); }
+        }
         /// <summary>
         /// Instantiates a new deviceHealthScriptRunSchedule and sets the default values.
         /// </summary>
         public DeviceHealthScriptRunSchedule() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

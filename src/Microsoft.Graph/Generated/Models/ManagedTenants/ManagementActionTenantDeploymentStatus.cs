@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class ManagementActionTenantDeploymentStatus : Entity, IParsable {
         /// <summary>The collection of deployment status for each instance of a management action. Optional.</summary>
-        public List<ManagementActionDeploymentStatus> Statuses { get; set; }
+        public List<ManagementActionDeploymentStatus> Statuses {
+            get { return BackingStore?.Get<List<ManagementActionDeploymentStatus>>(nameof(Statuses)); }
+            set { BackingStore?.Set(nameof(Statuses), value); }
+        }
         /// <summary>The identifier for the tenant group that is associated with the management action. Required. Read-only.</summary>
-        public string TenantGroupId { get; set; }
+        public string TenantGroupId {
+            get { return BackingStore?.Get<string>(nameof(TenantGroupId)); }
+            set { BackingStore?.Set(nameof(TenantGroupId), value); }
+        }
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.</summary>
-        public string TenantId { get; set; }
+        public string TenantId {
+            get { return BackingStore?.Get<string>(nameof(TenantId)); }
+            set { BackingStore?.Set(nameof(TenantId), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

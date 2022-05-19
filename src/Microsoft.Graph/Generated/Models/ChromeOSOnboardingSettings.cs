@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Entity that represents a Chromebook tenant settings</summary>
     public class ChromeOSOnboardingSettings : Entity, IParsable {
         /// <summary>The ChromebookTenant&apos;s LastDirectorySyncDateTime</summary>
-        public DateTimeOffset? LastDirectorySyncDateTime { get; set; }
+        public DateTimeOffset? LastDirectorySyncDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastDirectorySyncDateTime)); }
+            set { BackingStore?.Set(nameof(LastDirectorySyncDateTime), value); }
+        }
         /// <summary>The ChromebookTenant&apos;s LastModifiedDateTime</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>The ChromebookTenant&apos;s OnboardingStatus. Possible values are: unknown, inprogress, onboarded, failed, offboarding, unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.OnboardingStatus? OnboardingStatus { get; set; }
+        public Microsoft.Graph.Beta.Models.OnboardingStatus? OnboardingStatus {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnboardingStatus?>(nameof(OnboardingStatus)); }
+            set { BackingStore?.Set(nameof(OnboardingStatus), value); }
+        }
         /// <summary>The ChromebookTenant&apos;s OwnerUserPrincipalName</summary>
-        public string OwnerUserPrincipalName { get; set; }
+        public string OwnerUserPrincipalName {
+            get { return BackingStore?.Get<string>(nameof(OwnerUserPrincipalName)); }
+            set { BackingStore?.Set(nameof(OwnerUserPrincipalName), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

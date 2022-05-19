@@ -4,18 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the appCatalogs singleton.</summary>
     public class TeamworkHostedContent : Entity, IParsable {
         /// <summary>Write only. Bytes for the hosted content (such as images).</summary>
-        public byte[] ContentBytes { get; set; }
+        public byte[] ContentBytes {
+            get { return BackingStore?.Get<byte[]>(nameof(ContentBytes)); }
+            set { BackingStore?.Set(nameof(ContentBytes), value); }
+        }
         /// <summary>Write only. Content type, such as image/png, image/jpg.</summary>
-        public string ContentType { get; set; }
+        public string ContentType {
+            get { return BackingStore?.Get<string>(nameof(ContentType)); }
+            set { BackingStore?.Set(nameof(ContentType), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new TeamworkHostedContent CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamworkHostedContent();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.teamworkHostedContent" => new TeamworkHostedContent(),
+                _ => new TeamworkHostedContent(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

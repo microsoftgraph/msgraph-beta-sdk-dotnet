@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class OnenoteResource : OnenoteEntityBaseModel, IParsable {
         /// <summary>The content stream</summary>
-        public byte[] Content { get; set; }
+        public byte[] Content {
+            get { return BackingStore?.Get<byte[]>(nameof(Content)); }
+            set { BackingStore?.Set(nameof(Content), value); }
+        }
         /// <summary>The URL for downloading the content</summary>
-        public string ContentUrl { get; set; }
+        public string ContentUrl {
+            get { return BackingStore?.Get<string>(nameof(ContentUrl)); }
+            set { BackingStore?.Set(nameof(ContentUrl), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

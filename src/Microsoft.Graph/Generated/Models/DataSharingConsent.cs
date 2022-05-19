@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Data sharing consent information.</summary>
     public class DataSharingConsent : Entity, IParsable {
         /// <summary>The time consent was granted for this account</summary>
-        public DateTimeOffset? GrantDateTime { get; set; }
+        public DateTimeOffset? GrantDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(GrantDateTime)); }
+            set { BackingStore?.Set(nameof(GrantDateTime), value); }
+        }
         /// <summary>The granted state for the data sharing consent</summary>
-        public bool? Granted { get; set; }
+        public bool? Granted {
+            get { return BackingStore?.Get<bool?>(nameof(Granted)); }
+            set { BackingStore?.Set(nameof(Granted), value); }
+        }
         /// <summary>The Upn of the user that granted consent for this account</summary>
-        public string GrantedByUpn { get; set; }
+        public string GrantedByUpn {
+            get { return BackingStore?.Get<string>(nameof(GrantedByUpn)); }
+            set { BackingStore?.Set(nameof(GrantedByUpn), value); }
+        }
         /// <summary>The UserId of the user that granted consent for this account</summary>
-        public string GrantedByUserId { get; set; }
+        public string GrantedByUserId {
+            get { return BackingStore?.Get<string>(nameof(GrantedByUserId)); }
+            set { BackingStore?.Set(nameof(GrantedByUserId), value); }
+        }
         /// <summary>The display name of the service work flow</summary>
-        public string ServiceDisplayName { get; set; }
+        public string ServiceDisplayName {
+            get { return BackingStore?.Get<string>(nameof(ServiceDisplayName)); }
+            set { BackingStore?.Set(nameof(ServiceDisplayName), value); }
+        }
         /// <summary>The TermsUrl for the data sharing consent</summary>
-        public string TermsUrl { get; set; }
+        public string TermsUrl {
+            get { return BackingStore?.Get<string>(nameof(TermsUrl)); }
+            set { BackingStore?.Set(nameof(TermsUrl), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

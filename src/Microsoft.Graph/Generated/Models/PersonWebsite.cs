@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class PersonWebsite : ItemFacet, IParsable {
         /// <summary>Contains categories a user has associated with the website (for example, personal, recipes).</summary>
-        public List<string> Categories { get; set; }
+        public List<string> Categories {
+            get { return BackingStore?.Get<List<string>>(nameof(Categories)); }
+            set { BackingStore?.Set(nameof(Categories), value); }
+        }
         /// <summary>Contains a description of the website.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Contains a friendly name for the website.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The thumbnailUrl property</summary>
-        public string ThumbnailUrl { get; set; }
+        public string ThumbnailUrl {
+            get { return BackingStore?.Get<string>(nameof(ThumbnailUrl)); }
+            set { BackingStore?.Set(nameof(ThumbnailUrl), value); }
+        }
         /// <summary>Contains a link to the website itself.</summary>
-        public string WebUrl { get; set; }
+        public string WebUrl {
+            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
+            set { BackingStore?.Set(nameof(WebUrl), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

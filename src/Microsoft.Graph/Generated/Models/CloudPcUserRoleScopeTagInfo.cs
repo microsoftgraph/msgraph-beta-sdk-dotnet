@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class CloudPcUserRoleScopeTagInfo : IAdditionalDataHolder, IParsable {
+    public class CloudPcUserRoleScopeTagInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Scope tag display name.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Scope tag ID.</summary>
-        public string RoleScopeTagId { get; set; }
+        public string RoleScopeTagId {
+            get { return BackingStore?.Get<string>(nameof(RoleScopeTagId)); }
+            set { BackingStore?.Set(nameof(RoleScopeTagId), value); }
+        }
         /// <summary>
         /// Instantiates a new cloudPcUserRoleScopeTagInfo and sets the default values.
         /// </summary>
         public CloudPcUserRoleScopeTagInfo() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

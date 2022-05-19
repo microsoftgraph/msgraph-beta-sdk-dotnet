@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class RedirectUriSettings : IAdditionalDataHolder, IParsable {
+    public class RedirectUriSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Identifies the specific URI within the redirectURIs collection in SAML SSO flows. Defaults to null. The index is unique across all the redirectUris for the application.</summary>
-        public int? Index { get; set; }
+        public int? Index {
+            get { return BackingStore?.Get<int?>(nameof(Index)); }
+            set { BackingStore?.Set(nameof(Index), value); }
+        }
         /// <summary>Specifies the URI that tokens are sent to.</summary>
-        public string Uri { get; set; }
+        public string Uri {
+            get { return BackingStore?.Get<string>(nameof(Uri)); }
+            set { BackingStore?.Set(nameof(Uri), value); }
+        }
         /// <summary>
         /// Instantiates a new redirectUriSettings and sets the default values.
         /// </summary>
         public RedirectUriSettings() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

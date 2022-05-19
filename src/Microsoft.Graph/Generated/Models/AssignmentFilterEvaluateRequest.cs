@@ -1,27 +1,49 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Request for assignment filter evaluation for devices.</summary>
-    public class AssignmentFilterEvaluateRequest : IAdditionalDataHolder, IParsable {
+    public class AssignmentFilterEvaluateRequest : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Order the devices should be sorted in. Default is ascending on device name.</summary>
-        public List<string> OrderBy { get; set; }
+        public List<string> OrderBy {
+            get { return BackingStore?.Get<List<string>>(nameof(OrderBy)); }
+            set { BackingStore?.Set(nameof(OrderBy), value); }
+        }
         /// <summary>Platform type of the devices on which the Assignment Filter will be applicable. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.</summary>
-        public DevicePlatformType? Platform { get; set; }
+        public DevicePlatformType? Platform {
+            get { return BackingStore?.Get<DevicePlatformType?>(nameof(Platform)); }
+            set { BackingStore?.Set(nameof(Platform), value); }
+        }
         /// <summary>Rule definition of the Assignment Filter.</summary>
-        public string Rule { get; set; }
+        public string Rule {
+            get { return BackingStore?.Get<string>(nameof(Rule)); }
+            set { BackingStore?.Set(nameof(Rule), value); }
+        }
         /// <summary>Number of records to skip. Default value is 0</summary>
-        public int? Skip { get; set; }
+        public int? Skip {
+            get { return BackingStore?.Get<int?>(nameof(Skip)); }
+            set { BackingStore?.Set(nameof(Skip), value); }
+        }
         /// <summary>Limit of records per request. Default value is 100, if provided less than 0 or greater than 100</summary>
-        public int? Top { get; set; }
+        public int? Top {
+            get { return BackingStore?.Get<int?>(nameof(Top)); }
+            set { BackingStore?.Set(nameof(Top), value); }
+        }
         /// <summary>
         /// Instantiates a new assignmentFilterEvaluateRequest and sets the default values.
         /// </summary>
         public AssignmentFilterEvaluateRequest() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

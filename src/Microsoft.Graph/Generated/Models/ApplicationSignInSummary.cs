@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to call the getAzureADApplicationSignInSummary method.</summary>
     public class ApplicationSignInSummary : Entity, IParsable {
         /// <summary>Name of the application that the user signed into.</summary>
-        public string AppDisplayName { get; set; }
+        public string AppDisplayName {
+            get { return BackingStore?.Get<string>(nameof(AppDisplayName)); }
+            set { BackingStore?.Set(nameof(AppDisplayName), value); }
+        }
         /// <summary>Count of failed sign-ins made by the application.</summary>
-        public long? FailedSignInCount { get; set; }
+        public long? FailedSignInCount {
+            get { return BackingStore?.Get<long?>(nameof(FailedSignInCount)); }
+            set { BackingStore?.Set(nameof(FailedSignInCount), value); }
+        }
         /// <summary>Count of successful sign-ins made by the application.</summary>
-        public long? SuccessfulSignInCount { get; set; }
+        public long? SuccessfulSignInCount {
+            get { return BackingStore?.Get<long?>(nameof(SuccessfulSignInCount)); }
+            set { BackingStore?.Set(nameof(SuccessfulSignInCount), value); }
+        }
         /// <summary>Percentage of successful sign-ins made by the application.</summary>
-        public double? SuccessPercentage { get; set; }
+        public double? SuccessPercentage {
+            get { return BackingStore?.Get<double?>(nameof(SuccessPercentage)); }
+            set { BackingStore?.Set(nameof(SuccessPercentage), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

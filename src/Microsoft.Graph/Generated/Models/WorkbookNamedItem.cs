@@ -4,21 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class WorkbookNamedItem : Entity, IParsable {
         /// <summary>Represents the comment associated with this name.</summary>
-        public string Comment { get; set; }
+        public string Comment {
+            get { return BackingStore?.Get<string>(nameof(Comment)); }
+            set { BackingStore?.Set(nameof(Comment), value); }
+        }
         /// <summary>The name of the object. Read-only.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>Indicates whether the name is scoped to the workbook or to a specific worksheet. Read-only.</summary>
-        public string Scope { get; set; }
+        public string Scope {
+            get { return BackingStore?.Get<string>(nameof(Scope)); }
+            set { BackingStore?.Set(nameof(Scope), value); }
+        }
         /// <summary>Indicates what type of reference is associated with the name. Possible values are: String, Integer, Double, Boolean, Range. Read-only.</summary>
-        public string Type { get; set; }
+        public string Type {
+            get { return BackingStore?.Get<string>(nameof(Type)); }
+            set { BackingStore?.Set(nameof(Type), value); }
+        }
         /// <summary>Represents the formula that the name is defined to refer to. E.g. =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.</summary>
-        public Json Value { get; set; }
+        public Json Value {
+            get { return BackingStore?.Get<Json>(nameof(Value)); }
+            set { BackingStore?.Set(nameof(Value), value); }
+        }
         /// <summary>Specifies whether the object is visible or not.</summary>
-        public bool? Visible { get; set; }
+        public bool? Visible {
+            get { return BackingStore?.Get<bool?>(nameof(Visible)); }
+            set { BackingStore?.Set(nameof(Visible), value); }
+        }
         /// <summary>Returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.</summary>
-        public WorkbookWorksheet Worksheet { get; set; }
+        public WorkbookWorksheet Worksheet {
+            get { return BackingStore?.Get<WorkbookWorksheet>(nameof(Worksheet)); }
+            set { BackingStore?.Set(nameof(Worksheet), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

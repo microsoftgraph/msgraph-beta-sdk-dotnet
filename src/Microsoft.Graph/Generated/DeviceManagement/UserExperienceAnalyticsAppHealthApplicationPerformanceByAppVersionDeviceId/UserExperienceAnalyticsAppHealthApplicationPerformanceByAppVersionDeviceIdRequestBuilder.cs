@@ -24,10 +24,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealth
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId.item collection</summary>
-        public UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceItemRequestBuilder this[string position] { get {
+        public UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId%2Did", position);
-            return new UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdRequestBuilder and sets the default values.

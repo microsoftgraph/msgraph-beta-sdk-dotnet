@@ -1,21 +1,34 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>The set of Role Definitions and Role Assignments assigned to a user.</summary>
-    public class DeviceAndAppManagementAssignedRoleDetails : IAdditionalDataHolder, IParsable {
+    public class DeviceAndAppManagementAssignedRoleDetails : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Role Assignment IDs for the specifc Role Assignments assigned to a user. This property is read-only.</summary>
-        public List<string> RoleAssignmentIds { get; set; }
+        public List<string> RoleAssignmentIds {
+            get { return BackingStore?.Get<List<string>>(nameof(RoleAssignmentIds)); }
+            set { BackingStore?.Set(nameof(RoleAssignmentIds), value); }
+        }
         /// <summary>Role Definition IDs for the specifc Role Definitions assigned to a user. This property is read-only.</summary>
-        public List<string> RoleDefinitionIds { get; set; }
+        public List<string> RoleDefinitionIds {
+            get { return BackingStore?.Get<List<string>>(nameof(RoleDefinitionIds)); }
+            set { BackingStore?.Set(nameof(RoleDefinitionIds), value); }
+        }
         /// <summary>
-        /// Instantiates a new deviceAndAppManagementAssignedRoleDetails and sets the default values.
+        /// Instantiates a new DeviceAndAppManagementAssignedRoleDetails and sets the default values.
         /// </summary>
         public DeviceAndAppManagementAssignedRoleDetails() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

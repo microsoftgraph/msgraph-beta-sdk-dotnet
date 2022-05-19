@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Entity that represents the health thresholds of a health metric.</summary>
     public class MicrosoftTunnelHealthThreshold : Entity, IParsable {
         /// <summary>The default threshold for being healthy</summary>
-        public long? DefaultHealthyThreshold { get; set; }
+        public long? DefaultHealthyThreshold {
+            get { return BackingStore?.Get<long?>(nameof(DefaultHealthyThreshold)); }
+            set { BackingStore?.Set(nameof(DefaultHealthyThreshold), value); }
+        }
         /// <summary>The default threshold for being unhealthy</summary>
-        public long? DefaultUnhealthyThreshold { get; set; }
+        public long? DefaultUnhealthyThreshold {
+            get { return BackingStore?.Get<long?>(nameof(DefaultUnhealthyThreshold)); }
+            set { BackingStore?.Set(nameof(DefaultUnhealthyThreshold), value); }
+        }
         /// <summary>The threshold for being healthy</summary>
-        public long? HealthyThreshold { get; set; }
+        public long? HealthyThreshold {
+            get { return BackingStore?.Get<long?>(nameof(HealthyThreshold)); }
+            set { BackingStore?.Set(nameof(HealthyThreshold), value); }
+        }
         /// <summary>The threshold for being unhealthy</summary>
-        public long? UnhealthyThreshold { get; set; }
+        public long? UnhealthyThreshold {
+            get { return BackingStore?.Get<long?>(nameof(UnhealthyThreshold)); }
+            set { BackingStore?.Set(nameof(UnhealthyThreshold), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -1,25 +1,44 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Base properties of the script parameter.</summary>
-    public class DeviceHealthScriptParameter : IAdditionalDataHolder, IParsable {
+    public class DeviceHealthScriptParameter : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Whether Apply DefaultValue When Not Assigned</summary>
-        public bool? ApplyDefaultValueWhenNotAssigned { get; set; }
+        public bool? ApplyDefaultValueWhenNotAssigned {
+            get { return BackingStore?.Get<bool?>(nameof(ApplyDefaultValueWhenNotAssigned)); }
+            set { BackingStore?.Set(nameof(ApplyDefaultValueWhenNotAssigned), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The description of the param</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Whether the param is required</summary>
-        public bool? IsRequired { get; set; }
+        public bool? IsRequired {
+            get { return BackingStore?.Get<bool?>(nameof(IsRequired)); }
+            set { BackingStore?.Set(nameof(IsRequired), value); }
+        }
         /// <summary>The name of the param</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>
         /// Instantiates a new deviceHealthScriptParameter and sets the default values.
         /// </summary>
         public DeviceHealthScriptParameter() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

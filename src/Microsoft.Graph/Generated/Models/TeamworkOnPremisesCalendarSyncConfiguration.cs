@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class TeamworkOnPremisesCalendarSyncConfiguration : IAdditionalDataHolder, IParsable {
+    public class TeamworkOnPremisesCalendarSyncConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The fully qualified domain name (FQDN) of the Skype for Business Server. Use the Exchange domain if the Skype for Business SIP domain is different from the Exchange domain of the user.</summary>
-        public string Domain { get; set; }
+        public string Domain {
+            get { return BackingStore?.Get<string>(nameof(Domain)); }
+            set { BackingStore?.Set(nameof(Domain), value); }
+        }
         /// <summary>The domain and username of the console device, for example, Seattle/RanierConf.</summary>
-        public string DomainUserName { get; set; }
+        public string DomainUserName {
+            get { return BackingStore?.Get<string>(nameof(DomainUserName)); }
+            set { BackingStore?.Set(nameof(DomainUserName), value); }
+        }
         /// <summary>The Simple Mail Transfer Protocol (SMTP) address of the user account. This is only required if a different user principal name (UPN) is used to sign in to Exchange other than Microsoft Teams and Skype for Business. This is a common scenario in a hybrid environment where an on-premises Exchange server is used.</summary>
-        public string SmtpAddress { get; set; }
+        public string SmtpAddress {
+            get { return BackingStore?.Get<string>(nameof(SmtpAddress)); }
+            set { BackingStore?.Set(nameof(SmtpAddress), value); }
+        }
         /// <summary>
         /// Instantiates a new teamworkOnPremisesCalendarSyncConfiguration and sets the default values.
         /// </summary>
         public TeamworkOnPremisesCalendarSyncConfiguration() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

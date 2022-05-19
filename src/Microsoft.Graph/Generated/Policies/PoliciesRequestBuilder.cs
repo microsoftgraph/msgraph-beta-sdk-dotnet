@@ -12,6 +12,7 @@ using Microsoft.Graph.Beta.Policies.ClaimsMappingPolicies;
 using Microsoft.Graph.Beta.Policies.ConditionalAccessPolicies;
 using Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy;
 using Microsoft.Graph.Beta.Policies.DefaultAppManagementPolicy;
+using Microsoft.Graph.Beta.Policies.DeviceRegistrationPolicy;
 using Microsoft.Graph.Beta.Policies.DirectoryRoleAccessReviewPolicy;
 using Microsoft.Graph.Beta.Policies.ExternalIdentitiesPolicy;
 using Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies;
@@ -83,6 +84,10 @@ namespace Microsoft.Graph.Beta.Policies {
         /// <summary>The defaultAppManagementPolicy property</summary>
         public DefaultAppManagementPolicyRequestBuilder DefaultAppManagementPolicy { get =>
             new DefaultAppManagementPolicyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The deviceRegistrationPolicy property</summary>
+        public DeviceRegistrationPolicyRequestBuilder DeviceRegistrationPolicy { get =>
+            new DeviceRegistrationPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The directoryRoleAccessReviewPolicy property</summary>
         public DirectoryRoleAccessReviewPolicyRequestBuilder DirectoryRoleAccessReviewPolicy { get =>

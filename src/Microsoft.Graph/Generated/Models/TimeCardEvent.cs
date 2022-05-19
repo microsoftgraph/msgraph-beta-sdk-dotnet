@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class TimeCardEvent : IAdditionalDataHolder, IParsable {
+    public class TimeCardEvent : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Indicates whether the entry was recorded at the approved location.</summary>
-        public bool? AtApprovedLocation { get; set; }
+        public bool? AtApprovedLocation {
+            get { return BackingStore?.Get<bool?>(nameof(AtApprovedLocation)); }
+            set { BackingStore?.Set(nameof(AtApprovedLocation), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The time the entry is recorded.</summary>
-        public DateTimeOffset? DateTime { get; set; }
+        public DateTimeOffset? DateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DateTime)); }
+            set { BackingStore?.Set(nameof(DateTime), value); }
+        }
         /// <summary>Notes about the timeCardEvent.</summary>
-        public ItemBody Notes { get; set; }
+        public ItemBody Notes {
+            get { return BackingStore?.Get<ItemBody>(nameof(Notes)); }
+            set { BackingStore?.Set(nameof(Notes), value); }
+        }
         /// <summary>
         /// Instantiates a new timeCardEvent and sets the default values.
         /// </summary>
         public TimeCardEvent() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

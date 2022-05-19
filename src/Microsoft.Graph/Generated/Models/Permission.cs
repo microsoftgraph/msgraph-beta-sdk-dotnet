@@ -4,29 +4,63 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class Permission : Entity, IParsable {
         /// <summary>A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.</summary>
-        public DateTimeOffset? ExpirationDateTime { get; set; }
+        public DateTimeOffset? ExpirationDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpirationDateTime)); }
+            set { BackingStore?.Set(nameof(ExpirationDateTime), value); }
+        }
         /// <summary>The grantedTo property</summary>
-        public IdentitySet GrantedTo { get; set; }
+        public IdentitySet GrantedTo {
+            get { return BackingStore?.Get<IdentitySet>(nameof(GrantedTo)); }
+            set { BackingStore?.Set(nameof(GrantedTo), value); }
+        }
         /// <summary>The grantedToIdentities property</summary>
-        public List<IdentitySet> GrantedToIdentities { get; set; }
+        public List<IdentitySet> GrantedToIdentities {
+            get { return BackingStore?.Get<List<IdentitySet>>(nameof(GrantedToIdentities)); }
+            set { BackingStore?.Set(nameof(GrantedToIdentities), value); }
+        }
         /// <summary>For link type permissions, the details of the users to whom permission was granted. Read-only.</summary>
-        public List<SharePointIdentitySet> GrantedToIdentitiesV2 { get; set; }
+        public List<SharePointIdentitySet> GrantedToIdentitiesV2 {
+            get { return BackingStore?.Get<List<SharePointIdentitySet>>(nameof(GrantedToIdentitiesV2)); }
+            set { BackingStore?.Set(nameof(GrantedToIdentitiesV2), value); }
+        }
         /// <summary>For user type permissions, the details of the users and applications for this permission. Read-only.</summary>
-        public SharePointIdentitySet GrantedToV2 { get; set; }
+        public SharePointIdentitySet GrantedToV2 {
+            get { return BackingStore?.Get<SharePointIdentitySet>(nameof(GrantedToV2)); }
+            set { BackingStore?.Set(nameof(GrantedToV2), value); }
+        }
         /// <summary>Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only. For OneDrive Personal only.</summary>
-        public bool? HasPassword { get; set; }
+        public bool? HasPassword {
+            get { return BackingStore?.Get<bool?>(nameof(HasPassword)); }
+            set { BackingStore?.Set(nameof(HasPassword), value); }
+        }
         /// <summary>Provides a reference to the ancestor of the current permission, if it is inherited from an ancestor. Read-only.</summary>
-        public ItemReference InheritedFrom { get; set; }
+        public ItemReference InheritedFrom {
+            get { return BackingStore?.Get<ItemReference>(nameof(InheritedFrom)); }
+            set { BackingStore?.Set(nameof(InheritedFrom), value); }
+        }
         /// <summary>Details of any associated sharing invitation for this permission. Read-only.</summary>
-        public SharingInvitation Invitation { get; set; }
+        public SharingInvitation Invitation {
+            get { return BackingStore?.Get<SharingInvitation>(nameof(Invitation)); }
+            set { BackingStore?.Set(nameof(Invitation), value); }
+        }
         /// <summary>Provides the link details of the current permission, if it is a link type permissions. Read-only.</summary>
-        public SharingLink Link { get; set; }
+        public SharingLink Link {
+            get { return BackingStore?.Get<SharingLink>(nameof(Link)); }
+            set { BackingStore?.Set(nameof(Link), value); }
+        }
         /// <summary>The type of permission, for example, read. See below for the full list of roles. Read-only.</summary>
-        public List<string> Roles { get; set; }
+        public List<string> Roles {
+            get { return BackingStore?.Get<List<string>>(nameof(Roles)); }
+            set { BackingStore?.Set(nameof(Roles), value); }
+        }
         /// <summary>A unique token that can be used to access this shared item via the [shares API][]. Read-only.</summary>
-        public string ShareId { get; set; }
+        public string ShareId {
+            get { return BackingStore?.Get<string>(nameof(ShareId)); }
+            set { BackingStore?.Set(nameof(ShareId), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -67,9 +67,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.AreGlobalScr
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<AreGlobalScriptsAvailableResponse> GetAsync(Action<AreGlobalScriptsAvailableRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<GlobalDeviceHealthScriptState?> GetAsync(Action<AreGlobalScriptsAvailableRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<AreGlobalScriptsAvailableResponse>(requestInfo, AreGlobalScriptsAvailableResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendPrimitiveAsync<GlobalDeviceHealthScriptState?>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class AreGlobalScriptsAvailableRequestBuilderGetRequestConfiguration {
@@ -83,40 +83,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.AreGlobalScr
             public AreGlobalScriptsAvailableRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
                 Headers = new Dictionary<string, string>();
-            }
-        }
-        /// <summary>Union type wrapper for classes globalDeviceHealthScriptState</summary>
-        public class AreGlobalScriptsAvailableResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type globalDeviceHealthScriptState</summary>
-            public Microsoft.Graph.Beta.Models.GlobalDeviceHealthScriptState? GlobalDeviceHealthScriptState { get; set; }
-            /// <summary>
-            /// Instantiates a new areGlobalScriptsAvailableResponse and sets the default values.
-            /// </summary>
-            public AreGlobalScriptsAvailableResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static AreGlobalScriptsAvailableResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new AreGlobalScriptsAvailableResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-                return new Dictionary<string, Action<IParseNode>> {
-                    {"globalDeviceHealthScriptState", n => { GlobalDeviceHealthScriptState = n.GetEnumValue<GlobalDeviceHealthScriptState>(); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteEnumValue<GlobalDeviceHealthScriptState>("globalDeviceHealthScriptState", GlobalDeviceHealthScriptState);
-                writer.WriteAdditionalData(AdditionalData);
             }
         }
     }

@@ -4,20 +4,35 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class TeamInfo : Entity, IParsable {
         /// <summary>The name of the team.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The team property</summary>
-        public Microsoft.Graph.Beta.Models.Team Team { get; set; }
+        public Microsoft.Graph.Beta.Models.Team Team {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Team>(nameof(Team)); }
+            set { BackingStore?.Set(nameof(Team), value); }
+        }
         /// <summary>The ID of the Azure Active Directory tenant.</summary>
-        public string TenantId { get; set; }
+        public string TenantId {
+            get { return BackingStore?.Get<string>(nameof(TenantId)); }
+            set { BackingStore?.Set(nameof(TenantId), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new TeamInfo CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamInfo();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.teamInfo" => new TeamInfo(),
+                _ => new TeamInfo(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

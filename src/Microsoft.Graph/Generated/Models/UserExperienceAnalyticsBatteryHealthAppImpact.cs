@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The user experience analytics battery health app impact entity contains battery usage related information at an app level for the tenant.</summary>
     public class UserExperienceAnalyticsBatteryHealthAppImpact : Entity, IParsable {
         /// <summary>Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647</summary>
-        public int? ActiveDevices { get; set; }
+        public int? ActiveDevices {
+            get { return BackingStore?.Get<int?>(nameof(ActiveDevices)); }
+            set { BackingStore?.Set(nameof(ActiveDevices), value); }
+        }
         /// <summary>User friendly display name for the app. Eg: Outlook</summary>
-        public string AppDisplayName { get; set; }
+        public string AppDisplayName {
+            get { return BackingStore?.Get<string>(nameof(AppDisplayName)); }
+            set { BackingStore?.Set(nameof(AppDisplayName), value); }
+        }
         /// <summary>App name. Eg: oltk.exe</summary>
-        public string AppName { get; set; }
+        public string AppName {
+            get { return BackingStore?.Get<string>(nameof(AppName)); }
+            set { BackingStore?.Set(nameof(AppName), value); }
+        }
         /// <summary>App publisher. Eg: Microsoft Corporation</summary>
-        public string AppPublisher { get; set; }
+        public string AppPublisher {
+            get { return BackingStore?.Get<string>(nameof(AppPublisher)); }
+            set { BackingStore?.Set(nameof(AppPublisher), value); }
+        }
         /// <summary>The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
-        public double? BatteryUsagePercentage { get; set; }
+        public double? BatteryUsagePercentage {
+            get { return BackingStore?.Get<double?>(nameof(BatteryUsagePercentage)); }
+            set { BackingStore?.Set(nameof(BatteryUsagePercentage), value); }
+        }
         /// <summary>true if the user had active interaction with the app.</summary>
-        public bool? IsForegroundApp { get; set; }
+        public bool? IsForegroundApp {
+            get { return BackingStore?.Get<bool?>(nameof(IsForegroundApp)); }
+            set { BackingStore?.Set(nameof(IsForegroundApp), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

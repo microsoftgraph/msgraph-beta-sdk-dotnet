@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the identityContainer singleton.</summary>
     public class SignInFrequencySessionControl : ConditionalAccessSessionControl, IParsable {
         /// <summary>The authenticationType property</summary>
-        public SignInFrequencyAuthenticationType? AuthenticationType { get; set; }
+        public SignInFrequencyAuthenticationType? AuthenticationType {
+            get { return BackingStore?.Get<SignInFrequencyAuthenticationType?>(nameof(AuthenticationType)); }
+            set { BackingStore?.Set(nameof(AuthenticationType), value); }
+        }
         /// <summary>The frequencyInterval property</summary>
-        public SignInFrequencyInterval? FrequencyInterval { get; set; }
+        public SignInFrequencyInterval? FrequencyInterval {
+            get { return BackingStore?.Get<SignInFrequencyInterval?>(nameof(FrequencyInterval)); }
+            set { BackingStore?.Set(nameof(FrequencyInterval), value); }
+        }
         /// <summary>Possible values are: days, hours.</summary>
-        public SigninFrequencyType? Type { get; set; }
+        public SigninFrequencyType? Type {
+            get { return BackingStore?.Get<SigninFrequencyType?>(nameof(Type)); }
+            set { BackingStore?.Set(nameof(Type), value); }
+        }
         /// <summary>The number of days or hours.</summary>
-        public int? Value { get; set; }
+        public int? Value {
+            get { return BackingStore?.Get<int?>(nameof(Value)); }
+            set { BackingStore?.Set(nameof(Value), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

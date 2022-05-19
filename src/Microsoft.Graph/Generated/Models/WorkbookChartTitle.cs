@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class WorkbookChartTitle : Entity, IParsable {
         /// <summary>Represents the formatting of a chart title, which includes fill and font formatting. Read-only.</summary>
-        public WorkbookChartTitleFormat Format { get; set; }
+        public WorkbookChartTitleFormat Format {
+            get { return BackingStore?.Get<WorkbookChartTitleFormat>(nameof(Format)); }
+            set { BackingStore?.Set(nameof(Format), value); }
+        }
         /// <summary>Boolean value representing if the chart title will overlay the chart or not.</summary>
-        public bool? Overlay { get; set; }
+        public bool? Overlay {
+            get { return BackingStore?.Get<bool?>(nameof(Overlay)); }
+            set { BackingStore?.Set(nameof(Overlay), value); }
+        }
         /// <summary>Represents the title text of a chart.</summary>
-        public string Text { get; set; }
+        public string Text {
+            get { return BackingStore?.Get<string>(nameof(Text)); }
+            set { BackingStore?.Set(nameof(Text), value); }
+        }
         /// <summary>A boolean value the represents the visibility of a chart title object.</summary>
-        public bool? Visible { get; set; }
+        public bool? Visible {
+            get { return BackingStore?.Get<bool?>(nameof(Visible)); }
+            set { BackingStore?.Set(nameof(Visible), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

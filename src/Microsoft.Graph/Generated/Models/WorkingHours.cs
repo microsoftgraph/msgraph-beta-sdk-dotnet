@@ -1,25 +1,44 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class WorkingHours : IAdditionalDataHolder, IParsable {
+    public class WorkingHours : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The days of the week on which the user works.</summary>
-        public List<DayOfWeek?> DaysOfWeek { get; set; }
+        public List<string> DaysOfWeek {
+            get { return BackingStore?.Get<List<string>>(nameof(DaysOfWeek)); }
+            set { BackingStore?.Set(nameof(DaysOfWeek), value); }
+        }
         /// <summary>The time of the day that the user stops working.</summary>
-        public Time? EndTime { get; set; }
+        public Time? EndTime {
+            get { return BackingStore?.Get<Time?>(nameof(EndTime)); }
+            set { BackingStore?.Set(nameof(EndTime), value); }
+        }
         /// <summary>The time of the day that the user starts working.</summary>
-        public Time? StartTime { get; set; }
+        public Time? StartTime {
+            get { return BackingStore?.Get<Time?>(nameof(StartTime)); }
+            set { BackingStore?.Set(nameof(StartTime), value); }
+        }
         /// <summary>The time zone to which the working hours apply.</summary>
-        public TimeZoneBase TimeZone { get; set; }
+        public TimeZoneBase TimeZone {
+            get { return BackingStore?.Get<TimeZoneBase>(nameof(TimeZone)); }
+            set { BackingStore?.Set(nameof(TimeZone), value); }
+        }
         /// <summary>
         /// Instantiates a new workingHours and sets the default values.
         /// </summary>
         public WorkingHours() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -35,7 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"daysOfWeek", n => { DaysOfWeek = n.GetCollectionOfEnumValues<DayOfWeek>().ToList(); } },
+                {"daysOfWeek", n => { DaysOfWeek = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"endTime", n => { EndTime = n.GetTimeValue(); } },
                 {"startTime", n => { StartTime = n.GetTimeValue(); } },
                 {"timeZone", n => { TimeZone = n.GetObjectValue<TimeZoneBase>(TimeZoneBase.CreateFromDiscriminatorValue); } },
@@ -47,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<DayOfWeek>("daysOfWeek", DaysOfWeek);
+            writer.WriteCollectionOfPrimitiveValues<string>("daysOfWeek", DaysOfWeek);
             writer.WriteTimeValue("endTime", EndTime);
             writer.WriteTimeValue("startTime", StartTime);
             writer.WriteObjectValue<TimeZoneBase>("timeZone", TimeZone);

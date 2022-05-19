@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.Notes {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// List of notes associcated with the request.
+        /// List of notes associated with the request.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<NotesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.Notes {
             return requestInfo;
         }
         /// <summary>
-        /// List of notes associcated with the request.
+        /// List of notes associated with the request.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.Notes {
             };
             return await RequestAdapter.SendAsync<AuthoredNote>(requestInfo, AuthoredNote.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>List of notes associcated with the request.</summary>
+        /// <summary>List of notes associated with the request.</summary>
         public class NotesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

@@ -1,26 +1,48 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class EducationCourse : IAdditionalDataHolder, IParsable {
+    public class EducationCourse : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Unique identifier for the course.</summary>
-        public string CourseNumber { get; set; }
+        public string CourseNumber {
+            get { return BackingStore?.Get<string>(nameof(CourseNumber)); }
+            set { BackingStore?.Set(nameof(CourseNumber), value); }
+        }
         /// <summary>Description of the course.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Name of the course.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>ID of the course from the syncing system.</summary>
-        public string ExternalId { get; set; }
+        public string ExternalId {
+            get { return BackingStore?.Get<string>(nameof(ExternalId)); }
+            set { BackingStore?.Set(nameof(ExternalId), value); }
+        }
         /// <summary>Subject of the course.</summary>
-        public string Subject { get; set; }
+        public string Subject {
+            get { return BackingStore?.Get<string>(nameof(Subject)); }
+            set { BackingStore?.Set(nameof(Subject), value); }
+        }
         /// <summary>
         /// Instantiates a new educationCourse and sets the default values.
         /// </summary>
         public EducationCourse() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -1,34 +1,68 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class TeamworkNetworkConfiguration : IAdditionalDataHolder, IParsable {
+    public class TeamworkNetworkConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The default gateway is the path used to pass information when the destination is unknown to the device.</summary>
-        public string DefaultGateway { get; set; }
+        public string DefaultGateway {
+            get { return BackingStore?.Get<string>(nameof(DefaultGateway)); }
+            set { BackingStore?.Set(nameof(DefaultGateway), value); }
+        }
         /// <summary>The network domain of the device, for example, contoso.com.</summary>
-        public string DomainName { get; set; }
+        public string DomainName {
+            get { return BackingStore?.Get<string>(nameof(DomainName)); }
+            set { BackingStore?.Set(nameof(DomainName), value); }
+        }
         /// <summary>The device name on a network.</summary>
-        public string HostName { get; set; }
+        public string HostName {
+            get { return BackingStore?.Get<string>(nameof(HostName)); }
+            set { BackingStore?.Set(nameof(HostName), value); }
+        }
         /// <summary>The IP address is a numerical label that uniquely identifies every device connected to the internet.</summary>
-        public string IpAddress { get; set; }
+        public string IpAddress {
+            get { return BackingStore?.Get<string>(nameof(IpAddress)); }
+            set { BackingStore?.Set(nameof(IpAddress), value); }
+        }
         /// <summary>True if DHCP is enabled.</summary>
-        public bool? IsDhcpEnabled { get; set; }
+        public bool? IsDhcpEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(IsDhcpEnabled)); }
+            set { BackingStore?.Set(nameof(IsDhcpEnabled), value); }
+        }
         /// <summary>True if the PC port is enabled.</summary>
-        public bool? IsPCPortEnabled { get; set; }
+        public bool? IsPCPortEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(IsPCPortEnabled)); }
+            set { BackingStore?.Set(nameof(IsPCPortEnabled), value); }
+        }
         /// <summary>A primary DNS is the first point of contact for a device that translates the hostname into an IP address.</summary>
-        public string PrimaryDns { get; set; }
+        public string PrimaryDns {
+            get { return BackingStore?.Get<string>(nameof(PrimaryDns)); }
+            set { BackingStore?.Set(nameof(PrimaryDns), value); }
+        }
         /// <summary>A secondary DNS is used when the primary DNS is not available.</summary>
-        public string SecondaryDns { get; set; }
+        public string SecondaryDns {
+            get { return BackingStore?.Get<string>(nameof(SecondaryDns)); }
+            set { BackingStore?.Set(nameof(SecondaryDns), value); }
+        }
         /// <summary>A subnet mask is a number that distinguishes the network address and the host address within an IP address.</summary>
-        public string SubnetMask { get; set; }
+        public string SubnetMask {
+            get { return BackingStore?.Get<string>(nameof(SubnetMask)); }
+            set { BackingStore?.Set(nameof(SubnetMask), value); }
+        }
         /// <summary>
         /// Instantiates a new teamworkNetworkConfiguration and sets the default values.
         /// </summary>
         public TeamworkNetworkConfiguration() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

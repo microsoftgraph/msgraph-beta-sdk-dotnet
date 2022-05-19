@@ -8,13 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provides operations to manage the cloudCommunications singleton.</summary>
     public class CloudCommunications : Entity, IParsable {
         /// <summary>The callRecords property</summary>
-        public List<CallRecord> CallRecords { get; set; }
+        public List<CallRecord> CallRecords {
+            get { return BackingStore?.Get<List<CallRecord>>(nameof(CallRecords)); }
+            set { BackingStore?.Set(nameof(CallRecords), value); }
+        }
         /// <summary>The calls property</summary>
-        public List<Call> Calls { get; set; }
+        public List<Call> Calls {
+            get { return BackingStore?.Get<List<Call>>(nameof(Calls)); }
+            set { BackingStore?.Set(nameof(Calls), value); }
+        }
         /// <summary>The onlineMeetings property</summary>
-        public List<OnlineMeeting> OnlineMeetings { get; set; }
+        public List<OnlineMeeting> OnlineMeetings {
+            get { return BackingStore?.Get<List<OnlineMeeting>>(nameof(OnlineMeetings)); }
+            set { BackingStore?.Set(nameof(OnlineMeetings), value); }
+        }
         /// <summary>The presences property</summary>
-        public List<Presence> Presences { get; set; }
+        public List<Presence> Presences {
+            get { return BackingStore?.Get<List<Presence>>(nameof(Presences)); }
+            set { BackingStore?.Set(nameof(Presences), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

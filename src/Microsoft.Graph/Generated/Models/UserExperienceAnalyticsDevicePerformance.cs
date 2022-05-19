@@ -4,47 +4,108 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The user experience analytics device performance entity contains device boot performance details.</summary>
     public class UserExperienceAnalyticsDevicePerformance : Entity, IParsable {
         /// <summary>Average (mean) number of Blue Screens per device in the last 14 days. Valid values 0 to 9999999</summary>
-        public double? AverageBlueScreens { get; set; }
+        public double? AverageBlueScreens {
+            get { return BackingStore?.Get<double?>(nameof(AverageBlueScreens)); }
+            set { BackingStore?.Set(nameof(AverageBlueScreens), value); }
+        }
         /// <summary>Average (mean) number of Restarts per device in the last 14 days. Valid values 0 to 9999999</summary>
-        public double? AverageRestarts { get; set; }
+        public double? AverageRestarts {
+            get { return BackingStore?.Get<double?>(nameof(AverageRestarts)); }
+            set { BackingStore?.Set(nameof(AverageRestarts), value); }
+        }
         /// <summary>Number of Blue Screens in the last 14 days. Valid values 0 to 9999999</summary>
-        public int? BlueScreenCount { get; set; }
+        public int? BlueScreenCount {
+            get { return BackingStore?.Get<int?>(nameof(BlueScreenCount)); }
+            set { BackingStore?.Set(nameof(BlueScreenCount), value); }
+        }
         /// <summary>The user experience analytics device boot score.</summary>
-        public int? BootScore { get; set; }
+        public int? BootScore {
+            get { return BackingStore?.Get<int?>(nameof(BootScore)); }
+            set { BackingStore?.Set(nameof(BootScore), value); }
+        }
         /// <summary>The user experience analytics device core boot time in milliseconds.</summary>
-        public int? CoreBootTimeInMs { get; set; }
+        public int? CoreBootTimeInMs {
+            get { return BackingStore?.Get<int?>(nameof(CoreBootTimeInMs)); }
+            set { BackingStore?.Set(nameof(CoreBootTimeInMs), value); }
+        }
         /// <summary>The user experience analytics device core login time in milliseconds.</summary>
-        public int? CoreLoginTimeInMs { get; set; }
+        public int? CoreLoginTimeInMs {
+            get { return BackingStore?.Get<int?>(nameof(CoreLoginTimeInMs)); }
+            set { BackingStore?.Set(nameof(CoreLoginTimeInMs), value); }
+        }
         /// <summary>User experience analytics summarized device count.</summary>
-        public long? DeviceCount { get; set; }
+        public long? DeviceCount {
+            get { return BackingStore?.Get<long?>(nameof(DeviceCount)); }
+            set { BackingStore?.Set(nameof(DeviceCount), value); }
+        }
         /// <summary>The user experience analytics device name.</summary>
-        public string DeviceName { get; set; }
+        public string DeviceName {
+            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
+            set { BackingStore?.Set(nameof(DeviceName), value); }
+        }
         /// <summary>The user experience analytics device disk type. Possible values are: unknown, hdd, ssd, unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.DiskType? DiskType { get; set; }
+        public Microsoft.Graph.Beta.Models.DiskType? DiskType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DiskType?>(nameof(DiskType)); }
+            set { BackingStore?.Set(nameof(DiskType), value); }
+        }
         /// <summary>The user experience analytics device group policy boot time in milliseconds.</summary>
-        public int? GroupPolicyBootTimeInMs { get; set; }
+        public int? GroupPolicyBootTimeInMs {
+            get { return BackingStore?.Get<int?>(nameof(GroupPolicyBootTimeInMs)); }
+            set { BackingStore?.Set(nameof(GroupPolicyBootTimeInMs), value); }
+        }
         /// <summary>The user experience analytics device group policy login time in milliseconds.</summary>
-        public int? GroupPolicyLoginTimeInMs { get; set; }
+        public int? GroupPolicyLoginTimeInMs {
+            get { return BackingStore?.Get<int?>(nameof(GroupPolicyLoginTimeInMs)); }
+            set { BackingStore?.Set(nameof(GroupPolicyLoginTimeInMs), value); }
+        }
         /// <summary>The health state of the user experience analytics device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.</summary>
-        public UserExperienceAnalyticsHealthState? HealthStatus { get; set; }
+        public UserExperienceAnalyticsHealthState? HealthStatus {
+            get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>(nameof(HealthStatus)); }
+            set { BackingStore?.Set(nameof(HealthStatus), value); }
+        }
         /// <summary>The user experience analytics device login score.</summary>
-        public int? LoginScore { get; set; }
+        public int? LoginScore {
+            get { return BackingStore?.Get<int?>(nameof(LoginScore)); }
+            set { BackingStore?.Set(nameof(LoginScore), value); }
+        }
         /// <summary>The user experience analytics device manufacturer.</summary>
-        public string Manufacturer { get; set; }
+        public string Manufacturer {
+            get { return BackingStore?.Get<string>(nameof(Manufacturer)); }
+            set { BackingStore?.Set(nameof(Manufacturer), value); }
+        }
         /// <summary>The user experience analytics device model.</summary>
-        public string Model { get; set; }
+        public string Model {
+            get { return BackingStore?.Get<string>(nameof(Model)); }
+            set { BackingStore?.Set(nameof(Model), value); }
+        }
         /// <summary>The user experience analytics model level startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
-        public double? ModelStartupPerformanceScore { get; set; }
+        public double? ModelStartupPerformanceScore {
+            get { return BackingStore?.Get<double?>(nameof(ModelStartupPerformanceScore)); }
+            set { BackingStore?.Set(nameof(ModelStartupPerformanceScore), value); }
+        }
         /// <summary>The user experience analytics device Operating System version.</summary>
-        public string OperatingSystemVersion { get; set; }
+        public string OperatingSystemVersion {
+            get { return BackingStore?.Get<string>(nameof(OperatingSystemVersion)); }
+            set { BackingStore?.Set(nameof(OperatingSystemVersion), value); }
+        }
         /// <summary>The user experience analytics responsive desktop time in milliseconds.</summary>
-        public int? ResponsiveDesktopTimeInMs { get; set; }
+        public int? ResponsiveDesktopTimeInMs {
+            get { return BackingStore?.Get<int?>(nameof(ResponsiveDesktopTimeInMs)); }
+            set { BackingStore?.Set(nameof(ResponsiveDesktopTimeInMs), value); }
+        }
         /// <summary>Number of Restarts in the last 14 days. Valid values 0 to 9999999</summary>
-        public int? RestartCount { get; set; }
+        public int? RestartCount {
+            get { return BackingStore?.Get<int?>(nameof(RestartCount)); }
+            set { BackingStore?.Set(nameof(RestartCount), value); }
+        }
         /// <summary>The user experience analytics device startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
-        public double? StartupPerformanceScore { get; set; }
+        public double? StartupPerformanceScore {
+            get { return BackingStore?.Get<double?>(nameof(StartupPerformanceScore)); }
+            set { BackingStore?.Set(nameof(StartupPerformanceScore), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

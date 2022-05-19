@@ -1,32 +1,63 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class Reminder : IAdditionalDataHolder, IParsable {
+    public class Reminder : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Identifies the version of the reminder. Every time the reminder is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object.</summary>
-        public string ChangeKey { get; set; }
+        public string ChangeKey {
+            get { return BackingStore?.Get<string>(nameof(ChangeKey)); }
+            set { BackingStore?.Set(nameof(ChangeKey), value); }
+        }
         /// <summary>The date, time and time zone that the event ends.</summary>
-        public DateTimeTimeZone EventEndTime { get; set; }
+        public DateTimeTimeZone EventEndTime {
+            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(EventEndTime)); }
+            set { BackingStore?.Set(nameof(EventEndTime), value); }
+        }
         /// <summary>The unique ID of the event. Read only.</summary>
-        public string EventId { get; set; }
+        public string EventId {
+            get { return BackingStore?.Get<string>(nameof(EventId)); }
+            set { BackingStore?.Set(nameof(EventId), value); }
+        }
         /// <summary>The location of the event.</summary>
-        public Location EventLocation { get; set; }
+        public Location EventLocation {
+            get { return BackingStore?.Get<Location>(nameof(EventLocation)); }
+            set { BackingStore?.Set(nameof(EventLocation), value); }
+        }
         /// <summary>The date, time, and time zone that the event starts.</summary>
-        public DateTimeTimeZone EventStartTime { get; set; }
+        public DateTimeTimeZone EventStartTime {
+            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(EventStartTime)); }
+            set { BackingStore?.Set(nameof(EventStartTime), value); }
+        }
         /// <summary>The text of the event&apos;s subject line.</summary>
-        public string EventSubject { get; set; }
+        public string EventSubject {
+            get { return BackingStore?.Get<string>(nameof(EventSubject)); }
+            set { BackingStore?.Set(nameof(EventSubject), value); }
+        }
         /// <summary>The URL to open the event in Outlook on the web.The event will open in the browser if you are logged in to your mailbox via Outlook on the web. You will be prompted to login if you are not already logged in with the browser.This URL cannot be accessed from within an iFrame.</summary>
-        public string EventWebLink { get; set; }
+        public string EventWebLink {
+            get { return BackingStore?.Get<string>(nameof(EventWebLink)); }
+            set { BackingStore?.Set(nameof(EventWebLink), value); }
+        }
         /// <summary>The date, time, and time zone that the reminder is set to occur.</summary>
-        public DateTimeTimeZone ReminderFireTime { get; set; }
+        public DateTimeTimeZone ReminderFireTime {
+            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(ReminderFireTime)); }
+            set { BackingStore?.Set(nameof(ReminderFireTime), value); }
+        }
         /// <summary>
         /// Instantiates a new reminder and sets the default values.
         /// </summary>
         public Reminder() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

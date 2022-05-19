@@ -4,21 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the print singleton.</summary>
     public class UserCredentialUsageDetails : Entity, IParsable {
         /// <summary>Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword,unknownFutureValue</summary>
-        public UsageAuthMethod? AuthMethod { get; set; }
+        public UsageAuthMethod? AuthMethod {
+            get { return BackingStore?.Get<UsageAuthMethod?>(nameof(AuthMethod)); }
+            set { BackingStore?.Set(nameof(AuthMethod), value); }
+        }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? EventDateTime { get; set; }
+        public DateTimeOffset? EventDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EventDateTime)); }
+            set { BackingStore?.Set(nameof(EventDateTime), value); }
+        }
         /// <summary>Provides the failure reason for the corresponding reset or registration workflow.</summary>
-        public string FailureReason { get; set; }
+        public string FailureReason {
+            get { return BackingStore?.Get<string>(nameof(FailureReason)); }
+            set { BackingStore?.Set(nameof(FailureReason), value); }
+        }
         /// <summary>Possible values are: registration, reset, unknownFutureValue.</summary>
-        public FeatureType? Feature { get; set; }
+        public FeatureType? Feature {
+            get { return BackingStore?.Get<FeatureType?>(nameof(Feature)); }
+            set { BackingStore?.Set(nameof(Feature), value); }
+        }
         /// <summary>Indicates success or failure of the workflow.</summary>
-        public bool? IsSuccess { get; set; }
+        public bool? IsSuccess {
+            get { return BackingStore?.Get<bool?>(nameof(IsSuccess)); }
+            set { BackingStore?.Set(nameof(IsSuccess), value); }
+        }
         /// <summary>User name of the user performing the reset or registration workflow.</summary>
-        public string UserDisplayName { get; set; }
+        public string UserDisplayName {
+            get { return BackingStore?.Get<string>(nameof(UserDisplayName)); }
+            set { BackingStore?.Set(nameof(UserDisplayName), value); }
+        }
         /// <summary>User principal name of the user performing the reset or registration workflow.</summary>
-        public string UserPrincipalName { get; set; }
+        public string UserPrincipalName {
+            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
+            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

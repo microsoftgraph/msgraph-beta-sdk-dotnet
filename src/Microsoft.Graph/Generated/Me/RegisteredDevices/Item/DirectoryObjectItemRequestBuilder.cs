@@ -1,3 +1,5 @@
+using Microsoft.Graph.Beta.Me.RegisteredDevices.Item.Device;
+using Microsoft.Graph.Beta.Me.RegisteredDevices.Item.Endpoint;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -11,6 +13,14 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.RegisteredDevices.Item {
     /// <summary>Provides operations to manage the registeredDevices property of the microsoft.graph.user entity.</summary>
     public class DirectoryObjectItemRequestBuilder {
+        /// <summary>The device property</summary>
+        public DeviceRequestBuilder Device { get =>
+            new DeviceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The endpoint property</summary>
+        public EndpointRequestBuilder Endpoint { get =>
+            new EndpointRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>

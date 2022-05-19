@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class AccessPackageLocalizedText : IAdditionalDataHolder, IParsable {
+    public class AccessPackageLocalizedText : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The ISO code for the intended language. Required.</summary>
-        public string LanguageCode { get; set; }
+        public string LanguageCode {
+            get { return BackingStore?.Get<string>(nameof(LanguageCode)); }
+            set { BackingStore?.Set(nameof(LanguageCode), value); }
+        }
         /// <summary>The text in the specific language. Required.</summary>
-        public string Text { get; set; }
+        public string Text {
+            get { return BackingStore?.Get<string>(nameof(Text)); }
+            set { BackingStore?.Set(nameof(Text), value); }
+        }
         /// <summary>
         /// Instantiates a new accessPackageLocalizedText and sets the default values.
         /// </summary>
         public AccessPackageLocalizedText() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

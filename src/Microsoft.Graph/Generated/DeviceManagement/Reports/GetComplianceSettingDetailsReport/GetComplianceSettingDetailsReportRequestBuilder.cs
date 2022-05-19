@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetComplianceSettingDeta
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(GetComplianceSettingDetailsReportRequestBody body, Action<GetComplianceSettingDetailsReportRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation CreatePostRequestInformation(GetComplianceSettingDetailsReportPostRequestBody body, Action<GetComplianceSettingDetailsReportRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -70,10 +70,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetComplianceSettingDeta
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<GetComplianceSettingDetailsReportResponse> PostAsync(GetComplianceSettingDetailsReportRequestBody body, Action<GetComplianceSettingDetailsReportRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> PostAsync(GetComplianceSettingDetailsReportPostRequestBody body, Action<GetComplianceSettingDetailsReportRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<GetComplianceSettingDetailsReportResponse>(requestInfo, GetComplianceSettingDetailsReportResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class GetComplianceSettingDetailsReportRequestBuilderPostRequestConfiguration {

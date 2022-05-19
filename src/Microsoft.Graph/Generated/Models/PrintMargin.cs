@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class PrintMargin : IAdditionalDataHolder, IParsable {
+    public class PrintMargin : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The margin in microns from the bottom edge.</summary>
-        public int? Bottom { get; set; }
+        public int? Bottom {
+            get { return BackingStore?.Get<int?>(nameof(Bottom)); }
+            set { BackingStore?.Set(nameof(Bottom), value); }
+        }
         /// <summary>The margin in microns from the left edge.</summary>
-        public int? Left { get; set; }
+        public int? Left {
+            get { return BackingStore?.Get<int?>(nameof(Left)); }
+            set { BackingStore?.Set(nameof(Left), value); }
+        }
         /// <summary>The margin in microns from the right edge.</summary>
-        public int? Right { get; set; }
+        public int? Right {
+            get { return BackingStore?.Get<int?>(nameof(Right)); }
+            set { BackingStore?.Set(nameof(Right), value); }
+        }
         /// <summary>The margin in microns from the top edge.</summary>
-        public int? Top { get; set; }
+        public int? Top {
+            get { return BackingStore?.Get<int?>(nameof(Top)); }
+            set { BackingStore?.Set(nameof(Top), value); }
+        }
         /// <summary>
         /// Instantiates a new printMargin and sets the default values.
         /// </summary>
         public PrintMargin() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

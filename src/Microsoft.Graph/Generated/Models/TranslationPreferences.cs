@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class TranslationPreferences : IAdditionalDataHolder, IParsable {
+    public class TranslationPreferences : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Translation override behavior for languages, if any.Returned by default.</summary>
-        public List<TranslationLanguageOverride> LanguageOverrides { get; set; }
+        public List<TranslationLanguageOverride> LanguageOverrides {
+            get { return BackingStore?.Get<List<TranslationLanguageOverride>>(nameof(LanguageOverrides)); }
+            set { BackingStore?.Set(nameof(LanguageOverrides), value); }
+        }
         /// <summary>The user&apos;s preferred translation behavior.Returned by default. Not nullable.</summary>
-        public Microsoft.Graph.Beta.Models.TranslationBehavior? TranslationBehavior { get; set; }
+        public Microsoft.Graph.Beta.Models.TranslationBehavior? TranslationBehavior {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TranslationBehavior?>(nameof(TranslationBehavior)); }
+            set { BackingStore?.Set(nameof(TranslationBehavior), value); }
+        }
         /// <summary>The list of languages the user does not need translated. This is computed from the authoringLanguages collection in regionalAndLanguageSettings, and the languageOverrides collection in translationPreferences. The list specifies neutral culture values that include the language code without any country or region association. For example, it would specify &apos;fr&apos; for the neutral French culture, but not &apos;fr-FR&apos; for the French culture in France. Returned by default. Read only.</summary>
-        public List<string> UntranslatedLanguages { get; set; }
+        public List<string> UntranslatedLanguages {
+            get { return BackingStore?.Get<List<string>>(nameof(UntranslatedLanguages)); }
+            set { BackingStore?.Set(nameof(UntranslatedLanguages), value); }
+        }
         /// <summary>
         /// Instantiates a new translationPreferences and sets the default values.
         /// </summary>
         public TranslationPreferences() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

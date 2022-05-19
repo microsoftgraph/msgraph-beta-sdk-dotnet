@@ -1,26 +1,48 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ProvisioningErrorInfo : IAdditionalDataHolder, IParsable {
+    public class ProvisioningErrorInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Additional details in case of error.</summary>
-        public string AdditionalDetails { get; set; }
+        public string AdditionalDetails {
+            get { return BackingStore?.Get<string>(nameof(AdditionalDetails)); }
+            set { BackingStore?.Set(nameof(AdditionalDetails), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Categorizes the error code. Possible values are failure, nonServiceFailure, success, unknownFutureValue</summary>
-        public ProvisioningStatusErrorCategory? ErrorCategory { get; set; }
+        public ProvisioningStatusErrorCategory? ErrorCategory {
+            get { return BackingStore?.Get<ProvisioningStatusErrorCategory?>(nameof(ErrorCategory)); }
+            set { BackingStore?.Set(nameof(ErrorCategory), value); }
+        }
         /// <summary>Unique error code if any occurred. Learn more</summary>
-        public string ErrorCode { get; set; }
+        public string ErrorCode {
+            get { return BackingStore?.Get<string>(nameof(ErrorCode)); }
+            set { BackingStore?.Set(nameof(ErrorCode), value); }
+        }
         /// <summary>Summarizes the status and describes why the status happened.</summary>
-        public string Reason { get; set; }
+        public string Reason {
+            get { return BackingStore?.Get<string>(nameof(Reason)); }
+            set { BackingStore?.Set(nameof(Reason), value); }
+        }
         /// <summary>Provides the resolution for the corresponding error.</summary>
-        public string RecommendedAction { get; set; }
+        public string RecommendedAction {
+            get { return BackingStore?.Get<string>(nameof(RecommendedAction)); }
+            set { BackingStore?.Set(nameof(RecommendedAction), value); }
+        }
         /// <summary>
         /// Instantiates a new provisioningErrorInfo and sets the default values.
         /// </summary>
         public ProvisioningErrorInfo() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

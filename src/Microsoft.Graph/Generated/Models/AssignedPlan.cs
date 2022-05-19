@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class AssignedPlan : IAdditionalDataHolder, IParsable {
+    public class AssignedPlan : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>The date and time at which the plan was assigned; for example: 2013-01-02T19:32:30Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? AssignedDateTime { get; set; }
+        public DateTimeOffset? AssignedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(AssignedDateTime)); }
+            set { BackingStore?.Set(nameof(AssignedDateTime), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut.</summary>
-        public string CapabilityStatus { get; set; }
+        public string CapabilityStatus {
+            get { return BackingStore?.Get<string>(nameof(CapabilityStatus)); }
+            set { BackingStore?.Set(nameof(CapabilityStatus), value); }
+        }
         /// <summary>The name of the service; for example, exchange.</summary>
-        public string Service { get; set; }
+        public string Service {
+            get { return BackingStore?.Get<string>(nameof(Service)); }
+            set { BackingStore?.Set(nameof(Service), value); }
+        }
         /// <summary>A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.</summary>
-        public string ServicePlanId { get; set; }
+        public string ServicePlanId {
+            get { return BackingStore?.Get<string>(nameof(ServicePlanId)); }
+            set { BackingStore?.Set(nameof(ServicePlanId), value); }
+        }
         /// <summary>
         /// Instantiates a new assignedPlan and sets the default values.
         /// </summary>
         public AssignedPlan() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

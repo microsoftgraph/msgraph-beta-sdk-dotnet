@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class SensitivityPolicySettings : Entity, IParsable {
         /// <summary>The applicableTo property</summary>
-        public SensitivityLabelTarget? ApplicableTo { get; set; }
+        public SensitivityLabelTarget? ApplicableTo {
+            get { return BackingStore?.Get<SensitivityLabelTarget?>(nameof(ApplicableTo)); }
+            set { BackingStore?.Set(nameof(ApplicableTo), value); }
+        }
         /// <summary>The downgradeSensitivityRequiresJustification property</summary>
-        public bool? DowngradeSensitivityRequiresJustification { get; set; }
+        public bool? DowngradeSensitivityRequiresJustification {
+            get { return BackingStore?.Get<bool?>(nameof(DowngradeSensitivityRequiresJustification)); }
+            set { BackingStore?.Set(nameof(DowngradeSensitivityRequiresJustification), value); }
+        }
         /// <summary>The helpWebUrl property</summary>
-        public string HelpWebUrl { get; set; }
+        public string HelpWebUrl {
+            get { return BackingStore?.Get<string>(nameof(HelpWebUrl)); }
+            set { BackingStore?.Set(nameof(HelpWebUrl), value); }
+        }
         /// <summary>The isMandatory property</summary>
-        public bool? IsMandatory { get; set; }
+        public bool? IsMandatory {
+            get { return BackingStore?.Get<bool?>(nameof(IsMandatory)); }
+            set { BackingStore?.Set(nameof(IsMandatory), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

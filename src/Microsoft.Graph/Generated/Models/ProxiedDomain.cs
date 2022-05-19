@@ -1,21 +1,34 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Proxied Domain</summary>
-    public class ProxiedDomain : IAdditionalDataHolder, IParsable {
+    public class ProxiedDomain : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The IP address or FQDN</summary>
-        public string IpAddressOrFQDN { get; set; }
+        public string IpAddressOrFQDN {
+            get { return BackingStore?.Get<string>(nameof(IpAddressOrFQDN)); }
+            set { BackingStore?.Set(nameof(IpAddressOrFQDN), value); }
+        }
         /// <summary>Proxy IP or FQDN</summary>
-        public string Proxy { get; set; }
+        public string Proxy {
+            get { return BackingStore?.Get<string>(nameof(Proxy)); }
+            set { BackingStore?.Set(nameof(Proxy), value); }
+        }
         /// <summary>
         /// Instantiates a new proxiedDomain and sets the default values.
         /// </summary>
         public ProxiedDomain() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of riskyUser entities.</summary>
     public class RiskyUserHistoryItem : RiskyUser, IParsable {
         /// <summary>The activity related to user risk level change.</summary>
-        public RiskUserActivity Activity { get; set; }
+        public RiskUserActivity Activity {
+            get { return BackingStore?.Get<RiskUserActivity>(nameof(Activity)); }
+            set { BackingStore?.Set(nameof(Activity), value); }
+        }
         /// <summary>The id of actor that does the operation.</summary>
-        public string InitiatedBy { get; set; }
+        public string InitiatedBy {
+            get { return BackingStore?.Get<string>(nameof(InitiatedBy)); }
+            set { BackingStore?.Set(nameof(InitiatedBy), value); }
+        }
         /// <summary>The id of the user.</summary>
-        public string UserId { get; set; }
+        public string UserId {
+            get { return BackingStore?.Get<string>(nameof(UserId)); }
+            set { BackingStore?.Set(nameof(UserId), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

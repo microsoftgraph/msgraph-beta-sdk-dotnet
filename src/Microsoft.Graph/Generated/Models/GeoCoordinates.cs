@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class GeoCoordinates : IAdditionalDataHolder, IParsable {
+    public class GeoCoordinates : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Optional. The altitude (height), in feet,  above sea level for the item. Read-only.</summary>
-        public double? Altitude { get; set; }
+        public double? Altitude {
+            get { return BackingStore?.Get<double?>(nameof(Altitude)); }
+            set { BackingStore?.Set(nameof(Altitude), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.</summary>
-        public double? Latitude { get; set; }
+        public double? Latitude {
+            get { return BackingStore?.Get<double?>(nameof(Latitude)); }
+            set { BackingStore?.Set(nameof(Latitude), value); }
+        }
         /// <summary>Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.</summary>
-        public double? Longitude { get; set; }
+        public double? Longitude {
+            get { return BackingStore?.Get<double?>(nameof(Longitude)); }
+            set { BackingStore?.Set(nameof(Longitude), value); }
+        }
         /// <summary>
         /// Instantiates a new geoCoordinates and sets the default values.
         /// </summary>
         public GeoCoordinates() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

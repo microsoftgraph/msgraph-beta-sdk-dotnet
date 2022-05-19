@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class DeviceManagementApplicabilityRuleOsEdition : IAdditionalDataHolder, IParsable {
+    public class DeviceManagementApplicabilityRuleOsEdition : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Name for object.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>Applicability rule OS edition type.</summary>
-        public List<Windows10EditionType?> OsEditionTypes { get; set; }
+        public List<string> OsEditionTypes {
+            get { return BackingStore?.Get<List<string>>(nameof(OsEditionTypes)); }
+            set { BackingStore?.Set(nameof(OsEditionTypes), value); }
+        }
         /// <summary>Applicability Rule type. Possible values are: include, exclude.</summary>
-        public DeviceManagementApplicabilityRuleType? RuleType { get; set; }
+        public DeviceManagementApplicabilityRuleType? RuleType {
+            get { return BackingStore?.Get<DeviceManagementApplicabilityRuleType?>(nameof(RuleType)); }
+            set { BackingStore?.Set(nameof(RuleType), value); }
+        }
         /// <summary>
         /// Instantiates a new deviceManagementApplicabilityRuleOsEdition and sets the default values.
         /// </summary>
         public DeviceManagementApplicabilityRuleOsEdition() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -33,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"name", n => { Name = n.GetStringValue(); } },
-                {"osEditionTypes", n => { OsEditionTypes = n.GetCollectionOfEnumValues<Windows10EditionType>().ToList(); } },
+                {"osEditionTypes", n => { OsEditionTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"ruleType", n => { RuleType = n.GetEnumValue<DeviceManagementApplicabilityRuleType>(); } },
             };
         }
@@ -44,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfEnumValues<Windows10EditionType>("osEditionTypes", OsEditionTypes);
+            writer.WriteCollectionOfPrimitiveValues<string>("osEditionTypes", OsEditionTypes);
             writer.WriteEnumValue<DeviceManagementApplicabilityRuleType>("ruleType", RuleType);
             writer.WriteAdditionalData(AdditionalData);
         }

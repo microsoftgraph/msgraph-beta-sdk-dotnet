@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the commsApplication singleton.</summary>
     public class Participant : Entity, IParsable {
         /// <summary>The info property</summary>
-        public ParticipantInfo Info { get; set; }
+        public ParticipantInfo Info {
+            get { return BackingStore?.Get<ParticipantInfo>(nameof(Info)); }
+            set { BackingStore?.Set(nameof(Info), value); }
+        }
         /// <summary>true if the participant is in lobby.</summary>
-        public bool? IsInLobby { get; set; }
+        public bool? IsInLobby {
+            get { return BackingStore?.Get<bool?>(nameof(IsInLobby)); }
+            set { BackingStore?.Set(nameof(IsInLobby), value); }
+        }
         /// <summary>true if the participant is muted (client or server muted).</summary>
-        public bool? IsMuted { get; set; }
+        public bool? IsMuted {
+            get { return BackingStore?.Get<bool?>(nameof(IsMuted)); }
+            set { BackingStore?.Set(nameof(IsMuted), value); }
+        }
         /// <summary>The list of media streams.</summary>
-        public List<MediaStream> MediaStreams { get; set; }
+        public List<MediaStream> MediaStreams {
+            get { return BackingStore?.Get<List<MediaStream>>(nameof(MediaStreams)); }
+            set { BackingStore?.Set(nameof(MediaStreams), value); }
+        }
         /// <summary>A blob of data provided by the participant in the roster.</summary>
-        public string Metadata { get; set; }
+        public string Metadata {
+            get { return BackingStore?.Get<string>(nameof(Metadata)); }
+            set { BackingStore?.Set(nameof(Metadata), value); }
+        }
         /// <summary>Information on whether the participant has recording capability.</summary>
-        public Microsoft.Graph.Beta.Models.RecordingInfo RecordingInfo { get; set; }
+        public Microsoft.Graph.Beta.Models.RecordingInfo RecordingInfo {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RecordingInfo>(nameof(RecordingInfo)); }
+            set { BackingStore?.Set(nameof(RecordingInfo), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to call the evaluate method.</summary>
     public class EvaluateLabelJobResponse : JobResponseBase, IParsable {
         /// <summary>The result property</summary>
-        public EvaluateLabelJobResultGroup Result { get; set; }
+        public EvaluateLabelJobResultGroup Result {
+            get { return BackingStore?.Get<EvaluateLabelJobResultGroup>(nameof(Result)); }
+            set { BackingStore?.Set(nameof(Result), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

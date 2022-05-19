@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class Conversation : Entity, IParsable {
         /// <summary>Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.</summary>
-        public bool? HasAttachments { get; set; }
+        public bool? HasAttachments {
+            get { return BackingStore?.Get<bool?>(nameof(HasAttachments)); }
+            set { BackingStore?.Set(nameof(HasAttachments), value); }
+        }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, le, ge).</summary>
-        public DateTimeOffset? LastDeliveredDateTime { get; set; }
+        public DateTimeOffset? LastDeliveredDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastDeliveredDateTime)); }
+            set { BackingStore?.Set(nameof(LastDeliveredDateTime), value); }
+        }
         /// <summary>A short summary from the body of the latest post in this conversation.</summary>
-        public string Preview { get; set; }
+        public string Preview {
+            get { return BackingStore?.Get<string>(nameof(Preview)); }
+            set { BackingStore?.Set(nameof(Preview), value); }
+        }
         /// <summary>A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.</summary>
-        public List<ConversationThread> Threads { get; set; }
+        public List<ConversationThread> Threads {
+            get { return BackingStore?.Get<List<ConversationThread>>(nameof(Threads)); }
+            set { BackingStore?.Set(nameof(Threads), value); }
+        }
         /// <summary>The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.</summary>
-        public string Topic { get; set; }
+        public string Topic {
+            get { return BackingStore?.Get<string>(nameof(Topic)); }
+            set { BackingStore?.Set(nameof(Topic), value); }
+        }
         /// <summary>All the users that sent a message to this Conversation.</summary>
-        public List<string> UniqueSenders { get; set; }
+        public List<string> UniqueSenders {
+            get { return BackingStore?.Get<List<string>>(nameof(UniqueSenders)); }
+            set { BackingStore?.Set(nameof(UniqueSenders), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

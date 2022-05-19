@@ -7,19 +7,40 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provides operations to manage the authenticationMethodsPolicy singleton.</summary>
     public class AuthenticationMethodsPolicy : Entity, IParsable {
         /// <summary>Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.</summary>
-        public List<AuthenticationMethodConfiguration> AuthenticationMethodConfigurations { get; set; }
+        public List<AuthenticationMethodConfiguration> AuthenticationMethodConfigurations {
+            get { return BackingStore?.Get<List<AuthenticationMethodConfiguration>>(nameof(AuthenticationMethodConfigurations)); }
+            set { BackingStore?.Set(nameof(AuthenticationMethodConfigurations), value); }
+        }
         /// <summary>A description of the policy.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The name of the policy.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The date and time of the last update to the policy.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>The version of the policy in use.</summary>
-        public string PolicyVersion { get; set; }
+        public string PolicyVersion {
+            get { return BackingStore?.Get<string>(nameof(PolicyVersion)); }
+            set { BackingStore?.Set(nameof(PolicyVersion), value); }
+        }
         /// <summary>The reconfirmationInDays property</summary>
-        public int? ReconfirmationInDays { get; set; }
+        public int? ReconfirmationInDays {
+            get { return BackingStore?.Get<int?>(nameof(ReconfirmationInDays)); }
+            set { BackingStore?.Set(nameof(ReconfirmationInDays), value); }
+        }
         /// <summary>Enforce registration at sign-in time. This property can be used to remind users to set up targeted authentication methods.</summary>
-        public Microsoft.Graph.Beta.Models.RegistrationEnforcement RegistrationEnforcement { get; set; }
+        public Microsoft.Graph.Beta.Models.RegistrationEnforcement RegistrationEnforcement {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RegistrationEnforcement>(nameof(RegistrationEnforcement)); }
+            set { BackingStore?.Set(nameof(RegistrationEnforcement), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

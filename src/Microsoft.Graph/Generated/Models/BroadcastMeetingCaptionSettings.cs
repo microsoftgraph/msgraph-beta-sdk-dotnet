@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class BroadcastMeetingCaptionSettings : IAdditionalDataHolder, IParsable {
+    public class BroadcastMeetingCaptionSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether caption is enabled for this Teams live event.</summary>
-        public bool? IsCaptionEnabled { get; set; }
+        public bool? IsCaptionEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(IsCaptionEnabled)); }
+            set { BackingStore?.Set(nameof(IsCaptionEnabled), value); }
+        }
         /// <summary>The spoken language.</summary>
-        public string SpokenLanguage { get; set; }
+        public string SpokenLanguage {
+            get { return BackingStore?.Get<string>(nameof(SpokenLanguage)); }
+            set { BackingStore?.Set(nameof(SpokenLanguage), value); }
+        }
         /// <summary>The translation languages (choose up to 6).</summary>
-        public List<string> TranslationLanguages { get; set; }
+        public List<string> TranslationLanguages {
+            get { return BackingStore?.Get<List<string>>(nameof(TranslationLanguages)); }
+            set { BackingStore?.Set(nameof(TranslationLanguages), value); }
+        }
         /// <summary>
         /// Instantiates a new broadcastMeetingCaptionSettings and sets the default values.
         /// </summary>
         public BroadcastMeetingCaptionSettings() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

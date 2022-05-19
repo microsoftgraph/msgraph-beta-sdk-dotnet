@@ -1,26 +1,48 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SecureScoreControlStateUpdate : IAdditionalDataHolder, IParsable {
+    public class SecureScoreControlStateUpdate : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Assigns the control to the user who will take the action.</summary>
-        public string AssignedTo { get; set; }
+        public string AssignedTo {
+            get { return BackingStore?.Get<string>(nameof(AssignedTo)); }
+            set { BackingStore?.Set(nameof(AssignedTo), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Provides optional comment about the control.</summary>
-        public string Comment { get; set; }
+        public string Comment {
+            get { return BackingStore?.Get<string>(nameof(Comment)); }
+            set { BackingStore?.Set(nameof(Comment), value); }
+        }
         /// <summary>State of the control, which can be modified via a PATCH command (for example, ignored, thirdParty).</summary>
-        public string State { get; set; }
+        public string State {
+            get { return BackingStore?.Get<string>(nameof(State)); }
+            set { BackingStore?.Set(nameof(State), value); }
+        }
         /// <summary>ID of the user who updated tenant state.</summary>
-        public string UpdatedBy { get; set; }
+        public string UpdatedBy {
+            get { return BackingStore?.Get<string>(nameof(UpdatedBy)); }
+            set { BackingStore?.Set(nameof(UpdatedBy), value); }
+        }
         /// <summary>Time at which the control state was updated.</summary>
-        public DateTimeOffset? UpdatedDateTime { get; set; }
+        public DateTimeOffset? UpdatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(UpdatedDateTime)); }
+            set { BackingStore?.Set(nameof(UpdatedDateTime), value); }
+        }
         /// <summary>
         /// Instantiates a new secureScoreControlStateUpdate and sets the default values.
         /// </summary>
         public SecureScoreControlStateUpdate() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Policy status detail item contained by an autopilot event.</summary>
     public class DeviceManagementAutopilotPolicyStatusDetail : Entity, IParsable {
         /// <summary>The policy compliance status. Possible values are: unknown, compliant, installed, notCompliant, notInstalled, error.</summary>
-        public DeviceManagementAutopilotPolicyComplianceStatus? ComplianceStatus { get; set; }
+        public DeviceManagementAutopilotPolicyComplianceStatus? ComplianceStatus {
+            get { return BackingStore?.Get<DeviceManagementAutopilotPolicyComplianceStatus?>(nameof(ComplianceStatus)); }
+            set { BackingStore?.Set(nameof(ComplianceStatus), value); }
+        }
         /// <summary>The friendly name of the policy.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The errorode associated with the compliance or enforcement status of the policy. Error code for enforcement status takes precedence if it exists.</summary>
-        public int? ErrorCode { get; set; }
+        public int? ErrorCode {
+            get { return BackingStore?.Get<int?>(nameof(ErrorCode)); }
+            set { BackingStore?.Set(nameof(ErrorCode), value); }
+        }
         /// <summary>Timestamp of the reported policy status</summary>
-        public DateTimeOffset? LastReportedDateTime { get; set; }
+        public DateTimeOffset? LastReportedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastReportedDateTime)); }
+            set { BackingStore?.Set(nameof(LastReportedDateTime), value); }
+        }
         /// <summary>The type of policy. Possible values are: unknown, application, appModel, configurationPolicy.</summary>
-        public DeviceManagementAutopilotPolicyType? PolicyType { get; set; }
+        public DeviceManagementAutopilotPolicyType? PolicyType {
+            get { return BackingStore?.Get<DeviceManagementAutopilotPolicyType?>(nameof(PolicyType)); }
+            set { BackingStore?.Set(nameof(PolicyType), value); }
+        }
         /// <summary>Indicates if this prolicy was tracked as part of the autopilot bootstrap enrollment sync session</summary>
-        public bool? TrackedOnEnrollmentStatus { get; set; }
+        public bool? TrackedOnEnrollmentStatus {
+            get { return BackingStore?.Get<bool?>(nameof(TrackedOnEnrollmentStatus)); }
+            set { BackingStore?.Set(nameof(TrackedOnEnrollmentStatus), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

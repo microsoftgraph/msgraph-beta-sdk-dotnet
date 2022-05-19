@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class RecordingInfo : IAdditionalDataHolder, IParsable {
+    public class RecordingInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The participant who initiated the recording.</summary>
-        public ParticipantInfo InitiatedBy { get; set; }
+        public ParticipantInfo InitiatedBy {
+            get { return BackingStore?.Get<ParticipantInfo>(nameof(InitiatedBy)); }
+            set { BackingStore?.Set(nameof(InitiatedBy), value); }
+        }
         /// <summary>The identities of recording initiator.</summary>
-        public IdentitySet Initiator { get; set; }
+        public IdentitySet Initiator {
+            get { return BackingStore?.Get<IdentitySet>(nameof(Initiator)); }
+            set { BackingStore?.Set(nameof(Initiator), value); }
+        }
         /// <summary>Possible values are: unknown, notRecording, recording, or failed.</summary>
-        public Microsoft.Graph.Beta.Models.RecordingStatus? RecordingStatus { get; set; }
+        public Microsoft.Graph.Beta.Models.RecordingStatus? RecordingStatus {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RecordingStatus?>(nameof(RecordingStatus)); }
+            set { BackingStore?.Set(nameof(RecordingStatus), value); }
+        }
         /// <summary>
         /// Instantiates a new recordingInfo and sets the default values.
         /// </summary>
         public RecordingInfo() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

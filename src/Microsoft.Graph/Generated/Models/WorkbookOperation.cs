@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class WorkbookOperation : Entity, IParsable {
         /// <summary>The error returned by the operation.</summary>
-        public WorkbookOperationError Error { get; set; }
+        public WorkbookOperationError Error {
+            get { return BackingStore?.Get<WorkbookOperationError>(nameof(Error)); }
+            set { BackingStore?.Set(nameof(Error), value); }
+        }
         /// <summary>The resource URI for the result.</summary>
-        public string ResourceLocation { get; set; }
+        public string ResourceLocation {
+            get { return BackingStore?.Get<string>(nameof(ResourceLocation)); }
+            set { BackingStore?.Set(nameof(ResourceLocation), value); }
+        }
         /// <summary>The current status of the operation. Possible values are: notStarted, running, succeeded, failed.</summary>
-        public WorkbookOperationStatus? Status { get; set; }
+        public WorkbookOperationStatus? Status {
+            get { return BackingStore?.Get<WorkbookOperationStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

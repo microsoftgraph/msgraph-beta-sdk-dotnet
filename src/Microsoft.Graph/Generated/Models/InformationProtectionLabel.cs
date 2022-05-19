@@ -4,21 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class InformationProtectionLabel : Entity, IParsable {
         /// <summary>The color that the UI should display for the label, if configured.</summary>
-        public string Color { get; set; }
+        public string Color {
+            get { return BackingStore?.Get<string>(nameof(Color)); }
+            set { BackingStore?.Set(nameof(Color), value); }
+        }
         /// <summary>The admin-defined description for the label.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Indicates whether the label is active or not. Active labels should be hidden or disabled in UI.</summary>
-        public bool? IsActive { get; set; }
+        public bool? IsActive {
+            get { return BackingStore?.Get<bool?>(nameof(IsActive)); }
+            set { BackingStore?.Set(nameof(IsActive), value); }
+        }
         /// <summary>The plaintext name of the label.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>The parent label associated with a child label. Null if label has no parent.</summary>
-        public ParentLabelDetails Parent { get; set; }
+        public ParentLabelDetails Parent {
+            get { return BackingStore?.Get<ParentLabelDetails>(nameof(Parent)); }
+            set { BackingStore?.Set(nameof(Parent), value); }
+        }
         /// <summary>The sensitivity value of the label, where lower is less sensitive.</summary>
-        public int? Sensitivity { get; set; }
+        public int? Sensitivity {
+            get { return BackingStore?.Get<int?>(nameof(Sensitivity)); }
+            set { BackingStore?.Set(nameof(Sensitivity), value); }
+        }
         /// <summary>The tooltip that should be displayed for the label in a UI.</summary>
-        public string Tooltip { get; set; }
+        public string Tooltip {
+            get { return BackingStore?.Get<string>(nameof(Tooltip)); }
+            set { BackingStore?.Set(nameof(Tooltip), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

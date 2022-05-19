@@ -1,27 +1,49 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class RecurrenceRange : IAdditionalDataHolder, IParsable {
+    public class RecurrenceRange : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The date to stop applying the recurrence pattern. Depending on the recurrence pattern of the event, the last occurrence of the meeting may not be this date. Required if type is endDate.</summary>
-        public Date? EndDate { get; set; }
+        public Date? EndDate {
+            get { return BackingStore?.Get<Date?>(nameof(EndDate)); }
+            set { BackingStore?.Set(nameof(EndDate), value); }
+        }
         /// <summary>The number of times to repeat the event. Required and must be positive if type is numbered.</summary>
-        public int? NumberOfOccurrences { get; set; }
+        public int? NumberOfOccurrences {
+            get { return BackingStore?.Get<int?>(nameof(NumberOfOccurrences)); }
+            set { BackingStore?.Set(nameof(NumberOfOccurrences), value); }
+        }
         /// <summary>Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.</summary>
-        public string RecurrenceTimeZone { get; set; }
+        public string RecurrenceTimeZone {
+            get { return BackingStore?.Get<string>(nameof(RecurrenceTimeZone)); }
+            set { BackingStore?.Set(nameof(RecurrenceTimeZone), value); }
+        }
         /// <summary>The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.</summary>
-        public Date? StartDate { get; set; }
+        public Date? StartDate {
+            get { return BackingStore?.Get<Date?>(nameof(StartDate)); }
+            set { BackingStore?.Set(nameof(StartDate), value); }
+        }
         /// <summary>The recurrence range. Possible values are: endDate, noEnd, numbered. Required.</summary>
-        public RecurrenceRangeType? Type { get; set; }
+        public RecurrenceRangeType? Type {
+            get { return BackingStore?.Get<RecurrenceRangeType?>(nameof(Type)); }
+            set { BackingStore?.Set(nameof(Type), value); }
+        }
         /// <summary>
         /// Instantiates a new recurrenceRange and sets the default values.
         /// </summary>
         public RecurrenceRange() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

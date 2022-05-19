@@ -4,24 +4,45 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class Attachment : Entity, IParsable {
         /// <summary>The MIME type.</summary>
-        public string ContentType { get; set; }
+        public string ContentType {
+            get { return BackingStore?.Get<string>(nameof(ContentType)); }
+            set { BackingStore?.Set(nameof(ContentType), value); }
+        }
         /// <summary>true if the attachment is an inline attachment; otherwise, false.</summary>
-        public bool? IsInline { get; set; }
+        public bool? IsInline {
+            get { return BackingStore?.Get<bool?>(nameof(IsInline)); }
+            set { BackingStore?.Set(nameof(IsInline), value); }
+        }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>The display name of the attachment. This does not need to be the actual file name.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>The length of the attachment in bytes.</summary>
-        public int? Size { get; set; }
+        public int? Size {
+            get { return BackingStore?.Get<int?>(nameof(Size)); }
+            set { BackingStore?.Set(nameof(Size), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new Attachment CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Attachment();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.attachment" => new Attachment(),
+                _ => new Attachment(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -4,31 +4,68 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class CloudPcDevice : Entity, IParsable {
         /// <summary>The status of the cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed. Required. Read-only.</summary>
-        public string CloudPcStatus { get; set; }
+        public string CloudPcStatus {
+            get { return BackingStore?.Get<string>(nameof(CloudPcStatus)); }
+            set { BackingStore?.Set(nameof(CloudPcStatus), value); }
+        }
         /// <summary>The deviceSpecification property</summary>
-        public string DeviceSpecification { get; set; }
+        public string DeviceSpecification {
+            get { return BackingStore?.Get<string>(nameof(DeviceSpecification)); }
+            set { BackingStore?.Set(nameof(DeviceSpecification), value); }
+        }
         /// <summary>The display name for the cloud PC. Required. Read-only.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Date and time the entity was last updated in the multi-tenant management platform. Required. Read-only.</summary>
-        public DateTimeOffset? LastRefreshedDateTime { get; set; }
+        public DateTimeOffset? LastRefreshedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastRefreshedDateTime)); }
+            set { BackingStore?.Set(nameof(LastRefreshedDateTime), value); }
+        }
         /// <summary>The managed device identifier for the cloud PC. Optional. Read-only.</summary>
-        public string ManagedDeviceId { get; set; }
+        public string ManagedDeviceId {
+            get { return BackingStore?.Get<string>(nameof(ManagedDeviceId)); }
+            set { BackingStore?.Set(nameof(ManagedDeviceId), value); }
+        }
         /// <summary>The managed device display name for the cloud PC. Optional. Read-only.</summary>
-        public string ManagedDeviceName { get; set; }
+        public string ManagedDeviceName {
+            get { return BackingStore?.Get<string>(nameof(ManagedDeviceName)); }
+            set { BackingStore?.Set(nameof(ManagedDeviceName), value); }
+        }
         /// <summary>The provisioning policy identifier for the cloud PC. Required. Read-only.</summary>
-        public string ProvisioningPolicyId { get; set; }
+        public string ProvisioningPolicyId {
+            get { return BackingStore?.Get<string>(nameof(ProvisioningPolicyId)); }
+            set { BackingStore?.Set(nameof(ProvisioningPolicyId), value); }
+        }
         /// <summary>The service plan name for the cloud PC. Required. Read-only.</summary>
-        public string ServicePlanName { get; set; }
+        public string ServicePlanName {
+            get { return BackingStore?.Get<string>(nameof(ServicePlanName)); }
+            set { BackingStore?.Set(nameof(ServicePlanName), value); }
+        }
         /// <summary>The servicePlanType property</summary>
-        public string ServicePlanType { get; set; }
+        public string ServicePlanType {
+            get { return BackingStore?.Get<string>(nameof(ServicePlanType)); }
+            set { BackingStore?.Set(nameof(ServicePlanType), value); }
+        }
         /// <summary>The display name for the managed tenant. Required. Read-only.</summary>
-        public string TenantDisplayName { get; set; }
+        public string TenantDisplayName {
+            get { return BackingStore?.Get<string>(nameof(TenantDisplayName)); }
+            set { BackingStore?.Set(nameof(TenantDisplayName), value); }
+        }
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.</summary>
-        public string TenantId { get; set; }
+        public string TenantId {
+            get { return BackingStore?.Get<string>(nameof(TenantId)); }
+            set { BackingStore?.Set(nameof(TenantId), value); }
+        }
         /// <summary>The user principal name (UPN) of the user assigned to the cloud PC. Required. Read-only.</summary>
-        public string UserPrincipalName { get; set; }
+        public string UserPrincipalName {
+            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
+            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

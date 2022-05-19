@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Search {
+    /// <summary>Provides operations to manage the searchEntity singleton.</summary>
     public class Acronym : SearchAnswer, IParsable {
         /// <summary>What the acronym stands for.</summary>
-        public string StandsFor { get; set; }
+        public string StandsFor {
+            get { return BackingStore?.Get<string>(nameof(StandsFor)); }
+            set { BackingStore?.Set(nameof(StandsFor), value); }
+        }
         /// <summary>State of the acronym. Possible values are: published, draft, excluded, or unknownFutureValue.</summary>
-        public AnswerState? State { get; set; }
+        public AnswerState? State {
+            get { return BackingStore?.Get<AnswerState?>(nameof(State)); }
+            set { BackingStore?.Set(nameof(State), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

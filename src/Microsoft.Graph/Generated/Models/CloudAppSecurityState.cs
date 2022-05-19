@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class CloudAppSecurityState : IAdditionalDataHolder, IParsable {
+    public class CloudAppSecurityState : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Destination IP Address of the connection to the cloud application/service.</summary>
-        public string DestinationServiceIp { get; set; }
+        public string DestinationServiceIp {
+            get { return BackingStore?.Get<string>(nameof(DestinationServiceIp)); }
+            set { BackingStore?.Set(nameof(DestinationServiceIp), value); }
+        }
         /// <summary>Cloud application/service name (for example &apos;Salesforce&apos;, &apos;DropBox&apos;, etc.).</summary>
-        public string DestinationServiceName { get; set; }
+        public string DestinationServiceName {
+            get { return BackingStore?.Get<string>(nameof(DestinationServiceName)); }
+            set { BackingStore?.Set(nameof(DestinationServiceName), value); }
+        }
         /// <summary>Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.</summary>
-        public string RiskScore { get; set; }
+        public string RiskScore {
+            get { return BackingStore?.Get<string>(nameof(RiskScore)); }
+            set { BackingStore?.Set(nameof(RiskScore), value); }
+        }
         /// <summary>
         /// Instantiates a new cloudAppSecurityState and sets the default values.
         /// </summary>
         public CloudAppSecurityState() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

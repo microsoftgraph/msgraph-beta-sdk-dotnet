@@ -4,42 +4,90 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>An abstract class containing the base properties for Managed eBook.</summary>
     public class ManagedEBook : Entity, IParsable {
         /// <summary>The list of assignments for this eBook.</summary>
-        public List<ManagedEBookAssignment> Assignments { get; set; }
+        public List<ManagedEBookAssignment> Assignments {
+            get { return BackingStore?.Get<List<ManagedEBookAssignment>>(nameof(Assignments)); }
+            set { BackingStore?.Set(nameof(Assignments), value); }
+        }
         /// <summary>The list of categories for this eBook.</summary>
-        public List<ManagedEBookCategory> Categories { get; set; }
+        public List<ManagedEBookCategory> Categories {
+            get { return BackingStore?.Get<List<ManagedEBookCategory>>(nameof(Categories)); }
+            set { BackingStore?.Set(nameof(Categories), value); }
+        }
         /// <summary>The date and time when the eBook file was created.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>Description.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The list of installation states for this eBook.</summary>
-        public List<DeviceInstallState> DeviceStates { get; set; }
+        public List<DeviceInstallState> DeviceStates {
+            get { return BackingStore?.Get<List<DeviceInstallState>>(nameof(DeviceStates)); }
+            set { BackingStore?.Set(nameof(DeviceStates), value); }
+        }
         /// <summary>Name of the eBook.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The more information Url.</summary>
-        public string InformationUrl { get; set; }
+        public string InformationUrl {
+            get { return BackingStore?.Get<string>(nameof(InformationUrl)); }
+            set { BackingStore?.Set(nameof(InformationUrl), value); }
+        }
         /// <summary>Mobile App Install Summary.</summary>
-        public EBookInstallSummary InstallSummary { get; set; }
+        public EBookInstallSummary InstallSummary {
+            get { return BackingStore?.Get<EBookInstallSummary>(nameof(InstallSummary)); }
+            set { BackingStore?.Set(nameof(InstallSummary), value); }
+        }
         /// <summary>Book cover.</summary>
-        public MimeContent LargeCover { get; set; }
+        public MimeContent LargeCover {
+            get { return BackingStore?.Get<MimeContent>(nameof(LargeCover)); }
+            set { BackingStore?.Set(nameof(LargeCover), value); }
+        }
         /// <summary>The date and time when the eBook was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>The privacy statement Url.</summary>
-        public string PrivacyInformationUrl { get; set; }
+        public string PrivacyInformationUrl {
+            get { return BackingStore?.Get<string>(nameof(PrivacyInformationUrl)); }
+            set { BackingStore?.Set(nameof(PrivacyInformationUrl), value); }
+        }
         /// <summary>The date and time when the eBook was published.</summary>
-        public DateTimeOffset? PublishedDateTime { get; set; }
+        public DateTimeOffset? PublishedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(PublishedDateTime)); }
+            set { BackingStore?.Set(nameof(PublishedDateTime), value); }
+        }
         /// <summary>Publisher.</summary>
-        public string Publisher { get; set; }
+        public string Publisher {
+            get { return BackingStore?.Get<string>(nameof(Publisher)); }
+            set { BackingStore?.Set(nameof(Publisher), value); }
+        }
         /// <summary>The list of installation states for this eBook.</summary>
-        public List<UserInstallStateSummary> UserStateSummary { get; set; }
+        public List<UserInstallStateSummary> UserStateSummary {
+            get { return BackingStore?.Get<List<UserInstallStateSummary>>(nameof(UserStateSummary)); }
+            set { BackingStore?.Set(nameof(UserStateSummary), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new ManagedEBook CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagedEBook();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.managedEBook" => new ManagedEBook(),
+                _ => new ManagedEBook(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

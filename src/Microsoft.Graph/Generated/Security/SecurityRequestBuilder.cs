@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.Security {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// security resource type
+        /// The security resource is the entry point for the Security object model. It returns a singleton security resource. It doesn&apos;t contain any usable properties.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<SecurityRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Beta.Security {
             return requestInfo;
         }
         /// <summary>
-        /// security resource type
+        /// The security resource is the entry point for the Security object model. It returns a singleton security resource. It doesn&apos;t contain any usable properties.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Security {
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>security resource type</summary>
+        /// <summary>The security resource is the entry point for the Security object model. It returns a singleton security resource. It doesn&apos;t contain any usable properties.</summary>
         public class SecurityRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

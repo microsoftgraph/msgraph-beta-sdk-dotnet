@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.MuteAll {
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MuteAllRequestBody body, Action<MuteAllRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation CreatePostRequestInformation(MuteAllPostRequestBody body, Action<MuteAllRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.MuteAll {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MuteParticipantsOperation> PostAsync(MuteAllRequestBody body, Action<MuteAllRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MuteParticipantsOperation> PostAsync(MuteAllPostRequestBody body, Action<MuteAllRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<MuteParticipantsOperation>(requestInfo, MuteParticipantsOperation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);

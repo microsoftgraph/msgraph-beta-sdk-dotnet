@@ -1,26 +1,48 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class TeamworkHardwareDetail : IAdditionalDataHolder, IParsable {
+    public class TeamworkHardwareDetail : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>MAC address.</summary>
-        public List<string> MacAddresses { get; set; }
+        public List<string> MacAddresses {
+            get { return BackingStore?.Get<List<string>>(nameof(MacAddresses)); }
+            set { BackingStore?.Set(nameof(MacAddresses), value); }
+        }
         /// <summary>Device manufacturer.</summary>
-        public string Manufacturer { get; set; }
+        public string Manufacturer {
+            get { return BackingStore?.Get<string>(nameof(Manufacturer)); }
+            set { BackingStore?.Set(nameof(Manufacturer), value); }
+        }
         /// <summary>Devie model.</summary>
-        public string Model { get; set; }
+        public string Model {
+            get { return BackingStore?.Get<string>(nameof(Model)); }
+            set { BackingStore?.Set(nameof(Model), value); }
+        }
         /// <summary>Device serial number.</summary>
-        public string SerialNumber { get; set; }
+        public string SerialNumber {
+            get { return BackingStore?.Get<string>(nameof(SerialNumber)); }
+            set { BackingStore?.Set(nameof(SerialNumber), value); }
+        }
         /// <summary>The unique identifier for the device.</summary>
-        public string UniqueId { get; set; }
+        public string UniqueId {
+            get { return BackingStore?.Get<string>(nameof(UniqueId)); }
+            set { BackingStore?.Set(nameof(UniqueId), value); }
+        }
         /// <summary>
         /// Instantiates a new teamworkHardwareDetail and sets the default values.
         /// </summary>
         public TeamworkHardwareDetail() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

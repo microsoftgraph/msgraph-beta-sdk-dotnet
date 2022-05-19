@@ -1,23 +1,39 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Color in RGB.</summary>
-    public class RgbColor : IAdditionalDataHolder, IParsable {
+    public class RgbColor : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Blue value</summary>
-        public byte? B { get; set; }
+        public byte? B {
+            get { return BackingStore?.Get<byte?>(nameof(B)); }
+            set { BackingStore?.Set(nameof(B), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Green value</summary>
-        public byte? G { get; set; }
+        public byte? G {
+            get { return BackingStore?.Get<byte?>(nameof(G)); }
+            set { BackingStore?.Set(nameof(G), value); }
+        }
         /// <summary>Red value</summary>
-        public byte? R { get; set; }
+        public byte? R {
+            get { return BackingStore?.Get<byte?>(nameof(R)); }
+            set { BackingStore?.Set(nameof(R), value); }
+        }
         /// <summary>
         /// Instantiates a new rgbColor and sets the default values.
         /// </summary>
         public RgbColor() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

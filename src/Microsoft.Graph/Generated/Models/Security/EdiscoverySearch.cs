@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
+    /// <summary>Provides operations to manage the security singleton.</summary>
     public class EdiscoverySearch : Search, IParsable {
         /// <summary>The additionalSources property</summary>
-        public List<DataSource> AdditionalSources { get; set; }
+        public List<DataSource> AdditionalSources {
+            get { return BackingStore?.Get<List<DataSource>>(nameof(AdditionalSources)); }
+            set { BackingStore?.Set(nameof(AdditionalSources), value); }
+        }
         /// <summary>The addToReviewSetOperation property</summary>
-        public EdiscoveryAddToReviewSetOperation AddToReviewSetOperation { get; set; }
+        public EdiscoveryAddToReviewSetOperation AddToReviewSetOperation {
+            get { return BackingStore?.Get<EdiscoveryAddToReviewSetOperation>(nameof(AddToReviewSetOperation)); }
+            set { BackingStore?.Set(nameof(AddToReviewSetOperation), value); }
+        }
         /// <summary>The custodianSources property</summary>
-        public List<DataSource> CustodianSources { get; set; }
+        public List<DataSource> CustodianSources {
+            get { return BackingStore?.Get<List<DataSource>>(nameof(CustodianSources)); }
+            set { BackingStore?.Set(nameof(CustodianSources), value); }
+        }
         /// <summary>The dataSourceScopes property</summary>
-        public Microsoft.Graph.Beta.Models.Security.DataSourceScopes? DataSourceScopes { get; set; }
+        public Microsoft.Graph.Beta.Models.Security.DataSourceScopes? DataSourceScopes {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DataSourceScopes?>(nameof(DataSourceScopes)); }
+            set { BackingStore?.Set(nameof(DataSourceScopes), value); }
+        }
         /// <summary>The lastEstimateStatisticsOperation property</summary>
-        public EdiscoveryEstimateOperation LastEstimateStatisticsOperation { get; set; }
+        public EdiscoveryEstimateOperation LastEstimateStatisticsOperation {
+            get { return BackingStore?.Get<EdiscoveryEstimateOperation>(nameof(LastEstimateStatisticsOperation)); }
+            set { BackingStore?.Set(nameof(LastEstimateStatisticsOperation), value); }
+        }
         /// <summary>The noncustodialSources property</summary>
-        public List<EdiscoveryNoncustodialDataSource> NoncustodialSources { get; set; }
+        public List<EdiscoveryNoncustodialDataSource> NoncustodialSources {
+            get { return BackingStore?.Get<List<EdiscoveryNoncustodialDataSource>>(nameof(NoncustodialSources)); }
+            set { BackingStore?.Set(nameof(NoncustodialSources), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

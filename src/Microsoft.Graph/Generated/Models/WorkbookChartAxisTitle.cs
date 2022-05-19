@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class WorkbookChartAxisTitle : Entity, IParsable {
         /// <summary>Represents the formatting of chart axis title. Read-only.</summary>
-        public WorkbookChartAxisTitleFormat Format { get; set; }
+        public WorkbookChartAxisTitleFormat Format {
+            get { return BackingStore?.Get<WorkbookChartAxisTitleFormat>(nameof(Format)); }
+            set { BackingStore?.Set(nameof(Format), value); }
+        }
         /// <summary>Represents the axis title.</summary>
-        public string Text { get; set; }
+        public string Text {
+            get { return BackingStore?.Get<string>(nameof(Text)); }
+            set { BackingStore?.Set(nameof(Text), value); }
+        }
         /// <summary>A boolean that specifies the visibility of an axis title.</summary>
-        public bool? Visible { get; set; }
+        public bool? Visible {
+            get { return BackingStore?.Get<bool?>(nameof(Visible)); }
+            set { BackingStore?.Set(nameof(Visible), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

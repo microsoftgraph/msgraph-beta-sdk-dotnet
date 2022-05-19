@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Quota {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get quota from external
+        /// Read-only. Nullable.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<QuotaRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Quota {
             return requestInfo;
         }
         /// <summary>
-        /// Get quota from external
+        /// Read-only. Nullable.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Quota {
             };
             return await RequestAdapter.SendAsync<ConnectionQuota>(requestInfo, ConnectionQuota.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get quota from external</summary>
+        /// <summary>Read-only. Nullable.</summary>
         public class QuotaRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

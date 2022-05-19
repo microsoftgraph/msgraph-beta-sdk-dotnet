@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ServiceHealthIssuePost : IAdditionalDataHolder, IParsable {
+    public class ServiceHealthIssuePost : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The published time of the post.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>The content of the service issue post.</summary>
-        public ItemBody Description { get; set; }
+        public ItemBody Description {
+            get { return BackingStore?.Get<ItemBody>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The post type of the service issue historical post. Possible values are: regular, quick, strategic, unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.PostType? PostType { get; set; }
+        public Microsoft.Graph.Beta.Models.PostType? PostType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PostType?>(nameof(PostType)); }
+            set { BackingStore?.Set(nameof(PostType), value); }
+        }
         /// <summary>
         /// Instantiates a new serviceHealthIssuePost and sets the default values.
         /// </summary>
         public ServiceHealthIssuePost() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

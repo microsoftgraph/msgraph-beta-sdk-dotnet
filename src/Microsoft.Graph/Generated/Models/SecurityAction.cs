@@ -4,35 +4,78 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the security singleton.</summary>
     public class SecurityAction : Entity, IParsable {
         /// <summary>Reason for invoking this action.</summary>
-        public string ActionReason { get; set; }
+        public string ActionReason {
+            get { return BackingStore?.Get<string>(nameof(ActionReason)); }
+            set { BackingStore?.Set(nameof(ActionReason), value); }
+        }
         /// <summary>The Application ID of the calling application that submitted (POST) the action. The appId should be extracted from the auth token and not entered manually by the calling application.</summary>
-        public string AppId { get; set; }
+        public string AppId {
+            get { return BackingStore?.Get<string>(nameof(AppId)); }
+            set { BackingStore?.Set(nameof(AppId), value); }
+        }
         /// <summary>Azure tenant ID of the entity to determine which tenant the entity belongs to (multi-tenancy support). The azureTenantId should be extracted from the auth token and not entered manually by the calling application.</summary>
-        public string AzureTenantId { get; set; }
+        public string AzureTenantId {
+            get { return BackingStore?.Get<string>(nameof(AzureTenantId)); }
+            set { BackingStore?.Set(nameof(AzureTenantId), value); }
+        }
         /// <summary>The clientContext property</summary>
-        public string ClientContext { get; set; }
+        public string ClientContext {
+            get { return BackingStore?.Get<string>(nameof(ClientContext)); }
+            set { BackingStore?.Set(nameof(ClientContext), value); }
+        }
         /// <summary>Timestamp when the action was completed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? CompletedDateTime { get; set; }
+        public DateTimeOffset? CompletedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CompletedDateTime)); }
+            set { BackingStore?.Set(nameof(CompletedDateTime), value); }
+        }
         /// <summary>Timestamp when the action is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>Error info when the action fails.</summary>
-        public ResultInfo ErrorInfo { get; set; }
+        public ResultInfo ErrorInfo {
+            get { return BackingStore?.Get<ResultInfo>(nameof(ErrorInfo)); }
+            set { BackingStore?.Set(nameof(ErrorInfo), value); }
+        }
         /// <summary>Timestamp when this action was last updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? LastActionDateTime { get; set; }
+        public DateTimeOffset? LastActionDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastActionDateTime)); }
+            set { BackingStore?.Set(nameof(LastActionDateTime), value); }
+        }
         /// <summary>Action name.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>Collection of parameters (key-value pairs) necessary to invoke the action, for example, URL or fileHash to block.). Required.</summary>
-        public List<KeyValuePair> Parameters { get; set; }
+        public List<KeyValuePair> Parameters {
+            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(Parameters)); }
+            set { BackingStore?.Set(nameof(Parameters), value); }
+        }
         /// <summary>Collection of securityActionState to keep the history of an action.</summary>
-        public List<SecurityActionState> States { get; set; }
+        public List<SecurityActionState> States {
+            get { return BackingStore?.Get<List<SecurityActionState>>(nameof(States)); }
+            set { BackingStore?.Set(nameof(States), value); }
+        }
         /// <summary>Status of the action. Possible values are: NotStarted, Running, Completed, Failed.</summary>
-        public OperationStatus? Status { get; set; }
+        public OperationStatus? Status {
+            get { return BackingStore?.Get<OperationStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>The user principal name of the signed-in user that submitted  (POST) the action. The user should be extracted from the auth token and not entered manually by the calling application.</summary>
-        public string User { get; set; }
+        public string User {
+            get { return BackingStore?.Get<string>(nameof(User)); }
+            set { BackingStore?.Set(nameof(User), value); }
+        }
         /// <summary>Complex Type containing details about the Security product/service vendor, provider, and sub-provider (for example, vendor=Microsoft; provider=Windows Defender ATP; sub-provider=AppLocker).</summary>
-        public SecurityVendorInformation VendorInformation { get; set; }
+        public SecurityVendorInformation VendorInformation {
+            get { return BackingStore?.Get<SecurityVendorInformation>(nameof(VendorInformation)); }
+            set { BackingStore?.Set(nameof(VendorInformation), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

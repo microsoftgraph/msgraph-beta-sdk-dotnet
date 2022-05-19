@@ -1,20 +1,30 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.BookingBusinesses.Item.GetStaffAvailability {
     /// <summary>Provides operations to call the getStaffAvailability method.</summary>
-    public class GetStaffAvailabilityResponse : IAdditionalDataHolder, IParsable {
+    public class GetStaffAvailabilityResponse : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The value property</summary>
-        public List<StaffAvailabilityItem> Value { get; set; }
+        public List<StaffAvailabilityItem> Value {
+            get { return BackingStore?.Get<List<StaffAvailabilityItem>>(nameof(Value)); }
+            set { BackingStore?.Set(nameof(Value), value); }
+        }
         /// <summary>
         /// Instantiates a new getStaffAvailabilityResponse and sets the default values.
         /// </summary>
         public GetStaffAvailabilityResponse() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

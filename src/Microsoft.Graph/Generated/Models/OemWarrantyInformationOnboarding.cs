@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Warranty status entity for a given OEM</summary>
     public class OemWarrantyInformationOnboarding : Entity, IParsable {
         /// <summary>Specifies whether warranty API is available. This property is read-only.</summary>
-        public bool? Available { get; set; }
+        public bool? Available {
+            get { return BackingStore?.Get<bool?>(nameof(Available)); }
+            set { BackingStore?.Set(nameof(Available), value); }
+        }
         /// <summary>Specifies whether warranty query is enabled for given OEM. This property is read-only.</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled {
+            get { return BackingStore?.Get<bool?>(nameof(Enabled)); }
+            set { BackingStore?.Set(nameof(Enabled), value); }
+        }
         /// <summary>OEM name. This property is read-only.</summary>
-        public string OemName { get; set; }
+        public string OemName {
+            get { return BackingStore?.Get<string>(nameof(OemName)); }
+            set { BackingStore?.Set(nameof(OemName), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

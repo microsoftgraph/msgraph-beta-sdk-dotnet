@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ConditionalAccessLocations : IAdditionalDataHolder, IParsable {
+    public class ConditionalAccessLocations : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Location IDs excluded from scope of policy.</summary>
-        public List<string> ExcludeLocations { get; set; }
+        public List<string> ExcludeLocations {
+            get { return BackingStore?.Get<List<string>>(nameof(ExcludeLocations)); }
+            set { BackingStore?.Set(nameof(ExcludeLocations), value); }
+        }
         /// <summary>Location IDs in scope of policy unless explicitly excluded, All, or AllTrusted.</summary>
-        public List<string> IncludeLocations { get; set; }
+        public List<string> IncludeLocations {
+            get { return BackingStore?.Get<List<string>>(nameof(IncludeLocations)); }
+            set { BackingStore?.Set(nameof(IncludeLocations), value); }
+        }
         /// <summary>
         /// Instantiates a new conditionalAccessLocations and sets the default values.
         /// </summary>
         public ConditionalAccessLocations() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

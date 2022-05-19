@@ -4,18 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of chat entities.</summary>
     public class TeamsAppInstallation : Entity, IParsable {
         /// <summary>The app that is installed.</summary>
-        public Microsoft.Graph.Beta.Models.TeamsApp TeamsApp { get; set; }
+        public Microsoft.Graph.Beta.Models.TeamsApp TeamsApp {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsApp>(nameof(TeamsApp)); }
+            set { BackingStore?.Set(nameof(TeamsApp), value); }
+        }
         /// <summary>The details of this version of the app.</summary>
-        public Microsoft.Graph.Beta.Models.TeamsAppDefinition TeamsAppDefinition { get; set; }
+        public Microsoft.Graph.Beta.Models.TeamsAppDefinition TeamsAppDefinition {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsAppDefinition>(nameof(TeamsAppDefinition)); }
+            set { BackingStore?.Set(nameof(TeamsAppDefinition), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new TeamsAppInstallation CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamsAppInstallation();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.teamsAppInstallation" => new TeamsAppInstallation(),
+                _ => new TeamsAppInstallation(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

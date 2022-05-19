@@ -1,26 +1,48 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class RubricQuality : IAdditionalDataHolder, IParsable {
+    public class RubricQuality : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The collection of criteria for this rubric quality.</summary>
-        public List<RubricCriterion> Criteria { get; set; }
+        public List<RubricCriterion> Criteria {
+            get { return BackingStore?.Get<List<RubricCriterion>>(nameof(Criteria)); }
+            set { BackingStore?.Set(nameof(Criteria), value); }
+        }
         /// <summary>The description of this rubric quality.</summary>
-        public EducationItemBody Description { get; set; }
+        public EducationItemBody Description {
+            get { return BackingStore?.Get<EducationItemBody>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The name of this rubric quality.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The ID of this resource.</summary>
-        public string QualityId { get; set; }
+        public string QualityId {
+            get { return BackingStore?.Get<string>(nameof(QualityId)); }
+            set { BackingStore?.Set(nameof(QualityId), value); }
+        }
         /// <summary>If present, a numerical weight for this quality.  Weights must add up to 100.</summary>
-        public float? Weight { get; set; }
+        public float? Weight {
+            get { return BackingStore?.Get<float?>(nameof(Weight)); }
+            set { BackingStore?.Set(nameof(Weight), value); }
+        }
         /// <summary>
         /// Instantiates a new rubricQuality and sets the default values.
         /// </summary>
         public RubricQuality() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

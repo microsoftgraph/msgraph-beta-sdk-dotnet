@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class AccessPackageLocalizedContent : IAdditionalDataHolder, IParsable {
+    public class AccessPackageLocalizedContent : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The fallback string, which is used when a requested localization is not available. Required.</summary>
-        public string DefaultText { get; set; }
+        public string DefaultText {
+            get { return BackingStore?.Get<string>(nameof(DefaultText)); }
+            set { BackingStore?.Set(nameof(DefaultText), value); }
+        }
         /// <summary>Content represented in a format for a specific locale.</summary>
-        public List<AccessPackageLocalizedText> LocalizedTexts { get; set; }
+        public List<AccessPackageLocalizedText> LocalizedTexts {
+            get { return BackingStore?.Get<List<AccessPackageLocalizedText>>(nameof(LocalizedTexts)); }
+            set { BackingStore?.Set(nameof(LocalizedTexts), value); }
+        }
         /// <summary>
         /// Instantiates a new accessPackageLocalizedContent and sets the default values.
         /// </summary>
         public AccessPackageLocalizedContent() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

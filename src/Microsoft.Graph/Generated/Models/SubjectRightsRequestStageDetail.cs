@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SubjectRightsRequestStageDetail : IAdditionalDataHolder, IParsable {
+    public class SubjectRightsRequestStageDetail : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Describes the error, if any, for the current stage.</summary>
-        public PublicError Error { get; set; }
+        public PublicError Error {
+            get { return BackingStore?.Get<PublicError>(nameof(Error)); }
+            set { BackingStore?.Set(nameof(Error), value); }
+        }
         /// <summary>The stage of the subject rights request. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.</summary>
-        public SubjectRightsRequestStage? Stage { get; set; }
+        public SubjectRightsRequestStage? Stage {
+            get { return BackingStore?.Get<SubjectRightsRequestStage?>(nameof(Stage)); }
+            set { BackingStore?.Set(nameof(Stage), value); }
+        }
         /// <summary>Status of the current stage. Possible values are: notStarted, current, completed, failed, unknownFutureValue.</summary>
-        public SubjectRightsRequestStageStatus? Status { get; set; }
+        public SubjectRightsRequestStageStatus? Status {
+            get { return BackingStore?.Get<SubjectRightsRequestStageStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>
         /// Instantiates a new subjectRightsRequestStageDetail and sets the default values.
         /// </summary>
         public SubjectRightsRequestStageDetail() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

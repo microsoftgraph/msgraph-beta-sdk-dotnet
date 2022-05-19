@@ -4,28 +4,55 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class DataSourceContainer : Entity, IParsable {
         /// <summary>Created date and time of the dataSourceContainer entity.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>Display name of the dataSourceContainer entity.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The holdStatus property</summary>
-        public DataSourceHoldStatus? HoldStatus { get; set; }
+        public DataSourceHoldStatus? HoldStatus {
+            get { return BackingStore?.Get<DataSourceHoldStatus?>(nameof(HoldStatus)); }
+            set { BackingStore?.Set(nameof(HoldStatus), value); }
+        }
         /// <summary>The lastIndexOperation property</summary>
-        public CaseIndexOperation LastIndexOperation { get; set; }
+        public CaseIndexOperation LastIndexOperation {
+            get { return BackingStore?.Get<CaseIndexOperation>(nameof(LastIndexOperation)); }
+            set { BackingStore?.Set(nameof(LastIndexOperation), value); }
+        }
         /// <summary>Last modified date and time of the dataSourceContainer.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>Date and time that the dataSourceContainer was released from the case.</summary>
-        public DateTimeOffset? ReleasedDateTime { get; set; }
+        public DateTimeOffset? ReleasedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ReleasedDateTime)); }
+            set { BackingStore?.Set(nameof(ReleasedDateTime), value); }
+        }
         /// <summary>Latest status of the dataSourceContainer. Possible values are: Active, Released.</summary>
-        public DataSourceContainerStatus? Status { get; set; }
+        public DataSourceContainerStatus? Status {
+            get { return BackingStore?.Get<DataSourceContainerStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new DataSourceContainer CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DataSourceContainer();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.ediscovery.dataSourceContainer" => new DataSourceContainer(),
+                _ => new DataSourceContainer(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

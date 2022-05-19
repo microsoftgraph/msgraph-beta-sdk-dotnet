@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class PlannerDelta : Entity, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -11,7 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new PlannerDelta CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlannerDelta();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.plannerDelta" => new PlannerDelta(),
+                _ => new PlannerDelta(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class AttackSimulationTrainingUserCoverage : IAdditionalDataHolder, IParsable {
+    public class AttackSimulationTrainingUserCoverage : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>User in an attack simulation and training campaign.</summary>
-        public Microsoft.Graph.Beta.Models.AttackSimulationUser AttackSimulationUser { get; set; }
+        public Microsoft.Graph.Beta.Models.AttackSimulationUser AttackSimulationUser {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttackSimulationUser>(nameof(AttackSimulationUser)); }
+            set { BackingStore?.Set(nameof(AttackSimulationUser), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>List of assigned trainings&apos; and their statuses for the user.</summary>
-        public List<UserTrainingStatusInfo> UserTrainings { get; set; }
+        public List<UserTrainingStatusInfo> UserTrainings {
+            get { return BackingStore?.Get<List<UserTrainingStatusInfo>>(nameof(UserTrainings)); }
+            set { BackingStore?.Set(nameof(UserTrainings), value); }
+        }
         /// <summary>
         /// Instantiates a new attackSimulationTrainingUserCoverage and sets the default values.
         /// </summary>
         public AttackSimulationTrainingUserCoverage() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

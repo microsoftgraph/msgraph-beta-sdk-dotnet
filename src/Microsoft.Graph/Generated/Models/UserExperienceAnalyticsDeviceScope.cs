@@ -4,29 +4,63 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The user experience analytics device scope entity contains device scope configuration values use to apply filtering on the endpoint analytics reports.</summary>
     public class UserExperienceAnalyticsDeviceScope : Entity, IParsable {
         /// <summary>Indicates the creation date and time for the custom device scope.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>The name of the user experience analytics device Scope configuration.</summary>
-        public string DeviceScopeName { get; set; }
+        public string DeviceScopeName {
+            get { return BackingStore?.Get<string>(nameof(DeviceScopeName)); }
+            set { BackingStore?.Set(nameof(DeviceScopeName), value); }
+        }
         /// <summary>Indicates whether a device scope is enabled or disabled. When TRUE, the device scope is enabled. When FALSE, the device scope is disabled. Default value is FALSE.</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled {
+            get { return BackingStore?.Get<bool?>(nameof(Enabled)); }
+            set { BackingStore?.Set(nameof(Enabled), value); }
+        }
         /// <summary>Indicates whether the device scope configuration is built-in or custom. When TRUE, the device scope configuration is built-in. When FALSE, the device scope configuration is custom. Default value is FALSE.</summary>
-        public bool? IsBuiltIn { get; set; }
+        public bool? IsBuiltIn {
+            get { return BackingStore?.Get<bool?>(nameof(IsBuiltIn)); }
+            set { BackingStore?.Set(nameof(IsBuiltIn), value); }
+        }
         /// <summary>Indicates the last updated date and time for the custom device scope.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>Device scope configuration query operator. Possible values are: equals, notEquals, contains, notContains, greaterThan, lessThan. Default value: equals.</summary>
-        public DeviceScopeOperator? Operator { get; set; }
+        public DeviceScopeOperator? Operator {
+            get { return BackingStore?.Get<DeviceScopeOperator?>(nameof(Operator)); }
+            set { BackingStore?.Set(nameof(Operator), value); }
+        }
         /// <summary>The unique identifier of the person (admin) who created the device scope configuration.</summary>
-        public string OwnerId { get; set; }
+        public string OwnerId {
+            get { return BackingStore?.Get<string>(nameof(OwnerId)); }
+            set { BackingStore?.Set(nameof(OwnerId), value); }
+        }
         /// <summary>Device scope configuration parameter. It will be extended in future to add more parameter. Eg: device scope parameter can be OS version, Disk Type, Device manufacturer, device model or Scope tag. Default value: scopeTag.</summary>
-        public DeviceScopeParameter? Parameter { get; set; }
+        public DeviceScopeParameter? Parameter {
+            get { return BackingStore?.Get<DeviceScopeParameter?>(nameof(Parameter)); }
+            set { BackingStore?.Set(nameof(Parameter), value); }
+        }
         /// <summary>Indicates the device scope status after the device scope has been enabled. Possible values are: none, computing, insufficientData or completed. Default value is none.</summary>
-        public DeviceScopeStatus? Status { get; set; }
+        public DeviceScopeStatus? Status {
+            get { return BackingStore?.Get<DeviceScopeStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>The device scope configuration query clause value.</summary>
-        public string Value { get; set; }
+        public string Value {
+            get { return BackingStore?.Get<string>(nameof(Value)); }
+            set { BackingStore?.Set(nameof(Value), value); }
+        }
         /// <summary>The unique identifier for a user device scope tag Id used for the creation of device scope configuration.</summary>
-        public string ValueObjectId { get; set; }
+        public string ValueObjectId {
+            get { return BackingStore?.Get<string>(nameof(ValueObjectId)); }
+            set { BackingStore?.Set(nameof(ValueObjectId), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

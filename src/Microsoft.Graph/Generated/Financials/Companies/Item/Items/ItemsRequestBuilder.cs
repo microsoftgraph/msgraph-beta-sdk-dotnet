@@ -1,7 +1,6 @@
 using Microsoft.Graph.Beta.Financials.Companies.Item.Items.Count;
 using Microsoft.Graph.Beta.Financials.Companies.Item.Items.Item;
 using Microsoft.Graph.Beta.Models;
-using Microsoft.Graph.Beta.Models.Item;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Items {
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(Microsoft.Graph.Beta.Models.Item.Item body, Action<ItemsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation CreatePostRequestInformation(Microsoft.Graph.Beta.Models.Item body, Action<ItemsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -118,14 +117,14 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Items {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<Microsoft.Graph.Beta.Models.Item.Item> PostAsync(Microsoft.Graph.Beta.Models.Item.Item body, Action<ItemsRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Item> PostAsync(Microsoft.Graph.Beta.Models.Item body, Action<ItemsRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Item.Item>(requestInfo, Microsoft.Graph.Beta.Models.Item.Item.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Item>(requestInfo, Microsoft.Graph.Beta.Models.Item.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Get items from financials</summary>
         public class ItemsRequestBuilderGetQueryParameters {

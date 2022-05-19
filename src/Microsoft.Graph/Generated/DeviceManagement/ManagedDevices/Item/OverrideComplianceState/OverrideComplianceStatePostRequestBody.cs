@@ -1,0 +1,63 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.OverrideComplianceState {
+    /// <summary>Provides operations to call the overrideComplianceState method.</summary>
+    public class OverrideComplianceStatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
+        /// <summary>The complianceState property</summary>
+        public AdministratorConfiguredDeviceComplianceState? ComplianceState {
+            get { return BackingStore?.Get<AdministratorConfiguredDeviceComplianceState?>(nameof(ComplianceState)); }
+            set { BackingStore?.Set(nameof(ComplianceState), value); }
+        }
+        /// <summary>The remediationUrl property</summary>
+        public string RemediationUrl {
+            get { return BackingStore?.Get<string>(nameof(RemediationUrl)); }
+            set { BackingStore?.Set(nameof(RemediationUrl), value); }
+        }
+        /// <summary>
+        /// Instantiates a new overrideComplianceStatePostRequestBody and sets the default values.
+        /// </summary>
+        public OverrideComplianceStatePostRequestBody() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static OverrideComplianceStatePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new OverrideComplianceStatePostRequestBody();
+        }
+        /// <summary>
+        /// The deserialization information for the current model
+        /// </summary>
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"complianceState", n => { ComplianceState = n.GetEnumValue<AdministratorConfiguredDeviceComplianceState>(); } },
+                {"remediationUrl", n => { RemediationUrl = n.GetStringValue(); } },
+            };
+        }
+        /// <summary>
+        /// Serializes information the current object
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
+        /// </summary>
+        public void Serialize(ISerializationWriter writer) {
+            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<AdministratorConfiguredDeviceComplianceState>("complianceState", ComplianceState);
+            writer.WriteStringValue("remediationUrl", RemediationUrl);
+            writer.WriteAdditionalData(AdditionalData);
+        }
+    }
+}

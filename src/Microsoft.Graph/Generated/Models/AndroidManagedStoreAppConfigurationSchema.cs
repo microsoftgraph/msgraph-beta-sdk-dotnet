@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Schema describing an Android application&apos;s custom configurations.</summary>
     public class AndroidManagedStoreAppConfigurationSchema : Entity, IParsable {
         /// <summary>UTF8 encoded byte array containing example JSON string conforming to this schema that demonstrates how to set the configuration for this app</summary>
-        public byte[] ExampleJson { get; set; }
+        public byte[] ExampleJson {
+            get { return BackingStore?.Get<byte[]>(nameof(ExampleJson)); }
+            set { BackingStore?.Set(nameof(ExampleJson), value); }
+        }
         /// <summary>Collection of items each representing a named configuration option in the schema. It contains a flat list of all configuration.</summary>
-        public List<AndroidManagedStoreAppConfigurationSchemaItem> NestedSchemaItems { get; set; }
+        public List<AndroidManagedStoreAppConfigurationSchemaItem> NestedSchemaItems {
+            get { return BackingStore?.Get<List<AndroidManagedStoreAppConfigurationSchemaItem>>(nameof(NestedSchemaItems)); }
+            set { BackingStore?.Set(nameof(NestedSchemaItems), value); }
+        }
         /// <summary>Collection of items each representing a named configuration option in the schema. It only contains the root-level configuration.</summary>
-        public List<AndroidManagedStoreAppConfigurationSchemaItem> SchemaItems { get; set; }
+        public List<AndroidManagedStoreAppConfigurationSchemaItem> SchemaItems {
+            get { return BackingStore?.Get<List<AndroidManagedStoreAppConfigurationSchemaItem>>(nameof(SchemaItems)); }
+            set { BackingStore?.Set(nameof(SchemaItems), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

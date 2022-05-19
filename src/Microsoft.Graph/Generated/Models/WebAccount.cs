@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class WebAccount : ItemFacet, IParsable {
         /// <summary>Contains the description the user has provided for the account on the service being referenced.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The service property</summary>
-        public ServiceInformation Service { get; set; }
+        public ServiceInformation Service {
+            get { return BackingStore?.Get<ServiceInformation>(nameof(Service)); }
+            set { BackingStore?.Set(nameof(Service), value); }
+        }
         /// <summary>Contains a status message from the cloud service if provided or synchronized.</summary>
-        public string StatusMessage { get; set; }
+        public string StatusMessage {
+            get { return BackingStore?.Get<string>(nameof(StatusMessage)); }
+            set { BackingStore?.Set(nameof(StatusMessage), value); }
+        }
         /// <summary>The thumbnailUrl property</summary>
-        public string ThumbnailUrl { get; set; }
+        public string ThumbnailUrl {
+            get { return BackingStore?.Get<string>(nameof(ThumbnailUrl)); }
+            set { BackingStore?.Set(nameof(ThumbnailUrl), value); }
+        }
         /// <summary>The user name  displayed for the webaccount.</summary>
-        public string UserId { get; set; }
+        public string UserId {
+            get { return BackingStore?.Get<string>(nameof(UserId)); }
+            set { BackingStore?.Set(nameof(UserId), value); }
+        }
         /// <summary>Contains a link to the user&apos;s profile on the cloud service if one exists.</summary>
-        public string WebUrl { get; set; }
+        public string WebUrl {
+            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
+            set { BackingStore?.Set(nameof(WebUrl), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

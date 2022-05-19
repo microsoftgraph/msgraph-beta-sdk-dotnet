@@ -1,23 +1,39 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Setting Instance Template</summary>
-    public class DeviceManagementConfigurationSettingInstanceTemplate : IAdditionalDataHolder, IParsable {
+    public class DeviceManagementConfigurationSettingInstanceTemplate : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates if a policy must specify this setting.</summary>
-        public bool? IsRequired { get; set; }
+        public bool? IsRequired {
+            get { return BackingStore?.Get<bool?>(nameof(IsRequired)); }
+            set { BackingStore?.Set(nameof(IsRequired), value); }
+        }
         /// <summary>Setting Definition Id</summary>
-        public string SettingDefinitionId { get; set; }
+        public string SettingDefinitionId {
+            get { return BackingStore?.Get<string>(nameof(SettingDefinitionId)); }
+            set { BackingStore?.Set(nameof(SettingDefinitionId), value); }
+        }
         /// <summary>Setting Instance Template Id</summary>
-        public string SettingInstanceTemplateId { get; set; }
+        public string SettingInstanceTemplateId {
+            get { return BackingStore?.Get<string>(nameof(SettingInstanceTemplateId)); }
+            set { BackingStore?.Set(nameof(SettingInstanceTemplateId), value); }
+        }
         /// <summary>
         /// Instantiates a new deviceManagementConfigurationSettingInstanceTemplate and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationSettingInstanceTemplate() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

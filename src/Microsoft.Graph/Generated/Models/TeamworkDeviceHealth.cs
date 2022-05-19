@@ -4,25 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the teamwork singleton.</summary>
     public class TeamworkDeviceHealth : Entity, IParsable {
         /// <summary>The connection property</summary>
-        public TeamworkConnection Connection { get; set; }
+        public TeamworkConnection Connection {
+            get { return BackingStore?.Get<TeamworkConnection>(nameof(Connection)); }
+            set { BackingStore?.Set(nameof(Connection), value); }
+        }
         /// <summary>Identity of the user who created the device health document.</summary>
-        public IdentitySet CreatedBy { get; set; }
+        public IdentitySet CreatedBy {
+            get { return BackingStore?.Get<IdentitySet>(nameof(CreatedBy)); }
+            set { BackingStore?.Set(nameof(CreatedBy), value); }
+        }
         /// <summary>The UTC date and time when the device health document was created.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>Health details about the device hardware.</summary>
-        public TeamworkHardwareHealth HardwareHealth { get; set; }
+        public TeamworkHardwareHealth HardwareHealth {
+            get { return BackingStore?.Get<TeamworkHardwareHealth>(nameof(HardwareHealth)); }
+            set { BackingStore?.Set(nameof(HardwareHealth), value); }
+        }
         /// <summary>Identity of the user who last modified the device health details.</summary>
-        public IdentitySet LastModifiedBy { get; set; }
+        public IdentitySet LastModifiedBy {
+            get { return BackingStore?.Get<IdentitySet>(nameof(LastModifiedBy)); }
+            set { BackingStore?.Set(nameof(LastModifiedBy), value); }
+        }
         /// <summary>The UTC date and time when the device health detail was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>The login status of Microsoft Teams, Skype for Business, and Exchange.</summary>
-        public TeamworkLoginStatus LoginStatus { get; set; }
+        public TeamworkLoginStatus LoginStatus {
+            get { return BackingStore?.Get<TeamworkLoginStatus>(nameof(LoginStatus)); }
+            set { BackingStore?.Set(nameof(LoginStatus), value); }
+        }
         /// <summary>Health details about all peripherals (for example, speaker and microphone) attached to a device.</summary>
-        public TeamworkPeripheralsHealth PeripheralsHealth { get; set; }
+        public TeamworkPeripheralsHealth PeripheralsHealth {
+            get { return BackingStore?.Get<TeamworkPeripheralsHealth>(nameof(PeripheralsHealth)); }
+            set { BackingStore?.Set(nameof(PeripheralsHealth), value); }
+        }
         /// <summary>Software updates available for the device.</summary>
-        public TeamworkSoftwareUpdateHealth SoftwareUpdateHealth { get; set; }
+        public TeamworkSoftwareUpdateHealth SoftwareUpdateHealth {
+            get { return BackingStore?.Get<TeamworkSoftwareUpdateHealth>(nameof(SoftwareUpdateHealth)); }
+            set { BackingStore?.Set(nameof(SoftwareUpdateHealth), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

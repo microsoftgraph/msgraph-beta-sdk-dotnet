@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class InformationProtection : Entity, IParsable {
         /// <summary>The labelPolicySettings property</summary>
-        public InformationProtectionPolicySetting LabelPolicySettings { get; set; }
+        public InformationProtectionPolicySetting LabelPolicySettings {
+            get { return BackingStore?.Get<InformationProtectionPolicySetting>(nameof(LabelPolicySettings)); }
+            set { BackingStore?.Set(nameof(LabelPolicySettings), value); }
+        }
         /// <summary>The sensitivityLabels property</summary>
-        public List<SensitivityLabel> SensitivityLabels { get; set; }
+        public List<SensitivityLabel> SensitivityLabels {
+            get { return BackingStore?.Get<List<SensitivityLabel>>(nameof(SensitivityLabels)); }
+            set { BackingStore?.Set(nameof(SensitivityLabels), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

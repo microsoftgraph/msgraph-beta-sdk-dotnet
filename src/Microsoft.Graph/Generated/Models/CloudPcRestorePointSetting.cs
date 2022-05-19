@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class CloudPcRestorePointSetting : IAdditionalDataHolder, IParsable {
+    public class CloudPcRestorePointSetting : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are 4, 6, 12, 16, and 24. The default frequency is 12 hours.</summary>
-        public int? FrequencyInHours { get; set; }
+        public int? FrequencyInHours {
+            get { return BackingStore?.Get<int?>(nameof(FrequencyInHours)); }
+            set { BackingStore?.Set(nameof(FrequencyInHours), value); }
+        }
         /// <summary>If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users cannot use snapshots to restore the Cloud PC.</summary>
-        public bool? UserRestoreEnabled { get; set; }
+        public bool? UserRestoreEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(UserRestoreEnabled)); }
+            set { BackingStore?.Set(nameof(UserRestoreEnabled), value); }
+        }
         /// <summary>
         /// Instantiates a new cloudPcRestorePointSetting and sets the default values.
         /// </summary>
         public CloudPcRestorePointSetting() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -4,49 +4,113 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class Schedule : Entity, IParsable {
         /// <summary>Indicates whether the schedule is enabled for the team. Required.</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled {
+            get { return BackingStore?.Get<bool?>(nameof(Enabled)); }
+            set { BackingStore?.Set(nameof(Enabled), value); }
+        }
         /// <summary>The offerShiftRequests property</summary>
-        public List<OfferShiftRequest> OfferShiftRequests { get; set; }
+        public List<OfferShiftRequest> OfferShiftRequests {
+            get { return BackingStore?.Get<List<OfferShiftRequest>>(nameof(OfferShiftRequests)); }
+            set { BackingStore?.Set(nameof(OfferShiftRequests), value); }
+        }
         /// <summary>Indicates whether offer shift requests are enabled for the schedule.</summary>
-        public bool? OfferShiftRequestsEnabled { get; set; }
+        public bool? OfferShiftRequestsEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(OfferShiftRequestsEnabled)); }
+            set { BackingStore?.Set(nameof(OfferShiftRequestsEnabled), value); }
+        }
         /// <summary>The openShiftChangeRequests property</summary>
-        public List<OpenShiftChangeRequest> OpenShiftChangeRequests { get; set; }
+        public List<OpenShiftChangeRequest> OpenShiftChangeRequests {
+            get { return BackingStore?.Get<List<OpenShiftChangeRequest>>(nameof(OpenShiftChangeRequests)); }
+            set { BackingStore?.Set(nameof(OpenShiftChangeRequests), value); }
+        }
         /// <summary>The openShifts property</summary>
-        public List<OpenShift> OpenShifts { get; set; }
+        public List<OpenShift> OpenShifts {
+            get { return BackingStore?.Get<List<OpenShift>>(nameof(OpenShifts)); }
+            set { BackingStore?.Set(nameof(OpenShifts), value); }
+        }
         /// <summary>Indicates whether open shifts are enabled for the schedule.</summary>
-        public bool? OpenShiftsEnabled { get; set; }
+        public bool? OpenShiftsEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(OpenShiftsEnabled)); }
+            set { BackingStore?.Set(nameof(OpenShiftsEnabled), value); }
+        }
         /// <summary>The status of the schedule provisioning. The possible values are notStarted, running, completed, failed.</summary>
-        public OperationStatus? ProvisionStatus { get; set; }
+        public OperationStatus? ProvisionStatus {
+            get { return BackingStore?.Get<OperationStatus?>(nameof(ProvisionStatus)); }
+            set { BackingStore?.Set(nameof(ProvisionStatus), value); }
+        }
         /// <summary>Additional information about why schedule provisioning failed.</summary>
-        public string ProvisionStatusCode { get; set; }
+        public string ProvisionStatusCode {
+            get { return BackingStore?.Get<string>(nameof(ProvisionStatusCode)); }
+            set { BackingStore?.Set(nameof(ProvisionStatusCode), value); }
+        }
         /// <summary>The logical grouping of users in the schedule (usually by role).</summary>
-        public List<SchedulingGroup> SchedulingGroups { get; set; }
+        public List<SchedulingGroup> SchedulingGroups {
+            get { return BackingStore?.Get<List<SchedulingGroup>>(nameof(SchedulingGroups)); }
+            set { BackingStore?.Set(nameof(SchedulingGroups), value); }
+        }
         /// <summary>The shifts in the schedule.</summary>
-        public List<Shift> Shifts { get; set; }
+        public List<Shift> Shifts {
+            get { return BackingStore?.Get<List<Shift>>(nameof(Shifts)); }
+            set { BackingStore?.Set(nameof(Shifts), value); }
+        }
         /// <summary>The swapShiftsChangeRequests property</summary>
-        public List<SwapShiftsChangeRequest> SwapShiftsChangeRequests { get; set; }
+        public List<SwapShiftsChangeRequest> SwapShiftsChangeRequests {
+            get { return BackingStore?.Get<List<SwapShiftsChangeRequest>>(nameof(SwapShiftsChangeRequests)); }
+            set { BackingStore?.Set(nameof(SwapShiftsChangeRequests), value); }
+        }
         /// <summary>Indicates whether swap shifts requests are enabled for the schedule.</summary>
-        public bool? SwapShiftsRequestsEnabled { get; set; }
+        public bool? SwapShiftsRequestsEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(SwapShiftsRequestsEnabled)); }
+            set { BackingStore?.Set(nameof(SwapShiftsRequestsEnabled), value); }
+        }
         /// <summary>The timeCards property</summary>
-        public List<TimeCard> TimeCards { get; set; }
+        public List<TimeCard> TimeCards {
+            get { return BackingStore?.Get<List<TimeCard>>(nameof(TimeCards)); }
+            set { BackingStore?.Set(nameof(TimeCards), value); }
+        }
         /// <summary>Indicates whether time clock is enabled for the schedule.</summary>
-        public bool? TimeClockEnabled { get; set; }
+        public bool? TimeClockEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(TimeClockEnabled)); }
+            set { BackingStore?.Set(nameof(TimeClockEnabled), value); }
+        }
         /// <summary>The timeClockSettings property</summary>
-        public Microsoft.Graph.Beta.Models.TimeClockSettings TimeClockSettings { get; set; }
+        public Microsoft.Graph.Beta.Models.TimeClockSettings TimeClockSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TimeClockSettings>(nameof(TimeClockSettings)); }
+            set { BackingStore?.Set(nameof(TimeClockSettings), value); }
+        }
         /// <summary>The set of reasons for a time off in the schedule.</summary>
-        public List<TimeOffReason> TimeOffReasons { get; set; }
+        public List<TimeOffReason> TimeOffReasons {
+            get { return BackingStore?.Get<List<TimeOffReason>>(nameof(TimeOffReasons)); }
+            set { BackingStore?.Set(nameof(TimeOffReasons), value); }
+        }
         /// <summary>The timeOffRequests property</summary>
-        public List<TimeOffRequest> TimeOffRequests { get; set; }
+        public List<TimeOffRequest> TimeOffRequests {
+            get { return BackingStore?.Get<List<TimeOffRequest>>(nameof(TimeOffRequests)); }
+            set { BackingStore?.Set(nameof(TimeOffRequests), value); }
+        }
         /// <summary>Indicates whether time off requests are enabled for the schedule.</summary>
-        public bool? TimeOffRequestsEnabled { get; set; }
+        public bool? TimeOffRequestsEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(TimeOffRequestsEnabled)); }
+            set { BackingStore?.Set(nameof(TimeOffRequestsEnabled), value); }
+        }
         /// <summary>The instances of times off in the schedule.</summary>
-        public List<TimeOff> TimesOff { get; set; }
+        public List<TimeOff> TimesOff {
+            get { return BackingStore?.Get<List<TimeOff>>(nameof(TimesOff)); }
+            set { BackingStore?.Set(nameof(TimesOff), value); }
+        }
         /// <summary>Indicates the time zone of the schedule team using tz database format. Required.</summary>
-        public string TimeZone { get; set; }
+        public string TimeZone {
+            get { return BackingStore?.Get<string>(nameof(TimeZone)); }
+            set { BackingStore?.Set(nameof(TimeZone), value); }
+        }
         /// <summary>The workforceIntegrationIds property</summary>
-        public List<string> WorkforceIntegrationIds { get; set; }
+        public List<string> WorkforceIntegrationIds {
+            get { return BackingStore?.Get<List<string>>(nameof(WorkforceIntegrationIds)); }
+            set { BackingStore?.Set(nameof(WorkforceIntegrationIds), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

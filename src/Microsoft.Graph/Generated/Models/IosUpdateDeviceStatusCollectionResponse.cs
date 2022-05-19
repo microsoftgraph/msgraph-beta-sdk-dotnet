@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class IosUpdateDeviceStatusCollectionResponse : IAdditionalDataHolder, IParsable {
+    public class IosUpdateDeviceStatusCollectionResponse : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The nextLink property</summary>
-        public string NextLink { get; set; }
+        public string NextLink {
+            get { return BackingStore?.Get<string>(nameof(NextLink)); }
+            set { BackingStore?.Set(nameof(NextLink), value); }
+        }
         /// <summary>The value property</summary>
-        public List<IosUpdateDeviceStatus> Value { get; set; }
+        public List<IosUpdateDeviceStatus> Value {
+            get { return BackingStore?.Get<List<IosUpdateDeviceStatus>>(nameof(Value)); }
+            set { BackingStore?.Set(nameof(Value), value); }
+        }
         /// <summary>
         /// Instantiates a new IosUpdateDeviceStatusCollectionResponse and sets the default values.
         /// </summary>
         public IosUpdateDeviceStatusCollectionResponse() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

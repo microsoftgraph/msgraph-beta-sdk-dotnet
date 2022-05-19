@@ -4,33 +4,73 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the security singleton.</summary>
     public class IpSecurityProfile : Entity, IParsable {
         /// <summary>The activityGroupNames property</summary>
-        public List<string> ActivityGroupNames { get; set; }
+        public List<string> ActivityGroupNames {
+            get { return BackingStore?.Get<List<string>>(nameof(ActivityGroupNames)); }
+            set { BackingStore?.Set(nameof(ActivityGroupNames), value); }
+        }
         /// <summary>The address property</summary>
-        public string Address { get; set; }
+        public string Address {
+            get { return BackingStore?.Get<string>(nameof(Address)); }
+            set { BackingStore?.Set(nameof(Address), value); }
+        }
         /// <summary>The azureSubscriptionId property</summary>
-        public string AzureSubscriptionId { get; set; }
+        public string AzureSubscriptionId {
+            get { return BackingStore?.Get<string>(nameof(AzureSubscriptionId)); }
+            set { BackingStore?.Set(nameof(AzureSubscriptionId), value); }
+        }
         /// <summary>The azureTenantId property</summary>
-        public string AzureTenantId { get; set; }
+        public string AzureTenantId {
+            get { return BackingStore?.Get<string>(nameof(AzureTenantId)); }
+            set { BackingStore?.Set(nameof(AzureTenantId), value); }
+        }
         /// <summary>The countHits property</summary>
-        public int? CountHits { get; set; }
+        public int? CountHits {
+            get { return BackingStore?.Get<int?>(nameof(CountHits)); }
+            set { BackingStore?.Set(nameof(CountHits), value); }
+        }
         /// <summary>The countHosts property</summary>
-        public int? CountHosts { get; set; }
+        public int? CountHosts {
+            get { return BackingStore?.Get<int?>(nameof(CountHosts)); }
+            set { BackingStore?.Set(nameof(CountHosts), value); }
+        }
         /// <summary>The firstSeenDateTime property</summary>
-        public DateTimeOffset? FirstSeenDateTime { get; set; }
+        public DateTimeOffset? FirstSeenDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(FirstSeenDateTime)); }
+            set { BackingStore?.Set(nameof(FirstSeenDateTime), value); }
+        }
         /// <summary>The ipCategories property</summary>
-        public List<IpCategory> IpCategories { get; set; }
+        public List<IpCategory> IpCategories {
+            get { return BackingStore?.Get<List<IpCategory>>(nameof(IpCategories)); }
+            set { BackingStore?.Set(nameof(IpCategories), value); }
+        }
         /// <summary>The ipReferenceData property</summary>
-        public List<Microsoft.Graph.Beta.Models.IpReferenceData> IpReferenceData { get; set; }
+        public List<Microsoft.Graph.Beta.Models.IpReferenceData> IpReferenceData {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IpReferenceData>>(nameof(IpReferenceData)); }
+            set { BackingStore?.Set(nameof(IpReferenceData), value); }
+        }
         /// <summary>The lastSeenDateTime property</summary>
-        public DateTimeOffset? LastSeenDateTime { get; set; }
+        public DateTimeOffset? LastSeenDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSeenDateTime)); }
+            set { BackingStore?.Set(nameof(LastSeenDateTime), value); }
+        }
         /// <summary>The riskScore property</summary>
-        public string RiskScore { get; set; }
+        public string RiskScore {
+            get { return BackingStore?.Get<string>(nameof(RiskScore)); }
+            set { BackingStore?.Set(nameof(RiskScore), value); }
+        }
         /// <summary>The tags property</summary>
-        public List<string> Tags { get; set; }
+        public List<string> Tags {
+            get { return BackingStore?.Get<List<string>>(nameof(Tags)); }
+            set { BackingStore?.Set(nameof(Tags), value); }
+        }
         /// <summary>The vendorInformation property</summary>
-        public SecurityVendorInformation VendorInformation { get; set; }
+        public SecurityVendorInformation VendorInformation {
+            get { return BackingStore?.Get<SecurityVendorInformation>(nameof(VendorInformation)); }
+            set { BackingStore?.Set(nameof(VendorInformation), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

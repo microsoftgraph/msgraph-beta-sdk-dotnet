@@ -4,18 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the identityContainer singleton.</summary>
     public class IdentityUserFlow : Entity, IParsable {
         /// <summary>The userFlowType property</summary>
-        public Microsoft.Graph.Beta.Models.UserFlowType? UserFlowType { get; set; }
+        public Microsoft.Graph.Beta.Models.UserFlowType? UserFlowType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserFlowType?>(nameof(UserFlowType)); }
+            set { BackingStore?.Set(nameof(UserFlowType), value); }
+        }
         /// <summary>The userFlowTypeVersion property</summary>
-        public float? UserFlowTypeVersion { get; set; }
+        public float? UserFlowTypeVersion {
+            get { return BackingStore?.Get<float?>(nameof(UserFlowTypeVersion)); }
+            set { BackingStore?.Set(nameof(UserFlowTypeVersion), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new IdentityUserFlow CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IdentityUserFlow();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.identityUserFlow" => new IdentityUserFlow(),
+                _ => new IdentityUserFlow(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

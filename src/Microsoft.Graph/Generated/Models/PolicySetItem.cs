@@ -4,30 +4,60 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>A class containing the properties used for PolicySet Item.</summary>
     public class PolicySetItem : Entity, IParsable {
         /// <summary>Creation time of the PolicySetItem.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>DisplayName of the PolicySetItem.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Error code if any occured. Possible values are: noError, unauthorized, notFound, deleted.</summary>
-        public Microsoft.Graph.Beta.Models.ErrorCode? ErrorCode { get; set; }
+        public Microsoft.Graph.Beta.Models.ErrorCode? ErrorCode {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ErrorCode?>(nameof(ErrorCode)); }
+            set { BackingStore?.Set(nameof(ErrorCode), value); }
+        }
         /// <summary>Tags of the guided deployment</summary>
-        public List<string> GuidedDeploymentTags { get; set; }
+        public List<string> GuidedDeploymentTags {
+            get { return BackingStore?.Get<List<string>>(nameof(GuidedDeploymentTags)); }
+            set { BackingStore?.Set(nameof(GuidedDeploymentTags), value); }
+        }
         /// <summary>policySetType of the PolicySetItem.</summary>
-        public string ItemType { get; set; }
+        public string ItemType {
+            get { return BackingStore?.Get<string>(nameof(ItemType)); }
+            set { BackingStore?.Set(nameof(ItemType), value); }
+        }
         /// <summary>Last modified time of the PolicySetItem.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>PayloadId of the PolicySetItem.</summary>
-        public string PayloadId { get; set; }
+        public string PayloadId {
+            get { return BackingStore?.Get<string>(nameof(PayloadId)); }
+            set { BackingStore?.Set(nameof(PayloadId), value); }
+        }
         /// <summary>Status of the PolicySetItem. Possible values are: unknown, validating, partialSuccess, success, error, notAssigned.</summary>
-        public PolicySetStatus? Status { get; set; }
+        public PolicySetStatus? Status {
+            get { return BackingStore?.Get<PolicySetStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new PolicySetItem CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PolicySetItem();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.policySetItem" => new PolicySetItem(),
+                _ => new PolicySetItem(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

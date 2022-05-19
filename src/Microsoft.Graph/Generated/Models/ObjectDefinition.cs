@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ObjectDefinition : IAdditionalDataHolder, IParsable {
+    public class ObjectDefinition : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>The attributes property</summary>
-        public List<AttributeDefinition> Attributes { get; set; }
+        public List<AttributeDefinition> Attributes {
+            get { return BackingStore?.Get<List<AttributeDefinition>>(nameof(Attributes)); }
+            set { BackingStore?.Set(nameof(Attributes), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The metadata property</summary>
-        public List<MetadataEntry> Metadata { get; set; }
+        public List<MetadataEntry> Metadata {
+            get { return BackingStore?.Get<List<MetadataEntry>>(nameof(Metadata)); }
+            set { BackingStore?.Set(nameof(Metadata), value); }
+        }
         /// <summary>The name property</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>The supportedApis property</summary>
-        public List<string> SupportedApis { get; set; }
+        public List<string> SupportedApis {
+            get { return BackingStore?.Get<List<string>>(nameof(SupportedApis)); }
+            set { BackingStore?.Set(nameof(SupportedApis), value); }
+        }
         /// <summary>
         /// Instantiates a new objectDefinition and sets the default values.
         /// </summary>
         public ObjectDefinition() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

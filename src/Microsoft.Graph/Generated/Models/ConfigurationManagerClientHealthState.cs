@@ -1,23 +1,39 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Configuration manager client health state</summary>
-    public class ConfigurationManagerClientHealthState : IAdditionalDataHolder, IParsable {
+    public class ConfigurationManagerClientHealthState : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Error code for failed state.</summary>
-        public int? ErrorCode { get; set; }
+        public int? ErrorCode {
+            get { return BackingStore?.Get<int?>(nameof(ErrorCode)); }
+            set { BackingStore?.Set(nameof(ErrorCode), value); }
+        }
         /// <summary>Datetime for last sync with configuration manager management point.</summary>
-        public DateTimeOffset? LastSyncDateTime { get; set; }
+        public DateTimeOffset? LastSyncDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSyncDateTime)); }
+            set { BackingStore?.Set(nameof(LastSyncDateTime), value); }
+        }
         /// <summary>Current configuration manager client state. Possible values are: unknown, installed, healthy, installFailed, updateFailed, communicationError.</summary>
-        public ConfigurationManagerClientState? State { get; set; }
+        public ConfigurationManagerClientState? State {
+            get { return BackingStore?.Get<ConfigurationManagerClientState?>(nameof(State)); }
+            set { BackingStore?.Set(nameof(State), value); }
+        }
         /// <summary>
         /// Instantiates a new configurationManagerClientHealthState and sets the default values.
         /// </summary>
         public ConfigurationManagerClientHealthState() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

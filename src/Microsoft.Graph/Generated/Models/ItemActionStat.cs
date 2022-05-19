@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ItemActionStat : IAdditionalDataHolder, IParsable {
+    public class ItemActionStat : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The number of times the action took place. Read-only.</summary>
-        public int? ActionCount { get; set; }
+        public int? ActionCount {
+            get { return BackingStore?.Get<int?>(nameof(ActionCount)); }
+            set { BackingStore?.Set(nameof(ActionCount), value); }
+        }
         /// <summary>The number of distinct actors that performed the action. Read-only.</summary>
-        public int? ActorCount { get; set; }
+        public int? ActorCount {
+            get { return BackingStore?.Get<int?>(nameof(ActorCount)); }
+            set { BackingStore?.Set(nameof(ActorCount), value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>
         /// Instantiates a new itemActionStat and sets the default values.
         /// </summary>
         public ItemActionStat() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

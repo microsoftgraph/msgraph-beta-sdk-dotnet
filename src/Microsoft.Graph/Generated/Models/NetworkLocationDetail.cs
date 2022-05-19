@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class NetworkLocationDetail : IAdditionalDataHolder, IParsable {
+    public class NetworkLocationDetail : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Provides the name of the network used when signing in.</summary>
-        public List<string> NetworkNames { get; set; }
+        public List<string> NetworkNames {
+            get { return BackingStore?.Get<List<string>>(nameof(NetworkNames)); }
+            set { BackingStore?.Set(nameof(NetworkNames), value); }
+        }
         /// <summary>Provides the type of network used when signing in. Possible values are: intranet, extranet, namedNetwork, trusted, unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.NetworkType? NetworkType { get; set; }
+        public Microsoft.Graph.Beta.Models.NetworkType? NetworkType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.NetworkType?>(nameof(NetworkType)); }
+            set { BackingStore?.Set(nameof(NetworkType), value); }
+        }
         /// <summary>
         /// Instantiates a new networkLocationDetail and sets the default values.
         /// </summary>
         public NetworkLocationDetail() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

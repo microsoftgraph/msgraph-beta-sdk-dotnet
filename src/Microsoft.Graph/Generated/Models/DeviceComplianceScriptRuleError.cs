@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to call the validateComplianceScript method.</summary>
     public class DeviceComplianceScriptRuleError : DeviceComplianceScriptError, IParsable {
         /// <summary>Setting name for the rule with error.</summary>
-        public string SettingName { get; set; }
+        public string SettingName {
+            get { return BackingStore?.Get<string>(nameof(SettingName)); }
+            set { BackingStore?.Set(nameof(SettingName), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

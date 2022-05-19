@@ -1,20 +1,30 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Reports.GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime {
     /// <summary>Provides operations to call the getUserArchivedPrintJobs method.</summary>
-    public class GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse : IAdditionalDataHolder, IParsable {
+    public class GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The value property</summary>
-        public List<ArchivedPrintJob> Value { get; set; }
+        public List<ArchivedPrintJob> Value {
+            get { return BackingStore?.Get<List<ArchivedPrintJob>>(nameof(Value)); }
+            set { BackingStore?.Set(nameof(Value), value); }
+        }
         /// <summary>
         /// Instantiates a new getUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse and sets the default values.
         /// </summary>
         public GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

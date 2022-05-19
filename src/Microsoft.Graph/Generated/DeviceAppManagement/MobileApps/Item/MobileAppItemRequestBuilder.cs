@@ -5,6 +5,8 @@ using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.DeviceStatuses;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GetRelatedAppStatesWithUserPrincipalNameWithDeviceId;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.InstallSummary;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.IosVppApp;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.ManagedMobileLobApp;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.MobileLobApp;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Relationships;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UpdateRelationships;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UserStatuses;
@@ -44,6 +46,14 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item {
         /// <summary>The iosVppApp property</summary>
         public IosVppAppRequestBuilder IosVppApp { get =>
             new IosVppAppRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The managedMobileLobApp property</summary>
+        public ManagedMobileLobAppRequestBuilder ManagedMobileLobApp { get =>
+            new ManagedMobileLobAppRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The mobileLobApp property</summary>
+        public MobileLobAppRequestBuilder MobileLobApp { get =>
+            new MobileLobAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

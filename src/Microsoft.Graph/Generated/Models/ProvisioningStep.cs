@@ -1,26 +1,48 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ProvisioningStep : IAdditionalDataHolder, IParsable {
+    public class ProvisioningStep : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Summary of what occurred during the step.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Details of what occurred during the step.</summary>
-        public DetailsInfo Details { get; set; }
+        public DetailsInfo Details {
+            get { return BackingStore?.Get<DetailsInfo>(nameof(Details)); }
+            set { BackingStore?.Set(nameof(Details), value); }
+        }
         /// <summary>Name of the step.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>Type of step. Possible values are: import, scoping, matching, processing, referenceResolution, export, unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.ProvisioningStepType? ProvisioningStepType { get; set; }
+        public Microsoft.Graph.Beta.Models.ProvisioningStepType? ProvisioningStepType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ProvisioningStepType?>(nameof(ProvisioningStepType)); }
+            set { BackingStore?.Set(nameof(ProvisioningStepType), value); }
+        }
         /// <summary>Status of the step. Possible values are: success, warning,  failure, skipped, unknownFutureValue.</summary>
-        public ProvisioningResult? Status { get; set; }
+        public ProvisioningResult? Status {
+            get { return BackingStore?.Get<ProvisioningResult?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>
         /// Instantiates a new provisioningStep and sets the default values.
         /// </summary>
         public ProvisioningStep() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

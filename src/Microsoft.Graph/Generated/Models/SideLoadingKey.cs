@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>SideLoadingKey entity is required for Windows 8 and 8.1 devices to intall Line Of Business Apps for a tenant.</summary>
     public class SideLoadingKey : Entity, IParsable {
         /// <summary>Side Loading Key description displayed to the ITPro Admins..</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Side Loading Key Name displayed to the ITPro Admins.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Side Loading Key Last Updated Date displayed to the ITPro Admins.</summary>
-        public string LastUpdatedDateTime { get; set; }
+        public string LastUpdatedDateTime {
+            get { return BackingStore?.Get<string>(nameof(LastUpdatedDateTime)); }
+            set { BackingStore?.Set(nameof(LastUpdatedDateTime), value); }
+        }
         /// <summary>Side Loading Key Total Activation displayed to the ITPro Admins.</summary>
-        public int? TotalActivation { get; set; }
+        public int? TotalActivation {
+            get { return BackingStore?.Get<int?>(nameof(TotalActivation)); }
+            set { BackingStore?.Set(nameof(TotalActivation), value); }
+        }
         /// <summary>Side Loading Key Value, it is 5x5 value, seperated by hiphens.</summary>
-        public string Value { get; set; }
+        public string Value {
+            get { return BackingStore?.Get<string>(nameof(Value)); }
+            set { BackingStore?.Set(nameof(Value), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -1,54 +1,118 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class PrinterLocation : IAdditionalDataHolder, IParsable {
+    public class PrinterLocation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>The altitude, in meters, that the printer is located at.</summary>
-        public int? AltitudeInMeters { get; set; }
+        public int? AltitudeInMeters {
+            get { return BackingStore?.Get<int?>(nameof(AltitudeInMeters)); }
+            set { BackingStore?.Set(nameof(AltitudeInMeters), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The building that the printer is located in.</summary>
-        public string Building { get; set; }
+        public string Building {
+            get { return BackingStore?.Get<string>(nameof(Building)); }
+            set { BackingStore?.Set(nameof(Building), value); }
+        }
         /// <summary>The city that the printer is located in.</summary>
-        public string City { get; set; }
+        public string City {
+            get { return BackingStore?.Get<string>(nameof(City)); }
+            set { BackingStore?.Set(nameof(City), value); }
+        }
         /// <summary>The country or region that the printer is located in.</summary>
-        public string CountryOrRegion { get; set; }
+        public string CountryOrRegion {
+            get { return BackingStore?.Get<string>(nameof(CountryOrRegion)); }
+            set { BackingStore?.Set(nameof(CountryOrRegion), value); }
+        }
         /// <summary>The floor that the printer is located on. Only numerical values are supported right now.</summary>
-        public string Floor { get; set; }
+        public string Floor {
+            get { return BackingStore?.Get<string>(nameof(Floor)); }
+            set { BackingStore?.Set(nameof(Floor), value); }
+        }
         /// <summary>The description of the floor that the printer is located on.</summary>
-        public string FloorDescription { get; set; }
+        public string FloorDescription {
+            get { return BackingStore?.Get<string>(nameof(FloorDescription)); }
+            set { BackingStore?.Set(nameof(FloorDescription), value); }
+        }
         /// <summary>The floorNumber property</summary>
-        public int? FloorNumber { get; set; }
+        public int? FloorNumber {
+            get { return BackingStore?.Get<int?>(nameof(FloorNumber)); }
+            set { BackingStore?.Set(nameof(FloorNumber), value); }
+        }
         /// <summary>The latitude that the printer is located at.</summary>
-        public double? Latitude { get; set; }
+        public double? Latitude {
+            get { return BackingStore?.Get<double?>(nameof(Latitude)); }
+            set { BackingStore?.Set(nameof(Latitude), value); }
+        }
         /// <summary>The longitude that the printer is located at.</summary>
-        public double? Longitude { get; set; }
+        public double? Longitude {
+            get { return BackingStore?.Get<double?>(nameof(Longitude)); }
+            set { BackingStore?.Set(nameof(Longitude), value); }
+        }
         /// <summary>The organizational hierarchy that the printer belongs to. The elements should be in hierarchical order.</summary>
-        public List<string> Organization { get; set; }
+        public List<string> Organization {
+            get { return BackingStore?.Get<List<string>>(nameof(Organization)); }
+            set { BackingStore?.Set(nameof(Organization), value); }
+        }
         /// <summary>The postal code that the printer is located in.</summary>
-        public string PostalCode { get; set; }
+        public string PostalCode {
+            get { return BackingStore?.Get<string>(nameof(PostalCode)); }
+            set { BackingStore?.Set(nameof(PostalCode), value); }
+        }
         /// <summary>The description of the room that the printer is located in.</summary>
-        public string RoomDescription { get; set; }
+        public string RoomDescription {
+            get { return BackingStore?.Get<string>(nameof(RoomDescription)); }
+            set { BackingStore?.Set(nameof(RoomDescription), value); }
+        }
         /// <summary>The room that the printer is located in. Only numerical values are supported right now.</summary>
-        public string RoomName { get; set; }
+        public string RoomName {
+            get { return BackingStore?.Get<string>(nameof(RoomName)); }
+            set { BackingStore?.Set(nameof(RoomName), value); }
+        }
         /// <summary>The roomNumber property</summary>
-        public int? RoomNumber { get; set; }
+        public int? RoomNumber {
+            get { return BackingStore?.Get<int?>(nameof(RoomNumber)); }
+            set { BackingStore?.Set(nameof(RoomNumber), value); }
+        }
         /// <summary>The site that the printer is located in.</summary>
-        public string Site { get; set; }
+        public string Site {
+            get { return BackingStore?.Get<string>(nameof(Site)); }
+            set { BackingStore?.Set(nameof(Site), value); }
+        }
         /// <summary>The state or province that the printer is located in.</summary>
-        public string StateOrProvince { get; set; }
+        public string StateOrProvince {
+            get { return BackingStore?.Get<string>(nameof(StateOrProvince)); }
+            set { BackingStore?.Set(nameof(StateOrProvince), value); }
+        }
         /// <summary>The street address where the printer is located.</summary>
-        public string StreetAddress { get; set; }
+        public string StreetAddress {
+            get { return BackingStore?.Get<string>(nameof(StreetAddress)); }
+            set { BackingStore?.Set(nameof(StreetAddress), value); }
+        }
         /// <summary>The subdivision that the printer is located in. The elements should be in hierarchical order.</summary>
-        public List<string> Subdivision { get; set; }
+        public List<string> Subdivision {
+            get { return BackingStore?.Get<List<string>>(nameof(Subdivision)); }
+            set { BackingStore?.Set(nameof(Subdivision), value); }
+        }
         /// <summary>The subunit property</summary>
-        public List<string> Subunit { get; set; }
+        public List<string> Subunit {
+            get { return BackingStore?.Get<List<string>>(nameof(Subunit)); }
+            set { BackingStore?.Set(nameof(Subunit), value); }
+        }
         /// <summary>
         /// Instantiates a new printerLocation and sets the default values.
         /// </summary>
         public PrinterLocation() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the attackSimulation property of the microsoft.graph.security entity.</summary>
+    /// <summary>Provides operations to call the getAttackSimulationTrainingUserCoverage method.</summary>
     public enum TrainingStatus {
         Unknown,
         Assigned,

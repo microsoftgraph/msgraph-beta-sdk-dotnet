@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
+    /// <summary>Provides operations to manage the security singleton.</summary>
     public class EdiscoveryCustodian : DataSourceContainer, IParsable {
         /// <summary>The acknowledgedDateTime property</summary>
-        public DateTimeOffset? AcknowledgedDateTime { get; set; }
+        public DateTimeOffset? AcknowledgedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(AcknowledgedDateTime)); }
+            set { BackingStore?.Set(nameof(AcknowledgedDateTime), value); }
+        }
         /// <summary>The email property</summary>
-        public string Email { get; set; }
+        public string Email {
+            get { return BackingStore?.Get<string>(nameof(Email)); }
+            set { BackingStore?.Set(nameof(Email), value); }
+        }
         /// <summary>The lastIndexOperation property</summary>
-        public EdiscoveryIndexOperation LastIndexOperation { get; set; }
+        public EdiscoveryIndexOperation LastIndexOperation {
+            get { return BackingStore?.Get<EdiscoveryIndexOperation>(nameof(LastIndexOperation)); }
+            set { BackingStore?.Set(nameof(LastIndexOperation), value); }
+        }
         /// <summary>The siteSources property</summary>
-        public List<SiteSource> SiteSources { get; set; }
+        public List<SiteSource> SiteSources {
+            get { return BackingStore?.Get<List<SiteSource>>(nameof(SiteSources)); }
+            set { BackingStore?.Set(nameof(SiteSources), value); }
+        }
         /// <summary>The unifiedGroupSources property</summary>
-        public List<UnifiedGroupSource> UnifiedGroupSources { get; set; }
+        public List<UnifiedGroupSource> UnifiedGroupSources {
+            get { return BackingStore?.Get<List<UnifiedGroupSource>>(nameof(UnifiedGroupSources)); }
+            set { BackingStore?.Set(nameof(UnifiedGroupSources), value); }
+        }
         /// <summary>The userSources property</summary>
-        public List<UserSource> UserSources { get; set; }
+        public List<UserSource> UserSources {
+            get { return BackingStore?.Get<List<UserSource>>(nameof(UserSources)); }
+            set { BackingStore?.Set(nameof(UserSources), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

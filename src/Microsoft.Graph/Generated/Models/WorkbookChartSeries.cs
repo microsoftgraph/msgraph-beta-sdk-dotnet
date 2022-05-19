@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class WorkbookChartSeries : Entity, IParsable {
         /// <summary>Represents the formatting of a chart series, which includes fill and line formatting. Read-only.</summary>
-        public WorkbookChartSeriesFormat Format { get; set; }
+        public WorkbookChartSeriesFormat Format {
+            get { return BackingStore?.Get<WorkbookChartSeriesFormat>(nameof(Format)); }
+            set { BackingStore?.Set(nameof(Format), value); }
+        }
         /// <summary>Represents the name of a series in a chart.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>Represents a collection of all points in the series. Read-only.</summary>
-        public List<WorkbookChartPoint> Points { get; set; }
+        public List<WorkbookChartPoint> Points {
+            get { return BackingStore?.Get<List<WorkbookChartPoint>>(nameof(Points)); }
+            set { BackingStore?.Set(nameof(Points), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

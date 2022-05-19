@@ -4,28 +4,55 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
+    /// <summary>Provides operations to manage the security singleton.</summary>
     public class CaseOperation : Entity, IParsable {
         /// <summary>The action property</summary>
-        public CaseAction? Action { get; set; }
+        public CaseAction? Action {
+            get { return BackingStore?.Get<CaseAction?>(nameof(Action)); }
+            set { BackingStore?.Set(nameof(Action), value); }
+        }
         /// <summary>The completedDateTime property</summary>
-        public DateTimeOffset? CompletedDateTime { get; set; }
+        public DateTimeOffset? CompletedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CompletedDateTime)); }
+            set { BackingStore?.Set(nameof(CompletedDateTime), value); }
+        }
         /// <summary>The createdBy property</summary>
-        public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy { get; set; }
+        public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>(nameof(CreatedBy)); }
+            set { BackingStore?.Set(nameof(CreatedBy), value); }
+        }
         /// <summary>The createdDateTime property</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>The percentProgress property</summary>
-        public int? PercentProgress { get; set; }
+        public int? PercentProgress {
+            get { return BackingStore?.Get<int?>(nameof(PercentProgress)); }
+            set { BackingStore?.Set(nameof(PercentProgress), value); }
+        }
         /// <summary>The resultInfo property</summary>
-        public Microsoft.Graph.Beta.Models.ResultInfo ResultInfo { get; set; }
+        public Microsoft.Graph.Beta.Models.ResultInfo ResultInfo {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResultInfo>(nameof(ResultInfo)); }
+            set { BackingStore?.Set(nameof(ResultInfo), value); }
+        }
         /// <summary>The status property</summary>
-        public CaseOperationStatus? Status { get; set; }
+        public CaseOperationStatus? Status {
+            get { return BackingStore?.Get<CaseOperationStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new CaseOperation CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CaseOperation();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.security.caseOperation" => new CaseOperation(),
+                _ => new CaseOperation(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

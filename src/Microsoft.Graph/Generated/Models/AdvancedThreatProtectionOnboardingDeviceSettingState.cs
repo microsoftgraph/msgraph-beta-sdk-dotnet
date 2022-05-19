@@ -4,31 +4,68 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>ATP onboarding State for a given device.</summary>
     public class AdvancedThreatProtectionOnboardingDeviceSettingState : Entity, IParsable {
         /// <summary>The DateTime when device compliance grace period expires</summary>
-        public DateTimeOffset? ComplianceGracePeriodExpirationDateTime { get; set; }
+        public DateTimeOffset? ComplianceGracePeriodExpirationDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ComplianceGracePeriodExpirationDateTime)); }
+            set { BackingStore?.Set(nameof(ComplianceGracePeriodExpirationDateTime), value); }
+        }
         /// <summary>The Device Id that is being reported</summary>
-        public string DeviceId { get; set; }
+        public string DeviceId {
+            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
+            set { BackingStore?.Set(nameof(DeviceId), value); }
+        }
         /// <summary>The device model that is being reported</summary>
-        public string DeviceModel { get; set; }
+        public string DeviceModel {
+            get { return BackingStore?.Get<string>(nameof(DeviceModel)); }
+            set { BackingStore?.Set(nameof(DeviceModel), value); }
+        }
         /// <summary>The Device Name that is being reported</summary>
-        public string DeviceName { get; set; }
+        public string DeviceName {
+            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
+            set { BackingStore?.Set(nameof(DeviceName), value); }
+        }
         /// <summary>Device platform type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, cloudPC, blackberry, palm, unknown.</summary>
-        public DeviceType? PlatformType { get; set; }
+        public DeviceType? PlatformType {
+            get { return BackingStore?.Get<DeviceType?>(nameof(PlatformType)); }
+            set { BackingStore?.Set(nameof(PlatformType), value); }
+        }
         /// <summary>The setting class name and property name.</summary>
-        public string Setting { get; set; }
+        public string Setting {
+            get { return BackingStore?.Get<string>(nameof(Setting)); }
+            set { BackingStore?.Set(nameof(Setting), value); }
+        }
         /// <summary>The Setting Name that is being reported</summary>
-        public string SettingName { get; set; }
+        public string SettingName {
+            get { return BackingStore?.Get<string>(nameof(SettingName)); }
+            set { BackingStore?.Set(nameof(SettingName), value); }
+        }
         /// <summary>The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.</summary>
-        public ComplianceStatus? State { get; set; }
+        public ComplianceStatus? State {
+            get { return BackingStore?.Get<ComplianceStatus?>(nameof(State)); }
+            set { BackingStore?.Set(nameof(State), value); }
+        }
         /// <summary>The User email address that is being reported</summary>
-        public string UserEmail { get; set; }
+        public string UserEmail {
+            get { return BackingStore?.Get<string>(nameof(UserEmail)); }
+            set { BackingStore?.Set(nameof(UserEmail), value); }
+        }
         /// <summary>The user Id that is being reported</summary>
-        public string UserId { get; set; }
+        public string UserId {
+            get { return BackingStore?.Get<string>(nameof(UserId)); }
+            set { BackingStore?.Set(nameof(UserId), value); }
+        }
         /// <summary>The User Name that is being reported</summary>
-        public string UserName { get; set; }
+        public string UserName {
+            get { return BackingStore?.Get<string>(nameof(UserName)); }
+            set { BackingStore?.Set(nameof(UserName), value); }
+        }
         /// <summary>The User PrincipalName that is being reported</summary>
-        public string UserPrincipalName { get; set; }
+        public string UserPrincipalName {
+            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
+            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

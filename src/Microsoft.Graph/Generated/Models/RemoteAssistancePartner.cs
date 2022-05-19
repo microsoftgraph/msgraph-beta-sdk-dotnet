@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>RemoteAssistPartner resources represent the metadata and status of a given Remote Assistance partner service.</summary>
     public class RemoteAssistancePartner : Entity, IParsable {
         /// <summary>Display name of the partner.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Timestamp of the last request sent to Intune by the TEM partner.</summary>
-        public DateTimeOffset? LastConnectionDateTime { get; set; }
+        public DateTimeOffset? LastConnectionDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastConnectionDateTime)); }
+            set { BackingStore?.Set(nameof(LastConnectionDateTime), value); }
+        }
         /// <summary>When the OnboardingStatus is Onboarding, This is the date time when the onboarding request expires.</summary>
-        public DateTimeOffset? OnboardingRequestExpiryDateTime { get; set; }
+        public DateTimeOffset? OnboardingRequestExpiryDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(OnboardingRequestExpiryDateTime)); }
+            set { BackingStore?.Set(nameof(OnboardingRequestExpiryDateTime), value); }
+        }
         /// <summary>A friendly description of the current TeamViewer connector status. Possible values are: notOnboarded, onboarding, onboarded.</summary>
-        public RemoteAssistanceOnboardingStatus? OnboardingStatus { get; set; }
+        public RemoteAssistanceOnboardingStatus? OnboardingStatus {
+            get { return BackingStore?.Get<RemoteAssistanceOnboardingStatus?>(nameof(OnboardingStatus)); }
+            set { BackingStore?.Set(nameof(OnboardingStatus), value); }
+        }
         /// <summary>URL of the partner&apos;s onboarding portal, where an administrator can configure their Remote Assistance service.</summary>
-        public string OnboardingUrl { get; set; }
+        public string OnboardingUrl {
+            get { return BackingStore?.Get<string>(nameof(OnboardingUrl)); }
+            set { BackingStore?.Set(nameof(OnboardingUrl), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

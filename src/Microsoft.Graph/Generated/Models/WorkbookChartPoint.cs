@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class WorkbookChartPoint : Entity, IParsable {
         /// <summary>Encapsulates the format properties chart point. Read-only.</summary>
-        public WorkbookChartPointFormat Format { get; set; }
+        public WorkbookChartPointFormat Format {
+            get { return BackingStore?.Get<WorkbookChartPointFormat>(nameof(Format)); }
+            set { BackingStore?.Set(nameof(Format), value); }
+        }
         /// <summary>Returns the value of a chart point. Read-only.</summary>
-        public Json Value { get; set; }
+        public Json Value {
+            get { return BackingStore?.Get<Json>(nameof(Value)); }
+            set { BackingStore?.Set(nameof(Value), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

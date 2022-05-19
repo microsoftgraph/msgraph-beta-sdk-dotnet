@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class AuthenticationFlowsPolicy : Entity, IParsable {
         /// <summary>Inherited property. A description of the policy. This property is not a key. Optional. Read-only.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Inherited property. The human-readable name of the policy. This property is not a key. Optional. Read-only.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. This property is not a key. Optional. Read-only.</summary>
-        public SelfServiceSignUpAuthenticationFlowConfiguration SelfServiceSignUp { get; set; }
+        public SelfServiceSignUpAuthenticationFlowConfiguration SelfServiceSignUp {
+            get { return BackingStore?.Get<SelfServiceSignUpAuthenticationFlowConfiguration>(nameof(SelfServiceSignUp)); }
+            set { BackingStore?.Set(nameof(SelfServiceSignUp), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

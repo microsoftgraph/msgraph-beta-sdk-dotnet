@@ -4,27 +4,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Enrollment Profile used to enroll COSU devices using Google&apos;s Cloud Management.</summary>
     public class AndroidForWorkEnrollmentProfile : Entity, IParsable {
         /// <summary>Tenant GUID the enrollment profile belongs to.</summary>
-        public string AccountId { get; set; }
+        public string AccountId {
+            get { return BackingStore?.Get<string>(nameof(AccountId)); }
+            set { BackingStore?.Set(nameof(AccountId), value); }
+        }
         /// <summary>Date time the enrollment profile was created.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>Description for the enrollment profile.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Display name for the enrollment profile.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Total number of Android devices that have enrolled using this enrollment profile.</summary>
-        public int? EnrolledDeviceCount { get; set; }
+        public int? EnrolledDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(EnrolledDeviceCount)); }
+            set { BackingStore?.Set(nameof(EnrolledDeviceCount), value); }
+        }
         /// <summary>Date time the enrollment profile was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>String used to generate a QR code for the token.</summary>
-        public string QrCodeContent { get; set; }
+        public string QrCodeContent {
+            get { return BackingStore?.Get<string>(nameof(QrCodeContent)); }
+            set { BackingStore?.Set(nameof(QrCodeContent), value); }
+        }
         /// <summary>String used to generate a QR code for the token.</summary>
-        public MimeContent QrCodeImage { get; set; }
+        public MimeContent QrCodeImage {
+            get { return BackingStore?.Get<MimeContent>(nameof(QrCodeImage)); }
+            set { BackingStore?.Set(nameof(QrCodeImage), value); }
+        }
         /// <summary>Date time the most recently created token will expire.</summary>
-        public DateTimeOffset? TokenExpirationDateTime { get; set; }
+        public DateTimeOffset? TokenExpirationDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(TokenExpirationDateTime)); }
+            set { BackingStore?.Set(nameof(TokenExpirationDateTime), value); }
+        }
         /// <summary>Value of the most recently created token for this enrollment profile.</summary>
-        public string TokenValue { get; set; }
+        public string TokenValue {
+            get { return BackingStore?.Get<string>(nameof(TokenValue)); }
+            set { BackingStore?.Set(nameof(TokenValue), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

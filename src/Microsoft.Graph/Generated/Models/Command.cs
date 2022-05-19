@@ -4,25 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of command entities.</summary>
     public class Command : Entity, IParsable {
         /// <summary>The appServiceName property</summary>
-        public string AppServiceName { get; set; }
+        public string AppServiceName {
+            get { return BackingStore?.Get<string>(nameof(AppServiceName)); }
+            set { BackingStore?.Set(nameof(AppServiceName), value); }
+        }
         /// <summary>The error property</summary>
-        public string Error { get; set; }
+        public string Error {
+            get { return BackingStore?.Get<string>(nameof(Error)); }
+            set { BackingStore?.Set(nameof(Error), value); }
+        }
         /// <summary>The packageFamilyName property</summary>
-        public string PackageFamilyName { get; set; }
+        public string PackageFamilyName {
+            get { return BackingStore?.Get<string>(nameof(PackageFamilyName)); }
+            set { BackingStore?.Set(nameof(PackageFamilyName), value); }
+        }
         /// <summary>The payload property</summary>
-        public PayloadRequest Payload { get; set; }
+        public PayloadRequest Payload {
+            get { return BackingStore?.Get<PayloadRequest>(nameof(Payload)); }
+            set { BackingStore?.Set(nameof(Payload), value); }
+        }
         /// <summary>The permissionTicket property</summary>
-        public string PermissionTicket { get; set; }
+        public string PermissionTicket {
+            get { return BackingStore?.Get<string>(nameof(PermissionTicket)); }
+            set { BackingStore?.Set(nameof(PermissionTicket), value); }
+        }
         /// <summary>The postBackUri property</summary>
-        public string PostBackUri { get; set; }
+        public string PostBackUri {
+            get { return BackingStore?.Get<string>(nameof(PostBackUri)); }
+            set { BackingStore?.Set(nameof(PostBackUri), value); }
+        }
         /// <summary>The responsepayload property</summary>
-        public PayloadResponse Responsepayload { get; set; }
+        public PayloadResponse Responsepayload {
+            get { return BackingStore?.Get<PayloadResponse>(nameof(Responsepayload)); }
+            set { BackingStore?.Set(nameof(Responsepayload), value); }
+        }
         /// <summary>The status property</summary>
-        public string Status { get; set; }
+        public string Status {
+            get { return BackingStore?.Get<string>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>The type property</summary>
-        public string Type { get; set; }
+        public string Type {
+            get { return BackingStore?.Get<string>(nameof(Type)); }
+            set { BackingStore?.Set(nameof(Type), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

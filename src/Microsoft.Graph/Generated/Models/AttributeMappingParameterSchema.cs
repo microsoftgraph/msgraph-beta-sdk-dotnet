@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class AttributeMappingParameterSchema : IAdditionalDataHolder, IParsable {
+    public class AttributeMappingParameterSchema : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>The given parameter can be provided multiple times (for example, multiple input strings in the Concatenate(string,string,...) function).</summary>
-        public bool? AllowMultipleOccurrences { get; set; }
+        public bool? AllowMultipleOccurrences {
+            get { return BackingStore?.Get<bool?>(nameof(AllowMultipleOccurrences)); }
+            set { BackingStore?.Set(nameof(AllowMultipleOccurrences), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Parameter name.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>true if the parameter is required; otherwise false.</summary>
-        public bool? Required { get; set; }
+        public bool? Required {
+            get { return BackingStore?.Get<bool?>(nameof(Required)); }
+            set { BackingStore?.Set(nameof(Required), value); }
+        }
         /// <summary>Possible values are: Boolean, Binary, Reference, Integer, String. Default is String.</summary>
-        public AttributeType? Type { get; set; }
+        public AttributeType? Type {
+            get { return BackingStore?.Get<AttributeType?>(nameof(Type)); }
+            set { BackingStore?.Set(nameof(Type), value); }
+        }
         /// <summary>
         /// Instantiates a new attributeMappingParameterSchema and sets the default values.
         /// </summary>
         public AttributeMappingParameterSchema() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

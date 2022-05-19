@@ -8,11 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class TenantRelationship : Entity, IParsable {
         /// <summary>The customer who has a delegated admin relationship with a Microsoft partner.</summary>
-        public List<DelegatedAdminCustomer> DelegatedAdminCustomers { get; set; }
+        public List<DelegatedAdminCustomer> DelegatedAdminCustomers {
+            get { return BackingStore?.Get<List<DelegatedAdminCustomer>>(nameof(DelegatedAdminCustomers)); }
+            set { BackingStore?.Set(nameof(DelegatedAdminCustomers), value); }
+        }
         /// <summary>The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.</summary>
-        public List<DelegatedAdminRelationship> DelegatedAdminRelationships { get; set; }
+        public List<DelegatedAdminRelationship> DelegatedAdminRelationships {
+            get { return BackingStore?.Get<List<DelegatedAdminRelationship>>(nameof(DelegatedAdminRelationships)); }
+            set { BackingStore?.Set(nameof(DelegatedAdminRelationships), value); }
+        }
         /// <summary>The operations available to interact with the multi-tenant management platform.</summary>
-        public ManagedTenant ManagedTenants { get; set; }
+        public ManagedTenant ManagedTenants {
+            get { return BackingStore?.Get<ManagedTenant>(nameof(ManagedTenants)); }
+            set { BackingStore?.Set(nameof(ManagedTenants), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -4,20 +4,35 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of chat entities.</summary>
     public class ConversationMember : Entity, IParsable {
         /// <summary>The display name of the user.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The roles for that user.</summary>
-        public List<string> Roles { get; set; }
+        public List<string> Roles {
+            get { return BackingStore?.Get<List<string>>(nameof(Roles)); }
+            set { BackingStore?.Set(nameof(Roles), value); }
+        }
         /// <summary>The timestamp denoting how far back a conversation&apos;s history is shared with the conversation member. This property is settable only for members of a chat.</summary>
-        public DateTimeOffset? VisibleHistoryStartDateTime { get; set; }
+        public DateTimeOffset? VisibleHistoryStartDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(VisibleHistoryStartDateTime)); }
+            set { BackingStore?.Set(nameof(VisibleHistoryStartDateTime), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new ConversationMember CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConversationMember();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.conversationMember" => new ConversationMember(),
+                _ => new ConversationMember(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

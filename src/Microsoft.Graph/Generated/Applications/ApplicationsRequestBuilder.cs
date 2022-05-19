@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Applications {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// List applications
+        /// Get the list of [applications](../resources/application.md) in this organization.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ApplicationsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -92,11 +92,11 @@ namespace Microsoft.Graph.Beta.Applications {
             return requestInfo;
         }
         /// <summary>
-        /// Create application
+        /// Create a new [application](../resources/application.md) object.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(Application body, Action<ApplicationsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation CreatePostRequestInformation(Microsoft.Graph.Beta.Models.Application body, Action<ApplicationsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Applications {
             return new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// List applications
+        /// Get the list of [applications](../resources/application.md) in this organization.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -133,22 +133,22 @@ namespace Microsoft.Graph.Beta.Applications {
             return await RequestAdapter.SendAsync<ApplicationCollectionResponse>(requestInfo, ApplicationCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create application
+        /// Create a new [application](../resources/application.md) object.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<Application> PostAsync(Application body, Action<ApplicationsRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Application> PostAsync(Microsoft.Graph.Beta.Models.Application body, Action<ApplicationsRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Application>(requestInfo, Application.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Application>(requestInfo, Microsoft.Graph.Beta.Models.Application.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>List applications</summary>
+        /// <summary>Get the list of [applications](../resources/application.md) in this organization.</summary>
         public class ApplicationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

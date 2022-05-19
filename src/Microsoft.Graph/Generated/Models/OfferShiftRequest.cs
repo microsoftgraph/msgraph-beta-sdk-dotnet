@@ -4,22 +4,40 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class OfferShiftRequest : ScheduleChangeRequest, IParsable {
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? RecipientActionDateTime { get; set; }
+        public DateTimeOffset? RecipientActionDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(RecipientActionDateTime)); }
+            set { BackingStore?.Set(nameof(RecipientActionDateTime), value); }
+        }
         /// <summary>Custom message sent by recipient of the offer shift request.</summary>
-        public string RecipientActionMessage { get; set; }
+        public string RecipientActionMessage {
+            get { return BackingStore?.Get<string>(nameof(RecipientActionMessage)); }
+            set { BackingStore?.Set(nameof(RecipientActionMessage), value); }
+        }
         /// <summary>User id of the recipient of the offer shift request.</summary>
-        public string RecipientUserId { get; set; }
+        public string RecipientUserId {
+            get { return BackingStore?.Get<string>(nameof(RecipientUserId)); }
+            set { BackingStore?.Set(nameof(RecipientUserId), value); }
+        }
         /// <summary>User id of the sender of the offer shift request.</summary>
-        public string SenderShiftId { get; set; }
+        public string SenderShiftId {
+            get { return BackingStore?.Get<string>(nameof(SenderShiftId)); }
+            set { BackingStore?.Set(nameof(SenderShiftId), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new OfferShiftRequest CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OfferShiftRequest();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.offerShiftRequest" => new OfferShiftRequest(),
+                _ => new OfferShiftRequest(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -4,25 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Violation of restricted apps configuration profile per device per user</summary>
     public class RestrictedAppsViolation : Entity, IParsable {
         /// <summary>Device configuration profile unique identifier, must be Guid</summary>
-        public string DeviceConfigurationId { get; set; }
+        public string DeviceConfigurationId {
+            get { return BackingStore?.Get<string>(nameof(DeviceConfigurationId)); }
+            set { BackingStore?.Set(nameof(DeviceConfigurationId), value); }
+        }
         /// <summary>Device configuration profile name</summary>
-        public string DeviceConfigurationName { get; set; }
+        public string DeviceConfigurationName {
+            get { return BackingStore?.Get<string>(nameof(DeviceConfigurationName)); }
+            set { BackingStore?.Set(nameof(DeviceConfigurationName), value); }
+        }
         /// <summary>Device name</summary>
-        public string DeviceName { get; set; }
+        public string DeviceName {
+            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
+            set { BackingStore?.Set(nameof(DeviceName), value); }
+        }
         /// <summary>Managed device unique identifier, must be Guid</summary>
-        public string ManagedDeviceId { get; set; }
+        public string ManagedDeviceId {
+            get { return BackingStore?.Get<string>(nameof(ManagedDeviceId)); }
+            set { BackingStore?.Set(nameof(ManagedDeviceId), value); }
+        }
         /// <summary>Platform type. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, androidAOSP, all.</summary>
-        public PolicyPlatformType? PlatformType { get; set; }
+        public PolicyPlatformType? PlatformType {
+            get { return BackingStore?.Get<PolicyPlatformType?>(nameof(PlatformType)); }
+            set { BackingStore?.Set(nameof(PlatformType), value); }
+        }
         /// <summary>List of violated restricted apps</summary>
-        public List<ManagedDeviceReportedApp> RestrictedApps { get; set; }
+        public List<ManagedDeviceReportedApp> RestrictedApps {
+            get { return BackingStore?.Get<List<ManagedDeviceReportedApp>>(nameof(RestrictedApps)); }
+            set { BackingStore?.Set(nameof(RestrictedApps), value); }
+        }
         /// <summary>Restricted apps state. Possible values are: prohibitedApps, notApprovedApps.</summary>
-        public Microsoft.Graph.Beta.Models.RestrictedAppsState? RestrictedAppsState { get; set; }
+        public Microsoft.Graph.Beta.Models.RestrictedAppsState? RestrictedAppsState {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RestrictedAppsState?>(nameof(RestrictedAppsState)); }
+            set { BackingStore?.Set(nameof(RestrictedAppsState), value); }
+        }
         /// <summary>User unique identifier, must be Guid</summary>
-        public string UserId { get; set; }
+        public string UserId {
+            get { return BackingStore?.Get<string>(nameof(UserId)); }
+            set { BackingStore?.Set(nameof(UserId), value); }
+        }
         /// <summary>User name</summary>
-        public string UserName { get; set; }
+        public string UserName {
+            get { return BackingStore?.Get<string>(nameof(UserName)); }
+            set { BackingStore?.Set(nameof(UserName), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

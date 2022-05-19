@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class UserSource : DataSource, IParsable {
         /// <summary>Email address of the user&apos;s mailbox.</summary>
-        public string Email { get; set; }
+        public string Email {
+            get { return BackingStore?.Get<string>(nameof(Email)); }
+            set { BackingStore?.Set(nameof(Email), value); }
+        }
         /// <summary>Specifies which sources are included in this group. Possible values are: mailbox, site.</summary>
-        public SourceType? IncludedSources { get; set; }
+        public SourceType? IncludedSources {
+            get { return BackingStore?.Get<SourceType?>(nameof(IncludedSources)); }
+            set { BackingStore?.Set(nameof(IncludedSources), value); }
+        }
         /// <summary>The URL of the user&apos;s OneDrive for Business site. Read-only.</summary>
-        public string SiteWebUrl { get; set; }
+        public string SiteWebUrl {
+            get { return BackingStore?.Get<string>(nameof(SiteWebUrl)); }
+            set { BackingStore?.Set(nameof(SiteWebUrl), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -4,30 +4,60 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class ThreatAssessmentRequest : Entity, IParsable {
         /// <summary>The threat category. Possible values are: spam, phishing, malware.</summary>
-        public ThreatCategory? Category { get; set; }
+        public ThreatCategory? Category {
+            get { return BackingStore?.Get<ThreatCategory?>(nameof(Category)); }
+            set { BackingStore?.Set(nameof(Category), value); }
+        }
         /// <summary>The content type of threat assessment. Possible values are: mail, url, file.</summary>
-        public ThreatAssessmentContentType? ContentType { get; set; }
+        public ThreatAssessmentContentType? ContentType {
+            get { return BackingStore?.Get<ThreatAssessmentContentType?>(nameof(ContentType)); }
+            set { BackingStore?.Set(nameof(ContentType), value); }
+        }
         /// <summary>The threat assessment request creator.</summary>
-        public IdentitySet CreatedBy { get; set; }
+        public IdentitySet CreatedBy {
+            get { return BackingStore?.Get<IdentitySet>(nameof(CreatedBy)); }
+            set { BackingStore?.Set(nameof(CreatedBy), value); }
+        }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>The expected assessment from submitter. Possible values are: block, unblock.</summary>
-        public ThreatExpectedAssessment? ExpectedAssessment { get; set; }
+        public ThreatExpectedAssessment? ExpectedAssessment {
+            get { return BackingStore?.Get<ThreatExpectedAssessment?>(nameof(ExpectedAssessment)); }
+            set { BackingStore?.Set(nameof(ExpectedAssessment), value); }
+        }
         /// <summary>The source of the threat assessment request. Possible values are: user, administrator.</summary>
-        public ThreatAssessmentRequestSource? RequestSource { get; set; }
+        public ThreatAssessmentRequestSource? RequestSource {
+            get { return BackingStore?.Get<ThreatAssessmentRequestSource?>(nameof(RequestSource)); }
+            set { BackingStore?.Set(nameof(RequestSource), value); }
+        }
         /// <summary>A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.</summary>
-        public List<ThreatAssessmentResult> Results { get; set; }
+        public List<ThreatAssessmentResult> Results {
+            get { return BackingStore?.Get<List<ThreatAssessmentResult>>(nameof(Results)); }
+            set { BackingStore?.Set(nameof(Results), value); }
+        }
         /// <summary>The assessment process status. Possible values are: pending, completed.</summary>
-        public ThreatAssessmentStatus? Status { get; set; }
+        public ThreatAssessmentStatus? Status {
+            get { return BackingStore?.Get<ThreatAssessmentStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new ThreatAssessmentRequest CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ThreatAssessmentRequest();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.threatAssessmentRequest" => new ThreatAssessmentRequest(),
+                _ => new ThreatAssessmentRequest(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

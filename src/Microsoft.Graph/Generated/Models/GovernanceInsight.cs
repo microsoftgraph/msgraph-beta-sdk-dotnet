@@ -4,16 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class GovernanceInsight : Entity, IParsable {
         /// <summary>Indicates when the insight was created.</summary>
-        public DateTimeOffset? InsightCreatedDateTime { get; set; }
+        public DateTimeOffset? InsightCreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(InsightCreatedDateTime)); }
+            set { BackingStore?.Set(nameof(InsightCreatedDateTime), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new GovernanceInsight CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GovernanceInsight();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.governanceInsight" => new GovernanceInsight(),
+                _ => new GovernanceInsight(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

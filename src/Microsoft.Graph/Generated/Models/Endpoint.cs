@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to call the instantiate method.</summary>
     public class Endpoint : DirectoryObject, IParsable {
         /// <summary>Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.) Not nullable. Read-only.</summary>
-        public string Capability { get; set; }
+        public string Capability {
+            get { return BackingStore?.Get<string>(nameof(Capability)); }
+            set { BackingStore?.Set(nameof(Capability), value); }
+        }
         /// <summary>Application id of the publishing underlying service. Not nullable. Read-only.</summary>
-        public string ProviderId { get; set; }
+        public string ProviderId {
+            get { return BackingStore?.Get<string>(nameof(ProviderId)); }
+            set { BackingStore?.Set(nameof(ProviderId), value); }
+        }
         /// <summary>Name of the publishing underlying service. Read-only.</summary>
-        public string ProviderName { get; set; }
+        public string ProviderName {
+            get { return BackingStore?.Get<string>(nameof(ProviderName)); }
+            set { BackingStore?.Set(nameof(ProviderName), value); }
+        }
         /// <summary>For Microsoft 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.</summary>
-        public string ProviderResourceId { get; set; }
+        public string ProviderResourceId {
+            get { return BackingStore?.Get<string>(nameof(ProviderResourceId)); }
+            set { BackingStore?.Set(nameof(ProviderResourceId), value); }
+        }
         /// <summary>URL of the published resource. Not nullable. Read-only.</summary>
-        public string Uri { get; set; }
+        public string Uri {
+            get { return BackingStore?.Get<string>(nameof(Uri)); }
+            set { BackingStore?.Set(nameof(Uri), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

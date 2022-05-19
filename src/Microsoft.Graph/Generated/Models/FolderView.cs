@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class FolderView : IAdditionalDataHolder, IParsable {
+    public class FolderView : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The method by which the folder should be sorted.</summary>
-        public string SortBy { get; set; }
+        public string SortBy {
+            get { return BackingStore?.Get<string>(nameof(SortBy)); }
+            set { BackingStore?.Set(nameof(SortBy), value); }
+        }
         /// <summary>If true, indicates that items should be sorted in descending order. Otherwise, items should be sorted ascending.</summary>
-        public string SortOrder { get; set; }
+        public string SortOrder {
+            get { return BackingStore?.Get<string>(nameof(SortOrder)); }
+            set { BackingStore?.Set(nameof(SortOrder), value); }
+        }
         /// <summary>The type of view that should be used to represent the folder.</summary>
-        public string ViewType { get; set; }
+        public string ViewType {
+            get { return BackingStore?.Get<string>(nameof(ViewType)); }
+            set { BackingStore?.Set(nameof(ViewType), value); }
+        }
         /// <summary>
         /// Instantiates a new folderView and sets the default values.
         /// </summary>
         public FolderView() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

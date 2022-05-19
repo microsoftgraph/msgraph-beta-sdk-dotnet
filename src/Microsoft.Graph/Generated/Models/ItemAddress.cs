@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class ItemAddress : ItemFacet, IParsable {
         /// <summary>The detail property</summary>
-        public PhysicalAddress Detail { get; set; }
+        public PhysicalAddress Detail {
+            get { return BackingStore?.Get<PhysicalAddress>(nameof(Detail)); }
+            set { BackingStore?.Set(nameof(Detail), value); }
+        }
         /// <summary>Friendly name the user has assigned to this address.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The geocoordinates of the address.</summary>
-        public Microsoft.Graph.Beta.Models.GeoCoordinates GeoCoordinates { get; set; }
+        public Microsoft.Graph.Beta.Models.GeoCoordinates GeoCoordinates {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GeoCoordinates>(nameof(GeoCoordinates)); }
+            set { BackingStore?.Set(nameof(GeoCoordinates), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

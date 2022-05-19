@@ -4,35 +4,78 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Entity that represents an intent to apply settings to a device</summary>
     public class DeviceManagementIntent : Entity, IParsable {
         /// <summary>Collection of assignments</summary>
-        public List<DeviceManagementIntentAssignment> Assignments { get; set; }
+        public List<DeviceManagementIntentAssignment> Assignments {
+            get { return BackingStore?.Get<List<DeviceManagementIntentAssignment>>(nameof(Assignments)); }
+            set { BackingStore?.Set(nameof(Assignments), value); }
+        }
         /// <summary>Collection of setting categories within the intent</summary>
-        public List<DeviceManagementIntentSettingCategory> Categories { get; set; }
+        public List<DeviceManagementIntentSettingCategory> Categories {
+            get { return BackingStore?.Get<List<DeviceManagementIntentSettingCategory>>(nameof(Categories)); }
+            set { BackingStore?.Set(nameof(Categories), value); }
+        }
         /// <summary>The user given description</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent</summary>
-        public List<DeviceManagementIntentDeviceSettingStateSummary> DeviceSettingStateSummaries { get; set; }
+        public List<DeviceManagementIntentDeviceSettingStateSummary> DeviceSettingStateSummaries {
+            get { return BackingStore?.Get<List<DeviceManagementIntentDeviceSettingStateSummary>>(nameof(DeviceSettingStateSummaries)); }
+            set { BackingStore?.Set(nameof(DeviceSettingStateSummaries), value); }
+        }
         /// <summary>Collection of states of all devices that the intent is applied to</summary>
-        public List<DeviceManagementIntentDeviceState> DeviceStates { get; set; }
+        public List<DeviceManagementIntentDeviceState> DeviceStates {
+            get { return BackingStore?.Get<List<DeviceManagementIntentDeviceState>>(nameof(DeviceStates)); }
+            set { BackingStore?.Set(nameof(DeviceStates), value); }
+        }
         /// <summary>A summary of device states and counts of devices that belong to corresponding state for all devices that the intent is applied to</summary>
-        public DeviceManagementIntentDeviceStateSummary DeviceStateSummary { get; set; }
+        public DeviceManagementIntentDeviceStateSummary DeviceStateSummary {
+            get { return BackingStore?.Get<DeviceManagementIntentDeviceStateSummary>(nameof(DeviceStateSummary)); }
+            set { BackingStore?.Set(nameof(DeviceStateSummary), value); }
+        }
         /// <summary>The user given display name</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Signifies whether or not the intent is assigned to users</summary>
-        public bool? IsAssigned { get; set; }
+        public bool? IsAssigned {
+            get { return BackingStore?.Get<bool?>(nameof(IsAssigned)); }
+            set { BackingStore?.Set(nameof(IsAssigned), value); }
+        }
         /// <summary>When the intent was last modified</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>List of Scope Tags for this Entity instance.</summary>
-        public List<string> RoleScopeTagIds { get; set; }
+        public List<string> RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTagIds)); }
+            set { BackingStore?.Set(nameof(RoleScopeTagIds), value); }
+        }
         /// <summary>Collection of all settings to be applied</summary>
-        public List<DeviceManagementSettingInstance> Settings { get; set; }
+        public List<DeviceManagementSettingInstance> Settings {
+            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>(nameof(Settings)); }
+            set { BackingStore?.Set(nameof(Settings), value); }
+        }
         /// <summary>The ID of the template this intent was created from (if any)</summary>
-        public string TemplateId { get; set; }
+        public string TemplateId {
+            get { return BackingStore?.Get<string>(nameof(TemplateId)); }
+            set { BackingStore?.Set(nameof(TemplateId), value); }
+        }
         /// <summary>Collection of states of all users that the intent is applied to</summary>
-        public List<DeviceManagementIntentUserState> UserStates { get; set; }
+        public List<DeviceManagementIntentUserState> UserStates {
+            get { return BackingStore?.Get<List<DeviceManagementIntentUserState>>(nameof(UserStates)); }
+            set { BackingStore?.Set(nameof(UserStates), value); }
+        }
         /// <summary>A summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to</summary>
-        public DeviceManagementIntentUserStateSummary UserStateSummary { get; set; }
+        public DeviceManagementIntentUserStateSummary UserStateSummary {
+            get { return BackingStore?.Get<DeviceManagementIntentUserStateSummary>(nameof(UserStateSummary)); }
+            set { BackingStore?.Set(nameof(UserStateSummary), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

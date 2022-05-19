@@ -1,26 +1,48 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class TeamworkDeviceSoftwareVersions : IAdditionalDataHolder, IParsable {
+    public class TeamworkDeviceSoftwareVersions : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>The software version for the admin agent running on the device.</summary>
-        public string AdminAgentSoftwareVersion { get; set; }
+        public string AdminAgentSoftwareVersion {
+            get { return BackingStore?.Get<string>(nameof(AdminAgentSoftwareVersion)); }
+            set { BackingStore?.Set(nameof(AdminAgentSoftwareVersion), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The software version for the firmware running on the device.</summary>
-        public string FirmwareSoftwareVersion { get; set; }
+        public string FirmwareSoftwareVersion {
+            get { return BackingStore?.Get<string>(nameof(FirmwareSoftwareVersion)); }
+            set { BackingStore?.Set(nameof(FirmwareSoftwareVersion), value); }
+        }
         /// <summary>The software version for the operating system on the device.</summary>
-        public string OperatingSystemSoftwareVersion { get; set; }
+        public string OperatingSystemSoftwareVersion {
+            get { return BackingStore?.Get<string>(nameof(OperatingSystemSoftwareVersion)); }
+            set { BackingStore?.Set(nameof(OperatingSystemSoftwareVersion), value); }
+        }
         /// <summary>The software version for the partner agent running on the device.</summary>
-        public string PartnerAgentSoftwareVersion { get; set; }
+        public string PartnerAgentSoftwareVersion {
+            get { return BackingStore?.Get<string>(nameof(PartnerAgentSoftwareVersion)); }
+            set { BackingStore?.Set(nameof(PartnerAgentSoftwareVersion), value); }
+        }
         /// <summary>The software version for the Teams client running on the device.</summary>
-        public string TeamsClientSoftwareVersion { get; set; }
+        public string TeamsClientSoftwareVersion {
+            get { return BackingStore?.Get<string>(nameof(TeamsClientSoftwareVersion)); }
+            set { BackingStore?.Set(nameof(TeamsClientSoftwareVersion), value); }
+        }
         /// <summary>
         /// Instantiates a new teamworkDeviceSoftwareVersions and sets the default values.
         /// </summary>
         public TeamworkDeviceSoftwareVersions() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

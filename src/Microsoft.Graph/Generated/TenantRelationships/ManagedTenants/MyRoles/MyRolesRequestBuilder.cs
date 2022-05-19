@@ -24,10 +24,10 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.MyRoles {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.tenantRelationships.managedTenants.myRoles.item collection</summary>
-        public MyRoleItemRequestBuilder this[string position] { get {
+        public MyRoleTenantItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("myRole%2DtenantId", position);
-            return new MyRoleItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new MyRoleTenantItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MyRolesRequestBuilder and sets the default values.

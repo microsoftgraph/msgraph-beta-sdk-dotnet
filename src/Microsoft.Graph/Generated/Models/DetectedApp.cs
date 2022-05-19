@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>A managed or unmanaged app that is installed on a managed device. Unmanaged apps will only appear for devices marked as corporate owned.</summary>
     public class DetectedApp : Entity, IParsable {
         /// <summary>The number of devices that have installed this application</summary>
-        public int? DeviceCount { get; set; }
+        public int? DeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(DeviceCount)); }
+            set { BackingStore?.Set(nameof(DeviceCount), value); }
+        }
         /// <summary>Name of the discovered application. Read-only</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The devices that have the discovered application installed</summary>
-        public List<ManagedDevice> ManagedDevices { get; set; }
+        public List<ManagedDevice> ManagedDevices {
+            get { return BackingStore?.Get<List<ManagedDevice>>(nameof(ManagedDevices)); }
+            set { BackingStore?.Set(nameof(ManagedDevices), value); }
+        }
         /// <summary>Discovered application size in bytes. Read-only</summary>
-        public long? SizeInByte { get; set; }
+        public long? SizeInByte {
+            get { return BackingStore?.Get<long?>(nameof(SizeInByte)); }
+            set { BackingStore?.Set(nameof(SizeInByte), value); }
+        }
         /// <summary>Version of the discovered application. Read-only</summary>
-        public string Version { get; set; }
+        public string Version {
+            get { return BackingStore?.Get<string>(nameof(Version)); }
+            set { BackingStore?.Set(nameof(Version), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.RiskDetections {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// List riskDetection
+        /// Retrieve the properties of a collection of **riskDetection** objects.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<RiskDetectionsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.RiskDetections {
             return requestInfo;
         }
         /// <summary>
-        /// List riskDetection
+        /// Retrieve the properties of a collection of **riskDetection** objects.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.RiskDetections {
             };
             return await RequestAdapter.SendAsync<RiskDetection>(requestInfo, RiskDetection.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>List riskDetection</summary>
+        /// <summary>Retrieve the properties of a collection of **riskDetection** objects.</summary>
         public class RiskDetectionsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

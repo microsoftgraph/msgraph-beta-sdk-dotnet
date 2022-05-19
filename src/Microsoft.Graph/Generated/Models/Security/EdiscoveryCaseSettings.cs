@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
+    /// <summary>Provides operations to manage the security singleton.</summary>
     public class EdiscoveryCaseSettings : Entity, IParsable {
         /// <summary>The ocr property</summary>
-        public OcrSettings Ocr { get; set; }
+        public OcrSettings Ocr {
+            get { return BackingStore?.Get<OcrSettings>(nameof(Ocr)); }
+            set { BackingStore?.Set(nameof(Ocr), value); }
+        }
         /// <summary>The redundancyDetection property</summary>
-        public RedundancyDetectionSettings RedundancyDetection { get; set; }
+        public RedundancyDetectionSettings RedundancyDetection {
+            get { return BackingStore?.Get<RedundancyDetectionSettings>(nameof(RedundancyDetection)); }
+            set { BackingStore?.Set(nameof(RedundancyDetection), value); }
+        }
         /// <summary>The topicModeling property</summary>
-        public TopicModelingSettings TopicModeling { get; set; }
+        public TopicModelingSettings TopicModeling {
+            get { return BackingStore?.Get<TopicModelingSettings>(nameof(TopicModeling)); }
+            set { BackingStore?.Set(nameof(TopicModeling), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

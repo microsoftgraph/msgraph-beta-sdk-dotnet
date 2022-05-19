@@ -4,39 +4,88 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Represents a Microsot Bookings Business.</summary>
     public class BookingBusiness : BookingNamedEntity, IParsable {
         /// <summary>The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page.</summary>
-        public PhysicalAddress Address { get; set; }
+        public PhysicalAddress Address {
+            get { return BackingStore?.Get<PhysicalAddress>(nameof(Address)); }
+            set { BackingStore?.Set(nameof(Address), value); }
+        }
         /// <summary>All the appointments of this business. Read-only. Nullable.</summary>
-        public List<BookingAppointment> Appointments { get; set; }
+        public List<BookingAppointment> Appointments {
+            get { return BackingStore?.Get<List<BookingAppointment>>(nameof(Appointments)); }
+            set { BackingStore?.Set(nameof(Appointments), value); }
+        }
         /// <summary>The hours of operation for the business.</summary>
-        public List<BookingWorkHours> BusinessHours { get; set; }
+        public List<BookingWorkHours> BusinessHours {
+            get { return BackingStore?.Get<List<BookingWorkHours>>(nameof(BusinessHours)); }
+            set { BackingStore?.Set(nameof(BusinessHours), value); }
+        }
         /// <summary>The type of business.</summary>
-        public string BusinessType { get; set; }
+        public string BusinessType {
+            get { return BackingStore?.Get<string>(nameof(BusinessType)); }
+            set { BackingStore?.Set(nameof(BusinessType), value); }
+        }
         /// <summary>The set of appointments of this business in a specified date range. Read-only. Nullable.</summary>
-        public List<BookingAppointment> CalendarView { get; set; }
+        public List<BookingAppointment> CalendarView {
+            get { return BackingStore?.Get<List<BookingAppointment>>(nameof(CalendarView)); }
+            set { BackingStore?.Set(nameof(CalendarView), value); }
+        }
         /// <summary>All the customers of this business. Read-only. Nullable.</summary>
-        public List<BookingCustomer> Customers { get; set; }
+        public List<BookingCustomer> Customers {
+            get { return BackingStore?.Get<List<BookingCustomer>>(nameof(Customers)); }
+            set { BackingStore?.Set(nameof(Customers), value); }
+        }
         /// <summary>All the custom questions of this business. Read-only. Nullable.</summary>
-        public List<BookingCustomQuestion> CustomQuestions { get; set; }
+        public List<BookingCustomQuestion> CustomQuestions {
+            get { return BackingStore?.Get<List<BookingCustomQuestion>>(nameof(CustomQuestions)); }
+            set { BackingStore?.Set(nameof(CustomQuestions), value); }
+        }
         /// <summary>The code for the currency that the business operates in on Microsoft Bookings.</summary>
-        public string DefaultCurrencyIso { get; set; }
+        public string DefaultCurrencyIso {
+            get { return BackingStore?.Get<string>(nameof(DefaultCurrencyIso)); }
+            set { BackingStore?.Set(nameof(DefaultCurrencyIso), value); }
+        }
         /// <summary>The email address for the business.</summary>
-        public string Email { get; set; }
+        public string Email {
+            get { return BackingStore?.Get<string>(nameof(Email)); }
+            set { BackingStore?.Set(nameof(Email), value); }
+        }
         /// <summary>The scheduling page has been made available to external customers. Use the publish and unpublish actions to set this property. Read-only.</summary>
-        public bool? IsPublished { get; set; }
+        public bool? IsPublished {
+            get { return BackingStore?.Get<bool?>(nameof(IsPublished)); }
+            set { BackingStore?.Set(nameof(IsPublished), value); }
+        }
         /// <summary>The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.</summary>
-        public string Phone { get; set; }
+        public string Phone {
+            get { return BackingStore?.Get<string>(nameof(Phone)); }
+            set { BackingStore?.Set(nameof(Phone), value); }
+        }
         /// <summary>The URL for the scheduling page, which is set after you publish or unpublish the page. Read-only.</summary>
-        public string PublicUrl { get; set; }
+        public string PublicUrl {
+            get { return BackingStore?.Get<string>(nameof(PublicUrl)); }
+            set { BackingStore?.Set(nameof(PublicUrl), value); }
+        }
         /// <summary>Specifies how bookings can be created for this business.</summary>
-        public BookingSchedulingPolicy SchedulingPolicy { get; set; }
+        public BookingSchedulingPolicy SchedulingPolicy {
+            get { return BackingStore?.Get<BookingSchedulingPolicy>(nameof(SchedulingPolicy)); }
+            set { BackingStore?.Set(nameof(SchedulingPolicy), value); }
+        }
         /// <summary>All the services offered by this business. Read-only. Nullable.</summary>
-        public List<BookingService> Services { get; set; }
+        public List<BookingService> Services {
+            get { return BackingStore?.Get<List<BookingService>>(nameof(Services)); }
+            set { BackingStore?.Set(nameof(Services), value); }
+        }
         /// <summary>All the staff members that provide services in this business. Read-only. Nullable.</summary>
-        public List<BookingStaffMember> StaffMembers { get; set; }
+        public List<BookingStaffMember> StaffMembers {
+            get { return BackingStore?.Get<List<BookingStaffMember>>(nameof(StaffMembers)); }
+            set { BackingStore?.Set(nameof(StaffMembers), value); }
+        }
         /// <summary>The URL of the business web site. The webSiteUrl property, together with address, phone, appear in the footer of a business scheduling page.</summary>
-        public string WebSiteUrl { get; set; }
+        public string WebSiteUrl {
+            get { return BackingStore?.Get<string>(nameof(WebSiteUrl)); }
+            set { BackingStore?.Set(nameof(WebSiteUrl), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

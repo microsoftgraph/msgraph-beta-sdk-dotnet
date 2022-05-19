@@ -4,37 +4,83 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class Post : OutlookItem, IParsable {
         /// <summary>The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.</summary>
-        public List<Attachment> Attachments { get; set; }
+        public List<Attachment> Attachments {
+            get { return BackingStore?.Get<List<Attachment>>(nameof(Attachments)); }
+            set { BackingStore?.Set(nameof(Attachments), value); }
+        }
         /// <summary>The contents of the post. This is a default property. This property can be null.</summary>
-        public ItemBody Body { get; set; }
+        public ItemBody Body {
+            get { return BackingStore?.Get<ItemBody>(nameof(Body)); }
+            set { BackingStore?.Set(nameof(Body), value); }
+        }
         /// <summary>Unique ID of the conversation. Read-only.</summary>
-        public string ConversationId { get; set; }
+        public string ConversationId {
+            get { return BackingStore?.Get<string>(nameof(ConversationId)); }
+            set { BackingStore?.Set(nameof(ConversationId), value); }
+        }
         /// <summary>Unique ID of the conversation thread. Read-only.</summary>
-        public string ConversationThreadId { get; set; }
+        public string ConversationThreadId {
+            get { return BackingStore?.Get<string>(nameof(ConversationThreadId)); }
+            set { BackingStore?.Set(nameof(ConversationThreadId), value); }
+        }
         /// <summary>The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.</summary>
-        public List<Extension> Extensions { get; set; }
+        public List<Extension> Extensions {
+            get { return BackingStore?.Get<List<Extension>>(nameof(Extensions)); }
+            set { BackingStore?.Set(nameof(Extensions), value); }
+        }
         /// <summary>The from property</summary>
-        public Recipient From { get; set; }
+        public Recipient From {
+            get { return BackingStore?.Get<Recipient>(nameof(From)); }
+            set { BackingStore?.Set(nameof(From), value); }
+        }
         /// <summary>Indicates whether the post has at least one attachment. This is a default property.</summary>
-        public bool? HasAttachments { get; set; }
+        public bool? HasAttachments {
+            get { return BackingStore?.Get<bool?>(nameof(HasAttachments)); }
+            set { BackingStore?.Set(nameof(HasAttachments), value); }
+        }
         /// <summary>The importance of a group post: low, normal, high.</summary>
-        public Microsoft.Graph.Beta.Models.Importance? Importance { get; set; }
+        public Microsoft.Graph.Beta.Models.Importance? Importance {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Importance?>(nameof(Importance)); }
+            set { BackingStore?.Set(nameof(Importance), value); }
+        }
         /// <summary>The earlier post that this post is replying to in the conversationThread. Read-only. Supports $expand.</summary>
-        public Post InReplyTo { get; set; }
+        public Post InReplyTo {
+            get { return BackingStore?.Get<Post>(nameof(InReplyTo)); }
+            set { BackingStore?.Set(nameof(InReplyTo), value); }
+        }
         /// <summary>The mentions property</summary>
-        public List<Mention> Mentions { get; set; }
+        public List<Mention> Mentions {
+            get { return BackingStore?.Get<List<Mention>>(nameof(Mentions)); }
+            set { BackingStore?.Set(nameof(Mentions), value); }
+        }
         /// <summary>The collection of multi-value extended properties defined for the post. Read-only. Nullable.</summary>
-        public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties { get; set; }
+        public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties {
+            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>(nameof(MultiValueExtendedProperties)); }
+            set { BackingStore?.Set(nameof(MultiValueExtendedProperties), value); }
+        }
         /// <summary>Conversation participants that were added to the thread as part of this post.</summary>
-        public List<Recipient> NewParticipants { get; set; }
+        public List<Recipient> NewParticipants {
+            get { return BackingStore?.Get<List<Recipient>>(nameof(NewParticipants)); }
+            set { BackingStore?.Set(nameof(NewParticipants), value); }
+        }
         /// <summary>Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? ReceivedDateTime { get; set; }
+        public DateTimeOffset? ReceivedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ReceivedDateTime)); }
+            set { BackingStore?.Set(nameof(ReceivedDateTime), value); }
+        }
         /// <summary>Contains the address of the sender. The value of Sender is assumed to be the address of the authenticated user in the case when Sender is not specified. This is a default property.</summary>
-        public Recipient Sender { get; set; }
+        public Recipient Sender {
+            get { return BackingStore?.Get<Recipient>(nameof(Sender)); }
+            set { BackingStore?.Set(nameof(Sender), value); }
+        }
         /// <summary>The collection of single-value extended properties defined for the post. Read-only. Nullable.</summary>
-        public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties { get; set; }
+        public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties {
+            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>(nameof(SingleValueExtendedProperties)); }
+            set { BackingStore?.Set(nameof(SingleValueExtendedProperties), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

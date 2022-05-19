@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
     public class ExactMatchUploadAgent : Entity, IParsable {
         /// <summary>The creationDateTime property</summary>
-        public DateTimeOffset? CreationDateTime { get; set; }
+        public DateTimeOffset? CreationDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreationDateTime)); }
+            set { BackingStore?.Set(nameof(CreationDateTime), value); }
+        }
         /// <summary>The description property</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

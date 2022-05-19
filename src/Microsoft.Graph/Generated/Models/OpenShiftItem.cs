@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class OpenShiftItem : ShiftItem, IParsable {
         /// <summary>Count of the number of slots for the given open shift.</summary>
-        public int? OpenSlotCount { get; set; }
+        public int? OpenSlotCount {
+            get { return BackingStore?.Get<int?>(nameof(OpenSlotCount)); }
+            set { BackingStore?.Set(nameof(OpenSlotCount), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

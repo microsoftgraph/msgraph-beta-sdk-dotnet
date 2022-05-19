@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SiteCollection : IAdditionalDataHolder, IParsable {
+    public class SiteCollection : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The geographic region code for where this site collection resides. Read-only.</summary>
-        public string DataLocationCode { get; set; }
+        public string DataLocationCode {
+            get { return BackingStore?.Get<string>(nameof(DataLocationCode)); }
+            set { BackingStore?.Set(nameof(DataLocationCode), value); }
+        }
         /// <summary>The hostname for the site collection. Read-only.</summary>
-        public string Hostname { get; set; }
+        public string Hostname {
+            get { return BackingStore?.Get<string>(nameof(Hostname)); }
+            set { BackingStore?.Set(nameof(Hostname), value); }
+        }
         /// <summary>If present, indicates that this is a root site collection in SharePoint. Read-only.</summary>
-        public Microsoft.Graph.Beta.Models.Root Root { get; set; }
+        public Microsoft.Graph.Beta.Models.Root Root {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Root>(nameof(Root)); }
+            set { BackingStore?.Set(nameof(Root), value); }
+        }
         /// <summary>
         /// Instantiates a new siteCollection and sets the default values.
         /// </summary>
         public SiteCollection() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

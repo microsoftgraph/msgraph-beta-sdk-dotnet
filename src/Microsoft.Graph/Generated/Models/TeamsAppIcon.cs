@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the appCatalogs singleton.</summary>
     public class TeamsAppIcon : Entity, IParsable {
         /// <summary>The contents of the app icon if the icon is hosted within the Teams infrastructure.</summary>
-        public TeamworkHostedContent HostedContent { get; set; }
+        public TeamworkHostedContent HostedContent {
+            get { return BackingStore?.Get<TeamworkHostedContent>(nameof(HostedContent)); }
+            set { BackingStore?.Set(nameof(HostedContent), value); }
+        }
         /// <summary>The web URL that can be used for downloading the image.</summary>
-        public string WebUrl { get; set; }
+        public string WebUrl {
+            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
+            set { BackingStore?.Set(nameof(WebUrl), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

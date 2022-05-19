@@ -4,18 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Base type for a setting instance</summary>
     public class DeviceManagementSettingInstance : Entity, IParsable {
         /// <summary>The ID of the setting definition for this instance</summary>
-        public string DefinitionId { get; set; }
+        public string DefinitionId {
+            get { return BackingStore?.Get<string>(nameof(DefinitionId)); }
+            set { BackingStore?.Set(nameof(DefinitionId), value); }
+        }
         /// <summary>JSON representation of the value</summary>
-        public string ValueJson { get; set; }
+        public string ValueJson {
+            get { return BackingStore?.Get<string>(nameof(ValueJson)); }
+            set { BackingStore?.Set(nameof(ValueJson), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new DeviceManagementSettingInstance CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementSettingInstance();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.deviceManagementSettingInstance" => new DeviceManagementSettingInstance(),
+                _ => new DeviceManagementSettingInstance(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

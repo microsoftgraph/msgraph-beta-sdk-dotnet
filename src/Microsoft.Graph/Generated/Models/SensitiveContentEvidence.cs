@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SensitiveContentEvidence : IAdditionalDataHolder, IParsable {
+    public class SensitiveContentEvidence : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The length property</summary>
-        public int? Length { get; set; }
+        public int? Length {
+            get { return BackingStore?.Get<int?>(nameof(Length)); }
+            set { BackingStore?.Set(nameof(Length), value); }
+        }
         /// <summary>The match property</summary>
-        public string Match { get; set; }
+        public string Match {
+            get { return BackingStore?.Get<string>(nameof(Match)); }
+            set { BackingStore?.Set(nameof(Match), value); }
+        }
         /// <summary>The offset property</summary>
-        public int? Offset { get; set; }
+        public int? Offset {
+            get { return BackingStore?.Get<int?>(nameof(Offset)); }
+            set { BackingStore?.Set(nameof(Offset), value); }
+        }
         /// <summary>
         /// Instantiates a new sensitiveContentEvidence and sets the default values.
         /// </summary>
         public SensitiveContentEvidence() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ExpressionEvaluationDetails : IAdditionalDataHolder, IParsable {
+    public class ExpressionEvaluationDetails : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Represents expression which has been evaluated.</summary>
-        public string Expression { get; set; }
+        public string Expression {
+            get { return BackingStore?.Get<string>(nameof(Expression)); }
+            set { BackingStore?.Set(nameof(Expression), value); }
+        }
         /// <summary>Represents the details of the evaluation of the expression.</summary>
-        public List<ExpressionEvaluationDetails> ExpressionEvaluationDetails_prop { get; set; }
+        public List<ExpressionEvaluationDetails> ExpressionEvaluationDetails_prop {
+            get { return BackingStore?.Get<List<ExpressionEvaluationDetails>>(nameof(ExpressionEvaluationDetails_prop)); }
+            set { BackingStore?.Set(nameof(ExpressionEvaluationDetails_prop), value); }
+        }
         /// <summary>Represents the value of the result of the current expression.</summary>
-        public bool? ExpressionResult { get; set; }
+        public bool? ExpressionResult {
+            get { return BackingStore?.Get<bool?>(nameof(ExpressionResult)); }
+            set { BackingStore?.Set(nameof(ExpressionResult), value); }
+        }
         /// <summary>Defines the name of the property and the value of that property.</summary>
-        public Microsoft.Graph.Beta.Models.PropertyToEvaluate PropertyToEvaluate { get; set; }
+        public Microsoft.Graph.Beta.Models.PropertyToEvaluate PropertyToEvaluate {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PropertyToEvaluate>(nameof(PropertyToEvaluate)); }
+            set { BackingStore?.Set(nameof(PropertyToEvaluate), value); }
+        }
         /// <summary>
         /// Instantiates a new expressionEvaluationDetails and sets the default values.
         /// </summary>
         public ExpressionEvaluationDetails() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

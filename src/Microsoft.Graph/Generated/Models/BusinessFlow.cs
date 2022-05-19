@@ -4,25 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of approvalWorkflowProvider entities.</summary>
     public class BusinessFlow : Entity, IParsable {
         /// <summary>The customData property</summary>
-        public string CustomData { get; set; }
+        public string CustomData {
+            get { return BackingStore?.Get<string>(nameof(CustomData)); }
+            set { BackingStore?.Set(nameof(CustomData), value); }
+        }
         /// <summary>The deDuplicationId property</summary>
-        public string DeDuplicationId { get; set; }
+        public string DeDuplicationId {
+            get { return BackingStore?.Get<string>(nameof(DeDuplicationId)); }
+            set { BackingStore?.Set(nameof(DeDuplicationId), value); }
+        }
         /// <summary>The description property</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The displayName property</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The policy property</summary>
-        public GovernancePolicy Policy { get; set; }
+        public GovernancePolicy Policy {
+            get { return BackingStore?.Get<GovernancePolicy>(nameof(Policy)); }
+            set { BackingStore?.Set(nameof(Policy), value); }
+        }
         /// <summary>The policyTemplateId property</summary>
-        public string PolicyTemplateId { get; set; }
+        public string PolicyTemplateId {
+            get { return BackingStore?.Get<string>(nameof(PolicyTemplateId)); }
+            set { BackingStore?.Set(nameof(PolicyTemplateId), value); }
+        }
         /// <summary>The recordVersion property</summary>
-        public string RecordVersion { get; set; }
+        public string RecordVersion {
+            get { return BackingStore?.Get<string>(nameof(RecordVersion)); }
+            set { BackingStore?.Set(nameof(RecordVersion), value); }
+        }
         /// <summary>The schemaId property</summary>
-        public string SchemaId { get; set; }
+        public string SchemaId {
+            get { return BackingStore?.Get<string>(nameof(SchemaId)); }
+            set { BackingStore?.Set(nameof(SchemaId), value); }
+        }
         /// <summary>The settings property</summary>
-        public BusinessFlowSettings Settings { get; set; }
+        public BusinessFlowSettings Settings {
+            get { return BackingStore?.Get<BusinessFlowSettings>(nameof(Settings)); }
+            set { BackingStore?.Set(nameof(Settings), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

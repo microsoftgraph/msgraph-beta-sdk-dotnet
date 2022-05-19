@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ExpressionInputObject : IAdditionalDataHolder, IParsable {
+    public class ExpressionInputObject : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Definition of the test object.</summary>
-        public ObjectDefinition Definition { get; set; }
+        public ObjectDefinition Definition {
+            get { return BackingStore?.Get<ObjectDefinition>(nameof(Definition)); }
+            set { BackingStore?.Set(nameof(Definition), value); }
+        }
         /// <summary>Property values of the test object.</summary>
-        public List<StringKeyObjectValuePair> Properties { get; set; }
+        public List<StringKeyObjectValuePair> Properties {
+            get { return BackingStore?.Get<List<StringKeyObjectValuePair>>(nameof(Properties)); }
+            set { BackingStore?.Set(nameof(Properties), value); }
+        }
         /// <summary>
         /// Instantiates a new expressionInputObject and sets the default values.
         /// </summary>
         public ExpressionInputObject() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

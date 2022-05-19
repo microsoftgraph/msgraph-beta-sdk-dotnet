@@ -1,28 +1,53 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class AuthenticationDetail : IAdditionalDataHolder, IParsable {
+    public class AuthenticationDetail : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>The type of authentication method used to perform this step of authentication. Possible values: Password, SMS, Voice, Authenticator App, Software OATH token, Satisfied by token, Previously satisfied.</summary>
-        public string AuthenticationMethod { get; set; }
+        public string AuthenticationMethod {
+            get { return BackingStore?.Get<string>(nameof(AuthenticationMethod)); }
+            set { BackingStore?.Set(nameof(AuthenticationMethod), value); }
+        }
         /// <summary>Details about the authentication method used to perform this authentication step. For example, phone number (for SMS and voice), device name (for Authenticator app), and password source (e.g. cloud, AD FS, PTA, PHS).</summary>
-        public string AuthenticationMethodDetail { get; set; }
+        public string AuthenticationMethodDetail {
+            get { return BackingStore?.Get<string>(nameof(AuthenticationMethodDetail)); }
+            set { BackingStore?.Set(nameof(AuthenticationMethodDetail), value); }
+        }
         /// <summary>Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? AuthenticationStepDateTime { get; set; }
+        public DateTimeOffset? AuthenticationStepDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(AuthenticationStepDateTime)); }
+            set { BackingStore?.Set(nameof(AuthenticationStepDateTime), value); }
+        }
         /// <summary>The step of authentication that this satisfied. For example, primary authentication, or multi-factor authentication.</summary>
-        public string AuthenticationStepRequirement { get; set; }
+        public string AuthenticationStepRequirement {
+            get { return BackingStore?.Get<string>(nameof(AuthenticationStepRequirement)); }
+            set { BackingStore?.Set(nameof(AuthenticationStepRequirement), value); }
+        }
         /// <summary>Details about why the step succeeded or failed. For examples, user is blocked, fraud code entered, no phone input - timed out, phone unreachable, or claim in token.</summary>
-        public string AuthenticationStepResultDetail { get; set; }
+        public string AuthenticationStepResultDetail {
+            get { return BackingStore?.Get<string>(nameof(AuthenticationStepResultDetail)); }
+            set { BackingStore?.Set(nameof(AuthenticationStepResultDetail), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates the status of the authentication step. Possible values: succeeded, failed.</summary>
-        public bool? Succeeded { get; set; }
+        public bool? Succeeded {
+            get { return BackingStore?.Get<bool?>(nameof(Succeeded)); }
+            set { BackingStore?.Set(nameof(Succeeded), value); }
+        }
         /// <summary>
         /// Instantiates a new authenticationDetail and sets the default values.
         /// </summary>
         public AuthenticationDetail() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

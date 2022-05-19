@@ -1,21 +1,34 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>History Item contained in the Mobile App Troubleshooting Event.</summary>
-    public class MobileAppTroubleshootingHistoryItem : IAdditionalDataHolder, IParsable {
+    public class MobileAppTroubleshootingHistoryItem : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Time when the history item occurred.</summary>
-        public DateTimeOffset? OccurrenceDateTime { get; set; }
+        public DateTimeOffset? OccurrenceDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(OccurrenceDateTime)); }
+            set { BackingStore?.Set(nameof(OccurrenceDateTime), value); }
+        }
         /// <summary>Object containing detailed information about the error and its remediation.</summary>
-        public DeviceManagementTroubleshootingErrorDetails TroubleshootingErrorDetails { get; set; }
+        public DeviceManagementTroubleshootingErrorDetails TroubleshootingErrorDetails {
+            get { return BackingStore?.Get<DeviceManagementTroubleshootingErrorDetails>(nameof(TroubleshootingErrorDetails)); }
+            set { BackingStore?.Set(nameof(TroubleshootingErrorDetails), value); }
+        }
         /// <summary>
         /// Instantiates a new mobileAppTroubleshootingHistoryItem and sets the default values.
         /// </summary>
         public MobileAppTroubleshootingHistoryItem() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -4,35 +4,78 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the educationRoot singleton.</summary>
     public class EducationSchool : EducationOrganization, IParsable {
         /// <summary>Address of the school.</summary>
-        public PhysicalAddress Address { get; set; }
+        public PhysicalAddress Address {
+            get { return BackingStore?.Get<PhysicalAddress>(nameof(Address)); }
+            set { BackingStore?.Set(nameof(Address), value); }
+        }
         /// <summary>The underlying administrativeUnit for this school.</summary>
-        public Microsoft.Graph.Beta.Models.AdministrativeUnit AdministrativeUnit { get; set; }
+        public Microsoft.Graph.Beta.Models.AdministrativeUnit AdministrativeUnit {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdministrativeUnit>(nameof(AdministrativeUnit)); }
+            set { BackingStore?.Set(nameof(AdministrativeUnit), value); }
+        }
         /// <summary>Classes taught at the school. Nullable.</summary>
-        public List<EducationClass> Classes { get; set; }
+        public List<EducationClass> Classes {
+            get { return BackingStore?.Get<List<EducationClass>>(nameof(Classes)); }
+            set { BackingStore?.Set(nameof(Classes), value); }
+        }
         /// <summary>Entity who created the school.</summary>
-        public IdentitySet CreatedBy { get; set; }
+        public IdentitySet CreatedBy {
+            get { return BackingStore?.Get<IdentitySet>(nameof(CreatedBy)); }
+            set { BackingStore?.Set(nameof(CreatedBy), value); }
+        }
         /// <summary>ID of school in syncing system.</summary>
-        public string ExternalId { get; set; }
+        public string ExternalId {
+            get { return BackingStore?.Get<string>(nameof(ExternalId)); }
+            set { BackingStore?.Set(nameof(ExternalId), value); }
+        }
         /// <summary>ID of principal in syncing system.</summary>
-        public string ExternalPrincipalId { get; set; }
+        public string ExternalPrincipalId {
+            get { return BackingStore?.Get<string>(nameof(ExternalPrincipalId)); }
+            set { BackingStore?.Set(nameof(ExternalPrincipalId), value); }
+        }
         /// <summary>The fax property</summary>
-        public string Fax { get; set; }
+        public string Fax {
+            get { return BackingStore?.Get<string>(nameof(Fax)); }
+            set { BackingStore?.Set(nameof(Fax), value); }
+        }
         /// <summary>Highest grade taught.</summary>
-        public string HighestGrade { get; set; }
+        public string HighestGrade {
+            get { return BackingStore?.Get<string>(nameof(HighestGrade)); }
+            set { BackingStore?.Set(nameof(HighestGrade), value); }
+        }
         /// <summary>Lowest grade taught.</summary>
-        public string LowestGrade { get; set; }
+        public string LowestGrade {
+            get { return BackingStore?.Get<string>(nameof(LowestGrade)); }
+            set { BackingStore?.Set(nameof(LowestGrade), value); }
+        }
         /// <summary>Phone number of school.</summary>
-        public string Phone { get; set; }
+        public string Phone {
+            get { return BackingStore?.Get<string>(nameof(Phone)); }
+            set { BackingStore?.Set(nameof(Phone), value); }
+        }
         /// <summary>Email address of the principal.</summary>
-        public string PrincipalEmail { get; set; }
+        public string PrincipalEmail {
+            get { return BackingStore?.Get<string>(nameof(PrincipalEmail)); }
+            set { BackingStore?.Set(nameof(PrincipalEmail), value); }
+        }
         /// <summary>Name of the principal.</summary>
-        public string PrincipalName { get; set; }
+        public string PrincipalName {
+            get { return BackingStore?.Get<string>(nameof(PrincipalName)); }
+            set { BackingStore?.Set(nameof(PrincipalName), value); }
+        }
         /// <summary>School Number.</summary>
-        public string SchoolNumber { get; set; }
+        public string SchoolNumber {
+            get { return BackingStore?.Get<string>(nameof(SchoolNumber)); }
+            set { BackingStore?.Set(nameof(SchoolNumber), value); }
+        }
         /// <summary>Users in the school. Nullable.</summary>
-        public List<EducationUser> Users { get; set; }
+        public List<EducationUser> Users {
+            get { return BackingStore?.Get<List<EducationUser>>(nameof(Users)); }
+            set { BackingStore?.Set(nameof(Users), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

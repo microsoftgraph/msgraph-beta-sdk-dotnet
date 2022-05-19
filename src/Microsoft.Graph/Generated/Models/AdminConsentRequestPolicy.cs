@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class AdminConsentRequestPolicy : Entity, IParsable {
         /// <summary>Specifies whether the admin consent request feature is enabled or disabled. Required.</summary>
-        public bool? IsEnabled { get; set; }
+        public bool? IsEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
+            set { BackingStore?.Set(nameof(IsEnabled), value); }
+        }
         /// <summary>Specifies whether reviewers will receive notifications. Required.</summary>
-        public bool? NotifyReviewers { get; set; }
+        public bool? NotifyReviewers {
+            get { return BackingStore?.Get<bool?>(nameof(NotifyReviewers)); }
+            set { BackingStore?.Set(nameof(NotifyReviewers), value); }
+        }
         /// <summary>Specifies whether reviewers will receive reminder emails. Required.</summary>
-        public bool? RemindersEnabled { get; set; }
+        public bool? RemindersEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(RemindersEnabled)); }
+            set { BackingStore?.Set(nameof(RemindersEnabled), value); }
+        }
         /// <summary>Specifies the duration the request is active before it automatically expires if no decision is applied.</summary>
-        public int? RequestDurationInDays { get; set; }
+        public int? RequestDurationInDays {
+            get { return BackingStore?.Get<int?>(nameof(RequestDurationInDays)); }
+            set { BackingStore?.Set(nameof(RequestDurationInDays), value); }
+        }
         /// <summary>Required.</summary>
-        public List<AccessReviewReviewerScope> Reviewers { get; set; }
+        public List<AccessReviewReviewerScope> Reviewers {
+            get { return BackingStore?.Get<List<AccessReviewReviewerScope>>(nameof(Reviewers)); }
+            set { BackingStore?.Set(nameof(Reviewers), value); }
+        }
         /// <summary>Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.</summary>
-        public int? Version { get; set; }
+        public int? Version {
+            get { return BackingStore?.Get<int?>(nameof(Version)); }
+            set { BackingStore?.Set(nameof(Version), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

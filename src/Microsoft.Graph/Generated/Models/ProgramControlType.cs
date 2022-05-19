@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of programControlType entities.</summary>
     public class ProgramControlType : Entity, IParsable {
         /// <summary>The controlTypeGroupId property</summary>
-        public string ControlTypeGroupId { get; set; }
+        public string ControlTypeGroupId {
+            get { return BackingStore?.Get<string>(nameof(ControlTypeGroupId)); }
+            set { BackingStore?.Set(nameof(ControlTypeGroupId), value); }
+        }
         /// <summary>The name of the program control type</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

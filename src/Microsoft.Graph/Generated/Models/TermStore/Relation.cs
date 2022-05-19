@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.TermStore {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class Relation : Entity, IParsable {
         /// <summary>The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].</summary>
-        public Term FromTerm { get; set; }
+        public Term FromTerm {
+            get { return BackingStore?.Get<Term>(nameof(FromTerm)); }
+            set { BackingStore?.Set(nameof(FromTerm), value); }
+        }
         /// <summary>The type of relation. Possible values are: pin, reuse.</summary>
-        public RelationType? Relationship { get; set; }
+        public RelationType? Relationship {
+            get { return BackingStore?.Get<RelationType?>(nameof(Relationship)); }
+            set { BackingStore?.Set(nameof(Relationship), value); }
+        }
         /// <summary>The [set] in which the relation is relevant.</summary>
-        public Microsoft.Graph.Beta.Models.TermStore.Set Set { get; set; }
+        public Microsoft.Graph.Beta.Models.TermStore.Set Set {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TermStore.Set>(nameof(Set)); }
+            set { BackingStore?.Set(nameof(Set), value); }
+        }
         /// <summary>The to [term] of the relation. The term to which the relationship is defined.</summary>
-        public Term ToTerm { get; set; }
+        public Term ToTerm {
+            get { return BackingStore?.Get<Term>(nameof(ToTerm)); }
+            set { BackingStore?.Set(nameof(ToTerm), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

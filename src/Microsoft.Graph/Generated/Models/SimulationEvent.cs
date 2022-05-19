@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SimulationEvent : IAdditionalDataHolder, IParsable {
+    public class SimulationEvent : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Count of occurence of the simulation event in an attack simulation and training campaign.</summary>
-        public int? Count { get; set; }
+        public int? Count {
+            get { return BackingStore?.Get<int?>(nameof(Count)); }
+            set { BackingStore?.Set(nameof(Count), value); }
+        }
         /// <summary>Name of the simulation event in an attack simulation and training campaign.</summary>
-        public string EventName { get; set; }
+        public string EventName {
+            get { return BackingStore?.Get<string>(nameof(EventName)); }
+            set { BackingStore?.Set(nameof(EventName), value); }
+        }
         /// <summary>
         /// Instantiates a new simulationEvent and sets the default values.
         /// </summary>
         public SimulationEvent() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class InferenceClassificationOverride : Entity, IParsable {
         /// <summary>Specifies how incoming messages from a specific sender should always be classified as. Possible values are: focused, other.</summary>
-        public InferenceClassificationType? ClassifyAs { get; set; }
+        public InferenceClassificationType? ClassifyAs {
+            get { return BackingStore?.Get<InferenceClassificationType?>(nameof(ClassifyAs)); }
+            set { BackingStore?.Set(nameof(ClassifyAs), value); }
+        }
         /// <summary>The email address information of the sender for whom the override is created.</summary>
-        public EmailAddress SenderEmailAddress { get; set; }
+        public EmailAddress SenderEmailAddress {
+            get { return BackingStore?.Get<EmailAddress>(nameof(SenderEmailAddress)); }
+            set { BackingStore?.Set(nameof(SenderEmailAddress), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

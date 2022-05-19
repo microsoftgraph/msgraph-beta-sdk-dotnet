@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class TenantGroup : Entity, IParsable {
         /// <summary>A flag indicating whether all managed tenant are included in the tenant group. Required. Read-only.</summary>
-        public bool? AllTenantsIncluded { get; set; }
+        public bool? AllTenantsIncluded {
+            get { return BackingStore?.Get<bool?>(nameof(AllTenantsIncluded)); }
+            set { BackingStore?.Set(nameof(AllTenantsIncluded), value); }
+        }
         /// <summary>The display name for the tenant group. Optional. Read-only.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The collection of management action associated with the tenant group. Optional. Read-only.</summary>
-        public List<ManagementActionInfo> ManagementActions { get; set; }
+        public List<ManagementActionInfo> ManagementActions {
+            get { return BackingStore?.Get<List<ManagementActionInfo>>(nameof(ManagementActions)); }
+            set { BackingStore?.Set(nameof(ManagementActions), value); }
+        }
         /// <summary>The collection of management intents associated with the tenant group. Optional. Read-only.</summary>
-        public List<ManagementIntentInfo> ManagementIntents { get; set; }
+        public List<ManagementIntentInfo> ManagementIntents {
+            get { return BackingStore?.Get<List<ManagementIntentInfo>>(nameof(ManagementIntents)); }
+            set { BackingStore?.Set(nameof(ManagementIntents), value); }
+        }
         /// <summary>The collection of managed tenant identifiers include in the tenant group. Optional. Read-only.</summary>
-        public List<string> TenantIds { get; set; }
+        public List<string> TenantIds {
+            get { return BackingStore?.Get<List<string>>(nameof(TenantIds)); }
+            set { BackingStore?.Set(nameof(TenantIds), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

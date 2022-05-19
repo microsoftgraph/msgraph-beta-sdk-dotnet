@@ -1,28 +1,53 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class LicenseAssignmentState : IAdditionalDataHolder, IParsable {
+    public class LicenseAssignmentState : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>The id of the group that assigns this license. If the assignment is a direct-assigned license, this field will be Null. Read-Only.</summary>
-        public string AssignedByGroup { get; set; }
+        public string AssignedByGroup {
+            get { return BackingStore?.Get<string>(nameof(AssignedByGroup)); }
+            set { BackingStore?.Set(nameof(AssignedByGroup), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The service plans that are disabled in this assignment. Read-Only.</summary>
-        public List<string> DisabledPlans { get; set; }
+        public List<string> DisabledPlans {
+            get { return BackingStore?.Get<List<string>>(nameof(DisabledPlans)); }
+            set { BackingStore?.Set(nameof(DisabledPlans), value); }
+        }
         /// <summary>License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors see here.</summary>
-        public string Error { get; set; }
+        public string Error {
+            get { return BackingStore?.Get<string>(nameof(Error)); }
+            set { BackingStore?.Set(nameof(Error), value); }
+        }
         /// <summary>The timestamp when the state of the license assignment was last updated.</summary>
-        public DateTimeOffset? LastUpdatedDateTime { get; set; }
+        public DateTimeOffset? LastUpdatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastUpdatedDateTime)); }
+            set { BackingStore?.Set(nameof(LastUpdatedDateTime), value); }
+        }
         /// <summary>The unique identifier for the SKU. Read-Only.</summary>
-        public string SkuId { get; set; }
+        public string SkuId {
+            get { return BackingStore?.Get<string>(nameof(SkuId)); }
+            set { BackingStore?.Set(nameof(SkuId), value); }
+        }
         /// <summary>Indicate the current state of this assignment. Read-Only. The possible values are Active, ActiveWithError, Disabled, and Error.</summary>
-        public string State { get; set; }
+        public string State {
+            get { return BackingStore?.Get<string>(nameof(State)); }
+            set { BackingStore?.Set(nameof(State), value); }
+        }
         /// <summary>
         /// Instantiates a new licenseAssignmentState and sets the default values.
         /// </summary>
         public LicenseAssignmentState() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

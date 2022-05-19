@@ -4,21 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class EstimateStatisticsOperation : CaseOperation, IParsable {
         /// <summary>The estimated count of items for the sourceCollection that matched the content query.</summary>
-        public long? IndexedItemCount { get; set; }
+        public long? IndexedItemCount {
+            get { return BackingStore?.Get<long?>(nameof(IndexedItemCount)); }
+            set { BackingStore?.Set(nameof(IndexedItemCount), value); }
+        }
         /// <summary>The estimated size of items for the sourceCollection that matched the content query.</summary>
-        public long? IndexedItemsSize { get; set; }
+        public long? IndexedItemsSize {
+            get { return BackingStore?.Get<long?>(nameof(IndexedItemsSize)); }
+            set { BackingStore?.Set(nameof(IndexedItemsSize), value); }
+        }
         /// <summary>The number of mailboxes that had search hits.</summary>
-        public int? MailboxCount { get; set; }
+        public int? MailboxCount {
+            get { return BackingStore?.Get<int?>(nameof(MailboxCount)); }
+            set { BackingStore?.Set(nameof(MailboxCount), value); }
+        }
         /// <summary>The number of mailboxes that had search hits.</summary>
-        public int? SiteCount { get; set; }
+        public int? SiteCount {
+            get { return BackingStore?.Get<int?>(nameof(SiteCount)); }
+            set { BackingStore?.Set(nameof(SiteCount), value); }
+        }
         /// <summary>eDiscovery collection, commonly known as a search.</summary>
-        public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection SourceCollection { get; set; }
+        public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection SourceCollection {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>(nameof(SourceCollection)); }
+            set { BackingStore?.Set(nameof(SourceCollection), value); }
+        }
         /// <summary>The estimated count of unindexed items for the collection.</summary>
-        public long? UnindexedItemCount { get; set; }
+        public long? UnindexedItemCount {
+            get { return BackingStore?.Get<long?>(nameof(UnindexedItemCount)); }
+            set { BackingStore?.Set(nameof(UnindexedItemCount), value); }
+        }
         /// <summary>The estimated size of unindexed items for the collection.</summary>
-        public long? UnindexedItemsSize { get; set; }
+        public long? UnindexedItemsSize {
+            get { return BackingStore?.Get<long?>(nameof(UnindexedItemsSize)); }
+            set { BackingStore?.Set(nameof(UnindexedItemsSize), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

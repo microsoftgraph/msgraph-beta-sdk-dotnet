@@ -1,36 +1,73 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class MatchingLabel : IAdditionalDataHolder, IParsable {
+    public class MatchingLabel : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>The applicationMode property</summary>
-        public Microsoft.Graph.Beta.Models.ApplicationMode? ApplicationMode { get; set; }
+        public Microsoft.Graph.Beta.Models.ApplicationMode? ApplicationMode {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ApplicationMode?>(nameof(ApplicationMode)); }
+            set { BackingStore?.Set(nameof(ApplicationMode), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The description property</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The displayName property</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The id property</summary>
-        public string Id { get; set; }
+        public string Id {
+            get { return BackingStore?.Get<string>(nameof(Id)); }
+            set { BackingStore?.Set(nameof(Id), value); }
+        }
         /// <summary>The isEndpointProtectionEnabled property</summary>
-        public bool? IsEndpointProtectionEnabled { get; set; }
+        public bool? IsEndpointProtectionEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(IsEndpointProtectionEnabled)); }
+            set { BackingStore?.Set(nameof(IsEndpointProtectionEnabled), value); }
+        }
         /// <summary>The labelActions property</summary>
-        public List<LabelActionBase> LabelActions { get; set; }
+        public List<LabelActionBase> LabelActions {
+            get { return BackingStore?.Get<List<LabelActionBase>>(nameof(LabelActions)); }
+            set { BackingStore?.Set(nameof(LabelActions), value); }
+        }
         /// <summary>The name property</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>The policyTip property</summary>
-        public string PolicyTip { get; set; }
+        public string PolicyTip {
+            get { return BackingStore?.Get<string>(nameof(PolicyTip)); }
+            set { BackingStore?.Set(nameof(PolicyTip), value); }
+        }
         /// <summary>The priority property</summary>
-        public int? Priority { get; set; }
+        public int? Priority {
+            get { return BackingStore?.Get<int?>(nameof(Priority)); }
+            set { BackingStore?.Set(nameof(Priority), value); }
+        }
         /// <summary>The toolTip property</summary>
-        public string ToolTip { get; set; }
+        public string ToolTip {
+            get { return BackingStore?.Get<string>(nameof(ToolTip)); }
+            set { BackingStore?.Set(nameof(ToolTip), value); }
+        }
         /// <summary>
         /// Instantiates a new matchingLabel and sets the default values.
         /// </summary>
         public MatchingLabel() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

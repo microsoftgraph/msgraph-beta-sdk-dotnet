@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class ManagementIntent : Entity, IParsable {
         /// <summary>The display name for the management intent. Optional. Read-only.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>A flag indicating whether the management intent is global. Required. Read-only.</summary>
-        public bool? IsGlobal { get; set; }
+        public bool? IsGlobal {
+            get { return BackingStore?.Get<bool?>(nameof(IsGlobal)); }
+            set { BackingStore?.Set(nameof(IsGlobal), value); }
+        }
         /// <summary>The collection of management templates associated with the management intent. Optional. Read-only.</summary>
-        public List<ManagementTemplateDetailedInfo> ManagementTemplates { get; set; }
+        public List<ManagementTemplateDetailedInfo> ManagementTemplates {
+            get { return BackingStore?.Get<List<ManagementTemplateDetailedInfo>>(nameof(ManagementTemplates)); }
+            set { BackingStore?.Set(nameof(ManagementTemplates), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class PrintTaskTrigger : Entity, IParsable {
         /// <summary>The definition property</summary>
-        public PrintTaskDefinition Definition { get; set; }
+        public PrintTaskDefinition Definition {
+            get { return BackingStore?.Get<PrintTaskDefinition>(nameof(Definition)); }
+            set { BackingStore?.Set(nameof(Definition), value); }
+        }
         /// <summary>The Universal Print event that will cause a new printTask to be triggered. Valid values are described in the following table.</summary>
-        public PrintEvent? Event { get; set; }
+        public PrintEvent? Event {
+            get { return BackingStore?.Get<PrintEvent?>(nameof(Event)); }
+            set { BackingStore?.Set(nameof(Event), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

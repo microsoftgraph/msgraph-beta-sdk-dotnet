@@ -1,26 +1,48 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class InformationalUrl : IAdditionalDataHolder, IParsable {
+    public class InformationalUrl : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>CDN URL to the application&apos;s logo, Read-only.</summary>
-        public string LogoUrl { get; set; }
+        public string LogoUrl {
+            get { return BackingStore?.Get<string>(nameof(LogoUrl)); }
+            set { BackingStore?.Set(nameof(LogoUrl), value); }
+        }
         /// <summary>Link to the application&apos;s marketing page. For example, https://www.contoso.com/app/marketing</summary>
-        public string MarketingUrl { get; set; }
+        public string MarketingUrl {
+            get { return BackingStore?.Get<string>(nameof(MarketingUrl)); }
+            set { BackingStore?.Set(nameof(MarketingUrl), value); }
+        }
         /// <summary>Link to the application&apos;s privacy statement. For example, https://www.contoso.com/app/privacy</summary>
-        public string PrivacyStatementUrl { get; set; }
+        public string PrivacyStatementUrl {
+            get { return BackingStore?.Get<string>(nameof(PrivacyStatementUrl)); }
+            set { BackingStore?.Set(nameof(PrivacyStatementUrl), value); }
+        }
         /// <summary>Link to the application&apos;s support page. For example, https://www.contoso.com/app/support</summary>
-        public string SupportUrl { get; set; }
+        public string SupportUrl {
+            get { return BackingStore?.Get<string>(nameof(SupportUrl)); }
+            set { BackingStore?.Set(nameof(SupportUrl), value); }
+        }
         /// <summary>Link to the application&apos;s terms of service statement. For example, https://www.contoso.com/app/termsofservice</summary>
-        public string TermsOfServiceUrl { get; set; }
+        public string TermsOfServiceUrl {
+            get { return BackingStore?.Get<string>(nameof(TermsOfServiceUrl)); }
+            set { BackingStore?.Set(nameof(TermsOfServiceUrl), value); }
+        }
         /// <summary>
         /// Instantiates a new informationalUrl and sets the default values.
         /// </summary>
         public InformationalUrl() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

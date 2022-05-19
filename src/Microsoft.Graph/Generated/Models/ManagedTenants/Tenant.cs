@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class Tenant : Entity, IParsable {
         /// <summary>The relationship details for the tenant with the managing entity.</summary>
-        public TenantContract Contract { get; set; }
+        public TenantContract Contract {
+            get { return BackingStore?.Get<TenantContract>(nameof(Contract)); }
+            set { BackingStore?.Set(nameof(Contract), value); }
+        }
         /// <summary>The date and time the tenant was created in the multi-tenant management platform. Optional. Read-only.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>The display name for the tenant. Required. Read-only.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The date and time the tenant was last updated within the multi-tenant management platform. Optional. Read-only.</summary>
-        public DateTimeOffset? LastUpdatedDateTime { get; set; }
+        public DateTimeOffset? LastUpdatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastUpdatedDateTime)); }
+            set { BackingStore?.Set(nameof(LastUpdatedDateTime), value); }
+        }
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.</summary>
-        public string TenantId { get; set; }
+        public string TenantId {
+            get { return BackingStore?.Get<string>(nameof(TenantId)); }
+            set { BackingStore?.Set(nameof(TenantId), value); }
+        }
         /// <summary>The onboarding status information for the tenant. Optional. Read-only.</summary>
-        public Microsoft.Graph.Beta.Models.ManagedTenants.TenantStatusInformation TenantStatusInformation { get; set; }
+        public Microsoft.Graph.Beta.Models.ManagedTenants.TenantStatusInformation TenantStatusInformation {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.TenantStatusInformation>(nameof(TenantStatusInformation)); }
+            set { BackingStore?.Set(nameof(TenantStatusInformation), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

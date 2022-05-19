@@ -1,34 +1,68 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SelfSignedCertificate : IAdditionalDataHolder, IParsable {
+    public class SelfSignedCertificate : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Custom key identifier.</summary>
-        public byte[] CustomKeyIdentifier { get; set; }
+        public byte[] CustomKeyIdentifier {
+            get { return BackingStore?.Get<byte[]>(nameof(CustomKeyIdentifier)); }
+            set { BackingStore?.Set(nameof(CustomKeyIdentifier), value); }
+        }
         /// <summary>The friendly name for the key.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The date and time at which the credential expires. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? EndDateTime { get; set; }
+        public DateTimeOffset? EndDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
+            set { BackingStore?.Set(nameof(EndDateTime), value); }
+        }
         /// <summary>The value for the key credential. Should be a base-64 encoded value.</summary>
-        public byte[] Key { get; set; }
+        public byte[] Key {
+            get { return BackingStore?.Get<byte[]>(nameof(Key)); }
+            set { BackingStore?.Set(nameof(Key), value); }
+        }
         /// <summary>The unique identifier (GUID) for the key.</summary>
-        public string KeyId { get; set; }
+        public string KeyId {
+            get { return BackingStore?.Get<string>(nameof(KeyId)); }
+            set { BackingStore?.Set(nameof(KeyId), value); }
+        }
         /// <summary>The date and time at which the credential becomes valid. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? StartDateTime { get; set; }
+        public DateTimeOffset? StartDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
+            set { BackingStore?.Set(nameof(StartDateTime), value); }
+        }
         /// <summary>The thumbprint value for the key.</summary>
-        public string Thumbprint { get; set; }
+        public string Thumbprint {
+            get { return BackingStore?.Get<string>(nameof(Thumbprint)); }
+            set { BackingStore?.Set(nameof(Thumbprint), value); }
+        }
         /// <summary>The type of key credential. &apos;AsymmetricX509Cert&apos;.</summary>
-        public string Type { get; set; }
+        public string Type {
+            get { return BackingStore?.Get<string>(nameof(Type)); }
+            set { BackingStore?.Set(nameof(Type), value); }
+        }
         /// <summary>A string that describes the purpose for which the key can be used. For example, &apos;Verify&apos;.</summary>
-        public string Usage { get; set; }
+        public string Usage {
+            get { return BackingStore?.Get<string>(nameof(Usage)); }
+            set { BackingStore?.Set(nameof(Usage), value); }
+        }
         /// <summary>
         /// Instantiates a new SelfSignedCertificate and sets the default values.
         /// </summary>
         public SelfSignedCertificate() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

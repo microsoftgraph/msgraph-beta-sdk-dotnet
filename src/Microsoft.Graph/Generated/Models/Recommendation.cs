@@ -4,37 +4,83 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the directory singleton.</summary>
     public class Recommendation : Entity, IParsable {
         /// <summary>The actionSteps property</summary>
-        public List<ActionStep> ActionSteps { get; set; }
+        public List<ActionStep> ActionSteps {
+            get { return BackingStore?.Get<List<ActionStep>>(nameof(ActionSteps)); }
+            set { BackingStore?.Set(nameof(ActionSteps), value); }
+        }
         /// <summary>The benefits property</summary>
-        public string Benefits { get; set; }
+        public string Benefits {
+            get { return BackingStore?.Get<string>(nameof(Benefits)); }
+            set { BackingStore?.Set(nameof(Benefits), value); }
+        }
         /// <summary>The category property</summary>
-        public RecommendationCategory? Category { get; set; }
+        public RecommendationCategory? Category {
+            get { return BackingStore?.Get<RecommendationCategory?>(nameof(Category)); }
+            set { BackingStore?.Set(nameof(Category), value); }
+        }
         /// <summary>The createdDateTime property</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>The displayName property</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The impactedResources property</summary>
-        public List<RecommendationResource> ImpactedResources { get; set; }
+        public List<RecommendationResource> ImpactedResources {
+            get { return BackingStore?.Get<List<RecommendationResource>>(nameof(ImpactedResources)); }
+            set { BackingStore?.Set(nameof(ImpactedResources), value); }
+        }
         /// <summary>The impactStartDateTime property</summary>
-        public DateTimeOffset? ImpactStartDateTime { get; set; }
+        public DateTimeOffset? ImpactStartDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ImpactStartDateTime)); }
+            set { BackingStore?.Set(nameof(ImpactStartDateTime), value); }
+        }
         /// <summary>The impactType property</summary>
-        public string ImpactType { get; set; }
+        public string ImpactType {
+            get { return BackingStore?.Get<string>(nameof(ImpactType)); }
+            set { BackingStore?.Set(nameof(ImpactType), value); }
+        }
         /// <summary>The insights property</summary>
-        public string Insights { get; set; }
+        public string Insights {
+            get { return BackingStore?.Get<string>(nameof(Insights)); }
+            set { BackingStore?.Set(nameof(Insights), value); }
+        }
         /// <summary>The lastCheckedDateTime property</summary>
-        public DateTimeOffset? LastCheckedDateTime { get; set; }
+        public DateTimeOffset? LastCheckedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastCheckedDateTime)); }
+            set { BackingStore?.Set(nameof(LastCheckedDateTime), value); }
+        }
         /// <summary>The lastModifiedBy property</summary>
-        public string LastModifiedBy { get; set; }
+        public string LastModifiedBy {
+            get { return BackingStore?.Get<string>(nameof(LastModifiedBy)); }
+            set { BackingStore?.Set(nameof(LastModifiedBy), value); }
+        }
         /// <summary>The lastModifiedDateTime property</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>The postponeUntilDateTime property</summary>
-        public DateTimeOffset? PostponeUntilDateTime { get; set; }
+        public DateTimeOffset? PostponeUntilDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(PostponeUntilDateTime)); }
+            set { BackingStore?.Set(nameof(PostponeUntilDateTime), value); }
+        }
         /// <summary>The priority property</summary>
-        public RecommendationPriority? Priority { get; set; }
+        public RecommendationPriority? Priority {
+            get { return BackingStore?.Get<RecommendationPriority?>(nameof(Priority)); }
+            set { BackingStore?.Set(nameof(Priority), value); }
+        }
         /// <summary>The status property</summary>
-        public RecommendationStatus? Status { get; set; }
+        public RecommendationStatus? Status {
+            get { return BackingStore?.Get<RecommendationStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

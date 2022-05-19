@@ -4,25 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class UnifiedRoleManagementPolicy : Entity, IParsable {
         /// <summary>Description for the policy.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Display name for the policy.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Not implemented. The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval.</summary>
-        public List<UnifiedRoleManagementPolicyRule> EffectiveRules { get; set; }
+        public List<UnifiedRoleManagementPolicyRule> EffectiveRules {
+            get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyRule>>(nameof(EffectiveRules)); }
+            set { BackingStore?.Set(nameof(EffectiveRules), value); }
+        }
         /// <summary>This can only be set to true for a single tenant wide policy which will apply to all scopes and roles. Set the scopeId to &apos;/&apos; and scopeType to Directory.</summary>
-        public bool? IsOrganizationDefault { get; set; }
+        public bool? IsOrganizationDefault {
+            get { return BackingStore?.Get<bool?>(nameof(IsOrganizationDefault)); }
+            set { BackingStore?.Set(nameof(IsOrganizationDefault), value); }
+        }
         /// <summary>The identity who last modified the role setting.</summary>
-        public Identity LastModifiedBy { get; set; }
+        public Identity LastModifiedBy {
+            get { return BackingStore?.Get<Identity>(nameof(LastModifiedBy)); }
+            set { BackingStore?.Set(nameof(LastModifiedBy), value); }
+        }
         /// <summary>The time when the role setting was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>The collection of rules like approval rules and expiration rules.</summary>
-        public List<UnifiedRoleManagementPolicyRule> Rules { get; set; }
+        public List<UnifiedRoleManagementPolicyRule> Rules {
+            get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyRule>>(nameof(Rules)); }
+            set { BackingStore?.Set(nameof(Rules), value); }
+        }
         /// <summary>The id of the scope where the policy is created. Can be / for the tenant or a group ID. Required.</summary>
-        public string ScopeId { get; set; }
+        public string ScopeId {
+            get { return BackingStore?.Get<string>(nameof(ScopeId)); }
+            set { BackingStore?.Set(nameof(ScopeId), value); }
+        }
         /// <summary>The type of the scope where the policy is created. One of Directory, DirectoryRole. Required.</summary>
-        public string ScopeType { get; set; }
+        public string ScopeType {
+            get { return BackingStore?.Get<string>(nameof(ScopeType)); }
+            set { BackingStore?.Set(nameof(ScopeType), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

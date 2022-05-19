@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SearchAggregation : IAdditionalDataHolder, IParsable {
+    public class SearchAggregation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Defines the actual buckets of the computed aggregation.</summary>
-        public List<SearchBucket> Buckets { get; set; }
+        public List<SearchBucket> Buckets {
+            get { return BackingStore?.Get<List<SearchBucket>>(nameof(Buckets)); }
+            set { BackingStore?.Set(nameof(Buckets), value); }
+        }
         /// <summary>Defines on which field the aggregation was computed on.</summary>
-        public string Field { get; set; }
+        public string Field {
+            get { return BackingStore?.Get<string>(nameof(Field)); }
+            set { BackingStore?.Set(nameof(Field), value); }
+        }
         /// <summary>
         /// Instantiates a new searchAggregation and sets the default values.
         /// </summary>
         public SearchAggregation() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

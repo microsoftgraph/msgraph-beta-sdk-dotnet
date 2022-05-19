@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class PersonOrGroupColumn : IAdditionalDataHolder, IParsable {
+    public class PersonOrGroupColumn : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Indicates whether multiple values can be selected from the source.</summary>
-        public bool? AllowMultipleSelection { get; set; }
+        public bool? AllowMultipleSelection {
+            get { return BackingStore?.Get<bool?>(nameof(AllowMultipleSelection)); }
+            set { BackingStore?.Set(nameof(AllowMultipleSelection), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Whether to allow selection of people only, or people and groups. Must be one of peopleAndGroups or peopleOnly.</summary>
-        public string ChooseFromType { get; set; }
+        public string ChooseFromType {
+            get { return BackingStore?.Get<string>(nameof(ChooseFromType)); }
+            set { BackingStore?.Set(nameof(ChooseFromType), value); }
+        }
         /// <summary>How to display the information about the person or group chosen. See below.</summary>
-        public string DisplayAs { get; set; }
+        public string DisplayAs {
+            get { return BackingStore?.Get<string>(nameof(DisplayAs)); }
+            set { BackingStore?.Set(nameof(DisplayAs), value); }
+        }
         /// <summary>
         /// Instantiates a new personOrGroupColumn and sets the default values.
         /// </summary>
         public PersonOrGroupColumn() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

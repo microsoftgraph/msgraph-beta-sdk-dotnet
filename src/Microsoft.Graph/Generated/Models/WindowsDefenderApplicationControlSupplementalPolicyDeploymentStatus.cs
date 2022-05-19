@@ -4,27 +4,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Contains properties for the deployment state of a WindowsDefenderApplicationControl supplemental policy for a device.</summary>
     public class WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus : Entity, IParsable {
         /// <summary>The deployment state of the policy. Possible values are: unknown, success, tokenError, notAuthorizedByToken, policyNotFound.</summary>
-        public WindowsDefenderApplicationControlSupplementalPolicyStatuses? DeploymentStatus { get; set; }
+        public WindowsDefenderApplicationControlSupplementalPolicyStatuses? DeploymentStatus {
+            get { return BackingStore?.Get<WindowsDefenderApplicationControlSupplementalPolicyStatuses?>(nameof(DeploymentStatus)); }
+            set { BackingStore?.Set(nameof(DeploymentStatus), value); }
+        }
         /// <summary>Device ID.</summary>
-        public string DeviceId { get; set; }
+        public string DeviceId {
+            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
+            set { BackingStore?.Set(nameof(DeviceId), value); }
+        }
         /// <summary>Device name.</summary>
-        public string DeviceName { get; set; }
+        public string DeviceName {
+            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
+            set { BackingStore?.Set(nameof(DeviceName), value); }
+        }
         /// <summary>Last sync date time.</summary>
-        public DateTimeOffset? LastSyncDateTime { get; set; }
+        public DateTimeOffset? LastSyncDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSyncDateTime)); }
+            set { BackingStore?.Set(nameof(LastSyncDateTime), value); }
+        }
         /// <summary>Windows OS Version Description.</summary>
-        public string OsDescription { get; set; }
+        public string OsDescription {
+            get { return BackingStore?.Get<string>(nameof(OsDescription)); }
+            set { BackingStore?.Set(nameof(OsDescription), value); }
+        }
         /// <summary>Windows OS Version.</summary>
-        public string OsVersion { get; set; }
+        public string OsVersion {
+            get { return BackingStore?.Get<string>(nameof(OsVersion)); }
+            set { BackingStore?.Set(nameof(OsVersion), value); }
+        }
         /// <summary>The navigation link to the WindowsDefenderApplicationControl supplemental policy.</summary>
-        public WindowsDefenderApplicationControlSupplementalPolicy Policy { get; set; }
+        public WindowsDefenderApplicationControlSupplementalPolicy Policy {
+            get { return BackingStore?.Get<WindowsDefenderApplicationControlSupplementalPolicy>(nameof(Policy)); }
+            set { BackingStore?.Set(nameof(Policy), value); }
+        }
         /// <summary>Human readable version of the WindowsDefenderApplicationControl supplemental policy.</summary>
-        public string PolicyVersion { get; set; }
+        public string PolicyVersion {
+            get { return BackingStore?.Get<string>(nameof(PolicyVersion)); }
+            set { BackingStore?.Set(nameof(PolicyVersion), value); }
+        }
         /// <summary>The name of the user of this device.</summary>
-        public string UserName { get; set; }
+        public string UserName {
+            get { return BackingStore?.Get<string>(nameof(UserName)); }
+            set { BackingStore?.Set(nameof(UserName), value); }
+        }
         /// <summary>User Principal Name.</summary>
-        public string UserPrincipalName { get; set; }
+        public string UserPrincipalName {
+            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
+            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

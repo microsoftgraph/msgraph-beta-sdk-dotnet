@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Devices.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete device
+        /// Delete a registered device.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateDeleteRequestInformation(Action<DeviceItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Devices.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get device
+        /// Get the properties and relationships of a device object. Since the **device** resource supports [extensions](/graph/extensibility-overview), you can also use the `GET` operation to get custom properties and extension data in a **device** instance.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<DeviceItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -142,7 +142,7 @@ namespace Microsoft.Graph.Beta.Devices.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update device
+        /// Update the properties of a device. Only certain properties of a device can be updated through approved Mobile Device Management (MDM) apps.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -163,7 +163,7 @@ namespace Microsoft.Graph.Beta.Devices.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Delete device
+        /// Delete a registered device.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.Beta.Devices.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get device
+        /// Get the properties and relationships of a device object. Since the **device** resource supports [extensions](/graph/extensibility-overview), you can also use the `GET` operation to get custom properties and extension data in a **device** instance.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -191,7 +191,7 @@ namespace Microsoft.Graph.Beta.Devices.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Device>(requestInfo, Microsoft.Graph.Beta.Models.Device.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update device
+        /// Update the properties of a device. Only certain properties of a device can be updated through approved Mobile Device Management (MDM) apps.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Beta.Devices.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get device</summary>
+        /// <summary>Get the properties and relationships of a device object. Since the **device** resource supports [extensions](/graph/extensibility-overview), you can also use the `GET` operation to get custom properties and extension data in a **device** instance.</summary>
         public class DeviceItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

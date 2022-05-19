@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class DiscoveredSensitiveType : IAdditionalDataHolder, IParsable {
+    public class DiscoveredSensitiveType : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The classificationAttributes property</summary>
-        public List<ClassificationAttribute> ClassificationAttributes { get; set; }
+        public List<ClassificationAttribute> ClassificationAttributes {
+            get { return BackingStore?.Get<List<ClassificationAttribute>>(nameof(ClassificationAttributes)); }
+            set { BackingStore?.Set(nameof(ClassificationAttributes), value); }
+        }
         /// <summary>The confidence property</summary>
-        public int? Confidence { get; set; }
+        public int? Confidence {
+            get { return BackingStore?.Get<int?>(nameof(Confidence)); }
+            set { BackingStore?.Set(nameof(Confidence), value); }
+        }
         /// <summary>The count property</summary>
-        public int? Count { get; set; }
+        public int? Count {
+            get { return BackingStore?.Get<int?>(nameof(Count)); }
+            set { BackingStore?.Set(nameof(Count), value); }
+        }
         /// <summary>The id property</summary>
-        public string Id { get; set; }
+        public string Id {
+            get { return BackingStore?.Get<string>(nameof(Id)); }
+            set { BackingStore?.Set(nameof(Id), value); }
+        }
         /// <summary>
         /// Instantiates a new discoveredSensitiveType and sets the default values.
         /// </summary>
         public DiscoveredSensitiveType() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

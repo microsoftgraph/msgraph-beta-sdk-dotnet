@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class ServiceAnnouncement : Entity, IParsable {
         /// <summary>A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.</summary>
-        public List<ServiceHealth> HealthOverviews { get; set; }
+        public List<ServiceHealth> HealthOverviews {
+            get { return BackingStore?.Get<List<ServiceHealth>>(nameof(HealthOverviews)); }
+            set { BackingStore?.Set(nameof(HealthOverviews), value); }
+        }
         /// <summary>A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.</summary>
-        public List<ServiceHealthIssue> Issues { get; set; }
+        public List<ServiceHealthIssue> Issues {
+            get { return BackingStore?.Get<List<ServiceHealthIssue>>(nameof(Issues)); }
+            set { BackingStore?.Set(nameof(Issues), value); }
+        }
         /// <summary>A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.</summary>
-        public List<ServiceUpdateMessage> Messages { get; set; }
+        public List<ServiceUpdateMessage> Messages {
+            get { return BackingStore?.Get<List<ServiceUpdateMessage>>(nameof(Messages)); }
+            set { BackingStore?.Set(nameof(Messages), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

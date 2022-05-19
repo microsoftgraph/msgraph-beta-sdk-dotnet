@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ConditionalAccessRuleSatisfied : IAdditionalDataHolder, IParsable {
+    public class ConditionalAccessRuleSatisfied : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Refers to the conditional access policy conditions that are satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client, ipAddressSeenByAzureAD, ipAddressSeenByResourceProvider, unknownFutureValue, servicePrincipals, servicePrincipalRisk. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals, servicePrincipalRisk.</summary>
-        public ConditionalAccessConditions? ConditionalAccessCondition { get; set; }
+        public ConditionalAccessConditions? ConditionalAccessCondition {
+            get { return BackingStore?.Get<ConditionalAccessConditions?>(nameof(ConditionalAccessCondition)); }
+            set { BackingStore?.Set(nameof(ConditionalAccessCondition), value); }
+        }
         /// <summary>Refers to the conditional access policy conditions that were satisfied. The possible values are: allApps, firstPartyApps, office365, appId, acr, appFilter, allUsers, guest, groupId, roleId, userId, allDevicePlatforms, devicePlatform, allLocations, insideCorpnet, allTrustedLocations, locationId, allDevices, deviceFilter, deviceState, unknownFutureValue, deviceFilterIncludeRuleNotMatched, allDeviceStates. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: deviceFilterIncludeRuleNotMatched, allDeviceStates.</summary>
-        public ConditionalAccessRule? RuleSatisfied { get; set; }
+        public ConditionalAccessRule? RuleSatisfied {
+            get { return BackingStore?.Get<ConditionalAccessRule?>(nameof(RuleSatisfied)); }
+            set { BackingStore?.Set(nameof(RuleSatisfied), value); }
+        }
         /// <summary>
         /// Instantiates a new conditionalAccessRuleSatisfied and sets the default values.
         /// </summary>
         public ConditionalAccessRuleSatisfied() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

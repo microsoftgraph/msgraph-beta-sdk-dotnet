@@ -1,28 +1,53 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class CompanyDetail : IAdditionalDataHolder, IParsable {
+    public class CompanyDetail : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Address of the company.</summary>
-        public PhysicalAddress Address { get; set; }
+        public PhysicalAddress Address {
+            get { return BackingStore?.Get<PhysicalAddress>(nameof(Address)); }
+            set { BackingStore?.Set(nameof(Address), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Department Name within a company.</summary>
-        public string Department { get; set; }
+        public string Department {
+            get { return BackingStore?.Get<string>(nameof(Department)); }
+            set { BackingStore?.Set(nameof(Department), value); }
+        }
         /// <summary>Company name.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Office Location of the person referred to.</summary>
-        public string OfficeLocation { get; set; }
+        public string OfficeLocation {
+            get { return BackingStore?.Get<string>(nameof(OfficeLocation)); }
+            set { BackingStore?.Set(nameof(OfficeLocation), value); }
+        }
         /// <summary>Pronunciation guide for the company name.</summary>
-        public string Pronunciation { get; set; }
+        public string Pronunciation {
+            get { return BackingStore?.Get<string>(nameof(Pronunciation)); }
+            set { BackingStore?.Set(nameof(Pronunciation), value); }
+        }
         /// <summary>Link to the company home page.</summary>
-        public string WebUrl { get; set; }
+        public string WebUrl {
+            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
+            set { BackingStore?.Set(nameof(WebUrl), value); }
+        }
         /// <summary>
         /// Instantiates a new companyDetail and sets the default values.
         /// </summary>
         public CompanyDetail() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

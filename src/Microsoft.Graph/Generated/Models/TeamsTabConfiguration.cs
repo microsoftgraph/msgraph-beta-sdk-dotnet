@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class TeamsTabConfiguration : IAdditionalDataHolder, IParsable {
+    public class TeamsTabConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Url used for rendering tab contents in Teams. Required.</summary>
-        public string ContentUrl { get; set; }
+        public string ContentUrl {
+            get { return BackingStore?.Get<string>(nameof(ContentUrl)); }
+            set { BackingStore?.Set(nameof(ContentUrl), value); }
+        }
         /// <summary>Identifier for the entity hosted by the tab provider.</summary>
-        public string EntityId { get; set; }
+        public string EntityId {
+            get { return BackingStore?.Get<string>(nameof(EntityId)); }
+            set { BackingStore?.Set(nameof(EntityId), value); }
+        }
         /// <summary>Url called by Teams client when a Tab is removed using the Teams Client.</summary>
-        public string RemoveUrl { get; set; }
+        public string RemoveUrl {
+            get { return BackingStore?.Get<string>(nameof(RemoveUrl)); }
+            set { BackingStore?.Set(nameof(RemoveUrl), value); }
+        }
         /// <summary>Url for showing tab contents outside of Teams.</summary>
-        public string WebsiteUrl { get; set; }
+        public string WebsiteUrl {
+            get { return BackingStore?.Get<string>(nameof(WebsiteUrl)); }
+            set { BackingStore?.Set(nameof(WebsiteUrl), value); }
+        }
         /// <summary>
         /// Instantiates a new teamsTabConfiguration and sets the default values.
         /// </summary>
         public TeamsTabConfiguration() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

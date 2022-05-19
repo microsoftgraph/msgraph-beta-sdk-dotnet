@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
     public class AgreementFile : AgreementFileProperties, IParsable {
         /// <summary>The localized version of the terms of use agreement files attached to the agreement.</summary>
-        public List<AgreementFileLocalization> Localizations { get; set; }
+        public List<AgreementFileLocalization> Localizations {
+            get { return BackingStore?.Get<List<AgreementFileLocalization>>(nameof(Localizations)); }
+            set { BackingStore?.Set(nameof(Localizations), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -1,18 +1,28 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
-    public class MonitoringSettings : IAdditionalDataHolder, IParsable {
+    public class MonitoringSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies the rules through which monitoring signals can trigger actions on the deployment. Rules are combined using &apos;or&apos;.</summary>
-        public List<MonitoringRule> MonitoringRules { get; set; }
+        public List<MonitoringRule> MonitoringRules {
+            get { return BackingStore?.Get<List<MonitoringRule>>(nameof(MonitoringRules)); }
+            set { BackingStore?.Set(nameof(MonitoringRules), value); }
+        }
         /// <summary>
         /// Instantiates a new monitoringSettings and sets the default values.
         /// </summary>
         public MonitoringSettings() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

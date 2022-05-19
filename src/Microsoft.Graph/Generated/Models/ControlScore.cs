@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ControlScore : IAdditionalDataHolder, IParsable {
+    public class ControlScore : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Control action category (Identity, Data, Device, Apps, Infrastructure).</summary>
-        public string ControlCategory { get; set; }
+        public string ControlCategory {
+            get { return BackingStore?.Get<string>(nameof(ControlCategory)); }
+            set { BackingStore?.Set(nameof(ControlCategory), value); }
+        }
         /// <summary>Control unique name.</summary>
-        public string ControlName { get; set; }
+        public string ControlName {
+            get { return BackingStore?.Get<string>(nameof(ControlName)); }
+            set { BackingStore?.Set(nameof(ControlName), value); }
+        }
         /// <summary>Description of the control.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Tenant achieved score for the control (it varies day by day depending on tenant operations on the control).</summary>
-        public double? Score { get; set; }
+        public double? Score {
+            get { return BackingStore?.Get<double?>(nameof(Score)); }
+            set { BackingStore?.Set(nameof(Score), value); }
+        }
         /// <summary>
         /// Instantiates a new controlScore and sets the default values.
         /// </summary>
         public ControlScore() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

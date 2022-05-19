@@ -4,36 +4,75 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Entity representing the defintion for a given setting</summary>
     public class DeviceManagementSettingDefinition : Entity, IParsable {
         /// <summary>Collection of constraints for the setting value</summary>
-        public List<DeviceManagementConstraint> Constraints { get; set; }
+        public List<DeviceManagementConstraint> Constraints {
+            get { return BackingStore?.Get<List<DeviceManagementConstraint>>(nameof(Constraints)); }
+            set { BackingStore?.Set(nameof(Constraints), value); }
+        }
         /// <summary>Collection of dependencies on other settings</summary>
-        public List<DeviceManagementSettingDependency> Dependencies { get; set; }
+        public List<DeviceManagementSettingDependency> Dependencies {
+            get { return BackingStore?.Get<List<DeviceManagementSettingDependency>>(nameof(Dependencies)); }
+            set { BackingStore?.Set(nameof(Dependencies), value); }
+        }
         /// <summary>The setting&apos;s description</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The setting&apos;s display name</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Url to setting documentation</summary>
-        public string DocumentationUrl { get; set; }
+        public string DocumentationUrl {
+            get { return BackingStore?.Get<string>(nameof(DocumentationUrl)); }
+            set { BackingStore?.Set(nameof(DocumentationUrl), value); }
+        }
         /// <summary>subtitle of the setting header for more details about the category/section</summary>
-        public string HeaderSubtitle { get; set; }
+        public string HeaderSubtitle {
+            get { return BackingStore?.Get<string>(nameof(HeaderSubtitle)); }
+            set { BackingStore?.Set(nameof(HeaderSubtitle), value); }
+        }
         /// <summary>title of the setting header represents a category/section of a setting/settings</summary>
-        public string HeaderTitle { get; set; }
+        public string HeaderTitle {
+            get { return BackingStore?.Get<string>(nameof(HeaderTitle)); }
+            set { BackingStore?.Set(nameof(HeaderTitle), value); }
+        }
         /// <summary>If the setting is top level, it can be configured without the need to be wrapped in a collection or complex setting</summary>
-        public bool? IsTopLevel { get; set; }
+        public bool? IsTopLevel {
+            get { return BackingStore?.Get<bool?>(nameof(IsTopLevel)); }
+            set { BackingStore?.Set(nameof(IsTopLevel), value); }
+        }
         /// <summary>Keywords associated with the setting</summary>
-        public List<string> Keywords { get; set; }
+        public List<string> Keywords {
+            get { return BackingStore?.Get<List<string>>(nameof(Keywords)); }
+            set { BackingStore?.Set(nameof(Keywords), value); }
+        }
         /// <summary>Placeholder text as an example of valid input</summary>
-        public string PlaceholderText { get; set; }
+        public string PlaceholderText {
+            get { return BackingStore?.Get<string>(nameof(PlaceholderText)); }
+            set { BackingStore?.Set(nameof(PlaceholderText), value); }
+        }
         /// <summary>The data type of the value. Possible values are: integer, boolean, string, complex, collection, abstractComplex.</summary>
-        public DeviceManangementIntentValueType? ValueType { get; set; }
+        public DeviceManangementIntentValueType? ValueType {
+            get { return BackingStore?.Get<DeviceManangementIntentValueType?>(nameof(ValueType)); }
+            set { BackingStore?.Set(nameof(ValueType), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new DeviceManagementSettingDefinition CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementSettingDefinition();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.deviceManagementSettingDefinition" => new DeviceManagementSettingDefinition(),
+                _ => new DeviceManagementSettingDefinition(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

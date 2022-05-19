@@ -4,23 +4,48 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The user experience analytics device startup process performance.</summary>
     public class UserExperienceAnalyticsDeviceStartupProcessPerformance : Entity, IParsable {
         /// <summary>User experience analytics device startup process summarized count.</summary>
-        public long? DeviceCount { get; set; }
+        public long? DeviceCount {
+            get { return BackingStore?.Get<long?>(nameof(DeviceCount)); }
+            set { BackingStore?.Set(nameof(DeviceCount), value); }
+        }
         /// <summary>User experience analytics device startup process median impact in milliseconds.</summary>
-        public int? MedianImpactInMs { get; set; }
+        public int? MedianImpactInMs {
+            get { return BackingStore?.Get<int?>(nameof(MedianImpactInMs)); }
+            set { BackingStore?.Set(nameof(MedianImpactInMs), value); }
+        }
         /// <summary>User experience analytics device startup process median impact in milliseconds.</summary>
-        public long? MedianImpactInMs2 { get; set; }
+        public long? MedianImpactInMs2 {
+            get { return BackingStore?.Get<long?>(nameof(MedianImpactInMs2)); }
+            set { BackingStore?.Set(nameof(MedianImpactInMs2), value); }
+        }
         /// <summary>User experience analytics device startup process name.</summary>
-        public string ProcessName { get; set; }
+        public string ProcessName {
+            get { return BackingStore?.Get<string>(nameof(ProcessName)); }
+            set { BackingStore?.Set(nameof(ProcessName), value); }
+        }
         /// <summary>The user experience analytics device startup process product name.</summary>
-        public string ProductName { get; set; }
+        public string ProductName {
+            get { return BackingStore?.Get<string>(nameof(ProductName)); }
+            set { BackingStore?.Set(nameof(ProductName), value); }
+        }
         /// <summary>The User experience analytics device startup process publisher.</summary>
-        public string Publisher { get; set; }
+        public string Publisher {
+            get { return BackingStore?.Get<string>(nameof(Publisher)); }
+            set { BackingStore?.Set(nameof(Publisher), value); }
+        }
         /// <summary>User experience analytics device startup process total impact in milliseconds.</summary>
-        public int? TotalImpactInMs { get; set; }
+        public int? TotalImpactInMs {
+            get { return BackingStore?.Get<int?>(nameof(TotalImpactInMs)); }
+            set { BackingStore?.Set(nameof(TotalImpactInMs), value); }
+        }
         /// <summary>User experience analytics device startup process total impact in milliseconds.</summary>
-        public long? TotalImpactInMs2 { get; set; }
+        public long? TotalImpactInMs2 {
+            get { return BackingStore?.Get<long?>(nameof(TotalImpactInMs2)); }
+            set { BackingStore?.Set(nameof(TotalImpactInMs2), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

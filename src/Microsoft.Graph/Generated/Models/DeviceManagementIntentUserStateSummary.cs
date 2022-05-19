@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Entity that represents user state summary for an intent</summary>
     public class DeviceManagementIntentUserStateSummary : Entity, IParsable {
         /// <summary>Number of users in conflict</summary>
-        public int? ConflictCount { get; set; }
+        public int? ConflictCount {
+            get { return BackingStore?.Get<int?>(nameof(ConflictCount)); }
+            set { BackingStore?.Set(nameof(ConflictCount), value); }
+        }
         /// <summary>Number of error users</summary>
-        public int? ErrorCount { get; set; }
+        public int? ErrorCount {
+            get { return BackingStore?.Get<int?>(nameof(ErrorCount)); }
+            set { BackingStore?.Set(nameof(ErrorCount), value); }
+        }
         /// <summary>Number of failed users</summary>
-        public int? FailedCount { get; set; }
+        public int? FailedCount {
+            get { return BackingStore?.Get<int?>(nameof(FailedCount)); }
+            set { BackingStore?.Set(nameof(FailedCount), value); }
+        }
         /// <summary>Number of not applicable users</summary>
-        public int? NotApplicableCount { get; set; }
+        public int? NotApplicableCount {
+            get { return BackingStore?.Get<int?>(nameof(NotApplicableCount)); }
+            set { BackingStore?.Set(nameof(NotApplicableCount), value); }
+        }
         /// <summary>Number of succeeded users</summary>
-        public int? SuccessCount { get; set; }
+        public int? SuccessCount {
+            get { return BackingStore?.Get<int?>(nameof(SuccessCount)); }
+            set { BackingStore?.Set(nameof(SuccessCount), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

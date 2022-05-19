@@ -4,16 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class ListItemVersion : BaseItemVersion, IParsable {
         /// <summary>A collection of the fields and values for this version of the list item.</summary>
-        public FieldValueSet Fields { get; set; }
+        public FieldValueSet Fields {
+            get { return BackingStore?.Get<FieldValueSet>(nameof(Fields)); }
+            set { BackingStore?.Set(nameof(Fields), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new ListItemVersion CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ListItemVersion();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.listItemVersion" => new ListItemVersion(),
+                _ => new ListItemVersion(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

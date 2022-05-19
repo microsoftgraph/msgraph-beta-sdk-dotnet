@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class LocationConstraint : IAdditionalDataHolder, IParsable {
+    public class LocationConstraint : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes will not return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.</summary>
-        public bool? IsRequired { get; set; }
+        public bool? IsRequired {
+            get { return BackingStore?.Get<bool?>(nameof(IsRequired)); }
+            set { BackingStore?.Set(nameof(IsRequired), value); }
+        }
         /// <summary>Constraint information for one or more locations that the client requests for the meeting.</summary>
-        public List<LocationConstraintItem> Locations { get; set; }
+        public List<LocationConstraintItem> Locations {
+            get { return BackingStore?.Get<List<LocationConstraintItem>>(nameof(Locations)); }
+            set { BackingStore?.Set(nameof(Locations), value); }
+        }
         /// <summary>The client requests the service to suggest one or more meeting locations.</summary>
-        public bool? SuggestLocation { get; set; }
+        public bool? SuggestLocation {
+            get { return BackingStore?.Get<bool?>(nameof(SuggestLocation)); }
+            set { BackingStore?.Set(nameof(SuggestLocation), value); }
+        }
         /// <summary>
         /// Instantiates a new locationConstraint and sets the default values.
         /// </summary>
         public LocationConstraint() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

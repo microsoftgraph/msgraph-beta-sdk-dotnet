@@ -1,39 +1,79 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>ManagedDevices that are scheduled for retire</summary>
-    public class RetireScheduledManagedDevice : IAdditionalDataHolder, IParsable {
+    public class RetireScheduledManagedDevice : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Managed Device ComplianceStatus. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.</summary>
-        public ComplianceStatus? ComplianceState { get; set; }
+        public ComplianceStatus? ComplianceState {
+            get { return BackingStore?.Get<ComplianceStatus?>(nameof(ComplianceState)); }
+            set { BackingStore?.Set(nameof(ComplianceState), value); }
+        }
         /// <summary>Device Compliance PolicyId</summary>
-        public string DeviceCompliancePolicyId { get; set; }
+        public string DeviceCompliancePolicyId {
+            get { return BackingStore?.Get<string>(nameof(DeviceCompliancePolicyId)); }
+            set { BackingStore?.Set(nameof(DeviceCompliancePolicyId), value); }
+        }
         /// <summary>Device Compliance Policy Name</summary>
-        public string DeviceCompliancePolicyName { get; set; }
+        public string DeviceCompliancePolicyName {
+            get { return BackingStore?.Get<string>(nameof(DeviceCompliancePolicyName)); }
+            set { BackingStore?.Set(nameof(DeviceCompliancePolicyName), value); }
+        }
         /// <summary>Managed Device Device Type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, cloudPC, blackberry, palm, unknown.</summary>
-        public Microsoft.Graph.Beta.Models.DeviceType? DeviceType { get; set; }
+        public Microsoft.Graph.Beta.Models.DeviceType? DeviceType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceType?>(nameof(DeviceType)); }
+            set { BackingStore?.Set(nameof(DeviceType), value); }
+        }
         /// <summary>Key of the entity.</summary>
-        public string Id { get; set; }
+        public string Id {
+            get { return BackingStore?.Get<string>(nameof(Id)); }
+            set { BackingStore?.Set(nameof(Id), value); }
+        }
         /// <summary>Managed DeviceId</summary>
-        public string ManagedDeviceId { get; set; }
+        public string ManagedDeviceId {
+            get { return BackingStore?.Get<string>(nameof(ManagedDeviceId)); }
+            set { BackingStore?.Set(nameof(ManagedDeviceId), value); }
+        }
         /// <summary>Managed Device Name</summary>
-        public string ManagedDeviceName { get; set; }
+        public string ManagedDeviceName {
+            get { return BackingStore?.Get<string>(nameof(ManagedDeviceName)); }
+            set { BackingStore?.Set(nameof(ManagedDeviceName), value); }
+        }
         /// <summary>Managed Device ManagementAgentType. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController, microsoft365ManagedMdm, windowsManagementCloudApi.</summary>
-        public ManagementAgentType? ManagementAgent { get; set; }
+        public ManagementAgentType? ManagementAgent {
+            get { return BackingStore?.Get<ManagementAgentType?>(nameof(ManagementAgent)); }
+            set { BackingStore?.Set(nameof(ManagementAgent), value); }
+        }
         /// <summary>Managed Device ManagedDeviceOwnerType. Possible values are: unknown, company, personal.</summary>
-        public ManagedDeviceOwnerType? OwnerType { get; set; }
+        public ManagedDeviceOwnerType? OwnerType {
+            get { return BackingStore?.Get<ManagedDeviceOwnerType?>(nameof(OwnerType)); }
+            set { BackingStore?.Set(nameof(OwnerType), value); }
+        }
         /// <summary>Managed Device Retire After DateTime</summary>
-        public DateTimeOffset? RetireAfterDateTime { get; set; }
+        public DateTimeOffset? RetireAfterDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(RetireAfterDateTime)); }
+            set { BackingStore?.Set(nameof(RetireAfterDateTime), value); }
+        }
         /// <summary>List of Scope Tags for this Entity instance.</summary>
-        public List<string> RoleScopeTagIds { get; set; }
+        public List<string> RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTagIds)); }
+            set { BackingStore?.Set(nameof(RoleScopeTagIds), value); }
+        }
         /// <summary>
         /// Instantiates a new retireScheduledManagedDevice and sets the default values.
         /// </summary>
         public RetireScheduledManagedDevice() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

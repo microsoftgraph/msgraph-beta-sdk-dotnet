@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class WorkPosition : ItemFacet, IParsable {
         /// <summary>Categories that the user has associated with this position.</summary>
-        public List<string> Categories { get; set; }
+        public List<string> Categories {
+            get { return BackingStore?.Get<List<string>>(nameof(Categories)); }
+            set { BackingStore?.Set(nameof(Categories), value); }
+        }
         /// <summary>Colleagues that are associated with this position.</summary>
-        public List<RelatedPerson> Colleagues { get; set; }
+        public List<RelatedPerson> Colleagues {
+            get { return BackingStore?.Get<List<RelatedPerson>>(nameof(Colleagues)); }
+            set { BackingStore?.Set(nameof(Colleagues), value); }
+        }
         /// <summary>The detail property</summary>
-        public PositionDetail Detail { get; set; }
+        public PositionDetail Detail {
+            get { return BackingStore?.Get<PositionDetail>(nameof(Detail)); }
+            set { BackingStore?.Set(nameof(Detail), value); }
+        }
         /// <summary>Denotes whether or not the position is current.</summary>
-        public bool? IsCurrent { get; set; }
+        public bool? IsCurrent {
+            get { return BackingStore?.Get<bool?>(nameof(IsCurrent)); }
+            set { BackingStore?.Set(nameof(IsCurrent), value); }
+        }
         /// <summary>Contains detail of the user&apos;s manager in this position.</summary>
-        public RelatedPerson Manager { get; set; }
+        public RelatedPerson Manager {
+            get { return BackingStore?.Get<RelatedPerson>(nameof(Manager)); }
+            set { BackingStore?.Set(nameof(Manager), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

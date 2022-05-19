@@ -1,30 +1,58 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class PhysicalAddress : IAdditionalDataHolder, IParsable {
+    public class PhysicalAddress : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The city.</summary>
-        public string City { get; set; }
+        public string City {
+            get { return BackingStore?.Get<string>(nameof(City)); }
+            set { BackingStore?.Set(nameof(City), value); }
+        }
         /// <summary>The country or region. It&apos;s a free-format string value, for example, &apos;United States&apos;.</summary>
-        public string CountryOrRegion { get; set; }
+        public string CountryOrRegion {
+            get { return BackingStore?.Get<string>(nameof(CountryOrRegion)); }
+            set { BackingStore?.Set(nameof(CountryOrRegion), value); }
+        }
         /// <summary>The postal code.</summary>
-        public string PostalCode { get; set; }
+        public string PostalCode {
+            get { return BackingStore?.Get<string>(nameof(PostalCode)); }
+            set { BackingStore?.Set(nameof(PostalCode), value); }
+        }
         /// <summary>The post office box number.</summary>
-        public string PostOfficeBox { get; set; }
+        public string PostOfficeBox {
+            get { return BackingStore?.Get<string>(nameof(PostOfficeBox)); }
+            set { BackingStore?.Set(nameof(PostOfficeBox), value); }
+        }
         /// <summary>The state.</summary>
-        public string State { get; set; }
+        public string State {
+            get { return BackingStore?.Get<string>(nameof(State)); }
+            set { BackingStore?.Set(nameof(State), value); }
+        }
         /// <summary>The street.</summary>
-        public string Street { get; set; }
+        public string Street {
+            get { return BackingStore?.Get<string>(nameof(Street)); }
+            set { BackingStore?.Set(nameof(Street), value); }
+        }
         /// <summary>The type of address. Possible values are: unknown, home, business, other.</summary>
-        public PhysicalAddressType? Type { get; set; }
+        public PhysicalAddressType? Type {
+            get { return BackingStore?.Get<PhysicalAddressType?>(nameof(Type)); }
+            set { BackingStore?.Set(nameof(Type), value); }
+        }
         /// <summary>
         /// Instantiates a new physicalAddress and sets the default values.
         /// </summary>
         public PhysicalAddress() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

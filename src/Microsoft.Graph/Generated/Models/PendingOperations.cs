@@ -1,18 +1,28 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class PendingOperations : IAdditionalDataHolder, IParsable {
+    public class PendingOperations : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>A property that indicates that an operation that might update the binary content of a file is pending completion.</summary>
-        public Microsoft.Graph.Beta.Models.PendingContentUpdate PendingContentUpdate { get; set; }
+        public Microsoft.Graph.Beta.Models.PendingContentUpdate PendingContentUpdate {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PendingContentUpdate>(nameof(PendingContentUpdate)); }
+            set { BackingStore?.Set(nameof(PendingContentUpdate), value); }
+        }
         /// <summary>
         /// Instantiates a new pendingOperations and sets the default values.
         /// </summary>
         public PendingOperations() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

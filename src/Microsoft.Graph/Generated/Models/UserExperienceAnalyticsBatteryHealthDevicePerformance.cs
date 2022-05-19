@@ -4,25 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The user experience analytics battery health device performance entity contains device level battery information.</summary>
     public class UserExperienceAnalyticsBatteryHealthDevicePerformance : Entity, IParsable {
         /// <summary>Estimated battery age. Unit in days. Valid values -2147483648 to 2147483647</summary>
-        public int? BatteryAgeInDays { get; set; }
+        public int? BatteryAgeInDays {
+            get { return BackingStore?.Get<int?>(nameof(BatteryAgeInDays)); }
+            set { BackingStore?.Set(nameof(BatteryAgeInDays), value); }
+        }
         /// <summary>A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647</summary>
-        public int? DeviceBatteryHealthScore { get; set; }
+        public int? DeviceBatteryHealthScore {
+            get { return BackingStore?.Get<int?>(nameof(DeviceBatteryHealthScore)); }
+            set { BackingStore?.Set(nameof(DeviceBatteryHealthScore), value); }
+        }
         /// <summary>The unique identifier of the device, Intune DeviceID.</summary>
-        public string DeviceId { get; set; }
+        public string DeviceId {
+            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
+            set { BackingStore?.Set(nameof(DeviceId), value); }
+        }
         /// <summary>Device friendly name.</summary>
-        public string DeviceName { get; set; }
+        public string DeviceName {
+            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
+            set { BackingStore?.Set(nameof(DeviceName), value); }
+        }
         /// <summary>The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647</summary>
-        public int? EstimatedRuntimeInMinutes { get; set; }
+        public int? EstimatedRuntimeInMinutes {
+            get { return BackingStore?.Get<int?>(nameof(EstimatedRuntimeInMinutes)); }
+            set { BackingStore?.Set(nameof(EstimatedRuntimeInMinutes), value); }
+        }
         /// <summary>The overall battery health status of the device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.</summary>
-        public UserExperienceAnalyticsHealthState? HealthStatus { get; set; }
+        public UserExperienceAnalyticsHealthState? HealthStatus {
+            get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>(nameof(HealthStatus)); }
+            set { BackingStore?.Set(nameof(HealthStatus), value); }
+        }
         /// <summary>The manufacturer name of the device.</summary>
-        public string Manufacturer { get; set; }
+        public string Manufacturer {
+            get { return BackingStore?.Get<string>(nameof(Manufacturer)); }
+            set { BackingStore?.Set(nameof(Manufacturer), value); }
+        }
         /// <summary>Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values -2147483648 to 2147483647</summary>
-        public int? MaxCapacityPercentage { get; set; }
+        public int? MaxCapacityPercentage {
+            get { return BackingStore?.Get<int?>(nameof(MaxCapacityPercentage)); }
+            set { BackingStore?.Set(nameof(MaxCapacityPercentage), value); }
+        }
         /// <summary>The model name of the device.</summary>
-        public string Model { get; set; }
+        public string Model {
+            get { return BackingStore?.Get<string>(nameof(Model)); }
+            set { BackingStore?.Set(nameof(Model), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

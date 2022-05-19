@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class SharedWithChannelTeamInfo : TeamInfo, IParsable {
         /// <summary>A collection of team members who have access to the shared channel.</summary>
-        public List<ConversationMember> AllowedMembers { get; set; }
+        public List<ConversationMember> AllowedMembers {
+            get { return BackingStore?.Get<List<ConversationMember>>(nameof(AllowedMembers)); }
+            set { BackingStore?.Set(nameof(AllowedMembers), value); }
+        }
         /// <summary>Indicates whether the team is the host of the channel.</summary>
-        public bool? IsHostTeam { get; set; }
+        public bool? IsHostTeam {
+            get { return BackingStore?.Get<bool?>(nameof(IsHostTeam)); }
+            set { BackingStore?.Set(nameof(IsHostTeam), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

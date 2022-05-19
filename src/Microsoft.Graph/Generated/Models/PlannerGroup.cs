@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class PlannerGroup : Entity, IParsable {
         /// <summary>Read-only. Nullable. Returns the plannerPlans owned by the group.</summary>
-        public List<PlannerPlan> Plans { get; set; }
+        public List<PlannerPlan> Plans {
+            get { return BackingStore?.Get<List<PlannerPlan>>(nameof(Plans)); }
+            set { BackingStore?.Set(nameof(Plans), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

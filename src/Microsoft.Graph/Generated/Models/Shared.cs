@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class Shared : IAdditionalDataHolder, IParsable {
+    public class Shared : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The identity of the owner of the shared item. Read-only.</summary>
-        public IdentitySet Owner { get; set; }
+        public IdentitySet Owner {
+            get { return BackingStore?.Get<IdentitySet>(nameof(Owner)); }
+            set { BackingStore?.Set(nameof(Owner), value); }
+        }
         /// <summary>Indicates the scope of how the item is shared: anonymous, organization, or users. Read-only.</summary>
-        public string Scope { get; set; }
+        public string Scope {
+            get { return BackingStore?.Get<string>(nameof(Scope)); }
+            set { BackingStore?.Set(nameof(Scope), value); }
+        }
         /// <summary>The identity of the user who shared the item. Read-only.</summary>
-        public IdentitySet SharedBy { get; set; }
+        public IdentitySet SharedBy {
+            get { return BackingStore?.Get<IdentitySet>(nameof(SharedBy)); }
+            set { BackingStore?.Set(nameof(SharedBy), value); }
+        }
         /// <summary>The UTC date and time when the item was shared. Read-only.</summary>
-        public DateTimeOffset? SharedDateTime { get; set; }
+        public DateTimeOffset? SharedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(SharedDateTime)); }
+            set { BackingStore?.Set(nameof(SharedDateTime), value); }
+        }
         /// <summary>
         /// Instantiates a new shared and sets the default values.
         /// </summary>
         public Shared() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

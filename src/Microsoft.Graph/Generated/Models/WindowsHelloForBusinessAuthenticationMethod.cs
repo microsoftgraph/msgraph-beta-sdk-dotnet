@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class WindowsHelloForBusinessAuthenticationMethod : AuthenticationMethod, IParsable {
         /// <summary>The date and time that this Windows Hello for Business key was registered.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>The registered device on which this Windows Hello for Business key resides. Supports $expand. When you get a user&apos;s Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.</summary>
-        public Microsoft.Graph.Beta.Models.Device Device { get; set; }
+        public Microsoft.Graph.Beta.Models.Device Device {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Device>(nameof(Device)); }
+            set { BackingStore?.Set(nameof(Device), value); }
+        }
         /// <summary>The name of the device on which Windows Hello for Business is registered</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Key strength of this Windows Hello for Business key. Possible values are: normal, weak, unknown.</summary>
-        public AuthenticationMethodKeyStrength? KeyStrength { get; set; }
+        public AuthenticationMethodKeyStrength? KeyStrength {
+            get { return BackingStore?.Get<AuthenticationMethodKeyStrength?>(nameof(KeyStrength)); }
+            set { BackingStore?.Set(nameof(KeyStrength), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

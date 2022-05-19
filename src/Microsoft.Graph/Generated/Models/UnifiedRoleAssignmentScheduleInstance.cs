@@ -4,21 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the roleManagement singleton.</summary>
     public class UnifiedRoleAssignmentScheduleInstance : UnifiedRoleScheduleInstanceBase, IParsable {
         /// <summary>If the roleAssignmentScheduleInstance is activated by a roleEligibilityScheduleRequest, this is the link to the related schedule instance.</summary>
-        public UnifiedRoleEligibilityScheduleInstance ActivatedUsing { get; set; }
+        public UnifiedRoleEligibilityScheduleInstance ActivatedUsing {
+            get { return BackingStore?.Get<UnifiedRoleEligibilityScheduleInstance>(nameof(ActivatedUsing)); }
+            set { BackingStore?.Set(nameof(ActivatedUsing), value); }
+        }
         /// <summary>Type of the assignment. It can either be Assigned or Activated.</summary>
-        public string AssignmentType { get; set; }
+        public string AssignmentType {
+            get { return BackingStore?.Get<string>(nameof(AssignmentType)); }
+            set { BackingStore?.Set(nameof(AssignmentType), value); }
+        }
         /// <summary>Time that the roleAssignmentInstance will expire</summary>
-        public DateTimeOffset? EndDateTime { get; set; }
+        public DateTimeOffset? EndDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
+            set { BackingStore?.Set(nameof(EndDateTime), value); }
+        }
         /// <summary>Membership type of the assignment. It can either be Inherited, Direct, or Group.</summary>
-        public string MemberType { get; set; }
+        public string MemberType {
+            get { return BackingStore?.Get<string>(nameof(MemberType)); }
+            set { BackingStore?.Set(nameof(MemberType), value); }
+        }
         /// <summary>ID of the roleAssignment in the directory</summary>
-        public string RoleAssignmentOriginId { get; set; }
+        public string RoleAssignmentOriginId {
+            get { return BackingStore?.Get<string>(nameof(RoleAssignmentOriginId)); }
+            set { BackingStore?.Set(nameof(RoleAssignmentOriginId), value); }
+        }
         /// <summary>ID of the parent roleAssignmentSchedule for this instance</summary>
-        public string RoleAssignmentScheduleId { get; set; }
+        public string RoleAssignmentScheduleId {
+            get { return BackingStore?.Get<string>(nameof(RoleAssignmentScheduleId)); }
+            set { BackingStore?.Set(nameof(RoleAssignmentScheduleId), value); }
+        }
         /// <summary>Time that the roleAssignmentInstance will start</summary>
-        public DateTimeOffset? StartDateTime { get; set; }
+        public DateTimeOffset? StartDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
+            set { BackingStore?.Set(nameof(StartDateTime), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

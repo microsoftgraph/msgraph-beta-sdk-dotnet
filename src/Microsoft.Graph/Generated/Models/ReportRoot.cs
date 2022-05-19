@@ -4,31 +4,68 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the print singleton.</summary>
     public class ReportRoot : Entity, IParsable {
         /// <summary>Represents a detailed summary of an application sign-in.</summary>
-        public List<Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary> ApplicationSignInDetailedSummary { get; set; }
+        public List<Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary> ApplicationSignInDetailedSummary {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary>>(nameof(ApplicationSignInDetailedSummary)); }
+            set { BackingStore?.Set(nameof(ApplicationSignInDetailedSummary), value); }
+        }
         /// <summary>Container for navigation properties for Azure AD authentication methods resources.</summary>
-        public AuthenticationMethodsRoot AuthenticationMethods { get; set; }
+        public AuthenticationMethodsRoot AuthenticationMethods {
+            get { return BackingStore?.Get<AuthenticationMethodsRoot>(nameof(AuthenticationMethods)); }
+            set { BackingStore?.Set(nameof(AuthenticationMethods), value); }
+        }
         /// <summary>Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.</summary>
-        public List<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails> CredentialUserRegistrationDetails { get; set; }
+        public List<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails> CredentialUserRegistrationDetails {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails>>(nameof(CredentialUserRegistrationDetails)); }
+            set { BackingStore?.Set(nameof(CredentialUserRegistrationDetails), value); }
+        }
         /// <summary>The dailyPrintUsageByPrinter property</summary>
-        public List<PrintUsageByPrinter> DailyPrintUsageByPrinter { get; set; }
+        public List<PrintUsageByPrinter> DailyPrintUsageByPrinter {
+            get { return BackingStore?.Get<List<PrintUsageByPrinter>>(nameof(DailyPrintUsageByPrinter)); }
+            set { BackingStore?.Set(nameof(DailyPrintUsageByPrinter), value); }
+        }
         /// <summary>The dailyPrintUsageByUser property</summary>
-        public List<PrintUsageByUser> DailyPrintUsageByUser { get; set; }
+        public List<PrintUsageByUser> DailyPrintUsageByUser {
+            get { return BackingStore?.Get<List<PrintUsageByUser>>(nameof(DailyPrintUsageByUser)); }
+            set { BackingStore?.Set(nameof(DailyPrintUsageByUser), value); }
+        }
         /// <summary>The dailyPrintUsageSummariesByPrinter property</summary>
-        public List<PrintUsageByPrinter> DailyPrintUsageSummariesByPrinter { get; set; }
+        public List<PrintUsageByPrinter> DailyPrintUsageSummariesByPrinter {
+            get { return BackingStore?.Get<List<PrintUsageByPrinter>>(nameof(DailyPrintUsageSummariesByPrinter)); }
+            set { BackingStore?.Set(nameof(DailyPrintUsageSummariesByPrinter), value); }
+        }
         /// <summary>The dailyPrintUsageSummariesByUser property</summary>
-        public List<PrintUsageByUser> DailyPrintUsageSummariesByUser { get; set; }
+        public List<PrintUsageByUser> DailyPrintUsageSummariesByUser {
+            get { return BackingStore?.Get<List<PrintUsageByUser>>(nameof(DailyPrintUsageSummariesByUser)); }
+            set { BackingStore?.Set(nameof(DailyPrintUsageSummariesByUser), value); }
+        }
         /// <summary>The monthlyPrintUsageByPrinter property</summary>
-        public List<PrintUsageByPrinter> MonthlyPrintUsageByPrinter { get; set; }
+        public List<PrintUsageByPrinter> MonthlyPrintUsageByPrinter {
+            get { return BackingStore?.Get<List<PrintUsageByPrinter>>(nameof(MonthlyPrintUsageByPrinter)); }
+            set { BackingStore?.Set(nameof(MonthlyPrintUsageByPrinter), value); }
+        }
         /// <summary>The monthlyPrintUsageByUser property</summary>
-        public List<PrintUsageByUser> MonthlyPrintUsageByUser { get; set; }
+        public List<PrintUsageByUser> MonthlyPrintUsageByUser {
+            get { return BackingStore?.Get<List<PrintUsageByUser>>(nameof(MonthlyPrintUsageByUser)); }
+            set { BackingStore?.Set(nameof(MonthlyPrintUsageByUser), value); }
+        }
         /// <summary>The monthlyPrintUsageSummariesByPrinter property</summary>
-        public List<PrintUsageByPrinter> MonthlyPrintUsageSummariesByPrinter { get; set; }
+        public List<PrintUsageByPrinter> MonthlyPrintUsageSummariesByPrinter {
+            get { return BackingStore?.Get<List<PrintUsageByPrinter>>(nameof(MonthlyPrintUsageSummariesByPrinter)); }
+            set { BackingStore?.Set(nameof(MonthlyPrintUsageSummariesByPrinter), value); }
+        }
         /// <summary>The monthlyPrintUsageSummariesByUser property</summary>
-        public List<PrintUsageByUser> MonthlyPrintUsageSummariesByUser { get; set; }
+        public List<PrintUsageByUser> MonthlyPrintUsageSummariesByUser {
+            get { return BackingStore?.Get<List<PrintUsageByUser>>(nameof(MonthlyPrintUsageSummariesByUser)); }
+            set { BackingStore?.Set(nameof(MonthlyPrintUsageSummariesByUser), value); }
+        }
         /// <summary>Represents the self-service password reset (SSPR) usage for a given tenant.</summary>
-        public List<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails> UserCredentialUsageDetails { get; set; }
+        public List<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails> UserCredentialUsageDetails {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>>(nameof(UserCredentialUsageDetails)); }
+            set { BackingStore?.Set(nameof(UserCredentialUsageDetails), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

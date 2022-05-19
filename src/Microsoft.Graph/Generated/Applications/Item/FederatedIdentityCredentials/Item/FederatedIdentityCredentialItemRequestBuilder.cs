@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials.It
             return requestInfo;
         }
         /// <summary>
-        /// Federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
+        /// Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<FederatedIdentityCredentialItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials.It
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
+        /// Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials.It
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).</summary>
+        /// <summary>Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).</summary>
         public class FederatedIdentityCredentialItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

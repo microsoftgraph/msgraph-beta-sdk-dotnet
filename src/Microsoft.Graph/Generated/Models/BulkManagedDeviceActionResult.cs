@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class BulkManagedDeviceActionResult : IAdditionalDataHolder, IParsable {
+    public class BulkManagedDeviceActionResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Failed devices</summary>
-        public List<string> FailedDeviceIds { get; set; }
+        public List<string> FailedDeviceIds {
+            get { return BackingStore?.Get<List<string>>(nameof(FailedDeviceIds)); }
+            set { BackingStore?.Set(nameof(FailedDeviceIds), value); }
+        }
         /// <summary>Not found devices</summary>
-        public List<string> NotFoundDeviceIds { get; set; }
+        public List<string> NotFoundDeviceIds {
+            get { return BackingStore?.Get<List<string>>(nameof(NotFoundDeviceIds)); }
+            set { BackingStore?.Set(nameof(NotFoundDeviceIds), value); }
+        }
         /// <summary>Not supported devices</summary>
-        public List<string> NotSupportedDeviceIds { get; set; }
+        public List<string> NotSupportedDeviceIds {
+            get { return BackingStore?.Get<List<string>>(nameof(NotSupportedDeviceIds)); }
+            set { BackingStore?.Set(nameof(NotSupportedDeviceIds), value); }
+        }
         /// <summary>Successful devices</summary>
-        public List<string> SuccessfulDeviceIds { get; set; }
+        public List<string> SuccessfulDeviceIds {
+            get { return BackingStore?.Get<List<string>>(nameof(SuccessfulDeviceIds)); }
+            set { BackingStore?.Set(nameof(SuccessfulDeviceIds), value); }
+        }
         /// <summary>
-        /// Instantiates a new bulkManagedDeviceActionResult and sets the default values.
+        /// Instantiates a new BulkManagedDeviceActionResult and sets the default values.
         /// </summary>
         public BulkManagedDeviceActionResult() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

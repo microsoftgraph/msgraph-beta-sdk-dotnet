@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of onPremisesPublishingProfile entities.</summary>
     public class OnPremisesAgent : Entity, IParsable {
         /// <summary>List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.</summary>
-        public List<OnPremisesAgentGroup> AgentGroups { get; set; }
+        public List<OnPremisesAgentGroup> AgentGroups {
+            get { return BackingStore?.Get<List<OnPremisesAgentGroup>>(nameof(AgentGroups)); }
+            set { BackingStore?.Set(nameof(AgentGroups), value); }
+        }
         /// <summary>The external IP address as detected by the service for the agent machine. Read-only</summary>
-        public string ExternalIp { get; set; }
+        public string ExternalIp {
+            get { return BackingStore?.Get<string>(nameof(ExternalIp)); }
+            set { BackingStore?.Set(nameof(ExternalIp), value); }
+        }
         /// <summary>The name of the machine that the aggent is running on. Read-only</summary>
-        public string MachineName { get; set; }
+        public string MachineName {
+            get { return BackingStore?.Get<string>(nameof(MachineName)); }
+            set { BackingStore?.Set(nameof(MachineName), value); }
+        }
         /// <summary>Possible values are: active, inactive.</summary>
-        public AgentStatus? Status { get; set; }
+        public AgentStatus? Status {
+            get { return BackingStore?.Get<AgentStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>The supportedPublishingTypes property</summary>
-        public List<OnPremisesPublishingType?> SupportedPublishingTypes { get; set; }
+        public List<string> SupportedPublishingTypes {
+            get { return BackingStore?.Get<List<string>>(nameof(SupportedPublishingTypes)); }
+            set { BackingStore?.Set(nameof(SupportedPublishingTypes), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -32,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"externalIp", n => { ExternalIp = n.GetStringValue(); } },
                 {"machineName", n => { MachineName = n.GetStringValue(); } },
                 {"status", n => { Status = n.GetEnumValue<AgentStatus>(); } },
-                {"supportedPublishingTypes", n => { SupportedPublishingTypes = n.GetCollectionOfEnumValues<OnPremisesPublishingType>().ToList(); } },
+                {"supportedPublishingTypes", n => { SupportedPublishingTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>
@@ -46,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("externalIp", ExternalIp);
             writer.WriteStringValue("machineName", MachineName);
             writer.WriteEnumValue<AgentStatus>("status", Status);
-            writer.WriteCollectionOfEnumValues<OnPremisesPublishingType>("supportedPublishingTypes", SupportedPublishingTypes);
+            writer.WriteCollectionOfPrimitiveValues<string>("supportedPublishingTypes", SupportedPublishingTypes);
         }
     }
 }

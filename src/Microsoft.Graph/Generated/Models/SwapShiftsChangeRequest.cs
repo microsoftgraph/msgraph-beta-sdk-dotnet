@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class SwapShiftsChangeRequest : OfferShiftRequest, IParsable {
         /// <summary>Shift ID for the recipient user with whom the request is to swap.</summary>
-        public string RecipientShiftId { get; set; }
+        public string RecipientShiftId {
+            get { return BackingStore?.Get<string>(nameof(RecipientShiftId)); }
+            set { BackingStore?.Set(nameof(RecipientShiftId), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

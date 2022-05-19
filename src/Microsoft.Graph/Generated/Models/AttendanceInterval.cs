@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class AttendanceInterval : IAdditionalDataHolder, IParsable {
+    public class AttendanceInterval : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.</summary>
-        public int? DurationInSeconds { get; set; }
+        public int? DurationInSeconds {
+            get { return BackingStore?.Get<int?>(nameof(DurationInSeconds)); }
+            set { BackingStore?.Set(nameof(DurationInSeconds), value); }
+        }
         /// <summary>The time the attendee joined in UTC.</summary>
-        public DateTimeOffset? JoinDateTime { get; set; }
+        public DateTimeOffset? JoinDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(JoinDateTime)); }
+            set { BackingStore?.Set(nameof(JoinDateTime), value); }
+        }
         /// <summary>The time the attendee left in UTC.</summary>
-        public DateTimeOffset? LeaveDateTime { get; set; }
+        public DateTimeOffset? LeaveDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LeaveDateTime)); }
+            set { BackingStore?.Set(nameof(LeaveDateTime), value); }
+        }
         /// <summary>
         /// Instantiates a new attendanceInterval and sets the default values.
         /// </summary>
         public AttendanceInterval() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
+    /// <summary>Provides operations to manage the security singleton.</summary>
     public class EdiscoveryReviewTag : Tag, IParsable {
         /// <summary>The childSelectability property</summary>
-        public Microsoft.Graph.Beta.Models.Security.ChildSelectability? ChildSelectability { get; set; }
+        public Microsoft.Graph.Beta.Models.Security.ChildSelectability? ChildSelectability {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ChildSelectability?>(nameof(ChildSelectability)); }
+            set { BackingStore?.Set(nameof(ChildSelectability), value); }
+        }
         /// <summary>The childTags property</summary>
-        public List<EdiscoveryReviewTag> ChildTags { get; set; }
+        public List<EdiscoveryReviewTag> ChildTags {
+            get { return BackingStore?.Get<List<EdiscoveryReviewTag>>(nameof(ChildTags)); }
+            set { BackingStore?.Set(nameof(ChildTags), value); }
+        }
         /// <summary>The parent property</summary>
-        public EdiscoveryReviewTag Parent { get; set; }
+        public EdiscoveryReviewTag Parent {
+            get { return BackingStore?.Get<EdiscoveryReviewTag>(nameof(Parent)); }
+            set { BackingStore?.Set(nameof(Parent), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

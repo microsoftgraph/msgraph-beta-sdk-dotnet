@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public class TopicModelingSettings : IAdditionalDataHolder, IParsable {
+    public class TopicModelingSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The dynamicallyAdjustTopicCount property</summary>
-        public bool? DynamicallyAdjustTopicCount { get; set; }
+        public bool? DynamicallyAdjustTopicCount {
+            get { return BackingStore?.Get<bool?>(nameof(DynamicallyAdjustTopicCount)); }
+            set { BackingStore?.Set(nameof(DynamicallyAdjustTopicCount), value); }
+        }
         /// <summary>The ignoreNumbers property</summary>
-        public bool? IgnoreNumbers { get; set; }
+        public bool? IgnoreNumbers {
+            get { return BackingStore?.Get<bool?>(nameof(IgnoreNumbers)); }
+            set { BackingStore?.Set(nameof(IgnoreNumbers), value); }
+        }
         /// <summary>The isEnabled property</summary>
-        public bool? IsEnabled { get; set; }
+        public bool? IsEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
+            set { BackingStore?.Set(nameof(IsEnabled), value); }
+        }
         /// <summary>The topicCount property</summary>
-        public int? TopicCount { get; set; }
+        public int? TopicCount {
+            get { return BackingStore?.Get<int?>(nameof(TopicCount)); }
+            set { BackingStore?.Set(nameof(TopicCount), value); }
+        }
         /// <summary>
         /// Instantiates a new topicModelingSettings and sets the default values.
         /// </summary>
         public TopicModelingSettings() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

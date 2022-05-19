@@ -4,29 +4,63 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class CloudPcAuditEvent : Entity, IParsable {
         /// <summary>Friendly name of the activity. Optional.</summary>
-        public string Activity { get; set; }
+        public string Activity {
+            get { return BackingStore?.Get<string>(nameof(Activity)); }
+            set { BackingStore?.Set(nameof(Activity), value); }
+        }
         /// <summary>The date time in UTC when the activity was performed. Read-only.</summary>
-        public DateTimeOffset? ActivityDateTime { get; set; }
+        public DateTimeOffset? ActivityDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ActivityDateTime)); }
+            set { BackingStore?.Set(nameof(ActivityDateTime), value); }
+        }
         /// <summary>The HTTP operation type of the activity. Possible values include create, delete, patch and other. Read-only.</summary>
-        public CloudPcAuditActivityOperationType? ActivityOperationType { get; set; }
+        public CloudPcAuditActivityOperationType? ActivityOperationType {
+            get { return BackingStore?.Get<CloudPcAuditActivityOperationType?>(nameof(ActivityOperationType)); }
+            set { BackingStore?.Set(nameof(ActivityOperationType), value); }
+        }
         /// <summary>The result of the activity. Read-only.</summary>
-        public CloudPcAuditActivityResult? ActivityResult { get; set; }
+        public CloudPcAuditActivityResult? ActivityResult {
+            get { return BackingStore?.Get<CloudPcAuditActivityResult?>(nameof(ActivityResult)); }
+            set { BackingStore?.Set(nameof(ActivityResult), value); }
+        }
         /// <summary>The type of activity that was performed. Read-only.</summary>
-        public string ActivityType { get; set; }
+        public string ActivityType {
+            get { return BackingStore?.Get<string>(nameof(ActivityType)); }
+            set { BackingStore?.Set(nameof(ActivityType), value); }
+        }
         /// <summary>The actor property</summary>
-        public CloudPcAuditActor Actor { get; set; }
+        public CloudPcAuditActor Actor {
+            get { return BackingStore?.Get<CloudPcAuditActor>(nameof(Actor)); }
+            set { BackingStore?.Set(nameof(Actor), value); }
+        }
         /// <summary>Audit category. Read-only.</summary>
-        public CloudPcAuditCategory? Category { get; set; }
+        public CloudPcAuditCategory? Category {
+            get { return BackingStore?.Get<CloudPcAuditCategory?>(nameof(Category)); }
+            set { BackingStore?.Set(nameof(Category), value); }
+        }
         /// <summary>Component name. Read-only.</summary>
-        public string ComponentName { get; set; }
+        public string ComponentName {
+            get { return BackingStore?.Get<string>(nameof(ComponentName)); }
+            set { BackingStore?.Set(nameof(ComponentName), value); }
+        }
         /// <summary>The client request identifier, used to correlate activity within the system. Read-only.</summary>
-        public string CorrelationId { get; set; }
+        public string CorrelationId {
+            get { return BackingStore?.Get<string>(nameof(CorrelationId)); }
+            set { BackingStore?.Set(nameof(CorrelationId), value); }
+        }
         /// <summary>Event display name. Read-only.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>List of cloudPcAuditResource objects. Read-only.</summary>
-        public List<CloudPcAuditResource> Resources { get; set; }
+        public List<CloudPcAuditResource> Resources {
+            get { return BackingStore?.Get<List<CloudPcAuditResource>>(nameof(Resources)); }
+            set { BackingStore?.Set(nameof(Resources), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

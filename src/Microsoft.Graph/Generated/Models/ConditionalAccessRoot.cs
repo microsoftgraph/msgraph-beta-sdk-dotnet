@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the identityContainer singleton.</summary>
     public class ConditionalAccessRoot : Entity, IParsable {
         /// <summary>Read-only. Nullable. Returns a collection of the specified authentication context class references.</summary>
-        public List<AuthenticationContextClassReference> AuthenticationContextClassReferences { get; set; }
+        public List<AuthenticationContextClassReference> AuthenticationContextClassReferences {
+            get { return BackingStore?.Get<List<AuthenticationContextClassReference>>(nameof(AuthenticationContextClassReferences)); }
+            set { BackingStore?.Set(nameof(AuthenticationContextClassReferences), value); }
+        }
         /// <summary>Read-only. Nullable. Returns a collection of the specified named locations.</summary>
-        public List<NamedLocation> NamedLocations { get; set; }
+        public List<NamedLocation> NamedLocations {
+            get { return BackingStore?.Get<List<NamedLocation>>(nameof(NamedLocations)); }
+            set { BackingStore?.Set(nameof(NamedLocations), value); }
+        }
         /// <summary>Read-only. Nullable. Returns a collection of the specified Conditional Access policies.</summary>
-        public List<ConditionalAccessPolicy> Policies { get; set; }
+        public List<ConditionalAccessPolicy> Policies {
+            get { return BackingStore?.Get<List<ConditionalAccessPolicy>>(nameof(Policies)); }
+            set { BackingStore?.Set(nameof(Policies), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

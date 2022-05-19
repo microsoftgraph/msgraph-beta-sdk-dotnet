@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class BucketAggregationRange : IAdditionalDataHolder, IParsable {
+    public class BucketAggregationRange : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Defines the lower bound from which to compute the aggregation. This can be a numeric value or a string representation of a date using the YYYY-MM-DDTHH:mm:ss.sssZ format. Required.</summary>
-        public string From { get; set; }
+        public string From {
+            get { return BackingStore?.Get<string>(nameof(From)); }
+            set { BackingStore?.Set(nameof(From), value); }
+        }
         /// <summary>Defines the upper bound up to which to compute the aggregation. This can be a numeric value or a string representation of a date using the YYYY-MM-DDTHH:mm:ss.sssZ format. Required.</summary>
-        public string To { get; set; }
+        public string To {
+            get { return BackingStore?.Get<string>(nameof(To)); }
+            set { BackingStore?.Set(nameof(To), value); }
+        }
         /// <summary>
         /// Instantiates a new bucketAggregationRange and sets the default values.
         /// </summary>
         public BucketAggregationRange() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

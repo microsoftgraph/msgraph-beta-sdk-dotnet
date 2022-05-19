@@ -4,41 +4,93 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
     public class AccessPackageAssignmentPolicy : Entity, IParsable {
         /// <summary>The access package with this policy. Read-only. Nullable. Supports $expand.</summary>
-        public Microsoft.Graph.Beta.Models.AccessPackage AccessPackage { get; set; }
+        public Microsoft.Graph.Beta.Models.AccessPackage AccessPackage {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackage>(nameof(AccessPackage)); }
+            set { BackingStore?.Set(nameof(AccessPackage), value); }
+        }
         /// <summary>The accessPackageCatalog property</summary>
-        public Microsoft.Graph.Beta.Models.AccessPackageCatalog AccessPackageCatalog { get; set; }
+        public Microsoft.Graph.Beta.Models.AccessPackageCatalog AccessPackageCatalog {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageCatalog>(nameof(AccessPackageCatalog)); }
+            set { BackingStore?.Set(nameof(AccessPackageCatalog), value); }
+        }
         /// <summary>Identifier of the access package.</summary>
-        public string AccessPackageId { get; set; }
+        public string AccessPackageId {
+            get { return BackingStore?.Get<string>(nameof(AccessPackageId)); }
+            set { BackingStore?.Set(nameof(AccessPackageId), value); }
+        }
         /// <summary>Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews are not required.</summary>
-        public AssignmentReviewSettings AccessReviewSettings { get; set; }
+        public AssignmentReviewSettings AccessReviewSettings {
+            get { return BackingStore?.Get<AssignmentReviewSettings>(nameof(AccessReviewSettings)); }
+            set { BackingStore?.Set(nameof(AccessReviewSettings), value); }
+        }
         /// <summary>Indicates whether a user can extend the access package assignment duration after approval.</summary>
-        public bool? CanExtend { get; set; }
+        public bool? CanExtend {
+            get { return BackingStore?.Get<bool?>(nameof(CanExtend)); }
+            set { BackingStore?.Set(nameof(CanExtend), value); }
+        }
         /// <summary>Read-only.</summary>
-        public string CreatedBy { get; set; }
+        public string CreatedBy {
+            get { return BackingStore?.Get<string>(nameof(CreatedBy)); }
+            set { BackingStore?.Set(nameof(CreatedBy), value); }
+        }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.</summary>
-        public List<CustomExtensionHandler> CustomExtensionHandlers { get; set; }
+        public List<CustomExtensionHandler> CustomExtensionHandlers {
+            get { return BackingStore?.Get<List<CustomExtensionHandler>>(nameof(CustomExtensionHandlers)); }
+            set { BackingStore?.Set(nameof(CustomExtensionHandlers), value); }
+        }
         /// <summary>The description of the policy.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The display name of the policy. Supports $filter (eq).</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The number of days in which assignments from this policy last until they are expired.</summary>
-        public int? DurationInDays { get; set; }
+        public int? DurationInDays {
+            get { return BackingStore?.Get<int?>(nameof(DurationInDays)); }
+            set { BackingStore?.Set(nameof(DurationInDays), value); }
+        }
         /// <summary>The expiration date for assignments created in this policy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? ExpirationDateTime { get; set; }
+        public DateTimeOffset? ExpirationDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpirationDateTime)); }
+            set { BackingStore?.Set(nameof(ExpirationDateTime), value); }
+        }
         /// <summary>Read-only.</summary>
-        public string ModifiedBy { get; set; }
+        public string ModifiedBy {
+            get { return BackingStore?.Get<string>(nameof(ModifiedBy)); }
+            set { BackingStore?.Set(nameof(ModifiedBy), value); }
+        }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? ModifiedDateTime { get; set; }
+        public DateTimeOffset? ModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(ModifiedDateTime), value); }
+        }
         /// <summary>Questions that are posed to the  requestor.</summary>
-        public List<AccessPackageQuestion> Questions { get; set; }
+        public List<AccessPackageQuestion> Questions {
+            get { return BackingStore?.Get<List<AccessPackageQuestion>>(nameof(Questions)); }
+            set { BackingStore?.Set(nameof(Questions), value); }
+        }
         /// <summary>Who must approve requests for access package in this policy.</summary>
-        public ApprovalSettings RequestApprovalSettings { get; set; }
+        public ApprovalSettings RequestApprovalSettings {
+            get { return BackingStore?.Get<ApprovalSettings>(nameof(RequestApprovalSettings)); }
+            set { BackingStore?.Set(nameof(RequestApprovalSettings), value); }
+        }
         /// <summary>Who can request this access package from this policy.</summary>
-        public Microsoft.Graph.Beta.Models.RequestorSettings RequestorSettings { get; set; }
+        public Microsoft.Graph.Beta.Models.RequestorSettings RequestorSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RequestorSettings>(nameof(RequestorSettings)); }
+            set { BackingStore?.Set(nameof(RequestorSettings), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

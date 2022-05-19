@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
+    /// <summary>Provides operations to manage the security singleton.</summary>
     public class EdiscoveryNoncustodialDataSource : DataSourceContainer, IParsable {
         /// <summary>The dataSource property</summary>
-        public Microsoft.Graph.Beta.Models.Security.DataSource DataSource { get; set; }
+        public Microsoft.Graph.Beta.Models.Security.DataSource DataSource {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DataSource>(nameof(DataSource)); }
+            set { BackingStore?.Set(nameof(DataSource), value); }
+        }
         /// <summary>The lastIndexOperation property</summary>
-        public EdiscoveryIndexOperation LastIndexOperation { get; set; }
+        public EdiscoveryIndexOperation LastIndexOperation {
+            get { return BackingStore?.Get<EdiscoveryIndexOperation>(nameof(LastIndexOperation)); }
+            set { BackingStore?.Set(nameof(LastIndexOperation), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

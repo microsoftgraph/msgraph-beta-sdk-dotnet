@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to call the classifyExactMatches method.</summary>
     public class ExactMatchDetectedSensitiveContent : DetectedSensitiveContentBase, IParsable {
         /// <summary>The matches property</summary>
-        public List<SensitiveContentLocation> Matches { get; set; }
+        public List<SensitiveContentLocation> Matches {
+            get { return BackingStore?.Get<List<SensitiveContentLocation>>(nameof(Matches)); }
+            set { BackingStore?.Set(nameof(Matches), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

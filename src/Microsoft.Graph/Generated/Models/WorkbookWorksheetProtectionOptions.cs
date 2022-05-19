@@ -1,38 +1,78 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class WorkbookWorksheetProtectionOptions : IAdditionalDataHolder, IParsable {
+    public class WorkbookWorksheetProtectionOptions : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Represents the worksheet protection option of allowing using auto filter feature.</summary>
-        public bool? AllowAutoFilter { get; set; }
+        public bool? AllowAutoFilter {
+            get { return BackingStore?.Get<bool?>(nameof(AllowAutoFilter)); }
+            set { BackingStore?.Set(nameof(AllowAutoFilter), value); }
+        }
         /// <summary>Represents the worksheet protection option of allowing deleting columns.</summary>
-        public bool? AllowDeleteColumns { get; set; }
+        public bool? AllowDeleteColumns {
+            get { return BackingStore?.Get<bool?>(nameof(AllowDeleteColumns)); }
+            set { BackingStore?.Set(nameof(AllowDeleteColumns), value); }
+        }
         /// <summary>Represents the worksheet protection option of allowing deleting rows.</summary>
-        public bool? AllowDeleteRows { get; set; }
+        public bool? AllowDeleteRows {
+            get { return BackingStore?.Get<bool?>(nameof(AllowDeleteRows)); }
+            set { BackingStore?.Set(nameof(AllowDeleteRows), value); }
+        }
         /// <summary>Represents the worksheet protection option of allowing formatting cells.</summary>
-        public bool? AllowFormatCells { get; set; }
+        public bool? AllowFormatCells {
+            get { return BackingStore?.Get<bool?>(nameof(AllowFormatCells)); }
+            set { BackingStore?.Set(nameof(AllowFormatCells), value); }
+        }
         /// <summary>Represents the worksheet protection option of allowing formatting columns.</summary>
-        public bool? AllowFormatColumns { get; set; }
+        public bool? AllowFormatColumns {
+            get { return BackingStore?.Get<bool?>(nameof(AllowFormatColumns)); }
+            set { BackingStore?.Set(nameof(AllowFormatColumns), value); }
+        }
         /// <summary>Represents the worksheet protection option of allowing formatting rows.</summary>
-        public bool? AllowFormatRows { get; set; }
+        public bool? AllowFormatRows {
+            get { return BackingStore?.Get<bool?>(nameof(AllowFormatRows)); }
+            set { BackingStore?.Set(nameof(AllowFormatRows), value); }
+        }
         /// <summary>Represents the worksheet protection option of allowing inserting columns.</summary>
-        public bool? AllowInsertColumns { get; set; }
+        public bool? AllowInsertColumns {
+            get { return BackingStore?.Get<bool?>(nameof(AllowInsertColumns)); }
+            set { BackingStore?.Set(nameof(AllowInsertColumns), value); }
+        }
         /// <summary>Represents the worksheet protection option of allowing inserting hyperlinks.</summary>
-        public bool? AllowInsertHyperlinks { get; set; }
+        public bool? AllowInsertHyperlinks {
+            get { return BackingStore?.Get<bool?>(nameof(AllowInsertHyperlinks)); }
+            set { BackingStore?.Set(nameof(AllowInsertHyperlinks), value); }
+        }
         /// <summary>Represents the worksheet protection option of allowing inserting rows.</summary>
-        public bool? AllowInsertRows { get; set; }
+        public bool? AllowInsertRows {
+            get { return BackingStore?.Get<bool?>(nameof(AllowInsertRows)); }
+            set { BackingStore?.Set(nameof(AllowInsertRows), value); }
+        }
         /// <summary>Represents the worksheet protection option of allowing using pivot table feature.</summary>
-        public bool? AllowPivotTables { get; set; }
+        public bool? AllowPivotTables {
+            get { return BackingStore?.Get<bool?>(nameof(AllowPivotTables)); }
+            set { BackingStore?.Set(nameof(AllowPivotTables), value); }
+        }
         /// <summary>Represents the worksheet protection option of allowing using sort feature.</summary>
-        public bool? AllowSort { get; set; }
+        public bool? AllowSort {
+            get { return BackingStore?.Get<bool?>(nameof(AllowSort)); }
+            set { BackingStore?.Set(nameof(AllowSort), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>
         /// Instantiates a new workbookWorksheetProtectionOptions and sets the default values.
         /// </summary>
         public WorkbookWorksheetProtectionOptions() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

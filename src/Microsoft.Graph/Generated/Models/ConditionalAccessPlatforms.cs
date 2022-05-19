@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ConditionalAccessPlatforms : IAdditionalDataHolder, IParsable {
+    public class ConditionalAccessPlatforms : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue, linux.</summary>
-        public List<ConditionalAccessDevicePlatform?> ExcludePlatforms { get; set; }
+        public List<string> ExcludePlatforms {
+            get { return BackingStore?.Get<List<string>>(nameof(ExcludePlatforms)); }
+            set { BackingStore?.Set(nameof(ExcludePlatforms), value); }
+        }
         /// <summary>Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue,linux``.</summary>
-        public List<ConditionalAccessDevicePlatform?> IncludePlatforms { get; set; }
+        public List<string> IncludePlatforms {
+            get { return BackingStore?.Get<List<string>>(nameof(IncludePlatforms)); }
+            set { BackingStore?.Set(nameof(IncludePlatforms), value); }
+        }
         /// <summary>
         /// Instantiates a new conditionalAccessPlatforms and sets the default values.
         /// </summary>
         public ConditionalAccessPlatforms() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -30,8 +43,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"excludePlatforms", n => { ExcludePlatforms = n.GetCollectionOfEnumValues<ConditionalAccessDevicePlatform>().ToList(); } },
-                {"includePlatforms", n => { IncludePlatforms = n.GetCollectionOfEnumValues<ConditionalAccessDevicePlatform>().ToList(); } },
+                {"excludePlatforms", n => { ExcludePlatforms = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"includePlatforms", n => { IncludePlatforms = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>
@@ -40,8 +53,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<ConditionalAccessDevicePlatform>("excludePlatforms", ExcludePlatforms);
-            writer.WriteCollectionOfEnumValues<ConditionalAccessDevicePlatform>("includePlatforms", IncludePlatforms);
+            writer.WriteCollectionOfPrimitiveValues<string>("excludePlatforms", ExcludePlatforms);
+            writer.WriteCollectionOfPrimitiveValues<string>("includePlatforms", IncludePlatforms);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SiteSettings : IAdditionalDataHolder, IParsable {
+    public class SiteSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The language tag for the language used on this site.</summary>
-        public string LanguageTag { get; set; }
+        public string LanguageTag {
+            get { return BackingStore?.Get<string>(nameof(LanguageTag)); }
+            set { BackingStore?.Set(nameof(LanguageTag), value); }
+        }
         /// <summary>Indicates the time offset for the time zone of the site from Coordinated Universal Time (UTC).</summary>
-        public string TimeZone { get; set; }
+        public string TimeZone {
+            get { return BackingStore?.Get<string>(nameof(TimeZone)); }
+            set { BackingStore?.Set(nameof(TimeZone), value); }
+        }
         /// <summary>
         /// Instantiates a new siteSettings and sets the default values.
         /// </summary>
         public SiteSettings() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

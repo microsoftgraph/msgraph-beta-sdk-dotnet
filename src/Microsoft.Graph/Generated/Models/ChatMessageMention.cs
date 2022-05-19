@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ChatMessageMention : IAdditionalDataHolder, IParsable {
+    public class ChatMessageMention : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding &lt;at id=&apos;{index}&apos;&gt; tag in the message body.</summary>
-        public int? Id { get; set; }
+        public int? Id {
+            get { return BackingStore?.Get<int?>(nameof(Id)); }
+            set { BackingStore?.Set(nameof(Id), value); }
+        }
         /// <summary>The entity (user, application, team, or channel) that was @mentioned.</summary>
-        public ChatMessageMentionedIdentitySet Mentioned { get; set; }
+        public ChatMessageMentionedIdentitySet Mentioned {
+            get { return BackingStore?.Get<ChatMessageMentionedIdentitySet>(nameof(Mentioned)); }
+            set { BackingStore?.Set(nameof(Mentioned), value); }
+        }
         /// <summary>String used to represent the mention. For example, a user&apos;s display name, a team name.</summary>
-        public string MentionText { get; set; }
+        public string MentionText {
+            get { return BackingStore?.Get<string>(nameof(MentionText)); }
+            set { BackingStore?.Set(nameof(MentionText), value); }
+        }
         /// <summary>
         /// Instantiates a new chatMessageMention and sets the default values.
         /// </summary>
         public ChatMessageMention() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class RankedEmailAddress : IAdditionalDataHolder, IParsable {
+    public class RankedEmailAddress : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>The email address.</summary>
-        public string Address { get; set; }
+        public string Address {
+            get { return BackingStore?.Get<string>(nameof(Address)); }
+            set { BackingStore?.Set(nameof(Address), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The rank of the email address. A rank is used as a sort key, in relation to the other returned results. A higher rank value corresponds to a more relevant result. Relevance is determined by communication, collaboration, and business relationship signals.</summary>
-        public double? Rank { get; set; }
+        public double? Rank {
+            get { return BackingStore?.Get<double?>(nameof(Rank)); }
+            set { BackingStore?.Set(nameof(Rank), value); }
+        }
         /// <summary>
         /// Instantiates a new rankedEmailAddress and sets the default values.
         /// </summary>
         public RankedEmailAddress() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

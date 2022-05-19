@@ -1,28 +1,53 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ConditionalAccessSessionControls : IAdditionalDataHolder, IParsable {
+    public class ConditionalAccessSessionControls : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Session control to enforce application restrictions. Only Exchange Online and Sharepoint Online support this session control.</summary>
-        public ApplicationEnforcedRestrictionsSessionControl ApplicationEnforcedRestrictions { get; set; }
+        public ApplicationEnforcedRestrictionsSessionControl ApplicationEnforcedRestrictions {
+            get { return BackingStore?.Get<ApplicationEnforcedRestrictionsSessionControl>(nameof(ApplicationEnforcedRestrictions)); }
+            set { BackingStore?.Set(nameof(ApplicationEnforcedRestrictions), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Session control to apply cloud app security.</summary>
-        public CloudAppSecuritySessionControl CloudAppSecurity { get; set; }
+        public CloudAppSecuritySessionControl CloudAppSecurity {
+            get { return BackingStore?.Get<CloudAppSecuritySessionControl>(nameof(CloudAppSecurity)); }
+            set { BackingStore?.Set(nameof(CloudAppSecurity), value); }
+        }
         /// <summary>Session control for continuous access evaluation settings.</summary>
-        public ContinuousAccessEvaluationSessionControl ContinuousAccessEvaluation { get; set; }
+        public ContinuousAccessEvaluationSessionControl ContinuousAccessEvaluation {
+            get { return BackingStore?.Get<ContinuousAccessEvaluationSessionControl>(nameof(ContinuousAccessEvaluation)); }
+            set { BackingStore?.Set(nameof(ContinuousAccessEvaluation), value); }
+        }
         /// <summary>Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.</summary>
-        public bool? DisableResilienceDefaults { get; set; }
+        public bool? DisableResilienceDefaults {
+            get { return BackingStore?.Get<bool?>(nameof(DisableResilienceDefaults)); }
+            set { BackingStore?.Set(nameof(DisableResilienceDefaults), value); }
+        }
         /// <summary>Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.</summary>
-        public PersistentBrowserSessionControl PersistentBrowser { get; set; }
+        public PersistentBrowserSessionControl PersistentBrowser {
+            get { return BackingStore?.Get<PersistentBrowserSessionControl>(nameof(PersistentBrowser)); }
+            set { BackingStore?.Set(nameof(PersistentBrowser), value); }
+        }
         /// <summary>Session control to enforce signin frequency.</summary>
-        public SignInFrequencySessionControl SignInFrequency { get; set; }
+        public SignInFrequencySessionControl SignInFrequency {
+            get { return BackingStore?.Get<SignInFrequencySessionControl>(nameof(SignInFrequency)); }
+            set { BackingStore?.Set(nameof(SignInFrequency), value); }
+        }
         /// <summary>
         /// Instantiates a new conditionalAccessSessionControls and sets the default values.
         /// </summary>
         public ConditionalAccessSessionControls() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

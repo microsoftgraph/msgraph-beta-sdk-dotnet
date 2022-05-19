@@ -1,26 +1,48 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class DetectedSensitiveContentBase : IAdditionalDataHolder, IParsable {
+    public class DetectedSensitiveContentBase : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The confidence property</summary>
-        public int? Confidence { get; set; }
+        public int? Confidence {
+            get { return BackingStore?.Get<int?>(nameof(Confidence)); }
+            set { BackingStore?.Set(nameof(Confidence), value); }
+        }
         /// <summary>The displayName property</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The id property</summary>
-        public string Id { get; set; }
+        public string Id {
+            get { return BackingStore?.Get<string>(nameof(Id)); }
+            set { BackingStore?.Set(nameof(Id), value); }
+        }
         /// <summary>The recommendedConfidence property</summary>
-        public int? RecommendedConfidence { get; set; }
+        public int? RecommendedConfidence {
+            get { return BackingStore?.Get<int?>(nameof(RecommendedConfidence)); }
+            set { BackingStore?.Set(nameof(RecommendedConfidence), value); }
+        }
         /// <summary>The uniqueCount property</summary>
-        public int? UniqueCount { get; set; }
+        public int? UniqueCount {
+            get { return BackingStore?.Get<int?>(nameof(UniqueCount)); }
+            set { BackingStore?.Set(nameof(UniqueCount), value); }
+        }
         /// <summary>
         /// Instantiates a new detectedSensitiveContentBase and sets the default values.
         /// </summary>
         public DetectedSensitiveContentBase() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
