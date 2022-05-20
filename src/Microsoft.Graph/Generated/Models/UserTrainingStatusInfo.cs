@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class UserTrainingStatusInfo : IAdditionalDataHolder, IParsable {
+    public class UserTrainingStatusInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Date and time of assignment of the training to the user.</summary>
-        public DateTimeOffset? AssignedDateTime { get; set; }
+        public DateTimeOffset? AssignedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(AssignedDateTime)); }
+            set { BackingStore?.Set(nameof(AssignedDateTime), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Date and time of completion of the training by the user.</summary>
-        public DateTimeOffset? CompletionDateTime { get; set; }
+        public DateTimeOffset? CompletionDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CompletionDateTime)); }
+            set { BackingStore?.Set(nameof(CompletionDateTime), value); }
+        }
         /// <summary>Display name of the assigned training.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.TrainingStatus? TrainingStatus { get; set; }
+        public Microsoft.Graph.Beta.Models.TrainingStatus? TrainingStatus {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TrainingStatus?>(nameof(TrainingStatus)); }
+            set { BackingStore?.Set(nameof(TrainingStatus), value); }
+        }
         /// <summary>
         /// Instantiates a new userTrainingStatusInfo and sets the default values.
         /// </summary>
         public UserTrainingStatusInfo() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

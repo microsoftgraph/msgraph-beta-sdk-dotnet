@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ValidationResult : IAdditionalDataHolder, IParsable {
+    public class ValidationResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The string containing the reason for why the rule passed or not. Read-only. Not nullable.</summary>
-        public string Message { get; set; }
+        public string Message {
+            get { return BackingStore?.Get<string>(nameof(Message)); }
+            set { BackingStore?.Set(nameof(Message), value); }
+        }
         /// <summary>The string containing the name of the password validation rule that the action was validated against. Read-only. Not nullable.</summary>
-        public string RuleName { get; set; }
+        public string RuleName {
+            get { return BackingStore?.Get<string>(nameof(RuleName)); }
+            set { BackingStore?.Set(nameof(RuleName), value); }
+        }
         /// <summary>Whether the password passed or failed the validation rule. Read-only. Not nullable.</summary>
-        public bool? ValidationPassed { get; set; }
+        public bool? ValidationPassed {
+            get { return BackingStore?.Get<bool?>(nameof(ValidationPassed)); }
+            set { BackingStore?.Set(nameof(ValidationPassed), value); }
+        }
         /// <summary>
         /// Instantiates a new validationResult and sets the default values.
         /// </summary>
         public ValidationResult() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -1,26 +1,48 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class MediaStream : IAdditionalDataHolder, IParsable {
+    public class MediaStream : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The direction. The possible values are inactive, sendOnly, receiveOnly, sendReceive.</summary>
-        public MediaDirection? Direction { get; set; }
+        public MediaDirection? Direction {
+            get { return BackingStore?.Get<MediaDirection?>(nameof(Direction)); }
+            set { BackingStore?.Set(nameof(Direction), value); }
+        }
         /// <summary>The media stream label.</summary>
-        public string Label { get; set; }
+        public string Label {
+            get { return BackingStore?.Get<string>(nameof(Label)); }
+            set { BackingStore?.Set(nameof(Label), value); }
+        }
         /// <summary>The media type. The possible value are unknown, audio, video, videoBasedScreenSharing, data.</summary>
-        public Modality? MediaType { get; set; }
+        public Modality? MediaType {
+            get { return BackingStore?.Get<Modality?>(nameof(MediaType)); }
+            set { BackingStore?.Set(nameof(MediaType), value); }
+        }
         /// <summary>Indicates whether the media is muted by the server.</summary>
-        public bool? ServerMuted { get; set; }
+        public bool? ServerMuted {
+            get { return BackingStore?.Get<bool?>(nameof(ServerMuted)); }
+            set { BackingStore?.Set(nameof(ServerMuted), value); }
+        }
         /// <summary>The source ID.</summary>
-        public string SourceId { get; set; }
+        public string SourceId {
+            get { return BackingStore?.Get<string>(nameof(SourceId)); }
+            set { BackingStore?.Set(nameof(SourceId), value); }
+        }
         /// <summary>
         /// Instantiates a new mediaStream and sets the default values.
         /// </summary>
         public MediaStream() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

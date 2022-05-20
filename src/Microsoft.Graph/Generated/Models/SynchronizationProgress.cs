@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SynchronizationProgress : IAdditionalDataHolder, IParsable {
+    public class SynchronizationProgress : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The numerator of a progress ratio; the number of units of changes already processed.</summary>
-        public long? CompletedUnits { get; set; }
+        public long? CompletedUnits {
+            get { return BackingStore?.Get<long?>(nameof(CompletedUnits)); }
+            set { BackingStore?.Set(nameof(CompletedUnits), value); }
+        }
         /// <summary>The time of a progress observation as an offset in minutes from UTC.</summary>
-        public DateTimeOffset? ProgressObservationDateTime { get; set; }
+        public DateTimeOffset? ProgressObservationDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ProgressObservationDateTime)); }
+            set { BackingStore?.Set(nameof(ProgressObservationDateTime), value); }
+        }
         /// <summary>The denominator of a progress ratio; a number of units of changes to be processed to accomplish synchronization.</summary>
-        public long? TotalUnits { get; set; }
+        public long? TotalUnits {
+            get { return BackingStore?.Get<long?>(nameof(TotalUnits)); }
+            set { BackingStore?.Set(nameof(TotalUnits), value); }
+        }
         /// <summary>An optional description of the units.</summary>
-        public string Units { get; set; }
+        public string Units {
+            get { return BackingStore?.Get<string>(nameof(Units)); }
+            set { BackingStore?.Set(nameof(Units), value); }
+        }
         /// <summary>
         /// Instantiates a new synchronizationProgress and sets the default values.
         /// </summary>
         public SynchronizationProgress() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

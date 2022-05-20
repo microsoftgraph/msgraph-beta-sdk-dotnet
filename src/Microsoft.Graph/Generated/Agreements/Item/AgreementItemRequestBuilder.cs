@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Agreements.Item {
             new AcceptancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The file property</summary>
-        public FileRequestBuilder File { get =>
+        public FileRequestBuilder FileObject { get =>
             new FileRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The files property</summary>

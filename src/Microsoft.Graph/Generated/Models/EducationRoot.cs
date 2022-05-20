@@ -1,26 +1,48 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class EducationRoot : IAdditionalDataHolder, IParsable {
+    public class EducationRoot : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The classes property</summary>
-        public List<EducationClass> Classes { get; set; }
+        public List<EducationClass> Classes {
+            get { return BackingStore?.Get<List<EducationClass>>(nameof(Classes)); }
+            set { BackingStore?.Set(nameof(Classes), value); }
+        }
         /// <summary>The me property</summary>
-        public EducationUser Me { get; set; }
+        public EducationUser Me {
+            get { return BackingStore?.Get<EducationUser>(nameof(Me)); }
+            set { BackingStore?.Set(nameof(Me), value); }
+        }
         /// <summary>The schools property</summary>
-        public List<EducationSchool> Schools { get; set; }
+        public List<EducationSchool> Schools {
+            get { return BackingStore?.Get<List<EducationSchool>>(nameof(Schools)); }
+            set { BackingStore?.Set(nameof(Schools), value); }
+        }
         /// <summary>The synchronizationProfiles property</summary>
-        public List<EducationSynchronizationProfile> SynchronizationProfiles { get; set; }
+        public List<EducationSynchronizationProfile> SynchronizationProfiles {
+            get { return BackingStore?.Get<List<EducationSynchronizationProfile>>(nameof(SynchronizationProfiles)); }
+            set { BackingStore?.Set(nameof(SynchronizationProfiles), value); }
+        }
         /// <summary>The users property</summary>
-        public List<EducationUser> Users { get; set; }
+        public List<EducationUser> Users {
+            get { return BackingStore?.Get<List<EducationUser>>(nameof(Users)); }
+            set { BackingStore?.Set(nameof(Users), value); }
+        }
         /// <summary>
         /// Instantiates a new EducationRoot and sets the default values.
         /// </summary>
         public EducationRoot() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -4,23 +4,48 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class Mention : Entity, IParsable {
         /// <summary>The name of the application where the mention is created. Optional. Not used and defaulted as null for message.</summary>
-        public string Application { get; set; }
+        public string Application {
+            get { return BackingStore?.Get<string>(nameof(Application)); }
+            set { BackingStore?.Set(nameof(Application), value); }
+        }
         /// <summary>A unique identifier that represents a parent of the resource instance. Optional. Not used and defaulted as null for message.</summary>
-        public string ClientReference { get; set; }
+        public string ClientReference {
+            get { return BackingStore?.Get<string>(nameof(ClientReference)); }
+            set { BackingStore?.Set(nameof(ClientReference), value); }
+        }
         /// <summary>The email information of the user who made the mention.</summary>
-        public EmailAddress CreatedBy { get; set; }
+        public EmailAddress CreatedBy {
+            get { return BackingStore?.Get<EmailAddress>(nameof(CreatedBy)); }
+            set { BackingStore?.Set(nameof(CreatedBy), value); }
+        }
         /// <summary>The date and time that the mention is created on the client.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>A deep web link to the context of the mention in the resource instance. Optional. Not used and defaulted as null for message.</summary>
-        public string DeepLink { get; set; }
+        public string DeepLink {
+            get { return BackingStore?.Get<string>(nameof(DeepLink)); }
+            set { BackingStore?.Set(nameof(DeepLink), value); }
+        }
         /// <summary>The mentioned property</summary>
-        public EmailAddress Mentioned { get; set; }
+        public EmailAddress Mentioned {
+            get { return BackingStore?.Get<EmailAddress>(nameof(Mentioned)); }
+            set { BackingStore?.Set(nameof(Mentioned), value); }
+        }
         /// <summary>Optional. Not used and defaulted as null for message. To get the mentions in a message, see the bodyPreview property of the message instead.</summary>
-        public string MentionText { get; set; }
+        public string MentionText {
+            get { return BackingStore?.Get<string>(nameof(MentionText)); }
+            set { BackingStore?.Set(nameof(MentionText), value); }
+        }
         /// <summary>The date and time that the mention is created on the server. Optional. Not used and defaulted as null for message.</summary>
-        public DateTimeOffset? ServerCreatedDateTime { get; set; }
+        public DateTimeOffset? ServerCreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ServerCreatedDateTime)); }
+            set { BackingStore?.Set(nameof(ServerCreatedDateTime), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

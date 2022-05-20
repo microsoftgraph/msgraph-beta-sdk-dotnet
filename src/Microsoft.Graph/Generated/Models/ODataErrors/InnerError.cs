@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ODataErrors {
-    public class InnerError : IAdditionalDataHolder, IParsable {
+    public class InnerError : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Client request Id as sent by the client application.</summary>
-        public string ClientRequestId { get; set; }
+        public string ClientRequestId {
+            get { return BackingStore?.Get<string>(nameof(ClientRequestId)); }
+            set { BackingStore?.Set(nameof(ClientRequestId), value); }
+        }
         /// <summary>Date when the error occured.</summary>
-        public DateTimeOffset? Date { get; set; }
+        public DateTimeOffset? Date {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(Date)); }
+            set { BackingStore?.Set(nameof(Date), value); }
+        }
         /// <summary>Request Id as tracked internally by the service</summary>
-        public string RequestId { get; set; }
+        public string RequestId {
+            get { return BackingStore?.Get<string>(nameof(RequestId)); }
+            set { BackingStore?.Set(nameof(RequestId), value); }
+        }
         /// <summary>
         /// Instantiates a new InnerError and sets the default values.
         /// </summary>
         public InnerError() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

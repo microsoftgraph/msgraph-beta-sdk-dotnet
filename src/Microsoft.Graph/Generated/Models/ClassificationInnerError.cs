@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ClassificationInnerError : IAdditionalDataHolder, IParsable {
+    public class ClassificationInnerError : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The activityId property</summary>
-        public string ActivityId { get; set; }
+        public string ActivityId {
+            get { return BackingStore?.Get<string>(nameof(ActivityId)); }
+            set { BackingStore?.Set(nameof(ActivityId), value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The clientRequestId property</summary>
-        public string ClientRequestId { get; set; }
+        public string ClientRequestId {
+            get { return BackingStore?.Get<string>(nameof(ClientRequestId)); }
+            set { BackingStore?.Set(nameof(ClientRequestId), value); }
+        }
         /// <summary>The code property</summary>
-        public string Code { get; set; }
+        public string Code {
+            get { return BackingStore?.Get<string>(nameof(Code)); }
+            set { BackingStore?.Set(nameof(Code), value); }
+        }
         /// <summary>The errorDateTime property</summary>
-        public DateTimeOffset? ErrorDateTime { get; set; }
+        public DateTimeOffset? ErrorDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ErrorDateTime)); }
+            set { BackingStore?.Set(nameof(ErrorDateTime), value); }
+        }
         /// <summary>
         /// Instantiates a new classificationInnerError and sets the default values.
         /// </summary>
         public ClassificationInnerError() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

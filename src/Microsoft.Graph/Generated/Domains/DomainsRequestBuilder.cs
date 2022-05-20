@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Domains {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// List domains
+        /// Retrieve a list of domain objects.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<DomainsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Domains {
             return requestInfo;
         }
         /// <summary>
-        /// Create domain
+        /// Adds a domain to the tenant. **Important**: You cannot use an associated domain with your Azure AD tenant until ownership is verified. See [List verificationDnsRecords](domain-list-verificationdnsrecords.md) for details. Root domains require verification. For example, contoso.com requires verification. If a root domain is verified, subdomains of the root domain are automatically verified. For example, subdomain.contoso.com is automatically be verified if contoso.com has been verified.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Domains {
             return requestInfo;
         }
         /// <summary>
-        /// List domains
+        /// Retrieve a list of domain objects.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Domains {
             return await RequestAdapter.SendAsync<DomainCollectionResponse>(requestInfo, DomainCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create domain
+        /// Adds a domain to the tenant. **Important**: You cannot use an associated domain with your Azure AD tenant until ownership is verified. See [List verificationDnsRecords](domain-list-verificationdnsrecords.md) for details. Root domains require verification. For example, contoso.com requires verification. If a root domain is verified, subdomains of the root domain are automatically verified. For example, subdomain.contoso.com is automatically be verified if contoso.com has been verified.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Domains {
             };
             return await RequestAdapter.SendAsync<Domain>(requestInfo, Domain.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>List domains</summary>
+        /// <summary>Retrieve a list of domain objects.</summary>
         public class DomainsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

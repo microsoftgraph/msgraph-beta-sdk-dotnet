@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Windows management app entity.</summary>
     public class WindowsManagementApp : Entity, IParsable {
         /// <summary>Windows management app available version.</summary>
-        public string AvailableVersion { get; set; }
+        public string AvailableVersion {
+            get { return BackingStore?.Get<string>(nameof(AvailableVersion)); }
+            set { BackingStore?.Set(nameof(AvailableVersion), value); }
+        }
         /// <summary>The list of health states for installed Windows management app.</summary>
-        public List<WindowsManagementAppHealthState> HealthStates { get; set; }
+        public List<WindowsManagementAppHealthState> HealthStates {
+            get { return BackingStore?.Get<List<WindowsManagementAppHealthState>>(nameof(HealthStates)); }
+            set { BackingStore?.Set(nameof(HealthStates), value); }
+        }
         /// <summary>Managed Installer Status. Possible values are: disabled, enabled.</summary>
-        public ManagedInstallerStatus? ManagedInstaller { get; set; }
+        public ManagedInstallerStatus? ManagedInstaller {
+            get { return BackingStore?.Get<ManagedInstallerStatus?>(nameof(ManagedInstaller)); }
+            set { BackingStore?.Set(nameof(ManagedInstaller), value); }
+        }
         /// <summary>Managed Installer Configured Date Time</summary>
-        public string ManagedInstallerConfiguredDateTime { get; set; }
+        public string ManagedInstallerConfiguredDateTime {
+            get { return BackingStore?.Get<string>(nameof(ManagedInstallerConfiguredDateTime)); }
+            set { BackingStore?.Set(nameof(ManagedInstallerConfiguredDateTime), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

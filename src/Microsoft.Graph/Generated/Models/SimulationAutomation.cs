@@ -4,27 +4,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the security singleton.</summary>
     public class SimulationAutomation : Entity, IParsable {
         /// <summary>Identity of the user who created the attack simulation automation.</summary>
-        public EmailIdentity CreatedBy { get; set; }
+        public EmailIdentity CreatedBy {
+            get { return BackingStore?.Get<EmailIdentity>(nameof(CreatedBy)); }
+            set { BackingStore?.Set(nameof(CreatedBy), value); }
+        }
         /// <summary>Date and time when the attack simulation automation was created.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>Description of the attack simulation automation.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Display name of the attack simulation automation. Supports $filter and $orderby.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Identity of the user who most recently modified the attack simulation automation.</summary>
-        public EmailIdentity LastModifiedBy { get; set; }
+        public EmailIdentity LastModifiedBy {
+            get { return BackingStore?.Get<EmailIdentity>(nameof(LastModifiedBy)); }
+            set { BackingStore?.Set(nameof(LastModifiedBy), value); }
+        }
         /// <summary>Date and time when the attack simulation automation was most recently modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>Date and time of the latest run of the attack simulation automation.</summary>
-        public DateTimeOffset? LastRunDateTime { get; set; }
+        public DateTimeOffset? LastRunDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastRunDateTime)); }
+            set { BackingStore?.Set(nameof(LastRunDateTime), value); }
+        }
         /// <summary>Date and time of the upcoming run of the attack simulation automation.</summary>
-        public DateTimeOffset? NextRunDateTime { get; set; }
+        public DateTimeOffset? NextRunDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(NextRunDateTime)); }
+            set { BackingStore?.Set(nameof(NextRunDateTime), value); }
+        }
         /// <summary>A collection of simulation automation runs.</summary>
-        public List<SimulationAutomationRun> Runs { get; set; }
+        public List<SimulationAutomationRun> Runs {
+            get { return BackingStore?.Get<List<SimulationAutomationRun>>(nameof(Runs)); }
+            set { BackingStore?.Set(nameof(Runs), value); }
+        }
         /// <summary>Status of the attack simulation automation. Supports $filter and $orderby. The possible values are: unknown, draft, notRunning, running, completed, unknownFutureValue.</summary>
-        public SimulationAutomationStatus? Status { get; set; }
+        public SimulationAutomationStatus? Status {
+            get { return BackingStore?.Get<SimulationAutomationStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

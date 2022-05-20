@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the auditLogRoot singleton.</summary>
     public class Initiator : Identity, IParsable {
         /// <summary>Type of initiator. Possible values are: user, application, system, unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.InitiatorType? InitiatorType { get; set; }
+        public Microsoft.Graph.Beta.Models.InitiatorType? InitiatorType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InitiatorType?>(nameof(InitiatorType)); }
+            set { BackingStore?.Set(nameof(InitiatorType), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

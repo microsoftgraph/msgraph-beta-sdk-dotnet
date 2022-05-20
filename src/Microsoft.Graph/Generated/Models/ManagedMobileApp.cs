@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The identifier for the deployment an app.</summary>
     public class ManagedMobileApp : Entity, IParsable {
         /// <summary>The identifier for an app with it&apos;s operating system type.</summary>
-        public Microsoft.Graph.Beta.Models.MobileAppIdentifier MobileAppIdentifier { get; set; }
+        public Microsoft.Graph.Beta.Models.MobileAppIdentifier MobileAppIdentifier {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MobileAppIdentifier>(nameof(MobileAppIdentifier)); }
+            set { BackingStore?.Set(nameof(MobileAppIdentifier), value); }
+        }
         /// <summary>Version of the entity.</summary>
-        public string Version { get; set; }
+        public string Version {
+            get { return BackingStore?.Get<string>(nameof(Version)); }
+            set { BackingStore?.Set(nameof(Version), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

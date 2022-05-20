@@ -4,21 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class ManagementTemplateCollection : Entity, IParsable {
         /// <summary>The createdByUserId property</summary>
-        public string CreatedByUserId { get; set; }
+        public string CreatedByUserId {
+            get { return BackingStore?.Get<string>(nameof(CreatedByUserId)); }
+            set { BackingStore?.Set(nameof(CreatedByUserId), value); }
+        }
         /// <summary>The createdDateTime property</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>The description property</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The displayName property</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The lastActionByUserId property</summary>
-        public string LastActionByUserId { get; set; }
+        public string LastActionByUserId {
+            get { return BackingStore?.Get<string>(nameof(LastActionByUserId)); }
+            set { BackingStore?.Set(nameof(LastActionByUserId), value); }
+        }
         /// <summary>The lastActionDateTime property</summary>
-        public DateTimeOffset? LastActionDateTime { get; set; }
+        public DateTimeOffset? LastActionDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastActionDateTime)); }
+            set { BackingStore?.Set(nameof(LastActionDateTime), value); }
+        }
         /// <summary>The managementTemplates property</summary>
-        public List<ManagementTemplate> ManagementTemplates { get; set; }
+        public List<ManagementTemplate> ManagementTemplates {
+            get { return BackingStore?.Get<List<ManagementTemplate>>(nameof(ManagementTemplates)); }
+            set { BackingStore?.Set(nameof(ManagementTemplates), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

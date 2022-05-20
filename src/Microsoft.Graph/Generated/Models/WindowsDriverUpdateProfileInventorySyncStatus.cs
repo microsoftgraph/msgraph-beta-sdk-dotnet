@@ -1,21 +1,34 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>A complex type to store the status of a driver and firmware profile inventory sync. The status includes the last successful sync date time and the state of the last sync.</summary>
-    public class WindowsDriverUpdateProfileInventorySyncStatus : IAdditionalDataHolder, IParsable {
+    public class WindowsDriverUpdateProfileInventorySyncStatus : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The state of the latest sync. Possible values are: pending, success, failure.</summary>
-        public WindowsDriverUpdateProfileInventorySyncState? DriverInventorySyncState { get; set; }
+        public WindowsDriverUpdateProfileInventorySyncState? DriverInventorySyncState {
+            get { return BackingStore?.Get<WindowsDriverUpdateProfileInventorySyncState?>(nameof(DriverInventorySyncState)); }
+            set { BackingStore?.Set(nameof(DriverInventorySyncState), value); }
+        }
         /// <summary>The last successful sync date and time in UTC.</summary>
-        public DateTimeOffset? LastSuccessfulSyncDateTime { get; set; }
+        public DateTimeOffset? LastSuccessfulSyncDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSuccessfulSyncDateTime)); }
+            set { BackingStore?.Set(nameof(LastSuccessfulSyncDateTime), value); }
+        }
         /// <summary>
         /// Instantiates a new windowsDriverUpdateProfileInventorySyncStatus and sets the default values.
         /// </summary>
         public WindowsDriverUpdateProfileInventorySyncStatus() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class ShiftItem : ScheduleEntity, IParsable {
         /// <summary>An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.</summary>
-        public List<ShiftActivity> Activities { get; set; }
+        public List<ShiftActivity> Activities {
+            get { return BackingStore?.Get<List<ShiftActivity>>(nameof(Activities)); }
+            set { BackingStore?.Set(nameof(Activities), value); }
+        }
         /// <summary>The shift label of the shiftItem.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The shift notes for the shiftItem.</summary>
-        public string Notes { get; set; }
+        public string Notes {
+            get { return BackingStore?.Get<string>(nameof(Notes)); }
+            set { BackingStore?.Set(nameof(Notes), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

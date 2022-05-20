@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class IdentityGovernance : IAdditionalDataHolder, IParsable {
+    public class IdentityGovernance : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The accessReviews property</summary>
-        public AccessReviewSet AccessReviews { get; set; }
+        public AccessReviewSet AccessReviews {
+            get { return BackingStore?.Get<AccessReviewSet>(nameof(AccessReviews)); }
+            set { BackingStore?.Set(nameof(AccessReviews), value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>The appConsent property</summary>
-        public AppConsentApprovalRoute AppConsent { get; set; }
+        public AppConsentApprovalRoute AppConsent {
+            get { return BackingStore?.Get<AppConsentApprovalRoute>(nameof(AppConsent)); }
+            set { BackingStore?.Set(nameof(AppConsent), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The entitlementManagement property</summary>
-        public Microsoft.Graph.Beta.Models.EntitlementManagement EntitlementManagement { get; set; }
+        public Microsoft.Graph.Beta.Models.EntitlementManagement EntitlementManagement {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EntitlementManagement>(nameof(EntitlementManagement)); }
+            set { BackingStore?.Set(nameof(EntitlementManagement), value); }
+        }
         /// <summary>The termsOfUse property</summary>
-        public TermsOfUseContainer TermsOfUse { get; set; }
+        public TermsOfUseContainer TermsOfUse {
+            get { return BackingStore?.Get<TermsOfUseContainer>(nameof(TermsOfUse)); }
+            set { BackingStore?.Set(nameof(TermsOfUse), value); }
+        }
         /// <summary>
         /// Instantiates a new IdentityGovernance and sets the default values.
         /// </summary>
         public IdentityGovernance() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

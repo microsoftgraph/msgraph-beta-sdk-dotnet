@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to call the classifyFile method.</summary>
     public class ClassificationJobResponse : JobResponseBase, IParsable {
         /// <summary>The result property</summary>
-        public DetectedSensitiveContentWrapper Result { get; set; }
+        public DetectedSensitiveContentWrapper Result {
+            get { return BackingStore?.Get<DetectedSensitiveContentWrapper>(nameof(Result)); }
+            set { BackingStore?.Set(nameof(Result), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

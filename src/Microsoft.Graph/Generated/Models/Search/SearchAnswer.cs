@@ -4,24 +4,45 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Search {
+    /// <summary>Provides operations to manage the searchEntity singleton.</summary>
     public class SearchAnswer : Entity, IParsable {
         /// <summary>Search answer description shown on search results page.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Search answer name displayed in search results.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Details of the user that created or last modified the search answer. Read-only.</summary>
-        public IdentitySet LastModifiedBy { get; set; }
+        public IdentitySet LastModifiedBy {
+            get { return BackingStore?.Get<IdentitySet>(nameof(LastModifiedBy)); }
+            set { BackingStore?.Set(nameof(LastModifiedBy), value); }
+        }
         /// <summary>Timestamp of when the search answer is created or edited. Read-only.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>Search answer URL link. When users click this search answer in search results, they will go to this URL.</summary>
-        public string WebUrl { get; set; }
+        public string WebUrl {
+            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
+            set { BackingStore?.Set(nameof(WebUrl), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new SearchAnswer CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SearchAnswer();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.search.searchAnswer" => new SearchAnswer(),
+                _ => new SearchAnswer(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

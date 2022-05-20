@@ -1,32 +1,63 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class Location : IAdditionalDataHolder, IParsable {
+    public class Location : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>The street address of the location.</summary>
-        public PhysicalAddress Address { get; set; }
+        public PhysicalAddress Address {
+            get { return BackingStore?.Get<PhysicalAddress>(nameof(Address)); }
+            set { BackingStore?.Set(nameof(Address), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The geographic coordinates and elevation of the location.</summary>
-        public OutlookGeoCoordinates Coordinates { get; set; }
+        public OutlookGeoCoordinates Coordinates {
+            get { return BackingStore?.Get<OutlookGeoCoordinates>(nameof(Coordinates)); }
+            set { BackingStore?.Set(nameof(Coordinates), value); }
+        }
         /// <summary>The name associated with the location.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Optional email address of the location.</summary>
-        public string LocationEmailAddress { get; set; }
+        public string LocationEmailAddress {
+            get { return BackingStore?.Get<string>(nameof(LocationEmailAddress)); }
+            set { BackingStore?.Set(nameof(LocationEmailAddress), value); }
+        }
         /// <summary>The type of location. Possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.</summary>
-        public Microsoft.Graph.Beta.Models.LocationType? LocationType { get; set; }
+        public Microsoft.Graph.Beta.Models.LocationType? LocationType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LocationType?>(nameof(LocationType)); }
+            set { BackingStore?.Set(nameof(LocationType), value); }
+        }
         /// <summary>Optional URI representing the location.</summary>
-        public string LocationUri { get; set; }
+        public string LocationUri {
+            get { return BackingStore?.Get<string>(nameof(LocationUri)); }
+            set { BackingStore?.Set(nameof(LocationUri), value); }
+        }
         /// <summary>For internal use only.</summary>
-        public string UniqueId { get; set; }
+        public string UniqueId {
+            get { return BackingStore?.Get<string>(nameof(UniqueId)); }
+            set { BackingStore?.Set(nameof(UniqueId), value); }
+        }
         /// <summary>For internal use only.</summary>
-        public LocationUniqueIdType? UniqueIdType { get; set; }
+        public LocationUniqueIdType? UniqueIdType {
+            get { return BackingStore?.Get<LocationUniqueIdType?>(nameof(UniqueIdType)); }
+            set { BackingStore?.Set(nameof(UniqueIdType), value); }
+        }
         /// <summary>
         /// Instantiates a new location and sets the default values.
         /// </summary>
         public Location() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

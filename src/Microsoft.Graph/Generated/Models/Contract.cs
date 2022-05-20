@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of contract entities.</summary>
     public class Contract : DirectoryObject, IParsable {
         /// <summary>Type of contract. Possible values are:  SyndicationPartner, BreadthPartner, ResellerPartner. See more in the table below.</summary>
-        public string ContractType { get; set; }
+        public string ContractType {
+            get { return BackingStore?.Get<string>(nameof(ContractType)); }
+            set { BackingStore?.Set(nameof(ContractType), value); }
+        }
         /// <summary>The unique identifier for the customer tenant referenced by this partnership. Corresponds to the id property of the customer tenant&apos;s organization resource.</summary>
-        public string CustomerId { get; set; }
+        public string CustomerId {
+            get { return BackingStore?.Get<string>(nameof(CustomerId)); }
+            set { BackingStore?.Set(nameof(CustomerId), value); }
+        }
         /// <summary>A copy of the customer tenant&apos;s default domain name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant&apos;s default domain name changes.</summary>
-        public string DefaultDomainName { get; set; }
+        public string DefaultDomainName {
+            get { return BackingStore?.Get<string>(nameof(DefaultDomainName)); }
+            set { BackingStore?.Set(nameof(DefaultDomainName), value); }
+        }
         /// <summary>A copy of the customer tenant&apos;s display name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant&apos;s display name changes.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

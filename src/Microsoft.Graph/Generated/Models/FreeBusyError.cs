@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class FreeBusyError : IAdditionalDataHolder, IParsable {
+    public class FreeBusyError : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Describes the error.</summary>
-        public string Message { get; set; }
+        public string Message {
+            get { return BackingStore?.Get<string>(nameof(Message)); }
+            set { BackingStore?.Set(nameof(Message), value); }
+        }
         /// <summary>The response code from querying for the availability of the user, distribution list, or resource.</summary>
-        public string ResponseCode { get; set; }
+        public string ResponseCode {
+            get { return BackingStore?.Get<string>(nameof(ResponseCode)); }
+            set { BackingStore?.Set(nameof(ResponseCode), value); }
+        }
         /// <summary>
         /// Instantiates a new freeBusyError and sets the default values.
         /// </summary>
         public FreeBusyError() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

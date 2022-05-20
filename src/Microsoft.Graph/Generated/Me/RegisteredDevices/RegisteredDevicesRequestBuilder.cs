@@ -1,4 +1,6 @@
 using Microsoft.Graph.Beta.Me.RegisteredDevices.Count;
+using Microsoft.Graph.Beta.Me.RegisteredDevices.Device;
+using Microsoft.Graph.Beta.Me.RegisteredDevices.Endpoint;
 using Microsoft.Graph.Beta.Me.RegisteredDevices.Item;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -16,6 +18,14 @@ namespace Microsoft.Graph.Beta.Me.RegisteredDevices {
         /// <summary>The count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The device property</summary>
+        public DeviceRequestBuilder Device { get =>
+            new DeviceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The endpoint property</summary>
+        public EndpointRequestBuilder Endpoint { get =>
+            new EndpointRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

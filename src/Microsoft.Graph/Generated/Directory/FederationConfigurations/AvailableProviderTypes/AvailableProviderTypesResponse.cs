@@ -1,19 +1,29 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Directory.FederationConfigurations.AvailableProviderTypes {
     /// <summary>Provides operations to call the availableProviderTypes method.</summary>
-    public class AvailableProviderTypesResponse : IAdditionalDataHolder, IParsable {
+    public class AvailableProviderTypesResponse : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The value property</summary>
-        public List<string> Value { get; set; }
+        public List<string> Value {
+            get { return BackingStore?.Get<List<string>>(nameof(Value)); }
+            set { BackingStore?.Set(nameof(Value), value); }
+        }
         /// <summary>
         /// Instantiates a new availableProviderTypesResponse and sets the default values.
         /// </summary>
         public AvailableProviderTypesResponse() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -4,24 +4,45 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of domainDnsRecord entities.</summary>
     public class DomainDnsRecord : Entity, IParsable {
         /// <summary>If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.</summary>
-        public bool? IsOptional { get; set; }
+        public bool? IsOptional {
+            get { return BackingStore?.Get<bool?>(nameof(IsOptional)); }
+            set { BackingStore?.Set(nameof(IsOptional), value); }
+        }
         /// <summary>Value used when configuring the name of the DNS record at the DNS host.</summary>
-        public string Label { get; set; }
+        public string Label {
+            get { return BackingStore?.Get<string>(nameof(Label)); }
+            set { BackingStore?.Set(nameof(Label), value); }
+        }
         /// <summary>Indicates what type of DNS record this entity represents.The value can be one of the following: CName, Mx, Srv, Txt.</summary>
-        public string RecordType { get; set; }
+        public string RecordType {
+            get { return BackingStore?.Get<string>(nameof(RecordType)); }
+            set { BackingStore?.Set(nameof(RecordType), value); }
+        }
         /// <summary>Microsoft Online Service or feature that has a dependency on this DNS record.Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune.</summary>
-        public string SupportedService { get; set; }
+        public string SupportedService {
+            get { return BackingStore?.Get<string>(nameof(SupportedService)); }
+            set { BackingStore?.Set(nameof(SupportedService), value); }
+        }
         /// <summary>Value to use when configuring the time-to-live (ttl) property of the DNS record at the DNS host. Not nullable.</summary>
-        public int? Ttl { get; set; }
+        public int? Ttl {
+            get { return BackingStore?.Get<int?>(nameof(Ttl)); }
+            set { BackingStore?.Set(nameof(Ttl), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new DomainDnsRecord CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DomainDnsRecord();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.domainDnsRecord" => new DomainDnsRecord(),
+                _ => new DomainDnsRecord(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

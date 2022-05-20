@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class CommsApplication : IAdditionalDataHolder, IParsable {
+    public class CommsApplication : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The calls property</summary>
-        public List<Call> Calls { get; set; }
+        public List<Call> Calls {
+            get { return BackingStore?.Get<List<Call>>(nameof(Calls)); }
+            set { BackingStore?.Set(nameof(Calls), value); }
+        }
         /// <summary>The onlineMeetings property</summary>
-        public List<OnlineMeeting> OnlineMeetings { get; set; }
+        public List<OnlineMeeting> OnlineMeetings {
+            get { return BackingStore?.Get<List<OnlineMeeting>>(nameof(OnlineMeetings)); }
+            set { BackingStore?.Set(nameof(OnlineMeetings), value); }
+        }
         /// <summary>
         /// Instantiates a new CommsApplication and sets the default values.
         /// </summary>
         public CommsApplication() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

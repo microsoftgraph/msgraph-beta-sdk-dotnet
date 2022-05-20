@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class TeamworkMicrophoneConfiguration : IAdditionalDataHolder, IParsable {
+    public class TeamworkMicrophoneConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The defaultMicrophone property</summary>
-        public TeamworkPeripheral DefaultMicrophone { get; set; }
+        public TeamworkPeripheral DefaultMicrophone {
+            get { return BackingStore?.Get<TeamworkPeripheral>(nameof(DefaultMicrophone)); }
+            set { BackingStore?.Set(nameof(DefaultMicrophone), value); }
+        }
         /// <summary>True if the configured microphone is optional. False if the microphone is not optional and the health state of the device should be computed.</summary>
-        public bool? IsMicrophoneOptional { get; set; }
+        public bool? IsMicrophoneOptional {
+            get { return BackingStore?.Get<bool?>(nameof(IsMicrophoneOptional)); }
+            set { BackingStore?.Set(nameof(IsMicrophoneOptional), value); }
+        }
         /// <summary>The microphones property</summary>
-        public List<TeamworkPeripheral> Microphones { get; set; }
+        public List<TeamworkPeripheral> Microphones {
+            get { return BackingStore?.Get<List<TeamworkPeripheral>>(nameof(Microphones)); }
+            set { BackingStore?.Set(nameof(Microphones), value); }
+        }
         /// <summary>
         /// Instantiates a new teamworkMicrophoneConfiguration and sets the default values.
         /// </summary>
         public TeamworkMicrophoneConfiguration() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

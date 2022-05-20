@@ -1,28 +1,53 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class UpdateWindowsDeviceAccountActionParameter : IAdditionalDataHolder, IParsable {
+    public class UpdateWindowsDeviceAccountActionParameter : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Not yet documented</summary>
-        public bool? CalendarSyncEnabled { get; set; }
+        public bool? CalendarSyncEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(CalendarSyncEnabled)); }
+            set { BackingStore?.Set(nameof(CalendarSyncEnabled), value); }
+        }
         /// <summary>Not yet documented</summary>
-        public WindowsDeviceAccount DeviceAccount { get; set; }
+        public WindowsDeviceAccount DeviceAccount {
+            get { return BackingStore?.Get<WindowsDeviceAccount>(nameof(DeviceAccount)); }
+            set { BackingStore?.Set(nameof(DeviceAccount), value); }
+        }
         /// <summary>Not yet documented</summary>
-        public string DeviceAccountEmail { get; set; }
+        public string DeviceAccountEmail {
+            get { return BackingStore?.Get<string>(nameof(DeviceAccountEmail)); }
+            set { BackingStore?.Set(nameof(DeviceAccountEmail), value); }
+        }
         /// <summary>Not yet documented</summary>
-        public string ExchangeServer { get; set; }
+        public string ExchangeServer {
+            get { return BackingStore?.Get<string>(nameof(ExchangeServer)); }
+            set { BackingStore?.Set(nameof(ExchangeServer), value); }
+        }
         /// <summary>Not yet documented</summary>
-        public bool? PasswordRotationEnabled { get; set; }
+        public bool? PasswordRotationEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(PasswordRotationEnabled)); }
+            set { BackingStore?.Set(nameof(PasswordRotationEnabled), value); }
+        }
         /// <summary>Not yet documented</summary>
-        public string SessionInitiationProtocalAddress { get; set; }
+        public string SessionInitiationProtocalAddress {
+            get { return BackingStore?.Get<string>(nameof(SessionInitiationProtocalAddress)); }
+            set { BackingStore?.Set(nameof(SessionInitiationProtocalAddress), value); }
+        }
         /// <summary>
         /// Instantiates a new updateWindowsDeviceAccountActionParameter and sets the default values.
         /// </summary>
         public UpdateWindowsDeviceAccountActionParameter() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

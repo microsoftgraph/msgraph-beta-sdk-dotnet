@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>A Domain Join Connector is a connector that is responsible to allocate (and delete) machine account blobs</summary>
     public class DeviceManagementDomainJoinConnector : Entity, IParsable {
         /// <summary>The connector display name.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Last time connector contacted Intune.</summary>
-        public DateTimeOffset? LastConnectionDateTime { get; set; }
+        public DateTimeOffset? LastConnectionDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastConnectionDateTime)); }
+            set { BackingStore?.Set(nameof(LastConnectionDateTime), value); }
+        }
         /// <summary>The connector state. Possible values are: active, error, inactive.</summary>
-        public DeviceManagementDomainJoinConnectorState? State { get; set; }
+        public DeviceManagementDomainJoinConnectorState? State {
+            get { return BackingStore?.Get<DeviceManagementDomainJoinConnectorState?>(nameof(State)); }
+            set { BackingStore?.Set(nameof(State), value); }
+        }
         /// <summary>The version of the connector.</summary>
-        public string Version { get; set; }
+        public string Version {
+            get { return BackingStore?.Get<string>(nameof(Version)); }
+            set { BackingStore?.Set(nameof(Version), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

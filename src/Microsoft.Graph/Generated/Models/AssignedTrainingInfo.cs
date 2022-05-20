@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class AssignedTrainingInfo : IAdditionalDataHolder, IParsable {
+    public class AssignedTrainingInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Number of users who were assigned the training in an attack simulation and training campaign.</summary>
-        public int? AssignedUserCount { get; set; }
+        public int? AssignedUserCount {
+            get { return BackingStore?.Get<int?>(nameof(AssignedUserCount)); }
+            set { BackingStore?.Set(nameof(AssignedUserCount), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Number of users who completed the training in an attack simulation and training campaign.</summary>
-        public int? CompletedUserCount { get; set; }
+        public int? CompletedUserCount {
+            get { return BackingStore?.Get<int?>(nameof(CompletedUserCount)); }
+            set { BackingStore?.Set(nameof(CompletedUserCount), value); }
+        }
         /// <summary>Display name of the training in an attack simulation and training campaign.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>
         /// Instantiates a new assignedTrainingInfo and sets the default values.
         /// </summary>
         public AssignedTrainingInfo() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

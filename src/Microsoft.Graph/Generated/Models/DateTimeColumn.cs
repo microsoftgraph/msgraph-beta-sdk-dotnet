@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class DateTimeColumn : IAdditionalDataHolder, IParsable {
+    public class DateTimeColumn : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>How the value should be presented in the UX. Must be one of default, friendly, or standard. See below for more details. If unspecified, treated as default.</summary>
-        public string DisplayAs { get; set; }
+        public string DisplayAs {
+            get { return BackingStore?.Get<string>(nameof(DisplayAs)); }
+            set { BackingStore?.Set(nameof(DisplayAs), value); }
+        }
         /// <summary>Indicates whether the value should be presented as a date only or a date and time. Must be one of dateOnly or dateTime</summary>
-        public string Format { get; set; }
+        public string Format {
+            get { return BackingStore?.Get<string>(nameof(Format)); }
+            set { BackingStore?.Set(nameof(Format), value); }
+        }
         /// <summary>
         /// Instantiates a new dateTimeColumn and sets the default values.
         /// </summary>
         public DateTimeColumn() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

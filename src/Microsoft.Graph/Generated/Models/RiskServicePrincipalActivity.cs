@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class RiskServicePrincipalActivity : IAdditionalDataHolder, IParsable {
+    public class RiskServicePrincipalActivity : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Details of the detected risk. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden,  adminConfirmedUserCompromised, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.</summary>
-        public RiskDetail? Detail { get; set; }
+        public RiskDetail? Detail {
+            get { return BackingStore?.Get<RiskDetail?>(nameof(Detail)); }
+            set { BackingStore?.Set(nameof(Detail), value); }
+        }
         /// <summary>The riskEventTypes property</summary>
-        public List<string> RiskEventTypes { get; set; }
+        public List<string> RiskEventTypes {
+            get { return BackingStore?.Get<List<string>>(nameof(RiskEventTypes)); }
+            set { BackingStore?.Set(nameof(RiskEventTypes), value); }
+        }
         /// <summary>
         /// Instantiates a new riskServicePrincipalActivity and sets the default values.
         /// </summary>
         public RiskServicePrincipalActivity() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.MarkRead {
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MarkReadRequestBody body, Action<MarkReadRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation CreatePostRequestInformation(MarkReadPostRequestBody body, Action<MarkReadRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.MarkRead {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MarkReadResponse> PostAsync(MarkReadRequestBody body, Action<MarkReadRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MarkReadResponse> PostAsync(MarkReadPostRequestBody body, Action<MarkReadRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<MarkReadResponse>(requestInfo, MarkReadResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);

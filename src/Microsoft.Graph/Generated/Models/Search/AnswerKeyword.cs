@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Search {
-    public class AnswerKeyword : IAdditionalDataHolder, IParsable {
+    public class AnswerKeyword : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>A collection of keywords used to trigger the search answer.</summary>
-        public List<string> Keywords { get; set; }
+        public List<string> Keywords {
+            get { return BackingStore?.Get<List<string>>(nameof(Keywords)); }
+            set { BackingStore?.Set(nameof(Keywords), value); }
+        }
         /// <summary>If true, indicates that the search term contains similar words to the keywords that should trigger the search answer.</summary>
-        public bool? MatchSimilarKeywords { get; set; }
+        public bool? MatchSimilarKeywords {
+            get { return BackingStore?.Get<bool?>(nameof(MatchSimilarKeywords)); }
+            set { BackingStore?.Set(nameof(MatchSimilarKeywords), value); }
+        }
         /// <summary>Unique keywords that will guarantee the search answer is triggered.</summary>
-        public List<string> ReservedKeywords { get; set; }
+        public List<string> ReservedKeywords {
+            get { return BackingStore?.Get<List<string>>(nameof(ReservedKeywords)); }
+            set { BackingStore?.Set(nameof(ReservedKeywords), value); }
+        }
         /// <summary>
         /// Instantiates a new answerKeyword and sets the default values.
         /// </summary>
         public AnswerKeyword() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class DeviceManagementConfigurationSettingApplicability : IAdditionalDataHolder, IParsable {
+    public class DeviceManagementConfigurationSettingApplicability : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>description of the setting</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Device Mode that setting can be applied on. Possible values are: none, kiosk.</summary>
-        public DeviceManagementConfigurationDeviceMode? DeviceMode { get; set; }
+        public DeviceManagementConfigurationDeviceMode? DeviceMode {
+            get { return BackingStore?.Get<DeviceManagementConfigurationDeviceMode?>(nameof(DeviceMode)); }
+            set { BackingStore?.Set(nameof(DeviceMode), value); }
+        }
         /// <summary>Platform setting can be applied on. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.</summary>
-        public DeviceManagementConfigurationPlatforms? Platform { get; set; }
+        public DeviceManagementConfigurationPlatforms? Platform {
+            get { return BackingStore?.Get<DeviceManagementConfigurationPlatforms?>(nameof(Platform)); }
+            set { BackingStore?.Set(nameof(Platform), value); }
+        }
         /// <summary>Which technology channels this setting can be deployed through. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.</summary>
-        public DeviceManagementConfigurationTechnologies? Technologies { get; set; }
+        public DeviceManagementConfigurationTechnologies? Technologies {
+            get { return BackingStore?.Get<DeviceManagementConfigurationTechnologies?>(nameof(Technologies)); }
+            set { BackingStore?.Set(nameof(Technologies), value); }
+        }
         /// <summary>
         /// Instantiates a new deviceManagementConfigurationSettingApplicability and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationSettingApplicability() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

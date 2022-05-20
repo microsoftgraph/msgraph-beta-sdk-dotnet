@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class AlterationResponse : IAdditionalDataHolder, IParsable {
+    public class AlterationResponse : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Defines the original user query string.</summary>
-        public string OriginalQueryString { get; set; }
+        public string OriginalQueryString {
+            get { return BackingStore?.Get<string>(nameof(OriginalQueryString)); }
+            set { BackingStore?.Set(nameof(OriginalQueryString), value); }
+        }
         /// <summary>Defines the details of alteration information for the spelling correction.</summary>
-        public SearchAlteration QueryAlteration { get; set; }
+        public SearchAlteration QueryAlteration {
+            get { return BackingStore?.Get<SearchAlteration>(nameof(QueryAlteration)); }
+            set { BackingStore?.Set(nameof(QueryAlteration), value); }
+        }
         /// <summary>Defines the type of the spelling correction. Possible values are suggestion, modification.</summary>
-        public SearchAlterationType? QueryAlterationType { get; set; }
+        public SearchAlterationType? QueryAlterationType {
+            get { return BackingStore?.Get<SearchAlterationType?>(nameof(QueryAlterationType)); }
+            set { BackingStore?.Set(nameof(QueryAlterationType), value); }
+        }
         /// <summary>
         /// Instantiates a new alterationResponse and sets the default values.
         /// </summary>
         public AlterationResponse() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

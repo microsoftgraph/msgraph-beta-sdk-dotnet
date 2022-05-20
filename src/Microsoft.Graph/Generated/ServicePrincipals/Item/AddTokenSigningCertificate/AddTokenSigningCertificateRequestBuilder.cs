@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.AddTokenSigningCertificate
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(SelfSignedCertificateRequestBody body, Action<AddTokenSigningCertificateRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation CreatePostRequestInformation(SelfSignedCertificatePostRequestBody body, Action<AddTokenSigningCertificateRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.AddTokenSigningCertificate
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<SelfSignedCertificate> PostAsync(SelfSignedCertificateRequestBody body, Action<AddTokenSigningCertificateRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<SelfSignedCertificate> PostAsync(SelfSignedCertificatePostRequestBody body, Action<AddTokenSigningCertificateRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<SelfSignedCertificate>(requestInfo, SelfSignedCertificate.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);

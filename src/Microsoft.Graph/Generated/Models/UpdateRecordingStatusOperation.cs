@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to call the updateRecordingStatus method.</summary>
     public class UpdateRecordingStatusOperation : CommsOperation, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

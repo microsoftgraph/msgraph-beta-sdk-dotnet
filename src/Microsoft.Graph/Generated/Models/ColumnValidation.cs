@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ColumnValidation : IAdditionalDataHolder, IParsable {
+    public class ColumnValidation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Default BCP 47 language tag for the description.</summary>
-        public string DefaultLanguage { get; set; }
+        public string DefaultLanguage {
+            get { return BackingStore?.Get<string>(nameof(DefaultLanguage)); }
+            set { BackingStore?.Set(nameof(DefaultLanguage), value); }
+        }
         /// <summary>Localized messages that explain what is needed for this column&apos;s value to be considered valid. User will be prompted with this message if validation fails.</summary>
-        public List<DisplayNameLocalization> Descriptions { get; set; }
+        public List<DisplayNameLocalization> Descriptions {
+            get { return BackingStore?.Get<List<DisplayNameLocalization>>(nameof(Descriptions)); }
+            set { BackingStore?.Set(nameof(Descriptions), value); }
+        }
         /// <summary>The formula to validate column value. For examples, see Examples of common formulas in lists</summary>
-        public string Formula { get; set; }
+        public string Formula {
+            get { return BackingStore?.Get<string>(nameof(Formula)); }
+            set { BackingStore?.Set(nameof(Formula), value); }
+        }
         /// <summary>
         /// Instantiates a new columnValidation and sets the default values.
         /// </summary>
         public ColumnValidation() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

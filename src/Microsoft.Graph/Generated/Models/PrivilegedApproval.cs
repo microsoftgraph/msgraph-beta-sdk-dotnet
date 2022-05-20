@@ -4,29 +4,63 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of privilegedApproval entities.</summary>
     public class PrivilegedApproval : Entity, IParsable {
         /// <summary>The approvalDuration property</summary>
-        public TimeSpan? ApprovalDuration { get; set; }
+        public TimeSpan? ApprovalDuration {
+            get { return BackingStore?.Get<TimeSpan?>(nameof(ApprovalDuration)); }
+            set { BackingStore?.Set(nameof(ApprovalDuration), value); }
+        }
         /// <summary>Possible values are: pending, approved, denied, aborted, canceled.</summary>
-        public Microsoft.Graph.Beta.Models.ApprovalState? ApprovalState { get; set; }
+        public Microsoft.Graph.Beta.Models.ApprovalState? ApprovalState {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ApprovalState?>(nameof(ApprovalState)); }
+            set { BackingStore?.Set(nameof(ApprovalState), value); }
+        }
         /// <summary>The approvalType property</summary>
-        public string ApprovalType { get; set; }
+        public string ApprovalType {
+            get { return BackingStore?.Get<string>(nameof(ApprovalType)); }
+            set { BackingStore?.Set(nameof(ApprovalType), value); }
+        }
         /// <summary>The approverReason property</summary>
-        public string ApproverReason { get; set; }
+        public string ApproverReason {
+            get { return BackingStore?.Get<string>(nameof(ApproverReason)); }
+            set { BackingStore?.Set(nameof(ApproverReason), value); }
+        }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? EndDateTime { get; set; }
+        public DateTimeOffset? EndDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
+            set { BackingStore?.Set(nameof(EndDateTime), value); }
+        }
         /// <summary>Read-only. The role assignment request for this approval object</summary>
-        public PrivilegedRoleAssignmentRequest Request { get; set; }
+        public PrivilegedRoleAssignmentRequest Request {
+            get { return BackingStore?.Get<PrivilegedRoleAssignmentRequest>(nameof(Request)); }
+            set { BackingStore?.Set(nameof(Request), value); }
+        }
         /// <summary>The requestorReason property</summary>
-        public string RequestorReason { get; set; }
+        public string RequestorReason {
+            get { return BackingStore?.Get<string>(nameof(RequestorReason)); }
+            set { BackingStore?.Set(nameof(RequestorReason), value); }
+        }
         /// <summary>The roleId property</summary>
-        public string RoleId { get; set; }
+        public string RoleId {
+            get { return BackingStore?.Get<string>(nameof(RoleId)); }
+            set { BackingStore?.Set(nameof(RoleId), value); }
+        }
         /// <summary>Read-only. Nullable.</summary>
-        public PrivilegedRole RoleInfo { get; set; }
+        public PrivilegedRole RoleInfo {
+            get { return BackingStore?.Get<PrivilegedRole>(nameof(RoleInfo)); }
+            set { BackingStore?.Set(nameof(RoleInfo), value); }
+        }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? StartDateTime { get; set; }
+        public DateTimeOffset? StartDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
+            set { BackingStore?.Set(nameof(StartDateTime), value); }
+        }
         /// <summary>The userId property</summary>
-        public string UserId { get; set; }
+        public string UserId {
+            get { return BackingStore?.Get<string>(nameof(UserId)); }
+            set { BackingStore?.Set(nameof(UserId), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

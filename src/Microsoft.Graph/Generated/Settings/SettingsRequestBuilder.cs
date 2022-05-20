@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Settings {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// List settings
+        /// Retrieve a list of tenant-level or group-specific group settings objects.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<SettingsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Settings {
             return requestInfo;
         }
         /// <summary>
-        /// Create settings
+        /// Create a new setting based on the templates available in [directorySettingTemplates](../resources/directorysettingtemplate.md). These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named `Group.Unified` can be used to configure tenant-wide Microsoft 365 group settings, while the template named `Group.Unified.Guest` can be used to configure group-specific settings.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Settings {
             return requestInfo;
         }
         /// <summary>
-        /// List settings
+        /// Retrieve a list of tenant-level or group-specific group settings objects.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Settings {
             return await RequestAdapter.SendAsync<DirectorySettingCollectionResponse>(requestInfo, DirectorySettingCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create settings
+        /// Create a new setting based on the templates available in [directorySettingTemplates](../resources/directorysettingtemplate.md). These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named `Group.Unified` can be used to configure tenant-wide Microsoft 365 group settings, while the template named `Group.Unified.Guest` can be used to configure group-specific settings.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Settings {
             };
             return await RequestAdapter.SendAsync<DirectorySetting>(requestInfo, DirectorySetting.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>List settings</summary>
+        /// <summary>Retrieve a list of tenant-level or group-specific group settings objects.</summary>
         public class SettingsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

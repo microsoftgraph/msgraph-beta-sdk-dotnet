@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the roleManagement singleton.</summary>
     public class UnifiedRoleEligibilityScheduleInstance : UnifiedRoleScheduleInstanceBase, IParsable {
         /// <summary>Time that the roleEligibilityScheduleInstance will expire.</summary>
-        public DateTimeOffset? EndDateTime { get; set; }
+        public DateTimeOffset? EndDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
+            set { BackingStore?.Set(nameof(EndDateTime), value); }
+        }
         /// <summary>Membership type of the assignment. It can either be Inherited, Direct, or Group.</summary>
-        public string MemberType { get; set; }
+        public string MemberType {
+            get { return BackingStore?.Get<string>(nameof(MemberType)); }
+            set { BackingStore?.Set(nameof(MemberType), value); }
+        }
         /// <summary>Identifier of the parent roleEligibilitySchedule for this instance.</summary>
-        public string RoleEligibilityScheduleId { get; set; }
+        public string RoleEligibilityScheduleId {
+            get { return BackingStore?.Get<string>(nameof(RoleEligibilityScheduleId)); }
+            set { BackingStore?.Set(nameof(RoleEligibilityScheduleId), value); }
+        }
         /// <summary>Time that the roleEligibilityScheduleInstance will start.</summary>
-        public DateTimeOffset? StartDateTime { get; set; }
+        public DateTimeOffset? StartDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
+            set { BackingStore?.Set(nameof(StartDateTime), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

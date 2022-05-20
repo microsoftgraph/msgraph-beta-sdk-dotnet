@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class AppleOwnerTypeEnrollmentType : IAdditionalDataHolder, IParsable {
+    public class AppleOwnerTypeEnrollmentType : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The enrollment type. Possible values are: unknown, device, user.</summary>
-        public AppleUserInitiatedEnrollmentType? EnrollmentType { get; set; }
+        public AppleUserInitiatedEnrollmentType? EnrollmentType {
+            get { return BackingStore?.Get<AppleUserInitiatedEnrollmentType?>(nameof(EnrollmentType)); }
+            set { BackingStore?.Set(nameof(EnrollmentType), value); }
+        }
         /// <summary>The owner type. Possible values are: unknown, company, personal.</summary>
-        public ManagedDeviceOwnerType? OwnerType { get; set; }
+        public ManagedDeviceOwnerType? OwnerType {
+            get { return BackingStore?.Get<ManagedDeviceOwnerType?>(nameof(OwnerType)); }
+            set { BackingStore?.Set(nameof(OwnerType), value); }
+        }
         /// <summary>
         /// Instantiates a new appleOwnerTypeEnrollmentType and sets the default values.
         /// </summary>
         public AppleOwnerTypeEnrollmentType() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

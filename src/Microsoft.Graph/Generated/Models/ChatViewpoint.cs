@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ChatViewpoint : IAdditionalDataHolder, IParsable {
+    public class ChatViewpoint : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether the chat is hidden for the current user.</summary>
-        public bool? IsHidden { get; set; }
+        public bool? IsHidden {
+            get { return BackingStore?.Get<bool?>(nameof(IsHidden)); }
+            set { BackingStore?.Set(nameof(IsHidden), value); }
+        }
         /// <summary>Represents the dateTime up until which the current user has read chatMessages in a specific chat.</summary>
-        public DateTimeOffset? LastMessageReadDateTime { get; set; }
+        public DateTimeOffset? LastMessageReadDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastMessageReadDateTime)); }
+            set { BackingStore?.Set(nameof(LastMessageReadDateTime), value); }
+        }
         /// <summary>
         /// Instantiates a new chatViewpoint and sets the default values.
         /// </summary>
         public ChatViewpoint() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

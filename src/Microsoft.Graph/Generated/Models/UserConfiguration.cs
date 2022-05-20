@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class UserConfiguration : Entity, IParsable {
         /// <summary>The binaryData property</summary>
-        public byte[] BinaryData { get; set; }
+        public byte[] BinaryData {
+            get { return BackingStore?.Get<byte[]>(nameof(BinaryData)); }
+            set { BackingStore?.Set(nameof(BinaryData), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

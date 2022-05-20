@@ -6,6 +6,7 @@ using Microsoft.Graph.Beta.Users.Item.Chats.Item.Members;
 using Microsoft.Graph.Beta.Users.Item.Chats.Item.Messages;
 using Microsoft.Graph.Beta.Users.Item.Chats.Item.Operations;
 using Microsoft.Graph.Beta.Users.Item.Chats.Item.PermissionGrants;
+using Microsoft.Graph.Beta.Users.Item.Chats.Item.PinnedMessages;
 using Microsoft.Graph.Beta.Users.Item.Chats.Item.Tabs;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -43,6 +44,10 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item {
         /// <summary>The permissionGrants property</summary>
         public PermissionGrantsRequestBuilder PermissionGrants { get =>
             new PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The pinnedMessages property</summary>
+        public PinnedMessagesRequestBuilder PinnedMessages { get =>
+            new PinnedMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }

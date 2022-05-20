@@ -1,83 +1,189 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Hardware information of a given device.</summary>
-    public class HardwareInformation : IAdditionalDataHolder, IParsable {
+    public class HardwareInformation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of charge cycles the device’s current battery has gone through. Valid values 0 to 2147483647</summary>
-        public int? BatteryChargeCycles { get; set; }
+        public int? BatteryChargeCycles {
+            get { return BackingStore?.Get<int?>(nameof(BatteryChargeCycles)); }
+            set { BackingStore?.Set(nameof(BatteryChargeCycles), value); }
+        }
         /// <summary>The device’s current battery’s health percentage. Valid values 0 to 100</summary>
-        public int? BatteryHealthPercentage { get; set; }
+        public int? BatteryHealthPercentage {
+            get { return BackingStore?.Get<int?>(nameof(BatteryHealthPercentage)); }
+            set { BackingStore?.Set(nameof(BatteryHealthPercentage), value); }
+        }
         /// <summary>The serial number of the device’s current battery</summary>
-        public string BatterySerialNumber { get; set; }
+        public string BatterySerialNumber {
+            get { return BackingStore?.Get<string>(nameof(BatterySerialNumber)); }
+            set { BackingStore?.Set(nameof(BatterySerialNumber), value); }
+        }
         /// <summary>Cellular technology of the device</summary>
-        public string CellularTechnology { get; set; }
+        public string CellularTechnology {
+            get { return BackingStore?.Get<string>(nameof(CellularTechnology)); }
+            set { BackingStore?.Set(nameof(CellularTechnology), value); }
+        }
         /// <summary>Returns the fully qualified domain name of the device (if any). If the device is not domain-joined, it returns an empty string.</summary>
-        public string DeviceFullQualifiedDomainName { get; set; }
+        public string DeviceFullQualifiedDomainName {
+            get { return BackingStore?.Get<string>(nameof(DeviceFullQualifiedDomainName)); }
+            set { BackingStore?.Set(nameof(DeviceFullQualifiedDomainName), value); }
+        }
         /// <summary>Local System Authority (LSA) credential guard status. . Possible values are: running, rebootRequired, notLicensed, notConfigured, virtualizationBasedSecurityNotRunning.</summary>
-        public Microsoft.Graph.Beta.Models.DeviceGuardLocalSystemAuthorityCredentialGuardState? DeviceGuardLocalSystemAuthorityCredentialGuardState { get; set; }
+        public Microsoft.Graph.Beta.Models.DeviceGuardLocalSystemAuthorityCredentialGuardState? DeviceGuardLocalSystemAuthorityCredentialGuardState {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceGuardLocalSystemAuthorityCredentialGuardState?>(nameof(DeviceGuardLocalSystemAuthorityCredentialGuardState)); }
+            set { BackingStore?.Set(nameof(DeviceGuardLocalSystemAuthorityCredentialGuardState), value); }
+        }
         /// <summary>Virtualization-based security hardware requirement status. Possible values are: meetHardwareRequirements, secureBootRequired, dmaProtectionRequired, hyperVNotSupportedForGuestVM, hyperVNotAvailable.</summary>
-        public Microsoft.Graph.Beta.Models.DeviceGuardVirtualizationBasedSecurityHardwareRequirementState? DeviceGuardVirtualizationBasedSecurityHardwareRequirementState { get; set; }
+        public Microsoft.Graph.Beta.Models.DeviceGuardVirtualizationBasedSecurityHardwareRequirementState? DeviceGuardVirtualizationBasedSecurityHardwareRequirementState {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceGuardVirtualizationBasedSecurityHardwareRequirementState?>(nameof(DeviceGuardVirtualizationBasedSecurityHardwareRequirementState)); }
+            set { BackingStore?.Set(nameof(DeviceGuardVirtualizationBasedSecurityHardwareRequirementState), value); }
+        }
         /// <summary>Virtualization-based security status. . Possible values are: running, rebootRequired, require64BitArchitecture, notLicensed, notConfigured, doesNotMeetHardwareRequirements, other.</summary>
-        public Microsoft.Graph.Beta.Models.DeviceGuardVirtualizationBasedSecurityState? DeviceGuardVirtualizationBasedSecurityState { get; set; }
+        public Microsoft.Graph.Beta.Models.DeviceGuardVirtualizationBasedSecurityState? DeviceGuardVirtualizationBasedSecurityState {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceGuardVirtualizationBasedSecurityState?>(nameof(DeviceGuardVirtualizationBasedSecurityState)); }
+            set { BackingStore?.Set(nameof(DeviceGuardVirtualizationBasedSecurityState), value); }
+        }
         /// <summary>eSIM identifier</summary>
-        public string EsimIdentifier { get; set; }
+        public string EsimIdentifier {
+            get { return BackingStore?.Get<string>(nameof(EsimIdentifier)); }
+            set { BackingStore?.Set(nameof(EsimIdentifier), value); }
+        }
         /// <summary>Free storage space of the device.</summary>
-        public long? FreeStorageSpace { get; set; }
+        public long? FreeStorageSpace {
+            get { return BackingStore?.Get<long?>(nameof(FreeStorageSpace)); }
+            set { BackingStore?.Set(nameof(FreeStorageSpace), value); }
+        }
         /// <summary>IMEI</summary>
-        public string Imei { get; set; }
+        public string Imei {
+            get { return BackingStore?.Get<string>(nameof(Imei)); }
+            set { BackingStore?.Set(nameof(Imei), value); }
+        }
         /// <summary>IPAddressV4</summary>
-        public string IpAddressV4 { get; set; }
+        public string IpAddressV4 {
+            get { return BackingStore?.Get<string>(nameof(IpAddressV4)); }
+            set { BackingStore?.Set(nameof(IpAddressV4), value); }
+        }
         /// <summary>Encryption status of the device</summary>
-        public bool? IsEncrypted { get; set; }
+        public bool? IsEncrypted {
+            get { return BackingStore?.Get<bool?>(nameof(IsEncrypted)); }
+            set { BackingStore?.Set(nameof(IsEncrypted), value); }
+        }
         /// <summary>Shared iPad</summary>
-        public bool? IsSharedDevice { get; set; }
+        public bool? IsSharedDevice {
+            get { return BackingStore?.Get<bool?>(nameof(IsSharedDevice)); }
+            set { BackingStore?.Set(nameof(IsSharedDevice), value); }
+        }
         /// <summary>Supervised mode of the device</summary>
-        public bool? IsSupervised { get; set; }
+        public bool? IsSupervised {
+            get { return BackingStore?.Get<bool?>(nameof(IsSupervised)); }
+            set { BackingStore?.Set(nameof(IsSupervised), value); }
+        }
         /// <summary>Manufacturer of the device</summary>
-        public string Manufacturer { get; set; }
+        public string Manufacturer {
+            get { return BackingStore?.Get<string>(nameof(Manufacturer)); }
+            set { BackingStore?.Set(nameof(Manufacturer), value); }
+        }
         /// <summary>MEID</summary>
-        public string Meid { get; set; }
+        public string Meid {
+            get { return BackingStore?.Get<string>(nameof(Meid)); }
+            set { BackingStore?.Set(nameof(Meid), value); }
+        }
         /// <summary>Model of the device</summary>
-        public string Model { get; set; }
+        public string Model {
+            get { return BackingStore?.Get<string>(nameof(Model)); }
+            set { BackingStore?.Set(nameof(Model), value); }
+        }
         /// <summary>String that specifies the OS edition.</summary>
-        public string OperatingSystemEdition { get; set; }
+        public string OperatingSystemEdition {
+            get { return BackingStore?.Get<string>(nameof(OperatingSystemEdition)); }
+            set { BackingStore?.Set(nameof(OperatingSystemEdition), value); }
+        }
         /// <summary>Operating system language of the device</summary>
-        public string OperatingSystemLanguage { get; set; }
+        public string OperatingSystemLanguage {
+            get { return BackingStore?.Get<string>(nameof(OperatingSystemLanguage)); }
+            set { BackingStore?.Set(nameof(OperatingSystemLanguage), value); }
+        }
         /// <summary>Int that specifies the Windows Operating System ProductType. More details here https://go.microsoft.com/fwlink/?linkid=2126950. Valid values 0 to 2147483647</summary>
-        public int? OperatingSystemProductType { get; set; }
+        public int? OperatingSystemProductType {
+            get { return BackingStore?.Get<int?>(nameof(OperatingSystemProductType)); }
+            set { BackingStore?.Set(nameof(OperatingSystemProductType), value); }
+        }
         /// <summary>Operating System Build Number on Android device</summary>
-        public string OsBuildNumber { get; set; }
+        public string OsBuildNumber {
+            get { return BackingStore?.Get<string>(nameof(OsBuildNumber)); }
+            set { BackingStore?.Set(nameof(OsBuildNumber), value); }
+        }
         /// <summary>Phone number of the device</summary>
-        public string PhoneNumber { get; set; }
+        public string PhoneNumber {
+            get { return BackingStore?.Get<string>(nameof(PhoneNumber)); }
+            set { BackingStore?.Set(nameof(PhoneNumber), value); }
+        }
         /// <summary>Serial number.</summary>
-        public string SerialNumber { get; set; }
+        public string SerialNumber {
+            get { return BackingStore?.Get<string>(nameof(SerialNumber)); }
+            set { BackingStore?.Set(nameof(SerialNumber), value); }
+        }
         /// <summary>All users on the shared Apple device</summary>
-        public List<SharedAppleDeviceUser> SharedDeviceCachedUsers { get; set; }
+        public List<SharedAppleDeviceUser> SharedDeviceCachedUsers {
+            get { return BackingStore?.Get<List<SharedAppleDeviceUser>>(nameof(SharedDeviceCachedUsers)); }
+            set { BackingStore?.Set(nameof(SharedDeviceCachedUsers), value); }
+        }
         /// <summary>SubnetAddress</summary>
-        public string SubnetAddress { get; set; }
+        public string SubnetAddress {
+            get { return BackingStore?.Get<string>(nameof(SubnetAddress)); }
+            set { BackingStore?.Set(nameof(SubnetAddress), value); }
+        }
         /// <summary>Subscriber carrier of the device</summary>
-        public string SubscriberCarrier { get; set; }
+        public string SubscriberCarrier {
+            get { return BackingStore?.Get<string>(nameof(SubscriberCarrier)); }
+            set { BackingStore?.Set(nameof(SubscriberCarrier), value); }
+        }
         /// <summary>BIOS version as reported by SMBIOS</summary>
-        public string SystemManagementBIOSVersion { get; set; }
+        public string SystemManagementBIOSVersion {
+            get { return BackingStore?.Get<string>(nameof(SystemManagementBIOSVersion)); }
+            set { BackingStore?.Set(nameof(SystemManagementBIOSVersion), value); }
+        }
         /// <summary>Total storage space of the device.</summary>
-        public long? TotalStorageSpace { get; set; }
+        public long? TotalStorageSpace {
+            get { return BackingStore?.Get<long?>(nameof(TotalStorageSpace)); }
+            set { BackingStore?.Set(nameof(TotalStorageSpace), value); }
+        }
         /// <summary>The identifying information that uniquely names the TPM manufacturer</summary>
-        public string TpmManufacturer { get; set; }
+        public string TpmManufacturer {
+            get { return BackingStore?.Get<string>(nameof(TpmManufacturer)); }
+            set { BackingStore?.Set(nameof(TpmManufacturer), value); }
+        }
         /// <summary>String that specifies the specification version.</summary>
-        public string TpmSpecificationVersion { get; set; }
+        public string TpmSpecificationVersion {
+            get { return BackingStore?.Get<string>(nameof(TpmSpecificationVersion)); }
+            set { BackingStore?.Set(nameof(TpmSpecificationVersion), value); }
+        }
         /// <summary>The version of the TPM, as specified by the manufacturer</summary>
-        public string TpmVersion { get; set; }
+        public string TpmVersion {
+            get { return BackingStore?.Get<string>(nameof(TpmVersion)); }
+            set { BackingStore?.Set(nameof(TpmVersion), value); }
+        }
         /// <summary>WiFi MAC address of the device</summary>
-        public string WifiMac { get; set; }
+        public string WifiMac {
+            get { return BackingStore?.Get<string>(nameof(WifiMac)); }
+            set { BackingStore?.Set(nameof(WifiMac), value); }
+        }
         /// <summary>
         /// Instantiates a new hardwareInformation and sets the default values.
         /// </summary>
         public HardwareInformation() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

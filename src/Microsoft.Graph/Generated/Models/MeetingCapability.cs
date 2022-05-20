@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class MeetingCapability : IAdditionalDataHolder, IParsable {
+    public class MeetingCapability : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Indicates whether anonymous users dialout is allowed in a meeting.</summary>
-        public bool? AllowAnonymousUsersToDialOut { get; set; }
+        public bool? AllowAnonymousUsersToDialOut {
+            get { return BackingStore?.Get<bool?>(nameof(AllowAnonymousUsersToDialOut)); }
+            set { BackingStore?.Set(nameof(AllowAnonymousUsersToDialOut), value); }
+        }
         /// <summary>Indicates whether anonymous users are allowed to start a meeting.</summary>
-        public bool? AllowAnonymousUsersToStartMeeting { get; set; }
+        public bool? AllowAnonymousUsersToStartMeeting {
+            get { return BackingStore?.Get<bool?>(nameof(AllowAnonymousUsersToStartMeeting)); }
+            set { BackingStore?.Set(nameof(AllowAnonymousUsersToStartMeeting), value); }
+        }
         /// <summary>Possible values are: everyoneInCompany, everyone.</summary>
-        public AutoAdmittedUsersType? AutoAdmittedUsers { get; set; }
+        public AutoAdmittedUsersType? AutoAdmittedUsers {
+            get { return BackingStore?.Get<AutoAdmittedUsersType?>(nameof(AutoAdmittedUsers)); }
+            set { BackingStore?.Set(nameof(AutoAdmittedUsers), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>
         /// Instantiates a new meetingCapability and sets the default values.
         /// </summary>
         public MeetingCapability() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

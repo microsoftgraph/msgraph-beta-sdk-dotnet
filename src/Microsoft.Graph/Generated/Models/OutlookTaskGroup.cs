@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class OutlookTaskGroup : Entity, IParsable {
         /// <summary>The version of the task group.</summary>
-        public string ChangeKey { get; set; }
+        public string ChangeKey {
+            get { return BackingStore?.Get<string>(nameof(ChangeKey)); }
+            set { BackingStore?.Set(nameof(ChangeKey), value); }
+        }
         /// <summary>The unique GUID identifier for the task group.</summary>
-        public string GroupKey { get; set; }
+        public string GroupKey {
+            get { return BackingStore?.Get<string>(nameof(GroupKey)); }
+            set { BackingStore?.Set(nameof(GroupKey), value); }
+        }
         /// <summary>True if the task group is the default task group.</summary>
-        public bool? IsDefaultGroup { get; set; }
+        public bool? IsDefaultGroup {
+            get { return BackingStore?.Get<bool?>(nameof(IsDefaultGroup)); }
+            set { BackingStore?.Set(nameof(IsDefaultGroup), value); }
+        }
         /// <summary>The name of the task group.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>The collection of task folders in the task group. Read-only. Nullable.</summary>
-        public List<OutlookTaskFolder> TaskFolders { get; set; }
+        public List<OutlookTaskFolder> TaskFolders {
+            get { return BackingStore?.Get<List<OutlookTaskFolder>>(nameof(TaskFolders)); }
+            set { BackingStore?.Set(nameof(TaskFolders), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -1,28 +1,53 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ScheduleItem : IAdditionalDataHolder, IParsable {
+    public class ScheduleItem : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The date, time, and time zone that the corresponding event ends.</summary>
-        public DateTimeTimeZone End { get; set; }
+        public DateTimeTimeZone End {
+            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(End)); }
+            set { BackingStore?.Set(nameof(End), value); }
+        }
         /// <summary>The sensitivity of the corresponding event. True if the event is marked private, false otherwise. Optional.</summary>
-        public bool? IsPrivate { get; set; }
+        public bool? IsPrivate {
+            get { return BackingStore?.Get<bool?>(nameof(IsPrivate)); }
+            set { BackingStore?.Set(nameof(IsPrivate), value); }
+        }
         /// <summary>The location where the corresponding event is held or attended from. Optional.</summary>
-        public string Location { get; set; }
+        public string Location {
+            get { return BackingStore?.Get<string>(nameof(Location)); }
+            set { BackingStore?.Set(nameof(Location), value); }
+        }
         /// <summary>The date, time, and time zone that the corresponding event starts.</summary>
-        public DateTimeTimeZone Start { get; set; }
+        public DateTimeTimeZone Start {
+            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(Start)); }
+            set { BackingStore?.Set(nameof(Start), value); }
+        }
         /// <summary>The availability status of the user or resource during the corresponding event. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.</summary>
-        public FreeBusyStatus? Status { get; set; }
+        public FreeBusyStatus? Status {
+            get { return BackingStore?.Get<FreeBusyStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>The corresponding event&apos;s subject line. Optional.</summary>
-        public string Subject { get; set; }
+        public string Subject {
+            get { return BackingStore?.Get<string>(nameof(Subject)); }
+            set { BackingStore?.Set(nameof(Subject), value); }
+        }
         /// <summary>
         /// Instantiates a new scheduleItem and sets the default values.
         /// </summary>
         public ScheduleItem() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ContentTypeOrder : IAdditionalDataHolder, IParsable {
+    public class ContentTypeOrder : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Whether this is the default Content Type</summary>
-        public bool? Default { get; set; }
+        public bool? Default {
+            get { return BackingStore?.Get<bool?>(nameof(Default)); }
+            set { BackingStore?.Set(nameof(Default), value); }
+        }
         /// <summary>Specifies the position in which the Content Type appears in the selection UI.</summary>
-        public int? Position { get; set; }
+        public int? Position {
+            get { return BackingStore?.Get<int?>(nameof(Position)); }
+            set { BackingStore?.Set(nameof(Position), value); }
+        }
         /// <summary>
         /// Instantiates a new contentTypeOrder and sets the default values.
         /// </summary>
         public ContentTypeOrder() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

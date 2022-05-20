@@ -1,28 +1,53 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class TeamworkSoftwareUpdateHealth : IAdditionalDataHolder, IParsable {
+    public class TeamworkSoftwareUpdateHealth : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>The software update available for the admin agent.</summary>
-        public TeamworkSoftwareUpdateStatus AdminAgentSoftwareUpdateStatus { get; set; }
+        public TeamworkSoftwareUpdateStatus AdminAgentSoftwareUpdateStatus {
+            get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus>(nameof(AdminAgentSoftwareUpdateStatus)); }
+            set { BackingStore?.Set(nameof(AdminAgentSoftwareUpdateStatus), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The software update available for the company portal.</summary>
-        public TeamworkSoftwareUpdateStatus CompanyPortalSoftwareUpdateStatus { get; set; }
+        public TeamworkSoftwareUpdateStatus CompanyPortalSoftwareUpdateStatus {
+            get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus>(nameof(CompanyPortalSoftwareUpdateStatus)); }
+            set { BackingStore?.Set(nameof(CompanyPortalSoftwareUpdateStatus), value); }
+        }
         /// <summary>The software update available for the firmware.</summary>
-        public TeamworkSoftwareUpdateStatus FirmwareSoftwareUpdateStatus { get; set; }
+        public TeamworkSoftwareUpdateStatus FirmwareSoftwareUpdateStatus {
+            get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus>(nameof(FirmwareSoftwareUpdateStatus)); }
+            set { BackingStore?.Set(nameof(FirmwareSoftwareUpdateStatus), value); }
+        }
         /// <summary>The software update available for the operating system.</summary>
-        public TeamworkSoftwareUpdateStatus OperatingSystemSoftwareUpdateStatus { get; set; }
+        public TeamworkSoftwareUpdateStatus OperatingSystemSoftwareUpdateStatus {
+            get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus>(nameof(OperatingSystemSoftwareUpdateStatus)); }
+            set { BackingStore?.Set(nameof(OperatingSystemSoftwareUpdateStatus), value); }
+        }
         /// <summary>The software update available for the partner agent.</summary>
-        public TeamworkSoftwareUpdateStatus PartnerAgentSoftwareUpdateStatus { get; set; }
+        public TeamworkSoftwareUpdateStatus PartnerAgentSoftwareUpdateStatus {
+            get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus>(nameof(PartnerAgentSoftwareUpdateStatus)); }
+            set { BackingStore?.Set(nameof(PartnerAgentSoftwareUpdateStatus), value); }
+        }
         /// <summary>The software update available for the Teams client.</summary>
-        public TeamworkSoftwareUpdateStatus TeamsClientSoftwareUpdateStatus { get; set; }
+        public TeamworkSoftwareUpdateStatus TeamsClientSoftwareUpdateStatus {
+            get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus>(nameof(TeamsClientSoftwareUpdateStatus)); }
+            set { BackingStore?.Set(nameof(TeamsClientSoftwareUpdateStatus), value); }
+        }
         /// <summary>
         /// Instantiates a new teamworkSoftwareUpdateHealth and sets the default values.
         /// </summary>
         public TeamworkSoftwareUpdateHealth() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

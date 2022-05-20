@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class GovernanceRuleSetting : IAdditionalDataHolder, IParsable {
+    public class GovernanceRuleSetting : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The id of the rule. For example, ExpirationRule and MfaRule.</summary>
-        public string RuleIdentifier { get; set; }
+        public string RuleIdentifier {
+            get { return BackingStore?.Get<string>(nameof(RuleIdentifier)); }
+            set { BackingStore?.Set(nameof(RuleIdentifier), value); }
+        }
         /// <summary>The settings of the rule. The value is a JSON string with a list of pairs in the format of Parameter_Name:Parameter_Value. For example, {&apos;permanentAssignment&apos;:false,&apos;maximumGrantPeriodInMinutes&apos;:129600}</summary>
-        public string Setting { get; set; }
+        public string Setting {
+            get { return BackingStore?.Get<string>(nameof(Setting)); }
+            set { BackingStore?.Set(nameof(Setting), value); }
+        }
         /// <summary>
         /// Instantiates a new governanceRuleSetting and sets the default values.
         /// </summary>
         public GovernanceRuleSetting() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

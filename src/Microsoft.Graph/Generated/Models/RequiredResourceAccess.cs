@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class RequiredResourceAccess : IAdditionalDataHolder, IParsable {
+    public class RequiredResourceAccess : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The list of OAuth2.0 permission scopes and app roles that the application requires from the specified resource.</summary>
-        public List<Microsoft.Graph.Beta.Models.ResourceAccess> ResourceAccess { get; set; }
+        public List<Microsoft.Graph.Beta.Models.ResourceAccess> ResourceAccess {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ResourceAccess>>(nameof(ResourceAccess)); }
+            set { BackingStore?.Set(nameof(ResourceAccess), value); }
+        }
         /// <summary>The unique identifier for the resource that the application requires access to. This should be equal to the appId declared on the target resource application.</summary>
-        public string ResourceAppId { get; set; }
+        public string ResourceAppId {
+            get { return BackingStore?.Get<string>(nameof(ResourceAppId)); }
+            set { BackingStore?.Set(nameof(ResourceAppId), value); }
+        }
         /// <summary>
         /// Instantiates a new requiredResourceAccess and sets the default values.
         /// </summary>
         public RequiredResourceAccess() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

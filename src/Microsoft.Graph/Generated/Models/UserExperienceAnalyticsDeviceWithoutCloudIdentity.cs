@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The user experience analytics Device without Cloud Identity.</summary>
     public class UserExperienceAnalyticsDeviceWithoutCloudIdentity : Entity, IParsable {
         /// <summary>Azure Active Directory Device Id</summary>
-        public string AzureAdDeviceId { get; set; }
+        public string AzureAdDeviceId {
+            get { return BackingStore?.Get<string>(nameof(AzureAdDeviceId)); }
+            set { BackingStore?.Set(nameof(AzureAdDeviceId), value); }
+        }
         /// <summary>The tenant attach device&apos;s name.</summary>
-        public string DeviceName { get; set; }
+        public string DeviceName {
+            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
+            set { BackingStore?.Set(nameof(DeviceName), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

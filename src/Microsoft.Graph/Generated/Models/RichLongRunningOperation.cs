@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class RichLongRunningOperation : LongRunningOperation, IParsable {
         /// <summary>Error due to which the operation failed.</summary>
-        public PublicError Error { get; set; }
+        public PublicError Error {
+            get { return BackingStore?.Get<PublicError>(nameof(Error)); }
+            set { BackingStore?.Set(nameof(Error), value); }
+        }
         /// <summary>A value between 0 and 100 that indicates the progress of the operation.</summary>
-        public int? PercentageComplete { get; set; }
+        public int? PercentageComplete {
+            get { return BackingStore?.Get<int?>(nameof(PercentageComplete)); }
+            set { BackingStore?.Set(nameof(PercentageComplete), value); }
+        }
         /// <summary>A unique identifier for the result.</summary>
-        public string ResourceId { get; set; }
+        public string ResourceId {
+            get { return BackingStore?.Get<string>(nameof(ResourceId)); }
+            set { BackingStore?.Set(nameof(ResourceId), value); }
+        }
         /// <summary>Type of the operation.</summary>
-        public string Type { get; set; }
+        public string Type {
+            get { return BackingStore?.Get<string>(nameof(Type)); }
+            set { BackingStore?.Set(nameof(Type), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

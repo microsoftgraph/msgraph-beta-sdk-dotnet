@@ -4,36 +4,75 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class BaseItem : Entity, IParsable {
         /// <summary>Identity of the user, device, or application which created the item. Read-only.</summary>
-        public IdentitySet CreatedBy { get; set; }
+        public IdentitySet CreatedBy {
+            get { return BackingStore?.Get<IdentitySet>(nameof(CreatedBy)); }
+            set { BackingStore?.Set(nameof(CreatedBy), value); }
+        }
         /// <summary>Identity of the user who created the item. Read-only.</summary>
-        public User CreatedByUser { get; set; }
+        public User CreatedByUser {
+            get { return BackingStore?.Get<User>(nameof(CreatedByUser)); }
+            set { BackingStore?.Set(nameof(CreatedByUser), value); }
+        }
         /// <summary>Date and time of item creation. Read-only.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>Provides a user-visible description of the item. Optional.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>ETag for the item. Read-only.</summary>
-        public string ETag { get; set; }
+        public string ETag {
+            get { return BackingStore?.Get<string>(nameof(ETag)); }
+            set { BackingStore?.Set(nameof(ETag), value); }
+        }
         /// <summary>Identity of the user, device, and application which last modified the item. Read-only.</summary>
-        public IdentitySet LastModifiedBy { get; set; }
+        public IdentitySet LastModifiedBy {
+            get { return BackingStore?.Get<IdentitySet>(nameof(LastModifiedBy)); }
+            set { BackingStore?.Set(nameof(LastModifiedBy), value); }
+        }
         /// <summary>Identity of the user who last modified the item. Read-only.</summary>
-        public User LastModifiedByUser { get; set; }
+        public User LastModifiedByUser {
+            get { return BackingStore?.Get<User>(nameof(LastModifiedByUser)); }
+            set { BackingStore?.Set(nameof(LastModifiedByUser), value); }
+        }
         /// <summary>Date and time the item was last modified. Read-only.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>The name of the item. Read-write.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>Parent information, if the item has a parent. Read-write.</summary>
-        public ItemReference ParentReference { get; set; }
+        public ItemReference ParentReference {
+            get { return BackingStore?.Get<ItemReference>(nameof(ParentReference)); }
+            set { BackingStore?.Set(nameof(ParentReference), value); }
+        }
         /// <summary>URL that displays the resource in the browser. Read-only.</summary>
-        public string WebUrl { get; set; }
+        public string WebUrl {
+            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
+            set { BackingStore?.Set(nameof(WebUrl), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new BaseItem CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BaseItem();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.baseItem" => new BaseItem(),
+                _ => new BaseItem(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

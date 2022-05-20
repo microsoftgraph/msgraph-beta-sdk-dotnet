@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
+    /// <summary>Provides operations to manage the collection of externalConnection entities.</summary>
     public class ExternalItem : Entity, IParsable {
         /// <summary>An array of access control entries. Each entry specifies the access granted to a user or group. Required.</summary>
-        public List<Microsoft.Graph.Beta.Models.ExternalConnectors.Acl> Acl { get; set; }
+        public List<Microsoft.Graph.Beta.Models.ExternalConnectors.Acl> Acl {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExternalConnectors.Acl>>(nameof(Acl)); }
+            set { BackingStore?.Set(nameof(Acl), value); }
+        }
         /// <summary>A plain-text  representation of the contents of the item. The text in this property is full-text indexed. Optional.</summary>
-        public ExternalItemContent Content { get; set; }
+        public ExternalItemContent Content {
+            get { return BackingStore?.Get<ExternalItemContent>(nameof(Content)); }
+            set { BackingStore?.Set(nameof(Content), value); }
+        }
         /// <summary>A property bag with the properties of the item. The properties MUST conform to the schema defined for the externalConnection. Required.</summary>
-        public Microsoft.Graph.Beta.Models.ExternalConnectors.Properties Properties { get; set; }
+        public Microsoft.Graph.Beta.Models.ExternalConnectors.Properties Properties {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.Properties>(nameof(Properties)); }
+            set { BackingStore?.Set(nameof(Properties), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

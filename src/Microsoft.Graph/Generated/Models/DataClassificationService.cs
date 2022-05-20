@@ -7,23 +7,50 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
     public class DataClassificationService : Entity, IParsable {
         /// <summary>The classifyFileJobs property</summary>
-        public List<JobResponseBase> ClassifyFileJobs { get; set; }
+        public List<JobResponseBase> ClassifyFileJobs {
+            get { return BackingStore?.Get<List<JobResponseBase>>(nameof(ClassifyFileJobs)); }
+            set { BackingStore?.Set(nameof(ClassifyFileJobs), value); }
+        }
         /// <summary>The classifyTextJobs property</summary>
-        public List<JobResponseBase> ClassifyTextJobs { get; set; }
+        public List<JobResponseBase> ClassifyTextJobs {
+            get { return BackingStore?.Get<List<JobResponseBase>>(nameof(ClassifyTextJobs)); }
+            set { BackingStore?.Set(nameof(ClassifyTextJobs), value); }
+        }
         /// <summary>The evaluateDlpPoliciesJobs property</summary>
-        public List<JobResponseBase> EvaluateDlpPoliciesJobs { get; set; }
+        public List<JobResponseBase> EvaluateDlpPoliciesJobs {
+            get { return BackingStore?.Get<List<JobResponseBase>>(nameof(EvaluateDlpPoliciesJobs)); }
+            set { BackingStore?.Set(nameof(EvaluateDlpPoliciesJobs), value); }
+        }
         /// <summary>The evaluateLabelJobs property</summary>
-        public List<JobResponseBase> EvaluateLabelJobs { get; set; }
+        public List<JobResponseBase> EvaluateLabelJobs {
+            get { return BackingStore?.Get<List<JobResponseBase>>(nameof(EvaluateLabelJobs)); }
+            set { BackingStore?.Set(nameof(EvaluateLabelJobs), value); }
+        }
         /// <summary>The exactMatchDataStores property</summary>
-        public List<ExactMatchDataStore> ExactMatchDataStores { get; set; }
+        public List<ExactMatchDataStore> ExactMatchDataStores {
+            get { return BackingStore?.Get<List<ExactMatchDataStore>>(nameof(ExactMatchDataStores)); }
+            set { BackingStore?.Set(nameof(ExactMatchDataStores), value); }
+        }
         /// <summary>The exactMatchUploadAgents property</summary>
-        public List<ExactMatchUploadAgent> ExactMatchUploadAgents { get; set; }
+        public List<ExactMatchUploadAgent> ExactMatchUploadAgents {
+            get { return BackingStore?.Get<List<ExactMatchUploadAgent>>(nameof(ExactMatchUploadAgents)); }
+            set { BackingStore?.Set(nameof(ExactMatchUploadAgents), value); }
+        }
         /// <summary>The jobs property</summary>
-        public List<JobResponseBase> Jobs { get; set; }
+        public List<JobResponseBase> Jobs {
+            get { return BackingStore?.Get<List<JobResponseBase>>(nameof(Jobs)); }
+            set { BackingStore?.Set(nameof(Jobs), value); }
+        }
         /// <summary>The sensitiveTypes property</summary>
-        public List<SensitiveType> SensitiveTypes { get; set; }
+        public List<SensitiveType> SensitiveTypes {
+            get { return BackingStore?.Get<List<SensitiveType>>(nameof(SensitiveTypes)); }
+            set { BackingStore?.Set(nameof(SensitiveTypes), value); }
+        }
         /// <summary>The sensitivityLabels property</summary>
-        public List<SensitivityLabel> SensitivityLabels { get; set; }
+        public List<SensitivityLabel> SensitivityLabels {
+            get { return BackingStore?.Get<List<SensitivityLabel>>(nameof(SensitivityLabels)); }
+            set { BackingStore?.Set(nameof(SensitivityLabels), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

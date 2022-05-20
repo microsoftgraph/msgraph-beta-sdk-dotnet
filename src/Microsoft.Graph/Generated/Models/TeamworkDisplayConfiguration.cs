@@ -1,26 +1,48 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class TeamworkDisplayConfiguration : IAdditionalDataHolder, IParsable {
+    public class TeamworkDisplayConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The list of configured displays. Applicable only for Microsoft Teams Rooms devices.</summary>
-        public List<TeamworkConfiguredPeripheral> ConfiguredDisplays { get; set; }
+        public List<TeamworkConfiguredPeripheral> ConfiguredDisplays {
+            get { return BackingStore?.Get<List<TeamworkConfiguredPeripheral>>(nameof(ConfiguredDisplays)); }
+            set { BackingStore?.Set(nameof(ConfiguredDisplays), value); }
+        }
         /// <summary>Total number of connected displays, including the inbuilt display. Applicable only for Teams Rooms devices.</summary>
-        public int? DisplayCount { get; set; }
+        public int? DisplayCount {
+            get { return BackingStore?.Get<int?>(nameof(DisplayCount)); }
+            set { BackingStore?.Set(nameof(DisplayCount), value); }
+        }
         /// <summary>Configuration for the inbuilt display. Not applicable for Teams Rooms devices.</summary>
-        public TeamworkDisplayScreenConfiguration InBuiltDisplayScreenConfiguration { get; set; }
+        public TeamworkDisplayScreenConfiguration InBuiltDisplayScreenConfiguration {
+            get { return BackingStore?.Get<TeamworkDisplayScreenConfiguration>(nameof(InBuiltDisplayScreenConfiguration)); }
+            set { BackingStore?.Set(nameof(InBuiltDisplayScreenConfiguration), value); }
+        }
         /// <summary>True if content duplication is allowed. Applicable only for Teams Rooms devices.</summary>
-        public bool? IsContentDuplicationAllowed { get; set; }
+        public bool? IsContentDuplicationAllowed {
+            get { return BackingStore?.Get<bool?>(nameof(IsContentDuplicationAllowed)); }
+            set { BackingStore?.Set(nameof(IsContentDuplicationAllowed), value); }
+        }
         /// <summary>True if dual display mode is enabled. If isDualDisplayModeEnabled is true, then the content will be displayed on both front of room screens instead of just the one screen, when it is shared via the HDMI ingest module on the Microsoft Teams Rooms device. Applicable only for Teams Rooms devices.</summary>
-        public bool? IsDualDisplayModeEnabled { get; set; }
+        public bool? IsDualDisplayModeEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(IsDualDisplayModeEnabled)); }
+            set { BackingStore?.Set(nameof(IsDualDisplayModeEnabled), value); }
+        }
         /// <summary>
         /// Instantiates a new teamworkDisplayConfiguration and sets the default values.
         /// </summary>
         public TeamworkDisplayConfiguration() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

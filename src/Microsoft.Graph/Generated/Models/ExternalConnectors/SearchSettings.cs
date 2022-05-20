@@ -1,18 +1,28 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
-    public class SearchSettings : IAdditionalDataHolder, IParsable {
+    public class SearchSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed.</summary>
-        public List<DisplayTemplate> SearchResultTemplates { get; set; }
+        public List<DisplayTemplate> SearchResultTemplates {
+            get { return BackingStore?.Get<List<DisplayTemplate>>(nameof(SearchResultTemplates)); }
+            set { BackingStore?.Set(nameof(SearchResultTemplates), value); }
+        }
         /// <summary>
         /// Instantiates a new searchSettings and sets the default values.
         /// </summary>
         public SearchSettings() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

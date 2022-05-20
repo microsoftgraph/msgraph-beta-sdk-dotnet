@@ -4,41 +4,93 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>You purchase multiple licenses for iOS apps through the Apple Volume Purchase Program for Business or Education. This involves setting up an Apple VPP account from the Apple website and uploading the Apple VPP Business or Education token to Intune. You can then synchronize your volume purchase information with Intune and track your volume-purchased app use. You can upload multiple Apple VPP Business or Education tokens.</summary>
     public class VppToken : Entity, IParsable {
         /// <summary>The apple Id associated with the given Apple Volume Purchase Program Token.</summary>
-        public string AppleId { get; set; }
+        public string AppleId {
+            get { return BackingStore?.Get<string>(nameof(AppleId)); }
+            set { BackingStore?.Set(nameof(AppleId), value); }
+        }
         /// <summary>Whether or not apps for the VPP token will be automatically updated.</summary>
-        public bool? AutomaticallyUpdateApps { get; set; }
+        public bool? AutomaticallyUpdateApps {
+            get { return BackingStore?.Get<bool?>(nameof(AutomaticallyUpdateApps)); }
+            set { BackingStore?.Set(nameof(AutomaticallyUpdateApps), value); }
+        }
         /// <summary>Admin consent to allow claiming token management from external MDM.</summary>
-        public bool? ClaimTokenManagementFromExternalMdm { get; set; }
+        public bool? ClaimTokenManagementFromExternalMdm {
+            get { return BackingStore?.Get<bool?>(nameof(ClaimTokenManagementFromExternalMdm)); }
+            set { BackingStore?.Set(nameof(ClaimTokenManagementFromExternalMdm), value); }
+        }
         /// <summary>Whether or not apps for the VPP token will be automatically updated.</summary>
-        public string CountryOrRegion { get; set; }
+        public string CountryOrRegion {
+            get { return BackingStore?.Get<string>(nameof(CountryOrRegion)); }
+            set { BackingStore?.Set(nameof(CountryOrRegion), value); }
+        }
         /// <summary>Consent granted for data sharing with the Apple Volume Purchase Program.</summary>
-        public bool? DataSharingConsentGranted { get; set; }
+        public bool? DataSharingConsentGranted {
+            get { return BackingStore?.Get<bool?>(nameof(DataSharingConsentGranted)); }
+            set { BackingStore?.Set(nameof(DataSharingConsentGranted), value); }
+        }
         /// <summary>An admin specified token friendly name.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The expiration date time of the Apple Volume Purchase Program Token.</summary>
-        public DateTimeOffset? ExpirationDateTime { get; set; }
+        public DateTimeOffset? ExpirationDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpirationDateTime)); }
+            set { BackingStore?.Set(nameof(ExpirationDateTime), value); }
+        }
         /// <summary>Last modification date time associated with the Apple Volume Purchase Program Token.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>The last time when an application sync was done with the Apple volume purchase program service using the the Apple Volume Purchase Program Token.</summary>
-        public DateTimeOffset? LastSyncDateTime { get; set; }
+        public DateTimeOffset? LastSyncDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSyncDateTime)); }
+            set { BackingStore?.Set(nameof(LastSyncDateTime), value); }
+        }
         /// <summary>Current sync status of the last application sync which was triggered using the Apple Volume Purchase Program Token. Possible values are: none, inProgress, completed, failed. Possible values are: none, inProgress, completed, failed.</summary>
-        public VppTokenSyncStatus? LastSyncStatus { get; set; }
+        public VppTokenSyncStatus? LastSyncStatus {
+            get { return BackingStore?.Get<VppTokenSyncStatus?>(nameof(LastSyncStatus)); }
+            set { BackingStore?.Set(nameof(LastSyncStatus), value); }
+        }
         /// <summary>Token location returned from Apple VPP.</summary>
-        public string LocationName { get; set; }
+        public string LocationName {
+            get { return BackingStore?.Get<string>(nameof(LocationName)); }
+            set { BackingStore?.Set(nameof(LocationName), value); }
+        }
         /// <summary>The organization associated with the Apple Volume Purchase Program Token</summary>
-        public string OrganizationName { get; set; }
+        public string OrganizationName {
+            get { return BackingStore?.Get<string>(nameof(OrganizationName)); }
+            set { BackingStore?.Set(nameof(OrganizationName), value); }
+        }
         /// <summary>Role Scope Tags IDs assigned to this entity.</summary>
-        public List<string> RoleScopeTagIds { get; set; }
+        public List<string> RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTagIds)); }
+            set { BackingStore?.Set(nameof(RoleScopeTagIds), value); }
+        }
         /// <summary>Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM, duplicateLocationId.</summary>
-        public VppTokenState? State { get; set; }
+        public VppTokenState? State {
+            get { return BackingStore?.Get<VppTokenState?>(nameof(State)); }
+            set { BackingStore?.Set(nameof(State), value); }
+        }
         /// <summary>The Apple Volume Purchase Program Token string downloaded from the Apple Volume Purchase Program.</summary>
-        public string Token { get; set; }
+        public string Token {
+            get { return BackingStore?.Get<string>(nameof(Token)); }
+            set { BackingStore?.Set(nameof(Token), value); }
+        }
         /// <summary>The collection of statuses of the actions performed on the Apple Volume Purchase Program Token.</summary>
-        public List<VppTokenActionResult> TokenActionResults { get; set; }
+        public List<VppTokenActionResult> TokenActionResults {
+            get { return BackingStore?.Get<List<VppTokenActionResult>>(nameof(TokenActionResults)); }
+            set { BackingStore?.Set(nameof(TokenActionResults), value); }
+        }
         /// <summary>The type of volume purchase program which the given Apple Volume Purchase Program Token is associated with. Possible values are: business, education. Possible values are: business, education.</summary>
-        public Microsoft.Graph.Beta.Models.VppTokenAccountType? VppTokenAccountType { get; set; }
+        public Microsoft.Graph.Beta.Models.VppTokenAccountType? VppTokenAccountType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VppTokenAccountType?>(nameof(VppTokenAccountType)); }
+            set { BackingStore?.Set(nameof(VppTokenAccountType), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class PatternedRecurrence : IAdditionalDataHolder, IParsable {
+    public class PatternedRecurrence : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The frequency of an event. Do not specify for a one-time access review.  For access reviews: Do not specify this property for a one-time access review.   Only interval, dayOfMonth, and type (weekly, absoluteMonthly) properties of recurrencePattern are supported.</summary>
-        public RecurrencePattern Pattern { get; set; }
+        public RecurrencePattern Pattern {
+            get { return BackingStore?.Get<RecurrencePattern>(nameof(Pattern)); }
+            set { BackingStore?.Set(nameof(Pattern), value); }
+        }
         /// <summary>The duration of an event.</summary>
-        public RecurrenceRange Range { get; set; }
+        public RecurrenceRange Range {
+            get { return BackingStore?.Get<RecurrenceRange>(nameof(Range)); }
+            set { BackingStore?.Set(nameof(Range), value); }
+        }
         /// <summary>
         /// Instantiates a new patternedRecurrence and sets the default values.
         /// </summary>
         public PatternedRecurrence() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

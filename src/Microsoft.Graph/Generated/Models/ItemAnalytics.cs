@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class ItemAnalytics : Entity, IParsable {
         /// <summary>The allTime property</summary>
-        public ItemActivityStat AllTime { get; set; }
+        public ItemActivityStat AllTime {
+            get { return BackingStore?.Get<ItemActivityStat>(nameof(AllTime)); }
+            set { BackingStore?.Set(nameof(AllTime), value); }
+        }
         /// <summary>The itemActivityStats property</summary>
-        public List<ItemActivityStat> ItemActivityStats { get; set; }
+        public List<ItemActivityStat> ItemActivityStats {
+            get { return BackingStore?.Get<List<ItemActivityStat>>(nameof(ItemActivityStats)); }
+            set { BackingStore?.Set(nameof(ItemActivityStats), value); }
+        }
         /// <summary>The lastSevenDays property</summary>
-        public ItemActivityStat LastSevenDays { get; set; }
+        public ItemActivityStat LastSevenDays {
+            get { return BackingStore?.Get<ItemActivityStat>(nameof(LastSevenDays)); }
+            set { BackingStore?.Set(nameof(LastSevenDays), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

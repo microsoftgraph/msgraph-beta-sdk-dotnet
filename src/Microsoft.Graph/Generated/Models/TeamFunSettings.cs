@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class TeamFunSettings : IAdditionalDataHolder, IParsable {
+    public class TeamFunSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>If set to true, enables users to include custom memes.</summary>
-        public bool? AllowCustomMemes { get; set; }
+        public bool? AllowCustomMemes {
+            get { return BackingStore?.Get<bool?>(nameof(AllowCustomMemes)); }
+            set { BackingStore?.Set(nameof(AllowCustomMemes), value); }
+        }
         /// <summary>If set to true, enables Giphy use.</summary>
-        public bool? AllowGiphy { get; set; }
+        public bool? AllowGiphy {
+            get { return BackingStore?.Get<bool?>(nameof(AllowGiphy)); }
+            set { BackingStore?.Set(nameof(AllowGiphy), value); }
+        }
         /// <summary>If set to true, enables users to include stickers and memes.</summary>
-        public bool? AllowStickersAndMemes { get; set; }
+        public bool? AllowStickersAndMemes {
+            get { return BackingStore?.Get<bool?>(nameof(AllowStickersAndMemes)); }
+            set { BackingStore?.Set(nameof(AllowStickersAndMemes), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Giphy content rating. Possible values are: moderate, strict.</summary>
-        public GiphyRatingType? GiphyContentRating { get; set; }
+        public GiphyRatingType? GiphyContentRating {
+            get { return BackingStore?.Get<GiphyRatingType?>(nameof(GiphyContentRating)); }
+            set { BackingStore?.Set(nameof(GiphyContentRating), value); }
+        }
         /// <summary>
         /// Instantiates a new teamFunSettings and sets the default values.
         /// </summary>
         public TeamFunSettings() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

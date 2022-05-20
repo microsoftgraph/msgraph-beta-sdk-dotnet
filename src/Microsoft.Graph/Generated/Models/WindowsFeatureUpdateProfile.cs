@@ -4,27 +4,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Windows Feature Update Profile</summary>
     public class WindowsFeatureUpdateProfile : Entity, IParsable {
         /// <summary>The list of group assignments of the profile.</summary>
-        public List<WindowsFeatureUpdateProfileAssignment> Assignments { get; set; }
+        public List<WindowsFeatureUpdateProfileAssignment> Assignments {
+            get { return BackingStore?.Get<List<WindowsFeatureUpdateProfileAssignment>>(nameof(Assignments)); }
+            set { BackingStore?.Set(nameof(Assignments), value); }
+        }
         /// <summary>The date time that the profile was created.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>Friendly display name of the quality update profile deployable content</summary>
-        public string DeployableContentDisplayName { get; set; }
+        public string DeployableContentDisplayName {
+            get { return BackingStore?.Get<string>(nameof(DeployableContentDisplayName)); }
+            set { BackingStore?.Set(nameof(DeployableContentDisplayName), value); }
+        }
         /// <summary>The description of the profile which is specified by the user.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The display name of the profile.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The last supported date for a feature update</summary>
-        public DateTimeOffset? EndOfSupportDate { get; set; }
+        public DateTimeOffset? EndOfSupportDate {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndOfSupportDate)); }
+            set { BackingStore?.Set(nameof(EndOfSupportDate), value); }
+        }
         /// <summary>The feature update version that will be deployed to the devices targeted by this profile. The version could be any supported version for example 1709, 1803 or 1809 and so on.</summary>
-        public string FeatureUpdateVersion { get; set; }
+        public string FeatureUpdateVersion {
+            get { return BackingStore?.Get<string>(nameof(FeatureUpdateVersion)); }
+            set { BackingStore?.Set(nameof(FeatureUpdateVersion), value); }
+        }
         /// <summary>The date time that the profile was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>List of Scope Tags for this Feature Update entity.</summary>
-        public List<string> RoleScopeTagIds { get; set; }
+        public List<string> RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTagIds)); }
+            set { BackingStore?.Set(nameof(RoleScopeTagIds), value); }
+        }
         /// <summary>The windows update rollout settings, including offer start date time, offer end date time, and days between each set of offers.</summary>
-        public WindowsUpdateRolloutSettings RolloutSettings { get; set; }
+        public WindowsUpdateRolloutSettings RolloutSettings {
+            get { return BackingStore?.Get<WindowsUpdateRolloutSettings>(nameof(RolloutSettings)); }
+            set { BackingStore?.Set(nameof(RolloutSettings), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

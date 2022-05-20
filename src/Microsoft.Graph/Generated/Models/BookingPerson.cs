@@ -4,16 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Represents a booking customer or staff member.</summary>
     public class BookingPerson : BookingNamedEntity, IParsable {
         /// <summary>The email address of the person.</summary>
-        public string EmailAddress { get; set; }
+        public string EmailAddress {
+            get { return BackingStore?.Get<string>(nameof(EmailAddress)); }
+            set { BackingStore?.Set(nameof(EmailAddress), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new BookingPerson CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BookingPerson();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.bookingPerson" => new BookingPerson(),
+                _ => new BookingPerson(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

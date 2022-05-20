@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class Tasks : Entity, IParsable {
         /// <summary>All tasks in the users mailbox.</summary>
-        public List<BaseTask> Alltasks { get; set; }
+        public List<BaseTask> Alltasks {
+            get { return BackingStore?.Get<List<BaseTask>>(nameof(Alltasks)); }
+            set { BackingStore?.Set(nameof(Alltasks), value); }
+        }
         /// <summary>The task lists in the users mailbox.</summary>
-        public List<BaseTaskList> Lists { get; set; }
+        public List<BaseTaskList> Lists {
+            get { return BackingStore?.Get<List<BaseTaskList>>(nameof(Lists)); }
+            set { BackingStore?.Set(nameof(Lists), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

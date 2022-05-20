@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.CancelMediaProcessing {
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(CancelMediaProcessingRequestBody body, Action<CancelMediaProcessingRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation CreatePostRequestInformation(CancelMediaProcessingPostRequestBody body, Action<CancelMediaProcessingRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.CancelMediaProcessing {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<CancelMediaProcessingOperation> PostAsync(CancelMediaProcessingRequestBody body, Action<CancelMediaProcessingRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<CancelMediaProcessingOperation> PostAsync(CancelMediaProcessingPostRequestBody body, Action<CancelMediaProcessingRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<CancelMediaProcessingOperation>(requestInfo, CancelMediaProcessingOperation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);

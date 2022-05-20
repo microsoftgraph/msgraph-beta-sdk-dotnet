@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class TeamworkCameraConfiguration : IAdditionalDataHolder, IParsable {
+    public class TeamworkCameraConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The cameras property</summary>
-        public List<TeamworkPeripheral> Cameras { get; set; }
+        public List<TeamworkPeripheral> Cameras {
+            get { return BackingStore?.Get<List<TeamworkPeripheral>>(nameof(Cameras)); }
+            set { BackingStore?.Set(nameof(Cameras), value); }
+        }
         /// <summary>The configuration for the content camera.</summary>
-        public TeamworkContentCameraConfiguration ContentCameraConfiguration { get; set; }
+        public TeamworkContentCameraConfiguration ContentCameraConfiguration {
+            get { return BackingStore?.Get<TeamworkContentCameraConfiguration>(nameof(ContentCameraConfiguration)); }
+            set { BackingStore?.Set(nameof(ContentCameraConfiguration), value); }
+        }
         /// <summary>The defaultContentCamera property</summary>
-        public TeamworkPeripheral DefaultContentCamera { get; set; }
+        public TeamworkPeripheral DefaultContentCamera {
+            get { return BackingStore?.Get<TeamworkPeripheral>(nameof(DefaultContentCamera)); }
+            set { BackingStore?.Set(nameof(DefaultContentCamera), value); }
+        }
         /// <summary>
         /// Instantiates a new teamworkCameraConfiguration and sets the default values.
         /// </summary>
         public TeamworkCameraConfiguration() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

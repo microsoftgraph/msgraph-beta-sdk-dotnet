@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class FollowupFlag : IAdditionalDataHolder, IParsable {
+    public class FollowupFlag : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The date and time that the follow-up was finished.</summary>
-        public DateTimeTimeZone CompletedDateTime { get; set; }
+        public DateTimeTimeZone CompletedDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(CompletedDateTime)); }
+            set { BackingStore?.Set(nameof(CompletedDateTime), value); }
+        }
         /// <summary>The date and time that the follow up is to be finished. Note: To set the due date, you must also specify the startDateTime; otherwise, you will get a 400 Bad Request response.</summary>
-        public DateTimeTimeZone DueDateTime { get; set; }
+        public DateTimeTimeZone DueDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(DueDateTime)); }
+            set { BackingStore?.Set(nameof(DueDateTime), value); }
+        }
         /// <summary>The status for follow-up for an item. Possible values are notFlagged, complete, and flagged.</summary>
-        public FollowupFlagStatus? FlagStatus { get; set; }
+        public FollowupFlagStatus? FlagStatus {
+            get { return BackingStore?.Get<FollowupFlagStatus?>(nameof(FlagStatus)); }
+            set { BackingStore?.Set(nameof(FlagStatus), value); }
+        }
         /// <summary>The date and time that the follow-up is to begin.</summary>
-        public DateTimeTimeZone StartDateTime { get; set; }
+        public DateTimeTimeZone StartDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(StartDateTime)); }
+            set { BackingStore?.Set(nameof(StartDateTime), value); }
+        }
         /// <summary>
         /// Instantiates a new followupFlag and sets the default values.
         /// </summary>
         public FollowupFlag() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

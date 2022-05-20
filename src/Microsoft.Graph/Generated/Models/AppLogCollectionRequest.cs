@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>AppLogCollectionRequest Entity.</summary>
     public class AppLogCollectionRequest : Entity, IParsable {
         /// <summary>Time at which the upload log request reached a terminal state</summary>
-        public DateTimeOffset? CompletedDateTime { get; set; }
+        public DateTimeOffset? CompletedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CompletedDateTime)); }
+            set { BackingStore?.Set(nameof(CompletedDateTime), value); }
+        }
         /// <summary>List of log folders.</summary>
-        public List<string> CustomLogFolders { get; set; }
+        public List<string> CustomLogFolders {
+            get { return BackingStore?.Get<List<string>>(nameof(CustomLogFolders)); }
+            set { BackingStore?.Set(nameof(CustomLogFolders), value); }
+        }
         /// <summary>Error message if any during the upload process</summary>
-        public string ErrorMessage { get; set; }
+        public string ErrorMessage {
+            get { return BackingStore?.Get<string>(nameof(ErrorMessage)); }
+            set { BackingStore?.Set(nameof(ErrorMessage), value); }
+        }
         /// <summary>Log upload status. Possible values are: pending, completed, failed.</summary>
-        public AppLogUploadState? Status { get; set; }
+        public AppLogUploadState? Status {
+            get { return BackingStore?.Get<AppLogUploadState?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

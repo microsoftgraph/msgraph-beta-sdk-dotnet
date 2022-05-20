@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the security singleton.</summary>
     public class ProviderTenantSetting : Entity, IParsable {
         /// <summary>The azureTenantId property</summary>
-        public string AzureTenantId { get; set; }
+        public string AzureTenantId {
+            get { return BackingStore?.Get<string>(nameof(AzureTenantId)); }
+            set { BackingStore?.Set(nameof(AzureTenantId), value); }
+        }
         /// <summary>The enabled property</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled {
+            get { return BackingStore?.Get<bool?>(nameof(Enabled)); }
+            set { BackingStore?.Set(nameof(Enabled), value); }
+        }
         /// <summary>The lastModifiedDateTime property</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>The provider property</summary>
-        public string Provider { get; set; }
+        public string Provider {
+            get { return BackingStore?.Get<string>(nameof(Provider)); }
+            set { BackingStore?.Set(nameof(Provider), value); }
+        }
         /// <summary>The vendor property</summary>
-        public string Vendor { get; set; }
+        public string Vendor {
+            get { return BackingStore?.Get<string>(nameof(Vendor)); }
+            set { BackingStore?.Set(nameof(Vendor), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

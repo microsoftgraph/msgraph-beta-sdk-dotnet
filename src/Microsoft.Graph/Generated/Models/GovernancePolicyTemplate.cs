@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of approvalWorkflowProvider entities.</summary>
     public class GovernancePolicyTemplate : Entity, IParsable {
         /// <summary>The displayName property</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The policy property</summary>
-        public GovernancePolicy Policy { get; set; }
+        public GovernancePolicy Policy {
+            get { return BackingStore?.Get<GovernancePolicy>(nameof(Policy)); }
+            set { BackingStore?.Set(nameof(Policy), value); }
+        }
         /// <summary>The settings property</summary>
-        public BusinessFlowSettings Settings { get; set; }
+        public BusinessFlowSettings Settings {
+            get { return BackingStore?.Get<BusinessFlowSettings>(nameof(Settings)); }
+            set { BackingStore?.Set(nameof(Settings), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

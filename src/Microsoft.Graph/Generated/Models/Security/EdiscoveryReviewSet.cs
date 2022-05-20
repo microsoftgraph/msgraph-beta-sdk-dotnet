@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
+    /// <summary>Provides operations to manage the security singleton.</summary>
     public class EdiscoveryReviewSet : DataSet, IParsable {
         /// <summary>The files property</summary>
-        public List<EdiscoveryFile> Files { get; set; }
+        public List<EdiscoveryFile> Files {
+            get { return BackingStore?.Get<List<EdiscoveryFile>>(nameof(Files)); }
+            set { BackingStore?.Set(nameof(Files), value); }
+        }
         /// <summary>The queries property</summary>
-        public List<EdiscoveryReviewSetQuery> Queries { get; set; }
+        public List<EdiscoveryReviewSetQuery> Queries {
+            get { return BackingStore?.Get<List<EdiscoveryReviewSetQuery>>(nameof(Queries)); }
+            set { BackingStore?.Set(nameof(Queries), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

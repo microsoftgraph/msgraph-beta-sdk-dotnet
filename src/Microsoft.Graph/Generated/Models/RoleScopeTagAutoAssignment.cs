@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Contains the properties for auto-assigning a Role Scope Tag to a group to be applied to Devices.</summary>
     public class RoleScopeTagAutoAssignment : Entity, IParsable {
         /// <summary>The auto-assignment target for the specific Role Scope Tag.</summary>
-        public DeviceAndAppManagementAssignmentTarget Target { get; set; }
+        public DeviceAndAppManagementAssignmentTarget Target {
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>(nameof(Target)); }
+            set { BackingStore?.Set(nameof(Target), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

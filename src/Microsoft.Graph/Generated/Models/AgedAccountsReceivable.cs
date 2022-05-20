@@ -5,27 +5,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the financials singleton.</summary>
     public class AgedAccountsReceivable : Entity, IParsable {
         /// <summary>The agedAsOfDate property</summary>
-        public Date? AgedAsOfDate { get; set; }
+        public Date? AgedAsOfDate {
+            get { return BackingStore?.Get<Date?>(nameof(AgedAsOfDate)); }
+            set { BackingStore?.Set(nameof(AgedAsOfDate), value); }
+        }
         /// <summary>The balanceDue property</summary>
-        public decimal? BalanceDue { get; set; }
+        public decimal? BalanceDue {
+            get { return BackingStore?.Get<decimal?>(nameof(BalanceDue)); }
+            set { BackingStore?.Set(nameof(BalanceDue), value); }
+        }
         /// <summary>The currencyCode property</summary>
-        public string CurrencyCode { get; set; }
+        public string CurrencyCode {
+            get { return BackingStore?.Get<string>(nameof(CurrencyCode)); }
+            set { BackingStore?.Set(nameof(CurrencyCode), value); }
+        }
         /// <summary>The currentAmount property</summary>
-        public decimal? CurrentAmount { get; set; }
+        public decimal? CurrentAmount {
+            get { return BackingStore?.Get<decimal?>(nameof(CurrentAmount)); }
+            set { BackingStore?.Set(nameof(CurrentAmount), value); }
+        }
         /// <summary>The customerNumber property</summary>
-        public string CustomerNumber { get; set; }
+        public string CustomerNumber {
+            get { return BackingStore?.Get<string>(nameof(CustomerNumber)); }
+            set { BackingStore?.Set(nameof(CustomerNumber), value); }
+        }
         /// <summary>The name property</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>The period1Amount property</summary>
-        public decimal? Period1Amount { get; set; }
+        public decimal? Period1Amount {
+            get { return BackingStore?.Get<decimal?>(nameof(Period1Amount)); }
+            set { BackingStore?.Set(nameof(Period1Amount), value); }
+        }
         /// <summary>The period2Amount property</summary>
-        public decimal? Period2Amount { get; set; }
+        public decimal? Period2Amount {
+            get { return BackingStore?.Get<decimal?>(nameof(Period2Amount)); }
+            set { BackingStore?.Set(nameof(Period2Amount), value); }
+        }
         /// <summary>The period3Amount property</summary>
-        public decimal? Period3Amount { get; set; }
+        public decimal? Period3Amount {
+            get { return BackingStore?.Get<decimal?>(nameof(Period3Amount)); }
+            set { BackingStore?.Set(nameof(Period3Amount), value); }
+        }
         /// <summary>The periodLengthFilter property</summary>
-        public string PeriodLengthFilter { get; set; }
+        public string PeriodLengthFilter {
+            get { return BackingStore?.Get<string>(nameof(PeriodLengthFilter)); }
+            set { BackingStore?.Set(nameof(PeriodLengthFilter), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

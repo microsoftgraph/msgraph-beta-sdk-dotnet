@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Entity that describes tenant level settings for derived credentials</summary>
     public class DeviceManagementDerivedCredentialSettings : Entity, IParsable {
         /// <summary>The display name for the profile.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The URL that will be accessible to end users as they retrieve a derived credential using the Company Portal.</summary>
-        public string HelpUrl { get; set; }
+        public string HelpUrl {
+            get { return BackingStore?.Get<string>(nameof(HelpUrl)); }
+            set { BackingStore?.Set(nameof(HelpUrl), value); }
+        }
         /// <summary>The derived credential provider to use.</summary>
-        public DeviceManagementDerivedCredentialIssuer? Issuer { get; set; }
+        public DeviceManagementDerivedCredentialIssuer? Issuer {
+            get { return BackingStore?.Get<DeviceManagementDerivedCredentialIssuer?>(nameof(Issuer)); }
+            set { BackingStore?.Set(nameof(Issuer), value); }
+        }
         /// <summary>The methods used to inform the end user to open Company Portal to deliver Wi-Fi, VPN, or email profiles that use certificates to the device.</summary>
-        public DeviceManagementDerivedCredentialNotificationType? NotificationType { get; set; }
+        public DeviceManagementDerivedCredentialNotificationType? NotificationType {
+            get { return BackingStore?.Get<DeviceManagementDerivedCredentialNotificationType?>(nameof(NotificationType)); }
+            set { BackingStore?.Set(nameof(NotificationType), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -1,23 +1,39 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>This type represents when and to whom to send an e-mail reminder.</summary>
-    public class BookingReminder : IAdditionalDataHolder, IParsable {
+    public class BookingReminder : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The message in the reminder.</summary>
-        public string Message { get; set; }
+        public string Message {
+            get { return BackingStore?.Get<string>(nameof(Message)); }
+            set { BackingStore?.Set(nameof(Message), value); }
+        }
         /// <summary>The amount of time before the start of an appointment that the reminder should be sent. It&apos;s denoted in ISO 8601 format.</summary>
-        public TimeSpan? Offset { get; set; }
+        public TimeSpan? Offset {
+            get { return BackingStore?.Get<TimeSpan?>(nameof(Offset)); }
+            set { BackingStore?.Set(nameof(Offset), value); }
+        }
         /// <summary>The persons who should receive the reminder. Possible values are: allAttendees, staff, customer and unknownFutureValue.</summary>
-        public BookingReminderRecipients? Recipients { get; set; }
+        public BookingReminderRecipients? Recipients {
+            get { return BackingStore?.Get<BookingReminderRecipients?>(nameof(Recipients)); }
+            set { BackingStore?.Set(nameof(Recipients), value); }
+        }
         /// <summary>
         /// Instantiates a new bookingReminder and sets the default values.
         /// </summary>
         public BookingReminder() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

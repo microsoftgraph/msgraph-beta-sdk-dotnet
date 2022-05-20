@@ -4,33 +4,73 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>A termsAndConditions entity represents the metadata and contents of a given Terms and Conditions (T&amp;C) policy. T&amp;C policies’ contents are presented to users upon their first attempt to enroll into Intune and subsequently upon edits where an administrator has required re-acceptance. They enable administrators to communicate the provisions to which a user must agree in order to have devices enrolled into Intune.</summary>
     public class TermsAndConditions : Entity, IParsable {
         /// <summary>Administrator-supplied explanation of the terms and conditions, typically describing what it means to accept the terms and conditions set out in the T&amp;C policy. This is shown to the user on prompts to accept the T&amp;C policy.</summary>
-        public string AcceptanceStatement { get; set; }
+        public string AcceptanceStatement {
+            get { return BackingStore?.Get<string>(nameof(AcceptanceStatement)); }
+            set { BackingStore?.Set(nameof(AcceptanceStatement), value); }
+        }
         /// <summary>The list of acceptance statuses for this T&amp;C policy.</summary>
-        public List<TermsAndConditionsAcceptanceStatus> AcceptanceStatuses { get; set; }
+        public List<TermsAndConditionsAcceptanceStatus> AcceptanceStatuses {
+            get { return BackingStore?.Get<List<TermsAndConditionsAcceptanceStatus>>(nameof(AcceptanceStatuses)); }
+            set { BackingStore?.Set(nameof(AcceptanceStatuses), value); }
+        }
         /// <summary>The list of assignments for this T&amp;C policy.</summary>
-        public List<TermsAndConditionsAssignment> Assignments { get; set; }
+        public List<TermsAndConditionsAssignment> Assignments {
+            get { return BackingStore?.Get<List<TermsAndConditionsAssignment>>(nameof(Assignments)); }
+            set { BackingStore?.Set(nameof(Assignments), value); }
+        }
         /// <summary>Administrator-supplied body text of the terms and conditions, typically the terms themselves. This is shown to the user on prompts to accept the T&amp;C policy.</summary>
-        public string BodyText { get; set; }
+        public string BodyText {
+            get { return BackingStore?.Get<string>(nameof(BodyText)); }
+            set { BackingStore?.Set(nameof(BodyText), value); }
+        }
         /// <summary>DateTime the object was created.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>Administrator-supplied description of the T&amp;C policy.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Administrator-supplied name for the T&amp;C policy.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The list of group assignments for this T&amp;C policy.</summary>
-        public List<TermsAndConditionsGroupAssignment> GroupAssignments { get; set; }
+        public List<TermsAndConditionsGroupAssignment> GroupAssignments {
+            get { return BackingStore?.Get<List<TermsAndConditionsGroupAssignment>>(nameof(GroupAssignments)); }
+            set { BackingStore?.Set(nameof(GroupAssignments), value); }
+        }
         /// <summary>DateTime the object was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>DateTime the object was last modified.</summary>
-        public DateTimeOffset? ModifiedDateTime { get; set; }
+        public DateTimeOffset? ModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(ModifiedDateTime), value); }
+        }
         /// <summary>List of Scope Tags for this Entity instance.</summary>
-        public List<string> RoleScopeTagIds { get; set; }
+        public List<string> RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTagIds)); }
+            set { BackingStore?.Set(nameof(RoleScopeTagIds), value); }
+        }
         /// <summary>Administrator-supplied title of the terms and conditions. This is shown to the user on prompts to accept the T&amp;C policy.</summary>
-        public string Title { get; set; }
+        public string Title {
+            get { return BackingStore?.Get<string>(nameof(Title)); }
+            set { BackingStore?.Set(nameof(Title), value); }
+        }
         /// <summary>Integer indicating the current version of the terms. Incremented when an administrator makes a change to the terms and wishes to require users to re-accept the modified T&amp;C policy.</summary>
-        public int? Version { get; set; }
+        public int? Version {
+            get { return BackingStore?.Get<int?>(nameof(Version)); }
+            set { BackingStore?.Set(nameof(Version), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

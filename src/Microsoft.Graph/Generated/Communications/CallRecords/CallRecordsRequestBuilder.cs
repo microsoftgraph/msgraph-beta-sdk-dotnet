@@ -1,4 +1,6 @@
 using Microsoft.Graph.Beta.Communications.CallRecords.Count;
+using Microsoft.Graph.Beta.Communications.CallRecords.GetDirectRoutingCallsWithFromDateTimeWithToDateTime;
+using Microsoft.Graph.Beta.Communications.CallRecords.GetPstnCallsWithFromDateTimeWithToDateTime;
 using Microsoft.Graph.Beta.Communications.CallRecords.Item;
 using Microsoft.Graph.Beta.Models.CallRecords;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -109,6 +111,26 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CallRecordCollectionResponse>(requestInfo, CallRecordCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Provides operations to call the getDirectRoutingCalls method.
+        /// <param name="fromDateTime">Usage: fromDateTime=&apos;{fromDateTime}&apos;</param>
+        /// <param name="toDateTime">Usage: toDateTime=&apos;{toDateTime}&apos;</param>
+        /// </summary>
+        public GetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder GetDirectRoutingCallsWithFromDateTimeWithToDateTime(DateTimeOffset? fromDateTime, DateTimeOffset? toDateTime) {
+            _ = fromDateTime ?? throw new ArgumentNullException(nameof(fromDateTime));
+            _ = toDateTime ?? throw new ArgumentNullException(nameof(toDateTime));
+            return new GetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder(PathParameters, RequestAdapter, fromDateTime, toDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getPstnCalls method.
+        /// <param name="fromDateTime">Usage: fromDateTime=&apos;{fromDateTime}&apos;</param>
+        /// <param name="toDateTime">Usage: toDateTime=&apos;{toDateTime}&apos;</param>
+        /// </summary>
+        public GetPstnCallsWithFromDateTimeWithToDateTimeRequestBuilder GetPstnCallsWithFromDateTimeWithToDateTime(DateTimeOffset? fromDateTime, DateTimeOffset? toDateTime) {
+            _ = fromDateTime ?? throw new ArgumentNullException(nameof(fromDateTime));
+            _ = toDateTime ?? throw new ArgumentNullException(nameof(toDateTime));
+            return new GetPstnCallsWithFromDateTimeWithToDateTimeRequestBuilder(PathParameters, RequestAdapter, fromDateTime, toDateTime);
         }
         /// <summary>
         /// Create new navigation property to callRecords for communications

@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class DisplayNameLocalization : IAdditionalDataHolder, IParsable {
+    public class DisplayNameLocalization : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Provides the language culture-code and friendly name of the language that the displayName field has been provided in.</summary>
-        public string LanguageTag { get; set; }
+        public string LanguageTag {
+            get { return BackingStore?.Get<string>(nameof(LanguageTag)); }
+            set { BackingStore?.Set(nameof(LanguageTag), value); }
+        }
         /// <summary>
         /// Instantiates a new displayNameLocalization and sets the default values.
         /// </summary>
         public DisplayNameLocalization() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

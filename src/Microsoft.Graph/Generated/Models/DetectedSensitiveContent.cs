@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to call the classifyFile method.</summary>
     public class DetectedSensitiveContent : DetectedSensitiveContentBase, IParsable {
         /// <summary>The classificationAttributes property</summary>
-        public List<ClassificationAttribute> ClassificationAttributes { get; set; }
+        public List<ClassificationAttribute> ClassificationAttributes {
+            get { return BackingStore?.Get<List<ClassificationAttribute>>(nameof(ClassificationAttributes)); }
+            set { BackingStore?.Set(nameof(ClassificationAttributes), value); }
+        }
         /// <summary>The classificationMethod property</summary>
-        public Microsoft.Graph.Beta.Models.ClassificationMethod? ClassificationMethod { get; set; }
+        public Microsoft.Graph.Beta.Models.ClassificationMethod? ClassificationMethod {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ClassificationMethod?>(nameof(ClassificationMethod)); }
+            set { BackingStore?.Set(nameof(ClassificationMethod), value); }
+        }
         /// <summary>The matches property</summary>
-        public List<SensitiveContentLocation> Matches { get; set; }
+        public List<SensitiveContentLocation> Matches {
+            get { return BackingStore?.Get<List<SensitiveContentLocation>>(nameof(Matches)); }
+            set { BackingStore?.Set(nameof(Matches), value); }
+        }
         /// <summary>The scope property</summary>
-        public SensitiveTypeScope? Scope { get; set; }
+        public SensitiveTypeScope? Scope {
+            get { return BackingStore?.Get<SensitiveTypeScope?>(nameof(Scope)); }
+            set { BackingStore?.Set(nameof(Scope), value); }
+        }
         /// <summary>The sensitiveTypeSource property</summary>
-        public Microsoft.Graph.Beta.Models.SensitiveTypeSource? SensitiveTypeSource { get; set; }
+        public Microsoft.Graph.Beta.Models.SensitiveTypeSource? SensitiveTypeSource {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SensitiveTypeSource?>(nameof(SensitiveTypeSource)); }
+            set { BackingStore?.Set(nameof(SensitiveTypeSource), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

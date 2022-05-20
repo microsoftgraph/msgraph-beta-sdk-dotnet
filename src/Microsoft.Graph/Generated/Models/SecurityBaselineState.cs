@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Security baseline state for a device.</summary>
     public class SecurityBaselineState : Entity, IParsable {
         /// <summary>The display name of the security baseline</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The security baseline template id</summary>
-        public string SecurityBaselineTemplateId { get; set; }
+        public string SecurityBaselineTemplateId {
+            get { return BackingStore?.Get<string>(nameof(SecurityBaselineTemplateId)); }
+            set { BackingStore?.Set(nameof(SecurityBaselineTemplateId), value); }
+        }
         /// <summary>The security baseline state for different settings for a device</summary>
-        public List<SecurityBaselineSettingState> SettingStates { get; set; }
+        public List<SecurityBaselineSettingState> SettingStates {
+            get { return BackingStore?.Get<List<SecurityBaselineSettingState>>(nameof(SettingStates)); }
+            set { BackingStore?.Set(nameof(SettingStates), value); }
+        }
         /// <summary>Security baseline compliance state</summary>
-        public SecurityBaselineComplianceState? State { get; set; }
+        public SecurityBaselineComplianceState? State {
+            get { return BackingStore?.Get<SecurityBaselineComplianceState?>(nameof(State)); }
+            set { BackingStore?.Set(nameof(State), value); }
+        }
         /// <summary>User Principal Name</summary>
-        public string UserPrincipalName { get; set; }
+        public string UserPrincipalName {
+            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
+            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

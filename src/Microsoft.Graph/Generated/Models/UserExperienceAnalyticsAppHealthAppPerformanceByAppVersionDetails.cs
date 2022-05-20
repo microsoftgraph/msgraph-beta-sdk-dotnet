@@ -4,23 +4,48 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The user experience analytics application performance entity contains app performance by app version details.</summary>
     public class UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails : Entity, IParsable {
         /// <summary>The number of crashes for the app. Valid values -2147483648 to 2147483647</summary>
-        public int? AppCrashCount { get; set; }
+        public int? AppCrashCount {
+            get { return BackingStore?.Get<int?>(nameof(AppCrashCount)); }
+            set { BackingStore?.Set(nameof(AppCrashCount), value); }
+        }
         /// <summary>The friendly name of the application.</summary>
-        public string AppDisplayName { get; set; }
+        public string AppDisplayName {
+            get { return BackingStore?.Get<string>(nameof(AppDisplayName)); }
+            set { BackingStore?.Set(nameof(AppDisplayName), value); }
+        }
         /// <summary>The name of the application.</summary>
-        public string AppName { get; set; }
+        public string AppName {
+            get { return BackingStore?.Get<string>(nameof(AppName)); }
+            set { BackingStore?.Set(nameof(AppName), value); }
+        }
         /// <summary>The publisher of the application.</summary>
-        public string AppPublisher { get; set; }
+        public string AppPublisher {
+            get { return BackingStore?.Get<string>(nameof(AppPublisher)); }
+            set { BackingStore?.Set(nameof(AppPublisher), value); }
+        }
         /// <summary>The version of the application.</summary>
-        public string AppVersion { get; set; }
+        public string AppVersion {
+            get { return BackingStore?.Get<string>(nameof(AppVersion)); }
+            set { BackingStore?.Set(nameof(AppVersion), value); }
+        }
         /// <summary>The total number of devices that have reported one or more application crashes for this application and version. Valid values -2147483648 to 2147483647</summary>
-        public int? DeviceCountWithCrashes { get; set; }
+        public int? DeviceCountWithCrashes {
+            get { return BackingStore?.Get<int?>(nameof(DeviceCountWithCrashes)); }
+            set { BackingStore?.Set(nameof(DeviceCountWithCrashes), value); }
+        }
         /// <summary>Is the version of application the latest version for that app that is in use.</summary>
-        public bool? IsLatestUsedVersion { get; set; }
+        public bool? IsLatestUsedVersion {
+            get { return BackingStore?.Get<bool?>(nameof(IsLatestUsedVersion)); }
+            set { BackingStore?.Set(nameof(IsLatestUsedVersion), value); }
+        }
         /// <summary>Is the version of application the most used version for that app.</summary>
-        public bool? IsMostUsedVersion { get; set; }
+        public bool? IsMostUsedVersion {
+            get { return BackingStore?.Get<bool?>(nameof(IsMostUsedVersion)); }
+            set { BackingStore?.Set(nameof(IsMostUsedVersion), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -1,25 +1,44 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Policy template reference information</summary>
-    public class DeviceManagementConfigurationPolicyTemplateReference : IAdditionalDataHolder, IParsable {
+    public class DeviceManagementConfigurationPolicyTemplateReference : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Template Display Name of the referenced template. This property is read-only.</summary>
-        public string TemplateDisplayName { get; set; }
+        public string TemplateDisplayName {
+            get { return BackingStore?.Get<string>(nameof(TemplateDisplayName)); }
+            set { BackingStore?.Set(nameof(TemplateDisplayName), value); }
+        }
         /// <summary>Template Display Version of the referenced Template. This property is read-only.</summary>
-        public string TemplateDisplayVersion { get; set; }
+        public string TemplateDisplayVersion {
+            get { return BackingStore?.Get<string>(nameof(TemplateDisplayVersion)); }
+            set { BackingStore?.Set(nameof(TemplateDisplayVersion), value); }
+        }
         /// <summary>Template Family of the referenced Template. This property is read-only. Possible values are: none, endpointSecurityAntivirus, endpointSecurityDiskEncryption, endpointSecurityFirewall, endpointSecurityEndpointDetectionAndResponse, endpointSecurityAttackSurfaceReduction, endpointSecurityAccountProtection, endpointSecurityApplicationControl, baseline.</summary>
-        public DeviceManagementConfigurationTemplateFamily? TemplateFamily { get; set; }
+        public DeviceManagementConfigurationTemplateFamily? TemplateFamily {
+            get { return BackingStore?.Get<DeviceManagementConfigurationTemplateFamily?>(nameof(TemplateFamily)); }
+            set { BackingStore?.Set(nameof(TemplateFamily), value); }
+        }
         /// <summary>Template id</summary>
-        public string TemplateId { get; set; }
+        public string TemplateId {
+            get { return BackingStore?.Get<string>(nameof(TemplateId)); }
+            set { BackingStore?.Set(nameof(TemplateId), value); }
+        }
         /// <summary>
         /// Instantiates a new deviceManagementConfigurationPolicyTemplateReference and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationPolicyTemplateReference() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

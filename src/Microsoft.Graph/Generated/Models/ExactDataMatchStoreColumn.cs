@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ExactDataMatchStoreColumn : IAdditionalDataHolder, IParsable {
+    public class ExactDataMatchStoreColumn : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The ignoredDelimiters property</summary>
-        public List<string> IgnoredDelimiters { get; set; }
+        public List<string> IgnoredDelimiters {
+            get { return BackingStore?.Get<List<string>>(nameof(IgnoredDelimiters)); }
+            set { BackingStore?.Set(nameof(IgnoredDelimiters), value); }
+        }
         /// <summary>The isCaseInsensitive property</summary>
-        public bool? IsCaseInsensitive { get; set; }
+        public bool? IsCaseInsensitive {
+            get { return BackingStore?.Get<bool?>(nameof(IsCaseInsensitive)); }
+            set { BackingStore?.Set(nameof(IsCaseInsensitive), value); }
+        }
         /// <summary>The isSearchable property</summary>
-        public bool? IsSearchable { get; set; }
+        public bool? IsSearchable {
+            get { return BackingStore?.Get<bool?>(nameof(IsSearchable)); }
+            set { BackingStore?.Set(nameof(IsSearchable), value); }
+        }
         /// <summary>The name property</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>
         /// Instantiates a new exactDataMatchStoreColumn and sets the default values.
         /// </summary>
         public ExactDataMatchStoreColumn() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

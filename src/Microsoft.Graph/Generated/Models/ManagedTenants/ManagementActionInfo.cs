@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public class ManagementActionInfo : IAdditionalDataHolder, IParsable {
+    public class ManagementActionInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The identifier for the management action. Required. Read-only.</summary>
-        public string ManagementActionId { get; set; }
+        public string ManagementActionId {
+            get { return BackingStore?.Get<string>(nameof(ManagementActionId)); }
+            set { BackingStore?.Set(nameof(ManagementActionId), value); }
+        }
         /// <summary>The identifier for the management template. Required. Read-only.</summary>
-        public string ManagementTemplateId { get; set; }
+        public string ManagementTemplateId {
+            get { return BackingStore?.Get<string>(nameof(ManagementTemplateId)); }
+            set { BackingStore?.Set(nameof(ManagementTemplateId), value); }
+        }
         /// <summary>The managementTemplateVersion property</summary>
-        public int? ManagementTemplateVersion { get; set; }
+        public int? ManagementTemplateVersion {
+            get { return BackingStore?.Get<int?>(nameof(ManagementTemplateVersion)); }
+            set { BackingStore?.Set(nameof(ManagementTemplateVersion), value); }
+        }
         /// <summary>
         /// Instantiates a new managementActionInfo and sets the default values.
         /// </summary>
         public ManagementActionInfo() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

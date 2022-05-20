@@ -4,77 +4,183 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Represents a booked appointment of a service by a customer in a business.</summary>
     public class BookingAppointment : Entity, IParsable {
         /// <summary>Additional information that is sent to the customer when an appointment is confirmed.</summary>
-        public string AdditionalInformation { get; set; }
+        public string AdditionalInformation {
+            get { return BackingStore?.Get<string>(nameof(AdditionalInformation)); }
+            set { BackingStore?.Set(nameof(AdditionalInformation), value); }
+        }
         /// <summary>The SMTP address of the bookingCustomer who is booking the appointment.</summary>
-        public string CustomerEmailAddress { get; set; }
+        public string CustomerEmailAddress {
+            get { return BackingStore?.Get<string>(nameof(CustomerEmailAddress)); }
+            set { BackingStore?.Set(nameof(CustomerEmailAddress), value); }
+        }
         /// <summary>The ID of the bookingCustomer for this appointment. If no ID is specified when an appointment is created, then a new bookingCustomer object is created. Once set, you should consider the customerId immutable.</summary>
-        public string CustomerId { get; set; }
+        public string CustomerId {
+            get { return BackingStore?.Get<string>(nameof(CustomerId)); }
+            set { BackingStore?.Set(nameof(CustomerId), value); }
+        }
         /// <summary>Represents location information for the bookingCustomer who is booking the appointment.</summary>
-        public Location CustomerLocation { get; set; }
+        public Location CustomerLocation {
+            get { return BackingStore?.Get<Location>(nameof(CustomerLocation)); }
+            set { BackingStore?.Set(nameof(CustomerLocation), value); }
+        }
         /// <summary>The customer&apos;s name.</summary>
-        public string CustomerName { get; set; }
+        public string CustomerName {
+            get { return BackingStore?.Get<string>(nameof(CustomerName)); }
+            set { BackingStore?.Set(nameof(CustomerName), value); }
+        }
         /// <summary>Notes from the customer associated with this appointment. You can get the value only when reading this bookingAppointment by its ID.  You can set this property only when initially creating an appointment with a new customer. After that point, the value is computed from the customer represented by customerId.</summary>
-        public string CustomerNotes { get; set; }
+        public string CustomerNotes {
+            get { return BackingStore?.Get<string>(nameof(CustomerNotes)); }
+            set { BackingStore?.Set(nameof(CustomerNotes), value); }
+        }
         /// <summary>The customer&apos;s phone number.</summary>
-        public string CustomerPhone { get; set; }
+        public string CustomerPhone {
+            get { return BackingStore?.Get<string>(nameof(CustomerPhone)); }
+            set { BackingStore?.Set(nameof(CustomerPhone), value); }
+        }
         /// <summary>It lists down the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.</summary>
-        public List<BookingCustomerInformationBase> Customers { get; set; }
+        public List<BookingCustomerInformationBase> Customers {
+            get { return BackingStore?.Get<List<BookingCustomerInformationBase>>(nameof(Customers)); }
+            set { BackingStore?.Set(nameof(Customers), value); }
+        }
         /// <summary>The time zone of the customer. For a list of possible values, see dateTimeTimeZone.</summary>
-        public string CustomerTimeZone { get; set; }
+        public string CustomerTimeZone {
+            get { return BackingStore?.Get<string>(nameof(CustomerTimeZone)); }
+            set { BackingStore?.Set(nameof(CustomerTimeZone), value); }
+        }
         /// <summary>The length of the appointment, denoted in ISO8601 format.</summary>
-        public TimeSpan? Duration { get; set; }
+        public TimeSpan? Duration {
+            get { return BackingStore?.Get<TimeSpan?>(nameof(Duration)); }
+            set { BackingStore?.Set(nameof(Duration), value); }
+        }
         /// <summary>The end property</summary>
-        public DateTimeTimeZone End { get; set; }
+        public DateTimeTimeZone End {
+            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(End)); }
+            set { BackingStore?.Set(nameof(End), value); }
+        }
         /// <summary>The current number of customers in the appointment.</summary>
-        public int? FilledAttendeesCount { get; set; }
+        public int? FilledAttendeesCount {
+            get { return BackingStore?.Get<int?>(nameof(FilledAttendeesCount)); }
+            set { BackingStore?.Set(nameof(FilledAttendeesCount), value); }
+        }
         /// <summary>The billed amount on the invoice.</summary>
-        public double? InvoiceAmount { get; set; }
+        public double? InvoiceAmount {
+            get { return BackingStore?.Get<double?>(nameof(InvoiceAmount)); }
+            set { BackingStore?.Set(nameof(InvoiceAmount), value); }
+        }
         /// <summary>The date, time, and time zone of the invoice for this appointment.</summary>
-        public DateTimeTimeZone InvoiceDate { get; set; }
+        public DateTimeTimeZone InvoiceDate {
+            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(InvoiceDate)); }
+            set { BackingStore?.Set(nameof(InvoiceDate), value); }
+        }
         /// <summary>The ID of the invoice.</summary>
-        public string InvoiceId { get; set; }
+        public string InvoiceId {
+            get { return BackingStore?.Get<string>(nameof(InvoiceId)); }
+            set { BackingStore?.Set(nameof(InvoiceId), value); }
+        }
         /// <summary>The status of the invoice. Possible values are: draft, reviewing, open, canceled, paid, corrective.</summary>
-        public BookingInvoiceStatus? InvoiceStatus { get; set; }
+        public BookingInvoiceStatus? InvoiceStatus {
+            get { return BackingStore?.Get<BookingInvoiceStatus?>(nameof(InvoiceStatus)); }
+            set { BackingStore?.Set(nameof(InvoiceStatus), value); }
+        }
         /// <summary>The URL of the invoice in Microsoft Bookings.</summary>
-        public string InvoiceUrl { get; set; }
+        public string InvoiceUrl {
+            get { return BackingStore?.Get<string>(nameof(InvoiceUrl)); }
+            set { BackingStore?.Set(nameof(InvoiceUrl), value); }
+        }
         /// <summary>True indicates that the appointment will be held online. Default value is false.</summary>
-        public bool? IsLocationOnline { get; set; }
+        public bool? IsLocationOnline {
+            get { return BackingStore?.Get<bool?>(nameof(IsLocationOnline)); }
+            set { BackingStore?.Set(nameof(IsLocationOnline), value); }
+        }
         /// <summary>The URL of the online meeting for the appointment.</summary>
-        public string JoinWebUrl { get; set; }
+        public string JoinWebUrl {
+            get { return BackingStore?.Get<string>(nameof(JoinWebUrl)); }
+            set { BackingStore?.Set(nameof(JoinWebUrl), value); }
+        }
         /// <summary>The maximum number of customers allowed in an appointment. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.</summary>
-        public int? MaximumAttendeesCount { get; set; }
+        public int? MaximumAttendeesCount {
+            get { return BackingStore?.Get<int?>(nameof(MaximumAttendeesCount)); }
+            set { BackingStore?.Set(nameof(MaximumAttendeesCount), value); }
+        }
         /// <summary>The onlineMeetingUrl property</summary>
-        public string OnlineMeetingUrl { get; set; }
+        public string OnlineMeetingUrl {
+            get { return BackingStore?.Get<string>(nameof(OnlineMeetingUrl)); }
+            set { BackingStore?.Set(nameof(OnlineMeetingUrl), value); }
+        }
         /// <summary>True indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.</summary>
-        public bool? OptOutOfCustomerEmail { get; set; }
+        public bool? OptOutOfCustomerEmail {
+            get { return BackingStore?.Get<bool?>(nameof(OptOutOfCustomerEmail)); }
+            set { BackingStore?.Set(nameof(OptOutOfCustomerEmail), value); }
+        }
         /// <summary>The amount of time to reserve after the appointment ends, for cleaning up, as an example. The value is expressed in ISO8601 format.</summary>
-        public TimeSpan? PostBuffer { get; set; }
+        public TimeSpan? PostBuffer {
+            get { return BackingStore?.Get<TimeSpan?>(nameof(PostBuffer)); }
+            set { BackingStore?.Set(nameof(PostBuffer), value); }
+        }
         /// <summary>The amount of time to reserve before the appointment begins, for preparation, as an example. The value is expressed in ISO8601 format.</summary>
-        public TimeSpan? PreBuffer { get; set; }
+        public TimeSpan? PreBuffer {
+            get { return BackingStore?.Get<TimeSpan?>(nameof(PreBuffer)); }
+            set { BackingStore?.Set(nameof(PreBuffer), value); }
+        }
         /// <summary>The regular price for an appointment for the specified bookingService.</summary>
-        public double? Price { get; set; }
+        public double? Price {
+            get { return BackingStore?.Get<double?>(nameof(Price)); }
+            set { BackingStore?.Set(nameof(Price), value); }
+        }
         /// <summary>A setting to provide flexibility for the pricing structure of services. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet, unknownFutureValue.</summary>
-        public BookingPriceType? PriceType { get; set; }
+        public BookingPriceType? PriceType {
+            get { return BackingStore?.Get<BookingPriceType?>(nameof(PriceType)); }
+            set { BackingStore?.Set(nameof(PriceType), value); }
+        }
         /// <summary>The collection of customer reminders sent for this appointment. The value of this property is available only when reading this bookingAppointment by its ID.</summary>
-        public List<BookingReminder> Reminders { get; set; }
+        public List<BookingReminder> Reminders {
+            get { return BackingStore?.Get<List<BookingReminder>>(nameof(Reminders)); }
+            set { BackingStore?.Set(nameof(Reminders), value); }
+        }
         /// <summary>An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.</summary>
-        public string SelfServiceAppointmentId { get; set; }
+        public string SelfServiceAppointmentId {
+            get { return BackingStore?.Get<string>(nameof(SelfServiceAppointmentId)); }
+            set { BackingStore?.Set(nameof(SelfServiceAppointmentId), value); }
+        }
         /// <summary>The ID of the bookingService associated with this appointment.</summary>
-        public string ServiceId { get; set; }
+        public string ServiceId {
+            get { return BackingStore?.Get<string>(nameof(ServiceId)); }
+            set { BackingStore?.Set(nameof(ServiceId), value); }
+        }
         /// <summary>The location where the service is delivered.</summary>
-        public Location ServiceLocation { get; set; }
+        public Location ServiceLocation {
+            get { return BackingStore?.Get<Location>(nameof(ServiceLocation)); }
+            set { BackingStore?.Set(nameof(ServiceLocation), value); }
+        }
         /// <summary>The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.</summary>
-        public string ServiceName { get; set; }
+        public string ServiceName {
+            get { return BackingStore?.Get<string>(nameof(ServiceName)); }
+            set { BackingStore?.Set(nameof(ServiceName), value); }
+        }
         /// <summary>Notes from a bookingStaffMember. The value of this property is available only when reading this bookingAppointment by its ID.</summary>
-        public string ServiceNotes { get; set; }
+        public string ServiceNotes {
+            get { return BackingStore?.Get<string>(nameof(ServiceNotes)); }
+            set { BackingStore?.Set(nameof(ServiceNotes), value); }
+        }
         /// <summary>True indicates SMS notifications will be sent to the customers for the appointment. Default value is false.</summary>
-        public bool? SmsNotificationsEnabled { get; set; }
+        public bool? SmsNotificationsEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(SmsNotificationsEnabled)); }
+            set { BackingStore?.Set(nameof(SmsNotificationsEnabled), value); }
+        }
         /// <summary>The ID of each bookingStaffMember who is scheduled in this appointment.</summary>
-        public List<string> StaffMemberIds { get; set; }
+        public List<string> StaffMemberIds {
+            get { return BackingStore?.Get<List<string>>(nameof(StaffMemberIds)); }
+            set { BackingStore?.Set(nameof(StaffMemberIds), value); }
+        }
         /// <summary>The start property</summary>
-        public DateTimeTimeZone Start { get; set; }
+        public DateTimeTimeZone Start {
+            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(Start)); }
+            set { BackingStore?.Set(nameof(Start), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

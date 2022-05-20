@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ConditionalAccessClientApplications : IAdditionalDataHolder, IParsable {
+    public class ConditionalAccessClientApplications : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Service principal IDs excluded from the policy scope.</summary>
-        public List<string> ExcludeServicePrincipals { get; set; }
+        public List<string> ExcludeServicePrincipals {
+            get { return BackingStore?.Get<List<string>>(nameof(ExcludeServicePrincipals)); }
+            set { BackingStore?.Set(nameof(ExcludeServicePrincipals), value); }
+        }
         /// <summary>Service principal IDs included in the policy scope, or ServicePrincipalsInMyTenant.</summary>
-        public List<string> IncludeServicePrincipals { get; set; }
+        public List<string> IncludeServicePrincipals {
+            get { return BackingStore?.Get<List<string>>(nameof(IncludeServicePrincipals)); }
+            set { BackingStore?.Set(nameof(IncludeServicePrincipals), value); }
+        }
         /// <summary>
         /// Instantiates a new conditionalAccessClientApplications and sets the default values.
         /// </summary>
         public ConditionalAccessClientApplications() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

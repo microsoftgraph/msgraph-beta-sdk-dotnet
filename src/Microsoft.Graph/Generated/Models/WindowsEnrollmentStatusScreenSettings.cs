@@ -1,31 +1,59 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Enrollment status screen setting</summary>
-    public class WindowsEnrollmentStatusScreenSettings : IAdditionalDataHolder, IParsable {
+    public class WindowsEnrollmentStatusScreenSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Allow or block user to use device before profile and app installation complete</summary>
-        public bool? AllowDeviceUseBeforeProfileAndAppInstallComplete { get; set; }
+        public bool? AllowDeviceUseBeforeProfileAndAppInstallComplete {
+            get { return BackingStore?.Get<bool?>(nameof(AllowDeviceUseBeforeProfileAndAppInstallComplete)); }
+            set { BackingStore?.Set(nameof(AllowDeviceUseBeforeProfileAndAppInstallComplete), value); }
+        }
         /// <summary>Allow the user to continue using the device on installation failure</summary>
-        public bool? AllowDeviceUseOnInstallFailure { get; set; }
+        public bool? AllowDeviceUseOnInstallFailure {
+            get { return BackingStore?.Get<bool?>(nameof(AllowDeviceUseOnInstallFailure)); }
+            set { BackingStore?.Set(nameof(AllowDeviceUseOnInstallFailure), value); }
+        }
         /// <summary>Allow or block log collection on installation failure</summary>
-        public bool? AllowLogCollectionOnInstallFailure { get; set; }
+        public bool? AllowLogCollectionOnInstallFailure {
+            get { return BackingStore?.Get<bool?>(nameof(AllowLogCollectionOnInstallFailure)); }
+            set { BackingStore?.Set(nameof(AllowLogCollectionOnInstallFailure), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Allow the user to retry the setup on installation failure</summary>
-        public bool? BlockDeviceSetupRetryByUser { get; set; }
+        public bool? BlockDeviceSetupRetryByUser {
+            get { return BackingStore?.Get<bool?>(nameof(BlockDeviceSetupRetryByUser)); }
+            set { BackingStore?.Set(nameof(BlockDeviceSetupRetryByUser), value); }
+        }
         /// <summary>Set custom error message to show upon installation failure</summary>
-        public string CustomErrorMessage { get; set; }
+        public string CustomErrorMessage {
+            get { return BackingStore?.Get<string>(nameof(CustomErrorMessage)); }
+            set { BackingStore?.Set(nameof(CustomErrorMessage), value); }
+        }
         /// <summary>Show or hide installation progress to user</summary>
-        public bool? HideInstallationProgress { get; set; }
+        public bool? HideInstallationProgress {
+            get { return BackingStore?.Get<bool?>(nameof(HideInstallationProgress)); }
+            set { BackingStore?.Set(nameof(HideInstallationProgress), value); }
+        }
         /// <summary>Set installation progress timeout in minutes</summary>
-        public int? InstallProgressTimeoutInMinutes { get; set; }
+        public int? InstallProgressTimeoutInMinutes {
+            get { return BackingStore?.Get<int?>(nameof(InstallProgressTimeoutInMinutes)); }
+            set { BackingStore?.Set(nameof(InstallProgressTimeoutInMinutes), value); }
+        }
         /// <summary>
         /// Instantiates a new windowsEnrollmentStatusScreenSettings and sets the default values.
         /// </summary>
         public WindowsEnrollmentStatusScreenSettings() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

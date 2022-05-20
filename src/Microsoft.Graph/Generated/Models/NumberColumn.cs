@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class NumberColumn : IAdditionalDataHolder, IParsable {
+    public class NumberColumn : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>How many decimal places to display. See below for information about the possible values.</summary>
-        public string DecimalPlaces { get; set; }
+        public string DecimalPlaces {
+            get { return BackingStore?.Get<string>(nameof(DecimalPlaces)); }
+            set { BackingStore?.Set(nameof(DecimalPlaces), value); }
+        }
         /// <summary>How the value should be presented in the UX. Must be one of number or percentage. If unspecified, treated as number.</summary>
-        public string DisplayAs { get; set; }
+        public string DisplayAs {
+            get { return BackingStore?.Get<string>(nameof(DisplayAs)); }
+            set { BackingStore?.Set(nameof(DisplayAs), value); }
+        }
         /// <summary>The maximum permitted value.</summary>
-        public double? Maximum { get; set; }
+        public double? Maximum {
+            get { return BackingStore?.Get<double?>(nameof(Maximum)); }
+            set { BackingStore?.Set(nameof(Maximum), value); }
+        }
         /// <summary>The minimum permitted value.</summary>
-        public double? Minimum { get; set; }
+        public double? Minimum {
+            get { return BackingStore?.Get<double?>(nameof(Minimum)); }
+            set { BackingStore?.Set(nameof(Minimum), value); }
+        }
         /// <summary>
         /// Instantiates a new numberColumn and sets the default values.
         /// </summary>
         public NumberColumn() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

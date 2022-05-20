@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class AuthenticationMethod : Entity, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -11,7 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new AuthenticationMethod CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuthenticationMethod();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.authenticationMethod" => new AuthenticationMethod(),
+                _ => new AuthenticationMethod(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

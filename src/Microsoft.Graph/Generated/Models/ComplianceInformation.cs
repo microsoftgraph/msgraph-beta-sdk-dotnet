@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ComplianceInformation : IAdditionalDataHolder, IParsable {
+    public class ComplianceInformation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Collection of the certification controls associated with certification</summary>
-        public List<CertificationControl> CertificationControls { get; set; }
+        public List<CertificationControl> CertificationControls {
+            get { return BackingStore?.Get<List<CertificationControl>>(nameof(CertificationControls)); }
+            set { BackingStore?.Set(nameof(CertificationControls), value); }
+        }
         /// <summary>Compliance certification name (for example, ISO 27018:2014, GDPR, FedRAMP, NIST 800-171)</summary>
-        public string CertificationName { get; set; }
+        public string CertificationName {
+            get { return BackingStore?.Get<string>(nameof(CertificationName)); }
+            set { BackingStore?.Set(nameof(CertificationName), value); }
+        }
         /// <summary>
         /// Instantiates a new complianceInformation and sets the default values.
         /// </summary>
         public ComplianceInformation() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

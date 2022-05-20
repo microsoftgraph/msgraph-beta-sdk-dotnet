@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item.ClockOut {
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(ClockOutRequestBody body, Action<ClockOutRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation CreatePostRequestInformation(ClockOutPostRequestBody body, Action<ClockOutRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item.ClockOut {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<TimeCard> PostAsync(ClockOutRequestBody body, Action<ClockOutRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<TimeCard> PostAsync(ClockOutPostRequestBody body, Action<ClockOutRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<TimeCard>(requestInfo, TimeCard.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);

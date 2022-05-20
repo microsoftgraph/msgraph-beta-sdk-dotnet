@@ -4,33 +4,73 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class SensitivityLabel : Entity, IParsable {
         /// <summary>The applicableTo property</summary>
-        public SensitivityLabelTarget? ApplicableTo { get; set; }
+        public SensitivityLabelTarget? ApplicableTo {
+            get { return BackingStore?.Get<SensitivityLabelTarget?>(nameof(ApplicableTo)); }
+            set { BackingStore?.Set(nameof(ApplicableTo), value); }
+        }
         /// <summary>The applicationMode property</summary>
-        public Microsoft.Graph.Beta.Models.ApplicationMode? ApplicationMode { get; set; }
+        public Microsoft.Graph.Beta.Models.ApplicationMode? ApplicationMode {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ApplicationMode?>(nameof(ApplicationMode)); }
+            set { BackingStore?.Set(nameof(ApplicationMode), value); }
+        }
         /// <summary>The assignedPolicies property</summary>
-        public List<LabelPolicy> AssignedPolicies { get; set; }
+        public List<LabelPolicy> AssignedPolicies {
+            get { return BackingStore?.Get<List<LabelPolicy>>(nameof(AssignedPolicies)); }
+            set { BackingStore?.Set(nameof(AssignedPolicies), value); }
+        }
         /// <summary>The autoLabeling property</summary>
-        public Microsoft.Graph.Beta.Models.AutoLabeling AutoLabeling { get; set; }
+        public Microsoft.Graph.Beta.Models.AutoLabeling AutoLabeling {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AutoLabeling>(nameof(AutoLabeling)); }
+            set { BackingStore?.Set(nameof(AutoLabeling), value); }
+        }
         /// <summary>The description property</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The displayName property</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The isDefault property</summary>
-        public bool? IsDefault { get; set; }
+        public bool? IsDefault {
+            get { return BackingStore?.Get<bool?>(nameof(IsDefault)); }
+            set { BackingStore?.Set(nameof(IsDefault), value); }
+        }
         /// <summary>The isEndpointProtectionEnabled property</summary>
-        public bool? IsEndpointProtectionEnabled { get; set; }
+        public bool? IsEndpointProtectionEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(IsEndpointProtectionEnabled)); }
+            set { BackingStore?.Set(nameof(IsEndpointProtectionEnabled), value); }
+        }
         /// <summary>The labelActions property</summary>
-        public List<LabelActionBase> LabelActions { get; set; }
+        public List<LabelActionBase> LabelActions {
+            get { return BackingStore?.Get<List<LabelActionBase>>(nameof(LabelActions)); }
+            set { BackingStore?.Set(nameof(LabelActions), value); }
+        }
         /// <summary>The name property</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>The priority property</summary>
-        public int? Priority { get; set; }
+        public int? Priority {
+            get { return BackingStore?.Get<int?>(nameof(Priority)); }
+            set { BackingStore?.Set(nameof(Priority), value); }
+        }
         /// <summary>The sublabels property</summary>
-        public List<SensitivityLabel> Sublabels { get; set; }
+        public List<SensitivityLabel> Sublabels {
+            get { return BackingStore?.Get<List<SensitivityLabel>>(nameof(Sublabels)); }
+            set { BackingStore?.Set(nameof(Sublabels), value); }
+        }
         /// <summary>The toolTip property</summary>
-        public string ToolTip { get; set; }
+        public string ToolTip {
+            get { return BackingStore?.Get<string>(nameof(ToolTip)); }
+            set { BackingStore?.Set(nameof(ToolTip), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

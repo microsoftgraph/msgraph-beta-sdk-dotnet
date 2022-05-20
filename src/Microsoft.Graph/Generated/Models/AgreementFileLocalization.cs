@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
     public class AgreementFileLocalization : AgreementFileProperties, IParsable {
         /// <summary>Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.</summary>
-        public List<AgreementFileVersion> Versions { get; set; }
+        public List<AgreementFileVersion> Versions {
+            get { return BackingStore?.Get<List<AgreementFileVersion>>(nameof(Versions)); }
+            set { BackingStore?.Set(nameof(Versions), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

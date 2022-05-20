@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>An assignment of a Windows Autopilot deployment profile to an AAD group.</summary>
     public class WindowsAutopilotDeploymentProfileAssignment : Entity, IParsable {
         /// <summary>Type of resource used for deployment to a group, direct or parcel/policySet. Possible values are: direct, policySets.</summary>
-        public DeviceAndAppManagementAssignmentSource? Source { get; set; }
+        public DeviceAndAppManagementAssignmentSource? Source {
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentSource?>(nameof(Source)); }
+            set { BackingStore?.Set(nameof(Source), value); }
+        }
         /// <summary>Identifier for resource used for deployment to a group</summary>
-        public string SourceId { get; set; }
+        public string SourceId {
+            get { return BackingStore?.Get<string>(nameof(SourceId)); }
+            set { BackingStore?.Set(nameof(SourceId), value); }
+        }
         /// <summary>The assignment target for the Windows Autopilot deployment profile.</summary>
-        public DeviceAndAppManagementAssignmentTarget Target { get; set; }
+        public DeviceAndAppManagementAssignmentTarget Target {
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>(nameof(Target)); }
+            set { BackingStore?.Set(nameof(Target), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

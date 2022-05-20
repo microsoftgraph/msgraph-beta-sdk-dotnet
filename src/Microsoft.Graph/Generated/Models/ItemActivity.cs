@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class ItemActivity : Entity, IParsable {
         /// <summary>An item was accessed.</summary>
-        public AccessAction Access { get; set; }
+        public AccessAction Access {
+            get { return BackingStore?.Get<AccessAction>(nameof(Access)); }
+            set { BackingStore?.Set(nameof(Access), value); }
+        }
         /// <summary>Details about when the activity took place. Read-only.</summary>
-        public DateTimeOffset? ActivityDateTime { get; set; }
+        public DateTimeOffset? ActivityDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ActivityDateTime)); }
+            set { BackingStore?.Set(nameof(ActivityDateTime), value); }
+        }
         /// <summary>Identity of who performed the action. Read-only.</summary>
-        public IdentitySet Actor { get; set; }
+        public IdentitySet Actor {
+            get { return BackingStore?.Get<IdentitySet>(nameof(Actor)); }
+            set { BackingStore?.Set(nameof(Actor), value); }
+        }
         /// <summary>Exposes the driveItem that was the target of this activity.</summary>
-        public Microsoft.Graph.Beta.Models.DriveItem DriveItem { get; set; }
+        public Microsoft.Graph.Beta.Models.DriveItem DriveItem {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem>(nameof(DriveItem)); }
+            set { BackingStore?.Set(nameof(DriveItem), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

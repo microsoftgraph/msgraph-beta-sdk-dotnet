@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class IdentitySecurityDefaultsEnforcementPolicy : PolicyBase, IParsable {
         /// <summary>If set to true, Azure Active Directory security defaults is enabled for the tenant.</summary>
-        public bool? IsEnabled { get; set; }
+        public bool? IsEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
+            set { BackingStore?.Set(nameof(IsEnabled), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

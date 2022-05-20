@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class GovernanceSchedule : IAdditionalDataHolder, IParsable {
+    public class GovernanceSchedule : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The duration of a role assignment. It is in format of a TimeSpan.</summary>
-        public TimeSpan? Duration { get; set; }
+        public TimeSpan? Duration {
+            get { return BackingStore?.Get<TimeSpan?>(nameof(Duration)); }
+            set { BackingStore?.Set(nameof(Duration), value); }
+        }
         /// <summary>The end time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Note: if the value is null, it indicates a permanent assignment.</summary>
-        public DateTimeOffset? EndDateTime { get; set; }
+        public DateTimeOffset? EndDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
+            set { BackingStore?.Set(nameof(EndDateTime), value); }
+        }
         /// <summary>The start time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? StartDateTime { get; set; }
+        public DateTimeOffset? StartDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
+            set { BackingStore?.Set(nameof(StartDateTime), value); }
+        }
         /// <summary>The role assignment schedule type. Only Once is supported for now.</summary>
-        public string Type { get; set; }
+        public string Type {
+            get { return BackingStore?.Get<string>(nameof(Type)); }
+            set { BackingStore?.Set(nameof(Type), value); }
+        }
         /// <summary>
         /// Instantiates a new governanceSchedule and sets the default values.
         /// </summary>
         public GovernanceSchedule() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -4,33 +4,73 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the appCatalogs singleton.</summary>
     public class TeamsAppDefinition : Entity, IParsable {
         /// <summary>A collection of scopes where the Teams app can be installed. Possible values are:team — Indicates that the Teams app can be installed within a team and is authorized to access that team&apos;s data. groupChat  — Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat&apos;s data.  personal — Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user&apos;s data.</summary>
-        public TeamsAppInstallationScopes? AllowedInstallationScopes { get; set; }
+        public TeamsAppInstallationScopes? AllowedInstallationScopes {
+            get { return BackingStore?.Get<TeamsAppInstallationScopes?>(nameof(AllowedInstallationScopes)); }
+            set { BackingStore?.Set(nameof(AllowedInstallationScopes), value); }
+        }
         /// <summary>The WebApplicationInfo.Id from the Teams app manifest.</summary>
-        public string AzureADAppId { get; set; }
+        public string AzureADAppId {
+            get { return BackingStore?.Get<string>(nameof(AzureADAppId)); }
+            set { BackingStore?.Set(nameof(AzureADAppId), value); }
+        }
         /// <summary>The details of the bot specified in the Teams app manifest.</summary>
-        public TeamworkBot Bot { get; set; }
+        public TeamworkBot Bot {
+            get { return BackingStore?.Get<TeamworkBot>(nameof(Bot)); }
+            set { BackingStore?.Set(nameof(Bot), value); }
+        }
         /// <summary>The color version of the Teams app&apos;s icon.</summary>
-        public TeamsAppIcon ColorIcon { get; set; }
+        public TeamsAppIcon ColorIcon {
+            get { return BackingStore?.Get<TeamsAppIcon>(nameof(ColorIcon)); }
+            set { BackingStore?.Set(nameof(ColorIcon), value); }
+        }
         /// <summary>The createdBy property</summary>
-        public IdentitySet CreatedBy { get; set; }
+        public IdentitySet CreatedBy {
+            get { return BackingStore?.Get<IdentitySet>(nameof(CreatedBy)); }
+            set { BackingStore?.Set(nameof(CreatedBy), value); }
+        }
         /// <summary>Verbose description of the application.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The name of the app provided by the app developer.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The lastModifiedDateTime property</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>The outline version of the Teams app&apos;s icon.</summary>
-        public TeamsAppIcon OutlineIcon { get; set; }
+        public TeamsAppIcon OutlineIcon {
+            get { return BackingStore?.Get<TeamsAppIcon>(nameof(OutlineIcon)); }
+            set { BackingStore?.Set(nameof(OutlineIcon), value); }
+        }
         /// <summary>The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.</summary>
-        public TeamsAppPublishingState? PublishingState { get; set; }
+        public TeamsAppPublishingState? PublishingState {
+            get { return BackingStore?.Get<TeamsAppPublishingState?>(nameof(PublishingState)); }
+            set { BackingStore?.Set(nameof(PublishingState), value); }
+        }
         /// <summary>The shortdescription property</summary>
-        public string Shortdescription { get; set; }
+        public string Shortdescription {
+            get { return BackingStore?.Get<string>(nameof(Shortdescription)); }
+            set { BackingStore?.Set(nameof(Shortdescription), value); }
+        }
         /// <summary>The ID from the Teams app manifest.</summary>
-        public string TeamsAppId { get; set; }
+        public string TeamsAppId {
+            get { return BackingStore?.Get<string>(nameof(TeamsAppId)); }
+            set { BackingStore?.Set(nameof(TeamsAppId), value); }
+        }
         /// <summary>The version number of the application.</summary>
-        public string Version { get; set; }
+        public string Version {
+            get { return BackingStore?.Get<string>(nameof(Version)); }
+            set { BackingStore?.Set(nameof(Version), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

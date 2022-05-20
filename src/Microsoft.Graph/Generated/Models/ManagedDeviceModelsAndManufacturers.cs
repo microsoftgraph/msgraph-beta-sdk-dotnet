@@ -1,21 +1,34 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Models and Manufactures meatadata for managed devices in the account</summary>
-    public class ManagedDeviceModelsAndManufacturers : IAdditionalDataHolder, IParsable {
+    public class ManagedDeviceModelsAndManufacturers : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>List of Manufactures for managed devices in the account</summary>
-        public List<string> DeviceManufacturers { get; set; }
+        public List<string> DeviceManufacturers {
+            get { return BackingStore?.Get<List<string>>(nameof(DeviceManufacturers)); }
+            set { BackingStore?.Set(nameof(DeviceManufacturers), value); }
+        }
         /// <summary>List of Models for managed devices in the account</summary>
-        public List<string> DeviceModels { get; set; }
+        public List<string> DeviceModels {
+            get { return BackingStore?.Get<List<string>>(nameof(DeviceModels)); }
+            set { BackingStore?.Set(nameof(DeviceModels), value); }
+        }
         /// <summary>
         /// Instantiates a new managedDeviceModelsAndManufacturers and sets the default values.
         /// </summary>
         public ManagedDeviceModelsAndManufacturers() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

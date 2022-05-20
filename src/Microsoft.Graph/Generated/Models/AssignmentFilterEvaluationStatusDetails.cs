@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>A class containing information about the payloads on which filter has been applied.</summary>
     public class AssignmentFilterEvaluationStatusDetails : Entity, IParsable {
         /// <summary>PayloadId on which filter has been applied.</summary>
-        public string PayloadId { get; set; }
+        public string PayloadId {
+            get { return BackingStore?.Get<string>(nameof(PayloadId)); }
+            set { BackingStore?.Set(nameof(PayloadId), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

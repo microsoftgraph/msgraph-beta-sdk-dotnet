@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Setting Template</summary>
     public class DeviceManagementConfigurationSettingTemplate : Entity, IParsable {
         /// <summary>List of related Setting Definitions</summary>
-        public List<DeviceManagementConfigurationSettingDefinition> SettingDefinitions { get; set; }
+        public List<DeviceManagementConfigurationSettingDefinition> SettingDefinitions {
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDefinition>>(nameof(SettingDefinitions)); }
+            set { BackingStore?.Set(nameof(SettingDefinitions), value); }
+        }
         /// <summary>Setting Instance Template</summary>
-        public DeviceManagementConfigurationSettingInstanceTemplate SettingInstanceTemplate { get; set; }
+        public DeviceManagementConfigurationSettingInstanceTemplate SettingInstanceTemplate {
+            get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstanceTemplate>(nameof(SettingInstanceTemplate)); }
+            set { BackingStore?.Set(nameof(SettingInstanceTemplate), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

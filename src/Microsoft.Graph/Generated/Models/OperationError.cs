@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class OperationError : IAdditionalDataHolder, IParsable {
+    public class OperationError : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Operation error code.</summary>
-        public string Code { get; set; }
+        public string Code {
+            get { return BackingStore?.Get<string>(nameof(Code)); }
+            set { BackingStore?.Set(nameof(Code), value); }
+        }
         /// <summary>Operation error message.</summary>
-        public string Message { get; set; }
+        public string Message {
+            get { return BackingStore?.Get<string>(nameof(Message)); }
+            set { BackingStore?.Set(nameof(Message), value); }
+        }
         /// <summary>
         /// Instantiates a new operationError and sets the default values.
         /// </summary>
         public OperationError() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

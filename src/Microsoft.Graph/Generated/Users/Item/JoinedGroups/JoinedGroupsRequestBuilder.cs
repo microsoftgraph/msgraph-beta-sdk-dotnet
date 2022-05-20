@@ -1,7 +1,5 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Users.Item.JoinedGroups.Count;
-using Microsoft.Graph.Beta.Users.Item.JoinedGroups.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -13,22 +11,12 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.JoinedGroups {
     /// <summary>Provides operations to manage the joinedGroups property of the microsoft.graph.user entity.</summary>
     public class JoinedGroupsRequestBuilder {
-        /// <summary>The count property</summary>
-        public CountRequestBuilder Count { get =>
-            new CountRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.joinedGroups.item collection</summary>
-        public GroupItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("group%2Did", position);
-            return new GroupItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
         /// <summary>
         /// Instantiates a new JoinedGroupsRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>

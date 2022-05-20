@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
-    public class DisplayTemplate : IAdditionalDataHolder, IParsable {
+    public class DisplayTemplate : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The text identifier for the display template; for example, contosoTickets.</summary>
-        public string Id { get; set; }
+        public string Id {
+            get { return BackingStore?.Get<string>(nameof(Id)); }
+            set { BackingStore?.Set(nameof(Id), value); }
+        }
         /// <summary>The layout property</summary>
-        public Microsoft.Graph.Beta.Models.Json Layout { get; set; }
+        public Microsoft.Graph.Beta.Models.Json Layout {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>(nameof(Layout)); }
+            set { BackingStore?.Set(nameof(Layout), value); }
+        }
         /// <summary>Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported.</summary>
-        public int? Priority { get; set; }
+        public int? Priority {
+            get { return BackingStore?.Get<int?>(nameof(Priority)); }
+            set { BackingStore?.Set(nameof(Priority), value); }
+        }
         /// <summary>Specifies additional rules for selecting this display template based on the item schema. Optional.</summary>
-        public List<PropertyRule> Rules { get; set; }
+        public List<PropertyRule> Rules {
+            get { return BackingStore?.Get<List<PropertyRule>>(nameof(Rules)); }
+            set { BackingStore?.Set(nameof(Rules), value); }
+        }
         /// <summary>
         /// Instantiates a new displayTemplate and sets the default values.
         /// </summary>
         public DisplayTemplate() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

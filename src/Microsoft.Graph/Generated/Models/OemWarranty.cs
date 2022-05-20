@@ -1,25 +1,44 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>OEM Warranty information for a given device</summary>
-    public class OemWarranty : IAdditionalDataHolder, IParsable {
+    public class OemWarranty : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>List of additional warranty offers. This collection can contain a maximum of 100 elements.</summary>
-        public List<WarrantyOffer> AdditionalWarranties { get; set; }
+        public List<WarrantyOffer> AdditionalWarranties {
+            get { return BackingStore?.Get<List<WarrantyOffer>>(nameof(AdditionalWarranties)); }
+            set { BackingStore?.Set(nameof(AdditionalWarranties), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>List of base warranty offers. This collection can contain a maximum of 100 elements.</summary>
-        public List<WarrantyOffer> BaseWarranties { get; set; }
+        public List<WarrantyOffer> BaseWarranties {
+            get { return BackingStore?.Get<List<WarrantyOffer>>(nameof(BaseWarranties)); }
+            set { BackingStore?.Set(nameof(BaseWarranties), value); }
+        }
         /// <summary>Device configuration page URL</summary>
-        public string DeviceConfigurationUrl { get; set; }
+        public string DeviceConfigurationUrl {
+            get { return BackingStore?.Get<string>(nameof(DeviceConfigurationUrl)); }
+            set { BackingStore?.Set(nameof(DeviceConfigurationUrl), value); }
+        }
         /// <summary>Device warranty page URL</summary>
-        public string DeviceWarrantyUrl { get; set; }
+        public string DeviceWarrantyUrl {
+            get { return BackingStore?.Get<string>(nameof(DeviceWarrantyUrl)); }
+            set { BackingStore?.Set(nameof(DeviceWarrantyUrl), value); }
+        }
         /// <summary>
-        /// Instantiates a new oemWarranty and sets the default values.
+        /// Instantiates a new OemWarranty and sets the default values.
         /// </summary>
         public OemWarranty() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

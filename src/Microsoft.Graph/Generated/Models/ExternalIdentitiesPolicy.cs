@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class ExternalIdentitiesPolicy : PolicyBase, IParsable {
         /// <summary>The allowDeletedIdentitiesDataRemoval property</summary>
-        public bool? AllowDeletedIdentitiesDataRemoval { get; set; }
+        public bool? AllowDeletedIdentitiesDataRemoval {
+            get { return BackingStore?.Get<bool?>(nameof(AllowDeletedIdentitiesDataRemoval)); }
+            set { BackingStore?.Set(nameof(AllowDeletedIdentitiesDataRemoval), value); }
+        }
         /// <summary>The allowExternalIdentitiesToLeave property</summary>
-        public bool? AllowExternalIdentitiesToLeave { get; set; }
+        public bool? AllowExternalIdentitiesToLeave {
+            get { return BackingStore?.Get<bool?>(nameof(AllowExternalIdentitiesToLeave)); }
+            set { BackingStore?.Set(nameof(AllowExternalIdentitiesToLeave), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

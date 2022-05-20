@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Represents a customer of the business.</summary>
     public class BookingCustomer : BookingPerson, IParsable {
         /// <summary>Addresses associated with the customer, including home, business and other addresses.</summary>
-        public List<PhysicalAddress> Addresses { get; set; }
+        public List<PhysicalAddress> Addresses {
+            get { return BackingStore?.Get<List<PhysicalAddress>>(nameof(Addresses)); }
+            set { BackingStore?.Set(nameof(Addresses), value); }
+        }
         /// <summary>Phone numbers associated with the customer, including home, business and mobile numbers.</summary>
-        public List<Phone> Phones { get; set; }
+        public List<Phone> Phones {
+            get { return BackingStore?.Get<List<Phone>>(nameof(Phones)); }
+            set { BackingStore?.Set(nameof(Phones), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

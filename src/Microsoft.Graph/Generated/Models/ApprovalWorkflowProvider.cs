@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of approvalWorkflowProvider entities.</summary>
     public class ApprovalWorkflowProvider : Entity, IParsable {
         /// <summary>The businessFlows property</summary>
-        public List<BusinessFlow> BusinessFlows { get; set; }
+        public List<BusinessFlow> BusinessFlows {
+            get { return BackingStore?.Get<List<BusinessFlow>>(nameof(BusinessFlows)); }
+            set { BackingStore?.Set(nameof(BusinessFlows), value); }
+        }
         /// <summary>The businessFlowsWithRequestsAwaitingMyDecision property</summary>
-        public List<BusinessFlow> BusinessFlowsWithRequestsAwaitingMyDecision { get; set; }
+        public List<BusinessFlow> BusinessFlowsWithRequestsAwaitingMyDecision {
+            get { return BackingStore?.Get<List<BusinessFlow>>(nameof(BusinessFlowsWithRequestsAwaitingMyDecision)); }
+            set { BackingStore?.Set(nameof(BusinessFlowsWithRequestsAwaitingMyDecision), value); }
+        }
         /// <summary>The displayName property</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The policyTemplates property</summary>
-        public List<GovernancePolicyTemplate> PolicyTemplates { get; set; }
+        public List<GovernancePolicyTemplate> PolicyTemplates {
+            get { return BackingStore?.Get<List<GovernancePolicyTemplate>>(nameof(PolicyTemplates)); }
+            set { BackingStore?.Set(nameof(PolicyTemplates), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

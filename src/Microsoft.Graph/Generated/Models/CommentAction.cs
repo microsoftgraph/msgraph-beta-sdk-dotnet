@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class CommentAction : IAdditionalDataHolder, IParsable {
+    public class CommentAction : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>If true, this activity was a reply to an existing comment thread.</summary>
-        public bool? IsReply { get; set; }
+        public bool? IsReply {
+            get { return BackingStore?.Get<bool?>(nameof(IsReply)); }
+            set { BackingStore?.Set(nameof(IsReply), value); }
+        }
         /// <summary>The identity of the user who started the comment thread.</summary>
-        public IdentitySet ParentAuthor { get; set; }
+        public IdentitySet ParentAuthor {
+            get { return BackingStore?.Get<IdentitySet>(nameof(ParentAuthor)); }
+            set { BackingStore?.Set(nameof(ParentAuthor), value); }
+        }
         /// <summary>The identities of the users participating in this comment thread.</summary>
-        public List<IdentitySet> Participants { get; set; }
+        public List<IdentitySet> Participants {
+            get { return BackingStore?.Get<List<IdentitySet>>(nameof(Participants)); }
+            set { BackingStore?.Set(nameof(Participants), value); }
+        }
         /// <summary>
         /// Instantiates a new commentAction and sets the default values.
         /// </summary>
         public CommentAction() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

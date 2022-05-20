@@ -4,43 +4,98 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class OutlookTask : OutlookItem, IParsable {
         /// <summary>The name of the person who has been assigned the task in Outlook. Read-only.</summary>
-        public string AssignedTo { get; set; }
+        public string AssignedTo {
+            get { return BackingStore?.Get<string>(nameof(AssignedTo)); }
+            set { BackingStore?.Set(nameof(AssignedTo), value); }
+        }
         /// <summary>The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.</summary>
-        public List<Attachment> Attachments { get; set; }
+        public List<Attachment> Attachments {
+            get { return BackingStore?.Get<List<Attachment>>(nameof(Attachments)); }
+            set { BackingStore?.Set(nameof(Attachments), value); }
+        }
         /// <summary>The task body that typically contains information about the task. Note that only HTML type is supported.</summary>
-        public ItemBody Body { get; set; }
+        public ItemBody Body {
+            get { return BackingStore?.Get<ItemBody>(nameof(Body)); }
+            set { BackingStore?.Set(nameof(Body), value); }
+        }
         /// <summary>The date in the specified time zone that the task was finished.</summary>
-        public DateTimeTimeZone CompletedDateTime { get; set; }
+        public DateTimeTimeZone CompletedDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(CompletedDateTime)); }
+            set { BackingStore?.Set(nameof(CompletedDateTime), value); }
+        }
         /// <summary>The date in the specified time zone that the task is to be finished.</summary>
-        public DateTimeTimeZone DueDateTime { get; set; }
+        public DateTimeTimeZone DueDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(DueDateTime)); }
+            set { BackingStore?.Set(nameof(DueDateTime), value); }
+        }
         /// <summary>Set to true if the task has attachments.</summary>
-        public bool? HasAttachments { get; set; }
+        public bool? HasAttachments {
+            get { return BackingStore?.Get<bool?>(nameof(HasAttachments)); }
+            set { BackingStore?.Set(nameof(HasAttachments), value); }
+        }
         /// <summary>The importance property</summary>
-        public Microsoft.Graph.Beta.Models.Importance? Importance { get; set; }
+        public Microsoft.Graph.Beta.Models.Importance? Importance {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Importance?>(nameof(Importance)); }
+            set { BackingStore?.Set(nameof(Importance), value); }
+        }
         /// <summary>The isReminderOn property</summary>
-        public bool? IsReminderOn { get; set; }
+        public bool? IsReminderOn {
+            get { return BackingStore?.Get<bool?>(nameof(IsReminderOn)); }
+            set { BackingStore?.Set(nameof(IsReminderOn), value); }
+        }
         /// <summary>The collection of multi-value extended properties defined for the task. Read-only. Nullable.</summary>
-        public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties { get; set; }
+        public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties {
+            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>(nameof(MultiValueExtendedProperties)); }
+            set { BackingStore?.Set(nameof(MultiValueExtendedProperties), value); }
+        }
         /// <summary>The owner property</summary>
-        public string Owner { get; set; }
+        public string Owner {
+            get { return BackingStore?.Get<string>(nameof(Owner)); }
+            set { BackingStore?.Set(nameof(Owner), value); }
+        }
         /// <summary>The parentFolderId property</summary>
-        public string ParentFolderId { get; set; }
+        public string ParentFolderId {
+            get { return BackingStore?.Get<string>(nameof(ParentFolderId)); }
+            set { BackingStore?.Set(nameof(ParentFolderId), value); }
+        }
         /// <summary>The recurrence property</summary>
-        public PatternedRecurrence Recurrence { get; set; }
+        public PatternedRecurrence Recurrence {
+            get { return BackingStore?.Get<PatternedRecurrence>(nameof(Recurrence)); }
+            set { BackingStore?.Set(nameof(Recurrence), value); }
+        }
         /// <summary>The reminderDateTime property</summary>
-        public DateTimeTimeZone ReminderDateTime { get; set; }
+        public DateTimeTimeZone ReminderDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(ReminderDateTime)); }
+            set { BackingStore?.Set(nameof(ReminderDateTime), value); }
+        }
         /// <summary>The sensitivity property</summary>
-        public Microsoft.Graph.Beta.Models.Sensitivity? Sensitivity { get; set; }
+        public Microsoft.Graph.Beta.Models.Sensitivity? Sensitivity {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Sensitivity?>(nameof(Sensitivity)); }
+            set { BackingStore?.Set(nameof(Sensitivity), value); }
+        }
         /// <summary>The collection of single-value extended properties defined for the task. Read-only. Nullable.</summary>
-        public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties { get; set; }
+        public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties {
+            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>(nameof(SingleValueExtendedProperties)); }
+            set { BackingStore?.Set(nameof(SingleValueExtendedProperties), value); }
+        }
         /// <summary>The startDateTime property</summary>
-        public DateTimeTimeZone StartDateTime { get; set; }
+        public DateTimeTimeZone StartDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(StartDateTime)); }
+            set { BackingStore?.Set(nameof(StartDateTime), value); }
+        }
         /// <summary>The status property</summary>
-        public TaskStatus? Status { get; set; }
+        public TaskStatus? Status {
+            get { return BackingStore?.Get<TaskStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>The subject property</summary>
-        public string Subject { get; set; }
+        public string Subject {
+            get { return BackingStore?.Get<string>(nameof(Subject)); }
+            set { BackingStore?.Set(nameof(Subject), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

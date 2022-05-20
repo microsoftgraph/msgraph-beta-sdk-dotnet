@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class AssignedLicense : IAdditionalDataHolder, IParsable {
+    public class AssignedLicense : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>A collection of the unique identifiers for plans that have been disabled.</summary>
-        public List<string> DisabledPlans { get; set; }
+        public List<string> DisabledPlans {
+            get { return BackingStore?.Get<List<string>>(nameof(DisabledPlans)); }
+            set { BackingStore?.Set(nameof(DisabledPlans), value); }
+        }
         /// <summary>The unique identifier for the SKU.</summary>
-        public string SkuId { get; set; }
+        public string SkuId {
+            get { return BackingStore?.Get<string>(nameof(SkuId)); }
+            set { BackingStore?.Set(nameof(SkuId), value); }
+        }
         /// <summary>
         /// Instantiates a new assignedLicense and sets the default values.
         /// </summary>
         public AssignedLicense() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

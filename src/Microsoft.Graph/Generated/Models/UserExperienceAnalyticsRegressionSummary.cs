@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The user experience analytics Regression Summary.</summary>
     public class UserExperienceAnalyticsRegressionSummary : Entity, IParsable {
         /// <summary>The metric values for the user experience analytics Manufacturer regression.</summary>
-        public List<UserExperienceAnalyticsMetric> ManufacturerRegression { get; set; }
+        public List<UserExperienceAnalyticsMetric> ManufacturerRegression {
+            get { return BackingStore?.Get<List<UserExperienceAnalyticsMetric>>(nameof(ManufacturerRegression)); }
+            set { BackingStore?.Set(nameof(ManufacturerRegression), value); }
+        }
         /// <summary>The metric values for the user experience analytics model regression.</summary>
-        public List<UserExperienceAnalyticsMetric> ModelRegression { get; set; }
+        public List<UserExperienceAnalyticsMetric> ModelRegression {
+            get { return BackingStore?.Get<List<UserExperienceAnalyticsMetric>>(nameof(ModelRegression)); }
+            set { BackingStore?.Set(nameof(ModelRegression), value); }
+        }
         /// <summary>The metric values for the user experience analytics operating system regression.</summary>
-        public List<UserExperienceAnalyticsMetric> OperatingSystemRegression { get; set; }
+        public List<UserExperienceAnalyticsMetric> OperatingSystemRegression {
+            get { return BackingStore?.Get<List<UserExperienceAnalyticsMetric>>(nameof(OperatingSystemRegression)); }
+            set { BackingStore?.Set(nameof(OperatingSystemRegression), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

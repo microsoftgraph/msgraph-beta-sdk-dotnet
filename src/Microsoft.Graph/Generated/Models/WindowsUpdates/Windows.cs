@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class Windows : Entity, IParsable {
         /// <summary>Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.</summary>
-        public Microsoft.Graph.Beta.Models.WindowsUpdates.Updates Updates { get; set; }
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.Updates Updates {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.Updates>(nameof(Updates)); }
+            set { BackingStore?.Set(nameof(Updates), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

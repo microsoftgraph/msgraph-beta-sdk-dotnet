@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ImageInfo : IAdditionalDataHolder, IParsable {
+    public class ImageInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Optional; parameter used to indicate the server is able to render image dynamically in response to parameterization. For example – a high contrast image</summary>
-        public bool? AddImageQuery { get; set; }
+        public bool? AddImageQuery {
+            get { return BackingStore?.Get<bool?>(nameof(AddImageQuery)); }
+            set { BackingStore?.Set(nameof(AddImageQuery), value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Optional; alt-text accessible content for the image</summary>
-        public string AlternateText { get; set; }
+        public string AlternateText {
+            get { return BackingStore?.Get<string>(nameof(AlternateText)); }
+            set { BackingStore?.Set(nameof(AlternateText), value); }
+        }
         /// <summary>The alternativeText property</summary>
-        public string AlternativeText { get; set; }
+        public string AlternativeText {
+            get { return BackingStore?.Get<string>(nameof(AlternativeText)); }
+            set { BackingStore?.Set(nameof(AlternativeText), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Optional; URI that points to an icon which represents the application used to generate the activity</summary>
-        public string IconUrl { get; set; }
+        public string IconUrl {
+            get { return BackingStore?.Get<string>(nameof(IconUrl)); }
+            set { BackingStore?.Set(nameof(IconUrl), value); }
+        }
         /// <summary>
         /// Instantiates a new imageInfo and sets the default values.
         /// </summary>
         public ImageInfo() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

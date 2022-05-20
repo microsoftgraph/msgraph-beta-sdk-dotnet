@@ -1,5 +1,8 @@
+using Microsoft.Graph.Beta.Directory.DeletedItems.Application;
 using Microsoft.Graph.Beta.Directory.DeletedItems.Count;
+using Microsoft.Graph.Beta.Directory.DeletedItems.Group;
 using Microsoft.Graph.Beta.Directory.DeletedItems.Item;
+using Microsoft.Graph.Beta.Directory.DeletedItems.User;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -13,9 +16,17 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Directory.DeletedItems {
     /// <summary>Provides operations to manage the deletedItems property of the microsoft.graph.directory entity.</summary>
     public class DeletedItemsRequestBuilder {
+        /// <summary>The application property</summary>
+        public ApplicationRequestBuilder Application { get =>
+            new ApplicationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The group property</summary>
+        public GroupRequestBuilder Group { get =>
+            new GroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -23,6 +34,10 @@ namespace Microsoft.Graph.Beta.Directory.DeletedItems {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>The user property</summary>
+        public UserRequestBuilder User { get =>
+            new UserRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.directory.deletedItems.item collection</summary>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

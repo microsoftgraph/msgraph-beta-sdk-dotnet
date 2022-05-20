@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Describes the resourceOperation resource (entity) of the Microsoft Graph API (REST), which supports Intune workflows related to role-based access control (RBAC).</summary>
     public class ResourceOperation : Entity, IParsable {
         /// <summary>Type of action this operation is going to perform. The actionName should be concise and limited to as few words as possible.</summary>
-        public string ActionName { get; set; }
+        public string ActionName {
+            get { return BackingStore?.Get<string>(nameof(ActionName)); }
+            set { BackingStore?.Set(nameof(ActionName), value); }
+        }
         /// <summary>Description of the resource operation. The description is used in mouse-over text for the operation when shown in the Azure Portal.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Determines whether the Permission is validated for Scopes defined per Role Assignment. This property is read-only.</summary>
-        public bool? EnabledForScopeValidation { get; set; }
+        public bool? EnabledForScopeValidation {
+            get { return BackingStore?.Get<bool?>(nameof(EnabledForScopeValidation)); }
+            set { BackingStore?.Set(nameof(EnabledForScopeValidation), value); }
+        }
         /// <summary>Resource category to which this Operation belongs. This property is read-only.</summary>
-        public string Resource { get; set; }
+        public string Resource {
+            get { return BackingStore?.Get<string>(nameof(Resource)); }
+            set { BackingStore?.Set(nameof(Resource), value); }
+        }
         /// <summary>Name of the Resource this operation is performed on.</summary>
-        public string ResourceName { get; set; }
+        public string ResourceName {
+            get { return BackingStore?.Get<string>(nameof(ResourceName)); }
+            set { BackingStore?.Set(nameof(ResourceName), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

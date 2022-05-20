@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SecurityActionState : IAdditionalDataHolder, IParsable {
+    public class SecurityActionState : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>The Application ID of the calling application that submitted an update (PATCH) to the action. The appId should be extracted from the auth token and not entered manually by the calling application.</summary>
-        public string AppId { get; set; }
+        public string AppId {
+            get { return BackingStore?.Get<string>(nameof(AppId)); }
+            set { BackingStore?.Set(nameof(AppId), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Status of the securityAction in this update. Possible values are: NotStarted, Running, Completed, Failed.</summary>
-        public OperationStatus? Status { get; set; }
+        public OperationStatus? Status {
+            get { return BackingStore?.Get<OperationStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>Timestamp when the actionState was updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? UpdatedDateTime { get; set; }
+        public DateTimeOffset? UpdatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(UpdatedDateTime)); }
+            set { BackingStore?.Set(nameof(UpdatedDateTime), value); }
+        }
         /// <summary>The user principal name of the signed-in user that submitted an update (PATCH) to the action. The user should be extracted from the auth token and not entered manually by the calling application.</summary>
-        public string User { get; set; }
+        public string User {
+            get { return BackingStore?.Get<string>(nameof(User)); }
+            set { BackingStore?.Set(nameof(User), value); }
+        }
         /// <summary>
         /// Instantiates a new securityActionState and sets the default values.
         /// </summary>
         public SecurityActionState() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to call the filterOperators method.</summary>
     public class FilterOperatorSchema : Entity, IParsable {
         /// <summary>Arity of the operator. Possible values are: Binary, Unary. The default is Binary.</summary>
-        public ScopeOperatorType? Arity { get; set; }
+        public ScopeOperatorType? Arity {
+            get { return BackingStore?.Get<ScopeOperatorType?>(nameof(Arity)); }
+            set { BackingStore?.Set(nameof(Arity), value); }
+        }
         /// <summary>Possible values are: All, Any. Applies only to multivalued attributes. All means that all values must satisfy the condition. Any means that at least one value has to satisfy the condition. The default is All.</summary>
-        public ScopeOperatorMultiValuedComparisonType? MultivaluedComparisonType { get; set; }
+        public ScopeOperatorMultiValuedComparisonType? MultivaluedComparisonType {
+            get { return BackingStore?.Get<ScopeOperatorMultiValuedComparisonType?>(nameof(MultivaluedComparisonType)); }
+            set { BackingStore?.Set(nameof(MultivaluedComparisonType), value); }
+        }
         /// <summary>Attribute types supported by the operator. Possible values are: Boolean, Binary, Reference, Integer, String.</summary>
-        public List<AttributeType?> SupportedAttributeTypes { get; set; }
+        public List<string> SupportedAttributeTypes {
+            get { return BackingStore?.Get<List<string>>(nameof(SupportedAttributeTypes)); }
+            set { BackingStore?.Set(nameof(SupportedAttributeTypes), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -26,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"arity", n => { Arity = n.GetEnumValue<ScopeOperatorType>(); } },
                 {"multivaluedComparisonType", n => { MultivaluedComparisonType = n.GetEnumValue<ScopeOperatorMultiValuedComparisonType>(); } },
-                {"supportedAttributeTypes", n => { SupportedAttributeTypes = n.GetCollectionOfEnumValues<AttributeType>().ToList(); } },
+                {"supportedAttributeTypes", n => { SupportedAttributeTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>
@@ -38,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteEnumValue<ScopeOperatorType>("arity", Arity);
             writer.WriteEnumValue<ScopeOperatorMultiValuedComparisonType>("multivaluedComparisonType", MultivaluedComparisonType);
-            writer.WriteCollectionOfEnumValues<AttributeType>("supportedAttributeTypes", SupportedAttributeTypes);
+            writer.WriteCollectionOfPrimitiveValues<string>("supportedAttributeTypes", SupportedAttributeTypes);
         }
     }
 }

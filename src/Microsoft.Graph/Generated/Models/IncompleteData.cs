@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class IncompleteData : IAdditionalDataHolder, IParsable {
+    public class IncompleteData : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The service does not have source data before the specified time.</summary>
-        public DateTimeOffset? MissingDataBeforeDateTime { get; set; }
+        public DateTimeOffset? MissingDataBeforeDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(MissingDataBeforeDateTime)); }
+            set { BackingStore?.Set(nameof(MissingDataBeforeDateTime), value); }
+        }
         /// <summary>Some data was not recorded due to excessive activity.</summary>
-        public bool? WasThrottled { get; set; }
+        public bool? WasThrottled {
+            get { return BackingStore?.Get<bool?>(nameof(WasThrottled)); }
+            set { BackingStore?.Set(nameof(WasThrottled), value); }
+        }
         /// <summary>
         /// Instantiates a new incompleteData and sets the default values.
         /// </summary>
         public IncompleteData() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

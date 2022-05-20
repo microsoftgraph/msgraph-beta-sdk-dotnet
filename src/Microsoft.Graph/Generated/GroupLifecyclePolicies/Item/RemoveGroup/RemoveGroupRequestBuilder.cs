@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.Item.RemoveGroup {
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(RemoveGroupRequestBody body, Action<RemoveGroupRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation CreatePostRequestInformation(RemoveGroupPostRequestBody body, Action<RemoveGroupRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.Item.RemoveGroup {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<RemoveGroupResponse> PostAsync(RemoveGroupRequestBody body, Action<RemoveGroupRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<RemoveGroupResponse> PostAsync(RemoveGroupPostRequestBody body, Action<RemoveGroupRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<RemoveGroupResponse>(requestInfo, RemoveGroupResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);

@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class Credential : IAdditionalDataHolder, IParsable {
+    public class Credential : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The name of the field for this credential. e.g, username or password or phoneNumber. This is defined by the application. Must match what is in the html field on singleSignOnSettings/password object.</summary>
-        public string FieldId { get; set; }
+        public string FieldId {
+            get { return BackingStore?.Get<string>(nameof(FieldId)); }
+            set { BackingStore?.Set(nameof(FieldId), value); }
+        }
         /// <summary>The type for this credential. Valid values: username, password, or other.</summary>
-        public string Type { get; set; }
+        public string Type {
+            get { return BackingStore?.Get<string>(nameof(Type)); }
+            set { BackingStore?.Set(nameof(Type), value); }
+        }
         /// <summary>The value for this credential. e.g, mysuperhiddenpassword. Note the value for passwords is write-only, the value can never be read back.</summary>
-        public string Value { get; set; }
+        public string Value {
+            get { return BackingStore?.Get<string>(nameof(Value)); }
+            set { BackingStore?.Set(nameof(Value), value); }
+        }
         /// <summary>
         /// Instantiates a new credential and sets the default values.
         /// </summary>
         public Credential() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

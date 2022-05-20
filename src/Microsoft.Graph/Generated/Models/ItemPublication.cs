@@ -5,19 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class ItemPublication : ItemFacet, IParsable {
         /// <summary>Description of the publication.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Title of the publication.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The date that the publication was published.</summary>
-        public Date? PublishedDate { get; set; }
+        public Date? PublishedDate {
+            get { return BackingStore?.Get<Date?>(nameof(PublishedDate)); }
+            set { BackingStore?.Set(nameof(PublishedDate), value); }
+        }
         /// <summary>Publication or publisher for the publication.</summary>
-        public string Publisher { get; set; }
+        public string Publisher {
+            get { return BackingStore?.Get<string>(nameof(Publisher)); }
+            set { BackingStore?.Set(nameof(Publisher), value); }
+        }
         /// <summary>URL referencing a thumbnail of the publication.</summary>
-        public string ThumbnailUrl { get; set; }
+        public string ThumbnailUrl {
+            get { return BackingStore?.Get<string>(nameof(ThumbnailUrl)); }
+            set { BackingStore?.Set(nameof(ThumbnailUrl), value); }
+        }
         /// <summary>URL referencing the publication.</summary>
-        public string WebUrl { get; set; }
+        public string WebUrl {
+            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
+            set { BackingStore?.Set(nameof(WebUrl), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

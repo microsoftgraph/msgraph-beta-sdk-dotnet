@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the trustFramework singleton.</summary>
     public class TrustFrameworkKeySet : Entity, IParsable {
         /// <summary>A collection of the keys.</summary>
-        public List<TrustFrameworkKey> Keys { get; set; }
+        public List<TrustFrameworkKey> Keys {
+            get { return BackingStore?.Get<List<TrustFrameworkKey>>(nameof(Keys)); }
+            set { BackingStore?.Set(nameof(Keys), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

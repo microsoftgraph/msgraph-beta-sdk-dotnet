@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The embedded SIM activation code pool assignment entity assigns a specific embeddedSIMActivationCodePool to an AAD device group.</summary>
     public class EmbeddedSIMActivationCodePoolAssignment : Entity, IParsable {
         /// <summary>Base type for assignment targets.</summary>
-        public DeviceAndAppManagementAssignmentTarget Target { get; set; }
+        public DeviceAndAppManagementAssignmentTarget Target {
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>(nameof(Target)); }
+            set { BackingStore?.Set(nameof(Target), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to call the getCredentialUsageSummary method.</summary>
     public class CredentialUsageSummary : Entity, IParsable {
         /// <summary>Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword, unknownFutureValue.</summary>
-        public UsageAuthMethod? AuthMethod { get; set; }
+        public UsageAuthMethod? AuthMethod {
+            get { return BackingStore?.Get<UsageAuthMethod?>(nameof(AuthMethod)); }
+            set { BackingStore?.Set(nameof(AuthMethod), value); }
+        }
         /// <summary>Provides the count of failed resets or registration data.</summary>
-        public long? FailureActivityCount { get; set; }
+        public long? FailureActivityCount {
+            get { return BackingStore?.Get<long?>(nameof(FailureActivityCount)); }
+            set { BackingStore?.Set(nameof(FailureActivityCount), value); }
+        }
         /// <summary>Defines the feature to report. Possible values are: registration, reset, unknownFutureValue.</summary>
-        public FeatureType? Feature { get; set; }
+        public FeatureType? Feature {
+            get { return BackingStore?.Get<FeatureType?>(nameof(Feature)); }
+            set { BackingStore?.Set(nameof(Feature), value); }
+        }
         /// <summary>Provides the count of successful registrations or resets.</summary>
-        public long? SuccessfulActivityCount { get; set; }
+        public long? SuccessfulActivityCount {
+            get { return BackingStore?.Get<long?>(nameof(SuccessfulActivityCount)); }
+            set { BackingStore?.Set(nameof(SuccessfulActivityCount), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

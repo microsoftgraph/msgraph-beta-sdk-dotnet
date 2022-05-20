@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoles {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// List privilegedRoles
+        /// Retrieve a list of [privilegedRole](../resources/privilegedrole.md) objects. To filter the results from the query, use the standard OData ``$filter`` expressions in the URIs.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<PrivilegedRolesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoles {
             return requestInfo;
         }
         /// <summary>
-        /// List privilegedRoles
+        /// Retrieve a list of [privilegedRole](../resources/privilegedrole.md) objects. To filter the results from the query, use the standard OData ``$filter`` expressions in the URIs.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoles {
             };
             return await RequestAdapter.SendAsync<PrivilegedRole>(requestInfo, PrivilegedRole.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>List privilegedRoles</summary>
+        /// <summary>Retrieve a list of [privilegedRole](../resources/privilegedrole.md) objects. To filter the results from the query, use the standard OData ``$filter`` expressions in the URIs.</summary>
         public class PrivilegedRolesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

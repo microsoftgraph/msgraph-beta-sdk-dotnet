@@ -4,25 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class PrintJob : Entity, IParsable {
         /// <summary>A group of settings that a printer should use to print a job.</summary>
-        public PrintJobConfiguration Configuration { get; set; }
+        public PrintJobConfiguration Configuration {
+            get { return BackingStore?.Get<PrintJobConfiguration>(nameof(Configuration)); }
+            set { BackingStore?.Set(nameof(Configuration), value); }
+        }
         /// <summary>Read-only. Nullable.</summary>
-        public UserIdentity CreatedBy { get; set; }
+        public UserIdentity CreatedBy {
+            get { return BackingStore?.Get<UserIdentity>(nameof(CreatedBy)); }
+            set { BackingStore?.Set(nameof(CreatedBy), value); }
+        }
         /// <summary>The DateTimeOffset when the job was created. Read-only.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>Read-only.</summary>
-        public List<PrintDocument> Documents { get; set; }
+        public List<PrintDocument> Documents {
+            get { return BackingStore?.Get<List<PrintDocument>>(nameof(Documents)); }
+            set { BackingStore?.Set(nameof(Documents), value); }
+        }
         /// <summary>If true, document can be fetched by printer.</summary>
-        public bool? IsFetchable { get; set; }
+        public bool? IsFetchable {
+            get { return BackingStore?.Get<bool?>(nameof(IsFetchable)); }
+            set { BackingStore?.Set(nameof(IsFetchable), value); }
+        }
         /// <summary>Contains the source job URL, if the job has been redirected from another printer.</summary>
-        public string RedirectedFrom { get; set; }
+        public string RedirectedFrom {
+            get { return BackingStore?.Get<string>(nameof(RedirectedFrom)); }
+            set { BackingStore?.Set(nameof(RedirectedFrom), value); }
+        }
         /// <summary>Contains the destination job URL, if the job has been redirected to another printer.</summary>
-        public string RedirectedTo { get; set; }
+        public string RedirectedTo {
+            get { return BackingStore?.Get<string>(nameof(RedirectedTo)); }
+            set { BackingStore?.Set(nameof(RedirectedTo), value); }
+        }
         /// <summary>The status of the print job. Read-only.</summary>
-        public PrintJobStatus Status { get; set; }
+        public PrintJobStatus Status {
+            get { return BackingStore?.Get<PrintJobStatus>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>A list of printTasks that were triggered by this print job.</summary>
-        public List<PrintTask> Tasks { get; set; }
+        public List<PrintTask> Tasks {
+            get { return BackingStore?.Get<List<PrintTask>>(nameof(Tasks)); }
+            set { BackingStore?.Set(nameof(Tasks), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

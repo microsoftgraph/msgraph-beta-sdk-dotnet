@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Models.Ediscovery;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;

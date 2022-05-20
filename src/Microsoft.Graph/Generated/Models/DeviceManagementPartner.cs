@@ -4,29 +4,63 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Entity which represents a connection to device management partner.</summary>
     public class DeviceManagementPartner : Entity, IParsable {
         /// <summary>Partner display name</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>User groups that specifies whether enrollment is through partner.</summary>
-        public List<DeviceManagementPartnerAssignment> GroupsRequiringPartnerEnrollment { get; set; }
+        public List<DeviceManagementPartnerAssignment> GroupsRequiringPartnerEnrollment {
+            get { return BackingStore?.Get<List<DeviceManagementPartnerAssignment>>(nameof(GroupsRequiringPartnerEnrollment)); }
+            set { BackingStore?.Set(nameof(GroupsRequiringPartnerEnrollment), value); }
+        }
         /// <summary>Whether device management partner is configured or not</summary>
-        public bool? IsConfigured { get; set; }
+        public bool? IsConfigured {
+            get { return BackingStore?.Get<bool?>(nameof(IsConfigured)); }
+            set { BackingStore?.Set(nameof(IsConfigured), value); }
+        }
         /// <summary>Timestamp of last heartbeat after admin enabled option Connect to Device management Partner</summary>
-        public DateTimeOffset? LastHeartbeatDateTime { get; set; }
+        public DateTimeOffset? LastHeartbeatDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastHeartbeatDateTime)); }
+            set { BackingStore?.Set(nameof(LastHeartbeatDateTime), value); }
+        }
         /// <summary>Partner App type. Possible values are: unknown, singleTenantApp, multiTenantApp.</summary>
-        public DeviceManagementPartnerAppType? PartnerAppType { get; set; }
+        public DeviceManagementPartnerAppType? PartnerAppType {
+            get { return BackingStore?.Get<DeviceManagementPartnerAppType?>(nameof(PartnerAppType)); }
+            set { BackingStore?.Set(nameof(PartnerAppType), value); }
+        }
         /// <summary>Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.</summary>
-        public DeviceManagementPartnerTenantState? PartnerState { get; set; }
+        public DeviceManagementPartnerTenantState? PartnerState {
+            get { return BackingStore?.Get<DeviceManagementPartnerTenantState?>(nameof(PartnerState)); }
+            set { BackingStore?.Set(nameof(PartnerState), value); }
+        }
         /// <summary>Partner Single tenant App id</summary>
-        public string SingleTenantAppId { get; set; }
+        public string SingleTenantAppId {
+            get { return BackingStore?.Get<string>(nameof(SingleTenantAppId)); }
+            set { BackingStore?.Set(nameof(SingleTenantAppId), value); }
+        }
         /// <summary>DateTime in UTC when PartnerDevices will be marked as NonCompliant. This will become obselete soon.</summary>
-        public DateTimeOffset? WhenPartnerDevicesWillBeMarkedAsNonCompliant { get; set; }
+        public DateTimeOffset? WhenPartnerDevicesWillBeMarkedAsNonCompliant {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(WhenPartnerDevicesWillBeMarkedAsNonCompliant)); }
+            set { BackingStore?.Set(nameof(WhenPartnerDevicesWillBeMarkedAsNonCompliant), value); }
+        }
         /// <summary>DateTime in UTC when PartnerDevices will be marked as NonCompliant</summary>
-        public DateTimeOffset? WhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime { get; set; }
+        public DateTimeOffset? WhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(WhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime)); }
+            set { BackingStore?.Set(nameof(WhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime), value); }
+        }
         /// <summary>DateTime in UTC when PartnerDevices will be removed. This will become obselete soon.</summary>
-        public DateTimeOffset? WhenPartnerDevicesWillBeRemoved { get; set; }
+        public DateTimeOffset? WhenPartnerDevicesWillBeRemoved {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(WhenPartnerDevicesWillBeRemoved)); }
+            set { BackingStore?.Set(nameof(WhenPartnerDevicesWillBeRemoved), value); }
+        }
         /// <summary>DateTime in UTC when PartnerDevices will be removed</summary>
-        public DateTimeOffset? WhenPartnerDevicesWillBeRemovedDateTime { get; set; }
+        public DateTimeOffset? WhenPartnerDevicesWillBeRemovedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(WhenPartnerDevicesWillBeRemovedDateTime)); }
+            set { BackingStore?.Set(nameof(WhenPartnerDevicesWillBeRemovedDateTime), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

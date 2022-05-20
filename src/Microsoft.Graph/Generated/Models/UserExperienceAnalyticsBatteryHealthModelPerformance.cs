@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The user experience analytics battery health model performance entity contains battery related information for all unique device models in their organization.</summary>
     public class UserExperienceAnalyticsBatteryHealthModelPerformance : Entity, IParsable {
         /// <summary>Number of active devices for that model. Valid values -2147483648 to 2147483647</summary>
-        public int? ActiveDevices { get; set; }
+        public int? ActiveDevices {
+            get { return BackingStore?.Get<int?>(nameof(ActiveDevices)); }
+            set { BackingStore?.Set(nameof(ActiveDevices), value); }
+        }
         /// <summary>The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values -2147483648 to 2147483647</summary>
-        public int? AverageBatteryAgeInDays { get; set; }
+        public int? AverageBatteryAgeInDays {
+            get { return BackingStore?.Get<int?>(nameof(AverageBatteryAgeInDays)); }
+            set { BackingStore?.Set(nameof(AverageBatteryAgeInDays), value); }
+        }
         /// <summary>The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values -2147483648 to 2147483647</summary>
-        public int? AverageEstimatedRuntimeInMinutes { get; set; }
+        public int? AverageEstimatedRuntimeInMinutes {
+            get { return BackingStore?.Get<int?>(nameof(AverageEstimatedRuntimeInMinutes)); }
+            set { BackingStore?.Set(nameof(AverageEstimatedRuntimeInMinutes), value); }
+        }
         /// <summary>The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647</summary>
-        public int? AverageMaxCapacityPercentage { get; set; }
+        public int? AverageMaxCapacityPercentage {
+            get { return BackingStore?.Get<int?>(nameof(AverageMaxCapacityPercentage)); }
+            set { BackingStore?.Set(nameof(AverageMaxCapacityPercentage), value); }
+        }
         /// <summary>Name of the device manufacturer.</summary>
-        public string Manufacturer { get; set; }
+        public string Manufacturer {
+            get { return BackingStore?.Get<string>(nameof(Manufacturer)); }
+            set { BackingStore?.Set(nameof(Manufacturer), value); }
+        }
         /// <summary>The model name of the device.</summary>
-        public string Model { get; set; }
+        public string Model {
+            get { return BackingStore?.Get<string>(nameof(Model)); }
+            set { BackingStore?.Set(nameof(Model), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -4,21 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The user experience analytics application performance entity contains app performance details by app version.</summary>
     public class UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion : Entity, IParsable {
         /// <summary>The number of crashes for the app. Valid values -2147483648 to 2147483647</summary>
-        public int? AppCrashCount { get; set; }
+        public int? AppCrashCount {
+            get { return BackingStore?.Get<int?>(nameof(AppCrashCount)); }
+            set { BackingStore?.Set(nameof(AppCrashCount), value); }
+        }
         /// <summary>The friendly name of the application.</summary>
-        public string AppDisplayName { get; set; }
+        public string AppDisplayName {
+            get { return BackingStore?.Get<string>(nameof(AppDisplayName)); }
+            set { BackingStore?.Set(nameof(AppDisplayName), value); }
+        }
         /// <summary>The name of the application.</summary>
-        public string AppName { get; set; }
+        public string AppName {
+            get { return BackingStore?.Get<string>(nameof(AppName)); }
+            set { BackingStore?.Set(nameof(AppName), value); }
+        }
         /// <summary>The publisher of the application.</summary>
-        public string AppPublisher { get; set; }
+        public string AppPublisher {
+            get { return BackingStore?.Get<string>(nameof(AppPublisher)); }
+            set { BackingStore?.Set(nameof(AppPublisher), value); }
+        }
         /// <summary>The total usage time of the application in minutes. Valid values -2147483648 to 2147483647</summary>
-        public int? AppUsageDuration { get; set; }
+        public int? AppUsageDuration {
+            get { return BackingStore?.Get<int?>(nameof(AppUsageDuration)); }
+            set { BackingStore?.Set(nameof(AppUsageDuration), value); }
+        }
         /// <summary>The version of the application.</summary>
-        public string AppVersion { get; set; }
+        public string AppVersion {
+            get { return BackingStore?.Get<string>(nameof(AppVersion)); }
+            set { BackingStore?.Set(nameof(AppVersion), value); }
+        }
         /// <summary>The mean time to failure for the app in minutes. Valid values -2147483648 to 2147483647</summary>
-        public int? MeanTimeToFailureInMinutes { get; set; }
+        public int? MeanTimeToFailureInMinutes {
+            get { return BackingStore?.Get<int?>(nameof(MeanTimeToFailureInMinutes)); }
+            set { BackingStore?.Set(nameof(MeanTimeToFailureInMinutes), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

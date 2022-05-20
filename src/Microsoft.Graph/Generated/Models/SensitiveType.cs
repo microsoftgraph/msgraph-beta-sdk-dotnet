@@ -4,25 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
     public class SensitiveType : Entity, IParsable {
         /// <summary>The classificationMethod property</summary>
-        public Microsoft.Graph.Beta.Models.ClassificationMethod? ClassificationMethod { get; set; }
+        public Microsoft.Graph.Beta.Models.ClassificationMethod? ClassificationMethod {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ClassificationMethod?>(nameof(ClassificationMethod)); }
+            set { BackingStore?.Set(nameof(ClassificationMethod), value); }
+        }
         /// <summary>The description property</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The name property</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>The publisherName property</summary>
-        public string PublisherName { get; set; }
+        public string PublisherName {
+            get { return BackingStore?.Get<string>(nameof(PublisherName)); }
+            set { BackingStore?.Set(nameof(PublisherName), value); }
+        }
         /// <summary>The rulePackageId property</summary>
-        public string RulePackageId { get; set; }
+        public string RulePackageId {
+            get { return BackingStore?.Get<string>(nameof(RulePackageId)); }
+            set { BackingStore?.Set(nameof(RulePackageId), value); }
+        }
         /// <summary>The rulePackageType property</summary>
-        public string RulePackageType { get; set; }
+        public string RulePackageType {
+            get { return BackingStore?.Get<string>(nameof(RulePackageType)); }
+            set { BackingStore?.Set(nameof(RulePackageType), value); }
+        }
         /// <summary>The scope property</summary>
-        public SensitiveTypeScope? Scope { get; set; }
+        public SensitiveTypeScope? Scope {
+            get { return BackingStore?.Get<SensitiveTypeScope?>(nameof(Scope)); }
+            set { BackingStore?.Set(nameof(Scope), value); }
+        }
         /// <summary>The sensitiveTypeSource property</summary>
-        public Microsoft.Graph.Beta.Models.SensitiveTypeSource? SensitiveTypeSource { get; set; }
+        public Microsoft.Graph.Beta.Models.SensitiveTypeSource? SensitiveTypeSource {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SensitiveTypeSource?>(nameof(SensitiveTypeSource)); }
+            set { BackingStore?.Set(nameof(SensitiveTypeSource), value); }
+        }
         /// <summary>The state property</summary>
-        public string State { get; set; }
+        public string State {
+            get { return BackingStore?.Get<string>(nameof(State)); }
+            set { BackingStore?.Set(nameof(State), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

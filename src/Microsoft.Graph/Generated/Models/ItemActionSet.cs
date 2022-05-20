@@ -1,36 +1,73 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ItemActionSet : IAdditionalDataHolder, IParsable {
+    public class ItemActionSet : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>A comment was added to the item.</summary>
-        public CommentAction Comment { get; set; }
+        public CommentAction Comment {
+            get { return BackingStore?.Get<CommentAction>(nameof(Comment)); }
+            set { BackingStore?.Set(nameof(Comment), value); }
+        }
         /// <summary>An item was created.</summary>
-        public CreateAction Create { get; set; }
+        public CreateAction Create {
+            get { return BackingStore?.Get<CreateAction>(nameof(Create)); }
+            set { BackingStore?.Set(nameof(Create), value); }
+        }
         /// <summary>An item was deleted.</summary>
-        public DeleteAction Delete { get; set; }
+        public DeleteAction Delete {
+            get { return BackingStore?.Get<DeleteAction>(nameof(Delete)); }
+            set { BackingStore?.Set(nameof(Delete), value); }
+        }
         /// <summary>An item was edited.</summary>
-        public EditAction Edit { get; set; }
+        public EditAction Edit {
+            get { return BackingStore?.Get<EditAction>(nameof(Edit)); }
+            set { BackingStore?.Set(nameof(Edit), value); }
+        }
         /// <summary>A user was mentioned in the item.</summary>
-        public MentionAction Mention { get; set; }
+        public MentionAction Mention {
+            get { return BackingStore?.Get<MentionAction>(nameof(Mention)); }
+            set { BackingStore?.Set(nameof(Mention), value); }
+        }
         /// <summary>An item was moved.</summary>
-        public MoveAction Move { get; set; }
+        public MoveAction Move {
+            get { return BackingStore?.Get<MoveAction>(nameof(Move)); }
+            set { BackingStore?.Set(nameof(Move), value); }
+        }
         /// <summary>An item was renamed.</summary>
-        public RenameAction Rename { get; set; }
+        public RenameAction Rename {
+            get { return BackingStore?.Get<RenameAction>(nameof(Rename)); }
+            set { BackingStore?.Set(nameof(Rename), value); }
+        }
         /// <summary>An item was restored.</summary>
-        public RestoreAction Restore { get; set; }
+        public RestoreAction Restore {
+            get { return BackingStore?.Get<RestoreAction>(nameof(Restore)); }
+            set { BackingStore?.Set(nameof(Restore), value); }
+        }
         /// <summary>An item was shared.</summary>
-        public ShareAction Share { get; set; }
+        public ShareAction Share {
+            get { return BackingStore?.Get<ShareAction>(nameof(Share)); }
+            set { BackingStore?.Set(nameof(Share), value); }
+        }
         /// <summary>An item was versioned.</summary>
-        public VersionAction Version { get; set; }
+        public VersionAction Version {
+            get { return BackingStore?.Get<VersionAction>(nameof(Version)); }
+            set { BackingStore?.Set(nameof(Version), value); }
+        }
         /// <summary>
         /// Instantiates a new itemActionSet and sets the default values.
         /// </summary>
         public ItemActionSet() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

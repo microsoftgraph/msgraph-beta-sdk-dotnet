@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class ServiceAnnouncementAttachment : Entity, IParsable {
         /// <summary>The attachment content.</summary>
-        public byte[] Content { get; set; }
+        public byte[] Content {
+            get { return BackingStore?.Get<byte[]>(nameof(Content)); }
+            set { BackingStore?.Set(nameof(Content), value); }
+        }
         /// <summary>The contentType property</summary>
-        public string ContentType { get; set; }
+        public string ContentType {
+            get { return BackingStore?.Get<string>(nameof(ContentType)); }
+            set { BackingStore?.Set(nameof(ContentType), value); }
+        }
         /// <summary>The lastModifiedDateTime property</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>The name property</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>The size property</summary>
-        public int? Size { get; set; }
+        public int? Size {
+            get { return BackingStore?.Get<int?>(nameof(Size)); }
+            set { BackingStore?.Set(nameof(Size), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

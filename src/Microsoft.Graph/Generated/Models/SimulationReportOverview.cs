@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SimulationReportOverview : IAdditionalDataHolder, IParsable {
+    public class SimulationReportOverview : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>List of recommended actions for a tenant to improve its security posture based on the attack simulation and training campaign attack type.</summary>
-        public List<RecommendedAction> RecommendedActions { get; set; }
+        public List<RecommendedAction> RecommendedActions {
+            get { return BackingStore?.Get<List<RecommendedAction>>(nameof(RecommendedActions)); }
+            set { BackingStore?.Set(nameof(RecommendedActions), value); }
+        }
         /// <summary>Number of valid users in the attack simulation and training campaign.</summary>
-        public int? ResolvedTargetsCount { get; set; }
+        public int? ResolvedTargetsCount {
+            get { return BackingStore?.Get<int?>(nameof(ResolvedTargetsCount)); }
+            set { BackingStore?.Set(nameof(ResolvedTargetsCount), value); }
+        }
         /// <summary>Summary of simulation events in the attack simulation and training campaign.</summary>
-        public Microsoft.Graph.Beta.Models.SimulationEventsContent SimulationEventsContent { get; set; }
+        public Microsoft.Graph.Beta.Models.SimulationEventsContent SimulationEventsContent {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SimulationEventsContent>(nameof(SimulationEventsContent)); }
+            set { BackingStore?.Set(nameof(SimulationEventsContent), value); }
+        }
         /// <summary>Summary of assigned trainings in the attack simulation and training campaign.</summary>
-        public Microsoft.Graph.Beta.Models.TrainingEventsContent TrainingEventsContent { get; set; }
+        public Microsoft.Graph.Beta.Models.TrainingEventsContent TrainingEventsContent {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TrainingEventsContent>(nameof(TrainingEventsContent)); }
+            set { BackingStore?.Set(nameof(TrainingEventsContent), value); }
+        }
         /// <summary>
         /// Instantiates a new simulationReportOverview and sets the default values.
         /// </summary>
         public SimulationReportOverview() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

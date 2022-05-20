@@ -1,27 +1,49 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Device Exchange Access State summary</summary>
-    public class DeviceExchangeAccessStateSummary : IAdditionalDataHolder, IParsable {
+    public class DeviceExchangeAccessStateSummary : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Total count of devices with Exchange Access State: Allowed.</summary>
-        public int? AllowedDeviceCount { get; set; }
+        public int? AllowedDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(AllowedDeviceCount)); }
+            set { BackingStore?.Set(nameof(AllowedDeviceCount), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Total count of devices with Exchange Access State: Blocked.</summary>
-        public int? BlockedDeviceCount { get; set; }
+        public int? BlockedDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(BlockedDeviceCount)); }
+            set { BackingStore?.Set(nameof(BlockedDeviceCount), value); }
+        }
         /// <summary>Total count of devices with Exchange Access State: Quarantined.</summary>
-        public int? QuarantinedDeviceCount { get; set; }
+        public int? QuarantinedDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(QuarantinedDeviceCount)); }
+            set { BackingStore?.Set(nameof(QuarantinedDeviceCount), value); }
+        }
         /// <summary>Total count of devices for which no Exchange Access State could be found.</summary>
-        public int? UnavailableDeviceCount { get; set; }
+        public int? UnavailableDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(UnavailableDeviceCount)); }
+            set { BackingStore?.Set(nameof(UnavailableDeviceCount), value); }
+        }
         /// <summary>Total count of devices with Exchange Access State: Unknown.</summary>
-        public int? UnknownDeviceCount { get; set; }
+        public int? UnknownDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(UnknownDeviceCount)); }
+            set { BackingStore?.Set(nameof(UnknownDeviceCount), value); }
+        }
         /// <summary>
         /// Instantiates a new deviceExchangeAccessStateSummary and sets the default values.
         /// </summary>
         public DeviceExchangeAccessStateSummary() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

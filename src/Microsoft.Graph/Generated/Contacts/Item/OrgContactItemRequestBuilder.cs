@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Contacts.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get orgContact
+        /// Get the properties and relationships of an organizational contact object.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<OrgContactItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.Contacts.Item {
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
-        public RequestInformation CreatePatchRequestInformation(OrgContact body, Action<OrgContactItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.OrgContact body, Action<OrgContactItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -167,18 +167,18 @@ namespace Microsoft.Graph.Beta.Contacts.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get orgContact
+        /// Get the properties and relationships of an organizational contact object.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<OrgContact> GetAsync(Action<OrgContactItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.OrgContact> GetAsync(Action<OrgContactItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<OrgContact>(requestInfo, OrgContact.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.OrgContact>(requestInfo, Microsoft.Graph.Beta.Models.OrgContact.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update entity in contacts
@@ -187,7 +187,7 @@ namespace Microsoft.Graph.Beta.Contacts.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(OrgContact body, Action<OrgContactItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(Microsoft.Graph.Beta.Models.OrgContact body, Action<OrgContactItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -210,7 +210,7 @@ namespace Microsoft.Graph.Beta.Contacts.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get orgContact</summary>
+        /// <summary>Get the properties and relationships of an organizational contact object.</summary>
         public class OrgContactItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

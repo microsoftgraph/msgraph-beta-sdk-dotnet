@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete privilegedRoleAssignment
+        /// Delete [privilegedRoleAssignment](../resources/privilegedroleassignment.md).
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateDeleteRequestInformation(Action<PrivilegedRoleAssignmentItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get privilegedRoleAssignment
+        /// Retrieve the properties and relationships of privilegedRoleAssignment object.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<PrivilegedRoleAssignmentItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Delete privilegedRoleAssignment
+        /// Delete [privilegedRoleAssignment](../resources/privilegedroleassignment.md).
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get privilegedRoleAssignment
+        /// Retrieve the properties and relationships of privilegedRoleAssignment object.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -175,7 +175,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get privilegedRoleAssignment</summary>
+        /// <summary>Retrieve the properties and relationships of privilegedRoleAssignment object.</summary>
         public class PrivilegedRoleAssignmentItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

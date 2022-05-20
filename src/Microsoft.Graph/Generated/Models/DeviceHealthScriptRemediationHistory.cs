@@ -1,21 +1,34 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>The number of devices remediated by a device health script on a given date with the last modified time.</summary>
-    public class DeviceHealthScriptRemediationHistory : IAdditionalDataHolder, IParsable {
+    public class DeviceHealthScriptRemediationHistory : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of devices remediated by the device health script on the given date.</summary>
-        public List<DeviceHealthScriptRemediationHistoryData> HistoryData { get; set; }
+        public List<DeviceHealthScriptRemediationHistoryData> HistoryData {
+            get { return BackingStore?.Get<List<DeviceHealthScriptRemediationHistoryData>>(nameof(HistoryData)); }
+            set { BackingStore?.Set(nameof(HistoryData), value); }
+        }
         /// <summary>The date on which the results history is calculated for the healthscript.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>
-        /// Instantiates a new deviceHealthScriptRemediationHistory and sets the default values.
+        /// Instantiates a new DeviceHealthScriptRemediationHistory and sets the default values.
         /// </summary>
         public DeviceHealthScriptRemediationHistory() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

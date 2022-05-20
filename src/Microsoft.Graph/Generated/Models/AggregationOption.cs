@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class AggregationOption : IAdditionalDataHolder, IParsable {
+    public class AggregationOption : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The bucketDefinition property</summary>
-        public BucketAggregationDefinition BucketDefinition { get; set; }
+        public BucketAggregationDefinition BucketDefinition {
+            get { return BackingStore?.Get<BucketAggregationDefinition>(nameof(BucketDefinition)); }
+            set { BackingStore?.Set(nameof(BucketDefinition), value); }
+        }
         /// <summary>Computes aggregation on the field while the field exists in current entity type. Required.</summary>
-        public string Field { get; set; }
+        public string Field {
+            get { return BackingStore?.Get<string>(nameof(Field)); }
+            set { BackingStore?.Set(nameof(Field), value); }
+        }
         /// <summary>The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.</summary>
-        public int? Size { get; set; }
+        public int? Size {
+            get { return BackingStore?.Get<int?>(nameof(Size)); }
+            set { BackingStore?.Set(nameof(Size), value); }
+        }
         /// <summary>
         /// Instantiates a new aggregationOption and sets the default values.
         /// </summary>
         public AggregationOption() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

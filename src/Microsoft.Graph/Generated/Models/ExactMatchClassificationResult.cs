@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ExactMatchClassificationResult : IAdditionalDataHolder, IParsable {
+    public class ExactMatchClassificationResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The classification property</summary>
-        public List<ExactMatchDetectedSensitiveContent> Classification { get; set; }
+        public List<ExactMatchDetectedSensitiveContent> Classification {
+            get { return BackingStore?.Get<List<ExactMatchDetectedSensitiveContent>>(nameof(Classification)); }
+            set { BackingStore?.Set(nameof(Classification), value); }
+        }
         /// <summary>The errors property</summary>
-        public List<ClassificationError> Errors { get; set; }
+        public List<ClassificationError> Errors {
+            get { return BackingStore?.Get<List<ClassificationError>>(nameof(Errors)); }
+            set { BackingStore?.Set(nameof(Errors), value); }
+        }
         /// <summary>
-        /// Instantiates a new exactMatchClassificationResult and sets the default values.
+        /// Instantiates a new ExactMatchClassificationResult and sets the default values.
         /// </summary>
         public ExactMatchClassificationResult() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

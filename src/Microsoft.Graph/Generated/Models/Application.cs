@@ -4,93 +4,223 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class Application : DirectoryObject, IParsable {
         /// <summary>Specifies settings for an application that implements a web API.</summary>
-        public ApiApplication Api { get; set; }
+        public ApiApplication Api {
+            get { return BackingStore?.Get<ApiApplication>(nameof(Api)); }
+            set { BackingStore?.Set(nameof(Api), value); }
+        }
         /// <summary>The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only.</summary>
-        public string AppId { get; set; }
+        public string AppId {
+            get { return BackingStore?.Get<string>(nameof(AppId)); }
+            set { BackingStore?.Set(nameof(AppId), value); }
+        }
         /// <summary>The appManagementPolicy applied to this application.</summary>
-        public List<AppManagementPolicy> AppManagementPolicies { get; set; }
+        public List<AppManagementPolicy> AppManagementPolicies {
+            get { return BackingStore?.Get<List<AppManagementPolicy>>(nameof(AppManagementPolicies)); }
+            set { BackingStore?.Set(nameof(AppManagementPolicies), value); }
+        }
         /// <summary>The collection of roles assigned to the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.</summary>
-        public List<AppRole> AppRoles { get; set; }
+        public List<AppRole> AppRoles {
+            get { return BackingStore?.Get<List<AppRole>>(nameof(AppRoles)); }
+            set { BackingStore?.Set(nameof(AppRoles), value); }
+        }
         /// <summary>Specifies the certification status of the application.</summary>
-        public Microsoft.Graph.Beta.Models.Certification Certification { get; set; }
+        public Microsoft.Graph.Beta.Models.Certification Certification {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Certification>(nameof(Certification)); }
+            set { BackingStore?.Set(nameof(Certification), value); }
+        }
         /// <summary>The connectorGroup the application is using with Azure AD Application Proxy. Nullable.</summary>
-        public Microsoft.Graph.Beta.Models.ConnectorGroup ConnectorGroup { get; set; }
+        public Microsoft.Graph.Beta.Models.ConnectorGroup ConnectorGroup {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConnectorGroup>(nameof(ConnectorGroup)); }
+            set { BackingStore?.Set(nameof(ConnectorGroup), value); }
+        }
         /// <summary>The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderBy.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>Read-only.</summary>
-        public DirectoryObject CreatedOnBehalfOf { get; set; }
+        public DirectoryObject CreatedOnBehalfOf {
+            get { return BackingStore?.Get<DirectoryObject>(nameof(CreatedOnBehalfOf)); }
+            set { BackingStore?.Set(nameof(CreatedOnBehalfOf), value); }
+        }
         /// <summary>The default redirect URI. If specified and there is no explicit redirect URI in the sign-in request for SAML and OIDC flows, Azure AD sends the token to this redirect URI. Azure AD also sends the token to this default URI in SAML IdP-initiated single sign-on. The value must match one of the configured redirect URIs for the application.</summary>
-        public string DefaultRedirectUri { get; set; }
+        public string DefaultRedirectUri {
+            get { return BackingStore?.Get<string>(nameof(DefaultRedirectUri)); }
+            set { BackingStore?.Set(nameof(DefaultRedirectUri), value); }
+        }
         /// <summary>Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).</summary>
-        public string DisabledByMicrosoftStatus { get; set; }
+        public string DisabledByMicrosoftStatus {
+            get { return BackingStore?.Get<string>(nameof(DisabledByMicrosoftStatus)); }
+            set { BackingStore?.Set(nameof(DisabledByMicrosoftStatus), value); }
+        }
         /// <summary>The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.</summary>
-        public string DisplayName { get; set; }
-        /// <summary>Read-only. Nullable.</summary>
-        public List<ExtensionProperty> ExtensionProperties { get; set; }
-        /// <summary>Federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).</summary>
-        public List<FederatedIdentityCredential> FederatedIdentityCredentials { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
+        /// <summary>Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).</summary>
+        public List<ExtensionProperty> ExtensionProperties {
+            get { return BackingStore?.Get<List<ExtensionProperty>>(nameof(ExtensionProperties)); }
+            set { BackingStore?.Set(nameof(ExtensionProperties), value); }
+        }
+        /// <summary>Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).</summary>
+        public List<FederatedIdentityCredential> FederatedIdentityCredentials {
+            get { return BackingStore?.Get<List<FederatedIdentityCredential>>(nameof(FederatedIdentityCredentials)); }
+            set { BackingStore?.Set(nameof(FederatedIdentityCredentials), value); }
+        }
         /// <summary>Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).</summary>
-        public string GroupMembershipClaims { get; set; }
+        public string GroupMembershipClaims {
+            get { return BackingStore?.Get<string>(nameof(GroupMembershipClaims)); }
+            set { BackingStore?.Set(nameof(GroupMembershipClaims), value); }
+        }
         /// <summary>The homeRealmDiscoveryPolicies property</summary>
-        public List<HomeRealmDiscoveryPolicy> HomeRealmDiscoveryPolicies { get; set; }
+        public List<HomeRealmDiscoveryPolicy> HomeRealmDiscoveryPolicies {
+            get { return BackingStore?.Get<List<HomeRealmDiscoveryPolicy>>(nameof(HomeRealmDiscoveryPolicies)); }
+            set { BackingStore?.Set(nameof(HomeRealmDiscoveryPolicies), value); }
+        }
         /// <summary>Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you&apos;ll reference in your API&apos;s code, and it must be globally unique. You can use the default value provided, which is in the form api://&lt;application-client-id&gt;, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Azure AD application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).</summary>
-        public List<string> IdentifierUris { get; set; }
+        public List<string> IdentifierUris {
+            get { return BackingStore?.Get<List<string>>(nameof(IdentifierUris)); }
+            set { BackingStore?.Set(nameof(IdentifierUris), value); }
+        }
         /// <summary>Basic profile information of the application, such as it&apos;s marketing, support, terms of service, and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more information, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).</summary>
-        public InformationalUrl Info { get; set; }
+        public InformationalUrl Info {
+            get { return BackingStore?.Get<InformationalUrl>(nameof(Info)); }
+            set { BackingStore?.Set(nameof(Info), value); }
+        }
         /// <summary>Specifies whether this application supports device authentication without a user. The default is false.</summary>
-        public bool? IsDeviceOnlyAuthSupported { get; set; }
+        public bool? IsDeviceOnlyAuthSupported {
+            get { return BackingStore?.Get<bool?>(nameof(IsDeviceOnlyAuthSupported)); }
+            set { BackingStore?.Set(nameof(IsDeviceOnlyAuthSupported), value); }
+        }
         /// <summary>Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where the application is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.</summary>
-        public bool? IsFallbackPublicClient { get; set; }
+        public bool? IsFallbackPublicClient {
+            get { return BackingStore?.Get<bool?>(nameof(IsFallbackPublicClient)); }
+            set { BackingStore?.Set(nameof(IsFallbackPublicClient), value); }
+        }
         /// <summary>The collection of key credentials associated with the application. Not nullable. Supports $filter (eq, not, ge, le).</summary>
-        public List<KeyCredential> KeyCredentials { get; set; }
+        public List<KeyCredential> KeyCredentials {
+            get { return BackingStore?.Get<List<KeyCredential>>(nameof(KeyCredentials)); }
+            set { BackingStore?.Set(nameof(KeyCredentials), value); }
+        }
         /// <summary>The main logo for the application. Not nullable.</summary>
-        public byte[] Logo { get; set; }
+        public byte[] Logo {
+            get { return BackingStore?.Get<byte[]>(nameof(Logo)); }
+            set { BackingStore?.Set(nameof(Logo), value); }
+        }
         /// <summary>Notes relevant for the management of the application.</summary>
-        public string Notes { get; set; }
+        public string Notes {
+            get { return BackingStore?.Get<string>(nameof(Notes)); }
+            set { BackingStore?.Set(nameof(Notes), value); }
+        }
         /// <summary>Represents the set of properties required for configuring Application Proxy for this application. Configuring these properties allows you to publish your on-premises application for secure remote access.</summary>
-        public Microsoft.Graph.Beta.Models.OnPremisesPublishing OnPremisesPublishing { get; set; }
+        public Microsoft.Graph.Beta.Models.OnPremisesPublishing OnPremisesPublishing {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnPremisesPublishing>(nameof(OnPremisesPublishing)); }
+            set { BackingStore?.Set(nameof(OnPremisesPublishing), value); }
+        }
         /// <summary>Application developers can configure optional claims in their Azure AD applications to specify the claims that are sent to their application by the Microsoft security token service. For more information, see How to: Provide optional claims to your app.</summary>
-        public Microsoft.Graph.Beta.Models.OptionalClaims OptionalClaims { get; set; }
+        public Microsoft.Graph.Beta.Models.OptionalClaims OptionalClaims {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OptionalClaims>(nameof(OptionalClaims)); }
+            set { BackingStore?.Set(nameof(OptionalClaims), value); }
+        }
         /// <summary>Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.</summary>
-        public List<DirectoryObject> Owners { get; set; }
+        public List<DirectoryObject> Owners {
+            get { return BackingStore?.Get<List<DirectoryObject>>(nameof(Owners)); }
+            set { BackingStore?.Set(nameof(Owners), value); }
+        }
         /// <summary>Specifies parental control settings for an application.</summary>
-        public Microsoft.Graph.Beta.Models.ParentalControlSettings ParentalControlSettings { get; set; }
+        public Microsoft.Graph.Beta.Models.ParentalControlSettings ParentalControlSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ParentalControlSettings>(nameof(ParentalControlSettings)); }
+            set { BackingStore?.Set(nameof(ParentalControlSettings), value); }
+        }
         /// <summary>The collection of password credentials associated with the application. Not nullable.</summary>
-        public List<PasswordCredential> PasswordCredentials { get; set; }
+        public List<PasswordCredential> PasswordCredentials {
+            get { return BackingStore?.Get<List<PasswordCredential>>(nameof(PasswordCredentials)); }
+            set { BackingStore?.Set(nameof(PasswordCredentials), value); }
+        }
         /// <summary>Specifies settings for installed clients such as desktop or mobile devices.</summary>
-        public PublicClientApplication PublicClient { get; set; }
+        public PublicClientApplication PublicClient {
+            get { return BackingStore?.Get<PublicClientApplication>(nameof(PublicClient)); }
+            set { BackingStore?.Set(nameof(PublicClient), value); }
+        }
         /// <summary>The verified publisher domain for the application. Read-only. Supports $filter (eq, ne, ge, le, startsWith).</summary>
-        public string PublisherDomain { get; set; }
+        public string PublisherDomain {
+            get { return BackingStore?.Get<string>(nameof(PublisherDomain)); }
+            set { BackingStore?.Set(nameof(PublisherDomain), value); }
+        }
         /// <summary>Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).</summary>
-        public List<Microsoft.Graph.Beta.Models.RequiredResourceAccess> RequiredResourceAccess { get; set; }
+        public List<Microsoft.Graph.Beta.Models.RequiredResourceAccess> RequiredResourceAccess {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RequiredResourceAccess>>(nameof(RequiredResourceAccess)); }
+            set { BackingStore?.Set(nameof(RequiredResourceAccess), value); }
+        }
         /// <summary>References application or service contact information from a Service or Asset Management database. Nullable.</summary>
-        public string ServiceManagementReference { get; set; }
+        public string ServiceManagementReference {
+            get { return BackingStore?.Get<string>(nameof(ServiceManagementReference)); }
+            set { BackingStore?.Set(nameof(ServiceManagementReference), value); }
+        }
         /// <summary>Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, not).</summary>
-        public string SignInAudience { get; set; }
+        public string SignInAudience {
+            get { return BackingStore?.Get<string>(nameof(SignInAudience)); }
+            set { BackingStore?.Set(nameof(SignInAudience), value); }
+        }
         /// <summary>Specifies settings for a single-page application, including sign out URLs and redirect URIs for authorization codes and access tokens.</summary>
-        public SpaApplication Spa { get; set; }
+        public SpaApplication Spa {
+            get { return BackingStore?.Get<SpaApplication>(nameof(Spa)); }
+            set { BackingStore?.Set(nameof(Spa), value); }
+        }
         /// <summary>The synchronization property</summary>
-        public Microsoft.Graph.Beta.Models.Synchronization Synchronization { get; set; }
+        public Microsoft.Graph.Beta.Models.Synchronization Synchronization {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Synchronization>(nameof(Synchronization)); }
+            set { BackingStore?.Set(nameof(Synchronization), value); }
+        }
         /// <summary>Custom strings that can be used to categorize and identify the application. Not nullable.Supports $filter (eq, not, ge, le, startsWith).</summary>
-        public List<string> Tags { get; set; }
+        public List<string> Tags {
+            get { return BackingStore?.Get<List<string>>(nameof(Tags)); }
+            set { BackingStore?.Set(nameof(Tags), value); }
+        }
         /// <summary>Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.</summary>
-        public string TokenEncryptionKeyId { get; set; }
+        public string TokenEncryptionKeyId {
+            get { return BackingStore?.Get<string>(nameof(TokenEncryptionKeyId)); }
+            set { BackingStore?.Set(nameof(TokenEncryptionKeyId), value); }
+        }
         /// <summary>The tokenIssuancePolicies property</summary>
-        public List<TokenIssuancePolicy> TokenIssuancePolicies { get; set; }
+        public List<TokenIssuancePolicy> TokenIssuancePolicies {
+            get { return BackingStore?.Get<List<TokenIssuancePolicy>>(nameof(TokenIssuancePolicies)); }
+            set { BackingStore?.Set(nameof(TokenIssuancePolicies), value); }
+        }
         /// <summary>The tokenLifetimePolicies assigned to this application. Supports $expand.</summary>
-        public List<TokenLifetimePolicy> TokenLifetimePolicies { get; set; }
+        public List<TokenLifetimePolicy> TokenLifetimePolicies {
+            get { return BackingStore?.Get<List<TokenLifetimePolicy>>(nameof(TokenLifetimePolicies)); }
+            set { BackingStore?.Set(nameof(TokenLifetimePolicies), value); }
+        }
         /// <summary>The unique identifier that can be assigned to an application as an alternative identifier. Immutable. Read-only.</summary>
-        public string UniqueName { get; set; }
+        public string UniqueName {
+            get { return BackingStore?.Get<string>(nameof(UniqueName)); }
+            set { BackingStore?.Set(nameof(UniqueName), value); }
+        }
         /// <summary>Specifies the verified publisher of the application. For more information about how publisher verification helps support application security, trustworthiness, and compliance, see Publisher verification.</summary>
-        public Microsoft.Graph.Beta.Models.VerifiedPublisher VerifiedPublisher { get; set; }
+        public Microsoft.Graph.Beta.Models.VerifiedPublisher VerifiedPublisher {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VerifiedPublisher>(nameof(VerifiedPublisher)); }
+            set { BackingStore?.Set(nameof(VerifiedPublisher), value); }
+        }
         /// <summary>Specifies settings for a web application.</summary>
-        public WebApplication Web { get; set; }
+        public WebApplication Web {
+            get { return BackingStore?.Get<WebApplication>(nameof(Web)); }
+            set { BackingStore?.Set(nameof(Web), value); }
+        }
         /// <summary>Specifies settings for apps running Microsoft Windows and published in the Microsoft Store or Xbox games store.</summary>
-        public WindowsApplication Windows { get; set; }
+        public WindowsApplication Windows {
+            get { return BackingStore?.Get<WindowsApplication>(nameof(Windows)); }
+            set { BackingStore?.Set(nameof(Windows), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

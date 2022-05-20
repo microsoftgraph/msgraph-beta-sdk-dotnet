@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Conflict summary for a set of device configuration policies.</summary>
     public class DeviceConfigurationConflictSummary : Entity, IParsable {
         /// <summary>The set of policies in conflict with the given setting</summary>
-        public List<SettingSource> ConflictingDeviceConfigurations { get; set; }
+        public List<SettingSource> ConflictingDeviceConfigurations {
+            get { return BackingStore?.Get<List<SettingSource>>(nameof(ConflictingDeviceConfigurations)); }
+            set { BackingStore?.Set(nameof(ConflictingDeviceConfigurations), value); }
+        }
         /// <summary>The set of settings in conflict with the given policies</summary>
-        public List<string> ContributingSettings { get; set; }
+        public List<string> ContributingSettings {
+            get { return BackingStore?.Get<List<string>>(nameof(ContributingSettings)); }
+            set { BackingStore?.Set(nameof(ContributingSettings), value); }
+        }
         /// <summary>The count of checkins impacted by the conflicting policies and settings</summary>
-        public int? DeviceCheckinsImpacted { get; set; }
+        public int? DeviceCheckinsImpacted {
+            get { return BackingStore?.Get<int?>(nameof(DeviceCheckinsImpacted)); }
+            set { BackingStore?.Set(nameof(DeviceCheckinsImpacted), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

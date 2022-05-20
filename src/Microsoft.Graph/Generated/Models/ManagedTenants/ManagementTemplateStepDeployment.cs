@@ -4,23 +4,48 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class ManagementTemplateStepDeployment : Entity, IParsable {
         /// <summary>The createdByUserId property</summary>
-        public string CreatedByUserId { get; set; }
+        public string CreatedByUserId {
+            get { return BackingStore?.Get<string>(nameof(CreatedByUserId)); }
+            set { BackingStore?.Set(nameof(CreatedByUserId), value); }
+        }
         /// <summary>The createdDateTime property</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>The error property</summary>
-        public GraphAPIErrorDetails Error { get; set; }
+        public GraphAPIErrorDetails Error {
+            get { return BackingStore?.Get<GraphAPIErrorDetails>(nameof(Error)); }
+            set { BackingStore?.Set(nameof(Error), value); }
+        }
         /// <summary>The lastActionByUserId property</summary>
-        public string LastActionByUserId { get; set; }
+        public string LastActionByUserId {
+            get { return BackingStore?.Get<string>(nameof(LastActionByUserId)); }
+            set { BackingStore?.Set(nameof(LastActionByUserId), value); }
+        }
         /// <summary>The lastActionDateTime property</summary>
-        public DateTimeOffset? LastActionDateTime { get; set; }
+        public DateTimeOffset? LastActionDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastActionDateTime)); }
+            set { BackingStore?.Set(nameof(LastActionDateTime), value); }
+        }
         /// <summary>The status property</summary>
-        public ManagementTemplateDeploymentStatus? Status { get; set; }
+        public ManagementTemplateDeploymentStatus? Status {
+            get { return BackingStore?.Get<ManagementTemplateDeploymentStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>The templateStepVersion property</summary>
-        public ManagementTemplateStepVersion TemplateStepVersion { get; set; }
+        public ManagementTemplateStepVersion TemplateStepVersion {
+            get { return BackingStore?.Get<ManagementTemplateStepVersion>(nameof(TemplateStepVersion)); }
+            set { BackingStore?.Set(nameof(TemplateStepVersion), value); }
+        }
         /// <summary>The tenantId property</summary>
-        public string TenantId { get; set; }
+        public string TenantId {
+            get { return BackingStore?.Get<string>(nameof(TenantId)); }
+            set { BackingStore?.Set(nameof(TenantId), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

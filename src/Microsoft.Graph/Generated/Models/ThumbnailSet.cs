@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class ThumbnailSet : Entity, IParsable {
         /// <summary>A 1920x1920 scaled thumbnail.</summary>
-        public Thumbnail Large { get; set; }
+        public Thumbnail Large {
+            get { return BackingStore?.Get<Thumbnail>(nameof(Large)); }
+            set { BackingStore?.Set(nameof(Large), value); }
+        }
         /// <summary>A 176x176 scaled thumbnail.</summary>
-        public Thumbnail Medium { get; set; }
+        public Thumbnail Medium {
+            get { return BackingStore?.Get<Thumbnail>(nameof(Medium)); }
+            set { BackingStore?.Set(nameof(Medium), value); }
+        }
         /// <summary>A 48x48 cropped thumbnail.</summary>
-        public Thumbnail Small { get; set; }
+        public Thumbnail Small {
+            get { return BackingStore?.Get<Thumbnail>(nameof(Small)); }
+            set { BackingStore?.Set(nameof(Small), value); }
+        }
         /// <summary>A custom thumbnail image or the original image used to generate other thumbnails.</summary>
-        public Thumbnail Source { get; set; }
+        public Thumbnail Source {
+            get { return BackingStore?.Get<Thumbnail>(nameof(Source)); }
+            set { BackingStore?.Set(nameof(Source), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

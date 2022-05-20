@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class DlpEvaluationInput : IAdditionalDataHolder, IParsable {
+    public class DlpEvaluationInput : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The accessScope property</summary>
-        public Microsoft.Graph.Beta.Models.AccessScope? AccessScope { get; set; }
+        public Microsoft.Graph.Beta.Models.AccessScope? AccessScope {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessScope?>(nameof(AccessScope)); }
+            set { BackingStore?.Set(nameof(AccessScope), value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The currentLabel property</summary>
-        public Microsoft.Graph.Beta.Models.CurrentLabel CurrentLabel { get; set; }
+        public Microsoft.Graph.Beta.Models.CurrentLabel CurrentLabel {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CurrentLabel>(nameof(CurrentLabel)); }
+            set { BackingStore?.Set(nameof(CurrentLabel), value); }
+        }
         /// <summary>The discoveredSensitiveTypes property</summary>
-        public List<DiscoveredSensitiveType> DiscoveredSensitiveTypes { get; set; }
+        public List<DiscoveredSensitiveType> DiscoveredSensitiveTypes {
+            get { return BackingStore?.Get<List<DiscoveredSensitiveType>>(nameof(DiscoveredSensitiveTypes)); }
+            set { BackingStore?.Set(nameof(DiscoveredSensitiveTypes), value); }
+        }
         /// <summary>
         /// Instantiates a new dlpEvaluationInput and sets the default values.
         /// </summary>
         public DlpEvaluationInput() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

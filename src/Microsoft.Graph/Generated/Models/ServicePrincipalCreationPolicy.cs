@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class ServicePrincipalCreationPolicy : PolicyBase, IParsable {
         /// <summary>The excludes property</summary>
-        public List<ServicePrincipalCreationConditionSet> Excludes { get; set; }
+        public List<ServicePrincipalCreationConditionSet> Excludes {
+            get { return BackingStore?.Get<List<ServicePrincipalCreationConditionSet>>(nameof(Excludes)); }
+            set { BackingStore?.Set(nameof(Excludes), value); }
+        }
         /// <summary>The includes property</summary>
-        public List<ServicePrincipalCreationConditionSet> Includes { get; set; }
+        public List<ServicePrincipalCreationConditionSet> Includes {
+            get { return BackingStore?.Get<List<ServicePrincipalCreationConditionSet>>(nameof(Includes)); }
+            set { BackingStore?.Set(nameof(Includes), value); }
+        }
         /// <summary>The isBuiltIn property</summary>
-        public bool? IsBuiltIn { get; set; }
+        public bool? IsBuiltIn {
+            get { return BackingStore?.Get<bool?>(nameof(IsBuiltIn)); }
+            set { BackingStore?.Set(nameof(IsBuiltIn), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class OnPremisesApplicationSegment : IAdditionalDataHolder, IParsable {
+    public class OnPremisesApplicationSegment : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>The alternateUrl property</summary>
-        public string AlternateUrl { get; set; }
+        public string AlternateUrl {
+            get { return BackingStore?.Get<string>(nameof(AlternateUrl)); }
+            set { BackingStore?.Set(nameof(AlternateUrl), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The corsConfigurations property</summary>
-        public List<CorsConfiguration> CorsConfigurations { get; set; }
+        public List<CorsConfiguration> CorsConfigurations {
+            get { return BackingStore?.Get<List<CorsConfiguration>>(nameof(CorsConfigurations)); }
+            set { BackingStore?.Set(nameof(CorsConfigurations), value); }
+        }
         /// <summary>The externalUrl property</summary>
-        public string ExternalUrl { get; set; }
+        public string ExternalUrl {
+            get { return BackingStore?.Get<string>(nameof(ExternalUrl)); }
+            set { BackingStore?.Set(nameof(ExternalUrl), value); }
+        }
         /// <summary>The internalUrl property</summary>
-        public string InternalUrl { get; set; }
+        public string InternalUrl {
+            get { return BackingStore?.Get<string>(nameof(InternalUrl)); }
+            set { BackingStore?.Set(nameof(InternalUrl), value); }
+        }
         /// <summary>
         /// Instantiates a new onPremisesApplicationSegment and sets the default values.
         /// </summary>
         public OnPremisesApplicationSegment() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

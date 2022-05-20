@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Device compliance policy assignment.</summary>
     public class DeviceCompliancePolicyAssignment : Entity, IParsable {
         /// <summary>The assignment source for the device compliance policy, direct or parcel/policySet. Possible values are: direct, policySets.</summary>
-        public DeviceAndAppManagementAssignmentSource? Source { get; set; }
+        public DeviceAndAppManagementAssignmentSource? Source {
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentSource?>(nameof(Source)); }
+            set { BackingStore?.Set(nameof(Source), value); }
+        }
         /// <summary>The identifier of the source of the assignment.</summary>
-        public string SourceId { get; set; }
+        public string SourceId {
+            get { return BackingStore?.Get<string>(nameof(SourceId)); }
+            set { BackingStore?.Set(nameof(SourceId), value); }
+        }
         /// <summary>Target for the compliance policy assignment.</summary>
-        public DeviceAndAppManagementAssignmentTarget Target { get; set; }
+        public DeviceAndAppManagementAssignmentTarget Target {
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>(nameof(Target)); }
+            set { BackingStore?.Set(nameof(Target), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

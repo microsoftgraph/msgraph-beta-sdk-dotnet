@@ -4,23 +4,48 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class TimeCard : ChangeTrackedEntity, IParsable {
         /// <summary>The list of breaks associated with the timeCard.</summary>
-        public List<TimeCardBreak> Breaks { get; set; }
+        public List<TimeCardBreak> Breaks {
+            get { return BackingStore?.Get<List<TimeCardBreak>>(nameof(Breaks)); }
+            set { BackingStore?.Set(nameof(Breaks), value); }
+        }
         /// <summary>The clock-in event of the timeCard.</summary>
-        public TimeCardEvent ClockInEvent { get; set; }
+        public TimeCardEvent ClockInEvent {
+            get { return BackingStore?.Get<TimeCardEvent>(nameof(ClockInEvent)); }
+            set { BackingStore?.Set(nameof(ClockInEvent), value); }
+        }
         /// <summary>The clock-out event of the timeCard.</summary>
-        public TimeCardEvent ClockOutEvent { get; set; }
+        public TimeCardEvent ClockOutEvent {
+            get { return BackingStore?.Get<TimeCardEvent>(nameof(ClockOutEvent)); }
+            set { BackingStore?.Set(nameof(ClockOutEvent), value); }
+        }
         /// <summary>Indicate if this timeCard entry is confirmed. Possible values are none, user, manager, unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.ConfirmedBy? ConfirmedBy { get; set; }
+        public Microsoft.Graph.Beta.Models.ConfirmedBy? ConfirmedBy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConfirmedBy?>(nameof(ConfirmedBy)); }
+            set { BackingStore?.Set(nameof(ConfirmedBy), value); }
+        }
         /// <summary>Notes about the timeCard.</summary>
-        public ItemBody Notes { get; set; }
+        public ItemBody Notes {
+            get { return BackingStore?.Get<ItemBody>(nameof(Notes)); }
+            set { BackingStore?.Set(nameof(Notes), value); }
+        }
         /// <summary>The original timeCardEntry of the timeCard, before user edits.</summary>
-        public TimeCardEntry OriginalEntry { get; set; }
+        public TimeCardEntry OriginalEntry {
+            get { return BackingStore?.Get<TimeCardEntry>(nameof(OriginalEntry)); }
+            set { BackingStore?.Set(nameof(OriginalEntry), value); }
+        }
         /// <summary>The current state of the timeCard during its life cycle.Possible values are: clockedIn, onBreak, clockedOut, unknownFutureValue.</summary>
-        public TimeCardState? State { get; set; }
+        public TimeCardState? State {
+            get { return BackingStore?.Get<TimeCardState?>(nameof(State)); }
+            set { BackingStore?.Set(nameof(State), value); }
+        }
         /// <summary>User ID to which  the timeCard belongs.</summary>
-        public string UserId { get; set; }
+        public string UserId {
+            get { return BackingStore?.Get<string>(nameof(UserId)); }
+            set { BackingStore?.Set(nameof(UserId), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyNo
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(GetConfigurationPolicyNonComplianceReportRequestBody body, Action<GetConfigurationPolicyNonComplianceReportRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation CreatePostRequestInformation(GetConfigurationPolicyNonComplianceReportPostRequestBody body, Action<GetConfigurationPolicyNonComplianceReportRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -70,10 +70,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyNo
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<GetConfigurationPolicyNonComplianceReportResponse> PostAsync(GetConfigurationPolicyNonComplianceReportRequestBody body, Action<GetConfigurationPolicyNonComplianceReportRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> PostAsync(GetConfigurationPolicyNonComplianceReportPostRequestBody body, Action<GetConfigurationPolicyNonComplianceReportRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<GetConfigurationPolicyNonComplianceReportResponse>(requestInfo, GetConfigurationPolicyNonComplianceReportResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class GetConfigurationPolicyNonComplianceReportRequestBuilderPostRequestConfiguration {

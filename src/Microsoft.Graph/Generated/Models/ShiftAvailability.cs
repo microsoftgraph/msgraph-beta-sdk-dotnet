@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ShiftAvailability : IAdditionalDataHolder, IParsable {
+    public class ShiftAvailability : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies the pattern for recurrence</summary>
-        public PatternedRecurrence Recurrence { get; set; }
+        public PatternedRecurrence Recurrence {
+            get { return BackingStore?.Get<PatternedRecurrence>(nameof(Recurrence)); }
+            set { BackingStore?.Set(nameof(Recurrence), value); }
+        }
         /// <summary>The time slot(s) preferred by the user.</summary>
-        public List<TimeRange> TimeSlots { get; set; }
+        public List<TimeRange> TimeSlots {
+            get { return BackingStore?.Get<List<TimeRange>>(nameof(TimeSlots)); }
+            set { BackingStore?.Set(nameof(TimeSlots), value); }
+        }
         /// <summary>Specifies the time zone for the indicated time.</summary>
-        public string TimeZone { get; set; }
+        public string TimeZone {
+            get { return BackingStore?.Get<string>(nameof(TimeZone)); }
+            set { BackingStore?.Set(nameof(TimeZone), value); }
+        }
         /// <summary>
         /// Instantiates a new shiftAvailability and sets the default values.
         /// </summary>
         public ShiftAvailability() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

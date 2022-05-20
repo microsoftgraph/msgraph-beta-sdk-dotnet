@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class DeviceComplianceScriptError : IAdditionalDataHolder, IParsable {
+    public class DeviceComplianceScriptError : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Error code. Possible values are: none, jsonFileInvalid, jsonFileMissing, jsonFileTooLarge, rulesMissing, duplicateRules, tooManyRulesSpecified, operatorMissing, operatorNotSupported, datatypeMissing, datatypeNotSupported, operatorDataTypeCombinationNotSupported, moreInfoUriMissing, moreInfoUriInvalid, moreInfoUriTooLarge, descriptionMissing, descriptionInvalid, descriptionTooLarge, titleMissing, titleInvalid, titleTooLarge, operandMissing, operandInvalid, operandTooLarge, settingNameMissing, settingNameInvalid, settingNameTooLarge, englishLocaleMissing, duplicateLocales, unrecognizedLocale, unknown, remediationStringsMissing.</summary>
-        public Microsoft.Graph.Beta.Models.Code? Code { get; set; }
+        public Microsoft.Graph.Beta.Models.Code? Code {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Code?>(nameof(Code)); }
+            set { BackingStore?.Set(nameof(Code), value); }
+        }
         /// <summary>Error code. Possible values are: none, jsonFileInvalid, jsonFileMissing, jsonFileTooLarge, rulesMissing, duplicateRules, tooManyRulesSpecified, operatorMissing, operatorNotSupported, datatypeMissing, datatypeNotSupported, operatorDataTypeCombinationNotSupported, moreInfoUriMissing, moreInfoUriInvalid, moreInfoUriTooLarge, descriptionMissing, descriptionInvalid, descriptionTooLarge, titleMissing, titleInvalid, titleTooLarge, operandMissing, operandInvalid, operandTooLarge, settingNameMissing, settingNameInvalid, settingNameTooLarge, englishLocaleMissing, duplicateLocales, unrecognizedLocale, unknown, remediationStringsMissing.</summary>
-        public Microsoft.Graph.Beta.Models.DeviceComplianceScriptRulesValidationError? DeviceComplianceScriptRulesValidationError { get; set; }
+        public Microsoft.Graph.Beta.Models.DeviceComplianceScriptRulesValidationError? DeviceComplianceScriptRulesValidationError {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceComplianceScriptRulesValidationError?>(nameof(DeviceComplianceScriptRulesValidationError)); }
+            set { BackingStore?.Set(nameof(DeviceComplianceScriptRulesValidationError), value); }
+        }
         /// <summary>Error message.</summary>
-        public string Message { get; set; }
+        public string Message {
+            get { return BackingStore?.Get<string>(nameof(Message)); }
+            set { BackingStore?.Set(nameof(Message), value); }
+        }
         /// <summary>
         /// Instantiates a new deviceComplianceScriptError and sets the default values.
         /// </summary>
         public DeviceComplianceScriptError() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

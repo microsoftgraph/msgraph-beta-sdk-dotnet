@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Entity which represents an OnPrem Ndes connector.</summary>
     public class NdesConnector : Entity, IParsable {
         /// <summary>The friendly name of the Ndes Connector.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Last connection time for the Ndes Connector</summary>
-        public DateTimeOffset? LastConnectionDateTime { get; set; }
+        public DateTimeOffset? LastConnectionDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastConnectionDateTime)); }
+            set { BackingStore?.Set(nameof(LastConnectionDateTime), value); }
+        }
         /// <summary>Ndes Connector Status. Possible values are: none, active, inactive.</summary>
-        public NdesConnectorState? State { get; set; }
+        public NdesConnectorState? State {
+            get { return BackingStore?.Get<NdesConnectorState?>(nameof(State)); }
+            set { BackingStore?.Set(nameof(State), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

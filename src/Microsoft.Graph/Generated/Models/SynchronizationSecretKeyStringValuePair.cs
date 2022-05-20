@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SynchronizationSecretKeyStringValuePair : IAdditionalDataHolder, IParsable {
+    public class SynchronizationSecretKeyStringValuePair : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Possible values are: None, UserName, Password, SecretToken, AppKey, BaseAddress, ClientIdentifier, ClientSecret, SingleSignOnType, Sandbox, Url, Domain, ConsumerKey, ConsumerSecret, TokenKey, TokenExpiration, Oauth2AccessToken, Oauth2AccessTokenCreationTime, Oauth2RefreshToken, SyncAll, InstanceName, Oauth2ClientId, Oauth2ClientSecret, CompanyId, UpdateKeyOnSoftDelete, SynchronizationSchedule, SystemOfRecord, SandboxName, EnforceDomain, SyncNotificationSettings, Server, PerformInboundEntitlementGrants, HardDeletesEnabled, SyncAgentCompatibilityKey, SyncAgentADContainer, ValidateDomain, Oauth2TokenExchangeUri, Oauth2AuthorizationUri, AuthenticationType, TestReferences, ConnectionString.</summary>
-        public SynchronizationSecret? Key { get; set; }
+        public SynchronizationSecret? Key {
+            get { return BackingStore?.Get<SynchronizationSecret?>(nameof(Key)); }
+            set { BackingStore?.Set(nameof(Key), value); }
+        }
         /// <summary>The value of the secret.</summary>
-        public string Value { get; set; }
+        public string Value {
+            get { return BackingStore?.Get<string>(nameof(Value)); }
+            set { BackingStore?.Set(nameof(Value), value); }
+        }
         /// <summary>
         /// Instantiates a new synchronizationSecretKeyStringValuePair and sets the default values.
         /// </summary>
         public SynchronizationSecretKeyStringValuePair() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

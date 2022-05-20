@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class WorkbookIcon : IAdditionalDataHolder, IParsable {
+    public class WorkbookIcon : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Represents the index of the icon in the given set.</summary>
-        public int? Index { get; set; }
+        public int? Index {
+            get { return BackingStore?.Get<int?>(nameof(Index)); }
+            set { BackingStore?.Set(nameof(Index), value); }
+        }
         /// <summary>Represents the set that the icon is part of. Possible values are: Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.</summary>
-        public string Set { get; set; }
+        public string Set {
+            get { return BackingStore?.Get<string>(nameof(Set)); }
+            set { BackingStore?.Set(nameof(Set), value); }
+        }
         /// <summary>
         /// Instantiates a new workbookIcon and sets the default values.
         /// </summary>
         public WorkbookIcon() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

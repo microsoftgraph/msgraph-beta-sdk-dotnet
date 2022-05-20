@@ -4,24 +4,45 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
     public class ExactMatchJobBase : Entity, IParsable {
         /// <summary>The completionDateTime property</summary>
-        public DateTimeOffset? CompletionDateTime { get; set; }
+        public DateTimeOffset? CompletionDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CompletionDateTime)); }
+            set { BackingStore?.Set(nameof(CompletionDateTime), value); }
+        }
         /// <summary>The creationDateTime property</summary>
-        public DateTimeOffset? CreationDateTime { get; set; }
+        public DateTimeOffset? CreationDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreationDateTime)); }
+            set { BackingStore?.Set(nameof(CreationDateTime), value); }
+        }
         /// <summary>The error property</summary>
-        public ClassificationError Error { get; set; }
+        public ClassificationError Error {
+            get { return BackingStore?.Get<ClassificationError>(nameof(Error)); }
+            set { BackingStore?.Set(nameof(Error), value); }
+        }
         /// <summary>The lastUpdatedDateTime property</summary>
-        public DateTimeOffset? LastUpdatedDateTime { get; set; }
+        public DateTimeOffset? LastUpdatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastUpdatedDateTime)); }
+            set { BackingStore?.Set(nameof(LastUpdatedDateTime), value); }
+        }
         /// <summary>The startDateTime property</summary>
-        public DateTimeOffset? StartDateTime { get; set; }
+        public DateTimeOffset? StartDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
+            set { BackingStore?.Set(nameof(StartDateTime), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new ExactMatchJobBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExactMatchJobBase();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.exactMatchJobBase" => new ExactMatchJobBase(),
+                _ => new ExactMatchJobBase(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

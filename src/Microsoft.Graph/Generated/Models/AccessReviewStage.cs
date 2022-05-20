@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class AccessReviewStage : Entity, IParsable {
         /// <summary>Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.</summary>
-        public List<AccessReviewInstanceDecisionItem> Decisions { get; set; }
+        public List<AccessReviewInstanceDecisionItem> Decisions {
+            get { return BackingStore?.Get<List<AccessReviewInstanceDecisionItem>>(nameof(Decisions)); }
+            set { BackingStore?.Set(nameof(Decisions), value); }
+        }
         /// <summary>DateTime when review stage is scheduled to end. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This property is the cumulative total of the durationInDays for all stages. Read-only.</summary>
-        public DateTimeOffset? EndDateTime { get; set; }
+        public DateTimeOffset? EndDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
+            set { BackingStore?.Set(nameof(EndDateTime), value); }
+        }
         /// <summary>This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user&apos;s manager does not exist.</summary>
-        public List<AccessReviewReviewerScope> FallbackReviewers { get; set; }
+        public List<AccessReviewReviewerScope> FallbackReviewers {
+            get { return BackingStore?.Get<List<AccessReviewReviewerScope>>(nameof(FallbackReviewers)); }
+            set { BackingStore?.Set(nameof(FallbackReviewers), value); }
+        }
         /// <summary>This collection of access review scopes is used to define who the reviewers are. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.</summary>
-        public List<AccessReviewReviewerScope> Reviewers { get; set; }
+        public List<AccessReviewReviewerScope> Reviewers {
+            get { return BackingStore?.Get<List<AccessReviewReviewerScope>>(nameof(Reviewers)); }
+            set { BackingStore?.Set(nameof(Reviewers), value); }
+        }
         /// <summary>DateTime when review stage is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
-        public DateTimeOffset? StartDateTime { get; set; }
+        public DateTimeOffset? StartDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
+            set { BackingStore?.Set(nameof(StartDateTime), value); }
+        }
         /// <summary>Specifies the status of an accessReviewStage. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $orderby, and $filter (eq only). Read-only.</summary>
-        public string Status { get; set; }
+        public string Status {
+            get { return BackingStore?.Get<string>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

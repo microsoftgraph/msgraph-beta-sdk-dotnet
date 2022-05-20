@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class AppManagementPolicy : PolicyBase, IParsable {
         /// <summary>The appliesTo property</summary>
-        public List<DirectoryObject> AppliesTo { get; set; }
+        public List<DirectoryObject> AppliesTo {
+            get { return BackingStore?.Get<List<DirectoryObject>>(nameof(AppliesTo)); }
+            set { BackingStore?.Set(nameof(AppliesTo), value); }
+        }
         /// <summary>The isEnabled property</summary>
-        public bool? IsEnabled { get; set; }
+        public bool? IsEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
+            set { BackingStore?.Set(nameof(IsEnabled), value); }
+        }
         /// <summary>The restrictions property</summary>
-        public AppManagementConfiguration Restrictions { get; set; }
+        public AppManagementConfiguration Restrictions {
+            get { return BackingStore?.Get<AppManagementConfiguration>(nameof(Restrictions)); }
+            set { BackingStore?.Set(nameof(Restrictions), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

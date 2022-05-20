@@ -24,10 +24,10 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcsOvervi
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.tenantRelationships.managedTenants.cloudPcsOverview.item collection</summary>
-        public CloudPcOverviewItemRequestBuilder this[string position] { get {
+        public CloudPcOverviewTenantItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPcOverview%2DtenantId", position);
-            return new CloudPcOverviewItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new CloudPcOverviewTenantItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CloudPcsOverviewRequestBuilder and sets the default values.

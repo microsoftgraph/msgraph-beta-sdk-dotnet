@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to call the record method.</summary>
     public class RecordOperation : CommsOperation, IParsable {
         /// <summary>Possible values are: operationCanceled, stopToneDetected, maxRecordDurationReached, initialSilenceTimeout, maxSilenceTimeout, playPromptFailed, playBeepFailed, mediaReceiveTimeout, unspecifiedError, none.</summary>
-        public RecordCompletionReason? CompletionReason { get; set; }
+        public RecordCompletionReason? CompletionReason {
+            get { return BackingStore?.Get<RecordCompletionReason?>(nameof(CompletionReason)); }
+            set { BackingStore?.Set(nameof(CompletionReason), value); }
+        }
         /// <summary>The access token required to retrieve the recording.</summary>
-        public string RecordingAccessToken { get; set; }
+        public string RecordingAccessToken {
+            get { return BackingStore?.Get<string>(nameof(RecordingAccessToken)); }
+            set { BackingStore?.Set(nameof(RecordingAccessToken), value); }
+        }
         /// <summary>The location where the recording is located.</summary>
-        public string RecordingLocation { get; set; }
+        public string RecordingLocation {
+            get { return BackingStore?.Get<string>(nameof(RecordingLocation)); }
+            set { BackingStore?.Set(nameof(RecordingLocation), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

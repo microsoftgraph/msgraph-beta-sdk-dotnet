@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class Settings : IAdditionalDataHolder, IParsable {
+    public class Settings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies if the user&apos;s primary mailbox is hosted in the cloud and is enabled for Microsoft Graph.</summary>
-        public bool? HasGraphMailbox { get; set; }
+        public bool? HasGraphMailbox {
+            get { return BackingStore?.Get<bool?>(nameof(HasGraphMailbox)); }
+            set { BackingStore?.Set(nameof(HasGraphMailbox), value); }
+        }
         /// <summary>Specifies if the user has a MyAnalytics license assigned.</summary>
-        public bool? HasLicense { get; set; }
+        public bool? HasLicense {
+            get { return BackingStore?.Get<bool?>(nameof(HasLicense)); }
+            set { BackingStore?.Set(nameof(HasLicense), value); }
+        }
         /// <summary>Specifies if the user opted out of MyAnalytics.</summary>
-        public bool? HasOptedOut { get; set; }
+        public bool? HasOptedOut {
+            get { return BackingStore?.Get<bool?>(nameof(HasOptedOut)); }
+            set { BackingStore?.Set(nameof(HasOptedOut), value); }
+        }
         /// <summary>
         /// Instantiates a new settings and sets the default values.
         /// </summary>
         public Settings() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

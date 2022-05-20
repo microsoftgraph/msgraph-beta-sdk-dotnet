@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class PersonAnnotation : ItemFacet, IParsable {
         /// <summary>Contains the detail of the note itself.</summary>
-        public ItemBody Detail { get; set; }
+        public ItemBody Detail {
+            get { return BackingStore?.Get<ItemBody>(nameof(Detail)); }
+            set { BackingStore?.Set(nameof(Detail), value); }
+        }
         /// <summary>Contains a friendly name for the note.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The thumbnailUrl property</summary>
-        public string ThumbnailUrl { get; set; }
+        public string ThumbnailUrl {
+            get { return BackingStore?.Get<string>(nameof(ThumbnailUrl)); }
+            set { BackingStore?.Set(nameof(ThumbnailUrl), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

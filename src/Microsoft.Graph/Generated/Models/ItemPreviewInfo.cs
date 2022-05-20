@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ItemPreviewInfo : IAdditionalDataHolder, IParsable {
+    public class ItemPreviewInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The getUrl property</summary>
-        public string GetUrl { get; set; }
+        public string GetUrl {
+            get { return BackingStore?.Get<string>(nameof(GetUrl)); }
+            set { BackingStore?.Set(nameof(GetUrl), value); }
+        }
         /// <summary>The postParameters property</summary>
-        public string PostParameters { get; set; }
+        public string PostParameters {
+            get { return BackingStore?.Get<string>(nameof(PostParameters)); }
+            set { BackingStore?.Set(nameof(PostParameters), value); }
+        }
         /// <summary>The postUrl property</summary>
-        public string PostUrl { get; set; }
+        public string PostUrl {
+            get { return BackingStore?.Get<string>(nameof(PostUrl)); }
+            set { BackingStore?.Set(nameof(PostUrl), value); }
+        }
         /// <summary>
-        /// Instantiates a new itemPreviewInfo and sets the default values.
+        /// Instantiates a new ItemPreviewInfo and sets the default values.
         /// </summary>
         public ItemPreviewInfo() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

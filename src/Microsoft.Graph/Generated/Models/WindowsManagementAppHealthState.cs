@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Windows management app health state entity.</summary>
     public class WindowsManagementAppHealthState : Entity, IParsable {
         /// <summary>Name of the device on which Windows management app is installed.</summary>
-        public string DeviceName { get; set; }
+        public string DeviceName {
+            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
+            set { BackingStore?.Set(nameof(DeviceName), value); }
+        }
         /// <summary>Windows 10 OS version of the device on which Windows management app is installed.</summary>
-        public string DeviceOSVersion { get; set; }
+        public string DeviceOSVersion {
+            get { return BackingStore?.Get<string>(nameof(DeviceOSVersion)); }
+            set { BackingStore?.Set(nameof(DeviceOSVersion), value); }
+        }
         /// <summary>Windows management app health state. Possible values are: unknown, healthy, unhealthy.</summary>
-        public Microsoft.Graph.Beta.Models.HealthState? HealthState { get; set; }
+        public Microsoft.Graph.Beta.Models.HealthState? HealthState {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.HealthState?>(nameof(HealthState)); }
+            set { BackingStore?.Set(nameof(HealthState), value); }
+        }
         /// <summary>Windows management app installed version.</summary>
-        public string InstalledVersion { get; set; }
+        public string InstalledVersion {
+            get { return BackingStore?.Get<string>(nameof(InstalledVersion)); }
+            set { BackingStore?.Set(nameof(InstalledVersion), value); }
+        }
         /// <summary>Windows management app last check-in time.</summary>
-        public DateTimeOffset? LastCheckInDateTime { get; set; }
+        public DateTimeOffset? LastCheckInDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastCheckInDateTime)); }
+            set { BackingStore?.Set(nameof(LastCheckInDateTime), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

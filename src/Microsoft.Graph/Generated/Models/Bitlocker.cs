@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class Bitlocker : Entity, IParsable {
         /// <summary>The recovery keys associated with the bitlocker entity.</summary>
-        public List<BitlockerRecoveryKey> RecoveryKeys { get; set; }
+        public List<BitlockerRecoveryKey> RecoveryKeys {
+            get { return BackingStore?.Get<List<BitlockerRecoveryKey>>(nameof(RecoveryKeys)); }
+            set { BackingStore?.Set(nameof(RecoveryKeys), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

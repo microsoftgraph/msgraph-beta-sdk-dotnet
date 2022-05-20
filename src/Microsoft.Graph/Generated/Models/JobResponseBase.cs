@@ -4,28 +4,55 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
     public class JobResponseBase : Entity, IParsable {
         /// <summary>The creationDateTime property</summary>
-        public DateTimeOffset? CreationDateTime { get; set; }
+        public DateTimeOffset? CreationDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreationDateTime)); }
+            set { BackingStore?.Set(nameof(CreationDateTime), value); }
+        }
         /// <summary>The endDateTime property</summary>
-        public DateTimeOffset? EndDateTime { get; set; }
+        public DateTimeOffset? EndDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
+            set { BackingStore?.Set(nameof(EndDateTime), value); }
+        }
         /// <summary>The error property</summary>
-        public ClassificationError Error { get; set; }
+        public ClassificationError Error {
+            get { return BackingStore?.Get<ClassificationError>(nameof(Error)); }
+            set { BackingStore?.Set(nameof(Error), value); }
+        }
         /// <summary>The startDateTime property</summary>
-        public DateTimeOffset? StartDateTime { get; set; }
+        public DateTimeOffset? StartDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
+            set { BackingStore?.Set(nameof(StartDateTime), value); }
+        }
         /// <summary>The status property</summary>
-        public string Status { get; set; }
+        public string Status {
+            get { return BackingStore?.Get<string>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>The tenantId property</summary>
-        public string TenantId { get; set; }
+        public string TenantId {
+            get { return BackingStore?.Get<string>(nameof(TenantId)); }
+            set { BackingStore?.Set(nameof(TenantId), value); }
+        }
         /// <summary>The type property</summary>
-        public string Type { get; set; }
+        public string Type {
+            get { return BackingStore?.Get<string>(nameof(Type)); }
+            set { BackingStore?.Set(nameof(Type), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new JobResponseBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new JobResponseBase();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.jobResponseBase" => new JobResponseBase(),
+                _ => new JobResponseBase(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

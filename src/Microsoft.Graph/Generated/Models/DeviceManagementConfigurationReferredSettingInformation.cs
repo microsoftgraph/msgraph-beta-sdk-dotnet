@@ -1,19 +1,29 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Referred setting information about reusable setting</summary>
-    public class DeviceManagementConfigurationReferredSettingInformation : IAdditionalDataHolder, IParsable {
+    public class DeviceManagementConfigurationReferredSettingInformation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Setting definition id that is being referred to a setting. Applicable for reusable setting</summary>
-        public string SettingDefinitionId { get; set; }
+        public string SettingDefinitionId {
+            get { return BackingStore?.Get<string>(nameof(SettingDefinitionId)); }
+            set { BackingStore?.Set(nameof(SettingDefinitionId), value); }
+        }
         /// <summary>
         /// Instantiates a new deviceManagementConfigurationReferredSettingInformation and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationReferredSettingInformation() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

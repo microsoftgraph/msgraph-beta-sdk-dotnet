@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The entity represents an group policy operation.</summary>
     public class GroupPolicyOperation : Entity, IParsable {
         /// <summary>The date and time the entity was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>The group policy operation status. Possible values are: unknown, inProgress, success, failed.</summary>
-        public GroupPolicyOperationStatus? OperationStatus { get; set; }
+        public GroupPolicyOperationStatus? OperationStatus {
+            get { return BackingStore?.Get<GroupPolicyOperationStatus?>(nameof(OperationStatus)); }
+            set { BackingStore?.Set(nameof(OperationStatus), value); }
+        }
         /// <summary>The type of group policy operation. Possible values are: none, upload, uploadNewVersion, addLanguageFiles, removeLanguageFiles, updateLanguageFiles, remove.</summary>
-        public GroupPolicyOperationType? OperationType { get; set; }
+        public GroupPolicyOperationType? OperationType {
+            get { return BackingStore?.Get<GroupPolicyOperationType?>(nameof(OperationType)); }
+            set { BackingStore?.Set(nameof(OperationType), value); }
+        }
         /// <summary>The group policy operation status detail.</summary>
-        public string StatusDetails { get; set; }
+        public string StatusDetails {
+            get { return BackingStore?.Get<string>(nameof(StatusDetails)); }
+            set { BackingStore?.Set(nameof(StatusDetails), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

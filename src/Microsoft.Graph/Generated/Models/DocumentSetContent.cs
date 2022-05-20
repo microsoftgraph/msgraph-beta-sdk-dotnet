@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class DocumentSetContent : IAdditionalDataHolder, IParsable {
+    public class DocumentSetContent : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Content type information of the file.</summary>
-        public ContentTypeInfo ContentType { get; set; }
+        public ContentTypeInfo ContentType {
+            get { return BackingStore?.Get<ContentTypeInfo>(nameof(ContentType)); }
+            set { BackingStore?.Set(nameof(ContentType), value); }
+        }
         /// <summary>Name of the file in resource folder that should be added as a default content or a template in the document set</summary>
-        public string FileName { get; set; }
+        public string FileName {
+            get { return BackingStore?.Get<string>(nameof(FileName)); }
+            set { BackingStore?.Set(nameof(FileName), value); }
+        }
         /// <summary>Folder name in which the file will be placed when a new document set is created in the library.</summary>
-        public string FolderName { get; set; }
+        public string FolderName {
+            get { return BackingStore?.Get<string>(nameof(FolderName)); }
+            set { BackingStore?.Set(nameof(FolderName), value); }
+        }
         /// <summary>
         /// Instantiates a new documentSetContent and sets the default values.
         /// </summary>
         public DocumentSetContent() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

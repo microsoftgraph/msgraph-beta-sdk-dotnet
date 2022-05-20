@@ -4,34 +4,70 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The entity represents an ADMX (Administrative Template) XML file. The ADMX file contains a collection of group policy definitions and their locations by category path. The group policy definition file also contains the languages supported as determined by the language dependent ADML (Administrative Template) language files.</summary>
     public class GroupPolicyDefinitionFile : Entity, IParsable {
         /// <summary>The group policy definitions associated with the file.</summary>
-        public List<GroupPolicyDefinition> Definitions { get; set; }
+        public List<GroupPolicyDefinition> Definitions {
+            get { return BackingStore?.Get<List<GroupPolicyDefinition>>(nameof(Definitions)); }
+            set { BackingStore?.Set(nameof(Definitions), value); }
+        }
         /// <summary>The localized description of the policy settings in the ADMX file. The default value is empty.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The localized friendly name of the ADMX file.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The file name of the ADMX file without the path. For example: edge.admx</summary>
-        public string FileName { get; set; }
+        public string FileName {
+            get { return BackingStore?.Get<string>(nameof(FileName)); }
+            set { BackingStore?.Set(nameof(FileName), value); }
+        }
         /// <summary>The supported language codes for the ADMX file.</summary>
-        public List<string> LanguageCodes { get; set; }
+        public List<string> LanguageCodes {
+            get { return BackingStore?.Get<List<string>>(nameof(LanguageCodes)); }
+            set { BackingStore?.Set(nameof(LanguageCodes), value); }
+        }
         /// <summary>The date and time the entity was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>Specifies the type of group policy. Possible values are: admxBacked, admxIngested.</summary>
-        public GroupPolicyType? PolicyType { get; set; }
+        public GroupPolicyType? PolicyType {
+            get { return BackingStore?.Get<GroupPolicyType?>(nameof(PolicyType)); }
+            set { BackingStore?.Set(nameof(PolicyType), value); }
+        }
         /// <summary>The revision version associated with the file.</summary>
-        public string Revision { get; set; }
+        public string Revision {
+            get { return BackingStore?.Get<string>(nameof(Revision)); }
+            set { BackingStore?.Set(nameof(Revision), value); }
+        }
         /// <summary>Specifies the URI used to identify the namespace within the ADMX file.</summary>
-        public string TargetNamespace { get; set; }
+        public string TargetNamespace {
+            get { return BackingStore?.Get<string>(nameof(TargetNamespace)); }
+            set { BackingStore?.Set(nameof(TargetNamespace), value); }
+        }
         /// <summary>Specifies the logical name that refers to the namespace within the ADMX file.</summary>
-        public string TargetPrefix { get; set; }
+        public string TargetPrefix {
+            get { return BackingStore?.Get<string>(nameof(TargetPrefix)); }
+            set { BackingStore?.Set(nameof(TargetPrefix), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new GroupPolicyDefinitionFile CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GroupPolicyDefinitionFile();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.groupPolicyDefinitionFile" => new GroupPolicyDefinitionFile(),
+                _ => new GroupPolicyDefinitionFile(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

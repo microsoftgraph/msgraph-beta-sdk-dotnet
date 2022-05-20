@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the cloudCommunications singleton.</summary>
     public class Presence : Entity, IParsable {
         /// <summary>The supplemental information to a user&apos;s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.</summary>
-        public string Activity { get; set; }
+        public string Activity {
+            get { return BackingStore?.Get<string>(nameof(Activity)); }
+            set { BackingStore?.Set(nameof(Activity), value); }
+        }
         /// <summary>The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown</summary>
-        public string Availability { get; set; }
+        public string Availability {
+            get { return BackingStore?.Get<string>(nameof(Availability)); }
+            set { BackingStore?.Set(nameof(Availability), value); }
+        }
         /// <summary>The out of office settings for a user.</summary>
-        public Microsoft.Graph.Beta.Models.OutOfOfficeSettings OutOfOfficeSettings { get; set; }
+        public Microsoft.Graph.Beta.Models.OutOfOfficeSettings OutOfOfficeSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OutOfOfficeSettings>(nameof(OutOfOfficeSettings)); }
+            set { BackingStore?.Set(nameof(OutOfOfficeSettings), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

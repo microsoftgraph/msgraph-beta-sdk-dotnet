@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get privilegedApproval
+        /// Retrieve the properties and relationships of privilegedapproval object.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<PrivilegedApprovalItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update privilegedapproval
+        /// Update the properties of privilegedapproval object.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get privilegedApproval
+        /// Retrieve the properties and relationships of privilegedapproval object.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PrivilegedApproval>(requestInfo, Microsoft.Graph.Beta.Models.PrivilegedApproval.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update privilegedapproval
+        /// Update the properties of privilegedapproval object.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -170,7 +170,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get privilegedApproval</summary>
+        /// <summary>Retrieve the properties and relationships of privilegedapproval object.</summary>
         public class PrivilegedApprovalItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

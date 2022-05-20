@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of privilegedSignupStatus entities.</summary>
     public class PrivilegedSignupStatus : Entity, IParsable {
         /// <summary>The isRegistered property</summary>
-        public bool? IsRegistered { get; set; }
+        public bool? IsRegistered {
+            get { return BackingStore?.Get<bool?>(nameof(IsRegistered)); }
+            set { BackingStore?.Set(nameof(IsRegistered), value); }
+        }
         /// <summary>The status property</summary>
-        public SetupStatus? Status { get; set; }
+        public SetupStatus? Status {
+            get { return BackingStore?.Get<SetupStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

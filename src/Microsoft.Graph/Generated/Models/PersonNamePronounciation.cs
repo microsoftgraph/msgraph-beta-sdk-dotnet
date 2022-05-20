@@ -1,26 +1,48 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class PersonNamePronounciation : IAdditionalDataHolder, IParsable {
+    public class PersonNamePronounciation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The displayName property</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The first property</summary>
-        public string First { get; set; }
+        public string First {
+            get { return BackingStore?.Get<string>(nameof(First)); }
+            set { BackingStore?.Set(nameof(First), value); }
+        }
         /// <summary>The last property</summary>
-        public string Last { get; set; }
+        public string Last {
+            get { return BackingStore?.Get<string>(nameof(Last)); }
+            set { BackingStore?.Set(nameof(Last), value); }
+        }
         /// <summary>The maiden property</summary>
-        public string Maiden { get; set; }
+        public string Maiden {
+            get { return BackingStore?.Get<string>(nameof(Maiden)); }
+            set { BackingStore?.Set(nameof(Maiden), value); }
+        }
         /// <summary>The middle property</summary>
-        public string Middle { get; set; }
+        public string Middle {
+            get { return BackingStore?.Get<string>(nameof(Middle)); }
+            set { BackingStore?.Set(nameof(Middle), value); }
+        }
         /// <summary>
         /// Instantiates a new personNamePronounciation and sets the default values.
         /// </summary>
         public PersonNamePronounciation() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

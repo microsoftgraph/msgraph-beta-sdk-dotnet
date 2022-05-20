@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ApplicationServicePrincipal : IAdditionalDataHolder, IParsable {
+    public class ApplicationServicePrincipal : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>The application property</summary>
-        public Microsoft.Graph.Beta.Models.Application Application { get; set; }
+        public Microsoft.Graph.Beta.Models.Application Application {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Application>(nameof(Application)); }
+            set { BackingStore?.Set(nameof(Application), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The servicePrincipal property</summary>
-        public Microsoft.Graph.Beta.Models.ServicePrincipal ServicePrincipal { get; set; }
+        public Microsoft.Graph.Beta.Models.ServicePrincipal ServicePrincipal {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServicePrincipal>(nameof(ServicePrincipal)); }
+            set { BackingStore?.Set(nameof(ServicePrincipal), value); }
+        }
         /// <summary>
-        /// Instantiates a new applicationServicePrincipal and sets the default values.
+        /// Instantiates a new ApplicationServicePrincipal and sets the default values.
         /// </summary>
         public ApplicationServicePrincipal() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -4,21 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The user experience analytics device performance entity contains device performance details.</summary>
     public class UserExperienceAnalyticsAppHealthDevicePerformanceDetails : Entity, IParsable {
         /// <summary>The friendly name of the application for which the event occurred.</summary>
-        public string AppDisplayName { get; set; }
+        public string AppDisplayName {
+            get { return BackingStore?.Get<string>(nameof(AppDisplayName)); }
+            set { BackingStore?.Set(nameof(AppDisplayName), value); }
+        }
         /// <summary>The publisher of the application.</summary>
-        public string AppPublisher { get; set; }
+        public string AppPublisher {
+            get { return BackingStore?.Get<string>(nameof(AppPublisher)); }
+            set { BackingStore?.Set(nameof(AppPublisher), value); }
+        }
         /// <summary>The version of the application.</summary>
-        public string AppVersion { get; set; }
+        public string AppVersion {
+            get { return BackingStore?.Get<string>(nameof(AppVersion)); }
+            set { BackingStore?.Set(nameof(AppVersion), value); }
+        }
         /// <summary>The name of the device.</summary>
-        public string DeviceDisplayName { get; set; }
+        public string DeviceDisplayName {
+            get { return BackingStore?.Get<string>(nameof(DeviceDisplayName)); }
+            set { BackingStore?.Set(nameof(DeviceDisplayName), value); }
+        }
         /// <summary>The id of the device.</summary>
-        public string DeviceId { get; set; }
+        public string DeviceId {
+            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
+            set { BackingStore?.Set(nameof(DeviceId), value); }
+        }
         /// <summary>The time the event occurred.</summary>
-        public DateTimeOffset? EventDateTime { get; set; }
+        public DateTimeOffset? EventDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EventDateTime)); }
+            set { BackingStore?.Set(nameof(EventDateTime), value); }
+        }
         /// <summary>The type of the event.</summary>
-        public string EventType { get; set; }
+        public string EventType {
+            get { return BackingStore?.Get<string>(nameof(EventType)); }
+            set { BackingStore?.Set(nameof(EventType), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

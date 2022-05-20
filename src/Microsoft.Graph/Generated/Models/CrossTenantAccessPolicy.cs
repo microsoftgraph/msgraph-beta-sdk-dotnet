@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class CrossTenantAccessPolicy : TenantRelationshipAccessPolicyBase, IParsable {
         /// <summary>Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.</summary>
-        public CrossTenantAccessPolicyConfigurationDefault Default { get; set; }
+        public CrossTenantAccessPolicyConfigurationDefault Default {
+            get { return BackingStore?.Get<CrossTenantAccessPolicyConfigurationDefault>(nameof(Default)); }
+            set { BackingStore?.Set(nameof(Default), value); }
+        }
         /// <summary>Defines partner-specific configurations for external Azure Active Directory organizations.</summary>
-        public List<CrossTenantAccessPolicyConfigurationPartner> Partners { get; set; }
+        public List<CrossTenantAccessPolicyConfigurationPartner> Partners {
+            get { return BackingStore?.Get<List<CrossTenantAccessPolicyConfigurationPartner>>(nameof(Partners)); }
+            set { BackingStore?.Set(nameof(Partners), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -4,21 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Summary data for managed devices</summary>
     public class ManagedDeviceOverview : Entity, IParsable {
         /// <summary>Distribution of Exchange Access State in Intune</summary>
-        public Microsoft.Graph.Beta.Models.DeviceExchangeAccessStateSummary DeviceExchangeAccessStateSummary { get; set; }
+        public Microsoft.Graph.Beta.Models.DeviceExchangeAccessStateSummary DeviceExchangeAccessStateSummary {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceExchangeAccessStateSummary>(nameof(DeviceExchangeAccessStateSummary)); }
+            set { BackingStore?.Set(nameof(DeviceExchangeAccessStateSummary), value); }
+        }
         /// <summary>Device operating system summary.</summary>
-        public Microsoft.Graph.Beta.Models.DeviceOperatingSystemSummary DeviceOperatingSystemSummary { get; set; }
+        public Microsoft.Graph.Beta.Models.DeviceOperatingSystemSummary DeviceOperatingSystemSummary {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceOperatingSystemSummary>(nameof(DeviceOperatingSystemSummary)); }
+            set { BackingStore?.Set(nameof(DeviceOperatingSystemSummary), value); }
+        }
         /// <summary>The number of devices enrolled in both MDM and EAS</summary>
-        public int? DualEnrolledDeviceCount { get; set; }
+        public int? DualEnrolledDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(DualEnrolledDeviceCount)); }
+            set { BackingStore?.Set(nameof(DualEnrolledDeviceCount), value); }
+        }
         /// <summary>Total enrolled device count. Does not include PC devices managed via Intune PC Agent</summary>
-        public int? EnrolledDeviceCount { get; set; }
+        public int? EnrolledDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(EnrolledDeviceCount)); }
+            set { BackingStore?.Set(nameof(EnrolledDeviceCount), value); }
+        }
         /// <summary>Last modified date time of device overview</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>Models and Manufactures meatadata for managed devices in the account</summary>
-        public Microsoft.Graph.Beta.Models.ManagedDeviceModelsAndManufacturers ManagedDeviceModelsAndManufacturers { get; set; }
+        public Microsoft.Graph.Beta.Models.ManagedDeviceModelsAndManufacturers ManagedDeviceModelsAndManufacturers {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDeviceModelsAndManufacturers>(nameof(ManagedDeviceModelsAndManufacturers)); }
+            set { BackingStore?.Set(nameof(ManagedDeviceModelsAndManufacturers), value); }
+        }
         /// <summary>The number of devices enrolled in MDM</summary>
-        public int? MdmEnrolledCount { get; set; }
+        public int? MdmEnrolledCount {
+            get { return BackingStore?.Get<int?>(nameof(MdmEnrolledCount)); }
+            set { BackingStore?.Set(nameof(MdmEnrolledCount), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

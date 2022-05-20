@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
     public class TermsOfUseContainer : Entity, IParsable {
         /// <summary>Represents the current status of a user&apos;s response to a company&apos;s customizable terms of use agreement.</summary>
-        public List<AgreementAcceptance> AgreementAcceptances { get; set; }
+        public List<AgreementAcceptance> AgreementAcceptances {
+            get { return BackingStore?.Get<List<AgreementAcceptance>>(nameof(AgreementAcceptances)); }
+            set { BackingStore?.Set(nameof(AgreementAcceptances), value); }
+        }
         /// <summary>Represents a tenant&apos;s customizable terms of use agreement that&apos;s created and managed with Azure Active Directory (Azure AD).</summary>
-        public List<Agreement> Agreements { get; set; }
+        public List<Agreement> Agreements {
+            get { return BackingStore?.Get<List<Agreement>>(nameof(Agreements)); }
+            set { BackingStore?.Set(nameof(Agreements), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

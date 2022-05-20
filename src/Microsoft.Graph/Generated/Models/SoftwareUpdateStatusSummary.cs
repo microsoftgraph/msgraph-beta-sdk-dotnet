@@ -4,37 +4,83 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class SoftwareUpdateStatusSummary : Entity, IParsable {
         /// <summary>Number of compliant devices.</summary>
-        public int? CompliantDeviceCount { get; set; }
+        public int? CompliantDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(CompliantDeviceCount)); }
+            set { BackingStore?.Set(nameof(CompliantDeviceCount), value); }
+        }
         /// <summary>Number of compliant users.</summary>
-        public int? CompliantUserCount { get; set; }
+        public int? CompliantUserCount {
+            get { return BackingStore?.Get<int?>(nameof(CompliantUserCount)); }
+            set { BackingStore?.Set(nameof(CompliantUserCount), value); }
+        }
         /// <summary>Number of conflict devices.</summary>
-        public int? ConflictDeviceCount { get; set; }
+        public int? ConflictDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(ConflictDeviceCount)); }
+            set { BackingStore?.Set(nameof(ConflictDeviceCount), value); }
+        }
         /// <summary>Number of conflict users.</summary>
-        public int? ConflictUserCount { get; set; }
+        public int? ConflictUserCount {
+            get { return BackingStore?.Get<int?>(nameof(ConflictUserCount)); }
+            set { BackingStore?.Set(nameof(ConflictUserCount), value); }
+        }
         /// <summary>The name of the policy.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Number of devices had error.</summary>
-        public int? ErrorDeviceCount { get; set; }
+        public int? ErrorDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(ErrorDeviceCount)); }
+            set { BackingStore?.Set(nameof(ErrorDeviceCount), value); }
+        }
         /// <summary>Number of users had error.</summary>
-        public int? ErrorUserCount { get; set; }
+        public int? ErrorUserCount {
+            get { return BackingStore?.Get<int?>(nameof(ErrorUserCount)); }
+            set { BackingStore?.Set(nameof(ErrorUserCount), value); }
+        }
         /// <summary>Number of non compliant devices.</summary>
-        public int? NonCompliantDeviceCount { get; set; }
+        public int? NonCompliantDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(NonCompliantDeviceCount)); }
+            set { BackingStore?.Set(nameof(NonCompliantDeviceCount), value); }
+        }
         /// <summary>Number of non compliant users.</summary>
-        public int? NonCompliantUserCount { get; set; }
+        public int? NonCompliantUserCount {
+            get { return BackingStore?.Get<int?>(nameof(NonCompliantUserCount)); }
+            set { BackingStore?.Set(nameof(NonCompliantUserCount), value); }
+        }
         /// <summary>Number of not applicable devices.</summary>
-        public int? NotApplicableDeviceCount { get; set; }
+        public int? NotApplicableDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(NotApplicableDeviceCount)); }
+            set { BackingStore?.Set(nameof(NotApplicableDeviceCount), value); }
+        }
         /// <summary>Number of not applicable users.</summary>
-        public int? NotApplicableUserCount { get; set; }
+        public int? NotApplicableUserCount {
+            get { return BackingStore?.Get<int?>(nameof(NotApplicableUserCount)); }
+            set { BackingStore?.Set(nameof(NotApplicableUserCount), value); }
+        }
         /// <summary>Number of remediated devices.</summary>
-        public int? RemediatedDeviceCount { get; set; }
+        public int? RemediatedDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(RemediatedDeviceCount)); }
+            set { BackingStore?.Set(nameof(RemediatedDeviceCount), value); }
+        }
         /// <summary>Number of remediated users.</summary>
-        public int? RemediatedUserCount { get; set; }
+        public int? RemediatedUserCount {
+            get { return BackingStore?.Get<int?>(nameof(RemediatedUserCount)); }
+            set { BackingStore?.Set(nameof(RemediatedUserCount), value); }
+        }
         /// <summary>Number of unknown devices.</summary>
-        public int? UnknownDeviceCount { get; set; }
+        public int? UnknownDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(UnknownDeviceCount)); }
+            set { BackingStore?.Set(nameof(UnknownDeviceCount), value); }
+        }
         /// <summary>Number of unknown users.</summary>
-        public int? UnknownUserCount { get; set; }
+        public int? UnknownUserCount {
+            get { return BackingStore?.Get<int?>(nameof(UnknownUserCount)); }
+            set { BackingStore?.Set(nameof(UnknownUserCount), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

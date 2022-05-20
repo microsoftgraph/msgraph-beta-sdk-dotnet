@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The user experience analytics battery health runtime entity contains count of devices broken down into 3 categories - devices with runtime &gt; 5 hours, devices with runtime 3-5 hours and devices with runtime &lt; 3 hours.This API provides the count of devices in these 3 categories.</summary>
     public class UserExperienceAnalyticsBatteryHealthRuntimeDetails : Entity, IParsable {
         /// <summary>Number of active devices within the tenant. Valid values -2147483648 to 2147483647</summary>
-        public int? ActiveDevices { get; set; }
+        public int? ActiveDevices {
+            get { return BackingStore?.Get<int?>(nameof(ActiveDevices)); }
+            set { BackingStore?.Set(nameof(ActiveDevices), value); }
+        }
         /// <summary>Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values -2147483648 to 2147483647</summary>
-        public int? BatteryRuntimeFair { get; set; }
+        public int? BatteryRuntimeFair {
+            get { return BackingStore?.Get<int?>(nameof(BatteryRuntimeFair)); }
+            set { BackingStore?.Set(nameof(BatteryRuntimeFair), value); }
+        }
         /// <summary>Number of devices  whose active runtime is greater than 5 hours. Valid values -2147483648 to 2147483647</summary>
-        public int? BatteryRuntimeGood { get; set; }
+        public int? BatteryRuntimeGood {
+            get { return BackingStore?.Get<int?>(nameof(BatteryRuntimeGood)); }
+            set { BackingStore?.Set(nameof(BatteryRuntimeGood), value); }
+        }
         /// <summary>Number of devices whose active runtime is lesser than 3 hours. Valid values -2147483648 to 2147483647</summary>
-        public int? BatteryRuntimePoor { get; set; }
+        public int? BatteryRuntimePoor {
+            get { return BackingStore?.Get<int?>(nameof(BatteryRuntimePoor)); }
+            set { BackingStore?.Set(nameof(BatteryRuntimePoor), value); }
+        }
         /// <summary>Recorded date time of this runtime details instance.</summary>
-        public DateTimeOffset? LastRefreshedDateTime { get; set; }
+        public DateTimeOffset? LastRefreshedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastRefreshedDateTime)); }
+            set { BackingStore?.Set(nameof(LastRefreshedDateTime), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

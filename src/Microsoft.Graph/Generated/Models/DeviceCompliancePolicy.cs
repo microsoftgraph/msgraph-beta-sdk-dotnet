@@ -4,40 +4,85 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>This is the base class for Compliance policy. Compliance policies are platform specific and individual per-platform compliance policies inherit from here. </summary>
     public class DeviceCompliancePolicy : Entity, IParsable {
         /// <summary>The collection of assignments for this compliance policy.</summary>
-        public List<DeviceCompliancePolicyAssignment> Assignments { get; set; }
+        public List<DeviceCompliancePolicyAssignment> Assignments {
+            get { return BackingStore?.Get<List<DeviceCompliancePolicyAssignment>>(nameof(Assignments)); }
+            set { BackingStore?.Set(nameof(Assignments), value); }
+        }
         /// <summary>DateTime the object was created.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>Admin provided description of the Device Configuration.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Compliance Setting State Device Summary</summary>
-        public List<SettingStateDeviceSummary> DeviceSettingStateSummaries { get; set; }
+        public List<SettingStateDeviceSummary> DeviceSettingStateSummaries {
+            get { return BackingStore?.Get<List<SettingStateDeviceSummary>>(nameof(DeviceSettingStateSummaries)); }
+            set { BackingStore?.Set(nameof(DeviceSettingStateSummaries), value); }
+        }
         /// <summary>List of DeviceComplianceDeviceStatus.</summary>
-        public List<DeviceComplianceDeviceStatus> DeviceStatuses { get; set; }
+        public List<DeviceComplianceDeviceStatus> DeviceStatuses {
+            get { return BackingStore?.Get<List<DeviceComplianceDeviceStatus>>(nameof(DeviceStatuses)); }
+            set { BackingStore?.Set(nameof(DeviceStatuses), value); }
+        }
         /// <summary>Device compliance devices status overview</summary>
-        public DeviceComplianceDeviceOverview DeviceStatusOverview { get; set; }
+        public DeviceComplianceDeviceOverview DeviceStatusOverview {
+            get { return BackingStore?.Get<DeviceComplianceDeviceOverview>(nameof(DeviceStatusOverview)); }
+            set { BackingStore?.Set(nameof(DeviceStatusOverview), value); }
+        }
         /// <summary>Admin provided name of the device configuration.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>DateTime the object was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>List of Scope Tags for this Entity instance.</summary>
-        public List<string> RoleScopeTagIds { get; set; }
+        public List<string> RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTagIds)); }
+            set { BackingStore?.Set(nameof(RoleScopeTagIds), value); }
+        }
         /// <summary>The list of scheduled action for this rule</summary>
-        public List<DeviceComplianceScheduledActionForRule> ScheduledActionsForRule { get; set; }
+        public List<DeviceComplianceScheduledActionForRule> ScheduledActionsForRule {
+            get { return BackingStore?.Get<List<DeviceComplianceScheduledActionForRule>>(nameof(ScheduledActionsForRule)); }
+            set { BackingStore?.Set(nameof(ScheduledActionsForRule), value); }
+        }
         /// <summary>List of DeviceComplianceUserStatus.</summary>
-        public List<DeviceComplianceUserStatus> UserStatuses { get; set; }
+        public List<DeviceComplianceUserStatus> UserStatuses {
+            get { return BackingStore?.Get<List<DeviceComplianceUserStatus>>(nameof(UserStatuses)); }
+            set { BackingStore?.Set(nameof(UserStatuses), value); }
+        }
         /// <summary>Device compliance users status overview</summary>
-        public DeviceComplianceUserOverview UserStatusOverview { get; set; }
+        public DeviceComplianceUserOverview UserStatusOverview {
+            get { return BackingStore?.Get<DeviceComplianceUserOverview>(nameof(UserStatusOverview)); }
+            set { BackingStore?.Set(nameof(UserStatusOverview), value); }
+        }
         /// <summary>Version of the device configuration.</summary>
-        public int? Version { get; set; }
+        public int? Version {
+            get { return BackingStore?.Get<int?>(nameof(Version)); }
+            set { BackingStore?.Set(nameof(Version), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new DeviceCompliancePolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceCompliancePolicy();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.deviceCompliancePolicy" => new DeviceCompliancePolicy(),
+                _ => new DeviceCompliancePolicy(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Configure required Azure AD Graph permissions for an app registration
+        /// However, your app might still temporarily require Azure AD Graph permissions to access resources. This article describes the following four methods for configuring required Azure AD Graph permissions for your app registration:
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ServicePrincipalsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -92,11 +92,11 @@ namespace Microsoft.Graph.Beta.ServicePrincipals {
             return requestInfo;
         }
         /// <summary>
-        /// Create servicePrincipal
+        /// Create a new [servicePrincipal](../resources/serviceprincipal.md) object.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(ServicePrincipal body, Action<ServicePrincipalsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation CreatePostRequestInformation(Microsoft.Graph.Beta.Models.ServicePrincipal body, Action<ServicePrincipalsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals {
             return new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Configure required Azure AD Graph permissions for an app registration
+        /// However, your app might still temporarily require Azure AD Graph permissions to access resources. This article describes the following four methods for configuring required Azure AD Graph permissions for your app registration:
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -133,22 +133,22 @@ namespace Microsoft.Graph.Beta.ServicePrincipals {
             return await RequestAdapter.SendAsync<ServicePrincipalCollectionResponse>(requestInfo, ServicePrincipalCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create servicePrincipal
+        /// Create a new [servicePrincipal](../resources/serviceprincipal.md) object.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ServicePrincipal> PostAsync(ServicePrincipal body, Action<ServicePrincipalsRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.ServicePrincipal> PostAsync(Microsoft.Graph.Beta.Models.ServicePrincipal body, Action<ServicePrincipalsRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ServicePrincipal>(requestInfo, ServicePrincipal.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ServicePrincipal>(requestInfo, Microsoft.Graph.Beta.Models.ServicePrincipal.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Configure required Azure AD Graph permissions for an app registration</summary>
+        /// <summary>However, your app might still temporarily require Azure AD Graph permissions to access resources. This article describes the following four methods for configuring required Azure AD Graph permissions for your app registration:</summary>
         public class ServicePrincipalsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

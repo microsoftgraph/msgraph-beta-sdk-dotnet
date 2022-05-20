@@ -1,28 +1,53 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class DeviceComplianceScriptRule : IAdditionalDataHolder, IParsable {
+    public class DeviceComplianceScriptRule : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Data type specified in the rule. Possible values are: none, boolean, int64, double, string, dateTime, version, base64, xml, booleanArray, int64Array, doubleArray, stringArray, dateTimeArray, versionArray.</summary>
-        public Microsoft.Graph.Beta.Models.DataType? DataType { get; set; }
+        public Microsoft.Graph.Beta.Models.DataType? DataType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DataType?>(nameof(DataType)); }
+            set { BackingStore?.Set(nameof(DataType), value); }
+        }
         /// <summary>Data type specified in the rule. Possible values are: none, boolean, int64, double, string, dateTime, version, base64, xml, booleanArray, int64Array, doubleArray, stringArray, dateTimeArray, versionArray.</summary>
-        public Microsoft.Graph.Beta.Models.DeviceComplianceScriptRuleDataType? DeviceComplianceScriptRuleDataType { get; set; }
+        public Microsoft.Graph.Beta.Models.DeviceComplianceScriptRuleDataType? DeviceComplianceScriptRuleDataType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceComplianceScriptRuleDataType?>(nameof(DeviceComplianceScriptRuleDataType)); }
+            set { BackingStore?.Set(nameof(DeviceComplianceScriptRuleDataType), value); }
+        }
         /// <summary>Operator specified in the rule. Possible values are: none, and, or, isEquals, notEquals, greaterThan, lessThan, between, notBetween, greaterEquals, lessEquals, dayTimeBetween, beginsWith, notBeginsWith, endsWith, notEndsWith, contains, notContains, allOf, oneOf, noneOf, setEquals, orderedSetEquals, subsetOf, excludesAll.</summary>
-        public Microsoft.Graph.Beta.Models.DeviceComplianceScriptRulOperator? DeviceComplianceScriptRulOperator { get; set; }
+        public Microsoft.Graph.Beta.Models.DeviceComplianceScriptRulOperator? DeviceComplianceScriptRulOperator {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceComplianceScriptRulOperator?>(nameof(DeviceComplianceScriptRulOperator)); }
+            set { BackingStore?.Set(nameof(DeviceComplianceScriptRulOperator), value); }
+        }
         /// <summary>Operand specified in the rule.</summary>
-        public string Operand { get; set; }
+        public string Operand {
+            get { return BackingStore?.Get<string>(nameof(Operand)); }
+            set { BackingStore?.Set(nameof(Operand), value); }
+        }
         /// <summary>Operator specified in the rule. Possible values are: none, and, or, isEquals, notEquals, greaterThan, lessThan, between, notBetween, greaterEquals, lessEquals, dayTimeBetween, beginsWith, notBeginsWith, endsWith, notEndsWith, contains, notContains, allOf, oneOf, noneOf, setEquals, orderedSetEquals, subsetOf, excludesAll.</summary>
-        public Microsoft.Graph.Beta.Models.Operator? Operator { get; set; }
+        public Microsoft.Graph.Beta.Models.Operator? Operator {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Operator?>(nameof(Operator)); }
+            set { BackingStore?.Set(nameof(Operator), value); }
+        }
         /// <summary>Setting name specified in the rule.</summary>
-        public string SettingName { get; set; }
+        public string SettingName {
+            get { return BackingStore?.Get<string>(nameof(SettingName)); }
+            set { BackingStore?.Set(nameof(SettingName), value); }
+        }
         /// <summary>
         /// Instantiates a new deviceComplianceScriptRule and sets the default values.
         /// </summary>
         public DeviceComplianceScriptRule() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

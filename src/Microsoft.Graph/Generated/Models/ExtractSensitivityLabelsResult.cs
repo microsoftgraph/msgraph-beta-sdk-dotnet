@@ -1,18 +1,28 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ExtractSensitivityLabelsResult : IAdditionalDataHolder, IParsable {
+    public class ExtractSensitivityLabelsResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>List of sensitivity labels assigned to a file.</summary>
-        public List<SensitivityLabelAssignment> Labels { get; set; }
+        public List<SensitivityLabelAssignment> Labels {
+            get { return BackingStore?.Get<List<SensitivityLabelAssignment>>(nameof(Labels)); }
+            set { BackingStore?.Set(nameof(Labels), value); }
+        }
         /// <summary>
-        /// Instantiates a new extractSensitivityLabelsResult and sets the default values.
+        /// Instantiates a new ExtractSensitivityLabelsResult and sets the default values.
         /// </summary>
         public ExtractSensitivityLabelsResult() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

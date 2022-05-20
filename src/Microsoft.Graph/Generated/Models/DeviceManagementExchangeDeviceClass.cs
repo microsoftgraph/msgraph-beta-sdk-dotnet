@@ -1,21 +1,34 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Device Class in Exchange.</summary>
-    public class DeviceManagementExchangeDeviceClass : IAdditionalDataHolder, IParsable {
+    public class DeviceManagementExchangeDeviceClass : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Name of the device class which will be impacted by this rule.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>Type of device which is impacted by this rule e.g. Model, Family. Possible values are: family, model.</summary>
-        public DeviceManagementExchangeAccessRuleType? Type { get; set; }
+        public DeviceManagementExchangeAccessRuleType? Type {
+            get { return BackingStore?.Get<DeviceManagementExchangeAccessRuleType?>(nameof(Type)); }
+            set { BackingStore?.Set(nameof(Type), value); }
+        }
         /// <summary>
         /// Instantiates a new deviceManagementExchangeDeviceClass and sets the default values.
         /// </summary>
         public DeviceManagementExchangeDeviceClass() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

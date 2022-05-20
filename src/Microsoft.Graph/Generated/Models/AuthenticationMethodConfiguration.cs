@@ -4,16 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of authenticationMethodConfiguration entities.</summary>
     public class AuthenticationMethodConfiguration : Entity, IParsable {
         /// <summary>The state of the policy. Possible values are: enabled, disabled.</summary>
-        public AuthenticationMethodState? State { get; set; }
+        public AuthenticationMethodState? State {
+            get { return BackingStore?.Get<AuthenticationMethodState?>(nameof(State)); }
+            set { BackingStore?.Set(nameof(State), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new AuthenticationMethodConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuthenticationMethodConfiguration();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.authenticationMethodConfiguration" => new AuthenticationMethodConfiguration(),
+                _ => new AuthenticationMethodConfiguration(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

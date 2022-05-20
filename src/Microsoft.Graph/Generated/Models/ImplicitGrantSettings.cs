@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ImplicitGrantSettings : IAdditionalDataHolder, IParsable {
+    public class ImplicitGrantSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies whether this web application can request an access token using the OAuth 2.0 implicit flow.</summary>
-        public bool? EnableAccessTokenIssuance { get; set; }
+        public bool? EnableAccessTokenIssuance {
+            get { return BackingStore?.Get<bool?>(nameof(EnableAccessTokenIssuance)); }
+            set { BackingStore?.Set(nameof(EnableAccessTokenIssuance), value); }
+        }
         /// <summary>Specifies whether this web application can request an ID token using the OAuth 2.0 implicit flow.</summary>
-        public bool? EnableIdTokenIssuance { get; set; }
+        public bool? EnableIdTokenIssuance {
+            get { return BackingStore?.Get<bool?>(nameof(EnableIdTokenIssuance)); }
+            set { BackingStore?.Set(nameof(EnableIdTokenIssuance), value); }
+        }
         /// <summary>
         /// Instantiates a new implicitGrantSettings and sets the default values.
         /// </summary>
         public ImplicitGrantSettings() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

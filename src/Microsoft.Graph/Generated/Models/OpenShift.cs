@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class OpenShift : ChangeTrackedEntity, IParsable {
         /// <summary>An unpublished open shift.</summary>
-        public OpenShiftItem DraftOpenShift { get; set; }
+        public OpenShiftItem DraftOpenShift {
+            get { return BackingStore?.Get<OpenShiftItem>(nameof(DraftOpenShift)); }
+            set { BackingStore?.Set(nameof(DraftOpenShift), value); }
+        }
         /// <summary>The isStagedForDeletion property</summary>
-        public bool? IsStagedForDeletion { get; set; }
+        public bool? IsStagedForDeletion {
+            get { return BackingStore?.Get<bool?>(nameof(IsStagedForDeletion)); }
+            set { BackingStore?.Set(nameof(IsStagedForDeletion), value); }
+        }
         /// <summary>ID for the scheduling group that the open shift belongs to.</summary>
-        public string SchedulingGroupId { get; set; }
+        public string SchedulingGroupId {
+            get { return BackingStore?.Get<string>(nameof(SchedulingGroupId)); }
+            set { BackingStore?.Set(nameof(SchedulingGroupId), value); }
+        }
         /// <summary>A published open shift.</summary>
-        public OpenShiftItem SharedOpenShift { get; set; }
+        public OpenShiftItem SharedOpenShift {
+            get { return BackingStore?.Get<OpenShiftItem>(nameof(SharedOpenShift)); }
+            set { BackingStore?.Set(nameof(SharedOpenShift), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

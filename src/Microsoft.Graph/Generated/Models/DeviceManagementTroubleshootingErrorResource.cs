@@ -1,21 +1,34 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Object representing a link to troubleshooting information, the link could be to the Azure Portal or a Microsoft doc.</summary>
-    public class DeviceManagementTroubleshootingErrorResource : IAdditionalDataHolder, IParsable {
+    public class DeviceManagementTroubleshootingErrorResource : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}</summary>
-        public string Link { get; set; }
+        public string Link {
+            get { return BackingStore?.Get<string>(nameof(Link)); }
+            set { BackingStore?.Set(nameof(Link), value); }
+        }
         /// <summary>Not yet documented</summary>
-        public string Text { get; set; }
+        public string Text {
+            get { return BackingStore?.Get<string>(nameof(Text)); }
+            set { BackingStore?.Set(nameof(Text), value); }
+        }
         /// <summary>
         /// Instantiates a new deviceManagementTroubleshootingErrorResource and sets the default values.
         /// </summary>
         public DeviceManagementTroubleshootingErrorResource() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

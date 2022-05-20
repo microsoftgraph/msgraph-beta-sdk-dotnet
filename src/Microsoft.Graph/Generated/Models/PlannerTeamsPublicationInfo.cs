@@ -1,26 +1,48 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class PlannerTeamsPublicationInfo : IAdditionalDataHolder, IParsable {
+    public class PlannerTeamsPublicationInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The date and time when this task was last modified by the publication process. Read-only.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>The identifier of the publication. Read-only.</summary>
-        public string PublicationId { get; set; }
+        public string PublicationId {
+            get { return BackingStore?.Get<string>(nameof(PublicationId)); }
+            set { BackingStore?.Set(nameof(PublicationId), value); }
+        }
         /// <summary>The identifier of the plannerPlan this task was originally placed in. Read-only.</summary>
-        public string PublishedToPlanId { get; set; }
+        public string PublishedToPlanId {
+            get { return BackingStore?.Get<string>(nameof(PublishedToPlanId)); }
+            set { BackingStore?.Set(nameof(PublishedToPlanId), value); }
+        }
         /// <summary>The identifier of the team that initiated the publication process. Read-only.</summary>
-        public string PublishingTeamId { get; set; }
+        public string PublishingTeamId {
+            get { return BackingStore?.Get<string>(nameof(PublishingTeamId)); }
+            set { BackingStore?.Set(nameof(PublishingTeamId), value); }
+        }
         /// <summary>The display name of the team that initiated the publication process. This display name is for reference only, and might not represent the most up-to-date name of the team. Read-only.</summary>
-        public string PublishingTeamName { get; set; }
+        public string PublishingTeamName {
+            get { return BackingStore?.Get<string>(nameof(PublishingTeamName)); }
+            set { BackingStore?.Set(nameof(PublishingTeamName), value); }
+        }
         /// <summary>
         /// Instantiates a new plannerTeamsPublicationInfo and sets the default values.
         /// </summary>
         public PlannerTeamsPublicationInfo() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

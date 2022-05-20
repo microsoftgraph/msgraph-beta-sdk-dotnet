@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class DelegatedAdminAccessContainer : IAdditionalDataHolder, IParsable {
+    public class DelegatedAdminAccessContainer : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The identifier of the access container (for example, a security group). For &apos;securityGroup&apos; access containers, this must be a valid ID of an Azure AD security group in the Microsoft partner&apos;s tenant.</summary>
-        public string AccessContainerId { get; set; }
+        public string AccessContainerId {
+            get { return BackingStore?.Get<string>(nameof(AccessContainerId)); }
+            set { BackingStore?.Set(nameof(AccessContainerId), value); }
+        }
         /// <summary>The type of access container (for example, security group) that will be assigned one or more roles through a delegated admin relationship. The possible values are: securityGroup, unknownFutureValue.</summary>
-        public DelegatedAdminAccessContainerType? AccessContainerType { get; set; }
+        public DelegatedAdminAccessContainerType? AccessContainerType {
+            get { return BackingStore?.Get<DelegatedAdminAccessContainerType?>(nameof(AccessContainerType)); }
+            set { BackingStore?.Set(nameof(AccessContainerType), value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>
         /// Instantiates a new delegatedAdminAccessContainer and sets the default values.
         /// </summary>
         public DelegatedAdminAccessContainer() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

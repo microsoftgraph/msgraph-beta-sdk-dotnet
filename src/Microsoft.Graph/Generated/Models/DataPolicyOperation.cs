@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of dataPolicyOperation entities.</summary>
     public class DataPolicyOperation : Entity, IParsable {
         /// <summary>Represents when the request for this data policy operation was completed, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Null until the operation completes.</summary>
-        public DateTimeOffset? CompletedDateTime { get; set; }
+        public DateTimeOffset? CompletedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CompletedDateTime)); }
+            set { BackingStore?.Set(nameof(CompletedDateTime), value); }
+        }
         /// <summary>Specifies the progress of an operation.</summary>
-        public double? Progress { get; set; }
+        public double? Progress {
+            get { return BackingStore?.Get<double?>(nameof(Progress)); }
+            set { BackingStore?.Set(nameof(Progress), value); }
+        }
         /// <summary>Possible values are: notStarted, running, complete, failed, unknownFutureValue.</summary>
-        public DataPolicyOperationStatus? Status { get; set; }
+        public DataPolicyOperationStatus? Status {
+            get { return BackingStore?.Get<DataPolicyOperationStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>The URL location to where data is being exported for export requests.</summary>
-        public string StorageLocation { get; set; }
+        public string StorageLocation {
+            get { return BackingStore?.Get<string>(nameof(StorageLocation)); }
+            set { BackingStore?.Set(nameof(StorageLocation), value); }
+        }
         /// <summary>Represents when the request for this data operation was submitted, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? SubmittedDateTime { get; set; }
+        public DateTimeOffset? SubmittedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(SubmittedDateTime)); }
+            set { BackingStore?.Set(nameof(SubmittedDateTime), value); }
+        }
         /// <summary>The id for the user on whom the operation is performed.</summary>
-        public string UserId { get; set; }
+        public string UserId {
+            get { return BackingStore?.Get<string>(nameof(UserId)); }
+            set { BackingStore?.Set(nameof(UserId), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

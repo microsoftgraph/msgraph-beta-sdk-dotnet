@@ -4,20 +4,35 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class BaseItemVersion : Entity, IParsable {
         /// <summary>Identity of the user which last modified the version. Read-only.</summary>
-        public IdentitySet LastModifiedBy { get; set; }
+        public IdentitySet LastModifiedBy {
+            get { return BackingStore?.Get<IdentitySet>(nameof(LastModifiedBy)); }
+            set { BackingStore?.Set(nameof(LastModifiedBy), value); }
+        }
         /// <summary>Date and time the version was last modified. Read-only.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>Indicates the publication status of this particular version. Read-only.</summary>
-        public PublicationFacet Publication { get; set; }
+        public PublicationFacet Publication {
+            get { return BackingStore?.Get<PublicationFacet>(nameof(Publication)); }
+            set { BackingStore?.Set(nameof(Publication), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new BaseItemVersion CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BaseItemVersion();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.baseItemVersion" => new BaseItemVersion(),
+                _ => new BaseItemVersion(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

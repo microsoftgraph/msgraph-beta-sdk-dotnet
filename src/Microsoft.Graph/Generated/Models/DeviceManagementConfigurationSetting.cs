@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Setting instance within policy</summary>
     public class DeviceManagementConfigurationSetting : Entity, IParsable {
         /// <summary>List of related Setting Definitions. This property is read-only.</summary>
-        public List<DeviceManagementConfigurationSettingDefinition> SettingDefinitions { get; set; }
+        public List<DeviceManagementConfigurationSettingDefinition> SettingDefinitions {
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDefinition>>(nameof(SettingDefinitions)); }
+            set { BackingStore?.Set(nameof(SettingDefinitions), value); }
+        }
         /// <summary>Setting instance within policy</summary>
-        public DeviceManagementConfigurationSettingInstance SettingInstance { get; set; }
+        public DeviceManagementConfigurationSettingInstance SettingInstance {
+            get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstance>(nameof(SettingInstance)); }
+            set { BackingStore?.Set(nameof(SettingInstance), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

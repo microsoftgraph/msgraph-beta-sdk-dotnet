@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete administrativeUnit
+        /// Delete an [administrativeUnit](../resources/administrativeunit.md).
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateDeleteRequestInformation(Action<AdministrativeUnitItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get administrativeUnit
+        /// Retrieve the properties and relationships of an [administrativeUnit](../resources/administrativeunit.md) object. Since the **administrativeUnit** resource supports [extensions](/graph/extensibility-overview), you can also use the `GET` operation to get custom properties and extension data in an **administrativeUnit** instance.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<AdministrativeUnitItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update administrativeunit
+        /// Update the properties of an [administrativeUnit](../resources/administrativeunit.md) object.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -143,7 +143,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Delete administrativeUnit
+        /// Delete an [administrativeUnit](../resources/administrativeunit.md).
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -157,7 +157,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get administrativeUnit
+        /// Retrieve the properties and relationships of an [administrativeUnit](../resources/administrativeunit.md) object. Since the **administrativeUnit** resource supports [extensions](/graph/extensibility-overview), you can also use the `GET` operation to get custom properties and extension data in an **administrativeUnit** instance.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -171,7 +171,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AdministrativeUnit>(requestInfo, Microsoft.Graph.Beta.Models.AdministrativeUnit.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update administrativeunit
+        /// Update the properties of an [administrativeUnit](../resources/administrativeunit.md) object.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -200,7 +200,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get administrativeUnit</summary>
+        /// <summary>Retrieve the properties and relationships of an [administrativeUnit](../resources/administrativeunit.md) object. Since the **administrativeUnit** resource supports [extensions](/graph/extensibility-overview), you can also use the `GET` operation to get custom properties and extension data in an **administrativeUnit** instance.</summary>
         public class AdministrativeUnitItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

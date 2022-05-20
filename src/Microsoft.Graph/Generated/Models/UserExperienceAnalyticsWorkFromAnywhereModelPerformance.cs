@@ -4,25 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The user experience analytics work from anywhere model performance.</summary>
     public class UserExperienceAnalyticsWorkFromAnywhereModelPerformance : Entity, IParsable {
         /// <summary>The user experience work from anywhere&apos;s cloud identity score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
-        public double? CloudIdentityScore { get; set; }
+        public double? CloudIdentityScore {
+            get { return BackingStore?.Get<double?>(nameof(CloudIdentityScore)); }
+            set { BackingStore?.Set(nameof(CloudIdentityScore), value); }
+        }
         /// <summary>The user experience work from anywhere&apos;s cloud management score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
-        public double? CloudManagementScore { get; set; }
+        public double? CloudManagementScore {
+            get { return BackingStore?.Get<double?>(nameof(CloudManagementScore)); }
+            set { BackingStore?.Set(nameof(CloudManagementScore), value); }
+        }
         /// <summary>The user experience work from anywhere&apos;s cloud provisioning score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
-        public double? CloudProvisioningScore { get; set; }
+        public double? CloudProvisioningScore {
+            get { return BackingStore?.Get<double?>(nameof(CloudProvisioningScore)); }
+            set { BackingStore?.Set(nameof(CloudProvisioningScore), value); }
+        }
         /// <summary>The health state of the user experience analytics work from anywhere model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.</summary>
-        public UserExperienceAnalyticsHealthState? HealthStatus { get; set; }
+        public UserExperienceAnalyticsHealthState? HealthStatus {
+            get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>(nameof(HealthStatus)); }
+            set { BackingStore?.Set(nameof(HealthStatus), value); }
+        }
         /// <summary>The user experience work from anywhere&apos;s manufacturer name of the devices.</summary>
-        public string Manufacturer { get; set; }
+        public string Manufacturer {
+            get { return BackingStore?.Get<string>(nameof(Manufacturer)); }
+            set { BackingStore?.Set(nameof(Manufacturer), value); }
+        }
         /// <summary>The user experience work from anywhere&apos;s model name of the devices.</summary>
-        public string Model { get; set; }
+        public string Model {
+            get { return BackingStore?.Get<string>(nameof(Model)); }
+            set { BackingStore?.Set(nameof(Model), value); }
+        }
         /// <summary>The user experience work from anywhere&apos;s devices count for the model. Valid values -2147483648 to 2147483647</summary>
-        public int? ModelDeviceCount { get; set; }
+        public int? ModelDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(ModelDeviceCount)); }
+            set { BackingStore?.Set(nameof(ModelDeviceCount), value); }
+        }
         /// <summary>The user experience work from anywhere windows score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
-        public double? WindowsScore { get; set; }
+        public double? WindowsScore {
+            get { return BackingStore?.Get<double?>(nameof(WindowsScore)); }
+            set { BackingStore?.Set(nameof(WindowsScore), value); }
+        }
         /// <summary>The user experience work from anywhere overall score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
-        public double? WorkFromAnywhereScore { get; set; }
+        public double? WorkFromAnywhereScore {
+            get { return BackingStore?.Get<double?>(nameof(WorkFromAnywhereScore)); }
+            set { BackingStore?.Set(nameof(WorkFromAnywhereScore), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

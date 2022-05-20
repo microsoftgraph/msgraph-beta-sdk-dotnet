@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.RiskyUsers {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// List riskyUsers
+        /// Retrieve the properties and relationships of a collection of **riskyUser** objects.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<RiskyUsersRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.RiskyUsers {
             return requestInfo;
         }
         /// <summary>
-        /// List riskyUsers
+        /// Retrieve the properties and relationships of a collection of **riskyUser** objects.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.RiskyUsers {
             };
             return await RequestAdapter.SendAsync<RiskyUser>(requestInfo, RiskyUser.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>List riskyUsers</summary>
+        /// <summary>Retrieve the properties and relationships of a collection of **riskyUser** objects.</summary>
         public class RiskyUsersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

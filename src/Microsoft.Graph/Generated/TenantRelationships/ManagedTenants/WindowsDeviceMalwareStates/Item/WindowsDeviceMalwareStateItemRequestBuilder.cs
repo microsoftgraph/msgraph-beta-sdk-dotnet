@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ManagedTenants;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;

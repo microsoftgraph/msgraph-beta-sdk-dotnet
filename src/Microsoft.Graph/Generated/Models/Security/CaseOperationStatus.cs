@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the cases property of the microsoft.graph.security entity.</summary>
+    /// <summary>Provides operations to manage the security singleton.</summary>
     public enum CaseOperationStatus {
         NotStarted,
         SubmissionFailed,

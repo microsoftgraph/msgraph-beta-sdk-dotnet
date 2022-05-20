@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class WorkbookTableSort : Entity, IParsable {
         /// <summary>Represents the current conditions used to last sort the table. Read-only.</summary>
-        public List<WorkbookSortField> Fields { get; set; }
+        public List<WorkbookSortField> Fields {
+            get { return BackingStore?.Get<List<WorkbookSortField>>(nameof(Fields)); }
+            set { BackingStore?.Set(nameof(Fields), value); }
+        }
         /// <summary>Represents whether the casing impacted the last sort of the table. Read-only.</summary>
-        public bool? MatchCase { get; set; }
+        public bool? MatchCase {
+            get { return BackingStore?.Get<bool?>(nameof(MatchCase)); }
+            set { BackingStore?.Set(nameof(MatchCase), value); }
+        }
         /// <summary>Represents Chinese character ordering method last used to sort the table. Possible values are: PinYin, StrokeCount. Read-only.</summary>
-        public string Method { get; set; }
+        public string Method {
+            get { return BackingStore?.Get<string>(nameof(Method)); }
+            set { BackingStore?.Set(nameof(Method), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to call the playPrompt method.</summary>
     public class PlayPromptOperation : CommsOperation, IParsable {
         /// <summary>Possible values are: unknown, completedSuccessfully, mediaOperationCanceled.</summary>
-        public PlayPromptCompletionReason? CompletionReason { get; set; }
+        public PlayPromptCompletionReason? CompletionReason {
+            get { return BackingStore?.Get<PlayPromptCompletionReason?>(nameof(CompletionReason)); }
+            set { BackingStore?.Set(nameof(CompletionReason), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

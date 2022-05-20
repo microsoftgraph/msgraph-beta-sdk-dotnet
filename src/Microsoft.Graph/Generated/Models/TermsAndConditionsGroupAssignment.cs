@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>A termsAndConditionsGroupAssignment entity represents the assignment of a given Terms and Conditions (T&amp;C) policy to a given group. Users in the group will be required to accept the terms in order to have devices enrolled into Intune.</summary>
     public class TermsAndConditionsGroupAssignment : Entity, IParsable {
         /// <summary>Unique identifier of a group that the T&amp;C policy is assigned to.</summary>
-        public string TargetGroupId { get; set; }
+        public string TargetGroupId {
+            get { return BackingStore?.Get<string>(nameof(TargetGroupId)); }
+            set { BackingStore?.Set(nameof(TargetGroupId), value); }
+        }
         /// <summary>Navigation link to the terms and conditions that are assigned.</summary>
-        public Microsoft.Graph.Beta.Models.TermsAndConditions TermsAndConditions { get; set; }
+        public Microsoft.Graph.Beta.Models.TermsAndConditions TermsAndConditions {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TermsAndConditions>(nameof(TermsAndConditions)); }
+            set { BackingStore?.Set(nameof(TermsAndConditions), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

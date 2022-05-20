@@ -1,18 +1,28 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class MeetingInfo : IAdditionalDataHolder, IParsable {
+    public class MeetingInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>The allowConversationWithoutHost property</summary>
-        public bool? AllowConversationWithoutHost { get; set; }
+        public bool? AllowConversationWithoutHost {
+            get { return BackingStore?.Get<bool?>(nameof(AllowConversationWithoutHost)); }
+            set { BackingStore?.Set(nameof(AllowConversationWithoutHost), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>
         /// Instantiates a new meetingInfo and sets the default values.
         /// </summary>
         public MeetingInfo() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

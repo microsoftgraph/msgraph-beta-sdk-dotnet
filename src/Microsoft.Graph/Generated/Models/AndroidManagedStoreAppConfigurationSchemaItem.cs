@@ -1,39 +1,79 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Single configuration item inside an Android application&apos;s custom configuration schema.</summary>
-    public class AndroidManagedStoreAppConfigurationSchemaItem : IAdditionalDataHolder, IParsable {
+    public class AndroidManagedStoreAppConfigurationSchemaItem : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The type of value this item describes. Possible values are: bool, integer, string, choice, multiselect, bundle, bundleArray, hidden.</summary>
-        public AndroidManagedStoreAppConfigurationSchemaItemDataType? DataType { get; set; }
+        public AndroidManagedStoreAppConfigurationSchemaItemDataType? DataType {
+            get { return BackingStore?.Get<AndroidManagedStoreAppConfigurationSchemaItemDataType?>(nameof(DataType)); }
+            set { BackingStore?.Set(nameof(DataType), value); }
+        }
         /// <summary>Default value for boolean type items, if specified by the app developer</summary>
-        public bool? DefaultBoolValue { get; set; }
+        public bool? DefaultBoolValue {
+            get { return BackingStore?.Get<bool?>(nameof(DefaultBoolValue)); }
+            set { BackingStore?.Set(nameof(DefaultBoolValue), value); }
+        }
         /// <summary>Default value for integer type items, if specified by the app developer</summary>
-        public int? DefaultIntValue { get; set; }
+        public int? DefaultIntValue {
+            get { return BackingStore?.Get<int?>(nameof(DefaultIntValue)); }
+            set { BackingStore?.Set(nameof(DefaultIntValue), value); }
+        }
         /// <summary>Default value for string array type items, if specified by the app developer</summary>
-        public List<string> DefaultStringArrayValue { get; set; }
+        public List<string> DefaultStringArrayValue {
+            get { return BackingStore?.Get<List<string>>(nameof(DefaultStringArrayValue)); }
+            set { BackingStore?.Set(nameof(DefaultStringArrayValue), value); }
+        }
         /// <summary>Default value for string type items, if specified by the app developer</summary>
-        public string DefaultStringValue { get; set; }
+        public string DefaultStringValue {
+            get { return BackingStore?.Get<string>(nameof(DefaultStringValue)); }
+            set { BackingStore?.Set(nameof(DefaultStringValue), value); }
+        }
         /// <summary>Description of what the item controls within the application</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Human readable name</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Unique index the application uses to maintain nested schema items</summary>
-        public int? Index { get; set; }
+        public int? Index {
+            get { return BackingStore?.Get<int?>(nameof(Index)); }
+            set { BackingStore?.Set(nameof(Index), value); }
+        }
         /// <summary>Index of parent schema item to track nested schema items</summary>
-        public int? ParentIndex { get; set; }
+        public int? ParentIndex {
+            get { return BackingStore?.Get<int?>(nameof(ParentIndex)); }
+            set { BackingStore?.Set(nameof(ParentIndex), value); }
+        }
         /// <summary>Unique key the application uses to identify the item</summary>
-        public string SchemaItemKey { get; set; }
+        public string SchemaItemKey {
+            get { return BackingStore?.Get<string>(nameof(SchemaItemKey)); }
+            set { BackingStore?.Set(nameof(SchemaItemKey), value); }
+        }
         /// <summary>List of human readable name/value pairs for the valid values that can be set for this item (Choice and Multiselect items only)</summary>
-        public List<KeyValuePair> Selections { get; set; }
+        public List<KeyValuePair> Selections {
+            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(Selections)); }
+            set { BackingStore?.Set(nameof(Selections), value); }
+        }
         /// <summary>
         /// Instantiates a new androidManagedStoreAppConfigurationSchemaItem and sets the default values.
         /// </summary>
         public AndroidManagedStoreAppConfigurationSchemaItem() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

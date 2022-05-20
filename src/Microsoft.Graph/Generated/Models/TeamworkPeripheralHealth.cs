@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class TeamworkPeripheralHealth : IAdditionalDataHolder, IParsable {
+    public class TeamworkPeripheralHealth : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The connected state and time since the peripheral device was connected.</summary>
-        public TeamworkConnection Connection { get; set; }
+        public TeamworkConnection Connection {
+            get { return BackingStore?.Get<TeamworkConnection>(nameof(Connection)); }
+            set { BackingStore?.Set(nameof(Connection), value); }
+        }
         /// <summary>True if the peripheral is optional. Used for health computation.</summary>
-        public bool? IsOptional { get; set; }
+        public bool? IsOptional {
+            get { return BackingStore?.Get<bool?>(nameof(IsOptional)); }
+            set { BackingStore?.Set(nameof(IsOptional), value); }
+        }
         /// <summary>The peripheral property</summary>
-        public TeamworkPeripheral Peripheral { get; set; }
+        public TeamworkPeripheral Peripheral {
+            get { return BackingStore?.Get<TeamworkPeripheral>(nameof(Peripheral)); }
+            set { BackingStore?.Set(nameof(Peripheral), value); }
+        }
         /// <summary>
         /// Instantiates a new teamworkPeripheralHealth and sets the default values.
         /// </summary>
         public TeamworkPeripheralHealth() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

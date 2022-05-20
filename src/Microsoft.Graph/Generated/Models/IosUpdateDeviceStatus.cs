@@ -4,31 +4,68 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class IosUpdateDeviceStatus : Entity, IParsable {
         /// <summary>The DateTime when device compliance grace period expires</summary>
-        public DateTimeOffset? ComplianceGracePeriodExpirationDateTime { get; set; }
+        public DateTimeOffset? ComplianceGracePeriodExpirationDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ComplianceGracePeriodExpirationDateTime)); }
+            set { BackingStore?.Set(nameof(ComplianceGracePeriodExpirationDateTime), value); }
+        }
         /// <summary>Device name of the DevicePolicyStatus.</summary>
-        public string DeviceDisplayName { get; set; }
+        public string DeviceDisplayName {
+            get { return BackingStore?.Get<string>(nameof(DeviceDisplayName)); }
+            set { BackingStore?.Set(nameof(DeviceDisplayName), value); }
+        }
         /// <summary>The device id that is being reported.</summary>
-        public string DeviceId { get; set; }
+        public string DeviceId {
+            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
+            set { BackingStore?.Set(nameof(DeviceId), value); }
+        }
         /// <summary>The device model that is being reported</summary>
-        public string DeviceModel { get; set; }
+        public string DeviceModel {
+            get { return BackingStore?.Get<string>(nameof(DeviceModel)); }
+            set { BackingStore?.Set(nameof(DeviceModel), value); }
+        }
         /// <summary>The installation status of the policy report. Possible values are: success, available, idle, unknown, mdmClientCrashed, timeout, downloading, downloadFailed, downloadRequiresComputer, downloadInsufficientSpace, downloadInsufficientPower, downloadInsufficientNetwork, installing, installInsufficientSpace, installInsufficientPower, installPhoneCallInProgress, installFailed, notSupportedOperation, sharedDeviceUserLoggedInError, updateError, deviceOsHigherThanDesiredOsVersion, updateScanFailed.</summary>
-        public IosUpdatesInstallStatus? InstallStatus { get; set; }
+        public IosUpdatesInstallStatus? InstallStatus {
+            get { return BackingStore?.Get<IosUpdatesInstallStatus?>(nameof(InstallStatus)); }
+            set { BackingStore?.Set(nameof(InstallStatus), value); }
+        }
         /// <summary>Last modified date time of the policy report.</summary>
-        public DateTimeOffset? LastReportedDateTime { get; set; }
+        public DateTimeOffset? LastReportedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastReportedDateTime)); }
+            set { BackingStore?.Set(nameof(LastReportedDateTime), value); }
+        }
         /// <summary>The device version that is being reported.</summary>
-        public string OsVersion { get; set; }
+        public string OsVersion {
+            get { return BackingStore?.Get<string>(nameof(OsVersion)); }
+            set { BackingStore?.Set(nameof(OsVersion), value); }
+        }
         /// <summary>Platform of the device that is being reported</summary>
-        public int? Platform { get; set; }
+        public int? Platform {
+            get { return BackingStore?.Get<int?>(nameof(Platform)); }
+            set { BackingStore?.Set(nameof(Platform), value); }
+        }
         /// <summary>Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.</summary>
-        public ComplianceStatus? Status { get; set; }
+        public ComplianceStatus? Status {
+            get { return BackingStore?.Get<ComplianceStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>The User id that is being reported.</summary>
-        public string UserId { get; set; }
+        public string UserId {
+            get { return BackingStore?.Get<string>(nameof(UserId)); }
+            set { BackingStore?.Set(nameof(UserId), value); }
+        }
         /// <summary>The User Name that is being reported</summary>
-        public string UserName { get; set; }
+        public string UserName {
+            get { return BackingStore?.Get<string>(nameof(UserName)); }
+            set { BackingStore?.Set(nameof(UserName), value); }
+        }
         /// <summary>UserPrincipalName.</summary>
-        public string UserPrincipalName { get; set; }
+        public string UserPrincipalName {
+            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
+            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

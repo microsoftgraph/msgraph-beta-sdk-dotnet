@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class CloudPcAuditResource : IAdditionalDataHolder, IParsable {
+    public class CloudPcAuditResource : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The resource entity display name.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>A list of modified properties.</summary>
-        public List<CloudPcAuditProperty> ModifiedProperties { get; set; }
+        public List<CloudPcAuditProperty> ModifiedProperties {
+            get { return BackingStore?.Get<List<CloudPcAuditProperty>>(nameof(ModifiedProperties)); }
+            set { BackingStore?.Set(nameof(ModifiedProperties), value); }
+        }
         /// <summary>The ID of the audit resource.</summary>
-        public string ResourceId { get; set; }
+        public string ResourceId {
+            get { return BackingStore?.Get<string>(nameof(ResourceId)); }
+            set { BackingStore?.Set(nameof(ResourceId), value); }
+        }
         /// <summary>The type of the audit resource.</summary>
-        public string Type { get; set; }
+        public string Type {
+            get { return BackingStore?.Get<string>(nameof(Type)); }
+            set { BackingStore?.Set(nameof(Type), value); }
+        }
         /// <summary>
         /// Instantiates a new cloudPcAuditResource and sets the default values.
         /// </summary>
         public CloudPcAuditResource() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

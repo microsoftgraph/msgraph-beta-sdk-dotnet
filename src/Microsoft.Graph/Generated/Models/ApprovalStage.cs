@@ -1,28 +1,53 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ApprovalStage : IAdditionalDataHolder, IParsable {
+    public class ApprovalStage : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>The number of days that a request can be pending a response before it is automatically denied.</summary>
-        public int? ApprovalStageTimeOutInDays { get; set; }
+        public int? ApprovalStageTimeOutInDays {
+            get { return BackingStore?.Get<int?>(nameof(ApprovalStageTimeOutInDays)); }
+            set { BackingStore?.Set(nameof(ApprovalStageTimeOutInDays), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests. This can be a collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors.  When creating or updating a policy, if there are no escalation approvers, or escalation approvers are not required for the stage, the value of this property should be an empty collection.</summary>
-        public List<UserSet> EscalationApprovers { get; set; }
+        public List<UserSet> EscalationApprovers {
+            get { return BackingStore?.Get<List<UserSet>>(nameof(EscalationApprovers)); }
+            set { BackingStore?.Set(nameof(EscalationApprovers), value); }
+        }
         /// <summary>If escalation is required, the time a request can be pending a response from a primary approver.</summary>
-        public int? EscalationTimeInMinutes { get; set; }
+        public int? EscalationTimeInMinutes {
+            get { return BackingStore?.Get<int?>(nameof(EscalationTimeInMinutes)); }
+            set { BackingStore?.Set(nameof(EscalationTimeInMinutes), value); }
+        }
         /// <summary>Indicates whether the approver is required to provide a justification for approving a request.</summary>
-        public bool? IsApproverJustificationRequired { get; set; }
+        public bool? IsApproverJustificationRequired {
+            get { return BackingStore?.Get<bool?>(nameof(IsApproverJustificationRequired)); }
+            set { BackingStore?.Set(nameof(IsApproverJustificationRequired), value); }
+        }
         /// <summary>If true, then one or more escalation approvers are configured in this approval stage.</summary>
-        public bool? IsEscalationEnabled { get; set; }
+        public bool? IsEscalationEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(IsEscalationEnabled)); }
+            set { BackingStore?.Set(nameof(IsEscalationEnabled), value); }
+        }
         /// <summary>The users who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors. When creating or updating a policy, include at least one userSet in this collection.</summary>
-        public List<UserSet> PrimaryApprovers { get; set; }
+        public List<UserSet> PrimaryApprovers {
+            get { return BackingStore?.Get<List<UserSet>>(nameof(PrimaryApprovers)); }
+            set { BackingStore?.Set(nameof(PrimaryApprovers), value); }
+        }
         /// <summary>
         /// Instantiates a new approvalStage and sets the default values.
         /// </summary>
         public ApprovalStage() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class WorkbookComment : Entity, IParsable {
         /// <summary>The content of the comment.</summary>
-        public string Content { get; set; }
+        public string Content {
+            get { return BackingStore?.Get<string>(nameof(Content)); }
+            set { BackingStore?.Set(nameof(Content), value); }
+        }
         /// <summary>Indicates the type for the comment.</summary>
-        public string ContentType { get; set; }
+        public string ContentType {
+            get { return BackingStore?.Get<string>(nameof(ContentType)); }
+            set { BackingStore?.Set(nameof(ContentType), value); }
+        }
         /// <summary>Read-only. Nullable.</summary>
-        public List<WorkbookCommentReply> Replies { get; set; }
+        public List<WorkbookCommentReply> Replies {
+            get { return BackingStore?.Get<List<WorkbookCommentReply>>(nameof(Replies)); }
+            set { BackingStore?.Set(nameof(Replies), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

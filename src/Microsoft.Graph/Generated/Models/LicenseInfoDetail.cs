@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class LicenseInfoDetail : IAdditionalDataHolder, IParsable {
+    public class LicenseInfoDetail : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The licenseType property</summary>
-        public AzureADLicenseType? LicenseType { get; set; }
+        public AzureADLicenseType? LicenseType {
+            get { return BackingStore?.Get<AzureADLicenseType?>(nameof(LicenseType)); }
+            set { BackingStore?.Set(nameof(LicenseType), value); }
+        }
         /// <summary>The totalAssignedCount property</summary>
-        public int? TotalAssignedCount { get; set; }
+        public int? TotalAssignedCount {
+            get { return BackingStore?.Get<int?>(nameof(TotalAssignedCount)); }
+            set { BackingStore?.Set(nameof(TotalAssignedCount), value); }
+        }
         /// <summary>The totalLicenseCount property</summary>
-        public int? TotalLicenseCount { get; set; }
+        public int? TotalLicenseCount {
+            get { return BackingStore?.Get<int?>(nameof(TotalLicenseCount)); }
+            set { BackingStore?.Set(nameof(TotalLicenseCount), value); }
+        }
         /// <summary>The totalUsageCount property</summary>
-        public int? TotalUsageCount { get; set; }
+        public int? TotalUsageCount {
+            get { return BackingStore?.Get<int?>(nameof(TotalUsageCount)); }
+            set { BackingStore?.Set(nameof(TotalUsageCount), value); }
+        }
         /// <summary>
         /// Instantiates a new licenseInfoDetail and sets the default values.
         /// </summary>
         public LicenseInfoDetail() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

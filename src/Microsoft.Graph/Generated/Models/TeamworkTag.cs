@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class TeamworkTag : Entity, IParsable {
         /// <summary>Tag description as it will appear to the user in Microsoft Teams.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Tag name as it will appear to the user in Microsoft Teams.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The number of users assigned to the tag.</summary>
-        public int? MemberCount { get; set; }
+        public int? MemberCount {
+            get { return BackingStore?.Get<int?>(nameof(MemberCount)); }
+            set { BackingStore?.Set(nameof(MemberCount), value); }
+        }
         /// <summary>Users assigned to the tag.</summary>
-        public List<TeamworkTagMember> Members { get; set; }
+        public List<TeamworkTagMember> Members {
+            get { return BackingStore?.Get<List<TeamworkTagMember>>(nameof(Members)); }
+            set { BackingStore?.Set(nameof(Members), value); }
+        }
         /// <summary>The type of tag. Default is standard.</summary>
-        public TeamworkTagType? TagType { get; set; }
+        public TeamworkTagType? TagType {
+            get { return BackingStore?.Get<TeamworkTagType?>(nameof(TagType)); }
+            set { BackingStore?.Set(nameof(TagType), value); }
+        }
         /// <summary>ID of the team in which the tag is defined.</summary>
-        public string TeamId { get; set; }
+        public string TeamId {
+            get { return BackingStore?.Get<string>(nameof(TeamId)); }
+            set { BackingStore?.Set(nameof(TeamId), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

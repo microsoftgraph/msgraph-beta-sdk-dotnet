@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ImportedWindowsAutopilotDeviceIdentityState : IAdditionalDataHolder, IParsable {
+    public class ImportedWindowsAutopilotDeviceIdentityState : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Device error code reported by Device Directory Service(DDS).</summary>
-        public int? DeviceErrorCode { get; set; }
+        public int? DeviceErrorCode {
+            get { return BackingStore?.Get<int?>(nameof(DeviceErrorCode)); }
+            set { BackingStore?.Set(nameof(DeviceErrorCode), value); }
+        }
         /// <summary>Device error name reported by Device Directory Service(DDS).</summary>
-        public string DeviceErrorName { get; set; }
+        public string DeviceErrorName {
+            get { return BackingStore?.Get<string>(nameof(DeviceErrorName)); }
+            set { BackingStore?.Set(nameof(DeviceErrorName), value); }
+        }
         /// <summary>Device status reported by Device Directory Service(DDS). Possible values are: unknown, pending, partial, complete, error.</summary>
-        public ImportedWindowsAutopilotDeviceIdentityImportStatus? DeviceImportStatus { get; set; }
+        public ImportedWindowsAutopilotDeviceIdentityImportStatus? DeviceImportStatus {
+            get { return BackingStore?.Get<ImportedWindowsAutopilotDeviceIdentityImportStatus?>(nameof(DeviceImportStatus)); }
+            set { BackingStore?.Set(nameof(DeviceImportStatus), value); }
+        }
         /// <summary>Device Registration ID for successfully added device reported by Device Directory Service(DDS).</summary>
-        public string DeviceRegistrationId { get; set; }
+        public string DeviceRegistrationId {
+            get { return BackingStore?.Get<string>(nameof(DeviceRegistrationId)); }
+            set { BackingStore?.Set(nameof(DeviceRegistrationId), value); }
+        }
         /// <summary>
         /// Instantiates a new importedWindowsAutopilotDeviceIdentityState and sets the default values.
         /// </summary>
         public ImportedWindowsAutopilotDeviceIdentityState() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

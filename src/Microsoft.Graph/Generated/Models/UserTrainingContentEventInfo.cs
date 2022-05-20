@@ -1,26 +1,48 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class UserTrainingContentEventInfo : IAdditionalDataHolder, IParsable {
+    public class UserTrainingContentEventInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Browser of the user from where the training event was generated.</summary>
-        public string Browser { get; set; }
+        public string Browser {
+            get { return BackingStore?.Get<string>(nameof(Browser)); }
+            set { BackingStore?.Set(nameof(Browser), value); }
+        }
         /// <summary>Date and time of the training content playback by the user.</summary>
-        public DateTimeOffset? ContentDateTime { get; set; }
+        public DateTimeOffset? ContentDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ContentDateTime)); }
+            set { BackingStore?.Set(nameof(ContentDateTime), value); }
+        }
         /// <summary>IP address of the user for the training event.</summary>
-        public string IpAddress { get; set; }
+        public string IpAddress {
+            get { return BackingStore?.Get<string>(nameof(IpAddress)); }
+            set { BackingStore?.Set(nameof(IpAddress), value); }
+        }
         /// <summary>The operating system, platform, and device details of the user for the training event.</summary>
-        public string OsPlatformDeviceDetails { get; set; }
+        public string OsPlatformDeviceDetails {
+            get { return BackingStore?.Get<string>(nameof(OsPlatformDeviceDetails)); }
+            set { BackingStore?.Set(nameof(OsPlatformDeviceDetails), value); }
+        }
         /// <summary>Potential improvement in security posture of the tenant after completion of the training by the user.</summary>
-        public double? PotentialScoreImpact { get; set; }
+        public double? PotentialScoreImpact {
+            get { return BackingStore?.Get<double?>(nameof(PotentialScoreImpact)); }
+            set { BackingStore?.Set(nameof(PotentialScoreImpact), value); }
+        }
         /// <summary>
         /// Instantiates a new userTrainingContentEventInfo and sets the default values.
         /// </summary>
         public UserTrainingContentEventInfo() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

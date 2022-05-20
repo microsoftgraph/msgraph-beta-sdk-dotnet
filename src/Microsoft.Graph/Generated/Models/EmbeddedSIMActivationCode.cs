@@ -1,23 +1,39 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>The embedded SIM activation code as provided by the mobile operator.</summary>
-    public class EmbeddedSIMActivationCode : IAdditionalDataHolder, IParsable {
+    public class EmbeddedSIMActivationCode : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The Integrated Circuit Card Identifier (ICCID) for this embedded SIM activation code as provided by the mobile operator.</summary>
-        public string IntegratedCircuitCardIdentifier { get; set; }
+        public string IntegratedCircuitCardIdentifier {
+            get { return BackingStore?.Get<string>(nameof(IntegratedCircuitCardIdentifier)); }
+            set { BackingStore?.Set(nameof(IntegratedCircuitCardIdentifier), value); }
+        }
         /// <summary>The MatchingIdentifier (MatchingID) as specified in the GSMA Association SGP.22 RSP Technical Specification section 4.1.</summary>
-        public string MatchingIdentifier { get; set; }
+        public string MatchingIdentifier {
+            get { return BackingStore?.Get<string>(nameof(MatchingIdentifier)); }
+            set { BackingStore?.Set(nameof(MatchingIdentifier), value); }
+        }
         /// <summary>The fully qualified domain name of the SM-DP+ server as specified in the GSM Association SPG .22 RSP Technical Specification.</summary>
-        public string SmdpPlusServerAddress { get; set; }
+        public string SmdpPlusServerAddress {
+            get { return BackingStore?.Get<string>(nameof(SmdpPlusServerAddress)); }
+            set { BackingStore?.Set(nameof(SmdpPlusServerAddress), value); }
+        }
         /// <summary>
         /// Instantiates a new embeddedSIMActivationCode and sets the default values.
         /// </summary>
         public EmbeddedSIMActivationCode() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

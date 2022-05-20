@@ -4,25 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class ManagedDeviceComplianceTrend : Entity, IParsable {
         /// <summary>The number of devices with a compliant status. Required. Read-only.</summary>
-        public int? CompliantDeviceCount { get; set; }
+        public int? CompliantDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(CompliantDeviceCount)); }
+            set { BackingStore?.Set(nameof(CompliantDeviceCount), value); }
+        }
         /// <summary>The number of devices manged by Configuration Manager. Required. Read-only.</summary>
-        public int? ConfigManagerDeviceCount { get; set; }
+        public int? ConfigManagerDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(ConfigManagerDeviceCount)); }
+            set { BackingStore?.Set(nameof(ConfigManagerDeviceCount), value); }
+        }
         /// <summary>The date and time compliance snapshot was performed. Required. Read-only.</summary>
-        public string CountDateTime { get; set; }
+        public string CountDateTime {
+            get { return BackingStore?.Get<string>(nameof(CountDateTime)); }
+            set { BackingStore?.Set(nameof(CountDateTime), value); }
+        }
         /// <summary>The number of devices with an error status. Required. Read-only.</summary>
-        public int? ErrorDeviceCount { get; set; }
+        public int? ErrorDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(ErrorDeviceCount)); }
+            set { BackingStore?.Set(nameof(ErrorDeviceCount), value); }
+        }
         /// <summary>The number of devices that are in a grace period status. Required. Read-only.</summary>
-        public int? InGracePeriodDeviceCount { get; set; }
+        public int? InGracePeriodDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(InGracePeriodDeviceCount)); }
+            set { BackingStore?.Set(nameof(InGracePeriodDeviceCount), value); }
+        }
         /// <summary>The number of devices that are in a non-compliant status. Required. Read-only.</summary>
-        public int? NoncompliantDeviceCount { get; set; }
+        public int? NoncompliantDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(NoncompliantDeviceCount)); }
+            set { BackingStore?.Set(nameof(NoncompliantDeviceCount), value); }
+        }
         /// <summary>The display name for the managed tenant. Optional. Read-only.</summary>
-        public string TenantDisplayName { get; set; }
+        public string TenantDisplayName {
+            get { return BackingStore?.Get<string>(nameof(TenantDisplayName)); }
+            set { BackingStore?.Set(nameof(TenantDisplayName), value); }
+        }
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.</summary>
-        public string TenantId { get; set; }
+        public string TenantId {
+            get { return BackingStore?.Get<string>(nameof(TenantId)); }
+            set { BackingStore?.Set(nameof(TenantId), value); }
+        }
         /// <summary>The number of devices in an unknown status. Required. Read-only.</summary>
-        public int? UnknownDeviceCount { get; set; }
+        public int? UnknownDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(UnknownDeviceCount)); }
+            set { BackingStore?.Set(nameof(UnknownDeviceCount), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of bookingCurrency entities.</summary>
     public class BookingCurrency : Entity, IParsable {
         /// <summary>The currency symbol. For example, the currency symbol for the US dollar and for the Australian dollar is $.</summary>
-        public string Symbol { get; set; }
+        public string Symbol {
+            get { return BackingStore?.Get<string>(nameof(Symbol)); }
+            set { BackingStore?.Set(nameof(Symbol), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

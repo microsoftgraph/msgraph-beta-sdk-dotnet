@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ResultInfo : IAdditionalDataHolder, IParsable {
+    public class ResultInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The result code.</summary>
-        public int? Code { get; set; }
+        public int? Code {
+            get { return BackingStore?.Get<int?>(nameof(Code)); }
+            set { BackingStore?.Set(nameof(Code), value); }
+        }
         /// <summary>The message.</summary>
-        public string Message { get; set; }
+        public string Message {
+            get { return BackingStore?.Get<string>(nameof(Message)); }
+            set { BackingStore?.Set(nameof(Message), value); }
+        }
         /// <summary>The result sub-code.</summary>
-        public int? Subcode { get; set; }
+        public int? Subcode {
+            get { return BackingStore?.Get<int?>(nameof(Subcode)); }
+            set { BackingStore?.Set(nameof(Subcode), value); }
+        }
         /// <summary>
         /// Instantiates a new resultInfo and sets the default values.
         /// </summary>
         public ResultInfo() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

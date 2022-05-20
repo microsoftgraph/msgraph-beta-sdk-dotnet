@@ -24,10 +24,10 @@ namespace Microsoft.Graph.Beta.Directory.OutboundSharedUserProfiles {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.directory.outboundSharedUserProfiles.item collection</summary>
-        public OutboundSharedUserProfileItemRequestBuilder this[string position] { get {
+        public OutboundSharedUserProfileUserItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("outboundSharedUserProfile%2DuserId", position);
-            return new OutboundSharedUserProfileItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new OutboundSharedUserProfileUserItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OutboundSharedUserProfilesRequestBuilder and sets the default values.

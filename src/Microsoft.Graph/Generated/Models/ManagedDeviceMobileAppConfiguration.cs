@@ -4,38 +4,80 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>An abstract class for Mobile app configuration for enrolled devices.</summary>
     public class ManagedDeviceMobileAppConfiguration : Entity, IParsable {
         /// <summary>The list of group assignemenets for app configration.</summary>
-        public List<ManagedDeviceMobileAppConfigurationAssignment> Assignments { get; set; }
+        public List<ManagedDeviceMobileAppConfigurationAssignment> Assignments {
+            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationAssignment>>(nameof(Assignments)); }
+            set { BackingStore?.Set(nameof(Assignments), value); }
+        }
         /// <summary>DateTime the object was created.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>Admin provided description of the Device Configuration.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>List of ManagedDeviceMobileAppConfigurationDeviceStatus.</summary>
-        public List<ManagedDeviceMobileAppConfigurationDeviceStatus> DeviceStatuses { get; set; }
+        public List<ManagedDeviceMobileAppConfigurationDeviceStatus> DeviceStatuses {
+            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationDeviceStatus>>(nameof(DeviceStatuses)); }
+            set { BackingStore?.Set(nameof(DeviceStatuses), value); }
+        }
         /// <summary>App configuration device status summary.</summary>
-        public ManagedDeviceMobileAppConfigurationDeviceSummary DeviceStatusSummary { get; set; }
+        public ManagedDeviceMobileAppConfigurationDeviceSummary DeviceStatusSummary {
+            get { return BackingStore?.Get<ManagedDeviceMobileAppConfigurationDeviceSummary>(nameof(DeviceStatusSummary)); }
+            set { BackingStore?.Set(nameof(DeviceStatusSummary), value); }
+        }
         /// <summary>Admin provided name of the device configuration.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>DateTime the object was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>List of Scope Tags for this App configuration entity.</summary>
-        public List<string> RoleScopeTagIds { get; set; }
+        public List<string> RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTagIds)); }
+            set { BackingStore?.Set(nameof(RoleScopeTagIds), value); }
+        }
         /// <summary>the associated app.</summary>
-        public List<string> TargetedMobileApps { get; set; }
+        public List<string> TargetedMobileApps {
+            get { return BackingStore?.Get<List<string>>(nameof(TargetedMobileApps)); }
+            set { BackingStore?.Set(nameof(TargetedMobileApps), value); }
+        }
         /// <summary>List of ManagedDeviceMobileAppConfigurationUserStatus.</summary>
-        public List<ManagedDeviceMobileAppConfigurationUserStatus> UserStatuses { get; set; }
+        public List<ManagedDeviceMobileAppConfigurationUserStatus> UserStatuses {
+            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationUserStatus>>(nameof(UserStatuses)); }
+            set { BackingStore?.Set(nameof(UserStatuses), value); }
+        }
         /// <summary>App configuration user status summary.</summary>
-        public ManagedDeviceMobileAppConfigurationUserSummary UserStatusSummary { get; set; }
+        public ManagedDeviceMobileAppConfigurationUserSummary UserStatusSummary {
+            get { return BackingStore?.Get<ManagedDeviceMobileAppConfigurationUserSummary>(nameof(UserStatusSummary)); }
+            set { BackingStore?.Set(nameof(UserStatusSummary), value); }
+        }
         /// <summary>Version of the device configuration.</summary>
-        public int? Version { get; set; }
+        public int? Version {
+            get { return BackingStore?.Get<int?>(nameof(Version)); }
+            set { BackingStore?.Set(nameof(Version), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new ManagedDeviceMobileAppConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagedDeviceMobileAppConfiguration();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.managedDeviceMobileAppConfiguration" => new ManagedDeviceMobileAppConfiguration(),
+                _ => new ManagedDeviceMobileAppConfiguration(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

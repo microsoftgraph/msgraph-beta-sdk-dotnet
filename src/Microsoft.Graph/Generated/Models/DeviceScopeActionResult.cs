@@ -1,25 +1,44 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>The result of the triggered device scope action.</summary>
-    public class DeviceScopeActionResult : IAdditionalDataHolder, IParsable {
+    public class DeviceScopeActionResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The triggered action name.</summary>
-        public Microsoft.Graph.Beta.Models.DeviceScopeAction DeviceScopeAction { get; set; }
+        public string DeviceScopeAction {
+            get { return BackingStore?.Get<string>(nameof(DeviceScopeAction)); }
+            set { BackingStore?.Set(nameof(DeviceScopeAction), value); }
+        }
         /// <summary>The unique identifier of the device scope the action was triggered on.</summary>
-        public string DeviceScopeId { get; set; }
+        public string DeviceScopeId {
+            get { return BackingStore?.Get<string>(nameof(DeviceScopeId)); }
+            set { BackingStore?.Set(nameof(DeviceScopeId), value); }
+        }
         /// <summary>The message indicates the reason the device scope action failed to trigger.</summary>
-        public string FailedMessage { get; set; }
+        public string FailedMessage {
+            get { return BackingStore?.Get<string>(nameof(FailedMessage)); }
+            set { BackingStore?.Set(nameof(FailedMessage), value); }
+        }
         /// <summary>Indicates the status of the attempt device scope action. When succeeded, the action was succeessfully triggered, When failed, the action was failed to trigger.</summary>
-        public DeviceScopeActionStatus? Status { get; set; }
+        public DeviceScopeActionStatus? Status {
+            get { return BackingStore?.Get<DeviceScopeActionStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>
-        /// Instantiates a new deviceScopeActionResult and sets the default values.
+        /// Instantiates a new DeviceScopeActionResult and sets the default values.
         /// </summary>
         public DeviceScopeActionResult() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -35,7 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"deviceScopeAction", n => { DeviceScopeAction = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceScopeAction>(Microsoft.Graph.Beta.Models.DeviceScopeAction.CreateFromDiscriminatorValue); } },
+                {"deviceScopeAction", n => { DeviceScopeAction = n.GetStringValue(); } },
                 {"deviceScopeId", n => { DeviceScopeId = n.GetStringValue(); } },
                 {"failedMessage", n => { FailedMessage = n.GetStringValue(); } },
                 {"status", n => { Status = n.GetEnumValue<DeviceScopeActionStatus>(); } },
@@ -47,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceScopeAction>("deviceScopeAction", DeviceScopeAction);
+            writer.WriteStringValue("deviceScopeAction", DeviceScopeAction);
             writer.WriteStringValue("deviceScopeId", DeviceScopeId);
             writer.WriteStringValue("failedMessage", FailedMessage);
             writer.WriteEnumValue<DeviceScopeActionStatus>("status", Status);

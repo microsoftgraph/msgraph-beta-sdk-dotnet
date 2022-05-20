@@ -1,40 +1,83 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class AttributeDefinition : IAdditionalDataHolder, IParsable {
+    public class AttributeDefinition : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object&apos;s attributes must be designated as the anchor to support synchronization.</summary>
-        public bool? Anchor { get; set; }
+        public bool? Anchor {
+            get { return BackingStore?.Get<bool?>(nameof(Anchor)); }
+            set { BackingStore?.Set(nameof(Anchor), value); }
+        }
         /// <summary>The apiExpressions property</summary>
-        public List<StringKeyStringValuePair> ApiExpressions { get; set; }
+        public List<StringKeyStringValuePair> ApiExpressions {
+            get { return BackingStore?.Get<List<StringKeyStringValuePair>>(nameof(ApiExpressions)); }
+            set { BackingStore?.Set(nameof(ApiExpressions), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.</summary>
-        public bool? CaseExact { get; set; }
+        public bool? CaseExact {
+            get { return BackingStore?.Get<bool?>(nameof(CaseExact)); }
+            set { BackingStore?.Set(nameof(CaseExact), value); }
+        }
         /// <summary>The defaultValue property</summary>
-        public string DefaultValue { get; set; }
+        public string DefaultValue {
+            get { return BackingStore?.Get<string>(nameof(DefaultValue)); }
+            set { BackingStore?.Set(nameof(DefaultValue), value); }
+        }
         /// <summary>&apos;true&apos; to allow null values for attributes.</summary>
-        public bool? FlowNullValues { get; set; }
+        public bool? FlowNullValues {
+            get { return BackingStore?.Get<bool?>(nameof(FlowNullValues)); }
+            set { BackingStore?.Set(nameof(FlowNullValues), value); }
+        }
         /// <summary>Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.</summary>
-        public List<MetadataEntry> Metadata { get; set; }
+        public List<MetadataEntry> Metadata {
+            get { return BackingStore?.Get<List<MetadataEntry>>(nameof(Metadata)); }
+            set { BackingStore?.Set(nameof(Metadata), value); }
+        }
         /// <summary>true if an attribute can have multiple values. Default is false.</summary>
-        public bool? Multivalued { get; set; }
+        public bool? Multivalued {
+            get { return BackingStore?.Get<bool?>(nameof(Multivalued)); }
+            set { BackingStore?.Set(nameof(Multivalued), value); }
+        }
         /// <summary>An attribute&apos;s mutability. Possible values are:  ReadWrite, ReadOnly, Immutable, WriteOnly. Default is ReadWrite.</summary>
-        public Microsoft.Graph.Beta.Models.Mutability? Mutability { get; set; }
+        public Microsoft.Graph.Beta.Models.Mutability? Mutability {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Mutability?>(nameof(Mutability)); }
+            set { BackingStore?.Set(nameof(Mutability), value); }
+        }
         /// <summary>Name of the attribute. Must be unique within the object definition. Not nullable.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).</summary>
-        public List<ReferencedObject> ReferencedObjects { get; set; }
+        public List<ReferencedObject> ReferencedObjects {
+            get { return BackingStore?.Get<List<ReferencedObject>>(nameof(ReferencedObjects)); }
+            set { BackingStore?.Set(nameof(ReferencedObjects), value); }
+        }
         /// <summary>true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.</summary>
-        public bool? Required { get; set; }
+        public bool? Required {
+            get { return BackingStore?.Get<bool?>(nameof(Required)); }
+            set { BackingStore?.Set(nameof(Required), value); }
+        }
         /// <summary>Attribute value type. Possible values are: String, Integer, Reference, Binary, Boolean,DateTime. Default is String.</summary>
-        public AttributeType? Type { get; set; }
+        public AttributeType? Type {
+            get { return BackingStore?.Get<AttributeType?>(nameof(Type)); }
+            set { BackingStore?.Set(nameof(Type), value); }
+        }
         /// <summary>
         /// Instantiates a new attributeDefinition and sets the default values.
         /// </summary>
         public AttributeDefinition() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -1,25 +1,44 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>iOS available update version details</summary>
-    public class IosAvailableUpdateVersion : IAdditionalDataHolder, IParsable {
+    public class IosAvailableUpdateVersion : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The expiration date of the update.</summary>
-        public DateTimeOffset? ExpirationDateTime { get; set; }
+        public DateTimeOffset? ExpirationDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpirationDateTime)); }
+            set { BackingStore?.Set(nameof(ExpirationDateTime), value); }
+        }
         /// <summary>The posting date of the update.</summary>
-        public DateTimeOffset? PostingDateTime { get; set; }
+        public DateTimeOffset? PostingDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(PostingDateTime)); }
+            set { BackingStore?.Set(nameof(PostingDateTime), value); }
+        }
         /// <summary>The version of the update.</summary>
-        public string ProductVersion { get; set; }
+        public string ProductVersion {
+            get { return BackingStore?.Get<string>(nameof(ProductVersion)); }
+            set { BackingStore?.Set(nameof(ProductVersion), value); }
+        }
         /// <summary>List of supported devices for the update.</summary>
-        public List<string> SupportedDevices { get; set; }
+        public List<string> SupportedDevices {
+            get { return BackingStore?.Get<List<string>>(nameof(SupportedDevices)); }
+            set { BackingStore?.Set(nameof(SupportedDevices), value); }
+        }
         /// <summary>
         /// Instantiates a new iosAvailableUpdateVersion and sets the default values.
         /// </summary>
         public IosAvailableUpdateVersion() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

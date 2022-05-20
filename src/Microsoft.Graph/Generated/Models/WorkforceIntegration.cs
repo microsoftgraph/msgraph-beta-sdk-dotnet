@@ -4,23 +4,48 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the teamwork singleton.</summary>
     public class WorkforceIntegration : ChangeTrackedEntity, IParsable {
         /// <summary>API version for the call back URL. Start with 1.</summary>
-        public int? ApiVersion { get; set; }
+        public int? ApiVersion {
+            get { return BackingStore?.Get<int?>(nameof(ApiVersion)); }
+            set { BackingStore?.Set(nameof(ApiVersion), value); }
+        }
         /// <summary>Name of the workforce integration.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The eligibilityFilteringEnabledEntities property</summary>
-        public Microsoft.Graph.Beta.Models.EligibilityFilteringEnabledEntities? EligibilityFilteringEnabledEntities { get; set; }
+        public Microsoft.Graph.Beta.Models.EligibilityFilteringEnabledEntities? EligibilityFilteringEnabledEntities {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EligibilityFilteringEnabledEntities?>(nameof(EligibilityFilteringEnabledEntities)); }
+            set { BackingStore?.Set(nameof(EligibilityFilteringEnabledEntities), value); }
+        }
         /// <summary>The workforce integration encryption resource.</summary>
-        public WorkforceIntegrationEncryption Encryption { get; set; }
+        public WorkforceIntegrationEncryption Encryption {
+            get { return BackingStore?.Get<WorkforceIntegrationEncryption>(nameof(Encryption)); }
+            set { BackingStore?.Set(nameof(Encryption), value); }
+        }
         /// <summary>Indicates whether this workforce integration is currently active and available.</summary>
-        public bool? IsActive { get; set; }
+        public bool? IsActive {
+            get { return BackingStore?.Get<bool?>(nameof(IsActive)); }
+            set { BackingStore?.Set(nameof(IsActive), value); }
+        }
         /// <summary>This property has replaced supports in v1.0. We recommend that you use this property instead of supports. The supports property is still supported in beta for the time being. The possible values are: none, shift, swapRequest, openshift, openShiftRequest, userShiftPreferences, offerShiftRequest, unknownFutureValue, timeCard, timeOffReason, timeOff, timeOffRequest. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeCard, timeOffReason, timeOff, timeOffRequest. If selecting more than one value, all values must start with the first letter in uppercase.</summary>
-        public WorkforceIntegrationSupportedEntities? SupportedEntities { get; set; }
+        public WorkforceIntegrationSupportedEntities? SupportedEntities {
+            get { return BackingStore?.Get<WorkforceIntegrationSupportedEntities?>(nameof(SupportedEntities)); }
+            set { BackingStore?.Set(nameof(SupportedEntities), value); }
+        }
         /// <summary>The Shifts entities supported for synchronous change notifications. Shifts will make a call back to the url provided on client changes on those entities added here. By default, no entities are supported for change notifications. The possible values are: none, shift, swapRequest, openshift, openShiftRequest, userShiftPreferences, offerShiftRequest, unknownFutureValue, timeCard, timeOffReason, timeOff, timeOffRequest. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeCard, timeOffReason, timeOff, timeOffRequest. If selecting more than one value, all values must start with the first letter in uppercase.</summary>
-        public WorkforceIntegrationSupportedEntities? Supports { get; set; }
+        public WorkforceIntegrationSupportedEntities? Supports {
+            get { return BackingStore?.Get<WorkforceIntegrationSupportedEntities?>(nameof(Supports)); }
+            set { BackingStore?.Set(nameof(Supports), value); }
+        }
         /// <summary>Workforce Integration URL for callbacks from the Shifts service.</summary>
-        public string Url { get; set; }
+        public string Url {
+            get { return BackingStore?.Get<string>(nameof(Url)); }
+            set { BackingStore?.Set(nameof(Url), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

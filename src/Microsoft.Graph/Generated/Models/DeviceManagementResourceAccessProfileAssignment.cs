@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Entity that describes tenant level settings for derived credentials</summary>
     public class DeviceManagementResourceAccessProfileAssignment : Entity, IParsable {
         /// <summary>The assignment intent for the resource access profile. Possible values are: apply, remove.</summary>
-        public DeviceManagementResourceAccessProfileIntent? Intent { get; set; }
+        public DeviceManagementResourceAccessProfileIntent? Intent {
+            get { return BackingStore?.Get<DeviceManagementResourceAccessProfileIntent?>(nameof(Intent)); }
+            set { BackingStore?.Set(nameof(Intent), value); }
+        }
         /// <summary>The identifier of the source of the assignment.</summary>
-        public string SourceId { get; set; }
+        public string SourceId {
+            get { return BackingStore?.Get<string>(nameof(SourceId)); }
+            set { BackingStore?.Set(nameof(SourceId), value); }
+        }
         /// <summary>Base type for assignment targets.</summary>
-        public DeviceAndAppManagementAssignmentTarget Target { get; set; }
+        public DeviceAndAppManagementAssignmentTarget Target {
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>(nameof(Target)); }
+            set { BackingStore?.Set(nameof(Target), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

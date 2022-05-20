@@ -1,28 +1,53 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class InvitationParticipantInfo : IAdditionalDataHolder, IParsable {
+    public class InvitationParticipantInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The type of the endpoint. Possible values are: default, voicemail.</summary>
-        public Microsoft.Graph.Beta.Models.EndpointType? EndpointType { get; set; }
+        public Microsoft.Graph.Beta.Models.EndpointType? EndpointType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EndpointType?>(nameof(EndpointType)); }
+            set { BackingStore?.Set(nameof(EndpointType), value); }
+        }
         /// <summary>The hidden property</summary>
-        public bool? Hidden { get; set; }
+        public bool? Hidden {
+            get { return BackingStore?.Get<bool?>(nameof(Hidden)); }
+            set { BackingStore?.Set(nameof(Hidden), value); }
+        }
         /// <summary>The identity property</summary>
-        public IdentitySet Identity { get; set; }
+        public IdentitySet Identity {
+            get { return BackingStore?.Get<IdentitySet>(nameof(Identity)); }
+            set { BackingStore?.Set(nameof(Identity), value); }
+        }
         /// <summary>Optional. The ID of the target participant.</summary>
-        public string ParticipantId { get; set; }
+        public string ParticipantId {
+            get { return BackingStore?.Get<string>(nameof(ParticipantId)); }
+            set { BackingStore?.Set(nameof(ParticipantId), value); }
+        }
         /// <summary>The removeFromDefaultAudioRoutingGroup property</summary>
-        public bool? RemoveFromDefaultAudioRoutingGroup { get; set; }
+        public bool? RemoveFromDefaultAudioRoutingGroup {
+            get { return BackingStore?.Get<bool?>(nameof(RemoveFromDefaultAudioRoutingGroup)); }
+            set { BackingStore?.Set(nameof(RemoveFromDefaultAudioRoutingGroup), value); }
+        }
         /// <summary>Optional. The call which the target identity is currently a part of. For peer-to-peer case, the call will be dropped once the participant is added successfully.</summary>
-        public string ReplacesCallId { get; set; }
+        public string ReplacesCallId {
+            get { return BackingStore?.Get<string>(nameof(ReplacesCallId)); }
+            set { BackingStore?.Set(nameof(ReplacesCallId), value); }
+        }
         /// <summary>
         /// Instantiates a new invitationParticipantInfo and sets the default values.
         /// </summary>
         public InvitationParticipantInfo() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

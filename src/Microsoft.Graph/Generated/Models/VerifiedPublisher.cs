@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class VerifiedPublisher : IAdditionalDataHolder, IParsable {
+    public class VerifiedPublisher : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The timestamp when the verified publisher was first added or most recently updated.</summary>
-        public DateTimeOffset? AddedDateTime { get; set; }
+        public DateTimeOffset? AddedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(AddedDateTime)); }
+            set { BackingStore?.Set(nameof(AddedDateTime), value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The verified publisher name from the app publisher&apos;s Microsoft Partner Network (MPN) account.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The ID of the verified publisher from the app publisher&apos;s Partner Center account.</summary>
-        public string VerifiedPublisherId { get; set; }
+        public string VerifiedPublisherId {
+            get { return BackingStore?.Get<string>(nameof(VerifiedPublisherId)); }
+            set { BackingStore?.Set(nameof(VerifiedPublisherId), value); }
+        }
         /// <summary>
         /// Instantiates a new verifiedPublisher and sets the default values.
         /// </summary>
         public VerifiedPublisher() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

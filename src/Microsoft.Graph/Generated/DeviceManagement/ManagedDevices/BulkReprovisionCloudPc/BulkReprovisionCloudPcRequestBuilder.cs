@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -47,7 +48,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkReprovisionCl
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(BulkReprovisionCloudPcRequestBody body, Action<BulkReprovisionCloudPcRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation CreatePostRequestInformation(BulkReprovisionCloudPcPostRequestBody body, Action<BulkReprovisionCloudPcRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -70,10 +71,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkReprovisionCl
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PostAsync(BulkReprovisionCloudPcRequestBody body, Action<BulkReprovisionCloudPcRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<CloudPcBulkRemoteActionResult> PostAsync(BulkReprovisionCloudPcPostRequestBody body, Action<BulkReprovisionCloudPcRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudPcBulkRemoteActionResult>(requestInfo, CloudPcBulkRemoteActionResult.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class BulkReprovisionCloudPcRequestBuilderPostRequestConfiguration {

@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.CallRecords {
-    public class UserAgent : IAdditionalDataHolder, IParsable {
+    public class UserAgent : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Identifies the version of application software used by this endpoint.</summary>
-        public string ApplicationVersion { get; set; }
+        public string ApplicationVersion {
+            get { return BackingStore?.Get<string>(nameof(ApplicationVersion)); }
+            set { BackingStore?.Set(nameof(ApplicationVersion), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>User-agent header value reported by this endpoint.</summary>
-        public string HeaderValue { get; set; }
+        public string HeaderValue {
+            get { return BackingStore?.Get<string>(nameof(HeaderValue)); }
+            set { BackingStore?.Set(nameof(HeaderValue), value); }
+        }
         /// <summary>
         /// Instantiates a new userAgent and sets the default values.
         /// </summary>
         public UserAgent() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

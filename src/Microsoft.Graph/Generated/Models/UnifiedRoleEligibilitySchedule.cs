@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the roleManagement singleton.</summary>
     public class UnifiedRoleEligibilitySchedule : UnifiedRoleScheduleBase, IParsable {
         /// <summary>Membership type of the eligible assignment. It can either be Inherited, Direct, or Group.</summary>
-        public string MemberType { get; set; }
+        public string MemberType {
+            get { return BackingStore?.Get<string>(nameof(MemberType)); }
+            set { BackingStore?.Set(nameof(MemberType), value); }
+        }
         /// <summary>The schedule object of the eligible role assignment request.</summary>
-        public RequestSchedule ScheduleInfo { get; set; }
+        public RequestSchedule ScheduleInfo {
+            get { return BackingStore?.Get<RequestSchedule>(nameof(ScheduleInfo)); }
+            set { BackingStore?.Set(nameof(ScheduleInfo), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class WorkbookChartFont : Entity, IParsable {
         /// <summary>Represents the bold status of font.</summary>
-        public bool? Bold { get; set; }
+        public bool? Bold {
+            get { return BackingStore?.Get<bool?>(nameof(Bold)); }
+            set { BackingStore?.Set(nameof(Bold), value); }
+        }
         /// <summary>HTML color code representation of the text color. E.g. #FF0000 represents Red.</summary>
-        public string Color { get; set; }
+        public string Color {
+            get { return BackingStore?.Get<string>(nameof(Color)); }
+            set { BackingStore?.Set(nameof(Color), value); }
+        }
         /// <summary>Represents the italic status of the font.</summary>
-        public bool? Italic { get; set; }
+        public bool? Italic {
+            get { return BackingStore?.Get<bool?>(nameof(Italic)); }
+            set { BackingStore?.Set(nameof(Italic), value); }
+        }
         /// <summary>Font name (e.g. &apos;Calibri&apos;)</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>Size of the font (e.g. 11)</summary>
-        public double? Size { get; set; }
+        public double? Size {
+            get { return BackingStore?.Get<double?>(nameof(Size)); }
+            set { BackingStore?.Set(nameof(Size), value); }
+        }
         /// <summary>Type of underline applied to the font. The possible values are: None, Single.</summary>
-        public string Underline { get; set; }
+        public string Underline {
+            get { return BackingStore?.Get<string>(nameof(Underline)); }
+            set { BackingStore?.Set(nameof(Underline), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

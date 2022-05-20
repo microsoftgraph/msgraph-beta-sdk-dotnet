@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class TeamworkOnlineMeetingInfo : IAdditionalDataHolder, IParsable {
+    public class TeamworkOnlineMeetingInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The identifier of the calendar event associated with the meeting.</summary>
-        public string CalendarEventId { get; set; }
+        public string CalendarEventId {
+            get { return BackingStore?.Get<string>(nameof(CalendarEventId)); }
+            set { BackingStore?.Set(nameof(CalendarEventId), value); }
+        }
         /// <summary>The URL which can be clicked on to join or uniquely identify the meeting.</summary>
-        public string JoinWebUrl { get; set; }
+        public string JoinWebUrl {
+            get { return BackingStore?.Get<string>(nameof(JoinWebUrl)); }
+            set { BackingStore?.Set(nameof(JoinWebUrl), value); }
+        }
         /// <summary>The organizer of the meeting.</summary>
-        public TeamworkUserIdentity Organizer { get; set; }
+        public TeamworkUserIdentity Organizer {
+            get { return BackingStore?.Get<TeamworkUserIdentity>(nameof(Organizer)); }
+            set { BackingStore?.Set(nameof(Organizer), value); }
+        }
         /// <summary>
         /// Instantiates a new teamworkOnlineMeetingInfo and sets the default values.
         /// </summary>
         public TeamworkOnlineMeetingInfo() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

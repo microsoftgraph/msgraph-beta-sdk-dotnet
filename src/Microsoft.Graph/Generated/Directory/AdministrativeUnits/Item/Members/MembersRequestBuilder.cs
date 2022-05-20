@@ -1,5 +1,6 @@
 using Microsoft.Graph.Beta.Directory.AdministrativeUnits.Item.Members.Count;
 using Microsoft.Graph.Beta.Directory.AdministrativeUnits.Item.Members.Item;
+using Microsoft.Graph.Beta.Directory.AdministrativeUnits.Item.Members.Ref;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -19,6 +20,10 @@ namespace Microsoft.Graph.Beta.Directory.AdministrativeUnits.Item.Members {
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>The ref property</summary>
+        public RefRequestBuilder Ref { get =>
+            new RefRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>

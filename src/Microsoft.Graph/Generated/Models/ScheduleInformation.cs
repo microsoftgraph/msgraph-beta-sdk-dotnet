@@ -1,26 +1,48 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ScheduleInformation : IAdditionalDataHolder, IParsable {
+    public class ScheduleInformation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Represents a merged view of availability of all the items in scheduleItems. The view consists of time slots. Availability during each time slot is indicated with: 0= free, 1= tentative, 2= busy, 3= out of office, 4= working elsewhere.</summary>
-        public string AvailabilityView { get; set; }
+        public string AvailabilityView {
+            get { return BackingStore?.Get<string>(nameof(AvailabilityView)); }
+            set { BackingStore?.Set(nameof(AvailabilityView), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Error information from attempting to get the availability of the user, distribution list, or resource.</summary>
-        public FreeBusyError Error { get; set; }
+        public FreeBusyError Error {
+            get { return BackingStore?.Get<FreeBusyError>(nameof(Error)); }
+            set { BackingStore?.Set(nameof(Error), value); }
+        }
         /// <summary>An SMTP address of the user, distribution list, or resource, identifying an instance of scheduleInformation.</summary>
-        public string ScheduleId { get; set; }
+        public string ScheduleId {
+            get { return BackingStore?.Get<string>(nameof(ScheduleId)); }
+            set { BackingStore?.Set(nameof(ScheduleId), value); }
+        }
         /// <summary>Contains the items that describe the availability of the user or resource.</summary>
-        public List<ScheduleItem> ScheduleItems { get; set; }
+        public List<ScheduleItem> ScheduleItems {
+            get { return BackingStore?.Get<List<ScheduleItem>>(nameof(ScheduleItems)); }
+            set { BackingStore?.Set(nameof(ScheduleItems), value); }
+        }
         /// <summary>The days of the week and hours in a specific time zone that the user works. These are set as part of the user&apos;s mailboxSettings.</summary>
-        public Microsoft.Graph.Beta.Models.WorkingHours WorkingHours { get; set; }
+        public Microsoft.Graph.Beta.Models.WorkingHours WorkingHours {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkingHours>(nameof(WorkingHours)); }
+            set { BackingStore?.Set(nameof(WorkingHours), value); }
+        }
         /// <summary>
         /// Instantiates a new scheduleInformation and sets the default values.
         /// </summary>
         public ScheduleInformation() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

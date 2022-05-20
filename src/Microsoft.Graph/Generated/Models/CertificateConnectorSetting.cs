@@ -1,29 +1,54 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Certificate connector settings.</summary>
-    public class CertificateConnectorSetting : IAdditionalDataHolder, IParsable {
+    public class CertificateConnectorSetting : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Certificate expire time</summary>
-        public DateTimeOffset? CertExpiryTime { get; set; }
+        public DateTimeOffset? CertExpiryTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CertExpiryTime)); }
+            set { BackingStore?.Set(nameof(CertExpiryTime), value); }
+        }
         /// <summary>Version of certificate connector</summary>
-        public string ConnectorVersion { get; set; }
+        public string ConnectorVersion {
+            get { return BackingStore?.Get<string>(nameof(ConnectorVersion)); }
+            set { BackingStore?.Set(nameof(ConnectorVersion), value); }
+        }
         /// <summary>Certificate connector enrollment error</summary>
-        public string EnrollmentError { get; set; }
+        public string EnrollmentError {
+            get { return BackingStore?.Get<string>(nameof(EnrollmentError)); }
+            set { BackingStore?.Set(nameof(EnrollmentError), value); }
+        }
         /// <summary>Last time certificate connector connected</summary>
-        public DateTimeOffset? LastConnectorConnectionTime { get; set; }
+        public DateTimeOffset? LastConnectorConnectionTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastConnectorConnectionTime)); }
+            set { BackingStore?.Set(nameof(LastConnectorConnectionTime), value); }
+        }
         /// <summary>Version of last uploaded certificate connector</summary>
-        public long? LastUploadVersion { get; set; }
+        public long? LastUploadVersion {
+            get { return BackingStore?.Get<long?>(nameof(LastUploadVersion)); }
+            set { BackingStore?.Set(nameof(LastUploadVersion), value); }
+        }
         /// <summary>Certificate connector status</summary>
-        public int? Status { get; set; }
+        public int? Status {
+            get { return BackingStore?.Get<int?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>
         /// Instantiates a new certificateConnectorSetting and sets the default values.
         /// </summary>
         public CertificateConnectorSetting() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

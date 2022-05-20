@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the security singleton.</summary>
     public class EmailIdentity : Identity, IParsable {
         /// <summary>Email address of the user.</summary>
-        public string Email { get; set; }
+        public string Email {
+            get { return BackingStore?.Get<string>(nameof(Email)); }
+            set { BackingStore?.Set(nameof(Email), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -1,28 +1,53 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class RelatedContact : IAdditionalDataHolder, IParsable {
+    public class RelatedContact : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Indicates whether the user has been consented to access student data.</summary>
-        public bool? AccessConsent { get; set; }
+        public bool? AccessConsent {
+            get { return BackingStore?.Get<bool?>(nameof(AccessConsent)); }
+            set { BackingStore?.Set(nameof(AccessConsent), value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Name of the contact. Required.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Email address of the contact.</summary>
-        public string EmailAddress { get; set; }
+        public string EmailAddress {
+            get { return BackingStore?.Get<string>(nameof(EmailAddress)); }
+            set { BackingStore?.Set(nameof(EmailAddress), value); }
+        }
         /// <summary>The id property</summary>
-        public string Id { get; set; }
+        public string Id {
+            get { return BackingStore?.Get<string>(nameof(Id)); }
+            set { BackingStore?.Set(nameof(Id), value); }
+        }
         /// <summary>Mobile phone number of the contact.</summary>
-        public string MobilePhone { get; set; }
+        public string MobilePhone {
+            get { return BackingStore?.Get<string>(nameof(MobilePhone)); }
+            set { BackingStore?.Set(nameof(MobilePhone), value); }
+        }
         /// <summary>Relationship to the user. Possible values are: parent, relative, aide, doctor, guardian, child, other, unknownFutureValue.</summary>
-        public ContactRelationship? Relationship { get; set; }
+        public ContactRelationship? Relationship {
+            get { return BackingStore?.Get<ContactRelationship?>(nameof(Relationship)); }
+            set { BackingStore?.Set(nameof(Relationship), value); }
+        }
         /// <summary>
         /// Instantiates a new relatedContact and sets the default values.
         /// </summary>
         public RelatedContact() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

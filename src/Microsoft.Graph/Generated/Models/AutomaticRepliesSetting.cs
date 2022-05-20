@@ -1,28 +1,53 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class AutomaticRepliesSetting : IAdditionalDataHolder, IParsable {
+    public class AutomaticRepliesSetting : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The set of audience external to the signed-in user&apos;s organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. Possible values are: none, contactsOnly, all.</summary>
-        public ExternalAudienceScope? ExternalAudience { get; set; }
+        public ExternalAudienceScope? ExternalAudience {
+            get { return BackingStore?.Get<ExternalAudienceScope?>(nameof(ExternalAudience)); }
+            set { BackingStore?.Set(nameof(ExternalAudience), value); }
+        }
         /// <summary>The automatic reply to send to the specified external audience, if Status is AlwaysEnabled or Scheduled.</summary>
-        public string ExternalReplyMessage { get; set; }
+        public string ExternalReplyMessage {
+            get { return BackingStore?.Get<string>(nameof(ExternalReplyMessage)); }
+            set { BackingStore?.Set(nameof(ExternalReplyMessage), value); }
+        }
         /// <summary>The automatic reply to send to the audience internal to the signed-in user&apos;s organization, if Status is AlwaysEnabled or Scheduled.</summary>
-        public string InternalReplyMessage { get; set; }
+        public string InternalReplyMessage {
+            get { return BackingStore?.Get<string>(nameof(InternalReplyMessage)); }
+            set { BackingStore?.Set(nameof(InternalReplyMessage), value); }
+        }
         /// <summary>The date and time that automatic replies are set to end, if Status is set to Scheduled.</summary>
-        public DateTimeTimeZone ScheduledEndDateTime { get; set; }
+        public DateTimeTimeZone ScheduledEndDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(ScheduledEndDateTime)); }
+            set { BackingStore?.Set(nameof(ScheduledEndDateTime), value); }
+        }
         /// <summary>The date and time that automatic replies are set to begin, if Status is set to Scheduled.</summary>
-        public DateTimeTimeZone ScheduledStartDateTime { get; set; }
+        public DateTimeTimeZone ScheduledStartDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(ScheduledStartDateTime)); }
+            set { BackingStore?.Set(nameof(ScheduledStartDateTime), value); }
+        }
         /// <summary>Configurations status for automatic replies. Possible values are: disabled, alwaysEnabled, scheduled.</summary>
-        public AutomaticRepliesStatus? Status { get; set; }
+        public AutomaticRepliesStatus? Status {
+            get { return BackingStore?.Get<AutomaticRepliesStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>
         /// Instantiates a new automaticRepliesSetting and sets the default values.
         /// </summary>
         public AutomaticRepliesSetting() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

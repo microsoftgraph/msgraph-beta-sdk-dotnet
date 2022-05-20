@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class TimeCardBreak : IAdditionalDataHolder, IParsable {
+    public class TimeCardBreak : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>ID of the timeCardBreak.</summary>
-        public string BreakId { get; set; }
+        public string BreakId {
+            get { return BackingStore?.Get<string>(nameof(BreakId)); }
+            set { BackingStore?.Set(nameof(BreakId), value); }
+        }
         /// <summary>The start event of the timeCardBreak.</summary>
-        public TimeCardEvent End { get; set; }
+        public TimeCardEvent End {
+            get { return BackingStore?.Get<TimeCardEvent>(nameof(End)); }
+            set { BackingStore?.Set(nameof(End), value); }
+        }
         /// <summary>Notes about the timeCardBreak.</summary>
-        public ItemBody Notes { get; set; }
+        public ItemBody Notes {
+            get { return BackingStore?.Get<ItemBody>(nameof(Notes)); }
+            set { BackingStore?.Set(nameof(Notes), value); }
+        }
         /// <summary>The start property</summary>
-        public TimeCardEvent Start { get; set; }
+        public TimeCardEvent Start {
+            get { return BackingStore?.Get<TimeCardEvent>(nameof(Start)); }
+            set { BackingStore?.Set(nameof(Start), value); }
+        }
         /// <summary>
         /// Instantiates a new timeCardBreak and sets the default values.
         /// </summary>
         public TimeCardBreak() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

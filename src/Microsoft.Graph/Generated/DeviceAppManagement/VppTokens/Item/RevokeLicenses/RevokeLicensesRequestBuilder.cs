@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Item.RevokeLicenses
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(RevokeLicensesRequestBody body, Action<RevokeLicensesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation CreatePostRequestInformation(RevokeLicensesPostRequestBody body, Action<RevokeLicensesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Item.RevokeLicenses
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PostAsync(RevokeLicensesRequestBody body, Action<RevokeLicensesRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(RevokeLicensesPostRequestBody body, Action<RevokeLicensesRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);

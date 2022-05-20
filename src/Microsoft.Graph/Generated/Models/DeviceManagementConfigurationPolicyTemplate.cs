@@ -4,31 +4,68 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Device Management Configuration Policy Template</summary>
     public class DeviceManagementConfigurationPolicyTemplate : Entity, IParsable {
         /// <summary>Allow unmanaged setting templates</summary>
-        public bool? AllowUnmanagedSettings { get; set; }
+        public bool? AllowUnmanagedSettings {
+            get { return BackingStore?.Get<bool?>(nameof(AllowUnmanagedSettings)); }
+            set { BackingStore?.Set(nameof(AllowUnmanagedSettings), value); }
+        }
         /// <summary>Template base identifier</summary>
-        public string BaseId { get; set; }
+        public string BaseId {
+            get { return BackingStore?.Get<string>(nameof(BaseId)); }
+            set { BackingStore?.Set(nameof(BaseId), value); }
+        }
         /// <summary>Template description</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Template display name</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Description of template version</summary>
-        public string DisplayVersion { get; set; }
+        public string DisplayVersion {
+            get { return BackingStore?.Get<string>(nameof(DisplayVersion)); }
+            set { BackingStore?.Set(nameof(DisplayVersion), value); }
+        }
         /// <summary>Indicate current lifecycle state of template. Possible values are: invalid, draft, active, superseded, deprecated, retired.</summary>
-        public DeviceManagementTemplateLifecycleState? LifecycleState { get; set; }
+        public DeviceManagementTemplateLifecycleState? LifecycleState {
+            get { return BackingStore?.Get<DeviceManagementTemplateLifecycleState?>(nameof(LifecycleState)); }
+            set { BackingStore?.Set(nameof(LifecycleState), value); }
+        }
         /// <summary>Platforms for this template. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.</summary>
-        public DeviceManagementConfigurationPlatforms? Platforms { get; set; }
+        public DeviceManagementConfigurationPlatforms? Platforms {
+            get { return BackingStore?.Get<DeviceManagementConfigurationPlatforms?>(nameof(Platforms)); }
+            set { BackingStore?.Set(nameof(Platforms), value); }
+        }
         /// <summary>Number of setting templates. Valid values 0 to 2147483647. This property is read-only.</summary>
-        public int? SettingTemplateCount { get; set; }
+        public int? SettingTemplateCount {
+            get { return BackingStore?.Get<int?>(nameof(SettingTemplateCount)); }
+            set { BackingStore?.Set(nameof(SettingTemplateCount), value); }
+        }
         /// <summary>Setting templates</summary>
-        public List<DeviceManagementConfigurationSettingTemplate> SettingTemplates { get; set; }
+        public List<DeviceManagementConfigurationSettingTemplate> SettingTemplates {
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingTemplate>>(nameof(SettingTemplates)); }
+            set { BackingStore?.Set(nameof(SettingTemplates), value); }
+        }
         /// <summary>Technologies for this template. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.</summary>
-        public DeviceManagementConfigurationTechnologies? Technologies { get; set; }
+        public DeviceManagementConfigurationTechnologies? Technologies {
+            get { return BackingStore?.Get<DeviceManagementConfigurationTechnologies?>(nameof(Technologies)); }
+            set { BackingStore?.Set(nameof(Technologies), value); }
+        }
         /// <summary>TemplateFamily for this template. Possible values are: none, endpointSecurityAntivirus, endpointSecurityDiskEncryption, endpointSecurityFirewall, endpointSecurityEndpointDetectionAndResponse, endpointSecurityAttackSurfaceReduction, endpointSecurityAccountProtection, endpointSecurityApplicationControl, baseline.</summary>
-        public DeviceManagementConfigurationTemplateFamily? TemplateFamily { get; set; }
+        public DeviceManagementConfigurationTemplateFamily? TemplateFamily {
+            get { return BackingStore?.Get<DeviceManagementConfigurationTemplateFamily?>(nameof(TemplateFamily)); }
+            set { BackingStore?.Set(nameof(TemplateFamily), value); }
+        }
         /// <summary>Template version. Valid values 1 to 2147483647. This property is read-only.</summary>
-        public int? Version { get; set; }
+        public int? Version {
+            get { return BackingStore?.Get<int?>(nameof(Version)); }
+            set { BackingStore?.Set(nameof(Version), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

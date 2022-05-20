@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class AlteredQueryToken : IAdditionalDataHolder, IParsable {
+    public class AlteredQueryToken : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Defines the length of a changed segment.</summary>
-        public int? Length { get; set; }
+        public int? Length {
+            get { return BackingStore?.Get<int?>(nameof(Length)); }
+            set { BackingStore?.Set(nameof(Length), value); }
+        }
         /// <summary>Defines the offset of a changed segment.</summary>
-        public int? Offset { get; set; }
+        public int? Offset {
+            get { return BackingStore?.Get<int?>(nameof(Offset)); }
+            set { BackingStore?.Set(nameof(Offset), value); }
+        }
         /// <summary>Represents the corrected segment string.</summary>
-        public string Suggestion { get; set; }
+        public string Suggestion {
+            get { return BackingStore?.Get<string>(nameof(Suggestion)); }
+            set { BackingStore?.Set(nameof(Suggestion), value); }
+        }
         /// <summary>
         /// Instantiates a new alteredQueryToken and sets the default values.
         /// </summary>
         public AlteredQueryToken() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -1,21 +1,34 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Metric Time series data point</summary>
-    public class MetricTimeSeriesDataPoint : IAdditionalDataHolder, IParsable {
+    public class MetricTimeSeriesDataPoint : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Time of the metric time series data point</summary>
-        public DateTimeOffset? DateTime { get; set; }
+        public DateTimeOffset? DateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DateTime)); }
+            set { BackingStore?.Set(nameof(DateTime), value); }
+        }
         /// <summary>Value of the metric time series data point</summary>
-        public long? Value { get; set; }
+        public long? Value {
+            get { return BackingStore?.Get<long?>(nameof(Value)); }
+            set { BackingStore?.Set(nameof(Value), value); }
+        }
         /// <summary>
         /// Instantiates a new metricTimeSeriesDataPoint and sets the default values.
         /// </summary>
         public MetricTimeSeriesDataPoint() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

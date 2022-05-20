@@ -4,25 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class PermissionGrantConditionSet : Entity, IParsable {
         /// <summary>Set to true to only match on client applications that are Microsoft 365 certified. Set to false to match on any other client app. Default is false.</summary>
-        public bool? CertifiedClientApplicationsOnly { get; set; }
+        public bool? CertifiedClientApplicationsOnly {
+            get { return BackingStore?.Get<bool?>(nameof(CertifiedClientApplicationsOnly)); }
+            set { BackingStore?.Set(nameof(CertifiedClientApplicationsOnly), value); }
+        }
         /// <summary>A list of appId values for the client applications to match with, or a list with the single value all to match any client application. Default is the single value all.</summary>
-        public List<string> ClientApplicationIds { get; set; }
+        public List<string> ClientApplicationIds {
+            get { return BackingStore?.Get<List<string>>(nameof(ClientApplicationIds)); }
+            set { BackingStore?.Set(nameof(ClientApplicationIds), value); }
+        }
         /// <summary>A list of Microsoft Partner Network (MPN) IDs for verified publishers of the client application, or a list with the single value all to match with client apps from any publisher. Default is the single value all.</summary>
-        public List<string> ClientApplicationPublisherIds { get; set; }
+        public List<string> ClientApplicationPublisherIds {
+            get { return BackingStore?.Get<List<string>>(nameof(ClientApplicationPublisherIds)); }
+            set { BackingStore?.Set(nameof(ClientApplicationPublisherIds), value); }
+        }
         /// <summary>Set to true to only match on client applications with a verified publisher. Set to false to match on any client app, even if it does not have a verified publisher. Default is false.</summary>
-        public bool? ClientApplicationsFromVerifiedPublisherOnly { get; set; }
+        public bool? ClientApplicationsFromVerifiedPublisherOnly {
+            get { return BackingStore?.Get<bool?>(nameof(ClientApplicationsFromVerifiedPublisherOnly)); }
+            set { BackingStore?.Set(nameof(ClientApplicationsFromVerifiedPublisherOnly), value); }
+        }
         /// <summary>A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.</summary>
-        public List<string> ClientApplicationTenantIds { get; set; }
+        public List<string> ClientApplicationTenantIds {
+            get { return BackingStore?.Get<List<string>>(nameof(ClientApplicationTenantIds)); }
+            set { BackingStore?.Set(nameof(ClientApplicationTenantIds), value); }
+        }
         /// <summary>The permission classification for the permission being granted, or all to match with any permission classification (including permissions which are not classified). Default is all.</summary>
-        public string PermissionClassification { get; set; }
+        public string PermissionClassification {
+            get { return BackingStore?.Get<string>(nameof(PermissionClassification)); }
+            set { BackingStore?.Set(nameof(PermissionClassification), value); }
+        }
         /// <summary>The list of id values for the specific permissions to match with, or a list with the single value all to match with any permission. The id of delegated permissions can be found in the publishedPermissionScopes property of the API&apos;s **servicePrincipal** object. The id of application permissions can be found in the appRoles property of the API&apos;s **servicePrincipal** object. The id of resource-specific application permissions can be found in the resourceSpecificApplicationPermissions property of the API&apos;s **servicePrincipal** object. Default is the single value all.</summary>
-        public List<string> Permissions { get; set; }
+        public List<string> Permissions {
+            get { return BackingStore?.Get<List<string>>(nameof(Permissions)); }
+            set { BackingStore?.Set(nameof(Permissions), value); }
+        }
         /// <summary>The permission type of the permission being granted. Possible values: application for application permissions (e.g. app roles), or delegated for delegated permissions. The value delegatedUserConsentable indicates delegated permissions which have not been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but cannot be used in custom permission grant policies. Required.</summary>
-        public Microsoft.Graph.Beta.Models.PermissionType? PermissionType { get; set; }
+        public Microsoft.Graph.Beta.Models.PermissionType? PermissionType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionType?>(nameof(PermissionType)); }
+            set { BackingStore?.Set(nameof(PermissionType), value); }
+        }
         /// <summary>The appId of the resource application (e.g. the API) for which a permission is being granted, or any to match with any resource application or API. Default is any.</summary>
-        public string ResourceApplication { get; set; }
+        public string ResourceApplication {
+            get { return BackingStore?.Get<string>(nameof(ResourceApplication)); }
+            set { BackingStore?.Set(nameof(ResourceApplication), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

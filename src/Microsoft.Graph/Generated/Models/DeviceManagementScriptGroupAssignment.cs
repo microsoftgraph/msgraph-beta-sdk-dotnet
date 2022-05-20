@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Contains properties used to assign a device management script to a group.</summary>
     public class DeviceManagementScriptGroupAssignment : Entity, IParsable {
         /// <summary>The Id of the Azure Active Directory group we are targeting the script to.</summary>
-        public string TargetGroupId { get; set; }
+        public string TargetGroupId {
+            get { return BackingStore?.Get<string>(nameof(TargetGroupId)); }
+            set { BackingStore?.Set(nameof(TargetGroupId), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

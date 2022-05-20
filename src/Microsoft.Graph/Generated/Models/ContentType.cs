@@ -4,45 +4,103 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class ContentType : Entity, IParsable {
         /// <summary>List of canonical URLs for hub sites with which this content type is associated to. This will contain all hubsites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.</summary>
-        public List<string> AssociatedHubsUrls { get; set; }
+        public List<string> AssociatedHubsUrls {
+            get { return BackingStore?.Get<List<string>>(nameof(AssociatedHubsUrls)); }
+            set { BackingStore?.Set(nameof(AssociatedHubsUrls), value); }
+        }
         /// <summary>Parent contentType from which this content type is derived.</summary>
-        public ContentType Base { get; set; }
+        public ContentType Base {
+            get { return BackingStore?.Get<ContentType>(nameof(Base)); }
+            set { BackingStore?.Set(nameof(Base), value); }
+        }
         /// <summary>The collection of content types that are ancestors of this content type.</summary>
-        public List<ContentType> BaseTypes { get; set; }
+        public List<ContentType> BaseTypes {
+            get { return BackingStore?.Get<List<ContentType>>(nameof(BaseTypes)); }
+            set { BackingStore?.Set(nameof(BaseTypes), value); }
+        }
         /// <summary>The collection of columns that are required by this content type</summary>
-        public List<ColumnLink> ColumnLinks { get; set; }
+        public List<ColumnLink> ColumnLinks {
+            get { return BackingStore?.Get<List<ColumnLink>>(nameof(ColumnLinks)); }
+            set { BackingStore?.Set(nameof(ColumnLinks), value); }
+        }
         /// <summary>Column order information in a content type.</summary>
-        public List<ColumnDefinition> ColumnPositions { get; set; }
+        public List<ColumnDefinition> ColumnPositions {
+            get { return BackingStore?.Get<List<ColumnDefinition>>(nameof(ColumnPositions)); }
+            set { BackingStore?.Set(nameof(ColumnPositions), value); }
+        }
         /// <summary>The collection of column definitions for this contentType.</summary>
-        public List<ColumnDefinition> Columns { get; set; }
+        public List<ColumnDefinition> Columns {
+            get { return BackingStore?.Get<List<ColumnDefinition>>(nameof(Columns)); }
+            set { BackingStore?.Set(nameof(Columns), value); }
+        }
         /// <summary>The descriptive text for the item.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Document Set metadata.</summary>
-        public Microsoft.Graph.Beta.Models.DocumentSet DocumentSet { get; set; }
+        public Microsoft.Graph.Beta.Models.DocumentSet DocumentSet {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DocumentSet>(nameof(DocumentSet)); }
+            set { BackingStore?.Set(nameof(DocumentSet), value); }
+        }
         /// <summary>Document template metadata. To make sure that documents have consistent content across a site and its subsites, you can associate a Word, Excel, or PowerPoint template with a site content type.</summary>
-        public DocumentSetContent DocumentTemplate { get; set; }
+        public DocumentSetContent DocumentTemplate {
+            get { return BackingStore?.Get<DocumentSetContent>(nameof(DocumentTemplate)); }
+            set { BackingStore?.Set(nameof(DocumentTemplate), value); }
+        }
         /// <summary>The name of the group this content type belongs to. Helps organize related content types.</summary>
-        public string Group { get; set; }
+        public string Group {
+            get { return BackingStore?.Get<string>(nameof(Group)); }
+            set { BackingStore?.Set(nameof(Group), value); }
+        }
         /// <summary>Indicates whether the content type is hidden in the list&apos;s &apos;New&apos; menu.</summary>
-        public bool? Hidden { get; set; }
+        public bool? Hidden {
+            get { return BackingStore?.Get<bool?>(nameof(Hidden)); }
+            set { BackingStore?.Set(nameof(Hidden), value); }
+        }
         /// <summary>If this content type is inherited from another scope (like a site), provides a reference to the item where the content type is defined.</summary>
-        public ItemReference InheritedFrom { get; set; }
+        public ItemReference InheritedFrom {
+            get { return BackingStore?.Get<ItemReference>(nameof(InheritedFrom)); }
+            set { BackingStore?.Set(nameof(InheritedFrom), value); }
+        }
         /// <summary>Specifies if a content type is a built-in content type.</summary>
-        public bool? IsBuiltIn { get; set; }
+        public bool? IsBuiltIn {
+            get { return BackingStore?.Get<bool?>(nameof(IsBuiltIn)); }
+            set { BackingStore?.Set(nameof(IsBuiltIn), value); }
+        }
         /// <summary>The name of the content type.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>Specifies the order in which the content type appears in the selection UI.</summary>
-        public ContentTypeOrder Order { get; set; }
+        public ContentTypeOrder Order {
+            get { return BackingStore?.Get<ContentTypeOrder>(nameof(Order)); }
+            set { BackingStore?.Set(nameof(Order), value); }
+        }
         /// <summary>The unique identifier of the content type.</summary>
-        public string ParentId { get; set; }
+        public string ParentId {
+            get { return BackingStore?.Get<string>(nameof(ParentId)); }
+            set { BackingStore?.Set(nameof(ParentId), value); }
+        }
         /// <summary>If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.</summary>
-        public bool? PropagateChanges { get; set; }
+        public bool? PropagateChanges {
+            get { return BackingStore?.Get<bool?>(nameof(PropagateChanges)); }
+            set { BackingStore?.Set(nameof(PropagateChanges), value); }
+        }
         /// <summary>If true, the content type cannot be modified unless this value is first set to false.</summary>
-        public bool? ReadOnly { get; set; }
+        public bool? ReadOnly {
+            get { return BackingStore?.Get<bool?>(nameof(ReadOnly)); }
+            set { BackingStore?.Set(nameof(ReadOnly), value); }
+        }
         /// <summary>If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.</summary>
-        public bool? Sealed { get; set; }
+        public bool? Sealed {
+            get { return BackingStore?.Get<bool?>(nameof(Sealed)); }
+            set { BackingStore?.Set(nameof(Sealed), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

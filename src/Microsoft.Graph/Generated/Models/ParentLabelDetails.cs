@@ -1,32 +1,63 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ParentLabelDetails : IAdditionalDataHolder, IParsable {
+    public class ParentLabelDetails : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The color that the user interface should display for the label, if configured.</summary>
-        public string Color { get; set; }
+        public string Color {
+            get { return BackingStore?.Get<string>(nameof(Color)); }
+            set { BackingStore?.Set(nameof(Color), value); }
+        }
         /// <summary>The admin-defined description for the label.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The label ID is a globally unique identifier (GUID).</summary>
-        public string Id { get; set; }
+        public string Id {
+            get { return BackingStore?.Get<string>(nameof(Id)); }
+            set { BackingStore?.Set(nameof(Id), value); }
+        }
         /// <summary>Indicates whether the label is active or not. Active labels should be hidden or disabled in user interfaces.</summary>
-        public bool? IsActive { get; set; }
+        public bool? IsActive {
+            get { return BackingStore?.Get<bool?>(nameof(IsActive)); }
+            set { BackingStore?.Set(nameof(IsActive), value); }
+        }
         /// <summary>The plaintext name of the label.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>The parent property</summary>
-        public ParentLabelDetails Parent { get; set; }
+        public ParentLabelDetails Parent {
+            get { return BackingStore?.Get<ParentLabelDetails>(nameof(Parent)); }
+            set { BackingStore?.Set(nameof(Parent), value); }
+        }
         /// <summary>The sensitivity value of the label, where lower is less sensitive.</summary>
-        public int? Sensitivity { get; set; }
+        public int? Sensitivity {
+            get { return BackingStore?.Get<int?>(nameof(Sensitivity)); }
+            set { BackingStore?.Set(nameof(Sensitivity), value); }
+        }
         /// <summary>The tooltip that should be displayed for the label in a user interface.</summary>
-        public string Tooltip { get; set; }
+        public string Tooltip {
+            get { return BackingStore?.Get<string>(nameof(Tooltip)); }
+            set { BackingStore?.Set(nameof(Tooltip), value); }
+        }
         /// <summary>
         /// Instantiates a new parentLabelDetails and sets the default values.
         /// </summary>
         public ParentLabelDetails() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class OnPremisesPublishingSingleSignOn : IAdditionalDataHolder, IParsable {
+    public class OnPremisesPublishingSingleSignOn : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The Kerberos Constrained Delegation settings for applications that use Integrated Window Authentication.</summary>
-        public Microsoft.Graph.Beta.Models.KerberosSignOnSettings KerberosSignOnSettings { get; set; }
+        public Microsoft.Graph.Beta.Models.KerberosSignOnSettings KerberosSignOnSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KerberosSignOnSettings>(nameof(KerberosSignOnSettings)); }
+            set { BackingStore?.Set(nameof(KerberosSignOnSettings), value); }
+        }
         /// <summary>The preferred single-sign on mode for the application. Possible values are: none, onPremisesKerberos, aadHeaderBased,pingHeaderBased.</summary>
-        public Microsoft.Graph.Beta.Models.SingleSignOnMode? SingleSignOnMode { get; set; }
+        public Microsoft.Graph.Beta.Models.SingleSignOnMode? SingleSignOnMode {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SingleSignOnMode?>(nameof(SingleSignOnMode)); }
+            set { BackingStore?.Set(nameof(SingleSignOnMode), value); }
+        }
         /// <summary>
         /// Instantiates a new onPremisesPublishingSingleSignOn and sets the default values.
         /// </summary>
         public OnPremisesPublishingSingleSignOn() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

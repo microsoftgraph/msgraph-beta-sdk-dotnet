@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the roleManagement singleton.</summary>
     public class RbacApplicationMultiple : Entity, IParsable {
         /// <summary>The resourceNamespaces property</summary>
-        public List<UnifiedRbacResourceNamespace> ResourceNamespaces { get; set; }
+        public List<UnifiedRbacResourceNamespace> ResourceNamespaces {
+            get { return BackingStore?.Get<List<UnifiedRbacResourceNamespace>>(nameof(ResourceNamespaces)); }
+            set { BackingStore?.Set(nameof(ResourceNamespaces), value); }
+        }
         /// <summary>The roleAssignments property</summary>
-        public List<UnifiedRoleAssignmentMultiple> RoleAssignments { get; set; }
+        public List<UnifiedRoleAssignmentMultiple> RoleAssignments {
+            get { return BackingStore?.Get<List<UnifiedRoleAssignmentMultiple>>(nameof(RoleAssignments)); }
+            set { BackingStore?.Set(nameof(RoleAssignments), value); }
+        }
         /// <summary>The roleDefinitions property</summary>
-        public List<UnifiedRoleDefinition> RoleDefinitions { get; set; }
+        public List<UnifiedRoleDefinition> RoleDefinitions {
+            get { return BackingStore?.Get<List<UnifiedRoleDefinition>>(nameof(RoleDefinitions)); }
+            set { BackingStore?.Set(nameof(RoleDefinitions), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

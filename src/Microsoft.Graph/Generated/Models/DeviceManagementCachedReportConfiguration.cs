@@ -4,23 +4,48 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Entity representing the configuration of a cached report</summary>
     public class DeviceManagementCachedReportConfiguration : Entity, IParsable {
         /// <summary>Time that the cached report expires</summary>
-        public DateTimeOffset? ExpirationDateTime { get; set; }
+        public DateTimeOffset? ExpirationDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpirationDateTime)); }
+            set { BackingStore?.Set(nameof(ExpirationDateTime), value); }
+        }
         /// <summary>Filters applied on report creation.</summary>
-        public string Filter { get; set; }
+        public string Filter {
+            get { return BackingStore?.Get<string>(nameof(Filter)); }
+            set { BackingStore?.Set(nameof(Filter), value); }
+        }
         /// <summary>Time that the cached report was last refreshed</summary>
-        public DateTimeOffset? LastRefreshDateTime { get; set; }
+        public DateTimeOffset? LastRefreshDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastRefreshDateTime)); }
+            set { BackingStore?.Set(nameof(LastRefreshDateTime), value); }
+        }
         /// <summary>Caller-managed metadata associated with the report</summary>
-        public string Metadata { get; set; }
+        public string Metadata {
+            get { return BackingStore?.Get<string>(nameof(Metadata)); }
+            set { BackingStore?.Set(nameof(Metadata), value); }
+        }
         /// <summary>Ordering of columns in the report</summary>
-        public List<string> OrderBy { get; set; }
+        public List<string> OrderBy {
+            get { return BackingStore?.Get<List<string>>(nameof(OrderBy)); }
+            set { BackingStore?.Set(nameof(OrderBy), value); }
+        }
         /// <summary>Name of the report</summary>
-        public string ReportName { get; set; }
+        public string ReportName {
+            get { return BackingStore?.Get<string>(nameof(ReportName)); }
+            set { BackingStore?.Set(nameof(ReportName), value); }
+        }
         /// <summary>Columns selected from the report</summary>
-        public List<string> Select { get; set; }
+        public List<string> Select {
+            get { return BackingStore?.Get<List<string>>(nameof(Select)); }
+            set { BackingStore?.Set(nameof(Select), value); }
+        }
         /// <summary>Status of the cached report. Possible values are: unknown, notStarted, inProgress, completed, failed.</summary>
-        public DeviceManagementReportStatus? Status { get; set; }
+        public DeviceManagementReportStatus? Status {
+            get { return BackingStore?.Get<DeviceManagementReportStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

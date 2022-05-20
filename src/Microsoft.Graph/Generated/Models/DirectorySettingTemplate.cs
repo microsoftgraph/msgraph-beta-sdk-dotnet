@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of directorySettingTemplate entities.</summary>
     public class DirectorySettingTemplate : DirectoryObject, IParsable {
         /// <summary>Description of the template. Read-only.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Display name of the template. Read-only.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.  Read-only.</summary>
-        public List<SettingTemplateValue> Values { get; set; }
+        public List<SettingTemplateValue> Values {
+            get { return BackingStore?.Get<List<SettingTemplateValue>>(nameof(Values)); }
+            set { BackingStore?.Set(nameof(Values), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

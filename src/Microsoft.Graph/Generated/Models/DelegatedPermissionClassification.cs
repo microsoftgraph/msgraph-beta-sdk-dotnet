@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to call the instantiate method.</summary>
     public class DelegatedPermissionClassification : Entity, IParsable {
         /// <summary>The classification value being given. Possible value: low. Does not support $filter.</summary>
-        public PermissionClassificationType? Classification { get; set; }
+        public PermissionClassificationType? Classification {
+            get { return BackingStore?.Get<PermissionClassificationType?>(nameof(Classification)); }
+            set { BackingStore?.Set(nameof(Classification), value); }
+        }
         /// <summary>The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.</summary>
-        public string PermissionId { get; set; }
+        public string PermissionId {
+            get { return BackingStore?.Get<string>(nameof(PermissionId)); }
+            set { BackingStore?.Set(nameof(PermissionId), value); }
+        }
         /// <summary>The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Does not support $filter.</summary>
-        public string PermissionName { get; set; }
+        public string PermissionName {
+            get { return BackingStore?.Get<string>(nameof(PermissionName)); }
+            set { BackingStore?.Set(nameof(PermissionName), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

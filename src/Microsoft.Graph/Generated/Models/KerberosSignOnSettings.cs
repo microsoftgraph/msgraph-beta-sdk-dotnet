@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class KerberosSignOnSettings : IAdditionalDataHolder, IParsable {
+    public class KerberosSignOnSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The Internal Application SPN of the application server. This SPN needs to be in the list of services to which the connector can present delegated credentials.</summary>
-        public string KerberosServicePrincipalName { get; set; }
+        public string KerberosServicePrincipalName {
+            get { return BackingStore?.Get<string>(nameof(KerberosServicePrincipalName)); }
+            set { BackingStore?.Set(nameof(KerberosServicePrincipalName), value); }
+        }
         /// <summary>The Delegated Login Identity for the connector to use on behalf of your users. For more information, see Working with different on-premises and cloud identities . Possible values are: userPrincipalName, onPremisesUserPrincipalName, userPrincipalUsername, onPremisesUserPrincipalUsername, onPremisesSAMAccountName.</summary>
-        public Microsoft.Graph.Beta.Models.KerberosSignOnMappingAttributeType? KerberosSignOnMappingAttributeType { get; set; }
+        public Microsoft.Graph.Beta.Models.KerberosSignOnMappingAttributeType? KerberosSignOnMappingAttributeType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KerberosSignOnMappingAttributeType?>(nameof(KerberosSignOnMappingAttributeType)); }
+            set { BackingStore?.Set(nameof(KerberosSignOnMappingAttributeType), value); }
+        }
         /// <summary>
         /// Instantiates a new kerberosSignOnSettings and sets the default values.
         /// </summary>
         public KerberosSignOnSettings() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -4,31 +4,68 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class Drive : BaseItem, IParsable {
         /// <summary>The list of recent activities that took place under this drive.</summary>
-        public List<ItemActivityOLD> Activities { get; set; }
+        public List<ItemActivityOLD> Activities {
+            get { return BackingStore?.Get<List<ItemActivityOLD>>(nameof(Activities)); }
+            set { BackingStore?.Set(nameof(Activities), value); }
+        }
         /// <summary>Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.</summary>
-        public List<DriveItem> Bundles { get; set; }
+        public List<DriveItem> Bundles {
+            get { return BackingStore?.Get<List<DriveItem>>(nameof(Bundles)); }
+            set { BackingStore?.Set(nameof(Bundles), value); }
+        }
         /// <summary>Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.</summary>
-        public string DriveType { get; set; }
+        public string DriveType {
+            get { return BackingStore?.Get<string>(nameof(DriveType)); }
+            set { BackingStore?.Set(nameof(DriveType), value); }
+        }
         /// <summary>The list of items the user is following. Only in OneDrive for Business.</summary>
-        public List<DriveItem> Following { get; set; }
+        public List<DriveItem> Following {
+            get { return BackingStore?.Get<List<DriveItem>>(nameof(Following)); }
+            set { BackingStore?.Set(nameof(Following), value); }
+        }
         /// <summary>All items contained in the drive. Read-only. Nullable.</summary>
-        public List<DriveItem> Items { get; set; }
+        public List<DriveItem> Items {
+            get { return BackingStore?.Get<List<DriveItem>>(nameof(Items)); }
+            set { BackingStore?.Set(nameof(Items), value); }
+        }
         /// <summary>For drives in SharePoint, the underlying document library list. Read-only. Nullable.</summary>
-        public Microsoft.Graph.Beta.Models.List List { get; set; }
+        public Microsoft.Graph.Beta.Models.List List {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.List>(nameof(List)); }
+            set { BackingStore?.Set(nameof(List), value); }
+        }
         /// <summary>Optional. The user account that owns the drive. Read-only.</summary>
-        public IdentitySet Owner { get; set; }
+        public IdentitySet Owner {
+            get { return BackingStore?.Get<IdentitySet>(nameof(Owner)); }
+            set { BackingStore?.Set(nameof(Owner), value); }
+        }
         /// <summary>Optional. Information about the drive&apos;s storage space quota. Read-only.</summary>
-        public Microsoft.Graph.Beta.Models.Quota Quota { get; set; }
+        public Microsoft.Graph.Beta.Models.Quota Quota {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Quota>(nameof(Quota)); }
+            set { BackingStore?.Set(nameof(Quota), value); }
+        }
         /// <summary>The root folder of the drive. Read-only.</summary>
-        public DriveItem Root { get; set; }
+        public DriveItem Root {
+            get { return BackingStore?.Get<DriveItem>(nameof(Root)); }
+            set { BackingStore?.Set(nameof(Root), value); }
+        }
         /// <summary>The sharePointIds property</summary>
-        public Microsoft.Graph.Beta.Models.SharepointIds SharePointIds { get; set; }
+        public Microsoft.Graph.Beta.Models.SharepointIds SharePointIds {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharepointIds>(nameof(SharePointIds)); }
+            set { BackingStore?.Set(nameof(SharePointIds), value); }
+        }
         /// <summary>Collection of common folders available in OneDrive. Read-only. Nullable.</summary>
-        public List<DriveItem> Special { get; set; }
+        public List<DriveItem> Special {
+            get { return BackingStore?.Get<List<DriveItem>>(nameof(Special)); }
+            set { BackingStore?.Set(nameof(Special), value); }
+        }
         /// <summary>If present, indicates that this is a system-managed drive. Read-only.</summary>
-        public SystemFacet System { get; set; }
+        public SystemFacet System {
+            get { return BackingStore?.Get<SystemFacet>(nameof(System)); }
+            set { BackingStore?.Set(nameof(System), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

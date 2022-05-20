@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public class RoleAssignment : IAdditionalDataHolder, IParsable {
+    public class RoleAssignment : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>The assignmentType property</summary>
-        public DelegatedPrivilegeStatus? AssignmentType { get; set; }
+        public DelegatedPrivilegeStatus? AssignmentType {
+            get { return BackingStore?.Get<DelegatedPrivilegeStatus?>(nameof(AssignmentType)); }
+            set { BackingStore?.Set(nameof(AssignmentType), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The roles property</summary>
-        public List<RoleDefinition> Roles { get; set; }
+        public List<RoleDefinition> Roles {
+            get { return BackingStore?.Get<List<RoleDefinition>>(nameof(Roles)); }
+            set { BackingStore?.Set(nameof(Roles), value); }
+        }
         /// <summary>
         /// Instantiates a new roleAssignment and sets the default values.
         /// </summary>
         public RoleAssignment() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

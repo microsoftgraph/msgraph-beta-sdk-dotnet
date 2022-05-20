@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class CloudPcLaunchInfo : IAdditionalDataHolder, IParsable {
+    public class CloudPcLaunchInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The unique identifier of the Cloud PC.</summary>
-        public string CloudPcId { get; set; }
+        public string CloudPcId {
+            get { return BackingStore?.Get<string>(nameof(CloudPcId)); }
+            set { BackingStore?.Set(nameof(CloudPcId), value); }
+        }
         /// <summary>The connect URL of the Cloud PC.</summary>
-        public string CloudPcLaunchUrl { get; set; }
+        public string CloudPcLaunchUrl {
+            get { return BackingStore?.Get<string>(nameof(CloudPcLaunchUrl)); }
+            set { BackingStore?.Set(nameof(CloudPcLaunchUrl), value); }
+        }
         /// <summary>
-        /// Instantiates a new cloudPcLaunchInfo and sets the default values.
+        /// Instantiates a new CloudPcLaunchInfo and sets the default values.
         /// </summary>
         public CloudPcLaunchInfo() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

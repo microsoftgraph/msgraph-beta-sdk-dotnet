@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SynchronizationLinkedObjects : IAdditionalDataHolder, IParsable {
+    public class SynchronizationLinkedObjects : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The manager property</summary>
-        public SynchronizationJobSubject Manager { get; set; }
+        public SynchronizationJobSubject Manager {
+            get { return BackingStore?.Get<SynchronizationJobSubject>(nameof(Manager)); }
+            set { BackingStore?.Set(nameof(Manager), value); }
+        }
         /// <summary>The members property</summary>
-        public List<SynchronizationJobSubject> Members { get; set; }
+        public List<SynchronizationJobSubject> Members {
+            get { return BackingStore?.Get<List<SynchronizationJobSubject>>(nameof(Members)); }
+            set { BackingStore?.Set(nameof(Members), value); }
+        }
         /// <summary>The owners property</summary>
-        public List<SynchronizationJobSubject> Owners { get; set; }
+        public List<SynchronizationJobSubject> Owners {
+            get { return BackingStore?.Get<List<SynchronizationJobSubject>>(nameof(Owners)); }
+            set { BackingStore?.Set(nameof(Owners), value); }
+        }
         /// <summary>
         /// Instantiates a new synchronizationLinkedObjects and sets the default values.
         /// </summary>
         public SynchronizationLinkedObjects() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

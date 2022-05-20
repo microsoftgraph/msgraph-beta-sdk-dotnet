@@ -4,23 +4,48 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class TenantTag : Entity, IParsable {
         /// <summary>The identifier for the account that created the tenant tag. Required. Read-only.</summary>
-        public string CreatedByUserId { get; set; }
+        public string CreatedByUserId {
+            get { return BackingStore?.Get<string>(nameof(CreatedByUserId)); }
+            set { BackingStore?.Set(nameof(CreatedByUserId), value); }
+        }
         /// <summary>The date and time when the tenant tag was created. Required. Read-only.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>The date and time when the tenant tag was deleted. Required. Read-only.</summary>
-        public DateTimeOffset? DeletedDateTime { get; set; }
+        public DateTimeOffset? DeletedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DeletedDateTime)); }
+            set { BackingStore?.Set(nameof(DeletedDateTime), value); }
+        }
         /// <summary>The description for the tenant tag. Optional. Read-only.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The display name for the tenant tag. Required. Read-only.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The identifier for the account that lasted on the tenant tag. Optional. Read-only.</summary>
-        public string LastActionByUserId { get; set; }
+        public string LastActionByUserId {
+            get { return BackingStore?.Get<string>(nameof(LastActionByUserId)); }
+            set { BackingStore?.Set(nameof(LastActionByUserId), value); }
+        }
         /// <summary>The date and time the last action was performed against the tenant tag. Optional. Read-only.</summary>
-        public DateTimeOffset? LastActionDateTime { get; set; }
+        public DateTimeOffset? LastActionDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastActionDateTime)); }
+            set { BackingStore?.Set(nameof(LastActionDateTime), value); }
+        }
         /// <summary>The collection of managed tenants associated with the tenant tag. Optional.</summary>
-        public List<TenantInfo> Tenants { get; set; }
+        public List<TenantInfo> Tenants {
+            get { return BackingStore?.Get<List<TenantInfo>>(nameof(Tenants)); }
+            set { BackingStore?.Set(nameof(Tenants), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

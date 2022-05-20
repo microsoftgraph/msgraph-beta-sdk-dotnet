@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the directory singleton.</summary>
     public class AllowedValue : Entity, IParsable {
         /// <summary>Indicates whether the predefined value is active or deactivated. If set to false, this predefined value cannot be assigned to any additional supported directory objects.</summary>
-        public bool? IsActive { get; set; }
+        public bool? IsActive {
+            get { return BackingStore?.Get<bool?>(nameof(IsActive)); }
+            set { BackingStore?.Set(nameof(IsActive), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

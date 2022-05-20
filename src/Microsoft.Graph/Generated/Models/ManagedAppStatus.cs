@@ -4,18 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Represents app protection and configuration status for the organization.</summary>
     public class ManagedAppStatus : Entity, IParsable {
         /// <summary>Friendly name of the status report.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Version of the entity.</summary>
-        public string Version { get; set; }
+        public string Version {
+            get { return BackingStore?.Get<string>(nameof(Version)); }
+            set { BackingStore?.Set(nameof(Version), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new ManagedAppStatus CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagedAppStatus();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.managedAppStatus" => new ManagedAppStatus(),
+                _ => new ManagedAppStatus(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

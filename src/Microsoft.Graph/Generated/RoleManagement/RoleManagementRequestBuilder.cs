@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.RoleManagement {
             new DeviceManagementRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The directory property</summary>
-        public DirectoryRequestBuilder Directory { get =>
+        public DirectoryRequestBuilder DirectoryObject { get =>
             new DirectoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The entitlementManagement property</summary>

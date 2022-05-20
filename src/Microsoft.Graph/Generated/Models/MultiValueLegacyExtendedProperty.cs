@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class MultiValueLegacyExtendedProperty : Entity, IParsable {
         /// <summary>A collection of property values.</summary>
-        public List<string> Value { get; set; }
+        public List<string> Value {
+            get { return BackingStore?.Get<List<string>>(nameof(Value)); }
+            set { BackingStore?.Set(nameof(Value), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

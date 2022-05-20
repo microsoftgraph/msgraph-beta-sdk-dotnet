@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class CloudPcProvisioningPolicyAssignment : Entity, IParsable {
         /// <summary>The assignment target for the provisioning policy. Currently, the only target supported for this policy is a user group. For details, see cloudPcManagementGroupAssignmentTarget.</summary>
-        public CloudPcManagementAssignmentTarget Target { get; set; }
+        public CloudPcManagementAssignmentTarget Target {
+            get { return BackingStore?.Get<CloudPcManagementAssignmentTarget>(nameof(Target)); }
+            set { BackingStore?.Set(nameof(Target), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

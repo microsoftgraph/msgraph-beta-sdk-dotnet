@@ -4,29 +4,63 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class List : BaseItem, IParsable {
         /// <summary>The recent activities that took place within this list.</summary>
-        public List<ItemActivityOLD> Activities { get; set; }
+        public List<ItemActivityOLD> Activities {
+            get { return BackingStore?.Get<List<ItemActivityOLD>>(nameof(Activities)); }
+            set { BackingStore?.Set(nameof(Activities), value); }
+        }
         /// <summary>The collection of field definitions for this list.</summary>
-        public List<ColumnDefinition> Columns { get; set; }
+        public List<ColumnDefinition> Columns {
+            get { return BackingStore?.Get<List<ColumnDefinition>>(nameof(Columns)); }
+            set { BackingStore?.Set(nameof(Columns), value); }
+        }
         /// <summary>The collection of content types present in this list.</summary>
-        public List<ContentType> ContentTypes { get; set; }
+        public List<ContentType> ContentTypes {
+            get { return BackingStore?.Get<List<ContentType>>(nameof(ContentTypes)); }
+            set { BackingStore?.Set(nameof(ContentTypes), value); }
+        }
         /// <summary>The displayable title of the list.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].</summary>
-        public Microsoft.Graph.Beta.Models.Drive Drive { get; set; }
+        public Microsoft.Graph.Beta.Models.Drive Drive {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Drive>(nameof(Drive)); }
+            set { BackingStore?.Set(nameof(Drive), value); }
+        }
         /// <summary>All items contained in the list.</summary>
-        public List<ListItem> Items { get; set; }
+        public List<ListItem> Items {
+            get { return BackingStore?.Get<List<ListItem>>(nameof(Items)); }
+            set { BackingStore?.Set(nameof(Items), value); }
+        }
         /// <summary>Provides additional details about the list.</summary>
-        public ListInfo List_prop { get; set; }
+        public ListInfo List_prop {
+            get { return BackingStore?.Get<ListInfo>(nameof(List_prop)); }
+            set { BackingStore?.Set(nameof(List_prop), value); }
+        }
         /// <summary>The collection of long running operations for the list.</summary>
-        public List<RichLongRunningOperation> Operations { get; set; }
+        public List<RichLongRunningOperation> Operations {
+            get { return BackingStore?.Get<List<RichLongRunningOperation>>(nameof(Operations)); }
+            set { BackingStore?.Set(nameof(Operations), value); }
+        }
         /// <summary>Returns identifiers useful for SharePoint REST compatibility. Read-only.</summary>
-        public Microsoft.Graph.Beta.Models.SharepointIds SharepointIds { get; set; }
+        public Microsoft.Graph.Beta.Models.SharepointIds SharepointIds {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharepointIds>(nameof(SharepointIds)); }
+            set { BackingStore?.Set(nameof(SharepointIds), value); }
+        }
         /// <summary>The set of subscriptions on the list.</summary>
-        public List<Subscription> Subscriptions { get; set; }
+        public List<Subscription> Subscriptions {
+            get { return BackingStore?.Get<List<Subscription>>(nameof(Subscriptions)); }
+            set { BackingStore?.Set(nameof(Subscriptions), value); }
+        }
         /// <summary>If present, indicates that this is a system-managed list. Read-only.</summary>
-        public SystemFacet System { get; set; }
+        public SystemFacet System {
+            get { return BackingStore?.Get<SystemFacet>(nameof(System)); }
+            set { BackingStore?.Set(nameof(System), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

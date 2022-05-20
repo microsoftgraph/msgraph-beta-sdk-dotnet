@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Represents a custom question of the business.</summary>
     public class BookingCustomQuestion : Entity, IParsable {
         /// <summary>The expected answer type. The possible values are: text, radioButton, unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.AnswerInputType? AnswerInputType { get; set; }
+        public Microsoft.Graph.Beta.Models.AnswerInputType? AnswerInputType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AnswerInputType?>(nameof(AnswerInputType)); }
+            set { BackingStore?.Set(nameof(AnswerInputType), value); }
+        }
         /// <summary>List of possible answer values.</summary>
-        public List<string> AnswerOptions { get; set; }
+        public List<string> AnswerOptions {
+            get { return BackingStore?.Get<List<string>>(nameof(AnswerOptions)); }
+            set { BackingStore?.Set(nameof(AnswerOptions), value); }
+        }
         /// <summary>Display name of this entity.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

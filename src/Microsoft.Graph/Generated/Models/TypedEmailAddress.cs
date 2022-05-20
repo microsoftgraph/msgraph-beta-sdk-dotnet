@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class TypedEmailAddress : EmailAddress, IParsable {
         /// <summary>To specify a custom type of email address, set type to other, and assign otherLabel to a custom string. For example, you may use a specific email address for your volunteer activities. Set type to other, and set otherLabel to a custom string such as Volunteer work.</summary>
-        public string OtherLabel { get; set; }
+        public string OtherLabel {
+            get { return BackingStore?.Get<string>(nameof(OtherLabel)); }
+            set { BackingStore?.Set(nameof(OtherLabel), value); }
+        }
         /// <summary>The type of email address. Possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.</summary>
-        public EmailType? Type { get; set; }
+        public EmailType? Type {
+            get { return BackingStore?.Get<EmailType?>(nameof(Type)); }
+            set { BackingStore?.Set(nameof(Type), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

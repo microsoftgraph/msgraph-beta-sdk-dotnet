@@ -1,21 +1,34 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Admin consent information.</summary>
-    public class AdminConsent : IAdditionalDataHolder, IParsable {
+    public class AdminConsent : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The admin consent state of sharing user and device data to Apple. Possible values are: notConfigured, granted, notGranted.</summary>
-        public AdminConsentState? ShareAPNSData { get; set; }
+        public AdminConsentState? ShareAPNSData {
+            get { return BackingStore?.Get<AdminConsentState?>(nameof(ShareAPNSData)); }
+            set { BackingStore?.Set(nameof(ShareAPNSData), value); }
+        }
         /// <summary>Gets or sets the admin consent for sharing User experience analytics data. Possible values are: notConfigured, granted, notGranted.</summary>
-        public AdminConsentState? ShareUserExperienceAnalyticsData { get; set; }
+        public AdminConsentState? ShareUserExperienceAnalyticsData {
+            get { return BackingStore?.Get<AdminConsentState?>(nameof(ShareUserExperienceAnalyticsData)); }
+            set { BackingStore?.Set(nameof(ShareUserExperienceAnalyticsData), value); }
+        }
         /// <summary>
         /// Instantiates a new adminConsent and sets the default values.
         /// </summary>
         public AdminConsent() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

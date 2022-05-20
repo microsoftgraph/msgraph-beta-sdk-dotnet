@@ -4,23 +4,48 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class MessageRule : Entity, IParsable {
         /// <summary>Actions to be taken on a message when the corresponding conditions are fulfilled.</summary>
-        public MessageRuleActions Actions { get; set; }
+        public MessageRuleActions Actions {
+            get { return BackingStore?.Get<MessageRuleActions>(nameof(Actions)); }
+            set { BackingStore?.Set(nameof(Actions), value); }
+        }
         /// <summary>Conditions that when fulfilled, will trigger the corresponding actions for that rule.</summary>
-        public MessageRulePredicates Conditions { get; set; }
+        public MessageRulePredicates Conditions {
+            get { return BackingStore?.Get<MessageRulePredicates>(nameof(Conditions)); }
+            set { BackingStore?.Set(nameof(Conditions), value); }
+        }
         /// <summary>The display name of the rule.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Exception conditions for the rule.</summary>
-        public MessageRulePredicates Exceptions { get; set; }
+        public MessageRulePredicates Exceptions {
+            get { return BackingStore?.Get<MessageRulePredicates>(nameof(Exceptions)); }
+            set { BackingStore?.Set(nameof(Exceptions), value); }
+        }
         /// <summary>Indicates whether the rule is in an error condition. Read-only.</summary>
-        public bool? HasError { get; set; }
+        public bool? HasError {
+            get { return BackingStore?.Get<bool?>(nameof(HasError)); }
+            set { BackingStore?.Set(nameof(HasError), value); }
+        }
         /// <summary>Indicates whether the rule is enabled to be applied to messages.</summary>
-        public bool? IsEnabled { get; set; }
+        public bool? IsEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
+            set { BackingStore?.Set(nameof(IsEnabled), value); }
+        }
         /// <summary>Indicates if the rule is read-only and cannot be modified or deleted by the rules REST API.</summary>
-        public bool? IsReadOnly { get; set; }
+        public bool? IsReadOnly {
+            get { return BackingStore?.Get<bool?>(nameof(IsReadOnly)); }
+            set { BackingStore?.Set(nameof(IsReadOnly), value); }
+        }
         /// <summary>Indicates the order in which the rule is executed, among other rules.</summary>
-        public int? Sequence { get; set; }
+        public int? Sequence {
+            get { return BackingStore?.Get<int?>(nameof(Sequence)); }
+            set { BackingStore?.Set(nameof(Sequence), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

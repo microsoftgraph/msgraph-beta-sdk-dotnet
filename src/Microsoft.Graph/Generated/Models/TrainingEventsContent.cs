@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class TrainingEventsContent : IAdditionalDataHolder, IParsable {
+    public class TrainingEventsContent : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>List of assigned trainings and their information in an attack simulation and training campaign.</summary>
-        public List<AssignedTrainingInfo> AssignedTrainingsInfos { get; set; }
+        public List<AssignedTrainingInfo> AssignedTrainingsInfos {
+            get { return BackingStore?.Get<List<AssignedTrainingInfo>>(nameof(AssignedTrainingsInfos)); }
+            set { BackingStore?.Set(nameof(AssignedTrainingsInfos), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Number of users who were assigned trainings in an attack simulation and training campaign.</summary>
-        public int? TrainingsAssignedUserCount { get; set; }
+        public int? TrainingsAssignedUserCount {
+            get { return BackingStore?.Get<int?>(nameof(TrainingsAssignedUserCount)); }
+            set { BackingStore?.Set(nameof(TrainingsAssignedUserCount), value); }
+        }
         /// <summary>
         /// Instantiates a new trainingEventsContent and sets the default values.
         /// </summary>
         public TrainingEventsContent() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

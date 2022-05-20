@@ -4,20 +4,35 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class BaseTaskList : Entity, IParsable {
         /// <summary>The name of the task list.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The collection of open extensions defined for the task list. Nullable.</summary>
-        public List<Extension> Extensions { get; set; }
+        public List<Extension> Extensions {
+            get { return BackingStore?.Get<List<Extension>>(nameof(Extensions)); }
+            set { BackingStore?.Set(nameof(Extensions), value); }
+        }
         /// <summary>The tasks in this task list. Read-only. Nullable.</summary>
-        public List<BaseTask> Tasks { get; set; }
+        public List<BaseTask> Tasks {
+            get { return BackingStore?.Get<List<BaseTask>>(nameof(Tasks)); }
+            set { BackingStore?.Set(nameof(Tasks), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new BaseTaskList CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BaseTaskList();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.baseTaskList" => new BaseTaskList(),
+                _ => new BaseTaskList(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

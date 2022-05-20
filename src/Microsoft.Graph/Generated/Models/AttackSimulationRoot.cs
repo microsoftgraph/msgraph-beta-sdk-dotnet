@@ -4,12 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the attackSimulation property of the microsoft.graph.security entity.</summary>
+    /// <summary>Provides operations to manage the security singleton.</summary>
     public class AttackSimulationRoot : Entity, IParsable {
         /// <summary>Represents simulation automations created to run on a tenant.</summary>
-        public List<SimulationAutomation> SimulationAutomations { get; set; }
+        public List<SimulationAutomation> SimulationAutomations {
+            get { return BackingStore?.Get<List<SimulationAutomation>>(nameof(SimulationAutomations)); }
+            set { BackingStore?.Set(nameof(SimulationAutomations), value); }
+        }
         /// <summary>Represents an attack simulation training campaign in a tenant.</summary>
-        public List<Simulation> Simulations { get; set; }
+        public List<Simulation> Simulations {
+            get { return BackingStore?.Get<List<Simulation>>(nameof(Simulations)); }
+            set { BackingStore?.Set(nameof(Simulations), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

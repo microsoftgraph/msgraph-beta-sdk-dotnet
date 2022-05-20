@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class LinkedResource_v2 : Entity, IParsable {
         /// <summary>Field indicating the app name of the source that is sending the linkedResource.</summary>
-        public string ApplicationName { get; set; }
+        public string ApplicationName {
+            get { return BackingStore?.Get<string>(nameof(ApplicationName)); }
+            set { BackingStore?.Set(nameof(ApplicationName), value); }
+        }
         /// <summary>Field indicating the title of the linkedResource.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Id of the object that is associated with this task on the third-party/partner system.</summary>
-        public string ExternalId { get; set; }
+        public string ExternalId {
+            get { return BackingStore?.Get<string>(nameof(ExternalId)); }
+            set { BackingStore?.Set(nameof(ExternalId), value); }
+        }
         /// <summary>Deep link to the linkedResource.</summary>
-        public string WebUrl { get; set; }
+        public string WebUrl {
+            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
+            set { BackingStore?.Set(nameof(WebUrl), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

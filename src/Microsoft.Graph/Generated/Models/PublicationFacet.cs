@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class PublicationFacet : IAdditionalDataHolder, IParsable {
+    public class PublicationFacet : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The state of publication for this document. Either published or checkout. Read-only.</summary>
-        public string Level { get; set; }
+        public string Level {
+            get { return BackingStore?.Get<string>(nameof(Level)); }
+            set { BackingStore?.Set(nameof(Level), value); }
+        }
         /// <summary>The unique identifier for the version that is visible to the current caller. Read-only.</summary>
-        public string VersionId { get; set; }
+        public string VersionId {
+            get { return BackingStore?.Get<string>(nameof(VersionId)); }
+            set { BackingStore?.Set(nameof(VersionId), value); }
+        }
         /// <summary>
         /// Instantiates a new publicationFacet and sets the default values.
         /// </summary>
         public PublicationFacet() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

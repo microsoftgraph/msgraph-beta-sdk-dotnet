@@ -1,26 +1,48 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public class Setting : IAdditionalDataHolder, IParsable {
+    public class Setting : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The display name for the setting. Required. Read-only.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The value for the setting serialized as string of JSON. Required. Read-only.</summary>
-        public string JsonValue { get; set; }
+        public string JsonValue {
+            get { return BackingStore?.Get<string>(nameof(JsonValue)); }
+            set { BackingStore?.Set(nameof(JsonValue), value); }
+        }
         /// <summary>A flag indicating whether the setting can be override existing configurations when applied. Required. Read-only.</summary>
-        public bool? OverwriteAllowed { get; set; }
+        public bool? OverwriteAllowed {
+            get { return BackingStore?.Get<bool?>(nameof(OverwriteAllowed)); }
+            set { BackingStore?.Set(nameof(OverwriteAllowed), value); }
+        }
         /// <summary>The settingId property</summary>
-        public string SettingId { get; set; }
+        public string SettingId {
+            get { return BackingStore?.Get<string>(nameof(SettingId)); }
+            set { BackingStore?.Set(nameof(SettingId), value); }
+        }
         /// <summary>The data type for the setting. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.</summary>
-        public ManagementParameterValueType? ValueType { get; set; }
+        public ManagementParameterValueType? ValueType {
+            get { return BackingStore?.Get<ManagementParameterValueType?>(nameof(ValueType)); }
+            set { BackingStore?.Set(nameof(ValueType), value); }
+        }
         /// <summary>
         /// Instantiates a new setting and sets the default values.
         /// </summary>
         public Setting() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

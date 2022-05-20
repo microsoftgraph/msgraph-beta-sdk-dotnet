@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class UnifiedRolePermission : IAdditionalDataHolder, IParsable {
+    public class UnifiedRolePermission : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Set of tasks that can be performed on a resource.</summary>
-        public List<string> AllowedResourceActions { get; set; }
+        public List<string> AllowedResourceActions {
+            get { return BackingStore?.Get<List<string>>(nameof(AllowedResourceActions)); }
+            set { BackingStore?.Set(nameof(AllowedResourceActions), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Optional constraints that must be met for the permission to be effective.</summary>
-        public string Condition { get; set; }
+        public string Condition {
+            get { return BackingStore?.Get<string>(nameof(Condition)); }
+            set { BackingStore?.Set(nameof(Condition), value); }
+        }
         /// <summary>Set of tasks that may not be performed on a resource. Not yet supported.</summary>
-        public List<string> ExcludedResourceActions { get; set; }
+        public List<string> ExcludedResourceActions {
+            get { return BackingStore?.Get<List<string>>(nameof(ExcludedResourceActions)); }
+            set { BackingStore?.Set(nameof(ExcludedResourceActions), value); }
+        }
         /// <summary>
         /// Instantiates a new unifiedRolePermission and sets the default values.
         /// </summary>
         public UnifiedRolePermission() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

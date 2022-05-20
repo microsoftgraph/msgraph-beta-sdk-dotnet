@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of chat entities.</summary>
     public class TeamworkConversationIdentity : Identity, IParsable {
         /// <summary>Type of conversation. Possible values are: team, channel, and chat.</summary>
-        public TeamworkConversationIdentityType? ConversationIdentityType { get; set; }
+        public TeamworkConversationIdentityType? ConversationIdentityType {
+            get { return BackingStore?.Get<TeamworkConversationIdentityType?>(nameof(ConversationIdentityType)); }
+            set { BackingStore?.Set(nameof(ConversationIdentityType), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

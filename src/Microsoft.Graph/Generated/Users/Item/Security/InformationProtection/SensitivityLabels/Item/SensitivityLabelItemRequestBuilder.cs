@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.Item.Parent;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;

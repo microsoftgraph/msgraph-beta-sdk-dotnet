@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class FilterGroup : IAdditionalDataHolder, IParsable {
+    public class FilterGroup : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Filter clauses (conditions) of this group. All clauses in a group must be satisfied in order for the filter group to evaluate to true.</summary>
-        public List<FilterClause> Clauses { get; set; }
+        public List<FilterClause> Clauses {
+            get { return BackingStore?.Get<List<FilterClause>>(nameof(Clauses)); }
+            set { BackingStore?.Set(nameof(Clauses), value); }
+        }
         /// <summary>Human-readable name of the filter group.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>
         /// Instantiates a new filterGroup and sets the default values.
         /// </summary>
         public FilterGroup() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class CallRoute : IAdditionalDataHolder, IParsable {
+    public class CallRoute : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The final property</summary>
-        public IdentitySet Final { get; set; }
+        public IdentitySet Final {
+            get { return BackingStore?.Get<IdentitySet>(nameof(Final)); }
+            set { BackingStore?.Set(nameof(Final), value); }
+        }
         /// <summary>The original property</summary>
-        public IdentitySet Original { get; set; }
+        public IdentitySet Original {
+            get { return BackingStore?.Get<IdentitySet>(nameof(Original)); }
+            set { BackingStore?.Set(nameof(Original), value); }
+        }
         /// <summary>Possible values are: forwarded, lookup, selfFork.</summary>
-        public Microsoft.Graph.Beta.Models.RoutingType? RoutingType { get; set; }
+        public Microsoft.Graph.Beta.Models.RoutingType? RoutingType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RoutingType?>(nameof(RoutingType)); }
+            set { BackingStore?.Set(nameof(RoutingType), value); }
+        }
         /// <summary>
         /// Instantiates a new callRoute and sets the default values.
         /// </summary>
         public CallRoute() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

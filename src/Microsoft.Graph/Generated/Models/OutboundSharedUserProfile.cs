@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class OutboundSharedUserProfile : IAdditionalDataHolder, IParsable {
+    public class OutboundSharedUserProfile : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The tenants property</summary>
-        public List<TenantReference> Tenants { get; set; }
+        public List<TenantReference> Tenants {
+            get { return BackingStore?.Get<List<TenantReference>>(nameof(Tenants)); }
+            set { BackingStore?.Set(nameof(Tenants), value); }
+        }
         /// <summary>The userId property</summary>
-        public string UserId { get; set; }
+        public string UserId {
+            get { return BackingStore?.Get<string>(nameof(UserId)); }
+            set { BackingStore?.Set(nameof(UserId), value); }
+        }
         /// <summary>
         /// Instantiates a new outboundSharedUserProfile and sets the default values.
         /// </summary>
         public OutboundSharedUserProfile() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class TaskViewpoint : IAdditionalDataHolder, IParsable {
+    public class TaskViewpoint : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.</summary>
-        public List<string> Categories { get; set; }
+        public List<string> Categories {
+            get { return BackingStore?.Get<List<string>>(nameof(Categories)); }
+            set { BackingStore?.Set(nameof(Categories), value); }
+        }
         /// <summary>The date and time for a reminder alert of the task to occur.</summary>
-        public DateTimeTimeZone ReminderDateTime { get; set; }
+        public DateTimeTimeZone ReminderDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(ReminderDateTime)); }
+            set { BackingStore?.Set(nameof(ReminderDateTime), value); }
+        }
         /// <summary>
         /// Instantiates a new taskViewpoint and sets the default values.
         /// </summary>
         public TaskViewpoint() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

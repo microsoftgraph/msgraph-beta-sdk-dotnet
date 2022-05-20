@@ -1,23 +1,39 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Blocked actions on the company portal as per platform and device ownership types</summary>
-    public class CompanyPortalBlockedAction : IAdditionalDataHolder, IParsable {
+    public class CompanyPortalBlockedAction : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Device Action. Possible values are: unknown, remove, reset.</summary>
-        public CompanyPortalAction? Action { get; set; }
+        public CompanyPortalAction? Action {
+            get { return BackingStore?.Get<CompanyPortalAction?>(nameof(Action)); }
+            set { BackingStore?.Set(nameof(Action), value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Device ownership type. Possible values are: unknown, company, personal.</summary>
-        public Microsoft.Graph.Beta.Models.OwnerType? OwnerType { get; set; }
+        public Microsoft.Graph.Beta.Models.OwnerType? OwnerType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OwnerType?>(nameof(OwnerType)); }
+            set { BackingStore?.Set(nameof(OwnerType), value); }
+        }
         /// <summary>Device OS/Platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.</summary>
-        public DevicePlatformType? Platform { get; set; }
+        public DevicePlatformType? Platform {
+            get { return BackingStore?.Get<DevicePlatformType?>(nameof(Platform)); }
+            set { BackingStore?.Set(nameof(Platform), value); }
+        }
         /// <summary>
         /// Instantiates a new companyPortalBlockedAction and sets the default values.
         /// </summary>
         public CompanyPortalBlockedAction() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

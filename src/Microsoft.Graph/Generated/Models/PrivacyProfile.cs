@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class PrivacyProfile : IAdditionalDataHolder, IParsable {
+    public class PrivacyProfile : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>A valid smtp email address for the privacy statement contact. Not required.</summary>
-        public string ContactEmail { get; set; }
+        public string ContactEmail {
+            get { return BackingStore?.Get<string>(nameof(ContactEmail)); }
+            set { BackingStore?.Set(nameof(ContactEmail), value); }
+        }
         /// <summary>A valid URL format that begins with http:// or https://. Maximum length is 255 characters. The URL that directs to the company&apos;s privacy statement. Not required.</summary>
-        public string StatementUrl { get; set; }
+        public string StatementUrl {
+            get { return BackingStore?.Get<string>(nameof(StatementUrl)); }
+            set { BackingStore?.Set(nameof(StatementUrl), value); }
+        }
         /// <summary>
         /// Instantiates a new privacyProfile and sets the default values.
         /// </summary>
         public PrivacyProfile() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

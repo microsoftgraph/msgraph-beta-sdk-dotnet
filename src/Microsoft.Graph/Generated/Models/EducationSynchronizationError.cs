@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the educationRoot singleton.</summary>
     public class EducationSynchronizationError : Entity, IParsable {
         /// <summary>Represents the sync entity (school, section, student, teacher).</summary>
-        public string EntryType { get; set; }
+        public string EntryType {
+            get { return BackingStore?.Get<string>(nameof(EntryType)); }
+            set { BackingStore?.Set(nameof(EntryType), value); }
+        }
         /// <summary>Represents the error code for this error.</summary>
-        public string ErrorCode { get; set; }
+        public string ErrorCode {
+            get { return BackingStore?.Get<string>(nameof(ErrorCode)); }
+            set { BackingStore?.Set(nameof(ErrorCode), value); }
+        }
         /// <summary>Contains a description of the error.</summary>
-        public string ErrorMessage { get; set; }
+        public string ErrorMessage {
+            get { return BackingStore?.Get<string>(nameof(ErrorMessage)); }
+            set { BackingStore?.Set(nameof(ErrorMessage), value); }
+        }
         /// <summary>The unique identifier for the entry.</summary>
-        public string JoiningValue { get; set; }
+        public string JoiningValue {
+            get { return BackingStore?.Get<string>(nameof(JoiningValue)); }
+            set { BackingStore?.Set(nameof(JoiningValue), value); }
+        }
         /// <summary>The time of occurrence of this error.</summary>
-        public DateTimeOffset? RecordedDateTime { get; set; }
+        public DateTimeOffset? RecordedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(RecordedDateTime)); }
+            set { BackingStore?.Set(nameof(RecordedDateTime), value); }
+        }
         /// <summary>The identifier of this error entry.</summary>
-        public string ReportableIdentifier { get; set; }
+        public string ReportableIdentifier {
+            get { return BackingStore?.Get<string>(nameof(ReportableIdentifier)); }
+            set { BackingStore?.Set(nameof(ReportableIdentifier), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// List administrativeUnits
+        /// Retrieve a list of [administrativeUnit](../resources/administrativeunit.md) objects.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<AdministrativeUnitsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits {
             return requestInfo;
         }
         /// <summary>
-        /// Create administrativeUnit
+        /// Use this API to create a new [administrativeUnit](../resources/administrativeunit.md).
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits {
             return new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// List administrativeUnits
+        /// Retrieve a list of [administrativeUnit](../resources/administrativeunit.md) objects.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits {
             return await RequestAdapter.SendAsync<AdministrativeUnitCollectionResponse>(requestInfo, AdministrativeUnitCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create administrativeUnit
+        /// Use this API to create a new [administrativeUnit](../resources/administrativeunit.md).
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -148,7 +148,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AdministrativeUnit>(requestInfo, Microsoft.Graph.Beta.Models.AdministrativeUnit.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>List administrativeUnits</summary>
+        /// <summary>Retrieve a list of [administrativeUnit](../resources/administrativeunit.md) objects.</summary>
         public class AdministrativeUnitsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators {
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(SubmitTiIndicatorsRequestBody body, Action<SubmitTiIndicatorsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation CreatePostRequestInformation(SubmitTiIndicatorsPostRequestBody body, Action<SubmitTiIndicatorsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<SubmitTiIndicatorsResponse> PostAsync(SubmitTiIndicatorsRequestBody body, Action<SubmitTiIndicatorsRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<SubmitTiIndicatorsResponse> PostAsync(SubmitTiIndicatorsPostRequestBody body, Action<SubmitTiIndicatorsRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<SubmitTiIndicatorsResponse>(requestInfo, SubmitTiIndicatorsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);

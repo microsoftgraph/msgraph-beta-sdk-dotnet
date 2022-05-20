@@ -7,7 +7,10 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provides operations to manage the organizationalBranding singleton.</summary>
     public class OrganizationalBranding : OrganizationalBrandingProperties, IParsable {
         /// <summary>Add different branding based on a locale.</summary>
-        public List<OrganizationalBrandingLocalization> Localizations { get; set; }
+        public List<OrganizationalBrandingLocalization> Localizations {
+            get { return BackingStore?.Get<List<OrganizationalBrandingLocalization>>(nameof(Localizations)); }
+            set { BackingStore?.Set(nameof(Localizations), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

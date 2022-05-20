@@ -4,20 +4,35 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class StsPolicy : PolicyBase, IParsable {
         /// <summary>The appliesTo property</summary>
-        public List<DirectoryObject> AppliesTo { get; set; }
+        public List<DirectoryObject> AppliesTo {
+            get { return BackingStore?.Get<List<DirectoryObject>>(nameof(AppliesTo)); }
+            set { BackingStore?.Set(nameof(AppliesTo), value); }
+        }
         /// <summary>A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.</summary>
-        public List<string> Definition { get; set; }
+        public List<string> Definition {
+            get { return BackingStore?.Get<List<string>>(nameof(Definition)); }
+            set { BackingStore?.Set(nameof(Definition), value); }
+        }
         /// <summary>If set to true, activates this policy. There can be many policies for the same policy type, but only one can be activated as the organization default. Optional, default value is false.</summary>
-        public bool? IsOrganizationDefault { get; set; }
+        public bool? IsOrganizationDefault {
+            get { return BackingStore?.Get<bool?>(nameof(IsOrganizationDefault)); }
+            set { BackingStore?.Set(nameof(IsOrganizationDefault), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new StsPolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new StsPolicy();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.stsPolicy" => new StsPolicy(),
+                _ => new StsPolicy(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

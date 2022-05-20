@@ -1,26 +1,48 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ChatMessagePolicyViolation : IAdditionalDataHolder, IParsable {
+    public class ChatMessagePolicyViolation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The action taken by the DLP provider on the message with sensitive content. Supported values are: NoneNotifySender -- Inform the sender of the violation but allow readers to read the message.BlockAccess -- Block readers from reading the message.BlockAccessExternal -- Block users outside the organization from reading the message, while allowing users within the organization to read the message.</summary>
-        public ChatMessagePolicyViolationDlpActionTypes? DlpAction { get; set; }
+        public ChatMessagePolicyViolationDlpActionTypes? DlpAction {
+            get { return BackingStore?.Get<ChatMessagePolicyViolationDlpActionTypes?>(nameof(DlpAction)); }
+            set { BackingStore?.Set(nameof(DlpAction), value); }
+        }
         /// <summary>Justification text provided by the sender of the message when overriding a policy violation.</summary>
-        public string JustificationText { get; set; }
+        public string JustificationText {
+            get { return BackingStore?.Get<string>(nameof(JustificationText)); }
+            set { BackingStore?.Set(nameof(JustificationText), value); }
+        }
         /// <summary>Information to display to the message sender about why the message was flagged as a violation.</summary>
-        public ChatMessagePolicyViolationPolicyTip PolicyTip { get; set; }
+        public ChatMessagePolicyViolationPolicyTip PolicyTip {
+            get { return BackingStore?.Get<ChatMessagePolicyViolationPolicyTip>(nameof(PolicyTip)); }
+            set { BackingStore?.Set(nameof(PolicyTip), value); }
+        }
         /// <summary>Indicates the action taken by the user on a message blocked by the DLP provider. Supported values are: NoneOverrideReportFalsePositiveWhen the DLP provider is updating the message for blocking sensitive content, userAction is not required.</summary>
-        public ChatMessagePolicyViolationUserActionTypes? UserAction { get; set; }
+        public ChatMessagePolicyViolationUserActionTypes? UserAction {
+            get { return BackingStore?.Get<ChatMessagePolicyViolationUserActionTypes?>(nameof(UserAction)); }
+            set { BackingStore?.Set(nameof(UserAction), value); }
+        }
         /// <summary>Indicates what actions the sender may take in response to the policy violation. Supported values are: NoneAllowFalsePositiveOverride -- Allows the sender to declare the policyViolation to be an error in the DLP app and its rules, and allow readers to see the message again if the dlpAction had hidden it.AllowOverrideWithoutJustification -- Allows the sender to overriide the DLP violation and allow readers to see the message again if the dlpAction had hidden it, without needing to provide an explanation for doing so. AllowOverrideWithJustification -- Allows the sender to overriide the DLP violation and allow readers to see the message again if the dlpAction had hidden it, after providing an explanation for doing so.AllowOverrideWithoutJustification and AllowOverrideWithJustification are mutually exclusive.</summary>
-        public ChatMessagePolicyViolationVerdictDetailsTypes? VerdictDetails { get; set; }
+        public ChatMessagePolicyViolationVerdictDetailsTypes? VerdictDetails {
+            get { return BackingStore?.Get<ChatMessagePolicyViolationVerdictDetailsTypes?>(nameof(VerdictDetails)); }
+            set { BackingStore?.Set(nameof(VerdictDetails), value); }
+        }
         /// <summary>
         /// Instantiates a new chatMessagePolicyViolation and sets the default values.
         /// </summary>
         public ChatMessagePolicyViolation() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

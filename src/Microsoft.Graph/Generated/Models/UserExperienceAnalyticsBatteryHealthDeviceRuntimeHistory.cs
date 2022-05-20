@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The user experience analytics battery health runtime history entity contains the trend of runtime of a device over a period of 30 days</summary>
     public class UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory : Entity, IParsable {
         /// <summary>The unique identifier of the device, Intune DeviceID or SCCM device id.</summary>
-        public string DeviceId { get; set; }
+        public string DeviceId {
+            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
+            set { BackingStore?.Set(nameof(DeviceId), value); }
+        }
         /// <summary>The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647</summary>
-        public int? EstimatedRuntimeInMinutes { get; set; }
+        public int? EstimatedRuntimeInMinutes {
+            get { return BackingStore?.Get<int?>(nameof(EstimatedRuntimeInMinutes)); }
+            set { BackingStore?.Set(nameof(EstimatedRuntimeInMinutes), value); }
+        }
         /// <summary>The datetime for the instance of runtime history.</summary>
-        public string RuntimeDateTime { get; set; }
+        public string RuntimeDateTime {
+            get { return BackingStore?.Get<string>(nameof(RuntimeDateTime)); }
+            set { BackingStore?.Set(nameof(RuntimeDateTime), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

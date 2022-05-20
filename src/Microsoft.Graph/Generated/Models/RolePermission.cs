@@ -1,21 +1,34 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Contains the set of ResourceActions determining the allowed and not allowed permissions for each role.</summary>
-    public class RolePermission : IAdditionalDataHolder, IParsable {
+    public class RolePermission : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Allowed Actions - Deprecated</summary>
-        public List<string> Actions { get; set; }
+        public List<string> Actions {
+            get { return BackingStore?.Get<List<string>>(nameof(Actions)); }
+            set { BackingStore?.Set(nameof(Actions), value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Resource Actions each containing a set of allowed and not allowed permissions.</summary>
-        public List<ResourceAction> ResourceActions { get; set; }
+        public List<ResourceAction> ResourceActions {
+            get { return BackingStore?.Get<List<ResourceAction>>(nameof(ResourceActions)); }
+            set { BackingStore?.Set(nameof(ResourceActions), value); }
+        }
         /// <summary>
         /// Instantiates a new rolePermission and sets the default values.
         /// </summary>
         public RolePermission() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

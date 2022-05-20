@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class AddToReviewSetOperation : CaseOperation, IParsable {
         /// <summary>The review set to which items matching the source collection query are added to.</summary>
-        public Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet ReviewSet { get; set; }
+        public Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet ReviewSet {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet>(nameof(ReviewSet)); }
+            set { BackingStore?.Set(nameof(ReviewSet), value); }
+        }
         /// <summary>The sourceCollection that items are being added from.</summary>
-        public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection SourceCollection { get; set; }
+        public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection SourceCollection {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>(nameof(SourceCollection)); }
+            set { BackingStore?.Set(nameof(SourceCollection), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

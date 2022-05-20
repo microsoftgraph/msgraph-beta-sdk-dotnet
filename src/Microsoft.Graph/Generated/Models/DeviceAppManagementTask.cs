@@ -4,34 +4,70 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>A device app management task.</summary>
     public class DeviceAppManagementTask : Entity, IParsable {
         /// <summary>The name or email of the admin this task is assigned to.</summary>
-        public string AssignedTo { get; set; }
+        public string AssignedTo {
+            get { return BackingStore?.Get<string>(nameof(AssignedTo)); }
+            set { BackingStore?.Set(nameof(AssignedTo), value); }
+        }
         /// <summary>The category. Possible values are: unknown, advancedThreatProtection.</summary>
-        public DeviceAppManagementTaskCategory? Category { get; set; }
+        public DeviceAppManagementTaskCategory? Category {
+            get { return BackingStore?.Get<DeviceAppManagementTaskCategory?>(nameof(Category)); }
+            set { BackingStore?.Set(nameof(Category), value); }
+        }
         /// <summary>The created date.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>The email address of the creator.</summary>
-        public string Creator { get; set; }
+        public string Creator {
+            get { return BackingStore?.Get<string>(nameof(Creator)); }
+            set { BackingStore?.Set(nameof(Creator), value); }
+        }
         /// <summary>Notes from the creator.</summary>
-        public string CreatorNotes { get; set; }
+        public string CreatorNotes {
+            get { return BackingStore?.Get<string>(nameof(CreatorNotes)); }
+            set { BackingStore?.Set(nameof(CreatorNotes), value); }
+        }
         /// <summary>The description.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The name.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The due date.</summary>
-        public DateTimeOffset? DueDateTime { get; set; }
+        public DateTimeOffset? DueDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DueDateTime)); }
+            set { BackingStore?.Set(nameof(DueDateTime), value); }
+        }
         /// <summary>The priority. Possible values are: none, high, low.</summary>
-        public DeviceAppManagementTaskPriority? Priority { get; set; }
+        public DeviceAppManagementTaskPriority? Priority {
+            get { return BackingStore?.Get<DeviceAppManagementTaskPriority?>(nameof(Priority)); }
+            set { BackingStore?.Set(nameof(Priority), value); }
+        }
         /// <summary>The status. Possible values are: unknown, pending, active, completed, rejected.</summary>
-        public DeviceAppManagementTaskStatus? Status { get; set; }
+        public DeviceAppManagementTaskStatus? Status {
+            get { return BackingStore?.Get<DeviceAppManagementTaskStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new DeviceAppManagementTask CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceAppManagementTask();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.deviceAppManagementTask" => new DeviceAppManagementTask(),
+                _ => new DeviceAppManagementTask(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class ConnectorGroup : Entity, IParsable {
         /// <summary>Read-only. Nullable.</summary>
-        public List<Application> Applications { get; set; }
+        public List<Application> Applications {
+            get { return BackingStore?.Get<List<Application>>(nameof(Applications)); }
+            set { BackingStore?.Set(nameof(Applications), value); }
+        }
         /// <summary>Indicates the type of hybrid agent. This pre-set by the system. Possible values are: applicationProxy. Read-only.</summary>
-        public Microsoft.Graph.Beta.Models.ConnectorGroupType? ConnectorGroupType { get; set; }
+        public Microsoft.Graph.Beta.Models.ConnectorGroupType? ConnectorGroupType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConnectorGroupType?>(nameof(ConnectorGroupType)); }
+            set { BackingStore?.Set(nameof(ConnectorGroupType), value); }
+        }
         /// <summary>Indicates if the connectorGroup is the default connectorGroup. Only a single connector group can be the default connectorGroup and this is pre-set by the system. Read-only.</summary>
-        public bool? IsDefault { get; set; }
+        public bool? IsDefault {
+            get { return BackingStore?.Get<bool?>(nameof(IsDefault)); }
+            set { BackingStore?.Set(nameof(IsDefault), value); }
+        }
         /// <summary>Read-only. Nullable.</summary>
-        public List<Connector> Members { get; set; }
+        public List<Connector> Members {
+            get { return BackingStore?.Get<List<Connector>>(nameof(Members)); }
+            set { BackingStore?.Set(nameof(Members), value); }
+        }
         /// <summary>The name associated with the connectorGroup.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>The region the connectorGroup is assigned to and will optimize traffic for. This region can only be set if no connectors or applications are assigned to the connectorGroup. The possible values are: nam (for North America), eur (for Europe), aus (for Australia), asia (for Asia), ind (for India), and unknownFutureValue.</summary>
-        public ConnectorGroupRegion? Region { get; set; }
+        public ConnectorGroupRegion? Region {
+            get { return BackingStore?.Get<ConnectorGroupRegion?>(nameof(Region)); }
+            set { BackingStore?.Set(nameof(Region), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class StaffAvailabilityItem : IAdditionalDataHolder, IParsable {
+    public class StaffAvailabilityItem : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Each item in this collection indicates a slot and the status of the staff member.</summary>
-        public List<AvailabilityItem> AvailabilityItems { get; set; }
+        public List<AvailabilityItem> AvailabilityItems {
+            get { return BackingStore?.Get<List<AvailabilityItem>>(nameof(AvailabilityItems)); }
+            set { BackingStore?.Set(nameof(AvailabilityItems), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The ID of the staff member.</summary>
-        public string StaffId { get; set; }
+        public string StaffId {
+            get { return BackingStore?.Get<string>(nameof(StaffId)); }
+            set { BackingStore?.Set(nameof(StaffId), value); }
+        }
         /// <summary>
         /// Instantiates a new staffAvailabilityItem and sets the default values.
         /// </summary>
         public StaffAvailabilityItem() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Event representing a users device application install status.</summary>
     public class MobileAppTroubleshootingEvent : DeviceManagementTroubleshootingEvent, IParsable {
         /// <summary>Intune application identifier.</summary>
-        public string ApplicationId { get; set; }
+        public string ApplicationId {
+            get { return BackingStore?.Get<string>(nameof(ApplicationId)); }
+            set { BackingStore?.Set(nameof(ApplicationId), value); }
+        }
         /// <summary>The collection property of AppLogUploadRequest.</summary>
-        public List<AppLogCollectionRequest> AppLogCollectionRequests { get; set; }
+        public List<AppLogCollectionRequest> AppLogCollectionRequests {
+            get { return BackingStore?.Get<List<AppLogCollectionRequest>>(nameof(AppLogCollectionRequests)); }
+            set { BackingStore?.Set(nameof(AppLogCollectionRequests), value); }
+        }
         /// <summary>Intune Mobile Application Troubleshooting History Item</summary>
-        public List<MobileAppTroubleshootingHistoryItem> History { get; set; }
+        public List<MobileAppTroubleshootingHistoryItem> History {
+            get { return BackingStore?.Get<List<MobileAppTroubleshootingHistoryItem>>(nameof(History)); }
+            set { BackingStore?.Set(nameof(History), value); }
+        }
         /// <summary>Device identifier created or collected by Intune.</summary>
-        public string ManagedDeviceIdentifier { get; set; }
+        public string ManagedDeviceIdentifier {
+            get { return BackingStore?.Get<string>(nameof(ManagedDeviceIdentifier)); }
+            set { BackingStore?.Set(nameof(ManagedDeviceIdentifier), value); }
+        }
         /// <summary>Identifier for the user that tried to enroll the device.</summary>
-        public string UserId { get; set; }
+        public string UserId {
+            get { return BackingStore?.Get<string>(nameof(UserId)); }
+            set { BackingStore?.Set(nameof(UserId), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

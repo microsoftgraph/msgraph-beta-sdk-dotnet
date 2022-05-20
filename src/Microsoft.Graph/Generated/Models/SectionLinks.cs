@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SectionLinks : IAdditionalDataHolder, IParsable {
+    public class SectionLinks : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Opens the section in the OneNote native client if it&apos;s installed.</summary>
-        public ExternalLink OneNoteClientUrl { get; set; }
+        public ExternalLink OneNoteClientUrl {
+            get { return BackingStore?.Get<ExternalLink>(nameof(OneNoteClientUrl)); }
+            set { BackingStore?.Set(nameof(OneNoteClientUrl), value); }
+        }
         /// <summary>Opens the section in OneNote on the web.</summary>
-        public ExternalLink OneNoteWebUrl { get; set; }
+        public ExternalLink OneNoteWebUrl {
+            get { return BackingStore?.Get<ExternalLink>(nameof(OneNoteWebUrl)); }
+            set { BackingStore?.Set(nameof(OneNoteWebUrl), value); }
+        }
         /// <summary>
         /// Instantiates a new sectionLinks and sets the default values.
         /// </summary>
         public SectionLinks() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

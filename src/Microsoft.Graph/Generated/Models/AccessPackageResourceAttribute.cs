@@ -1,28 +1,53 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class AccessPackageResourceAttribute : IAdditionalDataHolder, IParsable {
+    public class AccessPackageResourceAttribute : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Information about how to set the attribute, currently a accessPackageUserDirectoryAttributeStore object type.</summary>
-        public AccessPackageResourceAttributeDestination AttributeDestination { get; set; }
+        public AccessPackageResourceAttributeDestination AttributeDestination {
+            get { return BackingStore?.Get<AccessPackageResourceAttributeDestination>(nameof(AttributeDestination)); }
+            set { BackingStore?.Set(nameof(AttributeDestination), value); }
+        }
         /// <summary>The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension_2b676109c7c74ae2b41549205f1947ed_personalTitle.</summary>
-        public string AttributeName { get; set; }
+        public string AttributeName {
+            get { return BackingStore?.Get<string>(nameof(AttributeName)); }
+            set { BackingStore?.Set(nameof(AttributeName), value); }
+        }
         /// <summary>Information about how to populate the attribute value when an accessPackageAssignmentRequest is being fulfilled, currently a accessPackageResourceAttributeQuestion object type.</summary>
-        public AccessPackageResourceAttributeSource AttributeSource { get; set; }
+        public AccessPackageResourceAttributeSource AttributeSource {
+            get { return BackingStore?.Get<AccessPackageResourceAttributeSource>(nameof(AttributeSource)); }
+            set { BackingStore?.Set(nameof(AttributeSource), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Unique identifier for the attribute on the access package resource. Read-only.</summary>
-        public string Id { get; set; }
+        public string Id {
+            get { return BackingStore?.Get<string>(nameof(Id)); }
+            set { BackingStore?.Set(nameof(Id), value); }
+        }
         /// <summary>Specifies whether or not an existing attribute value can be edited by the requester.</summary>
-        public bool? IsEditable { get; set; }
+        public bool? IsEditable {
+            get { return BackingStore?.Get<bool?>(nameof(IsEditable)); }
+            set { BackingStore?.Set(nameof(IsEditable), value); }
+        }
         /// <summary>Specifies whether the attribute will remain in the end system after an assignment ends.</summary>
-        public bool? IsPersistedOnAssignmentRemoval { get; set; }
+        public bool? IsPersistedOnAssignmentRemoval {
+            get { return BackingStore?.Get<bool?>(nameof(IsPersistedOnAssignmentRemoval)); }
+            set { BackingStore?.Set(nameof(IsPersistedOnAssignmentRemoval), value); }
+        }
         /// <summary>
         /// Instantiates a new accessPackageResourceAttribute and sets the default values.
         /// </summary>
         public AccessPackageResourceAttribute() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

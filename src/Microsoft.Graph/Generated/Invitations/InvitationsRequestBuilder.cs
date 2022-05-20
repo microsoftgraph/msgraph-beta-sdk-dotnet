@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Invitations {
             return requestInfo;
         }
         /// <summary>
-        /// Tutorial: Use the access reviews API to review guest access to your Microsoft 365 groups
+        /// Let&apos;s assume that you&apos;ve granted access to external users (also called *guest users*) to resources in your organization through Microsoft 365 groups. This tutorial will guide you to review their access to the Microsoft 365 groups in your tenant.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Invitations {
             return await RequestAdapter.SendAsync<InvitationCollectionResponse>(requestInfo, InvitationCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Tutorial: Use the access reviews API to review guest access to your Microsoft 365 groups
+        /// Let&apos;s assume that you&apos;ve granted access to external users (also called *guest users*) to resources in your organization through Microsoft 365 groups. This tutorial will guide you to review their access to the Microsoft 365 groups in your tenant.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

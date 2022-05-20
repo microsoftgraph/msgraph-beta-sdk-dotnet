@@ -1,36 +1,73 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class Video : IAdditionalDataHolder, IParsable {
+    public class Video : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Number of audio bits per sample.</summary>
-        public int? AudioBitsPerSample { get; set; }
+        public int? AudioBitsPerSample {
+            get { return BackingStore?.Get<int?>(nameof(AudioBitsPerSample)); }
+            set { BackingStore?.Set(nameof(AudioBitsPerSample), value); }
+        }
         /// <summary>Number of audio channels.</summary>
-        public int? AudioChannels { get; set; }
+        public int? AudioChannels {
+            get { return BackingStore?.Get<int?>(nameof(AudioChannels)); }
+            set { BackingStore?.Set(nameof(AudioChannels), value); }
+        }
         /// <summary>Name of the audio format (AAC, MP3, etc.).</summary>
-        public string AudioFormat { get; set; }
+        public string AudioFormat {
+            get { return BackingStore?.Get<string>(nameof(AudioFormat)); }
+            set { BackingStore?.Set(nameof(AudioFormat), value); }
+        }
         /// <summary>Number of audio samples per second.</summary>
-        public int? AudioSamplesPerSecond { get; set; }
+        public int? AudioSamplesPerSecond {
+            get { return BackingStore?.Get<int?>(nameof(AudioSamplesPerSecond)); }
+            set { BackingStore?.Set(nameof(AudioSamplesPerSecond), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Bit rate of the video in bits per second.</summary>
-        public int? Bitrate { get; set; }
+        public int? Bitrate {
+            get { return BackingStore?.Get<int?>(nameof(Bitrate)); }
+            set { BackingStore?.Set(nameof(Bitrate), value); }
+        }
         /// <summary>Duration of the file in milliseconds.</summary>
-        public long? Duration { get; set; }
+        public long? Duration {
+            get { return BackingStore?.Get<long?>(nameof(Duration)); }
+            set { BackingStore?.Set(nameof(Duration), value); }
+        }
         /// <summary>&apos;Four character code&apos; name of the video format.</summary>
-        public string FourCC { get; set; }
+        public string FourCC {
+            get { return BackingStore?.Get<string>(nameof(FourCC)); }
+            set { BackingStore?.Set(nameof(FourCC), value); }
+        }
         /// <summary>Frame rate of the video.</summary>
-        public double? FrameRate { get; set; }
+        public double? FrameRate {
+            get { return BackingStore?.Get<double?>(nameof(FrameRate)); }
+            set { BackingStore?.Set(nameof(FrameRate), value); }
+        }
         /// <summary>Height of the video, in pixels.</summary>
-        public int? Height { get; set; }
+        public int? Height {
+            get { return BackingStore?.Get<int?>(nameof(Height)); }
+            set { BackingStore?.Set(nameof(Height), value); }
+        }
         /// <summary>Width of the video, in pixels.</summary>
-        public int? Width { get; set; }
+        public int? Width {
+            get { return BackingStore?.Get<int?>(nameof(Width)); }
+            set { BackingStore?.Set(nameof(Width), value); }
+        }
         /// <summary>
         /// Instantiates a new video and sets the default values.
         /// </summary>
         public Video() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

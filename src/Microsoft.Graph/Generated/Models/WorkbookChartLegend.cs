@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class WorkbookChartLegend : Entity, IParsable {
         /// <summary>Represents the formatting of a chart legend, which includes fill and font formatting. Read-only.</summary>
-        public WorkbookChartLegendFormat Format { get; set; }
+        public WorkbookChartLegendFormat Format {
+            get { return BackingStore?.Get<WorkbookChartLegendFormat>(nameof(Format)); }
+            set { BackingStore?.Set(nameof(Format), value); }
+        }
         /// <summary>Boolean value for whether the chart legend should overlap with the main body of the chart.</summary>
-        public bool? Overlay { get; set; }
+        public bool? Overlay {
+            get { return BackingStore?.Get<bool?>(nameof(Overlay)); }
+            set { BackingStore?.Set(nameof(Overlay), value); }
+        }
         /// <summary>Represents the position of the legend on the chart. The possible values are: Top, Bottom, Left, Right, Corner, Custom.</summary>
-        public string Position { get; set; }
+        public string Position {
+            get { return BackingStore?.Get<string>(nameof(Position)); }
+            set { BackingStore?.Set(nameof(Position), value); }
+        }
         /// <summary>A boolean value the represents the visibility of a ChartLegend object.</summary>
-        public bool? Visible { get; set; }
+        public bool? Visible {
+            get { return BackingStore?.Get<bool?>(nameof(Visible)); }
+            set { BackingStore?.Set(nameof(Visible), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Programs.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete program
+        /// In the Azure AD [access reviews](../resources/accessreviews-root.md) feature, delete a [program](../resources/program.md) object. Do not delete a program which still has `programControl` linked to it, those access reviews should first be deleted or unlinked from the program and linked to a different program.  Also, please note that the built-in default program cannot be deleted.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateDeleteRequestInformation(Action<ProgramItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Programs.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update program
+        /// In the Azure AD [access reviews](../resources/accessreviews-root.md) feature, update an existing [program](../resources/program.md) object.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Programs.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Delete program
+        /// In the Azure AD [access reviews](../resources/accessreviews-root.md) feature, delete a [program](../resources/program.md) object. Do not delete a program which still has `programControl` linked to it, those access reviews should first be deleted or unlinked from the program and linked to a different program.  Also, please note that the built-in default program cannot be deleted.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.Programs.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Program>(requestInfo, Microsoft.Graph.Beta.Models.Program.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update program
+        /// In the Azure AD [access reviews](../resources/accessreviews-root.md) feature, update an existing [program](../resources/program.md) object.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

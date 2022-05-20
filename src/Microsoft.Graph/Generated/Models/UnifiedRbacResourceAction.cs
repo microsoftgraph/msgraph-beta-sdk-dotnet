@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the roleManagement singleton.</summary>
     public class UnifiedRbacResourceAction : Entity, IParsable {
         /// <summary>HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.</summary>
-        public string ActionVerb { get; set; }
+        public string ActionVerb {
+            get { return BackingStore?.Get<string>(nameof(ActionVerb)); }
+            set { BackingStore?.Set(nameof(ActionVerb), value); }
+        }
         /// <summary>Description for the action. Supports $filter (eq).</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>The resourceScope property</summary>
-        public UnifiedRbacResourceScope ResourceScope { get; set; }
+        public UnifiedRbacResourceScope ResourceScope {
+            get { return BackingStore?.Get<UnifiedRbacResourceScope>(nameof(ResourceScope)); }
+            set { BackingStore?.Set(nameof(ResourceScope), value); }
+        }
         /// <summary>Not implemented.</summary>
-        public string ResourceScopeId { get; set; }
+        public string ResourceScopeId {
+            get { return BackingStore?.Get<string>(nameof(ResourceScopeId)); }
+            set { BackingStore?.Set(nameof(ResourceScopeId), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

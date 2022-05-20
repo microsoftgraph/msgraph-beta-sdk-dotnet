@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class PasswordlessMicrosoftAuthenticatorAuthenticationMethod : AuthenticationMethod, IParsable {
         /// <summary>The createdDateTime property</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>The timestamp when this method was registered to the user.</summary>
-        public DateTimeOffset? CreationDateTime { get; set; }
+        public DateTimeOffset? CreationDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreationDateTime)); }
+            set { BackingStore?.Set(nameof(CreationDateTime), value); }
+        }
         /// <summary>The device property</summary>
-        public Microsoft.Graph.Beta.Models.Device Device { get; set; }
+        public Microsoft.Graph.Beta.Models.Device Device {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Device>(nameof(Device)); }
+            set { BackingStore?.Set(nameof(Device), value); }
+        }
         /// <summary>The display name of the mobile device as given by the user.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

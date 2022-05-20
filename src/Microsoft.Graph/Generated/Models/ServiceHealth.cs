@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class ServiceHealth : Entity, IParsable {
         /// <summary>A collection of issues that happened on the service, with detailed information for each issue.</summary>
-        public List<ServiceHealthIssue> Issues { get; set; }
+        public List<ServiceHealthIssue> Issues {
+            get { return BackingStore?.Get<List<ServiceHealthIssue>>(nameof(Issues)); }
+            set { BackingStore?.Set(nameof(Issues), value); }
+        }
         /// <summary>The service name. Use the list healthOverviews operation to get exact string names for services subscribed by the tenant.</summary>
-        public string Service { get; set; }
+        public string Service {
+            get { return BackingStore?.Get<string>(nameof(Service)); }
+            set { BackingStore?.Set(nameof(Service), value); }
+        }
         /// <summary>Show the overall service health status. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. For more details, see serviceHealthStatus values.</summary>
-        public ServiceHealthStatus? Status { get; set; }
+        public ServiceHealthStatus? Status {
+            get { return BackingStore?.Get<ServiceHealthStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

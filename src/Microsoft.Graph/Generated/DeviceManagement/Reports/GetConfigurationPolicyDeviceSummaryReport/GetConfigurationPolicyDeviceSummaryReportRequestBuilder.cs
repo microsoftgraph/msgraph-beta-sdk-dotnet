@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyDe
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(GetConfigurationPolicyDeviceSummaryReportRequestBody body, Action<GetConfigurationPolicyDeviceSummaryReportRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation CreatePostRequestInformation(GetConfigurationPolicyDeviceSummaryReportPostRequestBody body, Action<GetConfigurationPolicyDeviceSummaryReportRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -70,10 +70,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyDe
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<GetConfigurationPolicyDeviceSummaryReportResponse> PostAsync(GetConfigurationPolicyDeviceSummaryReportRequestBody body, Action<GetConfigurationPolicyDeviceSummaryReportRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> PostAsync(GetConfigurationPolicyDeviceSummaryReportPostRequestBody body, Action<GetConfigurationPolicyDeviceSummaryReportRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<GetConfigurationPolicyDeviceSummaryReportResponse>(requestInfo, GetConfigurationPolicyDeviceSummaryReportResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class GetConfigurationPolicyDeviceSummaryReportRequestBuilderPostRequestConfiguration {

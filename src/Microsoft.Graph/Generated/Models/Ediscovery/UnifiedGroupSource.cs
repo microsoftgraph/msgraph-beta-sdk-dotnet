@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class UnifiedGroupSource : DataSource, IParsable {
         /// <summary>The group property</summary>
-        public Microsoft.Graph.Beta.Models.Group Group { get; set; }
+        public Microsoft.Graph.Beta.Models.Group Group {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Group>(nameof(Group)); }
+            set { BackingStore?.Set(nameof(Group), value); }
+        }
         /// <summary>Specifies which sources are included in this group. Possible values are: mailbox, site.</summary>
-        public SourceType? IncludedSources { get; set; }
+        public SourceType? IncludedSources {
+            get { return BackingStore?.Get<SourceType?>(nameof(IncludedSources)); }
+            set { BackingStore?.Set(nameof(IncludedSources), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -4,39 +4,88 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The user experience analytics device startup history entity contains device boot performance history details.</summary>
     public class UserExperienceAnalyticsDeviceStartupHistory : Entity, IParsable {
         /// <summary>The user experience analytics device core boot time in milliseconds.</summary>
-        public int? CoreBootTimeInMs { get; set; }
+        public int? CoreBootTimeInMs {
+            get { return BackingStore?.Get<int?>(nameof(CoreBootTimeInMs)); }
+            set { BackingStore?.Set(nameof(CoreBootTimeInMs), value); }
+        }
         /// <summary>The user experience analytics device core login time in milliseconds.</summary>
-        public int? CoreLoginTimeInMs { get; set; }
+        public int? CoreLoginTimeInMs {
+            get { return BackingStore?.Get<int?>(nameof(CoreLoginTimeInMs)); }
+            set { BackingStore?.Set(nameof(CoreLoginTimeInMs), value); }
+        }
         /// <summary>The user experience analytics device id.</summary>
-        public string DeviceId { get; set; }
+        public string DeviceId {
+            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
+            set { BackingStore?.Set(nameof(DeviceId), value); }
+        }
         /// <summary>The user experience analytics device feature update time in milliseconds.</summary>
-        public int? FeatureUpdateBootTimeInMs { get; set; }
+        public int? FeatureUpdateBootTimeInMs {
+            get { return BackingStore?.Get<int?>(nameof(FeatureUpdateBootTimeInMs)); }
+            set { BackingStore?.Set(nameof(FeatureUpdateBootTimeInMs), value); }
+        }
         /// <summary>The User experience analytics Device group policy boot time in milliseconds.</summary>
-        public int? GroupPolicyBootTimeInMs { get; set; }
+        public int? GroupPolicyBootTimeInMs {
+            get { return BackingStore?.Get<int?>(nameof(GroupPolicyBootTimeInMs)); }
+            set { BackingStore?.Set(nameof(GroupPolicyBootTimeInMs), value); }
+        }
         /// <summary>The User experience analytics Device group policy login time in milliseconds.</summary>
-        public int? GroupPolicyLoginTimeInMs { get; set; }
+        public int? GroupPolicyLoginTimeInMs {
+            get { return BackingStore?.Get<int?>(nameof(GroupPolicyLoginTimeInMs)); }
+            set { BackingStore?.Set(nameof(GroupPolicyLoginTimeInMs), value); }
+        }
         /// <summary>The user experience analytics device boot record is a feature update.</summary>
-        public bool? IsFeatureUpdate { get; set; }
+        public bool? IsFeatureUpdate {
+            get { return BackingStore?.Get<bool?>(nameof(IsFeatureUpdate)); }
+            set { BackingStore?.Set(nameof(IsFeatureUpdate), value); }
+        }
         /// <summary>The user experience analytics device first login.</summary>
-        public bool? IsFirstLogin { get; set; }
+        public bool? IsFirstLogin {
+            get { return BackingStore?.Get<bool?>(nameof(IsFirstLogin)); }
+            set { BackingStore?.Set(nameof(IsFirstLogin), value); }
+        }
         /// <summary>The user experience analytics device boot record&apos;s operating system version.</summary>
-        public string OperatingSystemVersion { get; set; }
+        public string OperatingSystemVersion {
+            get { return BackingStore?.Get<string>(nameof(OperatingSystemVersion)); }
+            set { BackingStore?.Set(nameof(OperatingSystemVersion), value); }
+        }
         /// <summary>The user experience analytics responsive desktop time in milliseconds.</summary>
-        public int? ResponsiveDesktopTimeInMs { get; set; }
+        public int? ResponsiveDesktopTimeInMs {
+            get { return BackingStore?.Get<int?>(nameof(ResponsiveDesktopTimeInMs)); }
+            set { BackingStore?.Set(nameof(ResponsiveDesktopTimeInMs), value); }
+        }
         /// <summary>OS restart category. Possible values are: unknown, restartWithUpdate, restartWithoutUpdate, blueScreen, shutdownWithUpdate, shutdownWithoutUpdate, longPowerButtonPress, bootError, update.</summary>
-        public UserExperienceAnalyticsOperatingSystemRestartCategory? RestartCategory { get; set; }
+        public UserExperienceAnalyticsOperatingSystemRestartCategory? RestartCategory {
+            get { return BackingStore?.Get<UserExperienceAnalyticsOperatingSystemRestartCategory?>(nameof(RestartCategory)); }
+            set { BackingStore?.Set(nameof(RestartCategory), value); }
+        }
         /// <summary>OS restart fault bucket. The fault bucket is used to find additional information about a system crash.</summary>
-        public string RestartFaultBucket { get; set; }
+        public string RestartFaultBucket {
+            get { return BackingStore?.Get<string>(nameof(RestartFaultBucket)); }
+            set { BackingStore?.Set(nameof(RestartFaultBucket), value); }
+        }
         /// <summary>OS restart stop code. This shows the bug check code which can be used to look up the blue screen reason.</summary>
-        public string RestartStopCode { get; set; }
+        public string RestartStopCode {
+            get { return BackingStore?.Get<string>(nameof(RestartStopCode)); }
+            set { BackingStore?.Set(nameof(RestartStopCode), value); }
+        }
         /// <summary>The user experience analytics device boot start time.</summary>
-        public DateTimeOffset? StartTime { get; set; }
+        public DateTimeOffset? StartTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartTime)); }
+            set { BackingStore?.Set(nameof(StartTime), value); }
+        }
         /// <summary>The user experience analytics device total boot time in milliseconds.</summary>
-        public int? TotalBootTimeInMs { get; set; }
+        public int? TotalBootTimeInMs {
+            get { return BackingStore?.Get<int?>(nameof(TotalBootTimeInMs)); }
+            set { BackingStore?.Set(nameof(TotalBootTimeInMs), value); }
+        }
         /// <summary>The user experience analytics device total login time in milliseconds.</summary>
-        public int? TotalLoginTimeInMs { get; set; }
+        public int? TotalLoginTimeInMs {
+            get { return BackingStore?.Get<int?>(nameof(TotalLoginTimeInMs)); }
+            set { BackingStore?.Set(nameof(TotalLoginTimeInMs), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

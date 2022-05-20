@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class EmployeeOrgData : IAdditionalDataHolder, IParsable {
+    public class EmployeeOrgData : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The cost center associated with the user. Returned only on $select. Supports $filter.</summary>
-        public string CostCenter { get; set; }
+        public string CostCenter {
+            get { return BackingStore?.Get<string>(nameof(CostCenter)); }
+            set { BackingStore?.Set(nameof(CostCenter), value); }
+        }
         /// <summary>The name of the division in which the user works. Returned only on $select. Supports $filter.</summary>
-        public string Division { get; set; }
+        public string Division {
+            get { return BackingStore?.Get<string>(nameof(Division)); }
+            set { BackingStore?.Set(nameof(Division), value); }
+        }
         /// <summary>
         /// Instantiates a new employeeOrgData and sets the default values.
         /// </summary>
         public EmployeeOrgData() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

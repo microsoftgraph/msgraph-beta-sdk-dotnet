@@ -4,22 +4,40 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the educationRoot singleton.</summary>
     public class EducationOrganization : Entity, IParsable {
         /// <summary>Organization description.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Organization display name.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Where this user was created from. Possible values are: sis, lms, or manual.</summary>
-        public EducationExternalSource? ExternalSource { get; set; }
+        public EducationExternalSource? ExternalSource {
+            get { return BackingStore?.Get<EducationExternalSource?>(nameof(ExternalSource)); }
+            set { BackingStore?.Set(nameof(ExternalSource), value); }
+        }
         /// <summary>The name of the external source this resources was generated from.</summary>
-        public string ExternalSourceDetail { get; set; }
+        public string ExternalSourceDetail {
+            get { return BackingStore?.Get<string>(nameof(ExternalSourceDetail)); }
+            set { BackingStore?.Set(nameof(ExternalSourceDetail), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new EducationOrganization CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EducationOrganization();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.educationOrganization" => new EducationOrganization(),
+                _ => new EducationOrganization(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

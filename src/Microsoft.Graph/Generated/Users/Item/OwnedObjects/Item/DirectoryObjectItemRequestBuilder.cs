@@ -1,5 +1,8 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.OwnedObjects.Item.Application;
+using Microsoft.Graph.Beta.Users.Item.OwnedObjects.Item.Group;
+using Microsoft.Graph.Beta.Users.Item.OwnedObjects.Item.ServicePrincipal;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -11,10 +14,22 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.OwnedObjects.Item {
     /// <summary>Provides operations to manage the ownedObjects property of the microsoft.graph.user entity.</summary>
     public class DirectoryObjectItemRequestBuilder {
+        /// <summary>The application property</summary>
+        public ApplicationRequestBuilder Application { get =>
+            new ApplicationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The group property</summary>
+        public GroupRequestBuilder Group { get =>
+            new GroupRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The servicePrincipal property</summary>
+        public ServicePrincipalRequestBuilder ServicePrincipal { get =>
+            new ServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

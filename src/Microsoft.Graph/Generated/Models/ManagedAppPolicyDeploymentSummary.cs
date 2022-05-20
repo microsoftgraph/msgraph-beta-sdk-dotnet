@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The ManagedAppEntity is the base entity type for all other entity types under app management workflow.</summary>
     public class ManagedAppPolicyDeploymentSummary : Entity, IParsable {
         /// <summary>Not yet documented</summary>
-        public int? ConfigurationDeployedUserCount { get; set; }
+        public int? ConfigurationDeployedUserCount {
+            get { return BackingStore?.Get<int?>(nameof(ConfigurationDeployedUserCount)); }
+            set { BackingStore?.Set(nameof(ConfigurationDeployedUserCount), value); }
+        }
         /// <summary>Not yet documented</summary>
-        public List<ManagedAppPolicyDeploymentSummaryPerApp> ConfigurationDeploymentSummaryPerApp { get; set; }
+        public List<ManagedAppPolicyDeploymentSummaryPerApp> ConfigurationDeploymentSummaryPerApp {
+            get { return BackingStore?.Get<List<ManagedAppPolicyDeploymentSummaryPerApp>>(nameof(ConfigurationDeploymentSummaryPerApp)); }
+            set { BackingStore?.Set(nameof(ConfigurationDeploymentSummaryPerApp), value); }
+        }
         /// <summary>Not yet documented</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Not yet documented</summary>
-        public DateTimeOffset? LastRefreshTime { get; set; }
+        public DateTimeOffset? LastRefreshTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastRefreshTime)); }
+            set { BackingStore?.Set(nameof(LastRefreshTime), value); }
+        }
         /// <summary>Version of the entity.</summary>
-        public string Version { get; set; }
+        public string Version {
+            get { return BackingStore?.Get<string>(nameof(Version)); }
+            set { BackingStore?.Set(nameof(Version), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

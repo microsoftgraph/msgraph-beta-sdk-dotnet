@@ -4,21 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>CartToClassAssociation for associating device carts with classrooms.</summary>
     public class CartToClassAssociation : Entity, IParsable {
         /// <summary>Identifiers of classrooms to be associated with device carts.</summary>
-        public List<string> ClassroomIds { get; set; }
+        public List<string> ClassroomIds {
+            get { return BackingStore?.Get<List<string>>(nameof(ClassroomIds)); }
+            set { BackingStore?.Set(nameof(ClassroomIds), value); }
+        }
         /// <summary>DateTime the object was created.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>Admin provided description of the CartToClassAssociation.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Identifiers of device carts to be associated with classes.</summary>
-        public List<string> DeviceCartIds { get; set; }
+        public List<string> DeviceCartIds {
+            get { return BackingStore?.Get<List<string>>(nameof(DeviceCartIds)); }
+            set { BackingStore?.Set(nameof(DeviceCartIds), value); }
+        }
         /// <summary>Admin provided name of the device configuration.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>DateTime the object was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>Version of the CartToClassAssociation.</summary>
-        public int? Version { get; set; }
+        public int? Version {
+            get { return BackingStore?.Get<int?>(nameof(Version)); }
+            set { BackingStore?.Set(nameof(Version), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

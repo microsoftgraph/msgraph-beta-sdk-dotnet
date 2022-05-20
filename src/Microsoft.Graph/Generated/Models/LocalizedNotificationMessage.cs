@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The text content of a Notification Message Template for the specified locale.</summary>
     public class LocalizedNotificationMessage : Entity, IParsable {
         /// <summary>Flag to indicate whether or not this is the default locale for language fallback. This flag can only be set. To unset, set this property to true on another Localized Notification Message.</summary>
-        public bool? IsDefault { get; set; }
+        public bool? IsDefault {
+            get { return BackingStore?.Get<bool?>(nameof(IsDefault)); }
+            set { BackingStore?.Set(nameof(IsDefault), value); }
+        }
         /// <summary>DateTime the object was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>The Locale for which this message is destined.</summary>
-        public string Locale { get; set; }
+        public string Locale {
+            get { return BackingStore?.Get<string>(nameof(Locale)); }
+            set { BackingStore?.Set(nameof(Locale), value); }
+        }
         /// <summary>The Message Template content.</summary>
-        public string MessageTemplate { get; set; }
+        public string MessageTemplate {
+            get { return BackingStore?.Get<string>(nameof(MessageTemplate)); }
+            set { BackingStore?.Set(nameof(MessageTemplate), value); }
+        }
         /// <summary>The Message Template Subject.</summary>
-        public string Subject { get; set; }
+        public string Subject {
+            get { return BackingStore?.Get<string>(nameof(Subject)); }
+            set { BackingStore?.Set(nameof(Subject), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

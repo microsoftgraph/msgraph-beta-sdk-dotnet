@@ -1,38 +1,78 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class MessageRuleActions : IAdditionalDataHolder, IParsable {
+    public class MessageRuleActions : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>A list of categories to be assigned to a message.</summary>
-        public List<string> AssignCategories { get; set; }
+        public List<string> AssignCategories {
+            get { return BackingStore?.Get<List<string>>(nameof(AssignCategories)); }
+            set { BackingStore?.Set(nameof(AssignCategories), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The ID of a folder that a message is to be copied to.</summary>
-        public string CopyToFolder { get; set; }
+        public string CopyToFolder {
+            get { return BackingStore?.Get<string>(nameof(CopyToFolder)); }
+            set { BackingStore?.Set(nameof(CopyToFolder), value); }
+        }
         /// <summary>Indicates whether a message should be moved to the Deleted Items folder.</summary>
-        public bool? Delete { get; set; }
+        public bool? Delete {
+            get { return BackingStore?.Get<bool?>(nameof(Delete)); }
+            set { BackingStore?.Set(nameof(Delete), value); }
+        }
         /// <summary>The email addresses of the recipients to which a message should be forwarded as an attachment.</summary>
-        public List<Recipient> ForwardAsAttachmentTo { get; set; }
+        public List<Recipient> ForwardAsAttachmentTo {
+            get { return BackingStore?.Get<List<Recipient>>(nameof(ForwardAsAttachmentTo)); }
+            set { BackingStore?.Set(nameof(ForwardAsAttachmentTo), value); }
+        }
         /// <summary>The email addresses of the recipients to which a message should be forwarded.</summary>
-        public List<Recipient> ForwardTo { get; set; }
+        public List<Recipient> ForwardTo {
+            get { return BackingStore?.Get<List<Recipient>>(nameof(ForwardTo)); }
+            set { BackingStore?.Set(nameof(ForwardTo), value); }
+        }
         /// <summary>Indicates whether a message should be marked as read.</summary>
-        public bool? MarkAsRead { get; set; }
+        public bool? MarkAsRead {
+            get { return BackingStore?.Get<bool?>(nameof(MarkAsRead)); }
+            set { BackingStore?.Set(nameof(MarkAsRead), value); }
+        }
         /// <summary>Sets the importance of the message, which can be: low, normal, high.</summary>
-        public Importance? MarkImportance { get; set; }
+        public Importance? MarkImportance {
+            get { return BackingStore?.Get<Importance?>(nameof(MarkImportance)); }
+            set { BackingStore?.Set(nameof(MarkImportance), value); }
+        }
         /// <summary>The ID of the folder that a message will be moved to.</summary>
-        public string MoveToFolder { get; set; }
+        public string MoveToFolder {
+            get { return BackingStore?.Get<string>(nameof(MoveToFolder)); }
+            set { BackingStore?.Set(nameof(MoveToFolder), value); }
+        }
         /// <summary>Indicates whether a message should be permanently deleted and not saved to the Deleted Items folder.</summary>
-        public bool? PermanentDelete { get; set; }
+        public bool? PermanentDelete {
+            get { return BackingStore?.Get<bool?>(nameof(PermanentDelete)); }
+            set { BackingStore?.Set(nameof(PermanentDelete), value); }
+        }
         /// <summary>The email address to which a message should be redirected.</summary>
-        public List<Recipient> RedirectTo { get; set; }
+        public List<Recipient> RedirectTo {
+            get { return BackingStore?.Get<List<Recipient>>(nameof(RedirectTo)); }
+            set { BackingStore?.Set(nameof(RedirectTo), value); }
+        }
         /// <summary>Indicates whether subsequent rules should be evaluated.</summary>
-        public bool? StopProcessingRules { get; set; }
+        public bool? StopProcessingRules {
+            get { return BackingStore?.Get<bool?>(nameof(StopProcessingRules)); }
+            set { BackingStore?.Set(nameof(StopProcessingRules), value); }
+        }
         /// <summary>
         /// Instantiates a new messageRuleActions and sets the default values.
         /// </summary>
         public MessageRuleActions() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

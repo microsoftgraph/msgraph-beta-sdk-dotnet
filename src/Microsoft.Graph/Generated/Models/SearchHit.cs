@@ -1,36 +1,73 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SearchHit : IAdditionalDataHolder, IParsable {
+    public class SearchHit : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The _id property</summary>
-        public string _id { get; set; }
+        public string _id {
+            get { return BackingStore?.Get<string>(nameof(_id)); }
+            set { BackingStore?.Set(nameof(_id), value); }
+        }
         /// <summary>The _score property</summary>
-        public int? _score { get; set; }
+        public int? _score {
+            get { return BackingStore?.Get<int?>(nameof(_score)); }
+            set { BackingStore?.Set(nameof(_score), value); }
+        }
         /// <summary>The _source property</summary>
-        public Entity _source { get; set; }
+        public Entity _source {
+            get { return BackingStore?.Get<Entity>(nameof(_source)); }
+            set { BackingStore?.Set(nameof(_source), value); }
+        }
         /// <summary>The _summary property</summary>
-        public string _summary { get; set; }
+        public string _summary {
+            get { return BackingStore?.Get<string>(nameof(_summary)); }
+            set { BackingStore?.Set(nameof(_summary), value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The name of the content source which the externalItem is part of .</summary>
-        public string ContentSource { get; set; }
+        public string ContentSource {
+            get { return BackingStore?.Get<string>(nameof(ContentSource)); }
+            set { BackingStore?.Set(nameof(ContentSource), value); }
+        }
         /// <summary>The internal identifier for the item.</summary>
-        public string HitId { get; set; }
+        public string HitId {
+            get { return BackingStore?.Get<string>(nameof(HitId)); }
+            set { BackingStore?.Set(nameof(HitId), value); }
+        }
         /// <summary>The rank or the order of the result.</summary>
-        public int? Rank { get; set; }
+        public int? Rank {
+            get { return BackingStore?.Get<int?>(nameof(Rank)); }
+            set { BackingStore?.Set(nameof(Rank), value); }
+        }
         /// <summary>The resource property</summary>
-        public Entity Resource { get; set; }
+        public Entity Resource {
+            get { return BackingStore?.Get<Entity>(nameof(Resource)); }
+            set { BackingStore?.Set(nameof(Resource), value); }
+        }
         /// <summary>ID of the result template for rendering the search result. This ID must map to a display layout in the resultTemplates dictionary, included in the searchresponse as well.</summary>
-        public string ResultTemplateId { get; set; }
+        public string ResultTemplateId {
+            get { return BackingStore?.Get<string>(nameof(ResultTemplateId)); }
+            set { BackingStore?.Set(nameof(ResultTemplateId), value); }
+        }
         /// <summary>A summary of the result, if a summary is available.</summary>
-        public string Summary { get; set; }
+        public string Summary {
+            get { return BackingStore?.Get<string>(nameof(Summary)); }
+            set { BackingStore?.Set(nameof(Summary), value); }
+        }
         /// <summary>
         /// Instantiates a new searchHit and sets the default values.
         /// </summary>
         public SearchHit() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

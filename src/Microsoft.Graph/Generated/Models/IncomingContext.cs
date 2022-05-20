@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class IncomingContext : IAdditionalDataHolder, IParsable {
+    public class IncomingContext : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The id of the participant that is under observation. Read-only.</summary>
-        public string ObservedParticipantId { get; set; }
+        public string ObservedParticipantId {
+            get { return BackingStore?.Get<string>(nameof(ObservedParticipantId)); }
+            set { BackingStore?.Set(nameof(ObservedParticipantId), value); }
+        }
         /// <summary>The identity that the call is happening on behalf of.</summary>
-        public IdentitySet OnBehalfOf { get; set; }
+        public IdentitySet OnBehalfOf {
+            get { return BackingStore?.Get<IdentitySet>(nameof(OnBehalfOf)); }
+            set { BackingStore?.Set(nameof(OnBehalfOf), value); }
+        }
         /// <summary>The id of the participant that triggered the incoming call. Read-only.</summary>
-        public string SourceParticipantId { get; set; }
+        public string SourceParticipantId {
+            get { return BackingStore?.Get<string>(nameof(SourceParticipantId)); }
+            set { BackingStore?.Set(nameof(SourceParticipantId), value); }
+        }
         /// <summary>The identity that transferred the call.</summary>
-        public IdentitySet Transferor { get; set; }
+        public IdentitySet Transferor {
+            get { return BackingStore?.Get<IdentitySet>(nameof(Transferor)); }
+            set { BackingStore?.Set(nameof(Transferor), value); }
+        }
         /// <summary>
         /// Instantiates a new incomingContext and sets the default values.
         /// </summary>
         public IncomingContext() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

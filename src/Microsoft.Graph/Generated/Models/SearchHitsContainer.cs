@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SearchHitsContainer : IAdditionalDataHolder, IParsable {
+    public class SearchHitsContainer : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Contains the collection of aggregations computed based on the provided aggregationOption specified in the request.</summary>
-        public List<SearchAggregation> Aggregations { get; set; }
+        public List<SearchAggregation> Aggregations {
+            get { return BackingStore?.Get<List<SearchAggregation>>(nameof(Aggregations)); }
+            set { BackingStore?.Set(nameof(Aggregations), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>A collection of the search results.</summary>
-        public List<SearchHit> Hits { get; set; }
+        public List<SearchHit> Hits {
+            get { return BackingStore?.Get<List<SearchHit>>(nameof(Hits)); }
+            set { BackingStore?.Set(nameof(Hits), value); }
+        }
         /// <summary>Provides information if more results are available. Based on this information, you can adjust the from and size properties of the searchRequest accordingly.</summary>
-        public bool? MoreResultsAvailable { get; set; }
+        public bool? MoreResultsAvailable {
+            get { return BackingStore?.Get<bool?>(nameof(MoreResultsAvailable)); }
+            set { BackingStore?.Set(nameof(MoreResultsAvailable), value); }
+        }
         /// <summary>The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.</summary>
-        public int? Total { get; set; }
+        public int? Total {
+            get { return BackingStore?.Get<int?>(nameof(Total)); }
+            set { BackingStore?.Set(nameof(Total), value); }
+        }
         /// <summary>
         /// Instantiates a new searchHitsContainer and sets the default values.
         /// </summary>
         public SearchHitsContainer() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

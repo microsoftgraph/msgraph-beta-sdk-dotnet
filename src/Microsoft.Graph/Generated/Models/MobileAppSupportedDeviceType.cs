@@ -1,23 +1,39 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Device properties</summary>
-    public class MobileAppSupportedDeviceType : IAdditionalDataHolder, IParsable {
+    public class MobileAppSupportedDeviceType : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Maximum OS version</summary>
-        public string MaximumOperatingSystemVersion { get; set; }
+        public string MaximumOperatingSystemVersion {
+            get { return BackingStore?.Get<string>(nameof(MaximumOperatingSystemVersion)); }
+            set { BackingStore?.Set(nameof(MaximumOperatingSystemVersion), value); }
+        }
         /// <summary>Minimum OS version</summary>
-        public string MinimumOperatingSystemVersion { get; set; }
+        public string MinimumOperatingSystemVersion {
+            get { return BackingStore?.Get<string>(nameof(MinimumOperatingSystemVersion)); }
+            set { BackingStore?.Set(nameof(MinimumOperatingSystemVersion), value); }
+        }
         /// <summary>Device type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.</summary>
-        public DeviceType? Type { get; set; }
+        public DeviceType? Type {
+            get { return BackingStore?.Get<DeviceType?>(nameof(Type)); }
+            set { BackingStore?.Set(nameof(Type), value); }
+        }
         /// <summary>
         /// Instantiates a new mobileAppSupportedDeviceType and sets the default values.
         /// </summary>
         public MobileAppSupportedDeviceType() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

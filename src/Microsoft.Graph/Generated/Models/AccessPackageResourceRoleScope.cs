@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
     public class AccessPackageResourceRoleScope : Entity, IParsable {
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
-        public Microsoft.Graph.Beta.Models.AccessPackageResourceRole AccessPackageResourceRole { get; set; }
+        public Microsoft.Graph.Beta.Models.AccessPackageResourceRole AccessPackageResourceRole {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceRole>(nameof(AccessPackageResourceRole)); }
+            set { BackingStore?.Set(nameof(AccessPackageResourceRole), value); }
+        }
         /// <summary>Read-only. Nullable.</summary>
-        public Microsoft.Graph.Beta.Models.AccessPackageResourceScope AccessPackageResourceScope { get; set; }
+        public Microsoft.Graph.Beta.Models.AccessPackageResourceScope AccessPackageResourceScope {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceScope>(nameof(AccessPackageResourceScope)); }
+            set { BackingStore?.Set(nameof(AccessPackageResourceScope), value); }
+        }
         /// <summary>Read-only.</summary>
-        public string CreatedBy { get; set; }
+        public string CreatedBy {
+            get { return BackingStore?.Get<string>(nameof(CreatedBy)); }
+            set { BackingStore?.Set(nameof(CreatedBy), value); }
+        }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>Read-only.</summary>
-        public string ModifiedBy { get; set; }
+        public string ModifiedBy {
+            get { return BackingStore?.Get<string>(nameof(ModifiedBy)); }
+            set { BackingStore?.Set(nameof(ModifiedBy), value); }
+        }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? ModifiedDateTime { get; set; }
+        public DateTimeOffset? ModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(ModifiedDateTime), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

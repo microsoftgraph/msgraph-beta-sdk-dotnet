@@ -3,6 +3,8 @@ using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.GetMobileAppCountWithS
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.GetTopMobileAppsWithStatusWithCount;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.HasPayloadLinks;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.ManagedMobileLobApp;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.MobileLobApp;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.ValidateXml;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -24,6 +26,14 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps {
         /// <summary>The hasPayloadLinks property</summary>
         public HasPayloadLinksRequestBuilder HasPayloadLinks { get =>
             new HasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The managedMobileLobApp property</summary>
+        public ManagedMobileLobAppRequestBuilder ManagedMobileLobApp { get =>
+            new ManagedMobileLobAppRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The mobileLobApp property</summary>
+        public MobileLobAppRequestBuilder MobileLobApp { get =>
+            new MobileLobAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

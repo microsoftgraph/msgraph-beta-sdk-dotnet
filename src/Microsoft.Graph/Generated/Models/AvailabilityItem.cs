@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class AvailabilityItem : IAdditionalDataHolder, IParsable {
+    public class AvailabilityItem : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The endDateTime property</summary>
-        public DateTimeTimeZone EndDateTime { get; set; }
+        public DateTimeTimeZone EndDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(EndDateTime)); }
+            set { BackingStore?.Set(nameof(EndDateTime), value); }
+        }
         /// <summary>Indicates the service ID in case of 1:n appointments. If the appointment is of type 1:n, this field will be present, otherwise, null.</summary>
-        public string ServiceId { get; set; }
+        public string ServiceId {
+            get { return BackingStore?.Get<string>(nameof(ServiceId)); }
+            set { BackingStore?.Set(nameof(ServiceId), value); }
+        }
         /// <summary>The startDateTime property</summary>
-        public DateTimeTimeZone StartDateTime { get; set; }
+        public DateTimeTimeZone StartDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(StartDateTime)); }
+            set { BackingStore?.Set(nameof(StartDateTime), value); }
+        }
         /// <summary>The status of the staff member. Possible values are: available, busy, slotsAvailable, outOfOffice, unknownFutureValue.</summary>
-        public BookingsAvailabilityStatus? Status { get; set; }
+        public BookingsAvailabilityStatus? Status {
+            get { return BackingStore?.Get<BookingsAvailabilityStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>
         /// Instantiates a new availabilityItem and sets the default values.
         /// </summary>
         public AvailabilityItem() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

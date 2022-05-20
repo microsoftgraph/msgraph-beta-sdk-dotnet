@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.SchemaExtensions.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete schemaExtension
+        /// Delete the definition of a [schema extension](../resources/schemaextension.md). Only the app that created the schema extension (owner app) can delete the schema extension definition, and only when the extension is in the `InDevelopment` state. Deleting a schema extension definition does not affect accessing custom data that has been added to resource instances based on that definition.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateDeleteRequestInformation(Action<SchemaExtensionItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.SchemaExtensions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Delete schemaExtension
+        /// Delete the definition of a [schema extension](../resources/schemaextension.md). Only the app that created the schema extension (owner app) can delete the schema extension definition, and only when the extension is in the `InDevelopment` state. Deleting a schema extension definition does not affect accessing custom data that has been added to resource instances based on that definition.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

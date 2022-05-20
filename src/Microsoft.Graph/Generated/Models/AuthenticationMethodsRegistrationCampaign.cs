@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class AuthenticationMethodsRegistrationCampaign : IAdditionalDataHolder, IParsable {
+    public class AuthenticationMethodsRegistrationCampaign : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Users and groups of users that are excluded from being prompted to set up the authentication method.</summary>
-        public List<ExcludeTarget> ExcludeTargets { get; set; }
+        public List<ExcludeTarget> ExcludeTargets {
+            get { return BackingStore?.Get<List<ExcludeTarget>>(nameof(ExcludeTargets)); }
+            set { BackingStore?.Set(nameof(ExcludeTargets), value); }
+        }
         /// <summary>Users and groups of users that are prompted to set up the authentication method.</summary>
-        public List<AuthenticationMethodsRegistrationCampaignIncludeTarget> IncludeTargets { get; set; }
+        public List<AuthenticationMethodsRegistrationCampaignIncludeTarget> IncludeTargets {
+            get { return BackingStore?.Get<List<AuthenticationMethodsRegistrationCampaignIncludeTarget>>(nameof(IncludeTargets)); }
+            set { BackingStore?.Set(nameof(IncludeTargets), value); }
+        }
         /// <summary>Specifies the number of days that the user sees a prompt again if they select &apos;Not now&apos; and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is &apos;0&apos; – The user is prompted during every MFA attempt.</summary>
-        public int? SnoozeDurationInDays { get; set; }
+        public int? SnoozeDurationInDays {
+            get { return BackingStore?.Get<int?>(nameof(SnoozeDurationInDays)); }
+            set { BackingStore?.Set(nameof(SnoozeDurationInDays), value); }
+        }
         /// <summary>Enable or disable the feature. Possible values are: default, enabled, disabled, unknownFutureValue. The default value is used when the configuration hasn&apos;t been explicitly set and uses the default behavior of Azure AD for the setting. The default value is disabled.</summary>
-        public AdvancedConfigState? State { get; set; }
+        public AdvancedConfigState? State {
+            get { return BackingStore?.Get<AdvancedConfigState?>(nameof(State)); }
+            set { BackingStore?.Set(nameof(State), value); }
+        }
         /// <summary>
         /// Instantiates a new authenticationMethodsRegistrationCampaign and sets the default values.
         /// </summary>
         public AuthenticationMethodsRegistrationCampaign() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

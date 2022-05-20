@@ -4,37 +4,83 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Intune will provide customer the ability to run their Powershell scripts on the enrolled windows 10 Azure Active Directory joined devices. The script can be run once or periodically.</summary>
     public class DeviceManagementScript : Entity, IParsable {
         /// <summary>The list of group assignments for the device management script.</summary>
-        public List<DeviceManagementScriptAssignment> Assignments { get; set; }
+        public List<DeviceManagementScriptAssignment> Assignments {
+            get { return BackingStore?.Get<List<DeviceManagementScriptAssignment>>(nameof(Assignments)); }
+            set { BackingStore?.Set(nameof(Assignments), value); }
+        }
         /// <summary>The date and time the device management script was created. This property is read-only.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>Optional description for the device management script.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>List of run states for this script across all devices.</summary>
-        public List<DeviceManagementScriptDeviceState> DeviceRunStates { get; set; }
+        public List<DeviceManagementScriptDeviceState> DeviceRunStates {
+            get { return BackingStore?.Get<List<DeviceManagementScriptDeviceState>>(nameof(DeviceRunStates)); }
+            set { BackingStore?.Set(nameof(DeviceRunStates), value); }
+        }
         /// <summary>Name of the device management script.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Indicate whether the script signature needs be checked.</summary>
-        public bool? EnforceSignatureCheck { get; set; }
+        public bool? EnforceSignatureCheck {
+            get { return BackingStore?.Get<bool?>(nameof(EnforceSignatureCheck)); }
+            set { BackingStore?.Set(nameof(EnforceSignatureCheck), value); }
+        }
         /// <summary>Script file name.</summary>
-        public string FileName { get; set; }
+        public string FileName {
+            get { return BackingStore?.Get<string>(nameof(FileName)); }
+            set { BackingStore?.Set(nameof(FileName), value); }
+        }
         /// <summary>The list of group assignments for the device management script.</summary>
-        public List<DeviceManagementScriptGroupAssignment> GroupAssignments { get; set; }
+        public List<DeviceManagementScriptGroupAssignment> GroupAssignments {
+            get { return BackingStore?.Get<List<DeviceManagementScriptGroupAssignment>>(nameof(GroupAssignments)); }
+            set { BackingStore?.Set(nameof(GroupAssignments), value); }
+        }
         /// <summary>The date and time the device management script was last modified. This property is read-only.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>List of Scope Tag IDs for this PowerShellScript instance.</summary>
-        public List<string> RoleScopeTagIds { get; set; }
+        public List<string> RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTagIds)); }
+            set { BackingStore?.Set(nameof(RoleScopeTagIds), value); }
+        }
         /// <summary>A value indicating whether the PowerShell script should run as 32-bit</summary>
-        public bool? RunAs32Bit { get; set; }
+        public bool? RunAs32Bit {
+            get { return BackingStore?.Get<bool?>(nameof(RunAs32Bit)); }
+            set { BackingStore?.Set(nameof(RunAs32Bit), value); }
+        }
         /// <summary>Indicates the type of execution context. Possible values are: system, user.</summary>
-        public RunAsAccountType? RunAsAccount { get; set; }
+        public RunAsAccountType? RunAsAccount {
+            get { return BackingStore?.Get<RunAsAccountType?>(nameof(RunAsAccount)); }
+            set { BackingStore?.Set(nameof(RunAsAccount), value); }
+        }
         /// <summary>Run summary for device management script.</summary>
-        public DeviceManagementScriptRunSummary RunSummary { get; set; }
+        public DeviceManagementScriptRunSummary RunSummary {
+            get { return BackingStore?.Get<DeviceManagementScriptRunSummary>(nameof(RunSummary)); }
+            set { BackingStore?.Set(nameof(RunSummary), value); }
+        }
         /// <summary>The script content.</summary>
-        public byte[] ScriptContent { get; set; }
+        public byte[] ScriptContent {
+            get { return BackingStore?.Get<byte[]>(nameof(ScriptContent)); }
+            set { BackingStore?.Set(nameof(ScriptContent), value); }
+        }
         /// <summary>List of run states for this script across all users.</summary>
-        public List<DeviceManagementScriptUserState> UserRunStates { get; set; }
+        public List<DeviceManagementScriptUserState> UserRunStates {
+            get { return BackingStore?.Get<List<DeviceManagementScriptUserState>>(nameof(UserRunStates)); }
+            set { BackingStore?.Set(nameof(UserRunStates), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

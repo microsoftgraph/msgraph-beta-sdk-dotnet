@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the auditLogRoot singleton.</summary>
     public class AuditUserIdentity : UserIdentity, IParsable {
         /// <summary>For user sign ins, the identifier of the tenant that the user is a member of.</summary>
-        public string HomeTenantId { get; set; }
+        public string HomeTenantId {
+            get { return BackingStore?.Get<string>(nameof(HomeTenantId)); }
+            set { BackingStore?.Set(nameof(HomeTenantId), value); }
+        }
         /// <summary>For user sign ins, the name of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.</summary>
-        public string HomeTenantName { get; set; }
+        public string HomeTenantName {
+            get { return BackingStore?.Get<string>(nameof(HomeTenantName)); }
+            set { BackingStore?.Set(nameof(HomeTenantName), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

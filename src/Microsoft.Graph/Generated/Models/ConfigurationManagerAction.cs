@@ -1,19 +1,29 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Parameter for action triggerConfigurationManagerAction</summary>
-    public class ConfigurationManagerAction : IAdditionalDataHolder, IParsable {
+    public class ConfigurationManagerAction : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The action type to trigger on Configuration Manager client. Possible values are: refreshMachinePolicy, refreshUserPolicy, wakeUpClient, appEvaluation, quickScan, fullScan, windowsDefenderUpdateSignatures.</summary>
-        public ConfigurationManagerActionType? Action { get; set; }
+        public ConfigurationManagerActionType? Action {
+            get { return BackingStore?.Get<ConfigurationManagerActionType?>(nameof(Action)); }
+            set { BackingStore?.Set(nameof(Action), value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>
         /// Instantiates a new configurationManagerAction and sets the default values.
         /// </summary>
         public ConfigurationManagerAction() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

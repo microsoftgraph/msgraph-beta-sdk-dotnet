@@ -1,18 +1,28 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SelfServiceSignUpAuthenticationFlowConfiguration : IAdditionalDataHolder, IParsable {
+    public class SelfServiceSignUpAuthenticationFlowConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property is not a key. Required.</summary>
-        public bool? IsEnabled { get; set; }
+        public bool? IsEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
+            set { BackingStore?.Set(nameof(IsEnabled), value); }
+        }
         /// <summary>
         /// Instantiates a new selfServiceSignUpAuthenticationFlowConfiguration and sets the default values.
         /// </summary>
         public SelfServiceSignUpAuthenticationFlowConfiguration() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

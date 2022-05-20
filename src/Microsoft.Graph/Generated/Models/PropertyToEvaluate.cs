@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class PropertyToEvaluate : IAdditionalDataHolder, IParsable {
+    public class PropertyToEvaluate : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Provides the property name.</summary>
-        public string PropertyName { get; set; }
+        public string PropertyName {
+            get { return BackingStore?.Get<string>(nameof(PropertyName)); }
+            set { BackingStore?.Set(nameof(PropertyName), value); }
+        }
         /// <summary>Provides the property value.</summary>
-        public string PropertyValue { get; set; }
+        public string PropertyValue {
+            get { return BackingStore?.Get<string>(nameof(PropertyValue)); }
+            set { BackingStore?.Set(nameof(PropertyValue), value); }
+        }
         /// <summary>
         /// Instantiates a new propertyToEvaluate and sets the default values.
         /// </summary>
         public PropertyToEvaluate() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

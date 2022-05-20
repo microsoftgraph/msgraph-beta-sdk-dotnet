@@ -4,23 +4,48 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.TermStore {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class Set : Entity, IParsable {
         /// <summary>Children terms of set in term [store].</summary>
-        public List<Term> Children { get; set; }
+        public List<Term> Children {
+            get { return BackingStore?.Get<List<Term>>(nameof(Children)); }
+            set { BackingStore?.Set(nameof(Children), value); }
+        }
         /// <summary>Date and time of set creation. Read-only.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>Description giving details on the term usage.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Name of the set for each languageTag.</summary>
-        public List<LocalizedName> LocalizedNames { get; set; }
+        public List<LocalizedName> LocalizedNames {
+            get { return BackingStore?.Get<List<LocalizedName>>(nameof(LocalizedNames)); }
+            set { BackingStore?.Set(nameof(LocalizedNames), value); }
+        }
         /// <summary>The parentGroup property</summary>
-        public Group ParentGroup { get; set; }
+        public Group ParentGroup {
+            get { return BackingStore?.Get<Group>(nameof(ParentGroup)); }
+            set { BackingStore?.Set(nameof(ParentGroup), value); }
+        }
         /// <summary>Custom properties for the set.</summary>
-        public List<Microsoft.Graph.Beta.Models.KeyValue> Properties { get; set; }
+        public List<Microsoft.Graph.Beta.Models.KeyValue> Properties {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValue>>(nameof(Properties)); }
+            set { BackingStore?.Set(nameof(Properties), value); }
+        }
         /// <summary>Indicates which terms have been pinned or reused directly under the set.</summary>
-        public List<Relation> Relations { get; set; }
+        public List<Relation> Relations {
+            get { return BackingStore?.Get<List<Relation>>(nameof(Relations)); }
+            set { BackingStore?.Set(nameof(Relations), value); }
+        }
         /// <summary>All the terms under the set.</summary>
-        public List<Term> Terms { get; set; }
+        public List<Term> Terms {
+            get { return BackingStore?.Get<List<Term>>(nameof(Terms)); }
+            set { BackingStore?.Set(nameof(Terms), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

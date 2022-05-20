@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of organization entities.</summary>
     public class InsightsSettings : Entity, IParsable {
         /// <summary>The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.</summary>
-        public string DisabledForGroup { get; set; }
+        public string DisabledForGroup {
+            get { return BackingStore?.Get<string>(nameof(DisabledForGroup)); }
+            set { BackingStore?.Set(nameof(DisabledForGroup), value); }
+        }
         /// <summary>true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.</summary>
-        public bool? IsEnabledInOrganization { get; set; }
+        public bool? IsEnabledInOrganization {
+            get { return BackingStore?.Get<bool?>(nameof(IsEnabledInOrganization)); }
+            set { BackingStore?.Set(nameof(IsEnabledInOrganization), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

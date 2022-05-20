@@ -4,31 +4,68 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
+    /// <summary>Provides operations to manage the collection of externalConnection entities.</summary>
     public class ExternalConnection : Entity, IParsable {
         /// <summary>Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.</summary>
-        public Microsoft.Graph.Beta.Models.ExternalConnectors.Configuration Configuration { get; set; }
+        public Microsoft.Graph.Beta.Models.ExternalConnectors.Configuration Configuration {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.Configuration>(nameof(Configuration)); }
+            set { BackingStore?.Set(nameof(Configuration), value); }
+        }
         /// <summary>The Teams App ID. Optional.</summary>
-        public string ConnectorId { get; set; }
+        public string ConnectorId {
+            get { return BackingStore?.Get<string>(nameof(ConnectorId)); }
+            set { BackingStore?.Set(nameof(ConnectorId), value); }
+        }
         /// <summary>Description of the connection displayed in the Microsoft 365 admin center. Optional.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Read-only. Nullable.</summary>
-        public List<ExternalGroup> Groups { get; set; }
-        /// <summary>The ingestedItemsCount property</summary>
-        public long? IngestedItemsCount { get; set; }
+        public List<ExternalGroup> Groups {
+            get { return BackingStore?.Get<List<ExternalGroup>>(nameof(Groups)); }
+            set { BackingStore?.Set(nameof(Groups), value); }
+        }
+        /// <summary>The number of items ingested into a connection. This value is refreshed every 15 minutes. If the connection state is draft, then ingestedItemsCount will be null.</summary>
+        public long? IngestedItemsCount {
+            get { return BackingStore?.Get<long?>(nameof(IngestedItemsCount)); }
+            set { BackingStore?.Set(nameof(IngestedItemsCount), value); }
+        }
         /// <summary>Read-only. Nullable.</summary>
-        public List<ExternalItem> Items { get; set; }
+        public List<ExternalItem> Items {
+            get { return BackingStore?.Get<List<ExternalItem>>(nameof(Items)); }
+            set { BackingStore?.Set(nameof(Items), value); }
+        }
         /// <summary>The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>Read-only. Nullable.</summary>
-        public List<ConnectionOperation> Operations { get; set; }
-        /// <summary>The quota property</summary>
-        public ConnectionQuota Quota { get; set; }
+        public List<ConnectionOperation> Operations {
+            get { return BackingStore?.Get<List<ConnectionOperation>>(nameof(Operations)); }
+            set { BackingStore?.Set(nameof(Operations), value); }
+        }
         /// <summary>Read-only. Nullable.</summary>
-        public Microsoft.Graph.Beta.Models.ExternalConnectors.Schema Schema { get; set; }
+        public ConnectionQuota Quota {
+            get { return BackingStore?.Get<ConnectionQuota>(nameof(Quota)); }
+            set { BackingStore?.Set(nameof(Quota), value); }
+        }
+        /// <summary>Read-only. Nullable.</summary>
+        public Microsoft.Graph.Beta.Models.ExternalConnectors.Schema Schema {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.Schema>(nameof(Schema)); }
+            set { BackingStore?.Set(nameof(Schema), value); }
+        }
         /// <summary>The settings configuring the search experience for content in this connection, such as the display templates for search results.</summary>
-        public Microsoft.Graph.Beta.Models.ExternalConnectors.SearchSettings SearchSettings { get; set; }
+        public Microsoft.Graph.Beta.Models.ExternalConnectors.SearchSettings SearchSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.SearchSettings>(nameof(SearchSettings)); }
+            set { BackingStore?.Set(nameof(SearchSettings), value); }
+        }
         /// <summary>Indicates the current state of the connection. Possible values are draft, ready, obsolete, and limitExceeded. Required.</summary>
-        public ConnectionState? State { get; set; }
+        public ConnectionState? State {
+            get { return BackingStore?.Get<ConnectionState?>(nameof(State)); }
+            set { BackingStore?.Set(nameof(State), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

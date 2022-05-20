@@ -4,16 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class TenantRelationshipAccessPolicyBase : PolicyBase, IParsable {
         /// <summary>The definition property</summary>
-        public List<string> Definition { get; set; }
+        public List<string> Definition {
+            get { return BackingStore?.Get<List<string>>(nameof(Definition)); }
+            set { BackingStore?.Set(nameof(Definition), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new TenantRelationshipAccessPolicyBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TenantRelationshipAccessPolicyBase();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.tenantRelationshipAccessPolicyBase" => new TenantRelationshipAccessPolicyBase(),
+                _ => new TenantRelationshipAccessPolicyBase(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

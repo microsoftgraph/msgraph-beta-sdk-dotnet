@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class CalendarGroup : Entity, IParsable {
         /// <summary>The calendars in the calendar group. Navigation property. Read-only. Nullable.</summary>
-        public List<Calendar> Calendars { get; set; }
+        public List<Calendar> Calendars {
+            get { return BackingStore?.Get<List<Calendar>>(nameof(Calendars)); }
+            set { BackingStore?.Set(nameof(Calendars), value); }
+        }
         /// <summary>Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.</summary>
-        public string ChangeKey { get; set; }
+        public string ChangeKey {
+            get { return BackingStore?.Get<string>(nameof(ChangeKey)); }
+            set { BackingStore?.Set(nameof(ChangeKey), value); }
+        }
         /// <summary>The class identifier. Read-only.</summary>
-        public string ClassId { get; set; }
+        public string ClassId {
+            get { return BackingStore?.Get<string>(nameof(ClassId)); }
+            set { BackingStore?.Set(nameof(ClassId), value); }
+        }
         /// <summary>The group name.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

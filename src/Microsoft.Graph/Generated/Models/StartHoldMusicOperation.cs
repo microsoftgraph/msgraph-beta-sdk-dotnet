@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to call the startHoldMusic method.</summary>
     public class StartHoldMusicOperation : CommsOperation, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

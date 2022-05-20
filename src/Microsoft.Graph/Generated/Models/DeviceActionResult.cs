@@ -1,25 +1,44 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Device action result</summary>
-    public class DeviceActionResult : IAdditionalDataHolder, IParsable {
+    public class DeviceActionResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Action name</summary>
-        public string ActionName { get; set; }
+        public string ActionName {
+            get { return BackingStore?.Get<string>(nameof(ActionName)); }
+            set { BackingStore?.Set(nameof(ActionName), value); }
+        }
         /// <summary>State of the action. Possible values are: none, pending, canceled, active, done, failed, notSupported.</summary>
-        public Microsoft.Graph.Beta.Models.ActionState? ActionState { get; set; }
+        public Microsoft.Graph.Beta.Models.ActionState? ActionState {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionState?>(nameof(ActionState)); }
+            set { BackingStore?.Set(nameof(ActionState), value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Time the action state was last updated</summary>
-        public DateTimeOffset? LastUpdatedDateTime { get; set; }
+        public DateTimeOffset? LastUpdatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastUpdatedDateTime)); }
+            set { BackingStore?.Set(nameof(LastUpdatedDateTime), value); }
+        }
         /// <summary>Time the action was initiated</summary>
-        public DateTimeOffset? StartDateTime { get; set; }
+        public DateTimeOffset? StartDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
+            set { BackingStore?.Set(nameof(StartDateTime), value); }
+        }
         /// <summary>
         /// Instantiates a new deviceActionResult and sets the default values.
         /// </summary>
         public DeviceActionResult() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

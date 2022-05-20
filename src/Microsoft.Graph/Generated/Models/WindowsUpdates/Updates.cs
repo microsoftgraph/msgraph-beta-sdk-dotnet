@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class Updates : Entity, IParsable {
         /// <summary>Catalog of content that can be approved for deployment by the deployment service. Read-only.</summary>
-        public Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog Catalog { get; set; }
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog Catalog {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog>(nameof(Catalog)); }
+            set { BackingStore?.Set(nameof(Catalog), value); }
+        }
         /// <summary>Deployments created using the deployment service. Read-only.</summary>
-        public List<Deployment> Deployments { get; set; }
+        public List<Deployment> Deployments {
+            get { return BackingStore?.Get<List<Deployment>>(nameof(Deployments)); }
+            set { BackingStore?.Set(nameof(Deployments), value); }
+        }
         /// <summary>Assets registered with the deployment service that can receive updates. Read-only.</summary>
-        public List<UpdatableAsset> UpdatableAssets { get; set; }
+        public List<UpdatableAsset> UpdatableAssets {
+            get { return BackingStore?.Get<List<UpdatableAsset>>(nameof(UpdatableAssets)); }
+            set { BackingStore?.Set(nameof(UpdatableAssets), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -4,38 +4,80 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the roleManagement singleton.</summary>
     public class UnifiedRoleScheduleBase : Entity, IParsable {
         /// <summary>Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.</summary>
-        public Microsoft.Graph.Beta.Models.AppScope AppScope { get; set; }
+        public Microsoft.Graph.Beta.Models.AppScope AppScope {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppScope>(nameof(AppScope)); }
+            set { BackingStore?.Set(nameof(AppScope), value); }
+        }
         /// <summary>Identifier of the app-specific scope when the assignment scope is app-specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units or all users.</summary>
-        public string AppScopeId { get; set; }
+        public string AppScopeId {
+            get { return BackingStore?.Get<string>(nameof(AppScopeId)); }
+            set { BackingStore?.Set(nameof(AppScopeId), value); }
+        }
         /// <summary>Time that the schedule was created.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>Identifier of the roleAssignmentScheduleRequest that created this schedule.</summary>
-        public string CreatedUsing { get; set; }
+        public string CreatedUsing {
+            get { return BackingStore?.Get<string>(nameof(CreatedUsing)); }
+            set { BackingStore?.Set(nameof(CreatedUsing), value); }
+        }
         /// <summary>Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.</summary>
-        public DirectoryObject DirectoryScope { get; set; }
+        public DirectoryObject DirectoryScope {
+            get { return BackingStore?.Get<DirectoryObject>(nameof(DirectoryScope)); }
+            set { BackingStore?.Set(nameof(DirectoryScope), value); }
+        }
         /// <summary>Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only.</summary>
-        public string DirectoryScopeId { get; set; }
+        public string DirectoryScopeId {
+            get { return BackingStore?.Get<string>(nameof(DirectoryScopeId)); }
+            set { BackingStore?.Set(nameof(DirectoryScopeId), value); }
+        }
         /// <summary>Last time the schedule was updated.</summary>
-        public DateTimeOffset? ModifiedDateTime { get; set; }
+        public DateTimeOffset? ModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(ModifiedDateTime), value); }
+        }
         /// <summary>Property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.</summary>
-        public DirectoryObject Principal { get; set; }
+        public DirectoryObject Principal {
+            get { return BackingStore?.Get<DirectoryObject>(nameof(Principal)); }
+            set { BackingStore?.Set(nameof(Principal), value); }
+        }
         /// <summary>Identifier of the principal to which the assignment is being granted to. Supports $filter (eq).</summary>
-        public string PrincipalId { get; set; }
+        public string PrincipalId {
+            get { return BackingStore?.Get<string>(nameof(PrincipalId)); }
+            set { BackingStore?.Set(nameof(PrincipalId), value); }
+        }
         /// <summary>Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.</summary>
-        public UnifiedRoleDefinition RoleDefinition { get; set; }
+        public UnifiedRoleDefinition RoleDefinition {
+            get { return BackingStore?.Get<UnifiedRoleDefinition>(nameof(RoleDefinition)); }
+            set { BackingStore?.Set(nameof(RoleDefinition), value); }
+        }
         /// <summary>Identifier of the unifiedRoleDefinition the assignment is for. Read only. Supports $filter (eq).</summary>
-        public string RoleDefinitionId { get; set; }
+        public string RoleDefinitionId {
+            get { return BackingStore?.Get<string>(nameof(RoleDefinitionId)); }
+            set { BackingStore?.Set(nameof(RoleDefinitionId), value); }
+        }
         /// <summary>Status for the roleAssignmentSchedule. It can include state related messages like Provisioned, Revoked, Pending Provisioning, and Pending Approval. Supports $filter (eq).</summary>
-        public string Status { get; set; }
+        public string Status {
+            get { return BackingStore?.Get<string>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new UnifiedRoleScheduleBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UnifiedRoleScheduleBase();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.unifiedRoleScheduleBase" => new UnifiedRoleScheduleBase(),
+                _ => new UnifiedRoleScheduleBase(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

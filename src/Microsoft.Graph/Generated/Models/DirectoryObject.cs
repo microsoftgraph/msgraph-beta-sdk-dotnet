@@ -4,16 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class DirectoryObject : Entity, IParsable {
         /// <summary>Date and time when this object was deleted. Always null when the object hasn&apos;t been deleted.</summary>
-        public DateTimeOffset? DeletedDateTime { get; set; }
+        public DateTimeOffset? DeletedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DeletedDateTime)); }
+            set { BackingStore?.Set(nameof(DeletedDateTime), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new DirectoryObject CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DirectoryObject();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.directoryObject" => new DirectoryObject(),
+                _ => new DirectoryObject(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

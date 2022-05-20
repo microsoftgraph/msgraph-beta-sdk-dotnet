@@ -4,35 +4,78 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the security singleton.</summary>
     public class DomainSecurityProfile : Entity, IParsable {
         /// <summary>The activityGroupNames property</summary>
-        public List<string> ActivityGroupNames { get; set; }
+        public List<string> ActivityGroupNames {
+            get { return BackingStore?.Get<List<string>>(nameof(ActivityGroupNames)); }
+            set { BackingStore?.Set(nameof(ActivityGroupNames), value); }
+        }
         /// <summary>The azureSubscriptionId property</summary>
-        public string AzureSubscriptionId { get; set; }
+        public string AzureSubscriptionId {
+            get { return BackingStore?.Get<string>(nameof(AzureSubscriptionId)); }
+            set { BackingStore?.Set(nameof(AzureSubscriptionId), value); }
+        }
         /// <summary>The azureTenantId property</summary>
-        public string AzureTenantId { get; set; }
+        public string AzureTenantId {
+            get { return BackingStore?.Get<string>(nameof(AzureTenantId)); }
+            set { BackingStore?.Set(nameof(AzureTenantId), value); }
+        }
         /// <summary>The countHits property</summary>
-        public int? CountHits { get; set; }
+        public int? CountHits {
+            get { return BackingStore?.Get<int?>(nameof(CountHits)); }
+            set { BackingStore?.Set(nameof(CountHits), value); }
+        }
         /// <summary>The countInOrg property</summary>
-        public int? CountInOrg { get; set; }
+        public int? CountInOrg {
+            get { return BackingStore?.Get<int?>(nameof(CountInOrg)); }
+            set { BackingStore?.Set(nameof(CountInOrg), value); }
+        }
         /// <summary>The domainCategories property</summary>
-        public List<ReputationCategory> DomainCategories { get; set; }
+        public List<ReputationCategory> DomainCategories {
+            get { return BackingStore?.Get<List<ReputationCategory>>(nameof(DomainCategories)); }
+            set { BackingStore?.Set(nameof(DomainCategories), value); }
+        }
         /// <summary>The domainRegisteredDateTime property</summary>
-        public DateTimeOffset? DomainRegisteredDateTime { get; set; }
+        public DateTimeOffset? DomainRegisteredDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DomainRegisteredDateTime)); }
+            set { BackingStore?.Set(nameof(DomainRegisteredDateTime), value); }
+        }
         /// <summary>The firstSeenDateTime property</summary>
-        public DateTimeOffset? FirstSeenDateTime { get; set; }
+        public DateTimeOffset? FirstSeenDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(FirstSeenDateTime)); }
+            set { BackingStore?.Set(nameof(FirstSeenDateTime), value); }
+        }
         /// <summary>The lastSeenDateTime property</summary>
-        public DateTimeOffset? LastSeenDateTime { get; set; }
+        public DateTimeOffset? LastSeenDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSeenDateTime)); }
+            set { BackingStore?.Set(nameof(LastSeenDateTime), value); }
+        }
         /// <summary>The name property</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>The registrant property</summary>
-        public DomainRegistrant Registrant { get; set; }
+        public DomainRegistrant Registrant {
+            get { return BackingStore?.Get<DomainRegistrant>(nameof(Registrant)); }
+            set { BackingStore?.Set(nameof(Registrant), value); }
+        }
         /// <summary>The riskScore property</summary>
-        public string RiskScore { get; set; }
+        public string RiskScore {
+            get { return BackingStore?.Get<string>(nameof(RiskScore)); }
+            set { BackingStore?.Set(nameof(RiskScore), value); }
+        }
         /// <summary>The tags property</summary>
-        public List<string> Tags { get; set; }
+        public List<string> Tags {
+            get { return BackingStore?.Get<List<string>>(nameof(Tags)); }
+            set { BackingStore?.Set(nameof(Tags), value); }
+        }
         /// <summary>The vendorInformation property</summary>
-        public SecurityVendorInformation VendorInformation { get; set; }
+        public SecurityVendorInformation VendorInformation {
+            get { return BackingStore?.Get<SecurityVendorInformation>(nameof(VendorInformation)); }
+            set { BackingStore?.Set(nameof(VendorInformation), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

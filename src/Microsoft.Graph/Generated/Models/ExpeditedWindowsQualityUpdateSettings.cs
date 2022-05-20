@@ -1,21 +1,34 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>A complex type to store the expedited quality update settings such as release date and days until forced reboot.</summary>
-    public class ExpeditedWindowsQualityUpdateSettings : IAdditionalDataHolder, IParsable {
+    public class ExpeditedWindowsQualityUpdateSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of days after installation that forced reboot will happen.</summary>
-        public int? DaysUntilForcedReboot { get; set; }
+        public int? DaysUntilForcedReboot {
+            get { return BackingStore?.Get<int?>(nameof(DaysUntilForcedReboot)); }
+            set { BackingStore?.Set(nameof(DaysUntilForcedReboot), value); }
+        }
         /// <summary>The release date to identify a quality update.</summary>
-        public string QualityUpdateRelease { get; set; }
+        public string QualityUpdateRelease {
+            get { return BackingStore?.Get<string>(nameof(QualityUpdateRelease)); }
+            set { BackingStore?.Set(nameof(QualityUpdateRelease), value); }
+        }
         /// <summary>
         /// Instantiates a new expeditedWindowsQualityUpdateSettings and sets the default values.
         /// </summary>
         public ExpeditedWindowsQualityUpdateSettings() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

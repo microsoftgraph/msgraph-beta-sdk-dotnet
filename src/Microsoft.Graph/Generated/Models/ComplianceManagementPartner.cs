@@ -4,29 +4,63 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Compliance management partner for all platforms</summary>
     public class ComplianceManagementPartner : Entity, IParsable {
         /// <summary>User groups which enroll Android devices through partner.</summary>
-        public List<ComplianceManagementPartnerAssignment> AndroidEnrollmentAssignments { get; set; }
+        public List<ComplianceManagementPartnerAssignment> AndroidEnrollmentAssignments {
+            get { return BackingStore?.Get<List<ComplianceManagementPartnerAssignment>>(nameof(AndroidEnrollmentAssignments)); }
+            set { BackingStore?.Set(nameof(AndroidEnrollmentAssignments), value); }
+        }
         /// <summary>Partner onboarded for Android devices.</summary>
-        public bool? AndroidOnboarded { get; set; }
+        public bool? AndroidOnboarded {
+            get { return BackingStore?.Get<bool?>(nameof(AndroidOnboarded)); }
+            set { BackingStore?.Set(nameof(AndroidOnboarded), value); }
+        }
         /// <summary>Partner display name</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>User groups which enroll ios devices through partner.</summary>
-        public List<ComplianceManagementPartnerAssignment> IosEnrollmentAssignments { get; set; }
+        public List<ComplianceManagementPartnerAssignment> IosEnrollmentAssignments {
+            get { return BackingStore?.Get<List<ComplianceManagementPartnerAssignment>>(nameof(IosEnrollmentAssignments)); }
+            set { BackingStore?.Set(nameof(IosEnrollmentAssignments), value); }
+        }
         /// <summary>Partner onboarded for ios devices.</summary>
-        public bool? IosOnboarded { get; set; }
+        public bool? IosOnboarded {
+            get { return BackingStore?.Get<bool?>(nameof(IosOnboarded)); }
+            set { BackingStore?.Set(nameof(IosOnboarded), value); }
+        }
         /// <summary>Timestamp of last heartbeat after admin onboarded to the compliance management partner</summary>
-        public DateTimeOffset? LastHeartbeatDateTime { get; set; }
+        public DateTimeOffset? LastHeartbeatDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastHeartbeatDateTime)); }
+            set { BackingStore?.Set(nameof(LastHeartbeatDateTime), value); }
+        }
         /// <summary>User groups which enroll Mac devices through partner.</summary>
-        public List<ComplianceManagementPartnerAssignment> MacOsEnrollmentAssignments { get; set; }
+        public List<ComplianceManagementPartnerAssignment> MacOsEnrollmentAssignments {
+            get { return BackingStore?.Get<List<ComplianceManagementPartnerAssignment>>(nameof(MacOsEnrollmentAssignments)); }
+            set { BackingStore?.Set(nameof(MacOsEnrollmentAssignments), value); }
+        }
         /// <summary>Partner onboarded for Mac devices.</summary>
-        public bool? MacOsOnboarded { get; set; }
+        public bool? MacOsOnboarded {
+            get { return BackingStore?.Get<bool?>(nameof(MacOsOnboarded)); }
+            set { BackingStore?.Set(nameof(MacOsOnboarded), value); }
+        }
         /// <summary>Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.</summary>
-        public DeviceManagementPartnerTenantState? PartnerState { get; set; }
+        public DeviceManagementPartnerTenantState? PartnerState {
+            get { return BackingStore?.Get<DeviceManagementPartnerTenantState?>(nameof(PartnerState)); }
+            set { BackingStore?.Set(nameof(PartnerState), value); }
+        }
         /// <summary>User groups which enroll Windows devices through partner.</summary>
-        public List<ComplianceManagementPartnerAssignment> WindowsEnrollmentAssignments { get; set; }
+        public List<ComplianceManagementPartnerAssignment> WindowsEnrollmentAssignments {
+            get { return BackingStore?.Get<List<ComplianceManagementPartnerAssignment>>(nameof(WindowsEnrollmentAssignments)); }
+            set { BackingStore?.Set(nameof(WindowsEnrollmentAssignments), value); }
+        }
         /// <summary>Partner onboarded for Windows devices.</summary>
-        public bool? WindowsOnboarded { get; set; }
+        public bool? WindowsOnboarded {
+            get { return BackingStore?.Get<bool?>(nameof(WindowsOnboarded)); }
+            set { BackingStore?.Set(nameof(WindowsOnboarded), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

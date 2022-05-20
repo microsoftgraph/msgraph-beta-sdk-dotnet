@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class Hashes : IAdditionalDataHolder, IParsable {
+    public class Hashes : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The CRC32 value of the file (if available). Read-only.</summary>
-        public string Crc32Hash { get; set; }
+        public string Crc32Hash {
+            get { return BackingStore?.Get<string>(nameof(Crc32Hash)); }
+            set { BackingStore?.Set(nameof(Crc32Hash), value); }
+        }
         /// <summary>A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.</summary>
-        public string QuickXorHash { get; set; }
+        public string QuickXorHash {
+            get { return BackingStore?.Get<string>(nameof(QuickXorHash)); }
+            set { BackingStore?.Set(nameof(QuickXorHash), value); }
+        }
         /// <summary>SHA1 hash for the contents of the file (if available). Read-only.</summary>
-        public string Sha1Hash { get; set; }
+        public string Sha1Hash {
+            get { return BackingStore?.Get<string>(nameof(Sha1Hash)); }
+            set { BackingStore?.Set(nameof(Sha1Hash), value); }
+        }
         /// <summary>SHA256 hash for the contents of the file (if available). Read-only.</summary>
-        public string Sha256Hash { get; set; }
+        public string Sha256Hash {
+            get { return BackingStore?.Get<string>(nameof(Sha256Hash)); }
+            set { BackingStore?.Set(nameof(Sha256Hash), value); }
+        }
         /// <summary>
         /// Instantiates a new hashes and sets the default values.
         /// </summary>
         public Hashes() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

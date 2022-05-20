@@ -4,21 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DeviceConfigurationUserStateSummary : Entity, IParsable {
         /// <summary>Number of compliant users</summary>
-        public int? CompliantUserCount { get; set; }
+        public int? CompliantUserCount {
+            get { return BackingStore?.Get<int?>(nameof(CompliantUserCount)); }
+            set { BackingStore?.Set(nameof(CompliantUserCount), value); }
+        }
         /// <summary>Number of conflict users</summary>
-        public int? ConflictUserCount { get; set; }
+        public int? ConflictUserCount {
+            get { return BackingStore?.Get<int?>(nameof(ConflictUserCount)); }
+            set { BackingStore?.Set(nameof(ConflictUserCount), value); }
+        }
         /// <summary>Number of error users</summary>
-        public int? ErrorUserCount { get; set; }
+        public int? ErrorUserCount {
+            get { return BackingStore?.Get<int?>(nameof(ErrorUserCount)); }
+            set { BackingStore?.Set(nameof(ErrorUserCount), value); }
+        }
         /// <summary>Number of NonCompliant users</summary>
-        public int? NonCompliantUserCount { get; set; }
+        public int? NonCompliantUserCount {
+            get { return BackingStore?.Get<int?>(nameof(NonCompliantUserCount)); }
+            set { BackingStore?.Set(nameof(NonCompliantUserCount), value); }
+        }
         /// <summary>Number of not applicable users</summary>
-        public int? NotApplicableUserCount { get; set; }
+        public int? NotApplicableUserCount {
+            get { return BackingStore?.Get<int?>(nameof(NotApplicableUserCount)); }
+            set { BackingStore?.Set(nameof(NotApplicableUserCount), value); }
+        }
         /// <summary>Number of remediated users</summary>
-        public int? RemediatedUserCount { get; set; }
+        public int? RemediatedUserCount {
+            get { return BackingStore?.Get<int?>(nameof(RemediatedUserCount)); }
+            set { BackingStore?.Set(nameof(RemediatedUserCount), value); }
+        }
         /// <summary>Number of unknown users</summary>
-        public int? UnknownUserCount { get; set; }
+        public int? UnknownUserCount {
+            get { return BackingStore?.Get<int?>(nameof(UnknownUserCount)); }
+            set { BackingStore?.Set(nameof(UnknownUserCount), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

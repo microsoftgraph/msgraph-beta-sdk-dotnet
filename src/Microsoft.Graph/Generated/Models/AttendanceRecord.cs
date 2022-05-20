@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the commsApplication singleton.</summary>
     public class AttendanceRecord : Entity, IParsable {
         /// <summary>List of time periods between joining and leaving a meeting.</summary>
-        public List<AttendanceInterval> AttendanceIntervals { get; set; }
+        public List<AttendanceInterval> AttendanceIntervals {
+            get { return BackingStore?.Get<List<AttendanceInterval>>(nameof(AttendanceIntervals)); }
+            set { BackingStore?.Set(nameof(AttendanceIntervals), value); }
+        }
         /// <summary>Email address of the user associated with this atttendance record.</summary>
-        public string EmailAddress { get; set; }
+        public string EmailAddress {
+            get { return BackingStore?.Get<string>(nameof(EmailAddress)); }
+            set { BackingStore?.Set(nameof(EmailAddress), value); }
+        }
         /// <summary>Identity of the user associated with this atttendance record.</summary>
-        public Microsoft.Graph.Beta.Models.Identity Identity { get; set; }
+        public Microsoft.Graph.Beta.Models.Identity Identity {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Identity>(nameof(Identity)); }
+            set { BackingStore?.Set(nameof(Identity), value); }
+        }
         /// <summary>Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.</summary>
-        public string RegistrantId { get; set; }
+        public string RegistrantId {
+            get { return BackingStore?.Get<string>(nameof(RegistrantId)); }
+            set { BackingStore?.Set(nameof(RegistrantId), value); }
+        }
         /// <summary>Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.</summary>
-        public string Role { get; set; }
+        public string Role {
+            get { return BackingStore?.Get<string>(nameof(Role)); }
+            set { BackingStore?.Set(nameof(Role), value); }
+        }
         /// <summary>Total duration of the attendances in seconds.</summary>
-        public int? TotalAttendanceInSeconds { get; set; }
+        public int? TotalAttendanceInSeconds {
+            get { return BackingStore?.Get<int?>(nameof(TotalAttendanceInSeconds)); }
+            set { BackingStore?.Set(nameof(TotalAttendanceInSeconds), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

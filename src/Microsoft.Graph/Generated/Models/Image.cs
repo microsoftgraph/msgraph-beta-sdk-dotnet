@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class Image : IAdditionalDataHolder, IParsable {
+    public class Image : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Optional. Height of the image, in pixels. Read-only.</summary>
-        public int? Height { get; set; }
+        public int? Height {
+            get { return BackingStore?.Get<int?>(nameof(Height)); }
+            set { BackingStore?.Set(nameof(Height), value); }
+        }
         /// <summary>Optional. Width of the image, in pixels. Read-only.</summary>
-        public int? Width { get; set; }
+        public int? Width {
+            get { return BackingStore?.Get<int?>(nameof(Width)); }
+            set { BackingStore?.Set(nameof(Width), value); }
+        }
         /// <summary>
         /// Instantiates a new image and sets the default values.
         /// </summary>
         public Image() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

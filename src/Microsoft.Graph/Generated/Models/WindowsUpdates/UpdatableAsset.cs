@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class UpdatableAsset : Entity, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -11,7 +12,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// </summary>
         public static new UpdatableAsset CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UpdatableAsset();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.windowsUpdates.updatableAsset" => new UpdatableAsset(),
+                _ => new UpdatableAsset(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

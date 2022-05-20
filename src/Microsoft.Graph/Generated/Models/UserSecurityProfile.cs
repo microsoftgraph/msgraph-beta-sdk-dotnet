@@ -4,27 +4,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the security singleton.</summary>
     public class UserSecurityProfile : Entity, IParsable {
         /// <summary>The accounts property</summary>
-        public List<UserAccount> Accounts { get; set; }
+        public List<UserAccount> Accounts {
+            get { return BackingStore?.Get<List<UserAccount>>(nameof(Accounts)); }
+            set { BackingStore?.Set(nameof(Accounts), value); }
+        }
         /// <summary>The azureSubscriptionId property</summary>
-        public string AzureSubscriptionId { get; set; }
+        public string AzureSubscriptionId {
+            get { return BackingStore?.Get<string>(nameof(AzureSubscriptionId)); }
+            set { BackingStore?.Set(nameof(AzureSubscriptionId), value); }
+        }
         /// <summary>The azureTenantId property</summary>
-        public string AzureTenantId { get; set; }
+        public string AzureTenantId {
+            get { return BackingStore?.Get<string>(nameof(AzureTenantId)); }
+            set { BackingStore?.Set(nameof(AzureTenantId), value); }
+        }
         /// <summary>The createdDateTime property</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>The displayName property</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The lastModifiedDateTime property</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>The riskScore property</summary>
-        public string RiskScore { get; set; }
+        public string RiskScore {
+            get { return BackingStore?.Get<string>(nameof(RiskScore)); }
+            set { BackingStore?.Set(nameof(RiskScore), value); }
+        }
         /// <summary>The tags property</summary>
-        public List<string> Tags { get; set; }
+        public List<string> Tags {
+            get { return BackingStore?.Get<List<string>>(nameof(Tags)); }
+            set { BackingStore?.Set(nameof(Tags), value); }
+        }
         /// <summary>The userPrincipalName property</summary>
-        public string UserPrincipalName { get; set; }
+        public string UserPrincipalName {
+            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
+            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+        }
         /// <summary>The vendorInformation property</summary>
-        public SecurityVendorInformation VendorInformation { get; set; }
+        public SecurityVendorInformation VendorInformation {
+            get { return BackingStore?.Get<SecurityVendorInformation>(nameof(VendorInformation)); }
+            set { BackingStore?.Set(nameof(VendorInformation), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

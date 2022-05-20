@@ -4,31 +4,68 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Contains properties for device run state of the device health script.</summary>
     public class DeviceHealthScriptDeviceState : Entity, IParsable {
         /// <summary>A list of the assignment filter ids used for health script applicability evaluation</summary>
-        public List<string> AssignmentFilterIds { get; set; }
+        public List<string> AssignmentFilterIds {
+            get { return BackingStore?.Get<List<string>>(nameof(AssignmentFilterIds)); }
+            set { BackingStore?.Set(nameof(AssignmentFilterIds), value); }
+        }
         /// <summary>Detection state from the lastest device health script execution. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.</summary>
-        public RunState? DetectionState { get; set; }
+        public RunState? DetectionState {
+            get { return BackingStore?.Get<RunState?>(nameof(DetectionState)); }
+            set { BackingStore?.Set(nameof(DetectionState), value); }
+        }
         /// <summary>The next timestamp of when the device health script is expected to execute</summary>
-        public DateTimeOffset? ExpectedStateUpdateDateTime { get; set; }
+        public DateTimeOffset? ExpectedStateUpdateDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpectedStateUpdateDateTime)); }
+            set { BackingStore?.Set(nameof(ExpectedStateUpdateDateTime), value); }
+        }
         /// <summary>The last timestamp of when the device health script executed</summary>
-        public DateTimeOffset? LastStateUpdateDateTime { get; set; }
+        public DateTimeOffset? LastStateUpdateDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastStateUpdateDateTime)); }
+            set { BackingStore?.Set(nameof(LastStateUpdateDateTime), value); }
+        }
         /// <summary>The last time that Intune Managment Extension synced with Intune</summary>
-        public DateTimeOffset? LastSyncDateTime { get; set; }
+        public DateTimeOffset? LastSyncDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSyncDateTime)); }
+            set { BackingStore?.Set(nameof(LastSyncDateTime), value); }
+        }
         /// <summary>The managed device on which the device health script executed</summary>
-        public Microsoft.Graph.Beta.Models.ManagedDevice ManagedDevice { get; set; }
+        public Microsoft.Graph.Beta.Models.ManagedDevice ManagedDevice {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDevice>(nameof(ManagedDevice)); }
+            set { BackingStore?.Set(nameof(ManagedDevice), value); }
+        }
         /// <summary>Error from the detection script after remediation</summary>
-        public string PostRemediationDetectionScriptError { get; set; }
+        public string PostRemediationDetectionScriptError {
+            get { return BackingStore?.Get<string>(nameof(PostRemediationDetectionScriptError)); }
+            set { BackingStore?.Set(nameof(PostRemediationDetectionScriptError), value); }
+        }
         /// <summary>Detection script output after remediation</summary>
-        public string PostRemediationDetectionScriptOutput { get; set; }
+        public string PostRemediationDetectionScriptOutput {
+            get { return BackingStore?.Get<string>(nameof(PostRemediationDetectionScriptOutput)); }
+            set { BackingStore?.Set(nameof(PostRemediationDetectionScriptOutput), value); }
+        }
         /// <summary>Error from the detection script before remediation</summary>
-        public string PreRemediationDetectionScriptError { get; set; }
+        public string PreRemediationDetectionScriptError {
+            get { return BackingStore?.Get<string>(nameof(PreRemediationDetectionScriptError)); }
+            set { BackingStore?.Set(nameof(PreRemediationDetectionScriptError), value); }
+        }
         /// <summary>Output of the detection script before remediation</summary>
-        public string PreRemediationDetectionScriptOutput { get; set; }
+        public string PreRemediationDetectionScriptOutput {
+            get { return BackingStore?.Get<string>(nameof(PreRemediationDetectionScriptOutput)); }
+            set { BackingStore?.Set(nameof(PreRemediationDetectionScriptOutput), value); }
+        }
         /// <summary>Error output of the remediation script</summary>
-        public string RemediationScriptError { get; set; }
+        public string RemediationScriptError {
+            get { return BackingStore?.Get<string>(nameof(RemediationScriptError)); }
+            set { BackingStore?.Set(nameof(RemediationScriptError), value); }
+        }
         /// <summary>Remediation state from the lastest device health script execution. Possible values are: unknown, skipped, success, remediationFailed, scriptError.</summary>
-        public Microsoft.Graph.Beta.Models.RemediationState? RemediationState { get; set; }
+        public Microsoft.Graph.Beta.Models.RemediationState? RemediationState {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RemediationState?>(nameof(RemediationState)); }
+            set { BackingStore?.Set(nameof(RemediationState), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

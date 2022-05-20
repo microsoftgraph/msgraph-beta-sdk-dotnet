@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public class WorkloadStatus : IAdditionalDataHolder, IParsable {
+    public class WorkloadStatus : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The display name for the workload. Required. Read-only.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The date and time the workload was offboarded. Optional. Read-only.</summary>
-        public DateTimeOffset? OffboardedDateTime { get; set; }
+        public DateTimeOffset? OffboardedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(OffboardedDateTime)); }
+            set { BackingStore?.Set(nameof(OffboardedDateTime), value); }
+        }
         /// <summary>The date and time the workload was onboarded. Optional. Read-only.</summary>
-        public DateTimeOffset? OnboardedDateTime { get; set; }
+        public DateTimeOffset? OnboardedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(OnboardedDateTime)); }
+            set { BackingStore?.Set(nameof(OnboardedDateTime), value); }
+        }
         /// <summary>The onboarding status for the workload. Possible values are: notOnboarded, onboarded, unknownFutureValue. Optional. Read-only.</summary>
-        public WorkloadOnboardingStatus? OnboardingStatus { get; set; }
+        public WorkloadOnboardingStatus? OnboardingStatus {
+            get { return BackingStore?.Get<WorkloadOnboardingStatus?>(nameof(OnboardingStatus)); }
+            set { BackingStore?.Set(nameof(OnboardingStatus), value); }
+        }
         /// <summary>
         /// Instantiates a new workloadStatus and sets the default values.
         /// </summary>
         public WorkloadStatus() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

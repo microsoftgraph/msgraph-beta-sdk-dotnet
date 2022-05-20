@@ -4,25 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The enrollmentProfile resource represents a collection of configurations which must be provided pre-enrollment to enable enrolling certain devices whose identities have been pre-staged. Pre-staged device identities are assigned to this type of profile to apply the profile&apos;s configurations at enrollment of the corresponding device.</summary>
     public class AppleUserInitiatedEnrollmentProfile : Entity, IParsable {
         /// <summary>The list of assignments for this profile.</summary>
-        public List<AppleEnrollmentProfileAssignment> Assignments { get; set; }
+        public List<AppleEnrollmentProfileAssignment> Assignments {
+            get { return BackingStore?.Get<List<AppleEnrollmentProfileAssignment>>(nameof(Assignments)); }
+            set { BackingStore?.Set(nameof(Assignments), value); }
+        }
         /// <summary>List of available enrollment type options</summary>
-        public List<AppleOwnerTypeEnrollmentType> AvailableEnrollmentTypeOptions { get; set; }
+        public List<AppleOwnerTypeEnrollmentType> AvailableEnrollmentTypeOptions {
+            get { return BackingStore?.Get<List<AppleOwnerTypeEnrollmentType>>(nameof(AvailableEnrollmentTypeOptions)); }
+            set { BackingStore?.Set(nameof(AvailableEnrollmentTypeOptions), value); }
+        }
         /// <summary>Profile creation time</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>The default profile enrollment type. Possible values are: unknown, device, user.</summary>
-        public AppleUserInitiatedEnrollmentType? DefaultEnrollmentType { get; set; }
+        public AppleUserInitiatedEnrollmentType? DefaultEnrollmentType {
+            get { return BackingStore?.Get<AppleUserInitiatedEnrollmentType?>(nameof(DefaultEnrollmentType)); }
+            set { BackingStore?.Set(nameof(DefaultEnrollmentType), value); }
+        }
         /// <summary>Description of the profile</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Name of the profile</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Profile last modified time</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>The platform of the Device. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown, androidAOSP.</summary>
-        public DevicePlatformType? Platform { get; set; }
+        public DevicePlatformType? Platform {
+            get { return BackingStore?.Get<DevicePlatformType?>(nameof(Platform)); }
+            set { BackingStore?.Set(nameof(Platform), value); }
+        }
         /// <summary>Priority, 0 is highest</summary>
-        public int? Priority { get; set; }
+        public int? Priority {
+            get { return BackingStore?.Get<int?>(nameof(Priority)); }
+            set { BackingStore?.Set(nameof(Priority), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class WindowsApplication : IAdditionalDataHolder, IParsable {
+    public class WindowsApplication : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The package security identifier that Microsoft has assigned the application. Optional. Read-only.</summary>
-        public string PackageSid { get; set; }
+        public string PackageSid {
+            get { return BackingStore?.Get<string>(nameof(PackageSid)); }
+            set { BackingStore?.Set(nameof(PackageSid), value); }
+        }
         /// <summary>Specifies the URLs where user tokens are sent for sign-in or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent. Only available for applications that support the PersonalMicrosoftAccount signInAudience.</summary>
-        public List<string> RedirectUris { get; set; }
+        public List<string> RedirectUris {
+            get { return BackingStore?.Get<List<string>>(nameof(RedirectUris)); }
+            set { BackingStore?.Set(nameof(RedirectUris), value); }
+        }
         /// <summary>
         /// Instantiates a new windowsApplication and sets the default values.
         /// </summary>
         public WindowsApplication() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class ItemActivityOLD : Entity, IParsable {
         /// <summary>The action property</summary>
-        public ItemActionSet Action { get; set; }
+        public ItemActionSet Action {
+            get { return BackingStore?.Get<ItemActionSet>(nameof(Action)); }
+            set { BackingStore?.Set(nameof(Action), value); }
+        }
         /// <summary>The actor property</summary>
-        public IdentitySet Actor { get; set; }
+        public IdentitySet Actor {
+            get { return BackingStore?.Get<IdentitySet>(nameof(Actor)); }
+            set { BackingStore?.Set(nameof(Actor), value); }
+        }
         /// <summary>The driveItem property</summary>
-        public Microsoft.Graph.Beta.Models.DriveItem DriveItem { get; set; }
+        public Microsoft.Graph.Beta.Models.DriveItem DriveItem {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem>(nameof(DriveItem)); }
+            set { BackingStore?.Set(nameof(DriveItem), value); }
+        }
         /// <summary>The listItem property</summary>
-        public Microsoft.Graph.Beta.Models.ListItem ListItem { get; set; }
+        public Microsoft.Graph.Beta.Models.ListItem ListItem {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ListItem>(nameof(ListItem)); }
+            set { BackingStore?.Set(nameof(ListItem), value); }
+        }
         /// <summary>The times property</summary>
-        public ItemActivityTimeSet Times { get; set; }
+        public ItemActivityTimeSet Times {
+            get { return BackingStore?.Get<ItemActivityTimeSet>(nameof(Times)); }
+            set { BackingStore?.Set(nameof(Times), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

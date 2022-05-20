@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schem
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(ParseExpressionRequestBody body, Action<ParseExpressionRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation CreatePostRequestInformation(ParseExpressionPostRequestBody body, Action<ParseExpressionRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schem
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ParseExpressionResponse> PostAsync(ParseExpressionRequestBody body, Action<ParseExpressionRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<ParseExpressionResponse> PostAsync(ParseExpressionPostRequestBody body, Action<ParseExpressionRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<ParseExpressionResponse>(requestInfo, ParseExpressionResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);

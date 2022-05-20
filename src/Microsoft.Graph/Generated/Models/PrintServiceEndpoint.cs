@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the print singleton.</summary>
     public class PrintServiceEndpoint : Entity, IParsable {
         /// <summary>A human-readable display name for the endpoint.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The URI that can be used to access the service.</summary>
-        public string Uri { get; set; }
+        public string Uri {
+            get { return BackingStore?.Get<string>(nameof(Uri)); }
+            set { BackingStore?.Set(nameof(Uri), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

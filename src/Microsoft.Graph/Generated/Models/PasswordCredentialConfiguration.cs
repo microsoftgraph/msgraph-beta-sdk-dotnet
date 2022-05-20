@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class PasswordCredentialConfiguration : IAdditionalDataHolder, IParsable {
+    public class PasswordCredentialConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The maxLifetime property</summary>
-        public TimeSpan? MaxLifetime { get; set; }
+        public TimeSpan? MaxLifetime {
+            get { return BackingStore?.Get<TimeSpan?>(nameof(MaxLifetime)); }
+            set { BackingStore?.Set(nameof(MaxLifetime), value); }
+        }
         /// <summary>Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.</summary>
-        public DateTimeOffset? RestrictForAppsCreatedAfterDateTime { get; set; }
+        public DateTimeOffset? RestrictForAppsCreatedAfterDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(RestrictForAppsCreatedAfterDateTime)); }
+            set { BackingStore?.Set(nameof(RestrictForAppsCreatedAfterDateTime), value); }
+        }
         /// <summary>The type of restriction being applied. The possible values are: passwordAddition, passwordLifetime, symmetricKeyAddition, symmetricKeyLifetime,customPasswordAddition, unknownFutureValue. Each value of restrictionType can be used only once per policy.</summary>
-        public AppCredentialRestrictionType? RestrictionType { get; set; }
+        public AppCredentialRestrictionType? RestrictionType {
+            get { return BackingStore?.Get<AppCredentialRestrictionType?>(nameof(RestrictionType)); }
+            set { BackingStore?.Set(nameof(RestrictionType), value); }
+        }
         /// <summary>
         /// Instantiates a new passwordCredentialConfiguration and sets the default values.
         /// </summary>
         public PasswordCredentialConfiguration() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

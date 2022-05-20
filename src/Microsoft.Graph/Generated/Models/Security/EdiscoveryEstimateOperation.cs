@@ -4,21 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
+    /// <summary>Provides operations to manage the security singleton.</summary>
     public class EdiscoveryEstimateOperation : CaseOperation, IParsable {
         /// <summary>The indexedItemCount property</summary>
-        public long? IndexedItemCount { get; set; }
+        public long? IndexedItemCount {
+            get { return BackingStore?.Get<long?>(nameof(IndexedItemCount)); }
+            set { BackingStore?.Set(nameof(IndexedItemCount), value); }
+        }
         /// <summary>The indexedItemsSize property</summary>
-        public long? IndexedItemsSize { get; set; }
+        public long? IndexedItemsSize {
+            get { return BackingStore?.Get<long?>(nameof(IndexedItemsSize)); }
+            set { BackingStore?.Set(nameof(IndexedItemsSize), value); }
+        }
         /// <summary>The mailboxCount property</summary>
-        public int? MailboxCount { get; set; }
+        public int? MailboxCount {
+            get { return BackingStore?.Get<int?>(nameof(MailboxCount)); }
+            set { BackingStore?.Set(nameof(MailboxCount), value); }
+        }
         /// <summary>The search property</summary>
-        public EdiscoverySearch Search { get; set; }
+        public EdiscoverySearch Search {
+            get { return BackingStore?.Get<EdiscoverySearch>(nameof(Search)); }
+            set { BackingStore?.Set(nameof(Search), value); }
+        }
         /// <summary>The siteCount property</summary>
-        public int? SiteCount { get; set; }
+        public int? SiteCount {
+            get { return BackingStore?.Get<int?>(nameof(SiteCount)); }
+            set { BackingStore?.Set(nameof(SiteCount), value); }
+        }
         /// <summary>The unindexedItemCount property</summary>
-        public long? UnindexedItemCount { get; set; }
+        public long? UnindexedItemCount {
+            get { return BackingStore?.Get<long?>(nameof(UnindexedItemCount)); }
+            set { BackingStore?.Set(nameof(UnindexedItemCount), value); }
+        }
         /// <summary>The unindexedItemsSize property</summary>
-        public long? UnindexedItemsSize { get; set; }
+        public long? UnindexedItemsSize {
+            get { return BackingStore?.Get<long?>(nameof(UnindexedItemsSize)); }
+            set { BackingStore?.Set(nameof(UnindexedItemsSize), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

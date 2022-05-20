@@ -1,21 +1,34 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Windows Information Protection Proxied Domain Collection</summary>
-    public class WindowsInformationProtectionProxiedDomainCollection : IAdditionalDataHolder, IParsable {
+    public class WindowsInformationProtectionProxiedDomainCollection : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Display name</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Collection of proxied domains</summary>
-        public List<ProxiedDomain> ProxiedDomains { get; set; }
+        public List<ProxiedDomain> ProxiedDomains {
+            get { return BackingStore?.Get<List<ProxiedDomain>>(nameof(ProxiedDomains)); }
+            set { BackingStore?.Set(nameof(ProxiedDomains), value); }
+        }
         /// <summary>
         /// Instantiates a new windowsInformationProtectionProxiedDomainCollection and sets the default values.
         /// </summary>
         public WindowsInformationProtectionProxiedDomainCollection() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

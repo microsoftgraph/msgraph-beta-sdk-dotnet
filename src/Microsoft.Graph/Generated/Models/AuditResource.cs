@@ -1,25 +1,44 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>A class containing the properties for Audit Resource.</summary>
-    public class AuditResource : IAdditionalDataHolder, IParsable {
+    public class AuditResource : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Display name.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>List of modified properties.</summary>
-        public List<AuditProperty> ModifiedProperties { get; set; }
+        public List<AuditProperty> ModifiedProperties {
+            get { return BackingStore?.Get<List<AuditProperty>>(nameof(ModifiedProperties)); }
+            set { BackingStore?.Set(nameof(ModifiedProperties), value); }
+        }
         /// <summary>Audit resource&apos;s Id.</summary>
-        public string ResourceId { get; set; }
+        public string ResourceId {
+            get { return BackingStore?.Get<string>(nameof(ResourceId)); }
+            set { BackingStore?.Set(nameof(ResourceId), value); }
+        }
         /// <summary>Audit resource&apos;s type.</summary>
-        public string Type { get; set; }
+        public string Type {
+            get { return BackingStore?.Get<string>(nameof(Type)); }
+            set { BackingStore?.Set(nameof(Type), value); }
+        }
         /// <summary>
         /// Instantiates a new auditResource and sets the default values.
         /// </summary>
         public AuditResource() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

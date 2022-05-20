@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the educationRoot singleton.</summary>
     public class EducationAssignmentSettings : Entity, IParsable {
         /// <summary>Indicates whether turn-in celebration animation will be shown. A value of true indicates that the animation will not be shown. Default value is false.</summary>
-        public bool? SubmissionAnimationDisabled { get; set; }
+        public bool? SubmissionAnimationDisabled {
+            get { return BackingStore?.Get<bool?>(nameof(SubmissionAnimationDisabled)); }
+            set { BackingStore?.Set(nameof(SubmissionAnimationDisabled), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

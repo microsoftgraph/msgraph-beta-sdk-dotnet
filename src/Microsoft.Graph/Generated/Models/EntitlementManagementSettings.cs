@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
     public class EntitlementManagementSettings : Entity, IParsable {
         /// <summary>If externalUserLifecycleAction is BlockSignInAndDelete, the number of days after an external user is blocked from sign in before their account is deleted.</summary>
-        public int? DaysUntilExternalUserDeletedAfterBlocked { get; set; }
+        public int? DaysUntilExternalUserDeletedAfterBlocked {
+            get { return BackingStore?.Get<int?>(nameof(DaysUntilExternalUserDeletedAfterBlocked)); }
+            set { BackingStore?.Set(nameof(DaysUntilExternalUserDeletedAfterBlocked), value); }
+        }
         /// <summary>One of None, BlockSignIn, or BlockSignInAndDelete.</summary>
-        public string ExternalUserLifecycleAction { get; set; }
+        public string ExternalUserLifecycleAction {
+            get { return BackingStore?.Get<string>(nameof(ExternalUserLifecycleAction)); }
+            set { BackingStore?.Set(nameof(ExternalUserLifecycleAction), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

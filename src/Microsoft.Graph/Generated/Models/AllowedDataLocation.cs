@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of allowedDataLocation entities.</summary>
     public class AllowedDataLocation : Entity, IParsable {
         /// <summary>The appId property</summary>
-        public string AppId { get; set; }
+        public string AppId {
+            get { return BackingStore?.Get<string>(nameof(AppId)); }
+            set { BackingStore?.Set(nameof(AppId), value); }
+        }
         /// <summary>The domain property</summary>
-        public string Domain { get; set; }
+        public string Domain {
+            get { return BackingStore?.Get<string>(nameof(Domain)); }
+            set { BackingStore?.Set(nameof(Domain), value); }
+        }
         /// <summary>The isDefault property</summary>
-        public bool? IsDefault { get; set; }
+        public bool? IsDefault {
+            get { return BackingStore?.Get<bool?>(nameof(IsDefault)); }
+            set { BackingStore?.Set(nameof(IsDefault), value); }
+        }
         /// <summary>The location property</summary>
-        public string Location { get; set; }
+        public string Location {
+            get { return BackingStore?.Get<string>(nameof(Location)); }
+            set { BackingStore?.Set(nameof(Location), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

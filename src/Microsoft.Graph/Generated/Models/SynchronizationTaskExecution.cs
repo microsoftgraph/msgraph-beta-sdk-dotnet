@@ -1,44 +1,93 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SynchronizationTaskExecution : IAdditionalDataHolder, IParsable {
+    public class SynchronizationTaskExecution : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Identifier of the job run.</summary>
-        public string ActivityIdentifier { get; set; }
+        public string ActivityIdentifier {
+            get { return BackingStore?.Get<string>(nameof(ActivityIdentifier)); }
+            set { BackingStore?.Set(nameof(ActivityIdentifier), value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Count of processed entries that were assigned for this application.</summary>
-        public long? CountEntitled { get; set; }
+        public long? CountEntitled {
+            get { return BackingStore?.Get<long?>(nameof(CountEntitled)); }
+            set { BackingStore?.Set(nameof(CountEntitled), value); }
+        }
         /// <summary>Count of processed entries that were assigned for provisioning.</summary>
-        public long? CountEntitledForProvisioning { get; set; }
+        public long? CountEntitledForProvisioning {
+            get { return BackingStore?.Get<long?>(nameof(CountEntitledForProvisioning)); }
+            set { BackingStore?.Set(nameof(CountEntitledForProvisioning), value); }
+        }
         /// <summary>Count of entries that were escrowed (errors).</summary>
-        public long? CountEscrowed { get; set; }
+        public long? CountEscrowed {
+            get { return BackingStore?.Get<long?>(nameof(CountEscrowed)); }
+            set { BackingStore?.Set(nameof(CountEscrowed), value); }
+        }
         /// <summary>Count of entries that were escrowed, including system-generated escrows.</summary>
-        public long? CountEscrowedRaw { get; set; }
+        public long? CountEscrowedRaw {
+            get { return BackingStore?.Get<long?>(nameof(CountEscrowedRaw)); }
+            set { BackingStore?.Set(nameof(CountEscrowedRaw), value); }
+        }
         /// <summary>Count of exported entries.</summary>
-        public long? CountExported { get; set; }
+        public long? CountExported {
+            get { return BackingStore?.Get<long?>(nameof(CountExported)); }
+            set { BackingStore?.Set(nameof(CountExported), value); }
+        }
         /// <summary>Count of entries that were expected to be exported.</summary>
-        public long? CountExports { get; set; }
+        public long? CountExports {
+            get { return BackingStore?.Get<long?>(nameof(CountExports)); }
+            set { BackingStore?.Set(nameof(CountExports), value); }
+        }
         /// <summary>Count of imported entries.</summary>
-        public long? CountImported { get; set; }
+        public long? CountImported {
+            get { return BackingStore?.Get<long?>(nameof(CountImported)); }
+            set { BackingStore?.Set(nameof(CountImported), value); }
+        }
         /// <summary>Count of imported delta-changes.</summary>
-        public long? CountImportedDeltas { get; set; }
+        public long? CountImportedDeltas {
+            get { return BackingStore?.Get<long?>(nameof(CountImportedDeltas)); }
+            set { BackingStore?.Set(nameof(CountImportedDeltas), value); }
+        }
         /// <summary>Count of imported delta-changes pertaining to reference changes.</summary>
-        public long? CountImportedReferenceDeltas { get; set; }
+        public long? CountImportedReferenceDeltas {
+            get { return BackingStore?.Get<long?>(nameof(CountImportedReferenceDeltas)); }
+            set { BackingStore?.Set(nameof(CountImportedReferenceDeltas), value); }
+        }
         /// <summary>If an error was encountered, contains a synchronizationError object with details.</summary>
-        public SynchronizationError Error { get; set; }
+        public SynchronizationError Error {
+            get { return BackingStore?.Get<SynchronizationError>(nameof(Error)); }
+            set { BackingStore?.Set(nameof(Error), value); }
+        }
         /// <summary>Code summarizing the result of this run. Possible values are: Succeeded, Failed, EntryLevelErrors.</summary>
-        public SynchronizationTaskExecutionResult? State { get; set; }
+        public SynchronizationTaskExecutionResult? State {
+            get { return BackingStore?.Get<SynchronizationTaskExecutionResult?>(nameof(State)); }
+            set { BackingStore?.Set(nameof(State), value); }
+        }
         /// <summary>Time when this job run began. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? TimeBegan { get; set; }
+        public DateTimeOffset? TimeBegan {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(TimeBegan)); }
+            set { BackingStore?.Set(nameof(TimeBegan), value); }
+        }
         /// <summary>Time when this job run ended. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? TimeEnded { get; set; }
+        public DateTimeOffset? TimeEnded {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(TimeEnded)); }
+            set { BackingStore?.Set(nameof(TimeEnded), value); }
+        }
         /// <summary>
         /// Instantiates a new synchronizationTaskExecution and sets the default values.
         /// </summary>
         public SynchronizationTaskExecution() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

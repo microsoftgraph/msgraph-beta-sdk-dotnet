@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class TimeSlot : IAdditionalDataHolder, IParsable {
+    public class TimeSlot : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The end property</summary>
-        public DateTimeTimeZone End { get; set; }
+        public DateTimeTimeZone End {
+            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(End)); }
+            set { BackingStore?.Set(nameof(End), value); }
+        }
         /// <summary>The start property</summary>
-        public DateTimeTimeZone Start { get; set; }
+        public DateTimeTimeZone Start {
+            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(Start)); }
+            set { BackingStore?.Set(nameof(Start), value); }
+        }
         /// <summary>
         /// Instantiates a new timeSlot and sets the default values.
         /// </summary>
         public TimeSlot() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

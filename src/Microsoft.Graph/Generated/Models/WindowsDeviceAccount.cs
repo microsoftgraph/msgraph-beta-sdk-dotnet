@@ -1,18 +1,28 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class WindowsDeviceAccount : IAdditionalDataHolder, IParsable {
+    public class WindowsDeviceAccount : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Not yet documented</summary>
-        public string Password { get; set; }
+        public string Password {
+            get { return BackingStore?.Get<string>(nameof(Password)); }
+            set { BackingStore?.Set(nameof(Password), value); }
+        }
         /// <summary>
         /// Instantiates a new windowsDeviceAccount and sets the default values.
         /// </summary>
         public WindowsDeviceAccount() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

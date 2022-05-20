@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Entity used to retrieve information about Intune Certificate Connectors.</summary>
     public class CertificateConnectorDetails : Entity, IParsable {
         /// <summary>Connector name (set during enrollment).</summary>
-        public string ConnectorName { get; set; }
+        public string ConnectorName {
+            get { return BackingStore?.Get<string>(nameof(ConnectorName)); }
+            set { BackingStore?.Set(nameof(ConnectorName), value); }
+        }
         /// <summary>Date/time when this connector was enrolled.</summary>
-        public DateTimeOffset? EnrollmentDateTime { get; set; }
+        public DateTimeOffset? EnrollmentDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EnrollmentDateTime)); }
+            set { BackingStore?.Set(nameof(EnrollmentDateTime), value); }
+        }
         /// <summary>Date/time when this connector last connected to the service.</summary>
-        public DateTimeOffset? LastCheckinDateTime { get; set; }
+        public DateTimeOffset? LastCheckinDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastCheckinDateTime)); }
+            set { BackingStore?.Set(nameof(LastCheckinDateTime), value); }
+        }
         /// <summary>Name of the machine hosting this connector service.</summary>
-        public string MachineName { get; set; }
+        public string MachineName {
+            get { return BackingStore?.Get<string>(nameof(MachineName)); }
+            set { BackingStore?.Set(nameof(MachineName), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

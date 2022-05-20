@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SearchAlteration : IAdditionalDataHolder, IParsable {
+    public class SearchAlteration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is (/ue000, /ue001)</summary>
-        public string AlteredHighlightedQueryString { get; set; }
+        public string AlteredHighlightedQueryString {
+            get { return BackingStore?.Get<string>(nameof(AlteredHighlightedQueryString)); }
+            set { BackingStore?.Set(nameof(AlteredHighlightedQueryString), value); }
+        }
         /// <summary>Defines the altered query string with spelling correction.</summary>
-        public string AlteredQueryString { get; set; }
+        public string AlteredQueryString {
+            get { return BackingStore?.Get<string>(nameof(AlteredQueryString)); }
+            set { BackingStore?.Set(nameof(AlteredQueryString), value); }
+        }
         /// <summary>Represents changed segments with respect to original query.</summary>
-        public List<AlteredQueryToken> AlteredQueryTokens { get; set; }
+        public List<AlteredQueryToken> AlteredQueryTokens {
+            get { return BackingStore?.Get<List<AlteredQueryToken>>(nameof(AlteredQueryTokens)); }
+            set { BackingStore?.Set(nameof(AlteredQueryTokens), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>
         /// Instantiates a new searchAlteration and sets the default values.
         /// </summary>
         public SearchAlteration() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

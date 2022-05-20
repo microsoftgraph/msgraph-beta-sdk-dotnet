@@ -1,34 +1,68 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class AccessReviewSettings : IAdditionalDataHolder, IParsable {
+    public class AccessReviewSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Indicates whether showing recommendations to reviewers is enabled.</summary>
-        public bool? AccessRecommendationsEnabled { get; set; }
+        public bool? AccessRecommendationsEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(AccessRecommendationsEnabled)); }
+            set { BackingStore?.Set(nameof(AccessRecommendationsEnabled), value); }
+        }
         /// <summary>The number of days of user activities to show to reviewers.</summary>
-        public int? ActivityDurationInDays { get; set; }
+        public int? ActivityDurationInDays {
+            get { return BackingStore?.Get<int?>(nameof(ActivityDurationInDays)); }
+            set { BackingStore?.Set(nameof(ActivityDurationInDays), value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Indicates whether the auto-apply capability, to automatically change the target object access resource, is enabled.  If not enabled, a user must, after the review completes, apply the access review.</summary>
-        public bool? AutoApplyReviewResultsEnabled { get; set; }
+        public bool? AutoApplyReviewResultsEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(AutoApplyReviewResultsEnabled)); }
+            set { BackingStore?.Set(nameof(AutoApplyReviewResultsEnabled), value); }
+        }
         /// <summary>Indicates whether a decision should be set if the reviewer did not supply one. For use when auto-apply is enabled. If you don&apos;t want to have a review decision recorded unless the reviewer makes an explicit choice, set it to false.</summary>
-        public bool? AutoReviewEnabled { get; set; }
+        public bool? AutoReviewEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(AutoReviewEnabled)); }
+            set { BackingStore?.Set(nameof(AutoReviewEnabled), value); }
+        }
         /// <summary>Detailed settings for how the feature should set the review decision. For use when auto-apply is enabled.</summary>
-        public Microsoft.Graph.Beta.Models.AutoReviewSettings AutoReviewSettings { get; set; }
+        public Microsoft.Graph.Beta.Models.AutoReviewSettings AutoReviewSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AutoReviewSettings>(nameof(AutoReviewSettings)); }
+            set { BackingStore?.Set(nameof(AutoReviewSettings), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether reviewers are required to provide a justification when reviewing access.</summary>
-        public bool? JustificationRequiredOnApproval { get; set; }
+        public bool? JustificationRequiredOnApproval {
+            get { return BackingStore?.Get<bool?>(nameof(JustificationRequiredOnApproval)); }
+            set { BackingStore?.Set(nameof(JustificationRequiredOnApproval), value); }
+        }
         /// <summary>Indicates whether sending mails to reviewers and the review creator is enabled.</summary>
-        public bool? MailNotificationsEnabled { get; set; }
+        public bool? MailNotificationsEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(MailNotificationsEnabled)); }
+            set { BackingStore?.Set(nameof(MailNotificationsEnabled), value); }
+        }
         /// <summary>Detailed settings for recurrence.</summary>
-        public AccessReviewRecurrenceSettings RecurrenceSettings { get; set; }
+        public AccessReviewRecurrenceSettings RecurrenceSettings {
+            get { return BackingStore?.Get<AccessReviewRecurrenceSettings>(nameof(RecurrenceSettings)); }
+            set { BackingStore?.Set(nameof(RecurrenceSettings), value); }
+        }
         /// <summary>Indicates whether sending reminder emails to reviewers is enabled.</summary>
-        public bool? RemindersEnabled { get; set; }
+        public bool? RemindersEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(RemindersEnabled)); }
+            set { BackingStore?.Set(nameof(RemindersEnabled), value); }
+        }
         /// <summary>
         /// Instantiates a new accessReviewSettings and sets the default values.
         /// </summary>
         public AccessReviewSettings() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

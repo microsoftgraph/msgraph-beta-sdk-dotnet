@@ -5,27 +5,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class PersonCertification : ItemFacet, IParsable {
         /// <summary>The referenceable identifier for the certification.</summary>
-        public string CertificationId { get; set; }
+        public string CertificationId {
+            get { return BackingStore?.Get<string>(nameof(CertificationId)); }
+            set { BackingStore?.Set(nameof(CertificationId), value); }
+        }
         /// <summary>Description of the certification.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Title of the certification.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The date that the certification expires.</summary>
-        public Date? EndDate { get; set; }
+        public Date? EndDate {
+            get { return BackingStore?.Get<Date?>(nameof(EndDate)); }
+            set { BackingStore?.Set(nameof(EndDate), value); }
+        }
         /// <summary>The date that the certification was issued.</summary>
-        public Date? IssuedDate { get; set; }
+        public Date? IssuedDate {
+            get { return BackingStore?.Get<Date?>(nameof(IssuedDate)); }
+            set { BackingStore?.Set(nameof(IssuedDate), value); }
+        }
         /// <summary>Authority which granted the certification.</summary>
-        public string IssuingAuthority { get; set; }
+        public string IssuingAuthority {
+            get { return BackingStore?.Get<string>(nameof(IssuingAuthority)); }
+            set { BackingStore?.Set(nameof(IssuingAuthority), value); }
+        }
         /// <summary>Company which granted the certification.</summary>
-        public string IssuingCompany { get; set; }
+        public string IssuingCompany {
+            get { return BackingStore?.Get<string>(nameof(IssuingCompany)); }
+            set { BackingStore?.Set(nameof(IssuingCompany), value); }
+        }
         /// <summary>The date that the certification became valid.</summary>
-        public Date? StartDate { get; set; }
+        public Date? StartDate {
+            get { return BackingStore?.Get<Date?>(nameof(StartDate)); }
+            set { BackingStore?.Set(nameof(StartDate), value); }
+        }
         /// <summary>URL referencing a thumbnail of the certification.</summary>
-        public string ThumbnailUrl { get; set; }
+        public string ThumbnailUrl {
+            get { return BackingStore?.Get<string>(nameof(ThumbnailUrl)); }
+            set { BackingStore?.Set(nameof(ThumbnailUrl), value); }
+        }
         /// <summary>URL referencing the certification.</summary>
-        public string WebUrl { get; set; }
+        public string WebUrl {
+            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
+            set { BackingStore?.Set(nameof(WebUrl), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

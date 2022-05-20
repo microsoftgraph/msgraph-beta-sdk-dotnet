@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class DataSubject : IAdditionalDataHolder, IParsable {
+    public class DataSubject : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Email of the data subject.</summary>
-        public string Email { get; set; }
+        public string Email {
+            get { return BackingStore?.Get<string>(nameof(Email)); }
+            set { BackingStore?.Set(nameof(Email), value); }
+        }
         /// <summary>First name of the data subject.</summary>
-        public string FirstName { get; set; }
+        public string FirstName {
+            get { return BackingStore?.Get<string>(nameof(FirstName)); }
+            set { BackingStore?.Set(nameof(FirstName), value); }
+        }
         /// <summary>Last Name of the data subject.</summary>
-        public string LastName { get; set; }
+        public string LastName {
+            get { return BackingStore?.Get<string>(nameof(LastName)); }
+            set { BackingStore?.Set(nameof(LastName), value); }
+        }
         /// <summary>The country/region of residency. The residency information is uesed only for internal reporting but not for the content search.</summary>
-        public string Residency { get; set; }
+        public string Residency {
+            get { return BackingStore?.Get<string>(nameof(Residency)); }
+            set { BackingStore?.Set(nameof(Residency), value); }
+        }
         /// <summary>
         /// Instantiates a new dataSubject and sets the default values.
         /// </summary>
         public DataSubject() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

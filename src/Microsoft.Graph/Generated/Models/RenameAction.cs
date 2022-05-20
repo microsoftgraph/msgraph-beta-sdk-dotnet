@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class RenameAction : IAdditionalDataHolder, IParsable {
+    public class RenameAction : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The new name of the item.</summary>
-        public string NewName { get; set; }
+        public string NewName {
+            get { return BackingStore?.Get<string>(nameof(NewName)); }
+            set { BackingStore?.Set(nameof(NewName), value); }
+        }
         /// <summary>The previous name of the item.</summary>
-        public string OldName { get; set; }
+        public string OldName {
+            get { return BackingStore?.Get<string>(nameof(OldName)); }
+            set { BackingStore?.Set(nameof(OldName), value); }
+        }
         /// <summary>
         /// Instantiates a new renameAction and sets the default values.
         /// </summary>
         public RenameAction() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

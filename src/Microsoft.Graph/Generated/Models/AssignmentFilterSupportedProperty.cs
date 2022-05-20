@@ -1,29 +1,54 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Represents the information about the property which is supported in crafting the rule of AssignmentFilter.</summary>
-    public class AssignmentFilterSupportedProperty : IAdditionalDataHolder, IParsable {
+    public class AssignmentFilterSupportedProperty : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The data type of the property.</summary>
-        public string DataType { get; set; }
+        public string DataType {
+            get { return BackingStore?.Get<string>(nameof(DataType)); }
+            set { BackingStore?.Set(nameof(DataType), value); }
+        }
         /// <summary>Indicates whether the property is a collection type or not.</summary>
-        public bool? IsCollection { get; set; }
+        public bool? IsCollection {
+            get { return BackingStore?.Get<bool?>(nameof(IsCollection)); }
+            set { BackingStore?.Set(nameof(IsCollection), value); }
+        }
         /// <summary>Name of the property.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>Regex string to do validation on the property value.</summary>
-        public string PropertyRegexConstraint { get; set; }
+        public string PropertyRegexConstraint {
+            get { return BackingStore?.Get<string>(nameof(PropertyRegexConstraint)); }
+            set { BackingStore?.Set(nameof(PropertyRegexConstraint), value); }
+        }
         /// <summary>List of all supported operators on this property.</summary>
-        public List<AssignmentFilterOperator?> SupportedOperators { get; set; }
+        public List<string> SupportedOperators {
+            get { return BackingStore?.Get<List<string>>(nameof(SupportedOperators)); }
+            set { BackingStore?.Set(nameof(SupportedOperators), value); }
+        }
         /// <summary>List of all supported values for this propery, empty if everything is supported.</summary>
-        public List<string> SupportedValues { get; set; }
+        public List<string> SupportedValues {
+            get { return BackingStore?.Get<List<string>>(nameof(SupportedValues)); }
+            set { BackingStore?.Set(nameof(SupportedValues), value); }
+        }
         /// <summary>
         /// Instantiates a new assignmentFilterSupportedProperty and sets the default values.
         /// </summary>
         public AssignmentFilterSupportedProperty() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -43,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isCollection", n => { IsCollection = n.GetBoolValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"propertyRegexConstraint", n => { PropertyRegexConstraint = n.GetStringValue(); } },
-                {"supportedOperators", n => { SupportedOperators = n.GetCollectionOfEnumValues<AssignmentFilterOperator>().ToList(); } },
+                {"supportedOperators", n => { SupportedOperators = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"supportedValues", n => { SupportedValues = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
@@ -57,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isCollection", IsCollection);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("propertyRegexConstraint", PropertyRegexConstraint);
-            writer.WriteCollectionOfEnumValues<AssignmentFilterOperator>("supportedOperators", SupportedOperators);
+            writer.WriteCollectionOfPrimitiveValues<string>("supportedOperators", SupportedOperators);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedValues", SupportedValues);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class PreAuthorizedApplication : IAdditionalDataHolder, IParsable {
+    public class PreAuthorizedApplication : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>The unique identifier for the application.</summary>
-        public string AppId { get; set; }
+        public string AppId {
+            get { return BackingStore?.Get<string>(nameof(AppId)); }
+            set { BackingStore?.Set(nameof(AppId), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The unique identifier for the oauth2PermissionScopes the application requires.</summary>
-        public List<string> PermissionIds { get; set; }
+        public List<string> PermissionIds {
+            get { return BackingStore?.Get<List<string>>(nameof(PermissionIds)); }
+            set { BackingStore?.Set(nameof(PermissionIds), value); }
+        }
         /// <summary>
         /// Instantiates a new preAuthorizedApplication and sets the default values.
         /// </summary>
         public PreAuthorizedApplication() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

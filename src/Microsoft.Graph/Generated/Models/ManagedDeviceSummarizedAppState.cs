@@ -1,21 +1,34 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Event representing a user&apos;s devices with failed or pending apps.</summary>
-    public class ManagedDeviceSummarizedAppState : IAdditionalDataHolder, IParsable {
+    public class ManagedDeviceSummarizedAppState : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>DeviceId of device represented by this object</summary>
-        public string DeviceId { get; set; }
+        public string DeviceId {
+            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
+            set { BackingStore?.Set(nameof(DeviceId), value); }
+        }
         /// <summary>runState for the object. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.</summary>
-        public RunState? SummarizedAppState { get; set; }
+        public RunState? SummarizedAppState {
+            get { return BackingStore?.Get<RunState?>(nameof(SummarizedAppState)); }
+            set { BackingStore?.Set(nameof(SummarizedAppState), value); }
+        }
         /// <summary>
         /// Instantiates a new managedDeviceSummarizedAppState and sets the default values.
         /// </summary>
         public ManagedDeviceSummarizedAppState() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

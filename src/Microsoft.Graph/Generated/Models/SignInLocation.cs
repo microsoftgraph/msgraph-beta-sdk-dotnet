@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SignInLocation : IAdditionalDataHolder, IParsable {
+    public class SignInLocation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.</summary>
-        public string City { get; set; }
+        public string City {
+            get { return BackingStore?.Get<string>(nameof(City)); }
+            set { BackingStore?.Set(nameof(City), value); }
+        }
         /// <summary>Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.</summary>
-        public string CountryOrRegion { get; set; }
+        public string CountryOrRegion {
+            get { return BackingStore?.Get<string>(nameof(CountryOrRegion)); }
+            set { BackingStore?.Set(nameof(CountryOrRegion), value); }
+        }
         /// <summary>Provides the latitude, longitude and altitude where the sign-in originated.</summary>
-        public Microsoft.Graph.Beta.Models.GeoCoordinates GeoCoordinates { get; set; }
+        public Microsoft.Graph.Beta.Models.GeoCoordinates GeoCoordinates {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GeoCoordinates>(nameof(GeoCoordinates)); }
+            set { BackingStore?.Set(nameof(GeoCoordinates), value); }
+        }
         /// <summary>Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.</summary>
-        public string State { get; set; }
+        public string State {
+            get { return BackingStore?.Get<string>(nameof(State)); }
+            set { BackingStore?.Set(nameof(State), value); }
+        }
         /// <summary>
         /// Instantiates a new signInLocation and sets the default values.
         /// </summary>
         public SignInLocation() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

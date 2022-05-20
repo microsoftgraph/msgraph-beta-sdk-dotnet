@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class TimeOff : ChangeTrackedEntity, IParsable {
         /// <summary>The draft version of this timeOff that is viewable by managers. Required.</summary>
-        public TimeOffItem DraftTimeOff { get; set; }
+        public TimeOffItem DraftTimeOff {
+            get { return BackingStore?.Get<TimeOffItem>(nameof(DraftTimeOff)); }
+            set { BackingStore?.Set(nameof(DraftTimeOff), value); }
+        }
         /// <summary>The isStagedForDeletion property</summary>
-        public bool? IsStagedForDeletion { get; set; }
+        public bool? IsStagedForDeletion {
+            get { return BackingStore?.Get<bool?>(nameof(IsStagedForDeletion)); }
+            set { BackingStore?.Set(nameof(IsStagedForDeletion), value); }
+        }
         /// <summary>The shared version of this timeOff that is viewable by both employees and managers. Required.</summary>
-        public TimeOffItem SharedTimeOff { get; set; }
+        public TimeOffItem SharedTimeOff {
+            get { return BackingStore?.Get<TimeOffItem>(nameof(SharedTimeOff)); }
+            set { BackingStore?.Set(nameof(SharedTimeOff), value); }
+        }
         /// <summary>ID of the user assigned to the timeOff. Required.</summary>
-        public string UserId { get; set; }
+        public string UserId {
+            get { return BackingStore?.Get<string>(nameof(UserId)); }
+            set { BackingStore?.Set(nameof(UserId), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

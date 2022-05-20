@@ -1,21 +1,34 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class UpdateWindow : IAdditionalDataHolder, IParsable {
+    public class UpdateWindow : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>End of a time window during which agents can receive updates</summary>
-        public Time? UpdateWindowEndTime { get; set; }
+        public Time? UpdateWindowEndTime {
+            get { return BackingStore?.Get<Time?>(nameof(UpdateWindowEndTime)); }
+            set { BackingStore?.Set(nameof(UpdateWindowEndTime), value); }
+        }
         /// <summary>Start of a time window during which agents can receive updates</summary>
-        public Time? UpdateWindowStartTime { get; set; }
+        public Time? UpdateWindowStartTime {
+            get { return BackingStore?.Get<Time?>(nameof(UpdateWindowStartTime)); }
+            set { BackingStore?.Set(nameof(UpdateWindowStartTime), value); }
+        }
         /// <summary>
         /// Instantiates a new updateWindow and sets the default values.
         /// </summary>
         public UpdateWindow() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -5,45 +5,103 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to call the getOffice365GroupsActivityDetail method.</summary>
     public class Office365GroupsActivityDetail : Entity, IParsable {
         /// <summary>The storage used of the group mailbox.</summary>
-        public long? ExchangeMailboxStorageUsedInBytes { get; set; }
+        public long? ExchangeMailboxStorageUsedInBytes {
+            get { return BackingStore?.Get<long?>(nameof(ExchangeMailboxStorageUsedInBytes)); }
+            set { BackingStore?.Set(nameof(ExchangeMailboxStorageUsedInBytes), value); }
+        }
         /// <summary>The number of items in the group mailbox.</summary>
-        public long? ExchangeMailboxTotalItemCount { get; set; }
+        public long? ExchangeMailboxTotalItemCount {
+            get { return BackingStore?.Get<long?>(nameof(ExchangeMailboxTotalItemCount)); }
+            set { BackingStore?.Set(nameof(ExchangeMailboxTotalItemCount), value); }
+        }
         /// <summary>The number of email that the group mailbox received.</summary>
-        public long? ExchangeReceivedEmailCount { get; set; }
+        public long? ExchangeReceivedEmailCount {
+            get { return BackingStore?.Get<long?>(nameof(ExchangeReceivedEmailCount)); }
+            set { BackingStore?.Set(nameof(ExchangeReceivedEmailCount), value); }
+        }
         /// <summary>The group external member count.</summary>
-        public long? ExternalMemberCount { get; set; }
+        public long? ExternalMemberCount {
+            get { return BackingStore?.Get<long?>(nameof(ExternalMemberCount)); }
+            set { BackingStore?.Set(nameof(ExternalMemberCount), value); }
+        }
         /// <summary>The display name of the group.</summary>
-        public string GroupDisplayName { get; set; }
+        public string GroupDisplayName {
+            get { return BackingStore?.Get<string>(nameof(GroupDisplayName)); }
+            set { BackingStore?.Set(nameof(GroupDisplayName), value); }
+        }
         /// <summary>The group id.</summary>
-        public string GroupId { get; set; }
+        public string GroupId {
+            get { return BackingStore?.Get<string>(nameof(GroupId)); }
+            set { BackingStore?.Set(nameof(GroupId), value); }
+        }
         /// <summary>The group type. Possible values are: Public or Private.</summary>
-        public string GroupType { get; set; }
+        public string GroupType {
+            get { return BackingStore?.Get<string>(nameof(GroupType)); }
+            set { BackingStore?.Set(nameof(GroupType), value); }
+        }
         /// <summary>Whether this user has been deleted or soft deleted.</summary>
-        public bool? IsDeleted { get; set; }
+        public bool? IsDeleted {
+            get { return BackingStore?.Get<bool?>(nameof(IsDeleted)); }
+            set { BackingStore?.Set(nameof(IsDeleted), value); }
+        }
         /// <summary>The last activity date for the following scenarios:  group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.</summary>
-        public Date? LastActivityDate { get; set; }
+        public Date? LastActivityDate {
+            get { return BackingStore?.Get<Date?>(nameof(LastActivityDate)); }
+            set { BackingStore?.Set(nameof(LastActivityDate), value); }
+        }
         /// <summary>The group member count.</summary>
-        public long? MemberCount { get; set; }
+        public long? MemberCount {
+            get { return BackingStore?.Get<long?>(nameof(MemberCount)); }
+            set { BackingStore?.Set(nameof(MemberCount), value); }
+        }
         /// <summary>The group owner principal name.</summary>
-        public string OwnerPrincipalName { get; set; }
+        public string OwnerPrincipalName {
+            get { return BackingStore?.Get<string>(nameof(OwnerPrincipalName)); }
+            set { BackingStore?.Set(nameof(OwnerPrincipalName), value); }
+        }
         /// <summary>The number of days the report covers.</summary>
-        public string ReportPeriod { get; set; }
+        public string ReportPeriod {
+            get { return BackingStore?.Get<string>(nameof(ReportPeriod)); }
+            set { BackingStore?.Set(nameof(ReportPeriod), value); }
+        }
         /// <summary>The latest date of the content.</summary>
-        public Date? ReportRefreshDate { get; set; }
+        public Date? ReportRefreshDate {
+            get { return BackingStore?.Get<Date?>(nameof(ReportRefreshDate)); }
+            set { BackingStore?.Set(nameof(ReportRefreshDate), value); }
+        }
         /// <summary>The number of active files in SharePoint Group site.</summary>
-        public long? SharePointActiveFileCount { get; set; }
+        public long? SharePointActiveFileCount {
+            get { return BackingStore?.Get<long?>(nameof(SharePointActiveFileCount)); }
+            set { BackingStore?.Set(nameof(SharePointActiveFileCount), value); }
+        }
         /// <summary>The storage used by SharePoint Group site.</summary>
-        public long? SharePointSiteStorageUsedInBytes { get; set; }
+        public long? SharePointSiteStorageUsedInBytes {
+            get { return BackingStore?.Get<long?>(nameof(SharePointSiteStorageUsedInBytes)); }
+            set { BackingStore?.Set(nameof(SharePointSiteStorageUsedInBytes), value); }
+        }
         /// <summary>The total number of files in SharePoint Group site.</summary>
-        public long? SharePointTotalFileCount { get; set; }
+        public long? SharePointTotalFileCount {
+            get { return BackingStore?.Get<long?>(nameof(SharePointTotalFileCount)); }
+            set { BackingStore?.Set(nameof(SharePointTotalFileCount), value); }
+        }
         /// <summary>The number of messages liked in Yammer groups.</summary>
-        public long? YammerLikedMessageCount { get; set; }
+        public long? YammerLikedMessageCount {
+            get { return BackingStore?.Get<long?>(nameof(YammerLikedMessageCount)); }
+            set { BackingStore?.Set(nameof(YammerLikedMessageCount), value); }
+        }
         /// <summary>The number of messages posted to Yammer groups.</summary>
-        public long? YammerPostedMessageCount { get; set; }
+        public long? YammerPostedMessageCount {
+            get { return BackingStore?.Get<long?>(nameof(YammerPostedMessageCount)); }
+            set { BackingStore?.Set(nameof(YammerPostedMessageCount), value); }
+        }
         /// <summary>The number of messages read in Yammer groups.</summary>
-        public long? YammerReadMessageCount { get; set; }
+        public long? YammerReadMessageCount {
+            get { return BackingStore?.Get<long?>(nameof(YammerReadMessageCount)); }
+            set { BackingStore?.Set(nameof(YammerReadMessageCount), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

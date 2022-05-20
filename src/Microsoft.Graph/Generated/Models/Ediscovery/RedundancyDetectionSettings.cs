@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
-    public class RedundancyDetectionSettings : IAdditionalDataHolder, IParsable {
+    public class RedundancyDetectionSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether email threading and near duplicate detection are enabled.</summary>
-        public bool? IsEnabled { get; set; }
+        public bool? IsEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
+            set { BackingStore?.Set(nameof(IsEnabled), value); }
+        }
         /// <summary>Specifies the maximum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.</summary>
-        public int? MaxWords { get; set; }
+        public int? MaxWords {
+            get { return BackingStore?.Get<int?>(nameof(MaxWords)); }
+            set { BackingStore?.Set(nameof(MaxWords), value); }
+        }
         /// <summary>Specifies the minimum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.</summary>
-        public int? MinWords { get; set; }
+        public int? MinWords {
+            get { return BackingStore?.Get<int?>(nameof(MinWords)); }
+            set { BackingStore?.Set(nameof(MinWords), value); }
+        }
         /// <summary>Specifies the similarity level for documents to be put in the same near duplicate set. To learn more, see Document and email similarity threshold.</summary>
-        public int? SimilarityThreshold { get; set; }
+        public int? SimilarityThreshold {
+            get { return BackingStore?.Get<int?>(nameof(SimilarityThreshold)); }
+            set { BackingStore?.Set(nameof(SimilarityThreshold), value); }
+        }
         /// <summary>
         /// Instantiates a new redundancyDetectionSettings and sets the default values.
         /// </summary>
         public RedundancyDetectionSettings() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

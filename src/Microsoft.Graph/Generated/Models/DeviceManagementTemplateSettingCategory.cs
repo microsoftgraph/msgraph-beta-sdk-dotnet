@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Entity representing a template setting category</summary>
     public class DeviceManagementTemplateSettingCategory : DeviceManagementSettingCategory, IParsable {
         /// <summary>The settings this category contains</summary>
-        public List<DeviceManagementSettingInstance> RecommendedSettings { get; set; }
+        public List<DeviceManagementSettingInstance> RecommendedSettings {
+            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>(nameof(RecommendedSettings)); }
+            set { BackingStore?.Set(nameof(RecommendedSettings), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

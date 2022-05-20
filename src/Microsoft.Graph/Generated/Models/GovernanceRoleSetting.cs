@@ -4,29 +4,63 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of governanceResource entities.</summary>
     public class GovernanceRoleSetting : Entity, IParsable {
         /// <summary>The rule settings that are evaluated when an administrator tries to add an eligible role assignment.</summary>
-        public List<GovernanceRuleSetting> AdminEligibleSettings { get; set; }
+        public List<GovernanceRuleSetting> AdminEligibleSettings {
+            get { return BackingStore?.Get<List<GovernanceRuleSetting>>(nameof(AdminEligibleSettings)); }
+            set { BackingStore?.Set(nameof(AdminEligibleSettings), value); }
+        }
         /// <summary>The rule settings that are evaluated when an administrator tries to add a direct member role assignment.</summary>
-        public List<GovernanceRuleSetting> AdminMemberSettings { get; set; }
+        public List<GovernanceRuleSetting> AdminMemberSettings {
+            get { return BackingStore?.Get<List<GovernanceRuleSetting>>(nameof(AdminMemberSettings)); }
+            set { BackingStore?.Set(nameof(AdminMemberSettings), value); }
+        }
         /// <summary>Read-only. Indicate if the roleSetting is a default roleSetting</summary>
-        public bool? IsDefault { get; set; }
+        public bool? IsDefault {
+            get { return BackingStore?.Get<bool?>(nameof(IsDefault)); }
+            set { BackingStore?.Set(nameof(IsDefault), value); }
+        }
         /// <summary>Read-only. The display name of the administrator who last updated the roleSetting.</summary>
-        public string LastUpdatedBy { get; set; }
+        public string LastUpdatedBy {
+            get { return BackingStore?.Get<string>(nameof(LastUpdatedBy)); }
+            set { BackingStore?.Set(nameof(LastUpdatedBy), value); }
+        }
         /// <summary>Read-only. The time when the role setting was last updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? LastUpdatedDateTime { get; set; }
+        public DateTimeOffset? LastUpdatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastUpdatedDateTime)); }
+            set { BackingStore?.Set(nameof(LastUpdatedDateTime), value); }
+        }
         /// <summary>Read-only. The associated resource for this role setting.</summary>
-        public GovernanceResource Resource { get; set; }
+        public GovernanceResource Resource {
+            get { return BackingStore?.Get<GovernanceResource>(nameof(Resource)); }
+            set { BackingStore?.Set(nameof(Resource), value); }
+        }
         /// <summary>Required. The id of the resource that the role setting is associated with.</summary>
-        public string ResourceId { get; set; }
+        public string ResourceId {
+            get { return BackingStore?.Get<string>(nameof(ResourceId)); }
+            set { BackingStore?.Set(nameof(ResourceId), value); }
+        }
         /// <summary>Read-only. The role definition that is enforced with this role setting.</summary>
-        public GovernanceRoleDefinition RoleDefinition { get; set; }
+        public GovernanceRoleDefinition RoleDefinition {
+            get { return BackingStore?.Get<GovernanceRoleDefinition>(nameof(RoleDefinition)); }
+            set { BackingStore?.Set(nameof(RoleDefinition), value); }
+        }
         /// <summary>Required. The id of the role definition that the role setting is associated with.</summary>
-        public string RoleDefinitionId { get; set; }
+        public string RoleDefinitionId {
+            get { return BackingStore?.Get<string>(nameof(RoleDefinitionId)); }
+            set { BackingStore?.Set(nameof(RoleDefinitionId), value); }
+        }
         /// <summary>The rule settings that are evaluated when a user tries to add an eligible role assignment. The setting is not supported for now.</summary>
-        public List<GovernanceRuleSetting> UserEligibleSettings { get; set; }
+        public List<GovernanceRuleSetting> UserEligibleSettings {
+            get { return BackingStore?.Get<List<GovernanceRuleSetting>>(nameof(UserEligibleSettings)); }
+            set { BackingStore?.Set(nameof(UserEligibleSettings), value); }
+        }
         /// <summary>The rule settings that are evaluated when a user tries to activate his role assignment.</summary>
-        public List<GovernanceRuleSetting> UserMemberSettings { get; set; }
+        public List<GovernanceRuleSetting> UserMemberSettings {
+            get { return BackingStore?.Get<List<GovernanceRuleSetting>>(nameof(UserMemberSettings)); }
+            set { BackingStore?.Set(nameof(UserMemberSettings), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

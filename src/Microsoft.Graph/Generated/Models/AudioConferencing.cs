@@ -1,28 +1,53 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class AudioConferencing : IAdditionalDataHolder, IParsable {
+    public class AudioConferencing : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The conference id of the online meeting.</summary>
-        public string ConferenceId { get; set; }
+        public string ConferenceId {
+            get { return BackingStore?.Get<string>(nameof(ConferenceId)); }
+            set { BackingStore?.Set(nameof(ConferenceId), value); }
+        }
         /// <summary>A URL to the externally-accessible web page that contains dial-in information.</summary>
-        public string DialinUrl { get; set; }
+        public string DialinUrl {
+            get { return BackingStore?.Get<string>(nameof(DialinUrl)); }
+            set { BackingStore?.Set(nameof(DialinUrl), value); }
+        }
         /// <summary>The tollFreeNumber property</summary>
-        public string TollFreeNumber { get; set; }
+        public string TollFreeNumber {
+            get { return BackingStore?.Get<string>(nameof(TollFreeNumber)); }
+            set { BackingStore?.Set(nameof(TollFreeNumber), value); }
+        }
         /// <summary>List of toll-free numbers that are displayed in the meeting invite.</summary>
-        public List<string> TollFreeNumbers { get; set; }
+        public List<string> TollFreeNumbers {
+            get { return BackingStore?.Get<List<string>>(nameof(TollFreeNumbers)); }
+            set { BackingStore?.Set(nameof(TollFreeNumbers), value); }
+        }
         /// <summary>The tollNumber property</summary>
-        public string TollNumber { get; set; }
+        public string TollNumber {
+            get { return BackingStore?.Get<string>(nameof(TollNumber)); }
+            set { BackingStore?.Set(nameof(TollNumber), value); }
+        }
         /// <summary>List of toll numbers that are displayed in the meeting invite.</summary>
-        public List<string> TollNumbers { get; set; }
+        public List<string> TollNumbers {
+            get { return BackingStore?.Get<List<string>>(nameof(TollNumbers)); }
+            set { BackingStore?.Set(nameof(TollNumbers), value); }
+        }
         /// <summary>
         /// Instantiates a new audioConferencing and sets the default values.
         /// </summary>
         public AudioConferencing() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

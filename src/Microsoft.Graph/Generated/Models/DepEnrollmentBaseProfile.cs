@@ -4,52 +4,115 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The DepEnrollmentBaseProfile resource represents an Apple Device Enrollment Program (DEP) enrollment profile. This type of profile must be assigned to Apple DEP serial numbers before the corresponding devices can enroll via DEP.</summary>
     public class DepEnrollmentBaseProfile : EnrollmentProfile, IParsable {
         /// <summary>Indicates if Apple id setup pane is disabled</summary>
-        public bool? AppleIdDisabled { get; set; }
+        public bool? AppleIdDisabled {
+            get { return BackingStore?.Get<bool?>(nameof(AppleIdDisabled)); }
+            set { BackingStore?.Set(nameof(AppleIdDisabled), value); }
+        }
         /// <summary>Indicates if Apple pay setup pane is disabled</summary>
-        public bool? ApplePayDisabled { get; set; }
+        public bool? ApplePayDisabled {
+            get { return BackingStore?.Get<bool?>(nameof(ApplePayDisabled)); }
+            set { BackingStore?.Set(nameof(ApplePayDisabled), value); }
+        }
         /// <summary>URL for setup assistant login</summary>
-        public bool? ConfigurationWebUrl { get; set; }
+        public bool? ConfigurationWebUrl {
+            get { return BackingStore?.Get<bool?>(nameof(ConfigurationWebUrl)); }
+            set { BackingStore?.Set(nameof(ConfigurationWebUrl), value); }
+        }
         /// <summary>Sets a literal or name pattern.</summary>
-        public string DeviceNameTemplate { get; set; }
+        public string DeviceNameTemplate {
+            get { return BackingStore?.Get<string>(nameof(DeviceNameTemplate)); }
+            set { BackingStore?.Set(nameof(DeviceNameTemplate), value); }
+        }
         /// <summary>Indicates if diagnostics setup pane is disabled</summary>
-        public bool? DiagnosticsDisabled { get; set; }
+        public bool? DiagnosticsDisabled {
+            get { return BackingStore?.Get<bool?>(nameof(DiagnosticsDisabled)); }
+            set { BackingStore?.Set(nameof(DiagnosticsDisabled), value); }
+        }
         /// <summary>Indicates if displaytone setup screen is disabled</summary>
-        public bool? DisplayToneSetupDisabled { get; set; }
+        public bool? DisplayToneSetupDisabled {
+            get { return BackingStore?.Get<bool?>(nameof(DisplayToneSetupDisabled)); }
+            set { BackingStore?.Set(nameof(DisplayToneSetupDisabled), value); }
+        }
         /// <summary>Indicates if this is the default profile</summary>
-        public bool? IsDefault { get; set; }
+        public bool? IsDefault {
+            get { return BackingStore?.Get<bool?>(nameof(IsDefault)); }
+            set { BackingStore?.Set(nameof(IsDefault), value); }
+        }
         /// <summary>Indicates if the profile is mandatory</summary>
-        public bool? IsMandatory { get; set; }
+        public bool? IsMandatory {
+            get { return BackingStore?.Get<bool?>(nameof(IsMandatory)); }
+            set { BackingStore?.Set(nameof(IsMandatory), value); }
+        }
         /// <summary>Indicates if Location service setup pane is disabled</summary>
-        public bool? LocationDisabled { get; set; }
+        public bool? LocationDisabled {
+            get { return BackingStore?.Get<bool?>(nameof(LocationDisabled)); }
+            set { BackingStore?.Set(nameof(LocationDisabled), value); }
+        }
         /// <summary>Indicates if privacy screen is disabled</summary>
-        public bool? PrivacyPaneDisabled { get; set; }
+        public bool? PrivacyPaneDisabled {
+            get { return BackingStore?.Get<bool?>(nameof(PrivacyPaneDisabled)); }
+            set { BackingStore?.Set(nameof(PrivacyPaneDisabled), value); }
+        }
         /// <summary>Indicates if the profile removal option is disabled</summary>
-        public bool? ProfileRemovalDisabled { get; set; }
+        public bool? ProfileRemovalDisabled {
+            get { return BackingStore?.Get<bool?>(nameof(ProfileRemovalDisabled)); }
+            set { BackingStore?.Set(nameof(ProfileRemovalDisabled), value); }
+        }
         /// <summary>Indicates if Restore setup pane is blocked</summary>
-        public bool? RestoreBlocked { get; set; }
+        public bool? RestoreBlocked {
+            get { return BackingStore?.Get<bool?>(nameof(RestoreBlocked)); }
+            set { BackingStore?.Set(nameof(RestoreBlocked), value); }
+        }
         /// <summary>Indicates if screen timeout setup is disabled</summary>
-        public bool? ScreenTimeScreenDisabled { get; set; }
+        public bool? ScreenTimeScreenDisabled {
+            get { return BackingStore?.Get<bool?>(nameof(ScreenTimeScreenDisabled)); }
+            set { BackingStore?.Set(nameof(ScreenTimeScreenDisabled), value); }
+        }
         /// <summary>Indicates if siri setup pane is disabled</summary>
-        public bool? SiriDisabled { get; set; }
+        public bool? SiriDisabled {
+            get { return BackingStore?.Get<bool?>(nameof(SiriDisabled)); }
+            set { BackingStore?.Set(nameof(SiriDisabled), value); }
+        }
         /// <summary>Supervised mode, True to enable, false otherwise. See https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.</summary>
-        public bool? SupervisedModeEnabled { get; set; }
+        public bool? SupervisedModeEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(SupervisedModeEnabled)); }
+            set { BackingStore?.Set(nameof(SupervisedModeEnabled), value); }
+        }
         /// <summary>Support department information</summary>
-        public string SupportDepartment { get; set; }
+        public string SupportDepartment {
+            get { return BackingStore?.Get<string>(nameof(SupportDepartment)); }
+            set { BackingStore?.Set(nameof(SupportDepartment), value); }
+        }
         /// <summary>Support phone number</summary>
-        public string SupportPhoneNumber { get; set; }
+        public string SupportPhoneNumber {
+            get { return BackingStore?.Get<string>(nameof(SupportPhoneNumber)); }
+            set { BackingStore?.Set(nameof(SupportPhoneNumber), value); }
+        }
         /// <summary>Indicates if &apos;Terms and Conditions&apos; setup pane is disabled</summary>
-        public bool? TermsAndConditionsDisabled { get; set; }
+        public bool? TermsAndConditionsDisabled {
+            get { return BackingStore?.Get<bool?>(nameof(TermsAndConditionsDisabled)); }
+            set { BackingStore?.Set(nameof(TermsAndConditionsDisabled), value); }
+        }
         /// <summary>Indicates if touch id setup pane is disabled</summary>
-        public bool? TouchIdDisabled { get; set; }
+        public bool? TouchIdDisabled {
+            get { return BackingStore?.Get<bool?>(nameof(TouchIdDisabled)); }
+            set { BackingStore?.Set(nameof(TouchIdDisabled), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new DepEnrollmentBaseProfile CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DepEnrollmentBaseProfile();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.depEnrollmentBaseProfile" => new DepEnrollmentBaseProfile(),
+                _ => new DepEnrollmentBaseProfile(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

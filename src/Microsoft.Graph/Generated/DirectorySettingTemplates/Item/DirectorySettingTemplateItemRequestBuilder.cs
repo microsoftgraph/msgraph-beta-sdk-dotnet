@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get a directory setting template
+        /// A directory setting template represents a template of settings from which settings may be created within a tenant. This operation allows retrieval of the properties of the **directorySettingTemplate** object, including the available settings and their defaults.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<DirectorySettingTemplateItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -142,7 +142,7 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a directory setting template
+        /// A directory setting template represents a template of settings from which settings may be created within a tenant. This operation allows retrieval of the properties of the **directorySettingTemplate** object, including the available settings and their defaults.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -185,7 +185,7 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get a directory setting template</summary>
+        /// <summary>A directory setting template represents a template of settings from which settings may be created within a tenant. This operation allows retrieval of the properties of the **directorySettingTemplate** object, including the available settings and their defaults.</summary>
         public class DirectorySettingTemplateItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

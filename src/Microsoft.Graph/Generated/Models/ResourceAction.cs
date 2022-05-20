@@ -1,21 +1,34 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Set of allowed and not allowed actions for a resource.</summary>
-    public class ResourceAction : IAdditionalDataHolder, IParsable {
+    public class ResourceAction : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Allowed Actions</summary>
-        public List<string> AllowedResourceActions { get; set; }
+        public List<string> AllowedResourceActions {
+            get { return BackingStore?.Get<List<string>>(nameof(AllowedResourceActions)); }
+            set { BackingStore?.Set(nameof(AllowedResourceActions), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Not Allowed Actions.</summary>
-        public List<string> NotAllowedResourceActions { get; set; }
+        public List<string> NotAllowedResourceActions {
+            get { return BackingStore?.Get<List<string>>(nameof(NotAllowedResourceActions)); }
+            set { BackingStore?.Set(nameof(NotAllowedResourceActions), value); }
+        }
         /// <summary>
         /// Instantiates a new resourceAction and sets the default values.
         /// </summary>
         public ResourceAction() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

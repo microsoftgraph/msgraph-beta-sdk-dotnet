@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ManagementCertificateWithThumbprint : IAdditionalDataHolder, IParsable {
+    public class ManagementCertificateWithThumbprint : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The Base 64 encoded management certificate</summary>
-        public string Certificate { get; set; }
+        public string Certificate {
+            get { return BackingStore?.Get<string>(nameof(Certificate)); }
+            set { BackingStore?.Set(nameof(Certificate), value); }
+        }
         /// <summary>The thumbprint of the management certificate</summary>
-        public string Thumbprint { get; set; }
+        public string Thumbprint {
+            get { return BackingStore?.Get<string>(nameof(Thumbprint)); }
+            set { BackingStore?.Set(nameof(Thumbprint), value); }
+        }
         /// <summary>
         /// Instantiates a new managementCertificateWithThumbprint and sets the default values.
         /// </summary>
         public ManagementCertificateWithThumbprint() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

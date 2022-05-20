@@ -4,21 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the financials singleton.</summary>
     public class PaymentTerm : Entity, IParsable {
         /// <summary>The calculateDiscountOnCreditMemos property</summary>
-        public bool? CalculateDiscountOnCreditMemos { get; set; }
+        public bool? CalculateDiscountOnCreditMemos {
+            get { return BackingStore?.Get<bool?>(nameof(CalculateDiscountOnCreditMemos)); }
+            set { BackingStore?.Set(nameof(CalculateDiscountOnCreditMemos), value); }
+        }
         /// <summary>The code property</summary>
-        public string Code { get; set; }
+        public string Code {
+            get { return BackingStore?.Get<string>(nameof(Code)); }
+            set { BackingStore?.Set(nameof(Code), value); }
+        }
         /// <summary>The discountDateCalculation property</summary>
-        public string DiscountDateCalculation { get; set; }
+        public string DiscountDateCalculation {
+            get { return BackingStore?.Get<string>(nameof(DiscountDateCalculation)); }
+            set { BackingStore?.Set(nameof(DiscountDateCalculation), value); }
+        }
         /// <summary>The discountPercent property</summary>
-        public decimal? DiscountPercent { get; set; }
+        public decimal? DiscountPercent {
+            get { return BackingStore?.Get<decimal?>(nameof(DiscountPercent)); }
+            set { BackingStore?.Set(nameof(DiscountPercent), value); }
+        }
         /// <summary>The displayName property</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The dueDateCalculation property</summary>
-        public string DueDateCalculation { get; set; }
+        public string DueDateCalculation {
+            get { return BackingStore?.Get<string>(nameof(DueDateCalculation)); }
+            set { BackingStore?.Set(nameof(DueDateCalculation), value); }
+        }
         /// <summary>The lastModifiedDateTime property</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

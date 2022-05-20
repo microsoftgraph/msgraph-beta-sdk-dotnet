@@ -1,25 +1,44 @@
 using Microsoft.Graph.Beta.Models.TermStore;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class TermColumn : IAdditionalDataHolder, IParsable {
+    public class TermColumn : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Specifies whether the column will allow more than one value</summary>
-        public bool? AllowMultipleValues { get; set; }
+        public bool? AllowMultipleValues {
+            get { return BackingStore?.Get<bool?>(nameof(AllowMultipleValues)); }
+            set { BackingStore?.Set(nameof(AllowMultipleValues), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The parentTerm property</summary>
-        public Term ParentTerm { get; set; }
+        public Term ParentTerm {
+            get { return BackingStore?.Get<Term>(nameof(ParentTerm)); }
+            set { BackingStore?.Set(nameof(ParentTerm), value); }
+        }
         /// <summary>Specifies whether to display the entire term path or only the term label.</summary>
-        public bool? ShowFullyQualifiedName { get; set; }
+        public bool? ShowFullyQualifiedName {
+            get { return BackingStore?.Get<bool?>(nameof(ShowFullyQualifiedName)); }
+            set { BackingStore?.Set(nameof(ShowFullyQualifiedName), value); }
+        }
         /// <summary>The termSet property</summary>
-        public Microsoft.Graph.Beta.Models.TermStore.Set TermSet { get; set; }
+        public Microsoft.Graph.Beta.Models.TermStore.Set TermSet {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TermStore.Set>(nameof(TermSet)); }
+            set { BackingStore?.Set(nameof(TermSet), value); }
+        }
         /// <summary>
         /// Instantiates a new termColumn and sets the default values.
         /// </summary>
         public TermColumn() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

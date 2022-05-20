@@ -1,3 +1,5 @@
+using Microsoft.Graph.Beta.Me.DirectReports.Item.OrgContact;
+using Microsoft.Graph.Beta.Me.DirectReports.Item.User;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -11,12 +13,20 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.DirectReports.Item {
     /// <summary>Provides operations to manage the directReports property of the microsoft.graph.user entity.</summary>
     public class DirectoryObjectItemRequestBuilder {
+        /// <summary>The orgContact property</summary>
+        public OrgContactRequestBuilder OrgContact { get =>
+            new OrgContactRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>The user property</summary>
+        public UserRequestBuilder User { get =>
+            new UserRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>

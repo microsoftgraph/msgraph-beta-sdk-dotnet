@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class CaseIndexOperation : CaseOperation, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

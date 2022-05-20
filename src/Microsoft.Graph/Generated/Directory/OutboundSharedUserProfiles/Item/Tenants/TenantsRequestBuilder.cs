@@ -24,10 +24,10 @@ namespace Microsoft.Graph.Beta.Directory.OutboundSharedUserProfiles.Item.Tenants
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.directory.outboundSharedUserProfiles.item.tenants.item collection</summary>
-        public TenantReferenceItemRequestBuilder this[string position] { get {
+        public TenantReferenceTenantItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tenantReference%2DtenantId", position);
-            return new TenantReferenceItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new TenantReferenceTenantItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TenantsRequestBuilder and sets the default values.

@@ -4,45 +4,103 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Intune will provide customer the ability to run their Powershell Health scripts (remediation + detection) on the enrolled windows 10 Azure Active Directory joined devices.</summary>
     public class DeviceHealthScript : Entity, IParsable {
         /// <summary>The list of group assignments for the device health script</summary>
-        public List<DeviceHealthScriptAssignment> Assignments { get; set; }
+        public List<DeviceHealthScriptAssignment> Assignments {
+            get { return BackingStore?.Get<List<DeviceHealthScriptAssignment>>(nameof(Assignments)); }
+            set { BackingStore?.Set(nameof(Assignments), value); }
+        }
         /// <summary>The timestamp of when the device health script was created. This property is read-only.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>Description of the device health script</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The entire content of the detection powershell script</summary>
-        public byte[] DetectionScriptContent { get; set; }
+        public byte[] DetectionScriptContent {
+            get { return BackingStore?.Get<byte[]>(nameof(DetectionScriptContent)); }
+            set { BackingStore?.Set(nameof(DetectionScriptContent), value); }
+        }
         /// <summary>List of ComplexType DetectionScriptParameters objects.</summary>
-        public List<DeviceHealthScriptParameter> DetectionScriptParameters { get; set; }
+        public List<DeviceHealthScriptParameter> DetectionScriptParameters {
+            get { return BackingStore?.Get<List<DeviceHealthScriptParameter>>(nameof(DetectionScriptParameters)); }
+            set { BackingStore?.Set(nameof(DetectionScriptParameters), value); }
+        }
         /// <summary>List of run states for the device health script across all devices</summary>
-        public List<DeviceHealthScriptDeviceState> DeviceRunStates { get; set; }
+        public List<DeviceHealthScriptDeviceState> DeviceRunStates {
+            get { return BackingStore?.Get<List<DeviceHealthScriptDeviceState>>(nameof(DeviceRunStates)); }
+            set { BackingStore?.Set(nameof(DeviceRunStates), value); }
+        }
         /// <summary>Name of the device health script</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Indicate whether the script signature needs be checked</summary>
-        public bool? EnforceSignatureCheck { get; set; }
+        public bool? EnforceSignatureCheck {
+            get { return BackingStore?.Get<bool?>(nameof(EnforceSignatureCheck)); }
+            set { BackingStore?.Set(nameof(EnforceSignatureCheck), value); }
+        }
         /// <summary>Highest available version for a Microsoft Proprietary script</summary>
-        public string HighestAvailableVersion { get; set; }
+        public string HighestAvailableVersion {
+            get { return BackingStore?.Get<string>(nameof(HighestAvailableVersion)); }
+            set { BackingStore?.Set(nameof(HighestAvailableVersion), value); }
+        }
         /// <summary>Determines if this is Microsoft Proprietary Script. Proprietary scripts are read-only</summary>
-        public bool? IsGlobalScript { get; set; }
+        public bool? IsGlobalScript {
+            get { return BackingStore?.Get<bool?>(nameof(IsGlobalScript)); }
+            set { BackingStore?.Set(nameof(IsGlobalScript), value); }
+        }
         /// <summary>The timestamp of when the device health script was modified. This property is read-only.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>Name of the device health script publisher</summary>
-        public string Publisher { get; set; }
+        public string Publisher {
+            get { return BackingStore?.Get<string>(nameof(Publisher)); }
+            set { BackingStore?.Set(nameof(Publisher), value); }
+        }
         /// <summary>The entire content of the remediation powershell script</summary>
-        public byte[] RemediationScriptContent { get; set; }
+        public byte[] RemediationScriptContent {
+            get { return BackingStore?.Get<byte[]>(nameof(RemediationScriptContent)); }
+            set { BackingStore?.Set(nameof(RemediationScriptContent), value); }
+        }
         /// <summary>List of ComplexType RemediationScriptParameters objects.</summary>
-        public List<DeviceHealthScriptParameter> RemediationScriptParameters { get; set; }
+        public List<DeviceHealthScriptParameter> RemediationScriptParameters {
+            get { return BackingStore?.Get<List<DeviceHealthScriptParameter>>(nameof(RemediationScriptParameters)); }
+            set { BackingStore?.Set(nameof(RemediationScriptParameters), value); }
+        }
         /// <summary>List of Scope Tag IDs for the device health script</summary>
-        public List<string> RoleScopeTagIds { get; set; }
+        public List<string> RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTagIds)); }
+            set { BackingStore?.Set(nameof(RoleScopeTagIds), value); }
+        }
         /// <summary>Indicate whether PowerShell script(s) should run as 32-bit</summary>
-        public bool? RunAs32Bit { get; set; }
+        public bool? RunAs32Bit {
+            get { return BackingStore?.Get<bool?>(nameof(RunAs32Bit)); }
+            set { BackingStore?.Set(nameof(RunAs32Bit), value); }
+        }
         /// <summary>Indicates the type of execution context. Possible values are: system, user.</summary>
-        public RunAsAccountType? RunAsAccount { get; set; }
+        public RunAsAccountType? RunAsAccount {
+            get { return BackingStore?.Get<RunAsAccountType?>(nameof(RunAsAccount)); }
+            set { BackingStore?.Set(nameof(RunAsAccount), value); }
+        }
         /// <summary>High level run summary for device health script.</summary>
-        public DeviceHealthScriptRunSummary RunSummary { get; set; }
+        public DeviceHealthScriptRunSummary RunSummary {
+            get { return BackingStore?.Get<DeviceHealthScriptRunSummary>(nameof(RunSummary)); }
+            set { BackingStore?.Set(nameof(RunSummary), value); }
+        }
         /// <summary>Version of the device health script</summary>
-        public string Version { get; set; }
+        public string Version {
+            get { return BackingStore?.Get<string>(nameof(Version)); }
+            set { BackingStore?.Set(nameof(Version), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

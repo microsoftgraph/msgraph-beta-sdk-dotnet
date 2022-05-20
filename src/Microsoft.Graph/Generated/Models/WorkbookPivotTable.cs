@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class WorkbookPivotTable : Entity, IParsable {
         /// <summary>Name of the PivotTable.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>The worksheet containing the current PivotTable. Read-only.</summary>
-        public WorkbookWorksheet Worksheet { get; set; }
+        public WorkbookWorksheet Worksheet {
+            get { return BackingStore?.Get<WorkbookWorksheet>(nameof(Worksheet)); }
+            set { BackingStore?.Set(nameof(Worksheet), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

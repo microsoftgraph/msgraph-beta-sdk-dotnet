@@ -4,22 +4,40 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class DataSource : Entity, IParsable {
         /// <summary>The user who created the dataSource.</summary>
-        public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy { get; set; }
+        public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>(nameof(CreatedBy)); }
+            set { BackingStore?.Set(nameof(CreatedBy), value); }
+        }
         /// <summary>The date and time the dataSource was created.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>The display name of the dataSource. This will be the name of the SharePoint site.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The holdStatus property</summary>
-        public DataSourceHoldStatus? HoldStatus { get; set; }
+        public DataSourceHoldStatus? HoldStatus {
+            get { return BackingStore?.Get<DataSourceHoldStatus?>(nameof(HoldStatus)); }
+            set { BackingStore?.Set(nameof(HoldStatus), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new DataSource CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DataSource();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.ediscovery.dataSource" => new DataSource(),
+                _ => new DataSource(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

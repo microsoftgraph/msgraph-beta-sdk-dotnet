@@ -4,33 +4,73 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class AuditEvent : Entity, IParsable {
         /// <summary>A string which uniquely represents the operation that occurred. Required. Read-only.</summary>
-        public string Activity { get; set; }
+        public string Activity {
+            get { return BackingStore?.Get<string>(nameof(Activity)); }
+            set { BackingStore?.Set(nameof(Activity), value); }
+        }
         /// <summary>The time when the activity ocurred. Required. Read-only.</summary>
-        public DateTimeOffset? ActivityDateTime { get; set; }
+        public DateTimeOffset? ActivityDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ActivityDateTime)); }
+            set { BackingStore?.Set(nameof(ActivityDateTime), value); }
+        }
         /// <summary>The identifier of the activity request that made the audit event. Required. Read-only.</summary>
-        public string ActivityId { get; set; }
+        public string ActivityId {
+            get { return BackingStore?.Get<string>(nameof(ActivityId)); }
+            set { BackingStore?.Set(nameof(ActivityId), value); }
+        }
         /// <summary>A category which represents a logical grouping of activities. Required. Read-only.</summary>
-        public string Category { get; set; }
+        public string Category {
+            get { return BackingStore?.Get<string>(nameof(Category)); }
+            set { BackingStore?.Set(nameof(Category), value); }
+        }
         /// <summary>The HTTP verb that was used when making the API request. Required. Read-only.</summary>
-        public string HttpVerb { get; set; }
+        public string HttpVerb {
+            get { return BackingStore?.Get<string>(nameof(HttpVerb)); }
+            set { BackingStore?.Set(nameof(HttpVerb), value); }
+        }
         /// <summary>The identifier of the app that was used to make the request. Required. Read-only.</summary>
-        public string InitiatedByAppId { get; set; }
+        public string InitiatedByAppId {
+            get { return BackingStore?.Get<string>(nameof(InitiatedByAppId)); }
+            set { BackingStore?.Set(nameof(InitiatedByAppId), value); }
+        }
         /// <summary>The UPN of the user who initiated the activity. Required. Read-only.</summary>
-        public string InitiatedByUpn { get; set; }
+        public string InitiatedByUpn {
+            get { return BackingStore?.Get<string>(nameof(InitiatedByUpn)); }
+            set { BackingStore?.Set(nameof(InitiatedByUpn), value); }
+        }
         /// <summary>The identifier of the user who initiated the activity. Required. Read-only.</summary>
-        public string InitiatedByUserId { get; set; }
+        public string InitiatedByUserId {
+            get { return BackingStore?.Get<string>(nameof(InitiatedByUserId)); }
+            set { BackingStore?.Set(nameof(InitiatedByUserId), value); }
+        }
         /// <summary>The IP address of where the activity was initiated. This may be an IPv4 or IPv6 address. Required. Read-only.</summary>
-        public string IpAddress { get; set; }
+        public string IpAddress {
+            get { return BackingStore?.Get<string>(nameof(IpAddress)); }
+            set { BackingStore?.Set(nameof(IpAddress), value); }
+        }
         /// <summary>The raw HTTP request body. Some sensitive information may be removed.</summary>
-        public string RequestBody { get; set; }
+        public string RequestBody {
+            get { return BackingStore?.Get<string>(nameof(RequestBody)); }
+            set { BackingStore?.Set(nameof(RequestBody), value); }
+        }
         /// <summary>The raw HTTP request URL. Required. Read-only.</summary>
-        public string RequestUrl { get; set; }
+        public string RequestUrl {
+            get { return BackingStore?.Get<string>(nameof(RequestUrl)); }
+            set { BackingStore?.Set(nameof(RequestUrl), value); }
+        }
         /// <summary>The collection of Azure Active Directory tenant identifiers for the managed tenants that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.</summary>
-        public string TenantIds { get; set; }
+        public string TenantIds {
+            get { return BackingStore?.Get<string>(nameof(TenantIds)); }
+            set { BackingStore?.Set(nameof(TenantIds), value); }
+        }
         /// <summary>The collection of tenant names that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.</summary>
-        public string TenantNames { get; set; }
+        public string TenantNames {
+            get { return BackingStore?.Get<string>(nameof(TenantNames)); }
+            set { BackingStore?.Set(nameof(TenantNames), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

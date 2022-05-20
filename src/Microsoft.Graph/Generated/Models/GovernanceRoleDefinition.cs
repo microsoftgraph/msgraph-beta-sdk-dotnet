@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of governanceResource entities.</summary>
     public class GovernanceRoleDefinition : Entity, IParsable {
         /// <summary>The display name of the role definition.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The external id of the role definition.</summary>
-        public string ExternalId { get; set; }
+        public string ExternalId {
+            get { return BackingStore?.Get<string>(nameof(ExternalId)); }
+            set { BackingStore?.Set(nameof(ExternalId), value); }
+        }
         /// <summary>Read-only. The associated resource for the role definition.</summary>
-        public GovernanceResource Resource { get; set; }
+        public GovernanceResource Resource {
+            get { return BackingStore?.Get<GovernanceResource>(nameof(Resource)); }
+            set { BackingStore?.Set(nameof(Resource), value); }
+        }
         /// <summary>Required. The id of the resource associated with the role definition.</summary>
-        public string ResourceId { get; set; }
+        public string ResourceId {
+            get { return BackingStore?.Get<string>(nameof(ResourceId)); }
+            set { BackingStore?.Set(nameof(ResourceId), value); }
+        }
         /// <summary>The associated role setting for the role definition.</summary>
-        public GovernanceRoleSetting RoleSetting { get; set; }
+        public GovernanceRoleSetting RoleSetting {
+            get { return BackingStore?.Get<GovernanceRoleSetting>(nameof(RoleSetting)); }
+            set { BackingStore?.Set(nameof(RoleSetting), value); }
+        }
         /// <summary>The templateId property</summary>
-        public string TemplateId { get; set; }
+        public string TemplateId {
+            get { return BackingStore?.Get<string>(nameof(TemplateId)); }
+            set { BackingStore?.Set(nameof(TemplateId), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

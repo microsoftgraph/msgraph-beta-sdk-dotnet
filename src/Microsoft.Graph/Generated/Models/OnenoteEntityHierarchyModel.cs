@@ -4,22 +4,40 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class OnenoteEntityHierarchyModel : OnenoteEntitySchemaObjectModel, IParsable {
         /// <summary>Identity of the user, device, and application which created the item. Read-only.</summary>
-        public IdentitySet CreatedBy { get; set; }
+        public IdentitySet CreatedBy {
+            get { return BackingStore?.Get<IdentitySet>(nameof(CreatedBy)); }
+            set { BackingStore?.Set(nameof(CreatedBy), value); }
+        }
         /// <summary>The name of the notebook.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Identity of the user, device, and application which created the item. Read-only.</summary>
-        public IdentitySet LastModifiedBy { get; set; }
+        public IdentitySet LastModifiedBy {
+            get { return BackingStore?.Get<IdentitySet>(nameof(LastModifiedBy)); }
+            set { BackingStore?.Set(nameof(LastModifiedBy), value); }
+        }
         /// <summary>The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new OnenoteEntityHierarchyModel CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OnenoteEntityHierarchyModel();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.onenoteEntityHierarchyModel" => new OnenoteEntityHierarchyModel(),
+                _ => new OnenoteEntityHierarchyModel(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

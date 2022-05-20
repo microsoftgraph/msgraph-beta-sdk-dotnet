@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignIns.ConfirmCompromised {
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(ConfirmCompromisedRequestBody body, Action<ConfirmCompromisedRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation CreatePostRequestInformation(ConfirmCompromisedPostRequestBody body, Action<ConfirmCompromisedRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignIns.ConfirmCompromised {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PostAsync(ConfirmCompromisedRequestBody body, Action<ConfirmCompromisedRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(ConfirmCompromisedPostRequestBody body, Action<ConfirmCompromisedRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);

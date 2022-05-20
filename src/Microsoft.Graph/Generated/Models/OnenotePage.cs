@@ -4,29 +4,63 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class OnenotePage : OnenoteEntitySchemaObjectModel, IParsable {
         /// <summary>The page&apos;s HTML content.</summary>
-        public byte[] Content { get; set; }
+        public byte[] Content {
+            get { return BackingStore?.Get<byte[]>(nameof(Content)); }
+            set { BackingStore?.Set(nameof(Content), value); }
+        }
         /// <summary>The URL for the page&apos;s HTML content.  Read-only.</summary>
-        public string ContentUrl { get; set; }
+        public string ContentUrl {
+            get { return BackingStore?.Get<string>(nameof(ContentUrl)); }
+            set { BackingStore?.Set(nameof(ContentUrl), value); }
+        }
         /// <summary>The unique identifier of the application that created the page. Read-only.</summary>
-        public string CreatedByAppId { get; set; }
+        public string CreatedByAppId {
+            get { return BackingStore?.Get<string>(nameof(CreatedByAppId)); }
+            set { BackingStore?.Set(nameof(CreatedByAppId), value); }
+        }
         /// <summary>The date and time when the page was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>The indentation level of the page. Read-only.</summary>
-        public int? Level { get; set; }
+        public int? Level {
+            get { return BackingStore?.Get<int?>(nameof(Level)); }
+            set { BackingStore?.Set(nameof(Level), value); }
+        }
         /// <summary>Links for opening the page. The oneNoteClientURL link opens the page in the OneNote native client if it &apos;s installed. The oneNoteWebUrl link opens the page in OneNote on the web. Read-only.</summary>
-        public PageLinks Links { get; set; }
+        public PageLinks Links {
+            get { return BackingStore?.Get<PageLinks>(nameof(Links)); }
+            set { BackingStore?.Set(nameof(Links), value); }
+        }
         /// <summary>The order of the page within its parent section. Read-only.</summary>
-        public int? Order { get; set; }
+        public int? Order {
+            get { return BackingStore?.Get<int?>(nameof(Order)); }
+            set { BackingStore?.Set(nameof(Order), value); }
+        }
         /// <summary>The notebook that contains the page.  Read-only.</summary>
-        public Notebook ParentNotebook { get; set; }
+        public Notebook ParentNotebook {
+            get { return BackingStore?.Get<Notebook>(nameof(ParentNotebook)); }
+            set { BackingStore?.Set(nameof(ParentNotebook), value); }
+        }
         /// <summary>The section that contains the page. Read-only.</summary>
-        public OnenoteSection ParentSection { get; set; }
+        public OnenoteSection ParentSection {
+            get { return BackingStore?.Get<OnenoteSection>(nameof(ParentSection)); }
+            set { BackingStore?.Set(nameof(ParentSection), value); }
+        }
         /// <summary>The title of the page.</summary>
-        public string Title { get; set; }
+        public string Title {
+            get { return BackingStore?.Get<string>(nameof(Title)); }
+            set { BackingStore?.Set(nameof(Title), value); }
+        }
         /// <summary>The userTags property</summary>
-        public List<string> UserTags { get; set; }
+        public List<string> UserTags {
+            get { return BackingStore?.Get<List<string>>(nameof(UserTags)); }
+            set { BackingStore?.Set(nameof(UserTags), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

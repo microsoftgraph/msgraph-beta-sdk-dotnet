@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetQuietTimePolicyUserSu
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(GetQuietTimePolicyUserSummaryReportRequestBody body, Action<GetQuietTimePolicyUserSummaryReportRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation CreatePostRequestInformation(GetQuietTimePolicyUserSummaryReportPostRequestBody body, Action<GetQuietTimePolicyUserSummaryReportRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -70,10 +70,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetQuietTimePolicyUserSu
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<GetQuietTimePolicyUserSummaryReportResponse> PostAsync(GetQuietTimePolicyUserSummaryReportRequestBody body, Action<GetQuietTimePolicyUserSummaryReportRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> PostAsync(GetQuietTimePolicyUserSummaryReportPostRequestBody body, Action<GetQuietTimePolicyUserSummaryReportRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<GetQuietTimePolicyUserSummaryReportResponse>(requestInfo, GetQuietTimePolicyUserSummaryReportResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class GetQuietTimePolicyUserSummaryReportRequestBuilderPostRequestConfiguration {

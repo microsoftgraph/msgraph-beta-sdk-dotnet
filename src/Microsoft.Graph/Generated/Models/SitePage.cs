@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class SitePage : BaseItem, IParsable {
         /// <summary>The content type of the page.</summary>
-        public ContentTypeInfo ContentType { get; set; }
+        public ContentTypeInfo ContentType {
+            get { return BackingStore?.Get<ContentTypeInfo>(nameof(ContentType)); }
+            set { BackingStore?.Set(nameof(ContentType), value); }
+        }
         /// <summary>The pageLayoutType property</summary>
-        public string PageLayoutType { get; set; }
+        public string PageLayoutType {
+            get { return BackingStore?.Get<string>(nameof(PageLayoutType)); }
+            set { BackingStore?.Set(nameof(PageLayoutType), value); }
+        }
         /// <summary>The publishingState property</summary>
-        public PublicationFacet PublishingState { get; set; }
+        public PublicationFacet PublishingState {
+            get { return BackingStore?.Get<PublicationFacet>(nameof(PublishingState)); }
+            set { BackingStore?.Set(nameof(PublishingState), value); }
+        }
         /// <summary>The title property</summary>
-        public string Title { get; set; }
+        public string Title {
+            get { return BackingStore?.Get<string>(nameof(Title)); }
+            set { BackingStore?.Set(nameof(Title), value); }
+        }
         /// <summary>The webParts property</summary>
-        public List<WebPart> WebParts { get; set; }
+        public List<WebPart> WebParts {
+            get { return BackingStore?.Get<List<WebPart>>(nameof(WebParts)); }
+            set { BackingStore?.Set(nameof(WebParts), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -4,17 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class DelegatedAdminRelationshipOperation : Entity, IParsable {
         /// <summary>The time in ISO 8601 format and in UTC time when the long-running operation was created. Read-only.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>The data (payload) for the operation. Read-only.</summary>
-        public string Data { get; set; }
+        public string Data {
+            get { return BackingStore?.Get<string>(nameof(Data)); }
+            set { BackingStore?.Set(nameof(Data), value); }
+        }
         /// <summary>The time in ISO 8601 format and in UTC time when the long-running operation was last modified. Read-only.</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>The type of long-running operation. The possible values are: delegatedAdminAccessAssignmentUpdate, unknownFutureValue. Read-only.</summary>
-        public DelegatedAdminRelationshipOperationType? OperationType { get; set; }
+        public DelegatedAdminRelationshipOperationType? OperationType {
+            get { return BackingStore?.Get<DelegatedAdminRelationshipOperationType?>(nameof(OperationType)); }
+            set { BackingStore?.Set(nameof(OperationType), value); }
+        }
         /// <summary>The status of the operation. Read-only. The possible values are: notStarted, running, complete, failed, unknownFutureValue. Read-only. Supports $orderBy.</summary>
-        public DelegatedAdminRelationshipOperationStatus? Status { get; set; }
+        public DelegatedAdminRelationshipOperationStatus? Status {
+            get { return BackingStore?.Get<DelegatedAdminRelationshipOperationStatus?>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

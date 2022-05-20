@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the roleManagement singleton.</summary>
     public class UnifiedRbacResourceNamespace : Entity, IParsable {
         /// <summary>Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>Operations that an authorized principal are allowed to perform.</summary>
-        public List<UnifiedRbacResourceAction> ResourceActions { get; set; }
+        public List<UnifiedRbacResourceAction> ResourceActions {
+            get { return BackingStore?.Get<List<UnifiedRbacResourceAction>>(nameof(ResourceActions)); }
+            set { BackingStore?.Set(nameof(ResourceActions), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

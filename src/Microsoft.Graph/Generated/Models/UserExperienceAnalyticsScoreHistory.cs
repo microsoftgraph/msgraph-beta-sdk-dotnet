@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The user experience analytics device startup score history.</summary>
     public class UserExperienceAnalyticsScoreHistory : Entity, IParsable {
         /// <summary>The user experience analytics device startup date time.</summary>
-        public DateTimeOffset? StartupDateTime { get; set; }
+        public DateTimeOffset? StartupDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartupDateTime)); }
+            set { BackingStore?.Set(nameof(StartupDateTime), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

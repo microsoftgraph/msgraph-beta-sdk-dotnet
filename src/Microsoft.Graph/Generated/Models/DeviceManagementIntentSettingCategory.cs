@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Entity representing an intent setting category</summary>
     public class DeviceManagementIntentSettingCategory : DeviceManagementSettingCategory, IParsable {
         /// <summary>The settings this category contains</summary>
-        public List<DeviceManagementSettingInstance> Settings { get; set; }
+        public List<DeviceManagementSettingInstance> Settings {
+            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>(nameof(Settings)); }
+            set { BackingStore?.Set(nameof(Settings), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

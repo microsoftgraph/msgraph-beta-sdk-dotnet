@@ -4,23 +4,48 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of sharedDriveItem entities.</summary>
     public class SharedDriveItem : BaseItem, IParsable {
         /// <summary>Used to access the underlying driveItem</summary>
-        public Microsoft.Graph.Beta.Models.DriveItem DriveItem { get; set; }
+        public Microsoft.Graph.Beta.Models.DriveItem DriveItem {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem>(nameof(DriveItem)); }
+            set { BackingStore?.Set(nameof(DriveItem), value); }
+        }
         /// <summary>All driveItems contained in the sharing root. This collection cannot be enumerated.</summary>
-        public List<Microsoft.Graph.Beta.Models.DriveItem> Items { get; set; }
+        public List<Microsoft.Graph.Beta.Models.DriveItem> Items {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DriveItem>>(nameof(Items)); }
+            set { BackingStore?.Set(nameof(Items), value); }
+        }
         /// <summary>Used to access the underlying list</summary>
-        public Microsoft.Graph.Beta.Models.List List { get; set; }
+        public Microsoft.Graph.Beta.Models.List List {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.List>(nameof(List)); }
+            set { BackingStore?.Set(nameof(List), value); }
+        }
         /// <summary>Used to access the underlying listItem</summary>
-        public Microsoft.Graph.Beta.Models.ListItem ListItem { get; set; }
+        public Microsoft.Graph.Beta.Models.ListItem ListItem {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ListItem>(nameof(ListItem)); }
+            set { BackingStore?.Set(nameof(ListItem), value); }
+        }
         /// <summary>Information about the owner of the shared item being referenced.</summary>
-        public IdentitySet Owner { get; set; }
+        public IdentitySet Owner {
+            get { return BackingStore?.Get<IdentitySet>(nameof(Owner)); }
+            set { BackingStore?.Set(nameof(Owner), value); }
+        }
         /// <summary>Used to access the permission representing the underlying sharing link</summary>
-        public Microsoft.Graph.Beta.Models.Permission Permission { get; set; }
+        public Microsoft.Graph.Beta.Models.Permission Permission {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Permission>(nameof(Permission)); }
+            set { BackingStore?.Set(nameof(Permission), value); }
+        }
         /// <summary>Used to access the underlying driveItem. Deprecated -- use driveItem instead.</summary>
-        public Microsoft.Graph.Beta.Models.DriveItem Root { get; set; }
+        public Microsoft.Graph.Beta.Models.DriveItem Root {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem>(nameof(Root)); }
+            set { BackingStore?.Set(nameof(Root), value); }
+        }
         /// <summary>Used to access the underlying site</summary>
-        public Microsoft.Graph.Beta.Models.Site Site { get; set; }
+        public Microsoft.Graph.Beta.Models.Site Site {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Site>(nameof(Site)); }
+            set { BackingStore?.Set(nameof(Site), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

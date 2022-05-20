@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class InformationProtectionPolicySetting : Entity, IParsable {
         /// <summary>The defaultLabelId property</summary>
-        public string DefaultLabelId { get; set; }
+        public string DefaultLabelId {
+            get { return BackingStore?.Get<string>(nameof(DefaultLabelId)); }
+            set { BackingStore?.Set(nameof(DefaultLabelId), value); }
+        }
         /// <summary>The isDowngradeJustificationRequired property</summary>
-        public bool? IsDowngradeJustificationRequired { get; set; }
+        public bool? IsDowngradeJustificationRequired {
+            get { return BackingStore?.Get<bool?>(nameof(IsDowngradeJustificationRequired)); }
+            set { BackingStore?.Set(nameof(IsDowngradeJustificationRequired), value); }
+        }
         /// <summary>The isMandatory property</summary>
-        public bool? IsMandatory { get; set; }
+        public bool? IsMandatory {
+            get { return BackingStore?.Get<bool?>(nameof(IsMandatory)); }
+            set { BackingStore?.Set(nameof(IsMandatory), value); }
+        }
         /// <summary>The moreInfoUrl property</summary>
-        public string MoreInfoUrl { get; set; }
+        public string MoreInfoUrl {
+            get { return BackingStore?.Get<string>(nameof(MoreInfoUrl)); }
+            set { BackingStore?.Set(nameof(MoreInfoUrl), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

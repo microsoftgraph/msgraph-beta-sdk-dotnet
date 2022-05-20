@@ -4,29 +4,63 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
     public class AccessPackageResourceEnvironment : Entity, IParsable {
         /// <summary>Read-only. Required.</summary>
-        public List<AccessPackageResource> AccessPackageResources { get; set; }
+        public List<AccessPackageResource> AccessPackageResources {
+            get { return BackingStore?.Get<List<AccessPackageResource>>(nameof(AccessPackageResources)); }
+            set { BackingStore?.Set(nameof(AccessPackageResources), value); }
+        }
         /// <summary>Connection information of an environment used to connect to a resource.</summary>
-        public Microsoft.Graph.Beta.Models.ConnectionInfo ConnectionInfo { get; set; }
+        public Microsoft.Graph.Beta.Models.ConnectionInfo ConnectionInfo {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConnectionInfo>(nameof(ConnectionInfo)); }
+            set { BackingStore?.Set(nameof(ConnectionInfo), value); }
+        }
         /// <summary>The display name of the user that created this object.</summary>
-        public string CreatedBy { get; set; }
+        public string CreatedBy {
+            get { return BackingStore?.Get<string>(nameof(CreatedBy)); }
+            set { BackingStore?.Set(nameof(CreatedBy), value); }
+        }
         /// <summary>The date and time that this object was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>The description of this object.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The display name of this object.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Determines whether this is default environment or not. It is set to true for all static origin systems, such as Azure AD groups and Azure AD Applications.</summary>
-        public bool? IsDefaultEnvironment { get; set; }
+        public bool? IsDefaultEnvironment {
+            get { return BackingStore?.Get<bool?>(nameof(IsDefaultEnvironment)); }
+            set { BackingStore?.Set(nameof(IsDefaultEnvironment), value); }
+        }
         /// <summary>The display name of the entity that last modified this object.</summary>
-        public string ModifiedBy { get; set; }
+        public string ModifiedBy {
+            get { return BackingStore?.Get<string>(nameof(ModifiedBy)); }
+            set { BackingStore?.Set(nameof(ModifiedBy), value); }
+        }
         /// <summary>The date and time that this object was last modified. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? ModifiedDateTime { get; set; }
+        public DateTimeOffset? ModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(ModifiedDateTime), value); }
+        }
         /// <summary>The unique identifier of this environment in the origin system.</summary>
-        public string OriginId { get; set; }
+        public string OriginId {
+            get { return BackingStore?.Get<string>(nameof(OriginId)); }
+            set { BackingStore?.Set(nameof(OriginId), value); }
+        }
         /// <summary>The type of the resource in the origin system, that is, SharePointOnline. Requires $filter (eq).</summary>
-        public string OriginSystem { get; set; }
+        public string OriginSystem {
+            get { return BackingStore?.Get<string>(nameof(OriginSystem)); }
+            set { BackingStore?.Set(nameof(OriginSystem), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

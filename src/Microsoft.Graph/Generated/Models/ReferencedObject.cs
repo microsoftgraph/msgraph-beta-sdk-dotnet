@@ -1,20 +1,33 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ReferencedObject : IAdditionalDataHolder, IParsable {
+    public class ReferencedObject : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Name of the referenced object. Must match one of the objects in the directory definition.</summary>
-        public string ReferencedObjectName { get; set; }
+        public string ReferencedObjectName {
+            get { return BackingStore?.Get<string>(nameof(ReferencedObjectName)); }
+            set { BackingStore?.Set(nameof(ReferencedObjectName), value); }
+        }
         /// <summary>Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.</summary>
-        public string ReferencedProperty { get; set; }
+        public string ReferencedProperty {
+            get { return BackingStore?.Get<string>(nameof(ReferencedProperty)); }
+            set { BackingStore?.Set(nameof(ReferencedProperty), value); }
+        }
         /// <summary>
         /// Instantiates a new referencedObject and sets the default values.
         /// </summary>
         public ReferencedObject() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

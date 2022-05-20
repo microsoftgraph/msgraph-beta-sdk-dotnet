@@ -1,18 +1,28 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class DetectedSensitiveContentWrapper : IAdditionalDataHolder, IParsable {
+    public class DetectedSensitiveContentWrapper : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The classification property</summary>
-        public List<DetectedSensitiveContent> Classification { get; set; }
+        public List<DetectedSensitiveContent> Classification {
+            get { return BackingStore?.Get<List<DetectedSensitiveContent>>(nameof(Classification)); }
+            set { BackingStore?.Set(nameof(Classification), value); }
+        }
         /// <summary>
         /// Instantiates a new detectedSensitiveContentWrapper and sets the default values.
         /// </summary>
         public DetectedSensitiveContentWrapper() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

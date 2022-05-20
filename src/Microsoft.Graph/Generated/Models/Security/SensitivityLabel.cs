@@ -4,27 +4,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class SensitivityLabel : Entity, IParsable {
         /// <summary>The color property</summary>
-        public string Color { get; set; }
+        public string Color {
+            get { return BackingStore?.Get<string>(nameof(Color)); }
+            set { BackingStore?.Set(nameof(Color), value); }
+        }
         /// <summary>The contentFormats property</summary>
-        public List<string> ContentFormats { get; set; }
+        public List<string> ContentFormats {
+            get { return BackingStore?.Get<List<string>>(nameof(ContentFormats)); }
+            set { BackingStore?.Set(nameof(ContentFormats), value); }
+        }
         /// <summary>The description property</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The hasProtection property</summary>
-        public bool? HasProtection { get; set; }
+        public bool? HasProtection {
+            get { return BackingStore?.Get<bool?>(nameof(HasProtection)); }
+            set { BackingStore?.Set(nameof(HasProtection), value); }
+        }
         /// <summary>The isActive property</summary>
-        public bool? IsActive { get; set; }
+        public bool? IsActive {
+            get { return BackingStore?.Get<bool?>(nameof(IsActive)); }
+            set { BackingStore?.Set(nameof(IsActive), value); }
+        }
         /// <summary>The isAppliable property</summary>
-        public bool? IsAppliable { get; set; }
+        public bool? IsAppliable {
+            get { return BackingStore?.Get<bool?>(nameof(IsAppliable)); }
+            set { BackingStore?.Set(nameof(IsAppliable), value); }
+        }
         /// <summary>The name property</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>The parent property</summary>
-        public SensitivityLabel Parent { get; set; }
+        public SensitivityLabel Parent {
+            get { return BackingStore?.Get<SensitivityLabel>(nameof(Parent)); }
+            set { BackingStore?.Set(nameof(Parent), value); }
+        }
         /// <summary>The sensitivity property</summary>
-        public int? Sensitivity { get; set; }
+        public int? Sensitivity {
+            get { return BackingStore?.Get<int?>(nameof(Sensitivity)); }
+            set { BackingStore?.Set(nameof(Sensitivity), value); }
+        }
         /// <summary>The tooltip property</summary>
-        public string Tooltip { get; set; }
+        public string Tooltip {
+            get { return BackingStore?.Get<string>(nameof(Tooltip)); }
+            set { BackingStore?.Set(nameof(Tooltip), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

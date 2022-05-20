@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class DriveItemUploadableProperties : IAdditionalDataHolder, IParsable {
+    public class DriveItemUploadableProperties : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Provides a user-visible description of the item. Read-write. Only on OneDrive Personal.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.</summary>
-        public long? FileSize { get; set; }
+        public long? FileSize {
+            get { return BackingStore?.Get<long?>(nameof(FileSize)); }
+            set { BackingStore?.Set(nameof(FileSize), value); }
+        }
         /// <summary>File system information on client. Read-write.</summary>
-        public Microsoft.Graph.Beta.Models.FileSystemInfo FileSystemInfo { get; set; }
+        public Microsoft.Graph.Beta.Models.FileSystemInfo FileSystemInfo {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FileSystemInfo>(nameof(FileSystemInfo)); }
+            set { BackingStore?.Set(nameof(FileSystemInfo), value); }
+        }
         /// <summary>The name of the item (filename and extension). Read-write.</summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return BackingStore?.Get<string>(nameof(Name)); }
+            set { BackingStore?.Set(nameof(Name), value); }
+        }
         /// <summary>
         /// Instantiates a new driveItemUploadableProperties and sets the default values.
         /// </summary>
         public DriveItemUploadableProperties() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

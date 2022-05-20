@@ -4,39 +4,88 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class ManagementTemplate : Entity, IParsable {
         /// <summary>The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.</summary>
-        public ManagementCategory? Category { get; set; }
+        public ManagementCategory? Category {
+            get { return BackingStore?.Get<ManagementCategory?>(nameof(Category)); }
+            set { BackingStore?.Set(nameof(Category), value); }
+        }
         /// <summary>The createdByUserId property</summary>
-        public string CreatedByUserId { get; set; }
+        public string CreatedByUserId {
+            get { return BackingStore?.Get<string>(nameof(CreatedByUserId)); }
+            set { BackingStore?.Set(nameof(CreatedByUserId), value); }
+        }
         /// <summary>The createdDateTime property</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>The description for the management template. Optional. Read-only.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The display name for the management template. Required. Read-only.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The informationLinks property</summary>
-        public List<Microsoft.Graph.Beta.Models.ActionUrl> InformationLinks { get; set; }
+        public List<Microsoft.Graph.Beta.Models.ActionUrl> InformationLinks {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ActionUrl>>(nameof(InformationLinks)); }
+            set { BackingStore?.Set(nameof(InformationLinks), value); }
+        }
         /// <summary>The lastActionByUserId property</summary>
-        public string LastActionByUserId { get; set; }
+        public string LastActionByUserId {
+            get { return BackingStore?.Get<string>(nameof(LastActionByUserId)); }
+            set { BackingStore?.Set(nameof(LastActionByUserId), value); }
+        }
         /// <summary>The lastActionDateTime property</summary>
-        public DateTimeOffset? LastActionDateTime { get; set; }
+        public DateTimeOffset? LastActionDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastActionDateTime)); }
+            set { BackingStore?.Set(nameof(LastActionDateTime), value); }
+        }
         /// <summary>The managementTemplateCollections property</summary>
-        public List<ManagementTemplateCollection> ManagementTemplateCollections { get; set; }
+        public List<ManagementTemplateCollection> ManagementTemplateCollections {
+            get { return BackingStore?.Get<List<ManagementTemplateCollection>>(nameof(ManagementTemplateCollections)); }
+            set { BackingStore?.Set(nameof(ManagementTemplateCollections), value); }
+        }
         /// <summary>The managementTemplateSteps property</summary>
-        public List<ManagementTemplateStep> ManagementTemplateSteps { get; set; }
+        public List<ManagementTemplateStep> ManagementTemplateSteps {
+            get { return BackingStore?.Get<List<ManagementTemplateStep>>(nameof(ManagementTemplateSteps)); }
+            set { BackingStore?.Set(nameof(ManagementTemplateSteps), value); }
+        }
         /// <summary>The collection of parameters used by the management template. Optional. Read-only.</summary>
-        public List<TemplateParameter> Parameters { get; set; }
+        public List<TemplateParameter> Parameters {
+            get { return BackingStore?.Get<List<TemplateParameter>>(nameof(Parameters)); }
+            set { BackingStore?.Set(nameof(Parameters), value); }
+        }
         /// <summary>The priority property</summary>
-        public int? Priority { get; set; }
+        public int? Priority {
+            get { return BackingStore?.Get<int?>(nameof(Priority)); }
+            set { BackingStore?.Set(nameof(Priority), value); }
+        }
         /// <summary>The provider property</summary>
-        public ManagementProvider? Provider { get; set; }
+        public ManagementProvider? Provider {
+            get { return BackingStore?.Get<ManagementProvider?>(nameof(Provider)); }
+            set { BackingStore?.Set(nameof(Provider), value); }
+        }
         /// <summary>The userImpact property</summary>
-        public string UserImpact { get; set; }
+        public string UserImpact {
+            get { return BackingStore?.Get<string>(nameof(UserImpact)); }
+            set { BackingStore?.Set(nameof(UserImpact), value); }
+        }
         /// <summary>The version property</summary>
-        public int? Version { get; set; }
+        public int? Version {
+            get { return BackingStore?.Get<int?>(nameof(Version)); }
+            set { BackingStore?.Set(nameof(Version), value); }
+        }
         /// <summary>The collection of workload actions associated with the management template. Optional. Read-only.</summary>
-        public List<WorkloadAction> WorkloadActions { get; set; }
+        public List<WorkloadAction> WorkloadActions {
+            get { return BackingStore?.Get<List<WorkloadAction>>(nameof(WorkloadActions)); }
+            set { BackingStore?.Set(nameof(WorkloadActions), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class Attendee : AttendeeBase, IParsable {
         /// <summary>An alternate date/time proposed by the attendee for a meeting request to start and end. If the attendee hasn&apos;t proposed another time, then this property is not included in a response of a GET event.</summary>
-        public TimeSlot ProposedNewTime { get; set; }
+        public TimeSlot ProposedNewTime {
+            get { return BackingStore?.Get<TimeSlot>(nameof(ProposedNewTime)); }
+            set { BackingStore?.Set(nameof(ProposedNewTime), value); }
+        }
         /// <summary>The attendee&apos;s response (none, accepted, declined, etc.) for the event and date-time that the response was sent.</summary>
-        public ResponseStatus Status { get; set; }
+        public ResponseStatus Status {
+            get { return BackingStore?.Get<ResponseStatus>(nameof(Status)); }
+            set { BackingStore?.Set(nameof(Status), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

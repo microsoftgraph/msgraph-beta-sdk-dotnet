@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the educationRoot singleton.</summary>
     public class EducationAssignmentResource : Entity, IParsable {
         /// <summary>Indicates whether this resource should be copied to each student submission for modification and submission. Required</summary>
-        public bool? DistributeForStudentWork { get; set; }
+        public bool? DistributeForStudentWork {
+            get { return BackingStore?.Get<bool?>(nameof(DistributeForStudentWork)); }
+            set { BackingStore?.Set(nameof(DistributeForStudentWork), value); }
+        }
         /// <summary>Resource object that has been associated with this assignment.</summary>
-        public EducationResource Resource { get; set; }
+        public EducationResource Resource {
+            get { return BackingStore?.Get<EducationResource>(nameof(Resource)); }
+            set { BackingStore?.Set(nameof(Resource), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

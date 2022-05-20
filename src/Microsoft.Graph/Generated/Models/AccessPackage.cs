@@ -4,37 +4,83 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
     public class AccessPackage : Entity, IParsable {
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
-        public List<AccessPackageAssignmentPolicy> AccessPackageAssignmentPolicies { get; set; }
+        public List<AccessPackageAssignmentPolicy> AccessPackageAssignmentPolicies {
+            get { return BackingStore?.Get<List<AccessPackageAssignmentPolicy>>(nameof(AccessPackageAssignmentPolicies)); }
+            set { BackingStore?.Set(nameof(AccessPackageAssignmentPolicies), value); }
+        }
         /// <summary>Read-only. Nullable.</summary>
-        public Microsoft.Graph.Beta.Models.AccessPackageCatalog AccessPackageCatalog { get; set; }
+        public Microsoft.Graph.Beta.Models.AccessPackageCatalog AccessPackageCatalog {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageCatalog>(nameof(AccessPackageCatalog)); }
+            set { BackingStore?.Set(nameof(AccessPackageCatalog), value); }
+        }
         /// <summary>Nullable.</summary>
-        public List<AccessPackageResourceRoleScope> AccessPackageResourceRoleScopes { get; set; }
+        public List<AccessPackageResourceRoleScope> AccessPackageResourceRoleScopes {
+            get { return BackingStore?.Get<List<AccessPackageResourceRoleScope>>(nameof(AccessPackageResourceRoleScopes)); }
+            set { BackingStore?.Set(nameof(AccessPackageResourceRoleScopes), value); }
+        }
         /// <summary>The access packages that are incompatible with this package. Read-only.</summary>
-        public List<AccessPackage> AccessPackagesIncompatibleWith { get; set; }
+        public List<AccessPackage> AccessPackagesIncompatibleWith {
+            get { return BackingStore?.Get<List<AccessPackage>>(nameof(AccessPackagesIncompatibleWith)); }
+            set { BackingStore?.Set(nameof(AccessPackagesIncompatibleWith), value); }
+        }
         /// <summary>Identifier of the access package catalog referencing this access package. Read-only.</summary>
-        public string CatalogId { get; set; }
+        public string CatalogId {
+            get { return BackingStore?.Get<string>(nameof(CatalogId)); }
+            set { BackingStore?.Set(nameof(CatalogId), value); }
+        }
         /// <summary>The userPrincipalName of the user or identity of the subject who created this resource. Read-only.</summary>
-        public string CreatedBy { get; set; }
+        public string CreatedBy {
+            get { return BackingStore?.Get<string>(nameof(CreatedBy)); }
+            set { BackingStore?.Set(nameof(CreatedBy), value); }
+        }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>The description of the access package.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>The display name of the access package. Supports $filter (eq, contains).</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>The  access packages whose assigned users are ineligible to be assigned this access package.</summary>
-        public List<AccessPackage> IncompatibleAccessPackages { get; set; }
+        public List<AccessPackage> IncompatibleAccessPackages {
+            get { return BackingStore?.Get<List<AccessPackage>>(nameof(IncompatibleAccessPackages)); }
+            set { BackingStore?.Set(nameof(IncompatibleAccessPackages), value); }
+        }
         /// <summary>The groups whose members are ineligible to be assigned this access package.</summary>
-        public List<Group> IncompatibleGroups { get; set; }
+        public List<Group> IncompatibleGroups {
+            get { return BackingStore?.Get<List<Group>>(nameof(IncompatibleGroups)); }
+            set { BackingStore?.Set(nameof(IncompatibleGroups), value); }
+        }
         /// <summary>Whether the access package is hidden from the requestor.</summary>
-        public bool? IsHidden { get; set; }
+        public bool? IsHidden {
+            get { return BackingStore?.Get<bool?>(nameof(IsHidden)); }
+            set { BackingStore?.Set(nameof(IsHidden), value); }
+        }
         /// <summary>Indicates whether role scopes are visible.</summary>
-        public bool? IsRoleScopesVisible { get; set; }
+        public bool? IsRoleScopesVisible {
+            get { return BackingStore?.Get<bool?>(nameof(IsRoleScopesVisible)); }
+            set { BackingStore?.Set(nameof(IsRoleScopesVisible), value); }
+        }
         /// <summary>The userPrincipalName of the user who last modified this resource. Read-only.</summary>
-        public string ModifiedBy { get; set; }
+        public string ModifiedBy {
+            get { return BackingStore?.Get<string>(nameof(ModifiedBy)); }
+            set { BackingStore?.Set(nameof(ModifiedBy), value); }
+        }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
-        public DateTimeOffset? ModifiedDateTime { get; set; }
+        public DateTimeOffset? ModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(ModifiedDateTime), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

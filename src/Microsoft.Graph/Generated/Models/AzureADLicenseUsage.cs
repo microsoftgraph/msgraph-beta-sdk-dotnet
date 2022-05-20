@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to call the getAzureADLicenseUsage method.</summary>
     public class AzureADLicenseUsage : Entity, IParsable {
         /// <summary>The licenseInfoDetails property</summary>
-        public List<LicenseInfoDetail> LicenseInfoDetails { get; set; }
+        public List<LicenseInfoDetail> LicenseInfoDetails {
+            get { return BackingStore?.Get<List<LicenseInfoDetail>>(nameof(LicenseInfoDetails)); }
+            set { BackingStore?.Set(nameof(LicenseInfoDetails), value); }
+        }
         /// <summary>The snapshotDateTime property</summary>
-        public DateTimeOffset? SnapshotDateTime { get; set; }
+        public DateTimeOffset? SnapshotDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(SnapshotDateTime)); }
+            set { BackingStore?.Set(nameof(SnapshotDateTime), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

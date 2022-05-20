@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class GroupLifecyclePolicy : Entity, IParsable {
         /// <summary>List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.</summary>
-        public string AlternateNotificationEmails { get; set; }
+        public string AlternateNotificationEmails {
+            get { return BackingStore?.Get<string>(nameof(AlternateNotificationEmails)); }
+            set { BackingStore?.Set(nameof(AlternateNotificationEmails), value); }
+        }
         /// <summary>Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.</summary>
-        public int? GroupLifetimeInDays { get; set; }
+        public int? GroupLifetimeInDays {
+            get { return BackingStore?.Get<int?>(nameof(GroupLifetimeInDays)); }
+            set { BackingStore?.Set(nameof(GroupLifetimeInDays), value); }
+        }
         /// <summary>The group type for which the expiration policy applies. Possible values are All, Selected or None.</summary>
-        public string ManagedGroupTypes { get; set; }
+        public string ManagedGroupTypes {
+            get { return BackingStore?.Get<string>(nameof(ManagedGroupTypes)); }
+            set { BackingStore?.Set(nameof(ManagedGroupTypes), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -1,26 +1,48 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class UserTrainingEventInfo : IAdditionalDataHolder, IParsable {
+    public class UserTrainingEventInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Display name of the training.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.</summary>
-        public TrainingStatus? LatestTrainingStatus { get; set; }
+        public TrainingStatus? LatestTrainingStatus {
+            get { return BackingStore?.Get<TrainingStatus?>(nameof(LatestTrainingStatus)); }
+            set { BackingStore?.Set(nameof(LatestTrainingStatus), value); }
+        }
         /// <summary>Event details of the training when it was assigned to the user.</summary>
-        public UserTrainingContentEventInfo TrainingAssignedProperties { get; set; }
+        public UserTrainingContentEventInfo TrainingAssignedProperties {
+            get { return BackingStore?.Get<UserTrainingContentEventInfo>(nameof(TrainingAssignedProperties)); }
+            set { BackingStore?.Set(nameof(TrainingAssignedProperties), value); }
+        }
         /// <summary>Event details of the training when it was completed by the user.</summary>
-        public UserTrainingContentEventInfo TrainingCompletedProperties { get; set; }
+        public UserTrainingContentEventInfo TrainingCompletedProperties {
+            get { return BackingStore?.Get<UserTrainingContentEventInfo>(nameof(TrainingCompletedProperties)); }
+            set { BackingStore?.Set(nameof(TrainingCompletedProperties), value); }
+        }
         /// <summary>Event details of the training when it was updated/in-progress by the user.</summary>
-        public UserTrainingContentEventInfo TrainingUpdatedProperties { get; set; }
+        public UserTrainingContentEventInfo TrainingUpdatedProperties {
+            get { return BackingStore?.Get<UserTrainingContentEventInfo>(nameof(TrainingUpdatedProperties)); }
+            set { BackingStore?.Set(nameof(TrainingUpdatedProperties), value); }
+        }
         /// <summary>
         /// Instantiates a new userTrainingEventInfo and sets the default values.
         /// </summary>
         public UserTrainingEventInfo() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

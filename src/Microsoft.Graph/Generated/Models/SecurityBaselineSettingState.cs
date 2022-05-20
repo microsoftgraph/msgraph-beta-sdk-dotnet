@@ -4,23 +4,48 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The security baseline compliance state of a setting for a device</summary>
     public class SecurityBaselineSettingState : Entity, IParsable {
         /// <summary>The policies that contribute to this setting instance</summary>
-        public List<SecurityBaselineContributingPolicy> ContributingPolicies { get; set; }
+        public List<SecurityBaselineContributingPolicy> ContributingPolicies {
+            get { return BackingStore?.Get<List<SecurityBaselineContributingPolicy>>(nameof(ContributingPolicies)); }
+            set { BackingStore?.Set(nameof(ContributingPolicies), value); }
+        }
         /// <summary>The error code if the setting is in error state</summary>
-        public string ErrorCode { get; set; }
+        public string ErrorCode {
+            get { return BackingStore?.Get<string>(nameof(ErrorCode)); }
+            set { BackingStore?.Set(nameof(ErrorCode), value); }
+        }
         /// <summary>The setting category id which this setting belongs to</summary>
-        public string SettingCategoryId { get; set; }
+        public string SettingCategoryId {
+            get { return BackingStore?.Get<string>(nameof(SettingCategoryId)); }
+            set { BackingStore?.Set(nameof(SettingCategoryId), value); }
+        }
         /// <summary>The setting category name which this setting belongs to</summary>
-        public string SettingCategoryName { get; set; }
+        public string SettingCategoryName {
+            get { return BackingStore?.Get<string>(nameof(SettingCategoryName)); }
+            set { BackingStore?.Set(nameof(SettingCategoryName), value); }
+        }
         /// <summary>The setting id guid</summary>
-        public string SettingId { get; set; }
+        public string SettingId {
+            get { return BackingStore?.Get<string>(nameof(SettingId)); }
+            set { BackingStore?.Set(nameof(SettingId), value); }
+        }
         /// <summary>The setting name that is being reported</summary>
-        public string SettingName { get; set; }
+        public string SettingName {
+            get { return BackingStore?.Get<string>(nameof(SettingName)); }
+            set { BackingStore?.Set(nameof(SettingName), value); }
+        }
         /// <summary>The policies that contribute to this setting instance</summary>
-        public List<SettingSource> SourcePolicies { get; set; }
+        public List<SettingSource> SourcePolicies {
+            get { return BackingStore?.Get<List<SettingSource>>(nameof(SourcePolicies)); }
+            set { BackingStore?.Set(nameof(SourcePolicies), value); }
+        }
         /// <summary>The compliance state of the security baseline setting</summary>
-        public SecurityBaselineComplianceState? State { get; set; }
+        public SecurityBaselineComplianceState? State {
+            get { return BackingStore?.Get<SecurityBaselineComplianceState?>(nameof(State)); }
+            set { BackingStore?.Set(nameof(State), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

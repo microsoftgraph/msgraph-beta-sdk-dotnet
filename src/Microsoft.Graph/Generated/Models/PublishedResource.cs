@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of onPremisesPublishingProfile entities.</summary>
     public class PublishedResource : Entity, IParsable {
         /// <summary>List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.</summary>
-        public List<OnPremisesAgentGroup> AgentGroups { get; set; }
+        public List<OnPremisesAgentGroup> AgentGroups {
+            get { return BackingStore?.Get<List<OnPremisesAgentGroup>>(nameof(AgentGroups)); }
+            set { BackingStore?.Set(nameof(AgentGroups), value); }
+        }
         /// <summary>Display Name of the publishedResource.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.</summary>
-        public OnPremisesPublishingType? PublishingType { get; set; }
+        public OnPremisesPublishingType? PublishingType {
+            get { return BackingStore?.Get<OnPremisesPublishingType?>(nameof(PublishingType)); }
+            set { BackingStore?.Set(nameof(PublishingType), value); }
+        }
         /// <summary>Name of the publishedResource.</summary>
-        public string ResourceName { get; set; }
+        public string ResourceName {
+            get { return BackingStore?.Get<string>(nameof(ResourceName)); }
+            set { BackingStore?.Set(nameof(ResourceName), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

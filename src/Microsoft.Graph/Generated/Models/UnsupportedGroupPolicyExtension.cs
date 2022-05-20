@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Unsupported Group Policy Extension.</summary>
     public class UnsupportedGroupPolicyExtension : Entity, IParsable {
         /// <summary>ExtensionType of the unsupported extension.</summary>
-        public string ExtensionType { get; set; }
+        public string ExtensionType {
+            get { return BackingStore?.Get<string>(nameof(ExtensionType)); }
+            set { BackingStore?.Set(nameof(ExtensionType), value); }
+        }
         /// <summary>Namespace Url of the unsupported extension.</summary>
-        public string NamespaceUrl { get; set; }
+        public string NamespaceUrl {
+            get { return BackingStore?.Get<string>(nameof(NamespaceUrl)); }
+            set { BackingStore?.Set(nameof(NamespaceUrl), value); }
+        }
         /// <summary>Node name of the unsupported extension.</summary>
-        public string NodeName { get; set; }
+        public string NodeName {
+            get { return BackingStore?.Get<string>(nameof(NodeName)); }
+            set { BackingStore?.Set(nameof(NodeName), value); }
+        }
         /// <summary>Setting Scope of the unsupported extension. Possible values are: unknown, device, user.</summary>
-        public GroupPolicySettingScope? SettingScope { get; set; }
+        public GroupPolicySettingScope? SettingScope {
+            get { return BackingStore?.Get<GroupPolicySettingScope?>(nameof(SettingScope)); }
+            set { BackingStore?.Set(nameof(SettingScope), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

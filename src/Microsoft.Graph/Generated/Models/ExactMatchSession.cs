@@ -4,23 +4,48 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
     public class ExactMatchSession : ExactMatchSessionBase, IParsable {
         /// <summary>The checksum property</summary>
-        public string Checksum { get; set; }
+        public string Checksum {
+            get { return BackingStore?.Get<string>(nameof(Checksum)); }
+            set { BackingStore?.Set(nameof(Checksum), value); }
+        }
         /// <summary>The dataUploadURI property</summary>
-        public string DataUploadURI { get; set; }
+        public string DataUploadURI {
+            get { return BackingStore?.Get<string>(nameof(DataUploadURI)); }
+            set { BackingStore?.Set(nameof(DataUploadURI), value); }
+        }
         /// <summary>The fields property</summary>
-        public List<string> Fields { get; set; }
+        public List<string> Fields {
+            get { return BackingStore?.Get<List<string>>(nameof(Fields)); }
+            set { BackingStore?.Set(nameof(Fields), value); }
+        }
         /// <summary>The fileName property</summary>
-        public string FileName { get; set; }
+        public string FileName {
+            get { return BackingStore?.Get<string>(nameof(FileName)); }
+            set { BackingStore?.Set(nameof(FileName), value); }
+        }
         /// <summary>The rowsPerBlock property</summary>
-        public int? RowsPerBlock { get; set; }
+        public int? RowsPerBlock {
+            get { return BackingStore?.Get<int?>(nameof(RowsPerBlock)); }
+            set { BackingStore?.Set(nameof(RowsPerBlock), value); }
+        }
         /// <summary>The salt property</summary>
-        public string Salt { get; set; }
+        public string Salt {
+            get { return BackingStore?.Get<string>(nameof(Salt)); }
+            set { BackingStore?.Set(nameof(Salt), value); }
+        }
         /// <summary>The uploadAgent property</summary>
-        public ExactMatchUploadAgent UploadAgent { get; set; }
+        public ExactMatchUploadAgent UploadAgent {
+            get { return BackingStore?.Get<ExactMatchUploadAgent>(nameof(UploadAgent)); }
+            set { BackingStore?.Set(nameof(UploadAgent), value); }
+        }
         /// <summary>The uploadAgentId property</summary>
-        public string UploadAgentId { get; set; }
+        public string UploadAgentId {
+            get { return BackingStore?.Get<string>(nameof(UploadAgentId)); }
+            set { BackingStore?.Set(nameof(UploadAgentId), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

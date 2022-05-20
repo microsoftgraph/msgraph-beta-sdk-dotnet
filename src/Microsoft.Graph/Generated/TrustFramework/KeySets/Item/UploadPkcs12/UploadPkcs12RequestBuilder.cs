@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadPkcs12 {
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(UploadPkcs12RequestBody body, Action<UploadPkcs12RequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation CreatePostRequestInformation(UploadPkcs12PostRequestBody body, Action<UploadPkcs12RequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadPkcs12 {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<TrustFrameworkKey> PostAsync(UploadPkcs12RequestBody body, Action<UploadPkcs12RequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<TrustFrameworkKey> PostAsync(UploadPkcs12PostRequestBody body, Action<UploadPkcs12RequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<TrustFrameworkKey>(requestInfo, TrustFrameworkKey.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);

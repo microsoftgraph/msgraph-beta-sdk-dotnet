@@ -4,28 +4,55 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Base Profile Type for Resource Access</summary>
     public class DeviceManagementResourceAccessProfileBase : Entity, IParsable {
         /// <summary>The list of assignments for the device configuration profile.</summary>
-        public List<DeviceManagementResourceAccessProfileAssignment> Assignments { get; set; }
+        public List<DeviceManagementResourceAccessProfileAssignment> Assignments {
+            get { return BackingStore?.Get<List<DeviceManagementResourceAccessProfileAssignment>>(nameof(Assignments)); }
+            set { BackingStore?.Set(nameof(Assignments), value); }
+        }
         /// <summary>DateTime profile was created</summary>
-        public DateTimeOffset? CreationDateTime { get; set; }
+        public DateTimeOffset? CreationDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreationDateTime)); }
+            set { BackingStore?.Set(nameof(CreationDateTime), value); }
+        }
         /// <summary>Profile description</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Profile display name</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>DateTime profile was last modified</summary>
-        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
+            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+        }
         /// <summary>Scope Tags</summary>
-        public List<string> RoleScopeTagIds { get; set; }
+        public List<string> RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTagIds)); }
+            set { BackingStore?.Set(nameof(RoleScopeTagIds), value); }
+        }
         /// <summary>Version of the profile</summary>
-        public int? Version { get; set; }
+        public int? Version {
+            get { return BackingStore?.Get<int?>(nameof(Version)); }
+            set { BackingStore?.Set(nameof(Version), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
         public static new DeviceManagementResourceAccessProfileBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementResourceAccessProfileBase();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.deviceManagementResourceAccessProfileBase" => new DeviceManagementResourceAccessProfileBase(),
+                _ => new DeviceManagementResourceAccessProfileBase(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

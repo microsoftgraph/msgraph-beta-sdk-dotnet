@@ -4,21 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Entity that represents device setting state summary for an intent</summary>
     public class DeviceManagementIntentDeviceSettingStateSummary : Entity, IParsable {
         /// <summary>Number of compliant devices</summary>
-        public int? CompliantCount { get; set; }
+        public int? CompliantCount {
+            get { return BackingStore?.Get<int?>(nameof(CompliantCount)); }
+            set { BackingStore?.Set(nameof(CompliantCount), value); }
+        }
         /// <summary>Number of devices in conflict</summary>
-        public int? ConflictCount { get; set; }
+        public int? ConflictCount {
+            get { return BackingStore?.Get<int?>(nameof(ConflictCount)); }
+            set { BackingStore?.Set(nameof(ConflictCount), value); }
+        }
         /// <summary>Number of error devices</summary>
-        public int? ErrorCount { get; set; }
+        public int? ErrorCount {
+            get { return BackingStore?.Get<int?>(nameof(ErrorCount)); }
+            set { BackingStore?.Set(nameof(ErrorCount), value); }
+        }
         /// <summary>Number of non compliant devices</summary>
-        public int? NonCompliantCount { get; set; }
+        public int? NonCompliantCount {
+            get { return BackingStore?.Get<int?>(nameof(NonCompliantCount)); }
+            set { BackingStore?.Set(nameof(NonCompliantCount), value); }
+        }
         /// <summary>Number of not applicable devices</summary>
-        public int? NotApplicableCount { get; set; }
+        public int? NotApplicableCount {
+            get { return BackingStore?.Get<int?>(nameof(NotApplicableCount)); }
+            set { BackingStore?.Set(nameof(NotApplicableCount), value); }
+        }
         /// <summary>Number of remediated devices</summary>
-        public int? RemediatedCount { get; set; }
+        public int? RemediatedCount {
+            get { return BackingStore?.Get<int?>(nameof(RemediatedCount)); }
+            set { BackingStore?.Set(nameof(RemediatedCount), value); }
+        }
         /// <summary>Name of a setting</summary>
-        public string SettingName { get; set; }
+        public string SettingName {
+            get { return BackingStore?.Get<string>(nameof(SettingName)); }
+            set { BackingStore?.Set(nameof(SettingName), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

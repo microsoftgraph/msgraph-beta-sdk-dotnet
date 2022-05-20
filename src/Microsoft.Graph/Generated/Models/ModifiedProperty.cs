@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ModifiedProperty : IAdditionalDataHolder, IParsable {
+    public class ModifiedProperty : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Name of property that was modified.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>New property value.</summary>
-        public string NewValue { get; set; }
+        public string NewValue {
+            get { return BackingStore?.Get<string>(nameof(NewValue)); }
+            set { BackingStore?.Set(nameof(NewValue), value); }
+        }
         /// <summary>Old property value.</summary>
-        public string OldValue { get; set; }
+        public string OldValue {
+            get { return BackingStore?.Get<string>(nameof(OldValue)); }
+            set { BackingStore?.Set(nameof(OldValue), value); }
+        }
         /// <summary>
         /// Instantiates a new modifiedProperty and sets the default values.
         /// </summary>
         public ModifiedProperty() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

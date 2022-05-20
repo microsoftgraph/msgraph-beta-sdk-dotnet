@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Subscriptions {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// List subscriptions
+        /// Retrieve a list of webhook subscriptions.  The content of the response depends on the context in which the app is calling; for details, see the scenarios in the [Permissions](#permissions) section.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<SubscriptionsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Subscriptions {
             return requestInfo;
         }
         /// <summary>
-        /// Change notifications for Outlook resources in Microsoft Graph
+        /// There is a maximum limit of 1000 active subscriptions for Outlook resources per mailbox for all applications. You can subscribe to changes in contacts, events, or messages in the mailbox.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Subscriptions {
             return requestInfo;
         }
         /// <summary>
-        /// List subscriptions
+        /// Retrieve a list of webhook subscriptions.  The content of the response depends on the context in which the app is calling; for details, see the scenarios in the [Permissions](#permissions) section.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Subscriptions {
             return await RequestAdapter.SendAsync<SubscriptionCollectionResponse>(requestInfo, SubscriptionCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Change notifications for Outlook resources in Microsoft Graph
+        /// There is a maximum limit of 1000 active subscriptions for Outlook resources per mailbox for all applications. You can subscribe to changes in contacts, events, or messages in the mailbox.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.Subscriptions {
             };
             return await RequestAdapter.SendAsync<Subscription>(requestInfo, Subscription.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>List subscriptions</summary>
+        /// <summary>Retrieve a list of webhook subscriptions.  The content of the response depends on the context in which the app is calling; for details, see the scenarios in the [Permissions](#permissions) section.</summary>
         public class SubscriptionsRequestBuilderGetQueryParameters {
             /// <summary>Search items by search phrases</summary>
             [QueryParameter("%24search")]

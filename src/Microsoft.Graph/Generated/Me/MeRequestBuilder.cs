@@ -487,10 +487,6 @@ namespace Microsoft.Graph.Beta.Me {
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
-        /// <summary>
-        /// Helpers (examples that aren&apos;t included in the docs)
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<MeRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -507,7 +503,7 @@ namespace Microsoft.Graph.Beta.Me {
             return requestInfo;
         }
         /// <summary>
-        /// Update user
+        /// Update the properties of a [user](../resources/user.md) object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. [Compare member and guest default permissions](/azure/active-directory/fundamentals/users-default-permissions#compare-member-and-guest-default-permissions) to see properties they can manage.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -563,12 +559,6 @@ namespace Microsoft.Graph.Beta.Me {
             if(string.IsNullOrEmpty(roomList)) throw new ArgumentNullException(nameof(roomList));
             return new FindRoomsWithRoomListRequestBuilder(PathParameters, RequestAdapter, roomList);
         }
-        /// <summary>
-        /// Helpers (examples that aren&apos;t included in the docs)
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.User> GetAsync(Action<MeRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -620,7 +610,7 @@ namespace Microsoft.Graph.Beta.Me {
             return new IsManagedAppUserBlockedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Update user
+        /// Update the properties of a [user](../resources/user.md) object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. [Compare member and guest default permissions](/azure/active-directory/fundamentals/users-default-permissions#compare-member-and-guest-default-permissions) to see properties they can manage.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -645,7 +635,6 @@ namespace Microsoft.Graph.Beta.Me {
             if(string.IsNullOrEmpty(startDateTime)) throw new ArgumentNullException(nameof(startDateTime));
             return new ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
-        /// <summary>Helpers (examples that aren&apos;t included in the docs)</summary>
         public class MeRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

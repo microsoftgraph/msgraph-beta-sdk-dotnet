@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class PlannerPlanContainer : IAdditionalDataHolder, IParsable {
+    public class PlannerPlanContainer : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The identifier of the resource that contains the plan.</summary>
-        public string ContainerId { get; set; }
+        public string ContainerId {
+            get { return BackingStore?.Get<string>(nameof(ContainerId)); }
+            set { BackingStore?.Set(nameof(ContainerId), value); }
+        }
         /// <summary>The type of the resource that contains the plan. See the previous table for supported types. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster.</summary>
-        public PlannerContainerType? Type { get; set; }
+        public PlannerContainerType? Type {
+            get { return BackingStore?.Get<PlannerContainerType?>(nameof(Type)); }
+            set { BackingStore?.Set(nameof(Type), value); }
+        }
         /// <summary>The full canonical URL of the container.</summary>
-        public string Url { get; set; }
+        public string Url {
+            get { return BackingStore?.Get<string>(nameof(Url)); }
+            set { BackingStore?.Set(nameof(Url), value); }
+        }
         /// <summary>
         /// Instantiates a new plannerPlanContainer and sets the default values.
         /// </summary>
         public PlannerPlanContainer() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

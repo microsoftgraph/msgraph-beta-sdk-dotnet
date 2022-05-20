@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class AuthenticationMethodsRegistrationCampaignIncludeTarget : IAdditionalDataHolder, IParsable {
+    public class AuthenticationMethodsRegistrationCampaignIncludeTarget : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The object identifier of an Azure AD user or group.</summary>
-        public string Id { get; set; }
+        public string Id {
+            get { return BackingStore?.Get<string>(nameof(Id)); }
+            set { BackingStore?.Set(nameof(Id), value); }
+        }
         /// <summary>The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.</summary>
-        public string TargetedAuthenticationMethod { get; set; }
+        public string TargetedAuthenticationMethod {
+            get { return BackingStore?.Get<string>(nameof(TargetedAuthenticationMethod)); }
+            set { BackingStore?.Set(nameof(TargetedAuthenticationMethod), value); }
+        }
         /// <summary>The type of the authentication method target. Possible values are: user, group, unknownFutureValue.</summary>
-        public AuthenticationMethodTargetType? TargetType { get; set; }
+        public AuthenticationMethodTargetType? TargetType {
+            get { return BackingStore?.Get<AuthenticationMethodTargetType?>(nameof(TargetType)); }
+            set { BackingStore?.Set(nameof(TargetType), value); }
+        }
         /// <summary>
         /// Instantiates a new authenticationMethodsRegistrationCampaignIncludeTarget and sets the default values.
         /// </summary>
         public AuthenticationMethodsRegistrationCampaignIncludeTarget() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

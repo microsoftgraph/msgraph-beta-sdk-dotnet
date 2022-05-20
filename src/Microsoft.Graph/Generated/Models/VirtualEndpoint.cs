@@ -4,29 +4,63 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class VirtualEndpoint : Entity, IParsable {
         /// <summary>Cloud PC audit event.</summary>
-        public List<CloudPcAuditEvent> AuditEvents { get; set; }
+        public List<CloudPcAuditEvent> AuditEvents {
+            get { return BackingStore?.Get<List<CloudPcAuditEvent>>(nameof(AuditEvents)); }
+            set { BackingStore?.Set(nameof(AuditEvents), value); }
+        }
         /// <summary>Cloud managed virtual desktops.</summary>
-        public List<CloudPC> CloudPCs { get; set; }
+        public List<CloudPC> CloudPCs {
+            get { return BackingStore?.Get<List<CloudPC>>(nameof(CloudPCs)); }
+            set { BackingStore?.Set(nameof(CloudPCs), value); }
+        }
         /// <summary>The image resource on Cloud PC.</summary>
-        public List<CloudPcDeviceImage> DeviceImages { get; set; }
+        public List<CloudPcDeviceImage> DeviceImages {
+            get { return BackingStore?.Get<List<CloudPcDeviceImage>>(nameof(DeviceImages)); }
+            set { BackingStore?.Set(nameof(DeviceImages), value); }
+        }
         /// <summary>The gallery image resource on Cloud PC.</summary>
-        public List<CloudPcGalleryImage> GalleryImages { get; set; }
+        public List<CloudPcGalleryImage> GalleryImages {
+            get { return BackingStore?.Get<List<CloudPcGalleryImage>>(nameof(GalleryImages)); }
+            set { BackingStore?.Set(nameof(GalleryImages), value); }
+        }
         /// <summary>A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.</summary>
-        public List<CloudPcOnPremisesConnection> OnPremisesConnections { get; set; }
+        public List<CloudPcOnPremisesConnection> OnPremisesConnections {
+            get { return BackingStore?.Get<List<CloudPcOnPremisesConnection>>(nameof(OnPremisesConnections)); }
+            set { BackingStore?.Set(nameof(OnPremisesConnections), value); }
+        }
         /// <summary>The Cloud PC organization settings for a tenant.</summary>
-        public CloudPcOrganizationSettings OrganizationSettings { get; set; }
+        public CloudPcOrganizationSettings OrganizationSettings {
+            get { return BackingStore?.Get<CloudPcOrganizationSettings>(nameof(OrganizationSettings)); }
+            set { BackingStore?.Set(nameof(OrganizationSettings), value); }
+        }
         /// <summary>Cloud PC provisioning policy.</summary>
-        public List<CloudPcProvisioningPolicy> ProvisioningPolicies { get; set; }
+        public List<CloudPcProvisioningPolicy> ProvisioningPolicies {
+            get { return BackingStore?.Get<List<CloudPcProvisioningPolicy>>(nameof(ProvisioningPolicies)); }
+            set { BackingStore?.Set(nameof(ProvisioningPolicies), value); }
+        }
         /// <summary>Cloud PC service plans.</summary>
-        public List<CloudPcServicePlan> ServicePlans { get; set; }
+        public List<CloudPcServicePlan> ServicePlans {
+            get { return BackingStore?.Get<List<CloudPcServicePlan>>(nameof(ServicePlans)); }
+            set { BackingStore?.Set(nameof(ServicePlans), value); }
+        }
         /// <summary>Cloud PC snapshots.</summary>
-        public List<CloudPcSnapshot> Snapshots { get; set; }
+        public List<CloudPcSnapshot> Snapshots {
+            get { return BackingStore?.Get<List<CloudPcSnapshot>>(nameof(Snapshots)); }
+            set { BackingStore?.Set(nameof(Snapshots), value); }
+        }
         /// <summary>Cloud PC supported regions.</summary>
-        public List<CloudPcSupportedRegion> SupportedRegions { get; set; }
+        public List<CloudPcSupportedRegion> SupportedRegions {
+            get { return BackingStore?.Get<List<CloudPcSupportedRegion>>(nameof(SupportedRegions)); }
+            set { BackingStore?.Set(nameof(SupportedRegions), value); }
+        }
         /// <summary>Cloud PC user settings.</summary>
-        public List<CloudPcUserSetting> UserSettings { get; set; }
+        public List<CloudPcUserSetting> UserSettings {
+            get { return BackingStore?.Get<List<CloudPcUserSetting>>(nameof(UserSettings)); }
+            set { BackingStore?.Set(nameof(UserSettings), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

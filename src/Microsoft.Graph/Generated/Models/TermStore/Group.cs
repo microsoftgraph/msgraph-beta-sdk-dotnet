@@ -4,19 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.TermStore {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class Group : Entity, IParsable {
         /// <summary>Date and time of the group creation. Read-only.</summary>
-        public DateTimeOffset? CreatedDateTime { get; set; }
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
+            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+        }
         /// <summary>Description that gives details on the term usage.</summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
         /// <summary>Name of the group.</summary>
-        public string DisplayName { get; set; }
+        public string DisplayName {
+            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
+            set { BackingStore?.Set(nameof(DisplayName), value); }
+        }
         /// <summary>ID of the parent site of this group.</summary>
-        public string ParentSiteId { get; set; }
+        public string ParentSiteId {
+            get { return BackingStore?.Get<string>(nameof(ParentSiteId)); }
+            set { BackingStore?.Set(nameof(ParentSiteId), value); }
+        }
         /// <summary>Returns the type of the group. Possible values are global, system, and siteCollection.</summary>
-        public TermGroupScope? Scope { get; set; }
+        public TermGroupScope? Scope {
+            get { return BackingStore?.Get<TermGroupScope?>(nameof(Scope)); }
+            set { BackingStore?.Set(nameof(Scope), value); }
+        }
         /// <summary>All sets under the group in a term [store].</summary>
-        public List<Set> Sets { get; set; }
+        public List<Set> Sets {
+            get { return BackingStore?.Get<List<Set>>(nameof(Sets)); }
+            set { BackingStore?.Set(nameof(Sets), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

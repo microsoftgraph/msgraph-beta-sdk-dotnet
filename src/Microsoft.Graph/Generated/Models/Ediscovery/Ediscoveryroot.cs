@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class Ediscoveryroot : Entity, IParsable {
         /// <summary>The cases property</summary>
-        public List<Case> Cases { get; set; }
+        public List<Case> Cases {
+            get { return BackingStore?.Get<List<Case>>(nameof(Cases)); }
+            set { BackingStore?.Set(nameof(Cases), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

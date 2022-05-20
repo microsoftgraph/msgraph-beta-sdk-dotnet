@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class RequestorSettings : IAdditionalDataHolder, IParsable {
+    public class RequestorSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Indicates whether new requests are accepted on this policy.</summary>
-        public bool? AcceptRequests { get; set; }
+        public bool? AcceptRequests {
+            get { return BackingStore?.Get<bool?>(nameof(AcceptRequests)); }
+            set { BackingStore?.Set(nameof(AcceptRequests), value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>The users who are allowed to request on this policy, which can be singleUser, groupMembers, and connectedOrganizationMembers.</summary>
-        public List<UserSet> AllowedRequestors { get; set; }
+        public List<UserSet> AllowedRequestors {
+            get { return BackingStore?.Get<List<UserSet>>(nameof(AllowedRequestors)); }
+            set { BackingStore?.Set(nameof(AllowedRequestors), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Who can request. One of NoSubjects, SpecificDirectorySubjects, SpecificConnectedOrganizationSubjects, AllConfiguredConnectedOrganizationSubjects, AllExistingConnectedOrganizationSubjects, AllExistingDirectoryMemberUsers, AllExistingDirectorySubjects or AllExternalSubjects.</summary>
-        public string ScopeType { get; set; }
+        public string ScopeType {
+            get { return BackingStore?.Get<string>(nameof(ScopeType)); }
+            set { BackingStore?.Set(nameof(ScopeType), value); }
+        }
         /// <summary>
         /// Instantiates a new requestorSettings and sets the default values.
         /// </summary>
         public RequestorSettings() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

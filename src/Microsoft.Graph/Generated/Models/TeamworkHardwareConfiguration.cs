@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class TeamworkHardwareConfiguration : IAdditionalDataHolder, IParsable {
+    public class TeamworkHardwareConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The compute property</summary>
-        public TeamworkPeripheral Compute { get; set; }
+        public TeamworkPeripheral Compute {
+            get { return BackingStore?.Get<TeamworkPeripheral>(nameof(Compute)); }
+            set { BackingStore?.Set(nameof(Compute), value); }
+        }
         /// <summary>The hdmiIngest property</summary>
-        public TeamworkPeripheral HdmiIngest { get; set; }
+        public TeamworkPeripheral HdmiIngest {
+            get { return BackingStore?.Get<TeamworkPeripheral>(nameof(HdmiIngest)); }
+            set { BackingStore?.Set(nameof(HdmiIngest), value); }
+        }
         /// <summary>The CPU model on the device.</summary>
-        public string ProcessorModel { get; set; }
+        public string ProcessorModel {
+            get { return BackingStore?.Get<string>(nameof(ProcessorModel)); }
+            set { BackingStore?.Set(nameof(ProcessorModel), value); }
+        }
         /// <summary>
         /// Instantiates a new teamworkHardwareConfiguration and sets the default values.
         /// </summary>
         public TeamworkHardwareConfiguration() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class B2cAuthenticationMethodsPolicy : Entity, IParsable {
         /// <summary>The tenant admin can configure local accounts using email if the email and password authentication method is enabled.</summary>
-        public bool? IsEmailPasswordAuthenticationEnabled { get; set; }
+        public bool? IsEmailPasswordAuthenticationEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(IsEmailPasswordAuthenticationEnabled)); }
+            set { BackingStore?.Set(nameof(IsEmailPasswordAuthenticationEnabled), value); }
+        }
         /// <summary>The tenant admin can configure local accounts using phone number if the phone number and one-time password authentication method is enabled.</summary>
-        public bool? IsPhoneOneTimePasswordAuthenticationEnabled { get; set; }
+        public bool? IsPhoneOneTimePasswordAuthenticationEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(IsPhoneOneTimePasswordAuthenticationEnabled)); }
+            set { BackingStore?.Set(nameof(IsPhoneOneTimePasswordAuthenticationEnabled), value); }
+        }
         /// <summary>The tenant admin can configure local accounts using username if the username and password authentication method is enabled.</summary>
-        public bool? IsUserNameAuthenticationEnabled { get; set; }
+        public bool? IsUserNameAuthenticationEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(IsUserNameAuthenticationEnabled)); }
+            set { BackingStore?.Set(nameof(IsUserNameAuthenticationEnabled), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

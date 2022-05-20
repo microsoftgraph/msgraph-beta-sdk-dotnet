@@ -1,22 +1,38 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class SearchBucket : IAdditionalDataHolder, IParsable {
+    public class SearchBucket : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>A token containing the encoded filter to aggregate search matches by the specific key value. To use the filter, pass the token as part of the aggregationFilter property in a searchRequest object, in the format &apos;{field}:/&apos;{aggregationFilterToken}/&apos;&apos;. See an example.</summary>
-        public string AggregationFilterToken { get; set; }
+        public string AggregationFilterToken {
+            get { return BackingStore?.Get<string>(nameof(AggregationFilterToken)); }
+            set { BackingStore?.Set(nameof(AggregationFilterToken), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The approximate number of search matches that share the same value specified in the key property. Note that this number is not the exact number of matches.</summary>
-        public int? Count { get; set; }
+        public int? Count {
+            get { return BackingStore?.Get<int?>(nameof(Count)); }
+            set { BackingStore?.Set(nameof(Count), value); }
+        }
         /// <summary>The discrete value of the field that an aggregation was computed on.</summary>
-        public string Key { get; set; }
+        public string Key {
+            get { return BackingStore?.Get<string>(nameof(Key)); }
+            set { BackingStore?.Set(nameof(Key), value); }
+        }
         /// <summary>
         /// Instantiates a new searchBucket and sets the default values.
         /// </summary>
         public SearchBucket() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

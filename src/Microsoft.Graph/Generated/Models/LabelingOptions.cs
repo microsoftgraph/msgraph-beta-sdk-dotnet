@@ -1,24 +1,43 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class LabelingOptions : IAdditionalDataHolder, IParsable {
+    public class LabelingOptions : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
         /// <summary>Possible values are: standard, privileged, auto.</summary>
-        public Microsoft.Graph.Beta.Models.AssignmentMethod? AssignmentMethod { get; set; }
+        public Microsoft.Graph.Beta.Models.AssignmentMethod? AssignmentMethod {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AssignmentMethod?>(nameof(AssignmentMethod)); }
+            set { BackingStore?.Set(nameof(AssignmentMethod), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The downgrade justification object that indicates if downgrade was justified and, if so, the reason.</summary>
-        public Microsoft.Graph.Beta.Models.DowngradeJustification DowngradeJustification { get; set; }
+        public Microsoft.Graph.Beta.Models.DowngradeJustification DowngradeJustification {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DowngradeJustification>(nameof(DowngradeJustification)); }
+            set { BackingStore?.Set(nameof(DowngradeJustification), value); }
+        }
         /// <summary>Extended properties will be parsed and returned in the standard MIP labeled metadata format as part of the label information.</summary>
-        public List<KeyValuePair> ExtendedProperties { get; set; }
+        public List<KeyValuePair> ExtendedProperties {
+            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(ExtendedProperties)); }
+            set { BackingStore?.Set(nameof(ExtendedProperties), value); }
+        }
         /// <summary>The GUID of the label that should be applied to the information.</summary>
-        public string LabelId { get; set; }
+        public string LabelId {
+            get { return BackingStore?.Get<string>(nameof(LabelId)); }
+            set { BackingStore?.Set(nameof(LabelId), value); }
+        }
         /// <summary>
         /// Instantiates a new labelingOptions and sets the default values.
         /// </summary>
         public LabelingOptions() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>

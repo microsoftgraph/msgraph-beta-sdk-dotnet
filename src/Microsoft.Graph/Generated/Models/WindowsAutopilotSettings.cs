@@ -4,13 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The windowsAutopilotSettings resource represents a Windows Autopilot Account to sync data with Windows device data sync service.</summary>
     public class WindowsAutopilotSettings : Entity, IParsable {
         /// <summary>Last data sync date time with DDS service.</summary>
-        public DateTimeOffset? LastManualSyncTriggerDateTime { get; set; }
+        public DateTimeOffset? LastManualSyncTriggerDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastManualSyncTriggerDateTime)); }
+            set { BackingStore?.Set(nameof(LastManualSyncTriggerDateTime), value); }
+        }
         /// <summary>Last data sync date time with DDS service.</summary>
-        public DateTimeOffset? LastSyncDateTime { get; set; }
+        public DateTimeOffset? LastSyncDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSyncDateTime)); }
+            set { BackingStore?.Set(nameof(LastSyncDateTime), value); }
+        }
         /// <summary>Indicates the status of sync with Device data sync (DDS) service. Possible values are: unknown, inProgress, completed, failed.</summary>
-        public WindowsAutopilotSyncStatus? SyncStatus { get; set; }
+        public WindowsAutopilotSyncStatus? SyncStatus {
+            get { return BackingStore?.Get<WindowsAutopilotSyncStatus?>(nameof(SyncStatus)); }
+            set { BackingStore?.Set(nameof(SyncStatus), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

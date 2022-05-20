@@ -4,15 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Contains properties for user run state of the device management script.</summary>
     public class DeviceManagementScriptUserState : Entity, IParsable {
         /// <summary>List of run states for this script across all devices of specific user.</summary>
-        public List<DeviceManagementScriptDeviceState> DeviceRunStates { get; set; }
+        public List<DeviceManagementScriptDeviceState> DeviceRunStates {
+            get { return BackingStore?.Get<List<DeviceManagementScriptDeviceState>>(nameof(DeviceRunStates)); }
+            set { BackingStore?.Set(nameof(DeviceRunStates), value); }
+        }
         /// <summary>Error device count for specific user.</summary>
-        public int? ErrorDeviceCount { get; set; }
+        public int? ErrorDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(ErrorDeviceCount)); }
+            set { BackingStore?.Set(nameof(ErrorDeviceCount), value); }
+        }
         /// <summary>Success device count for specific user.</summary>
-        public int? SuccessDeviceCount { get; set; }
+        public int? SuccessDeviceCount {
+            get { return BackingStore?.Get<int?>(nameof(SuccessDeviceCount)); }
+            set { BackingStore?.Set(nameof(SuccessDeviceCount), value); }
+        }
         /// <summary>User principle name of specific user.</summary>
-        public string UserPrincipalName { get; set; }
+        public string UserPrincipalName {
+            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
+            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
