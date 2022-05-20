@@ -24,6 +24,7 @@
     <PackageReleaseNotes>
 - [Breaking] Adds support CAE in the authentication provider
 - [Breaking] Generated request parameter objects renamed to include http method name
+- Enalbes the backing store to enable dirty tracking of objects
     </PackageReleaseNotes>
     <!-- edit this value to change the current major.minor.patch version -->
     <VersionPrefix>5.4.0</VersionPrefix>
