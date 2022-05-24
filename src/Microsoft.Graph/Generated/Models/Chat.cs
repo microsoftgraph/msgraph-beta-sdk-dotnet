@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<ResourceSpecificPermissionGrant>>(nameof(PermissionGrants)); }
             set { BackingStore?.Set(nameof(PermissionGrants), value); }
         }
-        /// <summary>The pinnedMessages property</summary>
+        /// <summary>A collection of all the pinned messages in the chat. Nullable.</summary>
         public List<PinnedChatMessageInfo> PinnedMessages {
             get { return BackingStore?.Get<List<PinnedChatMessageInfo>>(nameof(PinnedMessages)); }
             set { BackingStore?.Set(nameof(PinnedMessages), value); }

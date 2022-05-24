@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to user.</summary>
     public enum DeviceRegistrationState {
         /// <summary>The device is not registered.</summary>
         NotRegistered,

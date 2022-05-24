@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to user.</summary>
     public class Todo : Entity, IParsable {
         /// <summary>The task lists in the users mailbox.</summary>
         public List<TodoTaskList> Lists {

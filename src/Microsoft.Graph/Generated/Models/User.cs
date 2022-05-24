@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to user.</summary>
     public class User : DirectoryObject, IParsable {
         /// <summary>A freeform text entry field for the user to describe themselves. Returned only on $select.</summary>
         public string AboutMe {
@@ -627,7 +627,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<UserSettings>(nameof(Settings)); }
             set { BackingStore?.Set(nameof(Settings), value); }
         }
-        /// <summary>true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Supports $filter (eq, ne, not, in).</summary>
+        /// <summary>Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.</summary>
         public bool? ShowInAddressList {
             get { return BackingStore?.Get<bool?>(nameof(ShowInAddressList)); }
             set { BackingStore?.Set(nameof(ShowInAddressList), value); }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to user.</summary>
     public class TimeCard : ChangeTrackedEntity, IParsable {
         /// <summary>The list of breaks associated with the timeCard.</summary>
         public List<TimeCardBreak> Breaks {

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to user.</summary>
     public enum ConfigurationManagerClientState {
         /// <summary>Configuration manager agent is older than 1806 or not installed or this device has not checked into Intune for over 30 days.</summary>
         Unknown,

@@ -1,6 +1,7 @@
 using Microsoft.Graph.Beta.Domains.Item.DomainNameReferences;
 using Microsoft.Graph.Beta.Domains.Item.FederationConfiguration;
 using Microsoft.Graph.Beta.Domains.Item.ForceDelete;
+using Microsoft.Graph.Beta.Domains.Item.Promote;
 using Microsoft.Graph.Beta.Domains.Item.ServiceConfigurationRecords;
 using Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations;
 using Microsoft.Graph.Beta.Domains.Item.VerificationDnsRecords;
@@ -32,6 +33,10 @@ namespace Microsoft.Graph.Beta.Domains.Item {
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>The promote property</summary>
+        public PromoteRequestBuilder Promote { get =>
+            new PromoteRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>The serviceConfigurationRecords property</summary>

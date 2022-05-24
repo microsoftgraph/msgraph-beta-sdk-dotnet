@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to user.</summary>
     public class WorkbookChartLegend : Entity, IParsable {
         /// <summary>Represents the formatting of a chart legend, which includes fill and font formatting. Read-only.</summary>
         public WorkbookChartLegendFormat Format {

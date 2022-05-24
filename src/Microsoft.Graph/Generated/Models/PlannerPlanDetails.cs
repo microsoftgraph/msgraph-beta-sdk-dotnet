@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to user.</summary>
     public class PlannerPlanDetails : PlannerDelta, IParsable {
         /// <summary>An object that specifies the descriptions of the 25 categories that can be associated with tasks in the plan</summary>
         public PlannerCategoryDescriptions CategoryDescriptions {

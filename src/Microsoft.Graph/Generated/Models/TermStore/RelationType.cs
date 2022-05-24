@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models.TermStore {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to user.</summary>
     public enum RelationType {
         Pin,
         Reuse,

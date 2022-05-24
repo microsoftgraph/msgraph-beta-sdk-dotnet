@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models.Search {
             get { return BackingStore?.Get<AnswerKeyword>(nameof(Keywords)); }
             set { BackingStore?.Set(nameof(Keywords), value); }
         }
-        /// <summary>A list of language names that are geographically specific and that this bookmark can be viewed in. Each language tag value follows the pattern {language}-{REGION}. As an example, en-US is English as used in the United States. See supported language tags for the list of possible values.</summary>
+        /// <summary>A list of language names that are geographically specific and that this bookmark can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. See supported language tags for the list of possible values.</summary>
         public List<string> LanguageTags {
             get { return BackingStore?.Get<List<string>>(nameof(LanguageTags)); }
             set { BackingStore?.Set(nameof(LanguageTags), value); }

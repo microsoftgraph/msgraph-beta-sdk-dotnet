@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to user.</summary>
     public class WorkbookChartAxis : Entity, IParsable {
         /// <summary>Represents the formatting of a chart object, which includes line and font formatting. Read-only.</summary>
         public WorkbookChartAxisFormat Format {

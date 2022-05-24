@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to user.</summary>
     public class SkillProficiency : ItemFacet, IParsable {
         /// <summary>Contains categories a user has associated with the skill (for example, personal, professional, hobby).</summary>
         public List<string> Categories {

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to user.</summary>
     public class PersonCertification : ItemFacet, IParsable {
         /// <summary>The referenceable identifier for the certification.</summary>
         public string CertificationId {

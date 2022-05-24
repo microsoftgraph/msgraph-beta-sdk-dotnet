@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to user.</summary>
     public enum ManagedDeviceArchitecture {
         /// <summary>Unknown architecture</summary>
         Unknown,

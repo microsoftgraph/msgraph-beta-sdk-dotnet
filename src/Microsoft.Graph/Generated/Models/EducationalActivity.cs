@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to user.</summary>
     public class EducationalActivity : ItemFacet, IParsable {
         /// <summary>The month and year the user graduated or completed the activity.</summary>
         public Date? CompletionMonthYear {
