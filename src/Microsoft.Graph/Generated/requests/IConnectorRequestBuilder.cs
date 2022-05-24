@@ -34,8 +34,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for MemberOf.
         /// </summary>
-        /// <returns>The <see cref="IConnectorMemberOfCollectionRequestBuilder"/>.</returns>
-        IConnectorMemberOfCollectionRequestBuilder MemberOf { get; }
+        /// <returns>The <see cref="IConnectorMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
+        IConnectorMemberOfCollectionWithReferencesRequestBuilder MemberOf { get; }
     
     }
 }

@@ -40,8 +40,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Members.
         /// </summary>
-        /// <returns>The <see cref="IConnectorGroupMembersCollectionRequestBuilder"/>.</returns>
-        IConnectorGroupMembersCollectionRequestBuilder Members { get; }
+        /// <returns>The <see cref="IConnectorGroupMembersCollectionWithReferencesRequestBuilder"/>.</returns>
+        IConnectorGroupMembersCollectionWithReferencesRequestBuilder Members { get; }
     
     }
 }

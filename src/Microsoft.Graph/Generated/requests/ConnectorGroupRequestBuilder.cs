@@ -65,12 +65,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Members.
         /// </summary>
-        /// <returns>The <see cref="IConnectorGroupMembersCollectionRequestBuilder"/>.</returns>
-        public IConnectorGroupMembersCollectionRequestBuilder Members
+        /// <returns>The <see cref="IConnectorGroupMembersCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IConnectorGroupMembersCollectionWithReferencesRequestBuilder Members
         {
             get
             {
-                return new ConnectorGroupMembersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("members"), this.Client);
+                return new ConnectorGroupMembersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("members"), this.Client);
             }
         }
     

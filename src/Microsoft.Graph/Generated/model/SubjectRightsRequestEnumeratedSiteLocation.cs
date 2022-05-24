@@ -29,6 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets urls.
+        /// Collection of site URLs that should be included. Includes the URL of each site, for example, https://www.contoso.com/site1.
         /// </summary>
         [JsonPropertyName("urls")]
         public IEnumerable<string> Urls { get; set; }

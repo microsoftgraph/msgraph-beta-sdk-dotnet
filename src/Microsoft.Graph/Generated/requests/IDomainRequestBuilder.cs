@@ -69,6 +69,12 @@ namespace Microsoft.Graph
             bool? disableUserAccounts = null);
 
         /// <summary>
+        /// Gets the request builder for DomainPromote.
+        /// </summary>
+        /// <returns>The <see cref="IDomainPromoteRequestBuilder"/>.</returns>
+        IDomainPromoteRequestBuilder Promote();
+
+        /// <summary>
         /// Gets the request builder for DomainVerify.
         /// </summary>
         /// <returns>The <see cref="IDomainVerifyRequestBuilder"/>.</returns>

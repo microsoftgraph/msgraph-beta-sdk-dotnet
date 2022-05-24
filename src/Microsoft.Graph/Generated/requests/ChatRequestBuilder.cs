@@ -123,6 +123,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for PinnedMessages.
+        /// </summary>
+        /// <returns>The <see cref="IChatPinnedMessagesCollectionRequestBuilder"/>.</returns>
+        public IChatPinnedMessagesCollectionRequestBuilder PinnedMessages
+        {
+            get
+            {
+                return new ChatPinnedMessagesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("pinnedMessages"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Tabs.
         /// </summary>
         /// <returns>The <see cref="IChatTabsCollectionRequestBuilder"/>.</returns>

@@ -53,12 +53,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for AgentGroups.
         /// </summary>
-        /// <returns>The <see cref="IOnPremisesAgentAgentGroupsCollectionRequestBuilder"/>.</returns>
-        public IOnPremisesAgentAgentGroupsCollectionRequestBuilder AgentGroups
+        /// <returns>The <see cref="IOnPremisesAgentAgentGroupsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IOnPremisesAgentAgentGroupsCollectionWithReferencesRequestBuilder AgentGroups
         {
             get
             {
-                return new OnPremisesAgentAgentGroupsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("agentGroups"), this.Client);
+                return new OnPremisesAgentAgentGroupsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("agentGroups"), this.Client);
             }
         }
     

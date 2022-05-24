@@ -68,7 +68,7 @@ namespace Microsoft.Graph
         /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("members")]
-        public IConnectorGroupMembersCollectionPage Members { get; set; }
+        public IConnectorGroupMembersCollectionWithReferencesPage Members { get; set; }
 
         /// <summary>
         /// Gets or sets membersNextLink.

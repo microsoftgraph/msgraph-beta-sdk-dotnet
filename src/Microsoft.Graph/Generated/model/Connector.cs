@@ -47,7 +47,7 @@ namespace Microsoft.Graph
         /// The connectorGroup that the connector is a member of. Read-only.
         /// </summary>
         [JsonPropertyName("memberOf")]
-        public IConnectorMemberOfCollectionPage MemberOf { get; set; }
+        public IConnectorMemberOfCollectionWithReferencesPage MemberOf { get; set; }
 
         /// <summary>
         /// Gets or sets memberOfNextLink.

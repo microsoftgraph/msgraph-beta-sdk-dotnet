@@ -29,6 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets upns.
+        /// Collection of mailboxes that should be included in the search. Includes the UPN (user principal name) of each mailbox, for example, Monica.Thompson@contoso.com.
         /// </summary>
         [JsonPropertyName("upns")]
         public IEnumerable<string> Upns { get; set; }

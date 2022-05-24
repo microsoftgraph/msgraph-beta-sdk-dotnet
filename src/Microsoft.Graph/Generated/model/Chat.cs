@@ -155,6 +155,20 @@ namespace Microsoft.Graph
         public string PermissionGrantsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets pinned messages.
+        /// A collection of all the pinned messages in the chat. Nullable.
+        /// </summary>
+        [JsonPropertyName("pinnedMessages")]
+        public IChatPinnedMessagesCollectionPage PinnedMessages { get; set; }
+
+        /// <summary>
+        /// Gets or sets pinnedMessagesNextLink.
+        /// </summary>
+        [JsonPropertyName("pinnedMessages@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string PinnedMessagesNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets tabs.
         /// A collection of all the tabs in the chat. Nullable.
         /// </summary>

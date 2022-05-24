@@ -124,6 +124,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DomainPromote.
+        /// </summary>
+        /// <returns>The <see cref="IDomainPromoteRequestBuilder"/>.</returns>
+        public IDomainPromoteRequestBuilder Promote()
+        {
+            return new DomainPromoteRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.promote"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for DomainVerify.
         /// </summary>
         /// <returns>The <see cref="IDomainVerifyRequestBuilder"/>.</returns>
