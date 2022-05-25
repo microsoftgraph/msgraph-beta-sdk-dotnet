@@ -43,6 +43,12 @@ namespace Microsoft.Graph
         public B2cAuthenticationMethodsPolicy B2cAuthenticationMethodsPolicy { get; set; }
     
         /// <summary>
+        /// Gets or sets device registration policy.
+        /// </summary>
+        [JsonPropertyName("deviceRegistrationPolicy")]
+        public DeviceRegistrationPolicy DeviceRegistrationPolicy { get; set; }
+    
+        /// <summary>
         /// Gets or sets activity based timeout policies.
         /// The policy that controls the idle time out for web sessions for applications.
         /// </summary>

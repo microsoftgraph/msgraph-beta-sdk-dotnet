@@ -53,7 +53,7 @@ namespace Microsoft.Graph
         /// List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("agentGroups")]
-        public IOnPremisesAgentAgentGroupsCollectionPage AgentGroups { get; set; }
+        public IOnPremisesAgentAgentGroupsCollectionWithReferencesPage AgentGroups { get; set; }
 
         /// <summary>
         /// Gets or sets agentGroupsNextLink.

@@ -1053,6 +1053,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceDeviceRegistrationPolicy request builder.
+        /// </summary>
+        public virtual IDeviceRegistrationPolicyRequestBuilder DeviceRegistrationPolicy
+        {
+            get
+            {
+                return new DeviceRegistrationPolicyRequestBuilder(this.BaseUrl + "/deviceRegistrationPolicy", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceBranding request builder.
         /// </summary>
         public virtual IOrganizationalBrandingRequestBuilder Branding

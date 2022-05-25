@@ -17,8 +17,15 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User Registration Details.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<UserRegistrationDetails>))]
     public partial class UserRegistrationDetails : Entity
     {
+    
+        /// <summary>
+        /// Gets or sets default mfa method.
+        /// </summary>
+        [JsonPropertyName("defaultMfaMethod")]
+        public DefaultMfaMethodType? DefaultMfaMethod { get; set; }
     
         /// <summary>
         /// Gets or sets is mfa capable.

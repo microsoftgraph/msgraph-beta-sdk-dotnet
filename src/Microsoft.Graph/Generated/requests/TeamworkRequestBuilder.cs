@@ -74,5 +74,30 @@ namespace Microsoft.Graph
             }
         }
     
+        /// <summary>
+        /// Gets the request builder for TeamworkSendActivityNotificationToRecipients.
+        /// </summary>
+        /// <returns>The <see cref="ITeamworkSendActivityNotificationToRecipientsRequestBuilder"/>.</returns>
+        public ITeamworkSendActivityNotificationToRecipientsRequestBuilder SendActivityNotificationToRecipients(
+            TeamworkActivityTopic topic = null,
+            string activityType = null,
+            Int64? chainId = null,
+            ItemBody previewText = null,
+            string teamsAppId = null,
+            IEnumerable<KeyValuePair> templateParameters = null,
+            IEnumerable<TeamworkNotificationRecipient> recipients = null)
+        {
+            return new TeamworkSendActivityNotificationToRecipientsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.sendActivityNotificationToRecipients"),
+                this.Client,
+                topic,
+                activityType,
+                chainId,
+                previewText,
+                teamsAppId,
+                templateParameters,
+                recipients);
+        }
+    
     }
 }

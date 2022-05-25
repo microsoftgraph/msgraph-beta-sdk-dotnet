@@ -23,48 +23,56 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets azureStorageAccountId.
+        /// The resource ID of the Azure Storage account in which the Cloud PC snapshot is being saved.
         /// </summary>
         [JsonPropertyName("azureStorageAccountId")]
         public string AzureStorageAccountId { get; set; }
     
         /// <summary>
         /// Gets or sets azureStorageAccountName.
+        /// The name of the Azure Storage account in which the Cloud PC snapshot is being saved.
         /// </summary>
         [JsonPropertyName("azureStorageAccountName")]
         public string AzureStorageAccountName { get; set; }
     
         /// <summary>
         /// Gets or sets inReview.
+        /// True if the Cloud PC is set to in review by the administrator.
         /// </summary>
         [JsonPropertyName("inReview")]
         public bool? InReview { get; set; }
     
         /// <summary>
         /// Gets or sets restorePointDateTime.
+        /// The specific date and time of the Cloud PC snapshot that was taken and saved automatically, when the Cloud PC is set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("restorePointDateTime")]
         public DateTimeOffset? RestorePointDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets reviewStartDateTime.
+        /// The specific date and time when the Cloud PC was set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("reviewStartDateTime")]
         public DateTimeOffset? ReviewStartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets subscriptionId.
+        /// The ID of the Azure subscription in which the Cloud PC snapshot is being saved, in GUID format.
         /// </summary>
         [JsonPropertyName("subscriptionId")]
         public string SubscriptionId { get; set; }
     
         /// <summary>
         /// Gets or sets subscriptionName.
+        /// The name of the Azure subscription in which the Cloud PC snapshot is being saved.
         /// </summary>
         [JsonPropertyName("subscriptionName")]
         public string SubscriptionName { get; set; }
     
         /// <summary>
         /// Gets or sets userAccessLevel.
+        /// The access level of the end user on the Cloud PC. Possible values are: unrestricted, restricted.
         /// </summary>
         [JsonPropertyName("userAccessLevel")]
         public CloudPcUserAccessLevel? UserAccessLevel { get; set; }

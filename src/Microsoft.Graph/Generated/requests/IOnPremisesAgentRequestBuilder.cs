@@ -34,8 +34,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for AgentGroups.
         /// </summary>
-        /// <returns>The <see cref="IOnPremisesAgentAgentGroupsCollectionRequestBuilder"/>.</returns>
-        IOnPremisesAgentAgentGroupsCollectionRequestBuilder AgentGroups { get; }
+        /// <returns>The <see cref="IOnPremisesAgentAgentGroupsCollectionWithReferencesRequestBuilder"/>.</returns>
+        IOnPremisesAgentAgentGroupsCollectionWithReferencesRequestBuilder AgentGroups { get; }
     
     }
 }
