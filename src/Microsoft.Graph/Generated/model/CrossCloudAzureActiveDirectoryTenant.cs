@@ -29,18 +29,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets cloudInstance.
+        /// The ID of the cloud where the tenant is located, one of microsoftonline.com, microsoftonline.us or partner.microsoftonline.cn. Read only.
         /// </summary>
         [JsonPropertyName("cloudInstance")]
         public string CloudInstance { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
+        /// The name of the Azure Active Directory tenant. Read only.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets tenantId.
+        /// The ID of the Azure Active Directory tenant. Read only.
         /// </summary>
         [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }

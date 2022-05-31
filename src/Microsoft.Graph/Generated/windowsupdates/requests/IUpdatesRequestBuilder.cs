@@ -44,6 +44,12 @@ namespace Microsoft.Graph.WindowsUpdates
         IUpdatesDeploymentsCollectionRequestBuilder Deployments { get; }
 
         /// <summary>
+        /// Gets the request builder for ResourceConnections.
+        /// </summary>
+        /// <returns>The <see cref="IUpdatesResourceConnectionsCollectionRequestBuilder"/>.</returns>
+        IUpdatesResourceConnectionsCollectionRequestBuilder ResourceConnections { get; }
+
+        /// <summary>
         /// Gets the request builder for UpdatableAssets.
         /// </summary>
         /// <returns>The <see cref="IUpdatesUpdatableAssetsCollectionRequestBuilder"/>.</returns>

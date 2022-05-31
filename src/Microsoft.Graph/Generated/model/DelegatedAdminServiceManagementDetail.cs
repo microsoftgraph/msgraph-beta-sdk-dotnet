@@ -21,12 +21,6 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Gets or sets service id.
-        /// </summary>
-        [JsonPropertyName("serviceId")]
-        public string ServiceId { get; set; }
-    
-        /// <summary>
         /// Gets or sets service management url.
         /// The URL of the management portal for the managed service. Read-only.
         /// </summary>

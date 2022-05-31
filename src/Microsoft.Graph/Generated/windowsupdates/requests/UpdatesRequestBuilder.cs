@@ -75,6 +75,18 @@ namespace Microsoft.Graph.WindowsUpdates
         }
 
         /// <summary>
+        /// Gets the request builder for ResourceConnections.
+        /// </summary>
+        /// <returns>The <see cref="IUpdatesResourceConnectionsCollectionRequestBuilder"/>.</returns>
+        public IUpdatesResourceConnectionsCollectionRequestBuilder ResourceConnections
+        {
+            get
+            {
+                return new UpdatesResourceConnectionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("resourceConnections"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for UpdatableAssets.
         /// </summary>
         /// <returns>The <see cref="IUpdatesUpdatableAssetsCollectionRequestBuilder"/>.</returns>

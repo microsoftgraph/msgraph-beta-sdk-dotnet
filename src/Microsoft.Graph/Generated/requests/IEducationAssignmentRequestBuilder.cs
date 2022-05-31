@@ -62,6 +62,12 @@ namespace Microsoft.Graph
         IEducationAssignmentPublishRequestBuilder Publish();
 
         /// <summary>
+        /// Gets the request builder for EducationAssignmentSetUpFeedbackResourcesFolder.
+        /// </summary>
+        /// <returns>The <see cref="IEducationAssignmentSetUpFeedbackResourcesFolderRequestBuilder"/>.</returns>
+        IEducationAssignmentSetUpFeedbackResourcesFolderRequestBuilder SetUpFeedbackResourcesFolder();
+
+        /// <summary>
         /// Gets the request builder for EducationAssignmentSetUpResourcesFolder.
         /// </summary>
         /// <returns>The <see cref="IEducationAssignmentSetUpResourcesFolderRequestBuilder"/>.</returns>

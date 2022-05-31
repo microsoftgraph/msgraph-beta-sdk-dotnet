@@ -13,31 +13,31 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The enum DelegatedAdminRelationshipOperationStatus.
+    /// The enum EducationFeedbackResourceOutcomeStatus.
     /// </summary>
     [JsonConverter(typeof(JsonStringEnumConverter))]
-    public enum DelegatedAdminRelationshipOperationStatus
+    public enum EducationFeedbackResourceOutcomeStatus
     {
     
         /// <summary>
-        /// Not Started
+        /// Not Published
         /// </summary>
-        NotStarted = 0,
+        NotPublished = 0,
 	
         /// <summary>
-        /// Running
+        /// Pending Publish
         /// </summary>
-        Running = 1,
+        PendingPublish = 1,
 	
         /// <summary>
-        /// Complete
+        /// Published
         /// </summary>
-        Complete = 2,
+        Published = 2,
 	
         /// <summary>
-        /// Failed
+        /// Failed Publish
         /// </summary>
-        Failed = 3,
+        FailedPublish = 3,
 	
         /// <summary>
         /// Unknown Future Value

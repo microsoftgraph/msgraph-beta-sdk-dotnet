@@ -7,26 +7,26 @@
 
 // Template Source: EntityRequestBuilder.cs.tt
 
-namespace Microsoft.Graph.SecurityNamespace
+namespace Microsoft.Graph
 {
     using System;
     using System.Collections.Generic;
     using System.IO;
 
     /// <summary>
-    /// The type SiteSourceRequestBuilder.
+    /// The type EducationFeedbackResourceOutcomeRequestBuilder.
     /// </summary>
-    public partial class SiteSourceRequestBuilder : DataSourceRequestBuilder, ISiteSourceRequestBuilder
+    public partial class EducationFeedbackResourceOutcomeRequestBuilder : EducationOutcomeRequestBuilder, IEducationFeedbackResourceOutcomeRequestBuilder
     {
 
         /// <summary>
-        /// Constructs a new SiteSourceRequestBuilder.
+        /// Constructs a new EducationFeedbackResourceOutcomeRequestBuilder.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
-        /// <param name="client">The <see cref="Microsoft.Graph.IBaseClient"/> for handling requests.</param>
-        public SiteSourceRequestBuilder(
+        /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
+        public EducationFeedbackResourceOutcomeRequestBuilder(
             string requestUrl,
-            Microsoft.Graph.IBaseClient client)
+            IBaseClient client)
             : base(requestUrl, client)
         {
         }
@@ -35,7 +35,7 @@ namespace Microsoft.Graph.SecurityNamespace
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new ISiteSourceRequest Request()
+        public new IEducationFeedbackResourceOutcomeRequest Request()
         {
             return this.Request(null);
         }
@@ -45,21 +45,9 @@ namespace Microsoft.Graph.SecurityNamespace
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new ISiteSourceRequest Request(IEnumerable<Microsoft.Graph.Option> options)
+        public new IEducationFeedbackResourceOutcomeRequest Request(IEnumerable<Option> options)
         {
-            return new SiteSourceRequest(this.RequestUrl, this.Client, options);
-        }
-    
-        /// <summary>
-        /// Gets the request builder for Site.
-        /// </summary>
-        /// <returns>The <see cref="Microsoft.Graph.ISiteWithReferenceRequestBuilder"/>.</returns>
-        public Microsoft.Graph.ISiteWithReferenceRequestBuilder Site
-        {
-            get
-            {
-                return new Microsoft.Graph.SiteWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("site"), this.Client);
-            }
+            return new EducationFeedbackResourceOutcomeRequest(this.RequestUrl, this.Client, options);
         }
     
     }

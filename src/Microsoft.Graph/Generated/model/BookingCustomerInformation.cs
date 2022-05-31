@@ -77,6 +77,12 @@ namespace Microsoft.Graph
         public string Phone { get; set; }
     
         /// <summary>
+        /// Gets or sets smsNotificationsEnabled.
+        /// </summary>
+        [JsonPropertyName("smsNotificationsEnabled")]
+        public bool? SmsNotificationsEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets timeZone.
         /// The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
         /// </summary>

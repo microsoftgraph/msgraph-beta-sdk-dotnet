@@ -8,41 +8,36 @@
 // Template Source: EnumType.cs.tt
 
 
-namespace Microsoft.Graph
+namespace Microsoft.Graph.WindowsUpdates
 {
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The enum DelegatedAdminRelationshipRequestStatus.
+    /// The enum ResourceConnectionState.
     /// </summary>
     [JsonConverter(typeof(JsonStringEnumConverter))]
-    public enum DelegatedAdminRelationshipRequestStatus
+    public enum ResourceConnectionState
     {
     
         /// <summary>
-        /// Created
+        /// Connected
         /// </summary>
-        Created = 0,
+        Connected = 0,
 	
         /// <summary>
-        /// Pending
+        /// Not Authorized
         /// </summary>
-        Pending = 1,
+        NotAuthorized = 1,
 	
         /// <summary>
-        /// Succeeded
+        /// Not Found
         /// </summary>
-        Succeeded = 2,
-	
-        /// <summary>
-        /// Failed
-        /// </summary>
-        Failed = 3,
+        NotFound = 2,
 	
         /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 4,
+        UnknownFutureValue = 3,
 	
     }
 }

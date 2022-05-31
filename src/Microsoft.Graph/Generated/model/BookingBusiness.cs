@@ -71,6 +71,12 @@ namespace Microsoft.Graph
         public bool? IsPublished { get; set; }
     
         /// <summary>
+        /// Gets or sets language tag.
+        /// </summary>
+        [JsonPropertyName("languageTag")]
+        public string LanguageTag { get; set; }
+    
+        /// <summary>
         /// Gets or sets phone.
         /// The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.
         /// </summary>

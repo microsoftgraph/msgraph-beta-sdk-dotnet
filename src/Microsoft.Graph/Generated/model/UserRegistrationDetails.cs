@@ -23,6 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets default mfa method.
+        /// The method the user or admin selected as default for performing multi-factor authentication for the user. The possible values are: none, mobilePhone, alternateMobilePhone, officePhone, microsoftAuthenticatorPush, softwareOneTimePasscode, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("defaultMfaMethod")]
         public DefaultMfaMethodType? DefaultMfaMethod { get; set; }

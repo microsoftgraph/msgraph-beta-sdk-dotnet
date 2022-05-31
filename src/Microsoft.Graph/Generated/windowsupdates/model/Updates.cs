@@ -42,6 +42,19 @@ namespace Microsoft.Graph.WindowsUpdates
         public string DeploymentsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets resource connections.
+        /// </summary>
+        [JsonPropertyName("resourceConnections")]
+        public IUpdatesResourceConnectionsCollectionPage ResourceConnections { get; set; }
+
+        /// <summary>
+        /// Gets or sets resourceConnectionsNextLink.
+        /// </summary>
+        [JsonPropertyName("resourceConnections@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ResourceConnectionsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets updatable assets.
         /// Assets registered with the deployment service that can receive updates. Read-only.
         /// </summary>

@@ -39,5 +39,20 @@ namespace Microsoft.Graph
         /// </summary>
         ExternalGuest = 3,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 4,
+	
+        /// <summary>
+        /// Scheduler
+        /// </summary>
+        Scheduler = 5,
+	
+        /// <summary>
+        /// Team Member
+        /// </summary>
+        TeamMember = 6,
+	
     }
 }
