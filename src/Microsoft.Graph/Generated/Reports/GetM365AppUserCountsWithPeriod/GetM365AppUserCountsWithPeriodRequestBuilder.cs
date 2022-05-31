@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Reports.GetM365AppUserCountsWithPeriod {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/reports/microsoft.graph.getM365AppUserCounts(period='{period}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", period);
+            urlTplParams.Add("period", period);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

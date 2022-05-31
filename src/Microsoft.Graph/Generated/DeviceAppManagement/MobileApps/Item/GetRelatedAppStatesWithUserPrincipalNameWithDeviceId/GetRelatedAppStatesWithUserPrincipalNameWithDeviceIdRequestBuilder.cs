@@ -27,8 +27,8 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GetRelatedApp
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/microsoft.graph.getRelatedAppStates(userPrincipalName='{userPrincipalName}',deviceId='{deviceId}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", deviceId);
-            urlTplParams.Add("", userPrincipalName);
+            urlTplParams.Add("deviceId", deviceId);
+            urlTplParams.Add("userPrincipalName", userPrincipalName);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

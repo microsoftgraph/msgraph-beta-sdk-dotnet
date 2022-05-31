@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithRe
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/microsoft.graph.getRoleScopeTagsByResource(resource='{resource}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", resource);
+            urlTplParams.Add("resource", resource);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

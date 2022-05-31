@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to group.</summary>
     public class PrintJob : Entity, IParsable {
         /// <summary>A group of settings that a printer should use to print a job.</summary>
         public PrintJobConfiguration Configuration {

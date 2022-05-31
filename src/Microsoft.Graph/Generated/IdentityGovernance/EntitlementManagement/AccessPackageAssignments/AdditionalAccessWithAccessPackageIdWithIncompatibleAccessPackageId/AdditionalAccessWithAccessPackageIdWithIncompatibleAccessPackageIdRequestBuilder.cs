@@ -27,8 +27,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignments/microsoft.graph.additionalAccess(accessPackageId='{accessPackageId}',incompatibleAccessPackageId='{incompatibleAccessPackageId}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", accessPackageId);
-            urlTplParams.Add("", incompatibleAccessPackageId);
+            urlTplParams.Add("accessPackageId", accessPackageId);
+            urlTplParams.Add("incompatibleAccessPackageId", incompatibleAccessPackageId);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

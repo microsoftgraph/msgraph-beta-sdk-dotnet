@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByIdsWithIds {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/microsoft.graph.getRoleScopeTagsByIds(ids={ids})";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", ids);
+            urlTplParams.Add("ids", ids);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

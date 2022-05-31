@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to group.</summary>
     public class ListItem : BaseItem, IParsable {
         /// <summary>The list of recent activities that took place on this item.</summary>
         public List<ItemActivityOLD> Activities {

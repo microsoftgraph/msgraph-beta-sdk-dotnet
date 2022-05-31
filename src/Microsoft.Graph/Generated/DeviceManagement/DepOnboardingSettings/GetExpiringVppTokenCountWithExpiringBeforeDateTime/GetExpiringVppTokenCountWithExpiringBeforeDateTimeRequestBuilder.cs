@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpirin
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/depOnboardingSettings/microsoft.graph.getExpiringVppTokenCount(expiringBeforeDateTime='{expiringBeforeDateTime}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", expiringBeforeDateTime);
+            urlTplParams.Add("expiringBeforeDateTime", expiringBeforeDateTime);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

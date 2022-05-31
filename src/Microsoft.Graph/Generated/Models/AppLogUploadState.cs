@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to group.</summary>
     public enum AppLogUploadState {
         /// <summary>Request is waiting to be processed or under processing</summary>
         Pending,

@@ -46,6 +46,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>(nameof(Description)); }
             set { BackingStore?.Set(nameof(Description), value); }
         }
+        /// <summary>The isAnonymousJoinEnabled property</summary>
+        public bool? IsAnonymousJoinEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(IsAnonymousJoinEnabled)); }
+            set { BackingStore?.Set(nameof(IsAnonymousJoinEnabled), value); }
+        }
         /// <summary>True means this service is not available to customers for booking.</summary>
         public bool? IsHiddenFromCustomers {
             get { return BackingStore?.Get<bool?>(nameof(IsHiddenFromCustomers)); }
@@ -55,6 +60,11 @@ namespace Microsoft.Graph.Beta.Models {
         public bool? IsLocationOnline {
             get { return BackingStore?.Get<bool?>(nameof(IsLocationOnline)); }
             set { BackingStore?.Set(nameof(IsLocationOnline), value); }
+        }
+        /// <summary>The languageTag property</summary>
+        public string LanguageTag {
+            get { return BackingStore?.Get<string>(nameof(LanguageTag)); }
+            set { BackingStore?.Set(nameof(LanguageTag), value); }
         }
         /// <summary>The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment.  To create a customer, use the Create bookingCustomer operation.</summary>
         public int? MaximumAttendeesCount {
@@ -117,8 +127,10 @@ namespace Microsoft.Graph.Beta.Models {
                 {"defaultPriceType", n => { DefaultPriceType = n.GetEnumValue<BookingPriceType>(); } },
                 {"defaultReminders", n => { DefaultReminders = n.GetCollectionOfObjectValues<BookingReminder>(BookingReminder.CreateFromDiscriminatorValue).ToList(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
+                {"isAnonymousJoinEnabled", n => { IsAnonymousJoinEnabled = n.GetBoolValue(); } },
                 {"isHiddenFromCustomers", n => { IsHiddenFromCustomers = n.GetBoolValue(); } },
                 {"isLocationOnline", n => { IsLocationOnline = n.GetBoolValue(); } },
+                {"languageTag", n => { LanguageTag = n.GetStringValue(); } },
                 {"maximumAttendeesCount", n => { MaximumAttendeesCount = n.GetIntValue(); } },
                 {"notes", n => { Notes = n.GetStringValue(); } },
                 {"postBuffer", n => { PostBuffer = n.GetTimeSpanValue(); } },
@@ -144,8 +156,10 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<BookingPriceType>("defaultPriceType", DefaultPriceType);
             writer.WriteCollectionOfObjectValues<BookingReminder>("defaultReminders", DefaultReminders);
             writer.WriteStringValue("description", Description);
+            writer.WriteBoolValue("isAnonymousJoinEnabled", IsAnonymousJoinEnabled);
             writer.WriteBoolValue("isHiddenFromCustomers", IsHiddenFromCustomers);
             writer.WriteBoolValue("isLocationOnline", IsLocationOnline);
+            writer.WriteStringValue("languageTag", LanguageTag);
             writer.WriteIntValue("maximumAttendeesCount", MaximumAttendeesCount);
             writer.WriteStringValue("notes", Notes);
             writer.WriteTimeSpanValue("postBuffer", PostBuffer);

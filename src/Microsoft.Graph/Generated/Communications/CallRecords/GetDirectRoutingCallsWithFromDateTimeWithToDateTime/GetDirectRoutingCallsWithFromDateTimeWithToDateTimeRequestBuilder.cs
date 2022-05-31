@@ -27,8 +27,8 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.GetDirectRoutingCallsW
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/communications/callRecords/microsoft.graph.callRecords.getDirectRoutingCalls(fromDateTime='{fromDateTime}',toDateTime='{toDateTime}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", fromDateTime);
-            urlTplParams.Add("", toDateTime);
+            urlTplParams.Add("fromDateTime", fromDateTime);
+            urlTplParams.Add("toDateTime", toDateTime);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

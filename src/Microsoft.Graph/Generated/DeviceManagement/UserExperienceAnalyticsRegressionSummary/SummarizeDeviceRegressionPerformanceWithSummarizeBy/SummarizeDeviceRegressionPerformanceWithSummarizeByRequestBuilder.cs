@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRegressio
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsRegressionSummary/microsoft.graph.summarizeDeviceRegressionPerformance(summarizeBy='{summarizeBy}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", summarizeBy);
+            urlTplParams.Add("summarizeBy", summarizeBy);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Beta.Teams.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of the specified [team](../resources/team.md).
+        /// Retrieve the properties and relationships of the specified team.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<TeamItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.Beta.Teams.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of the specified [team](../resources/team.md).
+        /// Update the properties of the specified team.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -212,7 +212,7 @@ namespace Microsoft.Graph.Beta.Teams.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of the specified [team](../resources/team.md).
+        /// Retrieve the properties and relationships of the specified team.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -226,7 +226,7 @@ namespace Microsoft.Graph.Beta.Teams.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Team>(requestInfo, Microsoft.Graph.Beta.Models.Team.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties of the specified [team](../resources/team.md).
+        /// Update the properties of the specified team.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -255,7 +255,7 @@ namespace Microsoft.Graph.Beta.Teams.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Retrieve the properties and relationships of the specified [team](../resources/team.md).</summary>
+        /// <summary>Retrieve the properties and relationships of the specified team.</summary>
         public class TeamItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

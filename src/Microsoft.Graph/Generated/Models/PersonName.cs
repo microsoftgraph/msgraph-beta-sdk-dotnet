@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to group.</summary>
     public class PersonName : ItemFacet, IParsable {
         /// <summary>Provides an ordered rendering of firstName and lastName depending on the locale of the user or their device.</summary>
         public string DisplayName {

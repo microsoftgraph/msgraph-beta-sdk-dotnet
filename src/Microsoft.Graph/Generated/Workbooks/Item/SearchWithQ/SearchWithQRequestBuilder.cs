@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Workbooks.Item.SearchWithQ {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/workbooks/{driveItem%2Did}/microsoft.graph.search(q='{q}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", q);
+            urlTplParams.Add("q", q);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

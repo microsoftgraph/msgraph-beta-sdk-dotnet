@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of chat entities.</summary>
+    /// <summary>Casts the previous resource to group.</summary>
     public enum ChatMessagePolicyViolationUserActionTypes {
         None,
         Override,

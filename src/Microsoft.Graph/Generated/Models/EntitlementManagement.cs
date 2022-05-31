@@ -6,7 +6,7 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
     public class EntitlementManagement : Entity, IParsable {
-        /// <summary>Approval stages for assignment requests.</summary>
+        /// <summary>Approval stages for decisions associated with access package assignment requests.</summary>
         public List<Approval> AccessPackageAssignmentApprovals {
             get { return BackingStore?.Get<List<Approval>>(nameof(AccessPackageAssignmentApprovals)); }
             set { BackingStore?.Set(nameof(AccessPackageAssignmentApprovals), value); }
@@ -26,12 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<AccessPackageAssignmentResourceRole>>(nameof(AccessPackageAssignmentResourceRoles)); }
             set { BackingStore?.Set(nameof(AccessPackageAssignmentResourceRoles), value); }
         }
-        /// <summary>Represents the grant of an access package to a subject (user or group).</summary>
+        /// <summary>The assignment of an access package to a subject for a period of time.</summary>
         public List<AccessPackageAssignment> AccessPackageAssignments {
             get { return BackingStore?.Get<List<AccessPackageAssignment>>(nameof(AccessPackageAssignments)); }
             set { BackingStore?.Set(nameof(AccessPackageAssignments), value); }
         }
-        /// <summary>Represents a group of access packages.</summary>
+        /// <summary>A container of access packages.</summary>
         public List<AccessPackageCatalog> AccessPackageCatalogs {
             get { return BackingStore?.Get<List<AccessPackageCatalog>>(nameof(AccessPackageCatalogs)); }
             set { BackingStore?.Set(nameof(AccessPackageCatalogs), value); }

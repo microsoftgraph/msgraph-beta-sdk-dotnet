@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.ApplicationTemplates {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Retrieve a list of [applicationTemplate](../resources/applicationtemplate.md) objects from the Azure AD application gallery.
+        /// Retrieve a list of applicationTemplate objects from the Azure AD application gallery.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ApplicationTemplatesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.ApplicationTemplates {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of [applicationTemplate](../resources/applicationtemplate.md) objects from the Azure AD application gallery.
+        /// Retrieve a list of applicationTemplate objects from the Azure AD application gallery.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.ApplicationTemplates {
             };
             return await RequestAdapter.SendAsync<ApplicationTemplate>(requestInfo, ApplicationTemplate.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Retrieve a list of [applicationTemplate](../resources/applicationtemplate.md) objects from the Azure AD application gallery.</summary>
+        /// <summary>Retrieve a list of applicationTemplate objects from the Azure AD application gallery.</summary>
         public class ApplicationTemplatesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

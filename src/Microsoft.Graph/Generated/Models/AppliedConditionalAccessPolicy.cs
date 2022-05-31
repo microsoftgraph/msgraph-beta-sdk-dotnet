@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<AppliedConditionalAccessPolicyResult?>(nameof(Result)); }
             set { BackingStore?.Set(nameof(Result), value); }
         }
-        /// <summary>The sessionControlsNotSatisfied property</summary>
+        /// <summary>Refers to the session controls that a sign-in activity did not satisfy. (Example: Application enforced Restrictions).</summary>
         public List<string> SessionControlsNotSatisfied {
             get { return BackingStore?.Get<List<string>>(nameof(SessionControlsNotSatisfied)); }
             set { BackingStore?.Set(nameof(SessionControlsNotSatisfied), value); }

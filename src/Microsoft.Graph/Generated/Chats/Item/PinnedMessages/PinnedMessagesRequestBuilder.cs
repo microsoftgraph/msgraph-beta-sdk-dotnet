@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.PinnedMessages {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get pinnedMessages from chats
+        /// A collection of all the pinned messages in the chat. Nullable.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<PinnedMessagesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.PinnedMessages {
             return requestInfo;
         }
         /// <summary>
-        /// Get pinnedMessages from chats
+        /// A collection of all the pinned messages in the chat. Nullable.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.PinnedMessages {
             };
             return await RequestAdapter.SendAsync<PinnedChatMessageInfo>(requestInfo, PinnedChatMessageInfo.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get pinnedMessages from chats</summary>
+        /// <summary>A collection of all the pinned messages in the chat. Nullable.</summary>
         public class PinnedMessagesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSto
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/snapshots/microsoft.graph.getStorageAccounts(subscriptionId='{subscriptionId}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", subscriptionId);
+            urlTplParams.Add("subscriptionId", subscriptionId);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

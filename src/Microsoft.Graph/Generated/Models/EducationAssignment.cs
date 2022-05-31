@@ -76,6 +76,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>(nameof(DueDateTime)); }
             set { BackingStore?.Set(nameof(DueDateTime), value); }
         }
+        /// <summary>The feedbackResourcesFolderUrl property</summary>
+        public string FeedbackResourcesFolderUrl {
+            get { return BackingStore?.Get<string>(nameof(FeedbackResourcesFolderUrl)); }
+            set { BackingStore?.Set(nameof(FeedbackResourcesFolderUrl), value); }
+        }
         /// <summary>How the assignment will be graded.</summary>
         public EducationAssignmentGradeType Grading {
             get { return BackingStore?.Get<EducationAssignmentGradeType>(nameof(Grading)); }
@@ -158,6 +163,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"dueDateTime", n => { DueDateTime = n.GetDateTimeOffsetValue(); } },
+                {"feedbackResourcesFolderUrl", n => { FeedbackResourcesFolderUrl = n.GetStringValue(); } },
                 {"grading", n => { Grading = n.GetObjectValue<EducationAssignmentGradeType>(EducationAssignmentGradeType.CreateFromDiscriminatorValue); } },
                 {"instructions", n => { Instructions = n.GetObjectValue<EducationItemBody>(EducationItemBody.CreateFromDiscriminatorValue); } },
                 {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
@@ -192,6 +198,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("dueDateTime", DueDateTime);
+            writer.WriteStringValue("feedbackResourcesFolderUrl", FeedbackResourcesFolderUrl);
             writer.WriteObjectValue<EducationAssignmentGradeType>("grading", Grading);
             writer.WriteObjectValue<EducationItemBody>("instructions", Instructions);
             writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);

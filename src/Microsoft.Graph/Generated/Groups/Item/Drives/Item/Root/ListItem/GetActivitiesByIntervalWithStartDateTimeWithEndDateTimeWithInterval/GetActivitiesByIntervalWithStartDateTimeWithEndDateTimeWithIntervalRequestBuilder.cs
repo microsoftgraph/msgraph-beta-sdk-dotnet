@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.ListItem.GetActiviti
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/groups/{group%2Did}/drives/{drive%2Did}/root/listItem/microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", endDateTime);
-            urlTplParams.Add("", interval);
-            urlTplParams.Add("", startDateTime);
+            urlTplParams.Add("endDateTime", endDateTime);
+            urlTplParams.Add("interval", interval);
+            urlTplParams.Add("startDateTime", startDateTime);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

@@ -1,6 +1,12 @@
+using Microsoft.Graph.Beta.AdministrativeUnits.Item.Members.Application;
 using Microsoft.Graph.Beta.AdministrativeUnits.Item.Members.Count;
+using Microsoft.Graph.Beta.AdministrativeUnits.Item.Members.Device;
+using Microsoft.Graph.Beta.AdministrativeUnits.Item.Members.Group;
 using Microsoft.Graph.Beta.AdministrativeUnits.Item.Members.Item;
+using Microsoft.Graph.Beta.AdministrativeUnits.Item.Members.OrgContact;
 using Microsoft.Graph.Beta.AdministrativeUnits.Item.Members.Ref;
+using Microsoft.Graph.Beta.AdministrativeUnits.Item.Members.ServicePrincipal;
+using Microsoft.Graph.Beta.AdministrativeUnits.Item.Members.User;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -14,9 +20,25 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.AdministrativeUnits.Item.Members {
     /// <summary>Provides operations to manage the members property of the microsoft.graph.administrativeUnit entity.</summary>
     public class MembersRequestBuilder {
+        /// <summary>The application property</summary>
+        public ApplicationRequestBuilder Application { get =>
+            new ApplicationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The device property</summary>
+        public DeviceRequestBuilder Device { get =>
+            new DeviceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The group property</summary>
+        public GroupRequestBuilder Group { get =>
+            new GroupRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The orgContact property</summary>
+        public OrgContactRequestBuilder OrgContact { get =>
+            new OrgContactRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -26,8 +48,16 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item.Members {
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The servicePrincipal property</summary>
+        public ServicePrincipalRequestBuilder ServicePrincipal { get =>
+            new ServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>The user property</summary>
+        public UserRequestBuilder User { get =>
+            new UserRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.administrativeUnits.item.members.item collection</summary>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

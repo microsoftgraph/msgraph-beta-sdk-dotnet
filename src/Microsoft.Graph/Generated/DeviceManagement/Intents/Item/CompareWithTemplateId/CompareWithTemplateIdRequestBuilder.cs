@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.CompareWithTemplate
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}/microsoft.graph.compare(templateId='{templateId}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", templateId);
+            urlTplParams.Add("templateId", templateId);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

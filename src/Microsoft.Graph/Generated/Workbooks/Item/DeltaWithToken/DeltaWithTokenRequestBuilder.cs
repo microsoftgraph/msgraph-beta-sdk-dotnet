@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Workbooks.Item.DeltaWithToken {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/workbooks/{driveItem%2Did}/microsoft.graph.delta(token='{token}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", token);
+            urlTplParams.Add("token", token);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

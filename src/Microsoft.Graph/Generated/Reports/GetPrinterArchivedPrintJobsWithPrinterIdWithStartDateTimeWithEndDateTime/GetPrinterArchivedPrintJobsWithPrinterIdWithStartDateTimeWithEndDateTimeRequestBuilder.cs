@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.Reports.GetPrinterArchivedPrintJobsWithPrinterIdW
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/reports/microsoft.graph.getPrinterArchivedPrintJobs(printerId='{printerId}',startDateTime='{startDateTime}',endDateTime='{endDateTime}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", endDateTime);
-            urlTplParams.Add("", printerId);
-            urlTplParams.Add("", startDateTime);
+            urlTplParams.Add("endDateTime", endDateTime);
+            urlTplParams.Add("printerId", printerId);
+            urlTplParams.Add("startDateTime", startDateTime);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

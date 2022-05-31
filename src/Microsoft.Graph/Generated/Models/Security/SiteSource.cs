@@ -1,4 +1,3 @@
-using Microsoft.Graph.Beta.Models.Ediscovery;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;

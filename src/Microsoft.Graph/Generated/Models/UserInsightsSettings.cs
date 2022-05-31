@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to group.</summary>
     public class UserInsightsSettings : Entity, IParsable {
         /// <summary>true if user&apos;s itemInsights and meeting hours insights are enabled; false if user&apos;s itemInsights and meeting hours insights are disabled. Default is true. Optional.</summary>
         public bool? IsEnabled {

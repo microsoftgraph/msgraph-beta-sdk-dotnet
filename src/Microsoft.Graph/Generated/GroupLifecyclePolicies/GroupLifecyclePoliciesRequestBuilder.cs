@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// List all the [groupLifecyclePolicies](../resources/grouplifecyclepolicy.md).
+        /// List all the groupLifecyclePolicies.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<GroupLifecyclePoliciesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies {
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new [groupLifecyclePolicy](../resources/grouplifecyclepolicy.md).
+        /// Creates a new groupLifecyclePolicy.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies {
             return requestInfo;
         }
         /// <summary>
-        /// List all the [groupLifecyclePolicies](../resources/grouplifecyclepolicy.md).
+        /// List all the groupLifecyclePolicies.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies {
             return await RequestAdapter.SendAsync<GroupLifecyclePolicyCollectionResponse>(requestInfo, GroupLifecyclePolicyCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Creates a new [groupLifecyclePolicy](../resources/grouplifecyclepolicy.md).
+        /// Creates a new groupLifecyclePolicy.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies {
             };
             return await RequestAdapter.SendAsync<GroupLifecyclePolicy>(requestInfo, GroupLifecyclePolicy.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>List all the [groupLifecyclePolicies](../resources/grouplifecyclepolicy.md).</summary>
+        /// <summary>List all the groupLifecyclePolicies.</summary>
         public class GroupLifecyclePoliciesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

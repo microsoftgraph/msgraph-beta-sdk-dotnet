@@ -16,6 +16,11 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             get { return BackingStore?.Get<List<Deployment>>(nameof(Deployments)); }
             set { BackingStore?.Set(nameof(Deployments), value); }
         }
+        /// <summary>The resourceConnections property</summary>
+        public List<ResourceConnection> ResourceConnections {
+            get { return BackingStore?.Get<List<ResourceConnection>>(nameof(ResourceConnections)); }
+            set { BackingStore?.Set(nameof(ResourceConnections), value); }
+        }
         /// <summary>Assets registered with the deployment service that can receive updates. Read-only.</summary>
         public List<UpdatableAsset> UpdatableAssets {
             get { return BackingStore?.Get<List<UpdatableAsset>>(nameof(UpdatableAssets)); }
@@ -36,6 +41,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"catalog", n => { Catalog = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog>(Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog.CreateFromDiscriminatorValue); } },
                 {"deployments", n => { Deployments = n.GetCollectionOfObjectValues<Deployment>(Deployment.CreateFromDiscriminatorValue).ToList(); } },
+                {"resourceConnections", n => { ResourceConnections = n.GetCollectionOfObjectValues<ResourceConnection>(ResourceConnection.CreateFromDiscriminatorValue).ToList(); } },
                 {"updatableAssets", n => { UpdatableAssets = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
@@ -48,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog>("catalog", Catalog);
             writer.WriteCollectionOfObjectValues<Deployment>("deployments", Deployments);
+            writer.WriteCollectionOfObjectValues<ResourceConnection>("resourceConnections", ResourceConnections);
             writer.WriteCollectionOfObjectValues<UpdatableAsset>("updatableAssets", UpdatableAssets);
         }
     }

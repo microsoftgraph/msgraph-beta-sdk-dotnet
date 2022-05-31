@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VerifyWindowsEnrollmentAutoDisco
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/microsoft.graph.verifyWindowsEnrollmentAutoDiscovery(domainName='{domainName}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", domainName);
+            urlTplParams.Add("domainName", domainName);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

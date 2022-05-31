@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to group.</summary>
     public class SoftwareOathAuthenticationMethod : AuthenticationMethod, IParsable {
         /// <summary>The secret key of the method. Always returns null.</summary>
         public string SecretKey {

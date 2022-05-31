@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Me.TransitiveMemberOf.Item.User.FindRoomsWithRoom
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/transitiveMemberOf/{directoryObject%2Did}/microsoft.graph.user/microsoft.graph.findRooms(RoomList='{RoomList}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", roomList);
+            urlTplParams.Add("RoomList", roomList);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

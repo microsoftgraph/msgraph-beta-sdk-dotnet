@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to group.</summary>
     public class WorkbookWorksheet : Entity, IParsable {
         /// <summary>Returns collection of charts that are part of the worksheet. Read-only.</summary>
         public List<WorkbookChart> Charts {

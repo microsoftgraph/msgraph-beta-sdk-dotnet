@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Notebooks.GetRecen
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/onenote/notebooks/microsoft.graph.getRecentNotebooks(includePersonalNotebooks={includePersonalNotebooks})";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", includePersonalNotebooks);
+            urlTplParams.Add("includePersonalNotebooks", includePersonalNotebooks);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

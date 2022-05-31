@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to group.</summary>
     public class ContactMergeSuggestions : Entity, IParsable {
         /// <summary>true if the duplicate contact merge suggestions feature is enabled for the user; false if the feature is disabled. Default value is true.</summary>
         public bool? IsEnabled {
