@@ -113,6 +113,12 @@ namespace Microsoft.Graph
         public DateTimeOffset? DueDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets feedback resources folder url.
+        /// </summary>
+        [JsonPropertyName("feedbackResourcesFolderUrl")]
+        public string FeedbackResourcesFolderUrl { get; set; }
+    
+        /// <summary>
         /// Gets or sets grading.
         /// How the assignment will be graded.
         /// </summary>

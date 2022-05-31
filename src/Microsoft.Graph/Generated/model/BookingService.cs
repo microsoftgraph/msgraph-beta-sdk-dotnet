@@ -86,6 +86,12 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
+        /// Gets or sets is anonymous join enabled.
+        /// </summary>
+        [JsonPropertyName("isAnonymousJoinEnabled")]
+        public bool? IsAnonymousJoinEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets is hidden from customers.
         /// True means this service is not available to customers for booking.
         /// </summary>
@@ -98,6 +104,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("isLocationOnline")]
         public bool? IsLocationOnline { get; set; }
+    
+        /// <summary>
+        /// Gets or sets language tag.
+        /// </summary>
+        [JsonPropertyName("languageTag")]
+        public string LanguageTag { get; set; }
     
         /// <summary>
         /// Gets or sets maximum attendees count.

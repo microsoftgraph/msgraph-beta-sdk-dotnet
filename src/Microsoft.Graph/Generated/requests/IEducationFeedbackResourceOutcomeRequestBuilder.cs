@@ -7,35 +7,29 @@
 
 // Template Source: IEntityRequestBuilder.cs.tt
 
-namespace Microsoft.Graph.SecurityNamespace
+namespace Microsoft.Graph
 {
     using System;
     using System.Collections.Generic;
     using System.IO;
 
     /// <summary>
-    /// The interface ISiteSourceRequestBuilder.
+    /// The interface IEducationFeedbackResourceOutcomeRequestBuilder.
     /// </summary>
-    public partial interface ISiteSourceRequestBuilder : IDataSourceRequestBuilder
+    public partial interface IEducationFeedbackResourceOutcomeRequestBuilder : IEducationOutcomeRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new ISiteSourceRequest Request();
+        new IEducationFeedbackResourceOutcomeRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new ISiteSourceRequest Request(IEnumerable<Microsoft.Graph.Option> options);
-    
-        /// <summary>
-        /// Gets the request builder for Site.
-        /// </summary>
-        /// <returns>The <see cref="Microsoft.Graph.ISiteWithReferenceRequestBuilder"/>.</returns>
-        Microsoft.Graph.ISiteWithReferenceRequestBuilder Site { get; }
+        new IEducationFeedbackResourceOutcomeRequest Request(IEnumerable<Option> options);
     
     }
 }

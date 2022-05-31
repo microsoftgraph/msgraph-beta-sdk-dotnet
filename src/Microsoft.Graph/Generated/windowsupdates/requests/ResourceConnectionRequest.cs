@@ -17,17 +17,17 @@ namespace Microsoft.Graph.WindowsUpdates
     using System.Linq.Expressions;
 
     /// <summary>
-    /// The type UpdatesRequest.
+    /// The type ResourceConnectionRequest.
     /// </summary>
-    public partial class UpdatesRequest : Microsoft.Graph.BaseRequest, IUpdatesRequest
+    public partial class ResourceConnectionRequest : Microsoft.Graph.BaseRequest, IResourceConnectionRequest
     {
         /// <summary>
-        /// Constructs a new UpdatesRequest.
+        /// Constructs a new ResourceConnectionRequest.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="Microsoft.Graph.IBaseClient"/> for handling requests.</param>
         /// <param name="options">Query and header option name value pairs for the request.</param>
-        public UpdatesRequest(
+        public ResourceConnectionRequest(
             string requestUrl,
             Microsoft.Graph.IBaseClient client,
             IEnumerable<Microsoft.Graph.Option> options)
@@ -36,46 +36,46 @@ namespace Microsoft.Graph.WindowsUpdates
         }
 
         /// <summary>
-        /// Creates the specified Updates using POST.
+        /// Creates the specified ResourceConnection using POST.
         /// </summary>
-        /// <param name="updatesToCreate">The Updates to create.</param>
+        /// <param name="resourceConnectionToCreate">The ResourceConnection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Updates.</returns>
-        public async System.Threading.Tasks.Task<Updates> CreateAsync(Updates updatesToCreate, CancellationToken cancellationToken = default)
+        /// <returns>The created ResourceConnection.</returns>
+        public async System.Threading.Tasks.Task<ResourceConnection> CreateAsync(ResourceConnection resourceConnectionToCreate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            var newEntity = await this.SendAsync<Updates>(updatesToCreate, cancellationToken).ConfigureAwait(false);
+            var newEntity = await this.SendAsync<ResourceConnection>(resourceConnectionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Creates the specified Updates using POST and returns a <see cref="GraphResponse{Updates}"/> object.
+        /// Creates the specified ResourceConnection using POST and returns a <see cref="GraphResponse{ResourceConnection}"/> object.
         /// </summary>
-        /// <param name="updatesToCreate">The Updates to create.</param>
+        /// <param name="resourceConnectionToCreate">The ResourceConnection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{Updates}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Updates>> CreateResponseAsync(Updates updatesToCreate, CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{ResourceConnection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ResourceConnection>> CreateResponseAsync(ResourceConnection resourceConnectionToCreate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            return this.SendAsyncWithGraphResponse<Updates>(updatesToCreate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<ResourceConnection>(resourceConnectionToCreate, cancellationToken);
         }
 
         /// <summary>
-        /// Deletes the specified Updates.
+        /// Deletes the specified ResourceConnection.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.DELETE;
-            await this.SendAsync<Updates>(null, cancellationToken).ConfigureAwait(false);
+            await this.SendAsync<ResourceConnection>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Deletes the specified Updates and returns a <see cref="GraphResponse"/> object.
+        /// Deletes the specified ResourceConnection and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
@@ -86,85 +86,85 @@ namespace Microsoft.Graph.WindowsUpdates
         }
 
         /// <summary>
-        /// Gets the specified Updates.
+        /// Gets the specified ResourceConnection.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The Updates.</returns>
-        public async System.Threading.Tasks.Task<Updates> GetAsync(CancellationToken cancellationToken = default)
+        /// <returns>The ResourceConnection.</returns>
+        public async System.Threading.Tasks.Task<ResourceConnection> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
-            var retrievedEntity = await this.SendAsync<Updates>(null, cancellationToken).ConfigureAwait(false);
+            var retrievedEntity = await this.SendAsync<ResourceConnection>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Gets the specified Updates and returns a <see cref="GraphResponse{Updates}"/> object.
+        /// Gets the specified ResourceConnection and returns a <see cref="GraphResponse{ResourceConnection}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{Updates}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Updates>> GetResponseAsync(CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{ResourceConnection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ResourceConnection>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
-            return this.SendAsyncWithGraphResponse<Updates>(null, cancellationToken);
+            return this.SendAsyncWithGraphResponse<ResourceConnection>(null, cancellationToken);
         }
 
         /// <summary>
-        /// Updates the specified Updates using PATCH.
+        /// Updates the specified ResourceConnection using PATCH.
         /// </summary>
-        /// <param name="updatesToUpdate">The Updates to update.</param>
+        /// <param name="resourceConnectionToUpdate">The ResourceConnection to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The updated Updates.</returns>
-        public async System.Threading.Tasks.Task<Updates> UpdateAsync(Updates updatesToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The updated ResourceConnection.</returns>
+        public async System.Threading.Tasks.Task<ResourceConnection> UpdateAsync(ResourceConnection resourceConnectionToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PATCH;
-            var updatedEntity = await this.SendAsync<Updates>(updatesToUpdate, cancellationToken).ConfigureAwait(false);
+            var updatedEntity = await this.SendAsync<ResourceConnection>(resourceConnectionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Updates using PATCH and returns a <see cref="GraphResponse{Updates}"/> object.
+        /// Updates the specified ResourceConnection using PATCH and returns a <see cref="GraphResponse{ResourceConnection}"/> object.
         /// </summary>
-        /// <param name="updatesToUpdate">The Updates to update.</param>
+        /// <param name="resourceConnectionToUpdate">The ResourceConnection to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The <see cref="GraphResponse{Updates}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Updates>> UpdateResponseAsync(Updates updatesToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{ResourceConnection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ResourceConnection>> UpdateResponseAsync(ResourceConnection resourceConnectionToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PATCH;
-            return this.SendAsyncWithGraphResponse<Updates>(updatesToUpdate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<ResourceConnection>(resourceConnectionToUpdate, cancellationToken);
         }
 
         /// <summary>
-        /// Updates the specified Updates using PUT.
+        /// Updates the specified ResourceConnection using PUT.
         /// </summary>
-        /// <param name="updatesToUpdate">The Updates object to update.</param>
+        /// <param name="resourceConnectionToUpdate">The ResourceConnection object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task<Updates> PutAsync(Updates updatesToUpdate, CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<ResourceConnection> PutAsync(ResourceConnection resourceConnectionToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PUT;
-            var updatedEntity = await this.SendAsync<Updates>(updatesToUpdate, cancellationToken).ConfigureAwait(false);
+            var updatedEntity = await this.SendAsync<ResourceConnection>(resourceConnectionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Updates using PUT and returns a <see cref="GraphResponse{Updates}"/> object.
+        /// Updates the specified ResourceConnection using PUT and returns a <see cref="GraphResponse{ResourceConnection}"/> object.
         /// </summary>
-        /// <param name="updatesToUpdate">The Updates object to update.</param>
+        /// <param name="resourceConnectionToUpdate">The ResourceConnection object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task to await of <see cref="GraphResponse{Updates}"/>.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Updates>> PutResponseAsync(Updates updatesToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The task to await of <see cref="GraphResponse{ResourceConnection}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ResourceConnection>> PutResponseAsync(ResourceConnection resourceConnectionToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PUT;
-            return this.SendAsyncWithGraphResponse<Updates>(updatesToUpdate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<ResourceConnection>(resourceConnectionToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// </summary>
         /// <param name="value">The expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IUpdatesRequest Expand(string value)
+        public IResourceConnectionRequest Expand(string value)
         {
             this.QueryOptions.Add(new Microsoft.Graph.QueryOption("$expand", value));
             return this;
@@ -183,7 +183,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IUpdatesRequest Expand(Expression<Func<Updates, object>> expandExpression)
+        public IResourceConnectionRequest Expand(Expression<Func<ResourceConnection, object>> expandExpression)
         {
 		    if (expandExpression == null)
             {
@@ -207,7 +207,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
-        public IUpdatesRequest Select(string value)
+        public IResourceConnectionRequest Select(string value)
         {
             this.QueryOptions.Add(new Microsoft.Graph.QueryOption("$select", value));
             return this;
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IUpdatesRequest Select(Expression<Func<Updates, object>> selectExpression)
+        public IResourceConnectionRequest Select(Expression<Func<ResourceConnection, object>> selectExpression)
         {
             if (selectExpression == null)
             {
@@ -240,33 +240,9 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <summary>
         /// Initializes any collection properties after deserialization, like next requests for paging.
         /// </summary>
-        /// <param name="updatesToInitialize">The <see cref="Updates"/> with the collection properties to initialize.</param>
-        private void InitializeCollectionProperties(Updates updatesToInitialize)
+        /// <param name="resourceConnectionToInitialize">The <see cref="ResourceConnection"/> with the collection properties to initialize.</param>
+        private void InitializeCollectionProperties(ResourceConnection resourceConnectionToInitialize)
         {
-
-            if (updatesToInitialize != null)
-            {
-                if (updatesToInitialize.Deployments != null && updatesToInitialize.Deployments.CurrentPage != null)
-                {
-                    updatesToInitialize.Deployments.InitializeNextPageRequest(this.Client, updatesToInitialize.DeploymentsNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    updatesToInitialize.Deployments.AdditionalData = updatesToInitialize.AdditionalData;
-                }
-                if (updatesToInitialize.ResourceConnections != null && updatesToInitialize.ResourceConnections.CurrentPage != null)
-                {
-                    updatesToInitialize.ResourceConnections.InitializeNextPageRequest(this.Client, updatesToInitialize.ResourceConnectionsNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    updatesToInitialize.ResourceConnections.AdditionalData = updatesToInitialize.AdditionalData;
-                }
-                if (updatesToInitialize.UpdatableAssets != null && updatesToInitialize.UpdatableAssets.CurrentPage != null)
-                {
-                    updatesToInitialize.UpdatableAssets.InitializeNextPageRequest(this.Client, updatesToInitialize.UpdatableAssetsNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    updatesToInitialize.UpdatableAssets.AdditionalData = updatesToInitialize.AdditionalData;
-                }
-
-            }
-
 
         }
     }

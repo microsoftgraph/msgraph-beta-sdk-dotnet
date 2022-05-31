@@ -7,24 +7,24 @@
 
 // Template Source: EntityRequestBuilder.cs.tt
 
-namespace Microsoft.Graph.SecurityNamespace
+namespace Microsoft.Graph.WindowsUpdates
 {
     using System;
     using System.Collections.Generic;
     using System.IO;
 
     /// <summary>
-    /// The type SiteSourceRequestBuilder.
+    /// The type ResourceConnectionRequestBuilder.
     /// </summary>
-    public partial class SiteSourceRequestBuilder : DataSourceRequestBuilder, ISiteSourceRequestBuilder
+    public partial class ResourceConnectionRequestBuilder : Microsoft.Graph.EntityRequestBuilder, IResourceConnectionRequestBuilder
     {
 
         /// <summary>
-        /// Constructs a new SiteSourceRequestBuilder.
+        /// Constructs a new ResourceConnectionRequestBuilder.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="Microsoft.Graph.IBaseClient"/> for handling requests.</param>
-        public SiteSourceRequestBuilder(
+        public ResourceConnectionRequestBuilder(
             string requestUrl,
             Microsoft.Graph.IBaseClient client)
             : base(requestUrl, client)
@@ -35,7 +35,7 @@ namespace Microsoft.Graph.SecurityNamespace
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new ISiteSourceRequest Request()
+        public new IResourceConnectionRequest Request()
         {
             return this.Request(null);
         }
@@ -45,21 +45,9 @@ namespace Microsoft.Graph.SecurityNamespace
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new ISiteSourceRequest Request(IEnumerable<Microsoft.Graph.Option> options)
+        public new IResourceConnectionRequest Request(IEnumerable<Microsoft.Graph.Option> options)
         {
-            return new SiteSourceRequest(this.RequestUrl, this.Client, options);
-        }
-    
-        /// <summary>
-        /// Gets the request builder for Site.
-        /// </summary>
-        /// <returns>The <see cref="Microsoft.Graph.ISiteWithReferenceRequestBuilder"/>.</returns>
-        public Microsoft.Graph.ISiteWithReferenceRequestBuilder Site
-        {
-            get
-            {
-                return new Microsoft.Graph.SiteWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("site"), this.Client);
-            }
+            return new ResourceConnectionRequest(this.RequestUrl, this.Client, options);
         }
     
     }

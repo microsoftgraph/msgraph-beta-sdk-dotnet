@@ -7,7 +7,7 @@
 
 // Template Source: EntityType.cs.tt
 
-namespace Microsoft.Graph.SecurityNamespace
+namespace Microsoft.Graph.WindowsUpdates
 {
     using System;
     using System.Collections.Generic;
@@ -15,24 +15,25 @@ namespace Microsoft.Graph.SecurityNamespace
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type Site Source.
+    /// The type Resource Connection.
     /// </summary>
-    public partial class SiteSource : DataSource
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<ResourceConnection>))]
+    public partial class ResourceConnection : Microsoft.Graph.Entity
     {
     
         ///<summary>
-        /// The SiteSource constructor
+        /// The internal ResourceConnection constructor
         ///</summary>
-        public SiteSource()
+        protected internal ResourceConnection()
         {
-            this.ODataType = "microsoft.graph.security.siteSource";
+            // Don't allow initialization of abstract entity types
         }
-
+    
         /// <summary>
-        /// Gets or sets site.
+        /// Gets or sets state.
         /// </summary>
-        [JsonPropertyName("site")]
-        public Microsoft.Graph.Site Site { get; set; }
+        [JsonPropertyName("state")]
+        public ResourceConnectionState? State { get; set; }
     
     }
 }

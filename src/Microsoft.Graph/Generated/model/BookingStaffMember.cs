@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         public Int32? ColorIndex { get; set; }
     
         /// <summary>
+        /// Gets or sets is email notification enabled.
+        /// </summary>
+        [JsonPropertyName("isEmailNotificationEnabled")]
+        public bool? IsEmailNotificationEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets role.
         /// The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest and unknownFutureValue. Required.
         /// </summary>

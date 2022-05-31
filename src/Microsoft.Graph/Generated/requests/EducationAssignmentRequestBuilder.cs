@@ -110,6 +110,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for EducationAssignmentSetUpFeedbackResourcesFolder.
+        /// </summary>
+        /// <returns>The <see cref="IEducationAssignmentSetUpFeedbackResourcesFolderRequestBuilder"/>.</returns>
+        public IEducationAssignmentSetUpFeedbackResourcesFolderRequestBuilder SetUpFeedbackResourcesFolder()
+        {
+            return new EducationAssignmentSetUpFeedbackResourcesFolderRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.setUpFeedbackResourcesFolder"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for EducationAssignmentSetUpResourcesFolder.
         /// </summary>
         /// <returns>The <see cref="IEducationAssignmentSetUpResourcesFolderRequestBuilder"/>.</returns>

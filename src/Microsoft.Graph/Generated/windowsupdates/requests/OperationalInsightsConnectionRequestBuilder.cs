@@ -7,24 +7,24 @@
 
 // Template Source: EntityRequestBuilder.cs.tt
 
-namespace Microsoft.Graph.SecurityNamespace
+namespace Microsoft.Graph.WindowsUpdates
 {
     using System;
     using System.Collections.Generic;
     using System.IO;
 
     /// <summary>
-    /// The type SiteSourceRequestBuilder.
+    /// The type OperationalInsightsConnectionRequestBuilder.
     /// </summary>
-    public partial class SiteSourceRequestBuilder : DataSourceRequestBuilder, ISiteSourceRequestBuilder
+    public partial class OperationalInsightsConnectionRequestBuilder : ResourceConnectionRequestBuilder, IOperationalInsightsConnectionRequestBuilder
     {
 
         /// <summary>
-        /// Constructs a new SiteSourceRequestBuilder.
+        /// Constructs a new OperationalInsightsConnectionRequestBuilder.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="Microsoft.Graph.IBaseClient"/> for handling requests.</param>
-        public SiteSourceRequestBuilder(
+        public OperationalInsightsConnectionRequestBuilder(
             string requestUrl,
             Microsoft.Graph.IBaseClient client)
             : base(requestUrl, client)
@@ -35,7 +35,7 @@ namespace Microsoft.Graph.SecurityNamespace
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new ISiteSourceRequest Request()
+        public new IOperationalInsightsConnectionRequest Request()
         {
             return this.Request(null);
         }
@@ -45,21 +45,9 @@ namespace Microsoft.Graph.SecurityNamespace
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new ISiteSourceRequest Request(IEnumerable<Microsoft.Graph.Option> options)
+        public new IOperationalInsightsConnectionRequest Request(IEnumerable<Microsoft.Graph.Option> options)
         {
-            return new SiteSourceRequest(this.RequestUrl, this.Client, options);
-        }
-    
-        /// <summary>
-        /// Gets the request builder for Site.
-        /// </summary>
-        /// <returns>The <see cref="Microsoft.Graph.ISiteWithReferenceRequestBuilder"/>.</returns>
-        public Microsoft.Graph.ISiteWithReferenceRequestBuilder Site
-        {
-            get
-            {
-                return new Microsoft.Graph.SiteWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("site"), this.Client);
-            }
+            return new OperationalInsightsConnectionRequest(this.RequestUrl, this.Client, options);
         }
     
     }

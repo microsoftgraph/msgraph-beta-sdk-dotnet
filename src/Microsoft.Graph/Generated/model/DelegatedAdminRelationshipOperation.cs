@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// The status of the operation. Read-only. The possible values are: notStarted, running, complete, failed, unknownFutureValue. Read-only. Supports $orderBy.
         /// </summary>
         [JsonPropertyName("status")]
-        public DelegatedAdminRelationshipOperationStatus? Status { get; set; }
+        public LongRunningOperationStatus? Status { get; set; }
     
     }
 }

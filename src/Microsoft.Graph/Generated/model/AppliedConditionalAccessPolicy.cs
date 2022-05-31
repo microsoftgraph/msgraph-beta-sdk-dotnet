@@ -93,6 +93,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sessionControlsNotSatisfied.
+        /// Refers to the session controls that a sign-in activity did not satisfy. (Example: Application enforced Restrictions).
         /// </summary>
         [JsonPropertyName("sessionControlsNotSatisfied")]
         public IEnumerable<string> SessionControlsNotSatisfied { get; set; }

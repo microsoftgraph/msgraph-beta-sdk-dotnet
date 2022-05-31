@@ -78,12 +78,6 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets partner.
-        /// </summary>
-        [JsonPropertyName("partner")]
-        public DelegatedAdminRelationshipParticipant Partner { get; set; }
-    
-        /// <summary>
         /// Gets or sets status.
         /// The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderBy.
         /// </summary>
