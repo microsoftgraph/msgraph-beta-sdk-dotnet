@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.BusinessFlowTemplates {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// In the Azure AD [access reviews](../resources/accessreviews-root.md) feature, list all the [businessFlowTemplate](../resources/businessflowtemplate.md) objects.
+        /// In the Azure AD access reviews feature, list all the businessFlowTemplate objects.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<BusinessFlowTemplatesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.BusinessFlowTemplates {
             return requestInfo;
         }
         /// <summary>
-        /// In the Azure AD [access reviews](../resources/accessreviews-root.md) feature, list all the [businessFlowTemplate](../resources/businessflowtemplate.md) objects.
+        /// In the Azure AD access reviews feature, list all the businessFlowTemplate objects.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.BusinessFlowTemplates {
             };
             return await RequestAdapter.SendAsync<BusinessFlowTemplate>(requestInfo, BusinessFlowTemplate.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>In the Azure AD [access reviews](../resources/accessreviews-root.md) feature, list all the [businessFlowTemplate](../resources/businessflowtemplate.md) objects.</summary>
+        /// <summary>In the Azure AD access reviews feature, list all the businessFlowTemplate objects.</summary>
         public class BusinessFlowTemplatesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

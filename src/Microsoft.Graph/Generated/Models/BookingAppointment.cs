@@ -11,6 +11,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>(nameof(AdditionalInformation)); }
             set { BackingStore?.Set(nameof(AdditionalInformation), value); }
         }
+        /// <summary>The anonymousJoinWebUrl property</summary>
+        public string AnonymousJoinWebUrl {
+            get { return BackingStore?.Get<string>(nameof(AnonymousJoinWebUrl)); }
+            set { BackingStore?.Set(nameof(AnonymousJoinWebUrl), value); }
+        }
         /// <summary>The SMTP address of the bookingCustomer who is booking the appointment.</summary>
         public string CustomerEmailAddress {
             get { return BackingStore?.Get<string>(nameof(CustomerEmailAddress)); }
@@ -195,6 +200,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"additionalInformation", n => { AdditionalInformation = n.GetStringValue(); } },
+                {"anonymousJoinWebUrl", n => { AnonymousJoinWebUrl = n.GetStringValue(); } },
                 {"customerEmailAddress", n => { CustomerEmailAddress = n.GetStringValue(); } },
                 {"customerId", n => { CustomerId = n.GetStringValue(); } },
                 {"customerLocation", n => { CustomerLocation = n.GetObjectValue<Location>(Location.CreateFromDiscriminatorValue); } },
@@ -239,6 +245,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("additionalInformation", AdditionalInformation);
+            writer.WriteStringValue("anonymousJoinWebUrl", AnonymousJoinWebUrl);
             writer.WriteStringValue("customerEmailAddress", CustomerEmailAddress);
             writer.WriteStringValue("customerId", CustomerId);
             writer.WriteObjectValue<Location>("customerLocation", CustomerLocation);

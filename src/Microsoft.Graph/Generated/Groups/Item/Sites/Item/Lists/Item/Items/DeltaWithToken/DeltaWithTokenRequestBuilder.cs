@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.Items.DeltaWith
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/items/microsoft.graph.delta(token='{token}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", token);
+            urlTplParams.Add("token", token);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

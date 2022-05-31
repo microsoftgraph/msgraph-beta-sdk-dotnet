@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.GetPoli
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/configManagerCollections/microsoft.graph.getPolicySummary(policyId='{policyId}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", policyId);
+            urlTplParams.Add("policyId", policyId);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

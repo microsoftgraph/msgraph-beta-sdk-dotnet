@@ -56,6 +56,10 @@ namespace Microsoft.Graph.Beta.Drives {
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
+        /// <summary>
+        /// Retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<DrivesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -92,6 +96,12 @@ namespace Microsoft.Graph.Beta.Drives {
             }
             return requestInfo;
         }
+        /// <summary>
+        /// Retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
+        /// </summary>
         public async Task<DriveCollectionResponse> GetAsync(Action<DrivesRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -116,6 +126,7 @@ namespace Microsoft.Graph.Beta.Drives {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Drive>(requestInfo, Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
+        /// <summary>Retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.</summary>
         public class DrivesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

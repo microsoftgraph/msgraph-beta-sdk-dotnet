@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to group.</summary>
     public enum JoinType {
         /// <summary>Unknown enrollment join type.</summary>
         Unknown,

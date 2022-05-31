@@ -28,8 +28,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.Item.User
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/registeredUsers/{directoryObject%2Did}/microsoft.graph.user/microsoft.graph.exportDeviceAndAppManagementData(skip={skip},top={top})";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", skip);
-            urlTplParams.Add("", top);
+            urlTplParams.Add("skip", skip);
+            urlTplParams.Add("top", top);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

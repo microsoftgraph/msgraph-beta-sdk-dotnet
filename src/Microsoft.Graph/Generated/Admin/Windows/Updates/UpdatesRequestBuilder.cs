@@ -1,5 +1,6 @@
 using Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog;
 using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections;
 using Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.WindowsUpdates;
@@ -26,6 +27,10 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The resourceConnections property</summary>
+        public ResourceConnectionsRequestBuilder ResourceConnections { get =>
+            new ResourceConnectionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The updatableAssets property</summary>
         public UpdatableAssetsRequestBuilder UpdatableAssets { get =>
             new UpdatableAssetsRequestBuilder(PathParameters, RequestAdapter);

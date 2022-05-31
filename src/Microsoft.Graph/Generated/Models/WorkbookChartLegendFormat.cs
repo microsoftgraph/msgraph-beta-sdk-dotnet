@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to group.</summary>
     public class WorkbookChartLegendFormat : Entity, IParsable {
         /// <summary>Represents the fill format of an object, which includes background formating information. Read-only.</summary>
         public WorkbookChartFill Fill {

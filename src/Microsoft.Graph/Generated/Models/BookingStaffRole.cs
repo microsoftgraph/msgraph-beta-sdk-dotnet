@@ -5,5 +5,8 @@ namespace Microsoft.Graph.Beta.Models {
         Administrator,
         Viewer,
         ExternalGuest,
+        UnknownFutureValue,
+        Scheduler,
+        TeamMember,
     }
 }

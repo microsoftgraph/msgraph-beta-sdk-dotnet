@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Retrieve a collection of [privilegedRoleAssignmentRequest](../resources/privilegedroleassignmentrequest.md).  **Note:** This requester must have at least one role assignment on the resource.
+        /// Retrieve a collection of privilegedRoleAssignmentRequest.  **Note:** This requester must have at least one role assignment on the resource.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<PrivilegedRoleAssignmentRequestsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests {
             return requestInfo;
         }
         /// <summary>
-        /// Create a [privilegedroleassignmentrequest](../resources/privilegedroleassignmentrequest.md) object.
+        /// Create a privilegedroleassignmentrequest object.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a collection of [privilegedRoleAssignmentRequest](../resources/privilegedroleassignmentrequest.md).  **Note:** This requester must have at least one role assignment on the resource.
+        /// Retrieve a collection of privilegedRoleAssignmentRequest.  **Note:** This requester must have at least one role assignment on the resource.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests {
             return new MyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Create a [privilegedroleassignmentrequest](../resources/privilegedroleassignmentrequest.md) object.
+        /// Create a privilegedroleassignmentrequest object.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests {
             };
             return await RequestAdapter.SendAsync<PrivilegedRoleAssignmentRequest>(requestInfo, PrivilegedRoleAssignmentRequest.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Retrieve a collection of [privilegedRoleAssignmentRequest](../resources/privilegedroleassignmentrequest.md).  **Note:** This requester must have at least one role assignment on the resource.</summary>
+        /// <summary>Retrieve a collection of privilegedRoleAssignmentRequest.  **Note:** This requester must have at least one role assignment on the resource.</summary>
         public class PrivilegedRoleAssignmentRequestsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

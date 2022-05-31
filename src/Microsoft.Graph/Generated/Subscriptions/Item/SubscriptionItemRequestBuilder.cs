@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Subscriptions.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete a subscription. For the list of resources that support subscribing to change notifications, see the table in the [Permissions](#permissions) section.
+        /// Delete a subscription. For the list of resources that support subscribing to change notifications, see the table in the Permissions section.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateDeleteRequestInformation(Action<SubscriptionItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Subscriptions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a subscription. See the table in the [Permissions](#permissions) section for the list of resources that support subscribing to change notifications.
+        /// Retrieve the properties and relationships of a subscription. See the table in the Permissions section for the list of resources that support subscribing to change notifications.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<SubscriptionItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Subscriptions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Renew a subscription by extending its expiry time. The table in the [Permissions](#permissions) section lists the resources that support subscribing to change notifications. Subscriptions expire after a length of time that varies by resource type. In order to avoid missing change notifications, an app should renew its subscriptions well in advance of their expiry date. See [subscription](../resources/subscription.md) for maximum length of a subscription for each resource type.
+        /// Renew a subscription by extending its expiry time. The table in the Permissions section lists the resources that support subscribing to change notifications. Subscriptions expire after a length of time that varies by resource type. In order to avoid missing change notifications, an app should renew its subscriptions well in advance of their expiry date. See subscription for maximum length of a subscription for each resource type.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Subscriptions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Delete a subscription. For the list of resources that support subscribing to change notifications, see the table in the [Permissions](#permissions) section.
+        /// Delete a subscription. For the list of resources that support subscribing to change notifications, see the table in the Permissions section.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.Subscriptions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a subscription. See the table in the [Permissions](#permissions) section for the list of resources that support subscribing to change notifications.
+        /// Retrieve the properties and relationships of a subscription. See the table in the Permissions section for the list of resources that support subscribing to change notifications.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.Subscriptions.Item {
             return await RequestAdapter.SendAsync<Subscription>(requestInfo, Subscription.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Renew a subscription by extending its expiry time. The table in the [Permissions](#permissions) section lists the resources that support subscribing to change notifications. Subscriptions expire after a length of time that varies by resource type. In order to avoid missing change notifications, an app should renew its subscriptions well in advance of their expiry date. See [subscription](../resources/subscription.md) for maximum length of a subscription for each resource type.
+        /// Renew a subscription by extending its expiry time. The table in the Permissions section lists the resources that support subscribing to change notifications. Subscriptions expire after a length of time that varies by resource type. In order to avoid missing change notifications, an app should renew its subscriptions well in advance of their expiry date. See subscription for maximum length of a subscription for each resource type.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Beta.Subscriptions.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Retrieve the properties and relationships of a subscription. See the table in the [Permissions](#permissions) section for the list of resources that support subscribing to change notifications.</summary>
+        /// <summary>Retrieve the properties and relationships of a subscription. See the table in the Permissions section for the list of resources that support subscribing to change notifications.</summary>
         public class SubscriptionItemRequestBuilderGetQueryParameters {
             /// <summary>Select properties to be returned</summary>
             [QueryParameter("%24select")]

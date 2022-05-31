@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to group.</summary>
     public class UserAnalytics : Entity, IParsable {
         /// <summary>The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.</summary>
         public List<Microsoft.Graph.Beta.Models.ActivityStatistics> ActivityStatistics {

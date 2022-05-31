@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.Item.User
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/registeredUsers/{directoryObject%2Did}/microsoft.graph.user/microsoft.graph.findRooms(RoomList='{RoomList}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", roomList);
+            urlTplParams.Add("RoomList", roomList);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

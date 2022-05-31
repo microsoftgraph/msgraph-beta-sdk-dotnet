@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<DirectoryObject>>(nameof(ExternalSponsors)); }
             set { BackingStore?.Set(nameof(ExternalSponsors), value); }
         }
-        /// <summary>The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/microsoft.graph.azureActiveDirectoryTenant/tenantId eq &apos;bcfdfff4-cbc3-43f2-9000-ba7b7515054f&apos;).</summary>
+        /// <summary>The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/microsoft.graph.azureActiveDirectoryTenant/tenantId eq &apos;bcfdfff4-cbc3-43f2-9000-ba7b7515054f&apos;).</summary>
         public List<IdentitySource> IdentitySources {
             get { return BackingStore?.Get<List<IdentitySource>>(nameof(IdentitySources)); }
             set { BackingStore?.Set(nameof(IdentitySources), value); }

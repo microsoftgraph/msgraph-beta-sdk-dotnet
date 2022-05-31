@@ -56,11 +56,6 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<DelegatedAdminRelationshipOperation>>(nameof(Operations)); }
             set { BackingStore?.Set(nameof(Operations), value); }
         }
-        /// <summary>The partner property</summary>
-        public DelegatedAdminRelationshipParticipant Partner {
-            get { return BackingStore?.Get<DelegatedAdminRelationshipParticipant>(nameof(Partner)); }
-            set { BackingStore?.Set(nameof(Partner), value); }
-        }
         /// <summary>The requests associated with the delegated admin relationship.</summary>
         public List<DelegatedAdminRelationshipRequest> Requests {
             get { return BackingStore?.Get<List<DelegatedAdminRelationshipRequest>>(nameof(Requests)); }
@@ -94,7 +89,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"operations", n => { Operations = n.GetCollectionOfObjectValues<DelegatedAdminRelationshipOperation>(DelegatedAdminRelationshipOperation.CreateFromDiscriminatorValue).ToList(); } },
-                {"partner", n => { Partner = n.GetObjectValue<DelegatedAdminRelationshipParticipant>(DelegatedAdminRelationshipParticipant.CreateFromDiscriminatorValue); } },
                 {"requests", n => { Requests = n.GetCollectionOfObjectValues<DelegatedAdminRelationshipRequest>(DelegatedAdminRelationshipRequest.CreateFromDiscriminatorValue).ToList(); } },
                 {"status", n => { Status = n.GetEnumValue<DelegatedAdminRelationshipStatus>(); } },
             };
@@ -116,7 +110,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteCollectionOfObjectValues<DelegatedAdminRelationshipOperation>("operations", Operations);
-            writer.WriteObjectValue<DelegatedAdminRelationshipParticipant>("partner", Partner);
             writer.WriteCollectionOfObjectValues<DelegatedAdminRelationshipRequest>("requests", Requests);
             writer.WriteEnumValue<DelegatedAdminRelationshipStatus>("status", Status);
         }

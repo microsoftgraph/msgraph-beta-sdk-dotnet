@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to group.</summary>
     public class InformationProtectionLabel : Entity, IParsable {
         /// <summary>The color that the UI should display for the label, if configured.</summary>
         public string Color {

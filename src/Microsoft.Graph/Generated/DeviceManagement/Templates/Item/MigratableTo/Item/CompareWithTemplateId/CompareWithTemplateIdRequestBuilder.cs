@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/migratableTo/{deviceManagementTemplate%2Did1}/microsoft.graph.compare(templateId='{templateId}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", templateId);
+            urlTplParams.Add("templateId", templateId);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

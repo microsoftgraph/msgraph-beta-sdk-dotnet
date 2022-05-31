@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of chat entities.</summary>
+    /// <summary>Casts the previous resource to group.</summary>
     public class Chat : Entity, IParsable {
         /// <summary>Specifies the type of chat. Possible values are: group, oneOnOne, meeting, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.ChatType? ChatType {
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<ResourceSpecificPermissionGrant>>(nameof(PermissionGrants)); }
             set { BackingStore?.Set(nameof(PermissionGrants), value); }
         }
-        /// <summary>The pinnedMessages property</summary>
+        /// <summary>A collection of all the pinned messages in the chat. Nullable.</summary>
         public List<PinnedChatMessageInfo> PinnedMessages {
             get { return BackingStore?.Get<List<PinnedChatMessageInfo>>(nameof(PinnedMessages)); }
             set { BackingStore?.Set(nameof(PinnedMessages), value); }

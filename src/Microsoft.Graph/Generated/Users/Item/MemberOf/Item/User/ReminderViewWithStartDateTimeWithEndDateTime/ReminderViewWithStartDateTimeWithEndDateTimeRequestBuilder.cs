@@ -27,8 +27,8 @@ namespace Microsoft.Graph.Beta.Users.Item.MemberOf.Item.User.ReminderViewWithSta
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/users/{user%2Did}/memberOf/{directoryObject%2Did}/microsoft.graph.user/microsoft.graph.reminderView(StartDateTime='{StartDateTime}',EndDateTime='{EndDateTime}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", endDateTime);
-            urlTplParams.Add("", startDateTime);
+            urlTplParams.Add("EndDateTime", endDateTime);
+            urlTplParams.Add("StartDateTime", startDateTime);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

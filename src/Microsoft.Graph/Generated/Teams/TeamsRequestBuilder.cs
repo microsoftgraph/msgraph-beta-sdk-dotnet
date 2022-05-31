@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Teams {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// List all [teams](../resources/team.md) in an organization.
+        /// List all teams in an organization.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<TeamsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Teams {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new [team](../resources/team.md).
+        /// Create a new team.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Teams {
             return new GetAllMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// List all [teams](../resources/team.md) in an organization.
+        /// List all teams in an organization.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.Teams {
             return await RequestAdapter.SendAsync<TeamCollectionResponse>(requestInfo, TeamCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new [team](../resources/team.md).
+        /// Create a new team.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Teams {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Team>(requestInfo, Microsoft.Graph.Beta.Models.Team.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>List all [teams](../resources/team.md) in an organization.</summary>
+        /// <summary>List all teams in an organization.</summary>
         public class TeamsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

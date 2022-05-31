@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the appCatalogs singleton.</summary>
+    /// <summary>Casts the previous resource to group.</summary>
     public class TeamsAppIcon : Entity, IParsable {
         /// <summary>The contents of the app icon if the icon is hosted within the Teams infrastructure.</summary>
         public TeamworkHostedContent HostedContent {

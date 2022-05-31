@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.GetPlatformSup
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/assignmentFilters/microsoft.graph.getPlatformSupportedProperties(platform='{platform}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", platform);
+            urlTplParams.Add("platform", platform);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

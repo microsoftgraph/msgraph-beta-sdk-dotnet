@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Chats {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Retrieve the list of [chats](../resources/chat.md) that the user is part of.
+        /// Retrieve the list of chats that the user is part of.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ChatsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Chats {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new [chat](../resources/chat.md) object.
+        /// Create a new chat object.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Chats {
             return new GetAllMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the list of [chats](../resources/chat.md) that the user is part of.
+        /// Retrieve the list of chats that the user is part of.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.Chats {
             return await RequestAdapter.SendAsync<ChatCollectionResponse>(requestInfo, ChatCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new [chat](../resources/chat.md) object.
+        /// Create a new chat object.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Chats {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Chat>(requestInfo, Microsoft.Graph.Beta.Models.Chat.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Retrieve the list of [chats](../resources/chat.md) that the user is part of.</summary>
+        /// <summary>Retrieve the list of chats that the user is part of.</summary>
         public class ChatsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

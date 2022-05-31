@@ -30,10 +30,10 @@ namespace Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentAbandonmentSummary
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/reports/microsoft.graph.managedDeviceEnrollmentAbandonmentSummary(skip={skip},top={top},filter='{filter}',skipToken='{skipToken}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", filter);
-            urlTplParams.Add("", skip);
-            urlTplParams.Add("", skipToken);
-            urlTplParams.Add("", top);
+            urlTplParams.Add("filter", filter);
+            urlTplParams.Add("skip", skip);
+            urlTplParams.Add("skipToken", skipToken);
+            urlTplParams.Add("top", top);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

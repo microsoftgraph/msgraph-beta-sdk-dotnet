@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to group.</summary>
     public class RegionalAndLanguageSettings : Entity, IParsable {
         /// <summary>Prioritized list of languages the user reads and authors in.Returned by default. Not nullable.</summary>
         public List<LocaleInfo> AuthoringLanguages {

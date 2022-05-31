@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item.GetScope
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/resourceOperations/{resourceOperation%2Did}/microsoft.graph.getScopesForUser(userid='{userid}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", userid);
+            urlTplParams.Add("userid", userid);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

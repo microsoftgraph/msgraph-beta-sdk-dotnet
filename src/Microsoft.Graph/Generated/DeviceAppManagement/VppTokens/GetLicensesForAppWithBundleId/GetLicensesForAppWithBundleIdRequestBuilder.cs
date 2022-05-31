@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWi
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceAppManagement/vppTokens/microsoft.graph.getLicensesForApp(bundleId='{bundleId}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", bundleId);
+            urlTplParams.Add("bundleId", bundleId);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

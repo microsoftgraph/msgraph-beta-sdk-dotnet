@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to group.</summary>
     public class SwapShiftsChangeRequest : OfferShiftRequest, IParsable {
         /// <summary>Shift ID for the recipient user with whom the request is to swap.</summary>
         public string RecipientShiftId {

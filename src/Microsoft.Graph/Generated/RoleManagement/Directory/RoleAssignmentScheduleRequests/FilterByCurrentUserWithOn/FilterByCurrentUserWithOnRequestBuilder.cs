@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleAssignmentScheduleRe
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/roleManagement/directory/roleAssignmentScheduleRequests/microsoft.graph.filterByCurrentUser(on='{on}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", on);
+            urlTplParams.Add("on", on);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

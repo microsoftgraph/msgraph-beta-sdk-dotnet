@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
+    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class AccessReviewPolicy : Entity, IParsable {
         /// <summary>Description for this policy. Read-only.</summary>
         public string Description {

@@ -6,11 +6,6 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class DelegatedAdminServiceManagementDetail : Entity, IParsable {
-        /// <summary>The serviceId property</summary>
-        public string ServiceId {
-            get { return BackingStore?.Get<string>(nameof(ServiceId)); }
-            set { BackingStore?.Set(nameof(ServiceId), value); }
-        }
         /// <summary>The URL of the management portal for the managed service. Read-only.</summary>
         public string ServiceManagementUrl {
             get { return BackingStore?.Get<string>(nameof(ServiceManagementUrl)); }
@@ -34,7 +29,6 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"serviceId", n => { ServiceId = n.GetStringValue(); } },
                 {"serviceManagementUrl", n => { ServiceManagementUrl = n.GetStringValue(); } },
                 {"serviceName", n => { ServiceName = n.GetStringValue(); } },
             };
@@ -46,7 +40,6 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("serviceId", ServiceId);
             writer.WriteStringValue("serviceManagementUrl", ServiceManagementUrl);
             writer.WriteStringValue("serviceName", ServiceName);
         }

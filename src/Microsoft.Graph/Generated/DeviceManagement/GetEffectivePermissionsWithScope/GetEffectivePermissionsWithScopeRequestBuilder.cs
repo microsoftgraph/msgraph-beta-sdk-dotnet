@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetEffectivePermissionsWithScope
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/microsoft.graph.getEffectivePermissions(scope='{scope}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", scope);
+            urlTplParams.Add("scope", scope);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

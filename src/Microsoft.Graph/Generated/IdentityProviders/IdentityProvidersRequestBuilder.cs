@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.IdentityProviders {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Retrieve a list of [identityProviders](../resources/identityprovider.md) objects.
+        /// Retrieve a list of identityProviders objects.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<IdentityProvidersRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.IdentityProviders {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new [identityProvider](../resources/identityprovider.md) object.
+        /// Create a new identityProvider object.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.IdentityProviders {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of [identityProviders](../resources/identityprovider.md) objects.
+        /// Retrieve a list of identityProviders objects.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.IdentityProviders {
             return await RequestAdapter.SendAsync<IdentityProviderCollectionResponse>(requestInfo, IdentityProviderCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new [identityProvider](../resources/identityprovider.md) object.
+        /// Create a new identityProvider object.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.IdentityProviders {
             };
             return await RequestAdapter.SendAsync<IdentityProvider>(requestInfo, IdentityProvider.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Retrieve a list of [identityProviders](../resources/identityprovider.md) objects.</summary>
+        /// <summary>Retrieve a list of identityProviders objects.</summary>
         public class IdentityProvidersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

@@ -27,8 +27,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set(nameof(OperationType), value); }
         }
         /// <summary>The status of the operation. Read-only. The possible values are: notStarted, running, complete, failed, unknownFutureValue. Read-only. Supports $orderBy.</summary>
-        public DelegatedAdminRelationshipOperationStatus? Status {
-            get { return BackingStore?.Get<DelegatedAdminRelationshipOperationStatus?>(nameof(Status)); }
+        public LongRunningOperationStatus? Status {
+            get { return BackingStore?.Get<LongRunningOperationStatus?>(nameof(Status)); }
             set { BackingStore?.Set(nameof(Status), value); }
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"data", n => { Data = n.GetStringValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"operationType", n => { OperationType = n.GetEnumValue<DelegatedAdminRelationshipOperationType>(); } },
-                {"status", n => { Status = n.GetEnumValue<DelegatedAdminRelationshipOperationStatus>(); } },
+                {"status", n => { Status = n.GetEnumValue<LongRunningOperationStatus>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("data", Data);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteEnumValue<DelegatedAdminRelationshipOperationType>("operationType", OperationType);
-            writer.WriteEnumValue<DelegatedAdminRelationshipOperationStatus>("status", Status);
+            writer.WriteEnumValue<LongRunningOperationStatus>("status", Status);
         }
     }
 }

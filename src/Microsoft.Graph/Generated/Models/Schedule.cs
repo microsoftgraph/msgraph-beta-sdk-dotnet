@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to group.</summary>
     public class Schedule : Entity, IParsable {
         /// <summary>Indicates whether the schedule is enabled for the team. Required.</summary>
         public bool? Enabled {

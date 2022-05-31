@@ -1,8 +1,11 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners.Count;
+using Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners.Endpoint;
 using Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners.Item;
 using Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners.Ref;
+using Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners.ServicePrincipal;
+using Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners.User;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -18,6 +21,10 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The endpoint property</summary>
+        public EndpointRequestBuilder Endpoint { get =>
+            new EndpointRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The ref property</summary>
@@ -26,8 +33,16 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners {
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The servicePrincipal property</summary>
+        public ServicePrincipalRequestBuilder ServicePrincipal { get =>
+            new ServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>The user property</summary>
+        public UserRequestBuilder User { get =>
+            new UserRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.devices.item.registeredOwners.item collection</summary>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

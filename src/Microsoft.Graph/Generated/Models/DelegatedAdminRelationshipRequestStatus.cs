@@ -3,7 +3,7 @@ namespace Microsoft.Graph.Beta.Models {
     public enum DelegatedAdminRelationshipRequestStatus {
         Created,
         Pending,
-        Complete,
+        Succeeded,
         Failed,
         UnknownFutureValue,
     }

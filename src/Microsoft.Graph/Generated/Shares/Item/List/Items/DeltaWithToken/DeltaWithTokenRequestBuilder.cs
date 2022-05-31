@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.Items.DeltaWithToken {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/shares/{sharedDriveItem%2Did}/list/items/microsoft.graph.delta(token='{token}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", token);
+            urlTplParams.Add("token", token);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

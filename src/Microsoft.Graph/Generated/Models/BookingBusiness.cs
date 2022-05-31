@@ -56,6 +56,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>(nameof(IsPublished)); }
             set { BackingStore?.Set(nameof(IsPublished), value); }
         }
+        /// <summary>The languageTag property</summary>
+        public string LanguageTag {
+            get { return BackingStore?.Get<string>(nameof(LanguageTag)); }
+            set { BackingStore?.Set(nameof(LanguageTag), value); }
+        }
         /// <summary>The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.</summary>
         public string Phone {
             get { return BackingStore?.Get<string>(nameof(Phone)); }
@@ -109,6 +114,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"defaultCurrencyIso", n => { DefaultCurrencyIso = n.GetStringValue(); } },
                 {"email", n => { Email = n.GetStringValue(); } },
                 {"isPublished", n => { IsPublished = n.GetBoolValue(); } },
+                {"languageTag", n => { LanguageTag = n.GetStringValue(); } },
                 {"phone", n => { Phone = n.GetStringValue(); } },
                 {"publicUrl", n => { PublicUrl = n.GetStringValue(); } },
                 {"schedulingPolicy", n => { SchedulingPolicy = n.GetObjectValue<BookingSchedulingPolicy>(BookingSchedulingPolicy.CreateFromDiscriminatorValue); } },
@@ -134,6 +140,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("defaultCurrencyIso", DefaultCurrencyIso);
             writer.WriteStringValue("email", Email);
             writer.WriteBoolValue("isPublished", IsPublished);
+            writer.WriteStringValue("languageTag", LanguageTag);
             writer.WriteStringValue("phone", Phone);
             writer.WriteStringValue("publicUrl", PublicUrl);
             writer.WriteObjectValue<BookingSchedulingPolicy>("schedulingPolicy", SchedulingPolicy);

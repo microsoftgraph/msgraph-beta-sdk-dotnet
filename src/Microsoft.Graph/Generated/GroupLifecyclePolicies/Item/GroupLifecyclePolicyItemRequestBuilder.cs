@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete a [groupLifecyclePolicy](../resources/grouplifecyclepolicy.md).
+        /// Delete a groupLifecyclePolicy.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateDeleteRequestInformation(Action<GroupLifecyclePolicyItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a [groupLifecyclePolicies](../resources/grouplifecyclepolicy.md) object.
+        /// Retrieve the properties and relationships of a groupLifecyclePolicies object.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<GroupLifecyclePolicyItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a groupLifecyclePolicy[groupLifecyclePolicy resource type](../resources/grouplifecyclepolicy.md) object.
+        /// Update the properties of a groupLifecyclePolicygroupLifecyclePolicy resource type object.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Delete a [groupLifecyclePolicy](../resources/grouplifecyclepolicy.md).
+        /// Delete a groupLifecyclePolicy.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a [groupLifecyclePolicies](../resources/grouplifecyclepolicy.md) object.
+        /// Retrieve the properties and relationships of a groupLifecyclePolicies object.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.Item {
             return await RequestAdapter.SendAsync<GroupLifecyclePolicy>(requestInfo, GroupLifecyclePolicy.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties of a groupLifecyclePolicy[groupLifecyclePolicy resource type](../resources/grouplifecyclepolicy.md) object.
+        /// Update the properties of a groupLifecyclePolicygroupLifecyclePolicy resource type object.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -170,7 +170,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Retrieve the properties and relationships of a [groupLifecyclePolicies](../resources/grouplifecyclepolicy.md) object.</summary>
+        /// <summary>Retrieve the properties and relationships of a groupLifecyclePolicies object.</summary>
         public class GroupLifecyclePolicyItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

@@ -22,12 +22,12 @@
     <AssemblyOriginatorKeyFile>35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PackageReleaseNotes>
-- [Breaking] Adds support CAE in the authentication provider
-- [Breaking] Generated request parameter objects renamed to include http method name
-- Enalbes the backing store to enable dirty tracking of objects
+- Fixes exceptions on deserialization of payload that do not have @odata.type
+- Fixes instances with missing key values for path parameters
+- Adds missing odata cast paths to enable requests for specific kind of objects
     </PackageReleaseNotes>
     <!-- edit this value to change the current major.minor.patch version -->
-    <VersionPrefix>5.4.0</VersionPrefix>
+    <VersionPrefix>5.5.0</VersionPrefix>
     <!-- adds a version suffix if the Prerelease environment variable is set. BUILD_BUILDID is an
     environment variable set by Azure pipelines from the build. We can use the buildid to correlate
     which commit was used to generate the preview build. -->
@@ -60,7 +60,7 @@
     <None Include=".\..\..\LICENSE.txt" Pack="true" PackagePath="" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Graph.Core" Version="3.0.0-preview.6" />
+    <PackageReference Include="Microsoft.Graph.Core" Version="3.0.0-preview.7" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">

@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.GetMobileAppCountW
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/microsoft.graph.getMobileAppCount(status='{status}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", status);
+            urlTplParams.Add("status", status);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

@@ -16,6 +16,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>(nameof(ColorIndex)); }
             set { BackingStore?.Set(nameof(ColorIndex), value); }
         }
+        /// <summary>The isEmailNotificationEnabled property</summary>
+        public bool? IsEmailNotificationEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(IsEmailNotificationEnabled)); }
+            set { BackingStore?.Set(nameof(IsEmailNotificationEnabled), value); }
+        }
         /// <summary>The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest and unknownFutureValue. Required.</summary>
         public BookingStaffRole? Role {
             get { return BackingStore?.Get<BookingStaffRole?>(nameof(Role)); }
@@ -51,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"availabilityIsAffectedByPersonalCalendar", n => { AvailabilityIsAffectedByPersonalCalendar = n.GetBoolValue(); } },
                 {"colorIndex", n => { ColorIndex = n.GetIntValue(); } },
+                {"isEmailNotificationEnabled", n => { IsEmailNotificationEnabled = n.GetBoolValue(); } },
                 {"role", n => { Role = n.GetEnumValue<BookingStaffRole>(); } },
                 {"timeZone", n => { TimeZone = n.GetStringValue(); } },
                 {"useBusinessHours", n => { UseBusinessHours = n.GetBoolValue(); } },
@@ -66,6 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteBoolValue("availabilityIsAffectedByPersonalCalendar", AvailabilityIsAffectedByPersonalCalendar);
             writer.WriteIntValue("colorIndex", ColorIndex);
+            writer.WriteBoolValue("isEmailNotificationEnabled", IsEmailNotificationEnabled);
             writer.WriteEnumValue<BookingStaffRole>("role", Role);
             writer.WriteStringValue("timeZone", TimeZone);
             writer.WriteBoolValue("useBusinessHours", UseBusinessHours);

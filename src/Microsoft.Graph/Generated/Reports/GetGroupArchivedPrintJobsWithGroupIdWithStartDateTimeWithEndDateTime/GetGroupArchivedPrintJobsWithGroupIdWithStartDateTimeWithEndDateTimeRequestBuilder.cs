@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.Reports.GetGroupArchivedPrintJobsWithGroupIdWithS
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId='{groupId}',startDateTime='{startDateTime}',endDateTime='{endDateTime}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", endDateTime);
-            urlTplParams.Add("", groupId);
-            urlTplParams.Add("", startDateTime);
+            urlTplParams.Add("endDateTime", endDateTime);
+            urlTplParams.Add("groupId", groupId);
+            urlTplParams.Add("startDateTime", startDateTime);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

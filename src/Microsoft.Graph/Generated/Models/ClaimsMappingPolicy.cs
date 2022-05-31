@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the instantiate method.</summary>
+    /// <summary>Casts the previous resource to servicePrincipal.</summary>
     public class ClaimsMappingPolicy : StsPolicy, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

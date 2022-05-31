@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.GetApplicableContentTypesForListWithLi
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/sites/{site%2Did}/microsoft.graph.getApplicableContentTypesForList(listId='{listId}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", listId);
+            urlTplParams.Add("listId", listId);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

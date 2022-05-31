@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.IdentityProviders.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete an [identityProvider](../resources/identityprovider.md).
+        /// Delete an identityProvider.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateDeleteRequestInformation(Action<IdentityProviderItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.IdentityProviders.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an [identityProvider](../resources/identityprovider.md).
+        /// Retrieve the properties and relationships of an identityProvider.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<IdentityProviderItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.IdentityProviders.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Delete an [identityProvider](../resources/identityprovider.md).
+        /// Delete an identityProvider.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.IdentityProviders.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an [identityProvider](../resources/identityprovider.md).
+        /// Retrieve the properties and relationships of an identityProvider.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Beta.IdentityProviders.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Retrieve the properties and relationships of an [identityProvider](../resources/identityprovider.md).</summary>
+        /// <summary>Retrieve the properties and relationships of an identityProvider.</summary>
         public class IdentityProviderItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

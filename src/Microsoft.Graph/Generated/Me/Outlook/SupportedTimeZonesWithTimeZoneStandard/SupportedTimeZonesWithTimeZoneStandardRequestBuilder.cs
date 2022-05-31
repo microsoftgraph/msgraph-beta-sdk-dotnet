@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.SupportedTimeZonesWithTimeZoneStandard
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/outlook/microsoft.graph.supportedTimeZones(TimeZoneStandard='{TimeZoneStandard}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("", timeZoneStandard);
+            urlTplParams.Add("TimeZoneStandard", timeZoneStandard);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

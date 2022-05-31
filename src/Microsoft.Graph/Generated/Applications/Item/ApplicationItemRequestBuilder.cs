@@ -173,7 +173,7 @@ namespace Microsoft.Graph.Beta.Applications.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of an [application](../resources/application.md) object.
+        /// Get the properties and relationships of an application object.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ApplicationItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -192,7 +192,7 @@ namespace Microsoft.Graph.Beta.Applications.Item {
             return requestInfo;
         }
         /// <summary>
-        /// However, your app might still temporarily require Azure AD Graph permissions to access resources. This article describes the following four methods for configuring required Azure AD Graph permissions for your app registration:
+        /// Update the properties of an application object.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -227,7 +227,7 @@ namespace Microsoft.Graph.Beta.Applications.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the properties and relationships of an [application](../resources/application.md) object.
+        /// Get the properties and relationships of an application object.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -241,7 +241,7 @@ namespace Microsoft.Graph.Beta.Applications.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Application>(requestInfo, Microsoft.Graph.Beta.Models.Application.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// However, your app might still temporarily require Azure AD Graph permissions to access resources. This article describes the following four methods for configuring required Azure AD Graph permissions for your app registration:
+        /// Update the properties of an application object.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -270,7 +270,7 @@ namespace Microsoft.Graph.Beta.Applications.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get the properties and relationships of an [application](../resources/application.md) object.</summary>
+        /// <summary>Get the properties and relationships of an application object.</summary>
         public class ApplicationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

@@ -2,6 +2,7 @@ using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Categories;
 using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Publish;
 using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Resources;
 using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Rubric;
+using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.SetUpFeedbackResourcesFolder;
 using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.SetUpResourcesFolder;
 using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions;
 using Microsoft.Graph.Beta.Models;
@@ -36,6 +37,10 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item {
         /// <summary>The rubric property</summary>
         public RubricRequestBuilder Rubric { get =>
             new RubricRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The setUpFeedbackResourcesFolder property</summary>
+        public SetUpFeedbackResourcesFolderRequestBuilder SetUpFeedbackResourcesFolder { get =>
+            new SetUpFeedbackResourcesFolderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The setUpResourcesFolder property</summary>
         public SetUpResourcesFolderRequestBuilder SetUpResourcesFolder { get =>

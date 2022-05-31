@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Casts the previous resource to group.</summary>
     public class Tasks : Entity, IParsable {
         /// <summary>All tasks in the users mailbox.</summary>
         public List<BaseTask> Alltasks {
