@@ -65,6 +65,41 @@ namespace Microsoft.Graph
         public bool? PreSharedKeyIsSet { get; set; }
     
         /// <summary>
+        /// Gets or sets proxy automatic configuration url.
+        /// Specify the proxy server configuration script URL.
+        /// </summary>
+        [JsonPropertyName("proxyAutomaticConfigurationUrl")]
+        public string ProxyAutomaticConfigurationUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets proxy exclusion list.
+        /// List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as .example.com.
+        /// </summary>
+        [JsonPropertyName("proxyExclusionList")]
+        public string ProxyExclusionList { get; set; }
+    
+        /// <summary>
+        /// Gets or sets proxy manual address.
+        /// Specify the proxy server IP address. Android documentation does not specify IPv4 or IPv6. For example: 192.168.1.1.
+        /// </summary>
+        [JsonPropertyName("proxyManualAddress")]
+        public string ProxyManualAddress { get; set; }
+    
+        /// <summary>
+        /// Gets or sets proxy manual port.
+        /// Specify the proxy server port.
+        /// </summary>
+        [JsonPropertyName("proxyManualPort")]
+        public Int32? ProxyManualPort { get; set; }
+    
+        /// <summary>
+        /// Gets or sets proxy settings.
+        /// Specify the proxy setting for Wi-Fi configuration. Possible values include none, manual, and automatic. Possible values are: none, manual, automatic.
+        /// </summary>
+        [JsonPropertyName("proxySettings")]
+        public WiFiProxySetting? ProxySettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets ssid.
         /// This is the name of the Wi-Fi network that is broadcast to all devices.
         /// </summary>

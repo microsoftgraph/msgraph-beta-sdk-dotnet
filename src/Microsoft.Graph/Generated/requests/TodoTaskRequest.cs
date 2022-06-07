@@ -246,6 +246,18 @@ namespace Microsoft.Graph
 
             if (todoTaskToInitialize != null)
             {
+                if (todoTaskToInitialize.Attachments != null && todoTaskToInitialize.Attachments.CurrentPage != null)
+                {
+                    todoTaskToInitialize.Attachments.InitializeNextPageRequest(this.Client, todoTaskToInitialize.AttachmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    todoTaskToInitialize.Attachments.AdditionalData = todoTaskToInitialize.AdditionalData;
+                }
+                if (todoTaskToInitialize.AttachmentSessions != null && todoTaskToInitialize.AttachmentSessions.CurrentPage != null)
+                {
+                    todoTaskToInitialize.AttachmentSessions.InitializeNextPageRequest(this.Client, todoTaskToInitialize.AttachmentSessionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    todoTaskToInitialize.AttachmentSessions.AdditionalData = todoTaskToInitialize.AdditionalData;
+                }
                 if (todoTaskToInitialize.ChecklistItems != null && todoTaskToInitialize.ChecklistItems.CurrentPage != null)
                 {
                     todoTaskToInitialize.ChecklistItems.InitializeNextPageRequest(this.Client, todoTaskToInitialize.ChecklistItemsNextLink);

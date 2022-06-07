@@ -232,6 +232,12 @@ namespace Microsoft.Graph
         IManagedDeviceRemoteLockRequestBuilder RemoteLock();
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceRemoveDeviceFirmwareConfigurationInterfaceManagement.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceRemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilder"/>.</returns>
+        IManagedDeviceRemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilder RemoveDeviceFirmwareConfigurationInterfaceManagement();
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceRequestRemoteAssistance.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceRequestRemoteAssistanceRequestBuilder"/>.</returns>

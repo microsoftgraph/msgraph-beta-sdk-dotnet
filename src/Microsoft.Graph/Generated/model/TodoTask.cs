@@ -37,6 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets categories.
+        /// The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
         /// </summary>
         [JsonPropertyName("categories")]
         public IEnumerable<string> Categories { get; set; }
@@ -61,6 +62,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("dueDateTime")]
         public DateTimeTimeZone DueDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets has attachments.
+        /// </summary>
+        [JsonPropertyName("hasAttachments")]
+        public bool? HasAttachments { get; set; }
     
         /// <summary>
         /// Gets or sets importance.
@@ -112,7 +119,34 @@ namespace Microsoft.Graph
         public string Title { get; set; }
     
         /// <summary>
+        /// Gets or sets attachments.
+        /// </summary>
+        [JsonPropertyName("attachments")]
+        public ITodoTaskAttachmentsCollectionPage Attachments { get; set; }
+
+        /// <summary>
+        /// Gets or sets attachmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("attachments@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string AttachmentsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets attachment sessions.
+        /// </summary>
+        [JsonPropertyName("attachmentSessions")]
+        public ITodoTaskAttachmentSessionsCollectionPage AttachmentSessions { get; set; }
+
+        /// <summary>
+        /// Gets or sets attachmentSessionsNextLink.
+        /// </summary>
+        [JsonPropertyName("attachmentSessions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string AttachmentSessionsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets checklist items.
+        /// A collection of smaller subtasks linked to the more complex parent task.
         /// </summary>
         [JsonPropertyName("checklistItems")]
         public ITodoTaskChecklistItemsCollectionPage ChecklistItems { get; set; }

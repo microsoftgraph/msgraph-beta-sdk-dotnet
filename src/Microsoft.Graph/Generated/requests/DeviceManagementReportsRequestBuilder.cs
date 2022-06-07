@@ -974,6 +974,35 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetZebraFotaDeploymentReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetZebraFotaDeploymentReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetZebraFotaDeploymentReportRequestBuilder GetZebraFotaDeploymentReport(
+            Int32 skip,
+            Int32 top,
+            Int32 sessionId,
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetZebraFotaDeploymentReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getZebraFotaDeploymentReport"),
+                this.Client,
+                skip,
+                top,
+                sessionId,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                filter);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetGroupPolicySettingsDeviceSettingsReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetGroupPolicySettingsDeviceSettingsReportRequestBuilder"/>.</returns>

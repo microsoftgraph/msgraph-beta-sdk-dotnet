@@ -23,11 +23,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
+        /// <param name="deviceEnrollmentNotificationConfigurations">A deviceEnrollmentNotificationConfigurations parameter for the OData method call.</param>
         public DeviceEnrollmentConfigurationCreateEnrollmentNotificationConfigurationRequestBuilder(
             string requestUrl,
-            IBaseClient client)
+            IBaseClient client,
+            IEnumerable<DeviceEnrollmentConfiguration> deviceEnrollmentNotificationConfigurations)
             : base(requestUrl, client)
         {
+            this.SetParameter("deviceEnrollmentNotificationConfigurations", deviceEnrollmentNotificationConfigurations, true);
         }
 
         /// <summary>
@@ -39,6 +42,11 @@ namespace Microsoft.Graph
         protected override IDeviceEnrollmentConfigurationCreateEnrollmentNotificationConfigurationRequest CreateRequest(string functionUrl, IEnumerable<Option> options)
         {
             var request = new DeviceEnrollmentConfigurationCreateEnrollmentNotificationConfigurationRequest(functionUrl, this.Client, options);
+
+            if (this.HasParameter("deviceEnrollmentNotificationConfigurations"))
+            {
+                request.RequestBody.DeviceEnrollmentNotificationConfigurations = this.GetParameter<IEnumerable<DeviceEnrollmentConfiguration>>("deviceEnrollmentNotificationConfigurations");
+            }
 
             return request;
         }

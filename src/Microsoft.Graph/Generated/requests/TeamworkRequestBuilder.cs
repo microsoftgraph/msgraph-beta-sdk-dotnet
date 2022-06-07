@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeletedTeams.
+        /// </summary>
+        /// <returns>The <see cref="ITeamworkDeletedTeamsCollectionRequestBuilder"/>.</returns>
+        public ITeamworkDeletedTeamsCollectionRequestBuilder DeletedTeams
+        {
+            get
+            {
+                return new TeamworkDeletedTeamsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deletedTeams"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Devices.
         /// </summary>
         /// <returns>The <see cref="ITeamworkDevicesCollectionRequestBuilder"/>.</returns>

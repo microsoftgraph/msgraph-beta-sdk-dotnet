@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         IAdminRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Sharepoint.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.TenantAdmin.ISharepointRequestBuilder"/>.</returns>
+        Microsoft.Graph.TenantAdmin.ISharepointRequestBuilder Sharepoint { get; }
+
+        /// <summary>
         /// Gets the request builder for ServiceAnnouncement.
         /// </summary>
         /// <returns>The <see cref="IServiceAnnouncementRequestBuilder"/>.</returns>

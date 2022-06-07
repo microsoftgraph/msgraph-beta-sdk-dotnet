@@ -36,7 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is organization default.
-        /// This can only be set to true for a single tenant wide policy which will apply to all scopes and roles. Set the scopeId to '/' and scopeType to Directory.
+        /// This can only be set to true for a single tenant-wide policy which will apply to all scopes and roles. Set the scopeId to / and scopeType to Directory. Supports $filter (eq, ne).
         /// </summary>
         [JsonPropertyName("isOrganizationDefault")]
         public bool? IsOrganizationDefault { get; set; }
@@ -57,7 +57,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets scope id.
-        /// The id of the scope where the policy is created. Can be / for the tenant or a group ID. Required.
+        /// The identifier of the scope where the policy is created. Can be / for the tenant or a group ID. Required.
         /// </summary>
         [JsonPropertyName("scopeId")]
         public string ScopeId { get; set; }
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets effective rules.
-        /// Not implemented. The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval.
+        /// The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval. Supports $expand.
         /// </summary>
         [JsonPropertyName("effectiveRules")]
         public IUnifiedRoleManagementPolicyEffectiveRulesCollectionPage EffectiveRules { get; set; }
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets rules.
-        /// The collection of rules like approval rules and expiration rules.
+        /// The collection of rules like approval rules and expiration rules. Supports $expand.
         /// </summary>
         [JsonPropertyName("rules")]
         public IUnifiedRoleManagementPolicyRulesCollectionPage Rules { get; set; }

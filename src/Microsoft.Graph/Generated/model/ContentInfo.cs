@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets metadata.
-        /// Existing Microsoft Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.
+        /// Existing Microsoft Purview Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.
         /// </summary>
         [JsonPropertyName("metadata")]
         public IEnumerable<KeyValuePair> Metadata { get; set; }

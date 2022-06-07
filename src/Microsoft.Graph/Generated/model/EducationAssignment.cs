@@ -114,6 +114,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets feedback resources folder url.
+        /// Folder URL where all the feedback file resources for this assignment are stored.
         /// </summary>
         [JsonPropertyName("feedbackResourcesFolderUrl")]
         public string FeedbackResourcesFolderUrl { get; set; }

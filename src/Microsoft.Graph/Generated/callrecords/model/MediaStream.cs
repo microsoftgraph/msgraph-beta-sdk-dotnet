@@ -22,6 +22,13 @@ namespace Microsoft.Graph.CallRecords
     {
 
         /// <summary>
+        /// Gets or sets audioCodec.
+        /// Codec name used to encode audio for transmission on the network. Possible values are: unknown, invalid, cn, pcma, pcmu, amrWide, g722, g7221, g7221c, g729, multiChannelAudio, muchv2, opus, satin, satinFullband, rtAudio8, rtAudio16, silk, silkNarrow, silkWide, siren, xmsRTA, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("audioCodec")]
+        public AudioCodec? AudioCodec { get; set; }
+    
+        /// <summary>
         /// Gets or sets averageAudioDegradation.
         /// Average Network Mean Opinion Score degradation for stream. Represents how much the network loss and jitter has impacted the quality of received audio.
         /// </summary>
@@ -188,6 +195,13 @@ namespace Microsoft.Graph.CallRecords
         /// </summary>
         [JsonPropertyName("streamId")]
         public string StreamId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets videoCodec.
+        /// Codec name used to encode video for transmission on the network. Possible values are: unknown, invalid, av1, h263, h264, h264s, h264uc, h265, rtvc1, rtVideo, xrtvc1, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("videoCodec")]
+        public VideoCodec? VideoCodec { get; set; }
     
         /// <summary>
         /// Gets or sets wasMediaBypassed.

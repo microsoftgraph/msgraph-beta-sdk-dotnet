@@ -58,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets operator.
-        /// Device scope configuration query operator. Possible values are: equals, notEquals, contains, notContains, greaterThan, lessThan. Default value: equals.
+        /// Device scope configuration query operator. Possible values are: equals, notEquals, contains, notContains, greaterThan, lessThan. Default value: equals. Possible values are: none, equals, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("operator")]
         public DeviceScopeOperator? Operator { get; set; }
@@ -72,14 +72,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets parameter.
-        /// Device scope configuration parameter. It will be extended in future to add more parameter. Eg: device scope parameter can be OS version, Disk Type, Device manufacturer, device model or Scope tag. Default value: scopeTag.
+        /// Device scope configuration parameter. It will be extended in future to add more parameter. Eg: device scope parameter can be OS version, Disk Type, Device manufacturer, device model or Scope tag. Default value: scopeTag. Possible values are: none, scopeTag, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("parameter")]
         public DeviceScopeParameter? Parameter { get; set; }
     
         /// <summary>
         /// Gets or sets status.
-        /// Indicates the device scope status after the device scope has been enabled. Possible values are: none, computing, insufficientData or completed. Default value is none.
+        /// Indicates the device scope status after the device scope has been enabled. Possible values are: none, computing, insufficientData or completed. Default value is none. Possible values are: none, computing, insufficientData, completed, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("status")]
         public DeviceScopeStatus? Status { get; set; }

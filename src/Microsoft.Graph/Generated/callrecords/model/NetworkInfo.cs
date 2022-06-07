@@ -78,6 +78,13 @@ namespace Microsoft.Graph.CallRecords
         public string MacAddress { get; set; }
     
         /// <summary>
+        /// Gets or sets networkTransportProtocol.
+        /// Network protocol used for the transmission of stream. Possible values are: unknown, udp, tcp, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("networkTransportProtocol")]
+        public NetworkTransportProtocol? NetworkTransportProtocol { get; set; }
+    
+        /// <summary>
         /// Gets or sets port.
         /// Network port number used by media endpoint.
         /// </summary>
@@ -125,6 +132,13 @@ namespace Microsoft.Graph.CallRecords
         /// </summary>
         [JsonPropertyName("subnet")]
         public string Subnet { get; set; }
+    
+        /// <summary>
+        /// Gets or sets traceRouteHops.
+        /// List of network trace route hops collected for this media stream.
+        /// </summary>
+        [JsonPropertyName("traceRouteHops")]
+        public IEnumerable<TraceRouteHop> TraceRouteHops { get; set; }
     
         /// <summary>
         /// Gets or sets wifiBand.

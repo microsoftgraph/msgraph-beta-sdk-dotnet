@@ -940,6 +940,13 @@ namespace Microsoft.Graph
         public AndroidDeviceOwnerRequiredPasswordType? WorkProfilePasswordRequiredType { get; set; }
     
         /// <summary>
+        /// Gets or sets work profile password require unlock.
+        /// Indicates the timeout period after which a work profile must be unlocked using a form of strong authentication. Possible values are: deviceDefault, daily, unkownFutureValue.
+        /// </summary>
+        [JsonPropertyName("workProfilePasswordRequireUnlock")]
+        public AndroidDeviceOwnerRequiredPasswordUnlock? WorkProfilePasswordRequireUnlock { get; set; }
+    
+        /// <summary>
         /// Gets or sets work profile password sign in failure count before factory reset.
         /// Indicates the number of times a user can enter an incorrect work profile password before the device is wiped. Valid values 4 to 11
         /// </summary>

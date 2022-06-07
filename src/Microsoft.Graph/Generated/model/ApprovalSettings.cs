@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets approvalMode.
-        /// One of NoApproval, SingleStage or Serial. The NoApproval is used when isApprovalRequired is false.
+        /// One of SingleStage, Serial, Parallel, NoApproval (default). NoApproval is used when isApprovalRequired is false.
         /// </summary>
         [JsonPropertyName("approvalMode")]
         public string ApprovalMode { get; set; }
@@ -37,14 +37,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets isApprovalRequired.
-        /// If false, then approval is not required for requests in this policy.
+        /// Indicates whether approval is required for requests in this policy.
         /// </summary>
         [JsonPropertyName("isApprovalRequired")]
         public bool? IsApprovalRequired { get; set; }
     
         /// <summary>
         /// Gets or sets isApprovalRequiredForExtension.
-        /// If false, then approval is not required for a user who already has an assignment to extend their assignment.
+        /// Indicates whether approval is required for a user to extend their assignment.
         /// </summary>
         [JsonPropertyName("isApprovalRequiredForExtension")]
         public bool? IsApprovalRequiredForExtension { get; set; }

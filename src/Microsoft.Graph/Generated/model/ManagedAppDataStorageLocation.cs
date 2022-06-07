@@ -39,5 +39,10 @@ namespace Microsoft.Graph
         /// </summary>
         LocalStorage = 6,
 	
+        /// <summary>
+        /// Photo Library
+        /// </summary>
+        PhotoLibrary = 7,
+	
     }
 }

@@ -32,6 +32,18 @@ namespace Microsoft.Graph
         new ITodoTaskRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Attachments.
+        /// </summary>
+        /// <returns>The <see cref="ITodoTaskAttachmentsCollectionRequestBuilder"/>.</returns>
+        ITodoTaskAttachmentsCollectionRequestBuilder Attachments { get; }
+
+        /// <summary>
+        /// Gets the request builder for AttachmentSessions.
+        /// </summary>
+        /// <returns>The <see cref="ITodoTaskAttachmentSessionsCollectionRequestBuilder"/>.</returns>
+        ITodoTaskAttachmentSessionsCollectionRequestBuilder AttachmentSessions { get; }
+
+        /// <summary>
         /// Gets the request builder for ChecklistItems.
         /// </summary>
         /// <returns>The <see cref="ITodoTaskChecklistItemsCollectionRequestBuilder"/>.</returns>

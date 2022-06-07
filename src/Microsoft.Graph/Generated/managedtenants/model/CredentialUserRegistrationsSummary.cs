@@ -43,6 +43,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets mfa excluded user count.
+        /// The number of users in the multi-factor authentication exclusion security group (Microsoft 365 Lighthouse - MFA exclusions). Optional. Read-only.
         /// </summary>
         [JsonPropertyName("mfaExcludedUserCount")]
         public Int32? MfaExcludedUserCount { get; set; }

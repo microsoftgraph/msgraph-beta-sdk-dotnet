@@ -59,14 +59,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets deadline for feature updates in days.
-        /// Number of days before feature updates are installed automatically with valid range from 2 to 30 days
+        /// Number of days before feature updates are installed automatically with valid range from 0 to 30 days
         /// </summary>
         [JsonPropertyName("deadlineForFeatureUpdatesInDays")]
         public Int32? DeadlineForFeatureUpdatesInDays { get; set; }
     
         /// <summary>
         /// Gets or sets deadline for quality updates in days.
-        /// Number of days before quality updates are installed automatically with valid range from 2 to 30 days
+        /// Number of days before quality updates are installed automatically with valid range from 0 to 30 days
         /// </summary>
         [JsonPropertyName("deadlineForQualityUpdatesInDays")]
         public Int32? DeadlineForQualityUpdatesInDays { get; set; }

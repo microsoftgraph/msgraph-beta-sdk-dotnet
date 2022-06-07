@@ -191,6 +191,13 @@ namespace Microsoft.Graph
         public IEnumerable<KeyValuePair> ExemptedAppPackages { get; set; }
     
         /// <summary>
+        /// Gets or sets fingerprint and biometric enabled.
+        /// If null, this setting will be ignored. If false both fingerprints and biometrics will not be enabled. If true, both fingerprints and biometrics will be enabled.
+        /// </summary>
+        [JsonPropertyName("fingerprintAndBiometricEnabled")]
+        public bool? FingerprintAndBiometricEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets keyboards restricted.
         /// Indicates if keyboard restriction is enabled. If enabled list of approved keyboards must be provided as well.
         /// </summary>
@@ -240,6 +247,13 @@ namespace Microsoft.Graph
         public string MinimumWipePatchVersion { get; set; }
     
         /// <summary>
+        /// Gets or sets require class3biometrics.
+        /// Require user to apply Class 3 Biometrics on their Android device.
+        /// </summary>
+        [JsonPropertyName("requireClass3Biometrics")]
+        public bool? RequireClass3Biometrics { get; set; }
+    
+        /// <summary>
         /// Gets or sets required android safety net apps verification type.
         /// Defines the Android SafetyNet Apps Verification requirement for a managed app to work. Possible values are: none, enabled.
         /// </summary>
@@ -259,6 +273,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("requiredAndroidSafetyNetEvaluationType")]
         public AndroidManagedAppSafetyNetEvaluationType? RequiredAndroidSafetyNetEvaluationType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets require pin after biometric change.
+        /// A PIN prompt will override biometric prompts if class 3 biometrics are updated on the device.
+        /// </summary>
+        [JsonPropertyName("requirePinAfterBiometricChange")]
+        public bool? RequirePinAfterBiometricChange { get; set; }
     
         /// <summary>
         /// Gets or sets screen capture blocked.

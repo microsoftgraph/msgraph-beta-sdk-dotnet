@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// The status of the request. Read-only. The possible values are: created, pending, complete, failed, unknownFutureValue.
+        /// The status of the request. Read-only. The possible values are: created, pending, succeeded, failed, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("status")]
         public DelegatedAdminRelationshipRequestStatus? Status { get; set; }

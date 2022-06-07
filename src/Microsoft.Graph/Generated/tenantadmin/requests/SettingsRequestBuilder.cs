@@ -7,26 +7,26 @@
 
 // Template Source: EntityRequestBuilder.cs.tt
 
-namespace Microsoft.Graph
+namespace Microsoft.Graph.TenantAdmin
 {
     using System;
     using System.Collections.Generic;
     using System.IO;
 
     /// <summary>
-    /// The type DeviceManagementReportScheduleRequestBuilder.
+    /// The type SettingsRequestBuilder.
     /// </summary>
-    public partial class DeviceManagementReportScheduleRequestBuilder : EntityRequestBuilder, IDeviceManagementReportScheduleRequestBuilder
+    public partial class SettingsRequestBuilder : Microsoft.Graph.EntityRequestBuilder, ISettingsRequestBuilder
     {
 
         /// <summary>
-        /// Constructs a new DeviceManagementReportScheduleRequestBuilder.
+        /// Constructs a new SettingsRequestBuilder.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
-        /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        public DeviceManagementReportScheduleRequestBuilder(
+        /// <param name="client">The <see cref="Microsoft.Graph.IBaseClient"/> for handling requests.</param>
+        public SettingsRequestBuilder(
             string requestUrl,
-            IBaseClient client)
+            Microsoft.Graph.IBaseClient client)
             : base(requestUrl, client)
         {
         }
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IDeviceManagementReportScheduleRequest Request()
+        public new ISettingsRequest Request()
         {
             return this.Request(null);
         }
@@ -45,9 +45,9 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IDeviceManagementReportScheduleRequest Request(IEnumerable<Option> options)
+        public new ISettingsRequest Request(IEnumerable<Microsoft.Graph.Option> options)
         {
-            return new DeviceManagementReportScheduleRequest(this.RequestUrl, this.Client, options);
+            return new SettingsRequest(this.RequestUrl, this.Client, options);
         }
     
     }

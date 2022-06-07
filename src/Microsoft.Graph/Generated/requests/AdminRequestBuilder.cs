@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Sharepoint.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.TenantAdmin.ISharepointRequestBuilder"/>.</returns>
+        public Microsoft.Graph.TenantAdmin.ISharepointRequestBuilder Sharepoint
+        {
+            get
+            {
+                return new Microsoft.Graph.TenantAdmin.SharepointRequestBuilder(this.AppendSegmentToRequestUrl("sharepoint"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ServiceAnnouncement.
         /// </summary>
         /// <returns>The <see cref="IServiceAnnouncementRequestBuilder"/>.</returns>

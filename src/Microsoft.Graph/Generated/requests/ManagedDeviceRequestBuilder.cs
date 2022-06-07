@@ -430,6 +430,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceRemoveDeviceFirmwareConfigurationInterfaceManagement.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceRemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilder"/>.</returns>
+        public IManagedDeviceRemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilder RemoveDeviceFirmwareConfigurationInterfaceManagement()
+        {
+            return new ManagedDeviceRemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.removeDeviceFirmwareConfigurationInterfaceManagement"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceRequestRemoteAssistance.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceRequestRemoteAssistanceRequestBuilder"/>.</returns>

@@ -22,28 +22,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets assignment type.
-        /// Type of the assignment. It can either be Assigned or Activated.
+        /// Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
         /// </summary>
         [JsonPropertyName("assignmentType")]
         public string AssignmentType { get; set; }
     
         /// <summary>
         /// Gets or sets member type.
-        /// Membership type of the assignment. It can either be Inherited, Direct, or Group.
+        /// How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
         /// </summary>
         [JsonPropertyName("memberType")]
         public string MemberType { get; set; }
     
         /// <summary>
         /// Gets or sets schedule info.
-        /// The schedule object of the role assignment request.
+        /// The period of the role assignment. It can represent a single occurrence or multiple recurrences.
         /// </summary>
         [JsonPropertyName("scheduleInfo")]
         public RequestSchedule ScheduleInfo { get; set; }
     
         /// <summary>
         /// Gets or sets activated using.
-        /// If the roleAssignmentSchedule is activated by a roleEligibilitySchedule, this is the link to that schedule.
+        /// If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.
         /// </summary>
         [JsonPropertyName("activatedUsing")]
         public UnifiedRoleEligibilitySchedule ActivatedUsing { get; set; }

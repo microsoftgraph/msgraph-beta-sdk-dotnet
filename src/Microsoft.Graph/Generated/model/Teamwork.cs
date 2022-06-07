@@ -35,6 +35,19 @@ namespace Microsoft.Graph
         public string WorkforceIntegrationsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets deleted teams.
+        /// </summary>
+        [JsonPropertyName("deletedTeams")]
+        public ITeamworkDeletedTeamsCollectionPage DeletedTeams { get; set; }
+
+        /// <summary>
+        /// Gets or sets deletedTeamsNextLink.
+        /// </summary>
+        [JsonPropertyName("deletedTeams@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string DeletedTeamsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets devices.
         /// The Teams devices provisioned for the tenant.
         /// </summary>

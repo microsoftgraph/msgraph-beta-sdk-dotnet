@@ -29,6 +29,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets allowed cloud endpoints.
+        /// Used to specify which Microsoft clouds an organization would like to collaborate with. By default, this value is empty. Supported values for this field are: microsoftonline.com, microsoftonline.us, and partner.microsoftonline.cn.
+        /// </summary>
+        [JsonPropertyName("allowedCloudEndpoints")]
+        public IEnumerable<string> AllowedCloudEndpoints { get; set; }
+    
+        /// <summary>
         /// Gets or sets default.
         /// Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
         /// </summary>

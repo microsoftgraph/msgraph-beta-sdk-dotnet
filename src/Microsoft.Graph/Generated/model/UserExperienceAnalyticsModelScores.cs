@@ -29,6 +29,13 @@ namespace Microsoft.Graph
         public double? AppReliabilityScore { get; set; }
     
         /// <summary>
+        /// Gets or sets battery health score.
+        /// The user experience analytics model battery health score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// </summary>
+        [JsonPropertyName("batteryHealthScore")]
+        public double? BatteryHealthScore { get; set; }
+    
+        /// <summary>
         /// Gets or sets endpoint analytics score.
         /// The user experience analytics model score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
