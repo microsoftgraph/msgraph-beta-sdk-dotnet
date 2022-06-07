@@ -92,6 +92,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new AccessReviewsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

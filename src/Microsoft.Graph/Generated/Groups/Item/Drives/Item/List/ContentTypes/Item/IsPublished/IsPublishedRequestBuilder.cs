@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.List.ContentTypes.Item.Is
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new IsPublishedRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

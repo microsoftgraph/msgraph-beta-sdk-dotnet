@@ -79,6 +79,7 @@ namespace Microsoft.Graph.Beta.Contacts.Item.DirectReports.Item.OrgContact {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new OrgContactRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

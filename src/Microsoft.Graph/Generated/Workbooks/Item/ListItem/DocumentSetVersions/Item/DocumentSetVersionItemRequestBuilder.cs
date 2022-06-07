@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.Workbooks.Item.ListItem.DocumentSetVersions.Item 
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DocumentSetVersionItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

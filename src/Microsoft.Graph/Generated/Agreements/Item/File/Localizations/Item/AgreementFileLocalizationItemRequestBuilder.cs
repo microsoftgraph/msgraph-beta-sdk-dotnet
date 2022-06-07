@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.Agreements.Item.File.Localizations.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new AgreementFileLocalizationItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Assignments.I
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new PolicySetAssignmentItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Recent {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new RecentRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

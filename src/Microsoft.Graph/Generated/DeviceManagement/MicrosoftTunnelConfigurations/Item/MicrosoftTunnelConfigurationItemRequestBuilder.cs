@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelConfigurations.It
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new MicrosoftTunnelConfigurationItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -87,6 +87,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.InstalledApps.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new TeamsAppInstallationItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

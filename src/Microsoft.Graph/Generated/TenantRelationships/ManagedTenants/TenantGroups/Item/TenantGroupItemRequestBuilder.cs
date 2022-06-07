@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups.I
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new TenantGroupItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

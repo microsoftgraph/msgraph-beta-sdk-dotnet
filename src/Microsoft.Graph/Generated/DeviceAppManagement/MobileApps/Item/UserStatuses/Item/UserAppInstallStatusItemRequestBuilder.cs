@@ -82,6 +82,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UserStatuses.
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new UserAppInstallStatusItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

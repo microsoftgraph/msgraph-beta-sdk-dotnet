@@ -1,4 +1,5 @@
 using Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.Count;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.CreateEnrollmentNotificationConfiguration;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.HasPayloadLinks;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.Item;
 using Microsoft.Graph.Beta.Models;
@@ -17,6 +18,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations {
         /// <summary>The count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The createEnrollmentNotificationConfiguration property</summary>
+        public CreateEnrollmentNotificationConfigurationRequestBuilder CreateEnrollmentNotificationConfiguration { get =>
+            new CreateEnrollmentNotificationConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The hasPayloadLinks property</summary>
         public HasPayloadLinksRequestBuilder HasPayloadLinks { get =>
@@ -71,6 +76,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DeviceEnrollmentConfigurationsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -92,6 +98,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new DeviceEnrollmentConfigurationsRequestBuilderPostRequestConfiguration();

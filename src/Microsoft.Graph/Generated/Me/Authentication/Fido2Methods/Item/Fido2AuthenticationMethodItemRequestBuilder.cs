@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.Fido2Methods.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new Fido2AuthenticationMethodItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

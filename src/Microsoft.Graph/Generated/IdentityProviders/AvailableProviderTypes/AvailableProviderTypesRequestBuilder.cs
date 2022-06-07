@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.IdentityProviders.AvailableProviderTypes {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new AvailableProviderTypesRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

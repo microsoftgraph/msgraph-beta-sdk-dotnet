@@ -92,6 +92,7 @@ namespace Microsoft.Graph.Beta.Directory.Recommendations.Item.ImpactedResources.
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new RecommendationResourceItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

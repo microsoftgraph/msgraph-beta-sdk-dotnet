@@ -71,6 +71,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Teachers {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new TeachersRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

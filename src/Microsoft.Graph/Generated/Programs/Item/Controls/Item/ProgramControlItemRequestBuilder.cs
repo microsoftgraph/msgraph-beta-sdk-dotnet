@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.Programs.Item.Controls.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ProgramControlItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -71,6 +71,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new AllowedUsersRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

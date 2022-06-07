@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.HasCustomRoleScope
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new HasCustomRoleScopeTagRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

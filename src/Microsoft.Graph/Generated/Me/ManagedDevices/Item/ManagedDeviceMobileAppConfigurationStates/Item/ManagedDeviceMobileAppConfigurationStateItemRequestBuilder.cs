@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.ManagedDeviceMobileAppConf
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ManagedDeviceMobileAppConfigurationStateItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

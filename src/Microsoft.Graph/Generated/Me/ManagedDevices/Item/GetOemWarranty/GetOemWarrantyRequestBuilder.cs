@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetOemWarranty {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GetOemWarrantyRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

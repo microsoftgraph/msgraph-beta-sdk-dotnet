@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.MyRequests {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new MyRequestsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

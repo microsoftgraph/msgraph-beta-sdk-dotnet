@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new StartRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

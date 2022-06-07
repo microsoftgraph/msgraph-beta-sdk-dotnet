@@ -97,6 +97,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Customers.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new CustomerItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

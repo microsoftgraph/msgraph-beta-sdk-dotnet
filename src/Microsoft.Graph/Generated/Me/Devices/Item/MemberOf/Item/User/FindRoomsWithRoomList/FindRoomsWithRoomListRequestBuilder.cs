@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.Me.Devices.Item.MemberOf.Item.User.FindRoomsWithR
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new FindRoomsWithRoomListRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

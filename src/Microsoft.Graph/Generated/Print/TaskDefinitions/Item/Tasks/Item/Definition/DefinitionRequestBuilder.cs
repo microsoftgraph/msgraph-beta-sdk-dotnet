@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item.Definition 
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DefinitionRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

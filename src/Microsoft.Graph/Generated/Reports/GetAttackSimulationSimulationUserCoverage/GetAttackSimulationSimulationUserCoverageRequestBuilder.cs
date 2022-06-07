@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Reports.GetAttackSimulationSimulationUserCoverage
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GetAttackSimulationSimulationUserCoverageRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

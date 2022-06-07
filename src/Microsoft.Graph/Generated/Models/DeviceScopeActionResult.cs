@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The triggered action name.</summary>
+        /// <summary>The triggered action name. Possible values are: .</summary>
         public string DeviceScopeAction {
             get { return BackingStore?.Get<string>(nameof(DeviceScopeAction)); }
             set { BackingStore?.Set(nameof(DeviceScopeAction), value); }
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>(nameof(FailedMessage)); }
             set { BackingStore?.Set(nameof(FailedMessage), value); }
         }
-        /// <summary>Indicates the status of the attempt device scope action. When succeeded, the action was succeessfully triggered, When failed, the action was failed to trigger.</summary>
+        /// <summary>Indicates the status of the attempt device scope action. When succeeded, the action was succeessfully triggered, When failed, the action was failed to trigger. Possible values are: failed, succeeded, unknownFutureValue.</summary>
         public DeviceScopeActionStatus? Status {
             get { return BackingStore?.Get<DeviceScopeActionStatus?>(nameof(Status)); }
             set { BackingStore?.Set(nameof(Status), value); }

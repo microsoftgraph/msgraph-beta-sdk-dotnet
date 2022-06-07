@@ -396,6 +396,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>(nameof(Visibility)); }
             set { BackingStore?.Set(nameof(Visibility), value); }
         }
+        /// <summary>The writebackConfiguration property</summary>
+        public GroupWritebackConfiguration WritebackConfiguration {
+            get { return BackingStore?.Get<GroupWritebackConfiguration>(nameof(WritebackConfiguration)); }
+            set { BackingStore?.Set(nameof(WritebackConfiguration), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -487,6 +492,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"unseenCount", n => { UnseenCount = n.GetIntValue(); } },
                 {"unseenMessagesCount", n => { UnseenMessagesCount = n.GetIntValue(); } },
                 {"visibility", n => { Visibility = n.GetStringValue(); } },
+                {"writebackConfiguration", n => { WritebackConfiguration = n.GetObjectValue<GroupWritebackConfiguration>(GroupWritebackConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -574,6 +580,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteIntValue("unseenCount", UnseenCount);
             writer.WriteIntValue("unseenMessagesCount", UnseenMessagesCount);
             writer.WriteStringValue("visibility", Visibility);
+            writer.WriteObjectValue<GroupWritebackConfiguration>("writebackConfiguration", WritebackConfiguration);
         }
     }
 }

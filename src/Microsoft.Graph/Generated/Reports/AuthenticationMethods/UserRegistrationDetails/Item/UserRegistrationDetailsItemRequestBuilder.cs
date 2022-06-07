@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserRegistrationDet
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new UserRegistrationDetailsItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

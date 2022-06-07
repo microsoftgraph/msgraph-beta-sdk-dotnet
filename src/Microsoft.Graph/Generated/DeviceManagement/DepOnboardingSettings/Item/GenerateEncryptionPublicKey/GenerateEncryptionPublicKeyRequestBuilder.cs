@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Gener
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GenerateEncryptionPublicKeyRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

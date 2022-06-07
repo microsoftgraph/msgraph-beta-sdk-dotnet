@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.OpenShifts.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new OpenShiftItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

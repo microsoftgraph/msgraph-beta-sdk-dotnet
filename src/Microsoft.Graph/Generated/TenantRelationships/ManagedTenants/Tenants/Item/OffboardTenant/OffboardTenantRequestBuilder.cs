@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item.O
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new OffboardTenantRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

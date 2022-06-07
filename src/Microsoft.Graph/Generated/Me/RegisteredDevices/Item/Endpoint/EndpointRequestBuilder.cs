@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.Me.RegisteredDevices.Item.Endpoint {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new EndpointRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

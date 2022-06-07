@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.Operations.Item
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new RichLongRunningOperationItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

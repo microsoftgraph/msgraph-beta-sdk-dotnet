@@ -13,27 +13,27 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The caller for the policy rule target. Allowed values are: None, Admin, EndUser.</summary>
+        /// <summary>The type of caller that&apos;s the target of the policy rule. Allowed values are: None, Admin, EndUser.</summary>
         public string Caller {
             get { return BackingStore?.Get<string>(nameof(Caller)); }
             set { BackingStore?.Set(nameof(Caller), value); }
         }
-        /// <summary>The list of settings which are enforced and cannot be overridden by child scopes. Use All for all settings.</summary>
+        /// <summary>The list of role settings that are enforced and cannot be overridden by child scopes. Use All for all settings.</summary>
         public List<string> EnforcedSettings {
             get { return BackingStore?.Get<List<string>>(nameof(EnforcedSettings)); }
             set { BackingStore?.Set(nameof(EnforcedSettings), value); }
         }
-        /// <summary>The list of settings which can be inherited by child scopes. Use All for all settings.</summary>
+        /// <summary>The list of role settings that can be inherited by child scopes. Use All for all settings.</summary>
         public List<string> InheritableSettings {
             get { return BackingStore?.Get<List<string>>(nameof(InheritableSettings)); }
             set { BackingStore?.Set(nameof(InheritableSettings), value); }
         }
-        /// <summary>The level for the policy rule target. Allowed values are: Eligibility, Assignment.</summary>
+        /// <summary>The role assignment type that&apos;s the target of policy rule. Allowed values are: Eligibility, Assignment.</summary>
         public string Level {
             get { return BackingStore?.Get<string>(nameof(Level)); }
             set { BackingStore?.Set(nameof(Level), value); }
         }
-        /// <summary>The operations for policy rule target. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.</summary>
+        /// <summary>The role management operations that are the target of the policy rule. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.</summary>
         public List<string> Operations {
             get { return BackingStore?.Get<List<string>>(nameof(Operations)); }
             set { BackingStore?.Set(nameof(Operations), value); }

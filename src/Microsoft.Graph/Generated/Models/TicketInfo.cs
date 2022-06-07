@@ -13,12 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Ticket number meta data</summary>
+        /// <summary>The ticket number.</summary>
         public string TicketNumber {
             get { return BackingStore?.Get<string>(nameof(TicketNumber)); }
             set { BackingStore?.Set(nameof(TicketNumber), value); }
         }
-        /// <summary>Ticket system meta data</summary>
+        /// <summary>The description of the ticket system.</summary>
         public string TicketSystem {
             get { return BackingStore?.Get<string>(nameof(TicketSystem)); }
             set { BackingStore?.Set(nameof(TicketSystem), value); }

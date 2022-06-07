@@ -36,6 +36,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>(nameof(Model)); }
             set { BackingStore?.Set(nameof(Model), value); }
         }
+        /// <summary>A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647</summary>
+        public int? ModelBatteryHealthScore {
+            get { return BackingStore?.Get<int?>(nameof(ModelBatteryHealthScore)); }
+            set { BackingStore?.Set(nameof(ModelBatteryHealthScore), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -55,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"averageMaxCapacityPercentage", n => { AverageMaxCapacityPercentage = n.GetIntValue(); } },
                 {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
                 {"model", n => { Model = n.GetStringValue(); } },
+                {"modelBatteryHealthScore", n => { ModelBatteryHealthScore = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -70,6 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteIntValue("averageMaxCapacityPercentage", AverageMaxCapacityPercentage);
             writer.WriteStringValue("manufacturer", Manufacturer);
             writer.WriteStringValue("model", Model);
+            writer.WriteIntValue("modelBatteryHealthScore", ModelBatteryHealthScore);
         }
     }
 }

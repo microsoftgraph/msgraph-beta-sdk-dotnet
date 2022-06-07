@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.ColumnLinks.Co
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "text/plain");
             if (requestConfiguration != null) {
                 var requestConfig = new CountRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

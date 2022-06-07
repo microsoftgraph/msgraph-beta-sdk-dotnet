@@ -92,6 +92,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new PresenceRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

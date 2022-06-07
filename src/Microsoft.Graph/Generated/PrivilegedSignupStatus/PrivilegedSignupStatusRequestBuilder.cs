@@ -84,6 +84,7 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new PrivilegedSignupStatusRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -105,6 +106,7 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new PrivilegedSignupStatusRequestBuilderPostRequestConfiguration();

@@ -176,6 +176,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>(nameof(FilterOpenInToOnlyManagedApps)); }
             set { BackingStore?.Set(nameof(FilterOpenInToOnlyManagedApps), value); }
         }
+        /// <summary>Indicate to the client to enable both biometrics and fingerprints for the app.</summary>
+        public bool? FingerprintAndBiometricEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(FingerprintAndBiometricEnabled)); }
+            set { BackingStore?.Set(nameof(FingerprintAndBiometricEnabled), value); }
+        }
         /// <summary>Minimum version of the Company portal that must be installed on the device or app access will be blocked</summary>
         public string MinimumRequiredCompanyPortalVersion {
             get { return BackingStore?.Get<string>(nameof(MinimumRequiredCompanyPortalVersion)); }
@@ -221,6 +226,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>(nameof(ProtectInboundDataFromUnknownSources)); }
             set { BackingStore?.Set(nameof(ProtectInboundDataFromUnknownSources), value); }
         }
+        /// <summary>Require user to apply Class 3 Biometrics on their Android device.</summary>
+        public bool? RequireClass3Biometrics {
+            get { return BackingStore?.Get<bool?>(nameof(RequireClass3Biometrics)); }
+            set { BackingStore?.Set(nameof(RequireClass3Biometrics), value); }
+        }
         /// <summary>Defines the Android SafetyNet Apps Verification requirement for a managed app to work. Possible values are: none, enabled.</summary>
         public AndroidManagedAppSafetyNetAppsVerificationType? RequiredAndroidSafetyNetAppsVerificationType {
             get { return BackingStore?.Get<AndroidManagedAppSafetyNetAppsVerificationType?>(nameof(RequiredAndroidSafetyNetAppsVerificationType)); }
@@ -235,6 +245,11 @@ namespace Microsoft.Graph.Beta.Models {
         public AndroidManagedAppSafetyNetEvaluationType? RequiredAndroidSafetyNetEvaluationType {
             get { return BackingStore?.Get<AndroidManagedAppSafetyNetEvaluationType?>(nameof(RequiredAndroidSafetyNetEvaluationType)); }
             set { BackingStore?.Set(nameof(RequiredAndroidSafetyNetEvaluationType), value); }
+        }
+        /// <summary>A PIN prompt will override biometric prompts if class 3 biometrics are updated on the device.</summary>
+        public bool? RequirePinAfterBiometricChange {
+            get { return BackingStore?.Get<bool?>(nameof(RequirePinAfterBiometricChange)); }
+            set { BackingStore?.Set(nameof(RequirePinAfterBiometricChange), value); }
         }
         /// <summary>Indicates whether screen capture is blocked. (Android only)</summary>
         public bool? ScreenCaptureBlocked {
@@ -303,6 +318,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"exemptedAppProtocols", n => { ExemptedAppProtocols = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
                 {"faceIdBlocked", n => { FaceIdBlocked = n.GetBoolValue(); } },
                 {"filterOpenInToOnlyManagedApps", n => { FilterOpenInToOnlyManagedApps = n.GetBoolValue(); } },
+                {"fingerprintAndBiometricEnabled", n => { FingerprintAndBiometricEnabled = n.GetBoolValue(); } },
                 {"minimumRequiredCompanyPortalVersion", n => { MinimumRequiredCompanyPortalVersion = n.GetStringValue(); } },
                 {"minimumRequiredPatchVersion", n => { MinimumRequiredPatchVersion = n.GetStringValue(); } },
                 {"minimumRequiredSdkVersion", n => { MinimumRequiredSdkVersion = n.GetStringValue(); } },
@@ -312,9 +328,11 @@ namespace Microsoft.Graph.Beta.Models {
                 {"minimumWipePatchVersion", n => { MinimumWipePatchVersion = n.GetStringValue(); } },
                 {"minimumWipeSdkVersion", n => { MinimumWipeSdkVersion = n.GetStringValue(); } },
                 {"protectInboundDataFromUnknownSources", n => { ProtectInboundDataFromUnknownSources = n.GetBoolValue(); } },
+                {"requireClass3Biometrics", n => { RequireClass3Biometrics = n.GetBoolValue(); } },
                 {"requiredAndroidSafetyNetAppsVerificationType", n => { RequiredAndroidSafetyNetAppsVerificationType = n.GetEnumValue<AndroidManagedAppSafetyNetAppsVerificationType>(); } },
                 {"requiredAndroidSafetyNetDeviceAttestationType", n => { RequiredAndroidSafetyNetDeviceAttestationType = n.GetEnumValue<AndroidManagedAppSafetyNetDeviceAttestationType>(); } },
                 {"requiredAndroidSafetyNetEvaluationType", n => { RequiredAndroidSafetyNetEvaluationType = n.GetEnumValue<AndroidManagedAppSafetyNetEvaluationType>(); } },
+                {"requirePinAfterBiometricChange", n => { RequirePinAfterBiometricChange = n.GetBoolValue(); } },
                 {"screenCaptureBlocked", n => { ScreenCaptureBlocked = n.GetBoolValue(); } },
                 {"thirdPartyKeyboardsBlocked", n => { ThirdPartyKeyboardsBlocked = n.GetBoolValue(); } },
                 {"warnAfterCompanyPortalUpdateDeferralInDays", n => { WarnAfterCompanyPortalUpdateDeferralInDays = n.GetIntValue(); } },
@@ -362,6 +380,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<KeyValuePair>("exemptedAppProtocols", ExemptedAppProtocols);
             writer.WriteBoolValue("faceIdBlocked", FaceIdBlocked);
             writer.WriteBoolValue("filterOpenInToOnlyManagedApps", FilterOpenInToOnlyManagedApps);
+            writer.WriteBoolValue("fingerprintAndBiometricEnabled", FingerprintAndBiometricEnabled);
             writer.WriteStringValue("minimumRequiredCompanyPortalVersion", MinimumRequiredCompanyPortalVersion);
             writer.WriteStringValue("minimumRequiredPatchVersion", MinimumRequiredPatchVersion);
             writer.WriteStringValue("minimumRequiredSdkVersion", MinimumRequiredSdkVersion);
@@ -371,9 +390,11 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("minimumWipePatchVersion", MinimumWipePatchVersion);
             writer.WriteStringValue("minimumWipeSdkVersion", MinimumWipeSdkVersion);
             writer.WriteBoolValue("protectInboundDataFromUnknownSources", ProtectInboundDataFromUnknownSources);
+            writer.WriteBoolValue("requireClass3Biometrics", RequireClass3Biometrics);
             writer.WriteEnumValue<AndroidManagedAppSafetyNetAppsVerificationType>("requiredAndroidSafetyNetAppsVerificationType", RequiredAndroidSafetyNetAppsVerificationType);
             writer.WriteEnumValue<AndroidManagedAppSafetyNetDeviceAttestationType>("requiredAndroidSafetyNetDeviceAttestationType", RequiredAndroidSafetyNetDeviceAttestationType);
             writer.WriteEnumValue<AndroidManagedAppSafetyNetEvaluationType>("requiredAndroidSafetyNetEvaluationType", RequiredAndroidSafetyNetEvaluationType);
+            writer.WriteBoolValue("requirePinAfterBiometricChange", RequirePinAfterBiometricChange);
             writer.WriteBoolValue("screenCaptureBlocked", ScreenCaptureBlocked);
             writer.WriteBoolValue("thirdPartyKeyboardsBlocked", ThirdPartyKeyboardsBlocked);
             writer.WriteIntValue("warnAfterCompanyPortalUpdateDeferralInDays", WarnAfterCompanyPortalUpdateDeferralInDays);

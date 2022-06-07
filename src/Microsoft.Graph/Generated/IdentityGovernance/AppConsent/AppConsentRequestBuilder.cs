@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new AppConsentRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

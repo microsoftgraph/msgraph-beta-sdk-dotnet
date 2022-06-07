@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.Buckets.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new PlannerBucketItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

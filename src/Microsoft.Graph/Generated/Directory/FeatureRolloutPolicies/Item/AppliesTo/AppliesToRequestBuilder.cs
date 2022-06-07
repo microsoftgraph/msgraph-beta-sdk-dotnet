@@ -71,6 +71,7 @@ namespace Microsoft.Graph.Beta.Directory.FeatureRolloutPolicies.Item.AppliesTo {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new AppliesToRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -92,6 +93,7 @@ namespace Microsoft.Graph.Beta.Directory.FeatureRolloutPolicies.Item.AppliesTo {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new AppliesToRequestBuilderPostRequestConfiguration();

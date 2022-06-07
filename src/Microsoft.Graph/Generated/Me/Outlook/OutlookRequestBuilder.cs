@@ -95,6 +95,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new OutlookRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

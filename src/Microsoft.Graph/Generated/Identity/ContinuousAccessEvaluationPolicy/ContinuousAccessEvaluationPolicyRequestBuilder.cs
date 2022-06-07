@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Identity.ContinuousAccessEvaluationPolicy {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ContinuousAccessEvaluationPolicyRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

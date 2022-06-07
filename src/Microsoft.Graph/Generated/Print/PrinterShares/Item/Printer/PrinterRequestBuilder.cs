@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.Printer {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new PrinterRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

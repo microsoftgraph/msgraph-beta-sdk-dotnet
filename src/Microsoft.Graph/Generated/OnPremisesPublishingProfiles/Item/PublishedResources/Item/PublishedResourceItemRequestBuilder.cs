@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResour
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new PublishedResourceItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

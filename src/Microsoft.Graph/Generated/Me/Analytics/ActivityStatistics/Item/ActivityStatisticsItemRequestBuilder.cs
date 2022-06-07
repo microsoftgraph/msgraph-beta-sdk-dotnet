@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Me.Analytics.ActivityStatistics.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ActivityStatisticsItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

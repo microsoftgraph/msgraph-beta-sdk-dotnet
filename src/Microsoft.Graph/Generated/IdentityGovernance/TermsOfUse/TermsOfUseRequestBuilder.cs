@@ -82,6 +82,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new TermsOfUseRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

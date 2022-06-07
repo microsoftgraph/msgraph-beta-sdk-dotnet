@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.TransitiveMemberOf.Item.U
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ReprocessLicenseAssignmentRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

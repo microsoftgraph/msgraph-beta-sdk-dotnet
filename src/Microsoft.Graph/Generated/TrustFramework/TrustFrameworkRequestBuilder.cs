@@ -64,6 +64,7 @@ namespace Microsoft.Graph.Beta.TrustFramework {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new TrustFrameworkRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

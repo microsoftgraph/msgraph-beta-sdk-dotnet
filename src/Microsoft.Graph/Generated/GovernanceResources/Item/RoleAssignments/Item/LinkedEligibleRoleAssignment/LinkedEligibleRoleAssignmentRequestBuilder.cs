@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Item.Lin
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new LinkedEligibleRoleAssignmentRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

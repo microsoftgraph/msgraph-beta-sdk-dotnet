@@ -59,6 +59,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Owners.Group {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GroupRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

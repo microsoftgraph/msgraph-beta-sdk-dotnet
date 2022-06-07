@@ -6,37 +6,37 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provides operations to manage the roleManagement singleton.</summary>
     public class UnifiedRoleAssignmentScheduleInstance : UnifiedRoleScheduleInstanceBase, IParsable {
-        /// <summary>If the roleAssignmentScheduleInstance is activated by a roleEligibilityScheduleRequest, this is the link to the related schedule instance.</summary>
+        /// <summary>If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.</summary>
         public UnifiedRoleEligibilityScheduleInstance ActivatedUsing {
             get { return BackingStore?.Get<UnifiedRoleEligibilityScheduleInstance>(nameof(ActivatedUsing)); }
             set { BackingStore?.Set(nameof(ActivatedUsing), value); }
         }
-        /// <summary>Type of the assignment. It can either be Assigned or Activated.</summary>
+        /// <summary>Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).</summary>
         public string AssignmentType {
             get { return BackingStore?.Get<string>(nameof(AssignmentType)); }
             set { BackingStore?.Set(nameof(AssignmentType), value); }
         }
-        /// <summary>Time that the roleAssignmentInstance will expire</summary>
+        /// <summary>The end date of the schedule instance.</summary>
         public DateTimeOffset? EndDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
             set { BackingStore?.Set(nameof(EndDateTime), value); }
         }
-        /// <summary>Membership type of the assignment. It can either be Inherited, Direct, or Group.</summary>
+        /// <summary>How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).</summary>
         public string MemberType {
             get { return BackingStore?.Get<string>(nameof(MemberType)); }
             set { BackingStore?.Set(nameof(MemberType), value); }
         }
-        /// <summary>ID of the roleAssignment in the directory</summary>
+        /// <summary>The identifier of the role assignment in Azure AD.</summary>
         public string RoleAssignmentOriginId {
             get { return BackingStore?.Get<string>(nameof(RoleAssignmentOriginId)); }
             set { BackingStore?.Set(nameof(RoleAssignmentOriginId), value); }
         }
-        /// <summary>ID of the parent roleAssignmentSchedule for this instance</summary>
+        /// <summary>The identifier of the unifiedRoleAssignmentSchedule object from which this instance was created.</summary>
         public string RoleAssignmentScheduleId {
             get { return BackingStore?.Get<string>(nameof(RoleAssignmentScheduleId)); }
             set { BackingStore?.Set(nameof(RoleAssignmentScheduleId), value); }
         }
-        /// <summary>Time that the roleAssignmentInstance will start</summary>
+        /// <summary>When this instance starts.</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
             set { BackingStore?.Set(nameof(StartDateTime), value); }

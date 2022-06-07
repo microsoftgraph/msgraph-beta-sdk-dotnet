@@ -98,6 +98,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Sections.Item.Pages.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new OnenotePageItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

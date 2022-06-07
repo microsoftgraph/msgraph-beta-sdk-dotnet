@@ -11,19 +11,19 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
             set { BackingStore?.Set(nameof(AdditionalData), value); }
         }
-        /// <summary>The Identity of the Application. This property is read-only.</summary>
+        /// <summary>Optional. The application associated with this action.</summary>
         public Identity Application {
             get { return BackingStore?.Get<Identity>(nameof(Application)); }
             set { BackingStore?.Set(nameof(Application), value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The Identity of the Device. This property is read-only.</summary>
+        /// <summary>Optional. The device associated with this action.</summary>
         public Identity Device {
             get { return BackingStore?.Get<Identity>(nameof(Device)); }
             set { BackingStore?.Set(nameof(Device), value); }
         }
-        /// <summary>The Identity of the User. This property is read-only.</summary>
+        /// <summary>Optional. The user associated with this action.</summary>
         public Identity User {
             get { return BackingStore?.Get<Identity>(nameof(User)); }
             set { BackingStore?.Set(nameof(User), value); }

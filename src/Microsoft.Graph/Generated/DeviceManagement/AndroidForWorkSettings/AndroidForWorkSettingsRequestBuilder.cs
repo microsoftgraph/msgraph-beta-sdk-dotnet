@@ -92,6 +92,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new AndroidForWorkSettingsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

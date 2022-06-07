@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Oauth2PermissionGrants.Ite
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new OAuth2PermissionGrantItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

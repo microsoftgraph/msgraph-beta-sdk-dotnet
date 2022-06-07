@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Services.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new BookingServiceItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

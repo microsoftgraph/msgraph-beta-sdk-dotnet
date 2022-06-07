@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new WindowsDriverUpdateInventoryItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

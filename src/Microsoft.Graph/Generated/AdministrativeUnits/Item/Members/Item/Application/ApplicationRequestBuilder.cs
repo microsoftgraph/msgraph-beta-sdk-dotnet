@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item.Members.Item.Application
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ApplicationRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

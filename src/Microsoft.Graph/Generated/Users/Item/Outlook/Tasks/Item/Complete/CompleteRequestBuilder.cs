@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.Tasks.Item.Complete {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new CompleteRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

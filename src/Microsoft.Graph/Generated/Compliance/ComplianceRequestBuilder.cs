@@ -59,6 +59,7 @@ namespace Microsoft.Graph.Beta.Compliance {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ComplianceRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

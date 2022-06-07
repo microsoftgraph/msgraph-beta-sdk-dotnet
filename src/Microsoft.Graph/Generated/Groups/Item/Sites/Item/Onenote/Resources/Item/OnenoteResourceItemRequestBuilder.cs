@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Resources.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new OnenoteResourceItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

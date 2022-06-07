@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Security.SecureScores.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new SecureScoreItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

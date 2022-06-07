@@ -26,6 +26,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DeviceManagementDerivedCredentialNotificationType?>(nameof(NotificationType)); }
             set { BackingStore?.Set(nameof(NotificationType), value); }
         }
+        /// <summary>The nominal percentage of time before certificate renewal is initiated by the client.</summary>
+        public int? RenewalThresholdPercentage {
+            get { return BackingStore?.Get<int?>(nameof(RenewalThresholdPercentage)); }
+            set { BackingStore?.Set(nameof(RenewalThresholdPercentage), value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -43,6 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"helpUrl", n => { HelpUrl = n.GetStringValue(); } },
                 {"issuer", n => { Issuer = n.GetEnumValue<DeviceManagementDerivedCredentialIssuer>(); } },
                 {"notificationType", n => { NotificationType = n.GetEnumValue<DeviceManagementDerivedCredentialNotificationType>(); } },
+                {"renewalThresholdPercentage", n => { RenewalThresholdPercentage = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -56,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("helpUrl", HelpUrl);
             writer.WriteEnumValue<DeviceManagementDerivedCredentialIssuer>("issuer", Issuer);
             writer.WriteEnumValue<DeviceManagementDerivedCredentialNotificationType>("notificationType", NotificationType);
+            writer.WriteIntValue("renewalThresholdPercentage", RenewalThresholdPercentage);
         }
     }
 }

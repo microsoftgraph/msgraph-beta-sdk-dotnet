@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Me.Security.InformationProtection.LabelPolicySett
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new LabelPolicySettingsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

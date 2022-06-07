@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.Ite
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new AgedAccountsPayableItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

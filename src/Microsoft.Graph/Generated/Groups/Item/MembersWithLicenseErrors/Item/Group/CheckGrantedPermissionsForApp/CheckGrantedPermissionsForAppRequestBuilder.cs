@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.MembersWithLicenseErrors.Item.Group.C
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new CheckGrantedPermissionsForAppRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

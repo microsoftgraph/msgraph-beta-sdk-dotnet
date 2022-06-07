@@ -57,6 +57,7 @@ namespace Microsoft.Graph.Beta.Me.TransitiveMemberOf.Item.User.ExportDeviceAndAp
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

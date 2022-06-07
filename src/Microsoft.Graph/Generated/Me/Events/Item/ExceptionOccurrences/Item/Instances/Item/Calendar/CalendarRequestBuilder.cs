@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.ExceptionOccurrences.Item.Instance
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new CalendarRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

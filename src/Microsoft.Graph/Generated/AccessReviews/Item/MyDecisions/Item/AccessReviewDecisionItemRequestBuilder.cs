@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.MyDecisions.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new AccessReviewDecisionItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item.GetScope
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GetScopesForUserWithUseridRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

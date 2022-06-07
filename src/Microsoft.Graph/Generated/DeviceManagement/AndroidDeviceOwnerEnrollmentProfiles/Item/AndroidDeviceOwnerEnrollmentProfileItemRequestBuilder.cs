@@ -82,6 +82,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidDeviceOwnerEnrollmentProf
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new AndroidDeviceOwnerEnrollmentProfileItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

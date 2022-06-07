@@ -112,6 +112,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new EducationClassItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

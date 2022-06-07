@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The hideAccountResetCredentials property</summary>
+        /// <summary>Option to hide the self-service password reset (SSPR) hyperlinks such as &apos;Can&apos;t access your account?&apos;, &apos;Forgot my password&apos; and &apos;Reset it now&apos; on the sign-in form.</summary>
         public bool? HideAccountResetCredentials {
             get { return BackingStore?.Get<bool?>(nameof(HideAccountResetCredentials)); }
             set { BackingStore?.Set(nameof(HideAccountResetCredentials), value); }

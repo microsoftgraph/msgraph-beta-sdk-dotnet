@@ -69,6 +69,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new TenantRelationshipsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

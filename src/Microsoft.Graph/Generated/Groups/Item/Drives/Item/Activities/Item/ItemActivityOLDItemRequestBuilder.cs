@@ -82,6 +82,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Activities.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ItemActivityOLDItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -66,6 +66,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitionFiles.Item.
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DefinitionsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

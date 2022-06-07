@@ -82,6 +82,7 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new TodoTaskListItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

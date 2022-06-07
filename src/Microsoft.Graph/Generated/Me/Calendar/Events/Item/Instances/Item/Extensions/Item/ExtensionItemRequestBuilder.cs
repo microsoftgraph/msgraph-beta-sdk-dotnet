@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Me.Calendar.Events.Item.Instances.Item.Extensions
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ExtensionItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

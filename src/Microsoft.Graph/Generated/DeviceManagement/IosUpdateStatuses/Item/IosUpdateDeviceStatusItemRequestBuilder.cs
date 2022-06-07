@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.IosUpdateStatuses.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new IosUpdateDeviceStatusItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -97,6 +97,7 @@ namespace Microsoft.Graph.Beta.PermissionGrants.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ResourceSpecificPermissionGrantItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

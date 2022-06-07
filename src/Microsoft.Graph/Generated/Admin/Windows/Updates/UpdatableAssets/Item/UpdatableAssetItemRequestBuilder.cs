@@ -92,6 +92,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new UpdatableAssetItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -167,6 +167,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new CallItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

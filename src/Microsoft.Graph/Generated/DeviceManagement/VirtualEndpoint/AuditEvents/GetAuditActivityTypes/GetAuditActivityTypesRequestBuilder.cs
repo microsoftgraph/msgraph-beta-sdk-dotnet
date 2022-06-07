@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents.GetA
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GetAuditActivityTypesRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

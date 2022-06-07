@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.I
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new FilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

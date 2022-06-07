@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DeploymentItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

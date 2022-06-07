@@ -132,6 +132,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item.Instances.Item.ExceptionOc
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new EventItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

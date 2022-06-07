@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Configuration {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ConfigurationRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TenantAttachRBAC.GetState {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GetStateRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

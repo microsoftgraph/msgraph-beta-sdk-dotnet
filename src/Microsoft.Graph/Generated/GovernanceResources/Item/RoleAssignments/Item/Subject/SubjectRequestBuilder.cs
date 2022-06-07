@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Item.Sub
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new SubjectRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

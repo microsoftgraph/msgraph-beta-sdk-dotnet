@@ -122,6 +122,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new EdiscoveryCaseItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetEffectivePermissions {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GetEffectivePermissionsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

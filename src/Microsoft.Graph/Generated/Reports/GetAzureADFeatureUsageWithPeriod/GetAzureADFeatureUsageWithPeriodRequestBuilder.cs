@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.Reports.GetAzureADFeatureUsageWithPeriod {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GetAzureADFeatureUsageWithPeriodRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

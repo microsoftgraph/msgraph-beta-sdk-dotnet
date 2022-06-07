@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.AreGlobalScr
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new AreGlobalScriptsAvailableRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

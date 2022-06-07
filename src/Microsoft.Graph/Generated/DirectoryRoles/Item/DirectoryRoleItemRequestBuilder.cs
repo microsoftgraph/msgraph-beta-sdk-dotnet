@@ -107,6 +107,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoles.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DirectoryRoleItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Account.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new UserAccountInformationItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

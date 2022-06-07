@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.Items.Item.ListItem.Analytics {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new AnalyticsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

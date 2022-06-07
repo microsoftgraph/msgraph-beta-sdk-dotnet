@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods.UsersRegisteredByMe
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new UsersRegisteredByMethodRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

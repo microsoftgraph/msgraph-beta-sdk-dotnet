@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.List.ContentTypes.Item.ColumnLinks
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ColumnLinkItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

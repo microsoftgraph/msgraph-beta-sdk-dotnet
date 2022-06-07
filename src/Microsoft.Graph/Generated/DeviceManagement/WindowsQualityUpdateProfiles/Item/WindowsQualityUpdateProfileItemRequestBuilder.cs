@@ -82,6 +82,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdateProfiles.Ite
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new WindowsQualityUpdateProfileItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

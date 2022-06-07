@@ -56,6 +56,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.GetTopMobileAppsWi
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GetTopMobileAppsWithStatusWithCountRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

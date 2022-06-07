@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Print.Connectors.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new PrintConnectorItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

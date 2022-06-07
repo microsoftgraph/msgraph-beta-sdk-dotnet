@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.FilterByCurrentUs
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new FilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

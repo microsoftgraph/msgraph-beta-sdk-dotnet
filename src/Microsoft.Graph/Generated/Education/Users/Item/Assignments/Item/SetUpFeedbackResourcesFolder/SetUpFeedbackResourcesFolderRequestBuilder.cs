@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.SetUpFeedba
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new SetUpFeedbackResourcesFolderRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

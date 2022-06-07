@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Sections.Item.Page
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ParentNotebookRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

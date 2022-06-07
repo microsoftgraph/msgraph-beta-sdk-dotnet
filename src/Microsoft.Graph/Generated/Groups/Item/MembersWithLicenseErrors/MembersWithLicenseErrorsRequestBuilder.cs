@@ -96,6 +96,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.MembersWithLicenseErrors {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new MembersWithLicenseErrorsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

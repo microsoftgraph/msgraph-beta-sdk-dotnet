@@ -78,6 +78,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TenantAttachRBAC {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new TenantAttachRBACRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

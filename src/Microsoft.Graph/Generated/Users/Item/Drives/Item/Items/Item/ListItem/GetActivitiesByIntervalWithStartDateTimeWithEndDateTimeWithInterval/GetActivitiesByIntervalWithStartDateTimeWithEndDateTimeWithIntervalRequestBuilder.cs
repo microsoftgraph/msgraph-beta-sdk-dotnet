@@ -58,6 +58,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.Items.Item.ListItem.GetAct
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

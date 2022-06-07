@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.TermStore.Sets.Item.Children.Item.Children.Item.S
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new SetRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

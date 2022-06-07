@@ -87,6 +87,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DeviceManagementRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

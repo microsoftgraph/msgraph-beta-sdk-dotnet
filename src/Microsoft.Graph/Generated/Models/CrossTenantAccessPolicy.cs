@@ -6,6 +6,11 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class CrossTenantAccessPolicy : TenantRelationshipAccessPolicyBase, IParsable {
+        /// <summary>Used to specify which Microsoft clouds an organization would like to collaborate with. By default, this value is empty. Supported values for this field are: microsoftonline.com, microsoftonline.us, and partner.microsoftonline.cn.</summary>
+        public List<string> AllowedCloudEndpoints {
+            get { return BackingStore?.Get<List<string>>(nameof(AllowedCloudEndpoints)); }
+            set { BackingStore?.Set(nameof(AllowedCloudEndpoints), value); }
+        }
         /// <summary>Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.</summary>
         public CrossTenantAccessPolicyConfigurationDefault Default {
             get { return BackingStore?.Get<CrossTenantAccessPolicyConfigurationDefault>(nameof(Default)); }
@@ -29,6 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"allowedCloudEndpoints", n => { AllowedCloudEndpoints = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"default", n => { Default = n.GetObjectValue<CrossTenantAccessPolicyConfigurationDefault>(CrossTenantAccessPolicyConfigurationDefault.CreateFromDiscriminatorValue); } },
                 {"partners", n => { Partners = n.GetCollectionOfObjectValues<CrossTenantAccessPolicyConfigurationPartner>(CrossTenantAccessPolicyConfigurationPartner.CreateFromDiscriminatorValue).ToList(); } },
             };
@@ -40,6 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfPrimitiveValues<string>("allowedCloudEndpoints", AllowedCloudEndpoints);
             writer.WriteObjectValue<CrossTenantAccessPolicyConfigurationDefault>("default", Default);
             writer.WriteCollectionOfObjectValues<CrossTenantAccessPolicyConfigurationPartner>("partners", Partners);
         }

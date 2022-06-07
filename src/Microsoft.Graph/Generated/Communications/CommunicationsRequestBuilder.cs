@@ -79,6 +79,7 @@ namespace Microsoft.Graph.Beta.Communications {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new CommunicationsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

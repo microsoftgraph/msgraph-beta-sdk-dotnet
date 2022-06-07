@@ -82,6 +82,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new CrossTenantAccessPolicyRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

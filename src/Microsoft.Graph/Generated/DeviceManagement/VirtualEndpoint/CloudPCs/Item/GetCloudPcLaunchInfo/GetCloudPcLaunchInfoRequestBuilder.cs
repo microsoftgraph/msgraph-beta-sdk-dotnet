@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Ge
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GetCloudPcLaunchInfoRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

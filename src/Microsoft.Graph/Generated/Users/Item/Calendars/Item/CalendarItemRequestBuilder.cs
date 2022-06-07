@@ -111,6 +111,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new CalendarItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

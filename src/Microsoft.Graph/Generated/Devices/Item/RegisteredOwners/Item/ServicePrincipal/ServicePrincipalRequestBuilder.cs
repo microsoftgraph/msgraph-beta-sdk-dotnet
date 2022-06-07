@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.Devices.Item.RegisteredOwners.Item.ServicePrincip
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ServicePrincipalRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

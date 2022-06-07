@@ -6,22 +6,22 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provides operations to manage the roleManagement singleton.</summary>
     public class UnifiedRoleAssignmentSchedule : UnifiedRoleScheduleBase, IParsable {
-        /// <summary>If the roleAssignmentSchedule is activated by a roleEligibilitySchedule, this is the link to that schedule.</summary>
+        /// <summary>If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.</summary>
         public UnifiedRoleEligibilitySchedule ActivatedUsing {
             get { return BackingStore?.Get<UnifiedRoleEligibilitySchedule>(nameof(ActivatedUsing)); }
             set { BackingStore?.Set(nameof(ActivatedUsing), value); }
         }
-        /// <summary>Type of the assignment. It can either be Assigned or Activated.</summary>
+        /// <summary>Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).</summary>
         public string AssignmentType {
             get { return BackingStore?.Get<string>(nameof(AssignmentType)); }
             set { BackingStore?.Set(nameof(AssignmentType), value); }
         }
-        /// <summary>Membership type of the assignment. It can either be Inherited, Direct, or Group.</summary>
+        /// <summary>How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).</summary>
         public string MemberType {
             get { return BackingStore?.Get<string>(nameof(MemberType)); }
             set { BackingStore?.Set(nameof(MemberType), value); }
         }
-        /// <summary>The schedule object of the role assignment request.</summary>
+        /// <summary>The period of the role assignment. It can represent a single occurrence or multiple recurrences.</summary>
         public RequestSchedule ScheduleInfo {
             get { return BackingStore?.Get<RequestSchedule>(nameof(ScheduleInfo)); }
             set { BackingStore?.Set(nameof(ScheduleInfo), value); }

@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Me.Devices.Item.MemberOf.Item.User.GetManagedAppP
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GetManagedAppPoliciesRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

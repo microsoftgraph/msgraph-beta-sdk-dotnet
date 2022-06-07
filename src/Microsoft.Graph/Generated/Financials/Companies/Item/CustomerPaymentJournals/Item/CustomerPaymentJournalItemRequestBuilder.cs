@@ -82,6 +82,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new CustomerPaymentJournalItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -92,6 +92,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ChatMessageItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -82,6 +82,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.Children.Item.Chil
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new TermItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

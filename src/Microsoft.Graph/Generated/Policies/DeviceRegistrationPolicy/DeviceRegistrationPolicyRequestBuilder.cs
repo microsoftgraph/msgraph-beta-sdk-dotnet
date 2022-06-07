@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Policies.DeviceRegistrationPolicy {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DeviceRegistrationPolicyRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

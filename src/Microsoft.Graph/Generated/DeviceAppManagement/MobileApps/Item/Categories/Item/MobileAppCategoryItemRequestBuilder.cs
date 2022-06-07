@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Categories.It
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new MobileAppCategoryItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

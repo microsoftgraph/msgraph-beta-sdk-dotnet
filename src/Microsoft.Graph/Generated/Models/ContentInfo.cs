@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>(nameof(Identifier)); }
             set { BackingStore?.Set(nameof(Identifier), value); }
         }
-        /// <summary>Existing Microsoft Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.</summary>
+        /// <summary>Existing Microsoft Purview Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.</summary>
         public List<KeyValuePair> Metadata {
             get { return BackingStore?.Get<List<KeyValuePair>>(nameof(Metadata)); }
             set { BackingStore?.Set(nameof(Metadata), value); }

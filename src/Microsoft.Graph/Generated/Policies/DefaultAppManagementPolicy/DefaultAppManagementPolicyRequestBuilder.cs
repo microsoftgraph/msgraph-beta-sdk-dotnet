@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Policies.DefaultAppManagementPolicy {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DefaultAppManagementPolicyRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

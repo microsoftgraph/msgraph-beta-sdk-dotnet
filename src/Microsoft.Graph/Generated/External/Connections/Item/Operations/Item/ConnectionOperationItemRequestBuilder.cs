@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Operations.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ConnectionOperationItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

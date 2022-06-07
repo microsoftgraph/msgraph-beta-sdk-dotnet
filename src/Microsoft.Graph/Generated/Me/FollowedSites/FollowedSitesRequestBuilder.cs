@@ -66,6 +66,7 @@ namespace Microsoft.Graph.Beta.Me.FollowedSites {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new FollowedSitesRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

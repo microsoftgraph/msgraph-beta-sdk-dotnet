@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Anniversaries.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new PersonAnnualEventItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

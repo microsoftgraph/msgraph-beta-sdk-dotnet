@@ -107,6 +107,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new UserExperienceAnalyticsBaselineItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

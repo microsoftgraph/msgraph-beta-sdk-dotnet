@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.Me.Tasks.Lists.Item.Tasks.Item.ParentList {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ParentListRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

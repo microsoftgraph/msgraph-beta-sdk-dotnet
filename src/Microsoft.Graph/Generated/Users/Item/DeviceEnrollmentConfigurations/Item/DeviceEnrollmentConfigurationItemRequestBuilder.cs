@@ -2,7 +2,6 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.Item.Assign;
 using Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.Item.Assignments;
-using Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.Item.CreateEnrollmentNotificationConfiguration;
 using Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.Item.SetPriority;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -22,10 +21,6 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.Item {
         /// <summary>The assignments property</summary>
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The createEnrollmentNotificationConfiguration property</summary>
-        public CreateEnrollmentNotificationConfigurationRequestBuilder CreateEnrollmentNotificationConfiguration { get =>
-            new CreateEnrollmentNotificationConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -92,6 +87,7 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DeviceEnrollmentConfigurationItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

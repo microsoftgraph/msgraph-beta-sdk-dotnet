@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.FederationConfiguration.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new InternalDomainFederationItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

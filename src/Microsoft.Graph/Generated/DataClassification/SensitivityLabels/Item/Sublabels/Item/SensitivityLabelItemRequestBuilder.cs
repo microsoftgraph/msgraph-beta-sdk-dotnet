@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.DataClassification.SensitivityLabels.Item.Sublabe
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new SensitivityLabelItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the commsApplication singleton.</summary>
+    /// <summary>Casts the previous resource to group.</summary>
     public class MeetingRegistrationBase : Entity, IParsable {
         /// <summary>Specifies who can register for the meeting.</summary>
         public MeetingAudience? AllowedRegistrant {

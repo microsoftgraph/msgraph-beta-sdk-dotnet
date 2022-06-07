@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Me.TransitiveMemberOf.Item.User.GetEffectiveDevic
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GetEffectiveDeviceEnrollmentConfigurationsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

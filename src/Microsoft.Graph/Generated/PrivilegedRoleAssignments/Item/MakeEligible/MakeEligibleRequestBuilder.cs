@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakeEligible {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new MakeEligibleRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

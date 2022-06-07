@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.FilterOperators.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new FilterOperatorSchemaItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

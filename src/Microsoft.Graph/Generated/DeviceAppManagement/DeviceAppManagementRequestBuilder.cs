@@ -23,6 +23,7 @@ using Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies;
 using Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionDeviceRegistrations;
 using Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionPolicies;
 using Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionWipeActions;
+using Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagedAppProtections;
 using Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagementApp;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -143,6 +144,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement {
         public WindowsInformationProtectionWipeActionsRequestBuilder WindowsInformationProtectionWipeActions { get =>
             new WindowsInformationProtectionWipeActionsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The windowsManagedAppProtections property</summary>
+        public WindowsManagedAppProtectionsRequestBuilder WindowsManagedAppProtections { get =>
+            new WindowsManagedAppProtectionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The windowsManagementApp property</summary>
         public WindowsManagementAppRequestBuilder WindowsManagementApp { get =>
             new WindowsManagementAppRequestBuilder(PathParameters, RequestAdapter);
@@ -184,6 +189,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DeviceAppManagementRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

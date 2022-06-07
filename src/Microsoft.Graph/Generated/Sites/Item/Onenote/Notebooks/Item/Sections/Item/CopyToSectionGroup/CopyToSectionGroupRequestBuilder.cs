@@ -55,6 +55,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item.Sections.Item.C
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new CopyToSectionGroupRequestBuilderPostRequestConfiguration();

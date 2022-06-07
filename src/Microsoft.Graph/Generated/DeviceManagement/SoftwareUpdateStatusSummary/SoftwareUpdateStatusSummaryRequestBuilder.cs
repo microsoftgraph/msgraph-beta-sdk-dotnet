@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.SoftwareUpdateStatusSummary {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new SoftwareUpdateStatusSummaryRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

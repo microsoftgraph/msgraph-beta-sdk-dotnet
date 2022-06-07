@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentFailureTrends {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ManagedDeviceEnrollmentFailureTrendsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.Me.MobileAppTroubleshootingEvents.Item.AppLogColl
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new CreateDownloadUrlRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -103,6 +103,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DeviceHealthScriptItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

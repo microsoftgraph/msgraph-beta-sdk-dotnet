@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new CatalogRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

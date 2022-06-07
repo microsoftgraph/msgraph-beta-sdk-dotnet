@@ -56,6 +56,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.GetPstnCallsWithFromDa
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GetPstnCallsWithFromDateTimeWithToDateTimeRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

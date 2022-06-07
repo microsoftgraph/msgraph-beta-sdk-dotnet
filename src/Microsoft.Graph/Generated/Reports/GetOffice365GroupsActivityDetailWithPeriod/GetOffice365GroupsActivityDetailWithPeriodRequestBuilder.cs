@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityDetailWithPerio
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GetOffice365GroupsActivityDetailWithPeriodRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

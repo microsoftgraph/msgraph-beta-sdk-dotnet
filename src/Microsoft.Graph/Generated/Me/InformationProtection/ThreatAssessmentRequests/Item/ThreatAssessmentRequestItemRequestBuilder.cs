@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.ThreatAssessmentRequests
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ThreatAssessmentRequestItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

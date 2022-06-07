@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.AttendanceReports.
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new MeetingAttendanceReportItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
