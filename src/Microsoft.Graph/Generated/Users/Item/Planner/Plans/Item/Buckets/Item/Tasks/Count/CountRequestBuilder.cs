@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.Buckets.Item.Tasks.
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "text/plain");
             if (requestConfiguration != null) {
                 var requestConfig = new CountRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

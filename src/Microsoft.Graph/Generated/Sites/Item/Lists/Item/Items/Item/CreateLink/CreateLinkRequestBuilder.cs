@@ -55,6 +55,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.CreateLink {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new CreateLinkRequestBuilderPostRequestConfiguration();

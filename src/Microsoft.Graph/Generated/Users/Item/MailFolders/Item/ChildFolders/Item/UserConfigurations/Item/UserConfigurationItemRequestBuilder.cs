@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Use
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new UserConfigurationItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleAssignmentScheduleRe
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.
+        /// The principal that&apos;s getting a role assignment through the request. Supports $expand.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<PrincipalRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleAssignmentScheduleRe
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new PrincipalRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -64,7 +65,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleAssignmentScheduleRe
             return requestInfo;
         }
         /// <summary>
-        /// Property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.
+        /// The principal that&apos;s getting a role assignment through the request. Supports $expand.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -77,7 +78,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleAssignmentScheduleRe
             };
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.</summary>
+        /// <summary>The principal that&apos;s getting a role assignment through the request. Supports $expand.</summary>
         public class PrincipalRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

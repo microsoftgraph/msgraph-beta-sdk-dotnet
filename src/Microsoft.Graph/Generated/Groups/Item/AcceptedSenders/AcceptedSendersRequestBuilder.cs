@@ -71,6 +71,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.AcceptedSenders {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new AcceptedSendersRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

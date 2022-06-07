@@ -11,6 +11,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<double?>(nameof(AppReliabilityScore)); }
             set { BackingStore?.Set(nameof(AppReliabilityScore), value); }
         }
+        /// <summary>The user experience analytics device battery health score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
+        public double? BatteryHealthScore {
+            get { return BackingStore?.Get<double?>(nameof(BatteryHealthScore)); }
+            set { BackingStore?.Set(nameof(BatteryHealthScore), value); }
+        }
         /// <summary>The user experience analytics device name.</summary>
         public string DeviceName {
             get { return BackingStore?.Get<string>(nameof(DeviceName)); }
@@ -60,6 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"appReliabilityScore", n => { AppReliabilityScore = n.GetDoubleValue(); } },
+                {"batteryHealthScore", n => { BatteryHealthScore = n.GetDoubleValue(); } },
                 {"deviceName", n => { DeviceName = n.GetStringValue(); } },
                 {"endpointAnalyticsScore", n => { EndpointAnalyticsScore = n.GetDoubleValue(); } },
                 {"healthStatus", n => { HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
@@ -77,6 +83,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDoubleValue("appReliabilityScore", AppReliabilityScore);
+            writer.WriteDoubleValue("batteryHealthScore", BatteryHealthScore);
             writer.WriteStringValue("deviceName", DeviceName);
             writer.WriteDoubleValue("endpointAnalyticsScore", EndpointAnalyticsScore);
             writer.WriteEnumValue<UserExperienceAnalyticsHealthState>("healthStatus", HealthStatus);

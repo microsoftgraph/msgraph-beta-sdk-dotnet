@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleAssignments.Item.Dir
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DirectoryScopeRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

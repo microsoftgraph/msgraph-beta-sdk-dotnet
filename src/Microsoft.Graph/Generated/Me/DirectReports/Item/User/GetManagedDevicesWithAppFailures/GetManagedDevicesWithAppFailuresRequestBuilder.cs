@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Me.DirectReports.Item.User.GetManagedDevicesWithA
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GetManagedDevicesWithAppFailuresRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

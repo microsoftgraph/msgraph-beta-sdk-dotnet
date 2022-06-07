@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.TaskTriggers.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new PrintTaskTriggerItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

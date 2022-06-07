@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.Bitlocker.RecoveryKeys.I
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new BitlockerRecoveryKeyItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

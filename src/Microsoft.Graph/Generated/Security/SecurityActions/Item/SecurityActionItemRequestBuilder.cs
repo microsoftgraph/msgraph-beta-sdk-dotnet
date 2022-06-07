@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new SecurityActionItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

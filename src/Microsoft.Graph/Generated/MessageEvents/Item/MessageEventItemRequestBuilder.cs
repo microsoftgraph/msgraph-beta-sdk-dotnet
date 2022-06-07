@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.MessageEvents.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new MessageEventItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

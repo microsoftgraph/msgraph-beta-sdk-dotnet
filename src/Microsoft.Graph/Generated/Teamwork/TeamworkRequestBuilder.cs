@@ -1,5 +1,6 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Teamwork.DeletedTeams;
 using Microsoft.Graph.Beta.Teamwork.Devices;
 using Microsoft.Graph.Beta.Teamwork.SendActivityNotificationToRecipients;
 using Microsoft.Graph.Beta.Teamwork.WorkforceIntegrations;
@@ -14,6 +15,10 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Teamwork {
     /// <summary>Provides operations to manage the teamwork singleton.</summary>
     public class TeamworkRequestBuilder {
+        /// <summary>The deletedTeams property</summary>
+        public DeletedTeamsRequestBuilder DeletedTeams { get =>
+            new DeletedTeamsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The devices property</summary>
         public DevicesRequestBuilder Devices { get =>
             new DevicesRequestBuilder(PathParameters, RequestAdapter);
@@ -69,6 +74,7 @@ namespace Microsoft.Graph.Beta.Teamwork {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new TeamworkRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

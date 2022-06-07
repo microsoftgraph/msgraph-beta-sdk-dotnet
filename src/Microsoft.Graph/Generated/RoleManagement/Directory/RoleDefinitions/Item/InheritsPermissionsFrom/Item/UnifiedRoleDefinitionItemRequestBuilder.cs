@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleDefinitions.Item.Inh
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new UnifiedRoleDefinitionItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

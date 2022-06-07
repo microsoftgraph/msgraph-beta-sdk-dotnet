@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Search.Bookmarks.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new BookmarkItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

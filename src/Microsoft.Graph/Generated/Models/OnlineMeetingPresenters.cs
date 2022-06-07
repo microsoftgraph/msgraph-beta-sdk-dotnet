@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the commsApplication singleton.</summary>
+    /// <summary>Casts the previous resource to group.</summary>
     public enum OnlineMeetingPresenters {
         Everyone,
         Organization,

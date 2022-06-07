@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.OfferShiftRequests.Item
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new OfferShiftRequestItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DataSharingConsents.Item.Consent
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ConsentToDataSharingRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -102,6 +102,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleEligibilityScheduleR
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new UnifiedRoleEligibilityScheduleRequestItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

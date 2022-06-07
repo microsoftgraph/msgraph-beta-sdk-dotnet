@@ -27,6 +27,7 @@ using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RebootNow;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RecoverPasscode;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.Reenable;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RemoteLock;
+using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RemoveDeviceFirmwareConfigurationInterfaceManagement;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ReprovisionCloudPc;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RequestRemoteAssistance;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ResetPasscode;
@@ -159,6 +160,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item {
         /// <summary>The remoteLock property</summary>
         public RemoteLockRequestBuilder RemoteLock { get =>
             new RemoteLockRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The removeDeviceFirmwareConfigurationInterfaceManagement property</summary>
+        public RemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilder RemoveDeviceFirmwareConfigurationInterfaceManagement { get =>
+            new RemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The reprovisionCloudPc property</summary>
         public ReprovisionCloudPcRequestBuilder ReprovisionCloudPc { get =>
@@ -307,6 +312,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ManagedDeviceItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

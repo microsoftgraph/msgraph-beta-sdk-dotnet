@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GetNonCompliantSettingsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

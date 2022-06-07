@@ -92,6 +92,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new EdiscoveryFileItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

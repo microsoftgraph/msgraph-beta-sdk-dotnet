@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new B2cAuthenticationMethodsPolicyRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -82,6 +82,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Ite
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new WindowsFeatureUpdateProfileItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -86,6 +86,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new LabelsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -107,6 +108,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new LabelsRequestBuilderPostRequestConfiguration();

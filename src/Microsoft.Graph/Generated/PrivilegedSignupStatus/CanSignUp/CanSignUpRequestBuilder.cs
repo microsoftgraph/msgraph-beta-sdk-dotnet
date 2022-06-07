@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.CanSignUp {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new CanSignUpRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

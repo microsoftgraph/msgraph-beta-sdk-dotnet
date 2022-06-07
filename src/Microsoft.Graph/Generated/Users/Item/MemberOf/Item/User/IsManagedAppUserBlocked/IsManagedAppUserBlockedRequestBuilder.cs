@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MemberOf.Item.User.IsManagedAppUserBlo
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new IsManagedAppUserBlockedRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

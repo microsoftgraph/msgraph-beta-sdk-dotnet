@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.Items.Item.Subscriptions.I
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new SubscriptionItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

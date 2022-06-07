@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.ExceptionOc
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new CalendarRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

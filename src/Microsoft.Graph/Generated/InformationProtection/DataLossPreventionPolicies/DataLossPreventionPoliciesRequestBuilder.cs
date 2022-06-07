@@ -71,6 +71,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.DataLossPreventionPolicies 
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DataLossPreventionPoliciesRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -92,6 +93,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.DataLossPreventionPolicies 
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new DataLossPreventionPoliciesRequestBuilderPostRequestConfiguration();

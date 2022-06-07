@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Chats.AllMessages {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new AllMessagesRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

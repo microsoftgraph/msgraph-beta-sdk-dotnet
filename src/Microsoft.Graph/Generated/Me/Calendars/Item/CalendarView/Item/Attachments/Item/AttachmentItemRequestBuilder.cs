@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Me.Calendars.Item.CalendarView.Item.Attachments.I
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new AttachmentItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.GetCompatible
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GetCompatibleHubContentTypesRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Me.Devices.Item.MemberOf.Item.User.InvalidateAllR
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new InvalidateAllRefreshTokensRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

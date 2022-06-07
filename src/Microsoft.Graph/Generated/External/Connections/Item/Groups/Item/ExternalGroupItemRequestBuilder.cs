@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Groups.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ExternalGroupItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

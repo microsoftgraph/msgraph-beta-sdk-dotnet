@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.PeopleInsights {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new PeopleInsightsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

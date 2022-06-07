@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Currencies.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new CurrencyItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

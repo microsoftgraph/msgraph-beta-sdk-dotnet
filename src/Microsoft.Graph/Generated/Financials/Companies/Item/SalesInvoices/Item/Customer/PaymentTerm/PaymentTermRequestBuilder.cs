@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.Cust
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new PaymentTermRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

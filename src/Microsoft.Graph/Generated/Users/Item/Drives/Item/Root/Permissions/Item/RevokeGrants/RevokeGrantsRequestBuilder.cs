@@ -55,6 +55,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.Root.Permissions.Item.Revo
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new RevokeGrantsRequestBuilderPostRequestConfiguration();

@@ -66,6 +66,7 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.Special {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new SpecialRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

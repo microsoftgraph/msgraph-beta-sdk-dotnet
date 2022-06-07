@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceManagementPartners.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DeviceManagementPartnerItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

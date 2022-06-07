@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TelecomExpenseManagementPartners
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new TelecomExpenseManagementPartnerItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

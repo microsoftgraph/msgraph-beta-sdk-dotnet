@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Resources.I
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new EducationAssignmentResourceItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

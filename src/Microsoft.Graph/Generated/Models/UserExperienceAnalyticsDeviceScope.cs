@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
             set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
         }
-        /// <summary>Device scope configuration query operator. Possible values are: equals, notEquals, contains, notContains, greaterThan, lessThan. Default value: equals.</summary>
+        /// <summary>Device scope configuration query operator. Possible values are: equals, notEquals, contains, notContains, greaterThan, lessThan. Default value: equals. Possible values are: none, equals, unknownFutureValue.</summary>
         public DeviceScopeOperator? Operator {
             get { return BackingStore?.Get<DeviceScopeOperator?>(nameof(Operator)); }
             set { BackingStore?.Set(nameof(Operator), value); }
@@ -41,12 +41,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>(nameof(OwnerId)); }
             set { BackingStore?.Set(nameof(OwnerId), value); }
         }
-        /// <summary>Device scope configuration parameter. It will be extended in future to add more parameter. Eg: device scope parameter can be OS version, Disk Type, Device manufacturer, device model or Scope tag. Default value: scopeTag.</summary>
+        /// <summary>Device scope configuration parameter. It will be extended in future to add more parameter. Eg: device scope parameter can be OS version, Disk Type, Device manufacturer, device model or Scope tag. Default value: scopeTag. Possible values are: none, scopeTag, unknownFutureValue.</summary>
         public DeviceScopeParameter? Parameter {
             get { return BackingStore?.Get<DeviceScopeParameter?>(nameof(Parameter)); }
             set { BackingStore?.Set(nameof(Parameter), value); }
         }
-        /// <summary>Indicates the device scope status after the device scope has been enabled. Possible values are: none, computing, insufficientData or completed. Default value is none.</summary>
+        /// <summary>Indicates the device scope status after the device scope has been enabled. Possible values are: none, computing, insufficientData or completed. Default value is none. Possible values are: none, computing, insufficientData, completed, unknownFutureValue.</summary>
         public DeviceScopeStatus? Status {
             get { return BackingStore?.Get<DeviceScopeStatus?>(nameof(Status)); }
             set { BackingStore?.Set(nameof(Status), value); }

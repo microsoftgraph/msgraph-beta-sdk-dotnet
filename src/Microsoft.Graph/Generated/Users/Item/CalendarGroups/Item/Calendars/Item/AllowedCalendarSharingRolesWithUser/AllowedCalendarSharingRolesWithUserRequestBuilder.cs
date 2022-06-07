@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.All
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new AllowedCalendarSharingRolesWithUserRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

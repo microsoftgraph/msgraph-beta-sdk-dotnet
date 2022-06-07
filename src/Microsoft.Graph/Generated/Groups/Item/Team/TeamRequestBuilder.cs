@@ -142,6 +142,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new TeamRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

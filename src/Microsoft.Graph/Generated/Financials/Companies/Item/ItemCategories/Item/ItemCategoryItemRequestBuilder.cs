@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.ItemCategories.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ItemCategoryItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

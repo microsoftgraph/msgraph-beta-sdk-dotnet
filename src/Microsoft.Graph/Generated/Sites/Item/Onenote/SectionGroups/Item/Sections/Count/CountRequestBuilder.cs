@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.SectionGroups.Item.Sections.Co
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "text/plain");
             if (requestConfiguration != null) {
                 var requestConfig = new CountRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

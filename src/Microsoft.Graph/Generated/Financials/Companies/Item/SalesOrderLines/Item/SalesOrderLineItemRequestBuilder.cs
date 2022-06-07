@@ -82,6 +82,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrderLines.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new SalesOrderLineItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

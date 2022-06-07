@@ -59,6 +59,7 @@ namespace Microsoft.Graph.Beta.Me.Manager {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ManagerRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

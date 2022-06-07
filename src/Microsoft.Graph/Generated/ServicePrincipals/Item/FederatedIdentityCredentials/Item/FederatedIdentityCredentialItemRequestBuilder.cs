@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.FederatedIdentityCredentia
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new FederatedIdentityCredentialItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

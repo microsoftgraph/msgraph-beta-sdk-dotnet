@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
             set { BackingStore?.Set(nameof(AdditionalData), value); }
         }
-        /// <summary>One of NoApproval, SingleStage or Serial. The NoApproval is used when isApprovalRequired is false.</summary>
+        /// <summary>One of SingleStage, Serial, Parallel, NoApproval (default). NoApproval is used when isApprovalRequired is false.</summary>
         public string ApprovalMode {
             get { return BackingStore?.Get<string>(nameof(ApprovalMode)); }
             set { BackingStore?.Set(nameof(ApprovalMode), value); }
@@ -23,12 +23,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>If false, then approval is not required for requests in this policy.</summary>
+        /// <summary>Indicates whether approval is required for requests in this policy.</summary>
         public bool? IsApprovalRequired {
             get { return BackingStore?.Get<bool?>(nameof(IsApprovalRequired)); }
             set { BackingStore?.Set(nameof(IsApprovalRequired), value); }
         }
-        /// <summary>If false, then approval is not required for a user who already has an assignment to extend their assignment.</summary>
+        /// <summary>Indicates whether approval is required for a user to extend their assignment.</summary>
         public bool? IsApprovalRequiredForExtension {
             get { return BackingStore?.Get<bool?>(nameof(IsApprovalRequiredForExtension)); }
             set { BackingStore?.Set(nameof(IsApprovalRequiredForExtension), value); }

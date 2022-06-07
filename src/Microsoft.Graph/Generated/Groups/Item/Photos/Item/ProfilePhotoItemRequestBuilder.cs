@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Photos.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ProfilePhotoItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

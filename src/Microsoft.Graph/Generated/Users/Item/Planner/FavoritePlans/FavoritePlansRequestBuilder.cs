@@ -66,6 +66,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.FavoritePlans {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new FavoritePlansRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

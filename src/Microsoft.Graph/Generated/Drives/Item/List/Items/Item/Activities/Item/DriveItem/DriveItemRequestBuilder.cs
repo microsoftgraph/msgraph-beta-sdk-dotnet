@@ -59,6 +59,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.Items.Item.Activities.Item.Drive
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DriveItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

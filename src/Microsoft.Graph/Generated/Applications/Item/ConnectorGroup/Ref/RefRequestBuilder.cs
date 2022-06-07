@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.ConnectorGroup.Ref {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new RefRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

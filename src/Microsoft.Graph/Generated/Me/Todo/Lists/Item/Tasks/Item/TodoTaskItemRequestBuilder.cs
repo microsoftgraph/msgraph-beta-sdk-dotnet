@@ -1,3 +1,5 @@
+using Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item.Attachments;
+using Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item.AttachmentSessions;
 using Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item.ChecklistItems;
 using Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item.Extensions;
 using Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item.LinkedResources;
@@ -14,6 +16,14 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item {
     /// <summary>Provides operations to manage the tasks property of the microsoft.graph.todoTaskList entity.</summary>
     public class TodoTaskItemRequestBuilder {
+        /// <summary>The attachments property</summary>
+        public AttachmentsRequestBuilder Attachments { get =>
+            new AttachmentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The attachmentSessions property</summary>
+        public AttachmentSessionsRequestBuilder AttachmentSessions { get =>
+            new AttachmentSessionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The checklistItems property</summary>
         public ChecklistItemsRequestBuilder ChecklistItems { get =>
             new ChecklistItemsRequestBuilder(PathParameters, RequestAdapter);
@@ -87,6 +97,7 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new TodoTaskItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

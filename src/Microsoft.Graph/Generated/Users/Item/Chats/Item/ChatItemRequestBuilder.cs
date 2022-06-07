@@ -112,6 +112,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ChatItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

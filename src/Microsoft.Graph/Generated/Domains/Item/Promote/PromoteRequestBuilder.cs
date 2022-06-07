@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.Promote {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new PromoteRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

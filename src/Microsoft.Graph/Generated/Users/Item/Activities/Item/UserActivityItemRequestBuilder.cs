@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Activities.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new UserActivityItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

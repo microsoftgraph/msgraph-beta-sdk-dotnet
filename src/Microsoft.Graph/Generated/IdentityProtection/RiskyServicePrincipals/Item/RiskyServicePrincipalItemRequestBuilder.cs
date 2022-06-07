@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new RiskyServicePrincipalItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

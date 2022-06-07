@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.ServicePrincipalRiskDetections
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ServicePrincipalRiskDetectionItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

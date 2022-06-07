@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.InstalledApps.Item.TeamsAppDefinition 
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new TeamsAppDefinitionRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleAssignmentScheduleIn
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new UnifiedRoleAssignmentScheduleInstanceItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

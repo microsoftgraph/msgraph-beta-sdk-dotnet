@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleSchedulesWithDirecto
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

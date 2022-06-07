@@ -54,6 +54,7 @@ using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlert
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlertSummaryReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertsPerPolicyPerDeviceReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertSummaryReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetZebraFotaDeploymentReport;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -291,6 +292,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports {
         public GetWindowsUpdateAlertSummaryReportRequestBuilder GetWindowsUpdateAlertSummaryReport { get =>
             new GetWindowsUpdateAlertSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The getZebraFotaDeploymentReport property</summary>
+        public GetZebraFotaDeploymentReportRequestBuilder GetZebraFotaDeploymentReport { get =>
+            new GetZebraFotaDeploymentReportRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -352,6 +357,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ReportsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

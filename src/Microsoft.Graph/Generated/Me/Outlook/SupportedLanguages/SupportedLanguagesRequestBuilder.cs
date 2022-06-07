@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.SupportedLanguages {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new SupportedLanguagesRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

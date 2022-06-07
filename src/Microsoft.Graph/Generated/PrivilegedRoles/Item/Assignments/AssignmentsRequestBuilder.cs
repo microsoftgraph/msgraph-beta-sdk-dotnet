@@ -66,6 +66,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoles.Item.Assignments {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new AssignmentsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

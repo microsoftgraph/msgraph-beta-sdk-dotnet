@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Print.Services.Item.Endpoints.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new PrintServiceEndpointItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

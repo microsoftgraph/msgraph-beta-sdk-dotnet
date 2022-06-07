@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Addresses.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ItemAddressItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

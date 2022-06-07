@@ -87,6 +87,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ServiceAnnouncementRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

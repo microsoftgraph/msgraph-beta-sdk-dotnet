@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>(nameof(BodyLastModifiedDateTime)); }
             set { BackingStore?.Set(nameof(BodyLastModifiedDateTime), value); }
         }
-        /// <summary>A collection of checklistItems linked to a task.</summary>
+        /// <summary>A collection of smaller subtasks linked to the more complex parent task.</summary>
         public List<ChecklistItem> ChecklistItems {
             get { return BackingStore?.Get<List<ChecklistItem>>(nameof(ChecklistItems)); }
             set { BackingStore?.Set(nameof(ChecklistItems), value); }

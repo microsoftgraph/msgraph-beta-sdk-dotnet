@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item.Sessions.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new SessionItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Me.GetManagedAppDiagnosticStatuses {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GetManagedAppDiagnosticStatusesRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Impo
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ImportOffice365DeviceConfigurationPoliciesRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

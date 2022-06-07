@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.DataLossPreventi
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DataLossPreventionPolicyItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

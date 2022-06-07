@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.PinnedMessages.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new PinnedChatMessageInfoItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

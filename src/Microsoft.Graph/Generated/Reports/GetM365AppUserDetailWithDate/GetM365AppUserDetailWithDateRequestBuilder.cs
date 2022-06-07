@@ -55,6 +55,7 @@ namespace Microsoft.Graph.Beta.Reports.GetM365AppUserDetailWithDate {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GetM365AppUserDetailWithDateRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new IsSignedUpRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

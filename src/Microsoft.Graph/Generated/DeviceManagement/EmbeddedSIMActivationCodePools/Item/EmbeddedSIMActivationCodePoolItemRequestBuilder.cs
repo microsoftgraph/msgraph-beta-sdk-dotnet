@@ -87,6 +87,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools.I
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new EmbeddedSIMActivationCodePoolItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

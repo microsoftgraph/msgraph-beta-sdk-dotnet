@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>(nameof(CompletedDateTime)); }
             set { BackingStore?.Set(nameof(CompletedDateTime), value); }
         }
-        /// <summary>The user who created this request.</summary>
+        /// <summary>The principal that created the request.</summary>
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>(nameof(CreatedBy)); }
             set { BackingStore?.Set(nameof(CreatedBy), value); }

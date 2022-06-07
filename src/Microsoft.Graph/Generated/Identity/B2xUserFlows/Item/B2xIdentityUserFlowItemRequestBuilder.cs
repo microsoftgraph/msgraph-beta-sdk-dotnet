@@ -92,6 +92,7 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new B2xIdentityUserFlowItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

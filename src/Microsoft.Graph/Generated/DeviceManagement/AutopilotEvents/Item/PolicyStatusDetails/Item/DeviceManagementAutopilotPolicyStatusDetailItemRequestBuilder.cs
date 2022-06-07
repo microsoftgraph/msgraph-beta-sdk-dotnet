@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatu
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

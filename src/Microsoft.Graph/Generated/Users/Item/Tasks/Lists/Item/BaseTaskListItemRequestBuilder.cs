@@ -82,6 +82,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Tasks.Lists.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new BaseTaskListItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

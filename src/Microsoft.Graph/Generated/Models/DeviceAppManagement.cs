@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<MdmWindowsInformationProtectionPolicy>>(nameof(MdmWindowsInformationProtectionPolicies)); }
             set { BackingStore?.Set(nameof(MdmWindowsInformationProtectionPolicies), value); }
         }
-        /// <summary>The locale information used to sync applications from the Microsoft Store for Business. Cultures that are specific to a country/region. The names of these cultures follow RFC 4646 (Windows Vista and later). The format is -&lt;country/regioncode2&gt;, where  is a lowercase two-letter code derived from ISO 639-1 and &lt;country/regioncode2&gt; is an uppercase two-letter code derived from ISO 3166. For example, en-US for English (United States) is a specific culture.</summary>
+        /// <summary>The locale information used to sync applications from the Microsoft Store for Business. Cultures that are specific to a country/region. The names of these cultures follow RFC 4646 (Windows Vista and later). The format is &lt;languagecode2&gt;-&lt;country/regioncode2&gt;, where &lt;languagecode2&gt; is a lowercase two-letter code derived from ISO 639-1 and &lt;country/regioncode2&gt; is an uppercase two-letter code derived from ISO 3166. For example, en-US for English (United States) is a specific culture.</summary>
         public string MicrosoftStoreForBusinessLanguage {
             get { return BackingStore?.Get<string>(nameof(MicrosoftStoreForBusinessLanguage)); }
             set { BackingStore?.Set(nameof(MicrosoftStoreForBusinessLanguage), value); }
@@ -151,6 +151,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<WindowsInformationProtectionWipeAction>>(nameof(WindowsInformationProtectionWipeActions)); }
             set { BackingStore?.Set(nameof(WindowsInformationProtectionWipeActions), value); }
         }
+        /// <summary>Windows managed app policies.</summary>
+        public List<WindowsManagedAppProtection> WindowsManagedAppProtections {
+            get { return BackingStore?.Get<List<WindowsManagedAppProtection>>(nameof(WindowsManagedAppProtections)); }
+            set { BackingStore?.Set(nameof(WindowsManagedAppProtections), value); }
+        }
         /// <summary>Windows management app.</summary>
         public Microsoft.Graph.Beta.Models.WindowsManagementApp WindowsManagementApp {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsManagementApp>(nameof(WindowsManagementApp)); }
@@ -198,6 +203,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"windowsInformationProtectionDeviceRegistrations", n => { WindowsInformationProtectionDeviceRegistrations = n.GetCollectionOfObjectValues<WindowsInformationProtectionDeviceRegistration>(WindowsInformationProtectionDeviceRegistration.CreateFromDiscriminatorValue).ToList(); } },
                 {"windowsInformationProtectionPolicies", n => { WindowsInformationProtectionPolicies = n.GetCollectionOfObjectValues<WindowsInformationProtectionPolicy>(WindowsInformationProtectionPolicy.CreateFromDiscriminatorValue).ToList(); } },
                 {"windowsInformationProtectionWipeActions", n => { WindowsInformationProtectionWipeActions = n.GetCollectionOfObjectValues<WindowsInformationProtectionWipeAction>(WindowsInformationProtectionWipeAction.CreateFromDiscriminatorValue).ToList(); } },
+                {"windowsManagedAppProtections", n => { WindowsManagedAppProtections = n.GetCollectionOfObjectValues<WindowsManagedAppProtection>(WindowsManagedAppProtection.CreateFromDiscriminatorValue).ToList(); } },
                 {"windowsManagementApp", n => { WindowsManagementApp = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsManagementApp>(Microsoft.Graph.Beta.Models.WindowsManagementApp.CreateFromDiscriminatorValue); } },
             };
         }
@@ -237,6 +243,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<WindowsInformationProtectionDeviceRegistration>("windowsInformationProtectionDeviceRegistrations", WindowsInformationProtectionDeviceRegistrations);
             writer.WriteCollectionOfObjectValues<WindowsInformationProtectionPolicy>("windowsInformationProtectionPolicies", WindowsInformationProtectionPolicies);
             writer.WriteCollectionOfObjectValues<WindowsInformationProtectionWipeAction>("windowsInformationProtectionWipeActions", WindowsInformationProtectionWipeActions);
+            writer.WriteCollectionOfObjectValues<WindowsManagedAppProtection>("windowsManagedAppProtections", WindowsManagedAppProtections);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsManagementApp>("windowsManagementApp", WindowsManagementApp);
         }
     }

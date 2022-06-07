@@ -71,6 +71,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item.Include
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new IncludedGroupsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

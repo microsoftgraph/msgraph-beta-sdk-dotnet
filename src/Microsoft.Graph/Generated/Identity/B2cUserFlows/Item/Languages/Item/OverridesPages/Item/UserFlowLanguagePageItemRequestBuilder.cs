@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.Languages.Item.Overrid
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new UserFlowLanguagePageItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

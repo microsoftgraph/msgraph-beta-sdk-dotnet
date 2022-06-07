@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.Items.Item.ListItem.Activities.Ite
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ListItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.Users {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new UsersRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

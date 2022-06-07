@@ -66,6 +66,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item.Categories
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new CategoriesRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

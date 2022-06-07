@@ -92,6 +92,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new SalesCreditMemoItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

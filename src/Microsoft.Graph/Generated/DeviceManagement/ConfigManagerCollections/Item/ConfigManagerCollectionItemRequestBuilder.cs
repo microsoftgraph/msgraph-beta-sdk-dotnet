@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ConfigManagerCollectionItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

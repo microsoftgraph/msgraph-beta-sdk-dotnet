@@ -92,6 +92,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignments.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GovernanceRoleAssignmentItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

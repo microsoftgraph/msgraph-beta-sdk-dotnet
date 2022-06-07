@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.SharedWithTeams.Item.Al
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ConversationMemberItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

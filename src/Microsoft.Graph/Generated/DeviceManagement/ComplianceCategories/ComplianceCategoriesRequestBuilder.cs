@@ -66,6 +66,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComplianceCategories {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ComplianceCategoriesRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -87,6 +88,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComplianceCategories {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new ComplianceCategoriesRequestBuilderPostRequestConfiguration();

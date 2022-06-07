@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.Me.MemberOf.Item.User.ReprocessLicenseAssignment 
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ReprocessLicenseAssignmentRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.Sites {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new SitesRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

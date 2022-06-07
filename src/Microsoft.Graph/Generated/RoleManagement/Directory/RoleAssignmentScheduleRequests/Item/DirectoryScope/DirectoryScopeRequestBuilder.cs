@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleAssignmentScheduleRe
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.
+        /// The directory object that is the scope of the assignment. Read-only. Supports $expand.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<DirectoryScopeRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleAssignmentScheduleRe
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DirectoryScopeRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -64,7 +65,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleAssignmentScheduleRe
             return requestInfo;
         }
         /// <summary>
-        /// Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.
+        /// The directory object that is the scope of the assignment. Read-only. Supports $expand.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -77,7 +78,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleAssignmentScheduleRe
             };
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.</summary>
+        /// <summary>The directory object that is the scope of the assignment. Read-only. Supports $expand.</summary>
         public class DirectoryScopeRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>(nameof(DueDateTime)); }
             set { BackingStore?.Set(nameof(DueDateTime), value); }
         }
-        /// <summary>The feedbackResourcesFolderUrl property</summary>
+        /// <summary>Folder URL where all the feedback file resources for this assignment are stored.</summary>
         public string FeedbackResourcesFolderUrl {
             get { return BackingStore?.Get<string>(nameof(FeedbackResourcesFolderUrl)); }
             set { BackingStore?.Set(nameof(FeedbackResourcesFolderUrl), value); }

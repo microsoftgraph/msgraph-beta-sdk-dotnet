@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Me.Devices.Item.TransitiveMemberOf.Item.User.IsMa
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new IsManagedAppUserBlockedRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

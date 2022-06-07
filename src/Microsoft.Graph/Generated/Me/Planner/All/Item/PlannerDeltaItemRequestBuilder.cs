@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.All.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new PlannerDeltaItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

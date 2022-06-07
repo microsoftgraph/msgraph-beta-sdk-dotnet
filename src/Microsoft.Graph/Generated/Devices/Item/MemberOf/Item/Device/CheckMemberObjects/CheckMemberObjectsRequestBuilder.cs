@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.Devices.Item.MemberOf.Item.Device.CheckMemberObje
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new CheckMemberObjectsRequestBuilderPostRequestConfiguration();

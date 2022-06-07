@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.SecurityBaselineStates.Ite
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new SecurityBaselineStateItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

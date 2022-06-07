@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.PaymentMethods.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new PaymentMethodItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

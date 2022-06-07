@@ -53,6 +53,11 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             get { return BackingStore?.Get<string>(nameof(MacAddress)); }
             set { BackingStore?.Set(nameof(MacAddress), value); }
         }
+        /// <summary>Network protocol used for the transmission of stream. Possible values are: unknown, udp, tcp, unknownFutureValue.</summary>
+        public Microsoft.Graph.Beta.Models.CallRecords.NetworkTransportProtocol? NetworkTransportProtocol {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallRecords.NetworkTransportProtocol?>(nameof(NetworkTransportProtocol)); }
+            set { BackingStore?.Set(nameof(NetworkTransportProtocol), value); }
+        }
         /// <summary>Network port number used by media endpoint.</summary>
         public int? Port {
             get { return BackingStore?.Get<int?>(nameof(Port)); }
@@ -87,6 +92,11 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         public string Subnet {
             get { return BackingStore?.Get<string>(nameof(Subnet)); }
             set { BackingStore?.Set(nameof(Subnet), value); }
+        }
+        /// <summary>List of network trace route hops collected for this media stream.</summary>
+        public List<TraceRouteHop> TraceRouteHops {
+            get { return BackingStore?.Get<List<TraceRouteHop>>(nameof(TraceRouteHops)); }
+            set { BackingStore?.Set(nameof(TraceRouteHops), value); }
         }
         /// <summary>WiFi band used by the media endpoint. Possible values are: unknown, frequency24GHz, frequency50GHz, frequency60GHz, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.CallRecords.WifiBand? WifiBand {
@@ -161,6 +171,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
                 {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
                 {"linkSpeed", n => { LinkSpeed = n.GetLongValue(); } },
                 {"macAddress", n => { MacAddress = n.GetStringValue(); } },
+                {"networkTransportProtocol", n => { NetworkTransportProtocol = n.GetEnumValue<NetworkTransportProtocol>(); } },
                 {"port", n => { Port = n.GetIntValue(); } },
                 {"receivedQualityEventRatio", n => { ReceivedQualityEventRatio = n.GetFloatValue(); } },
                 {"reflexiveIPAddress", n => { ReflexiveIPAddress = n.GetStringValue(); } },
@@ -168,6 +179,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
                 {"relayPort", n => { RelayPort = n.GetIntValue(); } },
                 {"sentQualityEventRatio", n => { SentQualityEventRatio = n.GetFloatValue(); } },
                 {"subnet", n => { Subnet = n.GetStringValue(); } },
+                {"traceRouteHops", n => { TraceRouteHops = n.GetCollectionOfObjectValues<TraceRouteHop>(TraceRouteHop.CreateFromDiscriminatorValue).ToList(); } },
                 {"wifiBand", n => { WifiBand = n.GetEnumValue<WifiBand>(); } },
                 {"wifiBatteryCharge", n => { WifiBatteryCharge = n.GetIntValue(); } },
                 {"wifiChannel", n => { WifiChannel = n.GetIntValue(); } },
@@ -193,6 +205,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             writer.WriteStringValue("ipAddress", IpAddress);
             writer.WriteLongValue("linkSpeed", LinkSpeed);
             writer.WriteStringValue("macAddress", MacAddress);
+            writer.WriteEnumValue<NetworkTransportProtocol>("networkTransportProtocol", NetworkTransportProtocol);
             writer.WriteIntValue("port", Port);
             writer.WriteFloatValue("receivedQualityEventRatio", ReceivedQualityEventRatio);
             writer.WriteStringValue("reflexiveIPAddress", ReflexiveIPAddress);
@@ -200,6 +213,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             writer.WriteIntValue("relayPort", RelayPort);
             writer.WriteFloatValue("sentQualityEventRatio", SentQualityEventRatio);
             writer.WriteStringValue("subnet", Subnet);
+            writer.WriteCollectionOfObjectValues<TraceRouteHop>("traceRouteHops", TraceRouteHops);
             writer.WriteEnumValue<WifiBand>("wifiBand", WifiBand);
             writer.WriteIntValue("wifiBatteryCharge", WifiBatteryCharge);
             writer.WriteIntValue("wifiChannel", WifiChannel);

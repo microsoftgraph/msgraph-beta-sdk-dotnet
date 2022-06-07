@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Print.Reports.MonthlyPrintUsageByPrinter.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new PrintUsageByPrinterItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

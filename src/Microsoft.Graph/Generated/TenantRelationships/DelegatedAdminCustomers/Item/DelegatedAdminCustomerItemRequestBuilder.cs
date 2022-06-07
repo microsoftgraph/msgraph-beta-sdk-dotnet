@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.Item 
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DelegatedAdminCustomerItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

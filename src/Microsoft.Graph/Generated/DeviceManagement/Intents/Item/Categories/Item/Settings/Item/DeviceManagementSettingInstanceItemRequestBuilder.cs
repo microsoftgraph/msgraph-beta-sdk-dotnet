@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Categories.Item.Set
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DeviceManagementSettingInstanceItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

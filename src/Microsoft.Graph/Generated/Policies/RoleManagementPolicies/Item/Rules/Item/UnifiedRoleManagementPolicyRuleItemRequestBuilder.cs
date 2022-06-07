@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicies.Item.Rules.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of rules like approval rules and expiration rules.
+        /// The collection of rules like approval rules and expiration rules. Supports $expand.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<UnifiedRoleManagementPolicyRuleItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicies.Item.Rules.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new UnifiedRoleManagementPolicyRuleItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -117,7 +118,7 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicies.Item.Rules.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The collection of rules like approval rules and expiration rules.
+        /// The collection of rules like approval rules and expiration rules. Supports $expand.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -160,7 +161,7 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicies.Item.Rules.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>The collection of rules like approval rules and expiration rules.</summary>
+        /// <summary>The collection of rules like approval rules and expiration rules. Supports $expand.</summary>
         public class UnifiedRoleManagementPolicyRuleItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

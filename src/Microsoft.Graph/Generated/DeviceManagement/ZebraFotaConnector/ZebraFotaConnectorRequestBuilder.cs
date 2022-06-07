@@ -92,6 +92,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ZebraFotaConnectorRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

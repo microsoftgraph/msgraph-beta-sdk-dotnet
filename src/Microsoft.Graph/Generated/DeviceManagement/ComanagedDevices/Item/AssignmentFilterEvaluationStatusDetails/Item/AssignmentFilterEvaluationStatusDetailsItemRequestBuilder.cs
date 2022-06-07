@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Assignment
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new AssignmentFilterEvaluationStatusDetailsItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

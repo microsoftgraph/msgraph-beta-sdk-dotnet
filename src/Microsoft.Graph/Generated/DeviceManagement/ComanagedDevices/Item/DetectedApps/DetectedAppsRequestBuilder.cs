@@ -66,6 +66,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.DetectedAp
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DetectedAppsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

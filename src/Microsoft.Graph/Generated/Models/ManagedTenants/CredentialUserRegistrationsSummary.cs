@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             get { return BackingStore?.Get<string>(nameof(MfaConditionalAccessPolicyState)); }
             set { BackingStore?.Set(nameof(MfaConditionalAccessPolicyState), value); }
         }
-        /// <summary>The mfaExcludedUserCount property</summary>
+        /// <summary>The number of users in the multi-factor authentication exclusion security group (Microsoft 365 Lighthouse - MFA exclusions). Optional. Read-only.</summary>
         public int? MfaExcludedUserCount {
             get { return BackingStore?.Get<int?>(nameof(MfaExcludedUserCount)); }
             set { BackingStore?.Set(nameof(MfaExcludedUserCount), value); }

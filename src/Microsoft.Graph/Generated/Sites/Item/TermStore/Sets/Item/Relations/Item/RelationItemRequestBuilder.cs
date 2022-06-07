@@ -87,6 +87,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.Relations.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new RelationItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

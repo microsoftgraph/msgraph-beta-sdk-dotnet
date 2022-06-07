@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ConversationItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

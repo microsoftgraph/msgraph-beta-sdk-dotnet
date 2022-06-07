@@ -71,6 +71,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.HomeRealmDiscoveryPolicies
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new HomeRealmDiscoveryPoliciesRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

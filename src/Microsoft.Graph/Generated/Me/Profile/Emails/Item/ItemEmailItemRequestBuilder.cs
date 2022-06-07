@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Emails.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ItemEmailItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

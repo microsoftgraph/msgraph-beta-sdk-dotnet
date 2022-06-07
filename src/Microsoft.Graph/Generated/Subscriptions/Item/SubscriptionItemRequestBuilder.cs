@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.Subscriptions.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new SubscriptionItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

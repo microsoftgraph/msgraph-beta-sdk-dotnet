@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item.Ex
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ServicePrincipalCreationConditionSetItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

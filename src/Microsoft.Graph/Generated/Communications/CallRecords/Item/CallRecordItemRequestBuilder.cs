@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new CallRecordItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

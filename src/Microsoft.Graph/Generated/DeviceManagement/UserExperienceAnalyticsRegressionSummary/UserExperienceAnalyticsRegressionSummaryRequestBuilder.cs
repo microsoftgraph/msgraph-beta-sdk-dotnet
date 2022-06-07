@@ -88,6 +88,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRegressio
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new UserExperienceAnalyticsRegressionSummaryRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

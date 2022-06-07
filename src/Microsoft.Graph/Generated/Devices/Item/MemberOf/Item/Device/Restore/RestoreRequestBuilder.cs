@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.Devices.Item.MemberOf.Item.Device.Restore {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new RestoreRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

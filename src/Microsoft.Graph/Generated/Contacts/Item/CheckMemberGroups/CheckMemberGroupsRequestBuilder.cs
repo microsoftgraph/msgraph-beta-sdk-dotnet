@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.Contacts.Item.CheckMemberGroups {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new CheckMemberGroupsRequestBuilderPostRequestConfiguration();

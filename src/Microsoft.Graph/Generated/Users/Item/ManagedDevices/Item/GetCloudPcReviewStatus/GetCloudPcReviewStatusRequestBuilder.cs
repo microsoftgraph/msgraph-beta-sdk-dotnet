@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetCloudPcReviewSt
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GetCloudPcReviewStatusRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -82,6 +82,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkEnrollmentProfiles
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new AndroidForWorkEnrollmentProfileItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

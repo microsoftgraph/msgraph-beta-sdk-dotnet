@@ -66,6 +66,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root.Children {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ChildrenRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

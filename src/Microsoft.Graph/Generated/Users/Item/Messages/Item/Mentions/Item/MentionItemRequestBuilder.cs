@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages.Item.Mentions.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new MentionItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.SetUpResourcesFolde
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new SetUpResourcesFolderRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

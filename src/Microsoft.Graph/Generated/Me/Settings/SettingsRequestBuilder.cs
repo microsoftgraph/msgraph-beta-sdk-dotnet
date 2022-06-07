@@ -92,6 +92,7 @@ namespace Microsoft.Graph.Beta.Me.Settings {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new SettingsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

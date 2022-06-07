@@ -67,6 +67,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.ExceptionOccurren
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new InstancesRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -88,6 +89,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.ExceptionOccurren
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new InstancesRequestBuilderPostRequestConfiguration();

@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.Me.Devices.Item.TransitiveMemberOf.Item.User.Expo
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ExportDeviceAndAppManagementDataRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

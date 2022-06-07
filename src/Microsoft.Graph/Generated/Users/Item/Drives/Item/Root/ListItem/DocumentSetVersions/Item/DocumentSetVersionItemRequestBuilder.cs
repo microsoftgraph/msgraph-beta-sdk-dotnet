@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.Root.ListItem.DocumentSetV
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DocumentSetVersionItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DelegatedAdminRelationshipOperationType?>(nameof(OperationType)); }
             set { BackingStore?.Set(nameof(OperationType), value); }
         }
-        /// <summary>The status of the operation. Read-only. The possible values are: notStarted, running, complete, failed, unknownFutureValue. Read-only. Supports $orderBy.</summary>
+        /// <summary>The status of the operation. Read-only. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue. Read-only. Supports $orderBy.</summary>
         public LongRunningOperationStatus? Status {
             get { return BackingStore?.Get<LongRunningOperationStatus?>(nameof(Status)); }
             set { BackingStore?.Set(nameof(Status), value); }

@@ -82,6 +82,7 @@ namespace Microsoft.Graph.Beta.Drive.Root.ListItem.Versions.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ListItemVersionItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

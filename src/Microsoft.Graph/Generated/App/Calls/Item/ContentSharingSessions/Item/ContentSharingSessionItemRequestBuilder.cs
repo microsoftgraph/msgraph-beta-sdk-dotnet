@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.ContentSharingSessions.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ContentSharingSessionItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

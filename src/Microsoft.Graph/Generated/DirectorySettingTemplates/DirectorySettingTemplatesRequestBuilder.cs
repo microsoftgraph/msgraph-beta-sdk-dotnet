@@ -81,6 +81,7 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DirectorySettingTemplatesRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -102,6 +103,7 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new DirectorySettingTemplatesRequestBuilderPostRequestConfiguration();

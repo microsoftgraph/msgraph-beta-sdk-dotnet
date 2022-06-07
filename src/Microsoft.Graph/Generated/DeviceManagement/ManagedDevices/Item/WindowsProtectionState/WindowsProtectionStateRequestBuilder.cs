@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.WindowsProte
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new WindowsProtectionStateRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

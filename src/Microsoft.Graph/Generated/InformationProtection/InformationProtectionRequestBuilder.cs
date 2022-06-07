@@ -104,6 +104,7 @@ namespace Microsoft.Graph.Beta.InformationProtection {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new InformationProtectionRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Rubric {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new RubricRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

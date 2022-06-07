@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeOffRequests.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new TimeOffRequestItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

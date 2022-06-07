@@ -167,6 +167,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ProfileRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

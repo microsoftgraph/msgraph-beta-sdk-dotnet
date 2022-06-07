@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.Me.Teamwork.InstalledApps.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new UserScopeTeamsAppInstallationItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

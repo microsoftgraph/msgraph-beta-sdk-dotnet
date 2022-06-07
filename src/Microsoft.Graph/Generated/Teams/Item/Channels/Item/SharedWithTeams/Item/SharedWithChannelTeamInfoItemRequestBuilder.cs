@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.SharedWithTeams.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new SharedWithChannelTeamInfoItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

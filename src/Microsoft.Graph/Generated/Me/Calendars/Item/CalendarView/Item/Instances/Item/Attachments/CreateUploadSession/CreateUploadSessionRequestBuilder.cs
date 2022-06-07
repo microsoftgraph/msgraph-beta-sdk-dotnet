@@ -55,6 +55,7 @@ namespace Microsoft.Graph.Beta.Me.Calendars.Item.CalendarView.Item.Instances.Ite
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new CreateUploadSessionRequestBuilderPostRequestConfiguration();

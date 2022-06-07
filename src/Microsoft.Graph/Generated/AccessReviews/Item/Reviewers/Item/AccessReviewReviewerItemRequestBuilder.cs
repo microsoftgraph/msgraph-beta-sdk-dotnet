@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Reviewers.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new AccessReviewReviewerItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

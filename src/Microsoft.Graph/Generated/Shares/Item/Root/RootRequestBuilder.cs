@@ -59,6 +59,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.Root {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new RootRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

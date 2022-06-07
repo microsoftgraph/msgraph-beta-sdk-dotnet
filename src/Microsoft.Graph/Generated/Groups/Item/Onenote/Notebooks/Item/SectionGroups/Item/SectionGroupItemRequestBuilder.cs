@@ -92,6 +92,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Notebooks.Item.SectionGroups.
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new SectionGroupItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

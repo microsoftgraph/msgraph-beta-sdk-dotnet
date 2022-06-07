@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.DoesUserHaveAcces
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -87,6 +87,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new AuthenticationMethodItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

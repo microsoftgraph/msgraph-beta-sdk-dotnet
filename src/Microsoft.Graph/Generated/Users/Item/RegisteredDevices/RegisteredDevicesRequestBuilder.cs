@@ -76,6 +76,7 @@ namespace Microsoft.Graph.Beta.Users.Item.RegisteredDevices {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new RegisteredDevicesRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

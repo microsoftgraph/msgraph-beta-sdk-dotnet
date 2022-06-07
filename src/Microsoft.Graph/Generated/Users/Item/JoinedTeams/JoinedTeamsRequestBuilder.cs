@@ -66,6 +66,7 @@ namespace Microsoft.Graph.Beta.Users.Item.JoinedTeams {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new JoinedTeamsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

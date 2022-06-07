@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.ContentTypes.Item.IsPublish
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new IsPublishedRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

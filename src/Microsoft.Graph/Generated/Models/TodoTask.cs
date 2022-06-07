@@ -6,6 +6,16 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Casts the previous resource to group.</summary>
     public class TodoTask : Entity, IParsable {
+        /// <summary>The attachments property</summary>
+        public List<Attachment_v2> Attachments {
+            get { return BackingStore?.Get<List<Attachment_v2>>(nameof(Attachments)); }
+            set { BackingStore?.Set(nameof(Attachments), value); }
+        }
+        /// <summary>The attachmentSessions property</summary>
+        public List<AttachmentSession> AttachmentSessions {
+            get { return BackingStore?.Get<List<AttachmentSession>>(nameof(AttachmentSessions)); }
+            set { BackingStore?.Set(nameof(AttachmentSessions), value); }
+        }
         /// <summary>The task body that typically contains information about the task.</summary>
         public ItemBody Body {
             get { return BackingStore?.Get<ItemBody>(nameof(Body)); }
@@ -16,12 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>(nameof(BodyLastModifiedDateTime)); }
             set { BackingStore?.Set(nameof(BodyLastModifiedDateTime), value); }
         }
-        /// <summary>The categories property</summary>
+        /// <summary>The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.</summary>
         public List<string> Categories {
             get { return BackingStore?.Get<List<string>>(nameof(Categories)); }
             set { BackingStore?.Set(nameof(Categories), value); }
         }
-        /// <summary>The checklistItems property</summary>
+        /// <summary>A collection of smaller subtasks linked to the more complex parent task.</summary>
         public List<ChecklistItem> ChecklistItems {
             get { return BackingStore?.Get<List<ChecklistItem>>(nameof(ChecklistItems)); }
             set { BackingStore?.Set(nameof(ChecklistItems), value); }
@@ -45,6 +55,11 @@ namespace Microsoft.Graph.Beta.Models {
         public List<Extension> Extensions {
             get { return BackingStore?.Get<List<Extension>>(nameof(Extensions)); }
             set { BackingStore?.Set(nameof(Extensions), value); }
+        }
+        /// <summary>The hasAttachments property</summary>
+        public bool? HasAttachments {
+            get { return BackingStore?.Get<bool?>(nameof(HasAttachments)); }
+            set { BackingStore?.Set(nameof(HasAttachments), value); }
         }
         /// <summary>The importance of the task. Possible values are: low, normal, high.</summary>
         public Microsoft.Graph.Beta.Models.Importance? Importance {
@@ -99,6 +114,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"attachments", n => { Attachments = n.GetCollectionOfObjectValues<Attachment_v2>(Attachment_v2.CreateFromDiscriminatorValue).ToList(); } },
+                {"attachmentSessions", n => { AttachmentSessions = n.GetCollectionOfObjectValues<AttachmentSession>(AttachmentSession.CreateFromDiscriminatorValue).ToList(); } },
                 {"body", n => { Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
                 {"bodyLastModifiedDateTime", n => { BodyLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
@@ -107,6 +124,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"dueDateTime", n => { DueDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 {"extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue).ToList(); } },
+                {"hasAttachments", n => { HasAttachments = n.GetBoolValue(); } },
                 {"importance", n => { Importance = n.GetEnumValue<Importance>(); } },
                 {"isReminderOn", n => { IsReminderOn = n.GetBoolValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -124,6 +142,8 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<Attachment_v2>("attachments", Attachments);
+            writer.WriteCollectionOfObjectValues<AttachmentSession>("attachmentSessions", AttachmentSessions);
             writer.WriteObjectValue<ItemBody>("body", Body);
             writer.WriteDateTimeOffsetValue("bodyLastModifiedDateTime", BodyLastModifiedDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("categories", Categories);
@@ -132,6 +152,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<DateTimeTimeZone>("dueDateTime", DueDateTime);
             writer.WriteCollectionOfObjectValues<Extension>("extensions", Extensions);
+            writer.WriteBoolValue("hasAttachments", HasAttachments);
             writer.WriteEnumValue<Importance>("importance", Importance);
             writer.WriteBoolValue("isReminderOn", IsReminderOn);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);

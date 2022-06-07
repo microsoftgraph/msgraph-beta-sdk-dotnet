@@ -132,6 +132,7 @@ namespace Microsoft.Graph.Beta.Print.Reports {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ReportsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

@@ -137,6 +137,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CalendarView.Item.Instances.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new EventItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

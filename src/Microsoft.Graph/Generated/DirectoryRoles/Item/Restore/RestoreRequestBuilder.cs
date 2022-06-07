@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoles.Item.Restore {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new RestoreRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

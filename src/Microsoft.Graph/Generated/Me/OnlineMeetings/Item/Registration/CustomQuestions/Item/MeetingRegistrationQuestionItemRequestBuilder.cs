@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.CustomQuestio
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new MeetingRegistrationQuestionItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

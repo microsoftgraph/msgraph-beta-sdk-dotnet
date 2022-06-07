@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.Verify {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new VerifyRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

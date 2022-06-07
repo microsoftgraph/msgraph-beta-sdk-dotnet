@@ -6,6 +6,11 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provides operations to manage the teamwork singleton.</summary>
     public class Teamwork : Entity, IParsable {
+        /// <summary>The deletedTeams property</summary>
+        public List<DeletedTeam> DeletedTeams {
+            get { return BackingStore?.Get<List<DeletedTeam>>(nameof(DeletedTeams)); }
+            set { BackingStore?.Set(nameof(DeletedTeams), value); }
+        }
         /// <summary>The Teams devices provisioned for the tenant.</summary>
         public List<TeamworkDevice> Devices {
             get { return BackingStore?.Get<List<TeamworkDevice>>(nameof(Devices)); }
@@ -29,6 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"deletedTeams", n => { DeletedTeams = n.GetCollectionOfObjectValues<DeletedTeam>(DeletedTeam.CreateFromDiscriminatorValue).ToList(); } },
                 {"devices", n => { Devices = n.GetCollectionOfObjectValues<TeamworkDevice>(TeamworkDevice.CreateFromDiscriminatorValue).ToList(); } },
                 {"workforceIntegrations", n => { WorkforceIntegrations = n.GetCollectionOfObjectValues<WorkforceIntegration>(WorkforceIntegration.CreateFromDiscriminatorValue).ToList(); } },
             };
@@ -40,6 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<DeletedTeam>("deletedTeams", DeletedTeams);
             writer.WriteCollectionOfObjectValues<TeamworkDevice>("devices", Devices);
             writer.WriteCollectionOfObjectValues<WorkforceIntegration>("workforceIntegrations", WorkforceIntegrations);
         }

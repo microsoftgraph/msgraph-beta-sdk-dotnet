@@ -81,6 +81,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PasswordlessMicrosoftAuthentica
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new RegisteredUsersRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

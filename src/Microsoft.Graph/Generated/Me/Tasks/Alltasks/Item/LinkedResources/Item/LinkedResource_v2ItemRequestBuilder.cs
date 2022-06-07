@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Me.Tasks.Alltasks.Item.LinkedResources.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new LinkedResource_v2ItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

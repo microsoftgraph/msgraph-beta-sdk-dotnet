@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Me.MemberOf.Item.User.GetLoggedOnManagedDevices {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GetLoggedOnManagedDevicesRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

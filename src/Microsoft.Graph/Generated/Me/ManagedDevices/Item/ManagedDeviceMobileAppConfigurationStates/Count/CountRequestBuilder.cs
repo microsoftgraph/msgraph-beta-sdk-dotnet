@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.ManagedDeviceMobileAppConf
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "text/plain");
             if (requestConfiguration != null) {
                 var requestConfig = new CountRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

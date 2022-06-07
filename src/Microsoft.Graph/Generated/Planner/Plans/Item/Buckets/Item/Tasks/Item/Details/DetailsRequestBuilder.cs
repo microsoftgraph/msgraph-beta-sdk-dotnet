@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans.Item.Buckets.Item.Tasks.Item.Detail
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DetailsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

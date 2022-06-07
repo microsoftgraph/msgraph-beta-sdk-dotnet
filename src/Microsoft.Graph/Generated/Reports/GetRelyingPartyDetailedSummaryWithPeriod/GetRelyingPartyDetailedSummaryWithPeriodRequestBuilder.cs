@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.Reports.GetRelyingPartyDetailedSummaryWithPeriod 
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

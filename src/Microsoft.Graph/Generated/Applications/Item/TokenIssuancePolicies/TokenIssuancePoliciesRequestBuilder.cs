@@ -71,6 +71,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.TokenIssuancePolicies {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new TokenIssuancePoliciesRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

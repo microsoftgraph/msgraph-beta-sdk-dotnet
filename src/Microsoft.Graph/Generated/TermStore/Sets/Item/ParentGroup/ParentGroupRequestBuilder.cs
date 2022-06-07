@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.TermStore.Sets.Item.ParentGroup {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ParentGroupRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

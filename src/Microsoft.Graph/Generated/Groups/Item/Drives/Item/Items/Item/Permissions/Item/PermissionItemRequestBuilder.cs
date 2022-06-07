@@ -82,6 +82,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Items.Item.Permissions.It
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new PermissionItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

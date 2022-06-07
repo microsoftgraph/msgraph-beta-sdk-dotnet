@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Tasks.Item.Details {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DetailsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

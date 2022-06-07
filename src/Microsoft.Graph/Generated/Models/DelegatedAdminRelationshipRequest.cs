@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
             set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
         }
-        /// <summary>The status of the request. Read-only. The possible values are: created, pending, complete, failed, unknownFutureValue.</summary>
+        /// <summary>The status of the request. Read-only. The possible values are: created, pending, succeeded, failed, unknownFutureValue.</summary>
         public DelegatedAdminRelationshipRequestStatus? Status {
             get { return BackingStore?.Get<DelegatedAdminRelationshipRequestStatus?>(nameof(Status)); }
             set { BackingStore?.Set(nameof(Status), value); }

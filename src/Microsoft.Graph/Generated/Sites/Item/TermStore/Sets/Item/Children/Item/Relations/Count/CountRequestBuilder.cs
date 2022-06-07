@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.Children.Item.Rela
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "text/plain");
             if (requestConfiguration != null) {
                 var requestConfig = new CountRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

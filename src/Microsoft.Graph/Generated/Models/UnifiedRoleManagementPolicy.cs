@@ -16,12 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>(nameof(DisplayName)); }
             set { BackingStore?.Set(nameof(DisplayName), value); }
         }
-        /// <summary>Not implemented. The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval.</summary>
+        /// <summary>The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval. Supports $expand.</summary>
         public List<UnifiedRoleManagementPolicyRule> EffectiveRules {
             get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyRule>>(nameof(EffectiveRules)); }
             set { BackingStore?.Set(nameof(EffectiveRules), value); }
         }
-        /// <summary>This can only be set to true for a single tenant wide policy which will apply to all scopes and roles. Set the scopeId to &apos;/&apos; and scopeType to Directory.</summary>
+        /// <summary>This can only be set to true for a single tenant-wide policy which will apply to all scopes and roles. Set the scopeId to / and scopeType to Directory. Supports $filter (eq, ne).</summary>
         public bool? IsOrganizationDefault {
             get { return BackingStore?.Get<bool?>(nameof(IsOrganizationDefault)); }
             set { BackingStore?.Set(nameof(IsOrganizationDefault), value); }
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
             set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
         }
-        /// <summary>The collection of rules like approval rules and expiration rules.</summary>
+        /// <summary>The collection of rules like approval rules and expiration rules. Supports $expand.</summary>
         public List<UnifiedRoleManagementPolicyRule> Rules {
             get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyRule>>(nameof(Rules)); }
             set { BackingStore?.Set(nameof(Rules), value); }
         }
-        /// <summary>The id of the scope where the policy is created. Can be / for the tenant or a group ID. Required.</summary>
+        /// <summary>The identifier of the scope where the policy is created. Can be / for the tenant or a group ID. Required.</summary>
         public string ScopeId {
             get { return BackingStore?.Get<string>(nameof(ScopeId)); }
             set { BackingStore?.Set(nameof(ScopeId), value); }

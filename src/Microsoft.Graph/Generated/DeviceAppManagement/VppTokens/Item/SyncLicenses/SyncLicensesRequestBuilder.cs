@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Item.SyncLicenses {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new SyncLicensesRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

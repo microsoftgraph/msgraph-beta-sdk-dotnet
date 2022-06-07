@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.AllChannels.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ChannelItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

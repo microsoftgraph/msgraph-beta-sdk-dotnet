@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.SensitivityPolicySettings {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new SensitivityPolicySettingsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

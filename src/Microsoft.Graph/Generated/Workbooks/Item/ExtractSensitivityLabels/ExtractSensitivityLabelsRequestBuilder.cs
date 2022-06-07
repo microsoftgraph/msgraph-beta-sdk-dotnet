@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.Workbooks.Item.ExtractSensitivityLabels {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ExtractSensitivityLabelsRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

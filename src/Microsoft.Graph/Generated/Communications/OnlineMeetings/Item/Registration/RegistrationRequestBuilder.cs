@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Registration {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new RegistrationRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

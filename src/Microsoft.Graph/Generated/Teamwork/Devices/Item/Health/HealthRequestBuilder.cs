@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Health {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new HealthRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);

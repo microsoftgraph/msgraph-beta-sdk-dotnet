@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Onenote.Notebooks.GetRecentNotebooksWi
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
