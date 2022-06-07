@@ -49,6 +49,13 @@ namespace Microsoft.Graph
         [JsonPropertyName("notificationType")]
         public DeviceManagementDerivedCredentialNotificationType? NotificationType { get; set; }
     
+        /// <summary>
+        /// Gets or sets renewal threshold percentage.
+        /// The nominal percentage of time before certificate renewal is initiated by the client.
+        /// </summary>
+        [JsonPropertyName("renewalThresholdPercentage")]
+        public Int32? RenewalThresholdPercentage { get; set; }
+    
     }
 }
 

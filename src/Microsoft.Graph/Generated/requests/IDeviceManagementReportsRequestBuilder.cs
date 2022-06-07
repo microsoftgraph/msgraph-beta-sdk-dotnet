@@ -509,6 +509,21 @@ namespace Microsoft.Graph
             string filter = null);
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetZebraFotaDeploymentReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetZebraFotaDeploymentReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetZebraFotaDeploymentReportRequestBuilder GetZebraFotaDeploymentReport(
+            Int32 skip,
+            Int32 top,
+            Int32 sessionId,
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            string filter = null);
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetGroupPolicySettingsDeviceSettingsReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetGroupPolicySettingsDeviceSettingsReportRequestBuilder"/>.</returns>

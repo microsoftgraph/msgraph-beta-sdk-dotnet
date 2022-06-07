@@ -22,49 +22,49 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets assignment type.
-        /// Type of the assignment. It can either be Assigned or Activated.
+        /// Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
         /// </summary>
         [JsonPropertyName("assignmentType")]
         public string AssignmentType { get; set; }
     
         /// <summary>
         /// Gets or sets end date time.
-        /// Time that the roleAssignmentInstance will expire
+        /// The end date of the schedule instance.
         /// </summary>
         [JsonPropertyName("endDateTime")]
         public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets member type.
-        /// Membership type of the assignment. It can either be Inherited, Direct, or Group.
+        /// How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
         /// </summary>
         [JsonPropertyName("memberType")]
         public string MemberType { get; set; }
     
         /// <summary>
         /// Gets or sets role assignment origin id.
-        /// ID of the roleAssignment in the directory
+        /// The identifier of the role assignment in Azure AD.
         /// </summary>
         [JsonPropertyName("roleAssignmentOriginId")]
         public string RoleAssignmentOriginId { get; set; }
     
         /// <summary>
         /// Gets or sets role assignment schedule id.
-        /// ID of the parent roleAssignmentSchedule for this instance
+        /// The identifier of the unifiedRoleAssignmentSchedule object from which this instance was created.
         /// </summary>
         [JsonPropertyName("roleAssignmentScheduleId")]
         public string RoleAssignmentScheduleId { get; set; }
     
         /// <summary>
         /// Gets or sets start date time.
-        /// Time that the roleAssignmentInstance will start
+        /// When this instance starts.
         /// </summary>
         [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets activated using.
-        /// If the roleAssignmentScheduleInstance is activated by a roleEligibilityScheduleRequest, this is the link to the related schedule instance.
+        /// If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.
         /// </summary>
         [JsonPropertyName("activatedUsing")]
         public UnifiedRoleEligibilityScheduleInstance ActivatedUsing { get; set; }

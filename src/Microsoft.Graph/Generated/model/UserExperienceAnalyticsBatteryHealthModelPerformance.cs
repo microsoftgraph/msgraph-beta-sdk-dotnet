@@ -62,6 +62,13 @@ namespace Microsoft.Graph
         [JsonPropertyName("model")]
         public string Model { get; set; }
     
+        /// <summary>
+        /// Gets or sets model battery health score.
+        /// A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
+        /// </summary>
+        [JsonPropertyName("modelBatteryHealthScore")]
+        public Int32? ModelBatteryHealthScore { get; set; }
+    
     }
 }
 

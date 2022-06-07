@@ -76,17 +76,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DeviceEnrollmentConfigurationCreateEnrollmentNotificationConfiguration.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceEnrollmentConfigurationCreateEnrollmentNotificationConfigurationRequestBuilder"/>.</returns>
-        public IDeviceEnrollmentConfigurationCreateEnrollmentNotificationConfigurationRequestBuilder CreateEnrollmentNotificationConfiguration()
-        {
-            return new DeviceEnrollmentConfigurationCreateEnrollmentNotificationConfigurationRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.createEnrollmentNotificationConfiguration"),
-                this.Client);
-        }
-
-        /// <summary>
         /// Gets the request builder for DeviceEnrollmentConfigurationSetPriority.
         /// </summary>
         /// <returns>The <see cref="IDeviceEnrollmentConfigurationSetPriorityRequestBuilder"/>.</returns>

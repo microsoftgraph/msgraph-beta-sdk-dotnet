@@ -30,6 +30,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets bluetooth.
+        /// Defines whether a user is allowed to enable Bluetooth. Possible values are: notConfigured, enabled, disabled.
+        /// </summary>
+        [JsonPropertyName("bluetooth")]
+        public Enablement? Bluetooth { get; set; }
+    
+        /// <summary>
         /// Gets or sets boot from built in network adapters.
         /// Defines whether a user is allowed to boot from built-in network adapters. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
@@ -58,11 +65,39 @@ namespace Microsoft.Graph
         public ChangeUefiSettingsPermission? ChangeUefiSettingsPermission { get; set; }
     
         /// <summary>
+        /// Gets or sets front camera.
+        /// Defines whether a user is allowed to enable Front Camera. Possible values are: notConfigured, enabled, disabled.
+        /// </summary>
+        [JsonPropertyName("frontCamera")]
+        public Enablement? FrontCamera { get; set; }
+    
+        /// <summary>
+        /// Gets or sets infrared camera.
+        /// Defines whether a user is allowed to enable Infrared camera. Possible values are: notConfigured, enabled, disabled.
+        /// </summary>
+        [JsonPropertyName("infraredCamera")]
+        public Enablement? InfraredCamera { get; set; }
+    
+        /// <summary>
+        /// Gets or sets microphone.
+        /// Defines whether a user is allowed to enable Microphone. Possible values are: notConfigured, enabled, disabled.
+        /// </summary>
+        [JsonPropertyName("microphone")]
+        public Enablement? Microphone { get; set; }
+    
+        /// <summary>
         /// Gets or sets microphones and speakers.
         /// Defines whether built-in microphones or speakers are enabled. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
         [JsonPropertyName("microphonesAndSpeakers")]
         public Enablement? MicrophonesAndSpeakers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets near field communication.
+        /// Defines whether a user is allowed to enable Near Field Communication. Possible values are: notConfigured, enabled, disabled.
+        /// </summary>
+        [JsonPropertyName("nearFieldCommunication")]
+        public Enablement? NearFieldCommunication { get; set; }
     
         /// <summary>
         /// Gets or sets radios.
@@ -72,11 +107,32 @@ namespace Microsoft.Graph
         public Enablement? Radios { get; set; }
     
         /// <summary>
+        /// Gets or sets rear camera.
+        /// Defines whether a user is allowed to enable rear camera. Possible values are: notConfigured, enabled, disabled.
+        /// </summary>
+        [JsonPropertyName("rearCamera")]
+        public Enablement? RearCamera { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sd card.
+        /// Defines whether a user is allowed to enable SD Card Port. Possible values are: notConfigured, enabled, disabled.
+        /// </summary>
+        [JsonPropertyName("sdCard")]
+        public Enablement? SdCard { get; set; }
+    
+        /// <summary>
         /// Gets or sets simultaneous multi threading.
         /// Defines whether a user is allowed to enable Simultaneous MultiThreading. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
         [JsonPropertyName("simultaneousMultiThreading")]
         public Enablement? SimultaneousMultiThreading { get; set; }
+    
+        /// <summary>
+        /// Gets or sets usb type aport.
+        /// Defines whether a user is allowed to enable USB Type A Port. Possible values are: notConfigured, enabled, disabled.
+        /// </summary>
+        [JsonPropertyName("usbTypeAPort")]
+        public Enablement? UsbTypeAPort { get; set; }
     
         /// <summary>
         /// Gets or sets virtualization of cpu and io.
@@ -86,11 +142,39 @@ namespace Microsoft.Graph
         public Enablement? VirtualizationOfCpuAndIO { get; set; }
     
         /// <summary>
+        /// Gets or sets wake on lan.
+        /// Defines whether a user is allowed to enable Wake on LAN. Possible values are: notConfigured, enabled, disabled.
+        /// </summary>
+        [JsonPropertyName("wakeOnLAN")]
+        public Enablement? WakeOnLAN { get; set; }
+    
+        /// <summary>
+        /// Gets or sets wake on power.
+        /// Defines whether a user is allowed to enable Wake On Power. Possible values are: notConfigured, enabled, disabled.
+        /// </summary>
+        [JsonPropertyName("wakeOnPower")]
+        public Enablement? WakeOnPower { get; set; }
+    
+        /// <summary>
+        /// Gets or sets wi fi.
+        /// Defines whether a user is allowed to enable WiFi. Possible values are: notConfigured, enabled, disabled.
+        /// </summary>
+        [JsonPropertyName("wiFi")]
+        public Enablement? WiFi { get; set; }
+    
+        /// <summary>
         /// Gets or sets windows platform binary table.
         /// Defines whether a user is allowed to enable Windows Platform Binary Table. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
         [JsonPropertyName("windowsPlatformBinaryTable")]
         public Enablement? WindowsPlatformBinaryTable { get; set; }
+    
+        /// <summary>
+        /// Gets or sets wireless wide area network.
+        /// Defines whether a user is allowed to enable Wireless Wide Area Network. Possible values are: notConfigured, enabled, disabled.
+        /// </summary>
+        [JsonPropertyName("wirelessWideAreaNetwork")]
+        public Enablement? WirelessWideAreaNetwork { get; set; }
     
     }
 }

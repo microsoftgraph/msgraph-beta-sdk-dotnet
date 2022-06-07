@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets sharepoint.
+        /// A container for administrative resources to manage tenant-level settings for SharePoint and OneDrive.
+        /// </summary>
+        [JsonPropertyName("sharepoint")]
+        public Microsoft.Graph.TenantAdmin.Sharepoint Sharepoint { get; set; }
+    
+        /// <summary>
         /// Gets or sets service announcement.
         /// A container for service communications resources. Read-only.
         /// </summary>

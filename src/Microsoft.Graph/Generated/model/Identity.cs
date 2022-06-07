@@ -23,14 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets displayName.
-        /// The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        /// The display name of the identity. This property is read-only.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets id.
-        /// Unique identifier for the identity.
+        /// The identifier of the identity. This property is read-only.
         /// </summary>
         [JsonPropertyName("id")]
         public string Id { get; set; }

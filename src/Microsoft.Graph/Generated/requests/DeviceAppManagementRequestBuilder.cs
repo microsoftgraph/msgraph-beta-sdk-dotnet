@@ -327,6 +327,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for WindowsManagedAppProtections.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAppManagementWindowsManagedAppProtectionsCollectionRequestBuilder"/>.</returns>
+        public IDeviceAppManagementWindowsManagedAppProtectionsCollectionRequestBuilder WindowsManagedAppProtections
+        {
+            get
+            {
+                return new DeviceAppManagementWindowsManagedAppProtectionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("windowsManagedAppProtections"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceAppManagementTasks.
         /// </summary>
         /// <returns>The <see cref="IDeviceAppManagementDeviceAppManagementTasksCollectionRequestBuilder"/>.</returns>

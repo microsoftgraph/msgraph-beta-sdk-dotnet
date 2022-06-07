@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets setting.
-        /// The approval setting for the rule.
+        /// The settings for approval of the role assignment.
         /// </summary>
         [JsonPropertyName("setting")]
         public ApprovalSettings Setting { get; set; }

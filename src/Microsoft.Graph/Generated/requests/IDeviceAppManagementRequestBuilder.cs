@@ -170,6 +170,12 @@ namespace Microsoft.Graph
         IDeviceAppManagementWindowsInformationProtectionWipeActionsCollectionRequestBuilder WindowsInformationProtectionWipeActions { get; }
 
         /// <summary>
+        /// Gets the request builder for WindowsManagedAppProtections.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAppManagementWindowsManagedAppProtectionsCollectionRequestBuilder"/>.</returns>
+        IDeviceAppManagementWindowsManagedAppProtectionsCollectionRequestBuilder WindowsManagedAppProtections { get; }
+
+        /// <summary>
         /// Gets the request builder for DeviceAppManagementTasks.
         /// </summary>
         /// <returns>The <see cref="IDeviceAppManagementDeviceAppManagementTasksCollectionRequestBuilder"/>.</returns>

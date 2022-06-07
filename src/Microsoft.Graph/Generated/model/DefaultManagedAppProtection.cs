@@ -254,6 +254,13 @@ namespace Microsoft.Graph
         public bool? FilterOpenInToOnlyManagedApps { get; set; }
     
         /// <summary>
+        /// Gets or sets fingerprint and biometric enabled.
+        /// Indicate to the client to enable both biometrics and fingerprints for the app.
+        /// </summary>
+        [JsonPropertyName("fingerprintAndBiometricEnabled")]
+        public bool? FingerprintAndBiometricEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets minimum required company portal version.
         /// Minimum version of the Company portal that must be installed on the device or app access will be blocked
         /// </summary>
@@ -317,6 +324,13 @@ namespace Microsoft.Graph
         public bool? ProtectInboundDataFromUnknownSources { get; set; }
     
         /// <summary>
+        /// Gets or sets require class3biometrics.
+        /// Require user to apply Class 3 Biometrics on their Android device.
+        /// </summary>
+        [JsonPropertyName("requireClass3Biometrics")]
+        public bool? RequireClass3Biometrics { get; set; }
+    
+        /// <summary>
         /// Gets or sets required android safety net apps verification type.
         /// Defines the Android SafetyNet Apps Verification requirement for a managed app to work. Possible values are: none, enabled.
         /// </summary>
@@ -336,6 +350,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("requiredAndroidSafetyNetEvaluationType")]
         public AndroidManagedAppSafetyNetEvaluationType? RequiredAndroidSafetyNetEvaluationType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets require pin after biometric change.
+        /// A PIN prompt will override biometric prompts if class 3 biometrics are updated on the device.
+        /// </summary>
+        [JsonPropertyName("requirePinAfterBiometricChange")]
+        public bool? RequirePinAfterBiometricChange { get; set; }
     
         /// <summary>
         /// Gets or sets screen capture blocked.

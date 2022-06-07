@@ -34,5 +34,10 @@ namespace Microsoft.Graph
         /// </summary>
         Camera = 3,
 	
+        /// <summary>
+        /// Photo Library
+        /// </summary>
+        PhotoLibrary = 4,
+	
     }
 }

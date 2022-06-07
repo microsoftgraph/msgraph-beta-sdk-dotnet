@@ -42,5 +42,12 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDeviceEnrollmentConfigurationHasPayloadLinksRequestBuilder"/>.</returns>
         IDeviceEnrollmentConfigurationHasPayloadLinksRequestBuilder HasPayloadLinks(
             IEnumerable<string> payloadIds = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceEnrollmentConfigurationCreateEnrollmentNotificationConfiguration.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceEnrollmentConfigurationCreateEnrollmentNotificationConfigurationRequestBuilder"/>.</returns>
+        IDeviceEnrollmentConfigurationCreateEnrollmentNotificationConfigurationRequestBuilder CreateEnrollmentNotificationConfiguration(
+            IEnumerable<DeviceEnrollmentConfiguration> deviceEnrollmentNotificationConfigurations = null);
     }
 }

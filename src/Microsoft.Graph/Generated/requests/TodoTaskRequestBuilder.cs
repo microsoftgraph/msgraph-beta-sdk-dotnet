@@ -51,6 +51,30 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Attachments.
+        /// </summary>
+        /// <returns>The <see cref="ITodoTaskAttachmentsCollectionRequestBuilder"/>.</returns>
+        public ITodoTaskAttachmentsCollectionRequestBuilder Attachments
+        {
+            get
+            {
+                return new TodoTaskAttachmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("attachments"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for AttachmentSessions.
+        /// </summary>
+        /// <returns>The <see cref="ITodoTaskAttachmentSessionsCollectionRequestBuilder"/>.</returns>
+        public ITodoTaskAttachmentSessionsCollectionRequestBuilder AttachmentSessions
+        {
+            get
+            {
+                return new TodoTaskAttachmentSessionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("attachmentSessions"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ChecklistItems.
         /// </summary>
         /// <returns>The <see cref="ITodoTaskChecklistItemsCollectionRequestBuilder"/>.</returns>

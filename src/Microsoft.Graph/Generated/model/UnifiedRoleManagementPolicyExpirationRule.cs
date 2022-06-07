@@ -30,14 +30,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets is expiration required.
-        /// Indicates if expiration is required for eligibility or assignment.
+        /// Indicates whether expiration is required or if it's a permanently active assignment or eligibility.
         /// </summary>
         [JsonPropertyName("isExpirationRequired")]
         public bool? IsExpirationRequired { get; set; }
     
         /// <summary>
         /// Gets or sets maximum duration.
-        /// The maximum duration allowed for eligiblity or assignment which is not permanent.
+        /// The maximum duration allowed for eligibility or assignment which is not permanent. Required when isExpirationRequired is true.
         /// </summary>
         [JsonPropertyName("maximumDuration")]
         public Duration MaximumDuration { get; set; }

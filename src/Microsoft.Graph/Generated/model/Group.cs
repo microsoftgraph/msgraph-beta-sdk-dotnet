@@ -294,6 +294,12 @@ namespace Microsoft.Graph
         public string Visibility { get; set; }
     
         /// <summary>
+        /// Gets or sets writeback configuration.
+        /// </summary>
+        [JsonPropertyName("writebackConfiguration")]
+        public GroupWritebackConfiguration WritebackConfiguration { get; set; }
+    
+        /// <summary>
         /// Gets or sets access type.
         /// </summary>
         [JsonPropertyName("accessType")]

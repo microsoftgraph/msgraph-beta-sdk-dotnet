@@ -252,6 +252,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     teamworkToInitialize.WorkforceIntegrations.AdditionalData = teamworkToInitialize.AdditionalData;
                 }
+                if (teamworkToInitialize.DeletedTeams != null && teamworkToInitialize.DeletedTeams.CurrentPage != null)
+                {
+                    teamworkToInitialize.DeletedTeams.InitializeNextPageRequest(this.Client, teamworkToInitialize.DeletedTeamsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    teamworkToInitialize.DeletedTeams.AdditionalData = teamworkToInitialize.AdditionalData;
+                }
                 if (teamworkToInitialize.Devices != null && teamworkToInitialize.Devices.CurrentPage != null)
                 {
                     teamworkToInitialize.Devices.InitializeNextPageRequest(this.Client, teamworkToInitialize.DevicesNextLink);

@@ -59,5 +59,20 @@ namespace Microsoft.Graph
         /// </summary>
         AllFeatures = 7,
 	
+        /// <summary>
+        /// Face
+        /// </summary>
+        Face = 8,
+	
+        /// <summary>
+        /// Iris
+        /// </summary>
+        Iris = 9,
+	
+        /// <summary>
+        /// Biometrics
+        /// </summary>
+        Biometrics = 10,
+	
     }
 }

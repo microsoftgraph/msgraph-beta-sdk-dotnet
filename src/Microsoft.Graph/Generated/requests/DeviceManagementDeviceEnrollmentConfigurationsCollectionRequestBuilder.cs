@@ -72,5 +72,18 @@ namespace Microsoft.Graph
                 this.Client,
                 payloadIds);
         }
+
+        /// <summary>
+        /// Gets the request builder for DeviceEnrollmentConfigurationCreateEnrollmentNotificationConfiguration.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceEnrollmentConfigurationCreateEnrollmentNotificationConfigurationRequestBuilder"/>.</returns>
+        public IDeviceEnrollmentConfigurationCreateEnrollmentNotificationConfigurationRequestBuilder CreateEnrollmentNotificationConfiguration(
+            IEnumerable<DeviceEnrollmentConfiguration> deviceEnrollmentNotificationConfigurations = null)
+        {
+            return new DeviceEnrollmentConfigurationCreateEnrollmentNotificationConfigurationRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.createEnrollmentNotificationConfiguration"),
+                this.Client,
+                deviceEnrollmentNotificationConfigurations);
+        }
     }
 }

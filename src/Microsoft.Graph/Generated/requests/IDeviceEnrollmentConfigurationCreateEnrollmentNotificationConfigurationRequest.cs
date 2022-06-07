@@ -20,6 +20,10 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceEnrollmentConfigurationCreateEnrollmentNotificationConfigurationRequest : IBaseRequest
     {
+        /// <summary>
+        /// Gets the request body.
+        /// </summary>
+        DeviceEnrollmentConfigurationCreateEnrollmentNotificationConfigurationRequestBody RequestBody { get; }
 
 
         /// <summary>

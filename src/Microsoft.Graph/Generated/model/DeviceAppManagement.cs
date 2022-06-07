@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets microsoft store for business language.
-        /// The locale information used to sync applications from the Microsoft Store for Business. Cultures that are specific to a country/region. The names of these cultures follow RFC 4646 (Windows Vista and later). The format is -&amp;lt;country/regioncode2&amp;gt;, where  is a lowercase two-letter code derived from ISO 639-1 and &amp;lt;country/regioncode2&amp;gt; is an uppercase two-letter code derived from ISO 3166. For example, en-US for English (United States) is a specific culture.
+        /// The locale information used to sync applications from the Microsoft Store for Business. Cultures that are specific to a country/region. The names of these cultures follow RFC 4646 (Windows Vista and later). The format is &amp;lt;languagecode2&amp;gt;-&amp;lt;country/regioncode2&amp;gt;, where &amp;lt;languagecode2&amp;gt; is a lowercase two-letter code derived from ISO 639-1 and &amp;lt;country/regioncode2&amp;gt; is an uppercase two-letter code derived from ISO 3166. For example, en-US for English (United States) is a specific culture.
         /// </summary>
         [JsonPropertyName("microsoftStoreForBusinessLanguage")]
         public string MicrosoftStoreForBusinessLanguage { get; set; }
@@ -363,6 +363,20 @@ namespace Microsoft.Graph
         [JsonPropertyName("windowsInformationProtectionWipeActions@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string WindowsInformationProtectionWipeActionsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windows managed app protections.
+        /// Windows managed app policies.
+        /// </summary>
+        [JsonPropertyName("windowsManagedAppProtections")]
+        public IDeviceAppManagementWindowsManagedAppProtectionsCollectionPage WindowsManagedAppProtections { get; set; }
+
+        /// <summary>
+        /// Gets or sets windowsManagedAppProtectionsNextLink.
+        /// </summary>
+        [JsonPropertyName("windowsManagedAppProtections@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string WindowsManagedAppProtectionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device app management tasks.

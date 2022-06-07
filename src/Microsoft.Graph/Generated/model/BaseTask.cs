@@ -115,7 +115,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets checklist items.
-        /// A collection of checklistItems linked to a task.
+        /// A collection of smaller subtasks linked to the more complex parent task.
         /// </summary>
         [JsonPropertyName("checklistItems")]
         public IBaseTaskChecklistItemsCollectionPage ChecklistItems { get; set; }

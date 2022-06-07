@@ -372,6 +372,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.WindowsInformationProtectionWipeActions.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
                 }
+                if (deviceAppManagementToInitialize.WindowsManagedAppProtections != null && deviceAppManagementToInitialize.WindowsManagedAppProtections.CurrentPage != null)
+                {
+                    deviceAppManagementToInitialize.WindowsManagedAppProtections.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.WindowsManagedAppProtectionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceAppManagementToInitialize.WindowsManagedAppProtections.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
+                }
                 if (deviceAppManagementToInitialize.DeviceAppManagementTasks != null && deviceAppManagementToInitialize.DeviceAppManagementTasks.CurrentPage != null)
                 {
                     deviceAppManagementToInitialize.DeviceAppManagementTasks.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.DeviceAppManagementTasksNextLink);

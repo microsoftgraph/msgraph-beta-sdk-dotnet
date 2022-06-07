@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type OrganizationActivateServiceRequest.
     /// </summary>
+    [Obsolete("The activateService API will be deprecated and will stop returning data on Jun-30, 2022")]
     public partial class OrganizationActivateServiceRequest : BaseRequest, IOrganizationActivateServiceRequest
     {
         /// <summary>

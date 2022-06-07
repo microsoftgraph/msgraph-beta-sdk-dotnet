@@ -31,12 +31,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets feedback resource.
+        /// The actual feedback resource.
         /// </summary>
         [JsonPropertyName("feedbackResource")]
         public EducationResource FeedbackResource { get; set; }
     
         /// <summary>
         /// Gets or sets resource status.
+        /// The status of the feedback resource. The possible values are: notPublished, pendingPublish, published, failedPublish, and unknownFutureValue.
         /// </summary>
         [JsonPropertyName("resourceStatus")]
         public EducationFeedbackResourceOutcomeStatus? ResourceStatus { get; set; }
