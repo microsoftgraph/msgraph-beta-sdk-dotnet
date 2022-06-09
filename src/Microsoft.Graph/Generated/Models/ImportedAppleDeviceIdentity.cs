@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.importedAppleDeviceIdentity" => new ImportedAppleDeviceIdentity(),
+                "#microsoft.graph.importedAppleDeviceIdentityResult" => new ImportedAppleDeviceIdentityResult(),
                 _ => new ImportedAppleDeviceIdentity(),
             };
         }

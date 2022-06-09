@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.It
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get unifiedGroupSources from security
+        /// Data source entity for groups associated with the custodian.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<UnifiedGroupSourcesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.It
             return requestInfo;
         }
         /// <summary>
-        /// Get unifiedGroupSources from security
+        /// Data source entity for groups associated with the custodian.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.It
             };
             return await RequestAdapter.SendAsync<UnifiedGroupSource>(requestInfo, UnifiedGroupSource.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get unifiedGroupSources from security</summary>
+        /// <summary>Data source entity for groups associated with the custodian.</summary>
         public class UnifiedGroupSourcesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

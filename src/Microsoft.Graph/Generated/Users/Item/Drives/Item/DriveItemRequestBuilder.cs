@@ -5,7 +5,10 @@ using Microsoft.Graph.Beta.Users.Item.Drives.Item.Bundles;
 using Microsoft.Graph.Beta.Users.Item.Drives.Item.Following;
 using Microsoft.Graph.Beta.Users.Item.Drives.Item.Items;
 using Microsoft.Graph.Beta.Users.Item.Drives.Item.List;
+using Microsoft.Graph.Beta.Users.Item.Drives.Item.Recent;
 using Microsoft.Graph.Beta.Users.Item.Drives.Item.Root;
+using Microsoft.Graph.Beta.Users.Item.Drives.Item.SearchWithQ;
+using Microsoft.Graph.Beta.Users.Item.Drives.Item.SharedWithMe;
 using Microsoft.Graph.Beta.Users.Item.Drives.Item.Special;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -181,6 +184,26 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Provides operations to call the recent method.
+        /// </summary>
+        public RecentRequestBuilder Recent() {
+            return new RecentRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>
+        /// Provides operations to call the search method.
+        /// <param name="q">Usage: q=&apos;{q}&apos;</param>
+        /// </summary>
+        public SearchWithQRequestBuilder SearchWithQ(string q) {
+            if(string.IsNullOrEmpty(q)) throw new ArgumentNullException(nameof(q));
+            return new SearchWithQRequestBuilder(PathParameters, RequestAdapter, q);
+        }
+        /// <summary>
+        /// Provides operations to call the sharedWithMe method.
+        /// </summary>
+        public SharedWithMeRequestBuilder SharedWithMe() {
+            return new SharedWithMeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class DriveItemRequestBuilderDeleteRequestConfiguration {

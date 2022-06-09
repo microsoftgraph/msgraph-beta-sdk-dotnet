@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.Item.Par
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get parent from security
+        /// Returns the parent tag of the specified tag.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ParentRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.Item.Par
             return requestInfo;
         }
         /// <summary>
-        /// Get parent from security
+        /// Returns the parent tag of the specified tag.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.Item.Par
             };
             return await RequestAdapter.SendAsync<EdiscoveryReviewTag>(requestInfo, EdiscoveryReviewTag.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get parent from security</summary>
+        /// <summary>Returns the parent tag of the specified tag.</summary>
         public class ParentRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

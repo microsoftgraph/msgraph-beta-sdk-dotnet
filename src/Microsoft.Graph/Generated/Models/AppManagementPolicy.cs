@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to application.</summary>
     public class AppManagementPolicy : PolicyBase, IParsable {
         /// <summary>The appliesTo property</summary>
         public List<DirectoryObject> AppliesTo {

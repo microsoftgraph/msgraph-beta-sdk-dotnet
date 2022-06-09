@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>An abstract base class containing properties for all mobile line of business apps.</summary>
     public class MobileLobApp : MobileApp, IParsable {
         /// <summary>The internal committed content version.</summary>
         public string CommittedContentVersion {
@@ -32,12 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new MobileLobApp CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.mobileLobApp" => new MobileLobApp(),
-                _ => new MobileLobApp(),
-            };
+            return new MobileLobApp();
         }
         /// <summary>
         /// The deserialization information for the current model

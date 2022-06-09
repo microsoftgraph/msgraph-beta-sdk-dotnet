@@ -55,7 +55,8 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.officeClientConfiguration" => new OfficeClientConfiguration(),
+                "#microsoft.graph.windowsOfficeClientConfiguration" => new WindowsOfficeClientConfiguration(),
+                "#microsoft.graph.windowsOfficeClientSecurityConfiguration" => new WindowsOfficeClientSecurityConfiguration(),
                 _ => new OfficeClientConfiguration(),
             };
         }

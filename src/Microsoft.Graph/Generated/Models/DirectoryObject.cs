@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<DirectoryObject>>(nameof(DeletedItems)); }
             set { BackingStore?.Set(nameof(DeletedItems), value); }
         }
-        /// <summary>Nullable.</summary>
+        /// <summary>The featureRolloutPolicies property</summary>
         public List<FeatureRolloutPolicy> FeatureRolloutPolicies {
             get { return BackingStore?.Get<List<FeatureRolloutPolicy>>(nameof(FeatureRolloutPolicies)); }
             set { BackingStore?.Set(nameof(FeatureRolloutPolicies), value); }

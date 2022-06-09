@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class WorkbookTableRow : Entity, IParsable {
         /// <summary>Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.</summary>
         public int? Index {

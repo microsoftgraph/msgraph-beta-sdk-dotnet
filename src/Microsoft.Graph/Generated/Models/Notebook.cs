@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
     public class Notebook : OnenoteEntityHierarchyModel, IParsable {
         /// <summary>Indicates whether this is the user&apos;s default notebook. Read-only.</summary>
         public bool? IsDefault {

@@ -60,7 +60,13 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.deviceEnrollmentConfiguration" => new DeviceEnrollmentConfiguration(),
+                "#microsoft.graph.deviceComanagementAuthorityConfiguration" => new DeviceComanagementAuthorityConfiguration(),
+                "#microsoft.graph.deviceEnrollmentLimitConfiguration" => new DeviceEnrollmentLimitConfiguration(),
+                "#microsoft.graph.deviceEnrollmentNotificationConfiguration" => new DeviceEnrollmentNotificationConfiguration(),
+                "#microsoft.graph.deviceEnrollmentPlatformRestrictionConfiguration" => new DeviceEnrollmentPlatformRestrictionConfiguration(),
+                "#microsoft.graph.deviceEnrollmentPlatformRestrictionsConfiguration" => new DeviceEnrollmentPlatformRestrictionsConfiguration(),
+                "#microsoft.graph.deviceEnrollmentWindowsHelloForBusinessConfiguration" => new DeviceEnrollmentWindowsHelloForBusinessConfiguration(),
+                "#microsoft.graph.windows10EnrollmentCompletionPageConfiguration" => new Windows10EnrollmentCompletionPageConfiguration(),
                 _ => new DeviceEnrollmentConfiguration(),
             };
         }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Represents a Microsot Bookings Business.</summary>
     public class BookingBusiness : BookingNamedEntity, IParsable {
         /// <summary>The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page.</summary>
         public PhysicalAddress Address {

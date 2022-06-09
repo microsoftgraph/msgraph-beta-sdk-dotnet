@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -70,7 +71,11 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.DoesUser
         /// </summary>
         public async Task<DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameResponse> GetAsync(Action<DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameResponse>(requestInfo, DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameResponse>(requestInfo, DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Invoke function doesUserHaveAccess</summary>
         public class DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameRequestBuilderGetQueryParameters {

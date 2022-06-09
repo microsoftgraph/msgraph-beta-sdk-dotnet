@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.windowsUpdates.catalogEntry" => new CatalogEntry(),
+                "#microsoft.graph.windowsUpdates.softwareUpdateCatalogEntry" => new SoftwareUpdateCatalogEntry(),
                 _ => new CatalogEntry(),
             };
         }

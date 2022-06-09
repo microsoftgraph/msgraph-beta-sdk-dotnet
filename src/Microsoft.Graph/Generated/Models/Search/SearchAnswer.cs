@@ -40,7 +40,9 @@ namespace Microsoft.Graph.Beta.Models.Search {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.search.searchAnswer" => new SearchAnswer(),
+                "#microsoft.graph.search.acronym" => new Acronym(),
+                "#microsoft.graph.search.bookmark" => new Bookmark(),
+                "#microsoft.graph.search.qna" => new Qna(),
                 _ => new SearchAnswer(),
             };
         }

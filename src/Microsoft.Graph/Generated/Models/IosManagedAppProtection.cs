@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an iOS device</summary>
     public class IosManagedAppProtection : TargetedManagedAppProtection, IParsable {
         /// <summary>Semicolon seperated list of device models allowed, as a string, for the managed app to work.</summary>
         public string AllowedIosDeviceModels {

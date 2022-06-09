@@ -6,7 +6,7 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
     public class AccessPackageResourceRequest : Entity, IParsable {
-        /// <summary>Nullable.</summary>
+        /// <summary>The accessPackageResource property</summary>
         public Microsoft.Graph.Beta.Models.AccessPackageResource AccessPackageResource {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResource>(nameof(AccessPackageResource)); }
             set { BackingStore?.Set(nameof(AccessPackageResource), value); }
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>(nameof(RequestState)); }
             set { BackingStore?.Set(nameof(RequestState), value); }
         }
-        /// <summary>Read-only.</summary>
+        /// <summary>The requestStatus property</summary>
         public string RequestStatus {
             get { return BackingStore?.Get<string>(nameof(RequestStatus)); }
             set { BackingStore?.Set(nameof(RequestStatus), value); }

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to managedMobileLobApp.</summary>
+    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public enum ManagedAppAvailability {
         /// <summary>A globally available app to all tenants.</summary>
         Global,

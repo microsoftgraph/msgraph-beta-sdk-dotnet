@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
     public class PersonAnnualEvent : ItemFacet, IParsable {
         /// <summary>The date property</summary>
         public Date? Date {

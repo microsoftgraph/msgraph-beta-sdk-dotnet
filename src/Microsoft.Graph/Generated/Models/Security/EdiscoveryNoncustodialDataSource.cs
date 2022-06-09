@@ -6,12 +6,12 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     /// <summary>Provides operations to manage the security singleton.</summary>
     public class EdiscoveryNoncustodialDataSource : DataSourceContainer, IParsable {
-        /// <summary>The dataSource property</summary>
+        /// <summary>User source or SharePoint site data source as non-custodial data source.</summary>
         public Microsoft.Graph.Beta.Models.Security.DataSource DataSource {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DataSource>(nameof(DataSource)); }
             set { BackingStore?.Set(nameof(DataSource), value); }
         }
-        /// <summary>The lastIndexOperation property</summary>
+        /// <summary>Operation entity that represents the latest indexing for the non-custodial data source.</summary>
         public EdiscoveryIndexOperation LastIndexOperation {
             get { return BackingStore?.Get<EdiscoveryIndexOperation>(nameof(LastIndexOperation)); }
             set { BackingStore?.Set(nameof(LastIndexOperation), value); }

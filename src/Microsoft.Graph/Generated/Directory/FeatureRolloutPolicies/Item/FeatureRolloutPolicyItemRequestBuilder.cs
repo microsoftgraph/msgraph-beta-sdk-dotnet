@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Directory.FeatureRolloutPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Nullable.
+        /// Get featureRolloutPolicies from directory
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<FeatureRolloutPolicyItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Directory.FeatureRolloutPolicies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Nullable.
+        /// Get featureRolloutPolicies from directory
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Beta.Directory.FeatureRolloutPolicies.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Nullable.</summary>
+        /// <summary>Get featureRolloutPolicies from directory</summary>
         public class FeatureRolloutPolicyItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

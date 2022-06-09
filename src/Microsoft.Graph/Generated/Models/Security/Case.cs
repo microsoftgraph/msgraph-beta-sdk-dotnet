@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.security.case" => new Case(),
+                "#microsoft.graph.security.ediscoveryCase" => new EdiscoveryCase(),
                 _ => new Case(),
             };
         }

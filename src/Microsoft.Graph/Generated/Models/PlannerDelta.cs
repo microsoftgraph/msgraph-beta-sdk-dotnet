@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class PlannerDelta : Entity, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -15,7 +15,15 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.plannerDelta" => new PlannerDelta(),
+                "#microsoft.graph.plannerAssignedToTaskBoardTaskFormat" => new PlannerAssignedToTaskBoardTaskFormat(),
+                "#microsoft.graph.plannerBucket" => new PlannerBucket(),
+                "#microsoft.graph.plannerBucketTaskBoardTaskFormat" => new PlannerBucketTaskBoardTaskFormat(),
+                "#microsoft.graph.plannerPlan" => new PlannerPlan(),
+                "#microsoft.graph.plannerPlanDetails" => new PlannerPlanDetails(),
+                "#microsoft.graph.plannerProgressTaskBoardTaskFormat" => new PlannerProgressTaskBoardTaskFormat(),
+                "#microsoft.graph.plannerTask" => new PlannerTask(),
+                "#microsoft.graph.plannerTaskDetails" => new PlannerTaskDetails(),
+                "#microsoft.graph.plannerUser" => new PlannerUser(),
                 _ => new PlannerDelta(),
             };
         }

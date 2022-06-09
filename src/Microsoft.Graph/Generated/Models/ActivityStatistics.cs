@@ -41,7 +41,11 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.activityStatistics" => new ActivityStatistics(),
+                "#microsoft.graph.callActivityStatistics" => new CallActivityStatistics(),
+                "#microsoft.graph.chatActivityStatistics" => new ChatActivityStatistics(),
+                "#microsoft.graph.emailActivityStatistics" => new EmailActivityStatistics(),
+                "#microsoft.graph.focusActivityStatistics" => new FocusActivityStatistics(),
+                "#microsoft.graph.meetingActivityStatistics" => new MeetingActivityStatistics(),
                 _ => new ActivityStatistics(),
             };
         }

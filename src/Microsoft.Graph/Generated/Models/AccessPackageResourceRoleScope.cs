@@ -11,12 +11,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceRole>(nameof(AccessPackageResourceRole)); }
             set { BackingStore?.Set(nameof(AccessPackageResourceRole), value); }
         }
-        /// <summary>Read-only. Nullable.</summary>
+        /// <summary>The accessPackageResourceScope property</summary>
         public Microsoft.Graph.Beta.Models.AccessPackageResourceScope AccessPackageResourceScope {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceScope>(nameof(AccessPackageResourceScope)); }
             set { BackingStore?.Set(nameof(AccessPackageResourceScope), value); }
         }
-        /// <summary>Read-only.</summary>
+        /// <summary>The createdBy property</summary>
         public string CreatedBy {
             get { return BackingStore?.Get<string>(nameof(CreatedBy)); }
             set { BackingStore?.Set(nameof(CreatedBy), value); }
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
             set { BackingStore?.Set(nameof(CreatedDateTime), value); }
         }
-        /// <summary>Read-only.</summary>
+        /// <summary>The modifiedBy property</summary>
         public string ModifiedBy {
             get { return BackingStore?.Get<string>(nameof(ModifiedBy)); }
             set { BackingStore?.Set(nameof(ModifiedBy), value); }

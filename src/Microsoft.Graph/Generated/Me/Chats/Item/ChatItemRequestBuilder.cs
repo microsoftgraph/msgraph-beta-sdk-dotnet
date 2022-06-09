@@ -1,11 +1,16 @@
+using Microsoft.Graph.Beta.Me.Chats.Item.HideForUser;
 using Microsoft.Graph.Beta.Me.Chats.Item.InstalledApps;
 using Microsoft.Graph.Beta.Me.Chats.Item.LastMessagePreview;
+using Microsoft.Graph.Beta.Me.Chats.Item.MarkChatReadForUser;
+using Microsoft.Graph.Beta.Me.Chats.Item.MarkChatUnreadForUser;
 using Microsoft.Graph.Beta.Me.Chats.Item.Members;
 using Microsoft.Graph.Beta.Me.Chats.Item.Messages;
 using Microsoft.Graph.Beta.Me.Chats.Item.Operations;
 using Microsoft.Graph.Beta.Me.Chats.Item.PermissionGrants;
 using Microsoft.Graph.Beta.Me.Chats.Item.PinnedMessages;
+using Microsoft.Graph.Beta.Me.Chats.Item.SendActivityNotification;
 using Microsoft.Graph.Beta.Me.Chats.Item.Tabs;
+using Microsoft.Graph.Beta.Me.Chats.Item.UnhideForUser;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -19,6 +24,10 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Chats.Item {
     /// <summary>Provides operations to manage the chats property of the microsoft.graph.user entity.</summary>
     public class ChatItemRequestBuilder {
+        /// <summary>The hideForUser property</summary>
+        public HideForUserRequestBuilder HideForUser { get =>
+            new HideForUserRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The installedApps property</summary>
         public InstalledAppsRequestBuilder InstalledApps { get =>
             new InstalledAppsRequestBuilder(PathParameters, RequestAdapter);
@@ -26,6 +35,14 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item {
         /// <summary>The lastMessagePreview property</summary>
         public LastMessagePreviewRequestBuilder LastMessagePreview { get =>
             new LastMessagePreviewRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The markChatReadForUser property</summary>
+        public MarkChatReadForUserRequestBuilder MarkChatReadForUser { get =>
+            new MarkChatReadForUserRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The markChatUnreadForUser property</summary>
+        public MarkChatUnreadForUserRequestBuilder MarkChatUnreadForUser { get =>
+            new MarkChatUnreadForUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The members property</summary>
         public MembersRequestBuilder Members { get =>
@@ -51,9 +68,17 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item {
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The sendActivityNotification property</summary>
+        public SendActivityNotificationRequestBuilder SendActivityNotification { get =>
+            new SendActivityNotificationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The tabs property</summary>
         public TabsRequestBuilder Tabs { get =>
             new TabsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The unhideForUser property</summary>
+        public UnhideForUserRequestBuilder UnhideForUser { get =>
+            new UnhideForUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }

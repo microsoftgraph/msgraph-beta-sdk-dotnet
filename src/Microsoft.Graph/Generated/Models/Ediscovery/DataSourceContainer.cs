@@ -50,7 +50,8 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.ediscovery.dataSourceContainer" => new DataSourceContainer(),
+                "#microsoft.graph.ediscovery.custodian" => new Custodian(),
+                "#microsoft.graph.ediscovery.noncustodialDataSource" => new NoncustodialDataSource(),
                 _ => new DataSourceContainer(),
             };
         }

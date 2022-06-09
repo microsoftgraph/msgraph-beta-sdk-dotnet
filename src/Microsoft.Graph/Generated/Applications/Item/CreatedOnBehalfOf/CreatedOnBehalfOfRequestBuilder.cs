@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.CreatedOnBehalfOf {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Read-only.
+        /// Get createdOnBehalfOf from applications
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<CreatedOnBehalfOfRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.CreatedOnBehalfOf {
             return requestInfo;
         }
         /// <summary>
-        /// Read-only.
+        /// Get createdOnBehalfOf from applications
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.CreatedOnBehalfOf {
             };
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Read-only.</summary>
+        /// <summary>Get createdOnBehalfOf from applications</summary>
         public class CreatedOnBehalfOfRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

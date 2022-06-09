@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class LinkedResource_v2 : Entity, IParsable {
         /// <summary>Field indicating the app name of the source that is sending the linkedResource.</summary>
         public string ApplicationName {

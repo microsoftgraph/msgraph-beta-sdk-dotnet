@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Schema {
             return requestInfo;
         }
         /// <summary>
-        /// Read-only. Nullable.
+        /// Get schema from connections
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<SchemaRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Schema {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read-only. Nullable.
+        /// Get schema from connections
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Schema {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Read-only. Nullable.</summary>
+        /// <summary>Get schema from connections</summary>
         public class SchemaRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

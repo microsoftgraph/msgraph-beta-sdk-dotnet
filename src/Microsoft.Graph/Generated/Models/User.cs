@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
     public class User : DirectoryObject, IParsable {
         /// <summary>A freeform text entry field for the user to describe themselves. Returned only on $select.</summary>
         public string AboutMe {
@@ -62,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<AssignedPlan>>(nameof(AssignedPlans)); }
             set { BackingStore?.Set(nameof(AssignedPlans), value); }
         }
-        /// <summary>TODO: Add Description</summary>
+        /// <summary>The authentication methods that are supported for the user.</summary>
         public Microsoft.Graph.Beta.Models.Authentication Authentication {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Authentication>(nameof(Authentication)); }
             set { BackingStore?.Set(nameof(Authentication), value); }
@@ -292,7 +291,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InformationProtection>(nameof(InformationProtection)); }
             set { BackingStore?.Set(nameof(InformationProtection), value); }
         }
-        /// <summary>Read-only. Nullable.</summary>
+        /// <summary>The insights property</summary>
         public ItemInsights Insights {
             get { return BackingStore?.Get<ItemInsights>(nameof(Insights)); }
             set { BackingStore?.Set(nameof(Insights), value); }
@@ -317,7 +316,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>(nameof(JobTitle)); }
             set { BackingStore?.Set(nameof(JobTitle), value); }
         }
-        /// <summary>Read-only. Nullable.</summary>
+        /// <summary>The joinedGroups property</summary>
         public List<Group> JoinedGroups {
             get { return BackingStore?.Get<List<Group>>(nameof(JoinedGroups)); }
             set { BackingStore?.Set(nameof(JoinedGroups), value); }
@@ -427,7 +426,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>(nameof(OfficeLocation)); }
             set { BackingStore?.Set(nameof(OfficeLocation), value); }
         }
-        /// <summary>Read-only.</summary>
+        /// <summary>The onenote property</summary>
         public Microsoft.Graph.Beta.Models.Onenote Onenote {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Onenote>(nameof(Onenote)); }
             set { BackingStore?.Set(nameof(Onenote), value); }
@@ -537,7 +536,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<ProfilePhoto>(nameof(Photo)); }
             set { BackingStore?.Set(nameof(Photo), value); }
         }
-        /// <summary>Read-only. Nullable.</summary>
+        /// <summary>The photos property</summary>
         public List<ProfilePhoto> Photos {
             get { return BackingStore?.Get<List<ProfilePhoto>>(nameof(Photos)); }
             set { BackingStore?.Set(nameof(Photos), value); }
@@ -622,7 +621,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.Security>(nameof(Security)); }
             set { BackingStore?.Set(nameof(Security), value); }
         }
-        /// <summary>Read-only. Nullable.</summary>
+        /// <summary>The settings property</summary>
         public UserSettings Settings {
             get { return BackingStore?.Get<UserSettings>(nameof(Settings)); }
             set { BackingStore?.Set(nameof(Settings), value); }

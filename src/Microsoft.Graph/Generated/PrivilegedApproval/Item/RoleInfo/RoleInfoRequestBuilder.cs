@@ -1,6 +1,8 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.Assignments;
+using Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.SelfActivate;
+using Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.SelfDeactivate;
 using Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.Settings;
 using Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.Summary;
 using Microsoft.Kiota.Abstractions;
@@ -22,6 +24,14 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The selfActivate property</summary>
+        public SelfActivateRequestBuilder SelfActivate { get =>
+            new SelfActivateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The selfDeactivate property</summary>
+        public SelfDeactivateRequestBuilder SelfDeactivate { get =>
+            new SelfDeactivateRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The settings property</summary>
         public SettingsRequestBuilder Settings { get =>
             new SettingsRequestBuilder(PathParameters, RequestAdapter);
@@ -78,7 +88,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo {
             return requestInfo;
         }
         /// <summary>
-        /// Read-only. Nullable.
+        /// Get roleInfo from privilegedApproval
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<RoleInfoRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -133,7 +143,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read-only. Nullable.
+        /// Get roleInfo from privilegedApproval
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -176,7 +186,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Read-only. Nullable.</summary>
+        /// <summary>Get roleInfo from privilegedApproval</summary>
         public class RoleInfoRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

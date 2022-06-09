@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class TenantAppManagementPolicy : PolicyBase, IParsable {
         /// <summary>Restrictions that apply as default to all application objects in the tenant.</summary>
         public AppManagementConfiguration ApplicationRestrictions {

@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>(nameof(CanExtend)); }
             set { BackingStore?.Set(nameof(CanExtend), value); }
         }
-        /// <summary>Read-only.</summary>
+        /// <summary>The createdBy property</summary>
         public string CreatedBy {
             get { return BackingStore?.Get<string>(nameof(CreatedBy)); }
             set { BackingStore?.Set(nameof(CreatedBy), value); }
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpirationDateTime)); }
             set { BackingStore?.Set(nameof(ExpirationDateTime), value); }
         }
-        /// <summary>Read-only.</summary>
+        /// <summary>The modifiedBy property</summary>
         public string ModifiedBy {
             get { return BackingStore?.Get<string>(nameof(ModifiedBy)); }
             set { BackingStore?.Set(nameof(ModifiedBy), value); }

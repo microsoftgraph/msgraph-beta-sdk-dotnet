@@ -65,24 +65,6 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete navigation property salesCreditMemos for financials
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
-        public RequestInformation CreateDeleteRequestInformation(Action<SalesCreditMemoItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.DELETE,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new SalesCreditMemoItemRequestBuilderDeleteRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            return requestInfo;
-        }
-        /// <summary>
         /// Get salesCreditMemos from financials
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -124,20 +106,6 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Delete navigation property salesCreditMemos for financials
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
-        /// </summary>
-        public async Task DeleteAsync(Action<SalesCreditMemoItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
-            };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
-        }
-        /// <summary>
         /// Get salesCreditMemos from financials
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -166,20 +134,6 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
-        }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
-        public class SalesCreditMemoItemRequestBuilderDeleteRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>
-            /// Instantiates a new salesCreditMemoItemRequestBuilderDeleteRequestConfiguration and sets the default values.
-            /// </summary>
-            public SalesCreditMemoItemRequestBuilderDeleteRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
-            }
         }
         /// <summary>Get salesCreditMemos from financials</summary>
         public class SalesCreditMemoItemRequestBuilderGetQueryParameters {

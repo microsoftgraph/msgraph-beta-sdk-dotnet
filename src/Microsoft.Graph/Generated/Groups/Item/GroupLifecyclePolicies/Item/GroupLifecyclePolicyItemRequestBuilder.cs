@@ -1,3 +1,5 @@
+using Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.Item.AddGroup;
+using Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.Item.RemoveGroup;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -11,8 +13,16 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.Item {
     /// <summary>Provides operations to manage the groupLifecyclePolicies property of the microsoft.graph.group entity.</summary>
     public class GroupLifecyclePolicyItemRequestBuilder {
+        /// <summary>The addGroup property</summary>
+        public AddGroupRequestBuilder AddGroup { get =>
+            new AddGroupRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>The removeGroup property</summary>
+        public RemoveGroupRequestBuilder RemoveGroup { get =>
+            new RemoveGroupRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>

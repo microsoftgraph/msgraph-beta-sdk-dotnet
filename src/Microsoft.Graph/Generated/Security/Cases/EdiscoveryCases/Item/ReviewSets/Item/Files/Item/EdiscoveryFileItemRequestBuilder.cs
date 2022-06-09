@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
             return requestInfo;
         }
         /// <summary>
-        /// Get files from security
+        /// Represents files within the review set.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<EdiscoveryFileItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get files from security
+        /// Represents files within the review set.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get files from security</summary>
+        /// <summary>Represents files within the review set.</summary>
         public class EdiscoveryFileItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

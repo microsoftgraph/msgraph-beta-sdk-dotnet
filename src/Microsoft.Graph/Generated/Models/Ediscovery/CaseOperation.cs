@@ -50,7 +50,13 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.ediscovery.caseOperation" => new CaseOperation(),
+                "#microsoft.graph.ediscovery.addToReviewSetOperation" => new AddToReviewSetOperation(),
+                "#microsoft.graph.ediscovery.caseExportOperation" => new CaseExportOperation(),
+                "#microsoft.graph.ediscovery.caseHoldOperation" => new CaseHoldOperation(),
+                "#microsoft.graph.ediscovery.caseIndexOperation" => new CaseIndexOperation(),
+                "#microsoft.graph.ediscovery.estimateStatisticsOperation" => new EstimateStatisticsOperation(),
+                "#microsoft.graph.ediscovery.purgeDataOperation" => new PurgeDataOperation(),
+                "#microsoft.graph.ediscovery.tagOperation" => new TagOperation(),
                 _ => new CaseOperation(),
             };
         }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Entity representing a template setting category</summary>
     public class DeviceManagementTemplateSettingCategory : DeviceManagementSettingCategory, IParsable {
         /// <summary>The settings this category contains</summary>
         public List<DeviceManagementSettingInstance> RecommendedSettings {

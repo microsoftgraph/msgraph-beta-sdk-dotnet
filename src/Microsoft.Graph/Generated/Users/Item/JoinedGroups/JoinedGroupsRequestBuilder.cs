@@ -1,5 +1,10 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.JoinedGroups.Delta;
+using Microsoft.Graph.Beta.Users.Item.JoinedGroups.EvaluateDynamicMembership;
+using Microsoft.Graph.Beta.Users.Item.JoinedGroups.GetByIds;
+using Microsoft.Graph.Beta.Users.Item.JoinedGroups.GetUserOwnedObjects;
+using Microsoft.Graph.Beta.Users.Item.JoinedGroups.ValidateProperties;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -11,12 +16,28 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.JoinedGroups {
     /// <summary>Provides operations to manage the joinedGroups property of the microsoft.graph.user entity.</summary>
     public class JoinedGroupsRequestBuilder {
+        /// <summary>The evaluateDynamicMembership property</summary>
+        public EvaluateDynamicMembershipRequestBuilder EvaluateDynamicMembership { get =>
+            new EvaluateDynamicMembershipRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The getByIds property</summary>
+        public GetByIdsRequestBuilder GetByIds { get =>
+            new GetByIdsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The getUserOwnedObjects property</summary>
+        public GetUserOwnedObjectsRequestBuilder GetUserOwnedObjects { get =>
+            new GetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>The validateProperties property</summary>
+        public ValidatePropertiesRequestBuilder ValidateProperties { get =>
+            new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new JoinedGroupsRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -45,7 +66,7 @@ namespace Microsoft.Graph.Beta.Users.Item.JoinedGroups {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Read-only. Nullable.
+        /// Get joinedGroups from users
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<JoinedGroupsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -87,7 +108,13 @@ namespace Microsoft.Graph.Beta.Users.Item.JoinedGroups {
             return requestInfo;
         }
         /// <summary>
-        /// Read-only. Nullable.
+        /// Provides operations to call the delta method.
+        /// </summary>
+        public DeltaRequestBuilder Delta() {
+            return new DeltaRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>
+        /// Get joinedGroups from users
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -116,7 +143,7 @@ namespace Microsoft.Graph.Beta.Users.Item.JoinedGroups {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Group>(requestInfo, Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Read-only. Nullable.</summary>
+        /// <summary>Get joinedGroups from users</summary>
         public class JoinedGroupsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

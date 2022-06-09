@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Event representing a users device application install status.</summary>
     public class MobileAppTroubleshootingEvent : DeviceManagementTroubleshootingEvent, IParsable {
         /// <summary>Intune application identifier.</summary>
         public string ApplicationId {

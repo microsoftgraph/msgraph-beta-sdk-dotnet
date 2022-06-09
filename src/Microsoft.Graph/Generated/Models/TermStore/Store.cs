@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.TermStore {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class Store : Entity, IParsable {
         /// <summary>Default language of the term store.</summary>
         public string DefaultLanguageTag {

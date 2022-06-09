@@ -50,7 +50,10 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.deviceManagementResourceAccessProfileBase" => new DeviceManagementResourceAccessProfileBase(),
+                "#microsoft.graph.windows10XCertificateProfile" => new Windows10XCertificateProfile(),
+                "#microsoft.graph.windows10XTrustedRootCertificate" => new Windows10XTrustedRootCertificate(),
+                "#microsoft.graph.windows10XVpnConfiguration" => new Windows10XVpnConfiguration(),
+                "#microsoft.graph.windows10XWifiConfiguration" => new Windows10XWifiConfiguration(),
                 _ => new DeviceManagementResourceAccessProfileBase(),
             };
         }

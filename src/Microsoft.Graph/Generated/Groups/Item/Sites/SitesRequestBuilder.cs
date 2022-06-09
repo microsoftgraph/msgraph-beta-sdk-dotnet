@@ -1,5 +1,8 @@
+using Microsoft.Graph.Beta.Groups.Item.Sites.Add;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Count;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Delta;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Remove;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -13,12 +16,20 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups.Item.Sites {
     /// <summary>Provides operations to manage the sites property of the microsoft.graph.group entity.</summary>
     public class SitesRequestBuilder {
+        /// <summary>The add property</summary>
+        public AddRequestBuilder Add { get =>
+            new AddRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>The remove property</summary>
+        public RemoveRequestBuilder Remove { get =>
+            new RemoveRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
@@ -97,6 +108,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites {
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             return requestInfo;
+        }
+        /// <summary>
+        /// Provides operations to call the delta method.
+        /// </summary>
+        public DeltaRequestBuilder Delta() {
+            return new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// The list of SharePoint sites in this group. Access the default site with /sites/root.

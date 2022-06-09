@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class TeamInfo : Entity, IParsable {
         /// <summary>The name of the team.</summary>
         public string DisplayName {
@@ -30,7 +30,8 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.teamInfo" => new TeamInfo(),
+                "#microsoft.graph.associatedTeamInfo" => new AssociatedTeamInfo(),
+                "#microsoft.graph.sharedWithChannelTeamInfo" => new SharedWithChannelTeamInfo(),
                 _ => new TeamInfo(),
             };
         }

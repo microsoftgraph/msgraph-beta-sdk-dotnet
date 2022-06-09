@@ -20,7 +20,9 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.bookingNamedEntity" => new BookingNamedEntity(),
+                "#microsoft.graph.bookingBusiness" => new BookingBusiness(),
+                "#microsoft.graph.bookingPerson" => new BookingPerson(),
+                "#microsoft.graph.bookingService" => new BookingService(),
                 _ => new BookingNamedEntity(),
             };
         }

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Read-only. Nullable.
+        /// Get ref of members from onPremisesPublishingProfiles
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<RefRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
             return requestInfo;
         }
         /// <summary>
-        /// Read-only. Nullable.
+        /// Get ref of members from onPremisesPublishingProfiles
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
             };
             return await RequestAdapter.SendAsync<Ref>(requestInfo, Ref.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Read-only. Nullable.</summary>
+        /// <summary>Get ref of members from onPremisesPublishingProfiles</summary>
         public class RefRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

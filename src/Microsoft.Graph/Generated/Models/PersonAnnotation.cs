@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
     public class PersonAnnotation : ItemFacet, IParsable {
         /// <summary>Contains the detail of the note itself.</summary>
         public ItemBody Detail {

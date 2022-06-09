@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The DepEnrollmentBaseProfile resource represents an Apple Device Enrollment Program (DEP) enrollment profile. This type of profile must be assigned to Apple DEP serial numbers before the corresponding devices can enroll via DEP.</summary>
     public class DepEnrollmentBaseProfile : EnrollmentProfile, IParsable {
         /// <summary>Indicates if Apple id setup pane is disabled</summary>
         public bool? AppleIdDisabled {
@@ -107,12 +106,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new DepEnrollmentBaseProfile CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.depEnrollmentBaseProfile" => new DepEnrollmentBaseProfile(),
-                _ => new DepEnrollmentBaseProfile(),
-            };
+            return new DepEnrollmentBaseProfile();
         }
         /// <summary>
         /// The deserialization information for the current model

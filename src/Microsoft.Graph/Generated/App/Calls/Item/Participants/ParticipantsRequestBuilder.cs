@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Read-only. Nullable.
+        /// Get participants from app
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ParticipantsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants {
             return requestInfo;
         }
         /// <summary>
-        /// Read-only. Nullable.
+        /// Get participants from app
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants {
             };
             return await RequestAdapter.SendAsync<Participant>(requestInfo, Participant.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Read-only. Nullable.</summary>
+        /// <summary>Get participants from app</summary>
         public class ParticipantsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

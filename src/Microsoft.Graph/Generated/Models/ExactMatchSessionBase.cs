@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
     public class ExactMatchSessionBase : ExactMatchJobBase, IParsable {
         /// <summary>The dataStoreId property</summary>
         public string DataStoreId {
@@ -52,12 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new ExactMatchSessionBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.exactMatchSessionBase" => new ExactMatchSessionBase(),
-                _ => new ExactMatchSessionBase(),
-            };
+            return new ExactMatchSessionBase();
         }
         /// <summary>
         /// The deserialization information for the current model

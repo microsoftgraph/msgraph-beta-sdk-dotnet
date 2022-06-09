@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Abstract class that contains properties and inherited properties for apps that you can manage with an Intune app protection policy.</summary>
     public class ManagedApp : MobileApp, IParsable {
         /// <summary>The Application&apos;s availability. Possible values are: global, lineOfBusiness.</summary>
         public ManagedAppAvailability? AppAvailability {
@@ -22,12 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new ManagedApp CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.managedApp" => new ManagedApp(),
-                _ => new ManagedApp(),
-            };
+            return new ManagedApp();
         }
         /// <summary>
         /// The deserialization information for the current model

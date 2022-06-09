@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
     public class LanguageProficiency : ItemFacet, IParsable {
         /// <summary>Contains the long-form name for the language.</summary>
         public string DisplayName {

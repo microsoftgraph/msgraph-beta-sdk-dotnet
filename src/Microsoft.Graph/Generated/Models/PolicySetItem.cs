@@ -55,7 +55,19 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.policySetItem" => new PolicySetItem(),
+                "#microsoft.graph.deviceCompliancePolicyPolicySetItem" => new DeviceCompliancePolicyPolicySetItem(),
+                "#microsoft.graph.deviceConfigurationPolicySetItem" => new DeviceConfigurationPolicySetItem(),
+                "#microsoft.graph.deviceManagementConfigurationPolicyPolicySetItem" => new DeviceManagementConfigurationPolicyPolicySetItem(),
+                "#microsoft.graph.deviceManagementScriptPolicySetItem" => new DeviceManagementScriptPolicySetItem(),
+                "#microsoft.graph.enrollmentRestrictionsConfigurationPolicySetItem" => new EnrollmentRestrictionsConfigurationPolicySetItem(),
+                "#microsoft.graph.iosLobAppProvisioningConfigurationPolicySetItem" => new IosLobAppProvisioningConfigurationPolicySetItem(),
+                "#microsoft.graph.managedAppProtectionPolicySetItem" => new ManagedAppProtectionPolicySetItem(),
+                "#microsoft.graph.managedDeviceMobileAppConfigurationPolicySetItem" => new ManagedDeviceMobileAppConfigurationPolicySetItem(),
+                "#microsoft.graph.mdmWindowsInformationProtectionPolicyPolicySetItem" => new MdmWindowsInformationProtectionPolicyPolicySetItem(),
+                "#microsoft.graph.mobileAppPolicySetItem" => new MobileAppPolicySetItem(),
+                "#microsoft.graph.targetedManagedAppConfigurationPolicySetItem" => new TargetedManagedAppConfigurationPolicySetItem(),
+                "#microsoft.graph.windows10EnrollmentCompletionPageConfigurationPolicySetItem" => new Windows10EnrollmentCompletionPageConfigurationPolicySetItem(),
+                "#microsoft.graph.windowsAutopilotDeploymentProfilePolicySetItem" => new WindowsAutopilotDeploymentProfilePolicySetItem(),
                 _ => new PolicySetItem(),
             };
         }

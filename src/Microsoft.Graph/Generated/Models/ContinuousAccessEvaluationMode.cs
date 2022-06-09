@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
+    /// <summary>Provides operations to manage the identityContainer singleton.</summary>
     public enum ContinuousAccessEvaluationMode {
         StrictEnforcement,
         Disabled,

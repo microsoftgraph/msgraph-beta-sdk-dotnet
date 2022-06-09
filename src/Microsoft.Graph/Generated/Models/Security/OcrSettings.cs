@@ -13,17 +13,17 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isEnabled property</summary>
+        /// <summary>Indicates whether or not OCR is enabled for the case.</summary>
         public bool? IsEnabled {
             get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
             set { BackingStore?.Set(nameof(IsEnabled), value); }
         }
-        /// <summary>The maxImageSize property</summary>
+        /// <summary>Maximum image size that will be processed in KB).</summary>
         public int? MaxImageSize {
             get { return BackingStore?.Get<int?>(nameof(MaxImageSize)); }
             set { BackingStore?.Set(nameof(MaxImageSize), value); }
         }
-        /// <summary>The timeout property</summary>
+        /// <summary>The timeout duration for the OCR engine. A longer timeout may increase success of OCR, but may add to the total processing time.</summary>
         public TimeSpan? Timeout {
             get { return BackingStore?.Get<TimeSpan?>(nameof(Timeout)); }
             set { BackingStore?.Set(nameof(Timeout), value); }

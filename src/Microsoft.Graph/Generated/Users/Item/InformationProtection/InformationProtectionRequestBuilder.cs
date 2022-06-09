@@ -2,10 +2,14 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Users.Item.InformationProtection.Bitlocker;
 using Microsoft.Graph.Beta.Users.Item.InformationProtection.DataLossPreventionPolicies;
+using Microsoft.Graph.Beta.Users.Item.InformationProtection.DecryptBuffer;
+using Microsoft.Graph.Beta.Users.Item.InformationProtection.EncryptBuffer;
 using Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy;
 using Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabels;
 using Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityPolicySettings;
+using Microsoft.Graph.Beta.Users.Item.InformationProtection.SignDigest;
 using Microsoft.Graph.Beta.Users.Item.InformationProtection.ThreatAssessmentRequests;
+using Microsoft.Graph.Beta.Users.Item.InformationProtection.VerifySignature;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -25,6 +29,14 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection {
         public DataLossPreventionPoliciesRequestBuilder DataLossPreventionPolicies { get =>
             new DataLossPreventionPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The decryptBuffer property</summary>
+        public DecryptBufferRequestBuilder DecryptBuffer { get =>
+            new DecryptBufferRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The encryptBuffer property</summary>
+        public EncryptBufferRequestBuilder EncryptBuffer { get =>
+            new EncryptBufferRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The policy property</summary>
@@ -41,12 +53,20 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection {
         public SensitivityPolicySettingsRequestBuilder SensitivityPolicySettings { get =>
             new SensitivityPolicySettingsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The signDigest property</summary>
+        public SignDigestRequestBuilder SignDigest { get =>
+            new SignDigestRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The threatAssessmentRequests property</summary>
         public ThreatAssessmentRequestsRequestBuilder ThreatAssessmentRequests { get =>
             new ThreatAssessmentRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>The verifySignature property</summary>
+        public VerifySignatureRequestBuilder VerifySignature { get =>
+            new VerifySignatureRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new InformationProtectionRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>

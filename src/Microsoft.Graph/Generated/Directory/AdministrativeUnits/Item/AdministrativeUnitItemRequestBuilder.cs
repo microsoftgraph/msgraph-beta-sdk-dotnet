@@ -1,5 +1,10 @@
+using Microsoft.Graph.Beta.Directory.AdministrativeUnits.Item.CheckMemberGroups;
+using Microsoft.Graph.Beta.Directory.AdministrativeUnits.Item.CheckMemberObjects;
 using Microsoft.Graph.Beta.Directory.AdministrativeUnits.Item.Extensions;
+using Microsoft.Graph.Beta.Directory.AdministrativeUnits.Item.GetMemberGroups;
+using Microsoft.Graph.Beta.Directory.AdministrativeUnits.Item.GetMemberObjects;
 using Microsoft.Graph.Beta.Directory.AdministrativeUnits.Item.Members;
+using Microsoft.Graph.Beta.Directory.AdministrativeUnits.Item.Restore;
 using Microsoft.Graph.Beta.Directory.AdministrativeUnits.Item.ScopedRoleMembers;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -14,9 +19,25 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Directory.AdministrativeUnits.Item {
     /// <summary>Provides operations to manage the administrativeUnits property of the microsoft.graph.directory entity.</summary>
     public class AdministrativeUnitItemRequestBuilder {
+        /// <summary>The checkMemberGroups property</summary>
+        public CheckMemberGroupsRequestBuilder CheckMemberGroups { get =>
+            new CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The checkMemberObjects property</summary>
+        public CheckMemberObjectsRequestBuilder CheckMemberObjects { get =>
+            new CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The extensions property</summary>
         public ExtensionsRequestBuilder Extensions { get =>
             new ExtensionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The getMemberGroups property</summary>
+        public GetMemberGroupsRequestBuilder GetMemberGroups { get =>
+            new GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The getMemberObjects property</summary>
+        public GetMemberObjectsRequestBuilder GetMemberObjects { get =>
+            new GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The members property</summary>
         public MembersRequestBuilder Members { get =>
@@ -26,6 +47,10 @@ namespace Microsoft.Graph.Beta.Directory.AdministrativeUnits.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The restore property</summary>
+        public RestoreRequestBuilder Restore { get =>
+            new RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The scopedRoleMembers property</summary>
         public ScopedRoleMembersRequestBuilder ScopedRoleMembers { get =>
             new ScopedRoleMembersRequestBuilder(PathParameters, RequestAdapter);

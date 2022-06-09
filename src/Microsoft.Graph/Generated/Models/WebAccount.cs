@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
     public class WebAccount : ItemFacet, IParsable {
         /// <summary>Contains the description the user has provided for the account on the service being referenced.</summary>
         public string Description {

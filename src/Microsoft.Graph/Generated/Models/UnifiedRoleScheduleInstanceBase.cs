@@ -55,7 +55,8 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.unifiedRoleScheduleInstanceBase" => new UnifiedRoleScheduleInstanceBase(),
+                "#microsoft.graph.unifiedRoleAssignmentScheduleInstance" => new UnifiedRoleAssignmentScheduleInstance(),
+                "#microsoft.graph.unifiedRoleEligibilityScheduleInstance" => new UnifiedRoleEligibilityScheduleInstance(),
                 _ => new UnifiedRoleScheduleInstanceBase(),
             };
         }

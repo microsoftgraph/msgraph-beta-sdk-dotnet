@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the roleManagement singleton.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class UnifiedRoleScheduleBase : Entity, IParsable {
         /// <summary>Read-only property with details of the app-specific scope when the role eligibility or assignment is scoped to an app. Nullable.</summary>
         public Microsoft.Graph.Beta.Models.AppScope AppScope {
@@ -75,7 +75,8 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.unifiedRoleScheduleBase" => new UnifiedRoleScheduleBase(),
+                "#microsoft.graph.unifiedRoleAssignmentSchedule" => new UnifiedRoleAssignmentSchedule(),
+                "#microsoft.graph.unifiedRoleEligibilitySchedule" => new UnifiedRoleEligibilitySchedule(),
                 _ => new UnifiedRoleScheduleBase(),
             };
         }

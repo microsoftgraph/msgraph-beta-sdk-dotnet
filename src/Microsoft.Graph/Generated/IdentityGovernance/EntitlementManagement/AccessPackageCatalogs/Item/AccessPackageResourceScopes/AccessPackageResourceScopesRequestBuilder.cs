@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Read-only.
+        /// Get accessPackageResourceScopes from identityGovernance
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<AccessPackageResourceScopesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return requestInfo;
         }
         /// <summary>
-        /// Read-only.
+        /// Get accessPackageResourceScopes from identityGovernance
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AccessPackageResourceScope>(requestInfo, Microsoft.Graph.Beta.Models.AccessPackageResourceScope.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Read-only.</summary>
+        /// <summary>Get accessPackageResourceScopes from identityGovernance</summary>
         public class AccessPackageResourceScopesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

@@ -4,59 +4,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the security singleton.</summary>
     public class EdiscoveryCase : Case, IParsable {
-        /// <summary>The closedBy property</summary>
+        /// <summary>The user who closed the case.</summary>
         public Microsoft.Graph.Beta.Models.IdentitySet ClosedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>(nameof(ClosedBy)); }
             set { BackingStore?.Set(nameof(ClosedBy), value); }
         }
-        /// <summary>The closedDateTime property</summary>
+        /// <summary>The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? ClosedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>(nameof(ClosedDateTime)); }
             set { BackingStore?.Set(nameof(ClosedDateTime), value); }
         }
-        /// <summary>The custodians property</summary>
+        /// <summary>Returns a list of case ediscoveryCustodian objects for this case.</summary>
         public List<EdiscoveryCustodian> Custodians {
             get { return BackingStore?.Get<List<EdiscoveryCustodian>>(nameof(Custodians)); }
             set { BackingStore?.Set(nameof(Custodians), value); }
         }
-        /// <summary>The externalId property</summary>
+        /// <summary>The external case number for customer reference.</summary>
         public string ExternalId {
             get { return BackingStore?.Get<string>(nameof(ExternalId)); }
             set { BackingStore?.Set(nameof(ExternalId), value); }
         }
-        /// <summary>The legalHolds property</summary>
+        /// <summary>Returns a list of case eDiscoveryHoldPolicy objects for this case.</summary>
         public List<EdiscoveryHoldPolicy> LegalHolds {
             get { return BackingStore?.Get<List<EdiscoveryHoldPolicy>>(nameof(LegalHolds)); }
             set { BackingStore?.Set(nameof(LegalHolds), value); }
         }
-        /// <summary>The noncustodialDataSources property</summary>
+        /// <summary>Returns a list of case ediscoveryNoncustodialDataSource objects for this case.</summary>
         public List<EdiscoveryNoncustodialDataSource> NoncustodialDataSources {
             get { return BackingStore?.Get<List<EdiscoveryNoncustodialDataSource>>(nameof(NoncustodialDataSources)); }
             set { BackingStore?.Set(nameof(NoncustodialDataSources), value); }
         }
-        /// <summary>The operations property</summary>
+        /// <summary>Returns a list of case caseOperation objects for this case.</summary>
         public List<CaseOperation> Operations {
             get { return BackingStore?.Get<List<CaseOperation>>(nameof(Operations)); }
             set { BackingStore?.Set(nameof(Operations), value); }
         }
-        /// <summary>The reviewSets property</summary>
+        /// <summary>Returns a list of eDiscoveryReviewSet objects in the case.</summary>
         public List<EdiscoveryReviewSet> ReviewSets {
             get { return BackingStore?.Get<List<EdiscoveryReviewSet>>(nameof(ReviewSets)); }
             set { BackingStore?.Set(nameof(ReviewSets), value); }
         }
-        /// <summary>The searches property</summary>
+        /// <summary>Returns a list of eDiscoverySearch objects associated with this case.</summary>
         public List<EdiscoverySearch> Searches {
             get { return BackingStore?.Get<List<EdiscoverySearch>>(nameof(Searches)); }
             set { BackingStore?.Set(nameof(Searches), value); }
         }
-        /// <summary>The settings property</summary>
+        /// <summary>Returns a list of eDIscoverySettings objects in the case.</summary>
         public EdiscoveryCaseSettings Settings {
             get { return BackingStore?.Get<EdiscoveryCaseSettings>(nameof(Settings)); }
             set { BackingStore?.Set(nameof(Settings), value); }
         }
-        /// <summary>The tags property</summary>
+        /// <summary>Returns a list of ediscoveryReviewTag objects associated to this case.</summary>
         public List<EdiscoveryReviewTag> Tags {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>>(nameof(Tags)); }
             set { BackingStore?.Set(nameof(Tags), value); }

@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Groups.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read-only. Nullable.
+        /// Get groups from external
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ExternalGroupItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Groups.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read-only. Nullable.
+        /// Get groups from external
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Groups.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Read-only. Nullable.</summary>
+        /// <summary>Get groups from external</summary>
         public class ExternalGroupItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

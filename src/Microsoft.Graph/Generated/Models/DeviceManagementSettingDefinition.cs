@@ -70,7 +70,9 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.deviceManagementSettingDefinition" => new DeviceManagementSettingDefinition(),
+                "#microsoft.graph.deviceManagementAbstractComplexSettingDefinition" => new DeviceManagementAbstractComplexSettingDefinition(),
+                "#microsoft.graph.deviceManagementCollectionSettingDefinition" => new DeviceManagementCollectionSettingDefinition(),
+                "#microsoft.graph.deviceManagementComplexSettingDefinition" => new DeviceManagementComplexSettingDefinition(),
                 _ => new DeviceManagementSettingDefinition(),
             };
         }

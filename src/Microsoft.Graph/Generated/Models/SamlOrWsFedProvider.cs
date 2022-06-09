@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of domain entities.</summary>
     public class SamlOrWsFedProvider : IdentityProviderBase, IParsable {
         /// <summary>Issuer URI of the federation server.</summary>
         public string IssuerUri {
@@ -37,12 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new SamlOrWsFedProvider CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.samlOrWsFedProvider" => new SamlOrWsFedProvider(),
-                _ => new SamlOrWsFedProvider(),
-            };
+            return new SamlOrWsFedProvider();
         }
         /// <summary>
         /// The deserialization information for the current model

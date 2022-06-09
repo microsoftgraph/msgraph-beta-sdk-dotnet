@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to application.</summary>
+    /// <summary>Provides operations to call the instantiate method.</summary>
     public class StsPolicy : PolicyBase, IParsable {
         /// <summary>The appliesTo property</summary>
         public List<DirectoryObject> AppliesTo {
@@ -30,7 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.stsPolicy" => new StsPolicy(),
+                "#microsoft.graph.activityBasedTimeoutPolicy" => new ActivityBasedTimeoutPolicy(),
+                "#microsoft.graph.claimsMappingPolicy" => new ClaimsMappingPolicy(),
+                "#microsoft.graph.homeRealmDiscoveryPolicy" => new HomeRealmDiscoveryPolicy(),
+                "#microsoft.graph.tokenIssuancePolicy" => new TokenIssuancePolicy(),
+                "#microsoft.graph.tokenLifetimePolicy" => new TokenLifetimePolicy(),
                 _ => new StsPolicy(),
             };
         }

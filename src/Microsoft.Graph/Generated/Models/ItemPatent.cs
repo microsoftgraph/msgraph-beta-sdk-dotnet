@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
     public class ItemPatent : ItemFacet, IParsable {
         /// <summary>Descpription of the patent or filing.</summary>
         public string Description {

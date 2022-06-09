@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class MailFolder : Entity, IParsable {
         /// <summary>The number of immediate child mailFolders in the current mailFolder.</summary>
         public int? ChildFolderCount {
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.mailFolder" => new MailFolder(),
+                "#microsoft.graph.mailSearchFolder" => new MailSearchFolder(),
                 _ => new MailFolder(),
             };
         }

@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Submissions
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Read-only. Nullable.
+        /// Get submittedResources from education
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<SubmittedResourcesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Submissions
             return requestInfo;
         }
         /// <summary>
-        /// Read-only. Nullable.
+        /// Get submittedResources from education
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Submissions
             };
             return await RequestAdapter.SendAsync<EducationSubmissionResource>(requestInfo, EducationSubmissionResource.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Read-only. Nullable.</summary>
+        /// <summary>Get submittedResources from education</summary>
         public class SubmittedResourcesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

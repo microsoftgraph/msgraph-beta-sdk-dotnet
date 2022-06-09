@@ -15,7 +15,8 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.windowsUpdates.updatableAsset" => new UpdatableAsset(),
+                "#microsoft.graph.windowsUpdates.azureADDevice" => new AzureADDevice(),
+                "#microsoft.graph.windowsUpdates.updatableAssetGroup" => new UpdatableAssetGroup(),
                 _ => new UpdatableAsset(),
             };
         }

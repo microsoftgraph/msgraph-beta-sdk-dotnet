@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Operations {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get operations from security
+        /// Returns a list of case caseOperation objects for this case.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<OperationsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Operations {
             return requestInfo;
         }
         /// <summary>
-        /// Get operations from security
+        /// Returns a list of case caseOperation objects for this case.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Operations {
             };
             return await RequestAdapter.SendAsync<CaseOperation>(requestInfo, CaseOperation.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get operations from security</summary>
+        /// <summary>Returns a list of case caseOperation objects for this case.</summary>
         public class OperationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

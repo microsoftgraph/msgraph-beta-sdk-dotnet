@@ -4,14 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the security singleton.</summary>
     public class EdiscoveryFile : FileObject, IParsable {
-        /// <summary>The custodian property</summary>
+        /// <summary>Custodians associated with the file.</summary>
         public EdiscoveryCustodian Custodian {
             get { return BackingStore?.Get<EdiscoveryCustodian>(nameof(Custodian)); }
             set { BackingStore?.Set(nameof(Custodian), value); }
         }
-        /// <summary>The tags property</summary>
+        /// <summary>Tags associated with the file.</summary>
         public List<EdiscoveryReviewTag> Tags {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>>(nameof(Tags)); }
             set { BackingStore?.Set(nameof(Tags), value); }

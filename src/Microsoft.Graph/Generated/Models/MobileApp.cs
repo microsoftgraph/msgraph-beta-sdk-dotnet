@@ -140,7 +140,25 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.mobileApp" => new MobileApp(),
+                "#microsoft.graph.androidForWorkApp" => new AndroidForWorkApp(),
+                "#microsoft.graph.androidManagedStoreApp" => new AndroidManagedStoreApp(),
+                "#microsoft.graph.androidStoreApp" => new AndroidStoreApp(),
+                "#microsoft.graph.iosiPadOSWebClip" => new IosiPadOSWebClip(),
+                "#microsoft.graph.iosStoreApp" => new IosStoreApp(),
+                "#microsoft.graph.iosVppApp" => new IosVppApp(),
+                "#microsoft.graph.macOSMdatpApp" => new MacOSMdatpApp(),
+                "#microsoft.graph.macOSMicrosoftEdgeApp" => new MacOSMicrosoftEdgeApp(),
+                "#microsoft.graph.macOSOfficeSuiteApp" => new MacOSOfficeSuiteApp(),
+                "#microsoft.graph.macOsVppApp" => new MacOsVppApp(),
+                "#microsoft.graph.managedApp" => new ManagedApp(),
+                "#microsoft.graph.microsoftStoreForBusinessApp" => new MicrosoftStoreForBusinessApp(),
+                "#microsoft.graph.mobileLobApp" => new MobileLobApp(),
+                "#microsoft.graph.officeSuiteApp" => new OfficeSuiteApp(),
+                "#microsoft.graph.webApp" => new WebApp(),
+                "#microsoft.graph.windowsMicrosoftEdgeApp" => new WindowsMicrosoftEdgeApp(),
+                "#microsoft.graph.windowsPhone81StoreApp" => new WindowsPhone81StoreApp(),
+                "#microsoft.graph.windowsStoreApp" => new WindowsStoreApp(),
+                "#microsoft.graph.windowsWebApp" => new WindowsWebApp(),
                 _ => new MobileApp(),
             };
         }

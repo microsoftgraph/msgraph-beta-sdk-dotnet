@@ -40,7 +40,11 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.domainDnsRecord" => new DomainDnsRecord(),
+                "#microsoft.graph.domainDnsCnameRecord" => new DomainDnsCnameRecord(),
+                "#microsoft.graph.domainDnsMxRecord" => new DomainDnsMxRecord(),
+                "#microsoft.graph.domainDnsSrvRecord" => new DomainDnsSrvRecord(),
+                "#microsoft.graph.domainDnsTxtRecord" => new DomainDnsTxtRecord(),
+                "#microsoft.graph.domainDnsUnavailableRecord" => new DomainDnsUnavailableRecord(),
                 _ => new DomainDnsRecord(),
             };
         }

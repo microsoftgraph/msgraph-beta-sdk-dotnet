@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class GovernanceInsight : Entity, IParsable {
         /// <summary>Indicates when the insight was created.</summary>
         public DateTimeOffset? InsightCreatedDateTime {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.governanceInsight" => new GovernanceInsight(),
+                "#microsoft.graph.userSignInInsight" => new UserSignInInsight(),
                 _ => new GovernanceInsight(),
             };
         }

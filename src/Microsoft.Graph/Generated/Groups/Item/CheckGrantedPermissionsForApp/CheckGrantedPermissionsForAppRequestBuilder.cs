@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -69,7 +70,11 @@ namespace Microsoft.Graph.Beta.Groups.Item.CheckGrantedPermissionsForApp {
         /// </summary>
         public async Task<CheckGrantedPermissionsForAppResponse> PostAsync(Action<CheckGrantedPermissionsForAppRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<CheckGrantedPermissionsForAppResponse>(requestInfo, CheckGrantedPermissionsForAppResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<CheckGrantedPermissionsForAppResponse>(requestInfo, CheckGrantedPermissionsForAppResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class CheckGrantedPermissionsForAppRequestBuilderPostRequestConfiguration {

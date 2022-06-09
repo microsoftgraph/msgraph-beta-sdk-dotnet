@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the teamwork singleton.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public enum WorkforceIntegrationEncryptionProtocol {
         SharedSecret,
         UnknownFutureValue,

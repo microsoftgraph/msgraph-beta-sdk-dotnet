@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissio
             return requestInfo;
         }
         /// <summary>
-        /// Read-Write. Nullable.
+        /// Get outcomes from education
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<EducationOutcomeItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissio
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read-Write. Nullable.
+        /// Get outcomes from education
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissio
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Read-Write. Nullable.</summary>
+        /// <summary>Get outcomes from education</summary>
         public class EducationOutcomeItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

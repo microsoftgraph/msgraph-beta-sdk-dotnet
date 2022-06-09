@@ -1,5 +1,8 @@
 using Microsoft.Graph.Beta.Chats.Item.PermissionGrants.Count;
+using Microsoft.Graph.Beta.Chats.Item.PermissionGrants.GetByIds;
+using Microsoft.Graph.Beta.Chats.Item.PermissionGrants.GetUserOwnedObjects;
 using Microsoft.Graph.Beta.Chats.Item.PermissionGrants.Item;
+using Microsoft.Graph.Beta.Chats.Item.PermissionGrants.ValidateProperties;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -17,12 +20,24 @@ namespace Microsoft.Graph.Beta.Chats.Item.PermissionGrants {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The getByIds property</summary>
+        public GetByIdsRequestBuilder GetByIds { get =>
+            new GetByIdsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The getUserOwnedObjects property</summary>
+        public GetUserOwnedObjectsRequestBuilder GetUserOwnedObjects { get =>
+            new GetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>The validateProperties property</summary>
+        public ValidatePropertiesRequestBuilder ValidateProperties { get =>
+            new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.chats.item.permissionGrants.item collection</summary>
         public ResourceSpecificPermissionGrantItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

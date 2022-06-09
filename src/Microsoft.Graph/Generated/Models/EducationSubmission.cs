@@ -6,7 +6,7 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provides operations to manage the educationRoot singleton.</summary>
     public class EducationSubmission : Entity, IParsable {
-        /// <summary>Read-Write. Nullable.</summary>
+        /// <summary>The outcomes property</summary>
         public List<EducationOutcome> Outcomes {
             get { return BackingStore?.Get<List<EducationOutcome>>(nameof(Outcomes)); }
             set { BackingStore?.Set(nameof(Outcomes), value); }
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<EducationSubmissionRecipient>(nameof(Recipient)); }
             set { BackingStore?.Set(nameof(Recipient), value); }
         }
-        /// <summary>Nullable.</summary>
+        /// <summary>The resources property</summary>
         public List<EducationSubmissionResource> Resources {
             get { return BackingStore?.Get<List<EducationSubmissionResource>>(nameof(Resources)); }
             set { BackingStore?.Set(nameof(Resources), value); }
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>(nameof(SubmittedDateTime)); }
             set { BackingStore?.Set(nameof(SubmittedDateTime), value); }
         }
-        /// <summary>Read-only. Nullable.</summary>
+        /// <summary>The submittedResources property</summary>
         public List<EducationSubmissionResource> SubmittedResources {
             get { return BackingStore?.Get<List<EducationSubmissionResource>>(nameof(SubmittedResources)); }
             set { BackingStore?.Set(nameof(SubmittedResources), value); }

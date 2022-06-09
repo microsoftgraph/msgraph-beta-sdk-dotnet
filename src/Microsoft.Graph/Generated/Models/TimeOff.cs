@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
     public class TimeOff : ChangeTrackedEntity, IParsable {
         /// <summary>The draft version of this timeOff that is viewable by managers. Required.</summary>
         public TimeOffItem DraftTimeOff {

@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -69,7 +70,11 @@ namespace Microsoft.Graph.Beta.Users.GetManagedAppBlockedUsers {
         /// </summary>
         public async Task<GetManagedAppBlockedUsersResponse> GetAsync(Action<GetManagedAppBlockedUsersRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<GetManagedAppBlockedUsersResponse>(requestInfo, GetManagedAppBlockedUsersResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<GetManagedAppBlockedUsersResponse>(requestInfo, GetManagedAppBlockedUsersResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class GetManagedAppBlockedUsersRequestBuilderGetRequestConfiguration {

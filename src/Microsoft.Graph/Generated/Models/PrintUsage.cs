@@ -36,7 +36,8 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.printUsage" => new PrintUsage(),
+                "#microsoft.graph.printUsageByPrinter" => new PrintUsageByPrinter(),
+                "#microsoft.graph.printUsageByUser" => new PrintUsageByUser(),
                 _ => new PrintUsage(),
             };
         }

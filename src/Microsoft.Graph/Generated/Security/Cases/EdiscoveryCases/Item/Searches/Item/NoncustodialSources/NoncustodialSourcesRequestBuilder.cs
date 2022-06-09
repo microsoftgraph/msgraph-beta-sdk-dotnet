@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get noncustodialSources from security
+        /// noncustodialDataSource sources that are included in the eDiscovery search
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<NoncustodialSourcesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get noncustodialSources from security
+        /// noncustodialDataSource sources that are included in the eDiscovery search
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
             };
             return await RequestAdapter.SendAsync<EdiscoveryNoncustodialDataSourceCollectionResponse>(requestInfo, EdiscoveryNoncustodialDataSourceCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get noncustodialSources from security</summary>
+        /// <summary>noncustodialDataSource sources that are included in the eDiscovery search</summary>
         public class NoncustodialSourcesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

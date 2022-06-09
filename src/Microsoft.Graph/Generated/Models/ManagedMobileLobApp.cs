@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.managedMobileLobApp" => new ManagedMobileLobApp(),
+                "#microsoft.graph.managedAndroidLobApp" => new ManagedAndroidLobApp(),
+                "#microsoft.graph.managedIOSLobApp" => new ManagedIOSLobApp(),
                 _ => new ManagedMobileLobApp(),
             };
         }

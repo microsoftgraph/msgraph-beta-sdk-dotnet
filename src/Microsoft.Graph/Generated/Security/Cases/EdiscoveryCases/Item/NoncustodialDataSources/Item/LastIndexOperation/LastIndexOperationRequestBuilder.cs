@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.NoncustodialD
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get lastIndexOperation from security
+        /// Operation entity that represents the latest indexing for the non-custodial data source.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<LastIndexOperationRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.NoncustodialD
             return requestInfo;
         }
         /// <summary>
-        /// Get lastIndexOperation from security
+        /// Operation entity that represents the latest indexing for the non-custodial data source.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.NoncustodialD
             };
             return await RequestAdapter.SendAsync<EdiscoveryIndexOperation>(requestInfo, EdiscoveryIndexOperation.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get lastIndexOperation from security</summary>
+        /// <summary>Operation entity that represents the latest indexing for the non-custodial data source.</summary>
         public class LastIndexOperationRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

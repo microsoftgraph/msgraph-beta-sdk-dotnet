@@ -4,6 +4,9 @@ using Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Drive;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Drives;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.ExternalColumns;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetApplicableContentTypesForListWithListId;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Items;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote;
@@ -115,24 +118,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete navigation property sites for groups
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
-        public RequestInformation CreateDeleteRequestInformation(Action<SiteItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.DELETE,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new SiteItemRequestBuilderDeleteRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            return requestInfo;
-        }
-        /// <summary>
         /// The list of SharePoint sites in this group. Access the default site with /sites/root.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -174,18 +159,24 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Delete navigation property sites for groups
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
+        /// Provides operations to call the getActivitiesByInterval method.
+        /// <param name="endDateTime">Usage: endDateTime=&apos;{endDateTime}&apos;</param>
+        /// <param name="interval">Usage: interval=&apos;{interval}&apos;</param>
+        /// <param name="startDateTime">Usage: startDateTime=&apos;{startDateTime}&apos;</param>
         /// </summary>
-        public async Task DeleteAsync(Action<SiteItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
-            };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+        public GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(string endDateTime, string interval, string startDateTime) {
+            if(string.IsNullOrEmpty(endDateTime)) throw new ArgumentNullException(nameof(endDateTime));
+            if(string.IsNullOrEmpty(interval)) throw new ArgumentNullException(nameof(interval));
+            if(string.IsNullOrEmpty(startDateTime)) throw new ArgumentNullException(nameof(startDateTime));
+            return new GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder(PathParameters, RequestAdapter, endDateTime, interval, startDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getApplicableContentTypesForList method.
+        /// <param name="listId">Usage: listId=&apos;{listId}&apos;</param>
+        /// </summary>
+        public GetApplicableContentTypesForListWithListIdRequestBuilder GetApplicableContentTypesForListWithListId(string listId) {
+            if(string.IsNullOrEmpty(listId)) throw new ArgumentNullException(nameof(listId));
+            return new GetApplicableContentTypesForListWithListIdRequestBuilder(PathParameters, RequestAdapter, listId);
         }
         /// <summary>
         /// The list of SharePoint sites in this group. Access the default site with /sites/root.
@@ -202,6 +193,14 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Site>(requestInfo, Microsoft.Graph.Beta.Models.Site.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
+        /// Provides operations to call the getByPath method.
+        /// <param name="path">Usage: path=&apos;{path}&apos;</param>
+        /// </summary>
+        public GetByPathWithPathRequestBuilder GetByPathWithPath(string path) {
+            if(string.IsNullOrEmpty(path)) throw new ArgumentNullException(nameof(path));
+            return new GetByPathWithPathRequestBuilder(PathParameters, RequestAdapter, path);
+        }
+        /// <summary>
         /// Update the navigation property sites in groups
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -216,20 +215,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
-        }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
-        public class SiteItemRequestBuilderDeleteRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>
-            /// Instantiates a new siteItemRequestBuilderDeleteRequestConfiguration and sets the default values.
-            /// </summary>
-            public SiteItemRequestBuilderDeleteRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
-            }
         }
         /// <summary>The list of SharePoint sites in this group. Access the default site with /sites/root.</summary>
         public class SiteItemRequestBuilderGetQueryParameters {

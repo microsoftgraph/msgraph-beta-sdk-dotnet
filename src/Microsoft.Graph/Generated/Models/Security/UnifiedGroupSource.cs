@@ -4,14 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the security singleton.</summary>
     public class UnifiedGroupSource : DataSource, IParsable {
         /// <summary>The group property</summary>
         public Microsoft.Graph.Beta.Models.Group Group {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Group>(nameof(Group)); }
             set { BackingStore?.Set(nameof(Group), value); }
         }
-        /// <summary>The includedSources property</summary>
+        /// <summary>Specifies which sources are included in this group. Possible values are: mailbox, site.</summary>
         public SourceType? IncludedSources {
             get { return BackingStore?.Get<SourceType?>(nameof(IncludedSources)); }
             set { BackingStore?.Set(nameof(IncludedSources), value); }

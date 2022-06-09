@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class Attachment_v2 : Entity, IParsable {
         /// <summary>The contentType property</summary>
         public string ContentType {
@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.attachment_v2" => new Attachment_v2(),
+                "#microsoft.graph.fileAttachment_v2" => new FileAttachment_v2(),
                 _ => new Attachment_v2(),
             };
         }

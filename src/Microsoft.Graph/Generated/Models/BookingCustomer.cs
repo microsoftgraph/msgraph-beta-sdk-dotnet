@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Represents a customer of the business.</summary>
     public class BookingCustomer : BookingPerson, IParsable {
         /// <summary>Addresses associated with the customer, including home, business and other addresses.</summary>
         public List<PhysicalAddress> Addresses {

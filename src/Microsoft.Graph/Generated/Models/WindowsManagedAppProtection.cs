@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on a Windows device</summary>
     public class WindowsManagedAppProtection : ManagedAppPolicy, IParsable {
         /// <summary>Indicates the sources from which data is allowed to be transferred. Some possible values are allApps or none. Possible values are: allApps, none.</summary>
         public WindowsManagedAppDataTransferLevel? AllowedInboundDataTransferSources {

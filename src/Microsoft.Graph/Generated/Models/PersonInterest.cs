@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
     public class PersonInterest : ItemFacet, IParsable {
         /// <summary>Contains categories a user has associated with the interest (for example, personal, recipies).</summary>
         public List<string> Categories {

@@ -1,10 +1,8 @@
 using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Attachments;
-using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.CalendarSharingMessage;
 using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Copy;
 using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.CreateForward;
 using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.CreateReply;
 using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.CreateReplyAll;
-using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.EventMessageRequest;
 using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Extensions;
 using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Forward;
 using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Mentions;
@@ -33,10 +31,6 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.It
         public AttachmentsRequestBuilder Attachments { get =>
             new AttachmentsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The calendarSharingMessage property</summary>
-        public CalendarSharingMessageRequestBuilder CalendarSharingMessage { get =>
-            new CalendarSharingMessageRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The Content property</summary>
         public ContentRequestBuilder Content { get =>
             new ContentRequestBuilder(PathParameters, RequestAdapter);
@@ -56,10 +50,6 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.It
         /// <summary>The createReplyAll property</summary>
         public CreateReplyAllRequestBuilder CreateReplyAll { get =>
             new CreateReplyAllRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The eventMessageRequest property</summary>
-        public EventMessageRequestRequestBuilder EventMessageRequest { get =>
-            new EventMessageRequestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The extensions property</summary>
         public ExtensionsRequestBuilder Extensions { get =>

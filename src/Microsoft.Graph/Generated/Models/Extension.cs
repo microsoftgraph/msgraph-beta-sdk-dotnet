@@ -15,7 +15,8 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.extension" => new Extension(),
+                "#microsoft.graph.openTypeExtension" => new OpenTypeExtension(),
+                "#microsoft.graph.personExtension" => new PersonExtension(),
                 _ => new Extension(),
             };
         }

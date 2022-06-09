@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the security singleton.</summary>
     public class SiteSource : DataSource, IParsable {
         /// <summary>The site property</summary>
         public Microsoft.Graph.Beta.Models.Site Site {

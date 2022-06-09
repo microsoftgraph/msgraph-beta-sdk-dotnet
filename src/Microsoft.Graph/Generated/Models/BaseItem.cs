@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class BaseItem : Entity, IParsable {
         /// <summary>Identity of the user, device, or application which created the item. Read-only.</summary>
         public IdentitySet CreatedBy {
@@ -70,7 +70,13 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.baseItem" => new BaseItem(),
+                "#microsoft.graph.drive" => new Drive(),
+                "#microsoft.graph.driveItem" => new DriveItem(),
+                "#microsoft.graph.list" => new List(),
+                "#microsoft.graph.listItem" => new ListItem(),
+                "#microsoft.graph.sharedDriveItem" => new SharedDriveItem(),
+                "#microsoft.graph.site" => new Site(),
+                "#microsoft.graph.sitePage" => new SitePage(),
                 _ => new BaseItem(),
             };
         }

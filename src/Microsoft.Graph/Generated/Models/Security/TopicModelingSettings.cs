@@ -13,22 +13,22 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The dynamicallyAdjustTopicCount property</summary>
+        /// <summary>To learn more, see Adjust maximum number of themes dynamically.</summary>
         public bool? DynamicallyAdjustTopicCount {
             get { return BackingStore?.Get<bool?>(nameof(DynamicallyAdjustTopicCount)); }
             set { BackingStore?.Set(nameof(DynamicallyAdjustTopicCount), value); }
         }
-        /// <summary>The ignoreNumbers property</summary>
+        /// <summary>To learn more, see Include numbers in themes.</summary>
         public bool? IgnoreNumbers {
             get { return BackingStore?.Get<bool?>(nameof(IgnoreNumbers)); }
             set { BackingStore?.Set(nameof(IgnoreNumbers), value); }
         }
-        /// <summary>The isEnabled property</summary>
+        /// <summary>Indicates whether themes is enabled for the case.</summary>
         public bool? IsEnabled {
             get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
             set { BackingStore?.Set(nameof(IsEnabled), value); }
         }
-        /// <summary>The topicCount property</summary>
+        /// <summary>To learn more, see Maximum number of themes.</summary>
         public int? TopicCount {
             get { return BackingStore?.Get<int?>(nameof(TopicCount)); }
             set { BackingStore?.Set(nameof(TopicCount), value); }

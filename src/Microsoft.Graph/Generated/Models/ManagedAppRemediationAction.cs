@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public enum ManagedAppRemediationAction {
         /// <summary>app and the corresponding company data to be blocked</summary>
         Block,

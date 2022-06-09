@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class BaseItemVersion : Entity, IParsable {
         /// <summary>Identity of the user which last modified the version. Read-only.</summary>
         public IdentitySet LastModifiedBy {
@@ -30,7 +30,8 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.baseItemVersion" => new BaseItemVersion(),
+                "#microsoft.graph.driveItemVersion" => new DriveItemVersion(),
+                "#microsoft.graph.listItemVersion" => new ListItemVersion(),
                 _ => new BaseItemVersion(),
             };
         }

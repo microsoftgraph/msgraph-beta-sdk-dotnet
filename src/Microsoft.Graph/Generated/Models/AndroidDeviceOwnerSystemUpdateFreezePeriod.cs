@@ -1,0 +1,76 @@
+using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Represents one item in the list of freeze periods for Android Device Owner system updates</summary>
+    public class AndroidDeviceOwnerSystemUpdateFreezePeriod : IAdditionalDataHolder, IBackedModel, IParsable {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
+            set { BackingStore?.Set(nameof(AdditionalData), value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
+        /// <summary>The day of the end date of the freeze period. Valid values 1 to 31</summary>
+        public int? EndDay {
+            get { return BackingStore?.Get<int?>(nameof(EndDay)); }
+            set { BackingStore?.Set(nameof(EndDay), value); }
+        }
+        /// <summary>The month of the end date of the freeze period. Valid values 1 to 12</summary>
+        public int? EndMonth {
+            get { return BackingStore?.Get<int?>(nameof(EndMonth)); }
+            set { BackingStore?.Set(nameof(EndMonth), value); }
+        }
+        /// <summary>The day of the start date of the freeze period. Valid values 1 to 31</summary>
+        public int? StartDay {
+            get { return BackingStore?.Get<int?>(nameof(StartDay)); }
+            set { BackingStore?.Set(nameof(StartDay), value); }
+        }
+        /// <summary>The month of the start date of the freeze period. Valid values 1 to 12</summary>
+        public int? StartMonth {
+            get { return BackingStore?.Get<int?>(nameof(StartMonth)); }
+            set { BackingStore?.Set(nameof(StartMonth), value); }
+        }
+        /// <summary>
+        /// Instantiates a new androidDeviceOwnerSystemUpdateFreezePeriod and sets the default values.
+        /// </summary>
+        public AndroidDeviceOwnerSystemUpdateFreezePeriod() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static AndroidDeviceOwnerSystemUpdateFreezePeriod CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AndroidDeviceOwnerSystemUpdateFreezePeriod();
+        }
+        /// <summary>
+        /// The deserialization information for the current model
+        /// </summary>
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"endDay", n => { EndDay = n.GetIntValue(); } },
+                {"endMonth", n => { EndMonth = n.GetIntValue(); } },
+                {"startDay", n => { StartDay = n.GetIntValue(); } },
+                {"startMonth", n => { StartMonth = n.GetIntValue(); } },
+            };
+        }
+        /// <summary>
+        /// Serializes information the current object
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
+        /// </summary>
+        public void Serialize(ISerializationWriter writer) {
+            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("endDay", EndDay);
+            writer.WriteIntValue("endMonth", EndMonth);
+            writer.WriteIntValue("startDay", StartDay);
+            writer.WriteIntValue("startMonth", StartMonth);
+            writer.WriteAdditionalData(AdditionalData);
+        }
+    }
+}

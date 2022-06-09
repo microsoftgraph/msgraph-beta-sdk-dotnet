@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Policy for Windows information protection to configure detailed management settings</summary>
     public class WindowsInformationProtection : ManagedAppPolicy, IParsable {
         /// <summary>Navigation property to list of security groups targeted for policy.</summary>
         public List<TargetedManagedAppPolicyAssignment> Assignments {
@@ -137,12 +136,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new WindowsInformationProtection CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.windowsInformationProtection" => new WindowsInformationProtection(),
-                _ => new WindowsInformationProtection(),
-            };
+            return new WindowsInformationProtection();
         }
         /// <summary>
         /// The deserialization information for the current model

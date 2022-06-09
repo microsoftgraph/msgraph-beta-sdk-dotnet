@@ -30,7 +30,8 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.deviceManagementSettingCategory" => new DeviceManagementSettingCategory(),
+                "#microsoft.graph.deviceManagementIntentSettingCategory" => new DeviceManagementIntentSettingCategory(),
+                "#microsoft.graph.deviceManagementTemplateSettingCategory" => new DeviceManagementTemplateSettingCategory(),
                 _ => new DeviceManagementSettingCategory(),
             };
         }

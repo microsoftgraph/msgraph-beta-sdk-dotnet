@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to application.</summary>
+    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class Application : DirectoryObject, IParsable {
         /// <summary>Specifies settings for an application that implements a web API.</summary>
         public ApiApplication Api {
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
             set { BackingStore?.Set(nameof(CreatedDateTime), value); }
         }
-        /// <summary>Read-only.</summary>
+        /// <summary>The createdOnBehalfOf property</summary>
         public DirectoryObject CreatedOnBehalfOf {
             get { return BackingStore?.Get<DirectoryObject>(nameof(CreatedOnBehalfOf)); }
             set { BackingStore?.Set(nameof(CreatedOnBehalfOf), value); }

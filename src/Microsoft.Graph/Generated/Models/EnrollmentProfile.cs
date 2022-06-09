@@ -45,7 +45,8 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.enrollmentProfile" => new EnrollmentProfile(),
+                "#microsoft.graph.depEnrollmentBaseProfile" => new DepEnrollmentBaseProfile(),
+                "#microsoft.graph.depEnrollmentProfile" => new DepEnrollmentProfile(),
                 _ => new EnrollmentProfile(),
             };
         }

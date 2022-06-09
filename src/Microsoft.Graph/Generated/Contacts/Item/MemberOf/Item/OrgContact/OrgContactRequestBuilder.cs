@@ -1,8 +1,3 @@
-using Microsoft.Graph.Beta.Contacts.Item.MemberOf.Item.OrgContact.CheckMemberGroups;
-using Microsoft.Graph.Beta.Contacts.Item.MemberOf.Item.OrgContact.CheckMemberObjects;
-using Microsoft.Graph.Beta.Contacts.Item.MemberOf.Item.OrgContact.GetMemberGroups;
-using Microsoft.Graph.Beta.Contacts.Item.MemberOf.Item.OrgContact.GetMemberObjects;
-using Microsoft.Graph.Beta.Contacts.Item.MemberOf.Item.OrgContact.Restore;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -16,30 +11,10 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Contacts.Item.MemberOf.Item.OrgContact {
     /// <summary>Casts the previous resource to orgContact.</summary>
     public class OrgContactRequestBuilder {
-        /// <summary>The checkMemberGroups property</summary>
-        public CheckMemberGroupsRequestBuilder CheckMemberGroups { get =>
-            new CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The checkMemberObjects property</summary>
-        public CheckMemberObjectsRequestBuilder CheckMemberObjects { get =>
-            new CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The getMemberGroups property</summary>
-        public GetMemberGroupsRequestBuilder GetMemberGroups { get =>
-            new GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The getMemberObjects property</summary>
-        public GetMemberObjectsRequestBuilder GetMemberObjects { get =>
-            new GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The restore property</summary>
-        public RestoreRequestBuilder Restore { get =>
-            new RestoreRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

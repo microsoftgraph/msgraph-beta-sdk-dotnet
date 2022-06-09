@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.customCalloutExtension" => new CustomCalloutExtension(),
+                "#microsoft.graph.customAccessPackageWorkflowExtension" => new CustomAccessPackageWorkflowExtension(),
                 _ => new CustomCalloutExtension(),
             };
         }

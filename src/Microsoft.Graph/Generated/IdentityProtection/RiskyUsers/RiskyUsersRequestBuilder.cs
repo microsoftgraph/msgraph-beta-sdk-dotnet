@@ -1,4 +1,6 @@
+using Microsoft.Graph.Beta.IdentityProtection.RiskyUsers.ConfirmCompromised;
 using Microsoft.Graph.Beta.IdentityProtection.RiskyUsers.Count;
+using Microsoft.Graph.Beta.IdentityProtection.RiskyUsers.Dismiss;
 using Microsoft.Graph.Beta.IdentityProtection.RiskyUsers.Item;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -13,9 +15,17 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers {
     /// <summary>Provides operations to manage the riskyUsers property of the microsoft.graph.identityProtectionRoot entity.</summary>
     public class RiskyUsersRequestBuilder {
+        /// <summary>The confirmCompromised property</summary>
+        public ConfirmCompromisedRequestBuilder ConfirmCompromised { get =>
+            new ConfirmCompromisedRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The dismiss property</summary>
+        public DismissRequestBuilder Dismiss { get =>
+            new DismissRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

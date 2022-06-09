@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.AudioRoutingGroups {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Read-only. Nullable.
+        /// Get audioRoutingGroups from communications
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<AudioRoutingGroupsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.AudioRoutingGroups {
             return requestInfo;
         }
         /// <summary>
-        /// Read-only. Nullable.
+        /// Get audioRoutingGroups from communications
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.AudioRoutingGroups {
             };
             return await RequestAdapter.SendAsync<AudioRoutingGroup>(requestInfo, AudioRoutingGroup.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Read-only. Nullable.</summary>
+        /// <summary>Get audioRoutingGroups from communications</summary>
         public class AudioRoutingGroupsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

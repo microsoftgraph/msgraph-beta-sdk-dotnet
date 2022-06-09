@@ -1,8 +1,11 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item.AppliesTo.Count;
+using Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item.AppliesTo.GetByIds;
+using Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item.AppliesTo.GetUserOwnedObjects;
 using Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item.AppliesTo.Item;
 using Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item.AppliesTo.Ref;
+using Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item.AppliesTo.ValidateProperties;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -18,6 +21,14 @@ namespace Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item.AppliesTo {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The getByIds property</summary>
+        public GetByIdsRequestBuilder GetByIds { get =>
+            new GetByIdsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The getUserOwnedObjects property</summary>
+        public GetUserOwnedObjectsRequestBuilder GetUserOwnedObjects { get =>
+            new GetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The ref property</summary>
@@ -28,6 +39,10 @@ namespace Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item.AppliesTo {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>The validateProperties property</summary>
+        public ValidatePropertiesRequestBuilder ValidateProperties { get =>
+            new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.policies.featureRolloutPolicies.item.appliesTo.item collection</summary>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

@@ -9,7 +9,6 @@ using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.GroupAssig
 using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.UserStatuses;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.UserStatusOverview;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.WindowsPrivacyAccessControls;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.WindowsUpdateForBusinessConfiguration;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -68,10 +67,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item {
         /// <summary>The windowsPrivacyAccessControls property</summary>
         public WindowsPrivacyAccessControlsRequestBuilder WindowsPrivacyAccessControls { get =>
             new WindowsPrivacyAccessControlsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The windowsUpdateForBusinessConfiguration property</summary>
-        public WindowsUpdateForBusinessConfigurationRequestBuilder WindowsUpdateForBusinessConfiguration { get =>
-            new WindowsUpdateForBusinessConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new DeviceConfigurationItemRequestBuilder and sets the default values.

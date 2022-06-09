@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
             return requestInfo;
         }
         /// <summary>
-        /// Get reviewSets from security
+        /// Returns a list of eDiscoveryReviewSet objects in the case.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<EdiscoveryReviewSetItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get reviewSets from security
+        /// Returns a list of eDiscoveryReviewSet objects in the case.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get reviewSets from security</summary>
+        /// <summary>Returns a list of eDiscoveryReviewSet objects in the case.</summary>
         public class EdiscoveryReviewSetItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

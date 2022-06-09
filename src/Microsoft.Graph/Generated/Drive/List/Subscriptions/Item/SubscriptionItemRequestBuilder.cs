@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Drive.List.Subscriptions.Item.Reauthorize;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -13,6 +14,10 @@ namespace Microsoft.Graph.Beta.Drive.List.Subscriptions.Item {
     public class SubscriptionItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>The reauthorize property</summary>
+        public ReauthorizeRequestBuilder Reauthorize { get =>
+            new ReauthorizeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>

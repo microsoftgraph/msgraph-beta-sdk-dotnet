@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class BaseTaskList : Entity, IParsable {
         /// <summary>The name of the task list.</summary>
         public string DisplayName {
@@ -30,7 +30,8 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.baseTaskList" => new BaseTaskList(),
+                "#microsoft.graph.taskList" => new TaskList(),
+                "#microsoft.graph.wellKnownTaskList" => new WellKnownTaskList(),
                 _ => new BaseTaskList(),
             };
         }

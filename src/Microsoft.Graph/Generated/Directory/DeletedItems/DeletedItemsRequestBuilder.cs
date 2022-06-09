@@ -1,8 +1,11 @@
 using Microsoft.Graph.Beta.Directory.DeletedItems.Application;
 using Microsoft.Graph.Beta.Directory.DeletedItems.Count;
+using Microsoft.Graph.Beta.Directory.DeletedItems.GetByIds;
+using Microsoft.Graph.Beta.Directory.DeletedItems.GetUserOwnedObjects;
 using Microsoft.Graph.Beta.Directory.DeletedItems.Group;
 using Microsoft.Graph.Beta.Directory.DeletedItems.Item;
 using Microsoft.Graph.Beta.Directory.DeletedItems.User;
+using Microsoft.Graph.Beta.Directory.DeletedItems.ValidateProperties;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -24,6 +27,14 @@ namespace Microsoft.Graph.Beta.Directory.DeletedItems {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The getByIds property</summary>
+        public GetByIdsRequestBuilder GetByIds { get =>
+            new GetByIdsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The getUserOwnedObjects property</summary>
+        public GetUserOwnedObjectsRequestBuilder GetUserOwnedObjects { get =>
+            new GetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The group property</summary>
         public GroupRequestBuilder Group { get =>
             new GroupRequestBuilder(PathParameters, RequestAdapter);
@@ -37,6 +48,10 @@ namespace Microsoft.Graph.Beta.Directory.DeletedItems {
         /// <summary>The user property</summary>
         public UserRequestBuilder User { get =>
             new UserRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The validateProperties property</summary>
+        public ValidatePropertiesRequestBuilder ValidateProperties { get =>
+            new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.directory.deletedItems.item collection</summary>
         public DirectoryObjectItemRequestBuilder this[string position] { get {

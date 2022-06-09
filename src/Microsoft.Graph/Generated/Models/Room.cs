@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to room.</summary>
     public class Room : Place, IParsable {
         /// <summary>Specifies the name of the audio device in the room.</summary>
         public string AudioDeviceName {

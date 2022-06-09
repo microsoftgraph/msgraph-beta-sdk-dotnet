@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of domain entities.</summary>
+    /// <summary>Provides operations to manage the directory singleton.</summary>
     public class IdentityProviderBase : Entity, IParsable {
         /// <summary>The display name of the identity provider.</summary>
         public string DisplayName {
@@ -20,7 +20,11 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.identityProviderBase" => new IdentityProviderBase(),
+                "#microsoft.graph.appleManagedIdentityProvider" => new AppleManagedIdentityProvider(),
+                "#microsoft.graph.builtInIdentityProvider" => new BuiltInIdentityProvider(),
+                "#microsoft.graph.openIdConnectIdentityProvider" => new OpenIdConnectIdentityProvider(),
+                "#microsoft.graph.samlOrWsFedProvider" => new SamlOrWsFedProvider(),
+                "#microsoft.graph.socialIdentityProvider" => new SocialIdentityProvider(),
                 _ => new IdentityProviderBase(),
             };
         }

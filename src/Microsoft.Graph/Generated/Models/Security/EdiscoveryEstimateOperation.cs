@@ -6,37 +6,37 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     /// <summary>Provides operations to manage the security singleton.</summary>
     public class EdiscoveryEstimateOperation : CaseOperation, IParsable {
-        /// <summary>The indexedItemCount property</summary>
+        /// <summary>The estimated count of items for the search that matched the content query.</summary>
         public long? IndexedItemCount {
             get { return BackingStore?.Get<long?>(nameof(IndexedItemCount)); }
             set { BackingStore?.Set(nameof(IndexedItemCount), value); }
         }
-        /// <summary>The indexedItemsSize property</summary>
+        /// <summary>The estimated size of items for the search that matched the content query.</summary>
         public long? IndexedItemsSize {
             get { return BackingStore?.Get<long?>(nameof(IndexedItemsSize)); }
             set { BackingStore?.Set(nameof(IndexedItemsSize), value); }
         }
-        /// <summary>The mailboxCount property</summary>
+        /// <summary>The number of mailboxes that had search hits.</summary>
         public int? MailboxCount {
             get { return BackingStore?.Get<int?>(nameof(MailboxCount)); }
             set { BackingStore?.Set(nameof(MailboxCount), value); }
         }
-        /// <summary>The search property</summary>
+        /// <summary>eDiscovery search.</summary>
         public EdiscoverySearch Search {
             get { return BackingStore?.Get<EdiscoverySearch>(nameof(Search)); }
             set { BackingStore?.Set(nameof(Search), value); }
         }
-        /// <summary>The siteCount property</summary>
+        /// <summary>The number of mailboxes that had search hits.</summary>
         public int? SiteCount {
             get { return BackingStore?.Get<int?>(nameof(SiteCount)); }
             set { BackingStore?.Set(nameof(SiteCount), value); }
         }
-        /// <summary>The unindexedItemCount property</summary>
+        /// <summary>The estimated count of unindexed items for the collection.</summary>
         public long? UnindexedItemCount {
             get { return BackingStore?.Get<long?>(nameof(UnindexedItemCount)); }
             set { BackingStore?.Set(nameof(UnindexedItemCount), value); }
         }
-        /// <summary>The unindexedItemsSize property</summary>
+        /// <summary>The estimated size of unindexed items for the collection.</summary>
         public long? UnindexedItemsSize {
             get { return BackingStore?.Get<long?>(nameof(UnindexedItemsSize)); }
             set { BackingStore?.Set(nameof(UnindexedItemsSize), value); }
