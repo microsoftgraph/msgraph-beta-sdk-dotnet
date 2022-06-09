@@ -1,6 +1,5 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Operations.Item.EdiscoveryExportOperation;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -12,10 +11,6 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Operations.Item {
     /// <summary>Provides operations to manage the operations property of the microsoft.graph.security.ediscoveryCase entity.</summary>
     public class CaseOperationItemRequestBuilder {
-        /// <summary>The ediscoveryExportOperation property</summary>
-        public EdiscoveryExportOperationRequestBuilder EdiscoveryExportOperation { get =>
-            new EdiscoveryExportOperationRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -68,7 +63,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Operations.It
             return requestInfo;
         }
         /// <summary>
-        /// Get operations from security
+        /// Returns a list of case caseOperation objects for this case.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<CaseOperationItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -123,7 +118,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Operations.It
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get operations from security
+        /// Returns a list of case caseOperation objects for this case.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -166,7 +161,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Operations.It
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get operations from security</summary>
+        /// <summary>Returns a list of case caseOperation objects for this case.</summary>
         public class CaseOperationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

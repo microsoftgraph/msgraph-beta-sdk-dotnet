@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to application.</summary>
+    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class ConnectorGroup : Entity, IParsable {
-        /// <summary>Read-only. Nullable.</summary>
+        /// <summary>The applications property</summary>
         public List<Application> Applications {
             get { return BackingStore?.Get<List<Application>>(nameof(Applications)); }
             set { BackingStore?.Set(nameof(Applications), value); }
@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>(nameof(IsDefault)); }
             set { BackingStore?.Set(nameof(IsDefault), value); }
         }
-        /// <summary>Read-only. Nullable.</summary>
+        /// <summary>The members property</summary>
         public List<Connector> Members {
             get { return BackingStore?.Get<List<Connector>>(nameof(Members)); }
             set { BackingStore?.Set(nameof(Members), value); }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
     public class ExactMatchDataStore : ExactMatchDataStoreBase, IParsable {
         /// <summary>The sessions property</summary>
         public List<ExactMatchSession> Sessions {

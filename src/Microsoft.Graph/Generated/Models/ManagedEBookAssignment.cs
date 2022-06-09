@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.managedEBookAssignment" => new ManagedEBookAssignment(),
+                "#microsoft.graph.iosVppEBookAssignment" => new IosVppEBookAssignment(),
                 _ => new ManagedEBookAssignment(),
             };
         }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class UserSource : DataSource, IParsable {
         /// <summary>Email address of the user&apos;s mailbox.</summary>
         public string Email {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the authenticationMethodsPolicy singleton.</summary>
+    /// <summary>Provides operations to manage the collection of authenticationMethodConfiguration entities.</summary>
     public class AuthenticationMethodConfiguration : Entity, IParsable {
         /// <summary>The state of the policy. Possible values are: enabled, disabled.</summary>
         public AuthenticationMethodState? State {
@@ -20,7 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.authenticationMethodConfiguration" => new AuthenticationMethodConfiguration(),
+                "#microsoft.graph.emailAuthenticationMethodConfiguration" => new EmailAuthenticationMethodConfiguration(),
+                "#microsoft.graph.fido2AuthenticationMethodConfiguration" => new Fido2AuthenticationMethodConfiguration(),
+                "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodConfiguration" => new MicrosoftAuthenticatorAuthenticationMethodConfiguration(),
+                "#microsoft.graph.smsAuthenticationMethodConfiguration" => new SmsAuthenticationMethodConfiguration(),
+                "#microsoft.graph.temporaryAccessPassAuthenticationMethodConfiguration" => new TemporaryAccessPassAuthenticationMethodConfiguration(),
+                "#microsoft.graph.x509CertificateAuthenticationMethodConfiguration" => new X509CertificateAuthenticationMethodConfiguration(),
                 _ => new AuthenticationMethodConfiguration(),
             };
         }

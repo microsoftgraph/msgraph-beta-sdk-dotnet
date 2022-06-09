@@ -25,7 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.deviceManagementSettingInstance" => new DeviceManagementSettingInstance(),
+                "#microsoft.graph.deviceManagementAbstractComplexSettingInstance" => new DeviceManagementAbstractComplexSettingInstance(),
+                "#microsoft.graph.deviceManagementBooleanSettingInstance" => new DeviceManagementBooleanSettingInstance(),
+                "#microsoft.graph.deviceManagementCollectionSettingInstance" => new DeviceManagementCollectionSettingInstance(),
+                "#microsoft.graph.deviceManagementComplexSettingInstance" => new DeviceManagementComplexSettingInstance(),
+                "#microsoft.graph.deviceManagementIntegerSettingInstance" => new DeviceManagementIntegerSettingInstance(),
+                "#microsoft.graph.deviceManagementStringSettingInstance" => new DeviceManagementStringSettingInstance(),
                 _ => new DeviceManagementSettingInstance(),
             };
         }

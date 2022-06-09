@@ -1,4 +1,3 @@
-using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.Item.CaseExportOperation;
 using Microsoft.Graph.Beta.Models.Ediscovery;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -12,10 +11,6 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.Item {
     /// <summary>Provides operations to manage the operations property of the microsoft.graph.ediscovery.case entity.</summary>
     public class CaseOperationItemRequestBuilder {
-        /// <summary>The caseExportOperation property</summary>
-        public CaseExportOperationRequestBuilder CaseExportOperation { get =>
-            new CaseExportOperationRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>

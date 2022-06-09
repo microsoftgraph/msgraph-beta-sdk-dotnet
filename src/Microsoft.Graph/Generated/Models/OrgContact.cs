@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to orgContact.</summary>
     public class OrgContact : DirectoryObject, IParsable {
         /// <summary>Postal addresses for this organizational contact. For now a contact can only have one physical address.</summary>
         public List<PhysicalOfficeAddress> Addresses {

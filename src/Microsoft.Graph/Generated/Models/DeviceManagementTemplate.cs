@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.deviceManagementTemplate" => new DeviceManagementTemplate(),
+                "#microsoft.graph.securityBaselineTemplate" => new SecurityBaselineTemplate(),
                 _ => new DeviceManagementTemplate(),
             };
         }

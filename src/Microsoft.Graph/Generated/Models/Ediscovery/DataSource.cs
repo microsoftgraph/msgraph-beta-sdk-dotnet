@@ -35,7 +35,9 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.ediscovery.dataSource" => new DataSource(),
+                "#microsoft.graph.ediscovery.siteSource" => new SiteSource(),
+                "#microsoft.graph.ediscovery.unifiedGroupSource" => new UnifiedGroupSource(),
+                "#microsoft.graph.ediscovery.userSource" => new UserSource(),
                 _ => new DataSource(),
             };
         }

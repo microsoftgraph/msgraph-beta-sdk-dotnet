@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.riskyServicePrincipal" => new RiskyServicePrincipal(),
+                "#microsoft.graph.riskyServicePrincipalHistoryItem" => new RiskyServicePrincipalHistoryItem(),
                 _ => new RiskyServicePrincipal(),
             };
         }

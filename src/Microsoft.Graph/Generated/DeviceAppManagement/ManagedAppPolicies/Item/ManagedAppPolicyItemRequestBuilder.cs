@@ -1,7 +1,4 @@
-using Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppPolicies.Item.ManagedAppProtection;
 using Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppPolicies.Item.TargetApps;
-using Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppPolicies.Item.TargetedManagedAppProtection;
-using Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppPolicies.Item.WindowsInformationProtection;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -15,10 +12,6 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppPolicies.Item {
     /// <summary>Provides operations to manage the managedAppPolicies property of the microsoft.graph.deviceAppManagement entity.</summary>
     public class ManagedAppPolicyItemRequestBuilder {
-        /// <summary>The managedAppProtection property</summary>
-        public ManagedAppProtectionRequestBuilder ManagedAppProtection { get =>
-            new ManagedAppProtectionRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -27,16 +20,8 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppPolicies.Item {
         public TargetAppsRequestBuilder TargetApps { get =>
             new TargetAppsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The targetedManagedAppProtection property</summary>
-        public TargetedManagedAppProtectionRequestBuilder TargetedManagedAppProtection { get =>
-            new TargetedManagedAppProtectionRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>The windowsInformationProtection property</summary>
-        public WindowsInformationProtectionRequestBuilder WindowsInformationProtection { get =>
-            new WindowsInformationProtectionRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new ManagedAppPolicyItemRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>

@@ -30,7 +30,8 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.namedLocation" => new NamedLocation(),
+                "#microsoft.graph.countryNamedLocation" => new CountryNamedLocation(),
+                "#microsoft.graph.ipNamedLocation" => new IpNamedLocation(),
                 _ => new NamedLocation(),
             };
         }

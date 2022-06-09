@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the security singleton.</summary>
     public class EdiscoveryReviewSetQuery : Search, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -1,8 +1,13 @@
+using Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods.Item.Device.CheckMemberGroups;
+using Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods.Item.Device.CheckMemberObjects;
 using Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods.Item.Device.Commands;
 using Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods.Item.Device.Extensions;
+using Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods.Item.Device.GetMemberGroups;
+using Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods.Item.Device.GetMemberObjects;
 using Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods.Item.Device.MemberOf;
 using Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods.Item.Device.RegisteredOwners;
 using Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods.Item.Device.RegisteredUsers;
+using Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods.Item.Device.Restore;
 using Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods.Item.Device.TransitiveMemberOf;
 using Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods.Item.Device.UsageRights;
 using Microsoft.Graph.Beta.Models;
@@ -18,6 +23,14 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods.Item.Device {
     /// <summary>Provides operations to manage the device property of the microsoft.graph.microsoftAuthenticatorAuthenticationMethod entity.</summary>
     public class DeviceRequestBuilder {
+        /// <summary>The checkMemberGroups property</summary>
+        public CheckMemberGroupsRequestBuilder CheckMemberGroups { get =>
+            new CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The checkMemberObjects property</summary>
+        public CheckMemberObjectsRequestBuilder CheckMemberObjects { get =>
+            new CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The commands property</summary>
         public CommandsRequestBuilder Commands { get =>
             new CommandsRequestBuilder(PathParameters, RequestAdapter);
@@ -25,6 +38,14 @@ namespace Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods.I
         /// <summary>The extensions property</summary>
         public ExtensionsRequestBuilder Extensions { get =>
             new ExtensionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The getMemberGroups property</summary>
+        public GetMemberGroupsRequestBuilder GetMemberGroups { get =>
+            new GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The getMemberObjects property</summary>
+        public GetMemberObjectsRequestBuilder GetMemberObjects { get =>
+            new GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The memberOf property</summary>
         public MemberOfRequestBuilder MemberOf { get =>
@@ -42,6 +63,10 @@ namespace Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods.I
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The restore property</summary>
+        public RestoreRequestBuilder Restore { get =>
+            new RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The transitiveMemberOf property</summary>
         public TransitiveMemberOfRequestBuilder TransitiveMemberOf { get =>
             new TransitiveMemberOfRequestBuilder(PathParameters, RequestAdapter);

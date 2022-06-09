@@ -4,14 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the security singleton.</summary>
     public class EdiscoveryAddToReviewSetOperation : CaseOperation, IParsable {
-        /// <summary>The reviewSet property</summary>
+        /// <summary>eDiscovery review set to which items matching source collection query gets added.</summary>
         public EdiscoveryReviewSet ReviewSet {
             get { return BackingStore?.Get<EdiscoveryReviewSet>(nameof(ReviewSet)); }
             set { BackingStore?.Set(nameof(ReviewSet), value); }
         }
-        /// <summary>The search property</summary>
+        /// <summary>eDiscovery search that gets added to review set.</summary>
         public EdiscoverySearch Search {
             get { return BackingStore?.Get<EdiscoverySearch>(nameof(Search)); }
             set { BackingStore?.Set(nameof(Search), value); }

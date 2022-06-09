@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the classifyFile method.</summary>
+    /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
     public class DetectedSensitiveContent : DetectedSensitiveContentBase, IParsable {
         /// <summary>The classificationAttributes property</summary>
         public List<ClassificationAttribute> ClassificationAttributes {

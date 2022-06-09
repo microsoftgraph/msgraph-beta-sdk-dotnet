@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.Submissions.Item.Re
             return requestInfo;
         }
         /// <summary>
-        /// Nullable.
+        /// Get resources from education
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<EducationSubmissionResourceItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.Submissions.Item.Re
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Nullable.
+        /// Get resources from education
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.Submissions.Item.Re
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Nullable.</summary>
+        /// <summary>Get resources from education</summary>
         public class EducationSubmissionResourceItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

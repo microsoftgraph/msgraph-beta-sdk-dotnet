@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get custodianSources from security
+        /// Custodian sources that are included in the eDiscovery search.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<DataSourceItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get custodianSources from security
+        /// Custodian sources that are included in the eDiscovery search.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.DataSource>(requestInfo, Microsoft.Graph.Beta.Models.Security.DataSource.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get custodianSources from security</summary>
+        /// <summary>Custodian sources that are included in the eDiscovery search.</summary>
         public class DataSourceItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

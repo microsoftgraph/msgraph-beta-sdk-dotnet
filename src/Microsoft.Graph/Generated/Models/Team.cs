@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class Team : Entity, IParsable {
         /// <summary>List of channels either hosted in or shared with the team (incoming channels).</summary>
         public List<Channel> AllChannels {

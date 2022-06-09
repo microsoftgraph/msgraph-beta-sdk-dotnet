@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class OutlookItem : Entity, IParsable {
         /// <summary>The categories associated with the item</summary>
         public List<string> Categories {
@@ -35,7 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.outlookItem" => new OutlookItem(),
+                "#microsoft.graph.contact" => new Contact(),
+                "#microsoft.graph.event" => new Event(),
+                "#microsoft.graph.message" => new Message(),
+                "#microsoft.graph.note" => new Note(),
+                "#microsoft.graph.outlookTask" => new OutlookTask(),
+                "#microsoft.graph.post" => new Post(),
                 _ => new OutlookItem(),
             };
         }

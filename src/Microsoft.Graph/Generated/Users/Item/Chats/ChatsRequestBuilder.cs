@@ -1,6 +1,8 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.Chats.AllMessages;
 using Microsoft.Graph.Beta.Users.Item.Chats.Count;
+using Microsoft.Graph.Beta.Users.Item.Chats.GetAllMessages;
 using Microsoft.Graph.Beta.Users.Item.Chats.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -29,6 +31,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats {
             urlTplParams.Add("chat%2Did", position);
             return new ChatItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
+        /// <summary>
+        /// Provides operations to call the allMessages method.
+        /// </summary>
+        public AllMessagesRequestBuilder AllMessages() {
+            return new AllMessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new ChatsRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -97,6 +105,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats {
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             return requestInfo;
+        }
+        /// <summary>
+        /// Provides operations to call the getAllMessages method.
+        /// </summary>
+        public GetAllMessagesRequestBuilder GetAllMessages() {
+            return new GetAllMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Get chats from users

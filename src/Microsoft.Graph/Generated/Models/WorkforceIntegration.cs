@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the teamwork singleton.</summary>
     public class WorkforceIntegration : ChangeTrackedEntity, IParsable {
         /// <summary>API version for the call back URL. Start with 1.</summary>
         public int? ApiVersion {

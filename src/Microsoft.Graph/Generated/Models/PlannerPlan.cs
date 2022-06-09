@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class PlannerPlan : PlannerDelta, IParsable {
         /// <summary>Collection of buckets in the plan. Read-only. Nullable.</summary>
         public List<PlannerBucket> Buckets {

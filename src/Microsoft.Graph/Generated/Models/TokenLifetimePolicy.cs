@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to application.</summary>
     public class TokenLifetimePolicy : StsPolicy, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

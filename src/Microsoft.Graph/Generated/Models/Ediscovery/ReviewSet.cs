@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
             get { return BackingStore?.Get<string>(nameof(DisplayName)); }
             set { BackingStore?.Set(nameof(DisplayName), value); }
         }
-        /// <summary>Read-only. Nullable.</summary>
+        /// <summary>The queries property</summary>
         public List<ReviewSetQuery> Queries {
             get { return BackingStore?.Get<List<ReviewSetQuery>>(nameof(Queries)); }
             set { BackingStore?.Set(nameof(Queries), value); }

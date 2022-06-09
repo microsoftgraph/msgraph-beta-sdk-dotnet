@@ -40,7 +40,9 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.deviceManagementTroubleshootingEvent" => new DeviceManagementTroubleshootingEvent(),
+                "#microsoft.graph.appleVppTokenTroubleshootingEvent" => new AppleVppTokenTroubleshootingEvent(),
+                "#microsoft.graph.enrollmentTroubleshootingEvent" => new EnrollmentTroubleshootingEvent(),
+                "#microsoft.graph.mobileAppTroubleshootingEvent" => new MobileAppTroubleshootingEvent(),
                 _ => new DeviceManagementTroubleshootingEvent(),
             };
         }

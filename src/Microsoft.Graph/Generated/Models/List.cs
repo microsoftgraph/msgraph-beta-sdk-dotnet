@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class List : BaseItem, IParsable {
         /// <summary>The recent activities that took place within this list.</summary>
         public List<ItemActivityOLD> Activities {

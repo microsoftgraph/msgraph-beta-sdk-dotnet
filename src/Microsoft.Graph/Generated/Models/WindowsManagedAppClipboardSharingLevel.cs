@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public enum WindowsManagedAppClipboardSharingLevel {
         /// <summary>Org users can paste data from and cut/copy data to any account, document, location or application.</summary>
         AnyDestinationAnySource,

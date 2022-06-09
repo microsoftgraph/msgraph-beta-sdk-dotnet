@@ -1,5 +1,10 @@
 using Microsoft.Graph.Beta.Directory.DeletedItems.Item.Application;
+using Microsoft.Graph.Beta.Directory.DeletedItems.Item.CheckMemberGroups;
+using Microsoft.Graph.Beta.Directory.DeletedItems.Item.CheckMemberObjects;
+using Microsoft.Graph.Beta.Directory.DeletedItems.Item.GetMemberGroups;
+using Microsoft.Graph.Beta.Directory.DeletedItems.Item.GetMemberObjects;
 using Microsoft.Graph.Beta.Directory.DeletedItems.Item.Group;
+using Microsoft.Graph.Beta.Directory.DeletedItems.Item.Restore;
 using Microsoft.Graph.Beta.Directory.DeletedItems.Item.User;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -18,6 +23,22 @@ namespace Microsoft.Graph.Beta.Directory.DeletedItems.Item {
         public ApplicationRequestBuilder Application { get =>
             new ApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The checkMemberGroups property</summary>
+        public CheckMemberGroupsRequestBuilder CheckMemberGroups { get =>
+            new CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The checkMemberObjects property</summary>
+        public CheckMemberObjectsRequestBuilder CheckMemberObjects { get =>
+            new CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The getMemberGroups property</summary>
+        public GetMemberGroupsRequestBuilder GetMemberGroups { get =>
+            new GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The getMemberObjects property</summary>
+        public GetMemberObjectsRequestBuilder GetMemberObjects { get =>
+            new GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The group property</summary>
         public GroupRequestBuilder Group { get =>
             new GroupRequestBuilder(PathParameters, RequestAdapter);
@@ -26,6 +47,10 @@ namespace Microsoft.Graph.Beta.Directory.DeletedItems.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The restore property</summary>
+        public RestoreRequestBuilder Restore { get =>
+            new RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>The user property</summary>

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the evaluate method.</summary>
+    /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
     public enum DlpAction {
         NotifyUser,
         BlockAccess,

@@ -1,6 +1,9 @@
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.ExternalSponsors.Count;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.ExternalSponsors.GetByIds;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.ExternalSponsors.GetUserOwnedObjects;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.ExternalSponsors.Item;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.ExternalSponsors.Ref;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.ExternalSponsors.ValidateProperties;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -18,6 +21,14 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The getByIds property</summary>
+        public GetByIdsRequestBuilder GetByIds { get =>
+            new GetByIdsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The getUserOwnedObjects property</summary>
+        public GetUserOwnedObjectsRequestBuilder GetUserOwnedObjects { get =>
+            new GetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The ref property</summary>
@@ -28,6 +39,10 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>The validateProperties property</summary>
+        public ValidatePropertiesRequestBuilder ValidateProperties { get =>
+            new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.identityGovernance.entitlementManagement.connectedOrganizations.item.externalSponsors.item collection</summary>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
@@ -62,7 +77,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Nullable.
+        /// Get externalSponsors from identityGovernance
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ExternalSponsorsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -104,7 +119,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
             return requestInfo;
         }
         /// <summary>
-        /// Nullable.
+        /// Get externalSponsors from identityGovernance
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -133,7 +148,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
             };
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Nullable.</summary>
+        /// <summary>Get externalSponsors from identityGovernance</summary>
         public class ExternalSponsorsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

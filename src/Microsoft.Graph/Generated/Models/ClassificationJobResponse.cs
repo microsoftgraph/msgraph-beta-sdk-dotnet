@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the classifyFile method.</summary>
     public class ClassificationJobResponse : JobResponseBase, IParsable {
         /// <summary>The result property</summary>
         public DetectedSensitiveContentWrapper Result {

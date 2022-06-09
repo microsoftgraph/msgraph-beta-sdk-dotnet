@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class OfficeGraphInsights : Entity, IParsable {
         /// <summary>Access this property from the derived type itemInsights.</summary>
         public List<SharedInsight> Shared {
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.officeGraphInsights" => new OfficeGraphInsights(),
+                "#microsoft.graph.itemInsights" => new ItemInsights(),
                 _ => new OfficeGraphInsights(),
             };
         }

@@ -6,22 +6,22 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     /// <summary>Provides operations to manage the security singleton.</summary>
     public class DataSource : Entity, IParsable {
-        /// <summary>The createdBy property</summary>
+        /// <summary>The user who created the dataSource.</summary>
         public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>(nameof(CreatedBy)); }
             set { BackingStore?.Set(nameof(CreatedBy), value); }
         }
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time the dataSource was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
             set { BackingStore?.Set(nameof(CreatedDateTime), value); }
         }
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the dataSource. This will be the name of the SharePoint site.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>(nameof(DisplayName)); }
             set { BackingStore?.Set(nameof(DisplayName), value); }
         }
-        /// <summary>The holdStatus property</summary>
+        /// <summary>The hold status of the dataSource.The possible values are: notApplied, applied, applying, removing, partial</summary>
         public DataSourceHoldStatus? HoldStatus {
             get { return BackingStore?.Get<DataSourceHoldStatus?>(nameof(HoldStatus)); }
             set { BackingStore?.Set(nameof(HoldStatus), value); }
@@ -35,7 +35,9 @@ namespace Microsoft.Graph.Beta.Models.Security {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.security.dataSource" => new DataSource(),
+                "#microsoft.graph.security.siteSource" => new SiteSource(),
+                "#microsoft.graph.security.unifiedGroupSource" => new UnifiedGroupSource(),
+                "#microsoft.graph.security.userSource" => new UserSource(),
                 _ => new DataSource(),
             };
         }

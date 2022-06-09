@@ -1,18 +1,3 @@
-using Microsoft.Graph.Beta.Groups.Item.Owners.Item.Group.AddFavorite;
-using Microsoft.Graph.Beta.Groups.Item.Owners.Item.Group.AssignLicense;
-using Microsoft.Graph.Beta.Groups.Item.Owners.Item.Group.CheckGrantedPermissionsForApp;
-using Microsoft.Graph.Beta.Groups.Item.Owners.Item.Group.CheckMemberGroups;
-using Microsoft.Graph.Beta.Groups.Item.Owners.Item.Group.CheckMemberObjects;
-using Microsoft.Graph.Beta.Groups.Item.Owners.Item.Group.EvaluateDynamicMembership;
-using Microsoft.Graph.Beta.Groups.Item.Owners.Item.Group.GetMemberGroups;
-using Microsoft.Graph.Beta.Groups.Item.Owners.Item.Group.GetMemberObjects;
-using Microsoft.Graph.Beta.Groups.Item.Owners.Item.Group.RemoveFavorite;
-using Microsoft.Graph.Beta.Groups.Item.Owners.Item.Group.Renew;
-using Microsoft.Graph.Beta.Groups.Item.Owners.Item.Group.ResetUnseenCount;
-using Microsoft.Graph.Beta.Groups.Item.Owners.Item.Group.Restore;
-using Microsoft.Graph.Beta.Groups.Item.Owners.Item.Group.SubscribeByMail;
-using Microsoft.Graph.Beta.Groups.Item.Owners.Item.Group.UnsubscribeByMail;
-using Microsoft.Graph.Beta.Groups.Item.Owners.Item.Group.ValidateProperties;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -26,72 +11,12 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups.Item.Owners.Item.Group {
     /// <summary>Casts the previous resource to group.</summary>
     public class GroupRequestBuilder {
-        /// <summary>The addFavorite property</summary>
-        public AddFavoriteRequestBuilder AddFavorite { get =>
-            new AddFavoriteRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The assignLicense property</summary>
-        public AssignLicenseRequestBuilder AssignLicense { get =>
-            new AssignLicenseRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The checkGrantedPermissionsForApp property</summary>
-        public CheckGrantedPermissionsForAppRequestBuilder CheckGrantedPermissionsForApp { get =>
-            new CheckGrantedPermissionsForAppRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The checkMemberGroups property</summary>
-        public CheckMemberGroupsRequestBuilder CheckMemberGroups { get =>
-            new CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The checkMemberObjects property</summary>
-        public CheckMemberObjectsRequestBuilder CheckMemberObjects { get =>
-            new CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The evaluateDynamicMembership property</summary>
-        public EvaluateDynamicMembershipRequestBuilder EvaluateDynamicMembership { get =>
-            new EvaluateDynamicMembershipRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The getMemberGroups property</summary>
-        public GetMemberGroupsRequestBuilder GetMemberGroups { get =>
-            new GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The getMemberObjects property</summary>
-        public GetMemberObjectsRequestBuilder GetMemberObjects { get =>
-            new GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The removeFavorite property</summary>
-        public RemoveFavoriteRequestBuilder RemoveFavorite { get =>
-            new RemoveFavoriteRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The renew property</summary>
-        public RenewRequestBuilder Renew { get =>
-            new RenewRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The resetUnseenCount property</summary>
-        public ResetUnseenCountRequestBuilder ResetUnseenCount { get =>
-            new ResetUnseenCountRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The restore property</summary>
-        public RestoreRequestBuilder Restore { get =>
-            new RestoreRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The subscribeByMail property</summary>
-        public SubscribeByMailRequestBuilder SubscribeByMail { get =>
-            new SubscribeByMailRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The unsubscribeByMail property</summary>
-        public UnsubscribeByMailRequestBuilder UnsubscribeByMail { get =>
-            new UnsubscribeByMailRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>The validateProperties property</summary>
-        public ValidatePropertiesRequestBuilder ValidateProperties { get =>
-            new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new GroupRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>

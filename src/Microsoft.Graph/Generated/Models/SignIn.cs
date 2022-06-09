@@ -315,7 +315,7 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.signIn" => new SignIn(),
+                "#microsoft.graph.restrictedSignIn" => new RestrictedSignIn(),
                 _ => new SignIn(),
             };
         }

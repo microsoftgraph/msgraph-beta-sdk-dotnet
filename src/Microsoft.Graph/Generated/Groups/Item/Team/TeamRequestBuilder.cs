@@ -1,5 +1,8 @@
 using Microsoft.Graph.Beta.Groups.Item.Team.AllChannels;
+using Microsoft.Graph.Beta.Groups.Item.Team.Archive;
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels;
+using Microsoft.Graph.Beta.Groups.Item.Team.Clone;
+using Microsoft.Graph.Beta.Groups.Item.Team.CompleteMigration;
 using Microsoft.Graph.Beta.Groups.Item.Team.Group;
 using Microsoft.Graph.Beta.Groups.Item.Team.IncomingChannels;
 using Microsoft.Graph.Beta.Groups.Item.Team.InstalledApps;
@@ -10,8 +13,10 @@ using Microsoft.Graph.Beta.Groups.Item.Team.PermissionGrants;
 using Microsoft.Graph.Beta.Groups.Item.Team.Photo;
 using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel;
 using Microsoft.Graph.Beta.Groups.Item.Team.Schedule;
+using Microsoft.Graph.Beta.Groups.Item.Team.SendActivityNotification;
 using Microsoft.Graph.Beta.Groups.Item.Team.Tags;
 using Microsoft.Graph.Beta.Groups.Item.Team.Template;
+using Microsoft.Graph.Beta.Groups.Item.Team.Unarchive;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -29,9 +34,21 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team {
         public AllChannelsRequestBuilder AllChannels { get =>
             new AllChannelsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The archive property</summary>
+        public ArchiveRequestBuilder Archive { get =>
+            new ArchiveRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The channels property</summary>
         public ChannelsRequestBuilder Channels { get =>
             new ChannelsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The clone property</summary>
+        public CloneRequestBuilder Clone { get =>
+            new CloneRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The completeMigration property</summary>
+        public CompleteMigrationRequestBuilder CompleteMigration { get =>
+            new CompleteMigrationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The group property</summary>
         public GroupRequestBuilder Group { get =>
@@ -77,6 +94,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team {
         public ScheduleRequestBuilder Schedule { get =>
             new ScheduleRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The sendActivityNotification property</summary>
+        public SendActivityNotificationRequestBuilder SendActivityNotification { get =>
+            new SendActivityNotificationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The tags property</summary>
         public TagsRequestBuilder Tags { get =>
             new TagsRequestBuilder(PathParameters, RequestAdapter);
@@ -84,6 +105,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team {
         /// <summary>The template property</summary>
         public TemplateRequestBuilder Template { get =>
             new TemplateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The unarchive property</summary>
+        public UnarchiveRequestBuilder Unarchive { get =>
+            new UnarchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }

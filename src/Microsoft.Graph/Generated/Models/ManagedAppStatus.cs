@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.managedAppStatus" => new ManagedAppStatus(),
+                "#microsoft.graph.managedAppStatusRaw" => new ManagedAppStatusRaw(),
                 _ => new ManagedAppStatus(),
             };
         }

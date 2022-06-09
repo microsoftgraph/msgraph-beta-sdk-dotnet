@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Directory.FeatureRolloutPolicies {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Nullable.
+        /// Get featureRolloutPolicies from directory
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<FeatureRolloutPoliciesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Directory.FeatureRolloutPolicies {
             return requestInfo;
         }
         /// <summary>
-        /// Nullable.
+        /// Get featureRolloutPolicies from directory
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Directory.FeatureRolloutPolicies {
             };
             return await RequestAdapter.SendAsync<FeatureRolloutPolicy>(requestInfo, FeatureRolloutPolicy.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Nullable.</summary>
+        /// <summary>Get featureRolloutPolicies from directory</summary>
         public class FeatureRolloutPoliciesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

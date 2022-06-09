@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of identityProvider entities.</summary>
+    /// <summary>Provides operations to manage the identityContainer singleton.</summary>
     public class IdentityProvider : Entity, IParsable {
         /// <summary>The client ID for the application obtained when registering the application with the identity provider. This is a required field.  Required. Not nullable.</summary>
         public string ClientId {
@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.identityProvider" => new IdentityProvider(),
+                "#microsoft.graph.openIdConnectProvider" => new OpenIdConnectProvider(),
                 _ => new IdentityProvider(),
             };
         }

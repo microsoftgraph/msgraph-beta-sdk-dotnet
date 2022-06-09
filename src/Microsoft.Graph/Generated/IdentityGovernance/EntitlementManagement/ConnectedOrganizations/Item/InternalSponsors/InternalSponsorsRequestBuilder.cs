@@ -1,5 +1,9 @@
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.InternalSponsors.Count;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.InternalSponsors.GetByIds;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.InternalSponsors.GetUserOwnedObjects;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.InternalSponsors.Item;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.InternalSponsors.Ref;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.InternalSponsors.ValidateProperties;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -17,12 +21,28 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The getByIds property</summary>
+        public GetByIdsRequestBuilder GetByIds { get =>
+            new GetByIdsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The getUserOwnedObjects property</summary>
+        public GetUserOwnedObjectsRequestBuilder GetUserOwnedObjects { get =>
+            new GetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>The ref property</summary>
+        public RefRequestBuilder Ref { get =>
+            new RefRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>The validateProperties property</summary>
+        public ValidatePropertiesRequestBuilder ValidateProperties { get =>
+            new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.identityGovernance.entitlementManagement.connectedOrganizations.item.internalSponsors.item collection</summary>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
@@ -57,7 +77,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Nullable.
+        /// Get internalSponsors from identityGovernance
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<InternalSponsorsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +119,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
             return requestInfo;
         }
         /// <summary>
-        /// Nullable.
+        /// Get internalSponsors from identityGovernance
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -128,7 +148,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
             };
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Nullable.</summary>
+        /// <summary>Get internalSponsors from identityGovernance</summary>
         public class InternalSponsorsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

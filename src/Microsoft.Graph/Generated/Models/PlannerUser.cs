@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
     public class PlannerUser : PlannerDelta, IParsable {
         /// <summary>The all property</summary>
         public List<PlannerDelta> All {

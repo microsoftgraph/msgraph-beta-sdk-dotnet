@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the commsApplication singleton.</summary>
     public class MeetingRegistrationBase : Entity, IParsable {
         /// <summary>Specifies who can register for the meeting.</summary>
         public MeetingAudience? AllowedRegistrant {
@@ -25,7 +25,8 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.meetingRegistrationBase" => new MeetingRegistrationBase(),
+                "#microsoft.graph.externalMeetingRegistration" => new ExternalMeetingRegistration(),
+                "#microsoft.graph.meetingRegistration" => new MeetingRegistration(),
                 _ => new MeetingRegistrationBase(),
             };
         }

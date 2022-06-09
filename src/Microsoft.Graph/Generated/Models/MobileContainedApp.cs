@@ -15,7 +15,8 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.mobileContainedApp" => new MobileContainedApp(),
+                "#microsoft.graph.microsoftStoreForBusinessContainedApp" => new MicrosoftStoreForBusinessContainedApp(),
+                "#microsoft.graph.windowsUniversalAppXContainedApp" => new WindowsUniversalAppXContainedApp(),
                 _ => new MobileContainedApp(),
             };
         }

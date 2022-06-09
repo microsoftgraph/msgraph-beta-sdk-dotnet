@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.exactMatchJobBase" => new ExactMatchJobBase(),
+                "#microsoft.graph.exactMatchLookupJob" => new ExactMatchLookupJob(),
+                "#microsoft.graph.exactMatchSessionBase" => new ExactMatchSessionBase(),
                 _ => new ExactMatchJobBase(),
             };
         }

@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Insights {
             return requestInfo;
         }
         /// <summary>
-        /// Read-only. Nullable.
+        /// Get insights from users
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<InsightsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Insights {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read-only. Nullable.
+        /// Get insights from users
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Insights {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Read-only. Nullable.</summary>
+        /// <summary>Get insights from users</summary>
         public class InsightsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

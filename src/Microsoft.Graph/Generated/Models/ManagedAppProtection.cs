@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Policy used to configure detailed management settings for a specified set of apps</summary>
     public class ManagedAppProtection : ManagedAppPolicy, IParsable {
         /// <summary>Data storage locations where a user may store managed data.</summary>
         public List<string> AllowedDataIngestionLocations {
@@ -237,12 +236,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new ManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.managedAppProtection" => new ManagedAppProtection(),
-                _ => new ManagedAppProtection(),
-            };
+            return new ManagedAppProtection();
         }
         /// <summary>
         /// The deserialization information for the current model

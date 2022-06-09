@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
     public class OnenoteEntitySchemaObjectModel : OnenoteEntityBaseModel, IParsable {
         /// <summary>The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -17,12 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new OnenoteEntitySchemaObjectModel CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.onenoteEntitySchemaObjectModel" => new OnenoteEntitySchemaObjectModel(),
-                _ => new OnenoteEntitySchemaObjectModel(),
-            };
+            return new OnenoteEntitySchemaObjectModel();
         }
         /// <summary>
         /// The deserialization information for the current model

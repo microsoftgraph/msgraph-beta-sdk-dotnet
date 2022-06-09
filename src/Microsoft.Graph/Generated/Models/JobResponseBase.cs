@@ -50,7 +50,9 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.jobResponseBase" => new JobResponseBase(),
+                "#microsoft.graph.classificationJobResponse" => new ClassificationJobResponse(),
+                "#microsoft.graph.dlpEvaluatePoliciesJobResponse" => new DlpEvaluatePoliciesJobResponse(),
+                "#microsoft.graph.evaluateLabelJobResponse" => new EvaluateLabelJobResponse(),
                 _ => new JobResponseBase(),
             };
         }

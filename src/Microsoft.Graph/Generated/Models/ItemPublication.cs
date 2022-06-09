@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
     public class ItemPublication : ItemFacet, IParsable {
         /// <summary>Description of the publication.</summary>
         public string Description {

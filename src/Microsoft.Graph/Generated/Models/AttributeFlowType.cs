@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to application.</summary>
+    /// <summary>Provides operations to call the instantiate method.</summary>
     public enum AttributeFlowType {
         Always,
         ObjectAddOnly,

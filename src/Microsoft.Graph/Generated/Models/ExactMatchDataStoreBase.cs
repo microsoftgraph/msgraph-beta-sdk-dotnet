@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.exactMatchDataStoreBase" => new ExactMatchDataStoreBase(),
+                "#microsoft.graph.exactMatchDataStore" => new ExactMatchDataStore(),
                 _ => new ExactMatchDataStoreBase(),
             };
         }

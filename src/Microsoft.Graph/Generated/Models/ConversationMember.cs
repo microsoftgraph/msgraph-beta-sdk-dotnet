@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class ConversationMember : Entity, IParsable {
         /// <summary>The display name of the user.</summary>
         public string DisplayName {
@@ -30,7 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.conversationMember" => new ConversationMember(),
+                "#microsoft.graph.aadUserConversationMember" => new AadUserConversationMember(),
+                "#microsoft.graph.anonymousGuestConversationMember" => new AnonymousGuestConversationMember(),
+                "#microsoft.graph.microsoftAccountUserConversationMember" => new MicrosoftAccountUserConversationMember(),
+                "#microsoft.graph.skypeForBusinessUserConversationMember" => new SkypeForBusinessUserConversationMember(),
+                "#microsoft.graph.skypeUserConversationMember" => new SkypeUserConversationMember(),
                 _ => new ConversationMember(),
             };
         }

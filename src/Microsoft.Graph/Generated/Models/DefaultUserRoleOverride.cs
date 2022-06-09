@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
+    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class DefaultUserRoleOverride : Entity, IParsable {
         /// <summary>The isDefault property</summary>
         public bool? IsDefault {

@@ -30,7 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.groupPolicyPresentation" => new GroupPolicyPresentation(),
+                "#microsoft.graph.groupPolicyPresentationCheckBox" => new GroupPolicyPresentationCheckBox(),
+                "#microsoft.graph.groupPolicyPresentationComboBox" => new GroupPolicyPresentationComboBox(),
+                "#microsoft.graph.groupPolicyPresentationDecimalTextBox" => new GroupPolicyPresentationDecimalTextBox(),
+                "#microsoft.graph.groupPolicyPresentationDropdownList" => new GroupPolicyPresentationDropdownList(),
+                "#microsoft.graph.groupPolicyPresentationListBox" => new GroupPolicyPresentationListBox(),
+                "#microsoft.graph.groupPolicyPresentationLongDecimalTextBox" => new GroupPolicyPresentationLongDecimalTextBox(),
+                "#microsoft.graph.groupPolicyPresentationMultiTextBox" => new GroupPolicyPresentationMultiTextBox(),
+                "#microsoft.graph.groupPolicyPresentationText" => new GroupPolicyPresentationText(),
+                "#microsoft.graph.groupPolicyPresentationTextBox" => new GroupPolicyPresentationTextBox(),
                 _ => new GroupPolicyPresentation(),
             };
         }

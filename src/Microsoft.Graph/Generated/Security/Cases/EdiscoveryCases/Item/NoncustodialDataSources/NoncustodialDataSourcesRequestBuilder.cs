@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.NoncustodialD
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get noncustodialDataSources from security
+        /// Returns a list of case ediscoveryNoncustodialDataSource objects for this case.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<NoncustodialDataSourcesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.NoncustodialD
             return requestInfo;
         }
         /// <summary>
-        /// Get noncustodialDataSources from security
+        /// Returns a list of case ediscoveryNoncustodialDataSource objects for this case.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.NoncustodialD
             };
             return await RequestAdapter.SendAsync<EdiscoveryNoncustodialDataSource>(requestInfo, EdiscoveryNoncustodialDataSource.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get noncustodialDataSources from security</summary>
+        /// <summary>Returns a list of case ediscoveryNoncustodialDataSource objects for this case.</summary>
         public class NoncustodialDataSourcesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

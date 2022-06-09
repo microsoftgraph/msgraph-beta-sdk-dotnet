@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>(nameof(DisplayName)); }
             set { BackingStore?.Set(nameof(DisplayName), value); }
         }
-        /// <summary>Nullable.</summary>
+        /// <summary>The externalSponsors property</summary>
         public List<DirectoryObject> ExternalSponsors {
             get { return BackingStore?.Get<List<DirectoryObject>>(nameof(ExternalSponsors)); }
             set { BackingStore?.Set(nameof(ExternalSponsors), value); }
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<IdentitySource>>(nameof(IdentitySources)); }
             set { BackingStore?.Set(nameof(IdentitySources), value); }
         }
-        /// <summary>Nullable.</summary>
+        /// <summary>The internalSponsors property</summary>
         public List<DirectoryObject> InternalSponsors {
             get { return BackingStore?.Get<List<DirectoryObject>>(nameof(InternalSponsors)); }
             set { BackingStore?.Set(nameof(InternalSponsors), value); }

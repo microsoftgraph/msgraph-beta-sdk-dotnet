@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<RbacApplicationMultiple>(nameof(DeviceManagement)); }
             set { BackingStore?.Set(nameof(DeviceManagement), value); }
         }
-        /// <summary>Read-only. Nullable.</summary>
+        /// <summary>The directory property</summary>
         public RbacApplication DirectoryObject {
             get { return BackingStore?.Get<RbacApplication>(nameof(DirectoryObject)); }
             set { BackingStore?.Set(nameof(DirectoryObject), value); }

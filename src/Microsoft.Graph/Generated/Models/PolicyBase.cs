@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to application.</summary>
+    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class PolicyBase : DirectoryObject, IParsable {
         /// <summary>Description for this policy. Required.</summary>
         public string Description {
@@ -25,7 +25,15 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.policyBase" => new PolicyBase(),
+                "#microsoft.graph.appManagementPolicy" => new AppManagementPolicy(),
+                "#microsoft.graph.authorizationPolicy" => new AuthorizationPolicy(),
+                "#microsoft.graph.externalIdentitiesPolicy" => new ExternalIdentitiesPolicy(),
+                "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy" => new IdentitySecurityDefaultsEnforcementPolicy(),
+                "#microsoft.graph.permissionGrantPolicy" => new PermissionGrantPolicy(),
+                "#microsoft.graph.servicePrincipalCreationPolicy" => new ServicePrincipalCreationPolicy(),
+                "#microsoft.graph.stsPolicy" => new StsPolicy(),
+                "#microsoft.graph.tenantAppManagementPolicy" => new TenantAppManagementPolicy(),
+                "#microsoft.graph.tenantRelationshipAccessPolicyBase" => new TenantRelationshipAccessPolicyBase(),
                 _ => new PolicyBase(),
             };
         }

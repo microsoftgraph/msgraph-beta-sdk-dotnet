@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public enum WindowsInformationProtectionEnforcementLevel {
         /// <summary>No protection enforcement</summary>
         NoProtection,

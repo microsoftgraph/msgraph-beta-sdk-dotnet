@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class ItemFacet : Entity, IParsable {
         /// <summary>The audiences that are able to see the values contained within the associated entity. Possible values are: me, family, contacts, groupMembers, organization, federatedOrganizations, everyone, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.AllowedAudiences? AllowedAudiences {
@@ -55,7 +55,26 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.itemFacet" => new ItemFacet(),
+                "#microsoft.graph.educationalActivity" => new EducationalActivity(),
+                "#microsoft.graph.itemAddress" => new ItemAddress(),
+                "#microsoft.graph.itemEmail" => new ItemEmail(),
+                "#microsoft.graph.itemPatent" => new ItemPatent(),
+                "#microsoft.graph.itemPhone" => new ItemPhone(),
+                "#microsoft.graph.itemPublication" => new ItemPublication(),
+                "#microsoft.graph.languageProficiency" => new LanguageProficiency(),
+                "#microsoft.graph.personAnnotation" => new PersonAnnotation(),
+                "#microsoft.graph.personAnnualEvent" => new PersonAnnualEvent(),
+                "#microsoft.graph.personAward" => new PersonAward(),
+                "#microsoft.graph.personCertification" => new PersonCertification(),
+                "#microsoft.graph.personInterest" => new PersonInterest(),
+                "#microsoft.graph.personName" => new PersonName(),
+                "#microsoft.graph.personResponsibility" => new PersonResponsibility(),
+                "#microsoft.graph.personWebsite" => new PersonWebsite(),
+                "#microsoft.graph.projectParticipation" => new ProjectParticipation(),
+                "#microsoft.graph.skillProficiency" => new SkillProficiency(),
+                "#microsoft.graph.userAccountInformation" => new UserAccountInformation(),
+                "#microsoft.graph.webAccount" => new WebAccount(),
+                "#microsoft.graph.workPosition" => new WorkPosition(),
                 _ => new ItemFacet(),
             };
         }

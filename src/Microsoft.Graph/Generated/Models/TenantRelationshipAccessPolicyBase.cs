@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class TenantRelationshipAccessPolicyBase : PolicyBase, IParsable {
         /// <summary>The definition property</summary>
         public List<string> Definition {
@@ -17,12 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new TenantRelationshipAccessPolicyBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.tenantRelationshipAccessPolicyBase" => new TenantRelationshipAccessPolicyBase(),
-                _ => new TenantRelationshipAccessPolicyBase(),
-            };
+            return new TenantRelationshipAccessPolicyBase();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to room.</summary>
+    /// <summary>Provides operations to manage the collection of place entities.</summary>
     public enum BookingType {
         Unknown,
         Standard,

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class WorkbookChartAxis : Entity, IParsable {
         /// <summary>Represents the formatting of a chart object, which includes line and font formatting. Read-only.</summary>
         public WorkbookChartAxisFormat Format {

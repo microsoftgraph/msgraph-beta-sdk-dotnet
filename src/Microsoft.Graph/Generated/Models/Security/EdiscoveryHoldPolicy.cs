@@ -4,19 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the security singleton.</summary>
     public class EdiscoveryHoldPolicy : PolicyBase, IParsable {
-        /// <summary>The contentQuery property</summary>
+        /// <summary>KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.</summary>
         public string ContentQuery {
             get { return BackingStore?.Get<string>(nameof(ContentQuery)); }
             set { BackingStore?.Set(nameof(ContentQuery), value); }
         }
-        /// <summary>The errors property</summary>
+        /// <summary>Lists any errors that happened while placing the hold.</summary>
         public List<string> Errors {
             get { return BackingStore?.Get<List<string>>(nameof(Errors)); }
             set { BackingStore?.Set(nameof(Errors), value); }
         }
-        /// <summary>The isEnabled property</summary>
+        /// <summary>Indicates whether the hold is enabled and actively holding content.</summary>
         public bool? IsEnabled {
             get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
             set { BackingStore?.Set(nameof(IsEnabled), value); }

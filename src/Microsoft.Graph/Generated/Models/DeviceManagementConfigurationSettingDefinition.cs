@@ -105,7 +105,10 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.deviceManagementConfigurationSettingDefinition" => new DeviceManagementConfigurationSettingDefinition(),
+                "#microsoft.graph.deviceManagementConfigurationChoiceSettingDefinition" => new DeviceManagementConfigurationChoiceSettingDefinition(),
+                "#microsoft.graph.deviceManagementConfigurationRedirectSettingDefinition" => new DeviceManagementConfigurationRedirectSettingDefinition(),
+                "#microsoft.graph.deviceManagementConfigurationSettingGroupDefinition" => new DeviceManagementConfigurationSettingGroupDefinition(),
+                "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition" => new DeviceManagementConfigurationSimpleSettingDefinition(),
                 _ => new DeviceManagementConfigurationSettingDefinition(),
             };
         }

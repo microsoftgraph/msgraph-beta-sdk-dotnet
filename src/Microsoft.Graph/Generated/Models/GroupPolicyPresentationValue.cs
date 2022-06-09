@@ -35,7 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.groupPolicyPresentationValue" => new GroupPolicyPresentationValue(),
+                "#microsoft.graph.groupPolicyPresentationValueBoolean" => new GroupPolicyPresentationValueBoolean(),
+                "#microsoft.graph.groupPolicyPresentationValueDecimal" => new GroupPolicyPresentationValueDecimal(),
+                "#microsoft.graph.groupPolicyPresentationValueList" => new GroupPolicyPresentationValueList(),
+                "#microsoft.graph.groupPolicyPresentationValueLongDecimal" => new GroupPolicyPresentationValueLongDecimal(),
+                "#microsoft.graph.groupPolicyPresentationValueMultiText" => new GroupPolicyPresentationValueMultiText(),
+                "#microsoft.graph.groupPolicyPresentationValueText" => new GroupPolicyPresentationValueText(),
                 _ => new GroupPolicyPresentationValue(),
             };
         }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Represents a staff member who provides services in a business.</summary>
     public class BookingStaffMember : BookingPerson, IParsable {
         /// <summary>True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member&apos;s availability in their personal calendar in Microsoft 365, before making a booking.</summary>
         public bool? AvailabilityIsAffectedByPersonalCalendar {

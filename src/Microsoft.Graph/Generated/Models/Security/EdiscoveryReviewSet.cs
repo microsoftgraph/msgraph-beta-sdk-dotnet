@@ -4,14 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the security singleton.</summary>
     public class EdiscoveryReviewSet : DataSet, IParsable {
-        /// <summary>The files property</summary>
+        /// <summary>Represents files within the review set.</summary>
         public List<EdiscoveryFile> Files {
             get { return BackingStore?.Get<List<EdiscoveryFile>>(nameof(Files)); }
             set { BackingStore?.Set(nameof(Files), value); }
         }
-        /// <summary>The queries property</summary>
+        /// <summary>Represents queries within the review set.</summary>
         public List<EdiscoveryReviewSetQuery> Queries {
             get { return BackingStore?.Get<List<EdiscoveryReviewSetQuery>>(nameof(Queries)); }
             set { BackingStore?.Set(nameof(Queries), value); }

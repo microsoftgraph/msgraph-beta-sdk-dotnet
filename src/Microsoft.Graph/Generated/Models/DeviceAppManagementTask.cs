@@ -65,7 +65,9 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.deviceAppManagementTask" => new DeviceAppManagementTask(),
+                "#microsoft.graph.appVulnerabilityTask" => new AppVulnerabilityTask(),
+                "#microsoft.graph.securityConfigurationTask" => new SecurityConfigurationTask(),
+                "#microsoft.graph.unmanagedDeviceDiscoveryTask" => new UnmanagedDeviceDiscoveryTask(),
                 _ => new DeviceAppManagementTask(),
             };
         }

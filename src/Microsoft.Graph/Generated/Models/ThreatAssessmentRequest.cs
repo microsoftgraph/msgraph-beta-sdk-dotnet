@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class ThreatAssessmentRequest : Entity, IParsable {
         /// <summary>The threat category. Possible values are: spam, phishing, malware.</summary>
         public ThreatCategory? Category {
@@ -55,7 +55,10 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.threatAssessmentRequest" => new ThreatAssessmentRequest(),
+                "#microsoft.graph.emailFileAssessmentRequest" => new EmailFileAssessmentRequest(),
+                "#microsoft.graph.fileAssessmentRequest" => new FileAssessmentRequest(),
+                "#microsoft.graph.mailAssessmentRequest" => new MailAssessmentRequest(),
+                "#microsoft.graph.urlAssessmentRequest" => new UrlAssessmentRequest(),
                 _ => new ThreatAssessmentRequest(),
             };
         }

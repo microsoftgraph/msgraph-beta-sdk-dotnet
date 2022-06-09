@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class Request : Entity, IParsable {
         /// <summary>The identifier of the approval of the request.</summary>
         public string ApprovalId {
@@ -45,7 +45,9 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.request" => new Request(),
+                "#microsoft.graph.unifiedRoleAssignmentScheduleRequest" => new UnifiedRoleAssignmentScheduleRequest(),
+                "#microsoft.graph.unifiedRoleEligibilityScheduleRequest" => new UnifiedRoleEligibilityScheduleRequest(),
+                "#microsoft.graph.userConsentRequest" => new UserConsentRequest(),
                 _ => new Request(),
             };
         }

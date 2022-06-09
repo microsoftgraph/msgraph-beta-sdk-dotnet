@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the evaluate method.</summary>
     public class DlpEvaluatePoliciesJobResponse : JobResponseBase, IParsable {
         /// <summary>The result property</summary>
         public DlpPoliciesJobResult Result {

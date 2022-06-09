@@ -1,4 +1,6 @@
+using Microsoft.Graph.Beta.Me.Chats.AllMessages;
 using Microsoft.Graph.Beta.Me.Chats.Count;
+using Microsoft.Graph.Beta.Me.Chats.GetAllMessages;
 using Microsoft.Graph.Beta.Me.Chats.Item;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -29,6 +31,12 @@ namespace Microsoft.Graph.Beta.Me.Chats {
             urlTplParams.Add("chat%2Did", position);
             return new ChatItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
+        /// <summary>
+        /// Provides operations to call the allMessages method.
+        /// </summary>
+        public AllMessagesRequestBuilder AllMessages() {
+            return new AllMessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new ChatsRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -97,6 +105,12 @@ namespace Microsoft.Graph.Beta.Me.Chats {
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             return requestInfo;
+        }
+        /// <summary>
+        /// Provides operations to call the getAllMessages method.
+        /// </summary>
+        public GetAllMessagesRequestBuilder GetAllMessages() {
+            return new GetAllMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Get chats from me

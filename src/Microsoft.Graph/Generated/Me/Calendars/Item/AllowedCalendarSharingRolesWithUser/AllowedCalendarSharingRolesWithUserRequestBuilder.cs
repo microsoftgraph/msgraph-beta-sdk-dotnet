@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -71,7 +72,11 @@ namespace Microsoft.Graph.Beta.Me.Calendars.Item.AllowedCalendarSharingRolesWith
         /// </summary>
         public async Task<AllowedCalendarSharingRolesWithUserResponse> GetAsync(Action<AllowedCalendarSharingRolesWithUserRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<AllowedCalendarSharingRolesWithUserResponse>(requestInfo, AllowedCalendarSharingRolesWithUserResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<AllowedCalendarSharingRolesWithUserResponse>(requestInfo, AllowedCalendarSharingRolesWithUserResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class AllowedCalendarSharingRolesWithUserRequestBuilderGetRequestConfiguration {

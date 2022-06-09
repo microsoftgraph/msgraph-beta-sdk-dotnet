@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of sharedDriveItem entities.</summary>
     public class SharedDriveItem : BaseItem, IParsable {
         /// <summary>Used to access the underlying driveItem</summary>
         public Microsoft.Graph.Beta.Models.DriveItem DriveItem {

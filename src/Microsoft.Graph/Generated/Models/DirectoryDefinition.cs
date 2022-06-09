@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to application.</summary>
+    /// <summary>Provides operations to call the instantiate method.</summary>
     public class DirectoryDefinition : Entity, IParsable {
         /// <summary>Read only value indicating what type of discovery the app supports. Possible values are: AttributeDataTypes, AttributeNames, AttributeReadOnly, None, ReferenceAttributes, UnknownFutureValue.</summary>
         public DirectoryDefinitionDiscoverabilities? Discoverabilities {

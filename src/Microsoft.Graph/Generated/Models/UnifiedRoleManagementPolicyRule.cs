@@ -20,7 +20,11 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.unifiedRoleManagementPolicyRule" => new UnifiedRoleManagementPolicyRule(),
+                "#microsoft.graph.unifiedRoleManagementPolicyApprovalRule" => new UnifiedRoleManagementPolicyApprovalRule(),
+                "#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule" => new UnifiedRoleManagementPolicyAuthenticationContextRule(),
+                "#microsoft.graph.unifiedRoleManagementPolicyEnablementRule" => new UnifiedRoleManagementPolicyEnablementRule(),
+                "#microsoft.graph.unifiedRoleManagementPolicyExpirationRule" => new UnifiedRoleManagementPolicyExpirationRule(),
+                "#microsoft.graph.unifiedRoleManagementPolicyNotificationRule" => new UnifiedRoleManagementPolicyNotificationRule(),
                 _ => new UnifiedRoleManagementPolicyRule(),
             };
         }

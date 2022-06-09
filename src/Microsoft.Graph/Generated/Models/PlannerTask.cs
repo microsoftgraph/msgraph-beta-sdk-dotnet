@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class PlannerTask : PlannerDelta, IParsable {
         /// <summary>Number of checklist items with value set to false, representing incomplete items.</summary>
         public int? ActiveChecklistItemCount {

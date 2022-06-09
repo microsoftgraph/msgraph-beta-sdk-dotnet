@@ -13,22 +13,22 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isEnabled property</summary>
+        /// <summary>Indicates whether email threading and near duplicate detection are enabled.</summary>
         public bool? IsEnabled {
             get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
             set { BackingStore?.Set(nameof(IsEnabled), value); }
         }
-        /// <summary>The maxWords property</summary>
+        /// <summary>Specifies the maximum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.</summary>
         public int? MaxWords {
             get { return BackingStore?.Get<int?>(nameof(MaxWords)); }
             set { BackingStore?.Set(nameof(MaxWords), value); }
         }
-        /// <summary>The minWords property</summary>
+        /// <summary>Specifies the minimum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.</summary>
         public int? MinWords {
             get { return BackingStore?.Get<int?>(nameof(MinWords)); }
             set { BackingStore?.Set(nameof(MinWords), value); }
         }
-        /// <summary>The similarityThreshold property</summary>
+        /// <summary>Specifies the similarity level for documents to be put in the same near duplicate set. To learn more, see Document and email similarity threshold.</summary>
         public int? SimilarityThreshold {
             get { return BackingStore?.Get<int?>(nameof(SimilarityThreshold)); }
             set { BackingStore?.Set(nameof(SimilarityThreshold), value); }

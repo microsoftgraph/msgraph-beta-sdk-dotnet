@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.serviceAnnouncementBase" => new ServiceAnnouncementBase(),
+                "#microsoft.graph.serviceHealthIssue" => new ServiceHealthIssue(),
+                "#microsoft.graph.serviceUpdateMessage" => new ServiceUpdateMessage(),
                 _ => new ServiceAnnouncementBase(),
             };
         }

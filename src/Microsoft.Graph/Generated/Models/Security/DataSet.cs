@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.security.dataSet" => new DataSet(),
+                "#microsoft.graph.security.ediscoveryReviewSet" => new EdiscoveryReviewSet(),
                 _ => new DataSet(),
             };
         }

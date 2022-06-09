@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class WorkbookChartGridlinesFormat : Entity, IParsable {
         /// <summary>Represents chart line formatting. Read-only.</summary>
         public WorkbookChartLineFormat Line {

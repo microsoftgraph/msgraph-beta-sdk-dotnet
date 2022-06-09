@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.Item.Chi
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get childTags from security
+        /// Returns the tags that are a child of a tag.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<EdiscoveryReviewTagItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.Item.Chi
             return requestInfo;
         }
         /// <summary>
-        /// Get childTags from security
+        /// Returns the tags that are a child of a tag.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.Item.Chi
             };
             return await RequestAdapter.SendAsync<EdiscoveryReviewTag>(requestInfo, EdiscoveryReviewTag.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get childTags from security</summary>
+        /// <summary>Returns the tags that are a child of a tag.</summary>
         public class EdiscoveryReviewTagItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

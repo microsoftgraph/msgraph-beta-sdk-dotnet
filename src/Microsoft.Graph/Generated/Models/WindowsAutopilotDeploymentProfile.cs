@@ -90,7 +90,8 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.windowsAutopilotDeploymentProfile" => new WindowsAutopilotDeploymentProfile(),
+                "#microsoft.graph.activeDirectoryWindowsAutopilotDeploymentProfile" => new ActiveDirectoryWindowsAutopilotDeploymentProfile(),
+                "#microsoft.graph.azureADWindowsAutopilotDeploymentProfile" => new AzureADWindowsAutopilotDeploymentProfile(),
                 _ => new WindowsAutopilotDeploymentProfile(),
             };
         }

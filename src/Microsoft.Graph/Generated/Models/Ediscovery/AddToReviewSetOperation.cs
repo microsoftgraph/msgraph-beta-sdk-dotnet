@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class AddToReviewSetOperation : CaseOperation, IParsable {
         /// <summary>The review set to which items matching the source collection query are added to.</summary>
         public Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet ReviewSet {

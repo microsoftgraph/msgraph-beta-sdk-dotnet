@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
     public class ItemPhone : ItemFacet, IParsable {
         /// <summary>Friendly name the user has assigned this phone number.</summary>
         public string DisplayName {

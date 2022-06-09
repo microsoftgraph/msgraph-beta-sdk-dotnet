@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class PrinterBase : Entity, IParsable {
         /// <summary>The capabilities of the printer/printerShare.</summary>
         public PrinterCapabilities Capabilities {
@@ -65,7 +65,8 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.printerBase" => new PrinterBase(),
+                "#microsoft.graph.printer" => new Printer(),
+                "#microsoft.graph.printerShare" => new PrinterShare(),
                 _ => new PrinterBase(),
             };
         }

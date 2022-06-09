@@ -1,0 +1,88 @@
+using Microsoft.Kiota.Abstractions.Serialization;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+namespace Microsoft.Graph.Beta.Models.Ediscovery {
+    public class CaseExportOperation : CaseOperation, IParsable {
+        /// <summary>The name of the Azure storage location where the export will be stored. This only applies to exports stored in your own Azure storage location.</summary>
+        public string AzureBlobContainer {
+            get { return BackingStore?.Get<string>(nameof(AzureBlobContainer)); }
+            set { BackingStore?.Set(nameof(AzureBlobContainer), value); }
+        }
+        /// <summary>The SAS token for the Azure storage location.  This only applies to exports stored in your own Azure storage location.</summary>
+        public string AzureBlobToken {
+            get { return BackingStore?.Get<string>(nameof(AzureBlobToken)); }
+            set { BackingStore?.Set(nameof(AzureBlobToken), value); }
+        }
+        /// <summary>The description provided for the export.</summary>
+        public string Description {
+            get { return BackingStore?.Get<string>(nameof(Description)); }
+            set { BackingStore?.Set(nameof(Description), value); }
+        }
+        /// <summary>The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.</summary>
+        public Microsoft.Graph.Beta.Models.Ediscovery.ExportOptions? ExportOptions {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.ExportOptions?>(nameof(ExportOptions)); }
+            set { BackingStore?.Set(nameof(ExportOptions), value); }
+        }
+        /// <summary>The options provided that specify the structure of the export. For more details, see reviewSet: export. Possible values are: none, directory, pst.</summary>
+        public ExportFileStructure? ExportStructure {
+            get { return BackingStore?.Get<ExportFileStructure?>(nameof(ExportStructure)); }
+            set { BackingStore?.Set(nameof(ExportStructure), value); }
+        }
+        /// <summary>The outputFolderId property</summary>
+        public string OutputFolderId {
+            get { return BackingStore?.Get<string>(nameof(OutputFolderId)); }
+            set { BackingStore?.Set(nameof(OutputFolderId), value); }
+        }
+        /// <summary>The name provided for the export.</summary>
+        public string OutputName {
+            get { return BackingStore?.Get<string>(nameof(OutputName)); }
+            set { BackingStore?.Set(nameof(OutputName), value); }
+        }
+        /// <summary>The review set the content is being exported from.</summary>
+        public Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet ReviewSet {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet>(nameof(ReviewSet)); }
+            set { BackingStore?.Set(nameof(ReviewSet), value); }
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new CaseExportOperation CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new CaseExportOperation();
+        }
+        /// <summary>
+        /// The deserialization information for the current model
+        /// </summary>
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"azureBlobContainer", n => { AzureBlobContainer = n.GetStringValue(); } },
+                {"azureBlobToken", n => { AzureBlobToken = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"exportOptions", n => { ExportOptions = n.GetEnumValue<ExportOptions>(); } },
+                {"exportStructure", n => { ExportStructure = n.GetEnumValue<ExportFileStructure>(); } },
+                {"outputFolderId", n => { OutputFolderId = n.GetStringValue(); } },
+                {"outputName", n => { OutputName = n.GetStringValue(); } },
+                {"reviewSet", n => { ReviewSet = n.GetObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet>(Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet.CreateFromDiscriminatorValue); } },
+            };
+        }
+        /// <summary>
+        /// Serializes information the current object
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
+        /// </summary>
+        public new void Serialize(ISerializationWriter writer) {
+            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            base.Serialize(writer);
+            writer.WriteStringValue("azureBlobContainer", AzureBlobContainer);
+            writer.WriteStringValue("azureBlobToken", AzureBlobToken);
+            writer.WriteStringValue("description", Description);
+            writer.WriteEnumValue<ExportOptions>("exportOptions", ExportOptions);
+            writer.WriteEnumValue<ExportFileStructure>("exportStructure", ExportStructure);
+            writer.WriteStringValue("outputFolderId", OutputFolderId);
+            writer.WriteStringValue("outputName", OutputName);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet>("reviewSet", ReviewSet);
+        }
+    }
+}

@@ -4,19 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the security singleton.</summary>
     public class EdiscoveryReviewTag : Tag, IParsable {
-        /// <summary>The childSelectability property</summary>
+        /// <summary>Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.</summary>
         public Microsoft.Graph.Beta.Models.Security.ChildSelectability? ChildSelectability {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ChildSelectability?>(nameof(ChildSelectability)); }
             set { BackingStore?.Set(nameof(ChildSelectability), value); }
         }
-        /// <summary>The childTags property</summary>
+        /// <summary>Returns the tags that are a child of a tag.</summary>
         public List<EdiscoveryReviewTag> ChildTags {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>>(nameof(ChildTags)); }
             set { BackingStore?.Set(nameof(ChildTags), value); }
         }
-        /// <summary>The parent property</summary>
+        /// <summary>Returns the parent tag of the specified tag.</summary>
         public EdiscoveryReviewTag Parent {
             get { return BackingStore?.Get<EdiscoveryReviewTag>(nameof(Parent)); }
             set { BackingStore?.Set(nameof(Parent), value); }

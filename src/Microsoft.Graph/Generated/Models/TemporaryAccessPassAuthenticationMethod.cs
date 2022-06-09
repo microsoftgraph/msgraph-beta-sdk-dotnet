@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
     public class TemporaryAccessPassAuthenticationMethod : AuthenticationMethod, IParsable {
         /// <summary>The date and time when the temporaryAccessPass was created.</summary>
         public DateTimeOffset? CreatedDateTime {

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
     public class Drive : BaseItem, IParsable {
         /// <summary>The list of recent activities that took place under this drive.</summary>
         public List<ItemActivityOLD> Activities {

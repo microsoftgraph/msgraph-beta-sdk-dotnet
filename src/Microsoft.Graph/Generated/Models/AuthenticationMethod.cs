@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class AuthenticationMethod : Entity, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -15,7 +15,15 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.authenticationMethod" => new AuthenticationMethod(),
+                "#microsoft.graph.emailAuthenticationMethod" => new EmailAuthenticationMethod(),
+                "#microsoft.graph.fido2AuthenticationMethod" => new Fido2AuthenticationMethod(),
+                "#microsoft.graph.microsoftAuthenticatorAuthenticationMethod" => new MicrosoftAuthenticatorAuthenticationMethod(),
+                "#microsoft.graph.passwordAuthenticationMethod" => new PasswordAuthenticationMethod(),
+                "#microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod" => new PasswordlessMicrosoftAuthenticatorAuthenticationMethod(),
+                "#microsoft.graph.phoneAuthenticationMethod" => new PhoneAuthenticationMethod(),
+                "#microsoft.graph.softwareOathAuthenticationMethod" => new SoftwareOathAuthenticationMethod(),
+                "#microsoft.graph.temporaryAccessPassAuthenticationMethod" => new TemporaryAccessPassAuthenticationMethod(),
+                "#microsoft.graph.windowsHelloForBusinessAuthenticationMethod" => new WindowsHelloForBusinessAuthenticationMethod(),
                 _ => new AuthenticationMethod(),
             };
         }

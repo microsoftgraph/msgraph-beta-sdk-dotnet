@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get additionalSources from security
+        /// Adds an additional source to the eDiscovery search.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<AdditionalSourcesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get additionalSources from security
+        /// Adds an additional source to the eDiscovery search.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.DataSource>(requestInfo, Microsoft.Graph.Beta.Models.Security.DataSource.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get additionalSources from security</summary>
+        /// <summary>Adds an additional source to the eDiscovery search.</summary>
         public class AdditionalSourcesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

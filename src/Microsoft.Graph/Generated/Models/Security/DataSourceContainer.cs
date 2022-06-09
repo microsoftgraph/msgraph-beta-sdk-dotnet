@@ -6,32 +6,32 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     /// <summary>Provides operations to manage the security singleton.</summary>
     public class DataSourceContainer : Entity, IParsable {
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Created date and time of the dataSourceContainer entity.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
             set { BackingStore?.Set(nameof(CreatedDateTime), value); }
         }
-        /// <summary>The displayName property</summary>
+        /// <summary>Display name of the dataSourceContainer entity.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>(nameof(DisplayName)); }
             set { BackingStore?.Set(nameof(DisplayName), value); }
         }
-        /// <summary>The holdStatus property</summary>
+        /// <summary>The hold status of the dataSourceContainer.The possible values are: notApplied, applied, applying, removing, partial</summary>
         public DataSourceHoldStatus? HoldStatus {
             get { return BackingStore?.Get<DataSourceHoldStatus?>(nameof(HoldStatus)); }
             set { BackingStore?.Set(nameof(HoldStatus), value); }
         }
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>Last modified date and time of the dataSourceContainer.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
             set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
         }
-        /// <summary>The releasedDateTime property</summary>
+        /// <summary>Date and time that the dataSourceContainer was released from the case.</summary>
         public DateTimeOffset? ReleasedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>(nameof(ReleasedDateTime)); }
             set { BackingStore?.Set(nameof(ReleasedDateTime), value); }
         }
-        /// <summary>The status property</summary>
+        /// <summary>Latest status of the dataSourceContainer. Possible values are: Active, Released.</summary>
         public DataSourceContainerStatus? Status {
             get { return BackingStore?.Get<DataSourceContainerStatus?>(nameof(Status)); }
             set { BackingStore?.Set(nameof(Status), value); }
@@ -45,7 +45,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.security.dataSourceContainer" => new DataSourceContainer(),
+                "#microsoft.graph.security.ediscoveryCustodian" => new EdiscoveryCustodian(),
+                "#microsoft.graph.security.ediscoveryNoncustodialDataSource" => new EdiscoveryNoncustodialDataSource(),
                 _ => new DataSourceContainer(),
             };
         }

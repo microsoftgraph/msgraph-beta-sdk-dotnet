@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Settings {
             return requestInfo;
         }
         /// <summary>
-        /// Get settings from security
+        /// Returns a list of eDIscoverySettings objects in the case.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<SettingsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Settings {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get settings from security
+        /// Returns a list of eDIscoverySettings objects in the case.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Settings {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get settings from security</summary>
+        /// <summary>Returns a list of eDIscoverySettings objects in the case.</summary>
         public class SettingsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

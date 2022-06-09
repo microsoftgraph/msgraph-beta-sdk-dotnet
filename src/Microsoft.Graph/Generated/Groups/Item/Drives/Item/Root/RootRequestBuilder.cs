@@ -1,11 +1,27 @@
 using Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.Activities;
 using Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.Analytics;
+using Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.Checkin;
+using Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.Checkout;
 using Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.Children;
 using Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.Content;
+using Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.Copy;
+using Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.CreateLink;
+using Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.CreateUploadSession;
+using Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.Delta;
+using Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.DeltaWithToken;
+using Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.ExtractSensitivityLabels;
+using Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.Follow;
+using Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval;
+using Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.Invite;
 using Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.ListItem;
 using Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.Permissions;
+using Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.Preview;
+using Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.Restore;
+using Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.SearchWithQ;
 using Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.Subscriptions;
 using Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.Thumbnails;
+using Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.Unfollow;
+using Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.ValidatePermission;
 using Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.Versions;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -28,6 +44,14 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root {
         public AnalyticsRequestBuilder Analytics { get =>
             new AnalyticsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The checkin property</summary>
+        public CheckinRequestBuilder Checkin { get =>
+            new CheckinRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The checkout property</summary>
+        public CheckoutRequestBuilder Checkout { get =>
+            new CheckoutRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The children property</summary>
         public ChildrenRequestBuilder Children { get =>
             new ChildrenRequestBuilder(PathParameters, RequestAdapter);
@@ -35,6 +59,30 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root {
         /// <summary>The content property</summary>
         public ContentRequestBuilder Content { get =>
             new ContentRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The copy property</summary>
+        public CopyRequestBuilder Copy { get =>
+            new CopyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The createLink property</summary>
+        public CreateLinkRequestBuilder CreateLink { get =>
+            new CreateLinkRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The createUploadSession property</summary>
+        public CreateUploadSessionRequestBuilder CreateUploadSession { get =>
+            new CreateUploadSessionRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The extractSensitivityLabels property</summary>
+        public ExtractSensitivityLabelsRequestBuilder ExtractSensitivityLabels { get =>
+            new ExtractSensitivityLabelsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The follow property</summary>
+        public FollowRequestBuilder Follow { get =>
+            new FollowRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The invite property</summary>
+        public InviteRequestBuilder Invite { get =>
+            new InviteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The listItem property</summary>
         public ListItemRequestBuilder ListItem { get =>
@@ -46,8 +94,16 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root {
         public PermissionsRequestBuilder Permissions { get =>
             new PermissionsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The preview property</summary>
+        public PreviewRequestBuilder Preview { get =>
+            new PreviewRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The restore property</summary>
+        public RestoreRequestBuilder Restore { get =>
+            new RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The subscriptions property</summary>
         public SubscriptionsRequestBuilder Subscriptions { get =>
             new SubscriptionsRequestBuilder(PathParameters, RequestAdapter);
@@ -56,8 +112,16 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root {
         public ThumbnailsRequestBuilder Thumbnails { get =>
             new ThumbnailsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The unfollow property</summary>
+        public UnfollowRequestBuilder Unfollow { get =>
+            new UnfollowRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>The validatePermission property</summary>
+        public ValidatePermissionRequestBuilder ValidatePermission { get =>
+            new ValidatePermissionRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The versions property</summary>
         public VersionsRequestBuilder Versions { get =>
             new VersionsRequestBuilder(PathParameters, RequestAdapter);
@@ -163,6 +227,32 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
+        /// Provides operations to call the delta method.
+        /// </summary>
+        public DeltaRequestBuilder Delta() {
+            return new DeltaRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>
+        /// Provides operations to call the delta method.
+        /// <param name="token">Usage: token=&apos;{token}&apos;</param>
+        /// </summary>
+        public DeltaWithTokenRequestBuilder DeltaWithToken(string token) {
+            if(string.IsNullOrEmpty(token)) throw new ArgumentNullException(nameof(token));
+            return new DeltaWithTokenRequestBuilder(PathParameters, RequestAdapter, token);
+        }
+        /// <summary>
+        /// Provides operations to call the getActivitiesByInterval method.
+        /// <param name="endDateTime">Usage: endDateTime=&apos;{endDateTime}&apos;</param>
+        /// <param name="interval">Usage: interval=&apos;{interval}&apos;</param>
+        /// <param name="startDateTime">Usage: startDateTime=&apos;{startDateTime}&apos;</param>
+        /// </summary>
+        public GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(string endDateTime, string interval, string startDateTime) {
+            if(string.IsNullOrEmpty(endDateTime)) throw new ArgumentNullException(nameof(endDateTime));
+            if(string.IsNullOrEmpty(interval)) throw new ArgumentNullException(nameof(interval));
+            if(string.IsNullOrEmpty(startDateTime)) throw new ArgumentNullException(nameof(startDateTime));
+            return new GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder(PathParameters, RequestAdapter, endDateTime, interval, startDateTime);
+        }
+        /// <summary>
         /// The root folder of the drive. Read-only.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -191,6 +281,14 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Provides operations to call the search method.
+        /// <param name="q">Usage: q=&apos;{q}&apos;</param>
+        /// </summary>
+        public SearchWithQRequestBuilder SearchWithQ(string q) {
+            if(string.IsNullOrEmpty(q)) throw new ArgumentNullException(nameof(q));
+            return new SearchWithQRequestBuilder(PathParameters, RequestAdapter, q);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class RootRequestBuilderDeleteRequestConfiguration {

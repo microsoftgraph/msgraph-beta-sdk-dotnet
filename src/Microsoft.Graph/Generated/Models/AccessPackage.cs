@@ -11,12 +11,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<AccessPackageAssignmentPolicy>>(nameof(AccessPackageAssignmentPolicies)); }
             set { BackingStore?.Set(nameof(AccessPackageAssignmentPolicies), value); }
         }
-        /// <summary>Read-only. Nullable.</summary>
+        /// <summary>The accessPackageCatalog property</summary>
         public Microsoft.Graph.Beta.Models.AccessPackageCatalog AccessPackageCatalog {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageCatalog>(nameof(AccessPackageCatalog)); }
             set { BackingStore?.Set(nameof(AccessPackageCatalog), value); }
         }
-        /// <summary>Nullable.</summary>
+        /// <summary>The accessPackageResourceRoleScopes property</summary>
         public List<AccessPackageResourceRoleScope> AccessPackageResourceRoleScopes {
             get { return BackingStore?.Get<List<AccessPackageResourceRoleScope>>(nameof(AccessPackageResourceRoleScopes)); }
             set { BackingStore?.Set(nameof(AccessPackageResourceRoleScopes), value); }

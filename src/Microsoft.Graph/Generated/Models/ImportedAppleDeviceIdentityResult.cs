@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The importedAppleDeviceIdentityResult resource represents the result of attempting to import Apple devices identities.</summary>
     public class ImportedAppleDeviceIdentityResult : ImportedAppleDeviceIdentity, IParsable {
         /// <summary>Status of imported device identity</summary>
         public bool? Status {

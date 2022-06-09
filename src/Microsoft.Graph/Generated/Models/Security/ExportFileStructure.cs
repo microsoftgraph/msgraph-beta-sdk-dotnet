@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to call the export method.</summary>
+    /// <summary>Provides operations to manage the security singleton.</summary>
     public enum ExportFileStructure {
         None,
         Directory,

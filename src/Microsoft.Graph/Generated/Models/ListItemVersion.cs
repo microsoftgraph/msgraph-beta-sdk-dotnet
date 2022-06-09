@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
     public class ListItemVersion : BaseItemVersion, IParsable {
         /// <summary>A collection of the fields and values for this version of the list item.</summary>
         public FieldValueSet Fields {
@@ -17,12 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new ListItemVersion CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.listItemVersion" => new ListItemVersion(),
-                _ => new ListItemVersion(),
-            };
+            return new ListItemVersion();
         }
         /// <summary>
         /// The deserialization information for the current model

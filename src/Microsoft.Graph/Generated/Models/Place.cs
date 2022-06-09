@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.place" => new Place(),
+                "#microsoft.graph.room" => new Room(),
+                "#microsoft.graph.roomList" => new RoomList(),
                 _ => new Place(),
             };
         }

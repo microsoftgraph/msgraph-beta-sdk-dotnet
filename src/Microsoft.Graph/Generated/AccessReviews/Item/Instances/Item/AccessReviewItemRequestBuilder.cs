@@ -1,6 +1,10 @@
+using Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.ApplyDecisions;
 using Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.Decisions;
 using Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.MyDecisions;
+using Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.ResetDecisions;
 using Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.Reviewers;
+using Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.SendReminder;
+using Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.Stop;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -14,6 +18,10 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item {
     /// <summary>Provides operations to manage the instances property of the microsoft.graph.accessReview entity.</summary>
     public class AccessReviewItemRequestBuilder {
+        /// <summary>The applyDecisions property</summary>
+        public ApplyDecisionsRequestBuilder ApplyDecisions { get =>
+            new ApplyDecisionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The decisions property</summary>
         public DecisionsRequestBuilder Decisions { get =>
             new DecisionsRequestBuilder(PathParameters, RequestAdapter);
@@ -26,9 +34,21 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The resetDecisions property</summary>
+        public ResetDecisionsRequestBuilder ResetDecisions { get =>
+            new ResetDecisionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The reviewers property</summary>
         public ReviewersRequestBuilder Reviewers { get =>
             new ReviewersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The sendReminder property</summary>
+        public SendReminderRequestBuilder SendReminder { get =>
+            new SendReminderRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The stop property</summary>
+        public StopRequestBuilder Stop { get =>
+            new StopRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }

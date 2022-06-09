@@ -460,7 +460,7 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.managedDevice" => new ManagedDevice(),
+                "#microsoft.graph.windowsManagedDevice" => new WindowsManagedDevice(),
                 _ => new ManagedDevice(),
             };
         }

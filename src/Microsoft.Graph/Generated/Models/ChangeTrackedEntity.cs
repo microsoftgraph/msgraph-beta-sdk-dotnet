@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class ChangeTrackedEntity : Entity, IParsable {
         /// <summary>The createdBy property</summary>
         public IdentitySet CreatedBy {
@@ -35,7 +35,15 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.changeTrackedEntity" => new ChangeTrackedEntity(),
+                "#microsoft.graph.openShift" => new OpenShift(),
+                "#microsoft.graph.scheduleChangeRequest" => new ScheduleChangeRequest(),
+                "#microsoft.graph.schedulingGroup" => new SchedulingGroup(),
+                "#microsoft.graph.shift" => new Shift(),
+                "#microsoft.graph.shiftPreferences" => new ShiftPreferences(),
+                "#microsoft.graph.timeCard" => new TimeCard(),
+                "#microsoft.graph.timeOff" => new TimeOff(),
+                "#microsoft.graph.timeOffReason" => new TimeOffReason(),
+                "#microsoft.graph.workforceIntegration" => new WorkforceIntegration(),
                 _ => new ChangeTrackedEntity(),
             };
         }

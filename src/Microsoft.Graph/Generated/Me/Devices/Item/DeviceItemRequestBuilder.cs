@@ -1,8 +1,13 @@
+using Microsoft.Graph.Beta.Me.Devices.Item.CheckMemberGroups;
+using Microsoft.Graph.Beta.Me.Devices.Item.CheckMemberObjects;
 using Microsoft.Graph.Beta.Me.Devices.Item.Commands;
 using Microsoft.Graph.Beta.Me.Devices.Item.Extensions;
+using Microsoft.Graph.Beta.Me.Devices.Item.GetMemberGroups;
+using Microsoft.Graph.Beta.Me.Devices.Item.GetMemberObjects;
 using Microsoft.Graph.Beta.Me.Devices.Item.MemberOf;
 using Microsoft.Graph.Beta.Me.Devices.Item.RegisteredOwners;
 using Microsoft.Graph.Beta.Me.Devices.Item.RegisteredUsers;
+using Microsoft.Graph.Beta.Me.Devices.Item.Restore;
 using Microsoft.Graph.Beta.Me.Devices.Item.TransitiveMemberOf;
 using Microsoft.Graph.Beta.Me.Devices.Item.UsageRights;
 using Microsoft.Graph.Beta.Models;
@@ -18,6 +23,14 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Devices.Item {
     /// <summary>Provides operations to manage the devices property of the microsoft.graph.user entity.</summary>
     public class DeviceItemRequestBuilder {
+        /// <summary>The checkMemberGroups property</summary>
+        public CheckMemberGroupsRequestBuilder CheckMemberGroups { get =>
+            new CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The checkMemberObjects property</summary>
+        public CheckMemberObjectsRequestBuilder CheckMemberObjects { get =>
+            new CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The commands property</summary>
         public CommandsRequestBuilder Commands { get =>
             new CommandsRequestBuilder(PathParameters, RequestAdapter);
@@ -25,6 +38,14 @@ namespace Microsoft.Graph.Beta.Me.Devices.Item {
         /// <summary>The extensions property</summary>
         public ExtensionsRequestBuilder Extensions { get =>
             new ExtensionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The getMemberGroups property</summary>
+        public GetMemberGroupsRequestBuilder GetMemberGroups { get =>
+            new GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The getMemberObjects property</summary>
+        public GetMemberObjectsRequestBuilder GetMemberObjects { get =>
+            new GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The memberOf property</summary>
         public MemberOfRequestBuilder MemberOf { get =>
@@ -42,6 +63,10 @@ namespace Microsoft.Graph.Beta.Me.Devices.Item {
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The restore property</summary>
+        public RestoreRequestBuilder Restore { get =>
+            new RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The transitiveMemberOf property</summary>
         public TransitiveMemberOfRequestBuilder TransitiveMemberOf { get =>
             new TransitiveMemberOfRequestBuilder(PathParameters, RequestAdapter);

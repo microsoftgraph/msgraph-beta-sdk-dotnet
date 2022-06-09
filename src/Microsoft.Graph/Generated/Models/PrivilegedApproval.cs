@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>(nameof(RoleId)); }
             set { BackingStore?.Set(nameof(RoleId), value); }
         }
-        /// <summary>Read-only. Nullable.</summary>
+        /// <summary>The roleInfo property</summary>
         public PrivilegedRole RoleInfo {
             get { return BackingStore?.Get<PrivilegedRole>(nameof(RoleInfo)); }
             set { BackingStore?.Set(nameof(RoleInfo), value); }

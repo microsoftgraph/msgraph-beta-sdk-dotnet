@@ -50,7 +50,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.security.search" => new Search(),
+                "#microsoft.graph.security.ediscoveryReviewSetQuery" => new EdiscoveryReviewSetQuery(),
+                "#microsoft.graph.security.ediscoverySearch" => new EdiscoverySearch(),
                 _ => new Search(),
             };
         }

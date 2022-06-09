@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public enum DeviceEnrollmentConfigurationType {
         /// <summary>Default. Set to unknown if the configuration type cannot be determined.</summary>
         Unknown,

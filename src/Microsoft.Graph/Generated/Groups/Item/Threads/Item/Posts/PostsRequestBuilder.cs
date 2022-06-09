@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item.Posts {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Read-only. Nullable.
+        /// Get posts from groups
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<PostsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item.Posts {
             return requestInfo;
         }
         /// <summary>
-        /// Read-only. Nullable.
+        /// Get posts from groups
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item.Posts {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Post>(requestInfo, Microsoft.Graph.Beta.Models.Post.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Read-only. Nullable.</summary>
+        /// <summary>Get posts from groups</summary>
         public class PostsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

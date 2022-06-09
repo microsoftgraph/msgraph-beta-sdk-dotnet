@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to group.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class OnenoteEntityBaseModel : Entity, IParsable {
         /// <summary>The endpoint where you can get details about the page. Read-only.</summary>
         public string Self {
@@ -20,7 +20,8 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.onenoteEntityBaseModel" => new OnenoteEntityBaseModel(),
+                "#microsoft.graph.onenoteEntitySchemaObjectModel" => new OnenoteEntitySchemaObjectModel(),
+                "#microsoft.graph.onenoteResource" => new OnenoteResource(),
                 _ => new OnenoteEntityBaseModel(),
             };
         }

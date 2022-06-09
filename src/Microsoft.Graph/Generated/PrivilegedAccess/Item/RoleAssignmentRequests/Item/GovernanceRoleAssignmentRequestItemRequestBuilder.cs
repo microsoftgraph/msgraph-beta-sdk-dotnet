@@ -1,8 +1,10 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item.Cancel;
 using Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item.Resource;
 using Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item.RoleDefinition;
 using Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item.Subject;
+using Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item.UpdateRequest;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -14,6 +16,10 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item {
     /// <summary>Provides operations to manage the roleAssignmentRequests property of the microsoft.graph.privilegedAccess entity.</summary>
     public class GovernanceRoleAssignmentRequestItemRequestBuilder {
+        /// <summary>The cancel property</summary>
+        public CancelRequestBuilder Cancel { get =>
+            new CancelRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -29,6 +35,10 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item
         /// <summary>The subject property</summary>
         public SubjectRequestBuilder Subject { get =>
             new SubjectRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The updateRequest property</summary>
+        public UpdateRequestRequestBuilder UpdateRequest { get =>
+            new UpdateRequestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
