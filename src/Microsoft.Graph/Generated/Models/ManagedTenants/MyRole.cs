@@ -11,14 +11,14 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
             set { BackingStore?.Set(nameof(AdditionalData), value); }
         }
-        /// <summary>The assignments property</summary>
+        /// <summary>A collection of role assignments for the managed tenant.</summary>
         public List<RoleAssignment> Assignments {
             get { return BackingStore?.Get<List<RoleAssignment>>(nameof(Assignments)); }
             set { BackingStore?.Set(nameof(Assignments), value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The tenantId property</summary>
+        /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.</summary>
         public string TenantId {
             get { return BackingStore?.Get<string>(nameof(TenantId)); }
             set { BackingStore?.Set(nameof(TenantId), value); }

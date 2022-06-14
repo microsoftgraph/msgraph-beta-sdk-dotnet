@@ -36,7 +36,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new SamlOrWsFedProvider CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SamlOrWsFedProvider();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.internalDomainFederation" => new InternalDomainFederation(),
+                "#microsoft.graph.samlOrWsFedExternalDomainFederation" => new SamlOrWsFedExternalDomainFederation(),
+                _ => new SamlOrWsFedProvider(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

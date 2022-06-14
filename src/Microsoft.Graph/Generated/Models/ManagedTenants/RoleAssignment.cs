@@ -11,14 +11,14 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
             set { BackingStore?.Set(nameof(AdditionalData), value); }
         }
-        /// <summary>The assignmentType property</summary>
+        /// <summary>The type of the admin relationship(s) associated with the role assignment. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges.</summary>
         public DelegatedPrivilegeStatus? AssignmentType {
             get { return BackingStore?.Get<DelegatedPrivilegeStatus?>(nameof(AssignmentType)); }
             set { BackingStore?.Set(nameof(AssignmentType), value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The roles property</summary>
+        /// <summary>The collection of roles assigned.</summary>
         public List<RoleDefinition> Roles {
             get { return BackingStore?.Get<List<RoleDefinition>>(nameof(Roles)); }
             set { BackingStore?.Set(nameof(Roles), value); }

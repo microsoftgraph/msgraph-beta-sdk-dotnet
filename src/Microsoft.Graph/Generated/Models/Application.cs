@@ -161,6 +161,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RequiredResourceAccess>>(nameof(RequiredResourceAccess)); }
             set { BackingStore?.Set(nameof(RequiredResourceAccess), value); }
         }
+        /// <summary>The URL where the service exposes SAML metadata for federation. This property is valid only for single-tenant applications. Nullable.</summary>
+        public string SamlMetadataUrl {
+            get { return BackingStore?.Get<string>(nameof(SamlMetadataUrl)); }
+            set { BackingStore?.Set(nameof(SamlMetadataUrl), value); }
+        }
         /// <summary>References application or service contact information from a Service or Asset Management database. Nullable.</summary>
         public string ServiceManagementReference {
             get { return BackingStore?.Get<string>(nameof(ServiceManagementReference)); }
@@ -265,6 +270,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"publicClient", n => { PublicClient = n.GetObjectValue<PublicClientApplication>(PublicClientApplication.CreateFromDiscriminatorValue); } },
                 {"publisherDomain", n => { PublisherDomain = n.GetStringValue(); } },
                 {"requiredResourceAccess", n => { RequiredResourceAccess = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RequiredResourceAccess>(Microsoft.Graph.Beta.Models.RequiredResourceAccess.CreateFromDiscriminatorValue).ToList(); } },
+                {"samlMetadataUrl", n => { SamlMetadataUrl = n.GetStringValue(); } },
                 {"serviceManagementReference", n => { ServiceManagementReference = n.GetStringValue(); } },
                 {"signInAudience", n => { SignInAudience = n.GetStringValue(); } },
                 {"spa", n => { Spa = n.GetObjectValue<SpaApplication>(SpaApplication.CreateFromDiscriminatorValue); } },
@@ -317,6 +323,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<PublicClientApplication>("publicClient", PublicClient);
             writer.WriteStringValue("publisherDomain", PublisherDomain);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RequiredResourceAccess>("requiredResourceAccess", RequiredResourceAccess);
+            writer.WriteStringValue("samlMetadataUrl", SamlMetadataUrl);
             writer.WriteStringValue("serviceManagementReference", ServiceManagementReference);
             writer.WriteStringValue("signInAudience", SignInAudience);
             writer.WriteObjectValue<SpaApplication>("spa", Spa);

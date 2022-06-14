@@ -3,6 +3,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams;
 using Microsoft.Graph.Beta.Teamwork.Devices;
 using Microsoft.Graph.Beta.Teamwork.SendActivityNotificationToRecipients;
+using Microsoft.Graph.Beta.Teamwork.TeamsAppSettings;
 using Microsoft.Graph.Beta.Teamwork.WorkforceIntegrations;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -30,6 +31,10 @@ namespace Microsoft.Graph.Beta.Teamwork {
         /// <summary>The sendActivityNotificationToRecipients property</summary>
         public SendActivityNotificationToRecipientsRequestBuilder SendActivityNotificationToRecipients { get =>
             new SendActivityNotificationToRecipientsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The teamsAppSettings property</summary>
+        public TeamsAppSettingsRequestBuilder TeamsAppSettings { get =>
+            new TeamsAppSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }

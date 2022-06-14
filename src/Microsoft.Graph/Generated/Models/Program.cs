@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of program entities.</summary>
+    /// <summary>Provides operations to manage the collection of programControl entities.</summary>
     public class Program : Entity, IParsable {
         /// <summary>Controls associated with the program.</summary>
         public List<ProgramControl> Controls {

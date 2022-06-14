@@ -46,7 +46,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new AndroidDeviceOwnerCertificateProfileBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidDeviceOwnerCertificateProfileBase();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.androidDeviceOwnerImportedPFXCertificateProfile" => new AndroidDeviceOwnerImportedPFXCertificateProfile(),
+                "#microsoft.graph.androidDeviceOwnerPkcsCertificateProfile" => new AndroidDeviceOwnerPkcsCertificateProfile(),
+                "#microsoft.graph.androidDeviceOwnerScepCertificateProfile" => new AndroidDeviceOwnerScepCertificateProfile(),
+                _ => new AndroidDeviceOwnerCertificateProfileBase(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

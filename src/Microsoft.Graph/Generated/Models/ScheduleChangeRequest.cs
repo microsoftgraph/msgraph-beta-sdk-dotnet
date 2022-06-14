@@ -51,7 +51,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new ScheduleChangeRequest CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ScheduleChangeRequest();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.offerShiftRequest" => new OfferShiftRequest(),
+                "#microsoft.graph.openShiftChangeRequest" => new OpenShiftChangeRequest(),
+                "#microsoft.graph.timeOffRequest" => new TimeOffRequest(),
+                _ => new ScheduleChangeRequest(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -22,16 +22,11 @@
     <AssemblyOriginatorKeyFile>35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PackageReleaseNotes>
-- Latest metadata updates from 7th June 2022 snapshot
-- Adds missing odata cast paths for the places API
-- Adds functionality to send the relevant accept header request execution
-- Fixed missing response error mappings for OData functions/actions
-- Fixed missing actions/functions defined on collection navigation properties
+- Latest metadata updates from 14th June 2022 snapshot
 - Fixed missing derived models not directly referenced in openApi paths
-- Fixed paging for odata functions/actions e.g. delta requests
     </PackageReleaseNotes>
     <!-- edit this value to change the current major.minor.patch version -->
-    <VersionPrefix>5.6.0</VersionPrefix>
+    <VersionPrefix>5.7.0</VersionPrefix>
     <!-- adds a version suffix if the Prerelease environment variable is set. BUILD_BUILDID is an
     environment variable set by Azure pipelines from the build. We can use the buildid to correlate
     which commit was used to generate the preview build. -->

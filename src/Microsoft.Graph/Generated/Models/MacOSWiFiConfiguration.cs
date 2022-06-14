@@ -61,7 +61,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new MacOSWiFiConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MacOSWiFiConfiguration();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.macOSEnterpriseWiFiConfiguration" => new MacOSEnterpriseWiFiConfiguration(),
+                _ => new MacOSWiFiConfiguration(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

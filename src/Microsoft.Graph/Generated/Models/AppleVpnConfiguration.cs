@@ -121,7 +121,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new AppleVpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AppleVpnConfiguration();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.iosVpnConfiguration" => new IosVpnConfiguration(),
+                "#microsoft.graph.macOSVpnConfiguration" => new MacOSVpnConfiguration(),
+                _ => new AppleVpnConfiguration(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

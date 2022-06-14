@@ -1,0 +1,67 @@
+using Microsoft.Kiota.Abstractions.Serialization;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+namespace Microsoft.Graph.Beta.Models {
+    public class AndroidForWorkPkcsCertificateProfile : AndroidForWorkCertificateProfileBase, IParsable {
+        /// <summary>PKCS Certificate Template Name</summary>
+        public string CertificateTemplateName {
+            get { return BackingStore?.Get<string>(nameof(CertificateTemplateName)); }
+            set { BackingStore?.Set(nameof(CertificateTemplateName), value); }
+        }
+        /// <summary>PKCS Certification Authority</summary>
+        public string CertificationAuthority {
+            get { return BackingStore?.Get<string>(nameof(CertificationAuthority)); }
+            set { BackingStore?.Set(nameof(CertificationAuthority), value); }
+        }
+        /// <summary>PKCS Certification Authority Name</summary>
+        public string CertificationAuthorityName {
+            get { return BackingStore?.Get<string>(nameof(CertificationAuthorityName)); }
+            set { BackingStore?.Set(nameof(CertificationAuthorityName), value); }
+        }
+        /// <summary>Certificate state for devices. This collection can contain a maximum of 2147483647 elements.</summary>
+        public List<ManagedDeviceCertificateState> ManagedDeviceCertificateStates {
+            get { return BackingStore?.Get<List<ManagedDeviceCertificateState>>(nameof(ManagedDeviceCertificateStates)); }
+            set { BackingStore?.Set(nameof(ManagedDeviceCertificateStates), value); }
+        }
+        /// <summary>Custom String that defines the AAD Attribute.</summary>
+        public string SubjectAlternativeNameFormatString {
+            get { return BackingStore?.Get<string>(nameof(SubjectAlternativeNameFormatString)); }
+            set { BackingStore?.Set(nameof(SubjectAlternativeNameFormatString), value); }
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new AndroidForWorkPkcsCertificateProfile CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AndroidForWorkPkcsCertificateProfile();
+        }
+        /// <summary>
+        /// The deserialization information for the current model
+        /// </summary>
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"certificateTemplateName", n => { CertificateTemplateName = n.GetStringValue(); } },
+                {"certificationAuthority", n => { CertificationAuthority = n.GetStringValue(); } },
+                {"certificationAuthorityName", n => { CertificationAuthorityName = n.GetStringValue(); } },
+                {"managedDeviceCertificateStates", n => { ManagedDeviceCertificateStates = n.GetCollectionOfObjectValues<ManagedDeviceCertificateState>(ManagedDeviceCertificateState.CreateFromDiscriminatorValue).ToList(); } },
+                {"subjectAlternativeNameFormatString", n => { SubjectAlternativeNameFormatString = n.GetStringValue(); } },
+            };
+        }
+        /// <summary>
+        /// Serializes information the current object
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
+        /// </summary>
+        public new void Serialize(ISerializationWriter writer) {
+            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            base.Serialize(writer);
+            writer.WriteStringValue("certificateTemplateName", CertificateTemplateName);
+            writer.WriteStringValue("certificationAuthority", CertificationAuthority);
+            writer.WriteStringValue("certificationAuthorityName", CertificationAuthorityName);
+            writer.WriteCollectionOfObjectValues<ManagedDeviceCertificateState>("managedDeviceCertificateStates", ManagedDeviceCertificateStates);
+            writer.WriteStringValue("subjectAlternativeNameFormatString", SubjectAlternativeNameFormatString);
+        }
+    }
+}

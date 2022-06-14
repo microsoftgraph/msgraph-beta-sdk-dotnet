@@ -36,7 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new VpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VpnConfiguration();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.androidDeviceOwnerVpnConfiguration" => new AndroidDeviceOwnerVpnConfiguration(),
+                _ => new VpnConfiguration(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

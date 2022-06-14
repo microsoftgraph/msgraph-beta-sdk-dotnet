@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>An abstract base class containing properties for all managed mobile line of business apps.</summary>
     public class ManagedMobileLobApp : ManagedApp, IParsable {
         /// <summary>The internal committed content version.</summary>
         public string CommittedContentVersion {

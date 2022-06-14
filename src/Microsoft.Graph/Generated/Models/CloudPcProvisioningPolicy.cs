@@ -6,10 +6,20 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class CloudPcProvisioningPolicy : Entity, IParsable {
+        /// <summary>The alternateResourceUrl property</summary>
+        public string AlternateResourceUrl {
+            get { return BackingStore?.Get<string>(nameof(AlternateResourceUrl)); }
+            set { BackingStore?.Set(nameof(AlternateResourceUrl), value); }
+        }
         /// <summary>A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.</summary>
         public List<CloudPcProvisioningPolicyAssignment> Assignments {
             get { return BackingStore?.Get<List<CloudPcProvisioningPolicyAssignment>>(nameof(Assignments)); }
             set { BackingStore?.Set(nameof(Assignments), value); }
+        }
+        /// <summary>The cloudPcGroupDisplayName property</summary>
+        public string CloudPcGroupDisplayName {
+            get { return BackingStore?.Get<string>(nameof(CloudPcGroupDisplayName)); }
+            set { BackingStore?.Set(nameof(CloudPcGroupDisplayName), value); }
         }
         /// <summary>The provisioning policy description.</summary>
         public string Description {
@@ -26,6 +36,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<CloudPcDomainJoinConfiguration>(nameof(DomainJoinConfiguration)); }
             set { BackingStore?.Set(nameof(DomainJoinConfiguration), value); }
         }
+        /// <summary>The gracePeriodInHours property</summary>
+        public int? GracePeriodInHours {
+            get { return BackingStore?.Get<int?>(nameof(GracePeriodInHours)); }
+            set { BackingStore?.Set(nameof(GracePeriodInHours), value); }
+        }
         /// <summary>The display name for the OS image you’re provisioning.</summary>
         public string ImageDisplayName {
             get { return BackingStore?.Get<string>(nameof(ImageDisplayName)); }
@@ -40,6 +55,16 @@ namespace Microsoft.Graph.Beta.Models {
         public CloudPcProvisioningPolicyImageType? ImageType {
             get { return BackingStore?.Get<CloudPcProvisioningPolicyImageType?>(nameof(ImageType)); }
             set { BackingStore?.Set(nameof(ImageType), value); }
+        }
+        /// <summary>The localAdminEnabled property</summary>
+        public bool? LocalAdminEnabled {
+            get { return BackingStore?.Get<bool?>(nameof(LocalAdminEnabled)); }
+            set { BackingStore?.Set(nameof(LocalAdminEnabled), value); }
+        }
+        /// <summary>The managedBy property</summary>
+        public CloudPcManagementService? ManagedBy {
+            get { return BackingStore?.Get<CloudPcManagementService?>(nameof(ManagedBy)); }
+            set { BackingStore?.Set(nameof(ManagedBy), value); }
         }
         /// <summary>The specific settings for the Microsoft Managed Desktop, which enables customers to get a managed device experience for the Cloud PC. Before you can enable Microsoft Managed Desktop, an admin must configure it.</summary>
         public Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop MicrosoftManagedDesktop {
@@ -69,13 +94,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"alternateResourceUrl", n => { AlternateResourceUrl = n.GetStringValue(); } },
                 {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<CloudPcProvisioningPolicyAssignment>(CloudPcProvisioningPolicyAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"cloudPcGroupDisplayName", n => { CloudPcGroupDisplayName = n.GetStringValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"domainJoinConfiguration", n => { DomainJoinConfiguration = n.GetObjectValue<CloudPcDomainJoinConfiguration>(CloudPcDomainJoinConfiguration.CreateFromDiscriminatorValue); } },
+                {"gracePeriodInHours", n => { GracePeriodInHours = n.GetIntValue(); } },
                 {"imageDisplayName", n => { ImageDisplayName = n.GetStringValue(); } },
                 {"imageId", n => { ImageId = n.GetStringValue(); } },
                 {"imageType", n => { ImageType = n.GetEnumValue<CloudPcProvisioningPolicyImageType>(); } },
+                {"localAdminEnabled", n => { LocalAdminEnabled = n.GetBoolValue(); } },
+                {"managedBy", n => { ManagedBy = n.GetEnumValue<CloudPcManagementService>(); } },
                 {"microsoftManagedDesktop", n => { MicrosoftManagedDesktop = n.GetObjectValue<Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop>(Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop.CreateFromDiscriminatorValue); } },
                 {"onPremisesConnectionId", n => { OnPremisesConnectionId = n.GetStringValue(); } },
                 {"windowsSettings", n => { WindowsSettings = n.GetObjectValue<CloudPcWindowsSettings>(CloudPcWindowsSettings.CreateFromDiscriminatorValue); } },
@@ -88,13 +118,18 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("alternateResourceUrl", AlternateResourceUrl);
             writer.WriteCollectionOfObjectValues<CloudPcProvisioningPolicyAssignment>("assignments", Assignments);
+            writer.WriteStringValue("cloudPcGroupDisplayName", CloudPcGroupDisplayName);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<CloudPcDomainJoinConfiguration>("domainJoinConfiguration", DomainJoinConfiguration);
+            writer.WriteIntValue("gracePeriodInHours", GracePeriodInHours);
             writer.WriteStringValue("imageDisplayName", ImageDisplayName);
             writer.WriteStringValue("imageId", ImageId);
             writer.WriteEnumValue<CloudPcProvisioningPolicyImageType>("imageType", ImageType);
+            writer.WriteBoolValue("localAdminEnabled", LocalAdminEnabled);
+            writer.WriteEnumValue<CloudPcManagementService>("managedBy", ManagedBy);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop>("microsoftManagedDesktop", MicrosoftManagedDesktop);
             writer.WriteStringValue("onPremisesConnectionId", OnPremisesConnectionId);
             writer.WriteObjectValue<CloudPcWindowsSettings>("windowsSettings", WindowsSettings);

@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class Attachment_v2CollectionResponse : IAdditionalDataHolder, IBackedModel, IParsable {
+    /// <summary>Contains installation experience properties for a Win32 App</summary>
+    public class Win32LobAppInstallExperience : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
@@ -13,20 +14,20 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The nextLink property</summary>
-        public string NextLink {
-            get { return BackingStore?.Get<string>(nameof(NextLink)); }
-            set { BackingStore?.Set(nameof(NextLink), value); }
+        /// <summary>Device restart behavior. Possible values are: basedOnReturnCode, allow, suppress, force.</summary>
+        public Win32LobAppRestartBehavior? DeviceRestartBehavior {
+            get { return BackingStore?.Get<Win32LobAppRestartBehavior?>(nameof(DeviceRestartBehavior)); }
+            set { BackingStore?.Set(nameof(DeviceRestartBehavior), value); }
         }
-        /// <summary>The value property</summary>
-        public List<Attachment_v2> Value {
-            get { return BackingStore?.Get<List<Attachment_v2>>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+        /// <summary>Indicates the type of execution context the app runs in. Possible values are: system, user.</summary>
+        public RunAsAccountType? RunAsAccount {
+            get { return BackingStore?.Get<RunAsAccountType?>(nameof(RunAsAccount)); }
+            set { BackingStore?.Set(nameof(RunAsAccount), value); }
         }
         /// <summary>
-        /// Instantiates a new Attachment_v2CollectionResponse and sets the default values.
+        /// Instantiates a new win32LobAppInstallExperience and sets the default values.
         /// </summary>
-        public Attachment_v2CollectionResponse() {
+        public Win32LobAppInstallExperience() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -34,17 +35,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
-        public static Attachment_v2CollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static Win32LobAppInstallExperience CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Attachment_v2CollectionResponse();
+            return new Win32LobAppInstallExperience();
         }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"@odata.nextLink", n => { NextLink = n.GetStringValue(); } },
-                {"value", n => { Value = n.GetCollectionOfObjectValues<Attachment_v2>(Attachment_v2.CreateFromDiscriminatorValue).ToList(); } },
+                {"deviceRestartBehavior", n => { DeviceRestartBehavior = n.GetEnumValue<Win32LobAppRestartBehavior>(); } },
+                {"runAsAccount", n => { RunAsAccount = n.GetEnumValue<RunAsAccountType>(); } },
             };
         }
         /// <summary>
@@ -53,8 +54,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("@odata.nextLink", NextLink);
-            writer.WriteCollectionOfObjectValues<Attachment_v2>("value", Value);
+            writer.WriteEnumValue<Win32LobAppRestartBehavior>("deviceRestartBehavior", DeviceRestartBehavior);
+            writer.WriteEnumValue<RunAsAccountType>("runAsAccount", RunAsAccount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

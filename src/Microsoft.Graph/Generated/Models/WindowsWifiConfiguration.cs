@@ -76,7 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new WindowsWifiConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsWifiConfiguration();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.windowsWifiEnterpriseEAPConfiguration" => new WindowsWifiEnterpriseEAPConfiguration(),
+                _ => new WindowsWifiConfiguration(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

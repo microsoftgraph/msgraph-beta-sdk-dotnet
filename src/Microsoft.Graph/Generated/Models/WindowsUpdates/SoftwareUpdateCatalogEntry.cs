@@ -11,7 +11,13 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// </summary>
         public static new SoftwareUpdateCatalogEntry CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SoftwareUpdateCatalogEntry();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.windowsUpdates.featureUpdateCatalogEntry" => new FeatureUpdateCatalogEntry(),
+                "#microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry" => new QualityUpdateCatalogEntry(),
+                _ => new SoftwareUpdateCatalogEntry(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -181,7 +181,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new Message CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Message();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.calendarSharingMessage" => new CalendarSharingMessage(),
+                "#microsoft.graph.eventMessage" => new EventMessage(),
+                _ => new Message(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

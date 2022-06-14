@@ -136,7 +136,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new WindowsInformationProtection CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsInformationProtection();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.mdmWindowsInformationProtectionPolicy" => new MdmWindowsInformationProtectionPolicy(),
+                "#microsoft.graph.windowsInformationProtectionPolicy" => new WindowsInformationProtectionPolicy(),
+                _ => new WindowsInformationProtection(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

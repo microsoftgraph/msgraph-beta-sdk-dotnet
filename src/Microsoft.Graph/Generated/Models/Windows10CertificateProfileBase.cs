@@ -4,26 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class FileAttachment_v2 : Attachment_v2, IParsable {
-        /// <summary>The contentBytes property</summary>
-        public byte[] ContentBytes {
-            get { return BackingStore?.Get<byte[]>(nameof(ContentBytes)); }
-            set { BackingStore?.Set(nameof(ContentBytes), value); }
-        }
+    public class Windows10CertificateProfileBase : WindowsCertificateProfileBase, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
-        public static new FileAttachment_v2 CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new Windows10CertificateProfileBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FileAttachment_v2();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.windows10PkcsCertificateProfile" => new Windows10PkcsCertificateProfile(),
+                _ => new Windows10CertificateProfileBase(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"contentBytes", n => { ContentBytes = n.GetByteArrayValue(); } },
             };
         }
         /// <summary>
@@ -33,7 +32,6 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteByteArrayValue("contentBytes", ContentBytes);
         }
     }
 }

@@ -36,7 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new AndroidForWorkWiFiConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidForWorkWiFiConfiguration();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.androidForWorkEnterpriseWiFiConfiguration" => new AndroidForWorkEnterpriseWiFiConfiguration(),
+                _ => new AndroidForWorkWiFiConfiguration(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<double?>(nameof(CurrentScore)); }
             set { BackingStore?.Set(nameof(CurrentScore), value); }
         }
-        /// <summary>Microsoft-provided services for the tenant (for example, Exchange online, Skype, Sharepoint).</summary>
+        /// <summary>Microsoft-provided services for the tenant (for example, Exchange online, Skype, SharePoint).</summary>
         public List<string> EnabledServices {
             get { return BackingStore?.Get<List<string>>(nameof(EnabledServices)); }
             set { BackingStore?.Set(nameof(EnabledServices), value); }
