@@ -16,7 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new ManagedAppConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagedAppConfiguration();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.targetedManagedAppConfiguration" => new TargetedManagedAppConfiguration(),
+                _ => new ManagedAppConfiguration(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The DepIOSEnrollmentProfile resource represents an Apple Device Enrollment Program (DEP) enrollment profile specific to iOS configuration. This type of profile must be assigned to Apple DEP serial numbers before the corresponding devices can enroll via DEP.</summary>
     public class DepIOSEnrollmentProfile : DepEnrollmentBaseProfile, IParsable {
         /// <summary>Indicates if Apperance screen is disabled</summary>
         public bool? AppearanceScreenDisabled {

@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             get { return BackingStore?.Get<List<ManagementTemplateStepVersion>>(nameof(ManagementTemplateStepVersions)); }
             set { BackingStore?.Set(nameof(ManagementTemplateStepVersions), value); }
         }
-        /// <summary>The myRoles property</summary>
+        /// <summary>The collection of role assignments to a signed-in user for a managed tenant.</summary>
         public List<MyRole> MyRoles {
             get { return BackingStore?.Get<List<MyRole>>(nameof(MyRoles)); }
             set { BackingStore?.Set(nameof(MyRoles), value); }

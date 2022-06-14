@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
     public class ExactMatchSession : ExactMatchSessionBase, IParsable {
         /// <summary>The checksum property</summary>
         public string Checksum {

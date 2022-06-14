@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.MyRoles {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get myRoles from tenantRelationships
+        /// The collection of role assignments to a signed-in user for a managed tenant.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<MyRolesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.MyRoles {
             return requestInfo;
         }
         /// <summary>
-        /// Get myRoles from tenantRelationships
+        /// The collection of role assignments to a signed-in user for a managed tenant.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.MyRoles {
             };
             return await RequestAdapter.SendAsync<MyRole>(requestInfo, MyRole.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get myRoles from tenantRelationships</summary>
+        /// <summary>The collection of role assignments to a signed-in user for a managed tenant.</summary>
         public class MyRolesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

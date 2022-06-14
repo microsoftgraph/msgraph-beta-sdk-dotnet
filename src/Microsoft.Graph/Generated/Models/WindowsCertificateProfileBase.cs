@@ -41,7 +41,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new WindowsCertificateProfileBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsCertificateProfileBase();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.windows10CertificateProfileBase" => new Windows10CertificateProfileBase(),
+                "#microsoft.graph.windows10ImportedPFXCertificateProfile" => new Windows10ImportedPFXCertificateProfile(),
+                "#microsoft.graph.windows81CertificateProfileBase" => new Windows81CertificateProfileBase(),
+                "#microsoft.graph.windowsPhone81ImportedPFXCertificateProfile" => new WindowsPhone81ImportedPFXCertificateProfile(),
+                _ => new WindowsCertificateProfileBase(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

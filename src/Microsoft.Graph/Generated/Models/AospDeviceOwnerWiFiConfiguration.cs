@@ -46,7 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new AospDeviceOwnerWiFiConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AospDeviceOwnerWiFiConfiguration();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.aospDeviceOwnerEnterpriseWiFiConfiguration" => new AospDeviceOwnerEnterpriseWiFiConfiguration(),
+                _ => new AospDeviceOwnerWiFiConfiguration(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

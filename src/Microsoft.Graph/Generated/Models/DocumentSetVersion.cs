@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class DocumentSetVersion : ListItemVersion, IParsable {
         /// <summary>Comment about the captured version.</summary>
         public string Comment {

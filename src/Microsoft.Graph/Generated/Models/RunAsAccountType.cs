@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public enum RunAsAccountType {
         /// <summary>System context</summary>
         System,

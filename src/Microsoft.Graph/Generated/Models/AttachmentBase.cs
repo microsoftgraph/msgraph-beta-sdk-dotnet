@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
-    public class Attachment_v2 : Entity, IParsable {
+    public class AttachmentBase : Entity, IParsable {
         /// <summary>The contentType property</summary>
         public string ContentType {
             get { return BackingStore?.Get<string>(nameof(ContentType)); }
@@ -30,13 +30,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
-        public static new Attachment_v2 CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new AttachmentBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.fileAttachment_v2" => new FileAttachment_v2(),
-                _ => new Attachment_v2(),
+                "#microsoft.graph.taskFileAttachment" => new TaskFileAttachment(),
+                _ => new AttachmentBase(),
             };
         }
         /// <summary>

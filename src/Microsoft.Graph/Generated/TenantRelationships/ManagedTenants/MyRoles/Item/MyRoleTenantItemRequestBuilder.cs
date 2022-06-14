@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.MyRoles.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get myRoles from tenantRelationships
+        /// The collection of role assignments to a signed-in user for a managed tenant.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<MyRoleTenantItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.MyRoles.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get myRoles from tenantRelationships
+        /// The collection of role assignments to a signed-in user for a managed tenant.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.MyRoles.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get myRoles from tenantRelationships</summary>
+        /// <summary>The collection of role assignments to a signed-in user for a managed tenant.</summary>
         public class MyRoleTenantItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

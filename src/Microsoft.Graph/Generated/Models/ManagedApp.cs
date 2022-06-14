@@ -21,7 +21,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new ManagedApp CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagedApp();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.managedAndroidStoreApp" => new ManagedAndroidStoreApp(),
+                "#microsoft.graph.managedIOSStoreApp" => new ManagedIOSStoreApp(),
+                "#microsoft.graph.managedMobileLobApp" => new ManagedMobileLobApp(),
+                _ => new ManagedApp(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

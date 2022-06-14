@@ -236,7 +236,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new ManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagedAppProtection();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.defaultManagedAppProtection" => new DefaultManagedAppProtection(),
+                "#microsoft.graph.targetedManagedAppProtection" => new TargetedManagedAppProtection(),
+                _ => new ManagedAppProtection(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

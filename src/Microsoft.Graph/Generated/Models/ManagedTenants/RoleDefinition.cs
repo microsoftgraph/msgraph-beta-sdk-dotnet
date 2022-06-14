@@ -13,17 +13,17 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The description property</summary>
+        /// <summary>The description for the role.</summary>
         public string Description {
             get { return BackingStore?.Get<string>(nameof(Description)); }
             set { BackingStore?.Set(nameof(Description), value); }
         }
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name for the role assignment.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>(nameof(DisplayName)); }
             set { BackingStore?.Set(nameof(DisplayName), value); }
         }
-        /// <summary>The templateId property</summary>
+        /// <summary>The unique identifier for the template.</summary>
         public string TemplateId {
             get { return BackingStore?.Get<string>(nameof(TemplateId)); }
             set { BackingStore?.Set(nameof(TemplateId), value); }

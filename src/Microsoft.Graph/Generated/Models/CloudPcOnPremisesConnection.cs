@@ -21,6 +21,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>(nameof(AdDomainUsername)); }
             set { BackingStore?.Set(nameof(AdDomainUsername), value); }
         }
+        /// <summary>The alternateResourceUrl property</summary>
+        public string AlternateResourceUrl {
+            get { return BackingStore?.Get<string>(nameof(AlternateResourceUrl)); }
+            set { BackingStore?.Set(nameof(AlternateResourceUrl), value); }
+        }
         /// <summary>The display name for the Azure network connection.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>(nameof(DisplayName)); }
@@ -97,6 +102,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"adDomainName", n => { AdDomainName = n.GetStringValue(); } },
                 {"adDomainPassword", n => { AdDomainPassword = n.GetStringValue(); } },
                 {"adDomainUsername", n => { AdDomainUsername = n.GetStringValue(); } },
+                {"alternateResourceUrl", n => { AlternateResourceUrl = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"healthCheckStatus", n => { HealthCheckStatus = n.GetEnumValue<CloudPcOnPremisesConnectionStatus>(); } },
                 {"healthCheckStatusDetails", n => { HealthCheckStatusDetails = n.GetObjectValue<CloudPcOnPremisesConnectionStatusDetails>(CloudPcOnPremisesConnectionStatusDetails.CreateFromDiscriminatorValue); } },
@@ -121,6 +127,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("adDomainName", AdDomainName);
             writer.WriteStringValue("adDomainPassword", AdDomainPassword);
             writer.WriteStringValue("adDomainUsername", AdDomainUsername);
+            writer.WriteStringValue("alternateResourceUrl", AlternateResourceUrl);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteEnumValue<CloudPcOnPremisesConnectionStatus>("healthCheckStatus", HealthCheckStatus);
             writer.WriteObjectValue<CloudPcOnPremisesConnectionStatusDetails>("healthCheckStatusDetails", HealthCheckStatusDetails);

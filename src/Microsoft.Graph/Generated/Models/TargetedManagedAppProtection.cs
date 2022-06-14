@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Policy used to configure detailed management settings targeted to specific security groups</summary>
     public class TargetedManagedAppProtection : ManagedAppProtection, IParsable {
         /// <summary>Public Apps selection: group or individual. Possible values are: selectedPublicApps, allCoreMicrosoftApps, allMicrosoftApps, allApps.</summary>
         public TargetedManagedAppGroupType? AppGroupType {

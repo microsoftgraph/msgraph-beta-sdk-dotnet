@@ -31,7 +31,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new EasEmailProfileConfigurationBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EasEmailProfileConfigurationBase();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.iosEasEmailProfileConfiguration" => new IosEasEmailProfileConfiguration(),
+                "#microsoft.graph.windows10EasEmailProfileConfiguration" => new Windows10EasEmailProfileConfiguration(),
+                "#microsoft.graph.windowsPhoneEASEmailProfileConfiguration" => new WindowsPhoneEASEmailProfileConfiguration(),
+                _ => new EasEmailProfileConfigurationBase(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

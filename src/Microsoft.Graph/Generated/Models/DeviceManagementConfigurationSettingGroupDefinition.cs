@@ -26,7 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new DeviceManagementConfigurationSettingGroupDefinition CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConfigurationSettingGroupDefinition();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.deviceManagementConfigurationSettingGroupCollectionDefinition" => new DeviceManagementConfigurationSettingGroupCollectionDefinition(),
+                _ => new DeviceManagementConfigurationSettingGroupDefinition(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

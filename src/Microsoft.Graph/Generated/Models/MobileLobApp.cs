@@ -31,7 +31,21 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new MobileLobApp CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MobileLobApp();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.androidLobApp" => new AndroidLobApp(),
+                "#microsoft.graph.iosLobApp" => new IosLobApp(),
+                "#microsoft.graph.macOSDmgApp" => new MacOSDmgApp(),
+                "#microsoft.graph.macOSLobApp" => new MacOSLobApp(),
+                "#microsoft.graph.win32LobApp" => new Win32LobApp(),
+                "#microsoft.graph.windowsAppX" => new WindowsAppX(),
+                "#microsoft.graph.windowsMobileMSI" => new WindowsMobileMSI(),
+                "#microsoft.graph.windowsPhone81AppX" => new WindowsPhone81AppX(),
+                "#microsoft.graph.windowsPhoneXAP" => new WindowsPhoneXAP(),
+                "#microsoft.graph.windowsUniversalAppX" => new WindowsUniversalAppX(),
+                _ => new MobileLobApp(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

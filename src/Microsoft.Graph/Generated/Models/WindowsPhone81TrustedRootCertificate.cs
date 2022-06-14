@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Windows Phone 8.1+ Trusted Root Certificate configuration profile</summary>
     public class WindowsPhone81TrustedRootCertificate : DeviceConfiguration, IParsable {
         /// <summary>File name to display in UI.</summary>
         public string CertFileName {

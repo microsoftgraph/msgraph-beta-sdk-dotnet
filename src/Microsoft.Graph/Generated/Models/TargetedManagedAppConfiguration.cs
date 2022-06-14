@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Configuration used to deliver a set of custom settings as-is to all users in the targeted security group</summary>
     public class TargetedManagedAppConfiguration : ManagedAppConfiguration, IParsable {
         /// <summary>Public Apps selection: group or individual</summary>
         public TargetedManagedAppGroupType? AppGroupType {

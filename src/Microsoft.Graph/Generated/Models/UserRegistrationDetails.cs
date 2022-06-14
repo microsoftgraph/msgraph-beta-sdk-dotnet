@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the print singleton.</summary>
+    /// <summary>Provides operations to manage the reportRoot singleton.</summary>
     public class UserRegistrationDetails : Entity, IParsable {
         /// <summary>The method the user or admin selected as default for performing multi-factor authentication for the user. The possible values are: none, mobilePhone, alternateMobilePhone, officePhone, microsoftAuthenticatorPush, softwareOneTimePasscode, unknownFutureValue.</summary>
         public DefaultMfaMethodType? DefaultMfaMethod {

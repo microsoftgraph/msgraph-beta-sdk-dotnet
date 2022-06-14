@@ -46,7 +46,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new AndroidWorkProfileEasEmailProfileBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidWorkProfileEasEmailProfileBase();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.androidWorkProfileGmailEasConfiguration" => new AndroidWorkProfileGmailEasConfiguration(),
+                "#microsoft.graph.androidWorkProfileNineWorkEasConfiguration" => new AndroidWorkProfileNineWorkEasConfiguration(),
+                _ => new AndroidWorkProfileEasEmailProfileBase(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of domain entities.</summary>
+    /// <summary>Provides operations to manage the directory singleton.</summary>
     public enum PromptLoginBehavior {
         TranslateToFreshPasswordAuthentication,
         NativeSupport,

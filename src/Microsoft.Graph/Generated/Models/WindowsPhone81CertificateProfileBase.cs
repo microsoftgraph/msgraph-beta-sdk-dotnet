@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Base Windows Phone 8.1+ certificate profile.</summary>
     public class WindowsPhone81CertificateProfileBase : DeviceConfiguration, IParsable {
         /// <summary>Scale for the Certificate Validity Period. Possible values are: days, months, years.</summary>
         public Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale? CertificateValidityPeriodScale {
@@ -46,7 +47,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new WindowsPhone81CertificateProfileBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsPhone81CertificateProfileBase();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.windowsPhone81SCEPCertificateProfile" => new WindowsPhone81SCEPCertificateProfile(),
+                _ => new WindowsPhone81CertificateProfileBase(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

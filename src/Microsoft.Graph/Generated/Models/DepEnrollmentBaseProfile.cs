@@ -106,7 +106,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new DepEnrollmentBaseProfile CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DepEnrollmentBaseProfile();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.depIOSEnrollmentProfile" => new DepIOSEnrollmentProfile(),
+                "#microsoft.graph.depMacOSEnrollmentProfile" => new DepMacOSEnrollmentProfile(),
+                _ => new DepEnrollmentBaseProfile(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

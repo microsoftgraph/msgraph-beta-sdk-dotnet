@@ -16,7 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new AppleExpeditedCheckinConfigurationBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AppleExpeditedCheckinConfigurationBase();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.iosExpeditedCheckinConfiguration" => new IosExpeditedCheckinConfiguration(),
+                _ => new AppleExpeditedCheckinConfigurationBase(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class TodoTask : Entity, IParsable {
         /// <summary>The attachments property</summary>
-        public List<Attachment_v2> Attachments {
-            get { return BackingStore?.Get<List<Attachment_v2>>(nameof(Attachments)); }
+        public List<AttachmentBase> Attachments {
+            get { return BackingStore?.Get<List<AttachmentBase>>(nameof(Attachments)); }
             set { BackingStore?.Set(nameof(Attachments), value); }
         }
         /// <summary>The attachmentSessions property</summary>
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"attachments", n => { Attachments = n.GetCollectionOfObjectValues<Attachment_v2>(Attachment_v2.CreateFromDiscriminatorValue).ToList(); } },
+                {"attachments", n => { Attachments = n.GetCollectionOfObjectValues<AttachmentBase>(AttachmentBase.CreateFromDiscriminatorValue).ToList(); } },
                 {"attachmentSessions", n => { AttachmentSessions = n.GetCollectionOfObjectValues<AttachmentSession>(AttachmentSession.CreateFromDiscriminatorValue).ToList(); } },
                 {"body", n => { Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
                 {"bodyLastModifiedDateTime", n => { BodyLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -142,7 +142,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<Attachment_v2>("attachments", Attachments);
+            writer.WriteCollectionOfObjectValues<AttachmentBase>("attachments", Attachments);
             writer.WriteCollectionOfObjectValues<AttachmentSession>("attachmentSessions", AttachmentSessions);
             writer.WriteObjectValue<ItemBody>("body", Body);
             writer.WriteDateTimeOffsetValue("bodyLastModifiedDateTime", BodyLastModifiedDateTime);

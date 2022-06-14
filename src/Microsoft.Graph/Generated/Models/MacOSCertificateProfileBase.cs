@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Mac OS certificate profile.</summary>
     public class MacOSCertificateProfileBase : DeviceConfiguration, IParsable {
         /// <summary>Scale for the Certificate Validity Period. Possible values are: days, months, years.</summary>
         public Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale? CertificateValidityPeriodScale {
@@ -36,7 +37,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new MacOSCertificateProfileBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MacOSCertificateProfileBase();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.macOSImportedPFXCertificateProfile" => new MacOSImportedPFXCertificateProfile(),
+                "#microsoft.graph.macOSPkcsCertificateProfile" => new MacOSPkcsCertificateProfile(),
+                "#microsoft.graph.macOSScepCertificateProfile" => new MacOSScepCertificateProfile(),
+                _ => new MacOSCertificateProfileBase(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

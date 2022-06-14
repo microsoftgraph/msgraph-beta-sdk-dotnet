@@ -51,7 +51,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new ExactMatchSessionBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExactMatchSessionBase();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.exactMatchSession" => new ExactMatchSession(),
+                _ => new ExactMatchSessionBase(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
