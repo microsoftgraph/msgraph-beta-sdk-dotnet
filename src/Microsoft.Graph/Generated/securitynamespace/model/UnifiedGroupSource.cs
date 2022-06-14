@@ -31,12 +31,14 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets included sources.
+        /// Specifies which sources are included in this group. Possible values are: mailbox, site.
         /// </summary>
         [JsonPropertyName("includedSources")]
         public SourceType? IncludedSources { get; set; }
     
         /// <summary>
         /// Gets or sets group.
+        /// Represent a group.
         /// </summary>
         [JsonPropertyName("group")]
         public Microsoft.Graph.Group Group { get; set; }

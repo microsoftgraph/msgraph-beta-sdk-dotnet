@@ -14,17 +14,17 @@ namespace Microsoft.Graph
     using System.IO;
 
     /// <summary>
-    /// The type FileAttachment_v2RequestBuilder.
+    /// The type TaskFileAttachmentRequestBuilder.
     /// </summary>
-    public partial class FileAttachment_v2RequestBuilder : Attachment_v2RequestBuilder, IFileAttachment_v2RequestBuilder
+    public partial class TaskFileAttachmentRequestBuilder : AttachmentBaseRequestBuilder, ITaskFileAttachmentRequestBuilder
     {
 
         /// <summary>
-        /// Constructs a new FileAttachment_v2RequestBuilder.
+        /// Constructs a new TaskFileAttachmentRequestBuilder.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        public FileAttachment_v2RequestBuilder(
+        public TaskFileAttachmentRequestBuilder(
             string requestUrl,
             IBaseClient client)
             : base(requestUrl, client)
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IFileAttachment_v2Request Request()
+        public new ITaskFileAttachmentRequest Request()
         {
             return this.Request(null);
         }
@@ -45,9 +45,9 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IFileAttachment_v2Request Request(IEnumerable<Option> options)
+        public new ITaskFileAttachmentRequest Request(IEnumerable<Option> options)
         {
-            return new FileAttachment_v2Request(this.RequestUrl, this.Client, options);
+            return new TaskFileAttachmentRequest(this.RequestUrl, this.Client, options);
         }
     
     }

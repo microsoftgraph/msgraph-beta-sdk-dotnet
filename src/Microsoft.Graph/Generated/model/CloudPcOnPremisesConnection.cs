@@ -43,6 +43,12 @@ namespace Microsoft.Graph
         public string AdDomainUsername { get; set; }
     
         /// <summary>
+        /// Gets or sets alternate resource url.
+        /// </summary>
+        [JsonPropertyName("alternateResourceUrl")]
+        public string AlternateResourceUrl { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// The display name for the Azure network connection.
         /// </summary>

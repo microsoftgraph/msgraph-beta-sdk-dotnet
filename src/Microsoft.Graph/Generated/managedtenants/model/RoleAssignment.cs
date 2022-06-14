@@ -23,12 +23,14 @@ namespace Microsoft.Graph.ManagedTenants
 
         /// <summary>
         /// Gets or sets assignmentType.
+        /// The type of the admin relationship(s) associated with the role assignment. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges.
         /// </summary>
         [JsonPropertyName("assignmentType")]
         public DelegatedPrivilegeStatus? AssignmentType { get; set; }
     
         /// <summary>
         /// Gets or sets roles.
+        /// The collection of roles assigned.
         /// </summary>
         [JsonPropertyName("roles")]
         public IEnumerable<RoleDefinition> Roles { get; set; }

@@ -23,24 +23,28 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets isEnabled.
+        /// Indicates whether email threading and near duplicate detection are enabled.
         /// </summary>
         [JsonPropertyName("isEnabled")]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets maxWords.
+        /// Specifies the maximum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
         /// </summary>
         [JsonPropertyName("maxWords")]
         public Int32? MaxWords { get; set; }
     
         /// <summary>
         /// Gets or sets minWords.
+        /// Specifies the minimum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
         /// </summary>
         [JsonPropertyName("minWords")]
         public Int32? MinWords { get; set; }
     
         /// <summary>
         /// Gets or sets similarityThreshold.
+        /// Specifies the similarity level for documents to be put in the same near duplicate set. To learn more, see Document and email similarity threshold.
         /// </summary>
         [JsonPropertyName("similarityThreshold")]
         public Int32? SimilarityThreshold { get; set; }

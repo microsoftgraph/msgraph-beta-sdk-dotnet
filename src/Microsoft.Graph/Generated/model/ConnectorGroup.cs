@@ -51,7 +51,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets applications.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("applications")]
         public IConnectorGroupApplicationsCollectionWithReferencesPage Applications { get; set; }
@@ -65,7 +64,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets members.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("members")]
         public IConnectorGroupMembersCollectionWithReferencesPage Members { get; set; }

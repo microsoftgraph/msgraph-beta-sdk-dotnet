@@ -15,16 +15,16 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type Attachment_v2.
+    /// The type Attachment Base.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<Attachment_v2>))]
-    public partial class Attachment_v2 : Entity
+    [JsonConverter(typeof(DerivedTypeConverter<AttachmentBase>))]
+    public partial class AttachmentBase : Entity
     {
     
         ///<summary>
-        /// The internal Attachment_v2 constructor
+        /// The internal AttachmentBase constructor
         ///</summary>
-        protected internal Attachment_v2()
+        protected internal AttachmentBase()
         {
             // Don't allow initialization of abstract entity types
         }

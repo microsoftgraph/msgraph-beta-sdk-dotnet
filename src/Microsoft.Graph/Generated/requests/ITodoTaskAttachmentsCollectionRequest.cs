@@ -21,20 +21,20 @@ namespace Microsoft.Graph
     public partial interface ITodoTaskAttachmentsCollectionRequest : IBaseRequest
     {
         /// <summary>
-        /// Adds the specified Attachment_v2 to the collection via POST.
+        /// Adds the specified AttachmentBase to the collection via POST.
         /// </summary>
-        /// <param name="attachment_v2">The Attachment_v2 to add.</param>
+        /// <param name="attachmentBase">The AttachmentBase to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Attachment_v2.</returns>
-        System.Threading.Tasks.Task<Attachment_v2> AddAsync(Attachment_v2 attachment_v2, CancellationToken cancellationToken = default);
+        /// <returns>The created AttachmentBase.</returns>
+        System.Threading.Tasks.Task<AttachmentBase> AddAsync(AttachmentBase attachmentBase, CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Adds the specified Attachment_v2 to the collection via POST and returns a <see cref="GraphResponse{Attachment_v2}"/> object of the request.
+        /// Adds the specified AttachmentBase to the collection via POST and returns a <see cref="GraphResponse{AttachmentBase}"/> object of the request.
         /// </summary>
-        /// <param name="attachment_v2">The Attachment_v2 to add.</param>
+        /// <param name="attachmentBase">The AttachmentBase to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{Attachment_v2}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Attachment_v2>> AddResponseAsync(Attachment_v2 attachment_v2, CancellationToken cancellationToken = default);
+        /// <returns>The <see cref="GraphResponse{AttachmentBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AttachmentBase>> AddResponseAsync(AttachmentBase attachmentBase, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        ITodoTaskAttachmentsCollectionRequest Expand(Expression<Func<Attachment_v2, object>> expandExpression);
+        ITodoTaskAttachmentsCollectionRequest Expand(Expression<Func<AttachmentBase, object>> expandExpression);
 
         /// <summary>
         /// Adds the specified select value to the request.
@@ -77,7 +77,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        ITodoTaskAttachmentsCollectionRequest Select(Expression<Func<Attachment_v2, object>> selectExpression);
+        ITodoTaskAttachmentsCollectionRequest Select(Expression<Func<AttachmentBase, object>> selectExpression);
 
         /// <summary>
         /// Adds the specified top value to the request.

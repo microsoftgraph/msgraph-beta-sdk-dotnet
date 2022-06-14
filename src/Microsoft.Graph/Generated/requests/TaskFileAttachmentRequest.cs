@@ -17,17 +17,17 @@ namespace Microsoft.Graph
     using System.Linq.Expressions;
 
     /// <summary>
-    /// The type Attachment_v2Request.
+    /// The type TaskFileAttachmentRequest.
     /// </summary>
-    public partial class Attachment_v2Request : BaseRequest, IAttachment_v2Request
+    public partial class TaskFileAttachmentRequest : BaseRequest, ITaskFileAttachmentRequest
     {
         /// <summary>
-        /// Constructs a new Attachment_v2Request.
+        /// Constructs a new TaskFileAttachmentRequest.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="options">Query and header option name value pairs for the request.</param>
-        public Attachment_v2Request(
+        public TaskFileAttachmentRequest(
             string requestUrl,
             IBaseClient client,
             IEnumerable<Option> options)
@@ -36,46 +36,46 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Creates the specified Attachment_v2 using POST.
+        /// Creates the specified TaskFileAttachment using POST.
         /// </summary>
-        /// <param name="attachment_v2ToCreate">The Attachment_v2 to create.</param>
+        /// <param name="taskFileAttachmentToCreate">The TaskFileAttachment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Attachment_v2.</returns>
-        public async System.Threading.Tasks.Task<Attachment_v2> CreateAsync(Attachment_v2 attachment_v2ToCreate, CancellationToken cancellationToken = default)
+        /// <returns>The created TaskFileAttachment.</returns>
+        public async System.Threading.Tasks.Task<TaskFileAttachment> CreateAsync(TaskFileAttachment taskFileAttachmentToCreate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            var newEntity = await this.SendAsync<Attachment_v2>(attachment_v2ToCreate, cancellationToken).ConfigureAwait(false);
+            var newEntity = await this.SendAsync<TaskFileAttachment>(taskFileAttachmentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Creates the specified Attachment_v2 using POST and returns a <see cref="GraphResponse{Attachment_v2}"/> object.
+        /// Creates the specified TaskFileAttachment using POST and returns a <see cref="GraphResponse{TaskFileAttachment}"/> object.
         /// </summary>
-        /// <param name="attachment_v2ToCreate">The Attachment_v2 to create.</param>
+        /// <param name="taskFileAttachmentToCreate">The TaskFileAttachment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{Attachment_v2}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Attachment_v2>> CreateResponseAsync(Attachment_v2 attachment_v2ToCreate, CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{TaskFileAttachment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TaskFileAttachment>> CreateResponseAsync(TaskFileAttachment taskFileAttachmentToCreate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            return this.SendAsyncWithGraphResponse<Attachment_v2>(attachment_v2ToCreate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<TaskFileAttachment>(taskFileAttachmentToCreate, cancellationToken);
         }
 
         /// <summary>
-        /// Deletes the specified Attachment_v2.
+        /// Deletes the specified TaskFileAttachment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.DELETE;
-            await this.SendAsync<Attachment_v2>(null, cancellationToken).ConfigureAwait(false);
+            await this.SendAsync<TaskFileAttachment>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Deletes the specified Attachment_v2 and returns a <see cref="GraphResponse"/> object.
+        /// Deletes the specified TaskFileAttachment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
@@ -86,85 +86,85 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the specified Attachment_v2.
+        /// Gets the specified TaskFileAttachment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The Attachment_v2.</returns>
-        public async System.Threading.Tasks.Task<Attachment_v2> GetAsync(CancellationToken cancellationToken = default)
+        /// <returns>The TaskFileAttachment.</returns>
+        public async System.Threading.Tasks.Task<TaskFileAttachment> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
-            var retrievedEntity = await this.SendAsync<Attachment_v2>(null, cancellationToken).ConfigureAwait(false);
+            var retrievedEntity = await this.SendAsync<TaskFileAttachment>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Gets the specified Attachment_v2 and returns a <see cref="GraphResponse{Attachment_v2}"/> object.
+        /// Gets the specified TaskFileAttachment and returns a <see cref="GraphResponse{TaskFileAttachment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{Attachment_v2}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Attachment_v2>> GetResponseAsync(CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{TaskFileAttachment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TaskFileAttachment>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
-            return this.SendAsyncWithGraphResponse<Attachment_v2>(null, cancellationToken);
+            return this.SendAsyncWithGraphResponse<TaskFileAttachment>(null, cancellationToken);
         }
 
         /// <summary>
-        /// Updates the specified Attachment_v2 using PATCH.
+        /// Updates the specified TaskFileAttachment using PATCH.
         /// </summary>
-        /// <param name="attachment_v2ToUpdate">The Attachment_v2 to update.</param>
+        /// <param name="taskFileAttachmentToUpdate">The TaskFileAttachment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The updated Attachment_v2.</returns>
-        public async System.Threading.Tasks.Task<Attachment_v2> UpdateAsync(Attachment_v2 attachment_v2ToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The updated TaskFileAttachment.</returns>
+        public async System.Threading.Tasks.Task<TaskFileAttachment> UpdateAsync(TaskFileAttachment taskFileAttachmentToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PATCH;
-            var updatedEntity = await this.SendAsync<Attachment_v2>(attachment_v2ToUpdate, cancellationToken).ConfigureAwait(false);
+            var updatedEntity = await this.SendAsync<TaskFileAttachment>(taskFileAttachmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Attachment_v2 using PATCH and returns a <see cref="GraphResponse{Attachment_v2}"/> object.
+        /// Updates the specified TaskFileAttachment using PATCH and returns a <see cref="GraphResponse{TaskFileAttachment}"/> object.
         /// </summary>
-        /// <param name="attachment_v2ToUpdate">The Attachment_v2 to update.</param>
+        /// <param name="taskFileAttachmentToUpdate">The TaskFileAttachment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The <see cref="GraphResponse{Attachment_v2}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Attachment_v2>> UpdateResponseAsync(Attachment_v2 attachment_v2ToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{TaskFileAttachment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TaskFileAttachment>> UpdateResponseAsync(TaskFileAttachment taskFileAttachmentToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PATCH;
-            return this.SendAsyncWithGraphResponse<Attachment_v2>(attachment_v2ToUpdate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<TaskFileAttachment>(taskFileAttachmentToUpdate, cancellationToken);
         }
 
         /// <summary>
-        /// Updates the specified Attachment_v2 using PUT.
+        /// Updates the specified TaskFileAttachment using PUT.
         /// </summary>
-        /// <param name="attachment_v2ToUpdate">The Attachment_v2 object to update.</param>
+        /// <param name="taskFileAttachmentToUpdate">The TaskFileAttachment object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task<Attachment_v2> PutAsync(Attachment_v2 attachment_v2ToUpdate, CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<TaskFileAttachment> PutAsync(TaskFileAttachment taskFileAttachmentToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PUT;
-            var updatedEntity = await this.SendAsync<Attachment_v2>(attachment_v2ToUpdate, cancellationToken).ConfigureAwait(false);
+            var updatedEntity = await this.SendAsync<TaskFileAttachment>(taskFileAttachmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Attachment_v2 using PUT and returns a <see cref="GraphResponse{Attachment_v2}"/> object.
+        /// Updates the specified TaskFileAttachment using PUT and returns a <see cref="GraphResponse{TaskFileAttachment}"/> object.
         /// </summary>
-        /// <param name="attachment_v2ToUpdate">The Attachment_v2 object to update.</param>
+        /// <param name="taskFileAttachmentToUpdate">The TaskFileAttachment object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task to await of <see cref="GraphResponse{Attachment_v2}"/>.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Attachment_v2>> PutResponseAsync(Attachment_v2 attachment_v2ToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The task to await of <see cref="GraphResponse{TaskFileAttachment}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TaskFileAttachment>> PutResponseAsync(TaskFileAttachment taskFileAttachmentToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PUT;
-            return this.SendAsyncWithGraphResponse<Attachment_v2>(attachment_v2ToUpdate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<TaskFileAttachment>(taskFileAttachmentToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IAttachment_v2Request Expand(string value)
+        public ITaskFileAttachmentRequest Expand(string value)
         {
             this.QueryOptions.Add(new QueryOption("$expand", value));
             return this;
@@ -183,7 +183,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IAttachment_v2Request Expand(Expression<Func<Attachment_v2, object>> expandExpression)
+        public ITaskFileAttachmentRequest Expand(Expression<Func<TaskFileAttachment, object>> expandExpression)
         {
 		    if (expandExpression == null)
             {
@@ -207,7 +207,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
-        public IAttachment_v2Request Select(string value)
+        public ITaskFileAttachmentRequest Select(string value)
         {
             this.QueryOptions.Add(new QueryOption("$select", value));
             return this;
@@ -218,7 +218,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IAttachment_v2Request Select(Expression<Func<Attachment_v2, object>> selectExpression)
+        public ITaskFileAttachmentRequest Select(Expression<Func<TaskFileAttachment, object>> selectExpression)
         {
             if (selectExpression == null)
             {
@@ -240,8 +240,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Initializes any collection properties after deserialization, like next requests for paging.
         /// </summary>
-        /// <param name="attachment_v2ToInitialize">The <see cref="Attachment_v2"/> with the collection properties to initialize.</param>
-        private void InitializeCollectionProperties(Attachment_v2 attachment_v2ToInitialize)
+        /// <param name="taskFileAttachmentToInitialize">The <see cref="TaskFileAttachment"/> with the collection properties to initialize.</param>
+        private void InitializeCollectionProperties(TaskFileAttachment taskFileAttachmentToInitialize)
         {
 
         }

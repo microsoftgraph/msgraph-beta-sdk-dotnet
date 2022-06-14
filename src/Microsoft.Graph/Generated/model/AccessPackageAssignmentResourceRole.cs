@@ -57,14 +57,12 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package resource role.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("accessPackageResourceRole")]
         public AccessPackageResourceRole AccessPackageResourceRole { get; set; }
     
         /// <summary>
         /// Gets or sets access package resource scope.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("accessPackageResourceScope")]
         public AccessPackageResourceScope AccessPackageResourceScope { get; set; }

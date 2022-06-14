@@ -31,7 +31,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets id.
-        /// Read-only.
         /// </summary>
         [JsonPropertyName("id")]
         public string Id { get; set; }

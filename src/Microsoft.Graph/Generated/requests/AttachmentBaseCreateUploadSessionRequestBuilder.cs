@@ -14,17 +14,17 @@ namespace Microsoft.Graph
     using System.IO;
 
     /// <summary>
-    /// The type Attachment_v2CreateUploadSessionRequestBuilder.
+    /// The type AttachmentBaseCreateUploadSessionRequestBuilder.
     /// </summary>
-    public partial class Attachment_v2CreateUploadSessionRequestBuilder : BaseActionMethodRequestBuilder<IAttachment_v2CreateUploadSessionRequest>, IAttachment_v2CreateUploadSessionRequestBuilder
+    public partial class AttachmentBaseCreateUploadSessionRequestBuilder : BaseActionMethodRequestBuilder<IAttachmentBaseCreateUploadSessionRequest>, IAttachmentBaseCreateUploadSessionRequestBuilder
     {
         /// <summary>
-        /// Constructs a new <see cref="Attachment_v2CreateUploadSessionRequestBuilder"/>.
+        /// Constructs a new <see cref="AttachmentBaseCreateUploadSessionRequestBuilder"/>.
         /// </summary>
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="attachmentInfo">A attachmentInfo parameter for the OData method call.</param>
-        public Attachment_v2CreateUploadSessionRequestBuilder(
+        public AttachmentBaseCreateUploadSessionRequestBuilder(
             string requestUrl,
             IBaseClient client,
             AttachmentInfo attachmentInfo)
@@ -39,9 +39,9 @@ namespace Microsoft.Graph
         /// <param name="functionUrl">The request URL to </param>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>An instance of a specific request class.</returns>
-        protected override IAttachment_v2CreateUploadSessionRequest CreateRequest(string functionUrl, IEnumerable<Option> options)
+        protected override IAttachmentBaseCreateUploadSessionRequest CreateRequest(string functionUrl, IEnumerable<Option> options)
         {
-            var request = new Attachment_v2CreateUploadSessionRequest(functionUrl, this.Client, options);
+            var request = new AttachmentBaseCreateUploadSessionRequest(functionUrl, this.Client, options);
 
             if (this.HasParameter("attachmentInfo"))
             {

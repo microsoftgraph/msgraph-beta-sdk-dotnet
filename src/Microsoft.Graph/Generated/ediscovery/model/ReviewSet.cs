@@ -43,7 +43,6 @@ namespace Microsoft.Graph.Ediscovery
     
         /// <summary>
         /// Gets or sets queries.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("queries")]
         public IReviewSetQueriesCollectionPage Queries { get; set; }

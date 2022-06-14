@@ -30,36 +30,42 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets default length.
+        /// Default length, in characters, of a temporaryAccessPass, between 8 and 48 characters.
         /// </summary>
         [JsonPropertyName("defaultLength")]
         public Int32? DefaultLength { get; set; }
     
         /// <summary>
         /// Gets or sets default lifetime in minutes.
+        /// Default lifetime, in minutes, for a temporaryAccessPass. Value can be between the minimumLifetimeInMinutes and maximumLifetimeInMinutes.
         /// </summary>
         [JsonPropertyName("defaultLifetimeInMinutes")]
         public Int32? DefaultLifetimeInMinutes { get; set; }
     
         /// <summary>
         /// Gets or sets is usable once.
+        /// If true, all the passes in the tenant will be restricted to one-time use. If false, passes in the tenant can be created to be either one-time use or multiple time use.
         /// </summary>
         [JsonPropertyName("isUsableOnce")]
         public bool? IsUsableOnce { get; set; }
     
         /// <summary>
         /// Gets or sets maximum lifetime in minutes.
+        /// Maximum lifetime in minutes for any temporaryAccessPass created in the tenant. Value can be between 10 and 43200 minutes (equivalent to 30 days).
         /// </summary>
         [JsonPropertyName("maximumLifetimeInMinutes")]
         public Int32? MaximumLifetimeInMinutes { get; set; }
     
         /// <summary>
         /// Gets or sets minimum lifetime in minutes.
+        /// Minimum lifetime in minutes for any temporaryAccessPass created in the tenant. Value can be between 10 and 43200 minutes (equivalent to 30 days).
         /// </summary>
         [JsonPropertyName("minimumLifetimeInMinutes")]
         public Int32? MinimumLifetimeInMinutes { get; set; }
     
         /// <summary>
         /// Gets or sets include targets.
+        /// A collection of users or groups who are enabled to use the authentication method.
         /// </summary>
         [JsonPropertyName("includeTargets")]
         public ITemporaryAccessPassAuthenticationMethodConfigurationIncludeTargetsCollectionPage IncludeTargets { get; set; }

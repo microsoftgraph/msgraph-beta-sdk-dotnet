@@ -30,12 +30,14 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets review set.
+        /// eDiscovery review set to which items matching source collection query gets added.
         /// </summary>
         [JsonPropertyName("reviewSet")]
         public EdiscoveryReviewSet ReviewSet { get; set; }
     
         /// <summary>
         /// Gets or sets search.
+        /// eDiscovery search that gets added to review set.
         /// </summary>
         [JsonPropertyName("search")]
         public EdiscoverySearch Search { get; set; }

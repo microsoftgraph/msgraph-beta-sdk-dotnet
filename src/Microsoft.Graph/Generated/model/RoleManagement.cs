@@ -23,7 +23,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets directory.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("directory")]
         public RbacApplication Directory { get; set; }

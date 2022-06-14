@@ -29,7 +29,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created by.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("createdBy")]
         public UserIdentity CreatedBy { get; set; }
@@ -71,7 +70,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets documents.
-        /// Read-only.
         /// </summary>
         [JsonPropertyName("documents")]
         public IPrintJobDocumentsCollectionPage Documents { get; set; }

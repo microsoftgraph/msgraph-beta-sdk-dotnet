@@ -22,12 +22,14 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets custodian.
+        /// Custodians associated with the file.
         /// </summary>
         [JsonPropertyName("custodian")]
         public EdiscoveryCustodian Custodian { get; set; }
     
         /// <summary>
         /// Gets or sets tags.
+        /// Tags associated with the file.
         /// </summary>
         [JsonPropertyName("tags")]
         public IEdiscoveryFileTagsCollectionWithReferencesPage Tags { get; set; }

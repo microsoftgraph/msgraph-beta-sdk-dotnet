@@ -48,26 +48,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets an <see cref="IAttachment_v2RequestBuilder"/> for the specified TodoTaskAttachment_v2.
+        /// Gets an <see cref="IAttachmentBaseRequestBuilder"/> for the specified TodoTaskAttachmentBase.
         /// </summary>
-        /// <param name="id">The ID for the TodoTaskAttachment_v2.</param>
-        /// <returns>The <see cref="IAttachment_v2RequestBuilder"/>.</returns>
-        public IAttachment_v2RequestBuilder this[string id]
+        /// <param name="id">The ID for the TodoTaskAttachmentBase.</param>
+        /// <returns>The <see cref="IAttachmentBaseRequestBuilder"/>.</returns>
+        public IAttachmentBaseRequestBuilder this[string id]
         {
             get
             {
-                return new Attachment_v2RequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
+                return new AttachmentBaseRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
             }
         }
 
         /// <summary>
-        /// Gets the request builder for Attachment_v2CreateUploadSession.
+        /// Gets the request builder for AttachmentBaseCreateUploadSession.
         /// </summary>
-        /// <returns>The <see cref="IAttachment_v2CreateUploadSessionRequestBuilder"/>.</returns>
-        public IAttachment_v2CreateUploadSessionRequestBuilder CreateUploadSession(
+        /// <returns>The <see cref="IAttachmentBaseCreateUploadSessionRequestBuilder"/>.</returns>
+        public IAttachmentBaseCreateUploadSessionRequestBuilder CreateUploadSession(
             AttachmentInfo attachmentInfo)
         {
-            return new Attachment_v2CreateUploadSessionRequestBuilder(
+            return new AttachmentBaseCreateUploadSessionRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.createUploadSession"),
                 this.Client,
                 attachmentInfo);

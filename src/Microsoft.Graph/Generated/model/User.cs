@@ -876,7 +876,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets joined groups.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("joinedGroups")]
         public IUserJoinedGroupsCollectionPage JoinedGroups { get; set; }
@@ -1165,21 +1164,18 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets insights.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("insights")]
         public ItemInsights Insights { get; set; }
     
         /// <summary>
         /// Gets or sets settings.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("settings")]
         public UserSettings Settings { get; set; }
     
         /// <summary>
         /// Gets or sets onenote.
-        /// Read-only.
         /// </summary>
         [JsonPropertyName("onenote")]
         public Onenote Onenote { get; set; }
@@ -1193,7 +1189,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets photos.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("photos")]
         public IUserPhotosCollectionPage Photos { get; set; }
@@ -1260,7 +1255,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets authentication.
-        /// TODO: Add Description
+        /// The authentication methods that are supported for the user.
         /// </summary>
         [JsonPropertyName("authentication")]
         public Authentication Authentication { get; set; }

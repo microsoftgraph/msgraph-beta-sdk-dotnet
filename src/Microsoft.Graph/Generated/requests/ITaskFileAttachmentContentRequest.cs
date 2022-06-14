@@ -15,9 +15,9 @@ namespace Microsoft.Graph
     using System.Threading;
 
     /// <summary>
-    /// The interface IAttachment_v2ContentRequest.
+    /// The interface ITaskFileAttachmentContentRequest.
     /// </summary>
-    public partial interface IAttachment_v2ContentRequest : IBaseRequest
+    public partial interface ITaskFileAttachmentContentRequest : IBaseRequest
     {
 
         /// <summary>

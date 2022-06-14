@@ -30,6 +30,7 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets files.
+        /// Represents files within the review set.
         /// </summary>
         [JsonPropertyName("files")]
         public IEdiscoveryReviewSetFilesCollectionPage Files { get; set; }
@@ -43,6 +44,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets queries.
+        /// Represents queries within the review set.
         /// </summary>
         [JsonPropertyName("queries")]
         public IEdiscoveryReviewSetQueriesCollectionPage Queries { get; set; }

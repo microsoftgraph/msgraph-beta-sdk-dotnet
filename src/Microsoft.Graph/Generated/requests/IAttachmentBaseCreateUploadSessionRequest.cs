@@ -16,14 +16,14 @@ namespace Microsoft.Graph
     using System.Threading;
 
     /// <summary>
-    /// The interface IAttachment_v2CreateUploadSessionRequest.
+    /// The interface IAttachmentBaseCreateUploadSessionRequest.
     /// </summary>
-    public partial interface IAttachment_v2CreateUploadSessionRequest : IBaseRequest
+    public partial interface IAttachmentBaseCreateUploadSessionRequest : IBaseRequest
     {
         /// <summary>
         /// Gets the request body.
         /// </summary>
-        Attachment_v2CreateUploadSessionRequestBody RequestBody { get; }
+        AttachmentBaseCreateUploadSessionRequestBody RequestBody { get; }
 
 
         /// <summary>
@@ -48,13 +48,13 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The expand value.</param>
         /// <returns>The request object to send.</returns>
-        IAttachment_v2CreateUploadSessionRequest Expand(string value);
+        IAttachmentBaseCreateUploadSessionRequest Expand(string value);
 
         /// <summary>
         /// Adds the specified select value to the request.
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
-        IAttachment_v2CreateUploadSessionRequest Select(string value);
+        IAttachmentBaseCreateUploadSessionRequest Select(string value);
     }
 }

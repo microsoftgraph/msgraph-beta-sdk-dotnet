@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// The interface ITodoTaskAttachmentsCollectionPage.
     /// </summary>
     [InterfaceConverter(typeof(InterfaceConverter<TodoTaskAttachmentsCollectionPage>))]
-    public interface ITodoTaskAttachmentsCollectionPage : ICollectionPage<Attachment_v2>
+    public interface ITodoTaskAttachmentsCollectionPage : ICollectionPage<AttachmentBase>
     {
         /// <summary>
         /// Gets the next page <see cref="ITodoTaskAttachmentsCollectionRequest"/> instance.

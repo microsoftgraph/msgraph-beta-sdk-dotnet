@@ -12,16 +12,16 @@ namespace Microsoft.Graph
     using System.Collections.Generic;
 
     /// <summary>
-    /// The type Attachment_v2ContentRequestBuilder.
+    /// The type AttachmentBaseContentRequestBuilder.
     /// </summary>
-    public partial class Attachment_v2ContentRequestBuilder : BaseRequestBuilder, IAttachment_v2ContentRequestBuilder
+    public partial class AttachmentBaseContentRequestBuilder : BaseRequestBuilder, IAttachmentBaseContentRequestBuilder
     {
         /// <summary>
-        /// Constructs a new Attachment_v2ContentRequestBuilder.
+        /// Constructs a new AttachmentBaseContentRequestBuilder.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        public Attachment_v2ContentRequestBuilder(
+        public AttachmentBaseContentRequestBuilder(
             string requestUrl,
             IBaseClient client)
             : base(requestUrl, client)
@@ -33,9 +33,9 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public IAttachment_v2ContentRequest Request(IEnumerable<Option> options = null)
+        public IAttachmentBaseContentRequest Request(IEnumerable<Option> options = null)
         {
-            return new Attachment_v2ContentRequest(this.RequestUrl, this.Client, options);
+            return new AttachmentBaseContentRequest(this.RequestUrl, this.Client, options);
         }
     }
 }

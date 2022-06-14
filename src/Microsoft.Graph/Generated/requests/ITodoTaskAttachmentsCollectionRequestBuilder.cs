@@ -30,17 +30,17 @@ namespace Microsoft.Graph
         ITodoTaskAttachmentsCollectionRequest Request(IEnumerable<Option> options);
 
         /// <summary>
-        /// Gets an <see cref="IAttachment_v2RequestBuilder"/> for the specified Attachment_v2.
+        /// Gets an <see cref="IAttachmentBaseRequestBuilder"/> for the specified AttachmentBase.
         /// </summary>
-        /// <param name="id">The ID for the Attachment_v2.</param>
-        /// <returns>The <see cref="IAttachment_v2RequestBuilder"/>.</returns>
-        IAttachment_v2RequestBuilder this[string id] { get; }
+        /// <param name="id">The ID for the AttachmentBase.</param>
+        /// <returns>The <see cref="IAttachmentBaseRequestBuilder"/>.</returns>
+        IAttachmentBaseRequestBuilder this[string id] { get; }
 
         /// <summary>
-        /// Gets the request builder for Attachment_v2CreateUploadSession.
+        /// Gets the request builder for AttachmentBaseCreateUploadSession.
         /// </summary>
-        /// <returns>The <see cref="IAttachment_v2CreateUploadSessionRequestBuilder"/>.</returns>
-        IAttachment_v2CreateUploadSessionRequestBuilder CreateUploadSession(
+        /// <returns>The <see cref="IAttachmentBaseCreateUploadSessionRequestBuilder"/>.</returns>
+        IAttachmentBaseCreateUploadSessionRequestBuilder CreateUploadSession(
             AttachmentInfo attachmentInfo);
     }
 }

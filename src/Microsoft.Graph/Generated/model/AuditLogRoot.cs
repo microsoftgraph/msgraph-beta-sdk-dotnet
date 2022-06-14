@@ -22,7 +22,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets directory audits.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("directoryAudits")]
         public IAuditLogRootDirectoryAuditsCollectionPage DirectoryAudits { get; set; }
@@ -75,7 +74,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sign ins.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("signIns")]
         public IAuditLogRootSignInsCollectionPage SignIns { get; set; }

@@ -22,18 +22,21 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets ocr.
+        /// The OCR (Optical Character Recognition) settings for the case.
         /// </summary>
         [JsonPropertyName("ocr")]
         public OcrSettings Ocr { get; set; }
     
         /// <summary>
         /// Gets or sets redundancy detection.
+        /// The redundancy (near duplicate and email threading) detection settings for the case.
         /// </summary>
         [JsonPropertyName("redundancyDetection")]
         public RedundancyDetectionSettings RedundancyDetection { get; set; }
     
         /// <summary>
         /// Gets or sets topic modeling.
+        /// The Topic Modeling (Themes) settings for the case.
         /// </summary>
         [JsonPropertyName("topicModeling")]
         public TopicModelingSettings TopicModeling { get; set; }

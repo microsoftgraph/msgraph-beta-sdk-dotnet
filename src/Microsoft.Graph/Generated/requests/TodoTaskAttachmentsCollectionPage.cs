@@ -14,7 +14,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type TodoTaskAttachmentsCollectionPage.
     /// </summary>
-    public partial class TodoTaskAttachmentsCollectionPage : CollectionPage<Attachment_v2>, ITodoTaskAttachmentsCollectionPage
+    public partial class TodoTaskAttachmentsCollectionPage : CollectionPage<AttachmentBase>, ITodoTaskAttachmentsCollectionPage
     {
         /// <summary>
         /// Gets the next page <see cref="ITodoTaskAttachmentsCollectionRequest"/> instance.

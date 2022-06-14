@@ -100,7 +100,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets outcomes.
-        /// Read-Write. Nullable.
         /// </summary>
         [JsonPropertyName("outcomes")]
         public IEducationSubmissionOutcomesCollectionPage Outcomes { get; set; }
@@ -114,7 +113,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets resources.
-        /// Nullable.
         /// </summary>
         [JsonPropertyName("resources")]
         public IEducationSubmissionResourcesCollectionPage Resources { get; set; }
@@ -128,7 +126,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets submitted resources.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("submittedResources")]
         public IEducationSubmissionSubmittedResourcesCollectionPage SubmittedResources { get; set; }

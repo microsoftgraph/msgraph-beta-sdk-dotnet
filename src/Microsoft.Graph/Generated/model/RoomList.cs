@@ -37,7 +37,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets rooms.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("rooms")]
         public IRoomListRoomsCollectionPage Rooms { get; set; }

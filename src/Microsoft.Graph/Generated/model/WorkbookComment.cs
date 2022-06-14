@@ -36,7 +36,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets replies.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("replies")]
         public IWorkbookCommentRepliesCollectionPage Replies { get; set; }

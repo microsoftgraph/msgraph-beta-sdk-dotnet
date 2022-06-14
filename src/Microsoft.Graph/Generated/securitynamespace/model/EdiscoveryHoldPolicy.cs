@@ -30,18 +30,21 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets content query.
+        /// KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.
         /// </summary>
         [JsonPropertyName("contentQuery")]
         public string ContentQuery { get; set; }
     
         /// <summary>
         /// Gets or sets errors.
+        /// Lists any errors that happened while placing the hold.
         /// </summary>
         [JsonPropertyName("errors")]
         public IEnumerable<string> Errors { get; set; }
     
         /// <summary>
         /// Gets or sets is enabled.
+        /// Indicates whether the hold is enabled and actively holding content.
         /// </summary>
         [JsonPropertyName("isEnabled")]
         public bool? IsEnabled { get; set; }
