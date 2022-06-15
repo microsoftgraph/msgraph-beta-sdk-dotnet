@@ -50,7 +50,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package resource.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("accessPackageResource")]
         public AccessPackageResource AccessPackageResource { get; set; }

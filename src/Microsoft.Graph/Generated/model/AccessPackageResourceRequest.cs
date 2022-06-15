@@ -63,7 +63,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets request status.
-        /// Read-only.
         /// </summary>
         [JsonPropertyName("requestStatus")]
         public string RequestStatus { get; set; }
@@ -77,7 +76,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package resource.
-        /// Nullable.
         /// </summary>
         [JsonPropertyName("accessPackageResource")]
         public AccessPackageResource AccessPackageResource { get; set; }

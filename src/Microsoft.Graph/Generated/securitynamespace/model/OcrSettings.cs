@@ -23,18 +23,21 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets isEnabled.
+        /// Indicates whether or not OCR is enabled for the case.
         /// </summary>
         [JsonPropertyName("isEnabled")]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets maxImageSize.
+        /// Maximum image size that will be processed in KB).
         /// </summary>
         [JsonPropertyName("maxImageSize")]
         public Int32? MaxImageSize { get; set; }
     
         /// <summary>
         /// Gets or sets timeout.
+        /// The timeout duration for the OCR engine. A longer timeout may increase success of OCR, but may add to the total processing time.
         /// </summary>
         [JsonPropertyName("timeout")]
         public Microsoft.Graph.Duration Timeout { get; set; }

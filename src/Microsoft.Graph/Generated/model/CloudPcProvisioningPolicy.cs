@@ -22,6 +22,18 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets alternate resource url.
+        /// </summary>
+        [JsonPropertyName("alternateResourceUrl")]
+        public string AlternateResourceUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets cloud pc group display name.
+        /// </summary>
+        [JsonPropertyName("cloudPcGroupDisplayName")]
+        public string CloudPcGroupDisplayName { get; set; }
+    
+        /// <summary>
         /// Gets or sets description.
         /// The provisioning policy description.
         /// </summary>
@@ -43,6 +55,12 @@ namespace Microsoft.Graph
         public CloudPcDomainJoinConfiguration DomainJoinConfiguration { get; set; }
     
         /// <summary>
+        /// Gets or sets grace period in hours.
+        /// </summary>
+        [JsonPropertyName("gracePeriodInHours")]
+        public Int32? GracePeriodInHours { get; set; }
+    
+        /// <summary>
         /// Gets or sets image display name.
         /// The display name for the OS image you’re provisioning.
         /// </summary>
@@ -62,6 +80,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("imageType")]
         public CloudPcProvisioningPolicyImageType? ImageType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets local admin enabled.
+        /// </summary>
+        [JsonPropertyName("localAdminEnabled")]
+        public bool? LocalAdminEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets managed by.
+        /// </summary>
+        [JsonPropertyName("managedBy")]
+        public CloudPcManagementService? ManagedBy { get; set; }
     
         /// <summary>
         /// Gets or sets microsoft managed desktop.

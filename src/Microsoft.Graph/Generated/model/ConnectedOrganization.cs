@@ -79,7 +79,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets external sponsors.
-        /// Nullable.
         /// </summary>
         [JsonPropertyName("externalSponsors")]
         public IConnectedOrganizationExternalSponsorsCollectionPage ExternalSponsors { get; set; }
@@ -93,7 +92,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets internal sponsors.
-        /// Nullable.
         /// </summary>
         [JsonPropertyName("internalSponsors")]
         public IConnectedOrganizationInternalSponsorsCollectionPage InternalSponsors { get; set; }

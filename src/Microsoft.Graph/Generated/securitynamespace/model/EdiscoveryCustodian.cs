@@ -30,24 +30,28 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets acknowledged date time.
+        /// Date and time the custodian acknowledged a hold notification.
         /// </summary>
         [JsonPropertyName("acknowledgedDateTime")]
         public DateTimeOffset? AcknowledgedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets email.
+        /// Email address of the custodian.
         /// </summary>
         [JsonPropertyName("email")]
         public string Email { get; set; }
     
         /// <summary>
         /// Gets or sets last index operation.
+        /// Operation entity that represents the latest indexing for the custodian.
         /// </summary>
         [JsonPropertyName("lastIndexOperation")]
         public EdiscoveryIndexOperation LastIndexOperation { get; set; }
     
         /// <summary>
         /// Gets or sets site sources.
+        /// Data source entity for SharePoint sites associated with the custodian.
         /// </summary>
         [JsonPropertyName("siteSources")]
         public IEdiscoveryCustodianSiteSourcesCollectionPage SiteSources { get; set; }
@@ -61,6 +65,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets unified group sources.
+        /// Data source entity for groups associated with the custodian.
         /// </summary>
         [JsonPropertyName("unifiedGroupSources")]
         public IEdiscoveryCustodianUnifiedGroupSourcesCollectionPage UnifiedGroupSources { get; set; }
@@ -74,6 +79,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets user sources.
+        /// Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
         /// </summary>
         [JsonPropertyName("userSources")]
         public IEdiscoveryCustodianUserSourcesCollectionPage UserSources { get; set; }

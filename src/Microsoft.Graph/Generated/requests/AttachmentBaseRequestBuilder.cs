@@ -14,17 +14,17 @@ namespace Microsoft.Graph
     using System.IO;
 
     /// <summary>
-    /// The type Attachment_v2RequestBuilder.
+    /// The type AttachmentBaseRequestBuilder.
     /// </summary>
-    public partial class Attachment_v2RequestBuilder : EntityRequestBuilder, IAttachment_v2RequestBuilder
+    public partial class AttachmentBaseRequestBuilder : EntityRequestBuilder, IAttachmentBaseRequestBuilder
     {
 
         /// <summary>
-        /// Constructs a new Attachment_v2RequestBuilder.
+        /// Constructs a new AttachmentBaseRequestBuilder.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        public Attachment_v2RequestBuilder(
+        public AttachmentBaseRequestBuilder(
             string requestUrl,
             IBaseClient client)
             : base(requestUrl, client)
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IAttachment_v2Request Request()
+        public new IAttachmentBaseRequest Request()
         {
             return this.Request(null);
         }
@@ -45,20 +45,20 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IAttachment_v2Request Request(IEnumerable<Option> options)
+        public new IAttachmentBaseRequest Request(IEnumerable<Option> options)
         {
-            return new Attachment_v2Request(this.RequestUrl, this.Client, options);
+            return new AttachmentBaseRequest(this.RequestUrl, this.Client, options);
         }
     
         /// <summary>
         /// Gets the request builder for Content.
         /// </summary>
-        /// <returns>The <see cref="IAttachment_v2ContentRequestBuilder"/>.</returns>
-        public IAttachment_v2ContentRequestBuilder Content
+        /// <returns>The <see cref="IAttachmentBaseContentRequestBuilder"/>.</returns>
+        public IAttachmentBaseContentRequestBuilder Content
         {
             get
             {
-                return new Attachment_v2ContentRequestBuilder(this.AppendSegmentToRequestUrl("$value"), this.Client);
+                return new AttachmentBaseContentRequestBuilder(this.AppendSegmentToRequestUrl("$value"), this.Client);
             }
         }
     

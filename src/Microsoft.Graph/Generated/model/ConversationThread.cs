@@ -78,7 +78,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets posts.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("posts")]
         public IConversationThreadPostsCollectionPage Posts { get; set; }

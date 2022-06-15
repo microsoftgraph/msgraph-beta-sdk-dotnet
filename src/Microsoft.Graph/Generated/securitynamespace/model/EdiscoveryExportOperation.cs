@@ -31,30 +31,35 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets azure blob container.
+        /// The name of the Azure storage location where the export will be stored. This only applies to exports stored in your own Azure storage location.
         /// </summary>
         [JsonPropertyName("azureBlobContainer")]
         public string AzureBlobContainer { get; set; }
     
         /// <summary>
         /// Gets or sets azure blob token.
+        /// The SAS token for the Azure storage location.  This only applies to exports stored in your own Azure storage location.
         /// </summary>
         [JsonPropertyName("azureBlobToken")]
         public string AzureBlobToken { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// The description provided for the export.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets export options.
+        /// The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.
         /// </summary>
         [JsonPropertyName("exportOptions")]
         public ExportOptions? ExportOptions { get; set; }
     
         /// <summary>
         /// Gets or sets export structure.
+        /// The options provided that specify the structure of the export. For more details, see reviewSet: export. Possible values are: none, directory, pst.
         /// </summary>
         [JsonPropertyName("exportStructure")]
         public ExportFileStructure? ExportStructure { get; set; }
@@ -67,18 +72,21 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets output name.
+        /// The name provided for the export.
         /// </summary>
         [JsonPropertyName("outputName")]
         public string OutputName { get; set; }
     
         /// <summary>
         /// Gets or sets review set.
+        /// Review set from where documents are exported.
         /// </summary>
         [JsonPropertyName("reviewSet")]
         public EdiscoveryReviewSet ReviewSet { get; set; }
     
         /// <summary>
         /// Gets or sets review set query.
+        /// The review set query which is used to filter the documents for export.
         /// </summary>
         [JsonPropertyName("reviewSetQuery")]
         public EdiscoveryReviewSetQuery ReviewSetQuery { get; set; }

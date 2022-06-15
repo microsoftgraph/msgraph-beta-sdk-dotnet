@@ -22,7 +22,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created by.
-        /// Read-only.
         /// </summary>
         [JsonPropertyName("createdBy")]
         public string CreatedBy { get; set; }
@@ -36,7 +35,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets modified by.
-        /// Read-only.
         /// </summary>
         [JsonPropertyName("modifiedBy")]
         public string ModifiedBy { get; set; }
@@ -57,7 +55,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package resource scope.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("accessPackageResourceScope")]
         public AccessPackageResourceScope AccessPackageResourceScope { get; set; }

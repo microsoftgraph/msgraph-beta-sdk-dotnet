@@ -72,7 +72,6 @@ namespace Microsoft.Graph.ExternalConnectors
     
         /// <summary>
         /// Gets or sets groups.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("groups")]
         public IExternalConnectionGroupsCollectionPage Groups { get; set; }
@@ -86,7 +85,6 @@ namespace Microsoft.Graph.ExternalConnectors
     
         /// <summary>
         /// Gets or sets items.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("items")]
         public IExternalConnectionItemsCollectionPage Items { get; set; }
@@ -100,7 +98,6 @@ namespace Microsoft.Graph.ExternalConnectors
     
         /// <summary>
         /// Gets or sets operations.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("operations")]
         public IExternalConnectionOperationsCollectionPage Operations { get; set; }
@@ -114,14 +111,12 @@ namespace Microsoft.Graph.ExternalConnectors
     
         /// <summary>
         /// Gets or sets quota.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("quota")]
         public ConnectionQuota Quota { get; set; }
     
         /// <summary>
         /// Gets or sets schema.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("schema")]
         public Schema Schema { get; set; }

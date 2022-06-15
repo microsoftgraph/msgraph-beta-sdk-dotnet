@@ -30,12 +30,14 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets data source.
+        /// User source or SharePoint site data source as non-custodial data source.
         /// </summary>
         [JsonPropertyName("dataSource")]
         public DataSource DataSource { get; set; }
     
         /// <summary>
         /// Gets or sets last index operation.
+        /// Operation entity that represents the latest indexing for the non-custodial data source.
         /// </summary>
         [JsonPropertyName("lastIndexOperation")]
         public EdiscoveryIndexOperation LastIndexOperation { get; set; }

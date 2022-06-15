@@ -61,6 +61,12 @@ namespace Microsoft.Graph
         [JsonConverter(typeof(NextLinkConverter))]
         public string DevicesNextLink { get; set; }
     
+        /// <summary>
+        /// Gets or sets teams app settings.
+        /// </summary>
+        [JsonPropertyName("teamsAppSettings")]
+        public TeamsAppSettings TeamsAppSettings { get; set; }
+    
     }
 }
 

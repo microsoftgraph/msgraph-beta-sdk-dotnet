@@ -16,115 +16,115 @@ namespace Microsoft.Graph
     using System.Linq.Expressions;
 
     /// <summary>
-    /// The interface IFileAttachment_v2Request.
+    /// The interface IAttachmentBaseRequest.
     /// </summary>
-    public partial interface IFileAttachment_v2Request : IBaseRequest
+    public partial interface IAttachmentBaseRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified FileAttachment_v2 using POST.
+        /// Creates the specified AttachmentBase using POST.
         /// </summary>
-        /// <param name="fileAttachment_v2ToCreate">The FileAttachment_v2 to create.</param>
+        /// <param name="attachmentBaseToCreate">The AttachmentBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created FileAttachment_v2.</returns>
-        System.Threading.Tasks.Task<FileAttachment_v2> CreateAsync(FileAttachment_v2 fileAttachment_v2ToCreate, CancellationToken cancellationToken = default);
+        /// <returns>The created AttachmentBase.</returns>
+        System.Threading.Tasks.Task<AttachmentBase> CreateAsync(AttachmentBase attachmentBaseToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Creates the specified FileAttachment_v2 using POST and returns a <see cref="GraphResponse{FileAttachment_v2}"/> object.
+        /// Creates the specified AttachmentBase using POST and returns a <see cref="GraphResponse{AttachmentBase}"/> object.
         /// </summary>
-        /// <param name="fileAttachment_v2ToCreate">The FileAttachment_v2 to create.</param>
+        /// <param name="attachmentBaseToCreate">The AttachmentBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{FileAttachment_v2}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<FileAttachment_v2>> CreateResponseAsync(FileAttachment_v2 fileAttachment_v2ToCreate, CancellationToken cancellationToken = default);
+        /// <returns>The <see cref="GraphResponse{AttachmentBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AttachmentBase>> CreateResponseAsync(AttachmentBase attachmentBaseToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Deletes the specified FileAttachment_v2.
+        /// Deletes the specified AttachmentBase.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Deletes the specified FileAttachment_v2 and returns a <see cref="GraphResponse"/> object.
+        /// Deletes the specified AttachmentBase and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
         System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified FileAttachment_v2.
+        /// Gets the specified AttachmentBase.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The FileAttachment_v2.</returns>
-        System.Threading.Tasks.Task<FileAttachment_v2> GetAsync(CancellationToken cancellationToken = default);
+        /// <returns>The AttachmentBase.</returns>
+        System.Threading.Tasks.Task<AttachmentBase> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified FileAttachment_v2 and returns a <see cref="GraphResponse{FileAttachment_v2}"/> object.
+        /// Gets the specified AttachmentBase and returns a <see cref="GraphResponse{AttachmentBase}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{FileAttachment_v2}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<FileAttachment_v2>> GetResponseAsync(CancellationToken cancellationToken = default);
+        /// <returns>The <see cref="GraphResponse{AttachmentBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AttachmentBase>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified FileAttachment_v2 using PATCH.
+        /// Updates the specified AttachmentBase using PATCH.
         /// </summary>
-        /// <param name="fileAttachment_v2ToUpdate">The FileAttachment_v2 to update.</param>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The updated FileAttachment_v2.</returns>
-        System.Threading.Tasks.Task<FileAttachment_v2> UpdateAsync(FileAttachment_v2 fileAttachment_v2ToUpdate, CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Updates the specified FileAttachment_v2 using PATCH and returns a <see cref="GraphResponse{FileAttachment_v2}"/> object.
-        /// </summary>
-        /// <param name="fileAttachment_v2ToUpdate">The FileAttachment_v2 to update.</param>
+        /// <param name="attachmentBaseToUpdate">The AttachmentBase to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The <see cref="GraphResponse{FileAttachment_v2}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<FileAttachment_v2>> UpdateResponseAsync(FileAttachment_v2 fileAttachment_v2ToUpdate, CancellationToken cancellationToken = default);
+        /// <returns>The updated AttachmentBase.</returns>
+        System.Threading.Tasks.Task<AttachmentBase> UpdateAsync(AttachmentBase attachmentBaseToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified FileAttachment_v2 using PUT.
+        /// Updates the specified AttachmentBase using PATCH and returns a <see cref="GraphResponse{AttachmentBase}"/> object.
         /// </summary>
-        /// <param name="fileAttachment_v2ToUpdate">The FileAttachment_v2 object to update.</param>
+        /// <param name="attachmentBaseToUpdate">The AttachmentBase to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AttachmentBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AttachmentBase>> UpdateResponseAsync(AttachmentBase attachmentBaseToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AttachmentBase using PUT.
+        /// </summary>
+        /// <param name="attachmentBaseToUpdate">The AttachmentBase object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<FileAttachment_v2> PutAsync(FileAttachment_v2 fileAttachment_v2ToUpdate, CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<AttachmentBase> PutAsync(AttachmentBase attachmentBaseToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified FileAttachment_v2 using PUT and returns a <see cref="GraphResponse{FileAttachment_v2}"/> object.
+        /// Updates the specified AttachmentBase using PUT and returns a <see cref="GraphResponse{AttachmentBase}"/> object.
         /// </summary>
-        /// <param name="fileAttachment_v2ToUpdate">The FileAttachment_v2 object to update.</param>
+        /// <param name="attachmentBaseToUpdate">The AttachmentBase object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task of <see cref="GraphResponse{FileAttachment_v2}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<FileAttachment_v2>> PutResponseAsync(FileAttachment_v2 fileAttachment_v2ToUpdate, CancellationToken cancellationToken = default);
+        /// <returns>The task of <see cref="GraphResponse{AttachmentBase}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AttachmentBase>> PutResponseAsync(AttachmentBase attachmentBaseToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>
         /// <returns>The request object to send.</returns>
-        IFileAttachment_v2Request Expand(string value);
+        IAttachmentBaseRequest Expand(string value);
 
         /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        IFileAttachment_v2Request Expand(Expression<Func<FileAttachment_v2, object>> expandExpression);
+        IAttachmentBaseRequest Expand(Expression<Func<AttachmentBase, object>> expandExpression);
 
         /// <summary>
         /// Adds the specified select value to the request.
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
-        IFileAttachment_v2Request Select(string value);
+        IAttachmentBaseRequest Select(string value);
 
         /// <summary>
         /// Adds the specified select value to the request.
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        IFileAttachment_v2Request Select(Expression<Func<FileAttachment_v2, object>> selectExpression);
+        IAttachmentBaseRequest Select(Expression<Func<AttachmentBase, object>> selectExpression);
 
     }
 }

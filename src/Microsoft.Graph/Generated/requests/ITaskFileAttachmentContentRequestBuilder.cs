@@ -12,15 +12,15 @@ namespace Microsoft.Graph
     using System.Collections.Generic;
 
     /// <summary>
-    /// The interface IFileAttachment_v2ContentRequestBuilder.
+    /// The interface ITaskFileAttachmentContentRequestBuilder.
     /// </summary>
-    public partial interface IFileAttachment_v2ContentRequestBuilder
+    public partial interface ITaskFileAttachmentContentRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        IFileAttachment_v2ContentRequest Request(IEnumerable<Option> options = null);
+        ITaskFileAttachmentContentRequest Request(IEnumerable<Option> options = null);
     }
 }

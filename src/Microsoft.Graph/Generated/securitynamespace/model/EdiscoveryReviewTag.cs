@@ -31,12 +31,14 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets child selectability.
+        /// Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
         /// </summary>
         [JsonPropertyName("childSelectability")]
         public ChildSelectability? ChildSelectability { get; set; }
     
         /// <summary>
         /// Gets or sets child tags.
+        /// Returns the tags that are a child of a tag.
         /// </summary>
         [JsonPropertyName("childTags")]
         public IEdiscoveryReviewTagChildTagsCollectionWithReferencesPage ChildTags { get; set; }
@@ -50,6 +52,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets parent.
+        /// Returns the parent tag of the specified tag.
         /// </summary>
         [JsonPropertyName("parent")]
         public EdiscoveryReviewTag Parent { get; set; }

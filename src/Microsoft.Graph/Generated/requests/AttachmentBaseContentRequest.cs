@@ -15,17 +15,17 @@ namespace Microsoft.Graph
     using System.Threading;
 
     /// <summary>
-    /// The type Attachment_v2ContentRequest.
+    /// The type AttachmentBaseContentRequest.
     /// </summary>
-    public partial class Attachment_v2ContentRequest : BaseRequest, IAttachment_v2ContentRequest
+    public partial class AttachmentBaseContentRequest : BaseRequest, IAttachmentBaseContentRequest
     {
         /// <summary>
-        /// Constructs a new Attachment_v2ContentRequest.
+        /// Constructs a new AttachmentBaseContentRequest.
         /// <param name="requestUrl">The request URL.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="options">Query option name value pairs for the request.</param>
         /// </summary>
-        public Attachment_v2ContentRequest(
+        public AttachmentBaseContentRequest(
             string requestUrl,
             IBaseClient client,
             IEnumerable<Option> options)

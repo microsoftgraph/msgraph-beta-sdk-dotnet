@@ -23,24 +23,28 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets dynamicallyAdjustTopicCount.
+        /// To learn more, see Adjust maximum number of themes dynamically.
         /// </summary>
         [JsonPropertyName("dynamicallyAdjustTopicCount")]
         public bool? DynamicallyAdjustTopicCount { get; set; }
     
         /// <summary>
         /// Gets or sets ignoreNumbers.
+        /// To learn more, see Include numbers in themes.
         /// </summary>
         [JsonPropertyName("ignoreNumbers")]
         public bool? IgnoreNumbers { get; set; }
     
         /// <summary>
         /// Gets or sets isEnabled.
+        /// Indicates whether themes is enabled for the case.
         /// </summary>
         [JsonPropertyName("isEnabled")]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets topicCount.
+        /// To learn more, see Maximum number of themes.
         /// </summary>
         [JsonPropertyName("topicCount")]
         public Int32? TopicCount { get; set; }

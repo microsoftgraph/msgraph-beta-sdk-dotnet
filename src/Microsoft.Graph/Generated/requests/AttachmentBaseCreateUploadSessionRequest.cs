@@ -16,27 +16,27 @@ namespace Microsoft.Graph
     using System.Threading;
 
     /// <summary>
-    /// The type Attachment_v2CreateUploadSessionRequest.
+    /// The type AttachmentBaseCreateUploadSessionRequest.
     /// </summary>
-    public partial class Attachment_v2CreateUploadSessionRequest : BaseRequest, IAttachment_v2CreateUploadSessionRequest
+    public partial class AttachmentBaseCreateUploadSessionRequest : BaseRequest, IAttachmentBaseCreateUploadSessionRequest
     {
         /// <summary>
-        /// Constructs a new Attachment_v2CreateUploadSessionRequest.
+        /// Constructs a new AttachmentBaseCreateUploadSessionRequest.
         /// </summary>
-        public Attachment_v2CreateUploadSessionRequest(
+        public AttachmentBaseCreateUploadSessionRequest(
             string requestUrl,
             IBaseClient client,
             IEnumerable<Option> options)
             : base(requestUrl, client, options)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
-            this.RequestBody = new Attachment_v2CreateUploadSessionRequestBody();
+            this.RequestBody = new AttachmentBaseCreateUploadSessionRequestBody();
         }
 
         /// <summary>
         /// Gets the request body.
         /// </summary>
-        public Attachment_v2CreateUploadSessionRequestBody RequestBody { get; private set; }
+        public AttachmentBaseCreateUploadSessionRequestBody RequestBody { get; private set; }
 
         /// <summary>
         /// Issues the POST request.
@@ -68,7 +68,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IAttachment_v2CreateUploadSessionRequest Expand(string value)
+        public IAttachmentBaseCreateUploadSessionRequest Expand(string value)
         {
             this.QueryOptions.Add(new QueryOption("$expand", value));
             return this;
@@ -79,7 +79,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
-        public IAttachment_v2CreateUploadSessionRequest Select(string value)
+        public IAttachmentBaseCreateUploadSessionRequest Select(string value)
         {
             this.QueryOptions.Add(new QueryOption("$select", value));
             return this;

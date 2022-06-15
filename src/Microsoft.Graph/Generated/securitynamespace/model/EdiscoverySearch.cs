@@ -31,12 +31,14 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets data source scopes.
+        /// When specified, the collection will span across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
         /// </summary>
         [JsonPropertyName("dataSourceScopes")]
         public DataSourceScopes? DataSourceScopes { get; set; }
     
         /// <summary>
         /// Gets or sets additional sources.
+        /// Adds an additional source to the eDiscovery search.
         /// </summary>
         [JsonPropertyName("additionalSources")]
         public IEdiscoverySearchAdditionalSourcesCollectionPage AdditionalSources { get; set; }
@@ -50,12 +52,14 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets add to review set operation.
+        /// Adds the results of the eDiscovery search to the specified reviewSet.
         /// </summary>
         [JsonPropertyName("addToReviewSetOperation")]
         public EdiscoveryAddToReviewSetOperation AddToReviewSetOperation { get; set; }
     
         /// <summary>
         /// Gets or sets custodian sources.
+        /// Custodian sources that are included in the eDiscovery search.
         /// </summary>
         [JsonPropertyName("custodianSources")]
         public IEdiscoverySearchCustodianSourcesCollectionWithReferencesPage CustodianSources { get; set; }
@@ -69,12 +73,14 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets last estimate statistics operation.
+        /// The last estimate operation associated with the eDiscovery search.
         /// </summary>
         [JsonPropertyName("lastEstimateStatisticsOperation")]
         public EdiscoveryEstimateOperation LastEstimateStatisticsOperation { get; set; }
     
         /// <summary>
         /// Gets or sets noncustodial sources.
+        /// noncustodialDataSource sources that are included in the eDiscovery search
         /// </summary>
         [JsonPropertyName("noncustodialSources")]
         public IEdiscoverySearchNoncustodialSourcesCollectionWithReferencesPage NoncustodialSources { get; set; }

@@ -31,36 +31,42 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets created date time.
+        /// Created date and time of the dataSourceContainer entity.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// Display name of the dataSourceContainer entity.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets hold status.
+        /// The hold status of the dataSourceContainer.The possible values are: notApplied, applied, applying, removing, partial
         /// </summary>
         [JsonPropertyName("holdStatus")]
         public DataSourceHoldStatus? HoldStatus { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
+        /// Last modified date and time of the dataSourceContainer.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets released date time.
+        /// Date and time that the dataSourceContainer was released from the case.
         /// </summary>
         [JsonPropertyName("releasedDateTime")]
         public DateTimeOffset? ReleasedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// Latest status of the dataSourceContainer. Possible values are: Active, Released.
         /// </summary>
         [JsonPropertyName("status")]
         public DataSourceContainerStatus? Status { get; set; }

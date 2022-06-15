@@ -99,14 +99,12 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package catalog.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("accessPackageCatalog")]
         public AccessPackageCatalog AccessPackageCatalog { get; set; }
     
         /// <summary>
         /// Gets or sets access package resource role scopes.
-        /// Nullable.
         /// </summary>
         [JsonPropertyName("accessPackageResourceRoleScopes")]
         public IAccessPackageAccessPackageResourceRoleScopesCollectionPage AccessPackageResourceRoleScopes { get; set; }

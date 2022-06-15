@@ -30,24 +30,28 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets closed by.
+        /// The user who closed the case.
         /// </summary>
         [JsonPropertyName("closedBy")]
         public Microsoft.Graph.IdentitySet ClosedBy { get; set; }
     
         /// <summary>
         /// Gets or sets closed date time.
+        /// The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
         [JsonPropertyName("closedDateTime")]
         public DateTimeOffset? ClosedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets external id.
+        /// The external case number for customer reference.
         /// </summary>
         [JsonPropertyName("externalId")]
         public string ExternalId { get; set; }
     
         /// <summary>
         /// Gets or sets custodians.
+        /// Returns a list of case ediscoveryCustodian objects for this case.
         /// </summary>
         [JsonPropertyName("custodians")]
         public IEdiscoveryCaseCustodiansCollectionPage Custodians { get; set; }
@@ -61,6 +65,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets legal holds.
+        /// Returns a list of case eDiscoveryHoldPolicy objects for this case.
         /// </summary>
         [JsonPropertyName("legalHolds")]
         public IEdiscoveryCaseLegalHoldsCollectionPage LegalHolds { get; set; }
@@ -74,6 +79,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets noncustodial data sources.
+        /// Returns a list of case ediscoveryNoncustodialDataSource objects for this case.
         /// </summary>
         [JsonPropertyName("noncustodialDataSources")]
         public IEdiscoveryCaseNoncustodialDataSourcesCollectionPage NoncustodialDataSources { get; set; }
@@ -87,6 +93,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets operations.
+        /// Returns a list of case caseOperation objects for this case.
         /// </summary>
         [JsonPropertyName("operations")]
         public IEdiscoveryCaseOperationsCollectionPage Operations { get; set; }
@@ -100,6 +107,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets review sets.
+        /// Returns a list of eDiscoveryReviewSet objects in the case.
         /// </summary>
         [JsonPropertyName("reviewSets")]
         public IEdiscoveryCaseReviewSetsCollectionPage ReviewSets { get; set; }
@@ -113,6 +121,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets searches.
+        /// Returns a list of eDiscoverySearch objects associated with this case.
         /// </summary>
         [JsonPropertyName("searches")]
         public IEdiscoveryCaseSearchesCollectionPage Searches { get; set; }
@@ -126,12 +135,14 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets settings.
+        /// Returns a list of eDIscoverySettings objects in the case.
         /// </summary>
         [JsonPropertyName("settings")]
         public EdiscoveryCaseSettings Settings { get; set; }
     
         /// <summary>
         /// Gets or sets tags.
+        /// Returns a list of ediscoveryReviewTag objects associated to this case.
         /// </summary>
         [JsonPropertyName("tags")]
         public IEdiscoveryCaseTagsCollectionPage Tags { get; set; }

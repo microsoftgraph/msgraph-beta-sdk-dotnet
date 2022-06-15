@@ -64,7 +64,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets enabled services.
-        /// Microsoft-provided services for the tenant (for example, Exchange online, Skype, Sharepoint).
+        /// Microsoft-provided services for the tenant (for example, Exchange online, Skype, SharePoint).
         /// </summary>
         [JsonPropertyName("enabledServices")]
         public IEnumerable<string> EnabledServices { get; set; }

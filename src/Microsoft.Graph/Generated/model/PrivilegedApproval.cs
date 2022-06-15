@@ -87,7 +87,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets role info.
-        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("roleInfo")]
         public PrivilegedRole RoleInfo { get; set; }

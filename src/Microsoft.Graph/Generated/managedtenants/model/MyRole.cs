@@ -23,12 +23,14 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets assignments.
+        /// A collection of role assignments for the managed tenant.
         /// </summary>
         [JsonPropertyName("assignments")]
         public IEnumerable<RoleAssignment> Assignments { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
+        /// The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }

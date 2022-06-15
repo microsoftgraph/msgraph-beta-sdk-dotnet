@@ -257,6 +257,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets my roles.
+        /// The collection of role assignments to a signed-in user for a managed tenant.
         /// </summary>
         [JsonPropertyName("myRoles")]
         public IManagedTenantMyRolesCollectionPage MyRoles { get; set; }

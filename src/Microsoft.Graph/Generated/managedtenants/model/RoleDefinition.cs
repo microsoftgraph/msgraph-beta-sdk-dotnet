@@ -23,18 +23,21 @@ namespace Microsoft.Graph.ManagedTenants
 
         /// <summary>
         /// Gets or sets description.
+        /// The description for the role.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
+        /// The display name for the role assignment.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets templateId.
+        /// The unique identifier for the template.
         /// </summary>
         [JsonPropertyName("templateId")]
         public string TemplateId { get; set; }

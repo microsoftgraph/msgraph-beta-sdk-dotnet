@@ -7,7 +7,7 @@
 
 // Template Source: EntityType.cs.tt
 
-namespace Microsoft.Graph.SecurityNamespace
+namespace Microsoft.Graph
 {
     using System;
     using System.Collections.Generic;
@@ -15,25 +15,16 @@ namespace Microsoft.Graph.SecurityNamespace
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type Site Source.
+    /// The type Teams App Settings.
     /// </summary>
-    public partial class SiteSource : DataSource
+    public partial class TeamsAppSettings : Entity
     {
     
-        ///<summary>
-        /// The SiteSource constructor
-        ///</summary>
-        public SiteSource()
-        {
-            this.ODataType = "microsoft.graph.security.siteSource";
-        }
-
         /// <summary>
-        /// Gets or sets site.
-        /// The SharePoint site associated with the siteSource.
+        /// Gets or sets is chat resource specific consent enabled.
         /// </summary>
-        [JsonPropertyName("site")]
-        public Microsoft.Graph.Site Site { get; set; }
+        [JsonPropertyName("isChatResourceSpecificConsentEnabled")]
+        public bool? IsChatResourceSpecificConsentEnabled { get; set; }
     
     }
 }

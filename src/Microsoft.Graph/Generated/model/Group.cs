@@ -689,7 +689,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets onenote.
-        /// Read-only.
         /// </summary>
         [JsonPropertyName("onenote")]
         public Onenote Onenote { get; set; }
