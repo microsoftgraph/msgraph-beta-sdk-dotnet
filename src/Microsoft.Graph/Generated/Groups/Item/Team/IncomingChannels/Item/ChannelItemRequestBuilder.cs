@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.IncomingChannels.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get incomingChannels from groups
+        /// List of channels shared with the team.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ChannelItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.IncomingChannels.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get incomingChannels from groups
+        /// List of channels shared with the team.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.IncomingChannels.Item {
             };
             return await RequestAdapter.SendAsync<Channel>(requestInfo, Channel.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get incomingChannels from groups</summary>
+        /// <summary>List of channels shared with the team.</summary>
         public class ChannelItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of privilegedRoleAssignment entities.</summary>
+    /// <summary>Provides operations to manage the collection of privilegedApproval entities.</summary>
     public class PrivilegedRoleAssignment : Entity, IParsable {
         /// <summary>The UTC DateTime when the temporary privileged role assignment will be expired. For permanent role assignment, the value is null.</summary>
         public DateTimeOffset? ExpirationDateTime {

@@ -6,7 +6,7 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class CloudPcProvisioningPolicy : Entity, IParsable {
-        /// <summary>The alternateResourceUrl property</summary>
+        /// <summary>The URL of the alternate resource that links to this provisioning policy. Read-only.</summary>
         public string AlternateResourceUrl {
             get { return BackingStore?.Get<string>(nameof(AlternateResourceUrl)); }
             set { BackingStore?.Set(nameof(AlternateResourceUrl), value); }
@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<CloudPcProvisioningPolicyAssignment>>(nameof(Assignments)); }
             set { BackingStore?.Set(nameof(Assignments), value); }
         }
-        /// <summary>The cloudPcGroupDisplayName property</summary>
+        /// <summary>The display name of the Cloud PC group that the Cloud PCs reside in. Read-only.</summary>
         public string CloudPcGroupDisplayName {
             get { return BackingStore?.Get<string>(nameof(CloudPcGroupDisplayName)); }
             set { BackingStore?.Set(nameof(CloudPcGroupDisplayName), value); }
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<CloudPcDomainJoinConfiguration>(nameof(DomainJoinConfiguration)); }
             set { BackingStore?.Set(nameof(DomainJoinConfiguration), value); }
         }
-        /// <summary>The gracePeriodInHours property</summary>
+        /// <summary>The number of hours to wait before reprovisioning/deprovisioning happens. Read-only.</summary>
         public int? GracePeriodInHours {
             get { return BackingStore?.Get<int?>(nameof(GracePeriodInHours)); }
             set { BackingStore?.Set(nameof(GracePeriodInHours), value); }
@@ -56,12 +56,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<CloudPcProvisioningPolicyImageType?>(nameof(ImageType)); }
             set { BackingStore?.Set(nameof(ImageType), value); }
         }
-        /// <summary>The localAdminEnabled property</summary>
+        /// <summary>Indicates whether the local admin option is enabled. If the local admin option is enabled, the end user can be an admin of the Cloud PC device. Read-only.</summary>
         public bool? LocalAdminEnabled {
             get { return BackingStore?.Get<bool?>(nameof(LocalAdminEnabled)); }
             set { BackingStore?.Set(nameof(LocalAdminEnabled), value); }
         }
-        /// <summary>The managedBy property</summary>
+        /// <summary>Specifies which services manage the Azure network connection. Possible values are: windows365, devBox, unknownFutureValue. Read-only.</summary>
         public CloudPcManagementService? ManagedBy {
             get { return BackingStore?.Get<CloudPcManagementService?>(nameof(ManagedBy)); }
             set { BackingStore?.Set(nameof(ManagedBy), value); }

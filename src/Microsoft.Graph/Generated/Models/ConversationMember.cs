@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>(nameof(DisplayName)); }
             set { BackingStore?.Set(nameof(DisplayName), value); }
         }
-        /// <summary>The roles for that user.</summary>
+        /// <summary>The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.</summary>
         public List<string> Roles {
             get { return BackingStore?.Get<List<string>>(nameof(Roles)); }
             set { BackingStore?.Set(nameof(Roles), value); }

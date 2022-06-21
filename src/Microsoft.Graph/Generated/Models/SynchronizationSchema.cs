@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class SynchronizationSchema : Entity, IParsable {
         /// <summary>Contains the collection of directories and all of their objects.</summary>
         public List<DirectoryDefinition> Directories {

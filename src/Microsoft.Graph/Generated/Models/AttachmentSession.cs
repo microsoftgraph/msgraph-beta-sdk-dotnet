@@ -16,10 +16,10 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpirationDateTime)); }
             set { BackingStore?.Set(nameof(ExpirationDateTime), value); }
         }
-        /// <summary>The nextExpectedRange property</summary>
-        public List<string> NextExpectedRange {
-            get { return BackingStore?.Get<List<string>>(nameof(NextExpectedRange)); }
-            set { BackingStore?.Set(nameof(NextExpectedRange), value); }
+        /// <summary>The nextExpectedRanges property</summary>
+        public List<string> NextExpectedRanges {
+            get { return BackingStore?.Get<List<string>>(nameof(NextExpectedRanges)); }
+            set { BackingStore?.Set(nameof(NextExpectedRanges), value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"content", n => { Content = n.GetByteArrayValue(); } },
                 {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"nextExpectedRange", n => { NextExpectedRange = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"nextExpectedRanges", n => { NextExpectedRanges = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteByteArrayValue("content", Content);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
-            writer.WriteCollectionOfPrimitiveValues<string>("nextExpectedRange", NextExpectedRange);
+            writer.WriteCollectionOfPrimitiveValues<string>("nextExpectedRanges", NextExpectedRanges);
         }
     }
 }

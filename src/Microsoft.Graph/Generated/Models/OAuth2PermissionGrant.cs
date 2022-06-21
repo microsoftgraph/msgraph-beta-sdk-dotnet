@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpiryTime)); }
             set { BackingStore?.Set(nameof(ExpiryTime), value); }
         }
-        /// <summary>The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.</summary>
+        /// <summary>The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal. Supports $filter (eq only).</summary>
         public string PrincipalId {
             get { return BackingStore?.Get<string>(nameof(PrincipalId)); }
             set { BackingStore?.Set(nameof(PrincipalId), value); }
         }
-        /// <summary>The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.</summary>
+        /// <summary>The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).</summary>
         public string ResourceId {
             get { return BackingStore?.Get<string>(nameof(ResourceId)); }
             set { BackingStore?.Set(nameof(ResourceId), value); }

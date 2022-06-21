@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class CrossTenantAccessPolicyConfigurationDefault : Entity, IParsable {
         /// <summary>Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.</summary>
         public CrossTenantAccessPolicyB2BSetting B2bCollaborationInbound {

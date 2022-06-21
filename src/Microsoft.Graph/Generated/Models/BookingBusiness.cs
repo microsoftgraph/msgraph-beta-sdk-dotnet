@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>(nameof(IsPublished)); }
             set { BackingStore?.Set(nameof(IsPublished), value); }
         }
-        /// <summary>The languageTag property</summary>
+        /// <summary>The language of the self service booking page</summary>
         public string LanguageTag {
             get { return BackingStore?.Get<string>(nameof(LanguageTag)); }
             set { BackingStore?.Set(nameof(LanguageTag), value); }
