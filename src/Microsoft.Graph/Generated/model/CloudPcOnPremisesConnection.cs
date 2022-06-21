@@ -44,6 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets alternate resource url.
+        /// The interface URL of the partner service's resource that links to this Azure network connection. Returned only on $select.
         /// </summary>
         [JsonPropertyName("alternateResourceUrl")]
         public string AlternateResourceUrl { get; set; }
@@ -57,14 +58,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets health check status.
-        /// The status of the most recent health check done on the Azure network connection. For example, if status is 'passed', the Azure network connection has passed all checks run by the service. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
+        /// The status of the most recent health check done on the Azure network connection. For example, if status is passed, the Azure network connection has passed all checks run by the service. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
         /// </summary>
         [JsonPropertyName("healthCheckStatus")]
         public CloudPcOnPremisesConnectionStatus? HealthCheckStatus { get; set; }
     
         /// <summary>
         /// Gets or sets health check status details.
-        /// The details of the connection's health checks and the corresponding results. Returned only on $select.For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+        /// The details of the connection's health checks and the corresponding results. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
         /// </summary>
         [JsonPropertyName("healthCheckStatusDetails")]
         public CloudPcOnPremisesConnectionStatusDetails HealthCheckStatusDetails { get; set; }
@@ -78,7 +79,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets managed by.
-        /// Specifies which services manage the Azure network connection. Possible values are: windows365, devBox and unknownFutureValue. Read-only.
+        /// Specifies which services manage the Azure network connection. Possible values are: windows365, devBox, unknownFutureValue. Read-only.
         /// </summary>
         [JsonPropertyName("managedBy")]
         public CloudPcManagementService? ManagedBy { get; set; }
@@ -92,14 +93,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets resource group id.
-        /// The ID of the target resource group. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}'.
+        /// The ID of the target resource group. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}.
         /// </summary>
         [JsonPropertyName("resourceGroupId")]
         public string ResourceGroupId { get; set; }
     
         /// <summary>
         /// Gets or sets subnet id.
-        /// The ID of the target subnet. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}'.
+        /// The ID of the target subnet. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}.
         /// </summary>
         [JsonPropertyName("subnetId")]
         public string SubnetId { get; set; }
@@ -127,7 +128,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets virtual network id.
-        /// The ID of the target virtual network. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}'.
+        /// The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.
         /// </summary>
         [JsonPropertyName("virtualNetworkId")]
         public string VirtualNetworkId { get; set; }

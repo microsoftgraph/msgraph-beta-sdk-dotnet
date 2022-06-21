@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for ConditionalAccess.
-        /// </summary>
-        /// <returns>The <see cref="IConditionalAccessRootRequestBuilder"/>.</returns>
-        public IConditionalAccessRootRequestBuilder ConditionalAccess
-        {
-            get
-            {
-                return new ConditionalAccessRootRequestBuilder(this.AppendSegmentToRequestUrl("conditionalAccess"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for ApiConnectors.
         /// </summary>
         /// <returns>The <see cref="IIdentityContainerApiConnectorsCollectionRequestBuilder"/>.</returns>
@@ -131,6 +119,18 @@ namespace Microsoft.Graph
             get
             {
                 return new IdentityContainerUserFlowsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userFlows"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ConditionalAccess.
+        /// </summary>
+        /// <returns>The <see cref="IConditionalAccessRootRequestBuilder"/>.</returns>
+        public IConditionalAccessRootRequestBuilder ConditionalAccess
+        {
+            get
+            {
+                return new ConditionalAccessRootRequestBuilder(this.AppendSegmentToRequestUrl("conditionalAccess"), this.Client);
             }
         }
 

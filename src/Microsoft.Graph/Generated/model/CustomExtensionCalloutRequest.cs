@@ -15,25 +15,29 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type PreAuthorizedApplication.
+    /// The type CustomExtensionCalloutRequest.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<PreAuthorizedApplication>))]
-    public partial class PreAuthorizedApplication
+    [JsonConverter(typeof(DerivedTypeConverter<CustomExtensionCalloutRequestObject>))]
+    public partial class CustomExtensionCalloutRequestObject
     {
 
         /// <summary>
-        /// Gets or sets appId.
-        /// The unique identifier for the client application.
+        /// Gets or sets data.
         /// </summary>
-        [JsonPropertyName("appId")]
-        public string AppId { get; set; }
+        [JsonPropertyName("data")]
+        public CustomExtensionData Data { get; set; }
     
         /// <summary>
-        /// Gets or sets permissionIds.
-        /// The unique identifier for the scopes the client application is granted.
+        /// Gets or sets source.
         /// </summary>
-        [JsonPropertyName("permissionIds")]
-        public IEnumerable<string> PermissionIds { get; set; }
+        [JsonPropertyName("source")]
+        public string Source { get; set; }
+    
+        /// <summary>
+        /// Gets or sets type.
+        /// </summary>
+        [JsonPropertyName("type")]
+        public string Type { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

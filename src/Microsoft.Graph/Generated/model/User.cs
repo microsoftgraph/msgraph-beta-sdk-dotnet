@@ -64,6 +64,12 @@ namespace Microsoft.Graph
         public IEnumerable<AssignedPlan> AssignedPlans { get; set; }
     
         /// <summary>
+        /// Gets or sets authorization info.
+        /// </summary>
+        [JsonPropertyName("authorizationInfo")]
+        public AuthorizationInfo AuthorizationInfo { get; set; }
+    
+        /// <summary>
         /// Gets or sets business phones.
         /// The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
         /// </summary>
@@ -417,6 +423,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("refreshTokensValidFromDateTime")]
         public DateTimeOffset? RefreshTokensValidFromDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets security identifier.
+        /// </summary>
+        [JsonPropertyName("securityIdentifier")]
+        public string SecurityIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets show in address list.

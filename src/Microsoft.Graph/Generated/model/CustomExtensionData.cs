@@ -15,26 +15,20 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type PreAuthorizedApplication.
+    /// The type CustomExtensionData.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<PreAuthorizedApplication>))]
-    public partial class PreAuthorizedApplication
+    [JsonConverter(typeof(DerivedTypeConverter<CustomExtensionData>))]
+    public partial class CustomExtensionData
     {
 
-        /// <summary>
-        /// Gets or sets appId.
-        /// The unique identifier for the client application.
-        /// </summary>
-        [JsonPropertyName("appId")]
-        public string AppId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets permissionIds.
-        /// The unique identifier for the scopes the client application is granted.
-        /// </summary>
-        [JsonPropertyName("permissionIds")]
-        public IEnumerable<string> PermissionIds { get; set; }
-    
+        ///<summary>
+        /// The internal CustomExtensionData constructor
+        ///</summary>
+        protected internal CustomExtensionData()
+        {
+            // Don't allow initialization of abstract complex types
+        }
+
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>

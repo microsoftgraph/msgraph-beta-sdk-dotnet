@@ -176,6 +176,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets incoming channels.
+        /// List of channels shared with the team.
         /// </summary>
         [JsonPropertyName("incomingChannels")]
         public ITeamIncomingChannelsCollectionWithReferencesPage IncomingChannels { get; set; }

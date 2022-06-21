@@ -78,6 +78,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets smsNotificationsEnabled.
+        /// Indicates if the SMS notifications will be sent to the customer for the appointment
         /// </summary>
         [JsonPropertyName("smsNotificationsEnabled")]
         public bool? SmsNotificationsEnabled { get; set; }

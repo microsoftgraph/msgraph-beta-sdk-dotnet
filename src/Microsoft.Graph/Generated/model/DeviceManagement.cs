@@ -134,6 +134,12 @@ namespace Microsoft.Graph
         public WindowsMalwareOverview WindowsMalwareOverview { get; set; }
     
         /// <summary>
+        /// Gets or sets virtual endpoint.
+        /// </summary>
+        [JsonPropertyName("virtualEndpoint")]
+        public VirtualEndpoint VirtualEndpoint { get; set; }
+    
+        /// <summary>
         /// Gets or sets android device owner enrollment profiles.
         /// Android device owner enrollment profile entities.
         /// </summary>
@@ -146,12 +152,6 @@ namespace Microsoft.Graph
         [JsonPropertyName("androidDeviceOwnerEnrollmentProfiles@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string AndroidDeviceOwnerEnrollmentProfilesNextLink { get; set; }
-    
-        /// <summary>
-        /// Gets or sets virtual endpoint.
-        /// </summary>
-        [JsonPropertyName("virtualEndpoint")]
-        public VirtualEndpoint VirtualEndpoint { get; set; }
     
         /// <summary>
         /// Gets or sets android for work app configuration schemas.
