@@ -33,10 +33,10 @@ namespace Microsoft.Graph
         public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets next expected range.
+        /// Gets or sets next expected ranges.
         /// </summary>
-        [JsonPropertyName("nextExpectedRange")]
-        public IEnumerable<string> NextExpectedRange { get; set; }
+        [JsonPropertyName("nextExpectedRanges")]
+        public IEnumerable<string> NextExpectedRanges { get; set; }
     
     }
 }

@@ -38,7 +38,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets roles.
-        /// The roles for that user.
+        /// The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.
         /// </summary>
         [JsonPropertyName("roles")]
         public IEnumerable<string> Roles { get; set; }

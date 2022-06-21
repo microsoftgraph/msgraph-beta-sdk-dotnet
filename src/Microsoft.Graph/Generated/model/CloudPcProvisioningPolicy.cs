@@ -23,12 +23,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets alternate resource url.
+        /// The URL of the alternate resource that links to this provisioning policy. Read-only.
         /// </summary>
         [JsonPropertyName("alternateResourceUrl")]
         public string AlternateResourceUrl { get; set; }
     
         /// <summary>
         /// Gets or sets cloud pc group display name.
+        /// The display name of the Cloud PC group that the Cloud PCs reside in. Read-only.
         /// </summary>
         [JsonPropertyName("cloudPcGroupDisplayName")]
         public string CloudPcGroupDisplayName { get; set; }
@@ -56,6 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets grace period in hours.
+        /// The number of hours to wait before reprovisioning/deprovisioning happens. Read-only.
         /// </summary>
         [JsonPropertyName("gracePeriodInHours")]
         public Int32? GracePeriodInHours { get; set; }
@@ -83,12 +86,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets local admin enabled.
+        /// Indicates whether the local admin option is enabled. If the local admin option is enabled, the end user can be an admin of the Cloud PC device. Read-only.
         /// </summary>
         [JsonPropertyName("localAdminEnabled")]
         public bool? LocalAdminEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets managed by.
+        /// Specifies which services manage the Azure network connection. Possible values are: windows365, devBox, unknownFutureValue. Read-only.
         /// </summary>
         [JsonPropertyName("managedBy")]
         public CloudPcManagementService? ManagedBy { get; set; }

@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IDeviceManagementRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for AndroidDeviceOwnerEnrollmentProfiles.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionRequestBuilder"/>.</returns>
-        IDeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionRequestBuilder AndroidDeviceOwnerEnrollmentProfiles { get; }
-
-        /// <summary>
         /// Gets the request builder for VirtualEndpoint.
         /// </summary>
         /// <returns>The <see cref="IVirtualEndpointRequestBuilder"/>.</returns>
         IVirtualEndpointRequestBuilder VirtualEndpoint { get; }
+
+        /// <summary>
+        /// Gets the request builder for AndroidDeviceOwnerEnrollmentProfiles.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionRequestBuilder AndroidDeviceOwnerEnrollmentProfiles { get; }
 
         /// <summary>
         /// Gets the request builder for AndroidForWorkAppConfigurationSchemas.

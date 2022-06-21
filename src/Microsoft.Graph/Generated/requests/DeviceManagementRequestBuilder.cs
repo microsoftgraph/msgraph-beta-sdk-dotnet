@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for AndroidDeviceOwnerEnrollmentProfiles.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionRequestBuilder AndroidDeviceOwnerEnrollmentProfiles
-        {
-            get
-            {
-                return new DeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("androidDeviceOwnerEnrollmentProfiles"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for VirtualEndpoint.
         /// </summary>
         /// <returns>The <see cref="IVirtualEndpointRequestBuilder"/>.</returns>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new VirtualEndpointRequestBuilder(this.AppendSegmentToRequestUrl("virtualEndpoint"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for AndroidDeviceOwnerEnrollmentProfiles.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionRequestBuilder AndroidDeviceOwnerEnrollmentProfiles
+        {
+            get
+            {
+                return new DeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("androidDeviceOwnerEnrollmentProfiles"), this.Client);
             }
         }
 

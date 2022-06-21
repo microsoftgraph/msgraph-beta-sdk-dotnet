@@ -30,6 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets anonymous join web url.
+        /// Url of meeting to join anonymously.
         /// </summary>
         [JsonPropertyName("anonymousJoinWebUrl")]
         public string AnonymousJoinWebUrl { get; set; }
