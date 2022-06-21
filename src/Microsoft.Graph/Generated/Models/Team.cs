@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<TeamGuestSettings>(nameof(GuestSettings)); }
             set { BackingStore?.Set(nameof(GuestSettings), value); }
         }
-        /// <summary>The incomingChannels property</summary>
+        /// <summary>List of channels shared with the team.</summary>
         public List<Channel> IncomingChannels {
             get { return BackingStore?.Get<List<Channel>>(nameof(IncomingChannels)); }
             set { BackingStore?.Set(nameof(IncomingChannels), value); }

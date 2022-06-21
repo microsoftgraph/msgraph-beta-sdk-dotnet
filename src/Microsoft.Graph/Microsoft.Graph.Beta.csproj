@@ -22,7 +22,7 @@
     <AssemblyOriginatorKeyFile>35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PackageReleaseNotes>
-- Latest metadata updates from 14th June 2022 snapshot
+- Latest metadata updates from 21st June 2022 snapshot
 - Fixed missing derived models not directly referenced in openApi paths
     </PackageReleaseNotes>
     <!-- edit this value to change the current major.minor.patch version -->
@@ -59,7 +59,7 @@
     <None Include=".\..\..\LICENSE.txt" Pack="true" PackagePath="" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Graph.Core" Version="3.0.0-preview.8" />
+    <PackageReference Include="Microsoft.Graph.Core" Version="3.0.0-preview.9" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">

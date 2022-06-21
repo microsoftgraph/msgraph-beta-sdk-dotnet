@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>(nameof(AdDomainUsername)); }
             set { BackingStore?.Set(nameof(AdDomainUsername), value); }
         }
-        /// <summary>The alternateResourceUrl property</summary>
+        /// <summary>The interface URL of the partner service&apos;s resource that links to this Azure network connection. Returned only on $select.</summary>
         public string AlternateResourceUrl {
             get { return BackingStore?.Get<string>(nameof(AlternateResourceUrl)); }
             set { BackingStore?.Set(nameof(AlternateResourceUrl), value); }
@@ -31,12 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>(nameof(DisplayName)); }
             set { BackingStore?.Set(nameof(DisplayName), value); }
         }
-        /// <summary>The status of the most recent health check done on the Azure network connection. For example, if status is &apos;passed&apos;, the Azure network connection has passed all checks run by the service. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.</summary>
+        /// <summary>The status of the most recent health check done on the Azure network connection. For example, if status is passed, the Azure network connection has passed all checks run by the service. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.</summary>
         public CloudPcOnPremisesConnectionStatus? HealthCheckStatus {
             get { return BackingStore?.Get<CloudPcOnPremisesConnectionStatus?>(nameof(HealthCheckStatus)); }
             set { BackingStore?.Set(nameof(HealthCheckStatus), value); }
         }
-        /// <summary>The details of the connection&apos;s health checks and the corresponding results. Returned only on $select.For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.</summary>
+        /// <summary>The details of the connection&apos;s health checks and the corresponding results. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.</summary>
         public CloudPcOnPremisesConnectionStatusDetails HealthCheckStatusDetails {
             get { return BackingStore?.Get<CloudPcOnPremisesConnectionStatusDetails>(nameof(HealthCheckStatusDetails)); }
             set { BackingStore?.Set(nameof(HealthCheckStatusDetails), value); }
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>(nameof(InUse)); }
             set { BackingStore?.Set(nameof(InUse), value); }
         }
-        /// <summary>Specifies which services manage the Azure network connection. Possible values are: windows365, devBox and unknownFutureValue. Read-only.</summary>
+        /// <summary>Specifies which services manage the Azure network connection. Possible values are: windows365, devBox, unknownFutureValue. Read-only.</summary>
         public CloudPcManagementService? ManagedBy {
             get { return BackingStore?.Get<CloudPcManagementService?>(nameof(ManagedBy)); }
             set { BackingStore?.Set(nameof(ManagedBy), value); }
@@ -56,12 +56,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>(nameof(OrganizationalUnit)); }
             set { BackingStore?.Set(nameof(OrganizationalUnit), value); }
         }
-        /// <summary>The ID of the target resource group. Required format: &apos;/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}&apos;.</summary>
+        /// <summary>The ID of the target resource group. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}.</summary>
         public string ResourceGroupId {
             get { return BackingStore?.Get<string>(nameof(ResourceGroupId)); }
             set { BackingStore?.Set(nameof(ResourceGroupId), value); }
         }
-        /// <summary>The ID of the target subnet. Required format: &apos;/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}&apos;.</summary>
+        /// <summary>The ID of the target subnet. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}.</summary>
         public string SubnetId {
             get { return BackingStore?.Get<string>(nameof(SubnetId)); }
             set { BackingStore?.Set(nameof(SubnetId), value); }
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<CloudPcOnPremisesConnectionType?>(nameof(Type)); }
             set { BackingStore?.Set(nameof(Type), value); }
         }
-        /// <summary>The ID of the target virtual network. Required format: &apos;/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}&apos;.</summary>
+        /// <summary>The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.</summary>
         public string VirtualNetworkId {
             get { return BackingStore?.Get<string>(nameof(VirtualNetworkId)); }
             set { BackingStore?.Set(nameof(VirtualNetworkId), value); }

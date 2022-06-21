@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>(nameof(AdditionalInformation)); }
             set { BackingStore?.Set(nameof(AdditionalInformation), value); }
         }
-        /// <summary>The anonymousJoinWebUrl property</summary>
+        /// <summary>Url of meeting to join anonymously.</summary>
         public string AnonymousJoinWebUrl {
             get { return BackingStore?.Get<string>(nameof(AnonymousJoinWebUrl)); }
             set { BackingStore?.Set(nameof(AnonymousJoinWebUrl), value); }

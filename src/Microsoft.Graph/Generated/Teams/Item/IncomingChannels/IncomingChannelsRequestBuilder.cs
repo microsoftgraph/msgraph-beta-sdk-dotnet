@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.IncomingChannels {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get incomingChannels from teams
+        /// List of channels shared with the team.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<IncomingChannelsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.IncomingChannels {
             return requestInfo;
         }
         /// <summary>
-        /// Get incomingChannels from teams
+        /// List of channels shared with the team.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.IncomingChannels {
             };
             return await RequestAdapter.SendAsync<ChannelCollectionResponse>(requestInfo, ChannelCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get incomingChannels from teams</summary>
+        /// <summary>List of channels shared with the team.</summary>
         public class IncomingChannelsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

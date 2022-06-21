@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of privilegedRoleAssignment entities.</summary>
+    /// <summary>Provides operations to manage the collection of privilegedApproval entities.</summary>
     public class PrivilegedRoleSettings : Entity, IParsable {
         /// <summary>true if the approval is required when activate the role. false if the approval is not required when activate the role.</summary>
         public bool? ApprovalOnElevation {

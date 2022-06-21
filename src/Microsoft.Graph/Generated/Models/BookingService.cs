@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>(nameof(Description)); }
             set { BackingStore?.Set(nameof(Description), value); }
         }
-        /// <summary>The isAnonymousJoinEnabled property</summary>
+        /// <summary>True if an anonymousJoinWebUrl(webrtcUrl) will be generated for the appointment booked for this service.</summary>
         public bool? IsAnonymousJoinEnabled {
             get { return BackingStore?.Get<bool?>(nameof(IsAnonymousJoinEnabled)); }
             set { BackingStore?.Set(nameof(IsAnonymousJoinEnabled), value); }
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>(nameof(IsLocationOnline)); }
             set { BackingStore?.Set(nameof(IsLocationOnline), value); }
         }
-        /// <summary>The languageTag property</summary>
+        /// <summary>The language of the self service booking page.</summary>
         public string LanguageTag {
             get { return BackingStore?.Get<string>(nameof(LanguageTag)); }
             set { BackingStore?.Set(nameof(LanguageTag), value); }

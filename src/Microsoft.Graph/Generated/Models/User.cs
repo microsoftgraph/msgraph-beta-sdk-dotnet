@@ -66,6 +66,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Authentication>(nameof(Authentication)); }
             set { BackingStore?.Set(nameof(Authentication), value); }
         }
+        /// <summary>The authorizationInfo property</summary>
+        public Microsoft.Graph.Beta.Models.AuthorizationInfo AuthorizationInfo {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationInfo>(nameof(AuthorizationInfo)); }
+            set { BackingStore?.Set(nameof(AuthorizationInfo), value); }
+        }
         /// <summary>The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.</summary>
         public DateTimeOffset? Birthday {
             get { return BackingStore?.Get<DateTimeOffset?>(nameof(Birthday)); }
@@ -621,6 +626,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.Security>(nameof(Security)); }
             set { BackingStore?.Set(nameof(Security), value); }
         }
+        /// <summary>The securityIdentifier property</summary>
+        public string SecurityIdentifier {
+            get { return BackingStore?.Get<string>(nameof(SecurityIdentifier)); }
+            set { BackingStore?.Set(nameof(SecurityIdentifier), value); }
+        }
         /// <summary>The settings property</summary>
         public UserSettings Settings {
             get { return BackingStore?.Get<UserSettings>(nameof(Settings)); }
@@ -736,6 +746,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"assignedLicenses", n => { AssignedLicenses = n.GetCollectionOfObjectValues<AssignedLicense>(AssignedLicense.CreateFromDiscriminatorValue).ToList(); } },
                 {"assignedPlans", n => { AssignedPlans = n.GetCollectionOfObjectValues<AssignedPlan>(AssignedPlan.CreateFromDiscriminatorValue).ToList(); } },
                 {"authentication", n => { Authentication = n.GetObjectValue<Microsoft.Graph.Beta.Models.Authentication>(Microsoft.Graph.Beta.Models.Authentication.CreateFromDiscriminatorValue); } },
+                {"authorizationInfo", n => { AuthorizationInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthorizationInfo>(Microsoft.Graph.Beta.Models.AuthorizationInfo.CreateFromDiscriminatorValue); } },
                 {"birthday", n => { Birthday = n.GetDateTimeOffsetValue(); } },
                 {"businessPhones", n => { BusinessPhones = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"calendar", n => { Calendar = n.GetObjectValue<Microsoft.Graph.Beta.Models.Calendar>(Microsoft.Graph.Beta.Models.Calendar.CreateFromDiscriminatorValue); } },
@@ -847,6 +858,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"schools", n => { Schools = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"scopedRoleMemberOf", n => { ScopedRoleMemberOf = n.GetCollectionOfObjectValues<ScopedRoleMembership>(ScopedRoleMembership.CreateFromDiscriminatorValue).ToList(); } },
                 {"security", n => { Security = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.Security>(Microsoft.Graph.Beta.Models.Security.Security.CreateFromDiscriminatorValue); } },
+                {"securityIdentifier", n => { SecurityIdentifier = n.GetStringValue(); } },
                 {"settings", n => { Settings = n.GetObjectValue<UserSettings>(UserSettings.CreateFromDiscriminatorValue); } },
                 {"showInAddressList", n => { ShowInAddressList = n.GetBoolValue(); } },
                 {"signInActivity", n => { SignInActivity = n.GetObjectValue<Microsoft.Graph.Beta.Models.SignInActivity>(Microsoft.Graph.Beta.Models.SignInActivity.CreateFromDiscriminatorValue); } },
@@ -886,6 +898,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<AssignedLicense>("assignedLicenses", AssignedLicenses);
             writer.WriteCollectionOfObjectValues<AssignedPlan>("assignedPlans", AssignedPlans);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Authentication>("authentication", Authentication);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthorizationInfo>("authorizationInfo", AuthorizationInfo);
             writer.WriteDateTimeOffsetValue("birthday", Birthday);
             writer.WriteCollectionOfPrimitiveValues<string>("businessPhones", BusinessPhones);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Calendar>("calendar", Calendar);
@@ -997,6 +1010,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("schools", Schools);
             writer.WriteCollectionOfObjectValues<ScopedRoleMembership>("scopedRoleMemberOf", ScopedRoleMemberOf);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.Security>("security", Security);
+            writer.WriteStringValue("securityIdentifier", SecurityIdentifier);
             writer.WriteObjectValue<UserSettings>("settings", Settings);
             writer.WriteBoolValue("showInAddressList", ShowInAddressList);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SignInActivity>("signInActivity", SignInActivity);
