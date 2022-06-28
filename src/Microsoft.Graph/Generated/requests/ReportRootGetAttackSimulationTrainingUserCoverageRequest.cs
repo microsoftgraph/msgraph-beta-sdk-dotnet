@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ReportRootGetAttackSimulationTrainingUserCoverageRequest.
     /// </summary>
+    [Obsolete("This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API.")]
     public partial class ReportRootGetAttackSimulationTrainingUserCoverageRequest : BaseRequest, IReportRootGetAttackSimulationTrainingUserCoverageRequest
     {
         /// <summary>

@@ -193,6 +193,18 @@ namespace Microsoft.Graph
                 return new ReportRootMonthlyPrintUsageSummariesByUserCollectionRequestBuilder(this.AppendSegmentToRequestUrl("monthlyPrintUsageSummariesByUser"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Security.
+        /// </summary>
+        /// <returns>The <see cref="ISecurityReportsRootRequestBuilder"/>.</returns>
+        public ISecurityReportsRootRequestBuilder Security
+        {
+            get
+            {
+                return new SecurityReportsRootRequestBuilder(this.AppendSegmentToRequestUrl("security"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for ReportRootGetAzureADApplicationSignInSummary.

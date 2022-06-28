@@ -56,6 +56,24 @@ namespace Microsoft.Graph
         IAttackSimulationRootRequestBuilder AttackSimulation { get; }
 
         /// <summary>
+        /// Gets the request builder for Labels.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.SecurityNamespace.ILabelsRootRequestBuilder"/>.</returns>
+        Microsoft.Graph.SecurityNamespace.ILabelsRootRequestBuilder Labels { get; }
+
+        /// <summary>
+        /// Gets the request builder for Triggers.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.SecurityNamespace.ITriggersRootRequestBuilder"/>.</returns>
+        Microsoft.Graph.SecurityNamespace.ITriggersRootRequestBuilder Triggers { get; }
+
+        /// <summary>
+        /// Gets the request builder for TriggerTypes.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.SecurityNamespace.ITriggerTypesRootRequestBuilder"/>.</returns>
+        Microsoft.Graph.SecurityNamespace.ITriggerTypesRootRequestBuilder TriggerTypes { get; }
+
+        /// <summary>
         /// Gets the request builder for Alerts.
         /// </summary>
         /// <returns>The <see cref="ISecurityAlertsCollectionRequestBuilder"/>.</returns>

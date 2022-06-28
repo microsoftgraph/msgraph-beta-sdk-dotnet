@@ -78,6 +78,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets principal resource membership.
+        /// Every decision item in an access review represents a principal's membership to a resource. This property provides the details of the membership. For example, whether the principal has direct access or indirect access to the resource. Supports $select. Read-only.
         /// </summary>
         [JsonPropertyName("principalResourceMembership")]
         public DecisionItemPrincipalResourceMembership PrincipalResourceMembership { get; set; }
