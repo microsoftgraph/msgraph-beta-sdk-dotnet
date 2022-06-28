@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         public ServiceAnnouncement ServiceAnnouncement { get; set; }
     
         /// <summary>
+        /// Gets or sets report settings.
+        /// </summary>
+        [JsonPropertyName("reportSettings")]
+        public AdminReportSettings ReportSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets windows.
         /// A container for all Windows Update for Business deployment service functionality. Read-only.
         /// </summary>

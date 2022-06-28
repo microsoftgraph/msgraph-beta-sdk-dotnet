@@ -75,6 +75,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ReportSettings.
+        /// </summary>
+        /// <returns>The <see cref="IAdminReportSettingsRequestBuilder"/>.</returns>
+        public IAdminReportSettingsRequestBuilder ReportSettings
+        {
+            get
+            {
+                return new AdminReportSettingsRequestBuilder(this.AppendSegmentToRequestUrl("reportSettings"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Windows.
         /// </summary>
         /// <returns>The <see cref="Microsoft.Graph.WindowsUpdates.IWindowsRequestBuilder"/>.</returns>

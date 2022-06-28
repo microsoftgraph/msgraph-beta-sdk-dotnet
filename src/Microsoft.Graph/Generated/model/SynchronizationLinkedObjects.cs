@@ -29,6 +29,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets members.
+        /// All group members that you would like to provision.
         /// </summary>
         [JsonPropertyName("members")]
         public IEnumerable<SynchronizationJobSubject> Members { get; set; }

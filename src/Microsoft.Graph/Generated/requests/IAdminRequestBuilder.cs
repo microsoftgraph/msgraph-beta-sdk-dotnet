@@ -44,6 +44,12 @@ namespace Microsoft.Graph
         IServiceAnnouncementRequestBuilder ServiceAnnouncement { get; }
 
         /// <summary>
+        /// Gets the request builder for ReportSettings.
+        /// </summary>
+        /// <returns>The <see cref="IAdminReportSettingsRequestBuilder"/>.</returns>
+        IAdminReportSettingsRequestBuilder ReportSettings { get; }
+
+        /// <summary>
         /// Gets the request builder for Windows.
         /// </summary>
         /// <returns>The <see cref="Microsoft.Graph.WindowsUpdates.IWindowsRequestBuilder"/>.</returns>

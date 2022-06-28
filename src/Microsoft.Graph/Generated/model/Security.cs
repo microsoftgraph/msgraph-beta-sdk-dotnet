@@ -59,6 +59,24 @@ namespace Microsoft.Graph
         public AttackSimulationRoot AttackSimulation { get; set; }
     
         /// <summary>
+        /// Gets or sets labels.
+        /// </summary>
+        [JsonPropertyName("labels")]
+        public Microsoft.Graph.SecurityNamespace.LabelsRoot Labels { get; set; }
+    
+        /// <summary>
+        /// Gets or sets triggers.
+        /// </summary>
+        [JsonPropertyName("triggers")]
+        public Microsoft.Graph.SecurityNamespace.TriggersRoot Triggers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets trigger types.
+        /// </summary>
+        [JsonPropertyName("triggerTypes")]
+        public Microsoft.Graph.SecurityNamespace.TriggerTypesRoot TriggerTypes { get; set; }
+    
+        /// <summary>
         /// Gets or sets alerts.
         /// Notifications for suspicious or potential security issues in a customer’s tenant.
         /// </summary>

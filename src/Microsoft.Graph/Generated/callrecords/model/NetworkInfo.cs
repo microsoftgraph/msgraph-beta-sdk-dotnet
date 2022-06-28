@@ -135,7 +135,7 @@ namespace Microsoft.Graph.CallRecords
     
         /// <summary>
         /// Gets or sets traceRouteHops.
-        /// List of network trace route hops collected for this media stream.
+        /// List of network trace route hops collected for this media stream.*
         /// </summary>
         [JsonPropertyName("traceRouteHops")]
         public IEnumerable<TraceRouteHop> TraceRouteHops { get; set; }

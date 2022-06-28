@@ -23,6 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets membershipType.
+        /// Type of membership that the principal has to the resource. Multi-valued. The possible values are: direct, indirect, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("membershipType")]
         public DecisionItemPrincipalResourceMembershipType? MembershipType { get; set; }

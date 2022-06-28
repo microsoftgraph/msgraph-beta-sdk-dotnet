@@ -102,6 +102,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IReportRootMonthlyPrintUsageSummariesByUserCollectionRequestBuilder"/>.</returns>
         IReportRootMonthlyPrintUsageSummariesByUserCollectionRequestBuilder MonthlyPrintUsageSummariesByUser { get; }
+
+        /// <summary>
+        /// Gets the request builder for Security.
+        /// </summary>
+        /// <returns>The <see cref="ISecurityReportsRootRequestBuilder"/>.</returns>
+        ISecurityReportsRootRequestBuilder Security { get; }
     
         /// <summary>
         /// Gets the request builder for ReportRootGetAzureADApplicationSignInSummary.

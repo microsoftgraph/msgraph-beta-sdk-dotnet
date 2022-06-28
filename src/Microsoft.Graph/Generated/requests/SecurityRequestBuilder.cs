@@ -99,6 +99,42 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Labels.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.SecurityNamespace.ILabelsRootRequestBuilder"/>.</returns>
+        public Microsoft.Graph.SecurityNamespace.ILabelsRootRequestBuilder Labels
+        {
+            get
+            {
+                return new Microsoft.Graph.SecurityNamespace.LabelsRootRequestBuilder(this.AppendSegmentToRequestUrl("labels"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Triggers.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.SecurityNamespace.ITriggersRootRequestBuilder"/>.</returns>
+        public Microsoft.Graph.SecurityNamespace.ITriggersRootRequestBuilder Triggers
+        {
+            get
+            {
+                return new Microsoft.Graph.SecurityNamespace.TriggersRootRequestBuilder(this.AppendSegmentToRequestUrl("triggers"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for TriggerTypes.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.SecurityNamespace.ITriggerTypesRootRequestBuilder"/>.</returns>
+        public Microsoft.Graph.SecurityNamespace.ITriggerTypesRootRequestBuilder TriggerTypes
+        {
+            get
+            {
+                return new Microsoft.Graph.SecurityNamespace.TriggerTypesRootRequestBuilder(this.AppendSegmentToRequestUrl("triggerTypes"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Alerts.
         /// </summary>
         /// <returns>The <see cref="ISecurityAlertsCollectionRequestBuilder"/>.</returns>

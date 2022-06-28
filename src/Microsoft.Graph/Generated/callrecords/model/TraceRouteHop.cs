@@ -23,7 +23,7 @@ namespace Microsoft.Graph.CallRecords
 
         /// <summary>
         /// Gets or sets hopCount.
-        /// The network path count of this hop that was used to compute the RTT.
+        /// The network path count of this hop that was used to compute the round-trip time.
         /// </summary>
         [JsonPropertyName("hopCount")]
         public Int32? HopCount { get; set; }
