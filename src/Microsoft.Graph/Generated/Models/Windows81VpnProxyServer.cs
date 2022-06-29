@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>VPN Proxy Server.</summary>
     public class Windows81VpnProxyServer : VpnProxyServer, IParsable {
         /// <summary>Automatically detect proxy settings.</summary>
         public bool? AutomaticallyDetectProxySettings {

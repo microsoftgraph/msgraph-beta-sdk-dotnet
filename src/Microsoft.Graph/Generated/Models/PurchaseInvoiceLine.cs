@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the financials singleton.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class PurchaseInvoiceLine : Entity, IParsable {
         /// <summary>The account property</summary>
         public Microsoft.Graph.Beta.Models.Account Account {

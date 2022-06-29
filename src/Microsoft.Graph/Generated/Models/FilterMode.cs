@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum FilterMode {
         Include,
         Exclude,

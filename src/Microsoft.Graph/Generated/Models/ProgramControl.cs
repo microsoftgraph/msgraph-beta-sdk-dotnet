@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of programControl entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ProgramControl : Entity, IParsable {
         /// <summary>The controlId of the control, in particular the identifier of an access review. Required on create.</summary>
         public string ControlId {

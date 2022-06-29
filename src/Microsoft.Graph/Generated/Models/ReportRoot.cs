@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the print singleton.</summary>
     public class ReportRoot : Entity, IParsable {
         /// <summary>Represents a detailed summary of an application sign-in.</summary>
         public List<Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary> ApplicationSignInDetailedSummary {
@@ -61,6 +60,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<PrintUsageByUser>>(nameof(MonthlyPrintUsageSummariesByUser)); }
             set { BackingStore?.Set(nameof(MonthlyPrintUsageSummariesByUser), value); }
         }
+        /// <summary>The security property</summary>
+        public SecurityReportsRoot Security {
+            get { return BackingStore?.Get<SecurityReportsRoot>(nameof(Security)); }
+            set { BackingStore?.Set(nameof(Security), value); }
+        }
         /// <summary>Represents the self-service password reset (SSPR) usage for a given tenant.</summary>
         public List<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails> UserCredentialUsageDetails {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>>(nameof(UserCredentialUsageDetails)); }
@@ -90,6 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"monthlyPrintUsageByUser", n => { MonthlyPrintUsageByUser = n.GetCollectionOfObjectValues<PrintUsageByUser>(PrintUsageByUser.CreateFromDiscriminatorValue).ToList(); } },
                 {"monthlyPrintUsageSummariesByPrinter", n => { MonthlyPrintUsageSummariesByPrinter = n.GetCollectionOfObjectValues<PrintUsageByPrinter>(PrintUsageByPrinter.CreateFromDiscriminatorValue).ToList(); } },
                 {"monthlyPrintUsageSummariesByUser", n => { MonthlyPrintUsageSummariesByUser = n.GetCollectionOfObjectValues<PrintUsageByUser>(PrintUsageByUser.CreateFromDiscriminatorValue).ToList(); } },
+                {"security", n => { Security = n.GetObjectValue<SecurityReportsRoot>(SecurityReportsRoot.CreateFromDiscriminatorValue); } },
                 {"userCredentialUsageDetails", n => { UserCredentialUsageDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>(Microsoft.Graph.Beta.Models.UserCredentialUsageDetails.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
@@ -111,6 +116,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<PrintUsageByUser>("monthlyPrintUsageByUser", MonthlyPrintUsageByUser);
             writer.WriteCollectionOfObjectValues<PrintUsageByPrinter>("monthlyPrintUsageSummariesByPrinter", MonthlyPrintUsageSummariesByPrinter);
             writer.WriteCollectionOfObjectValues<PrintUsageByUser>("monthlyPrintUsageSummariesByUser", MonthlyPrintUsageSummariesByUser);
+            writer.WriteObjectValue<SecurityReportsRoot>("security", Security);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>("userCredentialUsageDetails", UserCredentialUsageDetails);
         }
     }

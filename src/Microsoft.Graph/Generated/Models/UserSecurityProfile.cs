@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the security singleton.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class UserSecurityProfile : Entity, IParsable {
         /// <summary>The accounts property</summary>
         public List<UserAccount> Accounts {

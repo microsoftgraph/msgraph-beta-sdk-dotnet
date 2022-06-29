@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class SymantecCodeSigningCertificate : Entity, IParsable {
         /// <summary>The Windows Symantec Code-Signing Certificate in the raw data format.</summary>
         public byte[] Content {

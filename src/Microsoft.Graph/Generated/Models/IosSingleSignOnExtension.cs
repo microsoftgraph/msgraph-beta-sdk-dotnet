@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>An abstract base class for all iOS-specific single sign-on extension types.</summary>
     public class IosSingleSignOnExtension : SingleSignOnExtension, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -12,7 +12,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new IosSingleSignOnExtension CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosSingleSignOnExtension();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.iosAzureAdSingleSignOnExtension" => new IosAzureAdSingleSignOnExtension(),
+                "#microsoft.graph.iosCredentialSingleSignOnExtension" => new IosCredentialSingleSignOnExtension(),
+                "#microsoft.graph.iosKerberosSingleSignOnExtension" => new IosKerberosSingleSignOnExtension(),
+                "#microsoft.graph.iosRedirectSingleSignOnExtension" => new IosRedirectSingleSignOnExtension(),
+                _ => new IosSingleSignOnExtension(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

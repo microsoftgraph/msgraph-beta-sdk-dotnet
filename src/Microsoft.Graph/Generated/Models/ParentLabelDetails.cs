@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -66,7 +67,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static ParentLabelDetails CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ParentLabelDetails();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.labelDetails" => new LabelDetails(),
+                _ => new ParentLabelDetails(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

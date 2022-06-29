@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class PlannerProgressTaskBoardTaskFormat : PlannerDelta, IParsable {
         /// <summary>Hint value used to order the task on the Progress view of the Task Board. The format is defined as outlined here.</summary>
         public string OrderHint {

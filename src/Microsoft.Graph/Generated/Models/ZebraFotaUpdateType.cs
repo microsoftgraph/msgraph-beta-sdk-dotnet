@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum ZebraFotaUpdateType {
         /// <summary>Custom update where the user selects specific BSP, OS version, and patch number to update to.</summary>
         Custom,

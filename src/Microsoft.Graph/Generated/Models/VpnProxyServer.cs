@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -42,7 +43,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static VpnProxyServer CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VpnProxyServer();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.windows10VpnProxyServer" => new Windows10VpnProxyServer(),
+                "#microsoft.graph.windows81VpnProxyServer" => new Windows81VpnProxyServer(),
+                _ => new VpnProxyServer(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

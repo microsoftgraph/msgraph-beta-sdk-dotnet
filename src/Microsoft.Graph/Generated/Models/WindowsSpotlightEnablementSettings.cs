@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum WindowsSpotlightEnablementSettings {
         /// <summary>Spotlight on lock screen is not configured</summary>
         NotConfigured,

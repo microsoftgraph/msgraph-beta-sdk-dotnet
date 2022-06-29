@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class WorkbookWorksheet : Entity, IParsable {
         /// <summary>Returns collection of charts that are part of the worksheet. Read-only.</summary>
         public List<WorkbookChart> Charts {

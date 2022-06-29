@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -27,7 +28,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static WindowsKioskUser CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsKioskUser();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.windowsKioskActiveDirectoryGroup" => new WindowsKioskActiveDirectoryGroup(),
+                "#microsoft.graph.windowsKioskAutologon" => new WindowsKioskAutologon(),
+                "#microsoft.graph.windowsKioskAzureADGroup" => new WindowsKioskAzureADGroup(),
+                "#microsoft.graph.windowsKioskAzureADUser" => new WindowsKioskAzureADUser(),
+                "#microsoft.graph.windowsKioskLocalGroup" => new WindowsKioskLocalGroup(),
+                "#microsoft.graph.windowsKioskLocalUser" => new WindowsKioskLocalUser(),
+                "#microsoft.graph.windowsKioskVisitor" => new WindowsKioskVisitor(),
+                _ => new WindowsKioskUser(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

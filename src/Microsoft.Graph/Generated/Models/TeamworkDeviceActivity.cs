@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the teamwork singleton.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class TeamworkDeviceActivity : Entity, IParsable {
         /// <summary>The active peripheral devices attached to the device.</summary>
         public TeamworkActivePeripherals ActivePeripherals {

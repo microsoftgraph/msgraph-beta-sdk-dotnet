@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class TeamworkConversationIdentity : Identity, IParsable {
         /// <summary>Type of conversation. Possible values are: team, channel, and chat.</summary>
         public TeamworkConversationIdentityType? ConversationIdentityType {

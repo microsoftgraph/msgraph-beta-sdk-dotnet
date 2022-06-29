@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum BitLockerEncryptionMethod {
         /// <summary>AES-CBC 128-bit.</summary>
         AesCbc128,

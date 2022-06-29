@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class TimeOffItem : ScheduleEntity, IParsable {
         /// <summary>ID of the timeOffReason for this timeOffItem. Required.</summary>
         public string TimeOffReasonId {

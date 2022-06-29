@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<SynchronizationJobSubject>(nameof(Manager)); }
             set { BackingStore?.Set(nameof(Manager), value); }
         }
-        /// <summary>The members property</summary>
+        /// <summary>All group members that you would like to provision.</summary>
         public List<SynchronizationJobSubject> Members {
             get { return BackingStore?.Get<List<SynchronizationJobSubject>>(nameof(Members)); }
             set { BackingStore?.Set(nameof(Members), value); }

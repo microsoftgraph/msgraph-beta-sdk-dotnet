@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class CloudPcOnPremisesConnection : Entity, IParsable {
         /// <summary>The fully qualified domain name (FQDN) of the Active Directory domain you want to join. Optional.</summary>
         public string AdDomainName {

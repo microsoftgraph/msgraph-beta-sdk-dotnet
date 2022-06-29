@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -66,7 +67,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static Location CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Location();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.locationConstraintItem" => new LocationConstraintItem(),
+                _ => new Location(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the auditLogRoot singleton.</summary>
     public class Initiator : Identity, IParsable {
         /// <summary>Type of initiator. Possible values are: user, application, system, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.InitiatorType? InitiatorType {

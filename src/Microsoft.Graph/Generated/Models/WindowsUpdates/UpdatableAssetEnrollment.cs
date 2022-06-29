@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models.WindowsUpdates;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -26,7 +27,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// </summary>
         public static UpdatableAssetEnrollment CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UpdatableAssetEnrollment();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.windowsUpdates.updateManagementEnrollment" => new UpdateManagementEnrollment(),
+                _ => new UpdatableAssetEnrollment(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

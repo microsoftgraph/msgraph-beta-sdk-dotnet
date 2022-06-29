@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the getOffice365ActiveUserCounts method.</summary>
     public class Office365ActiveUserCounts : Entity, IParsable {
         /// <summary>The number of active users in Exchange. Any user who can read and send email is considered an active user.</summary>
         public long? Exchange {

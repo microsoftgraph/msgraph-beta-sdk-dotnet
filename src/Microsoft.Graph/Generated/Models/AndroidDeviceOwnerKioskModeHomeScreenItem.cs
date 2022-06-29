@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -27,7 +28,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static AndroidDeviceOwnerKioskModeHomeScreenItem CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidDeviceOwnerKioskModeHomeScreenItem();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.androidDeviceOwnerKioskModeFolderItem" => new AndroidDeviceOwnerKioskModeFolderItem(),
+                "#microsoft.graph.androidDeviceOwnerKioskModeManagedFolderReference" => new AndroidDeviceOwnerKioskModeManagedFolderReference(),
+                _ => new AndroidDeviceOwnerKioskModeHomeScreenItem(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

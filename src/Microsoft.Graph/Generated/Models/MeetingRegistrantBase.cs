@@ -1,10 +1,11 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the commsApplication singleton.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class MeetingRegistrantBase : Entity, IParsable {
         /// <summary>A unique web URL for the registrant to join the meeting. Read-only.</summary>
         public string JoinWebUrl {

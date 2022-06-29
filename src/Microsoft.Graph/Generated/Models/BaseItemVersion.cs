@@ -1,10 +1,11 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class BaseItemVersion : Entity, IParsable {
         /// <summary>Identity of the user which last modified the version. Read-only.</summary>
         public IdentitySet LastModifiedBy {

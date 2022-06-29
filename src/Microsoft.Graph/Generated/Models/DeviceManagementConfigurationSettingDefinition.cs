@@ -1,10 +1,11 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class DeviceManagementConfigurationSettingDefinition : Entity, IParsable {
         /// <summary>Read/write access mode of the setting. Possible values are: none, add, copy, delete, get, replace, execute.</summary>
         public DeviceManagementConfigurationSettingAccessTypes? AccessTypes {

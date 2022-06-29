@@ -1,10 +1,11 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class UserIdentity : Identity, IParsable {
         /// <summary>Indicates the client IP address used by user performing the activity (audit log only).</summary>
         public string IpAddress {
@@ -22,7 +23,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new UserIdentity CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserIdentity();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.auditUserIdentity" => new AuditUserIdentity(),
+                _ => new UserIdentity(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

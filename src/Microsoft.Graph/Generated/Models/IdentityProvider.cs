@@ -1,10 +1,11 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of identityProvider entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class IdentityProvider : Entity, IParsable {
         /// <summary>The client ID for the application obtained when registering the application with the identity provider. This is a required field.  Required. Not nullable.</summary>
         public string ClientId {

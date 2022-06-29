@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Bitlocker : Entity, IParsable {
         /// <summary>The recovery keys associated with the bitlocker entity.</summary>
         public List<BitlockerRecoveryKey> RecoveryKeys {

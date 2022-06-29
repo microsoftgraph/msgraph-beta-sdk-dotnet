@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class DelegatedAdminRelationshipRequest : Entity, IParsable {
         /// <summary>The action to be performed on the delegated admin relationship.</summary>
         public DelegatedAdminRelationshipRequestAction? Action {

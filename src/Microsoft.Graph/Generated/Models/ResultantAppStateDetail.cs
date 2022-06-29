@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum ResultantAppStateDetail {
         /// <summary>Device architecture (e.g. x86/amd64) is not applicable for the application.</summary>
         ProcessorArchitectureNotApplicable,

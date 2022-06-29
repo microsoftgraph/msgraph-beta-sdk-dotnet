@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the financials singleton.</summary>
     public class Company : Entity, IParsable {
         /// <summary>The accounts property</summary>
         public List<Account> Accounts {

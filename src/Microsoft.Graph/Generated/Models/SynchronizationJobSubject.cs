@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The links property</summary>
+        /// <summary>Principals that you would like to provision.</summary>
         public SynchronizationLinkedObjects Links {
             get { return BackingStore?.Get<SynchronizationLinkedObjects>(nameof(Links)); }
             set { BackingStore?.Set(nameof(Links), value); }
@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>(nameof(ObjectId)); }
             set { BackingStore?.Set(nameof(ObjectId), value); }
         }
-        /// <summary>The type of the object to which a synchronizationJob is to be applied. Can be one of the following: user for synchronization from Active Directory to Azure AD.User for synchronization from Azure AD to a third-party application. Worker for synchronization from Workday to either Active Directory or Azure AD.</summary>
+        /// <summary>The type of the object to which a synchronizationJob is to be applied. Can be one of the following: user for synchronizing between Active Directory and Azure AD.User for synchronizing a user between Azure AD and a third-party application. Worker for synchronization a user between Workday and either Active Directory or Azure AD.Group for synchronizing a group between Azure AD and a third-party application.</summary>
         public string ObjectTypeName {
             get { return BackingStore?.Get<string>(nameof(ObjectTypeName)); }
             set { BackingStore?.Set(nameof(ObjectTypeName), value); }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class AccessPackageAssignmentResourceRole : Entity, IParsable {
         /// <summary>The access package assignments resulting in this role assignment. Read-only. Nullable.</summary>
         public List<AccessPackageAssignment> AccessPackageAssignments {

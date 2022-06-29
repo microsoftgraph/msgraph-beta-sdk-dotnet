@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the getRelyingPartyDetailedSummary method.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum MigrationStatus {
         Ready,
         NeedsReview,

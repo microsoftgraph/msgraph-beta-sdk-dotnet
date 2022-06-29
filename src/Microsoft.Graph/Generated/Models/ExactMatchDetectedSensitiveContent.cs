@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the classifyExactMatches method.</summary>
     public class ExactMatchDetectedSensitiveContent : DetectedSensitiveContentBase, IParsable {
         /// <summary>The matches property</summary>
         public List<SensitiveContentLocation> Matches {

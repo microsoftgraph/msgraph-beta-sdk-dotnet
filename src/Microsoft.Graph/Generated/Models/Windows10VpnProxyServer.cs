@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>VPN Proxy Server.</summary>
     public class Windows10VpnProxyServer : VpnProxyServer, IParsable {
         /// <summary>Bypass proxy server for local address.</summary>
         public bool? BypassProxyServerForLocalAddress {

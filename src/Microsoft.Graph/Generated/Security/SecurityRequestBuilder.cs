@@ -9,12 +9,15 @@ using Microsoft.Graph.Beta.Security.FileSecurityProfiles;
 using Microsoft.Graph.Beta.Security.HostSecurityProfiles;
 using Microsoft.Graph.Beta.Security.InformationProtection;
 using Microsoft.Graph.Beta.Security.IpSecurityProfiles;
+using Microsoft.Graph.Beta.Security.Labels;
 using Microsoft.Graph.Beta.Security.ProviderTenantSettings;
 using Microsoft.Graph.Beta.Security.SecureScoreControlProfiles;
 using Microsoft.Graph.Beta.Security.SecureScores;
 using Microsoft.Graph.Beta.Security.SecurityActions;
 using Microsoft.Graph.Beta.Security.SubjectRightsRequests;
 using Microsoft.Graph.Beta.Security.TiIndicators;
+using Microsoft.Graph.Beta.Security.Triggers;
+using Microsoft.Graph.Beta.Security.TriggerTypes;
 using Microsoft.Graph.Beta.Security.UserSecurityProfiles;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -63,6 +66,10 @@ namespace Microsoft.Graph.Beta.Security {
         public IpSecurityProfilesRequestBuilder IpSecurityProfiles { get =>
             new IpSecurityProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The labels property</summary>
+        public LabelsRequestBuilder Labels { get =>
+            new LabelsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The providerTenantSettings property</summary>
@@ -90,6 +97,14 @@ namespace Microsoft.Graph.Beta.Security {
         /// <summary>The tiIndicators property</summary>
         public TiIndicatorsRequestBuilder TiIndicators { get =>
             new TiIndicatorsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The triggers property</summary>
+        public TriggersRequestBuilder Triggers { get =>
+            new TriggersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The triggerTypes property</summary>
+        public TriggerTypesRequestBuilder TriggerTypes { get =>
+            new TriggerTypesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }

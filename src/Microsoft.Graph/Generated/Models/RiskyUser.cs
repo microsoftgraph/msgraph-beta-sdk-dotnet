@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of riskyUser entities.</summary>
     public class RiskyUser : Entity, IParsable {
         /// <summary>The activity related to user risk level change</summary>
         public List<RiskyUserHistoryItem> History {

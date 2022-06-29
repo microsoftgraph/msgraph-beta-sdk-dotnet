@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The membershipType property</summary>
+        /// <summary>Type of membership that the principal has to the resource. Multi-valued. The possible values are: direct, indirect, unknownFutureValue.</summary>
         public DecisionItemPrincipalResourceMembershipType? MembershipType {
             get { return BackingStore?.Get<DecisionItemPrincipalResourceMembershipType?>(nameof(MembershipType)); }
             set { BackingStore?.Set(nameof(MembershipType), value); }

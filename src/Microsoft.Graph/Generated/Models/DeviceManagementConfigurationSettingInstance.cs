@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -37,7 +38,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static DeviceManagementConfigurationSettingInstance CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConfigurationSettingInstance();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.deviceManagementConfigurationChoiceSettingCollectionInstance" => new DeviceManagementConfigurationChoiceSettingCollectionInstance(),
+                "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance" => new DeviceManagementConfigurationChoiceSettingInstance(),
+                "#microsoft.graph.deviceManagementConfigurationGroupSettingCollectionInstance" => new DeviceManagementConfigurationGroupSettingCollectionInstance(),
+                "#microsoft.graph.deviceManagementConfigurationGroupSettingInstance" => new DeviceManagementConfigurationGroupSettingInstance(),
+                "#microsoft.graph.deviceManagementConfigurationSettingGroupCollectionInstance" => new DeviceManagementConfigurationSettingGroupCollectionInstance(),
+                "#microsoft.graph.deviceManagementConfigurationSettingGroupInstance" => new DeviceManagementConfigurationSettingGroupInstance(),
+                "#microsoft.graph.deviceManagementConfigurationSimpleSettingCollectionInstance" => new DeviceManagementConfigurationSimpleSettingCollectionInstance(),
+                "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance" => new DeviceManagementConfigurationSimpleSettingInstance(),
+                _ => new DeviceManagementConfigurationSettingInstance(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

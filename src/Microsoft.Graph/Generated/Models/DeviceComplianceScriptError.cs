@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -41,7 +42,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static DeviceComplianceScriptError CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceComplianceScriptError();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.deviceComplianceScriptRuleError" => new DeviceComplianceScriptRuleError(),
+                _ => new DeviceComplianceScriptError(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

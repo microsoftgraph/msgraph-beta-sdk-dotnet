@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the security singleton.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class AttackSimulationRoot : Entity, IParsable {
         /// <summary>Represents simulation automations created to run on a tenant.</summary>
         public List<SimulationAutomation> SimulationAutomations {

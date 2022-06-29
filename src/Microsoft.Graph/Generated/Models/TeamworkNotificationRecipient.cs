@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -26,7 +27,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static TeamworkNotificationRecipient CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamworkNotificationRecipient();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.aadUserNotificationRecipient" => new AadUserNotificationRecipient(),
+                "#microsoft.graph.channelMembersNotificationRecipient" => new ChannelMembersNotificationRecipient(),
+                "#microsoft.graph.chatMembersNotificationRecipient" => new ChatMembersNotificationRecipient(),
+                "#microsoft.graph.teamMembersNotificationRecipient" => new TeamMembersNotificationRecipient(),
+                _ => new TeamworkNotificationRecipient(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

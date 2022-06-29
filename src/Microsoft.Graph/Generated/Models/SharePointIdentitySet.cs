@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class SharePointIdentitySet : IdentitySet, IParsable {
         /// <summary>The group associated with this action. Optional.</summary>
         public Identity Group {

@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the officeConfiguration singleton.</summary>
     public class OfficeClientConfiguration : Entity, IParsable {
         /// <summary>The list of group assignments for the policy.</summary>
         public List<OfficeClientConfigurationAssignment> Assignments {

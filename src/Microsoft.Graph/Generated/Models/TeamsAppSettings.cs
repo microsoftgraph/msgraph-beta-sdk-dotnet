@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the teamwork singleton.</summary>
     public class TeamsAppSettings : Entity, IParsable {
         /// <summary>The isChatResourceSpecificConsentEnabled property</summary>
         public bool? IsChatResourceSpecificConsentEnabled {

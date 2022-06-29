@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the security singleton.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class EdiscoveryEstimateOperation : CaseOperation, IParsable {
         /// <summary>The estimated count of items for the search that matched the content query.</summary>
         public long? IndexedItemCount {

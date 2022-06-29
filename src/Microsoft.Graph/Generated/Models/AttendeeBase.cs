@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class AttendeeBase : Recipient, IParsable {
         /// <summary>The type of attendee. Possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.</summary>
         public AttendeeType? Type {
@@ -17,7 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new AttendeeBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AttendeeBase();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.attendee" => new Attendee(),
+                _ => new AttendeeBase(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

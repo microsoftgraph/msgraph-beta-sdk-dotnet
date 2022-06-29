@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the completeSetup method.</summary>
     public class TenantSetupInfo : Entity, IParsable {
         /// <summary>The defaultRolesSettings property</summary>
         public PrivilegedRoleSettings DefaultRolesSettings {

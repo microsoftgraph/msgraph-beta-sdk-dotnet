@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class CloudPcProvisioningPolicy : Entity, IParsable {
         /// <summary>The URL of the alternate resource that links to this provisioning policy. Read-only.</summary>
         public string AlternateResourceUrl {

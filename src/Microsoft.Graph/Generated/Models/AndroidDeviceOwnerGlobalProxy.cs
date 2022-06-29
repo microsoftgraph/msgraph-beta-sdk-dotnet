@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -27,7 +28,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static AndroidDeviceOwnerGlobalProxy CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidDeviceOwnerGlobalProxy();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.androidDeviceOwnerGlobalProxyAutoConfig" => new AndroidDeviceOwnerGlobalProxyAutoConfig(),
+                "#microsoft.graph.androidDeviceOwnerGlobalProxyDirect" => new AndroidDeviceOwnerGlobalProxyDirect(),
+                _ => new AndroidDeviceOwnerGlobalProxy(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class TenantRelationship : Entity, IParsable {
         /// <summary>The customer who has a delegated admin relationship with a Microsoft partner.</summary>
         public List<DelegatedAdminCustomer> DelegatedAdminCustomers {

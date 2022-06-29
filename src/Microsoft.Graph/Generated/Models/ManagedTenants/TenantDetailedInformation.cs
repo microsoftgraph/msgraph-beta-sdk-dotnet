@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class TenantDetailedInformation : Entity, IParsable {
         /// <summary>The city where the managed tenant is located. Optional. Read-only.</summary>
         public string City {

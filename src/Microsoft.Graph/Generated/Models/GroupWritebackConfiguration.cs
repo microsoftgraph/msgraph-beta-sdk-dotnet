@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class GroupWritebackConfiguration : WritebackConfiguration, IParsable {
         /// <summary>The onPremisesGroupType property</summary>
         public string OnPremisesGroupType {

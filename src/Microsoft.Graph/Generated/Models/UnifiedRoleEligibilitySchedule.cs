@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class UnifiedRoleEligibilitySchedule : UnifiedRoleScheduleBase, IParsable {
         /// <summary>Membership type of the eligible assignment. It can either be Inherited, Direct, or Group.</summary>
         public string MemberType {

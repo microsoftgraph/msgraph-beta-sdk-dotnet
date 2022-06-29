@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class AccessReviewInstanceDecisionItem : Entity, IParsable {
         /// <summary>The identifier of the accessReviewInstance parent. Supports $select. Read-only.</summary>
         public string AccessReviewId {
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>(nameof(PrincipalLink)); }
             set { BackingStore?.Set(nameof(PrincipalLink), value); }
         }
-        /// <summary>The principalResourceMembership property</summary>
+        /// <summary>Every decision item in an access review represents a principal&apos;s membership to a resource. This property provides the details of the membership. For example, whether the principal has direct access or indirect access to the resource. Supports $select. Read-only.</summary>
         public DecisionItemPrincipalResourceMembership PrincipalResourceMembership {
             get { return BackingStore?.Get<DecisionItemPrincipalResourceMembership>(nameof(PrincipalResourceMembership)); }
             set { BackingStore?.Set(nameof(PrincipalResourceMembership), value); }

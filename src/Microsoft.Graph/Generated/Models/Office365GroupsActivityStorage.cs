@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the getOffice365GroupsActivityStorage method.</summary>
     public class Office365GroupsActivityStorage : Entity, IParsable {
         /// <summary>The storage used in group mailbox.</summary>
         public long? MailboxStorageUsedInBytes {

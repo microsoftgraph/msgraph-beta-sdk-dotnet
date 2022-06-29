@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the security singleton.</summary>
     public class EmailIdentity : Identity, IParsable {
         /// <summary>Email address of the user.</summary>
         public string Email {

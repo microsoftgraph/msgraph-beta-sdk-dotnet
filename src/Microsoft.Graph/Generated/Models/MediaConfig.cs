@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -31,7 +32,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static MediaConfig CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MediaConfig();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.appHostedMediaConfig" => new AppHostedMediaConfig(),
+                "#microsoft.graph.serviceHostedMediaConfig" => new ServiceHostedMediaConfig(),
+                _ => new MediaConfig(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
