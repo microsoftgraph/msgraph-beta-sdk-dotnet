@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             get { return BackingStore?.Get<string>(nameof(Subnet)); }
             set { BackingStore?.Set(nameof(Subnet), value); }
         }
-        /// <summary>List of network trace route hops collected for this media stream.</summary>
+        /// <summary>List of network trace route hops collected for this media stream.*</summary>
         public List<TraceRouteHop> TraceRouteHops {
             get { return BackingStore?.Get<List<TraceRouteHop>>(nameof(TraceRouteHops)); }
             set { BackingStore?.Set(nameof(TraceRouteHops), value); }

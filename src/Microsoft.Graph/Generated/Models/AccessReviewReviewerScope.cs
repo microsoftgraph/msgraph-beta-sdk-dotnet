@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class AccessReviewReviewerScope : AccessReviewScope, IParsable {
         /// <summary>The query specifying who will be the reviewer. See table for examples.</summary>
         public string Query {

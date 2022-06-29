@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the roleManagement singleton.</summary>
     public class RbacApplication : Entity, IParsable {
         /// <summary>The resourceNamespaces property</summary>
         public List<UnifiedRbacResourceNamespace> ResourceNamespaces {

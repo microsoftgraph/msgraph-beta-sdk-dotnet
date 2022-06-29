@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>An abstract base class for all macOS-specific single sign-on extension types.</summary>
     public class MacOSSingleSignOnExtension : SingleSignOnExtension, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -12,7 +12,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new MacOSSingleSignOnExtension CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MacOSSingleSignOnExtension();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.macOSAzureAdSingleSignOnExtension" => new MacOSAzureAdSingleSignOnExtension(),
+                "#microsoft.graph.macOSCredentialSingleSignOnExtension" => new MacOSCredentialSingleSignOnExtension(),
+                "#microsoft.graph.macOSKerberosSingleSignOnExtension" => new MacOSKerberosSingleSignOnExtension(),
+                "#microsoft.graph.macOSRedirectSingleSignOnExtension" => new MacOSRedirectSingleSignOnExtension(),
+                _ => new MacOSSingleSignOnExtension(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

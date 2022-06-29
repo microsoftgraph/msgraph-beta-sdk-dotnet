@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -13,12 +14,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The display name of the identity. This property is read-only.</summary>
+        /// <summary>The identity&apos;s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won&apos;t show up as having changed when using delta.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>(nameof(DisplayName)); }
             set { BackingStore?.Set(nameof(DisplayName), value); }
         }
-        /// <summary>The identifier of the identity. This property is read-only.</summary>
+        /// <summary>Unique identifier for the identity.</summary>
         public string Id {
             get { return BackingStore?.Get<string>(nameof(Id)); }
             set { BackingStore?.Set(nameof(Id), value); }
@@ -36,7 +37,31 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static Identity CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Identity();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.azureCommunicationServicesUserIdentity" => new AzureCommunicationServicesUserIdentity(),
+                "#microsoft.graph.communicationsApplicationIdentity" => new CommunicationsApplicationIdentity(),
+                "#microsoft.graph.communicationsApplicationInstanceIdentity" => new CommunicationsApplicationInstanceIdentity(),
+                "#microsoft.graph.communicationsEncryptedIdentity" => new CommunicationsEncryptedIdentity(),
+                "#microsoft.graph.communicationsGuestIdentity" => new CommunicationsGuestIdentity(),
+                "#microsoft.graph.communicationsPhoneIdentity" => new CommunicationsPhoneIdentity(),
+                "#microsoft.graph.communicationsUserIdentity" => new CommunicationsUserIdentity(),
+                "#microsoft.graph.emailIdentity" => new EmailIdentity(),
+                "#microsoft.graph.initiator" => new Initiator(),
+                "#microsoft.graph.programResource" => new ProgramResource(),
+                "#microsoft.graph.provisionedIdentity" => new ProvisionedIdentity(),
+                "#microsoft.graph.provisioningServicePrincipal" => new ProvisioningServicePrincipal(),
+                "#microsoft.graph.provisioningSystem" => new ProvisioningSystem(),
+                "#microsoft.graph.servicePrincipalIdentity" => new ServicePrincipalIdentity(),
+                "#microsoft.graph.sharePointIdentity" => new SharePointIdentity(),
+                "#microsoft.graph.teamworkApplicationIdentity" => new TeamworkApplicationIdentity(),
+                "#microsoft.graph.teamworkConversationIdentity" => new TeamworkConversationIdentity(),
+                "#microsoft.graph.teamworkTagIdentity" => new TeamworkTagIdentity(),
+                "#microsoft.graph.teamworkUserIdentity" => new TeamworkUserIdentity(),
+                "#microsoft.graph.userIdentity" => new UserIdentity(),
+                _ => new Identity(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -46,7 +47,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static DeviceManagementConfigurationSettingApplicability CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConfigurationSettingApplicability();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.deviceManagementConfigurationExchangeOnlineSettingApplicability" => new DeviceManagementConfigurationExchangeOnlineSettingApplicability(),
+                "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability" => new DeviceManagementConfigurationWindowsSettingApplicability(),
+                _ => new DeviceManagementConfigurationSettingApplicability(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

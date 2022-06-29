@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -52,7 +53,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static OmaSetting CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OmaSetting();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.omaSettingBase64" => new OmaSettingBase64(),
+                "#microsoft.graph.omaSettingBoolean" => new OmaSettingBoolean(),
+                "#microsoft.graph.omaSettingDateTime" => new OmaSettingDateTime(),
+                "#microsoft.graph.omaSettingFloatingPoint" => new OmaSettingFloatingPoint(),
+                "#microsoft.graph.omaSettingInteger" => new OmaSettingInteger(),
+                "#microsoft.graph.omaSettingString" => new OmaSettingString(),
+                "#microsoft.graph.omaSettingStringXml" => new OmaSettingStringXml(),
+                _ => new OmaSetting(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

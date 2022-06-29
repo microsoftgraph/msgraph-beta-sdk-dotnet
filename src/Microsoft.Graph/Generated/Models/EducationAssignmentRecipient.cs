@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -26,7 +27,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static EducationAssignmentRecipient CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EducationAssignmentRecipient();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.educationAssignmentClassRecipient" => new EducationAssignmentClassRecipient(),
+                "#microsoft.graph.educationAssignmentGroupRecipient" => new EducationAssignmentGroupRecipient(),
+                "#microsoft.graph.educationAssignmentIndividualRecipient" => new EducationAssignmentIndividualRecipient(),
+                _ => new EducationAssignmentRecipient(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

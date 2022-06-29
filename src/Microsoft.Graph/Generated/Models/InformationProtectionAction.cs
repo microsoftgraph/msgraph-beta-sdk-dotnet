@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -26,7 +27,26 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static InformationProtectionAction CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new InformationProtectionAction();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.addContentFooterAction" => new AddContentFooterAction(),
+                "#microsoft.graph.addContentHeaderAction" => new AddContentHeaderAction(),
+                "#microsoft.graph.addWatermarkAction" => new AddWatermarkAction(),
+                "#microsoft.graph.applyLabelAction" => new ApplyLabelAction(),
+                "#microsoft.graph.customAction" => new CustomAction(),
+                "#microsoft.graph.justifyAction" => new JustifyAction(),
+                "#microsoft.graph.metadataAction" => new MetadataAction(),
+                "#microsoft.graph.protectAdhocAction" => new ProtectAdhocAction(),
+                "#microsoft.graph.protectByTemplateAction" => new ProtectByTemplateAction(),
+                "#microsoft.graph.protectDoNotForwardAction" => new ProtectDoNotForwardAction(),
+                "#microsoft.graph.recommendLabelAction" => new RecommendLabelAction(),
+                "#microsoft.graph.removeContentFooterAction" => new RemoveContentFooterAction(),
+                "#microsoft.graph.removeContentHeaderAction" => new RemoveContentHeaderAction(),
+                "#microsoft.graph.removeProtectionAction" => new RemoveProtectionAction(),
+                "#microsoft.graph.removeWatermarkAction" => new RemoveWatermarkAction(),
+                _ => new InformationProtectionAction(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

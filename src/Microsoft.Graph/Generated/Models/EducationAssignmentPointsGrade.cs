@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the educationRoot singleton.</summary>
     public class EducationAssignmentPointsGrade : EducationAssignmentGrade, IParsable {
         /// <summary>Number of points a teacher is giving this submission object.</summary>
         public float? Points {

@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class CloudPcDeviceImage : Entity, IParsable {
         /// <summary>The image&apos;s display name.</summary>
         public string DisplayName {

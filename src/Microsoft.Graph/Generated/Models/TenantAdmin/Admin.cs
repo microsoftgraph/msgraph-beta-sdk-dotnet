@@ -14,6 +14,11 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The reportSettings property</summary>
+        public Microsoft.Graph.Beta.Models.AdminReportSettings ReportSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdminReportSettings>(nameof(ReportSettings)); }
+            set { BackingStore?.Set(nameof(ReportSettings), value); }
+        }
         /// <summary>A container for service communications resources. Read-only.</summary>
         public Microsoft.Graph.Beta.Models.ServiceAnnouncement ServiceAnnouncement {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServiceAnnouncement>(nameof(ServiceAnnouncement)); }
@@ -49,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"reportSettings", n => { ReportSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.AdminReportSettings>(Microsoft.Graph.Beta.Models.AdminReportSettings.CreateFromDiscriminatorValue); } },
                 {"serviceAnnouncement", n => { ServiceAnnouncement = n.GetObjectValue<Microsoft.Graph.Beta.Models.ServiceAnnouncement>(Microsoft.Graph.Beta.Models.ServiceAnnouncement.CreateFromDiscriminatorValue); } },
                 {"sharepoint", n => { Sharepoint = n.GetObjectValue<Microsoft.Graph.Beta.Models.TenantAdmin.Sharepoint>(Microsoft.Graph.Beta.Models.TenantAdmin.Sharepoint.CreateFromDiscriminatorValue); } },
                 {"windows", n => { Windows = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.Windows>(Microsoft.Graph.Beta.Models.WindowsUpdates.Windows.CreateFromDiscriminatorValue); } },
@@ -60,6 +66,7 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AdminReportSettings>("reportSettings", ReportSettings);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ServiceAnnouncement>("serviceAnnouncement", ServiceAnnouncement);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TenantAdmin.Sharepoint>("sharepoint", Sharepoint);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.Windows>("windows", Windows);

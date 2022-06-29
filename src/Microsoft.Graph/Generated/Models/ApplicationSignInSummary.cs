@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the getAzureADApplicationSignInSummary method.</summary>
     public class ApplicationSignInSummary : Entity, IParsable {
         /// <summary>Name of the application that the user signed into.</summary>
         public string AppDisplayName {

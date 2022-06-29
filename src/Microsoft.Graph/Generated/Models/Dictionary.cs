@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -26,7 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static Dictionary CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Dictionary();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.resultTemplateDictionary" => new ResultTemplateDictionary(),
+                _ => new Dictionary(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

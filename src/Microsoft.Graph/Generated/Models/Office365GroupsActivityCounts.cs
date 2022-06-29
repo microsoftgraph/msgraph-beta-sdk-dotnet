@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the getOffice365GroupsActivityCounts method.</summary>
     public class Office365GroupsActivityCounts : Entity, IParsable {
         /// <summary>The number of emails received by Group mailboxes.</summary>
         public long? ExchangeEmailsReceived {

@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the educationRoot singleton.</summary>
     public class EducationSynchronizationProfile : Entity, IParsable {
         /// <summary>The dataProvider property</summary>
         public EducationSynchronizationDataProvider DataProvider {

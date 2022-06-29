@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the getAzureADUserFeatureUsage method.</summary>
     public class AzureADUserFeatureUsage : Entity, IParsable {
         /// <summary>The featureUsageDetails property</summary>
         public List<FeatureUsageDetail> FeatureUsageDetails {

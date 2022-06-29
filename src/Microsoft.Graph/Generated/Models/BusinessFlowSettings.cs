@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of approvalWorkflowProvider entities.</summary>
     public class BusinessFlowSettings : AccessReviewSettings, IParsable {
         /// <summary>The durationInDays property</summary>
         public int? DurationInDays {

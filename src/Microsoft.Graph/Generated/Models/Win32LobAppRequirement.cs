@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -37,7 +38,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static Win32LobAppRequirement CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Win32LobAppRequirement();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.win32LobAppFileSystemRequirement" => new Win32LobAppFileSystemRequirement(),
+                "#microsoft.graph.win32LobAppPowerShellScriptRequirement" => new Win32LobAppPowerShellScriptRequirement(),
+                "#microsoft.graph.win32LobAppRegistryRequirement" => new Win32LobAppRegistryRequirement(),
+                _ => new Win32LobAppRequirement(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

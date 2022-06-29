@@ -351,7 +351,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.LicenseDetails>>(nameof(LicenseDetails)); }
             set { BackingStore?.Set(nameof(LicenseDetails), value); }
         }
-        /// <summary>The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user&apos;s proxyAddresses collection to include the value as an SMTP address. For Azure AD B2C accounts, this property can be updated up to only ten times with unique SMTP addresses. This property cannot contain accent characters.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).</summary>
+        /// <summary>The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user&apos;s proxyAddresses collection to include the value as an SMTP address. This property cannot contain accent characters.  NOTE: We do not recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).</summary>
         public string Mail {
             get { return BackingStore?.Get<string>(nameof(Mail)); }
             set { BackingStore?.Set(nameof(Mail), value); }

@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -41,7 +42,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static IdentitySet CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IdentitySet();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.chatMessageFromIdentitySet" => new ChatMessageFromIdentitySet(),
+                "#microsoft.graph.chatMessageMentionedIdentitySet" => new ChatMessageMentionedIdentitySet(),
+                "#microsoft.graph.chatMessageReactionIdentitySet" => new ChatMessageReactionIdentitySet(),
+                "#microsoft.graph.communicationsIdentitySet" => new CommunicationsIdentitySet(),
+                "#microsoft.graph.sharePointIdentitySet" => new SharePointIdentitySet(),
+                _ => new IdentitySet(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

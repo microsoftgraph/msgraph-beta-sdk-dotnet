@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models.CallRecords;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -31,7 +32,13 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// </summary>
         public static Endpoint CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Endpoint();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.callRecords.participantEndpoint" => new ParticipantEndpoint(),
+                "#microsoft.graph.callRecords.serviceEndpoint" => new ServiceEndpoint(),
+                _ => new Endpoint(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

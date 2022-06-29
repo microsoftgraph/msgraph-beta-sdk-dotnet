@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -26,7 +27,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static GovernanceCriteria CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GovernanceCriteria();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.groupMembershipGovernanceCriteria" => new GroupMembershipGovernanceCriteria(),
+                "#microsoft.graph.roleMembershipGovernanceCriteria" => new RoleMembershipGovernanceCriteria(),
+                "#microsoft.graph.userGovernanceCriteria" => new UserGovernanceCriteria(),
+                _ => new GovernanceCriteria(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

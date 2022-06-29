@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class Ediscoveryroot : Entity, IParsable {
         /// <summary>The cases property</summary>
         public List<Case> Cases {

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>IPv4 Range definition.</summary>
     public class IPv4Range : IpRange, IParsable {
         /// <summary>Lower address.</summary>
         public string LowerAddress {

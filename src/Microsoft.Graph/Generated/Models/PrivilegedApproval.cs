@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of privilegedApproval entities.</summary>
     public class PrivilegedApproval : Entity, IParsable {
         /// <summary>The approvalDuration property</summary>
         public TimeSpan? ApprovalDuration {

@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The network path count of this hop that was used to compute the RTT.</summary>
+        /// <summary>The network path count of this hop that was used to compute the round-trip time.</summary>
         public int? HopCount {
             get { return BackingStore?.Get<int?>(nameof(HopCount)); }
             set { BackingStore?.Set(nameof(HopCount), value); }

@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -31,7 +32,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static DlpActionInfo CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DlpActionInfo();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.blockAccessAction" => new BlockAccessAction(),
+                "#microsoft.graph.deviceRestrictionAction" => new DeviceRestrictionAction(),
+                "#microsoft.graph.notifyUserAction" => new NotifyUserAction(),
+                _ => new DlpActionInfo(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

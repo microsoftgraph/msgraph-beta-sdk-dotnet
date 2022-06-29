@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -26,7 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static AccessReviewRecommendationInsightSetting CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessReviewRecommendationInsightSetting();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.userLastSignInRecommendationInsightSetting" => new UserLastSignInRecommendationInsightSetting(),
+                _ => new AccessReviewRecommendationInsightSetting(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

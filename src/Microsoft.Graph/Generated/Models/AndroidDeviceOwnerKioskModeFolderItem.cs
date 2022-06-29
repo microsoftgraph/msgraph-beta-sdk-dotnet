@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Represents an item that can be added to Android Device Owner folder (application or weblink)</summary>
     public class AndroidDeviceOwnerKioskModeFolderItem : AndroidDeviceOwnerKioskModeHomeScreenItem, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -12,7 +12,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new AndroidDeviceOwnerKioskModeFolderItem CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidDeviceOwnerKioskModeFolderItem();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.androidDeviceOwnerKioskModeApp" => new AndroidDeviceOwnerKioskModeApp(),
+                "#microsoft.graph.androidDeviceOwnerKioskModeWeblink" => new AndroidDeviceOwnerKioskModeWeblink(),
+                _ => new AndroidDeviceOwnerKioskModeFolderItem(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

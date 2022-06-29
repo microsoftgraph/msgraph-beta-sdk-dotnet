@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class CloudPcServicePlan : Entity, IParsable {
         /// <summary>The name for the service plan. Read-only.</summary>
         public string DisplayName {

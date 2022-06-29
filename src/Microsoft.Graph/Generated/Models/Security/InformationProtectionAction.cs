@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -26,7 +27,26 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// </summary>
         public static InformationProtectionAction CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new InformationProtectionAction();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.security.addContentFooterAction" => new AddContentFooterAction(),
+                "#microsoft.graph.security.addContentHeaderAction" => new AddContentHeaderAction(),
+                "#microsoft.graph.security.addWatermarkAction" => new AddWatermarkAction(),
+                "#microsoft.graph.security.applyLabelAction" => new ApplyLabelAction(),
+                "#microsoft.graph.security.customAction" => new CustomAction(),
+                "#microsoft.graph.security.justifyAction" => new JustifyAction(),
+                "#microsoft.graph.security.metadataAction" => new MetadataAction(),
+                "#microsoft.graph.security.protectAdhocAction" => new ProtectAdhocAction(),
+                "#microsoft.graph.security.protectByTemplateAction" => new ProtectByTemplateAction(),
+                "#microsoft.graph.security.protectDoNotForwardAction" => new ProtectDoNotForwardAction(),
+                "#microsoft.graph.security.recommendLabelAction" => new RecommendLabelAction(),
+                "#microsoft.graph.security.removeContentFooterAction" => new RemoveContentFooterAction(),
+                "#microsoft.graph.security.removeContentHeaderAction" => new RemoveContentHeaderAction(),
+                "#microsoft.graph.security.removeProtectionAction" => new RemoveProtectionAction(),
+                "#microsoft.graph.security.removeWatermarkAction" => new RemoveWatermarkAction(),
+                _ => new InformationProtectionAction(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

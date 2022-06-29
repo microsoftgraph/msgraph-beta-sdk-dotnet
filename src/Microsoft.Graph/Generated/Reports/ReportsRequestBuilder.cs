@@ -134,6 +134,7 @@ using Microsoft.Graph.Beta.Reports.MonthlyPrintUsageByPrinter;
 using Microsoft.Graph.Beta.Reports.MonthlyPrintUsageByUser;
 using Microsoft.Graph.Beta.Reports.MonthlyPrintUsageSummariesByPrinter;
 using Microsoft.Graph.Beta.Reports.MonthlyPrintUsageSummariesByUser;
+using Microsoft.Graph.Beta.Reports.Security;
 using Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -194,6 +195,10 @@ namespace Microsoft.Graph.Beta.Reports {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The security property</summary>
+        public SecurityRequestBuilder Security { get =>
+            new SecurityRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>The userCredentialUsageDetails property</summary>

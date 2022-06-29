@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -26,7 +27,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static SubjectRightsRequestMailboxLocation CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SubjectRightsRequestMailboxLocation();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.subjectRightsRequestAllMailboxLocation" => new SubjectRightsRequestAllMailboxLocation(),
+                "#microsoft.graph.subjectRightsRequestEnumeratedMailboxLocation" => new SubjectRightsRequestEnumeratedMailboxLocation(),
+                _ => new SubjectRightsRequestMailboxLocation(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

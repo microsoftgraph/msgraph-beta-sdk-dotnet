@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -41,7 +42,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static AccessReviewInstanceDecisionItemResource CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessReviewInstanceDecisionItemResource();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.accessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource" => new AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource(),
+                "#microsoft.graph.accessReviewInstanceDecisionItemAzureRoleResource" => new AccessReviewInstanceDecisionItemAzureRoleResource(),
+                "#microsoft.graph.accessReviewInstanceDecisionItemServicePrincipalResource" => new AccessReviewInstanceDecisionItemServicePrincipalResource(),
+                _ => new AccessReviewInstanceDecisionItemResource(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

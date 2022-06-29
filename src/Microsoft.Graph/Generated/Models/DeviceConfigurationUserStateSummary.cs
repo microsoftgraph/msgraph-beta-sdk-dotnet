@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class DeviceConfigurationUserStateSummary : Entity, IParsable {
         /// <summary>Number of compliant users</summary>
         public int? CompliantUserCount {

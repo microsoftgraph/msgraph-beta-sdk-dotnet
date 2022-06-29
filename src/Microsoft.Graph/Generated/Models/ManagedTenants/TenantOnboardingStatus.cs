@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum TenantOnboardingStatus {
         Ineligible,
         InProcess,

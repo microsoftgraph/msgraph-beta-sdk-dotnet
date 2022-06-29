@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the getAzureADFeatureUsage method.</summary>
     public class AzureADFeatureUsage : Entity, IParsable {
         /// <summary>The featureName property</summary>
         public string FeatureName {

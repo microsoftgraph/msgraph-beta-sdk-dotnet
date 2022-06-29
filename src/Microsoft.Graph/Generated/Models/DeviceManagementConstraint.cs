@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -27,7 +28,26 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static DeviceManagementConstraint CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConstraint();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.deviceManagementEnumConstraint" => new DeviceManagementEnumConstraint(),
+                "#microsoft.graph.deviceManagementIntentSettingSecretConstraint" => new DeviceManagementIntentSettingSecretConstraint(),
+                "#microsoft.graph.deviceManagementSettingAbstractImplementationConstraint" => new DeviceManagementSettingAbstractImplementationConstraint(),
+                "#microsoft.graph.deviceManagementSettingAppConstraint" => new DeviceManagementSettingAppConstraint(),
+                "#microsoft.graph.deviceManagementSettingBooleanConstraint" => new DeviceManagementSettingBooleanConstraint(),
+                "#microsoft.graph.deviceManagementSettingCollectionConstraint" => new DeviceManagementSettingCollectionConstraint(),
+                "#microsoft.graph.deviceManagementSettingEnrollmentTypeConstraint" => new DeviceManagementSettingEnrollmentTypeConstraint(),
+                "#microsoft.graph.deviceManagementSettingFileConstraint" => new DeviceManagementSettingFileConstraint(),
+                "#microsoft.graph.deviceManagementSettingIntegerConstraint" => new DeviceManagementSettingIntegerConstraint(),
+                "#microsoft.graph.deviceManagementSettingProfileConstraint" => new DeviceManagementSettingProfileConstraint(),
+                "#microsoft.graph.deviceManagementSettingRegexConstraint" => new DeviceManagementSettingRegexConstraint(),
+                "#microsoft.graph.deviceManagementSettingRequiredConstraint" => new DeviceManagementSettingRequiredConstraint(),
+                "#microsoft.graph.deviceManagementSettingSddlConstraint" => new DeviceManagementSettingSddlConstraint(),
+                "#microsoft.graph.deviceManagementSettingStringLengthConstraint" => new DeviceManagementSettingStringLengthConstraint(),
+                "#microsoft.graph.deviceManagementSettingXmlConstraint" => new DeviceManagementSettingXmlConstraint(),
+                _ => new DeviceManagementConstraint(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

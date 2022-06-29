@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the getRelyingPartyDetailedSummary method.</summary>
     public class RelyingPartyDetailedSummary : Entity, IParsable {
         /// <summary>Number of failed sign in on Active Directory Federation Service in the period specified.</summary>
         public long? FailedSignInCount {

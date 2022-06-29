@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
+    /// <summary>Casts the previous resource to servicePrincipal.</summary>
     public enum PermissionClassificationType {
         Low,
         Medium,

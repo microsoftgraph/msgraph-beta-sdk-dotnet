@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -27,7 +28,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static SingleSignOnExtension CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SingleSignOnExtension();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.credentialSingleSignOnExtension" => new CredentialSingleSignOnExtension(),
+                "#microsoft.graph.iosSingleSignOnExtension" => new IosSingleSignOnExtension(),
+                "#microsoft.graph.kerberosSingleSignOnExtension" => new KerberosSingleSignOnExtension(),
+                "#microsoft.graph.macOSSingleSignOnExtension" => new MacOSSingleSignOnExtension(),
+                "#microsoft.graph.redirectSingleSignOnExtension" => new RedirectSingleSignOnExtension(),
+                _ => new SingleSignOnExtension(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

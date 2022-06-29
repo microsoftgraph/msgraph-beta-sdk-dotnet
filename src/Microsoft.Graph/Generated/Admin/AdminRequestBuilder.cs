@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Admin.ReportSettings;
 using Microsoft.Graph.Beta.Admin.ServiceAnnouncement;
 using Microsoft.Graph.Beta.Admin.Sharepoint;
 using Microsoft.Graph.Beta.Admin.Windows;
@@ -16,6 +17,10 @@ namespace Microsoft.Graph.Beta.Admin {
     public class AdminRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>The reportSettings property</summary>
+        public ReportSettingsRequestBuilder ReportSettings { get =>
+            new ReportSettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>The serviceAnnouncement property</summary>

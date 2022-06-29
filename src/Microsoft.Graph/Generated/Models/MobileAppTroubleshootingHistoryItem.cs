@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -37,7 +38,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static MobileAppTroubleshootingHistoryItem CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MobileAppTroubleshootingHistoryItem();
+            var mappingValueNode = parseNode.GetChildNode("@odata.type");
+            var mappingValue = mappingValueNode?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.mobileAppTroubleshootingAppPolicyCreationHistory" => new MobileAppTroubleshootingAppPolicyCreationHistory(),
+                "#microsoft.graph.mobileAppTroubleshootingAppStateHistory" => new MobileAppTroubleshootingAppStateHistory(),
+                "#microsoft.graph.mobileAppTroubleshootingAppTargetHistory" => new MobileAppTroubleshootingAppTargetHistory(),
+                "#microsoft.graph.mobileAppTroubleshootingAppUpdateHistory" => new MobileAppTroubleshootingAppUpdateHistory(),
+                "#microsoft.graph.mobileAppTroubleshootingDeviceCheckinHistory" => new MobileAppTroubleshootingDeviceCheckinHistory(),
+                _ => new MobileAppTroubleshootingHistoryItem(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
