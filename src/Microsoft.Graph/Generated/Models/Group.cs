@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Group : DirectoryObject, IParsable {
         /// <summary>The list of users or groups that are allowed to create post&apos;s or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.</summary>
         public List<DirectoryObject> AcceptedSenders {
@@ -396,7 +396,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>(nameof(Visibility)); }
             set { BackingStore?.Set(nameof(Visibility), value); }
         }
-        /// <summary>The writebackConfiguration property</summary>
+        /// <summary>Specifies whether or not a group is configured to write back group object properties to on-premise Active Directory. These properties are used when group writeback is configured in the Azure AD Connect sync client.</summary>
         public GroupWritebackConfiguration WritebackConfiguration {
             get { return BackingStore?.Get<GroupWritebackConfiguration>(nameof(WritebackConfiguration)); }
             set { BackingStore?.Set(nameof(WritebackConfiguration), value); }

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Teamwork : Entity, IParsable {
-        /// <summary>The deletedTeams property</summary>
+        /// <summary>A collection of deleted teams.</summary>
         public List<DeletedTeam> DeletedTeams {
             get { return BackingStore?.Get<List<DeletedTeam>>(nameof(DeletedTeams)); }
             set { BackingStore?.Set(nameof(DeletedTeams), value); }

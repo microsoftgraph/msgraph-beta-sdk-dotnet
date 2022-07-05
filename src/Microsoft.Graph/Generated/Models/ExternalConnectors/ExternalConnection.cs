@@ -5,6 +5,11 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
     public class ExternalConnection : Entity, IParsable {
+        /// <summary>The complianceSettings property</summary>
+        public Microsoft.Graph.Beta.Models.ExternalConnectors.ComplianceSettings ComplianceSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.ComplianceSettings>(nameof(ComplianceSettings)); }
+            set { BackingStore?.Set(nameof(ComplianceSettings), value); }
+        }
         /// <summary>Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.</summary>
         public Microsoft.Graph.Beta.Models.ExternalConnectors.Configuration Configuration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.Configuration>(nameof(Configuration)); }
@@ -19,6 +24,11 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         public string Description {
             get { return BackingStore?.Get<string>(nameof(Description)); }
             set { BackingStore?.Set(nameof(Description), value); }
+        }
+        /// <summary>The enabledContentExperiences property</summary>
+        public ContentExperienceType? EnabledContentExperiences {
+            get { return BackingStore?.Get<ContentExperienceType?>(nameof(EnabledContentExperiences)); }
+            set { BackingStore?.Set(nameof(EnabledContentExperiences), value); }
         }
         /// <summary>The groups property</summary>
         public List<ExternalGroup> Groups {
@@ -78,9 +88,11 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"complianceSettings", n => { ComplianceSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.ComplianceSettings>(Microsoft.Graph.Beta.Models.ExternalConnectors.ComplianceSettings.CreateFromDiscriminatorValue); } },
                 {"configuration", n => { Configuration = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.Configuration>(Microsoft.Graph.Beta.Models.ExternalConnectors.Configuration.CreateFromDiscriminatorValue); } },
                 {"connectorId", n => { ConnectorId = n.GetStringValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
+                {"enabledContentExperiences", n => { EnabledContentExperiences = n.GetEnumValue<ContentExperienceType>(); } },
                 {"groups", n => { Groups = n.GetCollectionOfObjectValues<ExternalGroup>(ExternalGroup.CreateFromDiscriminatorValue).ToList(); } },
                 {"ingestedItemsCount", n => { IngestedItemsCount = n.GetLongValue(); } },
                 {"items", n => { Items = n.GetCollectionOfObjectValues<ExternalItem>(ExternalItem.CreateFromDiscriminatorValue).ToList(); } },
@@ -99,9 +111,11 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.ComplianceSettings>("complianceSettings", ComplianceSettings);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.Configuration>("configuration", Configuration);
             writer.WriteStringValue("connectorId", ConnectorId);
             writer.WriteStringValue("description", Description);
+            writer.WriteEnumValue<ContentExperienceType>("enabledContentExperiences", EnabledContentExperiences);
             writer.WriteCollectionOfObjectValues<ExternalGroup>("groups", Groups);
             writer.WriteLongValue("ingestedItemsCount", IngestedItemsCount);
             writer.WriteCollectionOfObjectValues<ExternalItem>("items", Items);

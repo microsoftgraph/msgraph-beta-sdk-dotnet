@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class WorkbookChartPointFormat : Entity, IParsable {
         /// <summary>Represents the fill format of a chart, which includes background formating information. Read-only.</summary>
         public WorkbookChartFill Fill {

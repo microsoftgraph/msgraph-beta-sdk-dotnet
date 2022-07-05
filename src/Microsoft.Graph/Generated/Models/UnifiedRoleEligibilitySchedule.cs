@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class UnifiedRoleEligibilitySchedule : UnifiedRoleScheduleBase, IParsable {
-        /// <summary>Membership type of the eligible assignment. It can either be Inherited, Direct, or Group.</summary>
+        /// <summary>Membership type of the eligible assignment. It can either be Inherited, Direct, or Group. Supports $filter (eq).</summary>
         public string MemberType {
             get { return BackingStore?.Get<string>(nameof(MemberType)); }
             set { BackingStore?.Set(nameof(MemberType), value); }

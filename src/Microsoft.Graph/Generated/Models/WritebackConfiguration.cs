@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isEnabled property</summary>
+        /// <summary>Indicates whether writeback of cloud groups to on-premise Active Directory is enabled. Default value is true for Microsoft 365 groups and false for security groups.</summary>
         public bool? IsEnabled {
             get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
             set { BackingStore?.Set(nameof(IsEnabled), value); }

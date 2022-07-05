@@ -11,6 +11,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<ParticipantInfo>(nameof(Info)); }
             set { BackingStore?.Set(nameof(Info), value); }
         }
+        /// <summary>The isIdentityAnonymized property</summary>
+        public bool? IsIdentityAnonymized {
+            get { return BackingStore?.Get<bool?>(nameof(IsIdentityAnonymized)); }
+            set { BackingStore?.Set(nameof(IsIdentityAnonymized), value); }
+        }
         /// <summary>true if the participant is in lobby.</summary>
         public bool? IsInLobby {
             get { return BackingStore?.Get<bool?>(nameof(IsInLobby)); }
@@ -50,6 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"info", n => { Info = n.GetObjectValue<ParticipantInfo>(ParticipantInfo.CreateFromDiscriminatorValue); } },
+                {"isIdentityAnonymized", n => { IsIdentityAnonymized = n.GetBoolValue(); } },
                 {"isInLobby", n => { IsInLobby = n.GetBoolValue(); } },
                 {"isMuted", n => { IsMuted = n.GetBoolValue(); } },
                 {"mediaStreams", n => { MediaStreams = n.GetCollectionOfObjectValues<MediaStream>(MediaStream.CreateFromDiscriminatorValue).ToList(); } },
@@ -65,6 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<ParticipantInfo>("info", Info);
+            writer.WriteBoolValue("isIdentityAnonymized", IsIdentityAnonymized);
             writer.WriteBoolValue("isInLobby", IsInLobby);
             writer.WriteBoolValue("isMuted", IsMuted);
             writer.WriteCollectionOfObjectValues<MediaStream>("mediaStreams", MediaStreams);

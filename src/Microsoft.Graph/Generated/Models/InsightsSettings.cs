@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class InsightsSettings : Entity, IParsable {
         /// <summary>The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.</summary>
         public string DisabledForGroup {

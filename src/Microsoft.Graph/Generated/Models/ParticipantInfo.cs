@@ -33,6 +33,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>(nameof(LanguageId)); }
             set { BackingStore?.Set(nameof(LanguageId), value); }
         }
+        /// <summary>The nonAnonymizedIdentity property</summary>
+        public IdentitySet NonAnonymizedIdentity {
+            get { return BackingStore?.Get<IdentitySet>(nameof(NonAnonymizedIdentity)); }
+            set { BackingStore?.Set(nameof(NonAnonymizedIdentity), value); }
+        }
         /// <summary>The participant ID of the participant. Read-only.</summary>
         public string ParticipantId {
             get { return BackingStore?.Get<string>(nameof(ParticipantId)); }
@@ -72,6 +77,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"endpointType", n => { EndpointType = n.GetEnumValue<EndpointType>(); } },
                 {"identity", n => { Identity = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"languageId", n => { LanguageId = n.GetStringValue(); } },
+                {"nonAnonymizedIdentity", n => { NonAnonymizedIdentity = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"participantId", n => { ParticipantId = n.GetStringValue(); } },
                 {"platformId", n => { PlatformId = n.GetStringValue(); } },
                 {"region", n => { Region = n.GetStringValue(); } },
@@ -87,6 +93,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<EndpointType>("endpointType", EndpointType);
             writer.WriteObjectValue<IdentitySet>("identity", Identity);
             writer.WriteStringValue("languageId", LanguageId);
+            writer.WriteObjectValue<IdentitySet>("nonAnonymizedIdentity", NonAnonymizedIdentity);
             writer.WriteStringValue("participantId", ParticipantId);
             writer.WriteStringValue("platformId", PlatformId);
             writer.WriteStringValue("region", Region);

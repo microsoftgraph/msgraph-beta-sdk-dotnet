@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class EstimateStatisticsOperation : CaseOperation, IParsable {
         /// <summary>The estimated count of items for the sourceCollection that matched the content query.</summary>
         public long? IndexedItemCount {

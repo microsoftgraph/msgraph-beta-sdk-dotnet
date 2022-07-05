@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>(nameof(Name)); }
             set { BackingStore?.Set(nameof(Name), value); }
         }
-        /// <summary>The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String.  See the table below for more details.</summary>
+        /// <summary>The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String. See the table below for more details.</summary>
         public string Type {
             get { return BackingStore?.Get<string>(nameof(Type)); }
             set { BackingStore?.Set(nameof(Type), value); }

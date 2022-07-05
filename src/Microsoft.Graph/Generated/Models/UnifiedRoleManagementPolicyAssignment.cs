@@ -5,27 +5,27 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRoleManagementPolicyAssignment : Entity, IParsable {
-        /// <summary>The policy for the assignment.</summary>
+        /// <summary>The policy that&apos;s associated with a policy assignment. Supports $expand and a nested $expand of the rules and effectiveRules relationships for the policy.</summary>
         public UnifiedRoleManagementPolicy Policy {
             get { return BackingStore?.Get<UnifiedRoleManagementPolicy>(nameof(Policy)); }
             set { BackingStore?.Set(nameof(Policy), value); }
         }
-        /// <summary>The id of the policy.</summary>
+        /// <summary>The id of the policy. Inherited from entity.</summary>
         public string PolicyId {
             get { return BackingStore?.Get<string>(nameof(PolicyId)); }
             set { BackingStore?.Set(nameof(PolicyId), value); }
         }
-        /// <summary>The id of the role definition where the policy applies. If not specified, the policy applies to all roles.</summary>
+        /// <summary>The identifier of the role definition object where the policy applies. If not specified, the policy applies to all roles. Supports $filter (eq).</summary>
         public string RoleDefinitionId {
             get { return BackingStore?.Get<string>(nameof(RoleDefinitionId)); }
             set { BackingStore?.Set(nameof(RoleDefinitionId), value); }
         }
-        /// <summary>The id of the scope where the policy is assigned. E.g. &apos;/&apos;, groupId, etc.</summary>
+        /// <summary>The identifier of the scope where the policy is assigned.  Can be / for the tenant or a group ID. Required.</summary>
         public string ScopeId {
             get { return BackingStore?.Get<string>(nameof(ScopeId)); }
             set { BackingStore?.Set(nameof(ScopeId), value); }
         }
-        /// <summary>The type of the scope where the policy is assigned. One of Directory, DirectoryRole, Group.</summary>
+        /// <summary>The type of the scope where the policy is assigned. One of Directory, DirectoryRole. Required.</summary>
         public string ScopeType {
             get { return BackingStore?.Get<string>(nameof(ScopeType)); }
             set { BackingStore?.Set(nameof(ScopeType), value); }

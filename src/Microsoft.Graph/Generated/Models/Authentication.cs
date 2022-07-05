@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Authentication : Entity, IParsable {
         /// <summary>Represents the email addresses registered to a user for authentication.</summary>
         public List<EmailAuthenticationMethod> EmailMethods {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class VirtualEndpoint : Entity, IParsable {
         /// <summary>Cloud PC audit event.</summary>
         public List<CloudPcAuditEvent> AuditEvents {
@@ -20,6 +20,11 @@ namespace Microsoft.Graph.Beta.Models {
         public List<CloudPcDeviceImage> DeviceImages {
             get { return BackingStore?.Get<List<CloudPcDeviceImage>>(nameof(DeviceImages)); }
             set { BackingStore?.Set(nameof(DeviceImages), value); }
+        }
+        /// <summary>The externalPartnerSettings property</summary>
+        public List<CloudPcExternalPartnerSetting> ExternalPartnerSettings {
+            get { return BackingStore?.Get<List<CloudPcExternalPartnerSetting>>(nameof(ExternalPartnerSettings)); }
+            set { BackingStore?.Set(nameof(ExternalPartnerSettings), value); }
         }
         /// <summary>The gallery image resource on Cloud PC.</summary>
         public List<CloudPcGalleryImage> GalleryImages {
@@ -77,6 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"auditEvents", n => { AuditEvents = n.GetCollectionOfObjectValues<CloudPcAuditEvent>(CloudPcAuditEvent.CreateFromDiscriminatorValue).ToList(); } },
                 {"cloudPCs", n => { CloudPCs = n.GetCollectionOfObjectValues<CloudPC>(CloudPC.CreateFromDiscriminatorValue).ToList(); } },
                 {"deviceImages", n => { DeviceImages = n.GetCollectionOfObjectValues<CloudPcDeviceImage>(CloudPcDeviceImage.CreateFromDiscriminatorValue).ToList(); } },
+                {"externalPartnerSettings", n => { ExternalPartnerSettings = n.GetCollectionOfObjectValues<CloudPcExternalPartnerSetting>(CloudPcExternalPartnerSetting.CreateFromDiscriminatorValue).ToList(); } },
                 {"galleryImages", n => { GalleryImages = n.GetCollectionOfObjectValues<CloudPcGalleryImage>(CloudPcGalleryImage.CreateFromDiscriminatorValue).ToList(); } },
                 {"onPremisesConnections", n => { OnPremisesConnections = n.GetCollectionOfObjectValues<CloudPcOnPremisesConnection>(CloudPcOnPremisesConnection.CreateFromDiscriminatorValue).ToList(); } },
                 {"organizationSettings", n => { OrganizationSettings = n.GetObjectValue<CloudPcOrganizationSettings>(CloudPcOrganizationSettings.CreateFromDiscriminatorValue); } },
@@ -97,6 +103,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<CloudPcAuditEvent>("auditEvents", AuditEvents);
             writer.WriteCollectionOfObjectValues<CloudPC>("cloudPCs", CloudPCs);
             writer.WriteCollectionOfObjectValues<CloudPcDeviceImage>("deviceImages", DeviceImages);
+            writer.WriteCollectionOfObjectValues<CloudPcExternalPartnerSetting>("externalPartnerSettings", ExternalPartnerSettings);
             writer.WriteCollectionOfObjectValues<CloudPcGalleryImage>("galleryImages", GalleryImages);
             writer.WriteCollectionOfObjectValues<CloudPcOnPremisesConnection>("onPremisesConnections", OnPremisesConnections);
             writer.WriteObjectValue<CloudPcOrganizationSettings>("organizationSettings", OrganizationSettings);

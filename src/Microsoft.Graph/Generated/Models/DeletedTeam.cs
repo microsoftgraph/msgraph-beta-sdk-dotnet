@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeletedTeam : Entity, IParsable {
-        /// <summary>The channels property</summary>
+        /// <summary>The channels those are either shared with this deleted team or created in this deleted team.</summary>
         public List<Channel> Channels {
             get { return BackingStore?.Get<List<Channel>>(nameof(Channels)); }
             set { BackingStore?.Set(nameof(Channels), value); }

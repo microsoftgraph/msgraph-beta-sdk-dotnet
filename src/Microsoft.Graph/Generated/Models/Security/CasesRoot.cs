@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class CasesRoot : Entity, IParsable {
         /// <summary>The ediscoveryCases property</summary>
         public List<EdiscoveryCase> EdiscoveryCases {

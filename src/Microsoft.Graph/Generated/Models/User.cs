@@ -236,7 +236,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<Event>>(nameof(Events)); }
             set { BackingStore?.Set(nameof(Events), value); }
         }
-        /// <summary>The collection of open extensions defined for the user. Nullable.</summary>
+        /// <summary>The collection of open extensions defined for the user. Supports $expand. Nullable.</summary>
         public List<Extension> Extensions {
             get { return BackingStore?.Get<List<Extension>>(nameof(Extensions)); }
             set { BackingStore?.Set(nameof(Extensions), value); }
@@ -451,7 +451,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>(nameof(OnPremisesDomainName)); }
             set { BackingStore?.Set(nameof(OnPremisesDomainName), value); }
         }
-        /// <summary>Contains extensionAttributes1-15 for the user. The individual extension attributes are neither selectable nor filterable. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. These extension attributes are also known as Exchange custom attributes 1-15. Returned only on $select.</summary>
+        /// <summary>Contains extensionAttributes1-15 for the user. These extension attributes are also known as Exchange custom attributes 1-15. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. Supports $filter (eq, ne, not, in).</summary>
         public Microsoft.Graph.Beta.Models.OnPremisesExtensionAttributes OnPremisesExtensionAttributes {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnPremisesExtensionAttributes>(nameof(OnPremisesExtensionAttributes)); }
             set { BackingStore?.Set(nameof(OnPremisesExtensionAttributes), value); }
@@ -491,7 +491,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>(nameof(OnPremisesUserPrincipalName)); }
             set { BackingStore?.Set(nameof(OnPremisesUserPrincipalName), value); }
         }
-        /// <summary>A list of additional email addresses for the user; for example: [&apos;bob@contoso.com&apos;, &apos;Robert@fabrikam.com&apos;].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, and counting empty collections).</summary>
+        /// <summary>A list of additional email addresses for the user; for example: [&apos;bob@contoso.com&apos;, &apos;Robert@fabrikam.com&apos;].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).</summary>
         public List<string> OtherMails {
             get { return BackingStore?.Get<List<string>>(nameof(OtherMails)); }
             set { BackingStore?.Set(nameof(OtherMails), value); }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class OnlineMeeting : Entity, IParsable {
         /// <summary>Indicates whether attendees can turn on their camera.</summary>
         public bool? AllowAttendeeToEnableCamera {
@@ -35,6 +35,11 @@ namespace Microsoft.Graph.Beta.Models {
         public byte[] AlternativeRecording {
             get { return BackingStore?.Get<byte[]>(nameof(AlternativeRecording)); }
             set { BackingStore?.Set(nameof(AlternativeRecording), value); }
+        }
+        /// <summary>The anonymizeIdentityForRoles property</summary>
+        public List<string> AnonymizeIdentityForRoles {
+            get { return BackingStore?.Get<List<string>>(nameof(AnonymizeIdentityForRoles)); }
+            set { BackingStore?.Set(nameof(AnonymizeIdentityForRoles), value); }
         }
         /// <summary>The attendance reports of an online meeting. Read-only.</summary>
         public List<Microsoft.Graph.Beta.Models.MeetingAttendanceReport> AttendanceReports {
@@ -175,6 +180,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"allowMeetingChat", n => { AllowMeetingChat = n.GetEnumValue<MeetingChatMode>(); } },
                 {"allowTeamworkReactions", n => { AllowTeamworkReactions = n.GetBoolValue(); } },
                 {"alternativeRecording", n => { AlternativeRecording = n.GetByteArrayValue(); } },
+                {"anonymizeIdentityForRoles", n => { AnonymizeIdentityForRoles = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"attendanceReports", n => { AttendanceReports = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MeetingAttendanceReport>(Microsoft.Graph.Beta.Models.MeetingAttendanceReport.CreateFromDiscriminatorValue).ToList(); } },
                 {"attendeeReport", n => { AttendeeReport = n.GetByteArrayValue(); } },
                 {"audioConferencing", n => { AudioConferencing = n.GetObjectValue<Microsoft.Graph.Beta.Models.AudioConferencing>(Microsoft.Graph.Beta.Models.AudioConferencing.CreateFromDiscriminatorValue); } },
@@ -214,6 +220,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<MeetingChatMode>("allowMeetingChat", AllowMeetingChat);
             writer.WriteBoolValue("allowTeamworkReactions", AllowTeamworkReactions);
             writer.WriteByteArrayValue("alternativeRecording", AlternativeRecording);
+            writer.WriteCollectionOfPrimitiveValues<string>("anonymizeIdentityForRoles", AnonymizeIdentityForRoles);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MeetingAttendanceReport>("attendanceReports", AttendanceReports);
             writer.WriteByteArrayValue("attendeeReport", AttendeeReport);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AudioConferencing>("audioConferencing", AudioConferencing);

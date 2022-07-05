@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get channels from teamwork
+        /// The channels those are either shared with this deleted team or created in this deleted team.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ChannelItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item {
             return new DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Get channels from teamwork
+        /// The channels those are either shared with this deleted team or created in this deleted team.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get channels from teamwork</summary>
+        /// <summary>The channels those are either shared with this deleted team or created in this deleted team.</summary>
         public class ChannelItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

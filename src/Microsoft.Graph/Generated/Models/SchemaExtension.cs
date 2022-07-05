@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<ExtensionSchemaProperty>>(nameof(Properties)); }
             set { BackingStore?.Set(nameof(Properties), value); }
         }
-        /// <summary>The lifecycle state of the schema extension. Possible states are InDevelopment, Available, and Deprecated. Automatically set to InDevelopment on creation. Schema extensions provides more information on the possible state transitions and behaviors. Supports $filter (eq).</summary>
+        /// <summary>The lifecycle state of the schema extension. Possible states are InDevelopment, Available, and Deprecated. Automatically set to InDevelopment on creation. For more information about the possible state transitions and behaviors, see Schema extensions lifecycle. Supports $filter (eq).</summary>
         public string Status {
             get { return BackingStore?.Get<string>(nameof(Status)); }
             set { BackingStore?.Set(nameof(Status), value); }
         }
-        /// <summary>Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from administrativeUnit, contact, device, event, group, message, organization, post, or user.</summary>
+        /// <summary>Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from administrativeUnit, contact, device, event, group, message, organization, post, todoTask, todoTaskList, or user.</summary>
         public List<string> TargetTypes {
             get { return BackingStore?.Get<List<string>>(nameof(TargetTypes)); }
             set { BackingStore?.Set(nameof(TargetTypes), value); }

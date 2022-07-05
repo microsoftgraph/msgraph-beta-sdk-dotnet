@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class TodoTask : Entity, IParsable {
         /// <summary>The attachments property</summary>
         public List<AttachmentBase> Attachments {
@@ -91,6 +91,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeTimeZone>(nameof(ReminderDateTime)); }
             set { BackingStore?.Set(nameof(ReminderDateTime), value); }
         }
+        /// <summary>The startDateTime property</summary>
+        public DateTimeTimeZone StartDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(StartDateTime)); }
+            set { BackingStore?.Set(nameof(StartDateTime), value); }
+        }
         /// <summary>Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.</summary>
         public TaskStatus? Status {
             get { return BackingStore?.Get<TaskStatus?>(nameof(Status)); }
@@ -131,6 +136,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"linkedResources", n => { LinkedResources = n.GetCollectionOfObjectValues<LinkedResource>(LinkedResource.CreateFromDiscriminatorValue).ToList(); } },
                 {"recurrence", n => { Recurrence = n.GetObjectValue<PatternedRecurrence>(PatternedRecurrence.CreateFromDiscriminatorValue); } },
                 {"reminderDateTime", n => { ReminderDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                {"startDateTime", n => { StartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 {"status", n => { Status = n.GetEnumValue<TaskStatus>(); } },
                 {"title", n => { Title = n.GetStringValue(); } },
             };
@@ -159,6 +165,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<LinkedResource>("linkedResources", LinkedResources);
             writer.WriteObjectValue<PatternedRecurrence>("recurrence", Recurrence);
             writer.WriteObjectValue<DateTimeTimeZone>("reminderDateTime", ReminderDateTime);
+            writer.WriteObjectValue<DateTimeTimeZone>("startDateTime", StartDateTime);
             writer.WriteEnumValue<TaskStatus>("status", Status);
             writer.WriteStringValue("title", Title);
         }
