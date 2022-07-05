@@ -63,6 +63,19 @@ namespace Microsoft.Graph
         public string DeviceImagesNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets external partner settings.
+        /// </summary>
+        [JsonPropertyName("externalPartnerSettings")]
+        public IVirtualEndpointExternalPartnerSettingsCollectionPage ExternalPartnerSettings { get; set; }
+
+        /// <summary>
+        /// Gets or sets externalPartnerSettingsNextLink.
+        /// </summary>
+        [JsonPropertyName("externalPartnerSettings@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ExternalPartnerSettingsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets gallery images.
         /// The gallery image resource on Cloud PC.
         /// </summary>

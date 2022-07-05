@@ -43,14 +43,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// The lifecycle state of the schema extension. Possible states are InDevelopment, Available, and Deprecated. Automatically set to InDevelopment on creation. Schema extensions provides more information on the possible state transitions and behaviors. Supports $filter (eq).
+        /// The lifecycle state of the schema extension. Possible states are InDevelopment, Available, and Deprecated. Automatically set to InDevelopment on creation. For more information about the possible state transitions and behaviors, see Schema extensions lifecycle. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("status")]
         public string Status { get; set; }
     
         /// <summary>
         /// Gets or sets target types.
-        /// Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from administrativeUnit, contact, device, event, group, message, organization, post, or user.
+        /// Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from administrativeUnit, contact, device, event, group, message, organization, post, todoTask, todoTaskList, or user.
         /// </summary>
         [JsonPropertyName("targetTypes")]
         public IEnumerable<string> TargetTypes { get; set; }

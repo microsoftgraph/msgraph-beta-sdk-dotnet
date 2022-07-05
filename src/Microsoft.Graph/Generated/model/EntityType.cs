@@ -64,5 +64,20 @@ namespace Microsoft.Graph
         /// </summary>
         UnknownFutureValue = 9,
 	
+        /// <summary>
+        /// Acronym
+        /// </summary>
+        Acronym = 10,
+	
+        /// <summary>
+        /// Bookmark
+        /// </summary>
+        Bookmark = 11,
+	
+        /// <summary>
+        /// Chat Message
+        /// </summary>
+        ChatMessage = 12,
+	
     }
 }

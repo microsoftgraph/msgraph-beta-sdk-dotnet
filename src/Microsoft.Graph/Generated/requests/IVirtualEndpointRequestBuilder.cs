@@ -50,6 +50,12 @@ namespace Microsoft.Graph
         IVirtualEndpointDeviceImagesCollectionRequestBuilder DeviceImages { get; }
 
         /// <summary>
+        /// Gets the request builder for ExternalPartnerSettings.
+        /// </summary>
+        /// <returns>The <see cref="IVirtualEndpointExternalPartnerSettingsCollectionRequestBuilder"/>.</returns>
+        IVirtualEndpointExternalPartnerSettingsCollectionRequestBuilder ExternalPartnerSettings { get; }
+
+        /// <summary>
         /// Gets the request builder for GalleryImages.
         /// </summary>
         /// <returns>The <see cref="IVirtualEndpointGalleryImagesCollectionRequestBuilder"/>.</returns>

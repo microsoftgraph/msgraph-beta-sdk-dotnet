@@ -22,105 +22,105 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets action.
-        /// Represents the type of the operation on the role eligibility assignment. The possible values are: AdminAssign: For administrators to assign role eligibility to users or groups to roles.AdminExtend: For administrators to extend expiring assignments.AdminUpdate: For administrators to change existing role assignments.AdminRenew: For administrators to renew expired assignments.AdminRemove: For administrators to remove users or groups from eligible roles.UserAdd: For users to activate their eligible assignments.UserExtend: For users to request to extend their expiring eligible assignments.UserRemove: For users to deactivate their active eligible assignments.UserRenew: For users to request to renew their expired eligible assignments.
+        /// Represents the type of operation on the role eligibility request. The possible values are: AdminAssign: For administrators to assign eligible roles to principals.AdminRemove: For administrators to remove eligible roles from principals. AdminUpdate: For administrators to change existing role eligibilities.AdminExtend: For administrators to extend expiring role eligibilities.AdminRenew: For administrators to renew expired eligibilities.UserAdd: For users to activate their eligible assignments.UserRemove: For users to deactivate their active eligible assignments.UserExtend: For users to request to extend their expiring eligible assignments.UserRenew: For users to request to renew their expired eligible assignments.
         /// </summary>
         [JsonPropertyName("action")]
         public string Action { get; set; }
     
         /// <summary>
         /// Gets or sets app scope id.
-        /// Identifier of the app-specific scope when the assignment scope is app-specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units.
+        /// Identifier of the app-specific scope when the role eligibility is scoped to an app. The scope of a role eligibility determines the set of resources for which the principal is eligible to access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, ne, and on null values).
         /// </summary>
         [JsonPropertyName("appScopeId")]
         public string AppScopeId { get; set; }
     
         /// <summary>
         /// Gets or sets directory scope id.
-        /// Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only.
+        /// Identifier of the directory object representing the scope of the role eligibility. The scope of a role eligibility determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, ne, and on null values).
         /// </summary>
         [JsonPropertyName("directoryScopeId")]
         public string DirectoryScopeId { get; set; }
     
         /// <summary>
         /// Gets or sets is validation only.
-        /// A boolean that determines whether the call is a validation or an actual call. Only set this property if you want to check whether an activation is subject to additional rules like MFA before actually submitting the request.
+        /// Determines whether the call is a validation or an actual call. Only set this property if you want to check whether an activation is subject to additional rules like MFA before actually submitting the request.
         /// </summary>
         [JsonPropertyName("isValidationOnly")]
         public bool? IsValidationOnly { get; set; }
     
         /// <summary>
         /// Gets or sets justification.
-        /// A message provided by users and administrators when create the request about why it is needed.
+        /// A message provided by users and administrators when create they create the unifiedRoleEligibilityScheduleRequest object.
         /// </summary>
         [JsonPropertyName("justification")]
         public string Justification { get; set; }
     
         /// <summary>
         /// Gets or sets principal id.
-        /// Identifier of the principal to which the assignment is being granted to. For example, a user or a group. For groups, they must be assignable to roles, that is, the isAssignableToRole of the group property set to true.
+        /// Identifier of the principal that has been granted the role eligibility. Supports $filter (eq, ne).
         /// </summary>
         [JsonPropertyName("principalId")]
         public string PrincipalId { get; set; }
     
         /// <summary>
         /// Gets or sets role definition id.
-        /// Identifier of the unifiedRoleDefinition the assignment is for. Read only.
+        /// Identifier of the unifiedRoleDefinition object that is being assigned to the principal. Supports $filter (eq, ne).
         /// </summary>
         [JsonPropertyName("roleDefinitionId")]
         public string RoleDefinitionId { get; set; }
     
         /// <summary>
         /// Gets or sets schedule info.
-        /// The schedule object of the role assignment request.
+        /// The period of the role eligibility. Recurring schedules are currently unsupported.
         /// </summary>
         [JsonPropertyName("scheduleInfo")]
         public RequestSchedule ScheduleInfo { get; set; }
     
         /// <summary>
         /// Gets or sets target schedule id.
-        /// The time period for which the eligibility assignment is valid.
+        /// Identifier of the schedule object that's linked to the eligibility request. Supports $filter (eq, ne).
         /// </summary>
         [JsonPropertyName("targetScheduleId")]
         public string TargetScheduleId { get; set; }
     
         /// <summary>
         /// Gets or sets ticket info.
-        /// The details of the ticket number and ticket system that is attached to the role assignment request.
+        /// Ticket details linked to the role eligibility request including details of the ticket number and ticket system. Optional.
         /// </summary>
         [JsonPropertyName("ticketInfo")]
         public TicketInfo TicketInfo { get; set; }
     
         /// <summary>
         /// Gets or sets app scope.
-        /// Read-only property with details of the app-specific scope when the assignment scope is app-specific. Containment entity.
+        /// Read-only property with details of the app-specific scope when the role eligibility is scoped to an app. Nullable. Supports $expand.
         /// </summary>
         [JsonPropertyName("appScope")]
         public AppScope AppScope { get; set; }
     
         /// <summary>
         /// Gets or sets directory scope.
-        /// Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.
+        /// The directory object that is the scope of the role eligibility. Read-only. Supports $expand.
         /// </summary>
         [JsonPropertyName("directoryScope")]
         public DirectoryObject DirectoryScope { get; set; }
     
         /// <summary>
         /// Gets or sets principal.
-        /// Property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.
+        /// The principal that's getting a role eligibility through the request. Supports $expand.
         /// </summary>
         [JsonPropertyName("principal")]
         public DirectoryObject Principal { get; set; }
     
         /// <summary>
         /// Gets or sets role definition.
-        /// Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
+        /// Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
         /// </summary>
         [JsonPropertyName("roleDefinition")]
         public UnifiedRoleDefinition RoleDefinition { get; set; }
     
         /// <summary>
         /// Gets or sets target schedule.
-        /// Property indicating the schedule for an eligible role assignment.
+        /// The schedule for a role eligibility that is referenced through the targetScheduleId property. Supports $expand.
         /// </summary>
         [JsonPropertyName("targetSchedule")]
         public UnifiedRoleEligibilitySchedule TargetSchedule { get; set; }

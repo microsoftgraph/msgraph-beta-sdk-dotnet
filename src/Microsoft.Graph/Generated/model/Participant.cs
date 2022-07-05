@@ -28,6 +28,12 @@ namespace Microsoft.Graph
         public ParticipantInfo Info { get; set; }
     
         /// <summary>
+        /// Gets or sets is identity anonymized.
+        /// </summary>
+        [JsonPropertyName("isIdentityAnonymized")]
+        public bool? IsIdentityAnonymized { get; set; }
+    
+        /// <summary>
         /// Gets or sets is in lobby.
         /// true if the participant is in lobby.
         /// </summary>

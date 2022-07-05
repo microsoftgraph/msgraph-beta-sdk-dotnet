@@ -105,6 +105,12 @@ namespace Microsoft.Graph
         public DateTimeTimeZone ReminderDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets start date time.
+        /// </summary>
+        [JsonPropertyName("startDateTime")]
+        public DateTimeTimeZone StartDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets status.
         /// Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.
         /// </summary>
