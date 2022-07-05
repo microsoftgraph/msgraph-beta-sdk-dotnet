@@ -22,6 +22,12 @@ namespace Microsoft.Graph.ExternalConnectors
     {
     
         /// <summary>
+        /// Gets or sets compliance settings.
+        /// </summary>
+        [JsonPropertyName("complianceSettings")]
+        public ComplianceSettings ComplianceSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets configuration.
         /// Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
         /// </summary>
@@ -41,6 +47,12 @@ namespace Microsoft.Graph.ExternalConnectors
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enabled content experiences.
+        /// </summary>
+        [JsonPropertyName("enabledContentExperiences")]
+        public ContentExperienceType? EnabledContentExperiences { get; set; }
     
         /// <summary>
         /// Gets or sets ingested items count.

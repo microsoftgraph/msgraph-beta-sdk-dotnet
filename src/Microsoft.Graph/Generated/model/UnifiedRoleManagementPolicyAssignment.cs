@@ -22,35 +22,35 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets policy id.
-        /// The id of the policy.
+        /// The id of the policy. Inherited from entity.
         /// </summary>
         [JsonPropertyName("policyId")]
         public string PolicyId { get; set; }
     
         /// <summary>
         /// Gets or sets role definition id.
-        /// The id of the role definition where the policy applies. If not specified, the policy applies to all roles.
+        /// The identifier of the role definition object where the policy applies. If not specified, the policy applies to all roles. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("roleDefinitionId")]
         public string RoleDefinitionId { get; set; }
     
         /// <summary>
         /// Gets or sets scope id.
-        /// The id of the scope where the policy is assigned. E.g. '/', groupId, etc.
+        /// The identifier of the scope where the policy is assigned.  Can be / for the tenant or a group ID. Required.
         /// </summary>
         [JsonPropertyName("scopeId")]
         public string ScopeId { get; set; }
     
         /// <summary>
         /// Gets or sets scope type.
-        /// The type of the scope where the policy is assigned. One of Directory, DirectoryRole, Group.
+        /// The type of the scope where the policy is assigned. One of Directory, DirectoryRole. Required.
         /// </summary>
         [JsonPropertyName("scopeType")]
         public string ScopeType { get; set; }
     
         /// <summary>
         /// Gets or sets policy.
-        /// The policy for the assignment.
+        /// The policy that's associated with a policy assignment. Supports $expand and a nested $expand of the rules and effectiveRules relationships for the policy.
         /// </summary>
         [JsonPropertyName("policy")]
         public UnifiedRoleManagementPolicy Policy { get; set; }

@@ -264,6 +264,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     virtualEndpointToInitialize.DeviceImages.AdditionalData = virtualEndpointToInitialize.AdditionalData;
                 }
+                if (virtualEndpointToInitialize.ExternalPartnerSettings != null && virtualEndpointToInitialize.ExternalPartnerSettings.CurrentPage != null)
+                {
+                    virtualEndpointToInitialize.ExternalPartnerSettings.InitializeNextPageRequest(this.Client, virtualEndpointToInitialize.ExternalPartnerSettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    virtualEndpointToInitialize.ExternalPartnerSettings.AdditionalData = virtualEndpointToInitialize.AdditionalData;
+                }
                 if (virtualEndpointToInitialize.GalleryImages != null && virtualEndpointToInitialize.GalleryImages.CurrentPage != null)
                 {
                     virtualEndpointToInitialize.GalleryImages.InitializeNextPageRequest(this.Client, virtualEndpointToInitialize.GalleryImagesNextLink);

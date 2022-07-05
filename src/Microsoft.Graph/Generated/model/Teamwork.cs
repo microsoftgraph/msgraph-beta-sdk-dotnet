@@ -36,6 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets deleted teams.
+        /// A collection of deleted teams.
         /// </summary>
         [JsonPropertyName("deletedTeams")]
         public ITeamworkDeletedTeamsCollectionPage DeletedTeams { get; set; }

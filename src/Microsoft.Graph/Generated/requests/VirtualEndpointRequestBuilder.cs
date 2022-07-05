@@ -87,6 +87,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ExternalPartnerSettings.
+        /// </summary>
+        /// <returns>The <see cref="IVirtualEndpointExternalPartnerSettingsCollectionRequestBuilder"/>.</returns>
+        public IVirtualEndpointExternalPartnerSettingsCollectionRequestBuilder ExternalPartnerSettings
+        {
+            get
+            {
+                return new VirtualEndpointExternalPartnerSettingsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("externalPartnerSettings"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for GalleryImages.
         /// </summary>
         /// <returns>The <see cref="IVirtualEndpointGalleryImagesCollectionRequestBuilder"/>.</returns>

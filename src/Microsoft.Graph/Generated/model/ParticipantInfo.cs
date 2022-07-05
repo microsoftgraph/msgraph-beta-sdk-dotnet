@@ -50,6 +50,12 @@ namespace Microsoft.Graph
         public string LanguageId { get; set; }
     
         /// <summary>
+        /// Gets or sets nonAnonymizedIdentity.
+        /// </summary>
+        [JsonPropertyName("nonAnonymizedIdentity")]
+        public IdentitySet NonAnonymizedIdentity { get; set; }
+    
+        /// <summary>
         /// Gets or sets participantId.
         /// The participant ID of the participant. Read-only.
         /// </summary>

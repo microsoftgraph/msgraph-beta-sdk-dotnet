@@ -295,6 +295,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets writeback configuration.
+        /// Specifies whether or not a group is configured to write back group object properties to on-premise Active Directory. These properties are used when group writeback is configured in the Azure AD Connect sync client.
         /// </summary>
         [JsonPropertyName("writebackConfiguration")]
         public GroupWritebackConfiguration WritebackConfiguration { get; set; }

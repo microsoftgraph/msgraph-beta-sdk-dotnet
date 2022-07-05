@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets type.
-        /// The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String.  See the table below for more details.
+        /// The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String. See the table below for more details.
         /// </summary>
         [JsonPropertyName("type")]
         public string Type { get; set; }

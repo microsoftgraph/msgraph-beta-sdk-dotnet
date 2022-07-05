@@ -64,6 +64,12 @@ namespace Microsoft.Graph
         public Stream AlternativeRecording { get; set; }
     
         /// <summary>
+        /// Gets or sets anonymize identity for roles.
+        /// </summary>
+        [JsonPropertyName("anonymizeIdentityForRoles")]
+        public IEnumerable<OnlineMeetingRole> AnonymizeIdentityForRoles { get; set; }
+    
+        /// <summary>
         /// Gets or sets attendee report.
         /// The content stream of the attendee report of a Teams live event. Read-only.
         /// </summary>

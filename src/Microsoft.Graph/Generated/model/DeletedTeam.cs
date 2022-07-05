@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets channels.
+        /// The channels those are either shared with this deleted team or created in this deleted team.
         /// </summary>
         [JsonPropertyName("channels")]
         public IDeletedTeamChannelsCollectionPage Channels { get; set; }
