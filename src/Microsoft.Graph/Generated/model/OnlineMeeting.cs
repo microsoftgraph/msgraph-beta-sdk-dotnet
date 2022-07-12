@@ -147,6 +147,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets join meeting id settings.
+        /// Specifies the joinMeetingId, the meeting passcode, and the requirement for the passcode.
         /// </summary>
         [JsonPropertyName("joinMeetingIdSettings")]
         public JoinMeetingIdSettings JoinMeetingIdSettings { get; set; }

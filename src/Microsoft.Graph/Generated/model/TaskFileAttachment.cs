@@ -30,6 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets content bytes.
+        /// The base64-encoded contents of the file.
         /// </summary>
         [JsonPropertyName("contentBytes")]
         public byte[] ContentBytes { get; set; }

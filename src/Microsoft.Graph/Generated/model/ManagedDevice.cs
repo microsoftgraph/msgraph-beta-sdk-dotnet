@@ -77,6 +77,13 @@ namespace Microsoft.Graph
         public bool? AzureADRegistered { get; set; }
     
         /// <summary>
+        /// Gets or sets bootstrap token escrowed.
+        /// Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.
+        /// </summary>
+        [JsonPropertyName("bootstrapTokenEscrowed")]
+        public bool? BootstrapTokenEscrowed { get; set; }
+    
+        /// <summary>
         /// Gets or sets chassis type.
         /// Chassis type of the device. This property is read-only. Possible values are: unknown, desktop, laptop, worksWorkstation, enterpriseServer, phone, tablet, mobileOther, mobileUnknown.
         /// </summary>
@@ -145,6 +152,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceEnrollmentType")]
         public DeviceEnrollmentType? DeviceEnrollmentType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device firmware configuration interface managed.
+        /// Indicates whether the device is DFCI managed. When TRUE the device is DFCI managed. When FALSE, the device is not DFCI managed. The default value is FALSE.
+        /// </summary>
+        [JsonPropertyName("deviceFirmwareConfigurationInterfaceManaged")]
+        public bool? DeviceFirmwareConfigurationInterfaceManaged { get; set; }
     
         /// <summary>
         /// Gets or sets device health attestation state.

@@ -220,6 +220,21 @@ namespace Microsoft.Graph
         ResourceAvailabilityCheckResourceGroupLockedForDelete = 515,
 	
         /// <summary>
+        /// Resource Availability Check No Intune Reader Role Error
+        /// </summary>
+        ResourceAvailabilityCheckNoIntuneReaderRoleError = 516,
+	
+        /// <summary>
+        /// Resource Availability Check Intune Default Windows Restriction Violation
+        /// </summary>
+        ResourceAvailabilityCheckIntuneDefaultWindowsRestrictionViolation = 517,
+	
+        /// <summary>
+        /// Resource Availability Check Intune Custom Windows Restriction Violation
+        /// </summary>
+        ResourceAvailabilityCheckIntuneCustomWindowsRestrictionViolation = 518,
+	
+        /// <summary>
         /// Resource Availability Check Transient Service Error
         /// </summary>
         ResourceAvailabilityCheckTransientServiceError = 598,

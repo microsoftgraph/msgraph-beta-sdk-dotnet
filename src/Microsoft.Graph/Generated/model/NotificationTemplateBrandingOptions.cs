@@ -45,5 +45,10 @@ namespace Microsoft.Graph
         /// </summary>
         IncludeCompanyPortalLink = 8,
 	
+        /// <summary>
+        /// Include Device Details
+        /// </summary>
+        IncludeDeviceDetails = 16,
+	
     }
 }

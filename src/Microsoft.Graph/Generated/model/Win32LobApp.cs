@@ -30,6 +30,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets allow available uninstall.
+        /// When TRUE, indicates that uninstall is supported from the company portal for the Windows app (Win32) with an Available assignment. When FALSE, indicates that uninstall is not supported for the Windows app (Win32) with an Available assignment. Default value is FALSE.
+        /// </summary>
+        [JsonPropertyName("allowAvailableUninstall")]
+        public bool? AllowAvailableUninstall { get; set; }
+    
+        /// <summary>
         /// Gets or sets applicable architectures.
         /// The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.
         /// </summary>

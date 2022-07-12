@@ -29,6 +29,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets fileTypes.
+        /// Supported file types for this setting.
+        /// </summary>
+        [JsonPropertyName("fileTypes")]
+        public IEnumerable<string> FileTypes { get; set; }
+    
+        /// <summary>
         /// Gets or sets format.
         /// Pre-defined format of the string. Possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub.
         /// </summary>

@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets isPasscodeRequired.
+        /// Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
         /// </summary>
         [JsonPropertyName("isPasscodeRequired")]
         public bool? IsPasscodeRequired { get; set; }
     
         /// <summary>
         /// Gets or sets joinMeetingId.
+        /// The meeting ID to be used to join a meeting. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("joinMeetingId")]
         public string JoinMeetingId { get; set; }
     
         /// <summary>
         /// Gets or sets passcode.
+        /// The passcode to join a meeting.  Optional. Read-only.
         /// </summary>
         [JsonPropertyName("passcode")]
         public string Passcode { get; set; }

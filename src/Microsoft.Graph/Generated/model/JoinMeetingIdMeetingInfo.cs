@@ -29,12 +29,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets joinMeetingId.
+        /// The ID used to join the meeting.
         /// </summary>
         [JsonPropertyName("joinMeetingId")]
         public string JoinMeetingId { get; set; }
     
         /// <summary>
         /// Gets or sets passcode.
+        /// The passcode used to join the meeting. Optional.
         /// </summary>
         [JsonPropertyName("passcode")]
         public string Passcode { get; set; }

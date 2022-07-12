@@ -65,6 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets has attachments.
+        /// Indicates whether the task has attachments.
         /// </summary>
         [JsonPropertyName("hasAttachments")]
         public bool? HasAttachments { get; set; }
@@ -126,6 +127,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets attachments.
+        /// A collection of file attachments for the task.
         /// </summary>
         [JsonPropertyName("attachments")]
         public ITodoTaskAttachmentsCollectionPage Attachments { get; set; }

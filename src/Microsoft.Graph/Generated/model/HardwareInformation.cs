@@ -36,6 +36,13 @@ namespace Microsoft.Graph
         public Int32? BatteryHealthPercentage { get; set; }
     
         /// <summary>
+        /// Gets or sets batteryLevelPercentage.
+        /// The battery level, between 0.0 and 100, or null if the battery level cannot be determined. The update frequency of this property is per-checkin. Note this property is currently supported only on devices running iOS 5.0 and later, and is available only when Device Information access right is obtained. Valid values 0 to 100
+        /// </summary>
+        [JsonPropertyName("batteryLevelPercentage")]
+        public double? BatteryLevelPercentage { get; set; }
+    
+        /// <summary>
         /// Gets or sets batterySerialNumber.
         /// The serial number of the device’s current battery
         /// </summary>
@@ -76,6 +83,27 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceGuardVirtualizationBasedSecurityState")]
         public DeviceGuardVirtualizationBasedSecurityState? DeviceGuardVirtualizationBasedSecurityState { get; set; }
+    
+        /// <summary>
+        /// Gets or sets deviceLicensingLastErrorCode.
+        /// A standard error code indicating the last error, or 0 indicating no error (default). The update frequency of this property is daily. Note this property is currently supported only for Windows based Device based subscription licensing. Valid values 0 to 2147483647
+        /// </summary>
+        [JsonPropertyName("deviceLicensingLastErrorCode")]
+        public Int32? DeviceLicensingLastErrorCode { get; set; }
+    
+        /// <summary>
+        /// Gets or sets deviceLicensingLastErrorDescription.
+        /// Error text message as a descripition for deviceLicensingLastErrorCode. The update frequency of this property is daily. Note this property is currently supported only for Windows based Device based subscription licensing.
+        /// </summary>
+        [JsonPropertyName("deviceLicensingLastErrorDescription")]
+        public string DeviceLicensingLastErrorDescription { get; set; }
+    
+        /// <summary>
+        /// Gets or sets deviceLicensingStatus.
+        /// Device based subscription licensing status. The update frequency of this property is daily. Note this property is currently supported only for Windows based Device based subscription licensing. In case it is not supported, the value will be set to unknown (-1). Possible values are: licenseRefreshStarted, licenseRefreshPending, deviceIsNotAzureActiveDirectoryJoined, verifyingMicrosoftDeviceIdentity, deviceIdentityVerificationFailed, verifyingMirosoftAccountIdentity, mirosoftAccountVerificationFailed, acquiringDeviceLicense, refreshingDeviceLicense, deviceLicenseRefreshSucceed, deviceLicenseRefreshFailed, removingDeviceLicense, deviceLicenseRemoveSucceed, deviceLicenseRemoveFailed, unknownFutureValue, unknown.
+        /// </summary>
+        [JsonPropertyName("deviceLicensingStatus")]
+        public DeviceLicensingStatus? DeviceLicensingStatus { get; set; }
     
         /// <summary>
         /// Gets or sets esimIdentifier.
@@ -183,6 +211,20 @@ namespace Microsoft.Graph
         public string PhoneNumber { get; set; }
     
         /// <summary>
+        /// Gets or sets productName.
+        /// The product name, e.g. iPad8,12 etc. The update frequency of this property is weekly. Note this property is currently supported only on iOS/MacOS devices, and is available only when Device Information access right is obtained.
+        /// </summary>
+        [JsonPropertyName("productName")]
+        public string ProductName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets residentUsersCount.
+        /// The number of users currently on this device, or null (default) if the value of this property cannot be determined. The update frequency of this property is per-checkin. Note this property is currently supported only on devices running iOS 13.4 and later, and is available only when Device Information access right is obtained. Valid values 0 to 2147483647
+        /// </summary>
+        [JsonPropertyName("residentUsersCount")]
+        public Int32? ResidentUsersCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets serialNumber.
         /// Serial number.
         /// </summary>
@@ -251,6 +293,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("wifiMac")]
         public string WifiMac { get; set; }
+    
+        /// <summary>
+        /// Gets or sets wiredIPv4Addresses.
+        /// A list of wired IPv4 addresses. The update frequency (the maximum delay for the change of property value to be synchronized from the device to the cloud storage) of this property is daily. Note this property is currently supported only on devices running on Windows.
+        /// </summary>
+        [JsonPropertyName("wiredIPv4Addresses")]
+        public IEnumerable<string> WiredIPv4Addresses { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

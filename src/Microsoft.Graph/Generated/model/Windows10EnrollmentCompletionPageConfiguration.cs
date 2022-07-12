@@ -50,6 +50,13 @@ namespace Microsoft.Graph
         public bool? AllowLogCollectionOnInstallFailure { get; set; }
     
         /// <summary>
+        /// Gets or sets allow non blocking app installation.
+        /// Install all required apps as non blocking apps during white glove
+        /// </summary>
+        [JsonPropertyName("allowNonBlockingAppInstallation")]
+        public bool? AllowNonBlockingAppInstallation { get; set; }
+    
+        /// <summary>
         /// Gets or sets block device setup retry by user.
         /// Allow the user to retry the setup on installation failure
         /// </summary>

@@ -149,6 +149,13 @@ namespace Microsoft.Graph
         public AndroidDeviceOwnerUserFacingMessage DetailedHelpText { get; set; }
     
         /// <summary>
+        /// Gets or sets device owner lock screen message.
+        /// Represents the customized lock screen message provided to users when they attempt to modify managed settings on their device.
+        /// </summary>
+        [JsonPropertyName("deviceOwnerLockScreenMessage")]
+        public AndroidDeviceOwnerUserFacingMessage DeviceOwnerLockScreenMessage { get; set; }
+    
+        /// <summary>
         /// Gets or sets enrollment profile.
         /// Indicates which enrollment profile you want to configure. Possible values are: notConfigured, dedicatedDevice, fullyManaged.
         /// </summary>
@@ -728,6 +735,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("screenCaptureBlocked")]
         public bool? ScreenCaptureBlocked { get; set; }
+    
+        /// <summary>
+        /// Gets or sets security common criteria mode enabled.
+        /// Represents the security common criteria mode enabled provided to users when they attempt to modify managed settings on their device.
+        /// </summary>
+        [JsonPropertyName("securityCommonCriteriaModeEnabled")]
+        public bool? SecurityCommonCriteriaModeEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets security developer settings enabled.

@@ -125,6 +125,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for CloudPCGetCloudPcConnectivityHistory.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCGetCloudPcConnectivityHistoryRequestBuilder"/>.</returns>
+        public ICloudPCGetCloudPcConnectivityHistoryRequestBuilder GetCloudPcConnectivityHistory()
+        {
+            return new CloudPCGetCloudPcConnectivityHistoryRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getCloudPcConnectivityHistory"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for CloudPCGetCloudPcLaunchInfo.
         /// </summary>
         /// <returns>The <see cref="ICloudPCGetCloudPcLaunchInfoRequestBuilder"/>.</returns>

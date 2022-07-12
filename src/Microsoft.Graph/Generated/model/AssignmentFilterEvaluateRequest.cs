@@ -43,6 +43,13 @@ namespace Microsoft.Graph
         public string Rule { get; set; }
     
         /// <summary>
+        /// Gets or sets search.
+        /// Search keyword applied to scope found devices.
+        /// </summary>
+        [JsonPropertyName("search")]
+        public string Search { get; set; }
+    
+        /// <summary>
         /// Gets or sets skip.
         /// Number of records to skip. Default value is 0
         /// </summary>

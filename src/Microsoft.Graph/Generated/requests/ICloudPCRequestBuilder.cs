@@ -72,6 +72,12 @@ namespace Microsoft.Graph
         ICloudPCTroubleshootRequestBuilder Troubleshoot();
 
         /// <summary>
+        /// Gets the request builder for CloudPCGetCloudPcConnectivityHistory.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCGetCloudPcConnectivityHistoryRequestBuilder"/>.</returns>
+        ICloudPCGetCloudPcConnectivityHistoryRequestBuilder GetCloudPcConnectivityHistory();
+
+        /// <summary>
         /// Gets the request builder for CloudPCGetCloudPcLaunchInfo.
         /// </summary>
         /// <returns>The <see cref="ICloudPCGetCloudPcLaunchInfoRequestBuilder"/>.</returns>
