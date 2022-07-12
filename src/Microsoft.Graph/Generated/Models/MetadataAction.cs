@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class MetadataAction : InformationProtectionAction, IParsable {
         /// <summary>A collection of key value pairs that should be added to the file.</summary>
         public List<KeyValuePair> MetadataToAdd {
-            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(MetadataToAdd)); }
-            set { BackingStore?.Set(nameof(MetadataToAdd), value); }
+            get { return BackingStore?.Get<List<KeyValuePair>>("metadataToAdd"); }
+            set { BackingStore?.Set("metadataToAdd", value); }
         }
         /// <summary>A collection of strings that indicate which keys to remove from the file metadata.</summary>
         public List<string> MetadataToRemove {
-            get { return BackingStore?.Get<List<string>>(nameof(MetadataToRemove)); }
-            set { BackingStore?.Set(nameof(MetadataToRemove), value); }
+            get { return BackingStore?.Get<List<string>>("metadataToRemove"); }
+            set { BackingStore?.Set("metadataToRemove", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

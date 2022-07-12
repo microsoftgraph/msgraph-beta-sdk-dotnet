@@ -8,53 +8,53 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsFeatureUpdateProfile : Entity, IParsable {
         /// <summary>The list of group assignments of the profile.</summary>
         public List<WindowsFeatureUpdateProfileAssignment> Assignments {
-            get { return BackingStore?.Get<List<WindowsFeatureUpdateProfileAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<WindowsFeatureUpdateProfileAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>The date time that the profile was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Friendly display name of the quality update profile deployable content</summary>
         public string DeployableContentDisplayName {
-            get { return BackingStore?.Get<string>(nameof(DeployableContentDisplayName)); }
-            set { BackingStore?.Set(nameof(DeployableContentDisplayName), value); }
+            get { return BackingStore?.Get<string>("deployableContentDisplayName"); }
+            set { BackingStore?.Set("deployableContentDisplayName", value); }
         }
         /// <summary>The description of the profile which is specified by the user.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The display name of the profile.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The last supported date for a feature update</summary>
         public DateTimeOffset? EndOfSupportDate {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndOfSupportDate)); }
-            set { BackingStore?.Set(nameof(EndOfSupportDate), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("endOfSupportDate"); }
+            set { BackingStore?.Set("endOfSupportDate", value); }
         }
         /// <summary>The feature update version that will be deployed to the devices targeted by this profile. The version could be any supported version for example 1709, 1803 or 1809 and so on.</summary>
         public string FeatureUpdateVersion {
-            get { return BackingStore?.Get<string>(nameof(FeatureUpdateVersion)); }
-            set { BackingStore?.Set(nameof(FeatureUpdateVersion), value); }
+            get { return BackingStore?.Get<string>("featureUpdateVersion"); }
+            set { BackingStore?.Set("featureUpdateVersion", value); }
         }
         /// <summary>The date time that the profile was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>List of Scope Tags for this Feature Update entity.</summary>
         public List<string> RoleScopeTagIds {
-            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTagIds)); }
-            set { BackingStore?.Set(nameof(RoleScopeTagIds), value); }
+            get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
         }
         /// <summary>The windows update rollout settings, including offer start date time, offer end date time, and days between each set of offers.</summary>
         public WindowsUpdateRolloutSettings RolloutSettings {
-            get { return BackingStore?.Get<WindowsUpdateRolloutSettings>(nameof(RolloutSettings)); }
-            set { BackingStore?.Set(nameof(RolloutSettings), value); }
+            get { return BackingStore?.Get<WindowsUpdateRolloutSettings>("rolloutSettings"); }
+            set { BackingStore?.Set("rolloutSettings", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

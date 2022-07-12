@@ -6,20 +6,20 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Device compliance policy assignment.</summary>
     public class DeviceCompliancePolicyAssignment : Entity, IParsable {
-        /// <summary>The assignment source for the device compliance policy, direct or parcel/policySet. Possible values are: direct, policySets.</summary>
+        /// <summary>Represents source of assignment.</summary>
         public DeviceAndAppManagementAssignmentSource? Source {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentSource?>(nameof(Source)); }
-            set { BackingStore?.Set(nameof(Source), value); }
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentSource?>("source"); }
+            set { BackingStore?.Set("source", value); }
         }
         /// <summary>The identifier of the source of the assignment.</summary>
         public string SourceId {
-            get { return BackingStore?.Get<string>(nameof(SourceId)); }
-            set { BackingStore?.Set(nameof(SourceId), value); }
+            get { return BackingStore?.Get<string>("sourceId"); }
+            set { BackingStore?.Set("sourceId", value); }
         }
         /// <summary>Target for the compliance policy assignment.</summary>
         public DeviceAndAppManagementAssignmentTarget Target {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>(nameof(Target)); }
-            set { BackingStore?.Set(nameof(Target), value); }
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
+            set { BackingStore?.Set("target", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

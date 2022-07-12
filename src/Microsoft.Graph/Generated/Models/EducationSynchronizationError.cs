@@ -4,37 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class EducationSynchronizationError : Entity, IParsable {
         /// <summary>Represents the sync entity (school, section, student, teacher).</summary>
         public string EntryType {
-            get { return BackingStore?.Get<string>(nameof(EntryType)); }
-            set { BackingStore?.Set(nameof(EntryType), value); }
+            get { return BackingStore?.Get<string>("entryType"); }
+            set { BackingStore?.Set("entryType", value); }
         }
         /// <summary>Represents the error code for this error.</summary>
         public string ErrorCode {
-            get { return BackingStore?.Get<string>(nameof(ErrorCode)); }
-            set { BackingStore?.Set(nameof(ErrorCode), value); }
+            get { return BackingStore?.Get<string>("errorCode"); }
+            set { BackingStore?.Set("errorCode", value); }
         }
         /// <summary>Contains a description of the error.</summary>
         public string ErrorMessage {
-            get { return BackingStore?.Get<string>(nameof(ErrorMessage)); }
-            set { BackingStore?.Set(nameof(ErrorMessage), value); }
+            get { return BackingStore?.Get<string>("errorMessage"); }
+            set { BackingStore?.Set("errorMessage", value); }
         }
         /// <summary>The unique identifier for the entry.</summary>
         public string JoiningValue {
-            get { return BackingStore?.Get<string>(nameof(JoiningValue)); }
-            set { BackingStore?.Set(nameof(JoiningValue), value); }
+            get { return BackingStore?.Get<string>("joiningValue"); }
+            set { BackingStore?.Set("joiningValue", value); }
         }
         /// <summary>The time of occurrence of this error.</summary>
         public DateTimeOffset? RecordedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(RecordedDateTime)); }
-            set { BackingStore?.Set(nameof(RecordedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("recordedDateTime"); }
+            set { BackingStore?.Set("recordedDateTime", value); }
         }
         /// <summary>The identifier of this error entry.</summary>
         public string ReportableIdentifier {
-            get { return BackingStore?.Get<string>(nameof(ReportableIdentifier)); }
-            set { BackingStore?.Set(nameof(ReportableIdentifier), value); }
+            get { return BackingStore?.Get<string>("reportableIdentifier"); }
+            set { BackingStore?.Set("reportableIdentifier", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -5,37 +5,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Case : Entity, IParsable {
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description property</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The displayName property</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The lastModifiedBy property</summary>
         public Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>(nameof(LastModifiedBy)); }
-            set { BackingStore?.Set(nameof(LastModifiedBy), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
         }
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The status property</summary>
         public CaseStatus? Status {
-            get { return BackingStore?.Get<CaseStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<CaseStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+        /// <summary>
+        /// Instantiates a new case and sets the default values.
+        /// </summary>
+        public Case() : base() {
+            Type = "#microsoft.graph.security.case";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

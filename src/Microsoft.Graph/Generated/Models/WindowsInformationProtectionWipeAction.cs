@@ -8,33 +8,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsInformationProtectionWipeAction : Entity, IParsable {
         /// <summary>Last checkin time of the device that was targeted by this wipe action.</summary>
         public DateTimeOffset? LastCheckInDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastCheckInDateTime)); }
-            set { BackingStore?.Set(nameof(LastCheckInDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastCheckInDateTime"); }
+            set { BackingStore?.Set("lastCheckInDateTime", value); }
         }
-        /// <summary>Wipe action status. Possible values are: none, pending, canceled, active, done, failed, notSupported.</summary>
+        /// <summary>The status property</summary>
         public ActionState? Status {
-            get { return BackingStore?.Get<ActionState?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<ActionState?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>Targeted device Mac address.</summary>
         public string TargetedDeviceMacAddress {
-            get { return BackingStore?.Get<string>(nameof(TargetedDeviceMacAddress)); }
-            set { BackingStore?.Set(nameof(TargetedDeviceMacAddress), value); }
+            get { return BackingStore?.Get<string>("targetedDeviceMacAddress"); }
+            set { BackingStore?.Set("targetedDeviceMacAddress", value); }
         }
         /// <summary>Targeted device name.</summary>
         public string TargetedDeviceName {
-            get { return BackingStore?.Get<string>(nameof(TargetedDeviceName)); }
-            set { BackingStore?.Set(nameof(TargetedDeviceName), value); }
+            get { return BackingStore?.Get<string>("targetedDeviceName"); }
+            set { BackingStore?.Set("targetedDeviceName", value); }
         }
         /// <summary>The DeviceRegistrationId being targeted by this wipe action.</summary>
         public string TargetedDeviceRegistrationId {
-            get { return BackingStore?.Get<string>(nameof(TargetedDeviceRegistrationId)); }
-            set { BackingStore?.Set(nameof(TargetedDeviceRegistrationId), value); }
+            get { return BackingStore?.Get<string>("targetedDeviceRegistrationId"); }
+            set { BackingStore?.Set("targetedDeviceRegistrationId", value); }
         }
         /// <summary>The UserId being targeted by this wipe action.</summary>
         public string TargetedUserId {
-            get { return BackingStore?.Get<string>(nameof(TargetedUserId)); }
-            set { BackingStore?.Set(nameof(TargetedUserId), value); }
+            get { return BackingStore?.Get<string>("targetedUserId"); }
+            set { BackingStore?.Set("targetedUserId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

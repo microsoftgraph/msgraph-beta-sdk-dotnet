@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class QualityUpdateCatalogEntry : SoftwareUpdateCatalogEntry, IParsable {
         /// <summary>Indicates whether the content can be deployed as an expedited quality update. Read-only.</summary>
         public bool? IsExpeditable {
-            get { return BackingStore?.Get<bool?>(nameof(IsExpeditable)); }
-            set { BackingStore?.Set(nameof(IsExpeditable), value); }
+            get { return BackingStore?.Get<bool?>("isExpeditable"); }
+            set { BackingStore?.Set("isExpeditable", value); }
         }
-        /// <summary>The classification on the quality update. Possible values are: all, security, nonSecurity, unknownFutureValue. Read-only.</summary>
+        /// <summary>The qualityUpdateClassification property</summary>
         public Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateClassification? QualityUpdateClassification {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateClassification?>(nameof(QualityUpdateClassification)); }
-            set { BackingStore?.Set(nameof(QualityUpdateClassification), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateClassification?>("qualityUpdateClassification"); }
+            set { BackingStore?.Set("qualityUpdateClassification", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

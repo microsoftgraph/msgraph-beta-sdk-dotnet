@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamMembersNotificationRecipient : TeamworkNotificationRecipient, IParsable {
         /// <summary>The team&apos;s identifier.</summary>
         public string TeamId {
-            get { return BackingStore?.Get<string>(nameof(TeamId)); }
-            set { BackingStore?.Set(nameof(TeamId), value); }
+            get { return BackingStore?.Get<string>("teamId"); }
+            set { BackingStore?.Set("teamId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

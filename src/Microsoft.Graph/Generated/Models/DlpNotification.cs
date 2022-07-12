@@ -9,22 +9,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class DlpNotification : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The author property</summary>
         public string Author {
-            get { return BackingStore?.Get<string>(nameof(Author)); }
-            set { BackingStore?.Set(nameof(Author), value); }
+            get { return BackingStore?.Get<string>("author"); }
+            set { BackingStore?.Set("author", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new dlpNotification and sets the default values.
         /// </summary>
         public DlpNotification() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.dlpNotification";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"author", n => { Author = n.GetStringValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -54,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("author", Author);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

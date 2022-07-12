@@ -4,52 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ManagedDeviceComplianceTrend : Entity, IParsable {
         /// <summary>The number of devices with a compliant status. Required. Read-only.</summary>
         public int? CompliantDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(CompliantDeviceCount)); }
-            set { BackingStore?.Set(nameof(CompliantDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("compliantDeviceCount"); }
+            set { BackingStore?.Set("compliantDeviceCount", value); }
         }
         /// <summary>The number of devices manged by Configuration Manager. Required. Read-only.</summary>
         public int? ConfigManagerDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(ConfigManagerDeviceCount)); }
-            set { BackingStore?.Set(nameof(ConfigManagerDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("configManagerDeviceCount"); }
+            set { BackingStore?.Set("configManagerDeviceCount", value); }
         }
         /// <summary>The date and time compliance snapshot was performed. Required. Read-only.</summary>
         public string CountDateTime {
-            get { return BackingStore?.Get<string>(nameof(CountDateTime)); }
-            set { BackingStore?.Set(nameof(CountDateTime), value); }
+            get { return BackingStore?.Get<string>("countDateTime"); }
+            set { BackingStore?.Set("countDateTime", value); }
         }
         /// <summary>The number of devices with an error status. Required. Read-only.</summary>
         public int? ErrorDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(ErrorDeviceCount)); }
-            set { BackingStore?.Set(nameof(ErrorDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("errorDeviceCount"); }
+            set { BackingStore?.Set("errorDeviceCount", value); }
         }
         /// <summary>The number of devices that are in a grace period status. Required. Read-only.</summary>
         public int? InGracePeriodDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(InGracePeriodDeviceCount)); }
-            set { BackingStore?.Set(nameof(InGracePeriodDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("inGracePeriodDeviceCount"); }
+            set { BackingStore?.Set("inGracePeriodDeviceCount", value); }
         }
         /// <summary>The number of devices that are in a non-compliant status. Required. Read-only.</summary>
         public int? NoncompliantDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(NoncompliantDeviceCount)); }
-            set { BackingStore?.Set(nameof(NoncompliantDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("noncompliantDeviceCount"); }
+            set { BackingStore?.Set("noncompliantDeviceCount", value); }
         }
         /// <summary>The display name for the managed tenant. Optional. Read-only.</summary>
         public string TenantDisplayName {
-            get { return BackingStore?.Get<string>(nameof(TenantDisplayName)); }
-            set { BackingStore?.Set(nameof(TenantDisplayName), value); }
+            get { return BackingStore?.Get<string>("tenantDisplayName"); }
+            set { BackingStore?.Set("tenantDisplayName", value); }
         }
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>The number of devices in an unknown status. Required. Read-only.</summary>
         public int? UnknownDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(UnknownDeviceCount)); }
-            set { BackingStore?.Set(nameof(UnknownDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("unknownDeviceCount"); }
+            set { BackingStore?.Set("unknownDeviceCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,20 +9,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageAnswer : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The question the answer is for. Required and Read-only.</summary>
         public AccessPackageQuestion AnsweredQuestion {
-            get { return BackingStore?.Get<AccessPackageQuestion>(nameof(AnsweredQuestion)); }
-            set { BackingStore?.Set(nameof(AnsweredQuestion), value); }
+            get { return BackingStore?.Get<AccessPackageQuestion>("answeredQuestion"); }
+            set { BackingStore?.Set("answeredQuestion", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The display value of the answer. Required.</summary>
         public string DisplayValue {
-            get { return BackingStore?.Get<string>(nameof(DisplayValue)); }
-            set { BackingStore?.Set(nameof(DisplayValue), value); }
+            get { return BackingStore?.Get<string>("displayValue"); }
+            set { BackingStore?.Set("displayValue", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new accessPackageAnswer and sets the default values.
@@ -30,6 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AccessPackageAnswer() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.accessPackageAnswer";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"answeredQuestion", n => { AnsweredQuestion = n.GetObjectValue<AccessPackageQuestion>(AccessPackageQuestion.CreateFromDiscriminatorValue); } },
                 {"displayValue", n => { DisplayValue = n.GetStringValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<AccessPackageQuestion>("answeredQuestion", AnsweredQuestion);
             writer.WriteStringValue("displayValue", DisplayValue);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationFileResource : EducationResource, IParsable {
         /// <summary>Location on disk of the file resource.</summary>
         public string FileUrl {
-            get { return BackingStore?.Get<string>(nameof(FileUrl)); }
-            set { BackingStore?.Set(nameof(FileUrl), value); }
+            get { return BackingStore?.Get<string>("fileUrl"); }
+            set { BackingStore?.Set("fileUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

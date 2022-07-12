@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessReviewRecurrenceSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The duration in days for recurrence.</summary>
         public int? DurationInDays {
-            get { return BackingStore?.Get<int?>(nameof(DurationInDays)); }
-            set { BackingStore?.Set(nameof(DurationInDays), value); }
+            get { return BackingStore?.Get<int?>("durationInDays"); }
+            set { BackingStore?.Set("durationInDays", value); }
         }
         /// <summary>The count of recurrences, if the value of recurrenceEndType is occurrences, or 0 otherwise.</summary>
         public int? RecurrenceCount {
-            get { return BackingStore?.Get<int?>(nameof(RecurrenceCount)); }
-            set { BackingStore?.Set(nameof(RecurrenceCount), value); }
+            get { return BackingStore?.Get<int?>("recurrenceCount"); }
+            set { BackingStore?.Set("recurrenceCount", value); }
         }
         /// <summary>How the recurrence ends. Possible values: never, endBy, occurrences, or recurrenceCount. If it is never, then there is no explicit end of the recurrence series. If it is endBy, then the recurrence ends at a certain date. If it is occurrences, then the series ends after recurrenceCount instances of the review have completed.</summary>
         public string RecurrenceEndType {
-            get { return BackingStore?.Get<string>(nameof(RecurrenceEndType)); }
-            set { BackingStore?.Set(nameof(RecurrenceEndType), value); }
+            get { return BackingStore?.Get<string>("recurrenceEndType"); }
+            set { BackingStore?.Set("recurrenceEndType", value); }
         }
         /// <summary>The recurrence interval. Possible vaules: onetime, weekly, monthly, quarterly, halfyearly or annual.</summary>
         public string RecurrenceType {
-            get { return BackingStore?.Get<string>(nameof(RecurrenceType)); }
-            set { BackingStore?.Set(nameof(RecurrenceType), value); }
+            get { return BackingStore?.Get<string>("recurrenceType"); }
+            set { BackingStore?.Set("recurrenceType", value); }
         }
         /// <summary>
         /// Instantiates a new accessReviewRecurrenceSettings and sets the default values.

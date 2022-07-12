@@ -4,22 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class EdiscoveryCaseSettings : Entity, IParsable {
         /// <summary>The OCR (Optical Character Recognition) settings for the case.</summary>
         public OcrSettings Ocr {
-            get { return BackingStore?.Get<OcrSettings>(nameof(Ocr)); }
-            set { BackingStore?.Set(nameof(Ocr), value); }
+            get { return BackingStore?.Get<OcrSettings>("ocr"); }
+            set { BackingStore?.Set("ocr", value); }
         }
         /// <summary>The redundancy (near duplicate and email threading) detection settings for the case.</summary>
         public RedundancyDetectionSettings RedundancyDetection {
-            get { return BackingStore?.Get<RedundancyDetectionSettings>(nameof(RedundancyDetection)); }
-            set { BackingStore?.Set(nameof(RedundancyDetection), value); }
+            get { return BackingStore?.Get<RedundancyDetectionSettings>("redundancyDetection"); }
+            set { BackingStore?.Set("redundancyDetection", value); }
         }
         /// <summary>The Topic Modeling (Themes) settings for the case.</summary>
         public TopicModelingSettings TopicModeling {
-            get { return BackingStore?.Get<TopicModelingSettings>(nameof(TopicModeling)); }
-            set { BackingStore?.Set(nameof(TopicModeling), value); }
+            get { return BackingStore?.Get<TopicModelingSettings>("topicModeling"); }
+            set { BackingStore?.Set("topicModeling", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

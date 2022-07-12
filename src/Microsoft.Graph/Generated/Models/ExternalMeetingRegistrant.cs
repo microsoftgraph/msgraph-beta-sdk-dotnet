@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class ExternalMeetingRegistrant : MeetingRegistrantBase, IParsable {
         /// <summary>The tenant ID of this registrant if in Azure Active Directory.</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>The user ID of this registrant if in Azure Active Directory.</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

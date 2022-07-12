@@ -8,173 +8,173 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsWorkFromAnywhereDevice : Entity, IParsable {
         /// <summary>The user experience analytics work from anywhere intune device&apos;s autopilotProfileAssigned.</summary>
         public bool? AutoPilotProfileAssigned {
-            get { return BackingStore?.Get<bool?>(nameof(AutoPilotProfileAssigned)); }
-            set { BackingStore?.Set(nameof(AutoPilotProfileAssigned), value); }
+            get { return BackingStore?.Get<bool?>("autoPilotProfileAssigned"); }
+            set { BackingStore?.Set("autoPilotProfileAssigned", value); }
         }
         /// <summary>The user experience work from anywhere intune device&apos;s autopilotRegistered.</summary>
         public bool? AutoPilotRegistered {
-            get { return BackingStore?.Get<bool?>(nameof(AutoPilotRegistered)); }
-            set { BackingStore?.Set(nameof(AutoPilotRegistered), value); }
+            get { return BackingStore?.Get<bool?>("autoPilotRegistered"); }
+            set { BackingStore?.Set("autoPilotRegistered", value); }
         }
         /// <summary>The user experience work from anywhere azure Ad device Id.</summary>
         public string AzureAdDeviceId {
-            get { return BackingStore?.Get<string>(nameof(AzureAdDeviceId)); }
-            set { BackingStore?.Set(nameof(AzureAdDeviceId), value); }
+            get { return BackingStore?.Get<string>("azureAdDeviceId"); }
+            set { BackingStore?.Set("azureAdDeviceId", value); }
         }
         /// <summary>The user experience work from anywhere device&apos;s azure Ad joinType.</summary>
         public string AzureAdJoinType {
-            get { return BackingStore?.Get<string>(nameof(AzureAdJoinType)); }
-            set { BackingStore?.Set(nameof(AzureAdJoinType), value); }
+            get { return BackingStore?.Get<string>("azureAdJoinType"); }
+            set { BackingStore?.Set("azureAdJoinType", value); }
         }
         /// <summary>The user experience work from anywhere device&apos;s azureAdRegistered.</summary>
         public bool? AzureAdRegistered {
-            get { return BackingStore?.Get<bool?>(nameof(AzureAdRegistered)); }
-            set { BackingStore?.Set(nameof(AzureAdRegistered), value); }
+            get { return BackingStore?.Get<bool?>("azureAdRegistered"); }
+            set { BackingStore?.Set("azureAdRegistered", value); }
         }
         /// <summary>The user experience work from anywhere per device cloud identity score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? CloudIdentityScore {
-            get { return BackingStore?.Get<double?>(nameof(CloudIdentityScore)); }
-            set { BackingStore?.Set(nameof(CloudIdentityScore), value); }
+            get { return BackingStore?.Get<double?>("cloudIdentityScore"); }
+            set { BackingStore?.Set("cloudIdentityScore", value); }
         }
         /// <summary>The user experience work from anywhere per device cloud management score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? CloudManagementScore {
-            get { return BackingStore?.Get<double?>(nameof(CloudManagementScore)); }
-            set { BackingStore?.Set(nameof(CloudManagementScore), value); }
+            get { return BackingStore?.Get<double?>("cloudManagementScore"); }
+            set { BackingStore?.Set("cloudManagementScore", value); }
         }
         /// <summary>The user experience work from anywhere per device cloud provisioning score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? CloudProvisioningScore {
-            get { return BackingStore?.Get<double?>(nameof(CloudProvisioningScore)); }
-            set { BackingStore?.Set(nameof(CloudProvisioningScore), value); }
+            get { return BackingStore?.Get<double?>("cloudProvisioningScore"); }
+            set { BackingStore?.Set("cloudProvisioningScore", value); }
         }
         /// <summary>The user experience work from anywhere device&apos;s compliancePolicySetToIntune.</summary>
         public bool? CompliancePolicySetToIntune {
-            get { return BackingStore?.Get<bool?>(nameof(CompliancePolicySetToIntune)); }
-            set { BackingStore?.Set(nameof(CompliancePolicySetToIntune), value); }
+            get { return BackingStore?.Get<bool?>("compliancePolicySetToIntune"); }
+            set { BackingStore?.Set("compliancePolicySetToIntune", value); }
         }
         /// <summary>The user experience work from anywhere device Id.</summary>
         public string DeviceId {
-            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
-            set { BackingStore?.Set(nameof(DeviceId), value); }
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>The work from anywhere device&apos;s name.</summary>
         public string DeviceName {
-            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
-            set { BackingStore?.Set(nameof(DeviceName), value); }
+            get { return BackingStore?.Get<string>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
         }
-        /// <summary>The user experience work from anywhere per device health status. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.</summary>
+        /// <summary>The healthStatus property</summary>
         public UserExperienceAnalyticsHealthState? HealthStatus {
-            get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>(nameof(HealthStatus)); }
-            set { BackingStore?.Set(nameof(HealthStatus), value); }
+            get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>("healthStatus"); }
+            set { BackingStore?.Set("healthStatus", value); }
         }
         /// <summary>The user experience work from anywhere device&apos;s Cloud Management Gateway for Configuration Manager is enabled.</summary>
         public bool? IsCloudManagedGatewayEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsCloudManagedGatewayEnabled)); }
-            set { BackingStore?.Set(nameof(IsCloudManagedGatewayEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isCloudManagedGatewayEnabled"); }
+            set { BackingStore?.Set("isCloudManagedGatewayEnabled", value); }
         }
         /// <summary>The user experience work from anywhere management agent of the device.</summary>
         public string ManagedBy {
-            get { return BackingStore?.Get<string>(nameof(ManagedBy)); }
-            set { BackingStore?.Set(nameof(ManagedBy), value); }
+            get { return BackingStore?.Get<string>("managedBy"); }
+            set { BackingStore?.Set("managedBy", value); }
         }
         /// <summary>The user experience work from anywhere device&apos;s manufacturer.</summary>
         public string Manufacturer {
-            get { return BackingStore?.Get<string>(nameof(Manufacturer)); }
-            set { BackingStore?.Set(nameof(Manufacturer), value); }
+            get { return BackingStore?.Get<string>("manufacturer"); }
+            set { BackingStore?.Set("manufacturer", value); }
         }
         /// <summary>The user experience work from anywhere device&apos;s model.</summary>
         public string Model {
-            get { return BackingStore?.Get<string>(nameof(Model)); }
-            set { BackingStore?.Set(nameof(Model), value); }
+            get { return BackingStore?.Get<string>("model"); }
+            set { BackingStore?.Set("model", value); }
         }
         /// <summary>The user experience work from anywhere device, Is OS check failed for device to upgrade to the latest version of windows.</summary>
         public bool? OsCheckFailed {
-            get { return BackingStore?.Get<bool?>(nameof(OsCheckFailed)); }
-            set { BackingStore?.Set(nameof(OsCheckFailed), value); }
+            get { return BackingStore?.Get<bool?>("osCheckFailed"); }
+            set { BackingStore?.Set("osCheckFailed", value); }
         }
         /// <summary>The user experience work from anywhere device&apos;s OS Description.</summary>
         public string OsDescription {
-            get { return BackingStore?.Get<string>(nameof(OsDescription)); }
-            set { BackingStore?.Set(nameof(OsDescription), value); }
+            get { return BackingStore?.Get<string>("osDescription"); }
+            set { BackingStore?.Set("osDescription", value); }
         }
         /// <summary>The user experience work from anywhere device&apos;s OS Version.</summary>
         public string OsVersion {
-            get { return BackingStore?.Get<string>(nameof(OsVersion)); }
-            set { BackingStore?.Set(nameof(OsVersion), value); }
+            get { return BackingStore?.Get<string>("osVersion"); }
+            set { BackingStore?.Set("osVersion", value); }
         }
         /// <summary>The user experience work from anywhere device&apos;s otherWorkloadsSetToIntune.</summary>
         public bool? OtherWorkloadsSetToIntune {
-            get { return BackingStore?.Get<bool?>(nameof(OtherWorkloadsSetToIntune)); }
-            set { BackingStore?.Set(nameof(OtherWorkloadsSetToIntune), value); }
+            get { return BackingStore?.Get<bool?>("otherWorkloadsSetToIntune"); }
+            set { BackingStore?.Set("otherWorkloadsSetToIntune", value); }
         }
         /// <summary>The user experience work from anywhere device&apos;s ownership.</summary>
         public string Ownership {
-            get { return BackingStore?.Get<string>(nameof(Ownership)); }
-            set { BackingStore?.Set(nameof(Ownership), value); }
+            get { return BackingStore?.Get<string>("ownership"); }
+            set { BackingStore?.Set("ownership", value); }
         }
         /// <summary>The user experience work from anywhere device, Is processor hardware 64-bit architecture check failed for device to upgrade to the latest version of windows.</summary>
         public bool? Processor64BitCheckFailed {
-            get { return BackingStore?.Get<bool?>(nameof(Processor64BitCheckFailed)); }
-            set { BackingStore?.Set(nameof(Processor64BitCheckFailed), value); }
+            get { return BackingStore?.Get<bool?>("processor64BitCheckFailed"); }
+            set { BackingStore?.Set("processor64BitCheckFailed", value); }
         }
         /// <summary>The user experience work from anywhere device, Is processor hardware core count check failed for device to upgrade to the latest version of windows.</summary>
         public bool? ProcessorCoreCountCheckFailed {
-            get { return BackingStore?.Get<bool?>(nameof(ProcessorCoreCountCheckFailed)); }
-            set { BackingStore?.Set(nameof(ProcessorCoreCountCheckFailed), value); }
+            get { return BackingStore?.Get<bool?>("processorCoreCountCheckFailed"); }
+            set { BackingStore?.Set("processorCoreCountCheckFailed", value); }
         }
         /// <summary>The user experience work from anywhere device, Is processor hardware family check failed for device to upgrade to the latest version of windows.</summary>
         public bool? ProcessorFamilyCheckFailed {
-            get { return BackingStore?.Get<bool?>(nameof(ProcessorFamilyCheckFailed)); }
-            set { BackingStore?.Set(nameof(ProcessorFamilyCheckFailed), value); }
+            get { return BackingStore?.Get<bool?>("processorFamilyCheckFailed"); }
+            set { BackingStore?.Set("processorFamilyCheckFailed", value); }
         }
         /// <summary>The user experience work from anywhere device, Is processor hardware speed check failed for device to upgrade to the latest version of windows.</summary>
         public bool? ProcessorSpeedCheckFailed {
-            get { return BackingStore?.Get<bool?>(nameof(ProcessorSpeedCheckFailed)); }
-            set { BackingStore?.Set(nameof(ProcessorSpeedCheckFailed), value); }
+            get { return BackingStore?.Get<bool?>("processorSpeedCheckFailed"); }
+            set { BackingStore?.Set("processorSpeedCheckFailed", value); }
         }
         /// <summary>Is the user experience analytics work from anywhere device RAM hardware check failed for device to upgrade to the latest version of windows</summary>
         public bool? RamCheckFailed {
-            get { return BackingStore?.Get<bool?>(nameof(RamCheckFailed)); }
-            set { BackingStore?.Set(nameof(RamCheckFailed), value); }
+            get { return BackingStore?.Get<bool?>("ramCheckFailed"); }
+            set { BackingStore?.Set("ramCheckFailed", value); }
         }
         /// <summary>The user experience work from anywhere device, Is secure boot hardware check failed for device to upgrade to the latest version of windows.</summary>
         public bool? SecureBootCheckFailed {
-            get { return BackingStore?.Get<bool?>(nameof(SecureBootCheckFailed)); }
-            set { BackingStore?.Set(nameof(SecureBootCheckFailed), value); }
+            get { return BackingStore?.Get<bool?>("secureBootCheckFailed"); }
+            set { BackingStore?.Set("secureBootCheckFailed", value); }
         }
         /// <summary>The user experience work from anywhere device&apos;s serial number.</summary>
         public string SerialNumber {
-            get { return BackingStore?.Get<string>(nameof(SerialNumber)); }
-            set { BackingStore?.Set(nameof(SerialNumber), value); }
+            get { return BackingStore?.Get<string>("serialNumber"); }
+            set { BackingStore?.Set("serialNumber", value); }
         }
         /// <summary>The user experience work from anywhere device, Is storage hardware check failed for device to upgrade to the latest version of windows.</summary>
         public bool? StorageCheckFailed {
-            get { return BackingStore?.Get<bool?>(nameof(StorageCheckFailed)); }
-            set { BackingStore?.Set(nameof(StorageCheckFailed), value); }
+            get { return BackingStore?.Get<bool?>("storageCheckFailed"); }
+            set { BackingStore?.Set("storageCheckFailed", value); }
         }
         /// <summary>The user experience work from anywhere device&apos;s tenantAttached.</summary>
         public bool? TenantAttached {
-            get { return BackingStore?.Get<bool?>(nameof(TenantAttached)); }
-            set { BackingStore?.Set(nameof(TenantAttached), value); }
+            get { return BackingStore?.Get<bool?>("tenantAttached"); }
+            set { BackingStore?.Set("tenantAttached", value); }
         }
         /// <summary>The user experience work from anywhere device, Is Trusted Platform Module (TPM) hardware check failed for device to the latest version of upgrade to windows.</summary>
         public bool? TpmCheckFailed {
-            get { return BackingStore?.Get<bool?>(nameof(TpmCheckFailed)); }
-            set { BackingStore?.Set(nameof(TpmCheckFailed), value); }
+            get { return BackingStore?.Get<bool?>("tpmCheckFailed"); }
+            set { BackingStore?.Set("tpmCheckFailed", value); }
         }
-        /// <summary>The user experience work from anywhere windows upgrade eligibility status of device. Possible values are: upgraded, unknown, notCapable, capable.</summary>
+        /// <summary>Work From Anywhere windows device upgrade eligibility status</summary>
         public OperatingSystemUpgradeEligibility? UpgradeEligibility {
-            get { return BackingStore?.Get<OperatingSystemUpgradeEligibility?>(nameof(UpgradeEligibility)); }
-            set { BackingStore?.Set(nameof(UpgradeEligibility), value); }
+            get { return BackingStore?.Get<OperatingSystemUpgradeEligibility?>("upgradeEligibility"); }
+            set { BackingStore?.Set("upgradeEligibility", value); }
         }
         /// <summary>The user experience work from anywhere per device windows score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? WindowsScore {
-            get { return BackingStore?.Get<double?>(nameof(WindowsScore)); }
-            set { BackingStore?.Set(nameof(WindowsScore), value); }
+            get { return BackingStore?.Get<double?>("windowsScore"); }
+            set { BackingStore?.Set("windowsScore", value); }
         }
         /// <summary>The user experience work from anywhere per device overall score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? WorkFromAnywhereScore {
-            get { return BackingStore?.Get<double?>(nameof(WorkFromAnywhereScore)); }
-            set { BackingStore?.Set(nameof(WorkFromAnywhereScore), value); }
+            get { return BackingStore?.Get<double?>("workFromAnywhereScore"); }
+            set { BackingStore?.Set("workFromAnywhereScore", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

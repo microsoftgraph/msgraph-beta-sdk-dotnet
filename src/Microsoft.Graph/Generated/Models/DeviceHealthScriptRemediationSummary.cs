@@ -9,23 +9,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceHealthScriptRemediationSummary : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of devices remediated by device health scripts.</summary>
         public int? RemediatedDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(RemediatedDeviceCount)); }
-            set { BackingStore?.Set(nameof(RemediatedDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("remediatedDeviceCount"); }
+            set { BackingStore?.Set("remediatedDeviceCount", value); }
         }
         /// <summary>The number of device health scripts deployed.</summary>
         public int? ScriptCount {
-            get { return BackingStore?.Get<int?>(nameof(ScriptCount)); }
-            set { BackingStore?.Set(nameof(ScriptCount), value); }
+            get { return BackingStore?.Get<int?>("scriptCount"); }
+            set { BackingStore?.Set("scriptCount", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceHealthScriptRemediationSummary and sets the default values.
+        /// Instantiates a new deviceHealthScriptRemediationSummary and sets the default values.
         /// </summary>
         public DeviceHealthScriptRemediationSummary() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

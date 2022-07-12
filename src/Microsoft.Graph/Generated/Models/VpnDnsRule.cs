@@ -9,35 +9,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class VpnDnsRule : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Automatically connect to the VPN when the device connects to this domain: Default False.</summary>
         public bool? AutoTrigger {
-            get { return BackingStore?.Get<bool?>(nameof(AutoTrigger)); }
-            set { BackingStore?.Set(nameof(AutoTrigger), value); }
+            get { return BackingStore?.Get<bool?>("autoTrigger"); }
+            set { BackingStore?.Set("autoTrigger", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Name.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>Keep this rule active even when the VPN is not connected: Default False</summary>
         public bool? Persistent {
-            get { return BackingStore?.Get<bool?>(nameof(Persistent)); }
-            set { BackingStore?.Set(nameof(Persistent), value); }
+            get { return BackingStore?.Get<bool?>("persistent"); }
+            set { BackingStore?.Set("persistent", value); }
         }
         /// <summary>Proxy Server Uri.</summary>
         public string ProxyServerUri {
-            get { return BackingStore?.Get<string>(nameof(ProxyServerUri)); }
-            set { BackingStore?.Set(nameof(ProxyServerUri), value); }
+            get { return BackingStore?.Get<string>("proxyServerUri"); }
+            set { BackingStore?.Set("proxyServerUri", value); }
         }
         /// <summary>Servers.</summary>
         public List<string> Servers {
-            get { return BackingStore?.Get<List<string>>(nameof(Servers)); }
-            set { BackingStore?.Set(nameof(Servers), value); }
+            get { return BackingStore?.Get<List<string>>("servers"); }
+            set { BackingStore?.Set("servers", value); }
         }
         /// <summary>
         /// Instantiates a new vpnDnsRule and sets the default values.

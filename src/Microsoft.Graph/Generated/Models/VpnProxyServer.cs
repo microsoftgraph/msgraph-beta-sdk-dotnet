@@ -10,25 +10,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class VpnProxyServer : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Address.</summary>
         public string Address {
-            get { return BackingStore?.Get<string>(nameof(Address)); }
-            set { BackingStore?.Set(nameof(Address), value); }
+            get { return BackingStore?.Get<string>("address"); }
+            set { BackingStore?.Set("address", value); }
         }
         /// <summary>Proxy&apos;s automatic configuration script url.</summary>
         public string AutomaticConfigurationScriptUrl {
-            get { return BackingStore?.Get<string>(nameof(AutomaticConfigurationScriptUrl)); }
-            set { BackingStore?.Set(nameof(AutomaticConfigurationScriptUrl), value); }
+            get { return BackingStore?.Get<string>("automaticConfigurationScriptUrl"); }
+            set { BackingStore?.Set("automaticConfigurationScriptUrl", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Port. Valid values 0 to 65535</summary>
         public int? Port {
-            get { return BackingStore?.Get<int?>(nameof(Port)); }
-            set { BackingStore?.Set(nameof(Port), value); }
+            get { return BackingStore?.Get<int?>("port"); }
+            set { BackingStore?.Set("port", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new vpnProxyServer and sets the default values.
@@ -36,6 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
         public VpnProxyServer() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.vpnProxyServer";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -59,6 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"address", n => { Address = n.GetStringValue(); } },
                 {"automaticConfigurationScriptUrl", n => { AutomaticConfigurationScriptUrl = n.GetStringValue(); } },
                 {"port", n => { Port = n.GetIntValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -70,6 +77,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("address", Address);
             writer.WriteStringValue("automaticConfigurationScriptUrl", AutomaticConfigurationScriptUrl);
             writer.WriteIntValue("port", Port);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

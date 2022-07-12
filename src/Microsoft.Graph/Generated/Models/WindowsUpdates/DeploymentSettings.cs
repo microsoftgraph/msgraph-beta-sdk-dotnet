@@ -9,25 +9,30 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class DeploymentSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Settings governing conditions to monitor and automated actions to take.</summary>
         public MonitoringSettings Monitoring {
-            get { return BackingStore?.Get<MonitoringSettings>(nameof(Monitoring)); }
-            set { BackingStore?.Set(nameof(Monitoring), value); }
+            get { return BackingStore?.Get<MonitoringSettings>("monitoring"); }
+            set { BackingStore?.Set("monitoring", value); }
         }
         /// <summary>Settings governing how the content is rolled out.</summary>
         public RolloutSettings Rollout {
-            get { return BackingStore?.Get<RolloutSettings>(nameof(Rollout)); }
-            set { BackingStore?.Set(nameof(Rollout), value); }
+            get { return BackingStore?.Get<RolloutSettings>("rollout"); }
+            set { BackingStore?.Set("rollout", value); }
         }
         /// <summary>Settings governing safeguard holds on offering content.</summary>
         public SafeguardSettings Safeguard {
-            get { return BackingStore?.Get<SafeguardSettings>(nameof(Safeguard)); }
-            set { BackingStore?.Set(nameof(Safeguard), value); }
+            get { return BackingStore?.Get<SafeguardSettings>("safeguard"); }
+            set { BackingStore?.Set("safeguard", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new deploymentSettings and sets the default values.
@@ -35,6 +40,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         public DeploymentSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.windowsUpdates.deploymentSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +63,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
                 {"monitoring", n => { Monitoring = n.GetObjectValue<MonitoringSettings>(MonitoringSettings.CreateFromDiscriminatorValue); } },
                 {"rollout", n => { Rollout = n.GetObjectValue<RolloutSettings>(RolloutSettings.CreateFromDiscriminatorValue); } },
                 {"safeguard", n => { Safeguard = n.GetObjectValue<SafeguardSettings>(SafeguardSettings.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -68,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             writer.WriteObjectValue<MonitoringSettings>("monitoring", Monitoring);
             writer.WriteObjectValue<RolloutSettings>("rollout", Rollout);
             writer.WriteObjectValue<SafeguardSettings>("safeguard", Safeguard);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

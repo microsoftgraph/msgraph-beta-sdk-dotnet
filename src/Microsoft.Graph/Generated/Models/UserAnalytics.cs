@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class UserAnalytics : Entity, IParsable {
         /// <summary>The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.</summary>
         public List<Microsoft.Graph.Beta.Models.ActivityStatistics> ActivityStatistics {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ActivityStatistics>>(nameof(ActivityStatistics)); }
-            set { BackingStore?.Set(nameof(ActivityStatistics), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ActivityStatistics>>("activityStatistics"); }
+            set { BackingStore?.Set("activityStatistics", value); }
         }
         /// <summary>The current settings for a user to use the analytics API.</summary>
         public Microsoft.Graph.Beta.Models.Settings Settings {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Settings>(nameof(Settings)); }
-            set { BackingStore?.Set(nameof(Settings), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Settings>("settings"); }
+            set { BackingStore?.Set("settings", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

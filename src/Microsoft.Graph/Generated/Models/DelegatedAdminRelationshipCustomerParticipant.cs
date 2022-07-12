@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class DelegatedAdminRelationshipCustomerParticipant : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The display name of the customer tenant as set by Azure AD. Read only</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The Azure AD-assigned tenant ID of the customer tenant.</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>
         /// Instantiates a new delegatedAdminRelationshipCustomerParticipant and sets the default values.

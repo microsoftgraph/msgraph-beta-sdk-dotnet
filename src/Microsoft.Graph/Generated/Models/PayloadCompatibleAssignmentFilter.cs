@@ -5,10 +5,10 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PayloadCompatibleAssignmentFilter : DeviceAndAppManagementAssignmentFilter, IParsable {
-        /// <summary>PayloadType of the Assignment Filter. Possible values are: notSet, enrollmentRestrictions.</summary>
+        /// <summary>Represents the payload type AssignmentFilter is being assigned to.</summary>
         public AssignmentFilterPayloadType? PayloadType {
-            get { return BackingStore?.Get<AssignmentFilterPayloadType?>(nameof(PayloadType)); }
-            set { BackingStore?.Set(nameof(PayloadType), value); }
+            get { return BackingStore?.Get<AssignmentFilterPayloadType?>("payloadType"); }
+            set { BackingStore?.Set("payloadType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

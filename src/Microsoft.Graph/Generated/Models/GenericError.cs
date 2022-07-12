@@ -9,20 +9,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class GenericError : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The error code.</summary>
         public string Code {
-            get { return BackingStore?.Get<string>(nameof(Code)); }
-            set { BackingStore?.Set(nameof(Code), value); }
+            get { return BackingStore?.Get<string>("code"); }
+            set { BackingStore?.Set("code", value); }
         }
         /// <summary>The error message.</summary>
         public string Message {
-            get { return BackingStore?.Get<string>(nameof(Message)); }
-            set { BackingStore?.Set(nameof(Message), value); }
+            get { return BackingStore?.Get<string>("message"); }
+            set { BackingStore?.Set("message", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new genericError and sets the default values.
@@ -30,6 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         public GenericError() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.genericError";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"code", n => { Code = n.GetStringValue(); } },
                 {"message", n => { Message = n.GetStringValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("code", Code);
             writer.WriteStringValue("message", Message);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

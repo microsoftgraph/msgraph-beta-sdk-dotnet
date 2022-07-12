@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyPresentationDropdownList : GroupPolicyPresentation, IParsable {
         /// <summary>Localized string value identifying the default choice of the list of items.</summary>
         public GroupPolicyPresentationDropdownListItem DefaultItem {
-            get { return BackingStore?.Get<GroupPolicyPresentationDropdownListItem>(nameof(DefaultItem)); }
-            set { BackingStore?.Set(nameof(DefaultItem), value); }
+            get { return BackingStore?.Get<GroupPolicyPresentationDropdownListItem>("defaultItem"); }
+            set { BackingStore?.Set("defaultItem", value); }
         }
         /// <summary>Represents a set of localized display names and their associated values.</summary>
         public List<GroupPolicyPresentationDropdownListItem> Items {
-            get { return BackingStore?.Get<List<GroupPolicyPresentationDropdownListItem>>(nameof(Items)); }
-            set { BackingStore?.Set(nameof(Items), value); }
+            get { return BackingStore?.Get<List<GroupPolicyPresentationDropdownListItem>>("items"); }
+            set { BackingStore?.Set("items", value); }
         }
         /// <summary>Requirement to enter a value in the parameter box. The default value is false.</summary>
         public bool? Required {
-            get { return BackingStore?.Get<bool?>(nameof(Required)); }
-            set { BackingStore?.Set(nameof(Required), value); }
+            get { return BackingStore?.Get<bool?>("required"); }
+            set { BackingStore?.Set("required", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

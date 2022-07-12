@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
     public class ParticipantEndpoint : Endpoint, IParsable {
         /// <summary>The feedback provided by the user of this endpoint about the quality of the session.</summary>
         public UserFeedback Feedback {
-            get { return BackingStore?.Get<UserFeedback>(nameof(Feedback)); }
-            set { BackingStore?.Set(nameof(Feedback), value); }
+            get { return BackingStore?.Get<UserFeedback>("feedback"); }
+            set { BackingStore?.Set("feedback", value); }
         }
         /// <summary>Identity associated with the endpoint.</summary>
         public Microsoft.Graph.Beta.Models.IdentitySet Identity {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>(nameof(Identity)); }
-            set { BackingStore?.Set(nameof(Identity), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("identity"); }
+            set { BackingStore?.Set("identity", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

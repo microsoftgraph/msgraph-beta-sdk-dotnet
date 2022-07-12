@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidManagedStoreAppConfigurationSchema : Entity, IParsable {
         /// <summary>UTF8 encoded byte array containing example JSON string conforming to this schema that demonstrates how to set the configuration for this app</summary>
         public byte[] ExampleJson {
-            get { return BackingStore?.Get<byte[]>(nameof(ExampleJson)); }
-            set { BackingStore?.Set(nameof(ExampleJson), value); }
+            get { return BackingStore?.Get<byte[]>("exampleJson"); }
+            set { BackingStore?.Set("exampleJson", value); }
         }
         /// <summary>Collection of items each representing a named configuration option in the schema. It contains a flat list of all configuration.</summary>
         public List<AndroidManagedStoreAppConfigurationSchemaItem> NestedSchemaItems {
-            get { return BackingStore?.Get<List<AndroidManagedStoreAppConfigurationSchemaItem>>(nameof(NestedSchemaItems)); }
-            set { BackingStore?.Set(nameof(NestedSchemaItems), value); }
+            get { return BackingStore?.Get<List<AndroidManagedStoreAppConfigurationSchemaItem>>("nestedSchemaItems"); }
+            set { BackingStore?.Set("nestedSchemaItems", value); }
         }
         /// <summary>Collection of items each representing a named configuration option in the schema. It only contains the root-level configuration.</summary>
         public List<AndroidManagedStoreAppConfigurationSchemaItem> SchemaItems {
-            get { return BackingStore?.Get<List<AndroidManagedStoreAppConfigurationSchemaItem>>(nameof(SchemaItems)); }
-            set { BackingStore?.Set(nameof(SchemaItems), value); }
+            get { return BackingStore?.Get<List<AndroidManagedStoreAppConfigurationSchemaItem>>("schemaItems"); }
+            set { BackingStore?.Set("schemaItems", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

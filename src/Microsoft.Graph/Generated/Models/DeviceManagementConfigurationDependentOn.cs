@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationDependentOn : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Identifier of parent setting/ parent setting option dependent on</summary>
         public string DependentOn {
-            get { return BackingStore?.Get<string>(nameof(DependentOn)); }
-            set { BackingStore?.Set(nameof(DependentOn), value); }
+            get { return BackingStore?.Get<string>("dependentOn"); }
+            set { BackingStore?.Set("dependentOn", value); }
         }
         /// <summary>Identifier of parent setting/ parent setting id dependent on</summary>
         public string ParentSettingId {
-            get { return BackingStore?.Get<string>(nameof(ParentSettingId)); }
-            set { BackingStore?.Set(nameof(ParentSettingId), value); }
+            get { return BackingStore?.Get<string>("parentSettingId"); }
+            set { BackingStore?.Set("parentSettingId", value); }
         }
         /// <summary>
         /// Instantiates a new deviceManagementConfigurationDependentOn and sets the default values.

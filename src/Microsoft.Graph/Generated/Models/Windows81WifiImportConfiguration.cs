@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class Windows81WifiImportConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Payload. (UTF8 encoded byte array). This is the XML file saved on the device you used to connect to the Wi-Fi endpoint.</summary>
         public byte[] Payload {
-            get { return BackingStore?.Get<byte[]>(nameof(Payload)); }
-            set { BackingStore?.Set(nameof(Payload), value); }
+            get { return BackingStore?.Get<byte[]>("payload"); }
+            set { BackingStore?.Set("payload", value); }
         }
         /// <summary>Payload file name (.xml).</summary>
         public string PayloadFileName {
-            get { return BackingStore?.Get<string>(nameof(PayloadFileName)); }
-            set { BackingStore?.Set(nameof(PayloadFileName), value); }
+            get { return BackingStore?.Get<string>("payloadFileName"); }
+            set { BackingStore?.Set("payloadFileName", value); }
         }
         /// <summary>Profile name displayed in the UI.</summary>
         public string ProfileName {
-            get { return BackingStore?.Get<string>(nameof(ProfileName)); }
-            set { BackingStore?.Set(nameof(ProfileName), value); }
+            get { return BackingStore?.Get<string>("profileName"); }
+            set { BackingStore?.Set("profileName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class RenameAction : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The new name of the item.</summary>
         public string NewName {
-            get { return BackingStore?.Get<string>(nameof(NewName)); }
-            set { BackingStore?.Set(nameof(NewName), value); }
+            get { return BackingStore?.Get<string>("newName"); }
+            set { BackingStore?.Set("newName", value); }
         }
         /// <summary>The previous name of the item.</summary>
         public string OldName {
-            get { return BackingStore?.Get<string>(nameof(OldName)); }
-            set { BackingStore?.Set(nameof(OldName), value); }
+            get { return BackingStore?.Get<string>("oldName"); }
+            set { BackingStore?.Set("oldName", value); }
         }
         /// <summary>
         /// Instantiates a new renameAction and sets the default values.

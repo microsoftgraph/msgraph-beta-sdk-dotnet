@@ -8,13 +8,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationSetting : Entity, IParsable {
         /// <summary>List of related Setting Definitions. This property is read-only.</summary>
         public List<DeviceManagementConfigurationSettingDefinition> SettingDefinitions {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDefinition>>(nameof(SettingDefinitions)); }
-            set { BackingStore?.Set(nameof(SettingDefinitions), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDefinition>>("settingDefinitions"); }
+            set { BackingStore?.Set("settingDefinitions", value); }
         }
         /// <summary>Setting instance within policy</summary>
         public DeviceManagementConfigurationSettingInstance SettingInstance {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstance>(nameof(SettingInstance)); }
-            set { BackingStore?.Set(nameof(SettingInstance), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstance>("settingInstance"); }
+            set { BackingStore?.Set("settingInstance", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

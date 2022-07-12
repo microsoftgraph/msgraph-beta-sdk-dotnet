@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class SecurityBaselineContributingPolicy : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Name of the policy</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Unique identifier of the policy</summary>
         public string SourceId {
-            get { return BackingStore?.Get<string>(nameof(SourceId)); }
-            set { BackingStore?.Set(nameof(SourceId), value); }
+            get { return BackingStore?.Get<string>("sourceId"); }
+            set { BackingStore?.Set("sourceId", value); }
         }
-        /// <summary>Authoring source of the policy. Possible values are: deviceConfiguration, deviceIntent.</summary>
+        /// <summary>Authoring source of a policy</summary>
         public SecurityBaselinePolicySourceType? SourceType {
-            get { return BackingStore?.Get<SecurityBaselinePolicySourceType?>(nameof(SourceType)); }
-            set { BackingStore?.Set(nameof(SourceType), value); }
+            get { return BackingStore?.Get<SecurityBaselinePolicySourceType?>("sourceType"); }
+            set { BackingStore?.Set("sourceType", value); }
         }
         /// <summary>
         /// Instantiates a new securityBaselineContributingPolicy and sets the default values.

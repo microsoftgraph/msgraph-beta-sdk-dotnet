@@ -8,53 +8,53 @@ namespace Microsoft.Graph.Beta.Models {
     public class AgedAccountsPayable : Entity, IParsable {
         /// <summary>The agedAsOfDate property</summary>
         public Date? AgedAsOfDate {
-            get { return BackingStore?.Get<Date?>(nameof(AgedAsOfDate)); }
-            set { BackingStore?.Set(nameof(AgedAsOfDate), value); }
+            get { return BackingStore?.Get<Date?>("agedAsOfDate"); }
+            set { BackingStore?.Set("agedAsOfDate", value); }
         }
         /// <summary>The balanceDue property</summary>
         public decimal? BalanceDue {
-            get { return BackingStore?.Get<decimal?>(nameof(BalanceDue)); }
-            set { BackingStore?.Set(nameof(BalanceDue), value); }
+            get { return BackingStore?.Get<decimal?>("balanceDue"); }
+            set { BackingStore?.Set("balanceDue", value); }
         }
         /// <summary>The currencyCode property</summary>
         public string CurrencyCode {
-            get { return BackingStore?.Get<string>(nameof(CurrencyCode)); }
-            set { BackingStore?.Set(nameof(CurrencyCode), value); }
+            get { return BackingStore?.Get<string>("currencyCode"); }
+            set { BackingStore?.Set("currencyCode", value); }
         }
         /// <summary>The currentAmount property</summary>
         public decimal? CurrentAmount {
-            get { return BackingStore?.Get<decimal?>(nameof(CurrentAmount)); }
-            set { BackingStore?.Set(nameof(CurrentAmount), value); }
+            get { return BackingStore?.Get<decimal?>("currentAmount"); }
+            set { BackingStore?.Set("currentAmount", value); }
         }
         /// <summary>The name property</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The period1Amount property</summary>
         public decimal? Period1Amount {
-            get { return BackingStore?.Get<decimal?>(nameof(Period1Amount)); }
-            set { BackingStore?.Set(nameof(Period1Amount), value); }
+            get { return BackingStore?.Get<decimal?>("period1Amount"); }
+            set { BackingStore?.Set("period1Amount", value); }
         }
         /// <summary>The period2Amount property</summary>
         public decimal? Period2Amount {
-            get { return BackingStore?.Get<decimal?>(nameof(Period2Amount)); }
-            set { BackingStore?.Set(nameof(Period2Amount), value); }
+            get { return BackingStore?.Get<decimal?>("period2Amount"); }
+            set { BackingStore?.Set("period2Amount", value); }
         }
         /// <summary>The period3Amount property</summary>
         public decimal? Period3Amount {
-            get { return BackingStore?.Get<decimal?>(nameof(Period3Amount)); }
-            set { BackingStore?.Set(nameof(Period3Amount), value); }
+            get { return BackingStore?.Get<decimal?>("period3Amount"); }
+            set { BackingStore?.Set("period3Amount", value); }
         }
         /// <summary>The periodLengthFilter property</summary>
         public string PeriodLengthFilter {
-            get { return BackingStore?.Get<string>(nameof(PeriodLengthFilter)); }
-            set { BackingStore?.Set(nameof(PeriodLengthFilter), value); }
+            get { return BackingStore?.Get<string>("periodLengthFilter"); }
+            set { BackingStore?.Set("periodLengthFilter", value); }
         }
         /// <summary>The vendorNumber property</summary>
         public string VendorNumber {
-            get { return BackingStore?.Get<string>(nameof(VendorNumber)); }
-            set { BackingStore?.Set(nameof(VendorNumber), value); }
+            get { return BackingStore?.Get<string>("vendorNumber"); }
+            set { BackingStore?.Set("vendorNumber", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

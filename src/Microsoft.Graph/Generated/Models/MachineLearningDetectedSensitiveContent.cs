@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class MachineLearningDetectedSensitiveContent : DetectedSensitiveContent, IParsable {
         /// <summary>The matchTolerance property</summary>
         public MlClassificationMatchTolerance? MatchTolerance {
-            get { return BackingStore?.Get<MlClassificationMatchTolerance?>(nameof(MatchTolerance)); }
-            set { BackingStore?.Set(nameof(MatchTolerance), value); }
+            get { return BackingStore?.Get<MlClassificationMatchTolerance?>("matchTolerance"); }
+            set { BackingStore?.Set("matchTolerance", value); }
         }
         /// <summary>The modelVersion property</summary>
         public string ModelVersion {
-            get { return BackingStore?.Get<string>(nameof(ModelVersion)); }
-            set { BackingStore?.Set(nameof(ModelVersion), value); }
+            get { return BackingStore?.Get<string>("modelVersion"); }
+            set { BackingStore?.Set("modelVersion", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

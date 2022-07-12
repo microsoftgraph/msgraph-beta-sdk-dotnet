@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class OperationalInsightsConnection : ResourceConnection, IParsable {
         /// <summary>The azureResourceGroupName property</summary>
         public string AzureResourceGroupName {
-            get { return BackingStore?.Get<string>(nameof(AzureResourceGroupName)); }
-            set { BackingStore?.Set(nameof(AzureResourceGroupName), value); }
+            get { return BackingStore?.Get<string>("azureResourceGroupName"); }
+            set { BackingStore?.Set("azureResourceGroupName", value); }
         }
         /// <summary>The azureSubscriptionId property</summary>
         public string AzureSubscriptionId {
-            get { return BackingStore?.Get<string>(nameof(AzureSubscriptionId)); }
-            set { BackingStore?.Set(nameof(AzureSubscriptionId), value); }
+            get { return BackingStore?.Get<string>("azureSubscriptionId"); }
+            set { BackingStore?.Set("azureSubscriptionId", value); }
         }
         /// <summary>The workspaceName property</summary>
         public string WorkspaceName {
-            get { return BackingStore?.Get<string>(nameof(WorkspaceName)); }
-            set { BackingStore?.Set(nameof(WorkspaceName), value); }
+            get { return BackingStore?.Get<string>("workspaceName"); }
+            set { BackingStore?.Set("workspaceName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

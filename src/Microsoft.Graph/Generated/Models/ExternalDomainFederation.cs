@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class ExternalDomainFederation : IdentitySource, IParsable {
         /// <summary>The name of the identity source, typically also the domain name. Read only.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The domain name. Read only.</summary>
         public string DomainName {
-            get { return BackingStore?.Get<string>(nameof(DomainName)); }
-            set { BackingStore?.Set(nameof(DomainName), value); }
+            get { return BackingStore?.Get<string>("domainName"); }
+            set { BackingStore?.Set("domainName", value); }
         }
         /// <summary>The issuerURI of the incoming federation. Read only.</summary>
         public string IssuerUri {
-            get { return BackingStore?.Get<string>(nameof(IssuerUri)); }
-            set { BackingStore?.Set(nameof(IssuerUri), value); }
+            get { return BackingStore?.Get<string>("issuerUri"); }
+            set { BackingStore?.Set("issuerUri", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

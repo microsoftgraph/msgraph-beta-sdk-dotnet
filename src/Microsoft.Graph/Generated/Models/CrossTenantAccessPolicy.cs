@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class CrossTenantAccessPolicy : TenantRelationshipAccessPolicyBase, IParsable {
         /// <summary>Used to specify which Microsoft clouds an organization would like to collaborate with. By default, this value is empty. Supported values for this field are: microsoftonline.com, microsoftonline.us, and partner.microsoftonline.cn.</summary>
         public List<string> AllowedCloudEndpoints {
-            get { return BackingStore?.Get<List<string>>(nameof(AllowedCloudEndpoints)); }
-            set { BackingStore?.Set(nameof(AllowedCloudEndpoints), value); }
+            get { return BackingStore?.Get<List<string>>("allowedCloudEndpoints"); }
+            set { BackingStore?.Set("allowedCloudEndpoints", value); }
         }
         /// <summary>Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.</summary>
         public CrossTenantAccessPolicyConfigurationDefault Default {
-            get { return BackingStore?.Get<CrossTenantAccessPolicyConfigurationDefault>(nameof(Default)); }
-            set { BackingStore?.Set(nameof(Default), value); }
+            get { return BackingStore?.Get<CrossTenantAccessPolicyConfigurationDefault>("default"); }
+            set { BackingStore?.Set("default", value); }
         }
         /// <summary>Defines partner-specific configurations for external Azure Active Directory organizations.</summary>
         public List<CrossTenantAccessPolicyConfigurationPartner> Partners {
-            get { return BackingStore?.Get<List<CrossTenantAccessPolicyConfigurationPartner>>(nameof(Partners)); }
-            set { BackingStore?.Set(nameof(Partners), value); }
+            get { return BackingStore?.Get<List<CrossTenantAccessPolicyConfigurationPartner>>("partners"); }
+            set { BackingStore?.Set("partners", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

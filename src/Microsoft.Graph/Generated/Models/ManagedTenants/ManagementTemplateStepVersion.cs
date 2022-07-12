@@ -4,62 +4,61 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ManagementTemplateStepVersion : Entity, IParsable {
         /// <summary>The acceptedFor property</summary>
         public ManagementTemplateStep AcceptedFor {
-            get { return BackingStore?.Get<ManagementTemplateStep>(nameof(AcceptedFor)); }
-            set { BackingStore?.Set(nameof(AcceptedFor), value); }
+            get { return BackingStore?.Get<ManagementTemplateStep>("acceptedFor"); }
+            set { BackingStore?.Set("acceptedFor", value); }
         }
         /// <summary>The contentMarkdown property</summary>
         public string ContentMarkdown {
-            get { return BackingStore?.Get<string>(nameof(ContentMarkdown)); }
-            set { BackingStore?.Set(nameof(ContentMarkdown), value); }
+            get { return BackingStore?.Get<string>("contentMarkdown"); }
+            set { BackingStore?.Set("contentMarkdown", value); }
         }
         /// <summary>The createdByUserId property</summary>
         public string CreatedByUserId {
-            get { return BackingStore?.Get<string>(nameof(CreatedByUserId)); }
-            set { BackingStore?.Set(nameof(CreatedByUserId), value); }
+            get { return BackingStore?.Get<string>("createdByUserId"); }
+            set { BackingStore?.Set("createdByUserId", value); }
         }
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The deployments property</summary>
         public List<ManagementTemplateStepDeployment> Deployments {
-            get { return BackingStore?.Get<List<ManagementTemplateStepDeployment>>(nameof(Deployments)); }
-            set { BackingStore?.Set(nameof(Deployments), value); }
+            get { return BackingStore?.Get<List<ManagementTemplateStepDeployment>>("deployments"); }
+            set { BackingStore?.Set("deployments", value); }
         }
         /// <summary>The lastActionByUserId property</summary>
         public string LastActionByUserId {
-            get { return BackingStore?.Get<string>(nameof(LastActionByUserId)); }
-            set { BackingStore?.Set(nameof(LastActionByUserId), value); }
+            get { return BackingStore?.Get<string>("lastActionByUserId"); }
+            set { BackingStore?.Set("lastActionByUserId", value); }
         }
         /// <summary>The lastActionDateTime property</summary>
         public DateTimeOffset? LastActionDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastActionDateTime)); }
-            set { BackingStore?.Set(nameof(LastActionDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
+            set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>The name property</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The templateStep property</summary>
         public ManagementTemplateStep TemplateStep {
-            get { return BackingStore?.Get<ManagementTemplateStep>(nameof(TemplateStep)); }
-            set { BackingStore?.Set(nameof(TemplateStep), value); }
+            get { return BackingStore?.Get<ManagementTemplateStep>("templateStep"); }
+            set { BackingStore?.Set("templateStep", value); }
         }
         /// <summary>The version property</summary>
         public int? Version {
-            get { return BackingStore?.Get<int?>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<int?>("version"); }
+            set { BackingStore?.Set("version", value); }
         }
         /// <summary>The versionInformation property</summary>
         public string VersionInformation {
-            get { return BackingStore?.Get<string>(nameof(VersionInformation)); }
-            set { BackingStore?.Set(nameof(VersionInformation), value); }
+            get { return BackingStore?.Get<string>("versionInformation"); }
+            set { BackingStore?.Set("versionInformation", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class Settings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies if the user&apos;s primary mailbox is hosted in the cloud and is enabled for Microsoft Graph.</summary>
         public bool? HasGraphMailbox {
-            get { return BackingStore?.Get<bool?>(nameof(HasGraphMailbox)); }
-            set { BackingStore?.Set(nameof(HasGraphMailbox), value); }
+            get { return BackingStore?.Get<bool?>("hasGraphMailbox"); }
+            set { BackingStore?.Set("hasGraphMailbox", value); }
         }
         /// <summary>Specifies if the user has a MyAnalytics license assigned.</summary>
         public bool? HasLicense {
-            get { return BackingStore?.Get<bool?>(nameof(HasLicense)); }
-            set { BackingStore?.Set(nameof(HasLicense), value); }
+            get { return BackingStore?.Get<bool?>("hasLicense"); }
+            set { BackingStore?.Set("hasLicense", value); }
         }
         /// <summary>Specifies if the user opted out of MyAnalytics.</summary>
         public bool? HasOptedOut {
-            get { return BackingStore?.Get<bool?>(nameof(HasOptedOut)); }
-            set { BackingStore?.Set(nameof(HasOptedOut), value); }
+            get { return BackingStore?.Get<bool?>("hasOptedOut"); }
+            set { BackingStore?.Set("hasOptedOut", value); }
         }
         /// <summary>
         /// Instantiates a new settings and sets the default values.

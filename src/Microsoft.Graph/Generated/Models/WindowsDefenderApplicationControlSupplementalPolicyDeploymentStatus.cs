@@ -6,55 +6,55 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Contains properties for the deployment state of a WindowsDefenderApplicationControl supplemental policy for a device.</summary>
     public class WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus : Entity, IParsable {
-        /// <summary>The deployment state of the policy. Possible values are: unknown, success, tokenError, notAuthorizedByToken, policyNotFound.</summary>
+        /// <summary>Enum values for the various WindowsDefenderApplicationControl supplemental policy deployment statuses.</summary>
         public WindowsDefenderApplicationControlSupplementalPolicyStatuses? DeploymentStatus {
-            get { return BackingStore?.Get<WindowsDefenderApplicationControlSupplementalPolicyStatuses?>(nameof(DeploymentStatus)); }
-            set { BackingStore?.Set(nameof(DeploymentStatus), value); }
+            get { return BackingStore?.Get<WindowsDefenderApplicationControlSupplementalPolicyStatuses?>("deploymentStatus"); }
+            set { BackingStore?.Set("deploymentStatus", value); }
         }
         /// <summary>Device ID.</summary>
         public string DeviceId {
-            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
-            set { BackingStore?.Set(nameof(DeviceId), value); }
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>Device name.</summary>
         public string DeviceName {
-            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
-            set { BackingStore?.Set(nameof(DeviceName), value); }
+            get { return BackingStore?.Get<string>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
         }
         /// <summary>Last sync date time.</summary>
         public DateTimeOffset? LastSyncDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSyncDateTime)); }
-            set { BackingStore?.Set(nameof(LastSyncDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
+            set { BackingStore?.Set("lastSyncDateTime", value); }
         }
         /// <summary>Windows OS Version Description.</summary>
         public string OsDescription {
-            get { return BackingStore?.Get<string>(nameof(OsDescription)); }
-            set { BackingStore?.Set(nameof(OsDescription), value); }
+            get { return BackingStore?.Get<string>("osDescription"); }
+            set { BackingStore?.Set("osDescription", value); }
         }
         /// <summary>Windows OS Version.</summary>
         public string OsVersion {
-            get { return BackingStore?.Get<string>(nameof(OsVersion)); }
-            set { BackingStore?.Set(nameof(OsVersion), value); }
+            get { return BackingStore?.Get<string>("osVersion"); }
+            set { BackingStore?.Set("osVersion", value); }
         }
         /// <summary>The navigation link to the WindowsDefenderApplicationControl supplemental policy.</summary>
         public WindowsDefenderApplicationControlSupplementalPolicy Policy {
-            get { return BackingStore?.Get<WindowsDefenderApplicationControlSupplementalPolicy>(nameof(Policy)); }
-            set { BackingStore?.Set(nameof(Policy), value); }
+            get { return BackingStore?.Get<WindowsDefenderApplicationControlSupplementalPolicy>("policy"); }
+            set { BackingStore?.Set("policy", value); }
         }
         /// <summary>Human readable version of the WindowsDefenderApplicationControl supplemental policy.</summary>
         public string PolicyVersion {
-            get { return BackingStore?.Get<string>(nameof(PolicyVersion)); }
-            set { BackingStore?.Set(nameof(PolicyVersion), value); }
+            get { return BackingStore?.Get<string>("policyVersion"); }
+            set { BackingStore?.Set("policyVersion", value); }
         }
         /// <summary>The name of the user of this device.</summary>
         public string UserName {
-            get { return BackingStore?.Get<string>(nameof(UserName)); }
-            set { BackingStore?.Set(nameof(UserName), value); }
+            get { return BackingStore?.Get<string>("userName"); }
+            set { BackingStore?.Set("userName", value); }
         }
         /// <summary>User Principal Name.</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

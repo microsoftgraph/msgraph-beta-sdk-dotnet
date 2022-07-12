@@ -10,30 +10,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class CustomUpdateTimeWindow : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>End day of the time window. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.</summary>
+        /// <summary>The endDay property</summary>
         public DayOfWeek? EndDay {
-            get { return BackingStore?.Get<DayOfWeek?>(nameof(EndDay)); }
-            set { BackingStore?.Set(nameof(EndDay), value); }
+            get { return BackingStore?.Get<DayOfWeek?>("endDay"); }
+            set { BackingStore?.Set("endDay", value); }
         }
         /// <summary>End time of the time window</summary>
         public Time? EndTime {
-            get { return BackingStore?.Get<Time?>(nameof(EndTime)); }
-            set { BackingStore?.Set(nameof(EndTime), value); }
+            get { return BackingStore?.Get<Time?>("endTime"); }
+            set { BackingStore?.Set("endTime", value); }
         }
-        /// <summary>Start day of the time window. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.</summary>
+        /// <summary>The startDay property</summary>
         public DayOfWeek? StartDay {
-            get { return BackingStore?.Get<DayOfWeek?>(nameof(StartDay)); }
-            set { BackingStore?.Set(nameof(StartDay), value); }
+            get { return BackingStore?.Get<DayOfWeek?>("startDay"); }
+            set { BackingStore?.Set("startDay", value); }
         }
         /// <summary>Start time of the time window</summary>
         public Time? StartTime {
-            get { return BackingStore?.Get<Time?>(nameof(StartTime)); }
-            set { BackingStore?.Set(nameof(StartTime), value); }
+            get { return BackingStore?.Get<Time?>("startTime"); }
+            set { BackingStore?.Set("startTime", value); }
         }
         /// <summary>
         /// Instantiates a new customUpdateTimeWindow and sets the default values.

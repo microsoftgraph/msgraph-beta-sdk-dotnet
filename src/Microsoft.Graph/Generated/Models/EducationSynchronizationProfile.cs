@@ -8,48 +8,48 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationSynchronizationProfile : Entity, IParsable {
         /// <summary>The dataProvider property</summary>
         public EducationSynchronizationDataProvider DataProvider {
-            get { return BackingStore?.Get<EducationSynchronizationDataProvider>(nameof(DataProvider)); }
-            set { BackingStore?.Set(nameof(DataProvider), value); }
+            get { return BackingStore?.Get<EducationSynchronizationDataProvider>("dataProvider"); }
+            set { BackingStore?.Set("dataProvider", value); }
         }
         /// <summary>Name of the configuration profile for syncing identities.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>All errors associated with this synchronization profile.</summary>
         public List<EducationSynchronizationError> Errors {
-            get { return BackingStore?.Get<List<EducationSynchronizationError>>(nameof(Errors)); }
-            set { BackingStore?.Set(nameof(Errors), value); }
+            get { return BackingStore?.Get<List<EducationSynchronizationError>>("errors"); }
+            set { BackingStore?.Set("errors", value); }
         }
         /// <summary>The date the profile should be considered expired and cease syncing. Provide the date in YYYY-MM-DD format, following ISO 8601. Maximum value is 18 months from profile creation.  (optional)</summary>
         public Date? ExpirationDate {
-            get { return BackingStore?.Get<Date?>(nameof(ExpirationDate)); }
-            set { BackingStore?.Set(nameof(ExpirationDate), value); }
+            get { return BackingStore?.Get<Date?>("expirationDate"); }
+            set { BackingStore?.Set("expirationDate", value); }
         }
         /// <summary>Determines if School Data Sync should automatically replace unsupported special characters while syncing from source.</summary>
         public bool? HandleSpecialCharacterConstraint {
-            get { return BackingStore?.Get<bool?>(nameof(HandleSpecialCharacterConstraint)); }
-            set { BackingStore?.Set(nameof(HandleSpecialCharacterConstraint), value); }
+            get { return BackingStore?.Get<bool?>("handleSpecialCharacterConstraint"); }
+            set { BackingStore?.Set("handleSpecialCharacterConstraint", value); }
         }
         /// <summary>The identitySynchronizationConfiguration property</summary>
         public EducationIdentitySynchronizationConfiguration IdentitySynchronizationConfiguration {
-            get { return BackingStore?.Get<EducationIdentitySynchronizationConfiguration>(nameof(IdentitySynchronizationConfiguration)); }
-            set { BackingStore?.Set(nameof(IdentitySynchronizationConfiguration), value); }
+            get { return BackingStore?.Get<EducationIdentitySynchronizationConfiguration>("identitySynchronizationConfiguration"); }
+            set { BackingStore?.Set("identitySynchronizationConfiguration", value); }
         }
         /// <summary>License setup configuration.</summary>
         public List<EducationSynchronizationLicenseAssignment> LicensesToAssign {
-            get { return BackingStore?.Get<List<EducationSynchronizationLicenseAssignment>>(nameof(LicensesToAssign)); }
-            set { BackingStore?.Set(nameof(LicensesToAssign), value); }
+            get { return BackingStore?.Get<List<EducationSynchronizationLicenseAssignment>>("licensesToAssign"); }
+            set { BackingStore?.Set("licensesToAssign", value); }
         }
         /// <summary>The synchronization status.</summary>
         public EducationSynchronizationProfileStatus ProfileStatus {
-            get { return BackingStore?.Get<EducationSynchronizationProfileStatus>(nameof(ProfileStatus)); }
-            set { BackingStore?.Set(nameof(ProfileStatus), value); }
+            get { return BackingStore?.Get<EducationSynchronizationProfileStatus>("profileStatus"); }
+            set { BackingStore?.Set("profileStatus", value); }
         }
         /// <summary>The state of the profile. Possible values are: provisioning, provisioned, provisioningFailed, deleting, deletionFailed.</summary>
         public EducationSynchronizationProfileState? State {
-            get { return BackingStore?.Get<EducationSynchronizationProfileState?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<EducationSynchronizationProfileState?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

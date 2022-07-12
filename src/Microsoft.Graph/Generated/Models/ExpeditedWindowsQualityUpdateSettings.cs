@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class ExpeditedWindowsQualityUpdateSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of days after installation that forced reboot will happen.</summary>
         public int? DaysUntilForcedReboot {
-            get { return BackingStore?.Get<int?>(nameof(DaysUntilForcedReboot)); }
-            set { BackingStore?.Set(nameof(DaysUntilForcedReboot), value); }
+            get { return BackingStore?.Get<int?>("daysUntilForcedReboot"); }
+            set { BackingStore?.Set("daysUntilForcedReboot", value); }
         }
         /// <summary>The release date to identify a quality update.</summary>
         public string QualityUpdateRelease {
-            get { return BackingStore?.Get<string>(nameof(QualityUpdateRelease)); }
-            set { BackingStore?.Set(nameof(QualityUpdateRelease), value); }
+            get { return BackingStore?.Get<string>("qualityUpdateRelease"); }
+            set { BackingStore?.Set("qualityUpdateRelease", value); }
         }
         /// <summary>
         /// Instantiates a new expeditedWindowsQualityUpdateSettings and sets the default values.

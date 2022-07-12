@@ -9,30 +9,30 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadSecret {
     public class UploadSecretPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The exp property</summary>
         public long? Exp {
-            get { return BackingStore?.Get<long?>(nameof(Exp)); }
-            set { BackingStore?.Set(nameof(Exp), value); }
+            get { return BackingStore?.Get<long?>("exp"); }
+            set { BackingStore?.Set("exp", value); }
         }
         /// <summary>The k property</summary>
         public string K {
-            get { return BackingStore?.Get<string>(nameof(K)); }
-            set { BackingStore?.Set(nameof(K), value); }
+            get { return BackingStore?.Get<string>("k"); }
+            set { BackingStore?.Set("k", value); }
         }
         /// <summary>The nbf property</summary>
         public long? Nbf {
-            get { return BackingStore?.Get<long?>(nameof(Nbf)); }
-            set { BackingStore?.Set(nameof(Nbf), value); }
+            get { return BackingStore?.Get<long?>("nbf"); }
+            set { BackingStore?.Set("nbf", value); }
         }
         /// <summary>The use property</summary>
         public string Use {
-            get { return BackingStore?.Get<string>(nameof(Use)); }
-            set { BackingStore?.Set(nameof(Use), value); }
+            get { return BackingStore?.Get<string>("use"); }
+            set { BackingStore?.Set("use", value); }
         }
         /// <summary>
         /// Instantiates a new uploadSecretPostRequestBody and sets the default values.

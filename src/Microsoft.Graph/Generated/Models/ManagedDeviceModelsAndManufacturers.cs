@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class ManagedDeviceModelsAndManufacturers : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>List of Manufactures for managed devices in the account</summary>
         public List<string> DeviceManufacturers {
-            get { return BackingStore?.Get<List<string>>(nameof(DeviceManufacturers)); }
-            set { BackingStore?.Set(nameof(DeviceManufacturers), value); }
+            get { return BackingStore?.Get<List<string>>("deviceManufacturers"); }
+            set { BackingStore?.Set("deviceManufacturers", value); }
         }
         /// <summary>List of Models for managed devices in the account</summary>
         public List<string> DeviceModels {
-            get { return BackingStore?.Get<List<string>>(nameof(DeviceModels)); }
-            set { BackingStore?.Set(nameof(DeviceModels), value); }
+            get { return BackingStore?.Get<List<string>>("deviceModels"); }
+            set { BackingStore?.Set("deviceModels", value); }
         }
         /// <summary>
         /// Instantiates a new managedDeviceModelsAndManufacturers and sets the default values.

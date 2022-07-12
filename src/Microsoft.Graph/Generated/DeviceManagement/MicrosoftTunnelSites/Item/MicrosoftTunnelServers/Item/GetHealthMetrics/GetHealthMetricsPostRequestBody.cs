@@ -9,15 +9,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.Micros
     public class GetHealthMetricsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The metricNames property</summary>
         public List<string> MetricNames {
-            get { return BackingStore?.Get<List<string>>(nameof(MetricNames)); }
-            set { BackingStore?.Set(nameof(MetricNames), value); }
+            get { return BackingStore?.Get<List<string>>("metricNames"); }
+            set { BackingStore?.Set("metricNames", value); }
         }
         /// <summary>
         /// Instantiates a new getHealthMetricsPostRequestBody and sets the default values.

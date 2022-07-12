@@ -5,35 +5,35 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TargetedManagedAppConfiguration : ManagedAppConfiguration, IParsable {
-        /// <summary>Public Apps selection: group or individual</summary>
+        /// <summary>Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps</summary>
         public TargetedManagedAppGroupType? AppGroupType {
-            get { return BackingStore?.Get<TargetedManagedAppGroupType?>(nameof(AppGroupType)); }
-            set { BackingStore?.Set(nameof(AppGroupType), value); }
+            get { return BackingStore?.Get<TargetedManagedAppGroupType?>("appGroupType"); }
+            set { BackingStore?.Set("appGroupType", value); }
         }
         /// <summary>List of apps to which the policy is deployed.</summary>
         public List<ManagedMobileApp> Apps {
-            get { return BackingStore?.Get<List<ManagedMobileApp>>(nameof(Apps)); }
-            set { BackingStore?.Set(nameof(Apps), value); }
+            get { return BackingStore?.Get<List<ManagedMobileApp>>("apps"); }
+            set { BackingStore?.Set("apps", value); }
         }
         /// <summary>Navigation property to list of inclusion and exclusion groups to which the policy is deployed.</summary>
         public List<TargetedManagedAppPolicyAssignment> Assignments {
-            get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>Count of apps to which the current policy is deployed.</summary>
         public int? DeployedAppCount {
-            get { return BackingStore?.Get<int?>(nameof(DeployedAppCount)); }
-            set { BackingStore?.Set(nameof(DeployedAppCount), value); }
+            get { return BackingStore?.Get<int?>("deployedAppCount"); }
+            set { BackingStore?.Set("deployedAppCount", value); }
         }
         /// <summary>Navigation property to deployment summary of the configuration.</summary>
         public ManagedAppPolicyDeploymentSummary DeploymentSummary {
-            get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary>(nameof(DeploymentSummary)); }
-            set { BackingStore?.Set(nameof(DeploymentSummary), value); }
+            get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary>("deploymentSummary"); }
+            set { BackingStore?.Set("deploymentSummary", value); }
         }
         /// <summary>Indicates if the policy is deployed to any inclusion groups or not.</summary>
         public bool? IsAssigned {
-            get { return BackingStore?.Get<bool?>(nameof(IsAssigned)); }
-            set { BackingStore?.Set(nameof(IsAssigned), value); }
+            get { return BackingStore?.Get<bool?>("isAssigned"); }
+            set { BackingStore?.Set("isAssigned", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationGroupSettingValueTemplate : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Group setting value children</summary>
         public List<DeviceManagementConfigurationSettingInstanceTemplate> Children {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstanceTemplate>>(nameof(Children)); }
-            set { BackingStore?.Set(nameof(Children), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstanceTemplate>>("children"); }
+            set { BackingStore?.Set("children", value); }
         }
         /// <summary>Setting Value Template Id</summary>
         public string SettingValueTemplateId {
-            get { return BackingStore?.Get<string>(nameof(SettingValueTemplateId)); }
-            set { BackingStore?.Set(nameof(SettingValueTemplateId), value); }
+            get { return BackingStore?.Get<string>("settingValueTemplateId"); }
+            set { BackingStore?.Set("settingValueTemplateId", value); }
         }
         /// <summary>
         /// Instantiates a new deviceManagementConfigurationGroupSettingValueTemplate and sets the default values.

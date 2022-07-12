@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Uploa
     public class UploadDepTokenPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The appleId property</summary>
         public string AppleId {
-            get { return BackingStore?.Get<string>(nameof(AppleId)); }
-            set { BackingStore?.Set(nameof(AppleId), value); }
+            get { return BackingStore?.Get<string>("appleId"); }
+            set { BackingStore?.Set("appleId", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The depToken property</summary>
         public string DepToken {
-            get { return BackingStore?.Get<string>(nameof(DepToken)); }
-            set { BackingStore?.Set(nameof(DepToken), value); }
+            get { return BackingStore?.Get<string>("depToken"); }
+            set { BackingStore?.Set("depToken", value); }
         }
         /// <summary>
         /// Instantiates a new uploadDepTokenPostRequestBody and sets the default values.

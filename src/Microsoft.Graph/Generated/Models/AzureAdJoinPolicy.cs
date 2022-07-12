@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class AzureAdJoinPolicy : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The identifiers of the groups that are in the scope of the policy. Required when the appliesTo property is set to selected.</summary>
         public List<string> AllowedGroups {
-            get { return BackingStore?.Get<List<string>>(nameof(AllowedGroups)); }
-            set { BackingStore?.Set(nameof(AllowedGroups), value); }
+            get { return BackingStore?.Get<List<string>>("allowedGroups"); }
+            set { BackingStore?.Set("allowedGroups", value); }
         }
         /// <summary>The identifiers of users that are in the scope of the policy. Required when the appliesTo property is set to selected.</summary>
         public List<string> AllowedUsers {
-            get { return BackingStore?.Get<List<string>>(nameof(AllowedUsers)); }
-            set { BackingStore?.Set(nameof(AllowedUsers), value); }
+            get { return BackingStore?.Get<List<string>>("allowedUsers"); }
+            set { BackingStore?.Set("allowedUsers", value); }
         }
         /// <summary>Specifies whether to block or allow fine-grained control of the policy scope. The possible values are: 0 (meaning none), 1 (meaning all), 2 (meaning selected), 3 (meaning unknownFutureValue). The default value is 1. When set to 2, at least one user or group identifier must be specified in either allowedUsers or allowedGroups.  Setting this property to 0 or 1 removes all identifiers in both allowedUsers and allowedGroups.</summary>
         public PolicyScope? AppliesTo {
-            get { return BackingStore?.Get<PolicyScope?>(nameof(AppliesTo)); }
-            set { BackingStore?.Set(nameof(AppliesTo), value); }
+            get { return BackingStore?.Get<PolicyScope?>("appliesTo"); }
+            set { BackingStore?.Set("appliesTo", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies whether this policy scope is configurable by the admin. The default value is false. When an admin has enabled Intune (MEM) to manage devices, this property is set to false and appliesTo defaults to 1 (meaning all).</summary>
         public bool? IsAdminConfigurable {
-            get { return BackingStore?.Get<bool?>(nameof(IsAdminConfigurable)); }
-            set { BackingStore?.Set(nameof(IsAdminConfigurable), value); }
+            get { return BackingStore?.Get<bool?>("isAdminConfigurable"); }
+            set { BackingStore?.Set("isAdminConfigurable", value); }
         }
         /// <summary>
         /// Instantiates a new azureAdJoinPolicy and sets the default values.

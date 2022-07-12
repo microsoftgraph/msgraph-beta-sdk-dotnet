@@ -9,38 +9,44 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceAndAppManagementAssignmentFilter : Entity, IParsable {
         /// <summary>Creation time of the Assignment Filter.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Description of the Assignment Filter.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>DisplayName of the Assignment Filter.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Last modified time of the Assignment Filter.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>Platform type of the devices on which the Assignment Filter will be applicable. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.</summary>
+        /// <summary>Supported platform types.</summary>
         public DevicePlatformType? Platform {
-            get { return BackingStore?.Get<DevicePlatformType?>(nameof(Platform)); }
-            set { BackingStore?.Set(nameof(Platform), value); }
+            get { return BackingStore?.Get<DevicePlatformType?>("platform"); }
+            set { BackingStore?.Set("platform", value); }
         }
         /// <summary>RoleScopeTags of the Assignment Filter.</summary>
         public List<string> RoleScopeTags {
-            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTags)); }
-            set { BackingStore?.Set(nameof(RoleScopeTags), value); }
+            get { return BackingStore?.Get<List<string>>("roleScopeTags"); }
+            set { BackingStore?.Set("roleScopeTags", value); }
         }
         /// <summary>Rule definition of the Assignment Filter.</summary>
         public string Rule {
-            get { return BackingStore?.Get<string>(nameof(Rule)); }
-            set { BackingStore?.Set(nameof(Rule), value); }
+            get { return BackingStore?.Get<string>("rule"); }
+            set { BackingStore?.Set("rule", value); }
+        }
+        /// <summary>
+        /// Instantiates a new deviceAndAppManagementAssignmentFilter and sets the default values.
+        /// </summary>
+        public DeviceAndAppManagementAssignmentFilter() : base() {
+            Type = "#microsoft.graph.deviceAndAppManagementAssignmentFilter";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

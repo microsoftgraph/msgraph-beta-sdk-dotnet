@@ -4,92 +4,87 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Item : Entity, IParsable {
         /// <summary>The baseUnitOfMeasureId property</summary>
         public string BaseUnitOfMeasureId {
-            get { return BackingStore?.Get<string>(nameof(BaseUnitOfMeasureId)); }
-            set { BackingStore?.Set(nameof(BaseUnitOfMeasureId), value); }
+            get { return BackingStore?.Get<string>("baseUnitOfMeasureId"); }
+            set { BackingStore?.Set("baseUnitOfMeasureId", value); }
         }
         /// <summary>The blocked property</summary>
         public bool? Blocked {
-            get { return BackingStore?.Get<bool?>(nameof(Blocked)); }
-            set { BackingStore?.Set(nameof(Blocked), value); }
+            get { return BackingStore?.Get<bool?>("blocked"); }
+            set { BackingStore?.Set("blocked", value); }
         }
         /// <summary>The displayName property</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The gtin property</summary>
         public string Gtin {
-            get { return BackingStore?.Get<string>(nameof(Gtin)); }
-            set { BackingStore?.Set(nameof(Gtin), value); }
+            get { return BackingStore?.Get<string>("gtin"); }
+            set { BackingStore?.Set("gtin", value); }
         }
         /// <summary>The inventory property</summary>
         public decimal? Inventory {
-            get { return BackingStore?.Get<decimal?>(nameof(Inventory)); }
-            set { BackingStore?.Set(nameof(Inventory), value); }
+            get { return BackingStore?.Get<decimal?>("inventory"); }
+            set { BackingStore?.Set("inventory", value); }
         }
         /// <summary>The itemCategory property</summary>
         public Microsoft.Graph.Beta.Models.ItemCategory ItemCategory {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemCategory>(nameof(ItemCategory)); }
-            set { BackingStore?.Set(nameof(ItemCategory), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemCategory>("itemCategory"); }
+            set { BackingStore?.Set("itemCategory", value); }
         }
         /// <summary>The itemCategoryCode property</summary>
         public string ItemCategoryCode {
-            get { return BackingStore?.Get<string>(nameof(ItemCategoryCode)); }
-            set { BackingStore?.Set(nameof(ItemCategoryCode), value); }
+            get { return BackingStore?.Get<string>("itemCategoryCode"); }
+            set { BackingStore?.Set("itemCategoryCode", value); }
         }
         /// <summary>The itemCategoryId property</summary>
         public string ItemCategoryId {
-            get { return BackingStore?.Get<string>(nameof(ItemCategoryId)); }
-            set { BackingStore?.Set(nameof(ItemCategoryId), value); }
+            get { return BackingStore?.Get<string>("itemCategoryId"); }
+            set { BackingStore?.Set("itemCategoryId", value); }
         }
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The number property</summary>
         public string Number {
-            get { return BackingStore?.Get<string>(nameof(Number)); }
-            set { BackingStore?.Set(nameof(Number), value); }
+            get { return BackingStore?.Get<string>("number"); }
+            set { BackingStore?.Set("number", value); }
         }
         /// <summary>The picture property</summary>
         public List<Microsoft.Graph.Beta.Models.Picture> Picture {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Picture>>(nameof(Picture)); }
-            set { BackingStore?.Set(nameof(Picture), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Picture>>("picture"); }
+            set { BackingStore?.Set("picture", value); }
         }
         /// <summary>The priceIncludesTax property</summary>
         public bool? PriceIncludesTax {
-            get { return BackingStore?.Get<bool?>(nameof(PriceIncludesTax)); }
-            set { BackingStore?.Set(nameof(PriceIncludesTax), value); }
+            get { return BackingStore?.Get<bool?>("priceIncludesTax"); }
+            set { BackingStore?.Set("priceIncludesTax", value); }
         }
         /// <summary>The taxGroupCode property</summary>
         public string TaxGroupCode {
-            get { return BackingStore?.Get<string>(nameof(TaxGroupCode)); }
-            set { BackingStore?.Set(nameof(TaxGroupCode), value); }
+            get { return BackingStore?.Get<string>("taxGroupCode"); }
+            set { BackingStore?.Set("taxGroupCode", value); }
         }
         /// <summary>The taxGroupId property</summary>
         public string TaxGroupId {
-            get { return BackingStore?.Get<string>(nameof(TaxGroupId)); }
-            set { BackingStore?.Set(nameof(TaxGroupId), value); }
-        }
-        /// <summary>The type property</summary>
-        public string Type {
-            get { return BackingStore?.Get<string>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<string>("taxGroupId"); }
+            set { BackingStore?.Set("taxGroupId", value); }
         }
         /// <summary>The unitCost property</summary>
         public decimal? UnitCost {
-            get { return BackingStore?.Get<decimal?>(nameof(UnitCost)); }
-            set { BackingStore?.Set(nameof(UnitCost), value); }
+            get { return BackingStore?.Get<decimal?>("unitCost"); }
+            set { BackingStore?.Set("unitCost", value); }
         }
         /// <summary>The unitPrice property</summary>
         public decimal? UnitPrice {
-            get { return BackingStore?.Get<decimal?>(nameof(UnitPrice)); }
-            set { BackingStore?.Set(nameof(UnitPrice), value); }
+            get { return BackingStore?.Get<decimal?>("unitPrice"); }
+            set { BackingStore?.Set("unitPrice", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -118,7 +113,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"priceIncludesTax", n => { PriceIncludesTax = n.GetBoolValue(); } },
                 {"taxGroupCode", n => { TaxGroupCode = n.GetStringValue(); } },
                 {"taxGroupId", n => { TaxGroupId = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetStringValue(); } },
                 {"unitCost", n => { UnitCost = n.GetDecimalValue(); } },
                 {"unitPrice", n => { UnitPrice = n.GetDecimalValue(); } },
             };
@@ -144,7 +138,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("priceIncludesTax", PriceIncludesTax);
             writer.WriteStringValue("taxGroupCode", TaxGroupCode);
             writer.WriteStringValue("taxGroupId", TaxGroupId);
-            writer.WriteStringValue("type", Type);
             writer.WriteDecimalValue("unitCost", UnitCost);
             writer.WriteDecimalValue("unitPrice", UnitPrice);
         }

@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class SkypeForBusinessUserConversationMember : ConversationMember, IParsable {
         /// <summary>ID of the tenant that the user belongs to.</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>ID of the user.</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

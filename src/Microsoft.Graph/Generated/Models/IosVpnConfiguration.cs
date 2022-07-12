@@ -8,43 +8,49 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosVpnConfiguration : AppleVpnConfiguration, IParsable {
         /// <summary>Zscaler only. Zscaler cloud which the user is assigned to.</summary>
         public string CloudName {
-            get { return BackingStore?.Get<string>(nameof(CloudName)); }
-            set { BackingStore?.Set(nameof(CloudName), value); }
+            get { return BackingStore?.Get<string>("cloudName"); }
+            set { BackingStore?.Set("cloudName", value); }
         }
         /// <summary>Tenant level settings for the Derived Credentials to be used for authentication.</summary>
         public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings {
-            get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings>(nameof(DerivedCredentialSettings)); }
-            set { BackingStore?.Set(nameof(DerivedCredentialSettings), value); }
+            get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings"); }
+            set { BackingStore?.Set("derivedCredentialSettings", value); }
         }
         /// <summary>Zscaler only. List of network addresses which are not sent through the Zscaler cloud.</summary>
         public List<string> ExcludeList {
-            get { return BackingStore?.Get<List<string>>(nameof(ExcludeList)); }
-            set { BackingStore?.Set(nameof(ExcludeList), value); }
+            get { return BackingStore?.Get<List<string>>("excludeList"); }
+            set { BackingStore?.Set("excludeList", value); }
         }
         /// <summary>Identity certificate for client authentication when authentication method is certificate.</summary>
         public IosCertificateProfileBase IdentityCertificate {
-            get { return BackingStore?.Get<IosCertificateProfileBase>(nameof(IdentityCertificate)); }
-            set { BackingStore?.Set(nameof(IdentityCertificate), value); }
+            get { return BackingStore?.Get<IosCertificateProfileBase>("identityCertificate"); }
+            set { BackingStore?.Set("identityCertificate", value); }
         }
         /// <summary>Microsoft Tunnel site ID.</summary>
         public string MicrosoftTunnelSiteId {
-            get { return BackingStore?.Get<string>(nameof(MicrosoftTunnelSiteId)); }
-            set { BackingStore?.Set(nameof(MicrosoftTunnelSiteId), value); }
+            get { return BackingStore?.Get<string>("microsoftTunnelSiteId"); }
+            set { BackingStore?.Set("microsoftTunnelSiteId", value); }
         }
         /// <summary>Zscaler only. Blocks network traffic until the user signs into Zscaler app. &apos;True&apos; means traffic is blocked.</summary>
         public bool? StrictEnforcement {
-            get { return BackingStore?.Get<bool?>(nameof(StrictEnforcement)); }
-            set { BackingStore?.Set(nameof(StrictEnforcement), value); }
+            get { return BackingStore?.Get<bool?>("strictEnforcement"); }
+            set { BackingStore?.Set("strictEnforcement", value); }
         }
         /// <summary>Targeted mobile apps. This collection can contain a maximum of 500 elements.</summary>
         public List<AppListItem> TargetedMobileApps {
-            get { return BackingStore?.Get<List<AppListItem>>(nameof(TargetedMobileApps)); }
-            set { BackingStore?.Set(nameof(TargetedMobileApps), value); }
+            get { return BackingStore?.Get<List<AppListItem>>("targetedMobileApps"); }
+            set { BackingStore?.Set("targetedMobileApps", value); }
         }
         /// <summary>Zscaler only. Enter a static domain to pre-populate the login field with in the Zscaler app. If this is left empty, the user&apos;s Azure Active Directory domain will be used instead.</summary>
         public string UserDomain {
-            get { return BackingStore?.Get<string>(nameof(UserDomain)); }
-            set { BackingStore?.Set(nameof(UserDomain), value); }
+            get { return BackingStore?.Get<string>("userDomain"); }
+            set { BackingStore?.Set("userDomain", value); }
+        }
+        /// <summary>
+        /// Instantiates a new IosVpnConfiguration and sets the default values.
+        /// </summary>
+        public IosVpnConfiguration() : base() {
+            Type = "#microsoft.graph.iosVpnConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

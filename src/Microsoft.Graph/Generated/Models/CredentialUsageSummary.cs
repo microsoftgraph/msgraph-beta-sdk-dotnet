@@ -5,25 +5,25 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CredentialUsageSummary : Entity, IParsable {
-        /// <summary>Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword, unknownFutureValue.</summary>
+        /// <summary>The authMethod property</summary>
         public UsageAuthMethod? AuthMethod {
-            get { return BackingStore?.Get<UsageAuthMethod?>(nameof(AuthMethod)); }
-            set { BackingStore?.Set(nameof(AuthMethod), value); }
+            get { return BackingStore?.Get<UsageAuthMethod?>("authMethod"); }
+            set { BackingStore?.Set("authMethod", value); }
         }
         /// <summary>Provides the count of failed resets or registration data.</summary>
         public long? FailureActivityCount {
-            get { return BackingStore?.Get<long?>(nameof(FailureActivityCount)); }
-            set { BackingStore?.Set(nameof(FailureActivityCount), value); }
+            get { return BackingStore?.Get<long?>("failureActivityCount"); }
+            set { BackingStore?.Set("failureActivityCount", value); }
         }
-        /// <summary>Defines the feature to report. Possible values are: registration, reset, unknownFutureValue.</summary>
+        /// <summary>The feature property</summary>
         public FeatureType? Feature {
-            get { return BackingStore?.Get<FeatureType?>(nameof(Feature)); }
-            set { BackingStore?.Set(nameof(Feature), value); }
+            get { return BackingStore?.Get<FeatureType?>("feature"); }
+            set { BackingStore?.Set("feature", value); }
         }
         /// <summary>Provides the count of successful registrations or resets.</summary>
         public long? SuccessfulActivityCount {
-            get { return BackingStore?.Get<long?>(nameof(SuccessfulActivityCount)); }
-            set { BackingStore?.Set(nameof(SuccessfulActivityCount), value); }
+            get { return BackingStore?.Get<long?>("successfulActivityCount"); }
+            set { BackingStore?.Set("successfulActivityCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

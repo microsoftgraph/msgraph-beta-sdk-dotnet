@@ -8,68 +8,68 @@ namespace Microsoft.Graph.Beta.Models {
     public class MobileAppInstallStatus : Entity, IParsable {
         /// <summary>The navigation link to the mobile app.</summary>
         public MobileApp App {
-            get { return BackingStore?.Get<MobileApp>(nameof(App)); }
-            set { BackingStore?.Set(nameof(App), value); }
+            get { return BackingStore?.Get<MobileApp>("app"); }
+            set { BackingStore?.Set("app", value); }
         }
         /// <summary>Device ID</summary>
         public string DeviceId {
-            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
-            set { BackingStore?.Set(nameof(DeviceId), value); }
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>Device name</summary>
         public string DeviceName {
-            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
-            set { BackingStore?.Set(nameof(DeviceName), value); }
+            get { return BackingStore?.Get<string>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
         }
         /// <summary>Human readable version of the application</summary>
         public string DisplayVersion {
-            get { return BackingStore?.Get<string>(nameof(DisplayVersion)); }
-            set { BackingStore?.Set(nameof(DisplayVersion), value); }
+            get { return BackingStore?.Get<string>("displayVersion"); }
+            set { BackingStore?.Set("displayVersion", value); }
         }
         /// <summary>The error code for install or uninstall failures.</summary>
         public int? ErrorCode {
-            get { return BackingStore?.Get<int?>(nameof(ErrorCode)); }
-            set { BackingStore?.Set(nameof(ErrorCode), value); }
+            get { return BackingStore?.Get<int?>("errorCode"); }
+            set { BackingStore?.Set("errorCode", value); }
         }
-        /// <summary>The install state of the app. Possible values are: installed, failed, notInstalled, uninstallFailed, pendingInstall, unknown, notApplicable.</summary>
+        /// <summary>A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.</summary>
         public ResultantAppState? InstallState {
-            get { return BackingStore?.Get<ResultantAppState?>(nameof(InstallState)); }
-            set { BackingStore?.Set(nameof(InstallState), value); }
+            get { return BackingStore?.Get<ResultantAppState?>("installState"); }
+            set { BackingStore?.Set("installState", value); }
         }
-        /// <summary>The install state detail of the app. Possible values are: noAdditionalDetails, dependencyFailedToInstall, dependencyWithRequirementsNotMet, dependencyPendingReboot, dependencyWithAutoInstallDisabled, supersededAppUninstallFailed, supersededAppUninstallPendingReboot, removingSupersededApps, iosAppStoreUpdateFailedToInstall, vppAppHasUpdateAvailable, userRejectedUpdate, uninstallPendingReboot, supersedingAppsDetected, supersededAppsDetected, seeInstallErrorCode, autoInstallDisabled, managedAppNoLongerPresent, userRejectedInstall, userIsNotLoggedIntoAppStore, untargetedSupersedingAppsDetected, appRemovedBySupersedence, seeUninstallErrorCode, pendingReboot, installingDependencies, contentDownloaded, supersedingAppsNotApplicable, powerShellScriptRequirementNotMet, registryRequirementNotMet, fileSystemRequirementNotMet, platformNotApplicable, minimumCpuSpeedNotMet, minimumLogicalProcessorCountNotMet, minimumPhysicalMemoryNotMet, minimumOsVersionNotMet, minimumDiskSpaceNotMet, processorArchitectureNotApplicable.</summary>
+        /// <summary>Enum indicating additional details regarding why an application has a particular install state.</summary>
         public ResultantAppStateDetail? InstallStateDetail {
-            get { return BackingStore?.Get<ResultantAppStateDetail?>(nameof(InstallStateDetail)); }
-            set { BackingStore?.Set(nameof(InstallStateDetail), value); }
+            get { return BackingStore?.Get<ResultantAppStateDetail?>("installStateDetail"); }
+            set { BackingStore?.Set("installStateDetail", value); }
         }
         /// <summary>Last sync date time</summary>
         public DateTimeOffset? LastSyncDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSyncDateTime)); }
-            set { BackingStore?.Set(nameof(LastSyncDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
+            set { BackingStore?.Set("lastSyncDateTime", value); }
         }
-        /// <summary>The install state of the app. Possible values are: installed, failed, notInstalled, uninstallFailed, pendingInstall, unknown, notApplicable.</summary>
+        /// <summary>A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.</summary>
         public ResultantAppState? MobileAppInstallStatusValue {
-            get { return BackingStore?.Get<ResultantAppState?>(nameof(MobileAppInstallStatusValue)); }
-            set { BackingStore?.Set(nameof(MobileAppInstallStatusValue), value); }
+            get { return BackingStore?.Get<ResultantAppState?>("mobileAppInstallStatusValue"); }
+            set { BackingStore?.Set("mobileAppInstallStatusValue", value); }
         }
         /// <summary>OS Description</summary>
         public string OsDescription {
-            get { return BackingStore?.Get<string>(nameof(OsDescription)); }
-            set { BackingStore?.Set(nameof(OsDescription), value); }
+            get { return BackingStore?.Get<string>("osDescription"); }
+            set { BackingStore?.Set("osDescription", value); }
         }
         /// <summary>OS Version</summary>
         public string OsVersion {
-            get { return BackingStore?.Get<string>(nameof(OsVersion)); }
-            set { BackingStore?.Set(nameof(OsVersion), value); }
+            get { return BackingStore?.Get<string>("osVersion"); }
+            set { BackingStore?.Set("osVersion", value); }
         }
         /// <summary>Device User Name</summary>
         public string UserName {
-            get { return BackingStore?.Get<string>(nameof(UserName)); }
-            set { BackingStore?.Set(nameof(UserName), value); }
+            get { return BackingStore?.Get<string>("userName"); }
+            set { BackingStore?.Set("userName", value); }
         }
         /// <summary>User Principal Name</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

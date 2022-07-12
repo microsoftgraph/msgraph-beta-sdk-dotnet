@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class InstitutionData : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Short description of the institution the user studied at.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Name of the institution the user studied at.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Address or location of the institute.</summary>
         public PhysicalAddress Location {
-            get { return BackingStore?.Get<PhysicalAddress>(nameof(Location)); }
-            set { BackingStore?.Set(nameof(Location), value); }
+            get { return BackingStore?.Get<PhysicalAddress>("location"); }
+            set { BackingStore?.Set("location", value); }
         }
         /// <summary>Link to the institution or department homepage.</summary>
         public string WebUrl {
-            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
-            set { BackingStore?.Set(nameof(WebUrl), value); }
+            get { return BackingStore?.Get<string>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
         }
         /// <summary>
         /// Instantiates a new institutionData and sets the default values.

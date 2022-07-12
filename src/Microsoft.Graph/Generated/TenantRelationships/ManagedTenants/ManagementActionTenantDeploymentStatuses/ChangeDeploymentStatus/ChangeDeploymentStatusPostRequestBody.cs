@@ -9,40 +9,40 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
     public class ChangeDeploymentStatusPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The managementActionId property</summary>
         public string ManagementActionId {
-            get { return BackingStore?.Get<string>(nameof(ManagementActionId)); }
-            set { BackingStore?.Set(nameof(ManagementActionId), value); }
+            get { return BackingStore?.Get<string>("managementActionId"); }
+            set { BackingStore?.Set("managementActionId", value); }
         }
         /// <summary>The managementTemplateId property</summary>
         public string ManagementTemplateId {
-            get { return BackingStore?.Get<string>(nameof(ManagementTemplateId)); }
-            set { BackingStore?.Set(nameof(ManagementTemplateId), value); }
+            get { return BackingStore?.Get<string>("managementTemplateId"); }
+            set { BackingStore?.Set("managementTemplateId", value); }
         }
         /// <summary>The managementTemplateVersion property</summary>
         public int? ManagementTemplateVersion {
-            get { return BackingStore?.Get<int?>(nameof(ManagementTemplateVersion)); }
-            set { BackingStore?.Set(nameof(ManagementTemplateVersion), value); }
+            get { return BackingStore?.Get<int?>("managementTemplateVersion"); }
+            set { BackingStore?.Set("managementTemplateVersion", value); }
         }
         /// <summary>The status property</summary>
         public string Status {
-            get { return BackingStore?.Get<string>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<string>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>The tenantGroupId property</summary>
         public string TenantGroupId {
-            get { return BackingStore?.Get<string>(nameof(TenantGroupId)); }
-            set { BackingStore?.Set(nameof(TenantGroupId), value); }
+            get { return BackingStore?.Get<string>("tenantGroupId"); }
+            set { BackingStore?.Set("tenantGroupId", value); }
         }
         /// <summary>The tenantId property</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>
         /// Instantiates a new changeDeploymentStatusPostRequestBody and sets the default values.

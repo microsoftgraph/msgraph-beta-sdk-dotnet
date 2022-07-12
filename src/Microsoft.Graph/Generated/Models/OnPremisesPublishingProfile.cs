@@ -7,38 +7,38 @@ namespace Microsoft.Graph.Beta.Models {
     public class OnPremisesPublishingProfile : Entity, IParsable {
         /// <summary>List of existing onPremisesAgentGroup objects. Read-only. Nullable.</summary>
         public List<OnPremisesAgentGroup> AgentGroups {
-            get { return BackingStore?.Get<List<OnPremisesAgentGroup>>(nameof(AgentGroups)); }
-            set { BackingStore?.Set(nameof(AgentGroups), value); }
+            get { return BackingStore?.Get<List<OnPremisesAgentGroup>>("agentGroups"); }
+            set { BackingStore?.Set("agentGroups", value); }
         }
         /// <summary>List of existing onPremisesAgent objects. Read-only. Nullable.</summary>
         public List<OnPremisesAgent> Agents {
-            get { return BackingStore?.Get<List<OnPremisesAgent>>(nameof(Agents)); }
-            set { BackingStore?.Set(nameof(Agents), value); }
+            get { return BackingStore?.Get<List<OnPremisesAgent>>("agents"); }
+            set { BackingStore?.Set("agents", value); }
         }
         /// <summary>List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.</summary>
         public List<ConnectorGroup> ConnectorGroups {
-            get { return BackingStore?.Get<List<ConnectorGroup>>(nameof(ConnectorGroups)); }
-            set { BackingStore?.Set(nameof(ConnectorGroups), value); }
+            get { return BackingStore?.Get<List<ConnectorGroup>>("connectorGroups"); }
+            set { BackingStore?.Set("connectorGroups", value); }
         }
         /// <summary>List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.</summary>
         public List<Connector> Connectors {
-            get { return BackingStore?.Get<List<Connector>>(nameof(Connectors)); }
-            set { BackingStore?.Set(nameof(Connectors), value); }
+            get { return BackingStore?.Get<List<Connector>>("connectors"); }
+            set { BackingStore?.Set("connectors", value); }
         }
         /// <summary>Represents a hybridAgentUpdaterConfiguration object.</summary>
         public Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration HybridAgentUpdaterConfiguration {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration>(nameof(HybridAgentUpdaterConfiguration)); }
-            set { BackingStore?.Set(nameof(HybridAgentUpdaterConfiguration), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration>("hybridAgentUpdaterConfiguration"); }
+            set { BackingStore?.Set("hybridAgentUpdaterConfiguration", value); }
         }
         /// <summary>Represents if Azure AD Application Proxy is enabled for the tenant.</summary>
         public bool? IsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
-            set { BackingStore?.Set(nameof(IsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isEnabled"); }
+            set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>List of existing publishedResource objects. Read-only. Nullable.</summary>
         public List<PublishedResource> PublishedResources {
-            get { return BackingStore?.Get<List<PublishedResource>>(nameof(PublishedResources)); }
-            set { BackingStore?.Set(nameof(PublishedResources), value); }
+            get { return BackingStore?.Get<List<PublishedResource>>("publishedResources"); }
+            set { BackingStore?.Set("publishedResources", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,78 +7,78 @@ namespace Microsoft.Graph.Beta.Models {
     public class CloudPcProvisioningPolicy : Entity, IParsable {
         /// <summary>The URL of the alternate resource that links to this provisioning policy. Read-only.</summary>
         public string AlternateResourceUrl {
-            get { return BackingStore?.Get<string>(nameof(AlternateResourceUrl)); }
-            set { BackingStore?.Set(nameof(AlternateResourceUrl), value); }
+            get { return BackingStore?.Get<string>("alternateResourceUrl"); }
+            set { BackingStore?.Set("alternateResourceUrl", value); }
         }
         /// <summary>A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.</summary>
         public List<CloudPcProvisioningPolicyAssignment> Assignments {
-            get { return BackingStore?.Get<List<CloudPcProvisioningPolicyAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<CloudPcProvisioningPolicyAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>The display name of the Cloud PC group that the Cloud PCs reside in. Read-only.</summary>
         public string CloudPcGroupDisplayName {
-            get { return BackingStore?.Get<string>(nameof(CloudPcGroupDisplayName)); }
-            set { BackingStore?.Set(nameof(CloudPcGroupDisplayName), value); }
+            get { return BackingStore?.Get<string>("cloudPcGroupDisplayName"); }
+            set { BackingStore?.Set("cloudPcGroupDisplayName", value); }
         }
         /// <summary>The provisioning policy description.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The display name for the provisioning policy.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Specifies how Cloud PCs will join Azure Active Directory.</summary>
         public CloudPcDomainJoinConfiguration DomainJoinConfiguration {
-            get { return BackingStore?.Get<CloudPcDomainJoinConfiguration>(nameof(DomainJoinConfiguration)); }
-            set { BackingStore?.Set(nameof(DomainJoinConfiguration), value); }
+            get { return BackingStore?.Get<CloudPcDomainJoinConfiguration>("domainJoinConfiguration"); }
+            set { BackingStore?.Set("domainJoinConfiguration", value); }
         }
         /// <summary>The number of hours to wait before reprovisioning/deprovisioning happens. Read-only.</summary>
         public int? GracePeriodInHours {
-            get { return BackingStore?.Get<int?>(nameof(GracePeriodInHours)); }
-            set { BackingStore?.Set(nameof(GracePeriodInHours), value); }
+            get { return BackingStore?.Get<int?>("gracePeriodInHours"); }
+            set { BackingStore?.Set("gracePeriodInHours", value); }
         }
         /// <summary>The display name for the OS image you’re provisioning.</summary>
         public string ImageDisplayName {
-            get { return BackingStore?.Get<string>(nameof(ImageDisplayName)); }
-            set { BackingStore?.Set(nameof(ImageDisplayName), value); }
+            get { return BackingStore?.Get<string>("imageDisplayName"); }
+            set { BackingStore?.Set("imageDisplayName", value); }
         }
         /// <summary>The ID of the OS image you want to provision on Cloud PCs. The format for a gallery type image is: {publisher_offer_sku}. Supported values for each of the parameters are as follows:publisher: Microsoftwindowsdesktop. offer: windows-ent-cpc. sku: 21h1-ent-cpc-m365, 21h1-ent-cpc-os, 20h2-ent-cpc-m365, 20h2-ent-cpc-os, 20h1-ent-cpc-m365, 20h1-ent-cpc-os, 19h2-ent-cpc-m365 and 19h2-ent-cpc-os.</summary>
         public string ImageId {
-            get { return BackingStore?.Get<string>(nameof(ImageId)); }
-            set { BackingStore?.Set(nameof(ImageId), value); }
+            get { return BackingStore?.Get<string>("imageId"); }
+            set { BackingStore?.Set("imageId", value); }
         }
-        /// <summary>The type of OS image (custom or gallery) you want to provision on Cloud PCs. Possible values are: gallery, custom.</summary>
+        /// <summary>The imageType property</summary>
         public CloudPcProvisioningPolicyImageType? ImageType {
-            get { return BackingStore?.Get<CloudPcProvisioningPolicyImageType?>(nameof(ImageType)); }
-            set { BackingStore?.Set(nameof(ImageType), value); }
+            get { return BackingStore?.Get<CloudPcProvisioningPolicyImageType?>("imageType"); }
+            set { BackingStore?.Set("imageType", value); }
         }
         /// <summary>Indicates whether the local admin option is enabled. If the local admin option is enabled, the end user can be an admin of the Cloud PC device. Read-only.</summary>
         public bool? LocalAdminEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(LocalAdminEnabled)); }
-            set { BackingStore?.Set(nameof(LocalAdminEnabled), value); }
+            get { return BackingStore?.Get<bool?>("localAdminEnabled"); }
+            set { BackingStore?.Set("localAdminEnabled", value); }
         }
-        /// <summary>Specifies which services manage the Azure network connection. Possible values are: windows365, devBox, unknownFutureValue. Read-only.</summary>
+        /// <summary>The managedBy property</summary>
         public CloudPcManagementService? ManagedBy {
-            get { return BackingStore?.Get<CloudPcManagementService?>(nameof(ManagedBy)); }
-            set { BackingStore?.Set(nameof(ManagedBy), value); }
+            get { return BackingStore?.Get<CloudPcManagementService?>("managedBy"); }
+            set { BackingStore?.Set("managedBy", value); }
         }
         /// <summary>The specific settings for the Microsoft Managed Desktop, which enables customers to get a managed device experience for the Cloud PC. Before you can enable Microsoft Managed Desktop, an admin must configure it.</summary>
         public Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop MicrosoftManagedDesktop {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop>(nameof(MicrosoftManagedDesktop)); }
-            set { BackingStore?.Set(nameof(MicrosoftManagedDesktop), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop>("microsoftManagedDesktop"); }
+            set { BackingStore?.Set("microsoftManagedDesktop", value); }
         }
         /// <summary>The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.</summary>
         public string OnPremisesConnectionId {
-            get { return BackingStore?.Get<string>(nameof(OnPremisesConnectionId)); }
-            set { BackingStore?.Set(nameof(OnPremisesConnectionId), value); }
+            get { return BackingStore?.Get<string>("onPremisesConnectionId"); }
+            set { BackingStore?.Set("onPremisesConnectionId", value); }
         }
         /// <summary>Specific Windows settings to configure while creating Cloud PCs for this provisioning policy.</summary>
         public CloudPcWindowsSettings WindowsSettings {
-            get { return BackingStore?.Get<CloudPcWindowsSettings>(nameof(WindowsSettings)); }
-            set { BackingStore?.Set(nameof(WindowsSettings), value); }
+            get { return BackingStore?.Get<CloudPcWindowsSettings>("windowsSettings"); }
+            set { BackingStore?.Set("windowsSettings", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

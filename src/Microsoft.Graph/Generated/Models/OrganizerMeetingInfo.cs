@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class OrganizerMeetingInfo : MeetingInfo, IParsable {
         /// <summary>The organizer property</summary>
         public IdentitySet Organizer {
-            get { return BackingStore?.Get<IdentitySet>(nameof(Organizer)); }
-            set { BackingStore?.Set(nameof(Organizer), value); }
+            get { return BackingStore?.Get<IdentitySet>("organizer"); }
+            set { BackingStore?.Set("organizer", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

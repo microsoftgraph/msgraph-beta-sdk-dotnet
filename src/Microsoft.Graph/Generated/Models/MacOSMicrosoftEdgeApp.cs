@@ -5,10 +5,10 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MacOSMicrosoftEdgeApp : MobileApp, IParsable {
-        /// <summary>The channel to install on target devices. Possible values are: dev, beta, stable.</summary>
+        /// <summary>The enum to specify the channels for Microsoft Edge apps.</summary>
         public MicrosoftEdgeChannel? Channel {
-            get { return BackingStore?.Get<MicrosoftEdgeChannel?>(nameof(Channel)); }
-            set { BackingStore?.Set(nameof(Channel), value); }
+            get { return BackingStore?.Get<MicrosoftEdgeChannel?>("channel"); }
+            set { BackingStore?.Set("channel", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

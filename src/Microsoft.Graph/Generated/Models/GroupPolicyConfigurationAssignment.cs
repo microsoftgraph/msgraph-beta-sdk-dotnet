@@ -8,13 +8,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyConfigurationAssignment : Entity, IParsable {
         /// <summary>The date and time the entity was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The type of groups targeted the group policy configuration.</summary>
         public DeviceAndAppManagementAssignmentTarget Target {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>(nameof(Target)); }
-            set { BackingStore?.Set(nameof(Target), value); }
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
+            set { BackingStore?.Set("target", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

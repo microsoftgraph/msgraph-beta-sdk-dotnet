@@ -8,23 +8,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class UnsupportedGroupPolicyExtension : Entity, IParsable {
         /// <summary>ExtensionType of the unsupported extension.</summary>
         public string ExtensionType {
-            get { return BackingStore?.Get<string>(nameof(ExtensionType)); }
-            set { BackingStore?.Set(nameof(ExtensionType), value); }
+            get { return BackingStore?.Get<string>("extensionType"); }
+            set { BackingStore?.Set("extensionType", value); }
         }
         /// <summary>Namespace Url of the unsupported extension.</summary>
         public string NamespaceUrl {
-            get { return BackingStore?.Get<string>(nameof(NamespaceUrl)); }
-            set { BackingStore?.Set(nameof(NamespaceUrl), value); }
+            get { return BackingStore?.Get<string>("namespaceUrl"); }
+            set { BackingStore?.Set("namespaceUrl", value); }
         }
         /// <summary>Node name of the unsupported extension.</summary>
         public string NodeName {
-            get { return BackingStore?.Get<string>(nameof(NodeName)); }
-            set { BackingStore?.Set(nameof(NodeName), value); }
+            get { return BackingStore?.Get<string>("nodeName"); }
+            set { BackingStore?.Set("nodeName", value); }
         }
-        /// <summary>Setting Scope of the unsupported extension. Possible values are: unknown, device, user.</summary>
+        /// <summary>Scope of the group policy setting.</summary>
         public GroupPolicySettingScope? SettingScope {
-            get { return BackingStore?.Get<GroupPolicySettingScope?>(nameof(SettingScope)); }
-            set { BackingStore?.Set(nameof(SettingScope), value); }
+            get { return BackingStore?.Get<GroupPolicySettingScope?>("settingScope"); }
+            set { BackingStore?.Set("settingScope", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,33 +7,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceRegistrationPolicy : Entity, IParsable {
         /// <summary>Specifies the authorization policy for controlling registration of new devices using Azure AD Join within your organization. Required. For more information, see What is a device identity?.</summary>
         public AzureAdJoinPolicy AzureADJoin {
-            get { return BackingStore?.Get<AzureAdJoinPolicy>(nameof(AzureADJoin)); }
-            set { BackingStore?.Set(nameof(AzureADJoin), value); }
+            get { return BackingStore?.Get<AzureAdJoinPolicy>("azureADJoin"); }
+            set { BackingStore?.Set("azureADJoin", value); }
         }
         /// <summary>Specifies the authorization policy for controlling registration of new devices using Azure AD registered within your organization. Required. For more information, see What is a device identity?.</summary>
         public AzureADRegistrationPolicy AzureADRegistration {
-            get { return BackingStore?.Get<AzureADRegistrationPolicy>(nameof(AzureADRegistration)); }
-            set { BackingStore?.Set(nameof(AzureADRegistration), value); }
+            get { return BackingStore?.Get<AzureADRegistrationPolicy>("azureADRegistration"); }
+            set { BackingStore?.Set("azureADRegistration", value); }
         }
         /// <summary>The description of the device registration policy. It is always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks. Read-only.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The name of the device registration policy. It is always set to Device Registration Policy. Read-only.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>Specifies the authentication policy for a user to complete registration using Azure AD Join or Azure AD registered within your organization. The possible values are: 0 (meaning notRequired), 1 (meaning required), and 2 (meaning unknownFutureValue). The default value is 0.</summary>
+        /// <summary>The multiFactorAuthConfiguration property</summary>
         public Microsoft.Graph.Beta.Models.MultiFactorAuthConfiguration? MultiFactorAuthConfiguration {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MultiFactorAuthConfiguration?>(nameof(MultiFactorAuthConfiguration)); }
-            set { BackingStore?.Set(nameof(MultiFactorAuthConfiguration), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MultiFactorAuthConfiguration?>("multiFactorAuthConfiguration"); }
+            set { BackingStore?.Set("multiFactorAuthConfiguration", value); }
         }
         /// <summary>Specifies the maximum number of devices that a user can have within your organization before blocking new device registrations. The default value is set to 50. If this property is not specified during the policy update operation, it is automatically reset to 0 to indicate that users are not allowed to join any devices.</summary>
         public int? UserDeviceQuota {
-            get { return BackingStore?.Get<int?>(nameof(UserDeviceQuota)); }
-            set { BackingStore?.Set(nameof(UserDeviceQuota), value); }
+            get { return BackingStore?.Get<int?>("userDeviceQuota"); }
+            set { BackingStore?.Set("userDeviceQuota", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

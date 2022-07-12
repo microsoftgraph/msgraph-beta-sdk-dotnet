@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class NetworkInterface : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection &lt;#&gt;, etc.).</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Last IPv4 address associated with this NIC.</summary>
         public string IpV4Address {
-            get { return BackingStore?.Get<string>(nameof(IpV4Address)); }
-            set { BackingStore?.Set(nameof(IpV4Address), value); }
+            get { return BackingStore?.Get<string>("ipV4Address"); }
+            set { BackingStore?.Set("ipV4Address", value); }
         }
         /// <summary>Last Public (aka global) IPv6 address associated with this NIC.</summary>
         public string IpV6Address {
-            get { return BackingStore?.Get<string>(nameof(IpV6Address)); }
-            set { BackingStore?.Set(nameof(IpV6Address), value); }
+            get { return BackingStore?.Get<string>("ipV6Address"); }
+            set { BackingStore?.Set("ipV6Address", value); }
         }
         /// <summary>Last local (link-local or site-local) IPv6 address associated with this NIC.</summary>
         public string LocalIpV6Address {
-            get { return BackingStore?.Get<string>(nameof(LocalIpV6Address)); }
-            set { BackingStore?.Set(nameof(LocalIpV6Address), value); }
+            get { return BackingStore?.Get<string>("localIpV6Address"); }
+            set { BackingStore?.Set("localIpV6Address", value); }
         }
         /// <summary>MAC address of the NIC on this host.</summary>
         public string MacAddress {
-            get { return BackingStore?.Get<string>(nameof(MacAddress)); }
-            set { BackingStore?.Set(nameof(MacAddress), value); }
+            get { return BackingStore?.Get<string>("macAddress"); }
+            set { BackingStore?.Set("macAddress", value); }
         }
         /// <summary>
         /// Instantiates a new networkInterface and sets the default values.

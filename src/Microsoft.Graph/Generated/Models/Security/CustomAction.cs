@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class CustomAction : InformationProtectionAction, IParsable {
         /// <summary>The name property</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The properties property</summary>
         public List<KeyValuePair> Properties {
-            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(Properties)); }
-            set { BackingStore?.Set(nameof(Properties), value); }
+            get { return BackingStore?.Get<List<KeyValuePair>>("properties"); }
+            set { BackingStore?.Set("properties", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

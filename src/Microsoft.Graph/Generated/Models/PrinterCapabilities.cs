@@ -8,205 +8,205 @@ namespace Microsoft.Graph.Beta.Models {
     public class PrinterCapabilities : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A list of supported bottom margins(in microns) for the printer.</summary>
         public List<int?> BottomMargins {
-            get { return BackingStore?.Get<List<int?>>(nameof(BottomMargins)); }
-            set { BackingStore?.Set(nameof(BottomMargins), value); }
+            get { return BackingStore?.Get<List<int?>>("bottomMargins"); }
+            set { BackingStore?.Set("bottomMargins", value); }
         }
         /// <summary>True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.</summary>
         public bool? Collation {
-            get { return BackingStore?.Get<bool?>(nameof(Collation)); }
-            set { BackingStore?.Set(nameof(Collation), value); }
+            get { return BackingStore?.Get<bool?>("collation"); }
+            set { BackingStore?.Set("collation", value); }
         }
         /// <summary>The color modes supported by the printer. Valid values are described in the following table.</summary>
         public List<string> ColorModes {
-            get { return BackingStore?.Get<List<string>>(nameof(ColorModes)); }
-            set { BackingStore?.Set(nameof(ColorModes), value); }
+            get { return BackingStore?.Get<List<string>>("colorModes"); }
+            set { BackingStore?.Set("colorModes", value); }
         }
         /// <summary>A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.</summary>
         public List<string> ContentTypes {
-            get { return BackingStore?.Get<List<string>>(nameof(ContentTypes)); }
-            set { BackingStore?.Set(nameof(ContentTypes), value); }
+            get { return BackingStore?.Get<List<string>>("contentTypes"); }
+            set { BackingStore?.Set("contentTypes", value); }
         }
         /// <summary>The range of copies per job supported by the printer.</summary>
         public IntegerRange CopiesPerJob {
-            get { return BackingStore?.Get<IntegerRange>(nameof(CopiesPerJob)); }
-            set { BackingStore?.Set(nameof(CopiesPerJob), value); }
+            get { return BackingStore?.Get<IntegerRange>("copiesPerJob"); }
+            set { BackingStore?.Set("copiesPerJob", value); }
         }
         /// <summary>The list of print resolutions in DPI that are supported by the printer.</summary>
         public List<int?> Dpis {
-            get { return BackingStore?.Get<List<int?>>(nameof(Dpis)); }
-            set { BackingStore?.Set(nameof(Dpis), value); }
+            get { return BackingStore?.Get<List<int?>>("dpis"); }
+            set { BackingStore?.Set("dpis", value); }
         }
         /// <summary>The list of duplex modes that are supported by the printer. Valid values are described in the following table.</summary>
         public List<string> DuplexModes {
-            get { return BackingStore?.Get<List<string>>(nameof(DuplexModes)); }
-            set { BackingStore?.Set(nameof(DuplexModes), value); }
+            get { return BackingStore?.Get<List<string>>("duplexModes"); }
+            set { BackingStore?.Set("duplexModes", value); }
         }
         /// <summary>The feedDirections property</summary>
         public List<string> FeedDirections {
-            get { return BackingStore?.Get<List<string>>(nameof(FeedDirections)); }
-            set { BackingStore?.Set(nameof(FeedDirections), value); }
+            get { return BackingStore?.Get<List<string>>("feedDirections"); }
+            set { BackingStore?.Set("feedDirections", value); }
         }
         /// <summary>The list of feed orientations that are supported by the printer.</summary>
         public List<string> FeedOrientations {
-            get { return BackingStore?.Get<List<string>>(nameof(FeedOrientations)); }
-            set { BackingStore?.Set(nameof(FeedOrientations), value); }
+            get { return BackingStore?.Get<List<string>>("feedOrientations"); }
+            set { BackingStore?.Set("feedOrientations", value); }
         }
         /// <summary>Finishing processes the printer supports for a printed document.</summary>
         public List<string> Finishings {
-            get { return BackingStore?.Get<List<string>>(nameof(Finishings)); }
-            set { BackingStore?.Set(nameof(Finishings), value); }
+            get { return BackingStore?.Get<List<string>>("finishings"); }
+            set { BackingStore?.Set("finishings", value); }
         }
         /// <summary>Supported input bins for the printer.</summary>
         public List<string> InputBins {
-            get { return BackingStore?.Get<List<string>>(nameof(InputBins)); }
-            set { BackingStore?.Set(nameof(InputBins), value); }
+            get { return BackingStore?.Get<List<string>>("inputBins"); }
+            set { BackingStore?.Set("inputBins", value); }
         }
         /// <summary>True if color printing is supported by the printer; false otherwise. Read-only.</summary>
         public bool? IsColorPrintingSupported {
-            get { return BackingStore?.Get<bool?>(nameof(IsColorPrintingSupported)); }
-            set { BackingStore?.Set(nameof(IsColorPrintingSupported), value); }
+            get { return BackingStore?.Get<bool?>("isColorPrintingSupported"); }
+            set { BackingStore?.Set("isColorPrintingSupported", value); }
         }
         /// <summary>True if the printer supports printing by page ranges; false otherwise.</summary>
         public bool? IsPageRangeSupported {
-            get { return BackingStore?.Get<bool?>(nameof(IsPageRangeSupported)); }
-            set { BackingStore?.Set(nameof(IsPageRangeSupported), value); }
+            get { return BackingStore?.Get<bool?>("isPageRangeSupported"); }
+            set { BackingStore?.Set("isPageRangeSupported", value); }
         }
         /// <summary>A list of supported left margins(in microns) for the printer.</summary>
         public List<int?> LeftMargins {
-            get { return BackingStore?.Get<List<int?>>(nameof(LeftMargins)); }
-            set { BackingStore?.Set(nameof(LeftMargins), value); }
+            get { return BackingStore?.Get<List<int?>>("leftMargins"); }
+            set { BackingStore?.Set("leftMargins", value); }
         }
         /// <summary>The media (i.e., paper) colors supported by the printer.</summary>
         public List<string> MediaColors {
-            get { return BackingStore?.Get<List<string>>(nameof(MediaColors)); }
-            set { BackingStore?.Set(nameof(MediaColors), value); }
+            get { return BackingStore?.Get<List<string>>("mediaColors"); }
+            set { BackingStore?.Set("mediaColors", value); }
         }
         /// <summary>The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.</summary>
         public List<string> MediaSizes {
-            get { return BackingStore?.Get<List<string>>(nameof(MediaSizes)); }
-            set { BackingStore?.Set(nameof(MediaSizes), value); }
+            get { return BackingStore?.Get<List<string>>("mediaSizes"); }
+            set { BackingStore?.Set("mediaSizes", value); }
         }
         /// <summary>The media types supported by the printer.</summary>
         public List<string> MediaTypes {
-            get { return BackingStore?.Get<List<string>>(nameof(MediaTypes)); }
-            set { BackingStore?.Set(nameof(MediaTypes), value); }
+            get { return BackingStore?.Get<List<string>>("mediaTypes"); }
+            set { BackingStore?.Set("mediaTypes", value); }
         }
         /// <summary>The presentation directions supported by the printer. Supported values are described in the following table.</summary>
         public List<string> MultipageLayouts {
-            get { return BackingStore?.Get<List<string>>(nameof(MultipageLayouts)); }
-            set { BackingStore?.Set(nameof(MultipageLayouts), value); }
+            get { return BackingStore?.Get<List<string>>("multipageLayouts"); }
+            set { BackingStore?.Set("multipageLayouts", value); }
         }
         /// <summary>The print orientations supported by the printer. Valid values are described in the following table.</summary>
         public List<string> Orientations {
-            get { return BackingStore?.Get<List<string>>(nameof(Orientations)); }
-            set { BackingStore?.Set(nameof(Orientations), value); }
+            get { return BackingStore?.Get<List<string>>("orientations"); }
+            set { BackingStore?.Set("orientations", value); }
         }
         /// <summary>The printer&apos;s supported output bins (trays).</summary>
         public List<string> OutputBins {
-            get { return BackingStore?.Get<List<string>>(nameof(OutputBins)); }
-            set { BackingStore?.Set(nameof(OutputBins), value); }
+            get { return BackingStore?.Get<List<string>>("outputBins"); }
+            set { BackingStore?.Set("outputBins", value); }
         }
         /// <summary>Supported number of Input Pages to impose upon a single Impression.</summary>
         public List<int?> PagesPerSheet {
-            get { return BackingStore?.Get<List<int?>>(nameof(PagesPerSheet)); }
-            set { BackingStore?.Set(nameof(PagesPerSheet), value); }
+            get { return BackingStore?.Get<List<int?>>("pagesPerSheet"); }
+            set { BackingStore?.Set("pagesPerSheet", value); }
         }
         /// <summary>The print qualities supported by the printer.</summary>
         public List<string> Qualities {
-            get { return BackingStore?.Get<List<string>>(nameof(Qualities)); }
-            set { BackingStore?.Set(nameof(Qualities), value); }
+            get { return BackingStore?.Get<List<string>>("qualities"); }
+            set { BackingStore?.Set("qualities", value); }
         }
         /// <summary>A list of supported right margins(in microns) for the printer.</summary>
         public List<int?> RightMargins {
-            get { return BackingStore?.Get<List<int?>>(nameof(RightMargins)); }
-            set { BackingStore?.Set(nameof(RightMargins), value); }
+            get { return BackingStore?.Get<List<int?>>("rightMargins"); }
+            set { BackingStore?.Set("rightMargins", value); }
         }
         /// <summary>Supported print scalings.</summary>
         public List<string> Scalings {
-            get { return BackingStore?.Get<List<string>>(nameof(Scalings)); }
-            set { BackingStore?.Set(nameof(Scalings), value); }
+            get { return BackingStore?.Get<List<string>>("scalings"); }
+            set { BackingStore?.Set("scalings", value); }
         }
         /// <summary>The supportedColorConfigurations property</summary>
         public List<string> SupportedColorConfigurations {
-            get { return BackingStore?.Get<List<string>>(nameof(SupportedColorConfigurations)); }
-            set { BackingStore?.Set(nameof(SupportedColorConfigurations), value); }
+            get { return BackingStore?.Get<List<string>>("supportedColorConfigurations"); }
+            set { BackingStore?.Set("supportedColorConfigurations", value); }
         }
         /// <summary>The supportedCopiesPerJob property</summary>
         public IntegerRange SupportedCopiesPerJob {
-            get { return BackingStore?.Get<IntegerRange>(nameof(SupportedCopiesPerJob)); }
-            set { BackingStore?.Set(nameof(SupportedCopiesPerJob), value); }
+            get { return BackingStore?.Get<IntegerRange>("supportedCopiesPerJob"); }
+            set { BackingStore?.Set("supportedCopiesPerJob", value); }
         }
         /// <summary>The supportedDocumentMimeTypes property</summary>
         public List<string> SupportedDocumentMimeTypes {
-            get { return BackingStore?.Get<List<string>>(nameof(SupportedDocumentMimeTypes)); }
-            set { BackingStore?.Set(nameof(SupportedDocumentMimeTypes), value); }
+            get { return BackingStore?.Get<List<string>>("supportedDocumentMimeTypes"); }
+            set { BackingStore?.Set("supportedDocumentMimeTypes", value); }
         }
         /// <summary>The supportedDuplexConfigurations property</summary>
         public List<string> SupportedDuplexConfigurations {
-            get { return BackingStore?.Get<List<string>>(nameof(SupportedDuplexConfigurations)); }
-            set { BackingStore?.Set(nameof(SupportedDuplexConfigurations), value); }
+            get { return BackingStore?.Get<List<string>>("supportedDuplexConfigurations"); }
+            set { BackingStore?.Set("supportedDuplexConfigurations", value); }
         }
         /// <summary>The supportedFinishings property</summary>
         public List<string> SupportedFinishings {
-            get { return BackingStore?.Get<List<string>>(nameof(SupportedFinishings)); }
-            set { BackingStore?.Set(nameof(SupportedFinishings), value); }
+            get { return BackingStore?.Get<List<string>>("supportedFinishings"); }
+            set { BackingStore?.Set("supportedFinishings", value); }
         }
         /// <summary>The supportedMediaColors property</summary>
         public List<string> SupportedMediaColors {
-            get { return BackingStore?.Get<List<string>>(nameof(SupportedMediaColors)); }
-            set { BackingStore?.Set(nameof(SupportedMediaColors), value); }
+            get { return BackingStore?.Get<List<string>>("supportedMediaColors"); }
+            set { BackingStore?.Set("supportedMediaColors", value); }
         }
         /// <summary>The supportedMediaSizes property</summary>
         public List<string> SupportedMediaSizes {
-            get { return BackingStore?.Get<List<string>>(nameof(SupportedMediaSizes)); }
-            set { BackingStore?.Set(nameof(SupportedMediaSizes), value); }
+            get { return BackingStore?.Get<List<string>>("supportedMediaSizes"); }
+            set { BackingStore?.Set("supportedMediaSizes", value); }
         }
         /// <summary>The supportedMediaTypes property</summary>
         public List<string> SupportedMediaTypes {
-            get { return BackingStore?.Get<List<string>>(nameof(SupportedMediaTypes)); }
-            set { BackingStore?.Set(nameof(SupportedMediaTypes), value); }
+            get { return BackingStore?.Get<List<string>>("supportedMediaTypes"); }
+            set { BackingStore?.Set("supportedMediaTypes", value); }
         }
         /// <summary>The supportedOrientations property</summary>
         public List<string> SupportedOrientations {
-            get { return BackingStore?.Get<List<string>>(nameof(SupportedOrientations)); }
-            set { BackingStore?.Set(nameof(SupportedOrientations), value); }
+            get { return BackingStore?.Get<List<string>>("supportedOrientations"); }
+            set { BackingStore?.Set("supportedOrientations", value); }
         }
         /// <summary>The supportedOutputBins property</summary>
         public List<string> SupportedOutputBins {
-            get { return BackingStore?.Get<List<string>>(nameof(SupportedOutputBins)); }
-            set { BackingStore?.Set(nameof(SupportedOutputBins), value); }
+            get { return BackingStore?.Get<List<string>>("supportedOutputBins"); }
+            set { BackingStore?.Set("supportedOutputBins", value); }
         }
         /// <summary>The supportedPagesPerSheet property</summary>
         public IntegerRange SupportedPagesPerSheet {
-            get { return BackingStore?.Get<IntegerRange>(nameof(SupportedPagesPerSheet)); }
-            set { BackingStore?.Set(nameof(SupportedPagesPerSheet), value); }
+            get { return BackingStore?.Get<IntegerRange>("supportedPagesPerSheet"); }
+            set { BackingStore?.Set("supportedPagesPerSheet", value); }
         }
         /// <summary>The supportedPresentationDirections property</summary>
         public List<string> SupportedPresentationDirections {
-            get { return BackingStore?.Get<List<string>>(nameof(SupportedPresentationDirections)); }
-            set { BackingStore?.Set(nameof(SupportedPresentationDirections), value); }
+            get { return BackingStore?.Get<List<string>>("supportedPresentationDirections"); }
+            set { BackingStore?.Set("supportedPresentationDirections", value); }
         }
         /// <summary>The supportedPrintQualities property</summary>
         public List<string> SupportedPrintQualities {
-            get { return BackingStore?.Get<List<string>>(nameof(SupportedPrintQualities)); }
-            set { BackingStore?.Set(nameof(SupportedPrintQualities), value); }
+            get { return BackingStore?.Get<List<string>>("supportedPrintQualities"); }
+            set { BackingStore?.Set("supportedPrintQualities", value); }
         }
         /// <summary>True if the printer supports scaling PDF pages to match the print media size; false otherwise.</summary>
         public bool? SupportsFitPdfToPage {
-            get { return BackingStore?.Get<bool?>(nameof(SupportsFitPdfToPage)); }
-            set { BackingStore?.Set(nameof(SupportsFitPdfToPage), value); }
+            get { return BackingStore?.Get<bool?>("supportsFitPdfToPage"); }
+            set { BackingStore?.Set("supportsFitPdfToPage", value); }
         }
         /// <summary>A list of supported top margins(in microns) for the printer.</summary>
         public List<int?> TopMargins {
-            get { return BackingStore?.Get<List<int?>>(nameof(TopMargins)); }
-            set { BackingStore?.Set(nameof(TopMargins), value); }
+            get { return BackingStore?.Get<List<int?>>("topMargins"); }
+            set { BackingStore?.Set("topMargins", value); }
         }
         /// <summary>
         /// Instantiates a new printerCapabilities and sets the default values.

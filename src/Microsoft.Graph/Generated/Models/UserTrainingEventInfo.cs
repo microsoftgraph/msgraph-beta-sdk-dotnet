@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserTrainingEventInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Display name of the training.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.</summary>
         public TrainingStatus? LatestTrainingStatus {
-            get { return BackingStore?.Get<TrainingStatus?>(nameof(LatestTrainingStatus)); }
-            set { BackingStore?.Set(nameof(LatestTrainingStatus), value); }
+            get { return BackingStore?.Get<TrainingStatus?>("latestTrainingStatus"); }
+            set { BackingStore?.Set("latestTrainingStatus", value); }
         }
         /// <summary>Event details of the training when it was assigned to the user.</summary>
         public UserTrainingContentEventInfo TrainingAssignedProperties {
-            get { return BackingStore?.Get<UserTrainingContentEventInfo>(nameof(TrainingAssignedProperties)); }
-            set { BackingStore?.Set(nameof(TrainingAssignedProperties), value); }
+            get { return BackingStore?.Get<UserTrainingContentEventInfo>("trainingAssignedProperties"); }
+            set { BackingStore?.Set("trainingAssignedProperties", value); }
         }
         /// <summary>Event details of the training when it was completed by the user.</summary>
         public UserTrainingContentEventInfo TrainingCompletedProperties {
-            get { return BackingStore?.Get<UserTrainingContentEventInfo>(nameof(TrainingCompletedProperties)); }
-            set { BackingStore?.Set(nameof(TrainingCompletedProperties), value); }
+            get { return BackingStore?.Get<UserTrainingContentEventInfo>("trainingCompletedProperties"); }
+            set { BackingStore?.Set("trainingCompletedProperties", value); }
         }
         /// <summary>Event details of the training when it was updated/in-progress by the user.</summary>
         public UserTrainingContentEventInfo TrainingUpdatedProperties {
-            get { return BackingStore?.Get<UserTrainingContentEventInfo>(nameof(TrainingUpdatedProperties)); }
-            set { BackingStore?.Set(nameof(TrainingUpdatedProperties), value); }
+            get { return BackingStore?.Get<UserTrainingContentEventInfo>("trainingUpdatedProperties"); }
+            set { BackingStore?.Set("trainingUpdatedProperties", value); }
         }
         /// <summary>
         /// Instantiates a new userTrainingEventInfo and sets the default values.

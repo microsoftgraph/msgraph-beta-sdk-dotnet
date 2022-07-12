@@ -5,10 +5,10 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeliveryOptimizationGroupIdSourceOptions : DeliveryOptimizationGroupIdSource, IParsable {
-        /// <summary>Set this policy to restrict peer selection to a specific source. Possible values are: notConfigured, adSite, authenticatedDomainSid, dhcpUserOption, dnsSuffix.</summary>
+        /// <summary>Possible values for the DeliveryOptimizationGroupIdOptionsType setting.</summary>
         public DeliveryOptimizationGroupIdOptionsType? GroupIdSourceOption {
-            get { return BackingStore?.Get<DeliveryOptimizationGroupIdOptionsType?>(nameof(GroupIdSourceOption)); }
-            set { BackingStore?.Set(nameof(GroupIdSourceOption), value); }
+            get { return BackingStore?.Get<DeliveryOptimizationGroupIdOptionsType?>("groupIdSourceOption"); }
+            set { BackingStore?.Set("groupIdSourceOption", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

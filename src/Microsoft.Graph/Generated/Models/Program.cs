@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class Program : Entity, IParsable {
         /// <summary>Controls associated with the program.</summary>
         public List<ProgramControl> Controls {
-            get { return BackingStore?.Get<List<ProgramControl>>(nameof(Controls)); }
-            set { BackingStore?.Set(nameof(Controls), value); }
+            get { return BackingStore?.Get<List<ProgramControl>>("controls"); }
+            set { BackingStore?.Set("controls", value); }
         }
         /// <summary>The description of the program.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The name of the program.  Required on create.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

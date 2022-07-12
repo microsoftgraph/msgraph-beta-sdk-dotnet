@@ -9,50 +9,50 @@ namespace Microsoft.Graph.Beta.Models {
     public class MobileAppRelationshipState : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The corresponding device id.</summary>
         public string DeviceId {
-            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
-            set { BackingStore?.Set(nameof(DeviceId), value); }
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>The error code for install or uninstall failures of target app.</summary>
         public int? ErrorCode {
-            get { return BackingStore?.Get<int?>(nameof(ErrorCode)); }
-            set { BackingStore?.Set(nameof(ErrorCode), value); }
+            get { return BackingStore?.Get<int?>("errorCode"); }
+            set { BackingStore?.Set("errorCode", value); }
         }
-        /// <summary>The install state of the app of target app. Possible values are: installed, failed, notInstalled, uninstallFailed, pendingInstall, unknown, notApplicable.</summary>
+        /// <summary>A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.</summary>
         public ResultantAppState? InstallState {
-            get { return BackingStore?.Get<ResultantAppState?>(nameof(InstallState)); }
-            set { BackingStore?.Set(nameof(InstallState), value); }
+            get { return BackingStore?.Get<ResultantAppState?>("installState"); }
+            set { BackingStore?.Set("installState", value); }
         }
-        /// <summary>The install state detail of the app. Possible values are: noAdditionalDetails, dependencyFailedToInstall, dependencyWithRequirementsNotMet, dependencyPendingReboot, dependencyWithAutoInstallDisabled, supersededAppUninstallFailed, supersededAppUninstallPendingReboot, removingSupersededApps, iosAppStoreUpdateFailedToInstall, vppAppHasUpdateAvailable, userRejectedUpdate, uninstallPendingReboot, supersedingAppsDetected, supersededAppsDetected, seeInstallErrorCode, autoInstallDisabled, managedAppNoLongerPresent, userRejectedInstall, userIsNotLoggedIntoAppStore, untargetedSupersedingAppsDetected, appRemovedBySupersedence, seeUninstallErrorCode, pendingReboot, installingDependencies, contentDownloaded, supersedingAppsNotApplicable, powerShellScriptRequirementNotMet, registryRequirementNotMet, fileSystemRequirementNotMet, platformNotApplicable, minimumCpuSpeedNotMet, minimumLogicalProcessorCountNotMet, minimumPhysicalMemoryNotMet, minimumOsVersionNotMet, minimumDiskSpaceNotMet, processorArchitectureNotApplicable.</summary>
+        /// <summary>Enum indicating additional details regarding why an application has a particular install state.</summary>
         public ResultantAppStateDetail? InstallStateDetail {
-            get { return BackingStore?.Get<ResultantAppStateDetail?>(nameof(InstallStateDetail)); }
-            set { BackingStore?.Set(nameof(InstallStateDetail), value); }
+            get { return BackingStore?.Get<ResultantAppStateDetail?>("installStateDetail"); }
+            set { BackingStore?.Set("installStateDetail", value); }
         }
         /// <summary>The collection of source mobile app&apos;s ids.</summary>
         public List<string> SourceIds {
-            get { return BackingStore?.Get<List<string>>(nameof(SourceIds)); }
-            set { BackingStore?.Set(nameof(SourceIds), value); }
+            get { return BackingStore?.Get<List<string>>("sourceIds"); }
+            set { BackingStore?.Set("sourceIds", value); }
         }
         /// <summary>The related target app&apos;s display name.</summary>
         public string TargetDisplayName {
-            get { return BackingStore?.Get<string>(nameof(TargetDisplayName)); }
-            set { BackingStore?.Set(nameof(TargetDisplayName), value); }
+            get { return BackingStore?.Get<string>("targetDisplayName"); }
+            set { BackingStore?.Set("targetDisplayName", value); }
         }
         /// <summary>The related target app&apos;s id.</summary>
         public string TargetId {
-            get { return BackingStore?.Get<string>(nameof(TargetId)); }
-            set { BackingStore?.Set(nameof(TargetId), value); }
+            get { return BackingStore?.Get<string>("targetId"); }
+            set { BackingStore?.Set("targetId", value); }
         }
         /// <summary>The last sync time of the target app.</summary>
         public DateTimeOffset? TargetLastSyncDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(TargetLastSyncDateTime)); }
-            set { BackingStore?.Set(nameof(TargetLastSyncDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("targetLastSyncDateTime"); }
+            set { BackingStore?.Set("targetLastSyncDateTime", value); }
         }
         /// <summary>
         /// Instantiates a new mobileAppRelationshipState and sets the default values.

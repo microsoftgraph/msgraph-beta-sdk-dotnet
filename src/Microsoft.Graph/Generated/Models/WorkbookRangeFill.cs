@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class WorkbookRangeFill : Entity, IParsable {
         /// <summary>HTML color code representing the color of the border line, of the form #RRGGBB (e.g. &apos;FFA500&apos;) or as a named HTML color (e.g. &apos;orange&apos;)</summary>
         public string Color {
-            get { return BackingStore?.Get<string>(nameof(Color)); }
-            set { BackingStore?.Set(nameof(Color), value); }
+            get { return BackingStore?.Get<string>("color"); }
+            set { BackingStore?.Set("color", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

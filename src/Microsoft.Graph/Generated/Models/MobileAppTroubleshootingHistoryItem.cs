@@ -10,20 +10,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class MobileAppTroubleshootingHistoryItem : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Time when the history item occurred.</summary>
         public DateTimeOffset? OccurrenceDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(OccurrenceDateTime)); }
-            set { BackingStore?.Set(nameof(OccurrenceDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("occurrenceDateTime"); }
+            set { BackingStore?.Set("occurrenceDateTime", value); }
         }
         /// <summary>Object containing detailed information about the error and its remediation.</summary>
         public DeviceManagementTroubleshootingErrorDetails TroubleshootingErrorDetails {
-            get { return BackingStore?.Get<DeviceManagementTroubleshootingErrorDetails>(nameof(TroubleshootingErrorDetails)); }
-            set { BackingStore?.Set(nameof(TroubleshootingErrorDetails), value); }
+            get { return BackingStore?.Get<DeviceManagementTroubleshootingErrorDetails>("troubleshootingErrorDetails"); }
+            set { BackingStore?.Set("troubleshootingErrorDetails", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new mobileAppTroubleshootingHistoryItem and sets the default values.
@@ -31,6 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
         public MobileAppTroubleshootingHistoryItem() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.mobileAppTroubleshootingHistoryItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"occurrenceDateTime", n => { OccurrenceDateTime = n.GetDateTimeOffsetValue(); } },
                 {"troubleshootingErrorDetails", n => { TroubleshootingErrorDetails = n.GetObjectValue<DeviceManagementTroubleshootingErrorDetails>(DeviceManagementTroubleshootingErrorDetails.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,6 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("occurrenceDateTime", OccurrenceDateTime);
             writer.WriteObjectValue<DeviceManagementTroubleshootingErrorDetails>("troubleshootingErrorDetails", TroubleshootingErrorDetails);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

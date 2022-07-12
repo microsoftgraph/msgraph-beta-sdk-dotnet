@@ -8,28 +8,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsDeviceStartupProcess : Entity, IParsable {
         /// <summary>The user experience analytics device id.</summary>
         public string ManagedDeviceId {
-            get { return BackingStore?.Get<string>(nameof(ManagedDeviceId)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceId), value); }
+            get { return BackingStore?.Get<string>("managedDeviceId"); }
+            set { BackingStore?.Set("managedDeviceId", value); }
         }
         /// <summary>User experience analytics device startup process name.</summary>
         public string ProcessName {
-            get { return BackingStore?.Get<string>(nameof(ProcessName)); }
-            set { BackingStore?.Set(nameof(ProcessName), value); }
+            get { return BackingStore?.Get<string>("processName"); }
+            set { BackingStore?.Set("processName", value); }
         }
         /// <summary>The user experience analytics device startup process product name.</summary>
         public string ProductName {
-            get { return BackingStore?.Get<string>(nameof(ProductName)); }
-            set { BackingStore?.Set(nameof(ProductName), value); }
+            get { return BackingStore?.Get<string>("productName"); }
+            set { BackingStore?.Set("productName", value); }
         }
         /// <summary>The User experience analytics device startup process publisher.</summary>
         public string Publisher {
-            get { return BackingStore?.Get<string>(nameof(Publisher)); }
-            set { BackingStore?.Set(nameof(Publisher), value); }
+            get { return BackingStore?.Get<string>("publisher"); }
+            set { BackingStore?.Set("publisher", value); }
         }
         /// <summary>User experience analytics device startup process impact in milliseconds.</summary>
         public int? StartupImpactInMs {
-            get { return BackingStore?.Get<int?>(nameof(StartupImpactInMs)); }
-            set { BackingStore?.Set(nameof(StartupImpactInMs), value); }
+            get { return BackingStore?.Get<int?>("startupImpactInMs"); }
+            set { BackingStore?.Set("startupImpactInMs", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

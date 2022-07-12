@@ -6,50 +6,50 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Report of remote actions initiated on the devices belonging to a certain tenant.</summary>
     public class RemoteActionAudit : Entity, IParsable {
-        /// <summary>The action name. Possible values are: unknown, factoryReset, removeCompanyData, resetPasscode, remoteLock, enableLostMode, disableLostMode, locateDevice, rebootNow, recoverPasscode, cleanWindowsDevice, logoutSharedAppleDeviceActiveUser, quickScan, fullScan, windowsDefenderUpdateSignatures, factoryResetKeepEnrollmentData, updateDeviceAccount, automaticRedeployment, shutDown, rotateBitLockerKeys, rotateFileVaultKey, getFileVaultKey, setDeviceName, activateDeviceEsim.</summary>
+        /// <summary>Remote actions Intune supports.</summary>
         public RemoteAction? Action {
-            get { return BackingStore?.Get<RemoteAction?>(nameof(Action)); }
-            set { BackingStore?.Set(nameof(Action), value); }
+            get { return BackingStore?.Get<RemoteAction?>("action"); }
+            set { BackingStore?.Set("action", value); }
         }
-        /// <summary>Action state. Possible values are: none, pending, canceled, active, done, failed, notSupported.</summary>
+        /// <summary>The actionState property</summary>
         public Microsoft.Graph.Beta.Models.ActionState? ActionState {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionState?>(nameof(ActionState)); }
-            set { BackingStore?.Set(nameof(ActionState), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionState?>("actionState"); }
+            set { BackingStore?.Set("actionState", value); }
         }
         /// <summary>Intune device name.</summary>
         public string DeviceDisplayName {
-            get { return BackingStore?.Get<string>(nameof(DeviceDisplayName)); }
-            set { BackingStore?.Set(nameof(DeviceDisplayName), value); }
+            get { return BackingStore?.Get<string>("deviceDisplayName"); }
+            set { BackingStore?.Set("deviceDisplayName", value); }
         }
         /// <summary>IMEI of the device.</summary>
         public string DeviceIMEI {
-            get { return BackingStore?.Get<string>(nameof(DeviceIMEI)); }
-            set { BackingStore?.Set(nameof(DeviceIMEI), value); }
+            get { return BackingStore?.Get<string>("deviceIMEI"); }
+            set { BackingStore?.Set("deviceIMEI", value); }
         }
         /// <summary>Upn of the device owner.</summary>
         public string DeviceOwnerUserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(DeviceOwnerUserPrincipalName)); }
-            set { BackingStore?.Set(nameof(DeviceOwnerUserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("deviceOwnerUserPrincipalName"); }
+            set { BackingStore?.Set("deviceOwnerUserPrincipalName", value); }
         }
         /// <summary>User who initiated the device action, format is UPN.</summary>
         public string InitiatedByUserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(InitiatedByUserPrincipalName)); }
-            set { BackingStore?.Set(nameof(InitiatedByUserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("initiatedByUserPrincipalName"); }
+            set { BackingStore?.Set("initiatedByUserPrincipalName", value); }
         }
         /// <summary>Action target.</summary>
         public string ManagedDeviceId {
-            get { return BackingStore?.Get<string>(nameof(ManagedDeviceId)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceId), value); }
+            get { return BackingStore?.Get<string>("managedDeviceId"); }
+            set { BackingStore?.Set("managedDeviceId", value); }
         }
         /// <summary>Time when the action was issued, given in UTC.</summary>
         public DateTimeOffset? RequestDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(RequestDateTime)); }
-            set { BackingStore?.Set(nameof(RequestDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("requestDateTime"); }
+            set { BackingStore?.Set("requestDateTime", value); }
         }
         /// <summary>[deprecated] Please use InitiatedByUserPrincipalName instead.</summary>
         public string UserName {
-            get { return BackingStore?.Get<string>(nameof(UserName)); }
-            set { BackingStore?.Set(nameof(UserName), value); }
+            get { return BackingStore?.Get<string>("userName"); }
+            set { BackingStore?.Set("userName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

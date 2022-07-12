@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceRestrictionAction : DlpActionInfo, IParsable {
         /// <summary>The message property</summary>
         public string Message {
-            get { return BackingStore?.Get<string>(nameof(Message)); }
-            set { BackingStore?.Set(nameof(Message), value); }
+            get { return BackingStore?.Get<string>("message"); }
+            set { BackingStore?.Set("message", value); }
         }
         /// <summary>The restrictionAction property</summary>
         public Microsoft.Graph.Beta.Models.RestrictionAction? RestrictionAction {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RestrictionAction?>(nameof(RestrictionAction)); }
-            set { BackingStore?.Set(nameof(RestrictionAction), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RestrictionAction?>("restrictionAction"); }
+            set { BackingStore?.Set("restrictionAction", value); }
         }
         /// <summary>The triggers property</summary>
         public List<string> Triggers {
-            get { return BackingStore?.Get<List<string>>(nameof(Triggers)); }
-            set { BackingStore?.Set(nameof(Triggers), value); }
+            get { return BackingStore?.Get<List<string>>("triggers"); }
+            set { BackingStore?.Set("triggers", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

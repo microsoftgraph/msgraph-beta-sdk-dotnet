@@ -9,25 +9,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceComplianceScriptError : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Error code. Possible values are: none, jsonFileInvalid, jsonFileMissing, jsonFileTooLarge, rulesMissing, duplicateRules, tooManyRulesSpecified, operatorMissing, operatorNotSupported, datatypeMissing, datatypeNotSupported, operatorDataTypeCombinationNotSupported, moreInfoUriMissing, moreInfoUriInvalid, moreInfoUriTooLarge, descriptionMissing, descriptionInvalid, descriptionTooLarge, titleMissing, titleInvalid, titleTooLarge, operandMissing, operandInvalid, operandTooLarge, settingNameMissing, settingNameInvalid, settingNameTooLarge, englishLocaleMissing, duplicateLocales, unrecognizedLocale, unknown, remediationStringsMissing.</summary>
+        /// <summary>Error code for rule validation.</summary>
         public Microsoft.Graph.Beta.Models.Code? Code {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Code?>(nameof(Code)); }
-            set { BackingStore?.Set(nameof(Code), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Code?>("code"); }
+            set { BackingStore?.Set("code", value); }
         }
-        /// <summary>Error code. Possible values are: none, jsonFileInvalid, jsonFileMissing, jsonFileTooLarge, rulesMissing, duplicateRules, tooManyRulesSpecified, operatorMissing, operatorNotSupported, datatypeMissing, datatypeNotSupported, operatorDataTypeCombinationNotSupported, moreInfoUriMissing, moreInfoUriInvalid, moreInfoUriTooLarge, descriptionMissing, descriptionInvalid, descriptionTooLarge, titleMissing, titleInvalid, titleTooLarge, operandMissing, operandInvalid, operandTooLarge, settingNameMissing, settingNameInvalid, settingNameTooLarge, englishLocaleMissing, duplicateLocales, unrecognizedLocale, unknown, remediationStringsMissing.</summary>
+        /// <summary>Error code for rule validation.</summary>
         public Microsoft.Graph.Beta.Models.DeviceComplianceScriptRulesValidationError? DeviceComplianceScriptRulesValidationError {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceComplianceScriptRulesValidationError?>(nameof(DeviceComplianceScriptRulesValidationError)); }
-            set { BackingStore?.Set(nameof(DeviceComplianceScriptRulesValidationError), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceComplianceScriptRulesValidationError?>("deviceComplianceScriptRulesValidationError"); }
+            set { BackingStore?.Set("deviceComplianceScriptRulesValidationError", value); }
         }
         /// <summary>Error message.</summary>
         public string Message {
-            get { return BackingStore?.Get<string>(nameof(Message)); }
-            set { BackingStore?.Set(nameof(Message), value); }
+            get { return BackingStore?.Get<string>("message"); }
+            set { BackingStore?.Set("message", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new deviceComplianceScriptError and sets the default values.
@@ -35,6 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceComplianceScriptError() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.deviceComplianceScriptError";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"code", n => { Code = n.GetEnumValue<Code>(); } },
                 {"deviceComplianceScriptRulesValidationError", n => { DeviceComplianceScriptRulesValidationError = n.GetEnumValue<DeviceComplianceScriptRulesValidationError>(); } },
                 {"message", n => { Message = n.GetStringValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -68,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<Code>("code", Code);
             writer.WriteEnumValue<DeviceComplianceScriptRulesValidationError>("deviceComplianceScriptRulesValidationError", DeviceComplianceScriptRulesValidationError);
             writer.WriteStringValue("message", Message);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,13 +8,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class RegistrationEnforcement : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Run campaigns to remind users to setup targeted authentication methods.</summary>
         public Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaign AuthenticationMethodsRegistrationCampaign {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaign>(nameof(AuthenticationMethodsRegistrationCampaign)); }
-            set { BackingStore?.Set(nameof(AuthenticationMethodsRegistrationCampaign), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaign>("authenticationMethodsRegistrationCampaign"); }
+            set { BackingStore?.Set("authenticationMethodsRegistrationCampaign", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }

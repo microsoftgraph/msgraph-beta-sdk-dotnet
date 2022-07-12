@@ -4,42 +4,42 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class InformationProtectionLabel : Entity, IParsable {
         /// <summary>The color that the UI should display for the label, if configured.</summary>
         public string Color {
-            get { return BackingStore?.Get<string>(nameof(Color)); }
-            set { BackingStore?.Set(nameof(Color), value); }
+            get { return BackingStore?.Get<string>("color"); }
+            set { BackingStore?.Set("color", value); }
         }
         /// <summary>The admin-defined description for the label.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Indicates whether the label is active or not. Active labels should be hidden or disabled in UI.</summary>
         public bool? IsActive {
-            get { return BackingStore?.Get<bool?>(nameof(IsActive)); }
-            set { BackingStore?.Set(nameof(IsActive), value); }
+            get { return BackingStore?.Get<bool?>("isActive"); }
+            set { BackingStore?.Set("isActive", value); }
         }
         /// <summary>The plaintext name of the label.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The parent label associated with a child label. Null if label has no parent.</summary>
         public ParentLabelDetails Parent {
-            get { return BackingStore?.Get<ParentLabelDetails>(nameof(Parent)); }
-            set { BackingStore?.Set(nameof(Parent), value); }
+            get { return BackingStore?.Get<ParentLabelDetails>("parent"); }
+            set { BackingStore?.Set("parent", value); }
         }
         /// <summary>The sensitivity value of the label, where lower is less sensitive.</summary>
         public int? Sensitivity {
-            get { return BackingStore?.Get<int?>(nameof(Sensitivity)); }
-            set { BackingStore?.Set(nameof(Sensitivity), value); }
+            get { return BackingStore?.Get<int?>("sensitivity"); }
+            set { BackingStore?.Set("sensitivity", value); }
         }
         /// <summary>The tooltip that should be displayed for the label in a UI.</summary>
         public string Tooltip {
-            get { return BackingStore?.Get<string>(nameof(Tooltip)); }
-            set { BackingStore?.Set(nameof(Tooltip), value); }
+            get { return BackingStore?.Get<string>("tooltip"); }
+            set { BackingStore?.Set("tooltip", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

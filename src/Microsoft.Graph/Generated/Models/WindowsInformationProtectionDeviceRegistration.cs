@@ -8,33 +8,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsInformationProtectionDeviceRegistration : Entity, IParsable {
         /// <summary>Device Mac address.</summary>
         public string DeviceMacAddress {
-            get { return BackingStore?.Get<string>(nameof(DeviceMacAddress)); }
-            set { BackingStore?.Set(nameof(DeviceMacAddress), value); }
+            get { return BackingStore?.Get<string>("deviceMacAddress"); }
+            set { BackingStore?.Set("deviceMacAddress", value); }
         }
         /// <summary>Device name.</summary>
         public string DeviceName {
-            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
-            set { BackingStore?.Set(nameof(DeviceName), value); }
+            get { return BackingStore?.Get<string>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
         }
         /// <summary>Device identifier for this device registration record.</summary>
         public string DeviceRegistrationId {
-            get { return BackingStore?.Get<string>(nameof(DeviceRegistrationId)); }
-            set { BackingStore?.Set(nameof(DeviceRegistrationId), value); }
+            get { return BackingStore?.Get<string>("deviceRegistrationId"); }
+            set { BackingStore?.Set("deviceRegistrationId", value); }
         }
         /// <summary>Device type, for example, Windows laptop VS Windows phone.</summary>
         public string DeviceType {
-            get { return BackingStore?.Get<string>(nameof(DeviceType)); }
-            set { BackingStore?.Set(nameof(DeviceType), value); }
+            get { return BackingStore?.Get<string>("deviceType"); }
+            set { BackingStore?.Set("deviceType", value); }
         }
         /// <summary>Last checkin time of the device.</summary>
         public DateTimeOffset? LastCheckInDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastCheckInDateTime)); }
-            set { BackingStore?.Set(nameof(LastCheckInDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastCheckInDateTime"); }
+            set { BackingStore?.Set("lastCheckInDateTime", value); }
         }
         /// <summary>UserId associated with this device registration record.</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,32 +4,32 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ItemActivityOLD : Entity, IParsable {
         /// <summary>The action property</summary>
         public ItemActionSet Action {
-            get { return BackingStore?.Get<ItemActionSet>(nameof(Action)); }
-            set { BackingStore?.Set(nameof(Action), value); }
+            get { return BackingStore?.Get<ItemActionSet>("action"); }
+            set { BackingStore?.Set("action", value); }
         }
         /// <summary>The actor property</summary>
         public IdentitySet Actor {
-            get { return BackingStore?.Get<IdentitySet>(nameof(Actor)); }
-            set { BackingStore?.Set(nameof(Actor), value); }
+            get { return BackingStore?.Get<IdentitySet>("actor"); }
+            set { BackingStore?.Set("actor", value); }
         }
         /// <summary>The driveItem property</summary>
         public Microsoft.Graph.Beta.Models.DriveItem DriveItem {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem>(nameof(DriveItem)); }
-            set { BackingStore?.Set(nameof(DriveItem), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem>("driveItem"); }
+            set { BackingStore?.Set("driveItem", value); }
         }
         /// <summary>The listItem property</summary>
         public Microsoft.Graph.Beta.Models.ListItem ListItem {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ListItem>(nameof(ListItem)); }
-            set { BackingStore?.Set(nameof(ListItem), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ListItem>("listItem"); }
+            set { BackingStore?.Set("listItem", value); }
         }
         /// <summary>The times property</summary>
         public ItemActivityTimeSet Times {
-            get { return BackingStore?.Get<ItemActivityTimeSet>(nameof(Times)); }
-            set { BackingStore?.Set(nameof(Times), value); }
+            get { return BackingStore?.Get<ItemActivityTimeSet>("times"); }
+            set { BackingStore?.Set("times", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamworkContentCameraConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>True if the content camera is inverted.</summary>
         public bool? IsContentCameraInverted {
-            get { return BackingStore?.Get<bool?>(nameof(IsContentCameraInverted)); }
-            set { BackingStore?.Set(nameof(IsContentCameraInverted), value); }
+            get { return BackingStore?.Get<bool?>("isContentCameraInverted"); }
+            set { BackingStore?.Set("isContentCameraInverted", value); }
         }
         /// <summary>True if the content camera is optional.</summary>
         public bool? IsContentCameraOptional {
-            get { return BackingStore?.Get<bool?>(nameof(IsContentCameraOptional)); }
-            set { BackingStore?.Set(nameof(IsContentCameraOptional), value); }
+            get { return BackingStore?.Get<bool?>("isContentCameraOptional"); }
+            set { BackingStore?.Set("isContentCameraOptional", value); }
         }
         /// <summary>True if the content enhancement is enabled.</summary>
         public bool? IsContentEnhancementEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsContentEnhancementEnabled)); }
-            set { BackingStore?.Set(nameof(IsContentEnhancementEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isContentEnhancementEnabled"); }
+            set { BackingStore?.Set("isContentEnhancementEnabled", value); }
         }
         /// <summary>
         /// Instantiates a new teamworkContentCameraConfiguration and sets the default values.

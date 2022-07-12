@@ -5,10 +5,10 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class GroupWritebackConfiguration : WritebackConfiguration, IParsable {
-        /// <summary>The onPremisesGroupType property</summary>
+        /// <summary>Indicates the target on-premise group type the cloud object will be written back as. Nullable. The possible values are: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup.If the cloud group is a unified (Microsoft 365) group, this property can be one of the following: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup. Azure AD security groups can be written back as universalSecurityGroup. If isEnabled or the NewUnifiedGroupWritebackDefault group setting is true but this property is not explicitly configured: Microsoft 365 groups will be written back as universalDistributionGroup by defaultSecurity groups will be written back as universalSecurityGroup by default</summary>
         public string OnPremisesGroupType {
-            get { return BackingStore?.Get<string>(nameof(OnPremisesGroupType)); }
-            set { BackingStore?.Set(nameof(OnPremisesGroupType), value); }
+            get { return BackingStore?.Get<string>("onPremisesGroupType"); }
+            set { BackingStore?.Set("onPremisesGroupType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

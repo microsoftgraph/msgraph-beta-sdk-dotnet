@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class DirectorySizeQuota : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Total amount of the directory quota.</summary>
         public int? Total {
-            get { return BackingStore?.Get<int?>(nameof(Total)); }
-            set { BackingStore?.Set(nameof(Total), value); }
+            get { return BackingStore?.Get<int?>("total"); }
+            set { BackingStore?.Set("total", value); }
         }
         /// <summary>Used amount of the directory quota.</summary>
         public int? Used {
-            get { return BackingStore?.Get<int?>(nameof(Used)); }
-            set { BackingStore?.Set(nameof(Used), value); }
+            get { return BackingStore?.Get<int?>("used"); }
+            set { BackingStore?.Set("used", value); }
         }
         /// <summary>
         /// Instantiates a new directorySizeQuota and sets the default values.

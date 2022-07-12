@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class ContentInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The contentFormat property</summary>
         public string ContentFormat {
-            get { return BackingStore?.Get<string>(nameof(ContentFormat)); }
-            set { BackingStore?.Set(nameof(ContentFormat), value); }
+            get { return BackingStore?.Get<string>("contentFormat"); }
+            set { BackingStore?.Set("contentFormat", value); }
         }
         /// <summary>The identifier property</summary>
         public string Identifier {
-            get { return BackingStore?.Get<string>(nameof(Identifier)); }
-            set { BackingStore?.Set(nameof(Identifier), value); }
+            get { return BackingStore?.Get<string>("identifier"); }
+            set { BackingStore?.Set("identifier", value); }
         }
         /// <summary>The metadata property</summary>
         public List<KeyValuePair> Metadata {
-            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(Metadata)); }
-            set { BackingStore?.Set(nameof(Metadata), value); }
+            get { return BackingStore?.Get<List<KeyValuePair>>("metadata"); }
+            set { BackingStore?.Set("metadata", value); }
         }
         /// <summary>The state property</summary>
         public ContentState? State {
-            get { return BackingStore?.Get<ContentState?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<ContentState?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Instantiates a new contentInfo and sets the default values.

@@ -9,18 +9,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class AssignmentFilterValidationResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicator to valid or invalid rule.</summary>
         public bool? IsValidRule {
-            get { return BackingStore?.Get<bool?>(nameof(IsValidRule)); }
-            set { BackingStore?.Set(nameof(IsValidRule), value); }
+            get { return BackingStore?.Get<bool?>("isValidRule"); }
+            set { BackingStore?.Set("isValidRule", value); }
         }
         /// <summary>
-        /// Instantiates a new AssignmentFilterValidationResult and sets the default values.
+        /// Instantiates a new assignmentFilterValidationResult and sets the default values.
         /// </summary>
         public AssignmentFilterValidationResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

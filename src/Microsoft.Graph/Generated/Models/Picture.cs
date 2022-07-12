@@ -4,27 +4,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Picture : Entity, IParsable {
         /// <summary>The content property</summary>
         public byte[] Content {
-            get { return BackingStore?.Get<byte[]>(nameof(Content)); }
-            set { BackingStore?.Set(nameof(Content), value); }
+            get { return BackingStore?.Get<byte[]>("content"); }
+            set { BackingStore?.Set("content", value); }
         }
         /// <summary>The contentType property</summary>
         public string ContentType {
-            get { return BackingStore?.Get<string>(nameof(ContentType)); }
-            set { BackingStore?.Set(nameof(ContentType), value); }
+            get { return BackingStore?.Get<string>("contentType"); }
+            set { BackingStore?.Set("contentType", value); }
         }
         /// <summary>The height property</summary>
         public int? Height {
-            get { return BackingStore?.Get<int?>(nameof(Height)); }
-            set { BackingStore?.Set(nameof(Height), value); }
+            get { return BackingStore?.Get<int?>("height"); }
+            set { BackingStore?.Set("height", value); }
         }
         /// <summary>The width property</summary>
         public int? Width {
-            get { return BackingStore?.Get<int?>(nameof(Width)); }
-            set { BackingStore?.Set(nameof(Width), value); }
+            get { return BackingStore?.Get<int?>("width"); }
+            set { BackingStore?.Set("width", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

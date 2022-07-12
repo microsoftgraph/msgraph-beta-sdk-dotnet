@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessReviewInstanceDecisionItemServicePrincipalResource : AccessReviewInstanceDecisionItemResource, IParsable {
         /// <summary>The appId property</summary>
         public string AppId {
-            get { return BackingStore?.Get<string>(nameof(AppId)); }
-            set { BackingStore?.Set(nameof(AppId), value); }
+            get { return BackingStore?.Get<string>("appId"); }
+            set { BackingStore?.Set("appId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

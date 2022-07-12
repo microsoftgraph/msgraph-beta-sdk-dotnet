@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models.Search {
     public class IdentitySet : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The application property</summary>
         public Identity Application {
-            get { return BackingStore?.Get<Identity>(nameof(Application)); }
-            set { BackingStore?.Set(nameof(Application), value); }
+            get { return BackingStore?.Get<Identity>("application"); }
+            set { BackingStore?.Set("application", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The device property</summary>
         public Identity Device {
-            get { return BackingStore?.Get<Identity>(nameof(Device)); }
-            set { BackingStore?.Set(nameof(Device), value); }
+            get { return BackingStore?.Get<Identity>("device"); }
+            set { BackingStore?.Set("device", value); }
         }
         /// <summary>The user property</summary>
         public Identity User {
-            get { return BackingStore?.Get<Identity>(nameof(User)); }
-            set { BackingStore?.Set(nameof(User), value); }
+            get { return BackingStore?.Get<Identity>("user"); }
+            set { BackingStore?.Set("user", value); }
         }
         /// <summary>
         /// Instantiates a new identitySet and sets the default values.

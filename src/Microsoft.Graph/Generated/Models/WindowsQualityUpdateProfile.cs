@@ -8,48 +8,48 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsQualityUpdateProfile : Entity, IParsable {
         /// <summary>The list of group assignments of the profile.</summary>
         public List<WindowsQualityUpdateProfileAssignment> Assignments {
-            get { return BackingStore?.Get<List<WindowsQualityUpdateProfileAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<WindowsQualityUpdateProfileAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>The date time that the profile was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Friendly display name of the quality update profile deployable content</summary>
         public string DeployableContentDisplayName {
-            get { return BackingStore?.Get<string>(nameof(DeployableContentDisplayName)); }
-            set { BackingStore?.Set(nameof(DeployableContentDisplayName), value); }
+            get { return BackingStore?.Get<string>("deployableContentDisplayName"); }
+            set { BackingStore?.Set("deployableContentDisplayName", value); }
         }
         /// <summary>The description of the profile which is specified by the user.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The display name for the profile.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Expedited update settings.</summary>
         public ExpeditedWindowsQualityUpdateSettings ExpeditedUpdateSettings {
-            get { return BackingStore?.Get<ExpeditedWindowsQualityUpdateSettings>(nameof(ExpeditedUpdateSettings)); }
-            set { BackingStore?.Set(nameof(ExpeditedUpdateSettings), value); }
+            get { return BackingStore?.Get<ExpeditedWindowsQualityUpdateSettings>("expeditedUpdateSettings"); }
+            set { BackingStore?.Set("expeditedUpdateSettings", value); }
         }
         /// <summary>The date time that the profile was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Friendly release date to display for a Quality Update release</summary>
         public string ReleaseDateDisplayName {
-            get { return BackingStore?.Get<string>(nameof(ReleaseDateDisplayName)); }
-            set { BackingStore?.Set(nameof(ReleaseDateDisplayName), value); }
+            get { return BackingStore?.Get<string>("releaseDateDisplayName"); }
+            set { BackingStore?.Set("releaseDateDisplayName", value); }
         }
         /// <summary>List of Scope Tags for this Quality Update entity.</summary>
         public List<string> RoleScopeTagIds {
-            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTagIds)); }
-            set { BackingStore?.Set(nameof(RoleScopeTagIds), value); }
+            get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

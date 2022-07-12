@@ -4,62 +4,62 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AggregatedPolicyCompliance : Entity, IParsable {
         /// <summary>Identifier for the device compliance policy. Optional. Read-only.</summary>
         public string CompliancePolicyId {
-            get { return BackingStore?.Get<string>(nameof(CompliancePolicyId)); }
-            set { BackingStore?.Set(nameof(CompliancePolicyId), value); }
+            get { return BackingStore?.Get<string>("compliancePolicyId"); }
+            set { BackingStore?.Set("compliancePolicyId", value); }
         }
         /// <summary>Name of the device compliance policy. Optional. Read-only.</summary>
         public string CompliancePolicyName {
-            get { return BackingStore?.Get<string>(nameof(CompliancePolicyName)); }
-            set { BackingStore?.Set(nameof(CompliancePolicyName), value); }
+            get { return BackingStore?.Get<string>("compliancePolicyName"); }
+            set { BackingStore?.Set("compliancePolicyName", value); }
         }
         /// <summary>Platform for the device compliance policy. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, androidAOSP, all. Optional. Read-only.</summary>
         public string CompliancePolicyPlatform {
-            get { return BackingStore?.Get<string>(nameof(CompliancePolicyPlatform)); }
-            set { BackingStore?.Set(nameof(CompliancePolicyPlatform), value); }
+            get { return BackingStore?.Get<string>("compliancePolicyPlatform"); }
+            set { BackingStore?.Set("compliancePolicyPlatform", value); }
         }
         /// <summary>The type of compliance policy. Optional. Read-only.</summary>
         public string CompliancePolicyType {
-            get { return BackingStore?.Get<string>(nameof(CompliancePolicyType)); }
-            set { BackingStore?.Set(nameof(CompliancePolicyType), value); }
+            get { return BackingStore?.Get<string>("compliancePolicyType"); }
+            set { BackingStore?.Set("compliancePolicyType", value); }
         }
         /// <summary>Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.</summary>
         public DateTimeOffset? LastRefreshedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastRefreshedDateTime)); }
-            set { BackingStore?.Set(nameof(LastRefreshedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshedDateTime"); }
+            set { BackingStore?.Set("lastRefreshedDateTime", value); }
         }
         /// <summary>The number of devices that are in a compliant status. Optional. Read-only.</summary>
         public long? NumberOfCompliantDevices {
-            get { return BackingStore?.Get<long?>(nameof(NumberOfCompliantDevices)); }
-            set { BackingStore?.Set(nameof(NumberOfCompliantDevices), value); }
+            get { return BackingStore?.Get<long?>("numberOfCompliantDevices"); }
+            set { BackingStore?.Set("numberOfCompliantDevices", value); }
         }
         /// <summary>The number of devices that are in an error status. Optional. Read-only.</summary>
         public long? NumberOfErrorDevices {
-            get { return BackingStore?.Get<long?>(nameof(NumberOfErrorDevices)); }
-            set { BackingStore?.Set(nameof(NumberOfErrorDevices), value); }
+            get { return BackingStore?.Get<long?>("numberOfErrorDevices"); }
+            set { BackingStore?.Set("numberOfErrorDevices", value); }
         }
         /// <summary>The number of device that are in a non-compliant status. Optional. Read-only.</summary>
         public long? NumberOfNonCompliantDevices {
-            get { return BackingStore?.Get<long?>(nameof(NumberOfNonCompliantDevices)); }
-            set { BackingStore?.Set(nameof(NumberOfNonCompliantDevices), value); }
+            get { return BackingStore?.Get<long?>("numberOfNonCompliantDevices"); }
+            set { BackingStore?.Set("numberOfNonCompliantDevices", value); }
         }
         /// <summary>The date and time the device policy was last modified. Optional. Read-only.</summary>
         public DateTimeOffset? PolicyModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(PolicyModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(PolicyModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("policyModifiedDateTime"); }
+            set { BackingStore?.Set("policyModifiedDateTime", value); }
         }
         /// <summary>The display name for the managed tenant. Optional. Read-only.</summary>
         public string TenantDisplayName {
-            get { return BackingStore?.Get<string>(nameof(TenantDisplayName)); }
-            set { BackingStore?.Set(nameof(TenantDisplayName), value); }
+            get { return BackingStore?.Get<string>("tenantDisplayName"); }
+            set { BackingStore?.Set("tenantDisplayName", value); }
         }
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

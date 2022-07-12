@@ -8,27 +8,27 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.ExecuteAction {
     /// <summary>Provides operations to call the executeAction method.</summary>
     public class ExecuteActionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
-        /// <summary>The actionName property</summary>
+        /// <summary>An enum type to represent approval actions of single or list of drivers.</summary>
         public DriverApprovalAction? ActionName {
-            get { return BackingStore?.Get<DriverApprovalAction?>(nameof(ActionName)); }
-            set { BackingStore?.Set(nameof(ActionName), value); }
+            get { return BackingStore?.Get<DriverApprovalAction?>("actionName"); }
+            set { BackingStore?.Set("actionName", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deploymentDate property</summary>
         public DateTimeOffset? DeploymentDate {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DeploymentDate)); }
-            set { BackingStore?.Set(nameof(DeploymentDate), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("deploymentDate"); }
+            set { BackingStore?.Set("deploymentDate", value); }
         }
         /// <summary>The driverIds property</summary>
         public List<string> DriverIds {
-            get { return BackingStore?.Get<List<string>>(nameof(DriverIds)); }
-            set { BackingStore?.Set(nameof(DriverIds), value); }
+            get { return BackingStore?.Get<List<string>>("driverIds"); }
+            set { BackingStore?.Set("driverIds", value); }
         }
         /// <summary>
         /// Instantiates a new executeActionPostRequestBody and sets the default values.

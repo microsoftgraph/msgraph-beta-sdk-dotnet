@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class TenantContactInformation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The email address for the contact. Optional</summary>
         public string Email {
-            get { return BackingStore?.Get<string>(nameof(Email)); }
-            set { BackingStore?.Set(nameof(Email), value); }
+            get { return BackingStore?.Get<string>("email"); }
+            set { BackingStore?.Set("email", value); }
         }
         /// <summary>The name for the contact. Required.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The notes associated with the contact. Optional</summary>
         public string Notes {
-            get { return BackingStore?.Get<string>(nameof(Notes)); }
-            set { BackingStore?.Set(nameof(Notes), value); }
+            get { return BackingStore?.Get<string>("notes"); }
+            set { BackingStore?.Set("notes", value); }
         }
         /// <summary>The phone number for the contact. Optional.</summary>
         public string Phone {
-            get { return BackingStore?.Get<string>(nameof(Phone)); }
-            set { BackingStore?.Set(nameof(Phone), value); }
+            get { return BackingStore?.Get<string>("phone"); }
+            set { BackingStore?.Set("phone", value); }
         }
         /// <summary>The title for the contact. Required.</summary>
         public string Title {
-            get { return BackingStore?.Get<string>(nameof(Title)); }
-            set { BackingStore?.Set(nameof(Title), value); }
+            get { return BackingStore?.Get<string>("title"); }
+            set { BackingStore?.Set("title", value); }
         }
         /// <summary>
         /// Instantiates a new tenantContactInformation and sets the default values.

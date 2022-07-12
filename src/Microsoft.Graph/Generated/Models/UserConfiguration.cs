@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class UserConfiguration : Entity, IParsable {
         /// <summary>The binaryData property</summary>
         public byte[] BinaryData {
-            get { return BackingStore?.Get<byte[]>(nameof(BinaryData)); }
-            set { BackingStore?.Set(nameof(BinaryData), value); }
+            get { return BackingStore?.Get<byte[]>("binaryData"); }
+            set { BackingStore?.Set("binaryData", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

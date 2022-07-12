@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class EmbeddedSIMActivationCode : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Integrated Circuit Card Identifier (ICCID) for this embedded SIM activation code as provided by the mobile operator.</summary>
         public string IntegratedCircuitCardIdentifier {
-            get { return BackingStore?.Get<string>(nameof(IntegratedCircuitCardIdentifier)); }
-            set { BackingStore?.Set(nameof(IntegratedCircuitCardIdentifier), value); }
+            get { return BackingStore?.Get<string>("integratedCircuitCardIdentifier"); }
+            set { BackingStore?.Set("integratedCircuitCardIdentifier", value); }
         }
         /// <summary>The MatchingIdentifier (MatchingID) as specified in the GSMA Association SGP.22 RSP Technical Specification section 4.1.</summary>
         public string MatchingIdentifier {
-            get { return BackingStore?.Get<string>(nameof(MatchingIdentifier)); }
-            set { BackingStore?.Set(nameof(MatchingIdentifier), value); }
+            get { return BackingStore?.Get<string>("matchingIdentifier"); }
+            set { BackingStore?.Set("matchingIdentifier", value); }
         }
         /// <summary>The fully qualified domain name of the SM-DP+ server as specified in the GSM Association SPG .22 RSP Technical Specification.</summary>
         public string SmdpPlusServerAddress {
-            get { return BackingStore?.Get<string>(nameof(SmdpPlusServerAddress)); }
-            set { BackingStore?.Set(nameof(SmdpPlusServerAddress), value); }
+            get { return BackingStore?.Get<string>("smdpPlusServerAddress"); }
+            set { BackingStore?.Set("smdpPlusServerAddress", value); }
         }
         /// <summary>
         /// Instantiates a new embeddedSIMActivationCode and sets the default values.

@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class SessionLifetimePolicy : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The human-readable details of the conditional access session management policy applied to the sign-in.</summary>
         public string Detail {
-            get { return BackingStore?.Get<string>(nameof(Detail)); }
-            set { BackingStore?.Set(nameof(Detail), value); }
+            get { return BackingStore?.Get<string>("detail"); }
+            set { BackingStore?.Set("detail", value); }
         }
         /// <summary>If a conditional access session management policy required the user to authenticate in this sign-in event, this field describes the policy type that required authentication. The possible values are: rememberMultifactorAuthenticationOnTrustedDevices, tenantTokenLifetimePolicy, audienceTokenLifetimePolicy, signInFrequencyPeriodicReauthentication, ngcMfa, signInFrequencyEveryTime, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.ExpirationRequirement? ExpirationRequirement {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExpirationRequirement?>(nameof(ExpirationRequirement)); }
-            set { BackingStore?.Set(nameof(ExpirationRequirement), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExpirationRequirement?>("expirationRequirement"); }
+            set { BackingStore?.Set("expirationRequirement", value); }
         }
         /// <summary>
         /// Instantiates a new sessionLifetimePolicy and sets the default values.

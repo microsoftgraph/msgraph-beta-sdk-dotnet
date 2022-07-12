@@ -5,10 +5,10 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class UpdateManagementEnrollment : UpdatableAssetEnrollment, IParsable {
-        /// <summary>The category of updates that the service manages. Supports a subset of the values for updateCategory. Possible values are: feature, unknownFutureValue.</summary>
+        /// <summary>The updateCategory property</summary>
         public Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateCategory? UpdateCategory {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateCategory?>(nameof(UpdateCategory)); }
-            set { BackingStore?.Set(nameof(UpdateCategory), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateCategory?>("updateCategory"); }
+            set { BackingStore?.Set("updateCategory", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

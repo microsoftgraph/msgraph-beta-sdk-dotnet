@@ -9,13 +9,19 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementSettingInstance : Entity, IParsable {
         /// <summary>The ID of the setting definition for this instance</summary>
         public string DefinitionId {
-            get { return BackingStore?.Get<string>(nameof(DefinitionId)); }
-            set { BackingStore?.Set(nameof(DefinitionId), value); }
+            get { return BackingStore?.Get<string>("definitionId"); }
+            set { BackingStore?.Set("definitionId", value); }
         }
         /// <summary>JSON representation of the value</summary>
         public string ValueJson {
-            get { return BackingStore?.Get<string>(nameof(ValueJson)); }
-            set { BackingStore?.Set(nameof(ValueJson), value); }
+            get { return BackingStore?.Get<string>("valueJson"); }
+            set { BackingStore?.Set("valueJson", value); }
+        }
+        /// <summary>
+        /// Instantiates a new deviceManagementSettingInstance and sets the default values.
+        /// </summary>
+        public DeviceManagementSettingInstance() : base() {
+            Type = "#microsoft.graph.deviceManagementSettingInstance";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

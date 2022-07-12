@@ -8,28 +8,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class Office365GroupsActivityStorage : Entity, IParsable {
         /// <summary>The storage used in group mailbox.</summary>
         public long? MailboxStorageUsedInBytes {
-            get { return BackingStore?.Get<long?>(nameof(MailboxStorageUsedInBytes)); }
-            set { BackingStore?.Set(nameof(MailboxStorageUsedInBytes), value); }
+            get { return BackingStore?.Get<long?>("mailboxStorageUsedInBytes"); }
+            set { BackingStore?.Set("mailboxStorageUsedInBytes", value); }
         }
         /// <summary>The snapshot date for Exchange and SharePoint used storage.</summary>
         public Date? ReportDate {
-            get { return BackingStore?.Get<Date?>(nameof(ReportDate)); }
-            set { BackingStore?.Set(nameof(ReportDate), value); }
+            get { return BackingStore?.Get<Date?>("reportDate"); }
+            set { BackingStore?.Set("reportDate", value); }
         }
         /// <summary>The number of days the report covers.</summary>
         public string ReportPeriod {
-            get { return BackingStore?.Get<string>(nameof(ReportPeriod)); }
-            set { BackingStore?.Set(nameof(ReportPeriod), value); }
+            get { return BackingStore?.Get<string>("reportPeriod"); }
+            set { BackingStore?.Set("reportPeriod", value); }
         }
         /// <summary>The latest date of the content.</summary>
         public Date? ReportRefreshDate {
-            get { return BackingStore?.Get<Date?>(nameof(ReportRefreshDate)); }
-            set { BackingStore?.Set(nameof(ReportRefreshDate), value); }
+            get { return BackingStore?.Get<Date?>("reportRefreshDate"); }
+            set { BackingStore?.Set("reportRefreshDate", value); }
         }
         /// <summary>The storage used in SharePoint document library.</summary>
         public long? SiteStorageUsedInBytes {
-            get { return BackingStore?.Get<long?>(nameof(SiteStorageUsedInBytes)); }
-            set { BackingStore?.Set(nameof(SiteStorageUsedInBytes), value); }
+            get { return BackingStore?.Get<long?>("siteStorageUsedInBytes"); }
+            set { BackingStore?.Set("siteStorageUsedInBytes", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

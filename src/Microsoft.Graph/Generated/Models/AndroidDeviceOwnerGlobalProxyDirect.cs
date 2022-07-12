@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceOwnerGlobalProxyDirect : AndroidDeviceOwnerGlobalProxy, IParsable {
         /// <summary>The excluded hosts</summary>
         public List<string> ExcludedHosts {
-            get { return BackingStore?.Get<List<string>>(nameof(ExcludedHosts)); }
-            set { BackingStore?.Set(nameof(ExcludedHosts), value); }
+            get { return BackingStore?.Get<List<string>>("excludedHosts"); }
+            set { BackingStore?.Set("excludedHosts", value); }
         }
         /// <summary>The host name</summary>
         public string Host {
-            get { return BackingStore?.Get<string>(nameof(Host)); }
-            set { BackingStore?.Set(nameof(Host), value); }
+            get { return BackingStore?.Get<string>("host"); }
+            set { BackingStore?.Set("host", value); }
         }
         /// <summary>The port</summary>
         public int? Port {
-            get { return BackingStore?.Get<int?>(nameof(Port)); }
-            set { BackingStore?.Set(nameof(Port), value); }
+            get { return BackingStore?.Get<int?>("port"); }
+            set { BackingStore?.Set("port", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

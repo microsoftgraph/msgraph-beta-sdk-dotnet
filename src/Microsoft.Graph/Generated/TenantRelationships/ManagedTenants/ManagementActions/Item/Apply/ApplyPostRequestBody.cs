@@ -9,40 +9,40 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
     public class ApplyPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The excludeGroups property</summary>
         public List<string> ExcludeGroups {
-            get { return BackingStore?.Get<List<string>>(nameof(ExcludeGroups)); }
-            set { BackingStore?.Set(nameof(ExcludeGroups), value); }
+            get { return BackingStore?.Get<List<string>>("excludeGroups"); }
+            set { BackingStore?.Set("excludeGroups", value); }
         }
         /// <summary>The includeAllUsers property</summary>
         public bool? IncludeAllUsers {
-            get { return BackingStore?.Get<bool?>(nameof(IncludeAllUsers)); }
-            set { BackingStore?.Set(nameof(IncludeAllUsers), value); }
+            get { return BackingStore?.Get<bool?>("includeAllUsers"); }
+            set { BackingStore?.Set("includeAllUsers", value); }
         }
         /// <summary>The includeGroups property</summary>
         public List<string> IncludeGroups {
-            get { return BackingStore?.Get<List<string>>(nameof(IncludeGroups)); }
-            set { BackingStore?.Set(nameof(IncludeGroups), value); }
+            get { return BackingStore?.Get<List<string>>("includeGroups"); }
+            set { BackingStore?.Set("includeGroups", value); }
         }
         /// <summary>The managementTemplateId property</summary>
         public string ManagementTemplateId {
-            get { return BackingStore?.Get<string>(nameof(ManagementTemplateId)); }
-            set { BackingStore?.Set(nameof(ManagementTemplateId), value); }
+            get { return BackingStore?.Get<string>("managementTemplateId"); }
+            set { BackingStore?.Set("managementTemplateId", value); }
         }
         /// <summary>The tenantGroupId property</summary>
         public string TenantGroupId {
-            get { return BackingStore?.Get<string>(nameof(TenantGroupId)); }
-            set { BackingStore?.Set(nameof(TenantGroupId), value); }
+            get { return BackingStore?.Get<string>("tenantGroupId"); }
+            set { BackingStore?.Set("tenantGroupId", value); }
         }
         /// <summary>The tenantId property</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>
         /// Instantiates a new applyPostRequestBody and sets the default values.

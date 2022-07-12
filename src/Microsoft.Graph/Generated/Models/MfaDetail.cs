@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class MfaDetail : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Indicates the MFA auth detail for the corresponding Sign-in activity when the MFA Required is &apos;Yes&apos;.</summary>
         public string AuthDetail {
-            get { return BackingStore?.Get<string>(nameof(AuthDetail)); }
-            set { BackingStore?.Set(nameof(AuthDetail), value); }
+            get { return BackingStore?.Get<string>("authDetail"); }
+            set { BackingStore?.Set("authDetail", value); }
         }
         /// <summary>Indicates the MFA Auth methods (SMS, Phone, Authenticator App are some of the value) for the corresponding sign-in activity when the MFA Required field is &apos;Yes&apos;.</summary>
         public string AuthMethod {
-            get { return BackingStore?.Get<string>(nameof(AuthMethod)); }
-            set { BackingStore?.Set(nameof(AuthMethod), value); }
+            get { return BackingStore?.Get<string>("authMethod"); }
+            set { BackingStore?.Set("authMethod", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }

@@ -7,28 +7,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOSCredentialSingleSignOnExtension : MacOSSingleSignOnExtension, IParsable {
         /// <summary>Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.</summary>
         public List<KeyTypedValuePair> Configurations {
-            get { return BackingStore?.Get<List<KeyTypedValuePair>>(nameof(Configurations)); }
-            set { BackingStore?.Set(nameof(Configurations), value); }
+            get { return BackingStore?.Get<List<KeyTypedValuePair>>("configurations"); }
+            set { BackingStore?.Set("configurations", value); }
         }
         /// <summary>Gets or sets a list of hosts or domain names for which the app extension performs SSO.</summary>
         public List<string> Domains {
-            get { return BackingStore?.Get<List<string>>(nameof(Domains)); }
-            set { BackingStore?.Set(nameof(Domains), value); }
+            get { return BackingStore?.Get<List<string>>("domains"); }
+            set { BackingStore?.Set("domains", value); }
         }
         /// <summary>Gets or sets the bundle ID of the app extension that performs SSO for the specified URLs.</summary>
         public string ExtensionIdentifier {
-            get { return BackingStore?.Get<string>(nameof(ExtensionIdentifier)); }
-            set { BackingStore?.Set(nameof(ExtensionIdentifier), value); }
+            get { return BackingStore?.Get<string>("extensionIdentifier"); }
+            set { BackingStore?.Set("extensionIdentifier", value); }
         }
         /// <summary>Gets or sets the case-sensitive realm name for this profile.</summary>
         public string Realm {
-            get { return BackingStore?.Get<string>(nameof(Realm)); }
-            set { BackingStore?.Set(nameof(Realm), value); }
+            get { return BackingStore?.Get<string>("realm"); }
+            set { BackingStore?.Set("realm", value); }
         }
         /// <summary>Gets or sets the team ID of the app extension that performs SSO for the specified URLs.</summary>
         public string TeamIdentifier {
-            get { return BackingStore?.Get<string>(nameof(TeamIdentifier)); }
-            set { BackingStore?.Set(nameof(TeamIdentifier), value); }
+            get { return BackingStore?.Get<string>("teamIdentifier"); }
+            set { BackingStore?.Set("teamIdentifier", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

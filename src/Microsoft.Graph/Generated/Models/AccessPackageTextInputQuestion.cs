@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageTextInputQuestion : AccessPackageQuestion, IParsable {
         /// <summary>Indicates whether the answer will be in single or multiple line format.</summary>
         public bool? IsSingleLineQuestion {
-            get { return BackingStore?.Get<bool?>(nameof(IsSingleLineQuestion)); }
-            set { BackingStore?.Set(nameof(IsSingleLineQuestion), value); }
+            get { return BackingStore?.Get<bool?>("isSingleLineQuestion"); }
+            set { BackingStore?.Set("isSingleLineQuestion", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

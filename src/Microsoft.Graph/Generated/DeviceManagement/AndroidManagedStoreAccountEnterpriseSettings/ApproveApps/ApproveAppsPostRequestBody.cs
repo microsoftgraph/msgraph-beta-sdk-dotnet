@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
     public class ApproveAppsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The approveAllPermissions property</summary>
         public bool? ApproveAllPermissions {
-            get { return BackingStore?.Get<bool?>(nameof(ApproveAllPermissions)); }
-            set { BackingStore?.Set(nameof(ApproveAllPermissions), value); }
+            get { return BackingStore?.Get<bool?>("approveAllPermissions"); }
+            set { BackingStore?.Set("approveAllPermissions", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The packageIds property</summary>
         public List<string> PackageIds {
-            get { return BackingStore?.Get<List<string>>(nameof(PackageIds)); }
-            set { BackingStore?.Set(nameof(PackageIds), value); }
+            get { return BackingStore?.Get<List<string>>("packageIds"); }
+            set { BackingStore?.Set("packageIds", value); }
         }
         /// <summary>
         /// Instantiates a new approveAppsPostRequestBody and sets the default values.

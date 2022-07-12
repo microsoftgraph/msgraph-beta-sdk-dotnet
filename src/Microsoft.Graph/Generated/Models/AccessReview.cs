@@ -4,77 +4,76 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AccessReview : Entity, IParsable {
         /// <summary>The business flow template identifier. Required on create.  This value is case sensitive.</summary>
         public string BusinessFlowTemplateId {
-            get { return BackingStore?.Get<string>(nameof(BusinessFlowTemplateId)); }
-            set { BackingStore?.Set(nameof(BusinessFlowTemplateId), value); }
+            get { return BackingStore?.Get<string>("businessFlowTemplateId"); }
+            set { BackingStore?.Set("businessFlowTemplateId", value); }
         }
         /// <summary>The user who created this review.</summary>
         public UserIdentity CreatedBy {
-            get { return BackingStore?.Get<UserIdentity>(nameof(CreatedBy)); }
-            set { BackingStore?.Set(nameof(CreatedBy), value); }
+            get { return BackingStore?.Get<UserIdentity>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
         }
         /// <summary>The collection of decisions for this access review.</summary>
         public List<AccessReviewDecision> Decisions {
-            get { return BackingStore?.Get<List<AccessReviewDecision>>(nameof(Decisions)); }
-            set { BackingStore?.Set(nameof(Decisions), value); }
+            get { return BackingStore?.Get<List<AccessReviewDecision>>("decisions"); }
+            set { BackingStore?.Set("decisions", value); }
         }
         /// <summary>The description provided by the access review creator, to show to the reviewers.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The access review name. Required on create.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The DateTime when the review is scheduled to end. This must be at least one day later than the start date.  Required on create.</summary>
         public DateTimeOffset? EndDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
-            set { BackingStore?.Set(nameof(EndDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
+            set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>The collection of access reviews instances past, present and future, if this object is a recurring access review.</summary>
         public List<AccessReview> Instances {
-            get { return BackingStore?.Get<List<AccessReview>>(nameof(Instances)); }
-            set { BackingStore?.Set(nameof(Instances), value); }
+            get { return BackingStore?.Get<List<AccessReview>>("instances"); }
+            set { BackingStore?.Set("instances", value); }
         }
         /// <summary>The collection of decisions for the caller, if the caller is a reviewer.</summary>
         public List<AccessReviewDecision> MyDecisions {
-            get { return BackingStore?.Get<List<AccessReviewDecision>>(nameof(MyDecisions)); }
-            set { BackingStore?.Set(nameof(MyDecisions), value); }
+            get { return BackingStore?.Get<List<AccessReviewDecision>>("myDecisions"); }
+            set { BackingStore?.Set("myDecisions", value); }
         }
         /// <summary>The object for which the access reviews is reviewing the access rights assignments. This can be the group for the review of memberships of users in a group, or the app for a review of assignments of users to an application. Required on create.</summary>
         public Identity ReviewedEntity {
-            get { return BackingStore?.Get<Identity>(nameof(ReviewedEntity)); }
-            set { BackingStore?.Set(nameof(ReviewedEntity), value); }
+            get { return BackingStore?.Get<Identity>("reviewedEntity"); }
+            set { BackingStore?.Set("reviewedEntity", value); }
         }
         /// <summary>The collection of reviewers for an access review, if access review reviewerType is of type delegated.</summary>
         public List<AccessReviewReviewer> Reviewers {
-            get { return BackingStore?.Get<List<AccessReviewReviewer>>(nameof(Reviewers)); }
-            set { BackingStore?.Set(nameof(Reviewers), value); }
+            get { return BackingStore?.Get<List<AccessReviewReviewer>>("reviewers"); }
+            set { BackingStore?.Set("reviewers", value); }
         }
         /// <summary>The relationship type of reviewer to the target object, one of self, delegated or entityOwners. Required on create.</summary>
         public string ReviewerType {
-            get { return BackingStore?.Get<string>(nameof(ReviewerType)); }
-            set { BackingStore?.Set(nameof(ReviewerType), value); }
+            get { return BackingStore?.Get<string>("reviewerType"); }
+            set { BackingStore?.Set("reviewerType", value); }
         }
         /// <summary>The settings of an accessReview, see type definition below.</summary>
         public AccessReviewSettings Settings {
-            get { return BackingStore?.Get<AccessReviewSettings>(nameof(Settings)); }
-            set { BackingStore?.Set(nameof(Settings), value); }
+            get { return BackingStore?.Get<AccessReviewSettings>("settings"); }
+            set { BackingStore?.Set("settings", value); }
         }
         /// <summary>The DateTime when the review is scheduled to be start.  This could be a date in the future.  Required on create.</summary>
         public DateTimeOffset? StartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
-            set { BackingStore?.Set(nameof(StartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>This read-only field specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting,InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.</summary>
         public string Status {
-            get { return BackingStore?.Get<string>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<string>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

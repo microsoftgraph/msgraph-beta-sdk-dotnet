@@ -7,43 +7,43 @@ namespace Microsoft.Graph.Beta.Models {
     public class Win32LobAppPowerShellScriptRule : Win32LobAppRule, IParsable {
         /// <summary>The script output comparison value. Do not specify a value if the rule is used for detection.</summary>
         public string ComparisonValue {
-            get { return BackingStore?.Get<string>(nameof(ComparisonValue)); }
-            set { BackingStore?.Set(nameof(ComparisonValue), value); }
+            get { return BackingStore?.Get<string>("comparisonValue"); }
+            set { BackingStore?.Set("comparisonValue", value); }
         }
         /// <summary>The display name for the rule. Do not specify this value if the rule is used for detection.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>A value indicating whether a signature check is enforced.</summary>
         public bool? EnforceSignatureCheck {
-            get { return BackingStore?.Get<bool?>(nameof(EnforceSignatureCheck)); }
-            set { BackingStore?.Set(nameof(EnforceSignatureCheck), value); }
+            get { return BackingStore?.Get<bool?>("enforceSignatureCheck"); }
+            set { BackingStore?.Set("enforceSignatureCheck", value); }
         }
-        /// <summary>The script output comparison operation type. Use NotConfigured (the default value) if the rule is used for detection. Possible values are: notConfigured, string, dateTime, integer, float, version, boolean.</summary>
+        /// <summary>Contains all supported Powershell Script output detection type.</summary>
         public Win32LobAppPowerShellScriptRuleOperationType? OperationType {
-            get { return BackingStore?.Get<Win32LobAppPowerShellScriptRuleOperationType?>(nameof(OperationType)); }
-            set { BackingStore?.Set(nameof(OperationType), value); }
+            get { return BackingStore?.Get<Win32LobAppPowerShellScriptRuleOperationType?>("operationType"); }
+            set { BackingStore?.Set("operationType", value); }
         }
-        /// <summary>The script output operator. Use NotConfigured (the default value) if the rule is used for detection. Possible values are: notConfigured, equal, notEqual, greaterThan, greaterThanOrEqual, lessThan, lessThanOrEqual.</summary>
+        /// <summary>Contains properties for detection operator.</summary>
         public Win32LobAppRuleOperator? Operator {
-            get { return BackingStore?.Get<Win32LobAppRuleOperator?>(nameof(Operator)); }
-            set { BackingStore?.Set(nameof(Operator), value); }
+            get { return BackingStore?.Get<Win32LobAppRuleOperator?>("operator"); }
+            set { BackingStore?.Set("operator", value); }
         }
         /// <summary>A value indicating whether the script should run as 32-bit.</summary>
         public bool? RunAs32Bit {
-            get { return BackingStore?.Get<bool?>(nameof(RunAs32Bit)); }
-            set { BackingStore?.Set(nameof(RunAs32Bit), value); }
+            get { return BackingStore?.Get<bool?>("runAs32Bit"); }
+            set { BackingStore?.Set("runAs32Bit", value); }
         }
         /// <summary>The execution context of the script. Do not specify this value if the rule is used for detection. Script detection rules will run in the same context as the associated app install context. Possible values are: system, user.</summary>
         public RunAsAccountType? RunAsAccount {
-            get { return BackingStore?.Get<RunAsAccountType?>(nameof(RunAsAccount)); }
-            set { BackingStore?.Set(nameof(RunAsAccount), value); }
+            get { return BackingStore?.Get<RunAsAccountType?>("runAsAccount"); }
+            set { BackingStore?.Set("runAsAccount", value); }
         }
         /// <summary>The base64-encoded script content.</summary>
         public string ScriptContent {
-            get { return BackingStore?.Get<string>(nameof(ScriptContent)); }
-            set { BackingStore?.Set(nameof(ScriptContent), value); }
+            get { return BackingStore?.Get<string>("scriptContent"); }
+            set { BackingStore?.Set("scriptContent", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

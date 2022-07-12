@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class SearchEntity : Entity, IParsable {
         /// <summary>Administrative answer in Microsoft Search results to define common acronyms in a organization.</summary>
         public List<Acronym> Acronyms {
-            get { return BackingStore?.Get<List<Acronym>>(nameof(Acronyms)); }
-            set { BackingStore?.Set(nameof(Acronyms), value); }
+            get { return BackingStore?.Get<List<Acronym>>("acronyms"); }
+            set { BackingStore?.Set("acronyms", value); }
         }
         /// <summary>Administrative answer in Microsoft Search results for common search queries in an organization.</summary>
         public List<Bookmark> Bookmarks {
-            get { return BackingStore?.Get<List<Bookmark>>(nameof(Bookmarks)); }
-            set { BackingStore?.Set(nameof(Bookmarks), value); }
+            get { return BackingStore?.Get<List<Bookmark>>("bookmarks"); }
+            set { BackingStore?.Set("bookmarks", value); }
         }
         /// <summary>Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.</summary>
         public List<Qna> Qnas {
-            get { return BackingStore?.Get<List<Qna>>(nameof(Qnas)); }
-            set { BackingStore?.Set(nameof(Qnas), value); }
+            get { return BackingStore?.Get<List<Qna>>("qnas"); }
+            set { BackingStore?.Set("qnas", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

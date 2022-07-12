@@ -5,20 +5,20 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsHealthMonitoringConfiguration : DeviceConfiguration, IParsable {
-        /// <summary>Enables device health monitoring on the device. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? AllowDeviceHealthMonitoring {
-            get { return BackingStore?.Get<Enablement?>(nameof(AllowDeviceHealthMonitoring)); }
-            set { BackingStore?.Set(nameof(AllowDeviceHealthMonitoring), value); }
+            get { return BackingStore?.Get<Enablement?>("allowDeviceHealthMonitoring"); }
+            set { BackingStore?.Set("allowDeviceHealthMonitoring", value); }
         }
         /// <summary>Specifies custom set of events collected from the device where health monitoring is enabled</summary>
         public string ConfigDeviceHealthMonitoringCustomScope {
-            get { return BackingStore?.Get<string>(nameof(ConfigDeviceHealthMonitoringCustomScope)); }
-            set { BackingStore?.Set(nameof(ConfigDeviceHealthMonitoringCustomScope), value); }
+            get { return BackingStore?.Get<string>("configDeviceHealthMonitoringCustomScope"); }
+            set { BackingStore?.Set("configDeviceHealthMonitoringCustomScope", value); }
         }
-        /// <summary>Specifies set of events collected from the device where health monitoring is enabled. Possible values are: undefined, healthMonitoring, bootPerformance, windowsUpdates.</summary>
+        /// <summary>Device health monitoring scope</summary>
         public WindowsHealthMonitoringScope? ConfigDeviceHealthMonitoringScope {
-            get { return BackingStore?.Get<WindowsHealthMonitoringScope?>(nameof(ConfigDeviceHealthMonitoringScope)); }
-            set { BackingStore?.Set(nameof(ConfigDeviceHealthMonitoringScope), value); }
+            get { return BackingStore?.Get<WindowsHealthMonitoringScope?>("configDeviceHealthMonitoringScope"); }
+            set { BackingStore?.Set("configDeviceHealthMonitoringScope", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class External : Entity, IParsable {
         /// <summary>The connections property</summary>
         public List<ExternalConnection> Connections {
-            get { return BackingStore?.Get<List<ExternalConnection>>(nameof(Connections)); }
-            set { BackingStore?.Set(nameof(Connections), value); }
+            get { return BackingStore?.Get<List<ExternalConnection>>("connections"); }
+            set { BackingStore?.Set("connections", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

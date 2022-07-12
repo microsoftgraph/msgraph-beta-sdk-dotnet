@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationSynchronizationLicenseAssignment : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The user role type to assign to license. Possible values are: student, teacher, faculty.</summary>
         public EducationUserRole? AppliesTo {
-            get { return BackingStore?.Get<EducationUserRole?>(nameof(AppliesTo)); }
-            set { BackingStore?.Set(nameof(AppliesTo), value); }
+            get { return BackingStore?.Get<EducationUserRole?>("appliesTo"); }
+            set { BackingStore?.Set("appliesTo", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Represents the SKU identifiers of the licenses to assign.</summary>
         public List<string> SkuIds {
-            get { return BackingStore?.Get<List<string>>(nameof(SkuIds)); }
-            set { BackingStore?.Set(nameof(SkuIds), value); }
+            get { return BackingStore?.Get<List<string>>("skuIds"); }
+            set { BackingStore?.Set("skuIds", value); }
         }
         /// <summary>
         /// Instantiates a new educationSynchronizationLicenseAssignment and sets the default values.

@@ -8,23 +8,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class ExactMatchClassificationResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The classification property</summary>
         public List<ExactMatchDetectedSensitiveContent> Classification {
-            get { return BackingStore?.Get<List<ExactMatchDetectedSensitiveContent>>(nameof(Classification)); }
-            set { BackingStore?.Set(nameof(Classification), value); }
+            get { return BackingStore?.Get<List<ExactMatchDetectedSensitiveContent>>("classification"); }
+            set { BackingStore?.Set("classification", value); }
         }
         /// <summary>The errors property</summary>
         public List<ClassificationError> Errors {
-            get { return BackingStore?.Get<List<ClassificationError>>(nameof(Errors)); }
-            set { BackingStore?.Set(nameof(Errors), value); }
+            get { return BackingStore?.Get<List<ClassificationError>>("errors"); }
+            set { BackingStore?.Set("errors", value); }
         }
         /// <summary>
-        /// Instantiates a new ExactMatchClassificationResult and sets the default values.
+        /// Instantiates a new exactMatchClassificationResult and sets the default values.
         /// </summary>
         public ExactMatchClassificationResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

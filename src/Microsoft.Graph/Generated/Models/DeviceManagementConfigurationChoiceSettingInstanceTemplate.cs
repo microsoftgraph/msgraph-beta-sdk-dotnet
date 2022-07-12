@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationChoiceSettingInstanceTemplate : DeviceManagementConfigurationSettingInstanceTemplate, IParsable {
         /// <summary>Choice Setting Value Template</summary>
         public DeviceManagementConfigurationChoiceSettingValueTemplate ChoiceSettingValueTemplate {
-            get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueTemplate>(nameof(ChoiceSettingValueTemplate)); }
-            set { BackingStore?.Set(nameof(ChoiceSettingValueTemplate), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueTemplate>("choiceSettingValueTemplate"); }
+            set { BackingStore?.Set("choiceSettingValueTemplate", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,57 +4,57 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class UserSecurityProfile : Entity, IParsable {
         /// <summary>The accounts property</summary>
         public List<UserAccount> Accounts {
-            get { return BackingStore?.Get<List<UserAccount>>(nameof(Accounts)); }
-            set { BackingStore?.Set(nameof(Accounts), value); }
+            get { return BackingStore?.Get<List<UserAccount>>("accounts"); }
+            set { BackingStore?.Set("accounts", value); }
         }
         /// <summary>The azureSubscriptionId property</summary>
         public string AzureSubscriptionId {
-            get { return BackingStore?.Get<string>(nameof(AzureSubscriptionId)); }
-            set { BackingStore?.Set(nameof(AzureSubscriptionId), value); }
+            get { return BackingStore?.Get<string>("azureSubscriptionId"); }
+            set { BackingStore?.Set("azureSubscriptionId", value); }
         }
         /// <summary>The azureTenantId property</summary>
         public string AzureTenantId {
-            get { return BackingStore?.Get<string>(nameof(AzureTenantId)); }
-            set { BackingStore?.Set(nameof(AzureTenantId), value); }
+            get { return BackingStore?.Get<string>("azureTenantId"); }
+            set { BackingStore?.Set("azureTenantId", value); }
         }
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The displayName property</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The riskScore property</summary>
         public string RiskScore {
-            get { return BackingStore?.Get<string>(nameof(RiskScore)); }
-            set { BackingStore?.Set(nameof(RiskScore), value); }
+            get { return BackingStore?.Get<string>("riskScore"); }
+            set { BackingStore?.Set("riskScore", value); }
         }
         /// <summary>The tags property</summary>
         public List<string> Tags {
-            get { return BackingStore?.Get<List<string>>(nameof(Tags)); }
-            set { BackingStore?.Set(nameof(Tags), value); }
+            get { return BackingStore?.Get<List<string>>("tags"); }
+            set { BackingStore?.Set("tags", value); }
         }
         /// <summary>The userPrincipalName property</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>The vendorInformation property</summary>
         public SecurityVendorInformation VendorInformation {
-            get { return BackingStore?.Get<SecurityVendorInformation>(nameof(VendorInformation)); }
-            set { BackingStore?.Set(nameof(VendorInformation), value); }
+            get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
+            set { BackingStore?.Set("vendorInformation", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

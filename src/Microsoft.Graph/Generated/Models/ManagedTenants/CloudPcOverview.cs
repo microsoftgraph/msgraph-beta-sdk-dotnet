@@ -4,107 +4,107 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class CloudPcOverview : Entity, IParsable {
         /// <summary>Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.</summary>
         public DateTimeOffset? LastRefreshedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastRefreshedDateTime)); }
-            set { BackingStore?.Set(nameof(LastRefreshedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshedDateTime"); }
+            set { BackingStore?.Set("lastRefreshedDateTime", value); }
         }
         /// <summary>The number of cloud PC connections that have a status of failed. Optional. Read-only.</summary>
         public int? NumberOfCloudPcConnectionStatusFailed {
-            get { return BackingStore?.Get<int?>(nameof(NumberOfCloudPcConnectionStatusFailed)); }
-            set { BackingStore?.Set(nameof(NumberOfCloudPcConnectionStatusFailed), value); }
+            get { return BackingStore?.Get<int?>("numberOfCloudPcConnectionStatusFailed"); }
+            set { BackingStore?.Set("numberOfCloudPcConnectionStatusFailed", value); }
         }
         /// <summary>The number of cloud PC connections that have a status of passed. Optional. Read-only.</summary>
         public int? NumberOfCloudPcConnectionStatusPassed {
-            get { return BackingStore?.Get<int?>(nameof(NumberOfCloudPcConnectionStatusPassed)); }
-            set { BackingStore?.Set(nameof(NumberOfCloudPcConnectionStatusPassed), value); }
+            get { return BackingStore?.Get<int?>("numberOfCloudPcConnectionStatusPassed"); }
+            set { BackingStore?.Set("numberOfCloudPcConnectionStatusPassed", value); }
         }
         /// <summary>The number of cloud PC connections that have a status of pending. Optional. Read-only.</summary>
         public int? NumberOfCloudPcConnectionStatusPending {
-            get { return BackingStore?.Get<int?>(nameof(NumberOfCloudPcConnectionStatusPending)); }
-            set { BackingStore?.Set(nameof(NumberOfCloudPcConnectionStatusPending), value); }
+            get { return BackingStore?.Get<int?>("numberOfCloudPcConnectionStatusPending"); }
+            set { BackingStore?.Set("numberOfCloudPcConnectionStatusPending", value); }
         }
         /// <summary>The number of cloud PC connections that have a status of running. Optional. Read-only.</summary>
         public int? NumberOfCloudPcConnectionStatusRunning {
-            get { return BackingStore?.Get<int?>(nameof(NumberOfCloudPcConnectionStatusRunning)); }
-            set { BackingStore?.Set(nameof(NumberOfCloudPcConnectionStatusRunning), value); }
+            get { return BackingStore?.Get<int?>("numberOfCloudPcConnectionStatusRunning"); }
+            set { BackingStore?.Set("numberOfCloudPcConnectionStatusRunning", value); }
         }
         /// <summary>The number of cloud PC connections that have a status of unknownFutureValue. Optional. Read-only.</summary>
         public int? NumberOfCloudPcConnectionStatusUnkownFutureValue {
-            get { return BackingStore?.Get<int?>(nameof(NumberOfCloudPcConnectionStatusUnkownFutureValue)); }
-            set { BackingStore?.Set(nameof(NumberOfCloudPcConnectionStatusUnkownFutureValue), value); }
+            get { return BackingStore?.Get<int?>("numberOfCloudPcConnectionStatusUnkownFutureValue"); }
+            set { BackingStore?.Set("numberOfCloudPcConnectionStatusUnkownFutureValue", value); }
         }
         /// <summary>The number of cloud PCs that have a status of deprovisioning. Optional. Read-only.</summary>
         public int? NumberOfCloudPcStatusDeprovisioning {
-            get { return BackingStore?.Get<int?>(nameof(NumberOfCloudPcStatusDeprovisioning)); }
-            set { BackingStore?.Set(nameof(NumberOfCloudPcStatusDeprovisioning), value); }
+            get { return BackingStore?.Get<int?>("numberOfCloudPcStatusDeprovisioning"); }
+            set { BackingStore?.Set("numberOfCloudPcStatusDeprovisioning", value); }
         }
         /// <summary>The number of cloud PCs that have a status of failed. Optional. Read-only.</summary>
         public int? NumberOfCloudPcStatusFailed {
-            get { return BackingStore?.Get<int?>(nameof(NumberOfCloudPcStatusFailed)); }
-            set { BackingStore?.Set(nameof(NumberOfCloudPcStatusFailed), value); }
+            get { return BackingStore?.Get<int?>("numberOfCloudPcStatusFailed"); }
+            set { BackingStore?.Set("numberOfCloudPcStatusFailed", value); }
         }
         /// <summary>The number of cloud PCs that have a status of inGracePeriod. Optional. Read-only.</summary>
         public int? NumberOfCloudPcStatusInGracePeriod {
-            get { return BackingStore?.Get<int?>(nameof(NumberOfCloudPcStatusInGracePeriod)); }
-            set { BackingStore?.Set(nameof(NumberOfCloudPcStatusInGracePeriod), value); }
+            get { return BackingStore?.Get<int?>("numberOfCloudPcStatusInGracePeriod"); }
+            set { BackingStore?.Set("numberOfCloudPcStatusInGracePeriod", value); }
         }
         /// <summary>The number of cloud PCs that have a status of notProvisioned. Optional. Read-only.</summary>
         public int? NumberOfCloudPcStatusNotProvisioned {
-            get { return BackingStore?.Get<int?>(nameof(NumberOfCloudPcStatusNotProvisioned)); }
-            set { BackingStore?.Set(nameof(NumberOfCloudPcStatusNotProvisioned), value); }
+            get { return BackingStore?.Get<int?>("numberOfCloudPcStatusNotProvisioned"); }
+            set { BackingStore?.Set("numberOfCloudPcStatusNotProvisioned", value); }
         }
         /// <summary>The number of cloud PCs that have a status of provisioned. Optional. Read-only.</summary>
         public int? NumberOfCloudPcStatusProvisioned {
-            get { return BackingStore?.Get<int?>(nameof(NumberOfCloudPcStatusProvisioned)); }
-            set { BackingStore?.Set(nameof(NumberOfCloudPcStatusProvisioned), value); }
+            get { return BackingStore?.Get<int?>("numberOfCloudPcStatusProvisioned"); }
+            set { BackingStore?.Set("numberOfCloudPcStatusProvisioned", value); }
         }
         /// <summary>The number of cloud PCs that have a status of provisioning. Optional. Read-only.</summary>
         public int? NumberOfCloudPcStatusProvisioning {
-            get { return BackingStore?.Get<int?>(nameof(NumberOfCloudPcStatusProvisioning)); }
-            set { BackingStore?.Set(nameof(NumberOfCloudPcStatusProvisioning), value); }
+            get { return BackingStore?.Get<int?>("numberOfCloudPcStatusProvisioning"); }
+            set { BackingStore?.Set("numberOfCloudPcStatusProvisioning", value); }
         }
         /// <summary>The number of cloud PCs that have a status of unknown. Optional. Read-only.</summary>
         public int? NumberOfCloudPcStatusUnknown {
-            get { return BackingStore?.Get<int?>(nameof(NumberOfCloudPcStatusUnknown)); }
-            set { BackingStore?.Set(nameof(NumberOfCloudPcStatusUnknown), value); }
+            get { return BackingStore?.Get<int?>("numberOfCloudPcStatusUnknown"); }
+            set { BackingStore?.Set("numberOfCloudPcStatusUnknown", value); }
         }
         /// <summary>The number of cloud PCs that have a status of upgrading. Optional. Read-only.</summary>
         public int? NumberOfCloudPcStatusUpgrading {
-            get { return BackingStore?.Get<int?>(nameof(NumberOfCloudPcStatusUpgrading)); }
-            set { BackingStore?.Set(nameof(NumberOfCloudPcStatusUpgrading), value); }
+            get { return BackingStore?.Get<int?>("numberOfCloudPcStatusUpgrading"); }
+            set { BackingStore?.Set("numberOfCloudPcStatusUpgrading", value); }
         }
         /// <summary>The display name for the managed tenant. Optional. Read-only.</summary>
         public string TenantDisplayName {
-            get { return BackingStore?.Get<string>(nameof(TenantDisplayName)); }
-            set { BackingStore?.Set(nameof(TenantDisplayName), value); }
+            get { return BackingStore?.Get<string>("tenantDisplayName"); }
+            set { BackingStore?.Set("tenantDisplayName", value); }
         }
         /// <summary>The tenantId property</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>The totalBusinessLicenses property</summary>
         public int? TotalBusinessLicenses {
-            get { return BackingStore?.Get<int?>(nameof(TotalBusinessLicenses)); }
-            set { BackingStore?.Set(nameof(TotalBusinessLicenses), value); }
+            get { return BackingStore?.Get<int?>("totalBusinessLicenses"); }
+            set { BackingStore?.Set("totalBusinessLicenses", value); }
         }
         /// <summary>The total number of cloud PC connection statuses for the given managed tenant. Optional. Read-only.</summary>
         public int? TotalCloudPcConnectionStatus {
-            get { return BackingStore?.Get<int?>(nameof(TotalCloudPcConnectionStatus)); }
-            set { BackingStore?.Set(nameof(TotalCloudPcConnectionStatus), value); }
+            get { return BackingStore?.Get<int?>("totalCloudPcConnectionStatus"); }
+            set { BackingStore?.Set("totalCloudPcConnectionStatus", value); }
         }
         /// <summary>The total number of cloud PC statues for the given managed tenant. Optional. Read-only.</summary>
         public int? TotalCloudPcStatus {
-            get { return BackingStore?.Get<int?>(nameof(TotalCloudPcStatus)); }
-            set { BackingStore?.Set(nameof(TotalCloudPcStatus), value); }
+            get { return BackingStore?.Get<int?>("totalCloudPcStatus"); }
+            set { BackingStore?.Set("totalCloudPcStatus", value); }
         }
         /// <summary>The totalEnterpriseLicenses property</summary>
         public int? TotalEnterpriseLicenses {
-            get { return BackingStore?.Get<int?>(nameof(TotalEnterpriseLicenses)); }
-            set { BackingStore?.Set(nameof(TotalEnterpriseLicenses), value); }
+            get { return BackingStore?.Get<int?>("totalEnterpriseLicenses"); }
+            set { BackingStore?.Set("totalEnterpriseLicenses", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

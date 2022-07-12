@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class OutboundSharedUserProfile : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The tenants property</summary>
         public List<TenantReference> Tenants {
-            get { return BackingStore?.Get<List<TenantReference>>(nameof(Tenants)); }
-            set { BackingStore?.Set(nameof(Tenants), value); }
+            get { return BackingStore?.Get<List<TenantReference>>("tenants"); }
+            set { BackingStore?.Set("tenants", value); }
         }
         /// <summary>The userId property</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>
         /// Instantiates a new outboundSharedUserProfile and sets the default values.

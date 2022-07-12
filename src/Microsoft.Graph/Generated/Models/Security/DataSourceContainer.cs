@@ -5,37 +5,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class DataSourceContainer : Entity, IParsable {
         /// <summary>Created date and time of the dataSourceContainer entity.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Display name of the dataSourceContainer entity.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The hold status of the dataSourceContainer.The possible values are: notApplied, applied, applying, removing, partial</summary>
         public DataSourceHoldStatus? HoldStatus {
-            get { return BackingStore?.Get<DataSourceHoldStatus?>(nameof(HoldStatus)); }
-            set { BackingStore?.Set(nameof(HoldStatus), value); }
+            get { return BackingStore?.Get<DataSourceHoldStatus?>("holdStatus"); }
+            set { BackingStore?.Set("holdStatus", value); }
         }
         /// <summary>Last modified date and time of the dataSourceContainer.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Date and time that the dataSourceContainer was released from the case.</summary>
         public DateTimeOffset? ReleasedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ReleasedDateTime)); }
-            set { BackingStore?.Set(nameof(ReleasedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("releasedDateTime"); }
+            set { BackingStore?.Set("releasedDateTime", value); }
         }
         /// <summary>Latest status of the dataSourceContainer. Possible values are: Active, Released.</summary>
         public DataSourceContainerStatus? Status {
-            get { return BackingStore?.Get<DataSourceContainerStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<DataSourceContainerStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+        /// <summary>
+        /// Instantiates a new dataSourceContainer and sets the default values.
+        /// </summary>
+        public DataSourceContainer() : base() {
+            Type = "#microsoft.graph.security.dataSourceContainer";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

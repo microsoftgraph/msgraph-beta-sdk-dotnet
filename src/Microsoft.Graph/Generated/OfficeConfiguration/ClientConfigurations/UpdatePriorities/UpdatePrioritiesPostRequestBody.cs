@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.UpdatePr
     public class UpdatePrioritiesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The officeConfigurationPolicyIds property</summary>
         public List<string> OfficeConfigurationPolicyIds {
-            get { return BackingStore?.Get<List<string>>(nameof(OfficeConfigurationPolicyIds)); }
-            set { BackingStore?.Set(nameof(OfficeConfigurationPolicyIds), value); }
+            get { return BackingStore?.Get<List<string>>("officeConfigurationPolicyIds"); }
+            set { BackingStore?.Set("officeConfigurationPolicyIds", value); }
         }
         /// <summary>The officeConfigurationPriorities property</summary>
         public List<int?> OfficeConfigurationPriorities {
-            get { return BackingStore?.Get<List<int?>>(nameof(OfficeConfigurationPriorities)); }
-            set { BackingStore?.Set(nameof(OfficeConfigurationPriorities), value); }
+            get { return BackingStore?.Get<List<int?>>("officeConfigurationPriorities"); }
+            set { BackingStore?.Set("officeConfigurationPriorities", value); }
         }
         /// <summary>
         /// Instantiates a new updatePrioritiesPostRequestBody and sets the default values.

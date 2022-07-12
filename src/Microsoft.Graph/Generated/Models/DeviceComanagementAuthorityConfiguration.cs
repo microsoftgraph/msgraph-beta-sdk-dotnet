@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceComanagementAuthorityConfiguration : DeviceEnrollmentConfiguration, IParsable {
         /// <summary>CoManagement Authority configuration ConfigurationManagerAgentCommandLineArgument</summary>
         public string ConfigurationManagerAgentCommandLineArgument {
-            get { return BackingStore?.Get<string>(nameof(ConfigurationManagerAgentCommandLineArgument)); }
-            set { BackingStore?.Set(nameof(ConfigurationManagerAgentCommandLineArgument), value); }
+            get { return BackingStore?.Get<string>("configurationManagerAgentCommandLineArgument"); }
+            set { BackingStore?.Set("configurationManagerAgentCommandLineArgument", value); }
         }
         /// <summary>CoManagement Authority configuration InstallConfigurationManagerAgent</summary>
         public bool? InstallConfigurationManagerAgent {
-            get { return BackingStore?.Get<bool?>(nameof(InstallConfigurationManagerAgent)); }
-            set { BackingStore?.Set(nameof(InstallConfigurationManagerAgent), value); }
+            get { return BackingStore?.Get<bool?>("installConfigurationManagerAgent"); }
+            set { BackingStore?.Set("installConfigurationManagerAgent", value); }
         }
         /// <summary>CoManagement Authority configuration ManagedDeviceAuthority</summary>
         public int? ManagedDeviceAuthority {
-            get { return BackingStore?.Get<int?>(nameof(ManagedDeviceAuthority)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceAuthority), value); }
+            get { return BackingStore?.Get<int?>("managedDeviceAuthority"); }
+            set { BackingStore?.Set("managedDeviceAuthority", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class Windows10VpnProxyServer : VpnProxyServer, IParsable {
         /// <summary>Bypass proxy server for local address.</summary>
         public bool? BypassProxyServerForLocalAddress {
-            get { return BackingStore?.Get<bool?>(nameof(BypassProxyServerForLocalAddress)); }
-            set { BackingStore?.Set(nameof(BypassProxyServerForLocalAddress), value); }
+            get { return BackingStore?.Get<bool?>("bypassProxyServerForLocalAddress"); }
+            set { BackingStore?.Set("bypassProxyServerForLocalAddress", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

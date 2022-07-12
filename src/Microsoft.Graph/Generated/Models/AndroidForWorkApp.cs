@@ -7,28 +7,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidForWorkApp : MobileApp, IParsable {
         /// <summary>The Identity Name.</summary>
         public string AppIdentifier {
-            get { return BackingStore?.Get<string>(nameof(AppIdentifier)); }
-            set { BackingStore?.Set(nameof(AppIdentifier), value); }
+            get { return BackingStore?.Get<string>("appIdentifier"); }
+            set { BackingStore?.Set("appIdentifier", value); }
         }
         /// <summary>The Play for Work Store app URL.</summary>
         public string AppStoreUrl {
-            get { return BackingStore?.Get<string>(nameof(AppStoreUrl)); }
-            set { BackingStore?.Set(nameof(AppStoreUrl), value); }
+            get { return BackingStore?.Get<string>("appStoreUrl"); }
+            set { BackingStore?.Set("appStoreUrl", value); }
         }
         /// <summary>The package identifier.</summary>
         public string PackageId {
-            get { return BackingStore?.Get<string>(nameof(PackageId)); }
-            set { BackingStore?.Set(nameof(PackageId), value); }
+            get { return BackingStore?.Get<string>("packageId"); }
+            set { BackingStore?.Set("packageId", value); }
         }
         /// <summary>The total number of VPP licenses.</summary>
         public int? TotalLicenseCount {
-            get { return BackingStore?.Get<int?>(nameof(TotalLicenseCount)); }
-            set { BackingStore?.Set(nameof(TotalLicenseCount), value); }
+            get { return BackingStore?.Get<int?>("totalLicenseCount"); }
+            set { BackingStore?.Set("totalLicenseCount", value); }
         }
         /// <summary>The number of VPP licenses in use.</summary>
         public int? UsedLicenseCount {
-            get { return BackingStore?.Get<int?>(nameof(UsedLicenseCount)); }
-            set { BackingStore?.Set(nameof(UsedLicenseCount), value); }
+            get { return BackingStore?.Get<int?>("usedLicenseCount"); }
+            set { BackingStore?.Set("usedLicenseCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

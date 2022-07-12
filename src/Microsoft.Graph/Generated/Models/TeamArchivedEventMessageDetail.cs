@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamArchivedEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>Initiator of the event.</summary>
         public IdentitySet Initiator {
-            get { return BackingStore?.Get<IdentitySet>(nameof(Initiator)); }
-            set { BackingStore?.Set(nameof(Initiator), value); }
+            get { return BackingStore?.Get<IdentitySet>("initiator"); }
+            set { BackingStore?.Set("initiator", value); }
         }
         /// <summary>Unique identifier of the team.</summary>
         public string TeamId {
-            get { return BackingStore?.Get<string>(nameof(TeamId)); }
-            set { BackingStore?.Set(nameof(TeamId), value); }
+            get { return BackingStore?.Get<string>("teamId"); }
+            set { BackingStore?.Set("teamId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

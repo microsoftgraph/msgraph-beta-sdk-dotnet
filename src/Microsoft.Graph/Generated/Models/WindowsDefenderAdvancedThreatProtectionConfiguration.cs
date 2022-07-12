@@ -7,38 +7,38 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsDefenderAdvancedThreatProtectionConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Auto populate onboarding blob programmatically from Advanced Threat protection service</summary>
         public bool? AdvancedThreatProtectionAutoPopulateOnboardingBlob {
-            get { return BackingStore?.Get<bool?>(nameof(AdvancedThreatProtectionAutoPopulateOnboardingBlob)); }
-            set { BackingStore?.Set(nameof(AdvancedThreatProtectionAutoPopulateOnboardingBlob), value); }
+            get { return BackingStore?.Get<bool?>("advancedThreatProtectionAutoPopulateOnboardingBlob"); }
+            set { BackingStore?.Set("advancedThreatProtectionAutoPopulateOnboardingBlob", value); }
         }
         /// <summary>Windows Defender AdvancedThreatProtection Offboarding Blob.</summary>
         public string AdvancedThreatProtectionOffboardingBlob {
-            get { return BackingStore?.Get<string>(nameof(AdvancedThreatProtectionOffboardingBlob)); }
-            set { BackingStore?.Set(nameof(AdvancedThreatProtectionOffboardingBlob), value); }
+            get { return BackingStore?.Get<string>("advancedThreatProtectionOffboardingBlob"); }
+            set { BackingStore?.Set("advancedThreatProtectionOffboardingBlob", value); }
         }
         /// <summary>Name of the file from which AdvancedThreatProtectionOffboardingBlob was obtained.</summary>
         public string AdvancedThreatProtectionOffboardingFilename {
-            get { return BackingStore?.Get<string>(nameof(AdvancedThreatProtectionOffboardingFilename)); }
-            set { BackingStore?.Set(nameof(AdvancedThreatProtectionOffboardingFilename), value); }
+            get { return BackingStore?.Get<string>("advancedThreatProtectionOffboardingFilename"); }
+            set { BackingStore?.Set("advancedThreatProtectionOffboardingFilename", value); }
         }
         /// <summary>Windows Defender AdvancedThreatProtection Onboarding Blob.</summary>
         public string AdvancedThreatProtectionOnboardingBlob {
-            get { return BackingStore?.Get<string>(nameof(AdvancedThreatProtectionOnboardingBlob)); }
-            set { BackingStore?.Set(nameof(AdvancedThreatProtectionOnboardingBlob), value); }
+            get { return BackingStore?.Get<string>("advancedThreatProtectionOnboardingBlob"); }
+            set { BackingStore?.Set("advancedThreatProtectionOnboardingBlob", value); }
         }
         /// <summary>Name of the file from which AdvancedThreatProtectionOnboardingBlob was obtained.</summary>
         public string AdvancedThreatProtectionOnboardingFilename {
-            get { return BackingStore?.Get<string>(nameof(AdvancedThreatProtectionOnboardingFilename)); }
-            set { BackingStore?.Set(nameof(AdvancedThreatProtectionOnboardingFilename), value); }
+            get { return BackingStore?.Get<string>("advancedThreatProtectionOnboardingFilename"); }
+            set { BackingStore?.Set("advancedThreatProtectionOnboardingFilename", value); }
         }
         /// <summary>Windows Defender AdvancedThreatProtection &apos;Allow Sample Sharing&apos; Rule</summary>
         public bool? AllowSampleSharing {
-            get { return BackingStore?.Get<bool?>(nameof(AllowSampleSharing)); }
-            set { BackingStore?.Set(nameof(AllowSampleSharing), value); }
+            get { return BackingStore?.Get<bool?>("allowSampleSharing"); }
+            set { BackingStore?.Set("allowSampleSharing", value); }
         }
         /// <summary>Expedite Windows Defender Advanced Threat Protection telemetry reporting frequency.</summary>
         public bool? EnableExpeditedTelemetryReporting {
-            get { return BackingStore?.Get<bool?>(nameof(EnableExpeditedTelemetryReporting)); }
-            set { BackingStore?.Set(nameof(EnableExpeditedTelemetryReporting), value); }
+            get { return BackingStore?.Get<bool?>("enableExpeditedTelemetryReporting"); }
+            set { BackingStore?.Set("enableExpeditedTelemetryReporting", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

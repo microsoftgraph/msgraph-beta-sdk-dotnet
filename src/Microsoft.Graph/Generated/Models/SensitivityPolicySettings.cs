@@ -4,27 +4,26 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class SensitivityPolicySettings : Entity, IParsable {
         /// <summary>The applicableTo property</summary>
         public SensitivityLabelTarget? ApplicableTo {
-            get { return BackingStore?.Get<SensitivityLabelTarget?>(nameof(ApplicableTo)); }
-            set { BackingStore?.Set(nameof(ApplicableTo), value); }
+            get { return BackingStore?.Get<SensitivityLabelTarget?>("applicableTo"); }
+            set { BackingStore?.Set("applicableTo", value); }
         }
         /// <summary>The downgradeSensitivityRequiresJustification property</summary>
         public bool? DowngradeSensitivityRequiresJustification {
-            get { return BackingStore?.Get<bool?>(nameof(DowngradeSensitivityRequiresJustification)); }
-            set { BackingStore?.Set(nameof(DowngradeSensitivityRequiresJustification), value); }
+            get { return BackingStore?.Get<bool?>("downgradeSensitivityRequiresJustification"); }
+            set { BackingStore?.Set("downgradeSensitivityRequiresJustification", value); }
         }
         /// <summary>The helpWebUrl property</summary>
         public string HelpWebUrl {
-            get { return BackingStore?.Get<string>(nameof(HelpWebUrl)); }
-            set { BackingStore?.Set(nameof(HelpWebUrl), value); }
+            get { return BackingStore?.Get<string>("helpWebUrl"); }
+            set { BackingStore?.Set("helpWebUrl", value); }
         }
         /// <summary>The isMandatory property</summary>
         public bool? IsMandatory {
-            get { return BackingStore?.Get<bool?>(nameof(IsMandatory)); }
-            set { BackingStore?.Set(nameof(IsMandatory), value); }
+            get { return BackingStore?.Get<bool?>("isMandatory"); }
+            set { BackingStore?.Set("isMandatory", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

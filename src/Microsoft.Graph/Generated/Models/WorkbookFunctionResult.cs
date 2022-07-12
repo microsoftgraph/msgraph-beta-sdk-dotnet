@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkbookFunctionResult : Entity, IParsable {
         /// <summary>The error property</summary>
         public string Error {
-            get { return BackingStore?.Get<string>(nameof(Error)); }
-            set { BackingStore?.Set(nameof(Error), value); }
+            get { return BackingStore?.Get<string>("error"); }
+            set { BackingStore?.Set("error", value); }
         }
         /// <summary>The value property</summary>
         public Json Value {
-            get { return BackingStore?.Get<Json>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<Json>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

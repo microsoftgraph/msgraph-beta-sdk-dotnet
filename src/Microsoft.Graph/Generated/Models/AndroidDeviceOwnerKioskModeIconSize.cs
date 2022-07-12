@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public enum AndroidDeviceOwnerKioskModeIconSize {
         /// <summary>Not configured; this value is ignored.</summary>
         NotConfigured,

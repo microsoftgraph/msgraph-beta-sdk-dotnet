@@ -8,38 +8,38 @@ namespace Microsoft.Graph.Beta.Models {
     public class EmbeddedSIMActivationCodePool : Entity, IParsable {
         /// <summary>The total count of activation codes which belong to this pool.</summary>
         public int? ActivationCodeCount {
-            get { return BackingStore?.Get<int?>(nameof(ActivationCodeCount)); }
-            set { BackingStore?.Set(nameof(ActivationCodeCount), value); }
+            get { return BackingStore?.Get<int?>("activationCodeCount"); }
+            set { BackingStore?.Set("activationCodeCount", value); }
         }
         /// <summary>The activation codes which belong to this pool. This navigation property is used to post activation codes to Intune but cannot be used to read activation codes from Intune.</summary>
         public List<EmbeddedSIMActivationCode> ActivationCodes {
-            get { return BackingStore?.Get<List<EmbeddedSIMActivationCode>>(nameof(ActivationCodes)); }
-            set { BackingStore?.Set(nameof(ActivationCodes), value); }
+            get { return BackingStore?.Get<List<EmbeddedSIMActivationCode>>("activationCodes"); }
+            set { BackingStore?.Set("activationCodes", value); }
         }
         /// <summary>Navigational property to a list of targets to which this pool is assigned.</summary>
         public List<EmbeddedSIMActivationCodePoolAssignment> Assignments {
-            get { return BackingStore?.Get<List<EmbeddedSIMActivationCodePoolAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<EmbeddedSIMActivationCodePoolAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>The time the embedded SIM activation code pool was created. Generated service side.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Navigational property to a list of device states for this pool.</summary>
         public List<EmbeddedSIMDeviceState> DeviceStates {
-            get { return BackingStore?.Get<List<EmbeddedSIMDeviceState>>(nameof(DeviceStates)); }
-            set { BackingStore?.Set(nameof(DeviceStates), value); }
+            get { return BackingStore?.Get<List<EmbeddedSIMDeviceState>>("deviceStates"); }
+            set { BackingStore?.Set("deviceStates", value); }
         }
         /// <summary>The admin defined name of the embedded SIM activation code pool.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The time the embedded SIM activation code pool was last modified. Updated service side.</summary>
         public DateTimeOffset? ModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(ModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }
+            set { BackingStore?.Set("modifiedDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

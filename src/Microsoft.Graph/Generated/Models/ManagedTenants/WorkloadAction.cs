@@ -8,45 +8,45 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class WorkloadAction : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The unique identifier for the workload action. Required. Read-only.</summary>
         public string ActionId {
-            get { return BackingStore?.Get<string>(nameof(ActionId)); }
-            set { BackingStore?.Set(nameof(ActionId), value); }
+            get { return BackingStore?.Get<string>("actionId"); }
+            set { BackingStore?.Set("actionId", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The category for the workload action. Possible values are: automated, manual, unknownFutureValue. Optional. Read-only.</summary>
         public WorkloadActionCategory? Category {
-            get { return BackingStore?.Get<WorkloadActionCategory?>(nameof(Category)); }
-            set { BackingStore?.Set(nameof(Category), value); }
+            get { return BackingStore?.Get<WorkloadActionCategory?>("category"); }
+            set { BackingStore?.Set("category", value); }
         }
         /// <summary>The description for the workload action. Optional. Read-only.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The display name for the workload action. Optional. Read-only.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The licenses property</summary>
         public List<string> Licenses {
-            get { return BackingStore?.Get<List<string>>(nameof(Licenses)); }
-            set { BackingStore?.Set(nameof(Licenses), value); }
+            get { return BackingStore?.Get<List<string>>("licenses"); }
+            set { BackingStore?.Set("licenses", value); }
         }
         /// <summary>The service associated with workload action. Optional. Read-only.</summary>
         public string Service {
-            get { return BackingStore?.Get<string>(nameof(Service)); }
-            set { BackingStore?.Set(nameof(Service), value); }
+            get { return BackingStore?.Get<string>("service"); }
+            set { BackingStore?.Set("service", value); }
         }
         /// <summary>The collection of settings associated with the workload action. Optional. Read-only.</summary>
         public List<Setting> Settings {
-            get { return BackingStore?.Get<List<Setting>>(nameof(Settings)); }
-            set { BackingStore?.Set(nameof(Settings), value); }
+            get { return BackingStore?.Get<List<Setting>>("settings"); }
+            set { BackingStore?.Set("settings", value); }
         }
         /// <summary>
         /// Instantiates a new workloadAction and sets the default values.

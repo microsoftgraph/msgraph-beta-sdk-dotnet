@@ -8,8 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementScriptAssignment : Entity, IParsable {
         /// <summary>The Id of the Azure Active Directory group we are targeting the script to.</summary>
         public DeviceAndAppManagementAssignmentTarget Target {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>(nameof(Target)); }
-            set { BackingStore?.Set(nameof(Target), value); }
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
+            set { BackingStore?.Set("target", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

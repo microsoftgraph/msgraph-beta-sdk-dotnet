@@ -8,43 +8,49 @@ namespace Microsoft.Graph.Beta.Models {
     public class ExactMatchSessionBase : ExactMatchJobBase, IParsable {
         /// <summary>The dataStoreId property</summary>
         public string DataStoreId {
-            get { return BackingStore?.Get<string>(nameof(DataStoreId)); }
-            set { BackingStore?.Set(nameof(DataStoreId), value); }
+            get { return BackingStore?.Get<string>("dataStoreId"); }
+            set { BackingStore?.Set("dataStoreId", value); }
         }
         /// <summary>The processingCompletionDateTime property</summary>
         public DateTimeOffset? ProcessingCompletionDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ProcessingCompletionDateTime)); }
-            set { BackingStore?.Set(nameof(ProcessingCompletionDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("processingCompletionDateTime"); }
+            set { BackingStore?.Set("processingCompletionDateTime", value); }
         }
         /// <summary>The remainingBlockCount property</summary>
         public int? RemainingBlockCount {
-            get { return BackingStore?.Get<int?>(nameof(RemainingBlockCount)); }
-            set { BackingStore?.Set(nameof(RemainingBlockCount), value); }
+            get { return BackingStore?.Get<int?>("remainingBlockCount"); }
+            set { BackingStore?.Set("remainingBlockCount", value); }
         }
         /// <summary>The remainingJobCount property</summary>
         public int? RemainingJobCount {
-            get { return BackingStore?.Get<int?>(nameof(RemainingJobCount)); }
-            set { BackingStore?.Set(nameof(RemainingJobCount), value); }
+            get { return BackingStore?.Get<int?>("remainingJobCount"); }
+            set { BackingStore?.Set("remainingJobCount", value); }
         }
         /// <summary>The state property</summary>
         public string State {
-            get { return BackingStore?.Get<string>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<string>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>The totalBlockCount property</summary>
         public int? TotalBlockCount {
-            get { return BackingStore?.Get<int?>(nameof(TotalBlockCount)); }
-            set { BackingStore?.Set(nameof(TotalBlockCount), value); }
+            get { return BackingStore?.Get<int?>("totalBlockCount"); }
+            set { BackingStore?.Set("totalBlockCount", value); }
         }
         /// <summary>The totalJobCount property</summary>
         public int? TotalJobCount {
-            get { return BackingStore?.Get<int?>(nameof(TotalJobCount)); }
-            set { BackingStore?.Set(nameof(TotalJobCount), value); }
+            get { return BackingStore?.Get<int?>("totalJobCount"); }
+            set { BackingStore?.Set("totalJobCount", value); }
         }
         /// <summary>The uploadCompletionDateTime property</summary>
         public DateTimeOffset? UploadCompletionDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(UploadCompletionDateTime)); }
-            set { BackingStore?.Set(nameof(UploadCompletionDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("uploadCompletionDateTime"); }
+            set { BackingStore?.Set("uploadCompletionDateTime", value); }
+        }
+        /// <summary>
+        /// Instantiates a new ExactMatchSessionBase and sets the default values.
+        /// </summary>
+        public ExactMatchSessionBase() : base() {
+            Type = "#microsoft.graph.exactMatchSessionBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

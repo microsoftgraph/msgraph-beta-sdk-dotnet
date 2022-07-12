@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.Item.Ass
     public class AssignPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceManagementScriptAssignments property</summary>
         public List<DeviceManagementScriptAssignment> DeviceManagementScriptAssignments {
-            get { return BackingStore?.Get<List<DeviceManagementScriptAssignment>>(nameof(DeviceManagementScriptAssignments)); }
-            set { BackingStore?.Set(nameof(DeviceManagementScriptAssignments), value); }
+            get { return BackingStore?.Get<List<DeviceManagementScriptAssignment>>("deviceManagementScriptAssignments"); }
+            set { BackingStore?.Set("deviceManagementScriptAssignments", value); }
         }
         /// <summary>The deviceManagementScriptGroupAssignments property</summary>
         public List<DeviceManagementScriptGroupAssignment> DeviceManagementScriptGroupAssignments {
-            get { return BackingStore?.Get<List<DeviceManagementScriptGroupAssignment>>(nameof(DeviceManagementScriptGroupAssignments)); }
-            set { BackingStore?.Set(nameof(DeviceManagementScriptGroupAssignments), value); }
+            get { return BackingStore?.Get<List<DeviceManagementScriptGroupAssignment>>("deviceManagementScriptGroupAssignments"); }
+            set { BackingStore?.Set("deviceManagementScriptGroupAssignments", value); }
         }
         /// <summary>
         /// Instantiates a new assignPostRequestBody and sets the default values.

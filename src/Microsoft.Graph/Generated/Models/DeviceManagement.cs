@@ -7,858 +7,858 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagement : Entity, IParsable {
         /// <summary>The date &amp; time when tenant data moved between scaleunits.</summary>
         public DateTimeOffset? AccountMoveCompletionDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(AccountMoveCompletionDateTime)); }
-            set { BackingStore?.Set(nameof(AccountMoveCompletionDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("accountMoveCompletionDateTime"); }
+            set { BackingStore?.Set("accountMoveCompletionDateTime", value); }
         }
         /// <summary>Admin consent information.</summary>
         public Microsoft.Graph.Beta.Models.AdminConsent AdminConsent {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdminConsent>(nameof(AdminConsent)); }
-            set { BackingStore?.Set(nameof(AdminConsent), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdminConsent>("adminConsent"); }
+            set { BackingStore?.Set("adminConsent", value); }
         }
         /// <summary>The summary state of ATP onboarding state for this account.</summary>
         public Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary AdvancedThreatProtectionOnboardingStateSummary {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary>(nameof(AdvancedThreatProtectionOnboardingStateSummary)); }
-            set { BackingStore?.Set(nameof(AdvancedThreatProtectionOnboardingStateSummary), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary>("advancedThreatProtectionOnboardingStateSummary"); }
+            set { BackingStore?.Set("advancedThreatProtectionOnboardingStateSummary", value); }
         }
         /// <summary>Android device owner enrollment profile entities.</summary>
         public List<AndroidDeviceOwnerEnrollmentProfile> AndroidDeviceOwnerEnrollmentProfiles {
-            get { return BackingStore?.Get<List<AndroidDeviceOwnerEnrollmentProfile>>(nameof(AndroidDeviceOwnerEnrollmentProfiles)); }
-            set { BackingStore?.Set(nameof(AndroidDeviceOwnerEnrollmentProfiles), value); }
+            get { return BackingStore?.Get<List<AndroidDeviceOwnerEnrollmentProfile>>("androidDeviceOwnerEnrollmentProfiles"); }
+            set { BackingStore?.Set("androidDeviceOwnerEnrollmentProfiles", value); }
         }
         /// <summary>Android for Work app configuration schema entities.</summary>
         public List<AndroidForWorkAppConfigurationSchema> AndroidForWorkAppConfigurationSchemas {
-            get { return BackingStore?.Get<List<AndroidForWorkAppConfigurationSchema>>(nameof(AndroidForWorkAppConfigurationSchemas)); }
-            set { BackingStore?.Set(nameof(AndroidForWorkAppConfigurationSchemas), value); }
+            get { return BackingStore?.Get<List<AndroidForWorkAppConfigurationSchema>>("androidForWorkAppConfigurationSchemas"); }
+            set { BackingStore?.Set("androidForWorkAppConfigurationSchemas", value); }
         }
         /// <summary>Android for Work enrollment profile entities.</summary>
         public List<AndroidForWorkEnrollmentProfile> AndroidForWorkEnrollmentProfiles {
-            get { return BackingStore?.Get<List<AndroidForWorkEnrollmentProfile>>(nameof(AndroidForWorkEnrollmentProfiles)); }
-            set { BackingStore?.Set(nameof(AndroidForWorkEnrollmentProfiles), value); }
+            get { return BackingStore?.Get<List<AndroidForWorkEnrollmentProfile>>("androidForWorkEnrollmentProfiles"); }
+            set { BackingStore?.Set("androidForWorkEnrollmentProfiles", value); }
         }
         /// <summary>The singleton Android for Work settings entity.</summary>
         public Microsoft.Graph.Beta.Models.AndroidForWorkSettings AndroidForWorkSettings {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidForWorkSettings>(nameof(AndroidForWorkSettings)); }
-            set { BackingStore?.Set(nameof(AndroidForWorkSettings), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidForWorkSettings>("androidForWorkSettings"); }
+            set { BackingStore?.Set("androidForWorkSettings", value); }
         }
         /// <summary>The singleton Android managed store account enterprise settings entity.</summary>
         public Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnterpriseSettings AndroidManagedStoreAccountEnterpriseSettings {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnterpriseSettings>(nameof(AndroidManagedStoreAccountEnterpriseSettings)); }
-            set { BackingStore?.Set(nameof(AndroidManagedStoreAccountEnterpriseSettings), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnterpriseSettings>("androidManagedStoreAccountEnterpriseSettings"); }
+            set { BackingStore?.Set("androidManagedStoreAccountEnterpriseSettings", value); }
         }
         /// <summary>Android Enterprise app configuration schema entities.</summary>
         public List<AndroidManagedStoreAppConfigurationSchema> AndroidManagedStoreAppConfigurationSchemas {
-            get { return BackingStore?.Get<List<AndroidManagedStoreAppConfigurationSchema>>(nameof(AndroidManagedStoreAppConfigurationSchemas)); }
-            set { BackingStore?.Set(nameof(AndroidManagedStoreAppConfigurationSchemas), value); }
+            get { return BackingStore?.Get<List<AndroidManagedStoreAppConfigurationSchema>>("androidManagedStoreAppConfigurationSchemas"); }
+            set { BackingStore?.Set("androidManagedStoreAppConfigurationSchemas", value); }
         }
         /// <summary>Apple push notification certificate.</summary>
         public Microsoft.Graph.Beta.Models.ApplePushNotificationCertificate ApplePushNotificationCertificate {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ApplePushNotificationCertificate>(nameof(ApplePushNotificationCertificate)); }
-            set { BackingStore?.Set(nameof(ApplePushNotificationCertificate), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ApplePushNotificationCertificate>("applePushNotificationCertificate"); }
+            set { BackingStore?.Set("applePushNotificationCertificate", value); }
         }
         /// <summary>Apple user initiated enrollment profiles</summary>
         public List<AppleUserInitiatedEnrollmentProfile> AppleUserInitiatedEnrollmentProfiles {
-            get { return BackingStore?.Get<List<AppleUserInitiatedEnrollmentProfile>>(nameof(AppleUserInitiatedEnrollmentProfiles)); }
-            set { BackingStore?.Set(nameof(AppleUserInitiatedEnrollmentProfiles), value); }
+            get { return BackingStore?.Get<List<AppleUserInitiatedEnrollmentProfile>>("appleUserInitiatedEnrollmentProfiles"); }
+            set { BackingStore?.Set("appleUserInitiatedEnrollmentProfiles", value); }
         }
         /// <summary>The list of assignment filters</summary>
         public List<DeviceAndAppManagementAssignmentFilter> AssignmentFilters {
-            get { return BackingStore?.Get<List<DeviceAndAppManagementAssignmentFilter>>(nameof(AssignmentFilters)); }
-            set { BackingStore?.Set(nameof(AssignmentFilters), value); }
+            get { return BackingStore?.Get<List<DeviceAndAppManagementAssignmentFilter>>("assignmentFilters"); }
+            set { BackingStore?.Set("assignmentFilters", value); }
         }
         /// <summary>The Audit Events</summary>
         public List<AuditEvent> AuditEvents {
-            get { return BackingStore?.Get<List<AuditEvent>>(nameof(AuditEvents)); }
-            set { BackingStore?.Set(nameof(AuditEvents), value); }
+            get { return BackingStore?.Get<List<AuditEvent>>("auditEvents"); }
+            set { BackingStore?.Set("auditEvents", value); }
         }
         /// <summary>The list of autopilot events for the tenant.</summary>
         public List<DeviceManagementAutopilotEvent> AutopilotEvents {
-            get { return BackingStore?.Get<List<DeviceManagementAutopilotEvent>>(nameof(AutopilotEvents)); }
-            set { BackingStore?.Set(nameof(AutopilotEvents), value); }
+            get { return BackingStore?.Get<List<DeviceManagementAutopilotEvent>>("autopilotEvents"); }
+            set { BackingStore?.Set("autopilotEvents", value); }
         }
         /// <summary>The Cart To Class Associations.</summary>
         public List<CartToClassAssociation> CartToClassAssociations {
-            get { return BackingStore?.Get<List<CartToClassAssociation>>(nameof(CartToClassAssociations)); }
-            set { BackingStore?.Set(nameof(CartToClassAssociations), value); }
+            get { return BackingStore?.Get<List<CartToClassAssociation>>("cartToClassAssociations"); }
+            set { BackingStore?.Set("cartToClassAssociations", value); }
         }
         /// <summary>The available categories</summary>
         public List<DeviceManagementSettingCategory> Categories {
-            get { return BackingStore?.Get<List<DeviceManagementSettingCategory>>(nameof(Categories)); }
-            set { BackingStore?.Set(nameof(Categories), value); }
+            get { return BackingStore?.Get<List<DeviceManagementSettingCategory>>("categories"); }
+            set { BackingStore?.Set("categories", value); }
         }
         /// <summary>Collection of certificate connector details, each associated with a corresponding Intune Certificate Connector.</summary>
         public List<Microsoft.Graph.Beta.Models.CertificateConnectorDetails> CertificateConnectorDetails {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CertificateConnectorDetails>>(nameof(CertificateConnectorDetails)); }
-            set { BackingStore?.Set(nameof(CertificateConnectorDetails), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CertificateConnectorDetails>>("certificateConnectorDetails"); }
+            set { BackingStore?.Set("certificateConnectorDetails", value); }
         }
         /// <summary>Collection of ChromeOSOnboardingSettings settings associated with account.</summary>
         public List<Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings> ChromeOSOnboardingSettings {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings>>(nameof(ChromeOSOnboardingSettings)); }
-            set { BackingStore?.Set(nameof(ChromeOSOnboardingSettings), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings>>("chromeOSOnboardingSettings"); }
+            set { BackingStore?.Set("chromeOSOnboardingSettings", value); }
         }
         /// <summary>The list of CloudPC Connectivity Issue.</summary>
         public List<CloudPCConnectivityIssue> CloudPCConnectivityIssues {
-            get { return BackingStore?.Get<List<CloudPCConnectivityIssue>>(nameof(CloudPCConnectivityIssues)); }
-            set { BackingStore?.Set(nameof(CloudPCConnectivityIssues), value); }
+            get { return BackingStore?.Get<List<CloudPCConnectivityIssue>>("cloudPCConnectivityIssues"); }
+            set { BackingStore?.Set("cloudPCConnectivityIssues", value); }
         }
         /// <summary>The list of co-managed devices report</summary>
         public List<ManagedDevice> ComanagedDevices {
-            get { return BackingStore?.Get<List<ManagedDevice>>(nameof(ComanagedDevices)); }
-            set { BackingStore?.Set(nameof(ComanagedDevices), value); }
+            get { return BackingStore?.Get<List<ManagedDevice>>("comanagedDevices"); }
+            set { BackingStore?.Set("comanagedDevices", value); }
         }
         /// <summary>The list of co-management eligible devices report</summary>
         public List<ComanagementEligibleDevice> ComanagementEligibleDevices {
-            get { return BackingStore?.Get<List<ComanagementEligibleDevice>>(nameof(ComanagementEligibleDevices)); }
-            set { BackingStore?.Set(nameof(ComanagementEligibleDevices), value); }
+            get { return BackingStore?.Get<List<ComanagementEligibleDevice>>("comanagementEligibleDevices"); }
+            set { BackingStore?.Set("comanagementEligibleDevices", value); }
         }
         /// <summary>List of all compliance categories</summary>
         public List<DeviceManagementConfigurationCategory> ComplianceCategories {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationCategory>>(nameof(ComplianceCategories)); }
-            set { BackingStore?.Set(nameof(ComplianceCategories), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationCategory>>("complianceCategories"); }
+            set { BackingStore?.Set("complianceCategories", value); }
         }
         /// <summary>The list of Compliance Management Partners configured by the tenant.</summary>
         public List<ComplianceManagementPartner> ComplianceManagementPartners {
-            get { return BackingStore?.Get<List<ComplianceManagementPartner>>(nameof(ComplianceManagementPartners)); }
-            set { BackingStore?.Set(nameof(ComplianceManagementPartners), value); }
+            get { return BackingStore?.Get<List<ComplianceManagementPartner>>("complianceManagementPartners"); }
+            set { BackingStore?.Set("complianceManagementPartners", value); }
         }
         /// <summary>List of all compliance policies</summary>
         public List<DeviceManagementCompliancePolicy> CompliancePolicies {
-            get { return BackingStore?.Get<List<DeviceManagementCompliancePolicy>>(nameof(CompliancePolicies)); }
-            set { BackingStore?.Set(nameof(CompliancePolicies), value); }
+            get { return BackingStore?.Get<List<DeviceManagementCompliancePolicy>>("compliancePolicies"); }
+            set { BackingStore?.Set("compliancePolicies", value); }
         }
         /// <summary>List of all ComplianceSettings</summary>
         public List<DeviceManagementConfigurationSettingDefinition> ComplianceSettings {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDefinition>>(nameof(ComplianceSettings)); }
-            set { BackingStore?.Set(nameof(ComplianceSettings), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDefinition>>("complianceSettings"); }
+            set { BackingStore?.Set("complianceSettings", value); }
         }
         /// <summary>The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access</summary>
         public OnPremisesConditionalAccessSettings ConditionalAccessSettings {
-            get { return BackingStore?.Get<OnPremisesConditionalAccessSettings>(nameof(ConditionalAccessSettings)); }
-            set { BackingStore?.Set(nameof(ConditionalAccessSettings), value); }
+            get { return BackingStore?.Get<OnPremisesConditionalAccessSettings>("conditionalAccessSettings"); }
+            set { BackingStore?.Set("conditionalAccessSettings", value); }
         }
         /// <summary>A list of ConfigManagerCollection</summary>
         public List<ConfigManagerCollection> ConfigManagerCollections {
-            get { return BackingStore?.Get<List<ConfigManagerCollection>>(nameof(ConfigManagerCollections)); }
-            set { BackingStore?.Set(nameof(ConfigManagerCollections), value); }
+            get { return BackingStore?.Get<List<ConfigManagerCollection>>("configManagerCollections"); }
+            set { BackingStore?.Set("configManagerCollections", value); }
         }
         /// <summary>List of all Configuration Categories</summary>
         public List<DeviceManagementConfigurationCategory> ConfigurationCategories {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationCategory>>(nameof(ConfigurationCategories)); }
-            set { BackingStore?.Set(nameof(ConfigurationCategories), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationCategory>>("configurationCategories"); }
+            set { BackingStore?.Set("configurationCategories", value); }
         }
         /// <summary>List of all Configuration policies</summary>
         public List<DeviceManagementConfigurationPolicy> ConfigurationPolicies {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationPolicy>>(nameof(ConfigurationPolicies)); }
-            set { BackingStore?.Set(nameof(ConfigurationPolicies), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationPolicy>>("configurationPolicies"); }
+            set { BackingStore?.Set("configurationPolicies", value); }
         }
         /// <summary>List of all templates</summary>
         public List<DeviceManagementConfigurationPolicyTemplate> ConfigurationPolicyTemplates {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationPolicyTemplate>>(nameof(ConfigurationPolicyTemplates)); }
-            set { BackingStore?.Set(nameof(ConfigurationPolicyTemplates), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationPolicyTemplate>>("configurationPolicyTemplates"); }
+            set { BackingStore?.Set("configurationPolicyTemplates", value); }
         }
         /// <summary>List of all ConfigurationSettings</summary>
         public List<DeviceManagementConfigurationSettingDefinition> ConfigurationSettings {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDefinition>>(nameof(ConfigurationSettings)); }
-            set { BackingStore?.Set(nameof(ConfigurationSettings), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDefinition>>("configurationSettings"); }
+            set { BackingStore?.Set("configurationSettings", value); }
         }
         /// <summary>Data sharing consents.</summary>
         public List<DataSharingConsent> DataSharingConsents {
-            get { return BackingStore?.Get<List<DataSharingConsent>>(nameof(DataSharingConsents)); }
-            set { BackingStore?.Set(nameof(DataSharingConsents), value); }
+            get { return BackingStore?.Get<List<DataSharingConsent>>("dataSharingConsents"); }
+            set { BackingStore?.Set("dataSharingConsents", value); }
         }
         /// <summary>This collections of multiple DEP tokens per-tenant.</summary>
         public List<DepOnboardingSetting> DepOnboardingSettings {
-            get { return BackingStore?.Get<List<DepOnboardingSetting>>(nameof(DepOnboardingSettings)); }
-            set { BackingStore?.Set(nameof(DepOnboardingSettings), value); }
+            get { return BackingStore?.Get<List<DepOnboardingSetting>>("depOnboardingSettings"); }
+            set { BackingStore?.Set("depOnboardingSettings", value); }
         }
         /// <summary>Collection of Derived credential settings associated with account.</summary>
         public List<DeviceManagementDerivedCredentialSettings> DerivedCredentials {
-            get { return BackingStore?.Get<List<DeviceManagementDerivedCredentialSettings>>(nameof(DerivedCredentials)); }
-            set { BackingStore?.Set(nameof(DerivedCredentials), value); }
+            get { return BackingStore?.Get<List<DeviceManagementDerivedCredentialSettings>>("derivedCredentials"); }
+            set { BackingStore?.Set("derivedCredentials", value); }
         }
         /// <summary>The list of detected apps associated with a device.</summary>
         public List<DetectedApp> DetectedApps {
-            get { return BackingStore?.Get<List<DetectedApp>>(nameof(DetectedApps)); }
-            set { BackingStore?.Set(nameof(DetectedApps), value); }
+            get { return BackingStore?.Get<List<DetectedApp>>("detectedApps"); }
+            set { BackingStore?.Set("detectedApps", value); }
         }
         /// <summary>The list of device categories with the tenant.</summary>
         public List<DeviceCategory> DeviceCategories {
-            get { return BackingStore?.Get<List<DeviceCategory>>(nameof(DeviceCategories)); }
-            set { BackingStore?.Set(nameof(DeviceCategories), value); }
+            get { return BackingStore?.Get<List<DeviceCategory>>("deviceCategories"); }
+            set { BackingStore?.Set("deviceCategories", value); }
         }
         /// <summary>The device compliance policies.</summary>
         public List<DeviceCompliancePolicy> DeviceCompliancePolicies {
-            get { return BackingStore?.Get<List<DeviceCompliancePolicy>>(nameof(DeviceCompliancePolicies)); }
-            set { BackingStore?.Set(nameof(DeviceCompliancePolicies), value); }
+            get { return BackingStore?.Get<List<DeviceCompliancePolicy>>("deviceCompliancePolicies"); }
+            set { BackingStore?.Set("deviceCompliancePolicies", value); }
         }
         /// <summary>The device compliance state summary for this account.</summary>
         public Microsoft.Graph.Beta.Models.DeviceCompliancePolicyDeviceStateSummary DeviceCompliancePolicyDeviceStateSummary {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyDeviceStateSummary>(nameof(DeviceCompliancePolicyDeviceStateSummary)); }
-            set { BackingStore?.Set(nameof(DeviceCompliancePolicyDeviceStateSummary), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyDeviceStateSummary>("deviceCompliancePolicyDeviceStateSummary"); }
+            set { BackingStore?.Set("deviceCompliancePolicyDeviceStateSummary", value); }
         }
         /// <summary>The summary states of compliance policy settings for this account.</summary>
         public List<DeviceCompliancePolicySettingStateSummary> DeviceCompliancePolicySettingStateSummaries {
-            get { return BackingStore?.Get<List<DeviceCompliancePolicySettingStateSummary>>(nameof(DeviceCompliancePolicySettingStateSummaries)); }
-            set { BackingStore?.Set(nameof(DeviceCompliancePolicySettingStateSummaries), value); }
+            get { return BackingStore?.Get<List<DeviceCompliancePolicySettingStateSummary>>("deviceCompliancePolicySettingStateSummaries"); }
+            set { BackingStore?.Set("deviceCompliancePolicySettingStateSummaries", value); }
         }
         /// <summary>The last requested time of device compliance reporting for this account. This property is read-only.</summary>
         public DateTimeOffset? DeviceComplianceReportSummarizationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DeviceComplianceReportSummarizationDateTime)); }
-            set { BackingStore?.Set(nameof(DeviceComplianceReportSummarizationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("deviceComplianceReportSummarizationDateTime"); }
+            set { BackingStore?.Set("deviceComplianceReportSummarizationDateTime", value); }
         }
         /// <summary>The list of device compliance scripts associated with the tenant.</summary>
         public List<DeviceComplianceScript> DeviceComplianceScripts {
-            get { return BackingStore?.Get<List<DeviceComplianceScript>>(nameof(DeviceComplianceScripts)); }
-            set { BackingStore?.Set(nameof(DeviceComplianceScripts), value); }
+            get { return BackingStore?.Get<List<DeviceComplianceScript>>("deviceComplianceScripts"); }
+            set { BackingStore?.Set("deviceComplianceScripts", value); }
         }
         /// <summary>Summary of policies in conflict state for this account.</summary>
         public List<Microsoft.Graph.Beta.Models.DeviceConfigurationConflictSummary> DeviceConfigurationConflictSummary {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceConfigurationConflictSummary>>(nameof(DeviceConfigurationConflictSummary)); }
-            set { BackingStore?.Set(nameof(DeviceConfigurationConflictSummary), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceConfigurationConflictSummary>>("deviceConfigurationConflictSummary"); }
+            set { BackingStore?.Set("deviceConfigurationConflictSummary", value); }
         }
         /// <summary>The device configuration device state summary for this account.</summary>
         public DeviceConfigurationDeviceStateSummary DeviceConfigurationDeviceStateSummaries {
-            get { return BackingStore?.Get<DeviceConfigurationDeviceStateSummary>(nameof(DeviceConfigurationDeviceStateSummaries)); }
-            set { BackingStore?.Set(nameof(DeviceConfigurationDeviceStateSummaries), value); }
+            get { return BackingStore?.Get<DeviceConfigurationDeviceStateSummary>("deviceConfigurationDeviceStateSummaries"); }
+            set { BackingStore?.Set("deviceConfigurationDeviceStateSummaries", value); }
         }
         /// <summary>Restricted apps violations for this account.</summary>
         public List<RestrictedAppsViolation> DeviceConfigurationRestrictedAppsViolations {
-            get { return BackingStore?.Get<List<RestrictedAppsViolation>>(nameof(DeviceConfigurationRestrictedAppsViolations)); }
-            set { BackingStore?.Set(nameof(DeviceConfigurationRestrictedAppsViolations), value); }
+            get { return BackingStore?.Get<List<RestrictedAppsViolation>>("deviceConfigurationRestrictedAppsViolations"); }
+            set { BackingStore?.Set("deviceConfigurationRestrictedAppsViolations", value); }
         }
         /// <summary>The device configurations.</summary>
         public List<DeviceConfiguration> DeviceConfigurations {
-            get { return BackingStore?.Get<List<DeviceConfiguration>>(nameof(DeviceConfigurations)); }
-            set { BackingStore?.Set(nameof(DeviceConfigurations), value); }
+            get { return BackingStore?.Get<List<DeviceConfiguration>>("deviceConfigurations"); }
+            set { BackingStore?.Set("deviceConfigurations", value); }
         }
         /// <summary>Summary of all certificates for all devices.</summary>
         public List<ManagedAllDeviceCertificateState> DeviceConfigurationsAllManagedDeviceCertificateStates {
-            get { return BackingStore?.Get<List<ManagedAllDeviceCertificateState>>(nameof(DeviceConfigurationsAllManagedDeviceCertificateStates)); }
-            set { BackingStore?.Set(nameof(DeviceConfigurationsAllManagedDeviceCertificateStates), value); }
+            get { return BackingStore?.Get<List<ManagedAllDeviceCertificateState>>("deviceConfigurationsAllManagedDeviceCertificateStates"); }
+            set { BackingStore?.Set("deviceConfigurationsAllManagedDeviceCertificateStates", value); }
         }
         /// <summary>The device configuration user state summary for this account.</summary>
         public DeviceConfigurationUserStateSummary DeviceConfigurationUserStateSummaries {
-            get { return BackingStore?.Get<DeviceConfigurationUserStateSummary>(nameof(DeviceConfigurationUserStateSummaries)); }
-            set { BackingStore?.Set(nameof(DeviceConfigurationUserStateSummaries), value); }
+            get { return BackingStore?.Get<DeviceConfigurationUserStateSummary>("deviceConfigurationUserStateSummaries"); }
+            set { BackingStore?.Set("deviceConfigurationUserStateSummaries", value); }
         }
         /// <summary>The list of device custom attribute shell scripts associated with the tenant.</summary>
         public List<DeviceCustomAttributeShellScript> DeviceCustomAttributeShellScripts {
-            get { return BackingStore?.Get<List<DeviceCustomAttributeShellScript>>(nameof(DeviceCustomAttributeShellScripts)); }
-            set { BackingStore?.Set(nameof(DeviceCustomAttributeShellScripts), value); }
+            get { return BackingStore?.Get<List<DeviceCustomAttributeShellScript>>("deviceCustomAttributeShellScripts"); }
+            set { BackingStore?.Set("deviceCustomAttributeShellScripts", value); }
         }
         /// <summary>The list of device enrollment configurations</summary>
         public List<DeviceEnrollmentConfiguration> DeviceEnrollmentConfigurations {
-            get { return BackingStore?.Get<List<DeviceEnrollmentConfiguration>>(nameof(DeviceEnrollmentConfigurations)); }
-            set { BackingStore?.Set(nameof(DeviceEnrollmentConfigurations), value); }
+            get { return BackingStore?.Get<List<DeviceEnrollmentConfiguration>>("deviceEnrollmentConfigurations"); }
+            set { BackingStore?.Set("deviceEnrollmentConfigurations", value); }
         }
         /// <summary>The list of device health scripts associated with the tenant.</summary>
         public List<DeviceHealthScript> DeviceHealthScripts {
-            get { return BackingStore?.Get<List<DeviceHealthScript>>(nameof(DeviceHealthScripts)); }
-            set { BackingStore?.Set(nameof(DeviceHealthScripts), value); }
+            get { return BackingStore?.Get<List<DeviceHealthScript>>("deviceHealthScripts"); }
+            set { BackingStore?.Set("deviceHealthScripts", value); }
         }
         /// <summary>The list of Device Management Partners configured by the tenant.</summary>
         public List<DeviceManagementPartner> DeviceManagementPartners {
-            get { return BackingStore?.Get<List<DeviceManagementPartner>>(nameof(DeviceManagementPartners)); }
-            set { BackingStore?.Set(nameof(DeviceManagementPartners), value); }
+            get { return BackingStore?.Get<List<DeviceManagementPartner>>("deviceManagementPartners"); }
+            set { BackingStore?.Set("deviceManagementPartners", value); }
         }
         /// <summary>The list of device management scripts associated with the tenant.</summary>
         public List<DeviceManagementScript> DeviceManagementScripts {
-            get { return BackingStore?.Get<List<DeviceManagementScript>>(nameof(DeviceManagementScripts)); }
-            set { BackingStore?.Set(nameof(DeviceManagementScripts), value); }
+            get { return BackingStore?.Get<List<DeviceManagementScript>>("deviceManagementScripts"); }
+            set { BackingStore?.Set("deviceManagementScripts", value); }
         }
         /// <summary>Device protection overview.</summary>
         public Microsoft.Graph.Beta.Models.DeviceProtectionOverview DeviceProtectionOverview {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceProtectionOverview>(nameof(DeviceProtectionOverview)); }
-            set { BackingStore?.Set(nameof(DeviceProtectionOverview), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceProtectionOverview>("deviceProtectionOverview"); }
+            set { BackingStore?.Set("deviceProtectionOverview", value); }
         }
         /// <summary>The list of device shell scripts associated with the tenant.</summary>
         public List<DeviceShellScript> DeviceShellScripts {
-            get { return BackingStore?.Get<List<DeviceShellScript>>(nameof(DeviceShellScripts)); }
-            set { BackingStore?.Set(nameof(DeviceShellScripts), value); }
+            get { return BackingStore?.Get<List<DeviceShellScript>>("deviceShellScripts"); }
+            set { BackingStore?.Set("deviceShellScripts", value); }
         }
         /// <summary>A list of connector objects.</summary>
         public List<DeviceManagementDomainJoinConnector> DomainJoinConnectors {
-            get { return BackingStore?.Get<List<DeviceManagementDomainJoinConnector>>(nameof(DomainJoinConnectors)); }
-            set { BackingStore?.Set(nameof(DomainJoinConnectors), value); }
+            get { return BackingStore?.Get<List<DeviceManagementDomainJoinConnector>>("domainJoinConnectors"); }
+            set { BackingStore?.Set("domainJoinConnectors", value); }
         }
         /// <summary>The embedded SIM activation code pools created by this account.</summary>
         public List<EmbeddedSIMActivationCodePool> EmbeddedSIMActivationCodePools {
-            get { return BackingStore?.Get<List<EmbeddedSIMActivationCodePool>>(nameof(EmbeddedSIMActivationCodePools)); }
-            set { BackingStore?.Set(nameof(EmbeddedSIMActivationCodePools), value); }
+            get { return BackingStore?.Get<List<EmbeddedSIMActivationCodePool>>("embeddedSIMActivationCodePools"); }
+            set { BackingStore?.Set("embeddedSIMActivationCodePools", value); }
         }
         /// <summary>The list of Exchange Connectors configured by the tenant.</summary>
         public List<DeviceManagementExchangeConnector> ExchangeConnectors {
-            get { return BackingStore?.Get<List<DeviceManagementExchangeConnector>>(nameof(ExchangeConnectors)); }
-            set { BackingStore?.Set(nameof(ExchangeConnectors), value); }
+            get { return BackingStore?.Get<List<DeviceManagementExchangeConnector>>("exchangeConnectors"); }
+            set { BackingStore?.Set("exchangeConnectors", value); }
         }
         /// <summary>The list of Exchange On Premisis policies configured by the tenant.</summary>
         public List<DeviceManagementExchangeOnPremisesPolicy> ExchangeOnPremisesPolicies {
-            get { return BackingStore?.Get<List<DeviceManagementExchangeOnPremisesPolicy>>(nameof(ExchangeOnPremisesPolicies)); }
-            set { BackingStore?.Set(nameof(ExchangeOnPremisesPolicies), value); }
+            get { return BackingStore?.Get<List<DeviceManagementExchangeOnPremisesPolicy>>("exchangeOnPremisesPolicies"); }
+            set { BackingStore?.Set("exchangeOnPremisesPolicies", value); }
         }
         /// <summary>The policy which controls mobile device access to Exchange On Premises</summary>
         public DeviceManagementExchangeOnPremisesPolicy ExchangeOnPremisesPolicy {
-            get { return BackingStore?.Get<DeviceManagementExchangeOnPremisesPolicy>(nameof(ExchangeOnPremisesPolicy)); }
-            set { BackingStore?.Set(nameof(ExchangeOnPremisesPolicy), value); }
+            get { return BackingStore?.Get<DeviceManagementExchangeOnPremisesPolicy>("exchangeOnPremisesPolicy"); }
+            set { BackingStore?.Set("exchangeOnPremisesPolicy", value); }
         }
         /// <summary>The available group policy categories for this account.</summary>
         public List<GroupPolicyCategory> GroupPolicyCategories {
-            get { return BackingStore?.Get<List<GroupPolicyCategory>>(nameof(GroupPolicyCategories)); }
-            set { BackingStore?.Set(nameof(GroupPolicyCategories), value); }
+            get { return BackingStore?.Get<List<GroupPolicyCategory>>("groupPolicyCategories"); }
+            set { BackingStore?.Set("groupPolicyCategories", value); }
         }
         /// <summary>The group policy configurations created by this account.</summary>
         public List<GroupPolicyConfiguration> GroupPolicyConfigurations {
-            get { return BackingStore?.Get<List<GroupPolicyConfiguration>>(nameof(GroupPolicyConfigurations)); }
-            set { BackingStore?.Set(nameof(GroupPolicyConfigurations), value); }
+            get { return BackingStore?.Get<List<GroupPolicyConfiguration>>("groupPolicyConfigurations"); }
+            set { BackingStore?.Set("groupPolicyConfigurations", value); }
         }
         /// <summary>The available group policy definition files for this account.</summary>
         public List<GroupPolicyDefinitionFile> GroupPolicyDefinitionFiles {
-            get { return BackingStore?.Get<List<GroupPolicyDefinitionFile>>(nameof(GroupPolicyDefinitionFiles)); }
-            set { BackingStore?.Set(nameof(GroupPolicyDefinitionFiles), value); }
+            get { return BackingStore?.Get<List<GroupPolicyDefinitionFile>>("groupPolicyDefinitionFiles"); }
+            set { BackingStore?.Set("groupPolicyDefinitionFiles", value); }
         }
         /// <summary>The available group policy definitions for this account.</summary>
         public List<GroupPolicyDefinition> GroupPolicyDefinitions {
-            get { return BackingStore?.Get<List<GroupPolicyDefinition>>(nameof(GroupPolicyDefinitions)); }
-            set { BackingStore?.Set(nameof(GroupPolicyDefinitions), value); }
+            get { return BackingStore?.Get<List<GroupPolicyDefinition>>("groupPolicyDefinitions"); }
+            set { BackingStore?.Set("groupPolicyDefinitions", value); }
         }
         /// <summary>A list of Group Policy migration reports.</summary>
         public List<GroupPolicyMigrationReport> GroupPolicyMigrationReports {
-            get { return BackingStore?.Get<List<GroupPolicyMigrationReport>>(nameof(GroupPolicyMigrationReports)); }
-            set { BackingStore?.Set(nameof(GroupPolicyMigrationReports), value); }
+            get { return BackingStore?.Get<List<GroupPolicyMigrationReport>>("groupPolicyMigrationReports"); }
+            set { BackingStore?.Set("groupPolicyMigrationReports", value); }
         }
         /// <summary>A list of Group Policy Object files uploaded.</summary>
         public List<GroupPolicyObjectFile> GroupPolicyObjectFiles {
-            get { return BackingStore?.Get<List<GroupPolicyObjectFile>>(nameof(GroupPolicyObjectFiles)); }
-            set { BackingStore?.Set(nameof(GroupPolicyObjectFiles), value); }
+            get { return BackingStore?.Get<List<GroupPolicyObjectFile>>("groupPolicyObjectFiles"); }
+            set { BackingStore?.Set("groupPolicyObjectFiles", value); }
         }
         /// <summary>The available group policy uploaded definition files for this account.</summary>
         public List<GroupPolicyUploadedDefinitionFile> GroupPolicyUploadedDefinitionFiles {
-            get { return BackingStore?.Get<List<GroupPolicyUploadedDefinitionFile>>(nameof(GroupPolicyUploadedDefinitionFiles)); }
-            set { BackingStore?.Set(nameof(GroupPolicyUploadedDefinitionFiles), value); }
+            get { return BackingStore?.Get<List<GroupPolicyUploadedDefinitionFile>>("groupPolicyUploadedDefinitionFiles"); }
+            set { BackingStore?.Set("groupPolicyUploadedDefinitionFiles", value); }
         }
         /// <summary>The imported device identities.</summary>
         public List<ImportedDeviceIdentity> ImportedDeviceIdentities {
-            get { return BackingStore?.Get<List<ImportedDeviceIdentity>>(nameof(ImportedDeviceIdentities)); }
-            set { BackingStore?.Set(nameof(ImportedDeviceIdentities), value); }
+            get { return BackingStore?.Get<List<ImportedDeviceIdentity>>("importedDeviceIdentities"); }
+            set { BackingStore?.Set("importedDeviceIdentities", value); }
         }
         /// <summary>Collection of imported Windows autopilot devices.</summary>
         public List<ImportedWindowsAutopilotDeviceIdentity> ImportedWindowsAutopilotDeviceIdentities {
-            get { return BackingStore?.Get<List<ImportedWindowsAutopilotDeviceIdentity>>(nameof(ImportedWindowsAutopilotDeviceIdentities)); }
-            set { BackingStore?.Set(nameof(ImportedWindowsAutopilotDeviceIdentities), value); }
+            get { return BackingStore?.Get<List<ImportedWindowsAutopilotDeviceIdentity>>("importedWindowsAutopilotDeviceIdentities"); }
+            set { BackingStore?.Set("importedWindowsAutopilotDeviceIdentities", value); }
         }
         /// <summary>The device management intents</summary>
         public List<DeviceManagementIntent> Intents {
-            get { return BackingStore?.Get<List<DeviceManagementIntent>>(nameof(Intents)); }
-            set { BackingStore?.Set(nameof(Intents), value); }
+            get { return BackingStore?.Get<List<DeviceManagementIntent>>("intents"); }
+            set { BackingStore?.Set("intents", value); }
         }
         /// <summary>Intune Account ID for given tenant</summary>
         public string IntuneAccountId {
-            get { return BackingStore?.Get<string>(nameof(IntuneAccountId)); }
-            set { BackingStore?.Set(nameof(IntuneAccountId), value); }
+            get { return BackingStore?.Get<string>("intuneAccountId"); }
+            set { BackingStore?.Set("intuneAccountId", value); }
         }
         /// <summary>intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.</summary>
         public Microsoft.Graph.Beta.Models.IntuneBrand IntuneBrand {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IntuneBrand>(nameof(IntuneBrand)); }
-            set { BackingStore?.Set(nameof(IntuneBrand), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IntuneBrand>("intuneBrand"); }
+            set { BackingStore?.Set("intuneBrand", value); }
         }
         /// <summary>Intune branding profiles targeted to AAD groups</summary>
         public List<IntuneBrandingProfile> IntuneBrandingProfiles {
-            get { return BackingStore?.Get<List<IntuneBrandingProfile>>(nameof(IntuneBrandingProfiles)); }
-            set { BackingStore?.Set(nameof(IntuneBrandingProfiles), value); }
+            get { return BackingStore?.Get<List<IntuneBrandingProfile>>("intuneBrandingProfiles"); }
+            set { BackingStore?.Set("intuneBrandingProfiles", value); }
         }
         /// <summary>The IOS software update installation statuses for this account.</summary>
         public List<IosUpdateDeviceStatus> IosUpdateStatuses {
-            get { return BackingStore?.Get<List<IosUpdateDeviceStatus>>(nameof(IosUpdateStatuses)); }
-            set { BackingStore?.Set(nameof(IosUpdateStatuses), value); }
+            get { return BackingStore?.Get<List<IosUpdateDeviceStatus>>("iosUpdateStatuses"); }
+            set { BackingStore?.Set("iosUpdateStatuses", value); }
         }
         /// <summary>The last modified time of reporting for this account. This property is read-only.</summary>
         public DateTimeOffset? LastReportAggregationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastReportAggregationDateTime)); }
-            set { BackingStore?.Set(nameof(LastReportAggregationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastReportAggregationDateTime"); }
+            set { BackingStore?.Set("lastReportAggregationDateTime", value); }
         }
         /// <summary>The property to enable Non-MDM managed legacy PC management for this account. This property is read-only.</summary>
         public bool? LegacyPcManangementEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(LegacyPcManangementEnabled)); }
-            set { BackingStore?.Set(nameof(LegacyPcManangementEnabled), value); }
+            get { return BackingStore?.Get<bool?>("legacyPcManangementEnabled"); }
+            set { BackingStore?.Set("legacyPcManangementEnabled", value); }
         }
         /// <summary>The MacOS software update account summaries for this account.</summary>
         public List<MacOSSoftwareUpdateAccountSummary> MacOSSoftwareUpdateAccountSummaries {
-            get { return BackingStore?.Get<List<MacOSSoftwareUpdateAccountSummary>>(nameof(MacOSSoftwareUpdateAccountSummaries)); }
-            set { BackingStore?.Set(nameof(MacOSSoftwareUpdateAccountSummaries), value); }
+            get { return BackingStore?.Get<List<MacOSSoftwareUpdateAccountSummary>>("macOSSoftwareUpdateAccountSummaries"); }
+            set { BackingStore?.Set("macOSSoftwareUpdateAccountSummaries", value); }
         }
         /// <summary>Device cleanup rule</summary>
         public Microsoft.Graph.Beta.Models.ManagedDeviceCleanupSettings ManagedDeviceCleanupSettings {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDeviceCleanupSettings>(nameof(ManagedDeviceCleanupSettings)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceCleanupSettings), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDeviceCleanupSettings>("managedDeviceCleanupSettings"); }
+            set { BackingStore?.Set("managedDeviceCleanupSettings", value); }
         }
         /// <summary>Encryption report for devices in this account</summary>
         public List<ManagedDeviceEncryptionState> ManagedDeviceEncryptionStates {
-            get { return BackingStore?.Get<List<ManagedDeviceEncryptionState>>(nameof(ManagedDeviceEncryptionStates)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceEncryptionStates), value); }
+            get { return BackingStore?.Get<List<ManagedDeviceEncryptionState>>("managedDeviceEncryptionStates"); }
+            set { BackingStore?.Set("managedDeviceEncryptionStates", value); }
         }
         /// <summary>Device overview</summary>
         public Microsoft.Graph.Beta.Models.ManagedDeviceOverview ManagedDeviceOverview {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDeviceOverview>(nameof(ManagedDeviceOverview)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceOverview), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDeviceOverview>("managedDeviceOverview"); }
+            set { BackingStore?.Set("managedDeviceOverview", value); }
         }
         /// <summary>The list of managed devices.</summary>
         public List<ManagedDevice> ManagedDevices {
-            get { return BackingStore?.Get<List<ManagedDevice>>(nameof(ManagedDevices)); }
-            set { BackingStore?.Set(nameof(ManagedDevices), value); }
+            get { return BackingStore?.Get<List<ManagedDevice>>("managedDevices"); }
+            set { BackingStore?.Set("managedDevices", value); }
         }
         /// <summary>Maximum number of DEP tokens allowed per-tenant.</summary>
         public int? MaximumDepTokens {
-            get { return BackingStore?.Get<int?>(nameof(MaximumDepTokens)); }
-            set { BackingStore?.Set(nameof(MaximumDepTokens), value); }
+            get { return BackingStore?.Get<int?>("maximumDepTokens"); }
+            set { BackingStore?.Set("maximumDepTokens", value); }
         }
         /// <summary>Collection of MicrosoftTunnelConfiguration settings associated with account.</summary>
         public List<MicrosoftTunnelConfiguration> MicrosoftTunnelConfigurations {
-            get { return BackingStore?.Get<List<MicrosoftTunnelConfiguration>>(nameof(MicrosoftTunnelConfigurations)); }
-            set { BackingStore?.Set(nameof(MicrosoftTunnelConfigurations), value); }
+            get { return BackingStore?.Get<List<MicrosoftTunnelConfiguration>>("microsoftTunnelConfigurations"); }
+            set { BackingStore?.Set("microsoftTunnelConfigurations", value); }
         }
         /// <summary>Collection of MicrosoftTunnelHealthThreshold settings associated with account.</summary>
         public List<MicrosoftTunnelHealthThreshold> MicrosoftTunnelHealthThresholds {
-            get { return BackingStore?.Get<List<MicrosoftTunnelHealthThreshold>>(nameof(MicrosoftTunnelHealthThresholds)); }
-            set { BackingStore?.Set(nameof(MicrosoftTunnelHealthThresholds), value); }
+            get { return BackingStore?.Get<List<MicrosoftTunnelHealthThreshold>>("microsoftTunnelHealthThresholds"); }
+            set { BackingStore?.Set("microsoftTunnelHealthThresholds", value); }
         }
         /// <summary>Collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.</summary>
         public List<MicrosoftTunnelServerLogCollectionResponse> MicrosoftTunnelServerLogCollectionResponses {
-            get { return BackingStore?.Get<List<MicrosoftTunnelServerLogCollectionResponse>>(nameof(MicrosoftTunnelServerLogCollectionResponses)); }
-            set { BackingStore?.Set(nameof(MicrosoftTunnelServerLogCollectionResponses), value); }
+            get { return BackingStore?.Get<List<MicrosoftTunnelServerLogCollectionResponse>>("microsoftTunnelServerLogCollectionResponses"); }
+            set { BackingStore?.Set("microsoftTunnelServerLogCollectionResponses", value); }
         }
         /// <summary>Collection of MicrosoftTunnelSite settings associated with account.</summary>
         public List<MicrosoftTunnelSite> MicrosoftTunnelSites {
-            get { return BackingStore?.Get<List<MicrosoftTunnelSite>>(nameof(MicrosoftTunnelSites)); }
-            set { BackingStore?.Set(nameof(MicrosoftTunnelSites), value); }
+            get { return BackingStore?.Get<List<MicrosoftTunnelSite>>("microsoftTunnelSites"); }
+            set { BackingStore?.Set("microsoftTunnelSites", value); }
         }
         /// <summary>The collection property of MobileAppTroubleshootingEvent.</summary>
         public List<MobileAppTroubleshootingEvent> MobileAppTroubleshootingEvents {
-            get { return BackingStore?.Get<List<MobileAppTroubleshootingEvent>>(nameof(MobileAppTroubleshootingEvents)); }
-            set { BackingStore?.Set(nameof(MobileAppTroubleshootingEvents), value); }
+            get { return BackingStore?.Get<List<MobileAppTroubleshootingEvent>>("mobileAppTroubleshootingEvents"); }
+            set { BackingStore?.Set("mobileAppTroubleshootingEvents", value); }
         }
         /// <summary>The list of Mobile threat Defense connectors configured by the tenant.</summary>
         public List<MobileThreatDefenseConnector> MobileThreatDefenseConnectors {
-            get { return BackingStore?.Get<List<MobileThreatDefenseConnector>>(nameof(MobileThreatDefenseConnectors)); }
-            set { BackingStore?.Set(nameof(MobileThreatDefenseConnectors), value); }
+            get { return BackingStore?.Get<List<MobileThreatDefenseConnector>>("mobileThreatDefenseConnectors"); }
+            set { BackingStore?.Set("mobileThreatDefenseConnectors", value); }
         }
         /// <summary>The collection of Ndes connectors for this account.</summary>
         public List<NdesConnector> NdesConnectors {
-            get { return BackingStore?.Get<List<NdesConnector>>(nameof(NdesConnectors)); }
-            set { BackingStore?.Set(nameof(NdesConnectors), value); }
+            get { return BackingStore?.Get<List<NdesConnector>>("ndesConnectors"); }
+            set { BackingStore?.Set("ndesConnectors", value); }
         }
         /// <summary>The Notification Message Templates.</summary>
         public List<NotificationMessageTemplate> NotificationMessageTemplates {
-            get { return BackingStore?.Get<List<NotificationMessageTemplate>>(nameof(NotificationMessageTemplates)); }
-            set { BackingStore?.Set(nameof(NotificationMessageTemplates), value); }
+            get { return BackingStore?.Get<List<NotificationMessageTemplate>>("notificationMessageTemplates"); }
+            set { BackingStore?.Set("notificationMessageTemplates", value); }
         }
         /// <summary>List of OEM Warranty Statuses</summary>
         public List<Microsoft.Graph.Beta.Models.OemWarrantyInformationOnboarding> OemWarrantyInformationOnboarding {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OemWarrantyInformationOnboarding>>(nameof(OemWarrantyInformationOnboarding)); }
-            set { BackingStore?.Set(nameof(OemWarrantyInformationOnboarding), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OemWarrantyInformationOnboarding>>("oemWarrantyInformationOnboarding"); }
+            set { BackingStore?.Set("oemWarrantyInformationOnboarding", value); }
         }
         /// <summary>The list of device remote action audits with the tenant.</summary>
         public List<RemoteActionAudit> RemoteActionAudits {
-            get { return BackingStore?.Get<List<RemoteActionAudit>>(nameof(RemoteActionAudits)); }
-            set { BackingStore?.Set(nameof(RemoteActionAudits), value); }
+            get { return BackingStore?.Get<List<RemoteActionAudit>>("remoteActionAudits"); }
+            set { BackingStore?.Set("remoteActionAudits", value); }
         }
         /// <summary>The remote assist partners.</summary>
         public List<RemoteAssistancePartner> RemoteAssistancePartners {
-            get { return BackingStore?.Get<List<RemoteAssistancePartner>>(nameof(RemoteAssistancePartners)); }
-            set { BackingStore?.Set(nameof(RemoteAssistancePartners), value); }
+            get { return BackingStore?.Get<List<RemoteAssistancePartner>>("remoteAssistancePartners"); }
+            set { BackingStore?.Set("remoteAssistancePartners", value); }
         }
         /// <summary>The remote assistance settings singleton</summary>
         public Microsoft.Graph.Beta.Models.RemoteAssistanceSettings RemoteAssistanceSettings {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RemoteAssistanceSettings>(nameof(RemoteAssistanceSettings)); }
-            set { BackingStore?.Set(nameof(RemoteAssistanceSettings), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RemoteAssistanceSettings>("remoteAssistanceSettings"); }
+            set { BackingStore?.Set("remoteAssistanceSettings", value); }
         }
         /// <summary>Reports singleton</summary>
         public DeviceManagementReports Reports {
-            get { return BackingStore?.Get<DeviceManagementReports>(nameof(Reports)); }
-            set { BackingStore?.Set(nameof(Reports), value); }
+            get { return BackingStore?.Get<DeviceManagementReports>("reports"); }
+            set { BackingStore?.Set("reports", value); }
         }
         /// <summary>Collection of resource access settings associated with account.</summary>
         public List<DeviceManagementResourceAccessProfileBase> ResourceAccessProfiles {
-            get { return BackingStore?.Get<List<DeviceManagementResourceAccessProfileBase>>(nameof(ResourceAccessProfiles)); }
-            set { BackingStore?.Set(nameof(ResourceAccessProfiles), value); }
+            get { return BackingStore?.Get<List<DeviceManagementResourceAccessProfileBase>>("resourceAccessProfiles"); }
+            set { BackingStore?.Set("resourceAccessProfiles", value); }
         }
         /// <summary>The Resource Operations.</summary>
         public List<ResourceOperation> ResourceOperations {
-            get { return BackingStore?.Get<List<ResourceOperation>>(nameof(ResourceOperations)); }
-            set { BackingStore?.Set(nameof(ResourceOperations), value); }
+            get { return BackingStore?.Get<List<ResourceOperation>>("resourceOperations"); }
+            set { BackingStore?.Set("resourceOperations", value); }
         }
         /// <summary>List of all reusable settings that can be referred in a policy</summary>
         public List<DeviceManagementReusablePolicySetting> ReusablePolicySettings {
-            get { return BackingStore?.Get<List<DeviceManagementReusablePolicySetting>>(nameof(ReusablePolicySettings)); }
-            set { BackingStore?.Set(nameof(ReusablePolicySettings), value); }
+            get { return BackingStore?.Get<List<DeviceManagementReusablePolicySetting>>("reusablePolicySettings"); }
+            set { BackingStore?.Set("reusablePolicySettings", value); }
         }
         /// <summary>List of all reusable settings</summary>
         public List<DeviceManagementConfigurationSettingDefinition> ReusableSettings {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDefinition>>(nameof(ReusableSettings)); }
-            set { BackingStore?.Set(nameof(ReusableSettings), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDefinition>>("reusableSettings"); }
+            set { BackingStore?.Set("reusableSettings", value); }
         }
         /// <summary>The Role Assignments.</summary>
         public List<DeviceAndAppManagementRoleAssignment> RoleAssignments {
-            get { return BackingStore?.Get<List<DeviceAndAppManagementRoleAssignment>>(nameof(RoleAssignments)); }
-            set { BackingStore?.Set(nameof(RoleAssignments), value); }
+            get { return BackingStore?.Get<List<DeviceAndAppManagementRoleAssignment>>("roleAssignments"); }
+            set { BackingStore?.Set("roleAssignments", value); }
         }
         /// <summary>The Role Definitions.</summary>
         public List<RoleDefinition> RoleDefinitions {
-            get { return BackingStore?.Get<List<RoleDefinition>>(nameof(RoleDefinitions)); }
-            set { BackingStore?.Set(nameof(RoleDefinitions), value); }
+            get { return BackingStore?.Get<List<RoleDefinition>>("roleDefinitions"); }
+            set { BackingStore?.Set("roleDefinitions", value); }
         }
         /// <summary>The Role Scope Tags.</summary>
         public List<RoleScopeTag> RoleScopeTags {
-            get { return BackingStore?.Get<List<RoleScopeTag>>(nameof(RoleScopeTags)); }
-            set { BackingStore?.Set(nameof(RoleScopeTags), value); }
+            get { return BackingStore?.Get<List<RoleScopeTag>>("roleScopeTags"); }
+            set { BackingStore?.Set("roleScopeTags", value); }
         }
         /// <summary>The device management intent setting definitions</summary>
         public List<DeviceManagementSettingDefinition> SettingDefinitions {
-            get { return BackingStore?.Get<List<DeviceManagementSettingDefinition>>(nameof(SettingDefinitions)); }
-            set { BackingStore?.Set(nameof(SettingDefinitions), value); }
+            get { return BackingStore?.Get<List<DeviceManagementSettingDefinition>>("settingDefinitions"); }
+            set { BackingStore?.Set("settingDefinitions", value); }
         }
         /// <summary>Account level settings.</summary>
         public DeviceManagementSettings Settings {
-            get { return BackingStore?.Get<DeviceManagementSettings>(nameof(Settings)); }
-            set { BackingStore?.Set(nameof(Settings), value); }
+            get { return BackingStore?.Get<DeviceManagementSettings>("settings"); }
+            set { BackingStore?.Set("settings", value); }
         }
         /// <summary>The software update status summary.</summary>
         public Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary SoftwareUpdateStatusSummary {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary>(nameof(SoftwareUpdateStatusSummary)); }
-            set { BackingStore?.Set(nameof(SoftwareUpdateStatusSummary), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary>("softwareUpdateStatusSummary"); }
+            set { BackingStore?.Set("softwareUpdateStatusSummary", value); }
         }
-        /// <summary>Tenant&apos;s Subscription. Possible values are: none, intune, office365, intunePremium, intune_EDU, intune_SMB.</summary>
+        /// <summary>Tenant mobile device management subscriptions.</summary>
         public DeviceManagementSubscriptions? Subscriptions {
-            get { return BackingStore?.Get<DeviceManagementSubscriptions?>(nameof(Subscriptions)); }
-            set { BackingStore?.Set(nameof(Subscriptions), value); }
+            get { return BackingStore?.Get<DeviceManagementSubscriptions?>("subscriptions"); }
+            set { BackingStore?.Set("subscriptions", value); }
         }
-        /// <summary>Tenant mobile device management subscription state. Possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.</summary>
+        /// <summary>Tenant mobile device management subscription state.</summary>
         public DeviceManagementSubscriptionState? SubscriptionState {
-            get { return BackingStore?.Get<DeviceManagementSubscriptionState?>(nameof(SubscriptionState)); }
-            set { BackingStore?.Set(nameof(SubscriptionState), value); }
+            get { return BackingStore?.Get<DeviceManagementSubscriptionState?>("subscriptionState"); }
+            set { BackingStore?.Set("subscriptionState", value); }
         }
         /// <summary>The telecom expense management partners.</summary>
         public List<TelecomExpenseManagementPartner> TelecomExpenseManagementPartners {
-            get { return BackingStore?.Get<List<TelecomExpenseManagementPartner>>(nameof(TelecomExpenseManagementPartners)); }
-            set { BackingStore?.Set(nameof(TelecomExpenseManagementPartners), value); }
+            get { return BackingStore?.Get<List<TelecomExpenseManagementPartner>>("telecomExpenseManagementPartners"); }
+            set { BackingStore?.Set("telecomExpenseManagementPartners", value); }
         }
         /// <summary>The available templates</summary>
         public List<DeviceManagementTemplate> Templates {
-            get { return BackingStore?.Get<List<DeviceManagementTemplate>>(nameof(Templates)); }
-            set { BackingStore?.Set(nameof(Templates), value); }
+            get { return BackingStore?.Get<List<DeviceManagementTemplate>>("templates"); }
+            set { BackingStore?.Set("templates", value); }
         }
         /// <summary>List of all TemplateSettings</summary>
         public List<DeviceManagementConfigurationSettingTemplate> TemplateSettings {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingTemplate>>(nameof(TemplateSettings)); }
-            set { BackingStore?.Set(nameof(TemplateSettings), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingTemplate>>("templateSettings"); }
+            set { BackingStore?.Set("templateSettings", value); }
         }
         /// <summary>TenantAttach RBAC Enablement</summary>
         public Microsoft.Graph.Beta.Models.TenantAttachRBAC TenantAttachRBAC {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TenantAttachRBAC>(nameof(TenantAttachRBAC)); }
-            set { BackingStore?.Set(nameof(TenantAttachRBAC), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TenantAttachRBAC>("tenantAttachRBAC"); }
+            set { BackingStore?.Set("tenantAttachRBAC", value); }
         }
         /// <summary>The terms and conditions associated with device management of the company.</summary>
         public List<Microsoft.Graph.Beta.Models.TermsAndConditions> TermsAndConditions {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TermsAndConditions>>(nameof(TermsAndConditions)); }
-            set { BackingStore?.Set(nameof(TermsAndConditions), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TermsAndConditions>>("termsAndConditions"); }
+            set { BackingStore?.Set("termsAndConditions", value); }
         }
         /// <summary>The list of troubleshooting events for the tenant.</summary>
         public List<DeviceManagementTroubleshootingEvent> TroubleshootingEvents {
-            get { return BackingStore?.Get<List<DeviceManagementTroubleshootingEvent>>(nameof(TroubleshootingEvents)); }
-            set { BackingStore?.Set(nameof(TroubleshootingEvents), value); }
+            get { return BackingStore?.Get<List<DeviceManagementTroubleshootingEvent>>("troubleshootingEvents"); }
+            set { BackingStore?.Set("troubleshootingEvents", value); }
         }
         /// <summary>When enabled, users assigned as administrators via Role Assignment Memberships do not require an assigned Intune license. Prior to this, only Intune licensed users were granted permissions with an Intune role unless they were assigned a role via Azure Active Directory. You are limited to 350 unlicensed direct members for each AAD security group in a role assignment, but you can assign multiple AAD security groups to a role if you need to support more than 350 unlicensed administrators. Licensed administrators are unaffected, do not have to be direct members, nor does the 350 member limit apply. This property is read-only.</summary>
         public bool? UnlicensedAdminstratorsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(UnlicensedAdminstratorsEnabled)); }
-            set { BackingStore?.Set(nameof(UnlicensedAdminstratorsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("unlicensedAdminstratorsEnabled"); }
+            set { BackingStore?.Set("unlicensedAdminstratorsEnabled", value); }
         }
         /// <summary>User experience analytics appHealth Application Performance</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthApplicationPerformance> UserExperienceAnalyticsAppHealthApplicationPerformance {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthApplicationPerformance>>(nameof(UserExperienceAnalyticsAppHealthApplicationPerformance)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsAppHealthApplicationPerformance), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthApplicationPerformance>>("userExperienceAnalyticsAppHealthApplicationPerformance"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAppHealthApplicationPerformance", value); }
         }
         /// <summary>User experience analytics appHealth Application Performance by App Version</summary>
         public List<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion> UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>>(nameof(UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion), value); }
+            get { return BackingStore?.Get<List<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>>("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion", value); }
         }
         /// <summary>User experience analytics appHealth Application Performance by App Version details</summary>
         public List<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails> UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails>>(nameof(UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails), value); }
+            get { return BackingStore?.Get<List<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails>>("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails", value); }
         }
         /// <summary>User experience analytics appHealth Application Performance by App Version Device Id</summary>
         public List<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId> UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId>>(nameof(UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId), value); }
+            get { return BackingStore?.Get<List<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId>>("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId", value); }
         }
         /// <summary>User experience analytics appHealth Application Performance by OS Version</summary>
         public List<UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion> UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>>(nameof(UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion), value); }
+            get { return BackingStore?.Get<List<UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>>("userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion", value); }
         }
         /// <summary>User experience analytics appHealth Model Performance</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDeviceModelPerformance> UserExperienceAnalyticsAppHealthDeviceModelPerformance {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDeviceModelPerformance>>(nameof(UserExperienceAnalyticsAppHealthDeviceModelPerformance)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsAppHealthDeviceModelPerformance), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDeviceModelPerformance>>("userExperienceAnalyticsAppHealthDeviceModelPerformance"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAppHealthDeviceModelPerformance", value); }
         }
         /// <summary>User experience analytics appHealth Device Performance</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformance> UserExperienceAnalyticsAppHealthDevicePerformance {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformance>>(nameof(UserExperienceAnalyticsAppHealthDevicePerformance)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsAppHealthDevicePerformance), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformance>>("userExperienceAnalyticsAppHealthDevicePerformance"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAppHealthDevicePerformance", value); }
         }
         /// <summary>User experience analytics device performance details</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformanceDetails> UserExperienceAnalyticsAppHealthDevicePerformanceDetails {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformanceDetails>>(nameof(UserExperienceAnalyticsAppHealthDevicePerformanceDetails)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsAppHealthDevicePerformanceDetails), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformanceDetails>>("userExperienceAnalyticsAppHealthDevicePerformanceDetails"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAppHealthDevicePerformanceDetails", value); }
         }
         /// <summary>User experience analytics appHealth OS version Performance</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthOSVersionPerformance> UserExperienceAnalyticsAppHealthOSVersionPerformance {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthOSVersionPerformance>>(nameof(UserExperienceAnalyticsAppHealthOSVersionPerformance)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsAppHealthOSVersionPerformance), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthOSVersionPerformance>>("userExperienceAnalyticsAppHealthOSVersionPerformance"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAppHealthOSVersionPerformance", value); }
         }
         /// <summary>User experience analytics appHealth overview</summary>
         public UserExperienceAnalyticsCategory UserExperienceAnalyticsAppHealthOverview {
-            get { return BackingStore?.Get<UserExperienceAnalyticsCategory>(nameof(UserExperienceAnalyticsAppHealthOverview)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsAppHealthOverview), value); }
+            get { return BackingStore?.Get<UserExperienceAnalyticsCategory>("userExperienceAnalyticsAppHealthOverview"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAppHealthOverview", value); }
         }
         /// <summary>User experience analytics baselines</summary>
         public List<UserExperienceAnalyticsBaseline> UserExperienceAnalyticsBaselines {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsBaseline>>(nameof(UserExperienceAnalyticsBaselines)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsBaselines), value); }
+            get { return BackingStore?.Get<List<UserExperienceAnalyticsBaseline>>("userExperienceAnalyticsBaselines"); }
+            set { BackingStore?.Set("userExperienceAnalyticsBaselines", value); }
         }
         /// <summary>User Experience Analytics Battery Health App Impact</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthAppImpact> UserExperienceAnalyticsBatteryHealthAppImpact {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthAppImpact>>(nameof(UserExperienceAnalyticsBatteryHealthAppImpact)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsBatteryHealthAppImpact), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthAppImpact>>("userExperienceAnalyticsBatteryHealthAppImpact"); }
+            set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthAppImpact", value); }
         }
         /// <summary>User Experience Analytics Battery Health Capacity Details</summary>
         public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthCapacityDetails UserExperienceAnalyticsBatteryHealthCapacityDetails {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthCapacityDetails>(nameof(UserExperienceAnalyticsBatteryHealthCapacityDetails)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsBatteryHealthCapacityDetails), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthCapacityDetails>("userExperienceAnalyticsBatteryHealthCapacityDetails"); }
+            set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthCapacityDetails", value); }
         }
         /// <summary>User Experience Analytics Battery Health Device App Impact</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceAppImpact> UserExperienceAnalyticsBatteryHealthDeviceAppImpact {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceAppImpact>>(nameof(UserExperienceAnalyticsBatteryHealthDeviceAppImpact)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsBatteryHealthDeviceAppImpact), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceAppImpact>>("userExperienceAnalyticsBatteryHealthDeviceAppImpact"); }
+            set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthDeviceAppImpact", value); }
         }
         /// <summary>User Experience Analytics Battery Health Device Performance</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDevicePerformance> UserExperienceAnalyticsBatteryHealthDevicePerformance {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDevicePerformance>>(nameof(UserExperienceAnalyticsBatteryHealthDevicePerformance)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsBatteryHealthDevicePerformance), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDevicePerformance>>("userExperienceAnalyticsBatteryHealthDevicePerformance"); }
+            set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthDevicePerformance", value); }
         }
         /// <summary>User Experience Analytics Battery Health Device Runtime History</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory> UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory>>(nameof(UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory>>("userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory"); }
+            set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory", value); }
         }
         /// <summary>User Experience Analytics Battery Health Model Performance</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthModelPerformance> UserExperienceAnalyticsBatteryHealthModelPerformance {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthModelPerformance>>(nameof(UserExperienceAnalyticsBatteryHealthModelPerformance)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsBatteryHealthModelPerformance), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthModelPerformance>>("userExperienceAnalyticsBatteryHealthModelPerformance"); }
+            set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthModelPerformance", value); }
         }
         /// <summary>User Experience Analytics Battery Health Os Performance</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthOsPerformance> UserExperienceAnalyticsBatteryHealthOsPerformance {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthOsPerformance>>(nameof(UserExperienceAnalyticsBatteryHealthOsPerformance)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsBatteryHealthOsPerformance), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthOsPerformance>>("userExperienceAnalyticsBatteryHealthOsPerformance"); }
+            set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthOsPerformance", value); }
         }
         /// <summary>User Experience Analytics Battery Health Runtime Details</summary>
         public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthRuntimeDetails UserExperienceAnalyticsBatteryHealthRuntimeDetails {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthRuntimeDetails>(nameof(UserExperienceAnalyticsBatteryHealthRuntimeDetails)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsBatteryHealthRuntimeDetails), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthRuntimeDetails>("userExperienceAnalyticsBatteryHealthRuntimeDetails"); }
+            set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthRuntimeDetails", value); }
         }
         /// <summary>User experience analytics categories</summary>
         public List<UserExperienceAnalyticsCategory> UserExperienceAnalyticsCategories {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsCategory>>(nameof(UserExperienceAnalyticsCategories)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsCategories), value); }
+            get { return BackingStore?.Get<List<UserExperienceAnalyticsCategory>>("userExperienceAnalyticsCategories"); }
+            set { BackingStore?.Set("userExperienceAnalyticsCategories", value); }
         }
         /// <summary>User experience analytics device metric history</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory> UserExperienceAnalyticsDeviceMetricHistory {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory>>(nameof(UserExperienceAnalyticsDeviceMetricHistory)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsDeviceMetricHistory), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory>>("userExperienceAnalyticsDeviceMetricHistory"); }
+            set { BackingStore?.Set("userExperienceAnalyticsDeviceMetricHistory", value); }
         }
         /// <summary>User experience analytics device performance</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance> UserExperienceAnalyticsDevicePerformance {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance>>(nameof(UserExperienceAnalyticsDevicePerformance)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsDevicePerformance), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance>>("userExperienceAnalyticsDevicePerformance"); }
+            set { BackingStore?.Set("userExperienceAnalyticsDevicePerformance", value); }
         }
         /// <summary>The user experience analytics device scope entity endpoint to trigger on the service to either START or STOP computing metrics data based on a device scope configuration.</summary>
         public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope UserExperienceAnalyticsDeviceScope {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope>(nameof(UserExperienceAnalyticsDeviceScope)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsDeviceScope), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope>("userExperienceAnalyticsDeviceScope"); }
+            set { BackingStore?.Set("userExperienceAnalyticsDeviceScope", value); }
         }
         /// <summary>The user experience analytics device scope entity contains device scope configuration use to apply filtering on the endpoint analytics reports.</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope> UserExperienceAnalyticsDeviceScopes {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope>>(nameof(UserExperienceAnalyticsDeviceScopes)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsDeviceScopes), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope>>("userExperienceAnalyticsDeviceScopes"); }
+            set { BackingStore?.Set("userExperienceAnalyticsDeviceScopes", value); }
         }
         /// <summary>User experience analytics device scores</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores> UserExperienceAnalyticsDeviceScores {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores>>(nameof(UserExperienceAnalyticsDeviceScores)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsDeviceScores), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores>>("userExperienceAnalyticsDeviceScores"); }
+            set { BackingStore?.Set("userExperienceAnalyticsDeviceScores", value); }
         }
         /// <summary>User experience analytics device Startup History</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupHistory> UserExperienceAnalyticsDeviceStartupHistory {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupHistory>>(nameof(UserExperienceAnalyticsDeviceStartupHistory)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsDeviceStartupHistory), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupHistory>>("userExperienceAnalyticsDeviceStartupHistory"); }
+            set { BackingStore?.Set("userExperienceAnalyticsDeviceStartupHistory", value); }
         }
         /// <summary>User experience analytics device Startup Processes</summary>
         public List<UserExperienceAnalyticsDeviceStartupProcess> UserExperienceAnalyticsDeviceStartupProcesses {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsDeviceStartupProcess>>(nameof(UserExperienceAnalyticsDeviceStartupProcesses)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsDeviceStartupProcesses), value); }
+            get { return BackingStore?.Get<List<UserExperienceAnalyticsDeviceStartupProcess>>("userExperienceAnalyticsDeviceStartupProcesses"); }
+            set { BackingStore?.Set("userExperienceAnalyticsDeviceStartupProcesses", value); }
         }
         /// <summary>User experience analytics device Startup Process Performance</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcessPerformance> UserExperienceAnalyticsDeviceStartupProcessPerformance {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcessPerformance>>(nameof(UserExperienceAnalyticsDeviceStartupProcessPerformance)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsDeviceStartupProcessPerformance), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcessPerformance>>("userExperienceAnalyticsDeviceStartupProcessPerformance"); }
+            set { BackingStore?.Set("userExperienceAnalyticsDeviceStartupProcessPerformance", value); }
         }
         /// <summary>User experience analytics devices without cloud identity.</summary>
         public List<UserExperienceAnalyticsDeviceWithoutCloudIdentity> UserExperienceAnalyticsDevicesWithoutCloudIdentity {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsDeviceWithoutCloudIdentity>>(nameof(UserExperienceAnalyticsDevicesWithoutCloudIdentity)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsDevicesWithoutCloudIdentity), value); }
+            get { return BackingStore?.Get<List<UserExperienceAnalyticsDeviceWithoutCloudIdentity>>("userExperienceAnalyticsDevicesWithoutCloudIdentity"); }
+            set { BackingStore?.Set("userExperienceAnalyticsDevicesWithoutCloudIdentity", value); }
         }
         /// <summary>User experience analytics impacting process</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsImpactingProcess> UserExperienceAnalyticsImpactingProcess {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsImpactingProcess>>(nameof(UserExperienceAnalyticsImpactingProcess)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsImpactingProcess), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsImpactingProcess>>("userExperienceAnalyticsImpactingProcess"); }
+            set { BackingStore?.Set("userExperienceAnalyticsImpactingProcess", value); }
         }
         /// <summary>User experience analytics metric history</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory> UserExperienceAnalyticsMetricHistory {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory>>(nameof(UserExperienceAnalyticsMetricHistory)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsMetricHistory), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory>>("userExperienceAnalyticsMetricHistory"); }
+            set { BackingStore?.Set("userExperienceAnalyticsMetricHistory", value); }
         }
         /// <summary>User experience analytics model scores</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsModelScores> UserExperienceAnalyticsModelScores {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsModelScores>>(nameof(UserExperienceAnalyticsModelScores)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsModelScores), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsModelScores>>("userExperienceAnalyticsModelScores"); }
+            set { BackingStore?.Set("userExperienceAnalyticsModelScores", value); }
         }
         /// <summary>User experience analytics devices not Windows Autopilot ready.</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsNotAutopilotReadyDevice> UserExperienceAnalyticsNotAutopilotReadyDevice {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsNotAutopilotReadyDevice>>(nameof(UserExperienceAnalyticsNotAutopilotReadyDevice)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsNotAutopilotReadyDevice), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsNotAutopilotReadyDevice>>("userExperienceAnalyticsNotAutopilotReadyDevice"); }
+            set { BackingStore?.Set("userExperienceAnalyticsNotAutopilotReadyDevice", value); }
         }
         /// <summary>User experience analytics overview</summary>
         public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsOverview UserExperienceAnalyticsOverview {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsOverview>(nameof(UserExperienceAnalyticsOverview)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsOverview), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsOverview>("userExperienceAnalyticsOverview"); }
+            set { BackingStore?.Set("userExperienceAnalyticsOverview", value); }
         }
         /// <summary>User experience analytics regression summary</summary>
         public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRegressionSummary UserExperienceAnalyticsRegressionSummary {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRegressionSummary>(nameof(UserExperienceAnalyticsRegressionSummary)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsRegressionSummary), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRegressionSummary>("userExperienceAnalyticsRegressionSummary"); }
+            set { BackingStore?.Set("userExperienceAnalyticsRegressionSummary", value); }
         }
         /// <summary>User experience analytics remote connection</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRemoteConnection> UserExperienceAnalyticsRemoteConnection {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRemoteConnection>>(nameof(UserExperienceAnalyticsRemoteConnection)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsRemoteConnection), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRemoteConnection>>("userExperienceAnalyticsRemoteConnection"); }
+            set { BackingStore?.Set("userExperienceAnalyticsRemoteConnection", value); }
         }
         /// <summary>User experience analytics resource performance</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsResourcePerformance> UserExperienceAnalyticsResourcePerformance {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsResourcePerformance>>(nameof(UserExperienceAnalyticsResourcePerformance)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsResourcePerformance), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsResourcePerformance>>("userExperienceAnalyticsResourcePerformance"); }
+            set { BackingStore?.Set("userExperienceAnalyticsResourcePerformance", value); }
         }
         /// <summary>User experience analytics device Startup Score History</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsScoreHistory> UserExperienceAnalyticsScoreHistory {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsScoreHistory>>(nameof(UserExperienceAnalyticsScoreHistory)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsScoreHistory), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsScoreHistory>>("userExperienceAnalyticsScoreHistory"); }
+            set { BackingStore?.Set("userExperienceAnalyticsScoreHistory", value); }
         }
         /// <summary>User experience analytics device settings</summary>
         public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsSettings UserExperienceAnalyticsSettings {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsSettings>(nameof(UserExperienceAnalyticsSettings)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsSettings), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsSettings>("userExperienceAnalyticsSettings"); }
+            set { BackingStore?.Set("userExperienceAnalyticsSettings", value); }
         }
         /// <summary>User experience analytics work from anywhere hardware readiness metrics.</summary>
         public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric>(nameof(UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric>("userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric"); }
+            set { BackingStore?.Set("userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric", value); }
         }
         /// <summary>User experience analytics work from anywhere metrics.</summary>
         public List<UserExperienceAnalyticsWorkFromAnywhereMetric> UserExperienceAnalyticsWorkFromAnywhereMetrics {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsWorkFromAnywhereMetric>>(nameof(UserExperienceAnalyticsWorkFromAnywhereMetrics)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsWorkFromAnywhereMetrics), value); }
+            get { return BackingStore?.Get<List<UserExperienceAnalyticsWorkFromAnywhereMetric>>("userExperienceAnalyticsWorkFromAnywhereMetrics"); }
+            set { BackingStore?.Set("userExperienceAnalyticsWorkFromAnywhereMetrics", value); }
         }
         /// <summary>The user experience analytics work from anywhere model performance</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance> UserExperienceAnalyticsWorkFromAnywhereModelPerformance {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance>>(nameof(UserExperienceAnalyticsWorkFromAnywhereModelPerformance)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsWorkFromAnywhereModelPerformance), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance>>("userExperienceAnalyticsWorkFromAnywhereModelPerformance"); }
+            set { BackingStore?.Set("userExperienceAnalyticsWorkFromAnywhereModelPerformance", value); }
         }
         /// <summary>Collection of PFX certificates associated with a user.</summary>
         public List<UserPFXCertificate> UserPfxCertificates {
-            get { return BackingStore?.Get<List<UserPFXCertificate>>(nameof(UserPfxCertificates)); }
-            set { BackingStore?.Set(nameof(UserPfxCertificates), value); }
+            get { return BackingStore?.Get<List<UserPFXCertificate>>("userPfxCertificates"); }
+            set { BackingStore?.Set("userPfxCertificates", value); }
         }
         /// <summary>The virtualEndpoint property</summary>
         public Microsoft.Graph.Beta.Models.VirtualEndpoint VirtualEndpoint {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VirtualEndpoint>(nameof(VirtualEndpoint)); }
-            set { BackingStore?.Set(nameof(VirtualEndpoint), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VirtualEndpoint>("virtualEndpoint"); }
+            set { BackingStore?.Set("virtualEndpoint", value); }
         }
         /// <summary>Windows auto pilot deployment profiles</summary>
         public List<WindowsAutopilotDeploymentProfile> WindowsAutopilotDeploymentProfiles {
-            get { return BackingStore?.Get<List<WindowsAutopilotDeploymentProfile>>(nameof(WindowsAutopilotDeploymentProfiles)); }
-            set { BackingStore?.Set(nameof(WindowsAutopilotDeploymentProfiles), value); }
+            get { return BackingStore?.Get<List<WindowsAutopilotDeploymentProfile>>("windowsAutopilotDeploymentProfiles"); }
+            set { BackingStore?.Set("windowsAutopilotDeploymentProfiles", value); }
         }
         /// <summary>The Windows autopilot device identities contained collection.</summary>
         public List<WindowsAutopilotDeviceIdentity> WindowsAutopilotDeviceIdentities {
-            get { return BackingStore?.Get<List<WindowsAutopilotDeviceIdentity>>(nameof(WindowsAutopilotDeviceIdentities)); }
-            set { BackingStore?.Set(nameof(WindowsAutopilotDeviceIdentities), value); }
+            get { return BackingStore?.Get<List<WindowsAutopilotDeviceIdentity>>("windowsAutopilotDeviceIdentities"); }
+            set { BackingStore?.Set("windowsAutopilotDeviceIdentities", value); }
         }
         /// <summary>The Windows autopilot account settings.</summary>
         public Microsoft.Graph.Beta.Models.WindowsAutopilotSettings WindowsAutopilotSettings {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsAutopilotSettings>(nameof(WindowsAutopilotSettings)); }
-            set { BackingStore?.Set(nameof(WindowsAutopilotSettings), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsAutopilotSettings>("windowsAutopilotSettings"); }
+            set { BackingStore?.Set("windowsAutopilotSettings", value); }
         }
         /// <summary>A collection of windows driver update profiles</summary>
         public List<WindowsDriverUpdateProfile> WindowsDriverUpdateProfiles {
-            get { return BackingStore?.Get<List<WindowsDriverUpdateProfile>>(nameof(WindowsDriverUpdateProfiles)); }
-            set { BackingStore?.Set(nameof(WindowsDriverUpdateProfiles), value); }
+            get { return BackingStore?.Get<List<WindowsDriverUpdateProfile>>("windowsDriverUpdateProfiles"); }
+            set { BackingStore?.Set("windowsDriverUpdateProfiles", value); }
         }
         /// <summary>A collection of windows feature update profiles</summary>
         public List<WindowsFeatureUpdateProfile> WindowsFeatureUpdateProfiles {
-            get { return BackingStore?.Get<List<WindowsFeatureUpdateProfile>>(nameof(WindowsFeatureUpdateProfiles)); }
-            set { BackingStore?.Set(nameof(WindowsFeatureUpdateProfiles), value); }
+            get { return BackingStore?.Get<List<WindowsFeatureUpdateProfile>>("windowsFeatureUpdateProfiles"); }
+            set { BackingStore?.Set("windowsFeatureUpdateProfiles", value); }
         }
         /// <summary>The windows information protection app learning summaries.</summary>
         public List<WindowsInformationProtectionAppLearningSummary> WindowsInformationProtectionAppLearningSummaries {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionAppLearningSummary>>(nameof(WindowsInformationProtectionAppLearningSummaries)); }
-            set { BackingStore?.Set(nameof(WindowsInformationProtectionAppLearningSummaries), value); }
+            get { return BackingStore?.Get<List<WindowsInformationProtectionAppLearningSummary>>("windowsInformationProtectionAppLearningSummaries"); }
+            set { BackingStore?.Set("windowsInformationProtectionAppLearningSummaries", value); }
         }
         /// <summary>The windows information protection network learning summaries.</summary>
         public List<WindowsInformationProtectionNetworkLearningSummary> WindowsInformationProtectionNetworkLearningSummaries {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionNetworkLearningSummary>>(nameof(WindowsInformationProtectionNetworkLearningSummaries)); }
-            set { BackingStore?.Set(nameof(WindowsInformationProtectionNetworkLearningSummaries), value); }
+            get { return BackingStore?.Get<List<WindowsInformationProtectionNetworkLearningSummary>>("windowsInformationProtectionNetworkLearningSummaries"); }
+            set { BackingStore?.Set("windowsInformationProtectionNetworkLearningSummaries", value); }
         }
         /// <summary>The list of affected malware in the tenant.</summary>
         public List<Microsoft.Graph.Beta.Models.WindowsMalwareInformation> WindowsMalwareInformation {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsMalwareInformation>>(nameof(WindowsMalwareInformation)); }
-            set { BackingStore?.Set(nameof(WindowsMalwareInformation), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsMalwareInformation>>("windowsMalwareInformation"); }
+            set { BackingStore?.Set("windowsMalwareInformation", value); }
         }
         /// <summary>Malware overview for windows devices.</summary>
         public Microsoft.Graph.Beta.Models.WindowsMalwareOverview WindowsMalwareOverview {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsMalwareOverview>(nameof(WindowsMalwareOverview)); }
-            set { BackingStore?.Set(nameof(WindowsMalwareOverview), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsMalwareOverview>("windowsMalwareOverview"); }
+            set { BackingStore?.Set("windowsMalwareOverview", value); }
         }
         /// <summary>A collection of windows quality update profiles</summary>
         public List<WindowsQualityUpdateProfile> WindowsQualityUpdateProfiles {
-            get { return BackingStore?.Get<List<WindowsQualityUpdateProfile>>(nameof(WindowsQualityUpdateProfiles)); }
-            set { BackingStore?.Set(nameof(WindowsQualityUpdateProfiles), value); }
+            get { return BackingStore?.Get<List<WindowsQualityUpdateProfile>>("windowsQualityUpdateProfiles"); }
+            set { BackingStore?.Set("windowsQualityUpdateProfiles", value); }
         }
         /// <summary>A collection of windows update catalog items (fetaure updates item , quality updates item)</summary>
         public List<WindowsUpdateCatalogItem> WindowsUpdateCatalogItems {
-            get { return BackingStore?.Get<List<WindowsUpdateCatalogItem>>(nameof(WindowsUpdateCatalogItems)); }
-            set { BackingStore?.Set(nameof(WindowsUpdateCatalogItems), value); }
+            get { return BackingStore?.Get<List<WindowsUpdateCatalogItem>>("windowsUpdateCatalogItems"); }
+            set { BackingStore?.Set("windowsUpdateCatalogItems", value); }
         }
         /// <summary>The Collection of ZebraFotaArtifacts.</summary>
         public List<ZebraFotaArtifact> ZebraFotaArtifacts {
-            get { return BackingStore?.Get<List<ZebraFotaArtifact>>(nameof(ZebraFotaArtifacts)); }
-            set { BackingStore?.Set(nameof(ZebraFotaArtifacts), value); }
+            get { return BackingStore?.Get<List<ZebraFotaArtifact>>("zebraFotaArtifacts"); }
+            set { BackingStore?.Set("zebraFotaArtifacts", value); }
         }
         /// <summary>The singleton ZebraFotaConnector associated with account.</summary>
         public Microsoft.Graph.Beta.Models.ZebraFotaConnector ZebraFotaConnector {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ZebraFotaConnector>(nameof(ZebraFotaConnector)); }
-            set { BackingStore?.Set(nameof(ZebraFotaConnector), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ZebraFotaConnector>("zebraFotaConnector"); }
+            set { BackingStore?.Set("zebraFotaConnector", value); }
         }
         /// <summary>Collection of ZebraFotaDeployments associated with account.</summary>
         public List<ZebraFotaDeployment> ZebraFotaDeployments {
-            get { return BackingStore?.Get<List<ZebraFotaDeployment>>(nameof(ZebraFotaDeployments)); }
-            set { BackingStore?.Set(nameof(ZebraFotaDeployments), value); }
+            get { return BackingStore?.Get<List<ZebraFotaDeployment>>("zebraFotaDeployments"); }
+            set { BackingStore?.Set("zebraFotaDeployments", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

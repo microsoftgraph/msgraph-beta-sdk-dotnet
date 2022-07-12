@@ -9,30 +9,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosVpnSecurityAssociationParameters : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Lifetime (minutes)</summary>
         public int? LifetimeInMinutes {
-            get { return BackingStore?.Get<int?>(nameof(LifetimeInMinutes)); }
-            set { BackingStore?.Set(nameof(LifetimeInMinutes), value); }
+            get { return BackingStore?.Get<int?>("lifetimeInMinutes"); }
+            set { BackingStore?.Set("lifetimeInMinutes", value); }
         }
         /// <summary>Diffie-Hellman Group</summary>
         public int? SecurityDiffieHellmanGroup {
-            get { return BackingStore?.Get<int?>(nameof(SecurityDiffieHellmanGroup)); }
-            set { BackingStore?.Set(nameof(SecurityDiffieHellmanGroup), value); }
+            get { return BackingStore?.Get<int?>("securityDiffieHellmanGroup"); }
+            set { BackingStore?.Set("securityDiffieHellmanGroup", value); }
         }
         /// <summary>Encryption algorithm. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.</summary>
         public VpnEncryptionAlgorithmType? SecurityEncryptionAlgorithm {
-            get { return BackingStore?.Get<VpnEncryptionAlgorithmType?>(nameof(SecurityEncryptionAlgorithm)); }
-            set { BackingStore?.Set(nameof(SecurityEncryptionAlgorithm), value); }
+            get { return BackingStore?.Get<VpnEncryptionAlgorithmType?>("securityEncryptionAlgorithm"); }
+            set { BackingStore?.Set("securityEncryptionAlgorithm", value); }
         }
         /// <summary>Integrity algorithm. Possible values are: sha2_256, sha1_96, sha1_160, sha2_384, sha2_512, md5.</summary>
         public VpnIntegrityAlgorithmType? SecurityIntegrityAlgorithm {
-            get { return BackingStore?.Get<VpnIntegrityAlgorithmType?>(nameof(SecurityIntegrityAlgorithm)); }
-            set { BackingStore?.Set(nameof(SecurityIntegrityAlgorithm), value); }
+            get { return BackingStore?.Get<VpnIntegrityAlgorithmType?>("securityIntegrityAlgorithm"); }
+            set { BackingStore?.Set("securityIntegrityAlgorithm", value); }
         }
         /// <summary>
         /// Instantiates a new iosVpnSecurityAssociationParameters and sets the default values.

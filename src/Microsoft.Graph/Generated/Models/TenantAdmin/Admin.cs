@@ -9,30 +9,30 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
     public class Admin : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The reportSettings property</summary>
         public Microsoft.Graph.Beta.Models.AdminReportSettings ReportSettings {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdminReportSettings>(nameof(ReportSettings)); }
-            set { BackingStore?.Set(nameof(ReportSettings), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdminReportSettings>("reportSettings"); }
+            set { BackingStore?.Set("reportSettings", value); }
         }
         /// <summary>A container for service communications resources. Read-only.</summary>
         public Microsoft.Graph.Beta.Models.ServiceAnnouncement ServiceAnnouncement {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServiceAnnouncement>(nameof(ServiceAnnouncement)); }
-            set { BackingStore?.Set(nameof(ServiceAnnouncement), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServiceAnnouncement>("serviceAnnouncement"); }
+            set { BackingStore?.Set("serviceAnnouncement", value); }
         }
         /// <summary>A container for administrative resources to manage tenant-level settings for SharePoint and OneDrive.</summary>
         public Microsoft.Graph.Beta.Models.TenantAdmin.Sharepoint Sharepoint {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TenantAdmin.Sharepoint>(nameof(Sharepoint)); }
-            set { BackingStore?.Set(nameof(Sharepoint), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TenantAdmin.Sharepoint>("sharepoint"); }
+            set { BackingStore?.Set("sharepoint", value); }
         }
         /// <summary>A container for all Windows Update for Business deployment service functionality. Read-only.</summary>
         public Microsoft.Graph.Beta.Models.WindowsUpdates.Windows Windows {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.Windows>(nameof(Windows)); }
-            set { BackingStore?.Set(nameof(Windows), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.Windows>("windows"); }
+            set { BackingStore?.Set("windows", value); }
         }
         /// <summary>
         /// Instantiates a new Admin and sets the default values.

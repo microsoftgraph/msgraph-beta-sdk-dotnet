@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class ProgramControlType : Entity, IParsable {
         /// <summary>The controlTypeGroupId property</summary>
         public string ControlTypeGroupId {
-            get { return BackingStore?.Get<string>(nameof(ControlTypeGroupId)); }
-            set { BackingStore?.Set(nameof(ControlTypeGroupId), value); }
+            get { return BackingStore?.Get<string>("controlTypeGroupId"); }
+            set { BackingStore?.Set("controlTypeGroupId", value); }
         }
         /// <summary>The name of the program control type</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

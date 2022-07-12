@@ -8,53 +8,53 @@ namespace Microsoft.Graph.Beta.Models {
     public class Office365ActiveUserCounts : Entity, IParsable {
         /// <summary>The number of active users in Exchange. Any user who can read and send email is considered an active user.</summary>
         public long? Exchange {
-            get { return BackingStore?.Get<long?>(nameof(Exchange)); }
-            set { BackingStore?.Set(nameof(Exchange), value); }
+            get { return BackingStore?.Get<long?>("exchange"); }
+            set { BackingStore?.Set("exchange", value); }
         }
         /// <summary>The number of active users in Microsoft 365. This number includes all the active users in Exchange, OneDrive, SharePoint, Skype For Business, Yammer, and Microsoft Teams. You can find the definition of active user for each product in the respective property description.</summary>
         public long? Office365 {
-            get { return BackingStore?.Get<long?>(nameof(Office365)); }
-            set { BackingStore?.Set(nameof(Office365), value); }
+            get { return BackingStore?.Get<long?>("office365"); }
+            set { BackingStore?.Set("office365", value); }
         }
         /// <summary>The number of active users in OneDrive. Any user who viewed or edited files, shared files internally or externally, or synced files is considered an active user.</summary>
         public long? OneDrive {
-            get { return BackingStore?.Get<long?>(nameof(OneDrive)); }
-            set { BackingStore?.Set(nameof(OneDrive), value); }
+            get { return BackingStore?.Get<long?>("oneDrive"); }
+            set { BackingStore?.Set("oneDrive", value); }
         }
         /// <summary>The date on which a number of users were active.</summary>
         public Date? ReportDate {
-            get { return BackingStore?.Get<Date?>(nameof(ReportDate)); }
-            set { BackingStore?.Set(nameof(ReportDate), value); }
+            get { return BackingStore?.Get<Date?>("reportDate"); }
+            set { BackingStore?.Set("reportDate", value); }
         }
         /// <summary>The number of days the report covers.</summary>
         public string ReportPeriod {
-            get { return BackingStore?.Get<string>(nameof(ReportPeriod)); }
-            set { BackingStore?.Set(nameof(ReportPeriod), value); }
+            get { return BackingStore?.Get<string>("reportPeriod"); }
+            set { BackingStore?.Set("reportPeriod", value); }
         }
         /// <summary>The latest date of the content.</summary>
         public Date? ReportRefreshDate {
-            get { return BackingStore?.Get<Date?>(nameof(ReportRefreshDate)); }
-            set { BackingStore?.Set(nameof(ReportRefreshDate), value); }
+            get { return BackingStore?.Get<Date?>("reportRefreshDate"); }
+            set { BackingStore?.Set("reportRefreshDate", value); }
         }
         /// <summary>The number of active users in SharePoint. Any user who viewed or edited files, shared files internally or externally, synced files, or viewed SharePoint pages is considered an active user.</summary>
         public long? SharePoint {
-            get { return BackingStore?.Get<long?>(nameof(SharePoint)); }
-            set { BackingStore?.Set(nameof(SharePoint), value); }
+            get { return BackingStore?.Get<long?>("sharePoint"); }
+            set { BackingStore?.Set("sharePoint", value); }
         }
         /// <summary>The number of active users in Skype For Business. Any user who organized or participated in conferences, or joined peer-to-peer sessions is considered an active user.</summary>
         public long? SkypeForBusiness {
-            get { return BackingStore?.Get<long?>(nameof(SkypeForBusiness)); }
-            set { BackingStore?.Set(nameof(SkypeForBusiness), value); }
+            get { return BackingStore?.Get<long?>("skypeForBusiness"); }
+            set { BackingStore?.Set("skypeForBusiness", value); }
         }
         /// <summary>The number of active users in Microsoft Teams. Any user who posted messages in team channels, sent messages in private chat sessions, or participated in meetings or calls is considered an active user.</summary>
         public long? Teams {
-            get { return BackingStore?.Get<long?>(nameof(Teams)); }
-            set { BackingStore?.Set(nameof(Teams), value); }
+            get { return BackingStore?.Get<long?>("teams"); }
+            set { BackingStore?.Set("teams", value); }
         }
         /// <summary>The number of active users in Yammer. Any user who can post, read, or like messages is considered an active user.</summary>
         public long? Yammer {
-            get { return BackingStore?.Get<long?>(nameof(Yammer)); }
-            set { BackingStore?.Set(nameof(Yammer), value); }
+            get { return BackingStore?.Get<long?>("yammer"); }
+            set { BackingStore?.Set("yammer", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

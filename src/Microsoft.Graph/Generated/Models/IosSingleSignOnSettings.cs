@@ -9,35 +9,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosSingleSignOnSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>List of app identifiers that are allowed to use this login. If this field is omitted, the login applies to all applications on the device. This collection can contain a maximum of 500 elements.</summary>
         public List<AppListItem> AllowedAppsList {
-            get { return BackingStore?.Get<List<AppListItem>>(nameof(AllowedAppsList)); }
-            set { BackingStore?.Set(nameof(AllowedAppsList), value); }
+            get { return BackingStore?.Get<List<AppListItem>>("allowedAppsList"); }
+            set { BackingStore?.Set("allowedAppsList", value); }
         }
         /// <summary>List of HTTP URLs that must be matched in order to use this login. With iOS 9.0 or later, a wildcard characters may be used.</summary>
         public List<string> AllowedUrls {
-            get { return BackingStore?.Get<List<string>>(nameof(AllowedUrls)); }
-            set { BackingStore?.Set(nameof(AllowedUrls), value); }
+            get { return BackingStore?.Get<List<string>>("allowedUrls"); }
+            set { BackingStore?.Set("allowedUrls", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The display name of login settings shown on the receiving device.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>A Kerberos principal name. If not provided, the user is prompted for one during profile installation.</summary>
         public string KerberosPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(KerberosPrincipalName)); }
-            set { BackingStore?.Set(nameof(KerberosPrincipalName), value); }
+            get { return BackingStore?.Get<string>("kerberosPrincipalName"); }
+            set { BackingStore?.Set("kerberosPrincipalName", value); }
         }
         /// <summary>A Kerberos realm name. Case sensitive.</summary>
         public string KerberosRealm {
-            get { return BackingStore?.Get<string>(nameof(KerberosRealm)); }
-            set { BackingStore?.Set(nameof(KerberosRealm), value); }
+            get { return BackingStore?.Get<string>("kerberosRealm"); }
+            set { BackingStore?.Set("kerberosRealm", value); }
         }
         /// <summary>
         /// Instantiates a new iosSingleSignOnSettings and sets the default values.

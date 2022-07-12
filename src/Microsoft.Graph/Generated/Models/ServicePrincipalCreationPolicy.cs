@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class ServicePrincipalCreationPolicy : PolicyBase, IParsable {
         /// <summary>The excludes property</summary>
         public List<ServicePrincipalCreationConditionSet> Excludes {
-            get { return BackingStore?.Get<List<ServicePrincipalCreationConditionSet>>(nameof(Excludes)); }
-            set { BackingStore?.Set(nameof(Excludes), value); }
+            get { return BackingStore?.Get<List<ServicePrincipalCreationConditionSet>>("excludes"); }
+            set { BackingStore?.Set("excludes", value); }
         }
         /// <summary>The includes property</summary>
         public List<ServicePrincipalCreationConditionSet> Includes {
-            get { return BackingStore?.Get<List<ServicePrincipalCreationConditionSet>>(nameof(Includes)); }
-            set { BackingStore?.Set(nameof(Includes), value); }
+            get { return BackingStore?.Get<List<ServicePrincipalCreationConditionSet>>("includes"); }
+            set { BackingStore?.Set("includes", value); }
         }
         /// <summary>The isBuiltIn property</summary>
         public bool? IsBuiltIn {
-            get { return BackingStore?.Get<bool?>(nameof(IsBuiltIn)); }
-            set { BackingStore?.Set(nameof(IsBuiltIn), value); }
+            get { return BackingStore?.Get<bool?>("isBuiltIn"); }
+            set { BackingStore?.Set("isBuiltIn", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

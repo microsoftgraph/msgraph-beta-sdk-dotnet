@@ -4,17 +4,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class DocumentCommentReply : Entity, IParsable {
         /// <summary>The content property</summary>
         public string Content {
-            get { return BackingStore?.Get<string>(nameof(Content)); }
-            set { BackingStore?.Set(nameof(Content), value); }
+            get { return BackingStore?.Get<string>("content"); }
+            set { BackingStore?.Set("content", value); }
         }
         /// <summary>The location property</summary>
         public string Location {
-            get { return BackingStore?.Get<string>(nameof(Location)); }
-            set { BackingStore?.Set(nameof(Location), value); }
+            get { return BackingStore?.Get<string>("location"); }
+            set { BackingStore?.Set("location", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosBookmark : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The folder into which the bookmark should be added in Safari</summary>
         public string BookmarkFolder {
-            get { return BackingStore?.Get<string>(nameof(BookmarkFolder)); }
-            set { BackingStore?.Set(nameof(BookmarkFolder), value); }
+            get { return BackingStore?.Get<string>("bookmarkFolder"); }
+            set { BackingStore?.Set("bookmarkFolder", value); }
         }
         /// <summary>The display name of the bookmark</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>URL allowed to access</summary>
         public string Url {
-            get { return BackingStore?.Get<string>(nameof(Url)); }
-            set { BackingStore?.Set(nameof(Url), value); }
+            get { return BackingStore?.Get<string>("url"); }
+            set { BackingStore?.Set("url", value); }
         }
         /// <summary>
         /// Instantiates a new iosBookmark and sets the default values.

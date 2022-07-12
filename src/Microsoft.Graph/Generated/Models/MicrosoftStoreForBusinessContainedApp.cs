@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class MicrosoftStoreForBusinessContainedApp : MobileContainedApp, IParsable {
         /// <summary>The app user model ID of the contained app of a MicrosoftStoreForBusinessApp.</summary>
         public string AppUserModelId {
-            get { return BackingStore?.Get<string>(nameof(AppUserModelId)); }
-            set { BackingStore?.Set(nameof(AppUserModelId), value); }
+            get { return BackingStore?.Get<string>("appUserModelId"); }
+            set { BackingStore?.Set("appUserModelId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

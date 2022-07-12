@@ -10,20 +10,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationSettingInstance : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Setting Definition Id</summary>
         public string SettingDefinitionId {
-            get { return BackingStore?.Get<string>(nameof(SettingDefinitionId)); }
-            set { BackingStore?.Set(nameof(SettingDefinitionId), value); }
+            get { return BackingStore?.Get<string>("settingDefinitionId"); }
+            set { BackingStore?.Set("settingDefinitionId", value); }
         }
         /// <summary>Setting Instance Template Reference</summary>
         public DeviceManagementConfigurationSettingInstanceTemplateReference SettingInstanceTemplateReference {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstanceTemplateReference>(nameof(SettingInstanceTemplateReference)); }
-            set { BackingStore?.Set(nameof(SettingInstanceTemplateReference), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstanceTemplateReference>("settingInstanceTemplateReference"); }
+            set { BackingStore?.Set("settingInstanceTemplateReference", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new deviceManagementConfigurationSettingInstance and sets the default values.
@@ -31,6 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceManagementConfigurationSettingInstance() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.deviceManagementConfigurationSettingInstance";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -59,6 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"settingDefinitionId", n => { SettingDefinitionId = n.GetStringValue(); } },
                 {"settingInstanceTemplateReference", n => { SettingInstanceTemplateReference = n.GetObjectValue<DeviceManagementConfigurationSettingInstanceTemplateReference>(DeviceManagementConfigurationSettingInstanceTemplateReference.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -69,6 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("settingDefinitionId", SettingDefinitionId);
             writer.WriteObjectValue<DeviceManagementConfigurationSettingInstanceTemplateReference>("settingInstanceTemplateReference", SettingInstanceTemplateReference);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

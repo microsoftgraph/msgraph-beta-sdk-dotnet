@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class NetworkLocationDetail : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Provides the name of the network used when signing in.</summary>
         public List<string> NetworkNames {
-            get { return BackingStore?.Get<List<string>>(nameof(NetworkNames)); }
-            set { BackingStore?.Set(nameof(NetworkNames), value); }
+            get { return BackingStore?.Get<List<string>>("networkNames"); }
+            set { BackingStore?.Set("networkNames", value); }
         }
         /// <summary>Provides the type of network used when signing in. Possible values are: intranet, extranet, namedNetwork, trusted, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.NetworkType? NetworkType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.NetworkType?>(nameof(NetworkType)); }
-            set { BackingStore?.Set(nameof(NetworkType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.NetworkType?>("networkType"); }
+            set { BackingStore?.Set("networkType", value); }
         }
         /// <summary>
         /// Instantiates a new networkLocationDetail and sets the default values.

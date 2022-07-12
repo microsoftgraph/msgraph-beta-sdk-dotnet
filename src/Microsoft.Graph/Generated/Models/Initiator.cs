@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class Initiator : Identity, IParsable {
         /// <summary>Type of initiator. Possible values are: user, application, system, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.InitiatorType? InitiatorType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InitiatorType?>(nameof(InitiatorType)); }
-            set { BackingStore?.Set(nameof(InitiatorType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InitiatorType?>("initiatorType"); }
+            set { BackingStore?.Set("initiatorType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

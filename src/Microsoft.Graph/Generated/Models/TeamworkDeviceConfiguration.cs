@@ -4,67 +4,66 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class TeamworkDeviceConfiguration : Entity, IParsable {
         /// <summary>The camera configuration. Applicable only for Microsoft Teams Rooms-enabled devices.</summary>
         public TeamworkCameraConfiguration CameraConfiguration {
-            get { return BackingStore?.Get<TeamworkCameraConfiguration>(nameof(CameraConfiguration)); }
-            set { BackingStore?.Set(nameof(CameraConfiguration), value); }
+            get { return BackingStore?.Get<TeamworkCameraConfiguration>("cameraConfiguration"); }
+            set { BackingStore?.Set("cameraConfiguration", value); }
         }
         /// <summary>Identity of the user who created the device configuration document.</summary>
         public IdentitySet CreatedBy {
-            get { return BackingStore?.Get<IdentitySet>(nameof(CreatedBy)); }
-            set { BackingStore?.Set(nameof(CreatedBy), value); }
+            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
         }
         /// <summary>The UTC date and time when the device configuration document was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The display configuration.</summary>
         public TeamworkDisplayConfiguration DisplayConfiguration {
-            get { return BackingStore?.Get<TeamworkDisplayConfiguration>(nameof(DisplayConfiguration)); }
-            set { BackingStore?.Set(nameof(DisplayConfiguration), value); }
+            get { return BackingStore?.Get<TeamworkDisplayConfiguration>("displayConfiguration"); }
+            set { BackingStore?.Set("displayConfiguration", value); }
         }
         /// <summary>The hardware configuration. Applicable only for Teams Rooms-enabled devices.</summary>
         public TeamworkHardwareConfiguration HardwareConfiguration {
-            get { return BackingStore?.Get<TeamworkHardwareConfiguration>(nameof(HardwareConfiguration)); }
-            set { BackingStore?.Set(nameof(HardwareConfiguration), value); }
+            get { return BackingStore?.Get<TeamworkHardwareConfiguration>("hardwareConfiguration"); }
+            set { BackingStore?.Set("hardwareConfiguration", value); }
         }
         /// <summary>Identity of the user who last modified the device configuration.</summary>
         public IdentitySet LastModifiedBy {
-            get { return BackingStore?.Get<IdentitySet>(nameof(LastModifiedBy)); }
-            set { BackingStore?.Set(nameof(LastModifiedBy), value); }
+            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
         }
         /// <summary>The UTC date and time when the device configuration was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The microphone configuration. Applicable only for Teams Rooms-enabled devices.</summary>
         public TeamworkMicrophoneConfiguration MicrophoneConfiguration {
-            get { return BackingStore?.Get<TeamworkMicrophoneConfiguration>(nameof(MicrophoneConfiguration)); }
-            set { BackingStore?.Set(nameof(MicrophoneConfiguration), value); }
+            get { return BackingStore?.Get<TeamworkMicrophoneConfiguration>("microphoneConfiguration"); }
+            set { BackingStore?.Set("microphoneConfiguration", value); }
         }
         /// <summary>Information related to software versions for the device, such as firmware, operating system, Teams client, and admin agent.</summary>
         public TeamworkDeviceSoftwareVersions SoftwareVersions {
-            get { return BackingStore?.Get<TeamworkDeviceSoftwareVersions>(nameof(SoftwareVersions)); }
-            set { BackingStore?.Set(nameof(SoftwareVersions), value); }
+            get { return BackingStore?.Get<TeamworkDeviceSoftwareVersions>("softwareVersions"); }
+            set { BackingStore?.Set("softwareVersions", value); }
         }
         /// <summary>The speaker configuration. Applicable only for Teams Rooms-enabled devices.</summary>
         public TeamworkSpeakerConfiguration SpeakerConfiguration {
-            get { return BackingStore?.Get<TeamworkSpeakerConfiguration>(nameof(SpeakerConfiguration)); }
-            set { BackingStore?.Set(nameof(SpeakerConfiguration), value); }
+            get { return BackingStore?.Get<TeamworkSpeakerConfiguration>("speakerConfiguration"); }
+            set { BackingStore?.Set("speakerConfiguration", value); }
         }
         /// <summary>The system configuration. Not applicable for Teams Rooms-enabled devices.</summary>
         public TeamworkSystemConfiguration SystemConfiguration {
-            get { return BackingStore?.Get<TeamworkSystemConfiguration>(nameof(SystemConfiguration)); }
-            set { BackingStore?.Set(nameof(SystemConfiguration), value); }
+            get { return BackingStore?.Get<TeamworkSystemConfiguration>("systemConfiguration"); }
+            set { BackingStore?.Set("systemConfiguration", value); }
         }
         /// <summary>The Teams client configuration. Applicable only for Teams Rooms-enabled devices.</summary>
         public TeamworkTeamsClientConfiguration TeamsClientConfiguration {
-            get { return BackingStore?.Get<TeamworkTeamsClientConfiguration>(nameof(TeamsClientConfiguration)); }
-            set { BackingStore?.Set(nameof(TeamsClientConfiguration), value); }
+            get { return BackingStore?.Get<TeamworkTeamsClientConfiguration>("teamsClientConfiguration"); }
+            set { BackingStore?.Set("teamsClientConfiguration", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

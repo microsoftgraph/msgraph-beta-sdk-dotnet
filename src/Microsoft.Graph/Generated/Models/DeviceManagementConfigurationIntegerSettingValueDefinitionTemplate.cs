@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Integer Setting Maximum Value. Valid values -2147483648 to 2147483647</summary>
         public int? MaxValue {
-            get { return BackingStore?.Get<int?>(nameof(MaxValue)); }
-            set { BackingStore?.Set(nameof(MaxValue), value); }
+            get { return BackingStore?.Get<int?>("maxValue"); }
+            set { BackingStore?.Set("maxValue", value); }
         }
         /// <summary>Integer Setting Minimum Value. Valid values -2147483648 to 2147483647</summary>
         public int? MinValue {
-            get { return BackingStore?.Get<int?>(nameof(MinValue)); }
-            set { BackingStore?.Set(nameof(MinValue), value); }
+            get { return BackingStore?.Get<int?>("minValue"); }
+            set { BackingStore?.Set("minValue", value); }
         }
         /// <summary>
         /// Instantiates a new deviceManagementConfigurationIntegerSettingValueDefinitionTemplate and sets the default values.

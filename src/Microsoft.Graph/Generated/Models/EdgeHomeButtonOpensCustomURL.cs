@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class EdgeHomeButtonOpensCustomURL : EdgeHomeButtonConfiguration, IParsable {
         /// <summary>The specific URL to load.</summary>
         public string HomeButtonCustomURL {
-            get { return BackingStore?.Get<string>(nameof(HomeButtonCustomURL)); }
-            set { BackingStore?.Set(nameof(HomeButtonCustomURL), value); }
+            get { return BackingStore?.Get<string>("homeButtonCustomURL"); }
+            set { BackingStore?.Set("homeButtonCustomURL", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

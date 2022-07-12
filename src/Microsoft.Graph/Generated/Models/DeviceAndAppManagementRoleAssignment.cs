@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceAndAppManagementRoleAssignment : RoleAssignment, IParsable {
         /// <summary>The list of ids of role member security groups. These are IDs from Azure Active Directory.</summary>
         public List<string> Members {
-            get { return BackingStore?.Get<List<string>>(nameof(Members)); }
-            set { BackingStore?.Set(nameof(Members), value); }
+            get { return BackingStore?.Get<List<string>>("members"); }
+            set { BackingStore?.Set("members", value); }
         }
         /// <summary>The set of Role Scope Tags defined on the Role Assignment.</summary>
         public List<RoleScopeTag> RoleScopeTags {
-            get { return BackingStore?.Get<List<RoleScopeTag>>(nameof(RoleScopeTags)); }
-            set { BackingStore?.Set(nameof(RoleScopeTags), value); }
+            get { return BackingStore?.Get<List<RoleScopeTag>>("roleScopeTags"); }
+            set { BackingStore?.Set("roleScopeTags", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

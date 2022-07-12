@@ -7,33 +7,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationWindowsSettingApplicability : DeviceManagementConfigurationSettingApplicability, IParsable {
         /// <summary>Version of CSP setting is a part of</summary>
         public string ConfigurationServiceProviderVersion {
-            get { return BackingStore?.Get<string>(nameof(ConfigurationServiceProviderVersion)); }
-            set { BackingStore?.Set(nameof(ConfigurationServiceProviderVersion), value); }
+            get { return BackingStore?.Get<string>("configurationServiceProviderVersion"); }
+            set { BackingStore?.Set("configurationServiceProviderVersion", value); }
         }
         /// <summary>Maximum supported version of Windows</summary>
         public string MaximumSupportedVersion {
-            get { return BackingStore?.Get<string>(nameof(MaximumSupportedVersion)); }
-            set { BackingStore?.Set(nameof(MaximumSupportedVersion), value); }
+            get { return BackingStore?.Get<string>("maximumSupportedVersion"); }
+            set { BackingStore?.Set("maximumSupportedVersion", value); }
         }
         /// <summary>Minimum supported version of Windows</summary>
         public string MinimumSupportedVersion {
-            get { return BackingStore?.Get<string>(nameof(MinimumSupportedVersion)); }
-            set { BackingStore?.Set(nameof(MinimumSupportedVersion), value); }
+            get { return BackingStore?.Get<string>("minimumSupportedVersion"); }
+            set { BackingStore?.Set("minimumSupportedVersion", value); }
         }
-        /// <summary>Required AzureAD trust type. Possible values are: none, azureAdJoined, addWorkAccount, mdmOnly.</summary>
+        /// <summary>Required AAD Trust Type</summary>
         public DeviceManagementConfigurationAzureAdTrustType? RequiredAzureAdTrustType {
-            get { return BackingStore?.Get<DeviceManagementConfigurationAzureAdTrustType?>(nameof(RequiredAzureAdTrustType)); }
-            set { BackingStore?.Set(nameof(RequiredAzureAdTrustType), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationAzureAdTrustType?>("requiredAzureAdTrustType"); }
+            set { BackingStore?.Set("requiredAzureAdTrustType", value); }
         }
         /// <summary>AzureAD setting requirement</summary>
         public bool? RequiresAzureAd {
-            get { return BackingStore?.Get<bool?>(nameof(RequiresAzureAd)); }
-            set { BackingStore?.Set(nameof(RequiresAzureAd), value); }
+            get { return BackingStore?.Get<bool?>("requiresAzureAd"); }
+            set { BackingStore?.Set("requiresAzureAd", value); }
         }
         /// <summary>List of Windows SKUs that the setting is applicable for</summary>
         public List<string> WindowsSkus {
-            get { return BackingStore?.Get<List<string>>(nameof(WindowsSkus)); }
-            set { BackingStore?.Set(nameof(WindowsSkus), value); }
+            get { return BackingStore?.Get<List<string>>("windowsSkus"); }
+            set { BackingStore?.Set("windowsSkus", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

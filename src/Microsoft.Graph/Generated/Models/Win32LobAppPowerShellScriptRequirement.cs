@@ -5,35 +5,35 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Win32LobAppPowerShellScriptRequirement : Win32LobAppRequirement, IParsable {
-        /// <summary>The detection type for script output. Possible values are: notConfigured, string, dateTime, integer, float, version, boolean.</summary>
+        /// <summary>Contains all supported Powershell Script output detection type.</summary>
         public Win32LobAppPowerShellScriptDetectionType? DetectionType {
-            get { return BackingStore?.Get<Win32LobAppPowerShellScriptDetectionType?>(nameof(DetectionType)); }
-            set { BackingStore?.Set(nameof(DetectionType), value); }
+            get { return BackingStore?.Get<Win32LobAppPowerShellScriptDetectionType?>("detectionType"); }
+            set { BackingStore?.Set("detectionType", value); }
         }
         /// <summary>The unique display name for this rule</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>A value indicating whether signature check is enforced</summary>
         public bool? EnforceSignatureCheck {
-            get { return BackingStore?.Get<bool?>(nameof(EnforceSignatureCheck)); }
-            set { BackingStore?.Set(nameof(EnforceSignatureCheck), value); }
+            get { return BackingStore?.Get<bool?>("enforceSignatureCheck"); }
+            set { BackingStore?.Set("enforceSignatureCheck", value); }
         }
         /// <summary>A value indicating whether this script should run as 32-bit</summary>
         public bool? RunAs32Bit {
-            get { return BackingStore?.Get<bool?>(nameof(RunAs32Bit)); }
-            set { BackingStore?.Set(nameof(RunAs32Bit), value); }
+            get { return BackingStore?.Get<bool?>("runAs32Bit"); }
+            set { BackingStore?.Set("runAs32Bit", value); }
         }
-        /// <summary>Indicates the type of execution context the script runs in. Possible values are: system, user.</summary>
+        /// <summary>Indicates the type of execution context the app runs in.</summary>
         public RunAsAccountType? RunAsAccount {
-            get { return BackingStore?.Get<RunAsAccountType?>(nameof(RunAsAccount)); }
-            set { BackingStore?.Set(nameof(RunAsAccount), value); }
+            get { return BackingStore?.Get<RunAsAccountType?>("runAsAccount"); }
+            set { BackingStore?.Set("runAsAccount", value); }
         }
         /// <summary>The base64 encoded script content to detect Win32 Line of Business (LoB) app</summary>
         public string ScriptContent {
-            get { return BackingStore?.Get<string>(nameof(ScriptContent)); }
-            set { BackingStore?.Set(nameof(ScriptContent), value); }
+            get { return BackingStore?.Get<string>("scriptContent"); }
+            set { BackingStore?.Set("scriptContent", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

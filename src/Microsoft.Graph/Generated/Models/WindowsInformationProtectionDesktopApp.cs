@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsInformationProtectionDesktopApp : WindowsInformationProtectionApp, IParsable {
         /// <summary>The binary name.</summary>
         public string BinaryName {
-            get { return BackingStore?.Get<string>(nameof(BinaryName)); }
-            set { BackingStore?.Set(nameof(BinaryName), value); }
+            get { return BackingStore?.Get<string>("binaryName"); }
+            set { BackingStore?.Set("binaryName", value); }
         }
         /// <summary>The high binary version.</summary>
         public string BinaryVersionHigh {
-            get { return BackingStore?.Get<string>(nameof(BinaryVersionHigh)); }
-            set { BackingStore?.Set(nameof(BinaryVersionHigh), value); }
+            get { return BackingStore?.Get<string>("binaryVersionHigh"); }
+            set { BackingStore?.Set("binaryVersionHigh", value); }
         }
         /// <summary>The lower binary version.</summary>
         public string BinaryVersionLow {
-            get { return BackingStore?.Get<string>(nameof(BinaryVersionLow)); }
-            set { BackingStore?.Set(nameof(BinaryVersionLow), value); }
+            get { return BackingStore?.Get<string>("binaryVersionLow"); }
+            set { BackingStore?.Set("binaryVersionLow", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

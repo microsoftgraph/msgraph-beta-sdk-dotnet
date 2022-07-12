@@ -10,30 +10,30 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyExactMatches {
     public class ClassifyExactMatchesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The contentClassifications property</summary>
         public List<ContentClassification> ContentClassifications {
-            get { return BackingStore?.Get<List<ContentClassification>>(nameof(ContentClassifications)); }
-            set { BackingStore?.Set(nameof(ContentClassifications), value); }
+            get { return BackingStore?.Get<List<ContentClassification>>("contentClassifications"); }
+            set { BackingStore?.Set("contentClassifications", value); }
         }
         /// <summary>The sensitiveTypeIds property</summary>
         public List<string> SensitiveTypeIds {
-            get { return BackingStore?.Get<List<string>>(nameof(SensitiveTypeIds)); }
-            set { BackingStore?.Set(nameof(SensitiveTypeIds), value); }
+            get { return BackingStore?.Get<List<string>>("sensitiveTypeIds"); }
+            set { BackingStore?.Set("sensitiveTypeIds", value); }
         }
         /// <summary>The text property</summary>
         public string Text {
-            get { return BackingStore?.Get<string>(nameof(Text)); }
-            set { BackingStore?.Set(nameof(Text), value); }
+            get { return BackingStore?.Get<string>("text"); }
+            set { BackingStore?.Set("text", value); }
         }
         /// <summary>The timeoutInMs property</summary>
         public string TimeoutInMs {
-            get { return BackingStore?.Get<string>(nameof(TimeoutInMs)); }
-            set { BackingStore?.Set(nameof(TimeoutInMs), value); }
+            get { return BackingStore?.Get<string>("timeoutInMs"); }
+            set { BackingStore?.Set("timeoutInMs", value); }
         }
         /// <summary>
         /// Instantiates a new classifyExactMatchesPostRequestBody and sets the default values.

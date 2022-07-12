@@ -5,97 +5,103 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class DeviceManagementConfigurationSettingDefinition : Entity, IParsable {
-        /// <summary>Read/write access mode of the setting. Possible values are: none, add, copy, delete, get, replace, execute.</summary>
+        /// <summary>The accessTypes property</summary>
         public DeviceManagementConfigurationSettingAccessTypes? AccessTypes {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingAccessTypes?>(nameof(AccessTypes)); }
-            set { BackingStore?.Set(nameof(AccessTypes), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationSettingAccessTypes?>("accessTypes"); }
+            set { BackingStore?.Set("accessTypes", value); }
         }
         /// <summary>Details which device setting is applicable on</summary>
         public DeviceManagementConfigurationSettingApplicability Applicability {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingApplicability>(nameof(Applicability)); }
-            set { BackingStore?.Set(nameof(Applicability), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationSettingApplicability>("applicability"); }
+            set { BackingStore?.Set("applicability", value); }
         }
         /// <summary>Base CSP Path</summary>
         public string BaseUri {
-            get { return BackingStore?.Get<string>(nameof(BaseUri)); }
-            set { BackingStore?.Set(nameof(BaseUri), value); }
+            get { return BackingStore?.Get<string>("baseUri"); }
+            set { BackingStore?.Set("baseUri", value); }
         }
         /// <summary>Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)</summary>
         public string CategoryId {
-            get { return BackingStore?.Get<string>(nameof(CategoryId)); }
-            set { BackingStore?.Set(nameof(CategoryId), value); }
+            get { return BackingStore?.Get<string>("categoryId"); }
+            set { BackingStore?.Set("categoryId", value); }
         }
         /// <summary>Description of the item</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Display name of the item</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Help text of the item</summary>
         public string HelpText {
-            get { return BackingStore?.Get<string>(nameof(HelpText)); }
-            set { BackingStore?.Set(nameof(HelpText), value); }
+            get { return BackingStore?.Get<string>("helpText"); }
+            set { BackingStore?.Set("helpText", value); }
         }
         /// <summary>List of links more info for the setting can be found at</summary>
         public List<string> InfoUrls {
-            get { return BackingStore?.Get<List<string>>(nameof(InfoUrls)); }
-            set { BackingStore?.Set(nameof(InfoUrls), value); }
+            get { return BackingStore?.Get<List<string>>("infoUrls"); }
+            set { BackingStore?.Set("infoUrls", value); }
         }
         /// <summary>Tokens which to search settings on</summary>
         public List<string> Keywords {
-            get { return BackingStore?.Get<List<string>>(nameof(Keywords)); }
-            set { BackingStore?.Set(nameof(Keywords), value); }
+            get { return BackingStore?.Get<List<string>>("keywords"); }
+            set { BackingStore?.Set("keywords", value); }
         }
         /// <summary>Name of the item</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>Indicates whether the setting is required or not</summary>
         public DeviceManagementConfigurationSettingOccurrence Occurrence {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingOccurrence>(nameof(Occurrence)); }
-            set { BackingStore?.Set(nameof(Occurrence), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationSettingOccurrence>("occurrence"); }
+            set { BackingStore?.Set("occurrence", value); }
         }
         /// <summary>Offset CSP Path from Base</summary>
         public string OffsetUri {
-            get { return BackingStore?.Get<string>(nameof(OffsetUri)); }
-            set { BackingStore?.Set(nameof(OffsetUri), value); }
+            get { return BackingStore?.Get<string>("offsetUri"); }
+            set { BackingStore?.Set("offsetUri", value); }
         }
         /// <summary>List of referred setting information.</summary>
         public List<DeviceManagementConfigurationReferredSettingInformation> ReferredSettingInformationList {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationReferredSettingInformation>>(nameof(ReferredSettingInformationList)); }
-            set { BackingStore?.Set(nameof(ReferredSettingInformationList), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationReferredSettingInformation>>("referredSettingInformationList"); }
+            set { BackingStore?.Set("referredSettingInformationList", value); }
         }
         /// <summary>Root setting definition if the setting is a child setting.</summary>
         public string RootDefinitionId {
-            get { return BackingStore?.Get<string>(nameof(RootDefinitionId)); }
-            set { BackingStore?.Set(nameof(RootDefinitionId), value); }
+            get { return BackingStore?.Get<string>("rootDefinitionId"); }
+            set { BackingStore?.Set("rootDefinitionId", value); }
         }
-        /// <summary>Setting type, for example, configuration and compliance. Possible values are: none, configuration, compliance.</summary>
+        /// <summary>Supported setting types</summary>
         public DeviceManagementConfigurationSettingUsage? SettingUsage {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingUsage?>(nameof(SettingUsage)); }
-            set { BackingStore?.Set(nameof(SettingUsage), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationSettingUsage?>("settingUsage"); }
+            set { BackingStore?.Set("settingUsage", value); }
         }
-        /// <summary>Setting control type representation in the UX. Possible values are: default, dropdown, smallTextBox, largeTextBox, toggle, multiheaderGrid, contextPane.</summary>
+        /// <summary>Setting control type representation in the UX</summary>
         public DeviceManagementConfigurationControlType? UxBehavior {
-            get { return BackingStore?.Get<DeviceManagementConfigurationControlType?>(nameof(UxBehavior)); }
-            set { BackingStore?.Set(nameof(UxBehavior), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationControlType?>("uxBehavior"); }
+            set { BackingStore?.Set("uxBehavior", value); }
         }
         /// <summary>Item Version</summary>
         public string Version {
-            get { return BackingStore?.Get<string>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<string>("version"); }
+            set { BackingStore?.Set("version", value); }
         }
-        /// <summary>Setting visibility scope to UX. Possible values are: none, settingsCatalog, template.</summary>
+        /// <summary>Supported setting types</summary>
         public DeviceManagementConfigurationSettingVisibility? Visibility {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingVisibility?>(nameof(Visibility)); }
-            set { BackingStore?.Set(nameof(Visibility), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationSettingVisibility?>("visibility"); }
+            set { BackingStore?.Set("visibility", value); }
+        }
+        /// <summary>
+        /// Instantiates a new deviceManagementConfigurationSettingDefinition and sets the default values.
+        /// </summary>
+        public DeviceManagementConfigurationSettingDefinition() : base() {
+            Type = "#microsoft.graph.deviceManagementConfigurationSettingDefinition";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

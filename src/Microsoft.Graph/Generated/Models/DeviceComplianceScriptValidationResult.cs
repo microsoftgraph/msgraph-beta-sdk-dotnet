@@ -8,28 +8,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceComplianceScriptValidationResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Errors in json for the script for rules.</summary>
         public List<DeviceComplianceScriptRuleError> RuleErrors {
-            get { return BackingStore?.Get<List<DeviceComplianceScriptRuleError>>(nameof(RuleErrors)); }
-            set { BackingStore?.Set(nameof(RuleErrors), value); }
+            get { return BackingStore?.Get<List<DeviceComplianceScriptRuleError>>("ruleErrors"); }
+            set { BackingStore?.Set("ruleErrors", value); }
         }
         /// <summary>Parsed rules from json.</summary>
         public List<DeviceComplianceScriptRule> Rules {
-            get { return BackingStore?.Get<List<DeviceComplianceScriptRule>>(nameof(Rules)); }
-            set { BackingStore?.Set(nameof(Rules), value); }
+            get { return BackingStore?.Get<List<DeviceComplianceScriptRule>>("rules"); }
+            set { BackingStore?.Set("rules", value); }
         }
         /// <summary>Errors in json for the script.</summary>
         public List<DeviceComplianceScriptError> ScriptErrors {
-            get { return BackingStore?.Get<List<DeviceComplianceScriptError>>(nameof(ScriptErrors)); }
-            set { BackingStore?.Set(nameof(ScriptErrors), value); }
+            get { return BackingStore?.Get<List<DeviceComplianceScriptError>>("scriptErrors"); }
+            set { BackingStore?.Set("scriptErrors", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceComplianceScriptValidationResult and sets the default values.
+        /// Instantiates a new deviceComplianceScriptValidationResult and sets the default values.
         /// </summary>
         public DeviceComplianceScriptValidationResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

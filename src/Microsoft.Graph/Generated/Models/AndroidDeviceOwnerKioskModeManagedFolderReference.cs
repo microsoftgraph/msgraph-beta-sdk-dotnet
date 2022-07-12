@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceOwnerKioskModeManagedFolderReference : AndroidDeviceOwnerKioskModeHomeScreenItem, IParsable {
         /// <summary>Unique identifier for the folder</summary>
         public string FolderIdentifier {
-            get { return BackingStore?.Get<string>(nameof(FolderIdentifier)); }
-            set { BackingStore?.Set(nameof(FolderIdentifier), value); }
+            get { return BackingStore?.Get<string>("folderIdentifier"); }
+            set { BackingStore?.Set("folderIdentifier", value); }
         }
         /// <summary>Name of the folder</summary>
         public string FolderName {
-            get { return BackingStore?.Get<string>(nameof(FolderName)); }
-            set { BackingStore?.Set(nameof(FolderName), value); }
+            get { return BackingStore?.Get<string>("folderName"); }
+            set { BackingStore?.Set("folderName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

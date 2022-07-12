@@ -4,27 +4,26 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class InformationProtectionPolicySetting : Entity, IParsable {
         /// <summary>The defaultLabelId property</summary>
         public string DefaultLabelId {
-            get { return BackingStore?.Get<string>(nameof(DefaultLabelId)); }
-            set { BackingStore?.Set(nameof(DefaultLabelId), value); }
+            get { return BackingStore?.Get<string>("defaultLabelId"); }
+            set { BackingStore?.Set("defaultLabelId", value); }
         }
         /// <summary>The isDowngradeJustificationRequired property</summary>
         public bool? IsDowngradeJustificationRequired {
-            get { return BackingStore?.Get<bool?>(nameof(IsDowngradeJustificationRequired)); }
-            set { BackingStore?.Set(nameof(IsDowngradeJustificationRequired), value); }
+            get { return BackingStore?.Get<bool?>("isDowngradeJustificationRequired"); }
+            set { BackingStore?.Set("isDowngradeJustificationRequired", value); }
         }
         /// <summary>The isMandatory property</summary>
         public bool? IsMandatory {
-            get { return BackingStore?.Get<bool?>(nameof(IsMandatory)); }
-            set { BackingStore?.Set(nameof(IsMandatory), value); }
+            get { return BackingStore?.Get<bool?>("isMandatory"); }
+            set { BackingStore?.Set("isMandatory", value); }
         }
         /// <summary>The moreInfoUrl property</summary>
         public string MoreInfoUrl {
-            get { return BackingStore?.Get<string>(nameof(MoreInfoUrl)); }
-            set { BackingStore?.Set(nameof(MoreInfoUrl), value); }
+            get { return BackingStore?.Get<string>("moreInfoUrl"); }
+            set { BackingStore?.Set("moreInfoUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

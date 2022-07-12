@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsKioskDesktopApp : WindowsKioskAppBase, IParsable {
         /// <summary>Define the DesktopApplicationID of the app</summary>
         public string DesktopApplicationId {
-            get { return BackingStore?.Get<string>(nameof(DesktopApplicationId)); }
-            set { BackingStore?.Set(nameof(DesktopApplicationId), value); }
+            get { return BackingStore?.Get<string>("desktopApplicationId"); }
+            set { BackingStore?.Set("desktopApplicationId", value); }
         }
         /// <summary>Define the DesktopApplicationLinkPath of the app</summary>
         public string DesktopApplicationLinkPath {
-            get { return BackingStore?.Get<string>(nameof(DesktopApplicationLinkPath)); }
-            set { BackingStore?.Set(nameof(DesktopApplicationLinkPath), value); }
+            get { return BackingStore?.Get<string>("desktopApplicationLinkPath"); }
+            set { BackingStore?.Set("desktopApplicationLinkPath", value); }
         }
         /// <summary>Define the path of a desktop app</summary>
         public string PathObject {
-            get { return BackingStore?.Get<string>(nameof(PathObject)); }
-            set { BackingStore?.Set(nameof(PathObject), value); }
+            get { return BackingStore?.Get<string>("path"); }
+            set { BackingStore?.Set("path", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

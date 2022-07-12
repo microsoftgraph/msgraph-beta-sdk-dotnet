@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class ChatRenamedEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>The updated name of the chat.</summary>
         public string ChatDisplayName {
-            get { return BackingStore?.Get<string>(nameof(ChatDisplayName)); }
-            set { BackingStore?.Set(nameof(ChatDisplayName), value); }
+            get { return BackingStore?.Get<string>("chatDisplayName"); }
+            set { BackingStore?.Set("chatDisplayName", value); }
         }
         /// <summary>Unique identifier of the chat.</summary>
         public string ChatId {
-            get { return BackingStore?.Get<string>(nameof(ChatId)); }
-            set { BackingStore?.Set(nameof(ChatId), value); }
+            get { return BackingStore?.Get<string>("chatId"); }
+            set { BackingStore?.Set("chatId", value); }
         }
         /// <summary>Initiator of the event.</summary>
         public IdentitySet Initiator {
-            get { return BackingStore?.Get<IdentitySet>(nameof(Initiator)); }
-            set { BackingStore?.Set(nameof(Initiator), value); }
+            get { return BackingStore?.Get<IdentitySet>("initiator"); }
+            set { BackingStore?.Set("initiator", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

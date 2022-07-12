@@ -8,28 +8,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class ZebraFotaArtifact : Entity, IParsable {
         /// <summary>The version of the Board Support Package.</summary>
         public string BoardSupportPackageVersion {
-            get { return BackingStore?.Get<string>(nameof(BoardSupportPackageVersion)); }
-            set { BackingStore?.Set(nameof(BoardSupportPackageVersion), value); }
+            get { return BackingStore?.Get<string>("boardSupportPackageVersion"); }
+            set { BackingStore?.Set("boardSupportPackageVersion", value); }
         }
         /// <summary>Artifact device model.</summary>
         public string DeviceModel {
-            get { return BackingStore?.Get<string>(nameof(DeviceModel)); }
-            set { BackingStore?.Set(nameof(DeviceModel), value); }
+            get { return BackingStore?.Get<string>("deviceModel"); }
+            set { BackingStore?.Set("deviceModel", value); }
         }
         /// <summary>Artifact OS version.</summary>
         public string OsVersion {
-            get { return BackingStore?.Get<string>(nameof(OsVersion)); }
-            set { BackingStore?.Set(nameof(OsVersion), value); }
+            get { return BackingStore?.Get<string>("osVersion"); }
+            set { BackingStore?.Set("osVersion", value); }
         }
         /// <summary>Artifact patch version.</summary>
         public string PatchVersion {
-            get { return BackingStore?.Get<string>(nameof(PatchVersion)); }
-            set { BackingStore?.Set(nameof(PatchVersion), value); }
+            get { return BackingStore?.Get<string>("patchVersion"); }
+            set { BackingStore?.Set("patchVersion", value); }
         }
         /// <summary>Artifact release notes URL.</summary>
         public string ReleaseNotesUrl {
-            get { return BackingStore?.Get<string>(nameof(ReleaseNotesUrl)); }
-            set { BackingStore?.Set(nameof(ReleaseNotesUrl), value); }
+            get { return BackingStore?.Get<string>("releaseNotesUrl"); }
+            set { BackingStore?.Set("releaseNotesUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

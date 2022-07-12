@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeliveryOptimizationMaxCacheSizeAbsolute : DeliveryOptimizationMaxCacheSize, IParsable {
         /// <summary>Specifies the maximum size in GB of Delivery Optimization cache. Valid values 0 to 4294967295</summary>
         public long? MaximumCacheSizeInGigabytes {
-            get { return BackingStore?.Get<long?>(nameof(MaximumCacheSizeInGigabytes)); }
-            set { BackingStore?.Set(nameof(MaximumCacheSizeInGigabytes), value); }
+            get { return BackingStore?.Get<long?>("maximumCacheSizeInGigabytes"); }
+            set { BackingStore?.Set("maximumCacheSizeInGigabytes", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

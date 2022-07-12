@@ -5,167 +5,167 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class SalesCreditMemo : Entity, IParsable {
         /// <summary>The billingPostalAddress property</summary>
         public PostalAddressType BillingPostalAddress {
-            get { return BackingStore?.Get<PostalAddressType>(nameof(BillingPostalAddress)); }
-            set { BackingStore?.Set(nameof(BillingPostalAddress), value); }
+            get { return BackingStore?.Get<PostalAddressType>("billingPostalAddress"); }
+            set { BackingStore?.Set("billingPostalAddress", value); }
         }
         /// <summary>The billToCustomerId property</summary>
         public string BillToCustomerId {
-            get { return BackingStore?.Get<string>(nameof(BillToCustomerId)); }
-            set { BackingStore?.Set(nameof(BillToCustomerId), value); }
+            get { return BackingStore?.Get<string>("billToCustomerId"); }
+            set { BackingStore?.Set("billToCustomerId", value); }
         }
         /// <summary>The billToCustomerNumber property</summary>
         public string BillToCustomerNumber {
-            get { return BackingStore?.Get<string>(nameof(BillToCustomerNumber)); }
-            set { BackingStore?.Set(nameof(BillToCustomerNumber), value); }
+            get { return BackingStore?.Get<string>("billToCustomerNumber"); }
+            set { BackingStore?.Set("billToCustomerNumber", value); }
         }
         /// <summary>The billToName property</summary>
         public string BillToName {
-            get { return BackingStore?.Get<string>(nameof(BillToName)); }
-            set { BackingStore?.Set(nameof(BillToName), value); }
+            get { return BackingStore?.Get<string>("billToName"); }
+            set { BackingStore?.Set("billToName", value); }
         }
         /// <summary>The creditMemoDate property</summary>
         public Date? CreditMemoDate {
-            get { return BackingStore?.Get<Date?>(nameof(CreditMemoDate)); }
-            set { BackingStore?.Set(nameof(CreditMemoDate), value); }
+            get { return BackingStore?.Get<Date?>("creditMemoDate"); }
+            set { BackingStore?.Set("creditMemoDate", value); }
         }
         /// <summary>The currency property</summary>
         public Microsoft.Graph.Beta.Models.Currency Currency {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Currency>(nameof(Currency)); }
-            set { BackingStore?.Set(nameof(Currency), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Currency>("currency"); }
+            set { BackingStore?.Set("currency", value); }
         }
         /// <summary>The currencyCode property</summary>
         public string CurrencyCode {
-            get { return BackingStore?.Get<string>(nameof(CurrencyCode)); }
-            set { BackingStore?.Set(nameof(CurrencyCode), value); }
+            get { return BackingStore?.Get<string>("currencyCode"); }
+            set { BackingStore?.Set("currencyCode", value); }
         }
         /// <summary>The currencyId property</summary>
         public string CurrencyId {
-            get { return BackingStore?.Get<string>(nameof(CurrencyId)); }
-            set { BackingStore?.Set(nameof(CurrencyId), value); }
+            get { return BackingStore?.Get<string>("currencyId"); }
+            set { BackingStore?.Set("currencyId", value); }
         }
         /// <summary>The customer property</summary>
         public Microsoft.Graph.Beta.Models.Customer Customer {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Customer>(nameof(Customer)); }
-            set { BackingStore?.Set(nameof(Customer), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Customer>("customer"); }
+            set { BackingStore?.Set("customer", value); }
         }
         /// <summary>The customerId property</summary>
         public string CustomerId {
-            get { return BackingStore?.Get<string>(nameof(CustomerId)); }
-            set { BackingStore?.Set(nameof(CustomerId), value); }
+            get { return BackingStore?.Get<string>("customerId"); }
+            set { BackingStore?.Set("customerId", value); }
         }
         /// <summary>The customerName property</summary>
         public string CustomerName {
-            get { return BackingStore?.Get<string>(nameof(CustomerName)); }
-            set { BackingStore?.Set(nameof(CustomerName), value); }
+            get { return BackingStore?.Get<string>("customerName"); }
+            set { BackingStore?.Set("customerName", value); }
         }
         /// <summary>The customerNumber property</summary>
         public string CustomerNumber {
-            get { return BackingStore?.Get<string>(nameof(CustomerNumber)); }
-            set { BackingStore?.Set(nameof(CustomerNumber), value); }
+            get { return BackingStore?.Get<string>("customerNumber"); }
+            set { BackingStore?.Set("customerNumber", value); }
         }
         /// <summary>The discountAmount property</summary>
         public decimal? DiscountAmount {
-            get { return BackingStore?.Get<decimal?>(nameof(DiscountAmount)); }
-            set { BackingStore?.Set(nameof(DiscountAmount), value); }
+            get { return BackingStore?.Get<decimal?>("discountAmount"); }
+            set { BackingStore?.Set("discountAmount", value); }
         }
         /// <summary>The discountAppliedBeforeTax property</summary>
         public bool? DiscountAppliedBeforeTax {
-            get { return BackingStore?.Get<bool?>(nameof(DiscountAppliedBeforeTax)); }
-            set { BackingStore?.Set(nameof(DiscountAppliedBeforeTax), value); }
+            get { return BackingStore?.Get<bool?>("discountAppliedBeforeTax"); }
+            set { BackingStore?.Set("discountAppliedBeforeTax", value); }
         }
         /// <summary>The dueDate property</summary>
         public Date? DueDate {
-            get { return BackingStore?.Get<Date?>(nameof(DueDate)); }
-            set { BackingStore?.Set(nameof(DueDate), value); }
+            get { return BackingStore?.Get<Date?>("dueDate"); }
+            set { BackingStore?.Set("dueDate", value); }
         }
         /// <summary>The email property</summary>
         public string Email {
-            get { return BackingStore?.Get<string>(nameof(Email)); }
-            set { BackingStore?.Set(nameof(Email), value); }
+            get { return BackingStore?.Get<string>("email"); }
+            set { BackingStore?.Set("email", value); }
         }
         /// <summary>The externalDocumentNumber property</summary>
         public string ExternalDocumentNumber {
-            get { return BackingStore?.Get<string>(nameof(ExternalDocumentNumber)); }
-            set { BackingStore?.Set(nameof(ExternalDocumentNumber), value); }
+            get { return BackingStore?.Get<string>("externalDocumentNumber"); }
+            set { BackingStore?.Set("externalDocumentNumber", value); }
         }
         /// <summary>The invoiceId property</summary>
         public string InvoiceId {
-            get { return BackingStore?.Get<string>(nameof(InvoiceId)); }
-            set { BackingStore?.Set(nameof(InvoiceId), value); }
+            get { return BackingStore?.Get<string>("invoiceId"); }
+            set { BackingStore?.Set("invoiceId", value); }
         }
         /// <summary>The invoiceNumber property</summary>
         public string InvoiceNumber {
-            get { return BackingStore?.Get<string>(nameof(InvoiceNumber)); }
-            set { BackingStore?.Set(nameof(InvoiceNumber), value); }
+            get { return BackingStore?.Get<string>("invoiceNumber"); }
+            set { BackingStore?.Set("invoiceNumber", value); }
         }
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The number property</summary>
         public string Number {
-            get { return BackingStore?.Get<string>(nameof(Number)); }
-            set { BackingStore?.Set(nameof(Number), value); }
+            get { return BackingStore?.Get<string>("number"); }
+            set { BackingStore?.Set("number", value); }
         }
         /// <summary>The paymentTerm property</summary>
         public Microsoft.Graph.Beta.Models.PaymentTerm PaymentTerm {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PaymentTerm>(nameof(PaymentTerm)); }
-            set { BackingStore?.Set(nameof(PaymentTerm), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PaymentTerm>("paymentTerm"); }
+            set { BackingStore?.Set("paymentTerm", value); }
         }
         /// <summary>The paymentTermsId property</summary>
         public string PaymentTermsId {
-            get { return BackingStore?.Get<string>(nameof(PaymentTermsId)); }
-            set { BackingStore?.Set(nameof(PaymentTermsId), value); }
+            get { return BackingStore?.Get<string>("paymentTermsId"); }
+            set { BackingStore?.Set("paymentTermsId", value); }
         }
         /// <summary>The phoneNumber property</summary>
         public string PhoneNumber {
-            get { return BackingStore?.Get<string>(nameof(PhoneNumber)); }
-            set { BackingStore?.Set(nameof(PhoneNumber), value); }
+            get { return BackingStore?.Get<string>("phoneNumber"); }
+            set { BackingStore?.Set("phoneNumber", value); }
         }
         /// <summary>The pricesIncludeTax property</summary>
         public bool? PricesIncludeTax {
-            get { return BackingStore?.Get<bool?>(nameof(PricesIncludeTax)); }
-            set { BackingStore?.Set(nameof(PricesIncludeTax), value); }
+            get { return BackingStore?.Get<bool?>("pricesIncludeTax"); }
+            set { BackingStore?.Set("pricesIncludeTax", value); }
         }
         /// <summary>The salesCreditMemoLines property</summary>
         public List<SalesCreditMemoLine> SalesCreditMemoLines {
-            get { return BackingStore?.Get<List<SalesCreditMemoLine>>(nameof(SalesCreditMemoLines)); }
-            set { BackingStore?.Set(nameof(SalesCreditMemoLines), value); }
+            get { return BackingStore?.Get<List<SalesCreditMemoLine>>("salesCreditMemoLines"); }
+            set { BackingStore?.Set("salesCreditMemoLines", value); }
         }
         /// <summary>The salesperson property</summary>
         public string Salesperson {
-            get { return BackingStore?.Get<string>(nameof(Salesperson)); }
-            set { BackingStore?.Set(nameof(Salesperson), value); }
+            get { return BackingStore?.Get<string>("salesperson"); }
+            set { BackingStore?.Set("salesperson", value); }
         }
         /// <summary>The sellingPostalAddress property</summary>
         public PostalAddressType SellingPostalAddress {
-            get { return BackingStore?.Get<PostalAddressType>(nameof(SellingPostalAddress)); }
-            set { BackingStore?.Set(nameof(SellingPostalAddress), value); }
+            get { return BackingStore?.Get<PostalAddressType>("sellingPostalAddress"); }
+            set { BackingStore?.Set("sellingPostalAddress", value); }
         }
         /// <summary>The status property</summary>
         public string Status {
-            get { return BackingStore?.Get<string>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<string>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>The totalAmountExcludingTax property</summary>
         public decimal? TotalAmountExcludingTax {
-            get { return BackingStore?.Get<decimal?>(nameof(TotalAmountExcludingTax)); }
-            set { BackingStore?.Set(nameof(TotalAmountExcludingTax), value); }
+            get { return BackingStore?.Get<decimal?>("totalAmountExcludingTax"); }
+            set { BackingStore?.Set("totalAmountExcludingTax", value); }
         }
         /// <summary>The totalAmountIncludingTax property</summary>
         public decimal? TotalAmountIncludingTax {
-            get { return BackingStore?.Get<decimal?>(nameof(TotalAmountIncludingTax)); }
-            set { BackingStore?.Set(nameof(TotalAmountIncludingTax), value); }
+            get { return BackingStore?.Get<decimal?>("totalAmountIncludingTax"); }
+            set { BackingStore?.Set("totalAmountIncludingTax", value); }
         }
         /// <summary>The totalTaxAmount property</summary>
         public decimal? TotalTaxAmount {
-            get { return BackingStore?.Get<decimal?>(nameof(TotalTaxAmount)); }
-            set { BackingStore?.Set(nameof(TotalTaxAmount), value); }
+            get { return BackingStore?.Get<decimal?>("totalTaxAmount"); }
+            set { BackingStore?.Set("totalTaxAmount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

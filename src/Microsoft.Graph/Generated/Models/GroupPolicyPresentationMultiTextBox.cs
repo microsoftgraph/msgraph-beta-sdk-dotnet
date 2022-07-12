@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyPresentationMultiTextBox : GroupPolicyPresentation, IParsable {
         /// <summary>An unsigned integer that specifies the maximum number of text characters. Default value is 1023.</summary>
         public long? MaxLength {
-            get { return BackingStore?.Get<long?>(nameof(MaxLength)); }
-            set { BackingStore?.Set(nameof(MaxLength), value); }
+            get { return BackingStore?.Get<long?>("maxLength"); }
+            set { BackingStore?.Set("maxLength", value); }
         }
         /// <summary>An unsigned integer that specifies the maximum number of strings. Default value is 0.</summary>
         public long? MaxStrings {
-            get { return BackingStore?.Get<long?>(nameof(MaxStrings)); }
-            set { BackingStore?.Set(nameof(MaxStrings), value); }
+            get { return BackingStore?.Get<long?>("maxStrings"); }
+            set { BackingStore?.Set("maxStrings", value); }
         }
         /// <summary>Requirement to enter a value in the text box. Default value is false.</summary>
         public bool? Required {
-            get { return BackingStore?.Get<bool?>(nameof(Required)); }
-            set { BackingStore?.Set(nameof(Required), value); }
+            get { return BackingStore?.Get<bool?>("required"); }
+            set { BackingStore?.Set("required", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

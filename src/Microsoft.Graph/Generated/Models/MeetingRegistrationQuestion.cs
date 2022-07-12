@@ -4,27 +4,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class MeetingRegistrationQuestion : Entity, IParsable {
         /// <summary>Answer input type of the custom registration question.</summary>
         public Microsoft.Graph.Beta.Models.AnswerInputType? AnswerInputType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AnswerInputType?>(nameof(AnswerInputType)); }
-            set { BackingStore?.Set(nameof(AnswerInputType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AnswerInputType?>("answerInputType"); }
+            set { BackingStore?.Set("answerInputType", value); }
         }
         /// <summary>Answer options when answerInputType is radioButton.</summary>
         public List<string> AnswerOptions {
-            get { return BackingStore?.Get<List<string>>(nameof(AnswerOptions)); }
-            set { BackingStore?.Set(nameof(AnswerOptions), value); }
+            get { return BackingStore?.Get<List<string>>("answerOptions"); }
+            set { BackingStore?.Set("answerOptions", value); }
         }
         /// <summary>Display name of the custom registration question.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Indicates whether the question is required. Default value is false.</summary>
         public bool? IsRequired {
-            get { return BackingStore?.Get<bool?>(nameof(IsRequired)); }
-            set { BackingStore?.Set(nameof(IsRequired), value); }
+            get { return BackingStore?.Get<bool?>("isRequired"); }
+            set { BackingStore?.Set("isRequired", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

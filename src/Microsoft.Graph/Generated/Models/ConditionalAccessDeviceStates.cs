@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class ConditionalAccessDeviceStates : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>States excluded from the scope of the policy. Possible values: Compliant, DomainJoined.</summary>
         public List<string> ExcludeStates {
-            get { return BackingStore?.Get<List<string>>(nameof(ExcludeStates)); }
-            set { BackingStore?.Set(nameof(ExcludeStates), value); }
+            get { return BackingStore?.Get<List<string>>("excludeStates"); }
+            set { BackingStore?.Set("excludeStates", value); }
         }
         /// <summary>States in the scope of the policy. All is the only allowed value.</summary>
         public List<string> IncludeStates {
-            get { return BackingStore?.Get<List<string>>(nameof(IncludeStates)); }
-            set { BackingStore?.Set(nameof(IncludeStates), value); }
+            get { return BackingStore?.Get<List<string>>("includeStates"); }
+            set { BackingStore?.Set("includeStates", value); }
         }
         /// <summary>
         /// Instantiates a new conditionalAccessDeviceStates and sets the default values.

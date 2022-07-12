@@ -8,18 +8,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class PersonAnnualEvent : ItemFacet, IParsable {
         /// <summary>The date property</summary>
         public Date? Date {
-            get { return BackingStore?.Get<Date?>(nameof(Date)); }
-            set { BackingStore?.Set(nameof(Date), value); }
+            get { return BackingStore?.Get<Date?>("date"); }
+            set { BackingStore?.Set("date", value); }
         }
         /// <summary>The displayName property</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
-        }
-        /// <summary>The type property</summary>
-        public PersonAnnualEventType? Type {
-            get { return BackingStore?.Get<PersonAnnualEventType?>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -36,7 +31,6 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"date", n => { Date = n.GetDateValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetEnumValue<PersonAnnualEventType>(); } },
             };
         }
         /// <summary>
@@ -48,7 +42,6 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteDateValue("date", Date);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<PersonAnnualEventType>("type", Type);
         }
     }
 }

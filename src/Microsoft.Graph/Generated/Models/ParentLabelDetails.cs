@@ -9,50 +9,55 @@ namespace Microsoft.Graph.Beta.Models {
     public class ParentLabelDetails : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The color that the user interface should display for the label, if configured.</summary>
         public string Color {
-            get { return BackingStore?.Get<string>(nameof(Color)); }
-            set { BackingStore?.Set(nameof(Color), value); }
+            get { return BackingStore?.Get<string>("color"); }
+            set { BackingStore?.Set("color", value); }
         }
         /// <summary>The admin-defined description for the label.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The label ID is a globally unique identifier (GUID).</summary>
         public string Id {
-            get { return BackingStore?.Get<string>(nameof(Id)); }
-            set { BackingStore?.Set(nameof(Id), value); }
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
         }
         /// <summary>Indicates whether the label is active or not. Active labels should be hidden or disabled in user interfaces.</summary>
         public bool? IsActive {
-            get { return BackingStore?.Get<bool?>(nameof(IsActive)); }
-            set { BackingStore?.Set(nameof(IsActive), value); }
+            get { return BackingStore?.Get<bool?>("isActive"); }
+            set { BackingStore?.Set("isActive", value); }
         }
         /// <summary>The plaintext name of the label.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The parent property</summary>
         public ParentLabelDetails Parent {
-            get { return BackingStore?.Get<ParentLabelDetails>(nameof(Parent)); }
-            set { BackingStore?.Set(nameof(Parent), value); }
+            get { return BackingStore?.Get<ParentLabelDetails>("parent"); }
+            set { BackingStore?.Set("parent", value); }
         }
         /// <summary>The sensitivity value of the label, where lower is less sensitive.</summary>
         public int? Sensitivity {
-            get { return BackingStore?.Get<int?>(nameof(Sensitivity)); }
-            set { BackingStore?.Set(nameof(Sensitivity), value); }
+            get { return BackingStore?.Get<int?>("sensitivity"); }
+            set { BackingStore?.Set("sensitivity", value); }
         }
         /// <summary>The tooltip that should be displayed for the label in a user interface.</summary>
         public string Tooltip {
-            get { return BackingStore?.Get<string>(nameof(Tooltip)); }
-            set { BackingStore?.Set(nameof(Tooltip), value); }
+            get { return BackingStore?.Get<string>("tooltip"); }
+            set { BackingStore?.Set("tooltip", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new parentLabelDetails and sets the default values.
@@ -60,6 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ParentLabelDetails() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.parentLabelDetails";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -87,6 +93,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"parent", n => { Parent = n.GetObjectValue<ParentLabelDetails>(ParentLabelDetails.CreateFromDiscriminatorValue); } },
                 {"sensitivity", n => { Sensitivity = n.GetIntValue(); } },
                 {"tooltip", n => { Tooltip = n.GetStringValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -103,6 +110,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<ParentLabelDetails>("parent", Parent);
             writer.WriteIntValue("sensitivity", Sensitivity);
             writer.WriteStringValue("tooltip", Tooltip);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

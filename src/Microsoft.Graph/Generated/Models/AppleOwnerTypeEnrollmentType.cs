@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class AppleOwnerTypeEnrollmentType : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The enrollment type. Possible values are: unknown, device, user.</summary>
+        /// <summary>The enrollmentType property</summary>
         public AppleUserInitiatedEnrollmentType? EnrollmentType {
-            get { return BackingStore?.Get<AppleUserInitiatedEnrollmentType?>(nameof(EnrollmentType)); }
-            set { BackingStore?.Set(nameof(EnrollmentType), value); }
+            get { return BackingStore?.Get<AppleUserInitiatedEnrollmentType?>("enrollmentType"); }
+            set { BackingStore?.Set("enrollmentType", value); }
         }
-        /// <summary>The owner type. Possible values are: unknown, company, personal.</summary>
+        /// <summary>Owner type of device.</summary>
         public ManagedDeviceOwnerType? OwnerType {
-            get { return BackingStore?.Get<ManagedDeviceOwnerType?>(nameof(OwnerType)); }
-            set { BackingStore?.Set(nameof(OwnerType), value); }
+            get { return BackingStore?.Get<ManagedDeviceOwnerType?>("ownerType"); }
+            set { BackingStore?.Set("ownerType", value); }
         }
         /// <summary>
         /// Instantiates a new appleOwnerTypeEnrollmentType and sets the default values.

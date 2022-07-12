@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
     public class AddToReviewSetPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The additionalDataOptions property</summary>
         public Microsoft.Graph.Beta.Models.Security.AdditionalDataOptions? AdditionalDataOptions {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AdditionalDataOptions?>(nameof(AdditionalDataOptions)); }
-            set { BackingStore?.Set(nameof(AdditionalDataOptions), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AdditionalDataOptions?>("additionalDataOptions"); }
+            set { BackingStore?.Set("additionalDataOptions", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The search property</summary>
         public EdiscoverySearch Search {
-            get { return BackingStore?.Get<EdiscoverySearch>(nameof(Search)); }
-            set { BackingStore?.Set(nameof(Search), value); }
+            get { return BackingStore?.Get<EdiscoverySearch>("search"); }
+            set { BackingStore?.Set("search", value); }
         }
         /// <summary>
         /// Instantiates a new addToReviewSetPostRequestBody and sets the default values.

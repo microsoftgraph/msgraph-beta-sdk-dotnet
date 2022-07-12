@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class EvaluateLabelJobResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The responsiblePolicy property</summary>
         public Microsoft.Graph.Beta.Models.ResponsiblePolicy ResponsiblePolicy {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResponsiblePolicy>(nameof(ResponsiblePolicy)); }
-            set { BackingStore?.Set(nameof(ResponsiblePolicy), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResponsiblePolicy>("responsiblePolicy"); }
+            set { BackingStore?.Set("responsiblePolicy", value); }
         }
         /// <summary>The responsibleSensitiveTypes property</summary>
         public List<ResponsibleSensitiveType> ResponsibleSensitiveTypes {
-            get { return BackingStore?.Get<List<ResponsibleSensitiveType>>(nameof(ResponsibleSensitiveTypes)); }
-            set { BackingStore?.Set(nameof(ResponsibleSensitiveTypes), value); }
+            get { return BackingStore?.Get<List<ResponsibleSensitiveType>>("responsibleSensitiveTypes"); }
+            set { BackingStore?.Set("responsibleSensitiveTypes", value); }
         }
         /// <summary>The sensitivityLabel property</summary>
         public MatchingLabel SensitivityLabel {
-            get { return BackingStore?.Get<MatchingLabel>(nameof(SensitivityLabel)); }
-            set { BackingStore?.Set(nameof(SensitivityLabel), value); }
+            get { return BackingStore?.Get<MatchingLabel>("sensitivityLabel"); }
+            set { BackingStore?.Set("sensitivityLabel", value); }
         }
         /// <summary>
         /// Instantiates a new evaluateLabelJobResult and sets the default values.

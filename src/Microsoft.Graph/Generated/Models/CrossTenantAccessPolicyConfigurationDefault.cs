@@ -4,37 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class CrossTenantAccessPolicyConfigurationDefault : Entity, IParsable {
         /// <summary>Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.</summary>
         public CrossTenantAccessPolicyB2BSetting B2bCollaborationInbound {
-            get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>(nameof(B2bCollaborationInbound)); }
-            set { BackingStore?.Set(nameof(B2bCollaborationInbound), value); }
+            get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>("b2bCollaborationInbound"); }
+            set { BackingStore?.Set("b2bCollaborationInbound", value); }
         }
         /// <summary>Defines your default configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.</summary>
         public CrossTenantAccessPolicyB2BSetting B2bCollaborationOutbound {
-            get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>(nameof(B2bCollaborationOutbound)); }
-            set { BackingStore?.Set(nameof(B2bCollaborationOutbound), value); }
+            get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>("b2bCollaborationOutbound"); }
+            set { BackingStore?.Set("b2bCollaborationOutbound", value); }
         }
         /// <summary>Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B direct connect.</summary>
         public CrossTenantAccessPolicyB2BSetting B2bDirectConnectInbound {
-            get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>(nameof(B2bDirectConnectInbound)); }
-            set { BackingStore?.Set(nameof(B2bDirectConnectInbound), value); }
+            get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>("b2bDirectConnectInbound"); }
+            set { BackingStore?.Set("b2bDirectConnectInbound", value); }
         }
         /// <summary>Defines your default configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.</summary>
         public CrossTenantAccessPolicyB2BSetting B2bDirectConnectOutbound {
-            get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>(nameof(B2bDirectConnectOutbound)); }
-            set { BackingStore?.Set(nameof(B2bDirectConnectOutbound), value); }
+            get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>("b2bDirectConnectOutbound"); }
+            set { BackingStore?.Set("b2bDirectConnectOutbound", value); }
         }
         /// <summary>Determines the default configuration for trusting other Conditional Access claims from external Azure AD organizations.</summary>
         public CrossTenantAccessPolicyInboundTrust InboundTrust {
-            get { return BackingStore?.Get<CrossTenantAccessPolicyInboundTrust>(nameof(InboundTrust)); }
-            set { BackingStore?.Set(nameof(InboundTrust), value); }
+            get { return BackingStore?.Get<CrossTenantAccessPolicyInboundTrust>("inboundTrust"); }
+            set { BackingStore?.Set("inboundTrust", value); }
         }
         /// <summary>If true, the default configuration is set to the system default configuration. If false, the default settings have been customized.</summary>
         public bool? IsServiceDefault {
-            get { return BackingStore?.Get<bool?>(nameof(IsServiceDefault)); }
-            set { BackingStore?.Set(nameof(IsServiceDefault), value); }
+            get { return BackingStore?.Get<bool?>("isServiceDefault"); }
+            set { BackingStore?.Set("isServiceDefault", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

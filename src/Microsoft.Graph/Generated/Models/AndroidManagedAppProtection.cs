@@ -7,208 +7,208 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidManagedAppProtection : TargetedManagedAppProtection, IParsable {
         /// <summary>Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work.</summary>
         public string AllowedAndroidDeviceManufacturers {
-            get { return BackingStore?.Get<string>(nameof(AllowedAndroidDeviceManufacturers)); }
-            set { BackingStore?.Set(nameof(AllowedAndroidDeviceManufacturers), value); }
+            get { return BackingStore?.Get<string>("allowedAndroidDeviceManufacturers"); }
+            set { BackingStore?.Set("allowedAndroidDeviceManufacturers", value); }
         }
         /// <summary>List of device models allowed, as a string, for the managed app to work.</summary>
         public List<string> AllowedAndroidDeviceModels {
-            get { return BackingStore?.Get<List<string>>(nameof(AllowedAndroidDeviceModels)); }
-            set { BackingStore?.Set(nameof(AllowedAndroidDeviceModels), value); }
+            get { return BackingStore?.Get<List<string>>("allowedAndroidDeviceModels"); }
+            set { BackingStore?.Set("allowedAndroidDeviceModels", value); }
         }
-        /// <summary>Defines a managed app behavior, either block or wipe, if the specified device manufacturer is not allowed. Possible values are: block, wipe, warn.</summary>
+        /// <summary>An admin initiated action to be applied on a managed app.</summary>
         public ManagedAppRemediationAction? AppActionIfAndroidDeviceManufacturerNotAllowed {
-            get { return BackingStore?.Get<ManagedAppRemediationAction?>(nameof(AppActionIfAndroidDeviceManufacturerNotAllowed)); }
-            set { BackingStore?.Set(nameof(AppActionIfAndroidDeviceManufacturerNotAllowed), value); }
+            get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfAndroidDeviceManufacturerNotAllowed"); }
+            set { BackingStore?.Set("appActionIfAndroidDeviceManufacturerNotAllowed", value); }
         }
-        /// <summary>Defines a managed app behavior, either block or wipe, if the specified device model is not allowed.</summary>
+        /// <summary>An admin initiated action to be applied on a managed app.</summary>
         public ManagedAppRemediationAction? AppActionIfAndroidDeviceModelNotAllowed {
-            get { return BackingStore?.Get<ManagedAppRemediationAction?>(nameof(AppActionIfAndroidDeviceModelNotAllowed)); }
-            set { BackingStore?.Set(nameof(AppActionIfAndroidDeviceModelNotAllowed), value); }
+            get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfAndroidDeviceModelNotAllowed"); }
+            set { BackingStore?.Set("appActionIfAndroidDeviceModelNotAllowed", value); }
         }
-        /// <summary>Defines a managed app behavior, either warn or block, if the specified Android App Verification requirment fails. Possible values are: block, wipe, warn.</summary>
+        /// <summary>An admin initiated action to be applied on a managed app.</summary>
         public ManagedAppRemediationAction? AppActionIfAndroidSafetyNetAppsVerificationFailed {
-            get { return BackingStore?.Get<ManagedAppRemediationAction?>(nameof(AppActionIfAndroidSafetyNetAppsVerificationFailed)); }
-            set { BackingStore?.Set(nameof(AppActionIfAndroidSafetyNetAppsVerificationFailed), value); }
+            get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfAndroidSafetyNetAppsVerificationFailed"); }
+            set { BackingStore?.Set("appActionIfAndroidSafetyNetAppsVerificationFailed", value); }
         }
-        /// <summary>Defines a managed app behavior, either warn or block, if the specified Android SafetyNet Attestation requirment fails. Possible values are: block, wipe, warn.</summary>
+        /// <summary>An admin initiated action to be applied on a managed app.</summary>
         public ManagedAppRemediationAction? AppActionIfAndroidSafetyNetDeviceAttestationFailed {
-            get { return BackingStore?.Get<ManagedAppRemediationAction?>(nameof(AppActionIfAndroidSafetyNetDeviceAttestationFailed)); }
-            set { BackingStore?.Set(nameof(AppActionIfAndroidSafetyNetDeviceAttestationFailed), value); }
+            get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfAndroidSafetyNetDeviceAttestationFailed"); }
+            set { BackingStore?.Set("appActionIfAndroidSafetyNetDeviceAttestationFailed", value); }
         }
-        /// <summary>Defines a managed app behavior, either warn, block or wipe, if the screen lock is required on android device but is not set.</summary>
+        /// <summary>An admin initiated action to be applied on a managed app.</summary>
         public ManagedAppRemediationAction? AppActionIfDeviceLockNotSet {
-            get { return BackingStore?.Get<ManagedAppRemediationAction?>(nameof(AppActionIfDeviceLockNotSet)); }
-            set { BackingStore?.Set(nameof(AppActionIfDeviceLockNotSet), value); }
+            get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfDeviceLockNotSet"); }
+            set { BackingStore?.Set("appActionIfDeviceLockNotSet", value); }
         }
         /// <summary>If the device does not have a passcode of high complexity or higher, trigger the stored action.</summary>
         public ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanHigh {
-            get { return BackingStore?.Get<ManagedAppRemediationAction?>(nameof(AppActionIfDevicePasscodeComplexityLessThanHigh)); }
-            set { BackingStore?.Set(nameof(AppActionIfDevicePasscodeComplexityLessThanHigh), value); }
+            get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfDevicePasscodeComplexityLessThanHigh"); }
+            set { BackingStore?.Set("appActionIfDevicePasscodeComplexityLessThanHigh", value); }
         }
         /// <summary>If the device does not have a passcode of low complexity or higher, trigger the stored action.</summary>
         public ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanLow {
-            get { return BackingStore?.Get<ManagedAppRemediationAction?>(nameof(AppActionIfDevicePasscodeComplexityLessThanLow)); }
-            set { BackingStore?.Set(nameof(AppActionIfDevicePasscodeComplexityLessThanLow), value); }
+            get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfDevicePasscodeComplexityLessThanLow"); }
+            set { BackingStore?.Set("appActionIfDevicePasscodeComplexityLessThanLow", value); }
         }
         /// <summary>If the device does not have a passcode of medium complexity or higher, trigger the stored action.</summary>
         public ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanMedium {
-            get { return BackingStore?.Get<ManagedAppRemediationAction?>(nameof(AppActionIfDevicePasscodeComplexityLessThanMedium)); }
-            set { BackingStore?.Set(nameof(AppActionIfDevicePasscodeComplexityLessThanMedium), value); }
+            get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfDevicePasscodeComplexityLessThanMedium"); }
+            set { BackingStore?.Set("appActionIfDevicePasscodeComplexityLessThanMedium", value); }
         }
         /// <summary>If Keyboard Restriction is enabled, only keyboards in this approved list will be allowed. A key should be Android package id for a keyboard and value should be a friendly name</summary>
         public List<KeyValuePair> ApprovedKeyboards {
-            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(ApprovedKeyboards)); }
-            set { BackingStore?.Set(nameof(ApprovedKeyboards), value); }
+            get { return BackingStore?.Get<List<KeyValuePair>>("approvedKeyboards"); }
+            set { BackingStore?.Set("approvedKeyboards", value); }
         }
         /// <summary>List of apps to which the policy is deployed.</summary>
         public List<ManagedMobileApp> Apps {
-            get { return BackingStore?.Get<List<ManagedMobileApp>>(nameof(Apps)); }
-            set { BackingStore?.Set(nameof(Apps), value); }
+            get { return BackingStore?.Get<List<ManagedMobileApp>>("apps"); }
+            set { BackingStore?.Set("apps", value); }
         }
         /// <summary>Indicates whether use of the biometric authentication is allowed in place of a pin if PinRequired is set to True.</summary>
         public bool? BiometricAuthenticationBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(BiometricAuthenticationBlocked)); }
-            set { BackingStore?.Set(nameof(BiometricAuthenticationBlocked), value); }
+            get { return BackingStore?.Get<bool?>("biometricAuthenticationBlocked"); }
+            set { BackingStore?.Set("biometricAuthenticationBlocked", value); }
         }
         /// <summary>Maximum number of days Company Portal update can be deferred on the device or app access will be blocked.</summary>
         public int? BlockAfterCompanyPortalUpdateDeferralInDays {
-            get { return BackingStore?.Get<int?>(nameof(BlockAfterCompanyPortalUpdateDeferralInDays)); }
-            set { BackingStore?.Set(nameof(BlockAfterCompanyPortalUpdateDeferralInDays), value); }
+            get { return BackingStore?.Get<int?>("blockAfterCompanyPortalUpdateDeferralInDays"); }
+            set { BackingStore?.Set("blockAfterCompanyPortalUpdateDeferralInDays", value); }
         }
         /// <summary>Whether the app should connect to the configured VPN on launch.</summary>
         public bool? ConnectToVpnOnLaunch {
-            get { return BackingStore?.Get<bool?>(nameof(ConnectToVpnOnLaunch)); }
-            set { BackingStore?.Set(nameof(ConnectToVpnOnLaunch), value); }
+            get { return BackingStore?.Get<bool?>("connectToVpnOnLaunch"); }
+            set { BackingStore?.Set("connectToVpnOnLaunch", value); }
         }
         /// <summary>Friendly name of the preferred custom browser to open weblink on Android.</summary>
         public string CustomBrowserDisplayName {
-            get { return BackingStore?.Get<string>(nameof(CustomBrowserDisplayName)); }
-            set { BackingStore?.Set(nameof(CustomBrowserDisplayName), value); }
+            get { return BackingStore?.Get<string>("customBrowserDisplayName"); }
+            set { BackingStore?.Set("customBrowserDisplayName", value); }
         }
         /// <summary>Unique identifier of a custom browser to open weblink on Android.</summary>
         public string CustomBrowserPackageId {
-            get { return BackingStore?.Get<string>(nameof(CustomBrowserPackageId)); }
-            set { BackingStore?.Set(nameof(CustomBrowserPackageId), value); }
+            get { return BackingStore?.Get<string>("customBrowserPackageId"); }
+            set { BackingStore?.Set("customBrowserPackageId", value); }
         }
         /// <summary>Friendly name of a custom dialer app to click-to-open a phone number on Android.</summary>
         public string CustomDialerAppDisplayName {
-            get { return BackingStore?.Get<string>(nameof(CustomDialerAppDisplayName)); }
-            set { BackingStore?.Set(nameof(CustomDialerAppDisplayName), value); }
+            get { return BackingStore?.Get<string>("customDialerAppDisplayName"); }
+            set { BackingStore?.Set("customDialerAppDisplayName", value); }
         }
         /// <summary>PackageId of a custom dialer app to click-to-open a phone number on Android.</summary>
         public string CustomDialerAppPackageId {
-            get { return BackingStore?.Get<string>(nameof(CustomDialerAppPackageId)); }
-            set { BackingStore?.Set(nameof(CustomDialerAppPackageId), value); }
+            get { return BackingStore?.Get<string>("customDialerAppPackageId"); }
+            set { BackingStore?.Set("customDialerAppPackageId", value); }
         }
         /// <summary>Count of apps to which the current policy is deployed.</summary>
         public int? DeployedAppCount {
-            get { return BackingStore?.Get<int?>(nameof(DeployedAppCount)); }
-            set { BackingStore?.Set(nameof(DeployedAppCount), value); }
+            get { return BackingStore?.Get<int?>("deployedAppCount"); }
+            set { BackingStore?.Set("deployedAppCount", value); }
         }
         /// <summary>Navigation property to deployment summary of the configuration.</summary>
         public ManagedAppPolicyDeploymentSummary DeploymentSummary {
-            get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary>(nameof(DeploymentSummary)); }
-            set { BackingStore?.Set(nameof(DeploymentSummary), value); }
+            get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary>("deploymentSummary"); }
+            set { BackingStore?.Set("deploymentSummary", value); }
         }
         /// <summary>Defines if any kind of lock must be required on android device</summary>
         public bool? DeviceLockRequired {
-            get { return BackingStore?.Get<bool?>(nameof(DeviceLockRequired)); }
-            set { BackingStore?.Set(nameof(DeviceLockRequired), value); }
+            get { return BackingStore?.Get<bool?>("deviceLockRequired"); }
+            set { BackingStore?.Set("deviceLockRequired", value); }
         }
         /// <summary>When this setting is enabled, app level encryption is disabled if device level encryption is enabled</summary>
         public bool? DisableAppEncryptionIfDeviceEncryptionIsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(DisableAppEncryptionIfDeviceEncryptionIsEnabled)); }
-            set { BackingStore?.Set(nameof(DisableAppEncryptionIfDeviceEncryptionIsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("disableAppEncryptionIfDeviceEncryptionIsEnabled"); }
+            set { BackingStore?.Set("disableAppEncryptionIfDeviceEncryptionIsEnabled", value); }
         }
         /// <summary>Indicates whether application data for managed apps should be encrypted</summary>
         public bool? EncryptAppData {
-            get { return BackingStore?.Get<bool?>(nameof(EncryptAppData)); }
-            set { BackingStore?.Set(nameof(EncryptAppData), value); }
+            get { return BackingStore?.Get<bool?>("encryptAppData"); }
+            set { BackingStore?.Set("encryptAppData", value); }
         }
         /// <summary>App packages in this list will be exempt from the policy and will be able to receive data from managed apps.</summary>
         public List<KeyValuePair> ExemptedAppPackages {
-            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(ExemptedAppPackages)); }
-            set { BackingStore?.Set(nameof(ExemptedAppPackages), value); }
+            get { return BackingStore?.Get<List<KeyValuePair>>("exemptedAppPackages"); }
+            set { BackingStore?.Set("exemptedAppPackages", value); }
         }
         /// <summary>If null, this setting will be ignored. If false both fingerprints and biometrics will not be enabled. If true, both fingerprints and biometrics will be enabled.</summary>
         public bool? FingerprintAndBiometricEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(FingerprintAndBiometricEnabled)); }
-            set { BackingStore?.Set(nameof(FingerprintAndBiometricEnabled), value); }
+            get { return BackingStore?.Get<bool?>("fingerprintAndBiometricEnabled"); }
+            set { BackingStore?.Set("fingerprintAndBiometricEnabled", value); }
         }
         /// <summary>Indicates if keyboard restriction is enabled. If enabled list of approved keyboards must be provided as well.</summary>
         public bool? KeyboardsRestricted {
-            get { return BackingStore?.Get<bool?>(nameof(KeyboardsRestricted)); }
-            set { BackingStore?.Set(nameof(KeyboardsRestricted), value); }
+            get { return BackingStore?.Get<bool?>("keyboardsRestricted"); }
+            set { BackingStore?.Set("keyboardsRestricted", value); }
         }
         /// <summary>Minimum version of the Company portal that must be installed on the device or app access will be blocked</summary>
         public string MinimumRequiredCompanyPortalVersion {
-            get { return BackingStore?.Get<string>(nameof(MinimumRequiredCompanyPortalVersion)); }
-            set { BackingStore?.Set(nameof(MinimumRequiredCompanyPortalVersion), value); }
+            get { return BackingStore?.Get<string>("minimumRequiredCompanyPortalVersion"); }
+            set { BackingStore?.Set("minimumRequiredCompanyPortalVersion", value); }
         }
         /// <summary>Define the oldest required Android security patch level a user can have to gain secure access to the app.</summary>
         public string MinimumRequiredPatchVersion {
-            get { return BackingStore?.Get<string>(nameof(MinimumRequiredPatchVersion)); }
-            set { BackingStore?.Set(nameof(MinimumRequiredPatchVersion), value); }
+            get { return BackingStore?.Get<string>("minimumRequiredPatchVersion"); }
+            set { BackingStore?.Set("minimumRequiredPatchVersion", value); }
         }
         /// <summary>Minimum version of the Company portal that must be installed on the device or the user will receive a warning</summary>
         public string MinimumWarningCompanyPortalVersion {
-            get { return BackingStore?.Get<string>(nameof(MinimumWarningCompanyPortalVersion)); }
-            set { BackingStore?.Set(nameof(MinimumWarningCompanyPortalVersion), value); }
+            get { return BackingStore?.Get<string>("minimumWarningCompanyPortalVersion"); }
+            set { BackingStore?.Set("minimumWarningCompanyPortalVersion", value); }
         }
         /// <summary>Define the oldest recommended Android security patch level a user can have for secure access to the app.</summary>
         public string MinimumWarningPatchVersion {
-            get { return BackingStore?.Get<string>(nameof(MinimumWarningPatchVersion)); }
-            set { BackingStore?.Set(nameof(MinimumWarningPatchVersion), value); }
+            get { return BackingStore?.Get<string>("minimumWarningPatchVersion"); }
+            set { BackingStore?.Set("minimumWarningPatchVersion", value); }
         }
         /// <summary>Minimum version of the Company portal that must be installed on the device or the company data on the app will be wiped</summary>
         public string MinimumWipeCompanyPortalVersion {
-            get { return BackingStore?.Get<string>(nameof(MinimumWipeCompanyPortalVersion)); }
-            set { BackingStore?.Set(nameof(MinimumWipeCompanyPortalVersion), value); }
+            get { return BackingStore?.Get<string>("minimumWipeCompanyPortalVersion"); }
+            set { BackingStore?.Set("minimumWipeCompanyPortalVersion", value); }
         }
         /// <summary>Android security patch level  less than or equal to the specified value will wipe the managed app and the associated company data.</summary>
         public string MinimumWipePatchVersion {
-            get { return BackingStore?.Get<string>(nameof(MinimumWipePatchVersion)); }
-            set { BackingStore?.Set(nameof(MinimumWipePatchVersion), value); }
+            get { return BackingStore?.Get<string>("minimumWipePatchVersion"); }
+            set { BackingStore?.Set("minimumWipePatchVersion", value); }
         }
         /// <summary>Require user to apply Class 3 Biometrics on their Android device.</summary>
         public bool? RequireClass3Biometrics {
-            get { return BackingStore?.Get<bool?>(nameof(RequireClass3Biometrics)); }
-            set { BackingStore?.Set(nameof(RequireClass3Biometrics), value); }
+            get { return BackingStore?.Get<bool?>("requireClass3Biometrics"); }
+            set { BackingStore?.Set("requireClass3Biometrics", value); }
         }
-        /// <summary>Defines the Android SafetyNet Apps Verification requirement for a managed app to work. Possible values are: none, enabled.</summary>
+        /// <summary>An admin enforced Android SafetyNet Device Attestation requirement on a managed app.</summary>
         public AndroidManagedAppSafetyNetAppsVerificationType? RequiredAndroidSafetyNetAppsVerificationType {
-            get { return BackingStore?.Get<AndroidManagedAppSafetyNetAppsVerificationType?>(nameof(RequiredAndroidSafetyNetAppsVerificationType)); }
-            set { BackingStore?.Set(nameof(RequiredAndroidSafetyNetAppsVerificationType), value); }
+            get { return BackingStore?.Get<AndroidManagedAppSafetyNetAppsVerificationType?>("requiredAndroidSafetyNetAppsVerificationType"); }
+            set { BackingStore?.Set("requiredAndroidSafetyNetAppsVerificationType", value); }
         }
-        /// <summary>Defines the Android SafetyNet Device Attestation requirement for a managed app to work. Possible values are: none, basicIntegrity, basicIntegrityAndDeviceCertification.</summary>
+        /// <summary>An admin enforced Android SafetyNet Device Attestation requirement on a managed app.</summary>
         public AndroidManagedAppSafetyNetDeviceAttestationType? RequiredAndroidSafetyNetDeviceAttestationType {
-            get { return BackingStore?.Get<AndroidManagedAppSafetyNetDeviceAttestationType?>(nameof(RequiredAndroidSafetyNetDeviceAttestationType)); }
-            set { BackingStore?.Set(nameof(RequiredAndroidSafetyNetDeviceAttestationType), value); }
+            get { return BackingStore?.Get<AndroidManagedAppSafetyNetDeviceAttestationType?>("requiredAndroidSafetyNetDeviceAttestationType"); }
+            set { BackingStore?.Set("requiredAndroidSafetyNetDeviceAttestationType", value); }
         }
-        /// <summary>Defines the Android SafetyNet evaluation type requirement for a managed app to work.</summary>
+        /// <summary>An admin enforced Android SafetyNet evaluation type requirement on a managed app.</summary>
         public AndroidManagedAppSafetyNetEvaluationType? RequiredAndroidSafetyNetEvaluationType {
-            get { return BackingStore?.Get<AndroidManagedAppSafetyNetEvaluationType?>(nameof(RequiredAndroidSafetyNetEvaluationType)); }
-            set { BackingStore?.Set(nameof(RequiredAndroidSafetyNetEvaluationType), value); }
+            get { return BackingStore?.Get<AndroidManagedAppSafetyNetEvaluationType?>("requiredAndroidSafetyNetEvaluationType"); }
+            set { BackingStore?.Set("requiredAndroidSafetyNetEvaluationType", value); }
         }
         /// <summary>A PIN prompt will override biometric prompts if class 3 biometrics are updated on the device.</summary>
         public bool? RequirePinAfterBiometricChange {
-            get { return BackingStore?.Get<bool?>(nameof(RequirePinAfterBiometricChange)); }
-            set { BackingStore?.Set(nameof(RequirePinAfterBiometricChange), value); }
+            get { return BackingStore?.Get<bool?>("requirePinAfterBiometricChange"); }
+            set { BackingStore?.Set("requirePinAfterBiometricChange", value); }
         }
         /// <summary>Indicates whether a managed user can take screen captures of managed apps</summary>
         public bool? ScreenCaptureBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(ScreenCaptureBlocked)); }
-            set { BackingStore?.Set(nameof(ScreenCaptureBlocked), value); }
+            get { return BackingStore?.Get<bool?>("screenCaptureBlocked"); }
+            set { BackingStore?.Set("screenCaptureBlocked", value); }
         }
         /// <summary>Maximum number of days Company Portal update can be deferred on the device or the user will receive the warning</summary>
         public int? WarnAfterCompanyPortalUpdateDeferralInDays {
-            get { return BackingStore?.Get<int?>(nameof(WarnAfterCompanyPortalUpdateDeferralInDays)); }
-            set { BackingStore?.Set(nameof(WarnAfterCompanyPortalUpdateDeferralInDays), value); }
+            get { return BackingStore?.Get<int?>("warnAfterCompanyPortalUpdateDeferralInDays"); }
+            set { BackingStore?.Set("warnAfterCompanyPortalUpdateDeferralInDays", value); }
         }
         /// <summary>Maximum number of days Company Portal update can be deferred on the device or the company data on the app will be wiped</summary>
         public int? WipeAfterCompanyPortalUpdateDeferralInDays {
-            get { return BackingStore?.Get<int?>(nameof(WipeAfterCompanyPortalUpdateDeferralInDays)); }
-            set { BackingStore?.Set(nameof(WipeAfterCompanyPortalUpdateDeferralInDays), value); }
+            get { return BackingStore?.Get<int?>("wipeAfterCompanyPortalUpdateDeferralInDays"); }
+            set { BackingStore?.Set("wipeAfterCompanyPortalUpdateDeferralInDays", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

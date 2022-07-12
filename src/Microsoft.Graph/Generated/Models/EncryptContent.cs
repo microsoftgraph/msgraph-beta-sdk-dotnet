@@ -8,8 +8,14 @@ namespace Microsoft.Graph.Beta.Models {
     public class EncryptContent : LabelActionBase, IParsable {
         /// <summary>The encryptWith property</summary>
         public Microsoft.Graph.Beta.Models.EncryptWith? EncryptWith {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EncryptWith?>(nameof(EncryptWith)); }
-            set { BackingStore?.Set(nameof(EncryptWith), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EncryptWith?>("encryptWith"); }
+            set { BackingStore?.Set("encryptWith", value); }
+        }
+        /// <summary>
+        /// Instantiates a new EncryptContent and sets the default values.
+        /// </summary>
+        public EncryptContent() : base() {
+            Type = "#microsoft.graph.encryptContent";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

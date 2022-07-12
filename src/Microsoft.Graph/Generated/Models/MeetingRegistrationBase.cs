@@ -5,17 +5,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class MeetingRegistrationBase : Entity, IParsable {
         /// <summary>Specifies who can register for the meeting.</summary>
         public MeetingAudience? AllowedRegistrant {
-            get { return BackingStore?.Get<MeetingAudience?>(nameof(AllowedRegistrant)); }
-            set { BackingStore?.Set(nameof(AllowedRegistrant), value); }
+            get { return BackingStore?.Get<MeetingAudience?>("allowedRegistrant"); }
+            set { BackingStore?.Set("allowedRegistrant", value); }
         }
         /// <summary>Registrants of the online meeting.</summary>
         public List<MeetingRegistrantBase> Registrants {
-            get { return BackingStore?.Get<List<MeetingRegistrantBase>>(nameof(Registrants)); }
-            set { BackingStore?.Set(nameof(Registrants), value); }
+            get { return BackingStore?.Get<List<MeetingRegistrantBase>>("registrants"); }
+            set { BackingStore?.Set("registrants", value); }
+        }
+        /// <summary>
+        /// Instantiates a new meetingRegistrationBase and sets the default values.
+        /// </summary>
+        public MeetingRegistrationBase() : base() {
+            Type = "#microsoft.graph.meetingRegistrationBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,62 +4,62 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class UnifiedRoleAssignmentMultiple : Entity, IParsable {
         /// <summary>Ids of the app specific scopes when the assignment scopes are app specific. The scopes of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.</summary>
         public List<string> AppScopeIds {
-            get { return BackingStore?.Get<List<string>>(nameof(AppScopeIds)); }
-            set { BackingStore?.Set(nameof(AppScopeIds), value); }
+            get { return BackingStore?.Get<List<string>>("appScopeIds"); }
+            set { BackingStore?.Set("appScopeIds", value); }
         }
         /// <summary>Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.</summary>
         public List<AppScope> AppScopes {
-            get { return BackingStore?.Get<List<AppScope>>(nameof(AppScopes)); }
-            set { BackingStore?.Set(nameof(AppScopes), value); }
+            get { return BackingStore?.Get<List<AppScope>>("appScopes"); }
+            set { BackingStore?.Set("appScopes", value); }
         }
         /// <summary>The condition property</summary>
         public string Condition {
-            get { return BackingStore?.Get<string>(nameof(Condition)); }
-            set { BackingStore?.Set(nameof(Condition), value); }
+            get { return BackingStore?.Get<string>("condition"); }
+            set { BackingStore?.Set("condition", value); }
         }
         /// <summary>Description of the role assignment.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Ids of the directory objects representing the scopes of the assignment. The scopes of an assignment determine the set of resources for which the principals have been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.</summary>
         public List<string> DirectoryScopeIds {
-            get { return BackingStore?.Get<List<string>>(nameof(DirectoryScopeIds)); }
-            set { BackingStore?.Set(nameof(DirectoryScopeIds), value); }
+            get { return BackingStore?.Get<List<string>>("directoryScopeIds"); }
+            set { BackingStore?.Set("directoryScopeIds", value); }
         }
         /// <summary>Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.</summary>
         public List<DirectoryObject> DirectoryScopes {
-            get { return BackingStore?.Get<List<DirectoryObject>>(nameof(DirectoryScopes)); }
-            set { BackingStore?.Set(nameof(DirectoryScopes), value); }
+            get { return BackingStore?.Get<List<DirectoryObject>>("directoryScopes"); }
+            set { BackingStore?.Set("directoryScopes", value); }
         }
         /// <summary>Name of the role assignment. Required.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Identifiers of the principals to which the assignment is granted.  Supports $filter (any operator only).</summary>
         public List<string> PrincipalIds {
-            get { return BackingStore?.Get<List<string>>(nameof(PrincipalIds)); }
-            set { BackingStore?.Set(nameof(PrincipalIds), value); }
+            get { return BackingStore?.Get<List<string>>("principalIds"); }
+            set { BackingStore?.Set("principalIds", value); }
         }
         /// <summary>Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.</summary>
         public List<DirectoryObject> Principals {
-            get { return BackingStore?.Get<List<DirectoryObject>>(nameof(Principals)); }
-            set { BackingStore?.Set(nameof(Principals), value); }
+            get { return BackingStore?.Get<List<DirectoryObject>>("principals"); }
+            set { BackingStore?.Set("principals", value); }
         }
         /// <summary>Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.</summary>
         public UnifiedRoleDefinition RoleDefinition {
-            get { return BackingStore?.Get<UnifiedRoleDefinition>(nameof(RoleDefinition)); }
-            set { BackingStore?.Set(nameof(RoleDefinition), value); }
+            get { return BackingStore?.Get<UnifiedRoleDefinition>("roleDefinition"); }
+            set { BackingStore?.Set("roleDefinition", value); }
         }
         /// <summary>Identifier of the unifiedRoleDefinition the assignment is for.</summary>
         public string RoleDefinitionId {
-            get { return BackingStore?.Get<string>(nameof(RoleDefinitionId)); }
-            set { BackingStore?.Set(nameof(RoleDefinitionId), value); }
+            get { return BackingStore?.Get<string>("roleDefinitionId"); }
+            set { BackingStore?.Set("roleDefinitionId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

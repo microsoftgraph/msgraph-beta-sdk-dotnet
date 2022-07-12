@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class Win32LobAppRegistryRequirement : Win32LobAppRequirement, IParsable {
         /// <summary>A value indicating whether this registry path is for checking 32-bit app on 64-bit system</summary>
         public bool? Check32BitOn64System {
-            get { return BackingStore?.Get<bool?>(nameof(Check32BitOn64System)); }
-            set { BackingStore?.Set(nameof(Check32BitOn64System), value); }
+            get { return BackingStore?.Get<bool?>("check32BitOn64System"); }
+            set { BackingStore?.Set("check32BitOn64System", value); }
         }
-        /// <summary>The registry data detection type. Possible values are: notConfigured, exists, doesNotExist, string, integer, version.</summary>
+        /// <summary>Contains all supported registry data detection type.</summary>
         public Win32LobAppRegistryDetectionType? DetectionType {
-            get { return BackingStore?.Get<Win32LobAppRegistryDetectionType?>(nameof(DetectionType)); }
-            set { BackingStore?.Set(nameof(DetectionType), value); }
+            get { return BackingStore?.Get<Win32LobAppRegistryDetectionType?>("detectionType"); }
+            set { BackingStore?.Set("detectionType", value); }
         }
         /// <summary>The registry key path to detect Win32 Line of Business (LoB) app</summary>
         public string KeyPath {
-            get { return BackingStore?.Get<string>(nameof(KeyPath)); }
-            set { BackingStore?.Set(nameof(KeyPath), value); }
+            get { return BackingStore?.Get<string>("keyPath"); }
+            set { BackingStore?.Set("keyPath", value); }
         }
         /// <summary>The registry value name</summary>
         public string ValueName {
-            get { return BackingStore?.Get<string>(nameof(ValueName)); }
-            set { BackingStore?.Set(nameof(ValueName), value); }
+            get { return BackingStore?.Get<string>("valueName"); }
+            set { BackingStore?.Set("valueName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

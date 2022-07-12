@@ -5,147 +5,147 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class SalesOrderLine : Entity, IParsable {
         /// <summary>The account property</summary>
         public Microsoft.Graph.Beta.Models.Account Account {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Account>(nameof(Account)); }
-            set { BackingStore?.Set(nameof(Account), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Account>("account"); }
+            set { BackingStore?.Set("account", value); }
         }
         /// <summary>The accountId property</summary>
         public string AccountId {
-            get { return BackingStore?.Get<string>(nameof(AccountId)); }
-            set { BackingStore?.Set(nameof(AccountId), value); }
+            get { return BackingStore?.Get<string>("accountId"); }
+            set { BackingStore?.Set("accountId", value); }
         }
         /// <summary>The amountExcludingTax property</summary>
         public decimal? AmountExcludingTax {
-            get { return BackingStore?.Get<decimal?>(nameof(AmountExcludingTax)); }
-            set { BackingStore?.Set(nameof(AmountExcludingTax), value); }
+            get { return BackingStore?.Get<decimal?>("amountExcludingTax"); }
+            set { BackingStore?.Set("amountExcludingTax", value); }
         }
         /// <summary>The amountIncludingTax property</summary>
         public decimal? AmountIncludingTax {
-            get { return BackingStore?.Get<decimal?>(nameof(AmountIncludingTax)); }
-            set { BackingStore?.Set(nameof(AmountIncludingTax), value); }
+            get { return BackingStore?.Get<decimal?>("amountIncludingTax"); }
+            set { BackingStore?.Set("amountIncludingTax", value); }
         }
         /// <summary>The description property</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The discountAmount property</summary>
         public decimal? DiscountAmount {
-            get { return BackingStore?.Get<decimal?>(nameof(DiscountAmount)); }
-            set { BackingStore?.Set(nameof(DiscountAmount), value); }
+            get { return BackingStore?.Get<decimal?>("discountAmount"); }
+            set { BackingStore?.Set("discountAmount", value); }
         }
         /// <summary>The discountAppliedBeforeTax property</summary>
         public bool? DiscountAppliedBeforeTax {
-            get { return BackingStore?.Get<bool?>(nameof(DiscountAppliedBeforeTax)); }
-            set { BackingStore?.Set(nameof(DiscountAppliedBeforeTax), value); }
+            get { return BackingStore?.Get<bool?>("discountAppliedBeforeTax"); }
+            set { BackingStore?.Set("discountAppliedBeforeTax", value); }
         }
         /// <summary>The discountPercent property</summary>
         public decimal? DiscountPercent {
-            get { return BackingStore?.Get<decimal?>(nameof(DiscountPercent)); }
-            set { BackingStore?.Set(nameof(DiscountPercent), value); }
+            get { return BackingStore?.Get<decimal?>("discountPercent"); }
+            set { BackingStore?.Set("discountPercent", value); }
         }
         /// <summary>The documentId property</summary>
         public string DocumentId {
-            get { return BackingStore?.Get<string>(nameof(DocumentId)); }
-            set { BackingStore?.Set(nameof(DocumentId), value); }
+            get { return BackingStore?.Get<string>("documentId"); }
+            set { BackingStore?.Set("documentId", value); }
         }
         /// <summary>The invoiceDiscountAllocation property</summary>
         public decimal? InvoiceDiscountAllocation {
-            get { return BackingStore?.Get<decimal?>(nameof(InvoiceDiscountAllocation)); }
-            set { BackingStore?.Set(nameof(InvoiceDiscountAllocation), value); }
+            get { return BackingStore?.Get<decimal?>("invoiceDiscountAllocation"); }
+            set { BackingStore?.Set("invoiceDiscountAllocation", value); }
         }
         /// <summary>The invoicedQuantity property</summary>
         public decimal? InvoicedQuantity {
-            get { return BackingStore?.Get<decimal?>(nameof(InvoicedQuantity)); }
-            set { BackingStore?.Set(nameof(InvoicedQuantity), value); }
+            get { return BackingStore?.Get<decimal?>("invoicedQuantity"); }
+            set { BackingStore?.Set("invoicedQuantity", value); }
         }
         /// <summary>The invoiceQuantity property</summary>
         public decimal? InvoiceQuantity {
-            get { return BackingStore?.Get<decimal?>(nameof(InvoiceQuantity)); }
-            set { BackingStore?.Set(nameof(InvoiceQuantity), value); }
+            get { return BackingStore?.Get<decimal?>("invoiceQuantity"); }
+            set { BackingStore?.Set("invoiceQuantity", value); }
         }
         /// <summary>The item property</summary>
         public Microsoft.Graph.Beta.Models.Item Item {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Item>(nameof(Item)); }
-            set { BackingStore?.Set(nameof(Item), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Item>("item"); }
+            set { BackingStore?.Set("item", value); }
         }
         /// <summary>The itemId property</summary>
         public string ItemId {
-            get { return BackingStore?.Get<string>(nameof(ItemId)); }
-            set { BackingStore?.Set(nameof(ItemId), value); }
+            get { return BackingStore?.Get<string>("itemId"); }
+            set { BackingStore?.Set("itemId", value); }
         }
         /// <summary>The lineType property</summary>
         public string LineType {
-            get { return BackingStore?.Get<string>(nameof(LineType)); }
-            set { BackingStore?.Set(nameof(LineType), value); }
+            get { return BackingStore?.Get<string>("lineType"); }
+            set { BackingStore?.Set("lineType", value); }
         }
         /// <summary>The netAmount property</summary>
         public decimal? NetAmount {
-            get { return BackingStore?.Get<decimal?>(nameof(NetAmount)); }
-            set { BackingStore?.Set(nameof(NetAmount), value); }
+            get { return BackingStore?.Get<decimal?>("netAmount"); }
+            set { BackingStore?.Set("netAmount", value); }
         }
         /// <summary>The netAmountIncludingTax property</summary>
         public decimal? NetAmountIncludingTax {
-            get { return BackingStore?.Get<decimal?>(nameof(NetAmountIncludingTax)); }
-            set { BackingStore?.Set(nameof(NetAmountIncludingTax), value); }
+            get { return BackingStore?.Get<decimal?>("netAmountIncludingTax"); }
+            set { BackingStore?.Set("netAmountIncludingTax", value); }
         }
         /// <summary>The netTaxAmount property</summary>
         public decimal? NetTaxAmount {
-            get { return BackingStore?.Get<decimal?>(nameof(NetTaxAmount)); }
-            set { BackingStore?.Set(nameof(NetTaxAmount), value); }
+            get { return BackingStore?.Get<decimal?>("netTaxAmount"); }
+            set { BackingStore?.Set("netTaxAmount", value); }
         }
         /// <summary>The quantity property</summary>
         public decimal? Quantity {
-            get { return BackingStore?.Get<decimal?>(nameof(Quantity)); }
-            set { BackingStore?.Set(nameof(Quantity), value); }
+            get { return BackingStore?.Get<decimal?>("quantity"); }
+            set { BackingStore?.Set("quantity", value); }
         }
         /// <summary>The sequence property</summary>
         public int? Sequence {
-            get { return BackingStore?.Get<int?>(nameof(Sequence)); }
-            set { BackingStore?.Set(nameof(Sequence), value); }
+            get { return BackingStore?.Get<int?>("sequence"); }
+            set { BackingStore?.Set("sequence", value); }
         }
         /// <summary>The shipmentDate property</summary>
         public Date? ShipmentDate {
-            get { return BackingStore?.Get<Date?>(nameof(ShipmentDate)); }
-            set { BackingStore?.Set(nameof(ShipmentDate), value); }
+            get { return BackingStore?.Get<Date?>("shipmentDate"); }
+            set { BackingStore?.Set("shipmentDate", value); }
         }
         /// <summary>The shippedQuantity property</summary>
         public decimal? ShippedQuantity {
-            get { return BackingStore?.Get<decimal?>(nameof(ShippedQuantity)); }
-            set { BackingStore?.Set(nameof(ShippedQuantity), value); }
+            get { return BackingStore?.Get<decimal?>("shippedQuantity"); }
+            set { BackingStore?.Set("shippedQuantity", value); }
         }
         /// <summary>The shipQuantity property</summary>
         public decimal? ShipQuantity {
-            get { return BackingStore?.Get<decimal?>(nameof(ShipQuantity)); }
-            set { BackingStore?.Set(nameof(ShipQuantity), value); }
+            get { return BackingStore?.Get<decimal?>("shipQuantity"); }
+            set { BackingStore?.Set("shipQuantity", value); }
         }
         /// <summary>The taxCode property</summary>
         public string TaxCode {
-            get { return BackingStore?.Get<string>(nameof(TaxCode)); }
-            set { BackingStore?.Set(nameof(TaxCode), value); }
+            get { return BackingStore?.Get<string>("taxCode"); }
+            set { BackingStore?.Set("taxCode", value); }
         }
         /// <summary>The taxPercent property</summary>
         public decimal? TaxPercent {
-            get { return BackingStore?.Get<decimal?>(nameof(TaxPercent)); }
-            set { BackingStore?.Set(nameof(TaxPercent), value); }
+            get { return BackingStore?.Get<decimal?>("taxPercent"); }
+            set { BackingStore?.Set("taxPercent", value); }
         }
         /// <summary>The totalTaxAmount property</summary>
         public decimal? TotalTaxAmount {
-            get { return BackingStore?.Get<decimal?>(nameof(TotalTaxAmount)); }
-            set { BackingStore?.Set(nameof(TotalTaxAmount), value); }
+            get { return BackingStore?.Get<decimal?>("totalTaxAmount"); }
+            set { BackingStore?.Set("totalTaxAmount", value); }
         }
         /// <summary>The unitOfMeasureId property</summary>
         public string UnitOfMeasureId {
-            get { return BackingStore?.Get<string>(nameof(UnitOfMeasureId)); }
-            set { BackingStore?.Set(nameof(UnitOfMeasureId), value); }
+            get { return BackingStore?.Get<string>("unitOfMeasureId"); }
+            set { BackingStore?.Set("unitOfMeasureId", value); }
         }
         /// <summary>The unitPrice property</summary>
         public decimal? UnitPrice {
-            get { return BackingStore?.Get<decimal?>(nameof(UnitPrice)); }
-            set { BackingStore?.Set(nameof(UnitPrice), value); }
+            get { return BackingStore?.Get<decimal?>("unitPrice"); }
+            set { BackingStore?.Set("unitPrice", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

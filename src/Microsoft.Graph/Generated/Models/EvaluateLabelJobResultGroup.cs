@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class EvaluateLabelJobResultGroup : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The automatic property</summary>
         public EvaluateLabelJobResult Automatic {
-            get { return BackingStore?.Get<EvaluateLabelJobResult>(nameof(Automatic)); }
-            set { BackingStore?.Set(nameof(Automatic), value); }
+            get { return BackingStore?.Get<EvaluateLabelJobResult>("automatic"); }
+            set { BackingStore?.Set("automatic", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The recommended property</summary>
         public EvaluateLabelJobResult Recommended {
-            get { return BackingStore?.Get<EvaluateLabelJobResult>(nameof(Recommended)); }
-            set { BackingStore?.Set(nameof(Recommended), value); }
+            get { return BackingStore?.Get<EvaluateLabelJobResult>("recommended"); }
+            set { BackingStore?.Set("recommended", value); }
         }
         /// <summary>
         /// Instantiates a new evaluateLabelJobResultGroup and sets the default values.

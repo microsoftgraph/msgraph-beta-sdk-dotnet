@@ -8,33 +8,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class PersonAward : ItemFacet, IParsable {
         /// <summary>Descpription of the award or honor.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Name of the award or honor.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The date that the award or honor was granted.</summary>
         public Date? IssuedDate {
-            get { return BackingStore?.Get<Date?>(nameof(IssuedDate)); }
-            set { BackingStore?.Set(nameof(IssuedDate), value); }
+            get { return BackingStore?.Get<Date?>("issuedDate"); }
+            set { BackingStore?.Set("issuedDate", value); }
         }
         /// <summary>Authority which granted the award or honor.</summary>
         public string IssuingAuthority {
-            get { return BackingStore?.Get<string>(nameof(IssuingAuthority)); }
-            set { BackingStore?.Set(nameof(IssuingAuthority), value); }
+            get { return BackingStore?.Get<string>("issuingAuthority"); }
+            set { BackingStore?.Set("issuingAuthority", value); }
         }
         /// <summary>URL referencing a thumbnail of the award or honor.</summary>
         public string ThumbnailUrl {
-            get { return BackingStore?.Get<string>(nameof(ThumbnailUrl)); }
-            set { BackingStore?.Set(nameof(ThumbnailUrl), value); }
+            get { return BackingStore?.Get<string>("thumbnailUrl"); }
+            set { BackingStore?.Set("thumbnailUrl", value); }
         }
         /// <summary>URL referencing the award or honor.</summary>
         public string WebUrl {
-            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
-            set { BackingStore?.Set(nameof(WebUrl), value); }
+            get { return BackingStore?.Get<string>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

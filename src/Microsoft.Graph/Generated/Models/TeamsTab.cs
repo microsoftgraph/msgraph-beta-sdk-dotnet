@@ -4,42 +4,42 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class TeamsTab : Entity, IParsable {
         /// <summary>Container for custom settings applied to a tab. The tab is considered configured only once this property is set.</summary>
         public TeamsTabConfiguration Configuration {
-            get { return BackingStore?.Get<TeamsTabConfiguration>(nameof(Configuration)); }
-            set { BackingStore?.Set(nameof(Configuration), value); }
+            get { return BackingStore?.Get<TeamsTabConfiguration>("configuration"); }
+            set { BackingStore?.Set("configuration", value); }
         }
         /// <summary>Name of the tab.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The messageId property</summary>
         public string MessageId {
-            get { return BackingStore?.Get<string>(nameof(MessageId)); }
-            set { BackingStore?.Set(nameof(MessageId), value); }
+            get { return BackingStore?.Get<string>("messageId"); }
+            set { BackingStore?.Set("messageId", value); }
         }
         /// <summary>Index of the order used for sorting tabs.</summary>
         public string SortOrderIndex {
-            get { return BackingStore?.Get<string>(nameof(SortOrderIndex)); }
-            set { BackingStore?.Set(nameof(SortOrderIndex), value); }
+            get { return BackingStore?.Get<string>("sortOrderIndex"); }
+            set { BackingStore?.Set("sortOrderIndex", value); }
         }
         /// <summary>The application that is linked to the tab.</summary>
         public Microsoft.Graph.Beta.Models.TeamsApp TeamsApp {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsApp>(nameof(TeamsApp)); }
-            set { BackingStore?.Set(nameof(TeamsApp), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsApp>("teamsApp"); }
+            set { BackingStore?.Set("teamsApp", value); }
         }
         /// <summary>The teamsAppId property</summary>
         public string TeamsAppId {
-            get { return BackingStore?.Get<string>(nameof(TeamsAppId)); }
-            set { BackingStore?.Set(nameof(TeamsAppId), value); }
+            get { return BackingStore?.Get<string>("teamsAppId"); }
+            set { BackingStore?.Set("teamsAppId", value); }
         }
         /// <summary>Deep link URL of the tab instance. Read only.</summary>
         public string WebUrl {
-            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
-            set { BackingStore?.Set(nameof(WebUrl), value); }
+            get { return BackingStore?.Get<string>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

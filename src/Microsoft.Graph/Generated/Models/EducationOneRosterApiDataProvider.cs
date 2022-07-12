@@ -7,33 +7,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationOneRosterApiDataProvider : EducationSynchronizationDataProvider, IParsable {
         /// <summary>The connectionSettings property</summary>
         public EducationSynchronizationConnectionSettings ConnectionSettings {
-            get { return BackingStore?.Get<EducationSynchronizationConnectionSettings>(nameof(ConnectionSettings)); }
-            set { BackingStore?.Set(nameof(ConnectionSettings), value); }
+            get { return BackingStore?.Get<EducationSynchronizationConnectionSettings>("connectionSettings"); }
+            set { BackingStore?.Set("connectionSettings", value); }
         }
         /// <summary>The connectionUrl property</summary>
         public string ConnectionUrl {
-            get { return BackingStore?.Get<string>(nameof(ConnectionUrl)); }
-            set { BackingStore?.Set(nameof(ConnectionUrl), value); }
+            get { return BackingStore?.Get<string>("connectionUrl"); }
+            set { BackingStore?.Set("connectionUrl", value); }
         }
         /// <summary>The customizations property</summary>
         public EducationSynchronizationCustomizations Customizations {
-            get { return BackingStore?.Get<EducationSynchronizationCustomizations>(nameof(Customizations)); }
-            set { BackingStore?.Set(nameof(Customizations), value); }
+            get { return BackingStore?.Get<EducationSynchronizationCustomizations>("customizations"); }
+            set { BackingStore?.Set("customizations", value); }
         }
         /// <summary>The providerName property</summary>
         public string ProviderName {
-            get { return BackingStore?.Get<string>(nameof(ProviderName)); }
-            set { BackingStore?.Set(nameof(ProviderName), value); }
+            get { return BackingStore?.Get<string>("providerName"); }
+            set { BackingStore?.Set("providerName", value); }
         }
         /// <summary>The schoolsIds property</summary>
         public List<string> SchoolsIds {
-            get { return BackingStore?.Get<List<string>>(nameof(SchoolsIds)); }
-            set { BackingStore?.Set(nameof(SchoolsIds), value); }
+            get { return BackingStore?.Get<List<string>>("schoolsIds"); }
+            set { BackingStore?.Set("schoolsIds", value); }
         }
         /// <summary>The termIds property</summary>
         public List<string> TermIds {
-            get { return BackingStore?.Get<List<string>>(nameof(TermIds)); }
-            set { BackingStore?.Set(nameof(TermIds), value); }
+            get { return BackingStore?.Get<List<string>>("termIds"); }
+            set { BackingStore?.Set("termIds", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

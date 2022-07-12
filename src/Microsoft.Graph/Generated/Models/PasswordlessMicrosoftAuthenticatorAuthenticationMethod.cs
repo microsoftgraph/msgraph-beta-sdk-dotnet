@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class PasswordlessMicrosoftAuthenticatorAuthenticationMethod : AuthenticationMethod, IParsable {
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The timestamp when this method was registered to the user.</summary>
         public DateTimeOffset? CreationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreationDateTime)); }
-            set { BackingStore?.Set(nameof(CreationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("creationDateTime"); }
+            set { BackingStore?.Set("creationDateTime", value); }
         }
         /// <summary>The device property</summary>
         public Microsoft.Graph.Beta.Models.Device Device {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Device>(nameof(Device)); }
-            set { BackingStore?.Set(nameof(Device), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Device>("device"); }
+            set { BackingStore?.Set("device", value); }
         }
         /// <summary>The display name of the mobile device as given by the user.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

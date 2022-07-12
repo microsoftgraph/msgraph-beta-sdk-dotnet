@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class ManagementIntentInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The display name for the management intent. Optional. Read-only.</summary>
         public string ManagementIntentDisplayName {
-            get { return BackingStore?.Get<string>(nameof(ManagementIntentDisplayName)); }
-            set { BackingStore?.Set(nameof(ManagementIntentDisplayName), value); }
+            get { return BackingStore?.Get<string>("managementIntentDisplayName"); }
+            set { BackingStore?.Set("managementIntentDisplayName", value); }
         }
         /// <summary>The identifier for the management intent. Required. Read-only.</summary>
         public string ManagementIntentId {
-            get { return BackingStore?.Get<string>(nameof(ManagementIntentId)); }
-            set { BackingStore?.Set(nameof(ManagementIntentId), value); }
+            get { return BackingStore?.Get<string>("managementIntentId"); }
+            set { BackingStore?.Set("managementIntentId", value); }
         }
         /// <summary>The collection of management template information associated with the management intent. Optional. Read-only.</summary>
         public List<ManagementTemplateDetailedInfo> ManagementTemplates {
-            get { return BackingStore?.Get<List<ManagementTemplateDetailedInfo>>(nameof(ManagementTemplates)); }
-            set { BackingStore?.Set(nameof(ManagementTemplates), value); }
+            get { return BackingStore?.Get<List<ManagementTemplateDetailedInfo>>("managementTemplates"); }
+            set { BackingStore?.Set("managementTemplates", value); }
         }
         /// <summary>
         /// Instantiates a new managementIntentInfo and sets the default values.

@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class Setting : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The display name for the setting. Required. Read-only.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The value for the setting serialized as string of JSON. Required. Read-only.</summary>
         public string JsonValue {
-            get { return BackingStore?.Get<string>(nameof(JsonValue)); }
-            set { BackingStore?.Set(nameof(JsonValue), value); }
+            get { return BackingStore?.Get<string>("jsonValue"); }
+            set { BackingStore?.Set("jsonValue", value); }
         }
         /// <summary>A flag indicating whether the setting can be override existing configurations when applied. Required. Read-only.</summary>
         public bool? OverwriteAllowed {
-            get { return BackingStore?.Get<bool?>(nameof(OverwriteAllowed)); }
-            set { BackingStore?.Set(nameof(OverwriteAllowed), value); }
+            get { return BackingStore?.Get<bool?>("overwriteAllowed"); }
+            set { BackingStore?.Set("overwriteAllowed", value); }
         }
         /// <summary>The settingId property</summary>
         public string SettingId {
-            get { return BackingStore?.Get<string>(nameof(SettingId)); }
-            set { BackingStore?.Set(nameof(SettingId), value); }
+            get { return BackingStore?.Get<string>("settingId"); }
+            set { BackingStore?.Set("settingId", value); }
         }
-        /// <summary>The data type for the setting. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.</summary>
+        /// <summary>The valueType property</summary>
         public ManagementParameterValueType? ValueType {
-            get { return BackingStore?.Get<ManagementParameterValueType?>(nameof(ValueType)); }
-            set { BackingStore?.Set(nameof(ValueType), value); }
+            get { return BackingStore?.Get<ManagementParameterValueType?>("valueType"); }
+            set { BackingStore?.Set("valueType", value); }
         }
         /// <summary>
         /// Instantiates a new setting and sets the default values.

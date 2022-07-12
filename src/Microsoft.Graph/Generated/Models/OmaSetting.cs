@@ -10,35 +10,40 @@ namespace Microsoft.Graph.Beta.Models {
     public class OmaSetting : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Description.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Display Name.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Indicates whether the value field is encrypted. This property is read-only.</summary>
         public bool? IsEncrypted {
-            get { return BackingStore?.Get<bool?>(nameof(IsEncrypted)); }
-            set { BackingStore?.Set(nameof(IsEncrypted), value); }
+            get { return BackingStore?.Get<bool?>("isEncrypted"); }
+            set { BackingStore?.Set("isEncrypted", value); }
         }
         /// <summary>OMA.</summary>
         public string OmaUri {
-            get { return BackingStore?.Get<string>(nameof(OmaUri)); }
-            set { BackingStore?.Set(nameof(OmaUri), value); }
+            get { return BackingStore?.Get<string>("omaUri"); }
+            set { BackingStore?.Set("omaUri", value); }
         }
         /// <summary>ReferenceId for looking up secret for decryption. This property is read-only.</summary>
         public string SecretReferenceValueId {
-            get { return BackingStore?.Get<string>(nameof(SecretReferenceValueId)); }
-            set { BackingStore?.Set(nameof(SecretReferenceValueId), value); }
+            get { return BackingStore?.Get<string>("secretReferenceValueId"); }
+            set { BackingStore?.Set("secretReferenceValueId", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new omaSetting and sets the default values.
@@ -46,6 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         public OmaSetting() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.omaSetting";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -76,6 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isEncrypted", n => { IsEncrypted = n.GetBoolValue(); } },
                 {"omaUri", n => { OmaUri = n.GetStringValue(); } },
                 {"secretReferenceValueId", n => { SecretReferenceValueId = n.GetStringValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -89,6 +96,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isEncrypted", IsEncrypted);
             writer.WriteStringValue("omaUri", OmaUri);
             writer.WriteStringValue("secretReferenceValueId", SecretReferenceValueId);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class GovernanceRuleSetting : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The id of the rule. For example, ExpirationRule and MfaRule.</summary>
         public string RuleIdentifier {
-            get { return BackingStore?.Get<string>(nameof(RuleIdentifier)); }
-            set { BackingStore?.Set(nameof(RuleIdentifier), value); }
+            get { return BackingStore?.Get<string>("ruleIdentifier"); }
+            set { BackingStore?.Set("ruleIdentifier", value); }
         }
         /// <summary>The settings of the rule. The value is a JSON string with a list of pairs in the format of Parameter_Name:Parameter_Value. For example, {&apos;permanentAssignment&apos;:false,&apos;maximumGrantPeriodInMinutes&apos;:129600}</summary>
         public string Setting {
-            get { return BackingStore?.Get<string>(nameof(Setting)); }
-            set { BackingStore?.Set(nameof(Setting), value); }
+            get { return BackingStore?.Get<string>("setting"); }
+            set { BackingStore?.Set("setting", value); }
         }
         /// <summary>
         /// Instantiates a new governanceRuleSetting and sets the default values.

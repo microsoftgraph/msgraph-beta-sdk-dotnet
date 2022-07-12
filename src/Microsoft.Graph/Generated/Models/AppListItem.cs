@@ -10,30 +10,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class AppListItem : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The application or bundle identifier of the application</summary>
         public string AppId {
-            get { return BackingStore?.Get<string>(nameof(AppId)); }
-            set { BackingStore?.Set(nameof(AppId), value); }
+            get { return BackingStore?.Get<string>("appId"); }
+            set { BackingStore?.Set("appId", value); }
         }
         /// <summary>The Store URL of the application</summary>
         public string AppStoreUrl {
-            get { return BackingStore?.Get<string>(nameof(AppStoreUrl)); }
-            set { BackingStore?.Set(nameof(AppStoreUrl), value); }
+            get { return BackingStore?.Get<string>("appStoreUrl"); }
+            set { BackingStore?.Set("appStoreUrl", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The application name</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The publisher of the application</summary>
         public string Publisher {
-            get { return BackingStore?.Get<string>(nameof(Publisher)); }
-            set { BackingStore?.Set(nameof(Publisher), value); }
+            get { return BackingStore?.Get<string>("publisher"); }
+            set { BackingStore?.Set("publisher", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new appListItem and sets the default values.
@@ -41,6 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AppListItem() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.appListItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -64,6 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"appStoreUrl", n => { AppStoreUrl = n.GetStringValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"publisher", n => { Publisher = n.GetStringValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,6 +83,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("appStoreUrl", AppStoreUrl);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("publisher", Publisher);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

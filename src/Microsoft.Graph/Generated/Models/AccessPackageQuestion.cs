@@ -9,35 +9,40 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageQuestion : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>ID of the question.</summary>
         public string Id {
-            get { return BackingStore?.Get<string>(nameof(Id)); }
-            set { BackingStore?.Set(nameof(Id), value); }
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
         }
         /// <summary>Specifies whether the requestor is allowed to edit answers to questions.</summary>
         public bool? IsAnswerEditable {
-            get { return BackingStore?.Get<bool?>(nameof(IsAnswerEditable)); }
-            set { BackingStore?.Set(nameof(IsAnswerEditable), value); }
+            get { return BackingStore?.Get<bool?>("isAnswerEditable"); }
+            set { BackingStore?.Set("isAnswerEditable", value); }
         }
         /// <summary>Whether the requestor is required to supply an answer or not.</summary>
         public bool? IsRequired {
-            get { return BackingStore?.Get<bool?>(nameof(IsRequired)); }
-            set { BackingStore?.Set(nameof(IsRequired), value); }
+            get { return BackingStore?.Get<bool?>("isRequired"); }
+            set { BackingStore?.Set("isRequired", value); }
         }
         /// <summary>Relative position of this question when displaying a list of questions to the requestor.</summary>
         public int? Sequence {
-            get { return BackingStore?.Get<int?>(nameof(Sequence)); }
-            set { BackingStore?.Set(nameof(Sequence), value); }
+            get { return BackingStore?.Get<int?>("sequence"); }
+            set { BackingStore?.Set("sequence", value); }
         }
         /// <summary>The text of the question to show to the requestor.</summary>
         public AccessPackageLocalizedContent Text {
-            get { return BackingStore?.Get<AccessPackageLocalizedContent>(nameof(Text)); }
-            set { BackingStore?.Set(nameof(Text), value); }
+            get { return BackingStore?.Get<AccessPackageLocalizedContent>("text"); }
+            set { BackingStore?.Set("text", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new accessPackageQuestion and sets the default values.
@@ -45,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AccessPackageQuestion() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.accessPackageQuestion";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -70,6 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isRequired", n => { IsRequired = n.GetBoolValue(); } },
                 {"sequence", n => { Sequence = n.GetIntValue(); } },
                 {"text", n => { Text = n.GetObjectValue<AccessPackageLocalizedContent>(AccessPackageLocalizedContent.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -83,6 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isRequired", IsRequired);
             writer.WriteIntValue("sequence", Sequence);
             writer.WriteObjectValue<AccessPackageLocalizedContent>("text", Text);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

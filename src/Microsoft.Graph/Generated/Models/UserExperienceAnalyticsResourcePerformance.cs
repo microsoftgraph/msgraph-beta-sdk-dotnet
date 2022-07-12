@@ -8,68 +8,68 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsResourcePerformance : Entity, IParsable {
         /// <summary>AverageSpikeTimeScore of a device or a model type. Valid values 0 to 100</summary>
         public int? AverageSpikeTimeScore {
-            get { return BackingStore?.Get<int?>(nameof(AverageSpikeTimeScore)); }
-            set { BackingStore?.Set(nameof(AverageSpikeTimeScore), value); }
+            get { return BackingStore?.Get<int?>("averageSpikeTimeScore"); }
+            set { BackingStore?.Set("averageSpikeTimeScore", value); }
         }
         /// <summary>CPU spike time in percentage. Valid values 0 to 100</summary>
         public double? CpuSpikeTimePercentage {
-            get { return BackingStore?.Get<double?>(nameof(CpuSpikeTimePercentage)); }
-            set { BackingStore?.Set(nameof(CpuSpikeTimePercentage), value); }
+            get { return BackingStore?.Get<double?>("cpuSpikeTimePercentage"); }
+            set { BackingStore?.Set("cpuSpikeTimePercentage", value); }
         }
         /// <summary>Threshold of cpuSpikeTimeScore. Valid values 0 to 100</summary>
         public double? CpuSpikeTimePercentageThreshold {
-            get { return BackingStore?.Get<double?>(nameof(CpuSpikeTimePercentageThreshold)); }
-            set { BackingStore?.Set(nameof(CpuSpikeTimePercentageThreshold), value); }
+            get { return BackingStore?.Get<double?>("cpuSpikeTimePercentageThreshold"); }
+            set { BackingStore?.Set("cpuSpikeTimePercentageThreshold", value); }
         }
         /// <summary>The user experience analytics device CPU spike time score. Valid values 0 to 100</summary>
         public int? CpuSpikeTimeScore {
-            get { return BackingStore?.Get<int?>(nameof(CpuSpikeTimeScore)); }
-            set { BackingStore?.Set(nameof(CpuSpikeTimeScore), value); }
+            get { return BackingStore?.Get<int?>("cpuSpikeTimeScore"); }
+            set { BackingStore?.Set("cpuSpikeTimeScore", value); }
         }
         /// <summary>User experience analytics summarized device count.</summary>
         public long? DeviceCount {
-            get { return BackingStore?.Get<long?>(nameof(DeviceCount)); }
-            set { BackingStore?.Set(nameof(DeviceCount), value); }
+            get { return BackingStore?.Get<long?>("deviceCount"); }
+            set { BackingStore?.Set("deviceCount", value); }
         }
         /// <summary>The id of the device.</summary>
         public string DeviceId {
-            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
-            set { BackingStore?.Set(nameof(DeviceId), value); }
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>The name of the device.</summary>
         public string DeviceName {
-            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
-            set { BackingStore?.Set(nameof(DeviceName), value); }
+            get { return BackingStore?.Get<string>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
         }
         /// <summary>Resource performance score of a specific device. Valid values 0 to 100</summary>
         public int? DeviceResourcePerformanceScore {
-            get { return BackingStore?.Get<int?>(nameof(DeviceResourcePerformanceScore)); }
-            set { BackingStore?.Set(nameof(DeviceResourcePerformanceScore), value); }
+            get { return BackingStore?.Get<int?>("deviceResourcePerformanceScore"); }
+            set { BackingStore?.Set("deviceResourcePerformanceScore", value); }
         }
         /// <summary>The user experience analytics device manufacturer.</summary>
         public string Manufacturer {
-            get { return BackingStore?.Get<string>(nameof(Manufacturer)); }
-            set { BackingStore?.Set(nameof(Manufacturer), value); }
+            get { return BackingStore?.Get<string>("manufacturer"); }
+            set { BackingStore?.Set("manufacturer", value); }
         }
         /// <summary>The user experience analytics device model.</summary>
         public string Model {
-            get { return BackingStore?.Get<string>(nameof(Model)); }
-            set { BackingStore?.Set(nameof(Model), value); }
+            get { return BackingStore?.Get<string>("model"); }
+            set { BackingStore?.Set("model", value); }
         }
         /// <summary>RAM spike time in percentage. Valid values 0 to 100</summary>
         public double? RamSpikeTimePercentage {
-            get { return BackingStore?.Get<double?>(nameof(RamSpikeTimePercentage)); }
-            set { BackingStore?.Set(nameof(RamSpikeTimePercentage), value); }
+            get { return BackingStore?.Get<double?>("ramSpikeTimePercentage"); }
+            set { BackingStore?.Set("ramSpikeTimePercentage", value); }
         }
         /// <summary>Threshold of ramSpikeTimeScore. Valid values 0 to 100</summary>
         public double? RamSpikeTimePercentageThreshold {
-            get { return BackingStore?.Get<double?>(nameof(RamSpikeTimePercentageThreshold)); }
-            set { BackingStore?.Set(nameof(RamSpikeTimePercentageThreshold), value); }
+            get { return BackingStore?.Get<double?>("ramSpikeTimePercentageThreshold"); }
+            set { BackingStore?.Set("ramSpikeTimePercentageThreshold", value); }
         }
         /// <summary>The user experience analytics device RAM spike time score. Valid values 0 to 100</summary>
         public int? RamSpikeTimeScore {
-            get { return BackingStore?.Get<int?>(nameof(RamSpikeTimeScore)); }
-            set { BackingStore?.Set(nameof(RamSpikeTimeScore), value); }
+            get { return BackingStore?.Get<int?>("ramSpikeTimeScore"); }
+            set { BackingStore?.Set("ramSpikeTimeScore", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

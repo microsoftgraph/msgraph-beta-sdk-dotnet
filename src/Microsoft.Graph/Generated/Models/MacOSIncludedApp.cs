@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOSIncludedApp : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The CFBundleIdentifier.</summary>
         public string BundleId {
-            get { return BackingStore?.Get<string>(nameof(BundleId)); }
-            set { BackingStore?.Set(nameof(BundleId), value); }
+            get { return BackingStore?.Get<string>("bundleId"); }
+            set { BackingStore?.Set("bundleId", value); }
         }
         /// <summary>The CFBundleVersion.</summary>
         public string BundleVersion {
-            get { return BackingStore?.Get<string>(nameof(BundleVersion)); }
-            set { BackingStore?.Set(nameof(BundleVersion), value); }
+            get { return BackingStore?.Get<string>("bundleVersion"); }
+            set { BackingStore?.Set("bundleVersion", value); }
         }
         /// <summary>
         /// Instantiates a new macOSIncludedApp and sets the default values.

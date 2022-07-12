@@ -7,18 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class ItemPhone : ItemFacet, IParsable {
         /// <summary>Friendly name the user has assigned this phone number.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Phone number provided by the user.</summary>
         public string Number {
-            get { return BackingStore?.Get<string>(nameof(Number)); }
-            set { BackingStore?.Set(nameof(Number), value); }
-        }
-        /// <summary>The type of phone number within the object. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.</summary>
-        public PhoneType? Type {
-            get { return BackingStore?.Get<PhoneType?>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<string>("number"); }
+            set { BackingStore?.Set("number", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +30,6 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"number", n => { Number = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetEnumValue<PhoneType>(); } },
             };
         }
         /// <summary>
@@ -47,7 +41,6 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("number", Number);
-            writer.WriteEnumValue<PhoneType>("type", Type);
         }
     }
 }

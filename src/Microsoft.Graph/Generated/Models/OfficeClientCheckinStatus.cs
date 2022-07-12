@@ -8,55 +8,55 @@ namespace Microsoft.Graph.Beta.Models {
     public class OfficeClientCheckinStatus : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>List of policies delivered to the device as last checkin.</summary>
         public List<string> AppliedPolicies {
-            get { return BackingStore?.Get<List<string>>(nameof(AppliedPolicies)); }
-            set { BackingStore?.Set(nameof(AppliedPolicies), value); }
+            get { return BackingStore?.Get<List<string>>("appliedPolicies"); }
+            set { BackingStore?.Set("appliedPolicies", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Last device check-in time in UTC.</summary>
         public DateTimeOffset? CheckinDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CheckinDateTime)); }
-            set { BackingStore?.Set(nameof(CheckinDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("checkinDateTime"); }
+            set { BackingStore?.Set("checkinDateTime", value); }
         }
         /// <summary>Device name trying to check-in.</summary>
         public string DeviceName {
-            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
-            set { BackingStore?.Set(nameof(DeviceName), value); }
+            get { return BackingStore?.Get<string>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
         }
         /// <summary>Device platform trying to check-in.</summary>
         public string DevicePlatform {
-            get { return BackingStore?.Get<string>(nameof(DevicePlatform)); }
-            set { BackingStore?.Set(nameof(DevicePlatform), value); }
+            get { return BackingStore?.Get<string>("devicePlatform"); }
+            set { BackingStore?.Set("devicePlatform", value); }
         }
         /// <summary>Device platform version trying to check-in.</summary>
         public string DevicePlatformVersion {
-            get { return BackingStore?.Get<string>(nameof(DevicePlatformVersion)); }
-            set { BackingStore?.Set(nameof(DevicePlatformVersion), value); }
+            get { return BackingStore?.Get<string>("devicePlatformVersion"); }
+            set { BackingStore?.Set("devicePlatformVersion", value); }
         }
         /// <summary>Error message if any associated for the last checkin.</summary>
         public string ErrorMessage {
-            get { return BackingStore?.Get<string>(nameof(ErrorMessage)); }
-            set { BackingStore?.Set(nameof(ErrorMessage), value); }
+            get { return BackingStore?.Get<string>("errorMessage"); }
+            set { BackingStore?.Set("errorMessage", value); }
         }
         /// <summary>User identifier using the device.</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>User principal name using the device.</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>If the last checkin was successful.</summary>
         public bool? WasSuccessful {
-            get { return BackingStore?.Get<bool?>(nameof(WasSuccessful)); }
-            set { BackingStore?.Set(nameof(WasSuccessful), value); }
+            get { return BackingStore?.Get<bool?>("wasSuccessful"); }
+            set { BackingStore?.Set("wasSuccessful", value); }
         }
         /// <summary>
         /// Instantiates a new officeClientCheckinStatus and sets the default values.

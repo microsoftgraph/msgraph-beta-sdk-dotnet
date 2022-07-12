@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class AttackSimulationUser : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Display name of the user.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Email address of the user.</summary>
         public string Email {
-            get { return BackingStore?.Get<string>(nameof(Email)); }
-            set { BackingStore?.Set(nameof(Email), value); }
+            get { return BackingStore?.Get<string>("email"); }
+            set { BackingStore?.Set("email", value); }
         }
         /// <summary>This is the id property value of the user resource that represents the user in the Azure AD tenant.</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>
         /// Instantiates a new attackSimulationUser and sets the default values.

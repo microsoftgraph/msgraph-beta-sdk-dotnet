@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsFeatureUpdateCatalogItem : WindowsUpdateCatalogItem, IParsable {
         /// <summary>The feature update version</summary>
         public string Version {
-            get { return BackingStore?.Get<string>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<string>("version"); }
+            set { BackingStore?.Set("version", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

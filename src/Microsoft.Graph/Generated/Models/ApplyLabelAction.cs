@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class ApplyLabelAction : InformationProtectionAction, IParsable {
         /// <summary>The collection of specific actions that should be taken by the consuming application to label the document. See  informationProtectionAction for the full list.</summary>
         public List<InformationProtectionAction> Actions {
-            get { return BackingStore?.Get<List<InformationProtectionAction>>(nameof(Actions)); }
-            set { BackingStore?.Set(nameof(Actions), value); }
+            get { return BackingStore?.Get<List<InformationProtectionAction>>("actions"); }
+            set { BackingStore?.Set("actions", value); }
         }
-        /// <summary>Possible values are: manual, automatic, recommended, default.</summary>
+        /// <summary>The actionSource property</summary>
         public Microsoft.Graph.Beta.Models.ActionSource? ActionSource {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionSource?>(nameof(ActionSource)); }
-            set { BackingStore?.Set(nameof(ActionSource), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionSource?>("actionSource"); }
+            set { BackingStore?.Set("actionSource", value); }
         }
         /// <summary>Object that describes the details of the label to apply.</summary>
         public LabelDetails Label {
-            get { return BackingStore?.Get<LabelDetails>(nameof(Label)); }
-            set { BackingStore?.Set(nameof(Label), value); }
+            get { return BackingStore?.Get<LabelDetails>("label"); }
+            set { BackingStore?.Set("label", value); }
         }
         /// <summary>If the label was the result of an automatic classification, supply the list of sensitive info type GUIDs that resulted in the returned label.</summary>
         public List<string> ResponsibleSensitiveTypeIds {
-            get { return BackingStore?.Get<List<string>>(nameof(ResponsibleSensitiveTypeIds)); }
-            set { BackingStore?.Set(nameof(ResponsibleSensitiveTypeIds), value); }
+            get { return BackingStore?.Get<List<string>>("responsibleSensitiveTypeIds"); }
+            set { BackingStore?.Set("responsibleSensitiveTypeIds", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

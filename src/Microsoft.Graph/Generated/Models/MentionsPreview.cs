@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Beta.Models {
     public class MentionsPreview : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>True if the signed-in user is mentioned in the parent resource instance. Read-only. Supports filter.</summary>
         public bool? IsMentioned {
-            get { return BackingStore?.Get<bool?>(nameof(IsMentioned)); }
-            set { BackingStore?.Set(nameof(IsMentioned), value); }
+            get { return BackingStore?.Get<bool?>("isMentioned"); }
+            set { BackingStore?.Set("isMentioned", value); }
         }
         /// <summary>
         /// Instantiates a new mentionsPreview and sets the default values.

@@ -5,22 +5,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Operation : Entity, IParsable {
         /// <summary>The start time of the operation.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The time of the last action of the operation.</summary>
         public DateTimeOffset? LastActionDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastActionDateTime)); }
-            set { BackingStore?.Set(nameof(LastActionDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
+            set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>Possible values are: notStarted, running, completed, failed. Read-only.</summary>
         public OperationStatus? Status {
-            get { return BackingStore?.Get<OperationStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<OperationStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+        /// <summary>
+        /// Instantiates a new operation and sets the default values.
+        /// </summary>
+        public Operation() : base() {
+            Type = "#microsoft.graph.operation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

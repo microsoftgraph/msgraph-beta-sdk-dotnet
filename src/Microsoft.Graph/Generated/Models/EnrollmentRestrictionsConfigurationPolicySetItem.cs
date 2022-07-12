@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class EnrollmentRestrictionsConfigurationPolicySetItem : PolicySetItem, IParsable {
         /// <summary>Limit of the EnrollmentRestrictionsConfigurationPolicySetItem.</summary>
         public int? Limit {
-            get { return BackingStore?.Get<int?>(nameof(Limit)); }
-            set { BackingStore?.Set(nameof(Limit), value); }
+            get { return BackingStore?.Get<int?>("limit"); }
+            set { BackingStore?.Set("limit", value); }
         }
         /// <summary>Priority of the EnrollmentRestrictionsConfigurationPolicySetItem.</summary>
         public int? Priority {
-            get { return BackingStore?.Get<int?>(nameof(Priority)); }
-            set { BackingStore?.Set(nameof(Priority), value); }
+            get { return BackingStore?.Get<int?>("priority"); }
+            set { BackingStore?.Set("priority", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

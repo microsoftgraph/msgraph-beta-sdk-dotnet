@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class CommunicationsApplicationIdentity : Identity, IParsable {
         /// <summary>The applicationType property</summary>
         public string ApplicationType {
-            get { return BackingStore?.Get<string>(nameof(ApplicationType)); }
-            set { BackingStore?.Set(nameof(ApplicationType), value); }
+            get { return BackingStore?.Get<string>("applicationType"); }
+            set { BackingStore?.Set("applicationType", value); }
         }
         /// <summary>The hidden property</summary>
         public bool? Hidden {
-            get { return BackingStore?.Get<bool?>(nameof(Hidden)); }
-            set { BackingStore?.Set(nameof(Hidden), value); }
+            get { return BackingStore?.Get<bool?>("hidden"); }
+            set { BackingStore?.Set("hidden", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

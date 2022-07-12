@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Beta.Models {
     public class SearchQueryString : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Contains the actual search terms of the request.</summary>
         public string Query {
-            get { return BackingStore?.Get<string>(nameof(Query)); }
-            set { BackingStore?.Set(nameof(Query), value); }
+            get { return BackingStore?.Get<string>("query"); }
+            set { BackingStore?.Set("query", value); }
         }
         /// <summary>
         /// Instantiates a new searchQueryString and sets the default values.

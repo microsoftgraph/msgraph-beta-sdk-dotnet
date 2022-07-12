@@ -8,53 +8,53 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsAppHealthApplicationPerformance : Entity, IParsable {
         /// <summary>The number of devices where the app has been active. Valid values -2147483648 to 2147483647</summary>
         public int? ActiveDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(ActiveDeviceCount)); }
-            set { BackingStore?.Set(nameof(ActiveDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("activeDeviceCount"); }
+            set { BackingStore?.Set("activeDeviceCount", value); }
         }
         /// <summary>The number of crashes for the app. Valid values -2147483648 to 2147483647</summary>
         public int? AppCrashCount {
-            get { return BackingStore?.Get<int?>(nameof(AppCrashCount)); }
-            set { BackingStore?.Set(nameof(AppCrashCount), value); }
+            get { return BackingStore?.Get<int?>("appCrashCount"); }
+            set { BackingStore?.Set("appCrashCount", value); }
         }
         /// <summary>The friendly name of the application.</summary>
         public string AppDisplayName {
-            get { return BackingStore?.Get<string>(nameof(AppDisplayName)); }
-            set { BackingStore?.Set(nameof(AppDisplayName), value); }
+            get { return BackingStore?.Get<string>("appDisplayName"); }
+            set { BackingStore?.Set("appDisplayName", value); }
         }
         /// <summary>The number of hangs for the app. Valid values -2147483648 to 2147483647</summary>
         public int? AppHangCount {
-            get { return BackingStore?.Get<int?>(nameof(AppHangCount)); }
-            set { BackingStore?.Set(nameof(AppHangCount), value); }
+            get { return BackingStore?.Get<int?>("appHangCount"); }
+            set { BackingStore?.Set("appHangCount", value); }
         }
         /// <summary>The health score of the app. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? AppHealthScore {
-            get { return BackingStore?.Get<double?>(nameof(AppHealthScore)); }
-            set { BackingStore?.Set(nameof(AppHealthScore), value); }
+            get { return BackingStore?.Get<double?>("appHealthScore"); }
+            set { BackingStore?.Set("appHealthScore", value); }
         }
         /// <summary>The overall health status of the app.</summary>
         public string AppHealthStatus {
-            get { return BackingStore?.Get<string>(nameof(AppHealthStatus)); }
-            set { BackingStore?.Set(nameof(AppHealthStatus), value); }
+            get { return BackingStore?.Get<string>("appHealthStatus"); }
+            set { BackingStore?.Set("appHealthStatus", value); }
         }
         /// <summary>The name of the application.</summary>
         public string AppName {
-            get { return BackingStore?.Get<string>(nameof(AppName)); }
-            set { BackingStore?.Set(nameof(AppName), value); }
+            get { return BackingStore?.Get<string>("appName"); }
+            set { BackingStore?.Set("appName", value); }
         }
         /// <summary>The publisher of the application.</summary>
         public string AppPublisher {
-            get { return BackingStore?.Get<string>(nameof(AppPublisher)); }
-            set { BackingStore?.Set(nameof(AppPublisher), value); }
+            get { return BackingStore?.Get<string>("appPublisher"); }
+            set { BackingStore?.Set("appPublisher", value); }
         }
         /// <summary>The total usage time of the application in minutes. Valid values -2147483648 to 2147483647</summary>
         public int? AppUsageDuration {
-            get { return BackingStore?.Get<int?>(nameof(AppUsageDuration)); }
-            set { BackingStore?.Set(nameof(AppUsageDuration), value); }
+            get { return BackingStore?.Get<int?>("appUsageDuration"); }
+            set { BackingStore?.Set("appUsageDuration", value); }
         }
         /// <summary>The mean time to failure for the app in minutes. Valid values -2147483648 to 2147483647</summary>
         public int? MeanTimeToFailureInMinutes {
-            get { return BackingStore?.Get<int?>(nameof(MeanTimeToFailureInMinutes)); }
-            set { BackingStore?.Set(nameof(MeanTimeToFailureInMinutes), value); }
+            get { return BackingStore?.Get<int?>("meanTimeToFailureInMinutes"); }
+            set { BackingStore?.Set("meanTimeToFailureInMinutes", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

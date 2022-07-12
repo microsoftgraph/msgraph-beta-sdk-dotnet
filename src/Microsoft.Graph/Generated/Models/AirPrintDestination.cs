@@ -9,30 +9,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class AirPrintDestination : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>If true AirPrint connections are secured by Transport Layer Security (TLS). Default is false. Available in iOS 11.0 and later.</summary>
         public bool? ForceTls {
-            get { return BackingStore?.Get<bool?>(nameof(ForceTls)); }
-            set { BackingStore?.Set(nameof(ForceTls), value); }
+            get { return BackingStore?.Get<bool?>("forceTls"); }
+            set { BackingStore?.Set("forceTls", value); }
         }
         /// <summary>The IP Address of the AirPrint destination.</summary>
         public string IpAddress {
-            get { return BackingStore?.Get<string>(nameof(IpAddress)); }
-            set { BackingStore?.Set(nameof(IpAddress), value); }
+            get { return BackingStore?.Get<string>("ipAddress"); }
+            set { BackingStore?.Set("ipAddress", value); }
         }
         /// <summary>The listening port of the AirPrint destination. If this key is not specified AirPrint will use the default port. Available in iOS 11.0 and later.</summary>
         public int? Port {
-            get { return BackingStore?.Get<int?>(nameof(Port)); }
-            set { BackingStore?.Set(nameof(Port), value); }
+            get { return BackingStore?.Get<int?>("port"); }
+            set { BackingStore?.Set("port", value); }
         }
         /// <summary>The Resource Path associated with the printer. This corresponds to the rp parameter of the ipps.tcp Bonjour record. For example: printers/Canon_MG5300_series, printers/Xerox_Phaser_7600, ipp/print, Epson_IPP_Printer.</summary>
         public string ResourcePath {
-            get { return BackingStore?.Get<string>(nameof(ResourcePath)); }
-            set { BackingStore?.Set(nameof(ResourcePath), value); }
+            get { return BackingStore?.Get<string>("resourcePath"); }
+            set { BackingStore?.Set("resourcePath", value); }
         }
         /// <summary>
         /// Instantiates a new airPrintDestination and sets the default values.

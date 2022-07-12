@@ -9,30 +9,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationChoiceSettingValueTemplate : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Choice Setting Value Default Template.</summary>
         public DeviceManagementConfigurationChoiceSettingValueDefaultTemplate DefaultValue {
-            get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueDefaultTemplate>(nameof(DefaultValue)); }
-            set { BackingStore?.Set(nameof(DefaultValue), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueDefaultTemplate>("defaultValue"); }
+            set { BackingStore?.Set("defaultValue", value); }
         }
         /// <summary>Recommended definition override.</summary>
         public DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate RecommendedValueDefinition {
-            get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate>(nameof(RecommendedValueDefinition)); }
-            set { BackingStore?.Set(nameof(RecommendedValueDefinition), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate>("recommendedValueDefinition"); }
+            set { BackingStore?.Set("recommendedValueDefinition", value); }
         }
         /// <summary>Required definition override.</summary>
         public DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate RequiredValueDefinition {
-            get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate>(nameof(RequiredValueDefinition)); }
-            set { BackingStore?.Set(nameof(RequiredValueDefinition), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate>("requiredValueDefinition"); }
+            set { BackingStore?.Set("requiredValueDefinition", value); }
         }
         /// <summary>Setting Value Template Id</summary>
         public string SettingValueTemplateId {
-            get { return BackingStore?.Get<string>(nameof(SettingValueTemplateId)); }
-            set { BackingStore?.Set(nameof(SettingValueTemplateId), value); }
+            get { return BackingStore?.Get<string>("settingValueTemplateId"); }
+            set { BackingStore?.Set("settingValueTemplateId", value); }
         }
         /// <summary>
         /// Instantiates a new deviceManagementConfigurationChoiceSettingValueTemplate and sets the default values.

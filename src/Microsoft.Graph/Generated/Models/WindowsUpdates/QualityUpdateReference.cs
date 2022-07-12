@@ -8,13 +8,19 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class QualityUpdateReference : WindowsUpdateReference, IParsable {
         /// <summary>Specifies the classification of the referenced content. Supports a subset of the values for qualityUpdateClassification. Possible values are: security, unknownFutureValue.</summary>
         public QualityUpdateClassification? Classification {
-            get { return BackingStore?.Get<QualityUpdateClassification?>(nameof(Classification)); }
-            set { BackingStore?.Set(nameof(Classification), value); }
+            get { return BackingStore?.Get<QualityUpdateClassification?>("classification"); }
+            set { BackingStore?.Set("classification", value); }
         }
         /// <summary>Specifies a quality update in the given servicingChannel with the given classification by date (i.e. the last update published on the specified date). Default value is security.</summary>
         public DateTimeOffset? ReleaseDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ReleaseDateTime)); }
-            set { BackingStore?.Set(nameof(ReleaseDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("releaseDateTime"); }
+            set { BackingStore?.Set("releaseDateTime", value); }
+        }
+        /// <summary>
+        /// Instantiates a new QualityUpdateReference and sets the default values.
+        /// </summary>
+        public QualityUpdateReference() : base() {
+            Type = "#microsoft.graph.windowsUpdates.qualityUpdateReference";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

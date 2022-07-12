@@ -8,38 +8,38 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserAppInstallStatus : Entity, IParsable {
         /// <summary>The navigation link to the mobile app.</summary>
         public MobileApp App {
-            get { return BackingStore?.Get<MobileApp>(nameof(App)); }
-            set { BackingStore?.Set(nameof(App), value); }
+            get { return BackingStore?.Get<MobileApp>("app"); }
+            set { BackingStore?.Set("app", value); }
         }
         /// <summary>The install state of the app on devices.</summary>
         public List<MobileAppInstallStatus> DeviceStatuses {
-            get { return BackingStore?.Get<List<MobileAppInstallStatus>>(nameof(DeviceStatuses)); }
-            set { BackingStore?.Set(nameof(DeviceStatuses), value); }
+            get { return BackingStore?.Get<List<MobileAppInstallStatus>>("deviceStatuses"); }
+            set { BackingStore?.Set("deviceStatuses", value); }
         }
         /// <summary>Failed Device Count.</summary>
         public int? FailedDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(FailedDeviceCount)); }
-            set { BackingStore?.Set(nameof(FailedDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("failedDeviceCount"); }
+            set { BackingStore?.Set("failedDeviceCount", value); }
         }
         /// <summary>Installed Device Count.</summary>
         public int? InstalledDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(InstalledDeviceCount)); }
-            set { BackingStore?.Set(nameof(InstalledDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("installedDeviceCount"); }
+            set { BackingStore?.Set("installedDeviceCount", value); }
         }
         /// <summary>Not installed device count.</summary>
         public int? NotInstalledDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(NotInstalledDeviceCount)); }
-            set { BackingStore?.Set(nameof(NotInstalledDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("notInstalledDeviceCount"); }
+            set { BackingStore?.Set("notInstalledDeviceCount", value); }
         }
         /// <summary>User name.</summary>
         public string UserName {
-            get { return BackingStore?.Get<string>(nameof(UserName)); }
-            set { BackingStore?.Set(nameof(UserName), value); }
+            get { return BackingStore?.Get<string>("userName"); }
+            set { BackingStore?.Set("userName", value); }
         }
         /// <summary>User Principal Name.</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

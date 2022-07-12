@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsKioskLocalUser : WindowsKioskUser, IParsable {
         /// <summary>The local user that will be locked to this kiosk configuration</summary>
         public string UserName {
-            get { return BackingStore?.Get<string>(nameof(UserName)); }
-            set { BackingStore?.Set(nameof(UserName), value); }
+            get { return BackingStore?.Get<string>("userName"); }
+            set { BackingStore?.Set("userName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

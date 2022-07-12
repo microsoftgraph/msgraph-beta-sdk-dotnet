@@ -8,23 +8,29 @@ namespace Microsoft.Graph.Beta.Models {
     public class Place : Entity, IParsable {
         /// <summary>The street address of the place.</summary>
         public PhysicalAddress Address {
-            get { return BackingStore?.Get<PhysicalAddress>(nameof(Address)); }
-            set { BackingStore?.Set(nameof(Address), value); }
+            get { return BackingStore?.Get<PhysicalAddress>("address"); }
+            set { BackingStore?.Set("address", value); }
         }
         /// <summary>The name associated with the place.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Specifies the place location in latitude, longitude and (optionally) altitude coordinates.</summary>
         public OutlookGeoCoordinates GeoCoordinates {
-            get { return BackingStore?.Get<OutlookGeoCoordinates>(nameof(GeoCoordinates)); }
-            set { BackingStore?.Set(nameof(GeoCoordinates), value); }
+            get { return BackingStore?.Get<OutlookGeoCoordinates>("geoCoordinates"); }
+            set { BackingStore?.Set("geoCoordinates", value); }
         }
         /// <summary>The phone number of the place.</summary>
         public string Phone {
-            get { return BackingStore?.Get<string>(nameof(Phone)); }
-            set { BackingStore?.Set(nameof(Phone), value); }
+            get { return BackingStore?.Get<string>("phone"); }
+            set { BackingStore?.Set("phone", value); }
+        }
+        /// <summary>
+        /// Instantiates a new Place and sets the default values.
+        /// </summary>
+        public Place() : base() {
+            Type = "#microsoft.graph.place";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

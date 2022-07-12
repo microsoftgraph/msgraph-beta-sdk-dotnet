@@ -8,33 +8,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsBatteryHealthDeviceAppImpact : Entity, IParsable {
         /// <summary>User friendly display name for the app. Eg: Outlook</summary>
         public string AppDisplayName {
-            get { return BackingStore?.Get<string>(nameof(AppDisplayName)); }
-            set { BackingStore?.Set(nameof(AppDisplayName), value); }
+            get { return BackingStore?.Get<string>("appDisplayName"); }
+            set { BackingStore?.Set("appDisplayName", value); }
         }
         /// <summary>App name. Eg: oltk.exe</summary>
         public string AppName {
-            get { return BackingStore?.Get<string>(nameof(AppName)); }
-            set { BackingStore?.Set(nameof(AppName), value); }
+            get { return BackingStore?.Get<string>("appName"); }
+            set { BackingStore?.Set("appName", value); }
         }
         /// <summary>App publisher. Eg: Microsoft Corporation</summary>
         public string AppPublisher {
-            get { return BackingStore?.Get<string>(nameof(AppPublisher)); }
-            set { BackingStore?.Set(nameof(AppPublisher), value); }
+            get { return BackingStore?.Get<string>("appPublisher"); }
+            set { BackingStore?.Set("appPublisher", value); }
         }
         /// <summary>The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? BatteryUsagePercentage {
-            get { return BackingStore?.Get<double?>(nameof(BatteryUsagePercentage)); }
-            set { BackingStore?.Set(nameof(BatteryUsagePercentage), value); }
+            get { return BackingStore?.Get<double?>("batteryUsagePercentage"); }
+            set { BackingStore?.Set("batteryUsagePercentage", value); }
         }
         /// <summary>The unique identifier of the device, Intune DeviceID or SCCM device id.</summary>
         public string DeviceId {
-            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
-            set { BackingStore?.Set(nameof(DeviceId), value); }
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>true if the user had active interaction with the app.</summary>
         public bool? IsForegroundApp {
-            get { return BackingStore?.Get<bool?>(nameof(IsForegroundApp)); }
-            set { BackingStore?.Set(nameof(IsForegroundApp), value); }
+            get { return BackingStore?.Get<bool?>("isForegroundApp"); }
+            set { BackingStore?.Set("isForegroundApp", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

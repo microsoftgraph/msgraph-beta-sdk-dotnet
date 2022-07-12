@@ -7,28 +7,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidForWorkPkcsCertificateProfile : AndroidForWorkCertificateProfileBase, IParsable {
         /// <summary>PKCS Certificate Template Name</summary>
         public string CertificateTemplateName {
-            get { return BackingStore?.Get<string>(nameof(CertificateTemplateName)); }
-            set { BackingStore?.Set(nameof(CertificateTemplateName), value); }
+            get { return BackingStore?.Get<string>("certificateTemplateName"); }
+            set { BackingStore?.Set("certificateTemplateName", value); }
         }
         /// <summary>PKCS Certification Authority</summary>
         public string CertificationAuthority {
-            get { return BackingStore?.Get<string>(nameof(CertificationAuthority)); }
-            set { BackingStore?.Set(nameof(CertificationAuthority), value); }
+            get { return BackingStore?.Get<string>("certificationAuthority"); }
+            set { BackingStore?.Set("certificationAuthority", value); }
         }
         /// <summary>PKCS Certification Authority Name</summary>
         public string CertificationAuthorityName {
-            get { return BackingStore?.Get<string>(nameof(CertificationAuthorityName)); }
-            set { BackingStore?.Set(nameof(CertificationAuthorityName), value); }
+            get { return BackingStore?.Get<string>("certificationAuthorityName"); }
+            set { BackingStore?.Set("certificationAuthorityName", value); }
         }
         /// <summary>Certificate state for devices. This collection can contain a maximum of 2147483647 elements.</summary>
         public List<ManagedDeviceCertificateState> ManagedDeviceCertificateStates {
-            get { return BackingStore?.Get<List<ManagedDeviceCertificateState>>(nameof(ManagedDeviceCertificateStates)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceCertificateStates), value); }
+            get { return BackingStore?.Get<List<ManagedDeviceCertificateState>>("managedDeviceCertificateStates"); }
+            set { BackingStore?.Set("managedDeviceCertificateStates", value); }
         }
         /// <summary>Custom String that defines the AAD Attribute.</summary>
         public string SubjectAlternativeNameFormatString {
-            get { return BackingStore?.Get<string>(nameof(SubjectAlternativeNameFormatString)); }
-            set { BackingStore?.Set(nameof(SubjectAlternativeNameFormatString), value); }
+            get { return BackingStore?.Get<string>("subjectAlternativeNameFormatString"); }
+            set { BackingStore?.Set("subjectAlternativeNameFormatString", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

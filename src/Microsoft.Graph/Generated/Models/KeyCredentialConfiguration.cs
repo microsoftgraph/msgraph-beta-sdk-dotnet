@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class KeyCredentialConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The maxLifetime property</summary>
         public TimeSpan? MaxLifetime {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(MaxLifetime)); }
-            set { BackingStore?.Set(nameof(MaxLifetime), value); }
+            get { return BackingStore?.Get<TimeSpan?>("maxLifetime"); }
+            set { BackingStore?.Set("maxLifetime", value); }
         }
         /// <summary>Timestamp when the policy is enforced for all apps created on or after the specified date. For existing applications, the enforcement date would be back dated. To apply to all applications regardless of their creation date, this property would be null. Nullable.</summary>
         public DateTimeOffset? RestrictForAppsCreatedAfterDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(RestrictForAppsCreatedAfterDateTime)); }
-            set { BackingStore?.Set(nameof(RestrictForAppsCreatedAfterDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("restrictForAppsCreatedAfterDateTime"); }
+            set { BackingStore?.Set("restrictForAppsCreatedAfterDateTime", value); }
         }
         /// <summary>The type of restriction being applied. Possible values are asymmetricKeyLifetime, unknownFutureValue. Each value of restrictionType can be used only once per policy.</summary>
         public AppKeyCredentialRestrictionType? RestrictionType {
-            get { return BackingStore?.Get<AppKeyCredentialRestrictionType?>(nameof(RestrictionType)); }
-            set { BackingStore?.Set(nameof(RestrictionType), value); }
+            get { return BackingStore?.Get<AppKeyCredentialRestrictionType?>("restrictionType"); }
+            set { BackingStore?.Set("restrictionType", value); }
         }
         /// <summary>
         /// Instantiates a new keyCredentialConfiguration and sets the default values.

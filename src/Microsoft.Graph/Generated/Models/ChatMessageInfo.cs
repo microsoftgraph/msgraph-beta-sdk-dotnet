@@ -4,37 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ChatMessageInfo : Entity, IParsable {
         /// <summary>Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object does not return @mentions and attachments.</summary>
         public ItemBody Body {
-            get { return BackingStore?.Get<ItemBody>(nameof(Body)); }
-            set { BackingStore?.Set(nameof(Body), value); }
+            get { return BackingStore?.Get<ItemBody>("body"); }
+            set { BackingStore?.Set("body", value); }
         }
         /// <summary>Date time object representing the time at which message was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, members were added, and so on. For event messages, the messageType property will be set to systemEventMessage.</summary>
         public EventMessageDetail EventDetail {
-            get { return BackingStore?.Get<EventMessageDetail>(nameof(EventDetail)); }
-            set { BackingStore?.Set(nameof(EventDetail), value); }
+            get { return BackingStore?.Get<EventMessageDetail>("eventDetail"); }
+            set { BackingStore?.Set("eventDetail", value); }
         }
         /// <summary>Information about the sender of the message.</summary>
         public ChatMessageFromIdentitySet From {
-            get { return BackingStore?.Get<ChatMessageFromIdentitySet>(nameof(From)); }
-            set { BackingStore?.Set(nameof(From), value); }
+            get { return BackingStore?.Get<ChatMessageFromIdentitySet>("from"); }
+            set { BackingStore?.Set("from", value); }
         }
         /// <summary>If set to true, the original message has been deleted.</summary>
         public bool? IsDeleted {
-            get { return BackingStore?.Get<bool?>(nameof(IsDeleted)); }
-            set { BackingStore?.Set(nameof(IsDeleted), value); }
+            get { return BackingStore?.Get<bool?>("isDeleted"); }
+            set { BackingStore?.Set("isDeleted", value); }
         }
-        /// <summary>The type of chat message. The possible values are: message, unknownFutureValue, systemEventMessage.</summary>
+        /// <summary>The messageType property</summary>
         public ChatMessageType? MessageType {
-            get { return BackingStore?.Get<ChatMessageType?>(nameof(MessageType)); }
-            set { BackingStore?.Set(nameof(MessageType), value); }
+            get { return BackingStore?.Get<ChatMessageType?>("messageType"); }
+            set { BackingStore?.Set("messageType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

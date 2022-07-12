@@ -8,33 +8,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsImpactingProcess : Entity, IParsable {
         /// <summary>The category of impacting process.</summary>
         public string Category {
-            get { return BackingStore?.Get<string>(nameof(Category)); }
-            set { BackingStore?.Set(nameof(Category), value); }
+            get { return BackingStore?.Get<string>("category"); }
+            set { BackingStore?.Set("category", value); }
         }
         /// <summary>The description of process.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The unique identifier of the impacted device.</summary>
         public string DeviceId {
-            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
-            set { BackingStore?.Set(nameof(DeviceId), value); }
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>The impact value of the process. Valid values 0 to 1.79769313486232E+308</summary>
         public double? ImpactValue {
-            get { return BackingStore?.Get<double?>(nameof(ImpactValue)); }
-            set { BackingStore?.Set(nameof(ImpactValue), value); }
+            get { return BackingStore?.Get<double?>("impactValue"); }
+            set { BackingStore?.Set("impactValue", value); }
         }
         /// <summary>The process name.</summary>
         public string ProcessName {
-            get { return BackingStore?.Get<string>(nameof(ProcessName)); }
-            set { BackingStore?.Set(nameof(ProcessName), value); }
+            get { return BackingStore?.Get<string>("processName"); }
+            set { BackingStore?.Set("processName", value); }
         }
         /// <summary>The publisher of the process.</summary>
         public string Publisher {
-            get { return BackingStore?.Get<string>(nameof(Publisher)); }
-            set { BackingStore?.Set(nameof(Publisher), value); }
+            get { return BackingStore?.Get<string>("publisher"); }
+            set { BackingStore?.Set("publisher", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationReferenceSettingValue : DeviceManagementConfigurationStringSettingValue, IParsable {
         /// <summary>A note that admin can use to put some contextual information</summary>
         public string Note {
-            get { return BackingStore?.Get<string>(nameof(Note)); }
-            set { BackingStore?.Set(nameof(Note), value); }
+            get { return BackingStore?.Get<string>("note"); }
+            set { BackingStore?.Set("note", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class MessageRecipient : Entity, IParsable {
         /// <summary>The deliveryStatus property</summary>
         public MessageStatus? DeliveryStatus {
-            get { return BackingStore?.Get<MessageStatus?>(nameof(DeliveryStatus)); }
-            set { BackingStore?.Set(nameof(DeliveryStatus), value); }
+            get { return BackingStore?.Get<MessageStatus?>("deliveryStatus"); }
+            set { BackingStore?.Set("deliveryStatus", value); }
         }
         /// <summary>The events property</summary>
         public List<MessageEvent> Events {
-            get { return BackingStore?.Get<List<MessageEvent>>(nameof(Events)); }
-            set { BackingStore?.Set(nameof(Events), value); }
+            get { return BackingStore?.Get<List<MessageEvent>>("events"); }
+            set { BackingStore?.Set("events", value); }
         }
         /// <summary>The recipientEmail property</summary>
         public string RecipientEmail {
-            get { return BackingStore?.Get<string>(nameof(RecipientEmail)); }
-            set { BackingStore?.Set(nameof(RecipientEmail), value); }
+            get { return BackingStore?.Get<string>("recipientEmail"); }
+            set { BackingStore?.Set("recipientEmail", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

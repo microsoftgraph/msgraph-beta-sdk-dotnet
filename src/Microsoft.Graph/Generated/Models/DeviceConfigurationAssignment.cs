@@ -8,23 +8,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceConfigurationAssignment : Entity, IParsable {
         /// <summary>The admin intent to apply or remove the profile. Possible values are: apply, remove.</summary>
         public DeviceConfigAssignmentIntent? Intent {
-            get { return BackingStore?.Get<DeviceConfigAssignmentIntent?>(nameof(Intent)); }
-            set { BackingStore?.Set(nameof(Intent), value); }
+            get { return BackingStore?.Get<DeviceConfigAssignmentIntent?>("intent"); }
+            set { BackingStore?.Set("intent", value); }
         }
-        /// <summary>The assignment source for the device configuration, direct or parcel/policySet. This property is read-only. Possible values are: direct, policySets.</summary>
+        /// <summary>Represents source of assignment.</summary>
         public DeviceAndAppManagementAssignmentSource? Source {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentSource?>(nameof(Source)); }
-            set { BackingStore?.Set(nameof(Source), value); }
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentSource?>("source"); }
+            set { BackingStore?.Set("source", value); }
         }
         /// <summary>The identifier of the source of the assignment. This property is read-only.</summary>
         public string SourceId {
-            get { return BackingStore?.Get<string>(nameof(SourceId)); }
-            set { BackingStore?.Set(nameof(SourceId), value); }
+            get { return BackingStore?.Get<string>("sourceId"); }
+            set { BackingStore?.Set("sourceId", value); }
         }
         /// <summary>The assignment target for the device configuration.</summary>
         public DeviceAndAppManagementAssignmentTarget Target {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>(nameof(Target)); }
-            set { BackingStore?.Set(nameof(Target), value); }
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
+            set { BackingStore?.Set("target", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

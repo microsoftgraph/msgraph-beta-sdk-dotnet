@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class PinnedChatMessageInfo : Entity, IParsable {
         /// <summary>Represents details about the chat message that is pinned.</summary>
         public ChatMessage Message {
-            get { return BackingStore?.Get<ChatMessage>(nameof(Message)); }
-            set { BackingStore?.Set(nameof(Message), value); }
+            get { return BackingStore?.Get<ChatMessage>("message"); }
+            set { BackingStore?.Set("message", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

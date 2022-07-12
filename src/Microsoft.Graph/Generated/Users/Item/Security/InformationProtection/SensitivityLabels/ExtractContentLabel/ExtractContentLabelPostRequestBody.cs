@@ -10,15 +10,15 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
     public class ExtractContentLabelPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The contentInfo property</summary>
         public Microsoft.Graph.Beta.Models.Security.ContentInfo ContentInfo {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ContentInfo>(nameof(ContentInfo)); }
-            set { BackingStore?.Set(nameof(ContentInfo), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ContentInfo>("contentInfo"); }
+            set { BackingStore?.Set("contentInfo", value); }
         }
         /// <summary>
         /// Instantiates a new extractContentLabelPostRequestBody and sets the default values.

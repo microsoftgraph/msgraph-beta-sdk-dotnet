@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationSynchronizationOAuth2ClientCredentialsConnectionSettings : EducationSynchronizationConnectionSettings, IParsable {
         /// <summary>The scope of the access request (see RFC6749).</summary>
         public string Scope {
-            get { return BackingStore?.Get<string>(nameof(Scope)); }
-            set { BackingStore?.Set(nameof(Scope), value); }
+            get { return BackingStore?.Get<string>("scope"); }
+            set { BackingStore?.Set("scope", value); }
         }
         /// <summary>The URL to get access tokens for the data provider.</summary>
         public string TokenUrl {
-            get { return BackingStore?.Get<string>(nameof(TokenUrl)); }
-            set { BackingStore?.Set(nameof(TokenUrl), value); }
+            get { return BackingStore?.Get<string>("tokenUrl"); }
+            set { BackingStore?.Set("tokenUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

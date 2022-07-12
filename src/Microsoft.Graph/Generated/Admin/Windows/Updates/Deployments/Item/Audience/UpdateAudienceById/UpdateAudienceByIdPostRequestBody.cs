@@ -9,35 +9,35 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.U
     public class UpdateAudienceByIdPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The addExclusions property</summary>
         public List<string> AddExclusions {
-            get { return BackingStore?.Get<List<string>>(nameof(AddExclusions)); }
-            set { BackingStore?.Set(nameof(AddExclusions), value); }
+            get { return BackingStore?.Get<List<string>>("addExclusions"); }
+            set { BackingStore?.Set("addExclusions", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The addMembers property</summary>
         public List<string> AddMembers {
-            get { return BackingStore?.Get<List<string>>(nameof(AddMembers)); }
-            set { BackingStore?.Set(nameof(AddMembers), value); }
+            get { return BackingStore?.Get<List<string>>("addMembers"); }
+            set { BackingStore?.Set("addMembers", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The memberEntityType property</summary>
         public string MemberEntityType {
-            get { return BackingStore?.Get<string>(nameof(MemberEntityType)); }
-            set { BackingStore?.Set(nameof(MemberEntityType), value); }
+            get { return BackingStore?.Get<string>("memberEntityType"); }
+            set { BackingStore?.Set("memberEntityType", value); }
         }
         /// <summary>The removeExclusions property</summary>
         public List<string> RemoveExclusions {
-            get { return BackingStore?.Get<List<string>>(nameof(RemoveExclusions)); }
-            set { BackingStore?.Set(nameof(RemoveExclusions), value); }
+            get { return BackingStore?.Get<List<string>>("removeExclusions"); }
+            set { BackingStore?.Set("removeExclusions", value); }
         }
         /// <summary>The removeMembers property</summary>
         public List<string> RemoveMembers {
-            get { return BackingStore?.Get<List<string>>(nameof(RemoveMembers)); }
-            set { BackingStore?.Set(nameof(RemoveMembers), value); }
+            get { return BackingStore?.Get<List<string>>("removeMembers"); }
+            set { BackingStore?.Set("removeMembers", value); }
         }
         /// <summary>
         /// Instantiates a new updateAudienceByIdPostRequestBody and sets the default values.

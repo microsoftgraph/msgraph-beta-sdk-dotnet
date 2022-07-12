@@ -8,23 +8,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementDomainJoinConnector : Entity, IParsable {
         /// <summary>The connector display name.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Last time connector contacted Intune.</summary>
         public DateTimeOffset? LastConnectionDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastConnectionDateTime)); }
-            set { BackingStore?.Set(nameof(LastConnectionDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastConnectionDateTime"); }
+            set { BackingStore?.Set("lastConnectionDateTime", value); }
         }
-        /// <summary>The connector state. Possible values are: active, error, inactive.</summary>
+        /// <summary>The ODJ request states.</summary>
         public DeviceManagementDomainJoinConnectorState? State {
-            get { return BackingStore?.Get<DeviceManagementDomainJoinConnectorState?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<DeviceManagementDomainJoinConnectorState?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>The version of the connector.</summary>
         public string Version {
-            get { return BackingStore?.Get<string>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<string>("version"); }
+            set { BackingStore?.Set("version", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

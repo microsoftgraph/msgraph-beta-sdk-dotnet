@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Beta.Models {
     public class ContinuousAccessEvaluationSessionControl : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies continuous access evaluation settings. The possible values are: strictEnforcement, disabled, unknownFutureValue.</summary>
         public ContinuousAccessEvaluationMode? Mode {
-            get { return BackingStore?.Get<ContinuousAccessEvaluationMode?>(nameof(Mode)); }
-            set { BackingStore?.Set(nameof(Mode), value); }
+            get { return BackingStore?.Get<ContinuousAccessEvaluationMode?>("mode"); }
+            set { BackingStore?.Set("mode", value); }
         }
         /// <summary>
         /// Instantiates a new continuousAccessEvaluationSessionControl and sets the default values.

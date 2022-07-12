@@ -5,125 +5,125 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsManagedAppProtection : ManagedAppPolicy, IParsable {
-        /// <summary>Indicates the sources from which data is allowed to be transferred. Some possible values are allApps or none. Possible values are: allApps, none.</summary>
+        /// <summary>Data can be transferred from/to these classes of apps</summary>
         public WindowsManagedAppDataTransferLevel? AllowedInboundDataTransferSources {
-            get { return BackingStore?.Get<WindowsManagedAppDataTransferLevel?>(nameof(AllowedInboundDataTransferSources)); }
-            set { BackingStore?.Set(nameof(AllowedInboundDataTransferSources), value); }
+            get { return BackingStore?.Get<WindowsManagedAppDataTransferLevel?>("allowedInboundDataTransferSources"); }
+            set { BackingStore?.Set("allowedInboundDataTransferSources", value); }
         }
-        /// <summary>Indicates the level to which the clipboard may be shared across org &amp; non-org resources. Some possible values are anyDestinationAnySource or none. Possible values are: anyDestinationAnySource, none.</summary>
+        /// <summary>Represents the level to which the device&apos;s clipboard may be shared between apps</summary>
         public WindowsManagedAppClipboardSharingLevel? AllowedOutboundClipboardSharingLevel {
-            get { return BackingStore?.Get<WindowsManagedAppClipboardSharingLevel?>(nameof(AllowedOutboundClipboardSharingLevel)); }
-            set { BackingStore?.Set(nameof(AllowedOutboundClipboardSharingLevel), value); }
+            get { return BackingStore?.Get<WindowsManagedAppClipboardSharingLevel?>("allowedOutboundClipboardSharingLevel"); }
+            set { BackingStore?.Set("allowedOutboundClipboardSharingLevel", value); }
         }
-        /// <summary>Indicates the destinations to which data is allowed to be transferred. Some possible values are allApps or none. Possible values are: allApps, none.</summary>
+        /// <summary>Data can be transferred from/to these classes of apps</summary>
         public WindowsManagedAppDataTransferLevel? AllowedOutboundDataTransferDestinations {
-            get { return BackingStore?.Get<WindowsManagedAppDataTransferLevel?>(nameof(AllowedOutboundDataTransferDestinations)); }
-            set { BackingStore?.Set(nameof(AllowedOutboundDataTransferDestinations), value); }
+            get { return BackingStore?.Get<WindowsManagedAppDataTransferLevel?>("allowedOutboundDataTransferDestinations"); }
+            set { BackingStore?.Set("allowedOutboundDataTransferDestinations", value); }
         }
         /// <summary>If set, it will specify what action to take in the case where the user is unable to checkin because their authentication token is invalid. This happens when the user is deleted or disabled in AAD. Some possible values are block or wipe. If this property is not set, no action will be taken. Possible values are: block, wipe, warn.</summary>
         public ManagedAppRemediationAction? AppActionIfUnableToAuthenticateUser {
-            get { return BackingStore?.Get<ManagedAppRemediationAction?>(nameof(AppActionIfUnableToAuthenticateUser)); }
-            set { BackingStore?.Set(nameof(AppActionIfUnableToAuthenticateUser), value); }
+            get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfUnableToAuthenticateUser"); }
+            set { BackingStore?.Set("appActionIfUnableToAuthenticateUser", value); }
         }
         /// <summary>List of apps to which the policy is deployed.</summary>
         public List<ManagedMobileApp> Apps {
-            get { return BackingStore?.Get<List<ManagedMobileApp>>(nameof(Apps)); }
-            set { BackingStore?.Set(nameof(Apps), value); }
+            get { return BackingStore?.Get<List<ManagedMobileApp>>("apps"); }
+            set { BackingStore?.Set("apps", value); }
         }
         /// <summary>Navigation property to list of inclusion and exclusion groups to which the policy is deployed.</summary>
         public List<TargetedManagedAppPolicyAssignment> Assignments {
-            get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>Indicates the total number of applications for which the current policy is deployed.</summary>
         public int? DeployedAppCount {
-            get { return BackingStore?.Get<int?>(nameof(DeployedAppCount)); }
-            set { BackingStore?.Set(nameof(DeployedAppCount), value); }
+            get { return BackingStore?.Get<int?>("deployedAppCount"); }
+            set { BackingStore?.Set("deployedAppCount", value); }
         }
         /// <summary>When TRUE, indicates that the policy is deployed to some inclusion groups. When FALSE, indicates that the policy is not deployed to any inclusion groups. Default value is FALSE.</summary>
         public bool? IsAssigned {
-            get { return BackingStore?.Get<bool?>(nameof(IsAssigned)); }
-            set { BackingStore?.Set(nameof(IsAssigned), value); }
+            get { return BackingStore?.Get<bool?>("isAssigned"); }
+            set { BackingStore?.Set("isAssigned", value); }
         }
-        /// <summary>Maximum allowed device threat level, as reported by the Mobile Threat Defense app. Possible values are: notConfigured, secured, low, medium, high.</summary>
+        /// <summary>The maxium threat level allowed for an app to be compliant.</summary>
         public ManagedAppDeviceThreatLevel? MaximumAllowedDeviceThreatLevel {
-            get { return BackingStore?.Get<ManagedAppDeviceThreatLevel?>(nameof(MaximumAllowedDeviceThreatLevel)); }
-            set { BackingStore?.Set(nameof(MaximumAllowedDeviceThreatLevel), value); }
+            get { return BackingStore?.Get<ManagedAppDeviceThreatLevel?>("maximumAllowedDeviceThreatLevel"); }
+            set { BackingStore?.Set("maximumAllowedDeviceThreatLevel", value); }
         }
         /// <summary>Versions bigger than the specified version will block the managed app from accessing company data. For example: &apos;8.1.0&apos; or &apos;13.1.1&apos;.</summary>
         public string MaximumRequiredOsVersion {
-            get { return BackingStore?.Get<string>(nameof(MaximumRequiredOsVersion)); }
-            set { BackingStore?.Set(nameof(MaximumRequiredOsVersion), value); }
+            get { return BackingStore?.Get<string>("maximumRequiredOsVersion"); }
+            set { BackingStore?.Set("maximumRequiredOsVersion", value); }
         }
         /// <summary>Versions bigger than the specified version will result in warning message on the managed app from accessing company data. For example: &apos;8.1.0&apos; or &apos;13.1.1&apos;.</summary>
         public string MaximumWarningOsVersion {
-            get { return BackingStore?.Get<string>(nameof(MaximumWarningOsVersion)); }
-            set { BackingStore?.Set(nameof(MaximumWarningOsVersion), value); }
+            get { return BackingStore?.Get<string>("maximumWarningOsVersion"); }
+            set { BackingStore?.Set("maximumWarningOsVersion", value); }
         }
         /// <summary>Versions bigger than the specified version will wipe the managed app and the associated company data. For example: &apos;8.1.0&apos; or &apos;13.1.1&apos;.</summary>
         public string MaximumWipeOsVersion {
-            get { return BackingStore?.Get<string>(nameof(MaximumWipeOsVersion)); }
-            set { BackingStore?.Set(nameof(MaximumWipeOsVersion), value); }
+            get { return BackingStore?.Get<string>("maximumWipeOsVersion"); }
+            set { BackingStore?.Set("maximumWipeOsVersion", value); }
         }
         /// <summary>Versions less than the specified version will block the managed app from accessing company data. For example: &apos;8.1.0&apos; or &apos;13.1.1&apos;.</summary>
         public string MinimumRequiredAppVersion {
-            get { return BackingStore?.Get<string>(nameof(MinimumRequiredAppVersion)); }
-            set { BackingStore?.Set(nameof(MinimumRequiredAppVersion), value); }
+            get { return BackingStore?.Get<string>("minimumRequiredAppVersion"); }
+            set { BackingStore?.Set("minimumRequiredAppVersion", value); }
         }
         /// <summary>Versions less than the specified version will block the managed app from accessing company data. For example: &apos;8.1.0&apos; or &apos;13.1.1&apos;.</summary>
         public string MinimumRequiredOsVersion {
-            get { return BackingStore?.Get<string>(nameof(MinimumRequiredOsVersion)); }
-            set { BackingStore?.Set(nameof(MinimumRequiredOsVersion), value); }
+            get { return BackingStore?.Get<string>("minimumRequiredOsVersion"); }
+            set { BackingStore?.Set("minimumRequiredOsVersion", value); }
         }
         /// <summary>Versions less than the specified version will block the managed app from accessing company data. For example: &apos;8.1.0&apos; or &apos;13.1.1&apos;.</summary>
         public string MinimumRequiredSdkVersion {
-            get { return BackingStore?.Get<string>(nameof(MinimumRequiredSdkVersion)); }
-            set { BackingStore?.Set(nameof(MinimumRequiredSdkVersion), value); }
+            get { return BackingStore?.Get<string>("minimumRequiredSdkVersion"); }
+            set { BackingStore?.Set("minimumRequiredSdkVersion", value); }
         }
         /// <summary>Versions less than the specified version will result in warning message on the managed app from accessing company data. For example: &apos;8.1.0&apos; or &apos;13.1.1&apos;.</summary>
         public string MinimumWarningAppVersion {
-            get { return BackingStore?.Get<string>(nameof(MinimumWarningAppVersion)); }
-            set { BackingStore?.Set(nameof(MinimumWarningAppVersion), value); }
+            get { return BackingStore?.Get<string>("minimumWarningAppVersion"); }
+            set { BackingStore?.Set("minimumWarningAppVersion", value); }
         }
         /// <summary>Versions less than the specified version will result in warning message on the managed app from accessing company data. For example: &apos;8.1.0&apos; or &apos;13.1.1&apos;.</summary>
         public string MinimumWarningOsVersion {
-            get { return BackingStore?.Get<string>(nameof(MinimumWarningOsVersion)); }
-            set { BackingStore?.Set(nameof(MinimumWarningOsVersion), value); }
+            get { return BackingStore?.Get<string>("minimumWarningOsVersion"); }
+            set { BackingStore?.Set("minimumWarningOsVersion", value); }
         }
         /// <summary>Versions less than the specified version will wipe the managed app and the associated company data. For example: &apos;8.1.0&apos; or &apos;13.1.1&apos;.</summary>
         public string MinimumWipeAppVersion {
-            get { return BackingStore?.Get<string>(nameof(MinimumWipeAppVersion)); }
-            set { BackingStore?.Set(nameof(MinimumWipeAppVersion), value); }
+            get { return BackingStore?.Get<string>("minimumWipeAppVersion"); }
+            set { BackingStore?.Set("minimumWipeAppVersion", value); }
         }
         /// <summary>Versions less than the specified version will wipe the managed app and the associated company data. For example: &apos;8.1.0&apos; or &apos;13.1.1&apos;.</summary>
         public string MinimumWipeOsVersion {
-            get { return BackingStore?.Get<string>(nameof(MinimumWipeOsVersion)); }
-            set { BackingStore?.Set(nameof(MinimumWipeOsVersion), value); }
+            get { return BackingStore?.Get<string>("minimumWipeOsVersion"); }
+            set { BackingStore?.Set("minimumWipeOsVersion", value); }
         }
         /// <summary>Versions less than the specified version will wipe the managed app and the associated company data. For example: &apos;8.1.0&apos; or &apos;13.1.1&apos;.</summary>
         public string MinimumWipeSdkVersion {
-            get { return BackingStore?.Get<string>(nameof(MinimumWipeSdkVersion)); }
-            set { BackingStore?.Set(nameof(MinimumWipeSdkVersion), value); }
+            get { return BackingStore?.Get<string>("minimumWipeSdkVersion"); }
+            set { BackingStore?.Set("minimumWipeSdkVersion", value); }
         }
-        /// <summary>Determines what action to take if the mobile threat defense threat threshold isn&apos;t met. Some possible values are block or wipe. Warn isn&apos;t a supported value for this property. Possible values are: block, wipe, warn.</summary>
+        /// <summary>An admin initiated action to be applied on a managed app.</summary>
         public ManagedAppRemediationAction? MobileThreatDefenseRemediationAction {
-            get { return BackingStore?.Get<ManagedAppRemediationAction?>(nameof(MobileThreatDefenseRemediationAction)); }
-            set { BackingStore?.Set(nameof(MobileThreatDefenseRemediationAction), value); }
+            get { return BackingStore?.Get<ManagedAppRemediationAction?>("mobileThreatDefenseRemediationAction"); }
+            set { BackingStore?.Set("mobileThreatDefenseRemediationAction", value); }
         }
         /// <summary>The period after which access is checked when the device is not connected to the internet. For example, PT5M indicates that the interval is 5 minutes in duration. A timespan value of PT0S indicates that access will be blocked immediately when the device is not connected to the internet.</summary>
         public TimeSpan? PeriodOfflineBeforeAccessCheck {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(PeriodOfflineBeforeAccessCheck)); }
-            set { BackingStore?.Set(nameof(PeriodOfflineBeforeAccessCheck), value); }
+            get { return BackingStore?.Get<TimeSpan?>("periodOfflineBeforeAccessCheck"); }
+            set { BackingStore?.Set("periodOfflineBeforeAccessCheck", value); }
         }
         /// <summary>The amount of time an app is allowed to remain disconnected from the internet before all managed data it is wiped. For example, P5D indicates that the interval is 5 days in duration. A timespan value of PT0S indicates that managed data will never be wiped when the device is not connected to the internet.</summary>
         public TimeSpan? PeriodOfflineBeforeWipeIsEnforced {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(PeriodOfflineBeforeWipeIsEnforced)); }
-            set { BackingStore?.Set(nameof(PeriodOfflineBeforeWipeIsEnforced), value); }
+            get { return BackingStore?.Get<TimeSpan?>("periodOfflineBeforeWipeIsEnforced"); }
+            set { BackingStore?.Set("periodOfflineBeforeWipeIsEnforced", value); }
         }
         /// <summary>When TRUE, indicates that printing is blocked from managed apps. When FALSE, indicates that printing is allowed from managed apps. Default value is FALSE.</summary>
         public bool? PrintBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(PrintBlocked)); }
-            set { BackingStore?.Set(nameof(PrintBlocked), value); }
+            get { return BackingStore?.Get<bool?>("printBlocked"); }
+            set { BackingStore?.Set("printBlocked", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

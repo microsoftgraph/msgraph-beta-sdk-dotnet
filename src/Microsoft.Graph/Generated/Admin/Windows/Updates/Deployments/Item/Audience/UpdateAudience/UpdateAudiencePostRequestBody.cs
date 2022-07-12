@@ -10,30 +10,30 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.U
     public class UpdateAudiencePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The addExclusions property</summary>
         public List<UpdatableAsset> AddExclusions {
-            get { return BackingStore?.Get<List<UpdatableAsset>>(nameof(AddExclusions)); }
-            set { BackingStore?.Set(nameof(AddExclusions), value); }
+            get { return BackingStore?.Get<List<UpdatableAsset>>("addExclusions"); }
+            set { BackingStore?.Set("addExclusions", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The addMembers property</summary>
         public List<UpdatableAsset> AddMembers {
-            get { return BackingStore?.Get<List<UpdatableAsset>>(nameof(AddMembers)); }
-            set { BackingStore?.Set(nameof(AddMembers), value); }
+            get { return BackingStore?.Get<List<UpdatableAsset>>("addMembers"); }
+            set { BackingStore?.Set("addMembers", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The removeExclusions property</summary>
         public List<UpdatableAsset> RemoveExclusions {
-            get { return BackingStore?.Get<List<UpdatableAsset>>(nameof(RemoveExclusions)); }
-            set { BackingStore?.Set(nameof(RemoveExclusions), value); }
+            get { return BackingStore?.Get<List<UpdatableAsset>>("removeExclusions"); }
+            set { BackingStore?.Set("removeExclusions", value); }
         }
         /// <summary>The removeMembers property</summary>
         public List<UpdatableAsset> RemoveMembers {
-            get { return BackingStore?.Get<List<UpdatableAsset>>(nameof(RemoveMembers)); }
-            set { BackingStore?.Set(nameof(RemoveMembers), value); }
+            get { return BackingStore?.Get<List<UpdatableAsset>>("removeMembers"); }
+            set { BackingStore?.Set("removeMembers", value); }
         }
         /// <summary>
         /// Instantiates a new updateAudiencePostRequestBody and sets the default values.

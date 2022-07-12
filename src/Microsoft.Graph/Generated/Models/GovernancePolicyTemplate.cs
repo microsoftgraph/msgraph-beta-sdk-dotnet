@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class GovernancePolicyTemplate : Entity, IParsable {
         /// <summary>The displayName property</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The policy property</summary>
         public GovernancePolicy Policy {
-            get { return BackingStore?.Get<GovernancePolicy>(nameof(Policy)); }
-            set { BackingStore?.Set(nameof(Policy), value); }
+            get { return BackingStore?.Get<GovernancePolicy>("policy"); }
+            set { BackingStore?.Set("policy", value); }
         }
         /// <summary>The settings property</summary>
         public BusinessFlowSettings Settings {
-            get { return BackingStore?.Get<BusinessFlowSettings>(nameof(Settings)); }
-            set { BackingStore?.Set(nameof(Settings), value); }
+            get { return BackingStore?.Get<BusinessFlowSettings>("settings"); }
+            set { BackingStore?.Set("settings", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

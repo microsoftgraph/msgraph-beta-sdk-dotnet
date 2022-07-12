@@ -8,33 +8,33 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class Deployment : Entity, IParsable {
         /// <summary>Specifies the audience to which content is deployed.</summary>
         public DeploymentAudience Audience {
-            get { return BackingStore?.Get<DeploymentAudience>(nameof(Audience)); }
-            set { BackingStore?.Set(nameof(Audience), value); }
+            get { return BackingStore?.Get<DeploymentAudience>("audience"); }
+            set { BackingStore?.Set("audience", value); }
         }
         /// <summary>Specifies what content to deploy. Cannot be changed. Returned by default.</summary>
         public DeployableContent Content {
-            get { return BackingStore?.Get<DeployableContent>(nameof(Content)); }
-            set { BackingStore?.Set(nameof(Content), value); }
+            get { return BackingStore?.Get<DeployableContent>("content"); }
+            set { BackingStore?.Set("content", value); }
         }
         /// <summary>The date and time the deployment was created. Returned by default. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The date and time the deployment was last modified. Returned by default. Read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Settings specified on the specific deployment governing how to deploy content. Returned by default.</summary>
         public DeploymentSettings Settings {
-            get { return BackingStore?.Get<DeploymentSettings>(nameof(Settings)); }
-            set { BackingStore?.Set(nameof(Settings), value); }
+            get { return BackingStore?.Get<DeploymentSettings>("settings"); }
+            set { BackingStore?.Set("settings", value); }
         }
         /// <summary>Execution status of the deployment. Returned by default.</summary>
         public DeploymentState State {
-            get { return BackingStore?.Get<DeploymentState>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<DeploymentState>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

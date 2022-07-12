@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsKioskAzureADGroup : WindowsKioskUser, IParsable {
         /// <summary>The display name of the AzureAD group that will be locked to this kiosk configuration</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The ID of the AzureAD group that will be locked to this kiosk configuration</summary>
         public string GroupId {
-            get { return BackingStore?.Get<string>(nameof(GroupId)); }
-            set { BackingStore?.Set(nameof(GroupId), value); }
+            get { return BackingStore?.Get<string>("groupId"); }
+            set { BackingStore?.Set("groupId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

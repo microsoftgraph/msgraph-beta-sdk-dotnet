@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence.SetUserPreferredPresence {
     public class SetUserPreferredPresencePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The activity property</summary>
         public string Activity {
-            get { return BackingStore?.Get<string>(nameof(Activity)); }
-            set { BackingStore?.Set(nameof(Activity), value); }
+            get { return BackingStore?.Get<string>("activity"); }
+            set { BackingStore?.Set("activity", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The availability property</summary>
         public string Availability {
-            get { return BackingStore?.Get<string>(nameof(Availability)); }
-            set { BackingStore?.Set(nameof(Availability), value); }
+            get { return BackingStore?.Get<string>("availability"); }
+            set { BackingStore?.Set("availability", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The expirationDuration property</summary>
         public TimeSpan? ExpirationDuration {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(ExpirationDuration)); }
-            set { BackingStore?.Set(nameof(ExpirationDuration), value); }
+            get { return BackingStore?.Get<TimeSpan?>("expirationDuration"); }
+            set { BackingStore?.Set("expirationDuration", value); }
         }
         /// <summary>
         /// Instantiates a new setUserPreferredPresencePostRequestBody and sets the default values.

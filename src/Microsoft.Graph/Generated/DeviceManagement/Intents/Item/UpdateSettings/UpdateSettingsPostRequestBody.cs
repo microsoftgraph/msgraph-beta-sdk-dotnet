@@ -10,15 +10,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.UpdateSettings {
     public class UpdateSettingsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The settings property</summary>
         public List<DeviceManagementSettingInstance> Settings {
-            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>(nameof(Settings)); }
-            set { BackingStore?.Set(nameof(Settings), value); }
+            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>("settings"); }
+            set { BackingStore?.Set("settings", value); }
         }
         /// <summary>
         /// Instantiates a new updateSettingsPostRequestBody and sets the default values.

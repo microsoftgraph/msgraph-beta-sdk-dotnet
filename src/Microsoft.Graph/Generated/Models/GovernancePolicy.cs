@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class GovernancePolicy : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The decisionMakerCriteria property</summary>
         public List<GovernanceCriteria> DecisionMakerCriteria {
-            get { return BackingStore?.Get<List<GovernanceCriteria>>(nameof(DecisionMakerCriteria)); }
-            set { BackingStore?.Set(nameof(DecisionMakerCriteria), value); }
+            get { return BackingStore?.Get<List<GovernanceCriteria>>("decisionMakerCriteria"); }
+            set { BackingStore?.Set("decisionMakerCriteria", value); }
         }
         /// <summary>The notificationPolicy property</summary>
         public GovernanceNotificationPolicy NotificationPolicy {
-            get { return BackingStore?.Get<GovernanceNotificationPolicy>(nameof(NotificationPolicy)); }
-            set { BackingStore?.Set(nameof(NotificationPolicy), value); }
+            get { return BackingStore?.Get<GovernanceNotificationPolicy>("notificationPolicy"); }
+            set { BackingStore?.Set("notificationPolicy", value); }
         }
         /// <summary>
         /// Instantiates a new governancePolicy and sets the default values.

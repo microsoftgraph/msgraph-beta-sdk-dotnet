@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class ParticipantLeftNotification : Entity, IParsable {
         /// <summary>The call property</summary>
         public Microsoft.Graph.Beta.Models.Call Call {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Call>(nameof(Call)); }
-            set { BackingStore?.Set(nameof(Call), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Call>("call"); }
+            set { BackingStore?.Set("call", value); }
         }
         /// <summary>ID of the participant under the policy who has left the meeting.</summary>
         public string ParticipantId {
-            get { return BackingStore?.Get<string>(nameof(ParticipantId)); }
-            set { BackingStore?.Set(nameof(ParticipantId), value); }
+            get { return BackingStore?.Get<string>("participantId"); }
+            set { BackingStore?.Set("participantId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

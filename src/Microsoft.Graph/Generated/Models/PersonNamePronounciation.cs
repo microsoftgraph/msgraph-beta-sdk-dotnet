@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class PersonNamePronounciation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The displayName property</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The first property</summary>
         public string First {
-            get { return BackingStore?.Get<string>(nameof(First)); }
-            set { BackingStore?.Set(nameof(First), value); }
+            get { return BackingStore?.Get<string>("first"); }
+            set { BackingStore?.Set("first", value); }
         }
         /// <summary>The last property</summary>
         public string Last {
-            get { return BackingStore?.Get<string>(nameof(Last)); }
-            set { BackingStore?.Set(nameof(Last), value); }
+            get { return BackingStore?.Get<string>("last"); }
+            set { BackingStore?.Set("last", value); }
         }
         /// <summary>The maiden property</summary>
         public string Maiden {
-            get { return BackingStore?.Get<string>(nameof(Maiden)); }
-            set { BackingStore?.Set(nameof(Maiden), value); }
+            get { return BackingStore?.Get<string>("maiden"); }
+            set { BackingStore?.Set("maiden", value); }
         }
         /// <summary>The middle property</summary>
         public string Middle {
-            get { return BackingStore?.Get<string>(nameof(Middle)); }
-            set { BackingStore?.Set(nameof(Middle), value); }
+            get { return BackingStore?.Get<string>("middle"); }
+            set { BackingStore?.Set("middle", value); }
         }
         /// <summary>
         /// Instantiates a new personNamePronounciation and sets the default values.

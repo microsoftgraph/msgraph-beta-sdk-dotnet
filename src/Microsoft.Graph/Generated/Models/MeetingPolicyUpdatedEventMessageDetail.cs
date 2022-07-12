@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class MeetingPolicyUpdatedEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>Initiator of the event.</summary>
         public IdentitySet Initiator {
-            get { return BackingStore?.Get<IdentitySet>(nameof(Initiator)); }
-            set { BackingStore?.Set(nameof(Initiator), value); }
+            get { return BackingStore?.Get<IdentitySet>("initiator"); }
+            set { BackingStore?.Set("initiator", value); }
         }
         /// <summary>Represents whether the meeting chat is enabled or not.</summary>
         public bool? MeetingChatEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(MeetingChatEnabled)); }
-            set { BackingStore?.Set(nameof(MeetingChatEnabled), value); }
+            get { return BackingStore?.Get<bool?>("meetingChatEnabled"); }
+            set { BackingStore?.Set("meetingChatEnabled", value); }
         }
         /// <summary>Unique identifier of the meeting chat.</summary>
         public string MeetingChatId {
-            get { return BackingStore?.Get<string>(nameof(MeetingChatId)); }
-            set { BackingStore?.Set(nameof(MeetingChatId), value); }
+            get { return BackingStore?.Get<string>("meetingChatId"); }
+            set { BackingStore?.Set("meetingChatId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

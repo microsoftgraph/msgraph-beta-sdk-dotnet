@@ -9,35 +9,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementTroubleshootingErrorDetails : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Not yet documented</summary>
         public string Context {
-            get { return BackingStore?.Get<string>(nameof(Context)); }
-            set { BackingStore?.Set(nameof(Context), value); }
+            get { return BackingStore?.Get<string>("context"); }
+            set { BackingStore?.Set("context", value); }
         }
         /// <summary>Not yet documented</summary>
         public string Failure {
-            get { return BackingStore?.Get<string>(nameof(Failure)); }
-            set { BackingStore?.Set(nameof(Failure), value); }
+            get { return BackingStore?.Get<string>("failure"); }
+            set { BackingStore?.Set("failure", value); }
         }
         /// <summary>The detailed description of what went wrong.</summary>
         public string FailureDetails {
-            get { return BackingStore?.Get<string>(nameof(FailureDetails)); }
-            set { BackingStore?.Set(nameof(FailureDetails), value); }
+            get { return BackingStore?.Get<string>("failureDetails"); }
+            set { BackingStore?.Set("failureDetails", value); }
         }
         /// <summary>The detailed description of how to remediate this issue.</summary>
         public string Remediation {
-            get { return BackingStore?.Get<string>(nameof(Remediation)); }
-            set { BackingStore?.Set(nameof(Remediation), value); }
+            get { return BackingStore?.Get<string>("remediation"); }
+            set { BackingStore?.Set("remediation", value); }
         }
         /// <summary>Links to helpful documentation about this failure.</summary>
         public List<DeviceManagementTroubleshootingErrorResource> Resources {
-            get { return BackingStore?.Get<List<DeviceManagementTroubleshootingErrorResource>>(nameof(Resources)); }
-            set { BackingStore?.Set(nameof(Resources), value); }
+            get { return BackingStore?.Get<List<DeviceManagementTroubleshootingErrorResource>>("resources"); }
+            set { BackingStore?.Set("resources", value); }
         }
         /// <summary>
         /// Instantiates a new deviceManagementTroubleshootingErrorDetails and sets the default values.

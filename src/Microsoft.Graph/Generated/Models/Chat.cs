@@ -4,87 +4,86 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Chat : Entity, IParsable {
-        /// <summary>Specifies the type of chat. Possible values are: group, oneOnOne, meeting, unknownFutureValue.</summary>
+        /// <summary>The chatType property</summary>
         public Microsoft.Graph.Beta.Models.ChatType? ChatType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ChatType?>(nameof(ChatType)); }
-            set { BackingStore?.Set(nameof(ChatType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ChatType?>("chatType"); }
+            set { BackingStore?.Set("chatType", value); }
         }
         /// <summary>Date and time at which the chat was created. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>A collection of all the apps in the chat. Nullable.</summary>
         public List<TeamsAppInstallation> InstalledApps {
-            get { return BackingStore?.Get<List<TeamsAppInstallation>>(nameof(InstalledApps)); }
-            set { BackingStore?.Set(nameof(InstalledApps), value); }
+            get { return BackingStore?.Get<List<TeamsAppInstallation>>("installedApps"); }
+            set { BackingStore?.Set("installedApps", value); }
         }
         /// <summary>Preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.</summary>
         public ChatMessageInfo LastMessagePreview {
-            get { return BackingStore?.Get<ChatMessageInfo>(nameof(LastMessagePreview)); }
-            set { BackingStore?.Set(nameof(LastMessagePreview), value); }
+            get { return BackingStore?.Get<ChatMessageInfo>("lastMessagePreview"); }
+            set { BackingStore?.Set("lastMessagePreview", value); }
         }
         /// <summary>Date and time at which the chat was renamed or list of members were last changed. Read-only.</summary>
         public DateTimeOffset? LastUpdatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastUpdatedDateTime)); }
-            set { BackingStore?.Set(nameof(LastUpdatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
+            set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>A collection of all the members in the chat. Nullable.</summary>
         public List<ConversationMember> Members {
-            get { return BackingStore?.Get<List<ConversationMember>>(nameof(Members)); }
-            set { BackingStore?.Set(nameof(Members), value); }
+            get { return BackingStore?.Get<List<ConversationMember>>("members"); }
+            set { BackingStore?.Set("members", value); }
         }
         /// <summary>A collection of all the messages in the chat. Nullable.</summary>
         public List<ChatMessage> Messages {
-            get { return BackingStore?.Get<List<ChatMessage>>(nameof(Messages)); }
-            set { BackingStore?.Set(nameof(Messages), value); }
+            get { return BackingStore?.Get<List<ChatMessage>>("messages"); }
+            set { BackingStore?.Set("messages", value); }
         }
         /// <summary>Represents details about an online meeting. If the chat isn&apos;t associated with an online meeting, the property is empty. Read-only.</summary>
         public TeamworkOnlineMeetingInfo OnlineMeetingInfo {
-            get { return BackingStore?.Get<TeamworkOnlineMeetingInfo>(nameof(OnlineMeetingInfo)); }
-            set { BackingStore?.Set(nameof(OnlineMeetingInfo), value); }
+            get { return BackingStore?.Get<TeamworkOnlineMeetingInfo>("onlineMeetingInfo"); }
+            set { BackingStore?.Set("onlineMeetingInfo", value); }
         }
         /// <summary>A collection of all the Teams async operations that ran or are running on the chat. Nullable.</summary>
         public List<TeamsAsyncOperation> Operations {
-            get { return BackingStore?.Get<List<TeamsAsyncOperation>>(nameof(Operations)); }
-            set { BackingStore?.Set(nameof(Operations), value); }
+            get { return BackingStore?.Get<List<TeamsAsyncOperation>>("operations"); }
+            set { BackingStore?.Set("operations", value); }
         }
         /// <summary>A collection of permissions granted to apps for the chat.</summary>
         public List<ResourceSpecificPermissionGrant> PermissionGrants {
-            get { return BackingStore?.Get<List<ResourceSpecificPermissionGrant>>(nameof(PermissionGrants)); }
-            set { BackingStore?.Set(nameof(PermissionGrants), value); }
+            get { return BackingStore?.Get<List<ResourceSpecificPermissionGrant>>("permissionGrants"); }
+            set { BackingStore?.Set("permissionGrants", value); }
         }
         /// <summary>A collection of all the pinned messages in the chat. Nullable.</summary>
         public List<PinnedChatMessageInfo> PinnedMessages {
-            get { return BackingStore?.Get<List<PinnedChatMessageInfo>>(nameof(PinnedMessages)); }
-            set { BackingStore?.Set(nameof(PinnedMessages), value); }
+            get { return BackingStore?.Get<List<PinnedChatMessageInfo>>("pinnedMessages"); }
+            set { BackingStore?.Set("pinnedMessages", value); }
         }
         /// <summary>A collection of all the tabs in the chat. Nullable.</summary>
         public List<TeamsTab> Tabs {
-            get { return BackingStore?.Get<List<TeamsTab>>(nameof(Tabs)); }
-            set { BackingStore?.Set(nameof(Tabs), value); }
+            get { return BackingStore?.Get<List<TeamsTab>>("tabs"); }
+            set { BackingStore?.Set("tabs", value); }
         }
         /// <summary>The identifier of the tenant in which the chat was created. Read-only.</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>(Optional) Subject or topic for the chat. Only available for group chats.</summary>
         public string Topic {
-            get { return BackingStore?.Get<string>(nameof(Topic)); }
-            set { BackingStore?.Set(nameof(Topic), value); }
+            get { return BackingStore?.Get<string>("topic"); }
+            set { BackingStore?.Set("topic", value); }
         }
         /// <summary>Represents caller-specific information about the chat, such as last message read date and time. This property is populated only when the request is made in a delegated context.</summary>
         public ChatViewpoint Viewpoint {
-            get { return BackingStore?.Get<ChatViewpoint>(nameof(Viewpoint)); }
-            set { BackingStore?.Set(nameof(Viewpoint), value); }
+            get { return BackingStore?.Get<ChatViewpoint>("viewpoint"); }
+            set { BackingStore?.Set("viewpoint", value); }
         }
         /// <summary>The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.</summary>
         public string WebUrl {
-            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
-            set { BackingStore?.Set(nameof(WebUrl), value); }
+            get { return BackingStore?.Get<string>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

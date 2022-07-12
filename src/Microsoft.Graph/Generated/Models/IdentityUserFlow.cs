@@ -5,17 +5,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class IdentityUserFlow : Entity, IParsable {
         /// <summary>The userFlowType property</summary>
         public Microsoft.Graph.Beta.Models.UserFlowType? UserFlowType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserFlowType?>(nameof(UserFlowType)); }
-            set { BackingStore?.Set(nameof(UserFlowType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserFlowType?>("userFlowType"); }
+            set { BackingStore?.Set("userFlowType", value); }
         }
         /// <summary>The userFlowTypeVersion property</summary>
         public float? UserFlowTypeVersion {
-            get { return BackingStore?.Get<float?>(nameof(UserFlowTypeVersion)); }
-            set { BackingStore?.Set(nameof(UserFlowTypeVersion), value); }
+            get { return BackingStore?.Get<float?>("userFlowTypeVersion"); }
+            set { BackingStore?.Set("userFlowTypeVersion", value); }
+        }
+        /// <summary>
+        /// Instantiates a new identityUserFlow and sets the default values.
+        /// </summary>
+        public IdentityUserFlow() : base() {
+            Type = "#microsoft.graph.identityUserFlow";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

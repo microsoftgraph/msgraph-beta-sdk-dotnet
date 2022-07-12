@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageLocalizedContent : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The fallback string, which is used when a requested localization is not available. Required.</summary>
         public string DefaultText {
-            get { return BackingStore?.Get<string>(nameof(DefaultText)); }
-            set { BackingStore?.Set(nameof(DefaultText), value); }
+            get { return BackingStore?.Get<string>("defaultText"); }
+            set { BackingStore?.Set("defaultText", value); }
         }
         /// <summary>Content represented in a format for a specific locale.</summary>
         public List<AccessPackageLocalizedText> LocalizedTexts {
-            get { return BackingStore?.Get<List<AccessPackageLocalizedText>>(nameof(LocalizedTexts)); }
-            set { BackingStore?.Set(nameof(LocalizedTexts), value); }
+            get { return BackingStore?.Get<List<AccessPackageLocalizedText>>("localizedTexts"); }
+            set { BackingStore?.Set("localizedTexts", value); }
         }
         /// <summary>
         /// Instantiates a new accessPackageLocalizedContent and sets the default values.

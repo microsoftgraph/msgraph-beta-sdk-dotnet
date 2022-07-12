@@ -8,68 +8,74 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsWifiConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Specify whether the wifi connection should connect automatically when in range.</summary>
         public bool? ConnectAutomatically {
-            get { return BackingStore?.Get<bool?>(nameof(ConnectAutomatically)); }
-            set { BackingStore?.Set(nameof(ConnectAutomatically), value); }
+            get { return BackingStore?.Get<bool?>("connectAutomatically"); }
+            set { BackingStore?.Set("connectAutomatically", value); }
         }
         /// <summary>Specify whether the wifi connection should connect to more preferred networks when already connected to this one.  Requires ConnectAutomatically to be true.</summary>
         public bool? ConnectToPreferredNetwork {
-            get { return BackingStore?.Get<bool?>(nameof(ConnectToPreferredNetwork)); }
-            set { BackingStore?.Set(nameof(ConnectToPreferredNetwork), value); }
+            get { return BackingStore?.Get<bool?>("connectToPreferredNetwork"); }
+            set { BackingStore?.Set("connectToPreferredNetwork", value); }
         }
         /// <summary>Specify whether the wifi connection should connect automatically even when the SSID is not broadcasting.</summary>
         public bool? ConnectWhenNetworkNameIsHidden {
-            get { return BackingStore?.Get<bool?>(nameof(ConnectWhenNetworkNameIsHidden)); }
-            set { BackingStore?.Set(nameof(ConnectWhenNetworkNameIsHidden), value); }
+            get { return BackingStore?.Get<bool?>("connectWhenNetworkNameIsHidden"); }
+            set { BackingStore?.Set("connectWhenNetworkNameIsHidden", value); }
         }
         /// <summary>Specify whether to force FIPS compliance.</summary>
         public bool? ForceFIPSCompliance {
-            get { return BackingStore?.Get<bool?>(nameof(ForceFIPSCompliance)); }
-            set { BackingStore?.Set(nameof(ForceFIPSCompliance), value); }
+            get { return BackingStore?.Get<bool?>("forceFIPSCompliance"); }
+            set { BackingStore?.Set("forceFIPSCompliance", value); }
         }
         /// <summary>Specify the metered connection limit type for the wifi connection. Possible values are: unrestricted, fixed, variable.</summary>
         public MeteredConnectionLimitType? MeteredConnectionLimit {
-            get { return BackingStore?.Get<MeteredConnectionLimitType?>(nameof(MeteredConnectionLimit)); }
-            set { BackingStore?.Set(nameof(MeteredConnectionLimit), value); }
+            get { return BackingStore?.Get<MeteredConnectionLimitType?>("meteredConnectionLimit"); }
+            set { BackingStore?.Set("meteredConnectionLimit", value); }
         }
         /// <summary>Specify the network configuration name.</summary>
         public string NetworkName {
-            get { return BackingStore?.Get<string>(nameof(NetworkName)); }
-            set { BackingStore?.Set(nameof(NetworkName), value); }
+            get { return BackingStore?.Get<string>("networkName"); }
+            set { BackingStore?.Set("networkName", value); }
         }
         /// <summary>This is the pre-shared key for WPA Personal Wi-Fi network.</summary>
         public string PreSharedKey {
-            get { return BackingStore?.Get<string>(nameof(PreSharedKey)); }
-            set { BackingStore?.Set(nameof(PreSharedKey), value); }
+            get { return BackingStore?.Get<string>("preSharedKey"); }
+            set { BackingStore?.Set("preSharedKey", value); }
         }
         /// <summary>Specify the URL for the proxy server configuration script.</summary>
         public string ProxyAutomaticConfigurationUrl {
-            get { return BackingStore?.Get<string>(nameof(ProxyAutomaticConfigurationUrl)); }
-            set { BackingStore?.Set(nameof(ProxyAutomaticConfigurationUrl), value); }
+            get { return BackingStore?.Get<string>("proxyAutomaticConfigurationUrl"); }
+            set { BackingStore?.Set("proxyAutomaticConfigurationUrl", value); }
         }
         /// <summary>Specify the IP address for the proxy server.</summary>
         public string ProxyManualAddress {
-            get { return BackingStore?.Get<string>(nameof(ProxyManualAddress)); }
-            set { BackingStore?.Set(nameof(ProxyManualAddress), value); }
+            get { return BackingStore?.Get<string>("proxyManualAddress"); }
+            set { BackingStore?.Set("proxyManualAddress", value); }
         }
         /// <summary>Specify the port for the proxy server.</summary>
         public int? ProxyManualPort {
-            get { return BackingStore?.Get<int?>(nameof(ProxyManualPort)); }
-            set { BackingStore?.Set(nameof(ProxyManualPort), value); }
+            get { return BackingStore?.Get<int?>("proxyManualPort"); }
+            set { BackingStore?.Set("proxyManualPort", value); }
         }
         /// <summary>Specify the proxy setting for Wi-Fi configuration. Possible values are: none, manual, automatic.</summary>
         public WiFiProxySetting? ProxySetting {
-            get { return BackingStore?.Get<WiFiProxySetting?>(nameof(ProxySetting)); }
-            set { BackingStore?.Set(nameof(ProxySetting), value); }
+            get { return BackingStore?.Get<WiFiProxySetting?>("proxySetting"); }
+            set { BackingStore?.Set("proxySetting", value); }
         }
         /// <summary>Specify the SSID of the wifi connection.</summary>
         public string Ssid {
-            get { return BackingStore?.Get<string>(nameof(Ssid)); }
-            set { BackingStore?.Set(nameof(Ssid), value); }
+            get { return BackingStore?.Get<string>("ssid"); }
+            set { BackingStore?.Set("ssid", value); }
         }
         /// <summary>Specify the Wifi Security Type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.</summary>
         public Microsoft.Graph.Beta.Models.WiFiSecurityType? WifiSecurityType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WiFiSecurityType?>(nameof(WifiSecurityType)); }
-            set { BackingStore?.Set(nameof(WifiSecurityType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WiFiSecurityType?>("wifiSecurityType"); }
+            set { BackingStore?.Set("wifiSecurityType", value); }
+        }
+        /// <summary>
+        /// Instantiates a new WindowsWifiConfiguration and sets the default values.
+        /// </summary>
+        public WindowsWifiConfiguration() : base() {
+            Type = "#microsoft.graph.windowsWifiConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

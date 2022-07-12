@@ -7,28 +7,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class CallEndedEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>Duration of the call.</summary>
         public TimeSpan? CallDuration {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(CallDuration)); }
-            set { BackingStore?.Set(nameof(CallDuration), value); }
+            get { return BackingStore?.Get<TimeSpan?>("callDuration"); }
+            set { BackingStore?.Set("callDuration", value); }
         }
         /// <summary>Represents the call event type. Possible values are: call, meeting, screenShare, unknownFutureValue.</summary>
         public TeamworkCallEventType? CallEventType {
-            get { return BackingStore?.Get<TeamworkCallEventType?>(nameof(CallEventType)); }
-            set { BackingStore?.Set(nameof(CallEventType), value); }
+            get { return BackingStore?.Get<TeamworkCallEventType?>("callEventType"); }
+            set { BackingStore?.Set("callEventType", value); }
         }
         /// <summary>Unique identifier of the call.</summary>
         public string CallId {
-            get { return BackingStore?.Get<string>(nameof(CallId)); }
-            set { BackingStore?.Set(nameof(CallId), value); }
+            get { return BackingStore?.Get<string>("callId"); }
+            set { BackingStore?.Set("callId", value); }
         }
         /// <summary>List of call participants.</summary>
         public List<CallParticipantInfo> CallParticipants {
-            get { return BackingStore?.Get<List<CallParticipantInfo>>(nameof(CallParticipants)); }
-            set { BackingStore?.Set(nameof(CallParticipants), value); }
+            get { return BackingStore?.Get<List<CallParticipantInfo>>("callParticipants"); }
+            set { BackingStore?.Set("callParticipants", value); }
         }
         /// <summary>Initiator of the event.</summary>
         public IdentitySet Initiator {
-            get { return BackingStore?.Get<IdentitySet>(nameof(Initiator)); }
-            set { BackingStore?.Set(nameof(Initiator), value); }
+            get { return BackingStore?.Get<IdentitySet>("initiator"); }
+            set { BackingStore?.Set("initiator", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

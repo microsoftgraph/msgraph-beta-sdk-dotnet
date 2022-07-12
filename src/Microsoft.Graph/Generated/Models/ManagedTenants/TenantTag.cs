@@ -4,47 +4,47 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class TenantTag : Entity, IParsable {
         /// <summary>The identifier for the account that created the tenant tag. Required. Read-only.</summary>
         public string CreatedByUserId {
-            get { return BackingStore?.Get<string>(nameof(CreatedByUserId)); }
-            set { BackingStore?.Set(nameof(CreatedByUserId), value); }
+            get { return BackingStore?.Get<string>("createdByUserId"); }
+            set { BackingStore?.Set("createdByUserId", value); }
         }
         /// <summary>The date and time when the tenant tag was created. Required. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The date and time when the tenant tag was deleted. Required. Read-only.</summary>
         public DateTimeOffset? DeletedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DeletedDateTime)); }
-            set { BackingStore?.Set(nameof(DeletedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("deletedDateTime"); }
+            set { BackingStore?.Set("deletedDateTime", value); }
         }
         /// <summary>The description for the tenant tag. Optional. Read-only.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The display name for the tenant tag. Required. Read-only.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The identifier for the account that lasted on the tenant tag. Optional. Read-only.</summary>
         public string LastActionByUserId {
-            get { return BackingStore?.Get<string>(nameof(LastActionByUserId)); }
-            set { BackingStore?.Set(nameof(LastActionByUserId), value); }
+            get { return BackingStore?.Get<string>("lastActionByUserId"); }
+            set { BackingStore?.Set("lastActionByUserId", value); }
         }
         /// <summary>The date and time the last action was performed against the tenant tag. Optional. Read-only.</summary>
         public DateTimeOffset? LastActionDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastActionDateTime)); }
-            set { BackingStore?.Set(nameof(LastActionDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
+            set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>The collection of managed tenants associated with the tenant tag. Optional.</summary>
         public List<TenantInfo> Tenants {
-            get { return BackingStore?.Get<List<TenantInfo>>(nameof(Tenants)); }
-            set { BackingStore?.Set(nameof(Tenants), value); }
+            get { return BackingStore?.Get<List<TenantInfo>>("tenants"); }
+            set { BackingStore?.Set("tenants", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

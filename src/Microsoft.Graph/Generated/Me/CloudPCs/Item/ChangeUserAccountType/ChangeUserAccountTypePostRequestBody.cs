@@ -10,15 +10,15 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.ChangeUserAccountType {
     public class ChangeUserAccountTypePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The userAccountType property</summary>
         public CloudPcUserAccountType? UserAccountType {
-            get { return BackingStore?.Get<CloudPcUserAccountType?>(nameof(UserAccountType)); }
-            set { BackingStore?.Set(nameof(UserAccountType), value); }
+            get { return BackingStore?.Get<CloudPcUserAccountType?>("userAccountType"); }
+            set { BackingStore?.Set("userAccountType", value); }
         }
         /// <summary>
         /// Instantiates a new changeUserAccountTypePostRequestBody and sets the default values.

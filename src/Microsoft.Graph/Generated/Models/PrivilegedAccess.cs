@@ -7,33 +7,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class PrivilegedAccess : Entity, IParsable {
         /// <summary>The display name of the provider managed by PIM.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>A collection of resources for the provider.</summary>
         public List<GovernanceResource> Resources {
-            get { return BackingStore?.Get<List<GovernanceResource>>(nameof(Resources)); }
-            set { BackingStore?.Set(nameof(Resources), value); }
+            get { return BackingStore?.Get<List<GovernanceResource>>("resources"); }
+            set { BackingStore?.Set("resources", value); }
         }
         /// <summary>A collection of role assignment requests for the provider.</summary>
         public List<GovernanceRoleAssignmentRequest> RoleAssignmentRequests {
-            get { return BackingStore?.Get<List<GovernanceRoleAssignmentRequest>>(nameof(RoleAssignmentRequests)); }
-            set { BackingStore?.Set(nameof(RoleAssignmentRequests), value); }
+            get { return BackingStore?.Get<List<GovernanceRoleAssignmentRequest>>("roleAssignmentRequests"); }
+            set { BackingStore?.Set("roleAssignmentRequests", value); }
         }
         /// <summary>A collection of role assignments for the provider.</summary>
         public List<GovernanceRoleAssignment> RoleAssignments {
-            get { return BackingStore?.Get<List<GovernanceRoleAssignment>>(nameof(RoleAssignments)); }
-            set { BackingStore?.Set(nameof(RoleAssignments), value); }
+            get { return BackingStore?.Get<List<GovernanceRoleAssignment>>("roleAssignments"); }
+            set { BackingStore?.Set("roleAssignments", value); }
         }
         /// <summary>A collection of role defintions for the provider.</summary>
         public List<GovernanceRoleDefinition> RoleDefinitions {
-            get { return BackingStore?.Get<List<GovernanceRoleDefinition>>(nameof(RoleDefinitions)); }
-            set { BackingStore?.Set(nameof(RoleDefinitions), value); }
+            get { return BackingStore?.Get<List<GovernanceRoleDefinition>>("roleDefinitions"); }
+            set { BackingStore?.Set("roleDefinitions", value); }
         }
         /// <summary>A collection of role settings for the provider.</summary>
         public List<GovernanceRoleSetting> RoleSettings {
-            get { return BackingStore?.Get<List<GovernanceRoleSetting>>(nameof(RoleSettings)); }
-            set { BackingStore?.Set(nameof(RoleSettings), value); }
+            get { return BackingStore?.Get<List<GovernanceRoleSetting>>("roleSettings"); }
+            set { BackingStore?.Set("roleSettings", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

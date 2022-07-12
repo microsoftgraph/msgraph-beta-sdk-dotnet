@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOSAzureAdSingleSignOnExtension : MacOSSingleSignOnExtension, IParsable {
         /// <summary>An optional list of additional bundle IDs allowed to use the AAD extension for single sign-on.</summary>
         public List<string> BundleIdAccessControlList {
-            get { return BackingStore?.Get<List<string>>(nameof(BundleIdAccessControlList)); }
-            set { BackingStore?.Set(nameof(BundleIdAccessControlList), value); }
+            get { return BackingStore?.Get<List<string>>("bundleIdAccessControlList"); }
+            set { BackingStore?.Set("bundleIdAccessControlList", value); }
         }
         /// <summary>Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.</summary>
         public List<KeyTypedValuePair> Configurations {
-            get { return BackingStore?.Get<List<KeyTypedValuePair>>(nameof(Configurations)); }
-            set { BackingStore?.Set(nameof(Configurations), value); }
+            get { return BackingStore?.Get<List<KeyTypedValuePair>>("configurations"); }
+            set { BackingStore?.Set("configurations", value); }
         }
         /// <summary>Enables or disables shared device mode.</summary>
         public bool? EnableSharedDeviceMode {
-            get { return BackingStore?.Get<bool?>(nameof(EnableSharedDeviceMode)); }
-            set { BackingStore?.Set(nameof(EnableSharedDeviceMode), value); }
+            get { return BackingStore?.Get<bool?>("enableSharedDeviceMode"); }
+            set { BackingStore?.Set("enableSharedDeviceMode", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

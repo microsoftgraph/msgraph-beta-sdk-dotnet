@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class PrincipalResourceMembershipsScope : AccessReviewScope, IParsable {
         /// <summary>Defines the scopes of the principals whose access to resources are reviewed in the access review.</summary>
         public List<AccessReviewScope> PrincipalScopes {
-            get { return BackingStore?.Get<List<AccessReviewScope>>(nameof(PrincipalScopes)); }
-            set { BackingStore?.Set(nameof(PrincipalScopes), value); }
+            get { return BackingStore?.Get<List<AccessReviewScope>>("principalScopes"); }
+            set { BackingStore?.Set("principalScopes", value); }
         }
         /// <summary>Defines the scopes of the resources for which access is reviewed.</summary>
         public List<AccessReviewScope> ResourceScopes {
-            get { return BackingStore?.Get<List<AccessReviewScope>>(nameof(ResourceScopes)); }
-            set { BackingStore?.Set(nameof(ResourceScopes), value); }
+            get { return BackingStore?.Get<List<AccessReviewScope>>("resourceScopes"); }
+            set { BackingStore?.Set("resourceScopes", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

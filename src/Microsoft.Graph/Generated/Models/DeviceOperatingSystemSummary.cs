@@ -9,90 +9,90 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceOperatingSystemSummary : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The count of Corporate work profile Android devices. Also known as Corporate Owned Personally Enabled (COPE). Valid values -1 to 2147483647</summary>
         public int? AndroidCorporateWorkProfileCount {
-            get { return BackingStore?.Get<int?>(nameof(AndroidCorporateWorkProfileCount)); }
-            set { BackingStore?.Set(nameof(AndroidCorporateWorkProfileCount), value); }
+            get { return BackingStore?.Get<int?>("androidCorporateWorkProfileCount"); }
+            set { BackingStore?.Set("androidCorporateWorkProfileCount", value); }
         }
         /// <summary>Number of android device count.</summary>
         public int? AndroidCount {
-            get { return BackingStore?.Get<int?>(nameof(AndroidCount)); }
-            set { BackingStore?.Set(nameof(AndroidCount), value); }
+            get { return BackingStore?.Get<int?>("androidCount"); }
+            set { BackingStore?.Set("androidCount", value); }
         }
         /// <summary>Number of dedicated Android devices.</summary>
         public int? AndroidDedicatedCount {
-            get { return BackingStore?.Get<int?>(nameof(AndroidDedicatedCount)); }
-            set { BackingStore?.Set(nameof(AndroidDedicatedCount), value); }
+            get { return BackingStore?.Get<int?>("androidDedicatedCount"); }
+            set { BackingStore?.Set("androidDedicatedCount", value); }
         }
         /// <summary>Number of device admin Android devices.</summary>
         public int? AndroidDeviceAdminCount {
-            get { return BackingStore?.Get<int?>(nameof(AndroidDeviceAdminCount)); }
-            set { BackingStore?.Set(nameof(AndroidDeviceAdminCount), value); }
+            get { return BackingStore?.Get<int?>("androidDeviceAdminCount"); }
+            set { BackingStore?.Set("androidDeviceAdminCount", value); }
         }
         /// <summary>Number of fully managed Android devices.</summary>
         public int? AndroidFullyManagedCount {
-            get { return BackingStore?.Get<int?>(nameof(AndroidFullyManagedCount)); }
-            set { BackingStore?.Set(nameof(AndroidFullyManagedCount), value); }
+            get { return BackingStore?.Get<int?>("androidFullyManagedCount"); }
+            set { BackingStore?.Set("androidFullyManagedCount", value); }
         }
         /// <summary>Number of work profile Android devices.</summary>
         public int? AndroidWorkProfileCount {
-            get { return BackingStore?.Get<int?>(nameof(AndroidWorkProfileCount)); }
-            set { BackingStore?.Set(nameof(AndroidWorkProfileCount), value); }
+            get { return BackingStore?.Get<int?>("androidWorkProfileCount"); }
+            set { BackingStore?.Set("androidWorkProfileCount", value); }
         }
         /// <summary>Number of AOSP user-associated Android devices. Valid values 0 to 2147483647</summary>
         public int? AospUserAssociatedCount {
-            get { return BackingStore?.Get<int?>(nameof(AospUserAssociatedCount)); }
-            set { BackingStore?.Set(nameof(AospUserAssociatedCount), value); }
+            get { return BackingStore?.Get<int?>("aospUserAssociatedCount"); }
+            set { BackingStore?.Set("aospUserAssociatedCount", value); }
         }
         /// <summary>Number of AOSP userless Android devices. Valid values 0 to 2147483647</summary>
         public int? AospUserlessCount {
-            get { return BackingStore?.Get<int?>(nameof(AospUserlessCount)); }
-            set { BackingStore?.Set(nameof(AospUserlessCount), value); }
+            get { return BackingStore?.Get<int?>("aospUserlessCount"); }
+            set { BackingStore?.Set("aospUserlessCount", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Number of Chrome OS devices. Valid values 0 to 2147483647</summary>
         public int? ChromeOSCount {
-            get { return BackingStore?.Get<int?>(nameof(ChromeOSCount)); }
-            set { BackingStore?.Set(nameof(ChromeOSCount), value); }
+            get { return BackingStore?.Get<int?>("chromeOSCount"); }
+            set { BackingStore?.Set("chromeOSCount", value); }
         }
         /// <summary>Number of ConfigMgr managed devices.</summary>
         public int? ConfigMgrDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(ConfigMgrDeviceCount)); }
-            set { BackingStore?.Set(nameof(ConfigMgrDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("configMgrDeviceCount"); }
+            set { BackingStore?.Set("configMgrDeviceCount", value); }
         }
         /// <summary>Number of iOS device count.</summary>
         public int? IosCount {
-            get { return BackingStore?.Get<int?>(nameof(IosCount)); }
-            set { BackingStore?.Set(nameof(IosCount), value); }
+            get { return BackingStore?.Get<int?>("iosCount"); }
+            set { BackingStore?.Set("iosCount", value); }
         }
         /// <summary>Number of Linux OS devices. Valid values 0 to 2147483647</summary>
         public int? LinuxCount {
-            get { return BackingStore?.Get<int?>(nameof(LinuxCount)); }
-            set { BackingStore?.Set(nameof(LinuxCount), value); }
+            get { return BackingStore?.Get<int?>("linuxCount"); }
+            set { BackingStore?.Set("linuxCount", value); }
         }
         /// <summary>Number of Mac OS X device count.</summary>
         public int? MacOSCount {
-            get { return BackingStore?.Get<int?>(nameof(MacOSCount)); }
-            set { BackingStore?.Set(nameof(MacOSCount), value); }
+            get { return BackingStore?.Get<int?>("macOSCount"); }
+            set { BackingStore?.Set("macOSCount", value); }
         }
         /// <summary>Number of unknown device count.</summary>
         public int? UnknownCount {
-            get { return BackingStore?.Get<int?>(nameof(UnknownCount)); }
-            set { BackingStore?.Set(nameof(UnknownCount), value); }
+            get { return BackingStore?.Get<int?>("unknownCount"); }
+            set { BackingStore?.Set("unknownCount", value); }
         }
         /// <summary>Number of Windows device count.</summary>
         public int? WindowsCount {
-            get { return BackingStore?.Get<int?>(nameof(WindowsCount)); }
-            set { BackingStore?.Set(nameof(WindowsCount), value); }
+            get { return BackingStore?.Get<int?>("windowsCount"); }
+            set { BackingStore?.Set("windowsCount", value); }
         }
         /// <summary>Number of Windows mobile device count.</summary>
         public int? WindowsMobileCount {
-            get { return BackingStore?.Get<int?>(nameof(WindowsMobileCount)); }
-            set { BackingStore?.Set(nameof(WindowsMobileCount), value); }
+            get { return BackingStore?.Get<int?>("windowsMobileCount"); }
+            set { BackingStore?.Set("windowsMobileCount", value); }
         }
         /// <summary>
         /// Instantiates a new deviceOperatingSystemSummary and sets the default values.

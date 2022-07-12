@@ -8,28 +8,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class SecurityBaselineDeviceState : Entity, IParsable {
         /// <summary>Display name of the device</summary>
         public string DeviceDisplayName {
-            get { return BackingStore?.Get<string>(nameof(DeviceDisplayName)); }
-            set { BackingStore?.Set(nameof(DeviceDisplayName), value); }
+            get { return BackingStore?.Get<string>("deviceDisplayName"); }
+            set { BackingStore?.Set("deviceDisplayName", value); }
         }
         /// <summary>Last modified date time of the policy report</summary>
         public DateTimeOffset? LastReportedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastReportedDateTime)); }
-            set { BackingStore?.Set(nameof(LastReportedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastReportedDateTime"); }
+            set { BackingStore?.Set("lastReportedDateTime", value); }
         }
         /// <summary>Intune device id</summary>
         public string ManagedDeviceId {
-            get { return BackingStore?.Get<string>(nameof(ManagedDeviceId)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceId), value); }
+            get { return BackingStore?.Get<string>("managedDeviceId"); }
+            set { BackingStore?.Set("managedDeviceId", value); }
         }
-        /// <summary>Security baseline compliance state. Possible values are: unknown, secure, notApplicable, notSecure, error, conflict.</summary>
+        /// <summary>Security Baseline Compliance State</summary>
         public SecurityBaselineComplianceState? State {
-            get { return BackingStore?.Get<SecurityBaselineComplianceState?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<SecurityBaselineComplianceState?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>User Principal Name</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

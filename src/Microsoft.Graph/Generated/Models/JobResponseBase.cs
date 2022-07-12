@@ -8,38 +8,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class JobResponseBase : Entity, IParsable {
         /// <summary>The creationDateTime property</summary>
         public DateTimeOffset? CreationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreationDateTime)); }
-            set { BackingStore?.Set(nameof(CreationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("creationDateTime"); }
+            set { BackingStore?.Set("creationDateTime", value); }
         }
         /// <summary>The endDateTime property</summary>
         public DateTimeOffset? EndDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
-            set { BackingStore?.Set(nameof(EndDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
+            set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>The error property</summary>
         public ClassificationError Error {
-            get { return BackingStore?.Get<ClassificationError>(nameof(Error)); }
-            set { BackingStore?.Set(nameof(Error), value); }
+            get { return BackingStore?.Get<ClassificationError>("error"); }
+            set { BackingStore?.Set("error", value); }
         }
         /// <summary>The startDateTime property</summary>
         public DateTimeOffset? StartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
-            set { BackingStore?.Set(nameof(StartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The status property</summary>
         public string Status {
-            get { return BackingStore?.Get<string>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<string>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>The tenantId property</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
-        }
-        /// <summary>The type property</summary>
-        public string Type {
-            get { return BackingStore?.Get<string>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -67,7 +62,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"status", n => { Status = n.GetStringValue(); } },
                 {"tenantId", n => { TenantId = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -83,7 +77,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("tenantId", TenantId);
-            writer.WriteStringValue("type", Type);
         }
     }
 }

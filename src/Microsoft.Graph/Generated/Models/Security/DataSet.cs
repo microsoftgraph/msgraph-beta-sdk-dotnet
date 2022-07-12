@@ -5,22 +5,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class DataSet : Entity, IParsable {
         /// <summary>The createdBy property</summary>
         public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>(nameof(CreatedBy)); }
-            set { BackingStore?.Set(nameof(CreatedBy), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
         }
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The displayName property</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+        /// <summary>
+        /// Instantiates a new dataSet and sets the default values.
+        /// </summary>
+        public DataSet() : base() {
+            Type = "#microsoft.graph.security.dataSet";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

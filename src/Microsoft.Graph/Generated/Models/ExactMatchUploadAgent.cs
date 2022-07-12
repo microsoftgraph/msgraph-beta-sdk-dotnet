@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ExactMatchUploadAgent : Entity, IParsable {
         /// <summary>The creationDateTime property</summary>
         public DateTimeOffset? CreationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreationDateTime)); }
-            set { BackingStore?.Set(nameof(CreationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("creationDateTime"); }
+            set { BackingStore?.Set("creationDateTime", value); }
         }
         /// <summary>The description property</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

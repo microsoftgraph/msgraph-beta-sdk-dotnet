@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class UpdatableAssetGroup : UpdatableAsset, IParsable {
         /// <summary>Members of the group. Read-only.</summary>
         public List<UpdatableAsset> Members {
-            get { return BackingStore?.Get<List<UpdatableAsset>>(nameof(Members)); }
-            set { BackingStore?.Set(nameof(Members), value); }
+            get { return BackingStore?.Get<List<UpdatableAsset>>("members"); }
+            set { BackingStore?.Set("members", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

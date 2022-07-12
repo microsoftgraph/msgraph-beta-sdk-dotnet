@@ -5,17 +5,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AuthenticationListener : Entity, IParsable {
         /// <summary>The priority of the listener. Determines the order of evaluation when an event has multiple listeners. The priority is evaluated from low to high.</summary>
         public int? Priority {
-            get { return BackingStore?.Get<int?>(nameof(Priority)); }
-            set { BackingStore?.Set(nameof(Priority), value); }
+            get { return BackingStore?.Get<int?>("priority"); }
+            set { BackingStore?.Set("priority", value); }
         }
         /// <summary>Filter based on the source of the authentication that is used to determine whether the listener is evaluated. This is currently limited to evaluations based on application the user is authenticating to.</summary>
         public AuthenticationSourceFilter SourceFilter {
-            get { return BackingStore?.Get<AuthenticationSourceFilter>(nameof(SourceFilter)); }
-            set { BackingStore?.Set(nameof(SourceFilter), value); }
+            get { return BackingStore?.Get<AuthenticationSourceFilter>("sourceFilter"); }
+            set { BackingStore?.Set("sourceFilter", value); }
+        }
+        /// <summary>
+        /// Instantiates a new authenticationListener and sets the default values.
+        /// </summary>
+        public AuthenticationListener() : base() {
+            Type = "#microsoft.graph.authenticationListener";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

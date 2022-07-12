@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class X509CertificateAuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable {
         /// <summary>Defines strong authentication configurations. This configuration includes the default authentication mode and the different rules for strong authentication bindings.</summary>
         public X509CertificateAuthenticationModeConfiguration AuthenticationModeConfiguration {
-            get { return BackingStore?.Get<X509CertificateAuthenticationModeConfiguration>(nameof(AuthenticationModeConfiguration)); }
-            set { BackingStore?.Set(nameof(AuthenticationModeConfiguration), value); }
+            get { return BackingStore?.Get<X509CertificateAuthenticationModeConfiguration>("authenticationModeConfiguration"); }
+            set { BackingStore?.Set("authenticationModeConfiguration", value); }
         }
         /// <summary>Defines fields in the X.509 certificate that map to attributes of the Azure AD user object in order to bind the certificate to the user. The priority of the object determines the order in which the binding is carried out. The first binding that matches will be used and the rest ignored.</summary>
         public List<X509CertificateUserBinding> CertificateUserBindings {
-            get { return BackingStore?.Get<List<X509CertificateUserBinding>>(nameof(CertificateUserBindings)); }
-            set { BackingStore?.Set(nameof(CertificateUserBindings), value); }
+            get { return BackingStore?.Get<List<X509CertificateUserBinding>>("certificateUserBindings"); }
+            set { BackingStore?.Set("certificateUserBindings", value); }
         }
         /// <summary>A collection of users or groups who are enabled to use the authentication method.</summary>
         public List<AuthenticationMethodTarget> IncludeTargets {
-            get { return BackingStore?.Get<List<AuthenticationMethodTarget>>(nameof(IncludeTargets)); }
-            set { BackingStore?.Set(nameof(IncludeTargets), value); }
+            get { return BackingStore?.Get<List<AuthenticationMethodTarget>>("includeTargets"); }
+            set { BackingStore?.Set("includeTargets", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

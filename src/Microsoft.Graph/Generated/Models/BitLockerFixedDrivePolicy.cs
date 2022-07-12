@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class BitLockerFixedDrivePolicy : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Select the encryption method for fixed drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.</summary>
         public BitLockerEncryptionMethod? EncryptionMethod {
-            get { return BackingStore?.Get<BitLockerEncryptionMethod?>(nameof(EncryptionMethod)); }
-            set { BackingStore?.Set(nameof(EncryptionMethod), value); }
+            get { return BackingStore?.Get<BitLockerEncryptionMethod?>("encryptionMethod"); }
+            set { BackingStore?.Set("encryptionMethod", value); }
         }
         /// <summary>This policy setting allows you to control how BitLocker-protected fixed data drives are recovered in the absence of the required credentials. This policy setting is applied when you turn on BitLocker.</summary>
         public BitLockerRecoveryOptions RecoveryOptions {
-            get { return BackingStore?.Get<BitLockerRecoveryOptions>(nameof(RecoveryOptions)); }
-            set { BackingStore?.Set(nameof(RecoveryOptions), value); }
+            get { return BackingStore?.Get<BitLockerRecoveryOptions>("recoveryOptions"); }
+            set { BackingStore?.Set("recoveryOptions", value); }
         }
         /// <summary>This policy setting determines whether BitLocker protection is required for fixed data drives to be writable on a computer.</summary>
         public bool? RequireEncryptionForWriteAccess {
-            get { return BackingStore?.Get<bool?>(nameof(RequireEncryptionForWriteAccess)); }
-            set { BackingStore?.Set(nameof(RequireEncryptionForWriteAccess), value); }
+            get { return BackingStore?.Get<bool?>("requireEncryptionForWriteAccess"); }
+            set { BackingStore?.Set("requireEncryptionForWriteAccess", value); }
         }
         /// <summary>
         /// Instantiates a new bitLockerFixedDrivePolicy and sets the default values.

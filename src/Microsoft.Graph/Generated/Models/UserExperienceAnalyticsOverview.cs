@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics overview entity contains the overall score and the scores and insights of every metric of all categories.</summary>
     public class UserExperienceAnalyticsOverview : Entity, IParsable {
         /// <summary>The user experience analytics insights.</summary>
         public List<UserExperienceAnalyticsInsight> Insights {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsInsight>>(nameof(Insights)); }
-            set { BackingStore?.Set(nameof(Insights), value); }
+            get { return BackingStore?.Get<List<UserExperienceAnalyticsInsight>>("insights"); }
+            set { BackingStore?.Set("insights", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

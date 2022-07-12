@@ -4,22 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Presence : Entity, IParsable {
         /// <summary>The supplemental information to a user&apos;s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.</summary>
         public string Activity {
-            get { return BackingStore?.Get<string>(nameof(Activity)); }
-            set { BackingStore?.Set(nameof(Activity), value); }
+            get { return BackingStore?.Get<string>("activity"); }
+            set { BackingStore?.Set("activity", value); }
         }
         /// <summary>The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown</summary>
         public string Availability {
-            get { return BackingStore?.Get<string>(nameof(Availability)); }
-            set { BackingStore?.Set(nameof(Availability), value); }
+            get { return BackingStore?.Get<string>("availability"); }
+            set { BackingStore?.Set("availability", value); }
         }
         /// <summary>The out of office settings for a user.</summary>
         public Microsoft.Graph.Beta.Models.OutOfOfficeSettings OutOfOfficeSettings {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OutOfOfficeSettings>(nameof(OutOfOfficeSettings)); }
-            set { BackingStore?.Set(nameof(OutOfOfficeSettings), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OutOfOfficeSettings>("outOfOfficeSettings"); }
+            set { BackingStore?.Set("outOfOfficeSettings", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,132 +4,131 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ManagedTenant : Entity, IParsable {
         /// <summary>Aggregate view of device compliance policies across managed tenants.</summary>
         public List<AggregatedPolicyCompliance> AggregatedPolicyCompliances {
-            get { return BackingStore?.Get<List<AggregatedPolicyCompliance>>(nameof(AggregatedPolicyCompliances)); }
-            set { BackingStore?.Set(nameof(AggregatedPolicyCompliances), value); }
+            get { return BackingStore?.Get<List<AggregatedPolicyCompliance>>("aggregatedPolicyCompliances"); }
+            set { BackingStore?.Set("aggregatedPolicyCompliances", value); }
         }
         /// <summary>The collection of audit events across managed tenants.</summary>
         public List<AuditEvent> AuditEvents {
-            get { return BackingStore?.Get<List<AuditEvent>>(nameof(AuditEvents)); }
-            set { BackingStore?.Set(nameof(AuditEvents), value); }
+            get { return BackingStore?.Get<List<AuditEvent>>("auditEvents"); }
+            set { BackingStore?.Set("auditEvents", value); }
         }
         /// <summary>The collection of cloud PC connections across managed tenants.</summary>
         public List<CloudPcConnection> CloudPcConnections {
-            get { return BackingStore?.Get<List<CloudPcConnection>>(nameof(CloudPcConnections)); }
-            set { BackingStore?.Set(nameof(CloudPcConnections), value); }
+            get { return BackingStore?.Get<List<CloudPcConnection>>("cloudPcConnections"); }
+            set { BackingStore?.Set("cloudPcConnections", value); }
         }
         /// <summary>The collection of cloud PC devices across managed tenants.</summary>
         public List<CloudPcDevice> CloudPcDevices {
-            get { return BackingStore?.Get<List<CloudPcDevice>>(nameof(CloudPcDevices)); }
-            set { BackingStore?.Set(nameof(CloudPcDevices), value); }
+            get { return BackingStore?.Get<List<CloudPcDevice>>("cloudPcDevices"); }
+            set { BackingStore?.Set("cloudPcDevices", value); }
         }
         /// <summary>Overview of cloud PC information across managed tenants.</summary>
         public List<CloudPcOverview> CloudPcsOverview {
-            get { return BackingStore?.Get<List<CloudPcOverview>>(nameof(CloudPcsOverview)); }
-            set { BackingStore?.Set(nameof(CloudPcsOverview), value); }
+            get { return BackingStore?.Get<List<CloudPcOverview>>("cloudPcsOverview"); }
+            set { BackingStore?.Set("cloudPcsOverview", value); }
         }
         /// <summary>Aggregate view of conditional access policy coverage across managed tenants.</summary>
         public List<ConditionalAccessPolicyCoverage> ConditionalAccessPolicyCoverages {
-            get { return BackingStore?.Get<List<ConditionalAccessPolicyCoverage>>(nameof(ConditionalAccessPolicyCoverages)); }
-            set { BackingStore?.Set(nameof(ConditionalAccessPolicyCoverages), value); }
+            get { return BackingStore?.Get<List<ConditionalAccessPolicyCoverage>>("conditionalAccessPolicyCoverages"); }
+            set { BackingStore?.Set("conditionalAccessPolicyCoverages", value); }
         }
         /// <summary>Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.</summary>
         public List<CredentialUserRegistrationsSummary> CredentialUserRegistrationsSummaries {
-            get { return BackingStore?.Get<List<CredentialUserRegistrationsSummary>>(nameof(CredentialUserRegistrationsSummaries)); }
-            set { BackingStore?.Set(nameof(CredentialUserRegistrationsSummaries), value); }
+            get { return BackingStore?.Get<List<CredentialUserRegistrationsSummary>>("credentialUserRegistrationsSummaries"); }
+            set { BackingStore?.Set("credentialUserRegistrationsSummaries", value); }
         }
         /// <summary>Summary information for device compliance policy setting states across managed tenants.</summary>
         public List<DeviceCompliancePolicySettingStateSummary> DeviceCompliancePolicySettingStateSummaries {
-            get { return BackingStore?.Get<List<DeviceCompliancePolicySettingStateSummary>>(nameof(DeviceCompliancePolicySettingStateSummaries)); }
-            set { BackingStore?.Set(nameof(DeviceCompliancePolicySettingStateSummaries), value); }
+            get { return BackingStore?.Get<List<DeviceCompliancePolicySettingStateSummary>>("deviceCompliancePolicySettingStateSummaries"); }
+            set { BackingStore?.Set("deviceCompliancePolicySettingStateSummaries", value); }
         }
         /// <summary>The collection of compliance for managed devices across managed tenants.</summary>
         public List<ManagedDeviceCompliance> ManagedDeviceCompliances {
-            get { return BackingStore?.Get<List<ManagedDeviceCompliance>>(nameof(ManagedDeviceCompliances)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceCompliances), value); }
+            get { return BackingStore?.Get<List<ManagedDeviceCompliance>>("managedDeviceCompliances"); }
+            set { BackingStore?.Set("managedDeviceCompliances", value); }
         }
         /// <summary>Trend insights for device compliance across managed tenants.</summary>
         public List<ManagedDeviceComplianceTrend> ManagedDeviceComplianceTrends {
-            get { return BackingStore?.Get<List<ManagedDeviceComplianceTrend>>(nameof(ManagedDeviceComplianceTrends)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceComplianceTrends), value); }
+            get { return BackingStore?.Get<List<ManagedDeviceComplianceTrend>>("managedDeviceComplianceTrends"); }
+            set { BackingStore?.Set("managedDeviceComplianceTrends", value); }
         }
         /// <summary>The collection of baseline management actions across managed tenants.</summary>
         public List<ManagementAction> ManagementActions {
-            get { return BackingStore?.Get<List<ManagementAction>>(nameof(ManagementActions)); }
-            set { BackingStore?.Set(nameof(ManagementActions), value); }
+            get { return BackingStore?.Get<List<ManagementAction>>("managementActions"); }
+            set { BackingStore?.Set("managementActions", value); }
         }
         /// <summary>The tenant level status of management actions across managed tenants.</summary>
         public List<ManagementActionTenantDeploymentStatus> ManagementActionTenantDeploymentStatuses {
-            get { return BackingStore?.Get<List<ManagementActionTenantDeploymentStatus>>(nameof(ManagementActionTenantDeploymentStatuses)); }
-            set { BackingStore?.Set(nameof(ManagementActionTenantDeploymentStatuses), value); }
+            get { return BackingStore?.Get<List<ManagementActionTenantDeploymentStatus>>("managementActionTenantDeploymentStatuses"); }
+            set { BackingStore?.Set("managementActionTenantDeploymentStatuses", value); }
         }
         /// <summary>The collection of baseline management intents across managed tenants.</summary>
         public List<ManagementIntent> ManagementIntents {
-            get { return BackingStore?.Get<List<ManagementIntent>>(nameof(ManagementIntents)); }
-            set { BackingStore?.Set(nameof(ManagementIntents), value); }
+            get { return BackingStore?.Get<List<ManagementIntent>>("managementIntents"); }
+            set { BackingStore?.Set("managementIntents", value); }
         }
         /// <summary>The managementTemplateCollections property</summary>
         public List<ManagementTemplateCollection> ManagementTemplateCollections {
-            get { return BackingStore?.Get<List<ManagementTemplateCollection>>(nameof(ManagementTemplateCollections)); }
-            set { BackingStore?.Set(nameof(ManagementTemplateCollections), value); }
+            get { return BackingStore?.Get<List<ManagementTemplateCollection>>("managementTemplateCollections"); }
+            set { BackingStore?.Set("managementTemplateCollections", value); }
         }
         /// <summary>The collection of baseline management templates across managed tenants.</summary>
         public List<ManagementTemplate> ManagementTemplates {
-            get { return BackingStore?.Get<List<ManagementTemplate>>(nameof(ManagementTemplates)); }
-            set { BackingStore?.Set(nameof(ManagementTemplates), value); }
+            get { return BackingStore?.Get<List<ManagementTemplate>>("managementTemplates"); }
+            set { BackingStore?.Set("managementTemplates", value); }
         }
         /// <summary>The managementTemplateSteps property</summary>
         public List<ManagementTemplateStep> ManagementTemplateSteps {
-            get { return BackingStore?.Get<List<ManagementTemplateStep>>(nameof(ManagementTemplateSteps)); }
-            set { BackingStore?.Set(nameof(ManagementTemplateSteps), value); }
+            get { return BackingStore?.Get<List<ManagementTemplateStep>>("managementTemplateSteps"); }
+            set { BackingStore?.Set("managementTemplateSteps", value); }
         }
         /// <summary>The managementTemplateStepVersions property</summary>
         public List<ManagementTemplateStepVersion> ManagementTemplateStepVersions {
-            get { return BackingStore?.Get<List<ManagementTemplateStepVersion>>(nameof(ManagementTemplateStepVersions)); }
-            set { BackingStore?.Set(nameof(ManagementTemplateStepVersions), value); }
+            get { return BackingStore?.Get<List<ManagementTemplateStepVersion>>("managementTemplateStepVersions"); }
+            set { BackingStore?.Set("managementTemplateStepVersions", value); }
         }
         /// <summary>The collection of role assignments to a signed-in user for a managed tenant.</summary>
         public List<MyRole> MyRoles {
-            get { return BackingStore?.Get<List<MyRole>>(nameof(MyRoles)); }
-            set { BackingStore?.Set(nameof(MyRoles), value); }
+            get { return BackingStore?.Get<List<MyRole>>("myRoles"); }
+            set { BackingStore?.Set("myRoles", value); }
         }
         /// <summary>The collection of a logical grouping of managed tenants used by the multi-tenant management platform.</summary>
         public List<TenantGroup> TenantGroups {
-            get { return BackingStore?.Get<List<TenantGroup>>(nameof(TenantGroups)); }
-            set { BackingStore?.Set(nameof(TenantGroups), value); }
+            get { return BackingStore?.Get<List<TenantGroup>>("tenantGroups"); }
+            set { BackingStore?.Set("tenantGroups", value); }
         }
         /// <summary>The collection of tenants associated with the managing entity.</summary>
         public List<Tenant> Tenants {
-            get { return BackingStore?.Get<List<Tenant>>(nameof(Tenants)); }
-            set { BackingStore?.Set(nameof(Tenants), value); }
+            get { return BackingStore?.Get<List<Tenant>>("tenants"); }
+            set { BackingStore?.Set("tenants", value); }
         }
         /// <summary>The collection of tenant level customized information across managed tenants.</summary>
         public List<TenantCustomizedInformation> TenantsCustomizedInformation {
-            get { return BackingStore?.Get<List<TenantCustomizedInformation>>(nameof(TenantsCustomizedInformation)); }
-            set { BackingStore?.Set(nameof(TenantsCustomizedInformation), value); }
+            get { return BackingStore?.Get<List<TenantCustomizedInformation>>("tenantsCustomizedInformation"); }
+            set { BackingStore?.Set("tenantsCustomizedInformation", value); }
         }
         /// <summary>The collection tenant level detailed information across managed tenants.</summary>
         public List<TenantDetailedInformation> TenantsDetailedInformation {
-            get { return BackingStore?.Get<List<TenantDetailedInformation>>(nameof(TenantsDetailedInformation)); }
-            set { BackingStore?.Set(nameof(TenantsDetailedInformation), value); }
+            get { return BackingStore?.Get<List<TenantDetailedInformation>>("tenantsDetailedInformation"); }
+            set { BackingStore?.Set("tenantsDetailedInformation", value); }
         }
         /// <summary>The collection of tenant tags across managed tenants.</summary>
         public List<TenantTag> TenantTags {
-            get { return BackingStore?.Get<List<TenantTag>>(nameof(TenantTags)); }
-            set { BackingStore?.Set(nameof(TenantTags), value); }
+            get { return BackingStore?.Get<List<TenantTag>>("tenantTags"); }
+            set { BackingStore?.Set("tenantTags", value); }
         }
         /// <summary>The state of malware for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.</summary>
         public List<WindowsDeviceMalwareState> WindowsDeviceMalwareStates {
-            get { return BackingStore?.Get<List<WindowsDeviceMalwareState>>(nameof(WindowsDeviceMalwareStates)); }
-            set { BackingStore?.Set(nameof(WindowsDeviceMalwareStates), value); }
+            get { return BackingStore?.Get<List<WindowsDeviceMalwareState>>("windowsDeviceMalwareStates"); }
+            set { BackingStore?.Set("windowsDeviceMalwareStates", value); }
         }
         /// <summary>The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.</summary>
         public List<WindowsProtectionState> WindowsProtectionStates {
-            get { return BackingStore?.Get<List<WindowsProtectionState>>(nameof(WindowsProtectionStates)); }
-            set { BackingStore?.Set(nameof(WindowsProtectionStates), value); }
+            get { return BackingStore?.Get<List<WindowsProtectionState>>("windowsProtectionStates"); }
+            set { BackingStore?.Set("windowsProtectionStates", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,28 +8,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class SideLoadingKey : Entity, IParsable {
         /// <summary>Side Loading Key description displayed to the ITPro Admins..</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Side Loading Key Name displayed to the ITPro Admins.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Side Loading Key Last Updated Date displayed to the ITPro Admins.</summary>
         public string LastUpdatedDateTime {
-            get { return BackingStore?.Get<string>(nameof(LastUpdatedDateTime)); }
-            set { BackingStore?.Set(nameof(LastUpdatedDateTime), value); }
+            get { return BackingStore?.Get<string>("lastUpdatedDateTime"); }
+            set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>Side Loading Key Total Activation displayed to the ITPro Admins.</summary>
         public int? TotalActivation {
-            get { return BackingStore?.Get<int?>(nameof(TotalActivation)); }
-            set { BackingStore?.Set(nameof(TotalActivation), value); }
+            get { return BackingStore?.Get<int?>("totalActivation"); }
+            set { BackingStore?.Set("totalActivation", value); }
         }
         /// <summary>Side Loading Key Value, it is 5x5 value, seperated by hiphens.</summary>
         public string Value {
-            get { return BackingStore?.Get<string>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<string>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

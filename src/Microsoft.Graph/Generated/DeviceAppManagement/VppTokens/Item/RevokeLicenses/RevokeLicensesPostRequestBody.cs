@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Item.RevokeLicenses
     public class RevokeLicensesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The notifyManagedDevices property</summary>
         public bool? NotifyManagedDevices {
-            get { return BackingStore?.Get<bool?>(nameof(NotifyManagedDevices)); }
-            set { BackingStore?.Set(nameof(NotifyManagedDevices), value); }
+            get { return BackingStore?.Get<bool?>("notifyManagedDevices"); }
+            set { BackingStore?.Set("notifyManagedDevices", value); }
         }
         /// <summary>The revokeUntrackedLicenses property</summary>
         public bool? RevokeUntrackedLicenses {
-            get { return BackingStore?.Get<bool?>(nameof(RevokeUntrackedLicenses)); }
-            set { BackingStore?.Set(nameof(RevokeUntrackedLicenses), value); }
+            get { return BackingStore?.Get<bool?>("revokeUntrackedLicenses"); }
+            set { BackingStore?.Set("revokeUntrackedLicenses", value); }
         }
         /// <summary>
         /// Instantiates a new revokeLicensesPostRequestBody and sets the default values.

@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class Win32LobAppProductCodeDetection : Win32LobAppDetection, IParsable {
         /// <summary>The product code of Win32 Line of Business (LoB) app.</summary>
         public string ProductCode {
-            get { return BackingStore?.Get<string>(nameof(ProductCode)); }
-            set { BackingStore?.Set(nameof(ProductCode), value); }
+            get { return BackingStore?.Get<string>("productCode"); }
+            set { BackingStore?.Set("productCode", value); }
         }
         /// <summary>The product version of Win32 Line of Business (LoB) app.</summary>
         public string ProductVersion {
-            get { return BackingStore?.Get<string>(nameof(ProductVersion)); }
-            set { BackingStore?.Set(nameof(ProductVersion), value); }
+            get { return BackingStore?.Get<string>("productVersion"); }
+            set { BackingStore?.Set("productVersion", value); }
         }
-        /// <summary>The operator to detect product version. Possible values are: notConfigured, equal, notEqual, greaterThan, greaterThanOrEqual, lessThan, lessThanOrEqual.</summary>
+        /// <summary>Contains properties for detection operator.</summary>
         public Win32LobAppDetectionOperator? ProductVersionOperator {
-            get { return BackingStore?.Get<Win32LobAppDetectionOperator?>(nameof(ProductVersionOperator)); }
-            set { BackingStore?.Set(nameof(ProductVersionOperator), value); }
+            get { return BackingStore?.Get<Win32LobAppDetectionOperator?>("productVersionOperator"); }
+            set { BackingStore?.Set("productVersionOperator", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

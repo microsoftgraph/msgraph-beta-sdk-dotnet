@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationAssignmentPointsGrade : EducationAssignmentGrade, IParsable {
         /// <summary>Number of points a teacher is giving this submission object.</summary>
         public float? Points {
-            get { return BackingStore?.Get<float?>(nameof(Points)); }
-            set { BackingStore?.Set(nameof(Points), value); }
+            get { return BackingStore?.Get<float?>("points"); }
+            set { BackingStore?.Set("points", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

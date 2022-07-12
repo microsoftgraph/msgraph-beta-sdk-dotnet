@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamworkDeviceSoftwareVersions : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The software version for the admin agent running on the device.</summary>
         public string AdminAgentSoftwareVersion {
-            get { return BackingStore?.Get<string>(nameof(AdminAgentSoftwareVersion)); }
-            set { BackingStore?.Set(nameof(AdminAgentSoftwareVersion), value); }
+            get { return BackingStore?.Get<string>("adminAgentSoftwareVersion"); }
+            set { BackingStore?.Set("adminAgentSoftwareVersion", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The software version for the firmware running on the device.</summary>
         public string FirmwareSoftwareVersion {
-            get { return BackingStore?.Get<string>(nameof(FirmwareSoftwareVersion)); }
-            set { BackingStore?.Set(nameof(FirmwareSoftwareVersion), value); }
+            get { return BackingStore?.Get<string>("firmwareSoftwareVersion"); }
+            set { BackingStore?.Set("firmwareSoftwareVersion", value); }
         }
         /// <summary>The software version for the operating system on the device.</summary>
         public string OperatingSystemSoftwareVersion {
-            get { return BackingStore?.Get<string>(nameof(OperatingSystemSoftwareVersion)); }
-            set { BackingStore?.Set(nameof(OperatingSystemSoftwareVersion), value); }
+            get { return BackingStore?.Get<string>("operatingSystemSoftwareVersion"); }
+            set { BackingStore?.Set("operatingSystemSoftwareVersion", value); }
         }
         /// <summary>The software version for the partner agent running on the device.</summary>
         public string PartnerAgentSoftwareVersion {
-            get { return BackingStore?.Get<string>(nameof(PartnerAgentSoftwareVersion)); }
-            set { BackingStore?.Set(nameof(PartnerAgentSoftwareVersion), value); }
+            get { return BackingStore?.Get<string>("partnerAgentSoftwareVersion"); }
+            set { BackingStore?.Set("partnerAgentSoftwareVersion", value); }
         }
         /// <summary>The software version for the Teams client running on the device.</summary>
         public string TeamsClientSoftwareVersion {
-            get { return BackingStore?.Get<string>(nameof(TeamsClientSoftwareVersion)); }
-            set { BackingStore?.Set(nameof(TeamsClientSoftwareVersion), value); }
+            get { return BackingStore?.Get<string>("teamsClientSoftwareVersion"); }
+            set { BackingStore?.Set("teamsClientSoftwareVersion", value); }
         }
         /// <summary>
         /// Instantiates a new teamworkDeviceSoftwareVersions and sets the default values.

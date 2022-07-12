@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class ClassificationResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The confidence level, 0 to 100, of the result.</summary>
         public int? ConfidenceLevel {
-            get { return BackingStore?.Get<int?>(nameof(ConfidenceLevel)); }
-            set { BackingStore?.Set(nameof(ConfidenceLevel), value); }
+            get { return BackingStore?.Get<int?>("confidenceLevel"); }
+            set { BackingStore?.Set("confidenceLevel", value); }
         }
         /// <summary>The number of instances of the specific information type in the input.</summary>
         public int? Count {
-            get { return BackingStore?.Get<int?>(nameof(Count)); }
-            set { BackingStore?.Set(nameof(Count), value); }
+            get { return BackingStore?.Get<int?>("count"); }
+            set { BackingStore?.Set("count", value); }
         }
         /// <summary>The GUID of the discovered sensitive information type.</summary>
         public string SensitiveTypeId {
-            get { return BackingStore?.Get<string>(nameof(SensitiveTypeId)); }
-            set { BackingStore?.Set(nameof(SensitiveTypeId), value); }
+            get { return BackingStore?.Get<string>("sensitiveTypeId"); }
+            set { BackingStore?.Set("sensitiveTypeId", value); }
         }
         /// <summary>
         /// Instantiates a new classificationResult and sets the default values.

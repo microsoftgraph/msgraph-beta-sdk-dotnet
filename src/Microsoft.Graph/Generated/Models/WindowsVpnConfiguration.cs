@@ -8,18 +8,24 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsVpnConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Connection name displayed to the user.</summary>
         public string ConnectionName {
-            get { return BackingStore?.Get<string>(nameof(ConnectionName)); }
-            set { BackingStore?.Set(nameof(ConnectionName), value); }
+            get { return BackingStore?.Get<string>("connectionName"); }
+            set { BackingStore?.Set("connectionName", value); }
         }
         /// <summary>Custom XML commands that configures the VPN connection. (UTF8 encoded byte array)</summary>
         public byte[] CustomXml {
-            get { return BackingStore?.Get<byte[]>(nameof(CustomXml)); }
-            set { BackingStore?.Set(nameof(CustomXml), value); }
+            get { return BackingStore?.Get<byte[]>("customXml"); }
+            set { BackingStore?.Set("customXml", value); }
         }
         /// <summary>List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.</summary>
         public List<VpnServer> Servers {
-            get { return BackingStore?.Get<List<VpnServer>>(nameof(Servers)); }
-            set { BackingStore?.Set(nameof(Servers), value); }
+            get { return BackingStore?.Get<List<VpnServer>>("servers"); }
+            set { BackingStore?.Set("servers", value); }
+        }
+        /// <summary>
+        /// Instantiates a new WindowsVpnConfiguration and sets the default values.
+        /// </summary>
+        public WindowsVpnConfiguration() : base() {
+            Type = "#microsoft.graph.windowsVpnConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

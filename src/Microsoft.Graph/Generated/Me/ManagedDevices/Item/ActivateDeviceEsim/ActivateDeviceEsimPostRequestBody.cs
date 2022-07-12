@@ -9,15 +9,15 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.ActivateDeviceEsim {
     public class ActivateDeviceEsimPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The carrierUrl property</summary>
         public string CarrierUrl {
-            get { return BackingStore?.Get<string>(nameof(CarrierUrl)); }
-            set { BackingStore?.Set(nameof(CarrierUrl), value); }
+            get { return BackingStore?.Get<string>("carrierUrl"); }
+            set { BackingStore?.Set("carrierUrl", value); }
         }
         /// <summary>
         /// Instantiates a new activateDeviceEsimPostRequestBody and sets the default values.

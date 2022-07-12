@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class MobileAppTroubleshootingAppTargetHistory : MobileAppTroubleshootingHistoryItem, IParsable {
         /// <summary>Error code for the failure, empty if no failure.</summary>
         public string ErrorCode {
-            get { return BackingStore?.Get<string>(nameof(ErrorCode)); }
-            set { BackingStore?.Set(nameof(ErrorCode), value); }
+            get { return BackingStore?.Get<string>("errorCode"); }
+            set { BackingStore?.Set("errorCode", value); }
         }
-        /// <summary>Status of the item. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.</summary>
+        /// <summary>Indicates the type of execution status of the device management script.</summary>
         public Microsoft.Graph.Beta.Models.RunState? RunState {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RunState?>(nameof(RunState)); }
-            set { BackingStore?.Set(nameof(RunState), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RunState?>("runState"); }
+            set { BackingStore?.Set("runState", value); }
         }
         /// <summary>AAD security group id to which it was targeted.</summary>
         public string SecurityGroupId {
-            get { return BackingStore?.Get<string>(nameof(SecurityGroupId)); }
-            set { BackingStore?.Set(nameof(SecurityGroupId), value); }
+            get { return BackingStore?.Get<string>("securityGroupId"); }
+            set { BackingStore?.Set("securityGroupId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidManagedStoreAppTrack : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Friendly name for track.</summary>
         public string TrackAlias {
-            get { return BackingStore?.Get<string>(nameof(TrackAlias)); }
-            set { BackingStore?.Set(nameof(TrackAlias), value); }
+            get { return BackingStore?.Get<string>("trackAlias"); }
+            set { BackingStore?.Set("trackAlias", value); }
         }
         /// <summary>Unique track identifier.</summary>
         public string TrackId {
-            get { return BackingStore?.Get<string>(nameof(TrackId)); }
-            set { BackingStore?.Set(nameof(TrackId), value); }
+            get { return BackingStore?.Get<string>("trackId"); }
+            set { BackingStore?.Set("trackId", value); }
         }
         /// <summary>
         /// Instantiates a new androidManagedStoreAppTrack and sets the default values.

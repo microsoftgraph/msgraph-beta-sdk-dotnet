@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class RecommendedAction : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Web URL to the recommended action.</summary>
         public string ActionWebUrl {
-            get { return BackingStore?.Get<string>(nameof(ActionWebUrl)); }
-            set { BackingStore?.Set(nameof(ActionWebUrl), value); }
+            get { return BackingStore?.Get<string>("actionWebUrl"); }
+            set { BackingStore?.Set("actionWebUrl", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Potential improvement in security score of the tenant from the recommended action.</summary>
         public double? PotentialScoreImpact {
-            get { return BackingStore?.Get<double?>(nameof(PotentialScoreImpact)); }
-            set { BackingStore?.Set(nameof(PotentialScoreImpact), value); }
+            get { return BackingStore?.Get<double?>("potentialScoreImpact"); }
+            set { BackingStore?.Set("potentialScoreImpact", value); }
         }
         /// <summary>Title of the recommended action.</summary>
         public string Title {
-            get { return BackingStore?.Get<string>(nameof(Title)); }
-            set { BackingStore?.Set(nameof(Title), value); }
+            get { return BackingStore?.Get<string>("title"); }
+            set { BackingStore?.Set("title", value); }
         }
         /// <summary>
         /// Instantiates a new recommendedAction and sets the default values.

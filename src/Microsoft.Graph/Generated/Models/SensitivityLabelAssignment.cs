@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class SensitivityLabelAssignment : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>Indicates whether the label assignment is done automatically, as a standard, or a privileged operation. The possible values are: standard, privileged, auto, unknownFutureValue.</summary>
+        /// <summary>The assignmentMethod property</summary>
         public SensitivityLabelAssignmentMethod? AssignmentMethod {
-            get { return BackingStore?.Get<SensitivityLabelAssignmentMethod?>(nameof(AssignmentMethod)); }
-            set { BackingStore?.Set(nameof(AssignmentMethod), value); }
+            get { return BackingStore?.Get<SensitivityLabelAssignmentMethod?>("assignmentMethod"); }
+            set { BackingStore?.Set("assignmentMethod", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The unique identifier for the sensitivity label assigned to the file.</summary>
         public string SensitivityLabelId {
-            get { return BackingStore?.Get<string>(nameof(SensitivityLabelId)); }
-            set { BackingStore?.Set(nameof(SensitivityLabelId), value); }
+            get { return BackingStore?.Get<string>("sensitivityLabelId"); }
+            set { BackingStore?.Set("sensitivityLabelId", value); }
         }
         /// <summary>The unique identifier for the tenant that hosts the file when this label is applied.</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>
         /// Instantiates a new sensitivityLabelAssignment and sets the default values.

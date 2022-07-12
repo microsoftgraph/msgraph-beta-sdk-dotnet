@@ -9,50 +9,50 @@ namespace Microsoft.Graph.Beta.Models {
     public class AssignmentFilterEvaluationSummary : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The admin defined name for assignment filter.</summary>
         public string AssignmentFilterDisplayName {
-            get { return BackingStore?.Get<string>(nameof(AssignmentFilterDisplayName)); }
-            set { BackingStore?.Set(nameof(AssignmentFilterDisplayName), value); }
+            get { return BackingStore?.Get<string>("assignmentFilterDisplayName"); }
+            set { BackingStore?.Set("assignmentFilterDisplayName", value); }
         }
         /// <summary>Unique identifier for the assignment filter object</summary>
         public string AssignmentFilterId {
-            get { return BackingStore?.Get<string>(nameof(AssignmentFilterId)); }
-            set { BackingStore?.Set(nameof(AssignmentFilterId), value); }
+            get { return BackingStore?.Get<string>("assignmentFilterId"); }
+            set { BackingStore?.Set("assignmentFilterId", value); }
         }
         /// <summary>The time the assignment filter was last modified.</summary>
         public DateTimeOffset? AssignmentFilterLastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(AssignmentFilterLastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(AssignmentFilterLastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("assignmentFilterLastModifiedDateTime"); }
+            set { BackingStore?.Set("assignmentFilterLastModifiedDateTime", value); }
         }
-        /// <summary>The platform for which this assignment filter is created. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.</summary>
+        /// <summary>Supported platform types.</summary>
         public DevicePlatformType? AssignmentFilterPlatform {
-            get { return BackingStore?.Get<DevicePlatformType?>(nameof(AssignmentFilterPlatform)); }
-            set { BackingStore?.Set(nameof(AssignmentFilterPlatform), value); }
+            get { return BackingStore?.Get<DevicePlatformType?>("assignmentFilterPlatform"); }
+            set { BackingStore?.Set("assignmentFilterPlatform", value); }
         }
-        /// <summary>Indicate filter type either include or exclude. Possible values are: none, include, exclude.</summary>
+        /// <summary>Represents type of the assignment filter.</summary>
         public DeviceAndAppManagementAssignmentFilterType? AssignmentFilterType {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentFilterType?>(nameof(AssignmentFilterType)); }
-            set { BackingStore?.Set(nameof(AssignmentFilterType), value); }
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentFilterType?>("assignmentFilterType"); }
+            set { BackingStore?.Set("assignmentFilterType", value); }
         }
         /// <summary>A collection of filter types and their corresponding evaluation results.</summary>
         public List<AssignmentFilterTypeAndEvaluationResult> AssignmentFilterTypeAndEvaluationResults {
-            get { return BackingStore?.Get<List<AssignmentFilterTypeAndEvaluationResult>>(nameof(AssignmentFilterTypeAndEvaluationResults)); }
-            set { BackingStore?.Set(nameof(AssignmentFilterTypeAndEvaluationResults), value); }
+            get { return BackingStore?.Get<List<AssignmentFilterTypeAndEvaluationResult>>("assignmentFilterTypeAndEvaluationResults"); }
+            set { BackingStore?.Set("assignmentFilterTypeAndEvaluationResults", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The time assignment filter was evaluated.</summary>
         public DateTimeOffset? EvaluationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EvaluationDateTime)); }
-            set { BackingStore?.Set(nameof(EvaluationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("evaluationDateTime"); }
+            set { BackingStore?.Set("evaluationDateTime", value); }
         }
-        /// <summary>Assignment filter evaluation result. Possible values are: unknown, match, notMatch, inconclusive, failure, notEvaluated.</summary>
+        /// <summary>Supported evaluation results for filter.</summary>
         public AssignmentFilterEvaluationResult? EvaluationResult {
-            get { return BackingStore?.Get<AssignmentFilterEvaluationResult?>(nameof(EvaluationResult)); }
-            set { BackingStore?.Set(nameof(EvaluationResult), value); }
+            get { return BackingStore?.Get<AssignmentFilterEvaluationResult?>("evaluationResult"); }
+            set { BackingStore?.Set("evaluationResult", value); }
         }
         /// <summary>
         /// Instantiates a new assignmentFilterEvaluationSummary and sets the default values.

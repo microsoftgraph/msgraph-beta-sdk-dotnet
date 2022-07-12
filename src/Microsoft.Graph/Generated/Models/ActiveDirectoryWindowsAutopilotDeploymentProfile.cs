@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class ActiveDirectoryWindowsAutopilotDeploymentProfile : WindowsAutopilotDeploymentProfile, IParsable {
         /// <summary>Configuration to join Active Directory domain</summary>
         public WindowsDomainJoinConfiguration DomainJoinConfiguration {
-            get { return BackingStore?.Get<WindowsDomainJoinConfiguration>(nameof(DomainJoinConfiguration)); }
-            set { BackingStore?.Set(nameof(DomainJoinConfiguration), value); }
+            get { return BackingStore?.Get<WindowsDomainJoinConfiguration>("domainJoinConfiguration"); }
+            set { BackingStore?.Set("domainJoinConfiguration", value); }
         }
         /// <summary>The Autopilot Hybrid Azure AD join flow will continue even if it does not establish domain controller connectivity during OOBE.</summary>
         public bool? HybridAzureADJoinSkipConnectivityCheck {
-            get { return BackingStore?.Get<bool?>(nameof(HybridAzureADJoinSkipConnectivityCheck)); }
-            set { BackingStore?.Set(nameof(HybridAzureADJoinSkipConnectivityCheck), value); }
+            get { return BackingStore?.Get<bool?>("hybridAzureADJoinSkipConnectivityCheck"); }
+            set { BackingStore?.Set("hybridAzureADJoinSkipConnectivityCheck", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

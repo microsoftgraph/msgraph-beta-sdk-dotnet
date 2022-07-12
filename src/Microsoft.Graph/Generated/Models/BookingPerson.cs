@@ -9,8 +9,14 @@ namespace Microsoft.Graph.Beta.Models {
     public class BookingPerson : BookingNamedEntity, IParsable {
         /// <summary>The email address of the person.</summary>
         public string EmailAddress {
-            get { return BackingStore?.Get<string>(nameof(EmailAddress)); }
-            set { BackingStore?.Set(nameof(EmailAddress), value); }
+            get { return BackingStore?.Get<string>("emailAddress"); }
+            set { BackingStore?.Set("emailAddress", value); }
+        }
+        /// <summary>
+        /// Instantiates a new bookingPerson and sets the default values.
+        /// </summary>
+        public BookingPerson() : base() {
+            Type = "#microsoft.graph.bookingPerson";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

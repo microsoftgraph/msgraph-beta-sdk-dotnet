@@ -8,8 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceHealthScriptRunOnceSchedule : DeviceHealthScriptTimeSchedule, IParsable {
         /// <summary>The date the script is scheduled to run. This collection can contain a maximum of 20 elements.</summary>
         public Date? Date {
-            get { return BackingStore?.Get<Date?>(nameof(Date)); }
-            set { BackingStore?.Set(nameof(Date), value); }
+            get { return BackingStore?.Get<Date?>("date"); }
+            set { BackingStore?.Set("date", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

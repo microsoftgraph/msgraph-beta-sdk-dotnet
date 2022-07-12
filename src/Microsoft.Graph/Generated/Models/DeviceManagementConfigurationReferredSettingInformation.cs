@@ -9,15 +9,15 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationReferredSettingInformation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Setting definition id that is being referred to a setting. Applicable for reusable setting</summary>
         public string SettingDefinitionId {
-            get { return BackingStore?.Get<string>(nameof(SettingDefinitionId)); }
-            set { BackingStore?.Set(nameof(SettingDefinitionId), value); }
+            get { return BackingStore?.Get<string>("settingDefinitionId"); }
+            set { BackingStore?.Set("settingDefinitionId", value); }
         }
         /// <summary>
         /// Instantiates a new deviceManagementConfigurationReferredSettingInformation and sets the default values.

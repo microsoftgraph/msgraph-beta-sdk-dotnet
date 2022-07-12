@@ -7,43 +7,43 @@ namespace Microsoft.Graph.Beta.Models {
     public class ProjectParticipation : ItemFacet, IParsable {
         /// <summary>Contains categories a user has associated with the project (for example, digital transformation, oil rig).</summary>
         public List<string> Categories {
-            get { return BackingStore?.Get<List<string>>(nameof(Categories)); }
-            set { BackingStore?.Set(nameof(Categories), value); }
+            get { return BackingStore?.Get<List<string>>("categories"); }
+            set { BackingStore?.Set("categories", value); }
         }
         /// <summary>Contains detailed information about the client the project was for.</summary>
         public CompanyDetail Client {
-            get { return BackingStore?.Get<CompanyDetail>(nameof(Client)); }
-            set { BackingStore?.Set(nameof(Client), value); }
+            get { return BackingStore?.Get<CompanyDetail>("client"); }
+            set { BackingStore?.Set("client", value); }
         }
         /// <summary>Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.</summary>
         public List<string> CollaborationTags {
-            get { return BackingStore?.Get<List<string>>(nameof(CollaborationTags)); }
-            set { BackingStore?.Set(nameof(CollaborationTags), value); }
+            get { return BackingStore?.Get<List<string>>("collaborationTags"); }
+            set { BackingStore?.Set("collaborationTags", value); }
         }
         /// <summary>Lists people that also worked on the project.</summary>
         public List<RelatedPerson> Colleagues {
-            get { return BackingStore?.Get<List<RelatedPerson>>(nameof(Colleagues)); }
-            set { BackingStore?.Set(nameof(Colleagues), value); }
+            get { return BackingStore?.Get<List<RelatedPerson>>("colleagues"); }
+            set { BackingStore?.Set("colleagues", value); }
         }
         /// <summary>Contains detail about the user&apos;s role on the project.</summary>
         public PositionDetail Detail {
-            get { return BackingStore?.Get<PositionDetail>(nameof(Detail)); }
-            set { BackingStore?.Set(nameof(Detail), value); }
+            get { return BackingStore?.Get<PositionDetail>("detail"); }
+            set { BackingStore?.Set("detail", value); }
         }
         /// <summary>Contains a friendly name for the project.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The Person or people who sponsored the project.</summary>
         public List<RelatedPerson> Sponsors {
-            get { return BackingStore?.Get<List<RelatedPerson>>(nameof(Sponsors)); }
-            set { BackingStore?.Set(nameof(Sponsors), value); }
+            get { return BackingStore?.Get<List<RelatedPerson>>("sponsors"); }
+            set { BackingStore?.Set("sponsors", value); }
         }
         /// <summary>The thumbnailUrl property</summary>
         public string ThumbnailUrl {
-            get { return BackingStore?.Get<string>(nameof(ThumbnailUrl)); }
-            set { BackingStore?.Set(nameof(ThumbnailUrl), value); }
+            get { return BackingStore?.Get<string>("thumbnailUrl"); }
+            set { BackingStore?.Set("thumbnailUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

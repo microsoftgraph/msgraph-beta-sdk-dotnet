@@ -8,40 +8,40 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamworkPeripheralsHealth : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The health details about the communication speaker.</summary>
         public TeamworkPeripheralHealth CommunicationSpeakerHealth {
-            get { return BackingStore?.Get<TeamworkPeripheralHealth>(nameof(CommunicationSpeakerHealth)); }
-            set { BackingStore?.Set(nameof(CommunicationSpeakerHealth), value); }
+            get { return BackingStore?.Get<TeamworkPeripheralHealth>("communicationSpeakerHealth"); }
+            set { BackingStore?.Set("communicationSpeakerHealth", value); }
         }
         /// <summary>The health details about the content camera.</summary>
         public TeamworkPeripheralHealth ContentCameraHealth {
-            get { return BackingStore?.Get<TeamworkPeripheralHealth>(nameof(ContentCameraHealth)); }
-            set { BackingStore?.Set(nameof(ContentCameraHealth), value); }
+            get { return BackingStore?.Get<TeamworkPeripheralHealth>("contentCameraHealth"); }
+            set { BackingStore?.Set("contentCameraHealth", value); }
         }
         /// <summary>The health details about displays.</summary>
         public List<TeamworkPeripheralHealth> DisplayHealthCollection {
-            get { return BackingStore?.Get<List<TeamworkPeripheralHealth>>(nameof(DisplayHealthCollection)); }
-            set { BackingStore?.Set(nameof(DisplayHealthCollection), value); }
+            get { return BackingStore?.Get<List<TeamworkPeripheralHealth>>("displayHealthCollection"); }
+            set { BackingStore?.Set("displayHealthCollection", value); }
         }
         /// <summary>The health details about the microphone.</summary>
         public TeamworkPeripheralHealth MicrophoneHealth {
-            get { return BackingStore?.Get<TeamworkPeripheralHealth>(nameof(MicrophoneHealth)); }
-            set { BackingStore?.Set(nameof(MicrophoneHealth), value); }
+            get { return BackingStore?.Get<TeamworkPeripheralHealth>("microphoneHealth"); }
+            set { BackingStore?.Set("microphoneHealth", value); }
         }
         /// <summary>The health details about the room camera.</summary>
         public TeamworkPeripheralHealth RoomCameraHealth {
-            get { return BackingStore?.Get<TeamworkPeripheralHealth>(nameof(RoomCameraHealth)); }
-            set { BackingStore?.Set(nameof(RoomCameraHealth), value); }
+            get { return BackingStore?.Get<TeamworkPeripheralHealth>("roomCameraHealth"); }
+            set { BackingStore?.Set("roomCameraHealth", value); }
         }
         /// <summary>The health details about the speaker.</summary>
         public TeamworkPeripheralHealth SpeakerHealth {
-            get { return BackingStore?.Get<TeamworkPeripheralHealth>(nameof(SpeakerHealth)); }
-            set { BackingStore?.Set(nameof(SpeakerHealth), value); }
+            get { return BackingStore?.Get<TeamworkPeripheralHealth>("speakerHealth"); }
+            set { BackingStore?.Set("speakerHealth", value); }
         }
         /// <summary>
         /// Instantiates a new teamworkPeripheralsHealth and sets the default values.

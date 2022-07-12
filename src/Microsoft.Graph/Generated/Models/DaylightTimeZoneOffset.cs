@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DaylightTimeZoneOffset : StandardTimeZoneOffset, IParsable {
         /// <summary>The time offset from Coordinated Universal Time (UTC) for daylight saving time. This value is in minutes.</summary>
         public int? DaylightBias {
-            get { return BackingStore?.Get<int?>(nameof(DaylightBias)); }
-            set { BackingStore?.Set(nameof(DaylightBias), value); }
+            get { return BackingStore?.Get<int?>("daylightBias"); }
+            set { BackingStore?.Set("daylightBias", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamworkFeaturesConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Email address to send logs and feedback.</summary>
         public string EmailToSendLogsAndFeedback {
-            get { return BackingStore?.Get<string>(nameof(EmailToSendLogsAndFeedback)); }
-            set { BackingStore?.Set(nameof(EmailToSendLogsAndFeedback), value); }
+            get { return BackingStore?.Get<string>("emailToSendLogsAndFeedback"); }
+            set { BackingStore?.Set("emailToSendLogsAndFeedback", value); }
         }
         /// <summary>True if auto screen shared is enabled.</summary>
         public bool? IsAutoScreenShareEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsAutoScreenShareEnabled)); }
-            set { BackingStore?.Set(nameof(IsAutoScreenShareEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isAutoScreenShareEnabled"); }
+            set { BackingStore?.Set("isAutoScreenShareEnabled", value); }
         }
         /// <summary>True if Bluetooth beaconing is enabled.</summary>
         public bool? IsBluetoothBeaconingEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsBluetoothBeaconingEnabled)); }
-            set { BackingStore?.Set(nameof(IsBluetoothBeaconingEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isBluetoothBeaconingEnabled"); }
+            set { BackingStore?.Set("isBluetoothBeaconingEnabled", value); }
         }
         /// <summary>True if hiding meeting names is enabled.</summary>
         public bool? IsHideMeetingNamesEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsHideMeetingNamesEnabled)); }
-            set { BackingStore?.Set(nameof(IsHideMeetingNamesEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isHideMeetingNamesEnabled"); }
+            set { BackingStore?.Set("isHideMeetingNamesEnabled", value); }
         }
         /// <summary>True if sending logs and feedback is enabled.</summary>
         public bool? IsSendLogsAndFeedbackEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsSendLogsAndFeedbackEnabled)); }
-            set { BackingStore?.Set(nameof(IsSendLogsAndFeedbackEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isSendLogsAndFeedbackEnabled"); }
+            set { BackingStore?.Set("isSendLogsAndFeedbackEnabled", value); }
         }
         /// <summary>
         /// Instantiates a new teamworkFeaturesConfiguration and sets the default values.

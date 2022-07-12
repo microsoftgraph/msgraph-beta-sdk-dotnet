@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class RotateBitLockerKeysDeviceActionResult : DeviceActionResult, IParsable {
         /// <summary>RotateBitLockerKeys action error code</summary>
         public int? ErrorCode {
-            get { return BackingStore?.Get<int?>(nameof(ErrorCode)); }
-            set { BackingStore?.Set(nameof(ErrorCode), value); }
+            get { return BackingStore?.Get<int?>("errorCode"); }
+            set { BackingStore?.Set("errorCode", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

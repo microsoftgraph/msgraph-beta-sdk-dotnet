@@ -8,8 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsWorkFromAnywhereMetric : Entity, IParsable {
         /// <summary>The work from anywhere metric devices.</summary>
         public List<UserExperienceAnalyticsWorkFromAnywhereDevice> MetricDevices {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsWorkFromAnywhereDevice>>(nameof(MetricDevices)); }
-            set { BackingStore?.Set(nameof(MetricDevices), value); }
+            get { return BackingStore?.Get<List<UserExperienceAnalyticsWorkFromAnywhereDevice>>("metricDevices"); }
+            set { BackingStore?.Set("metricDevices", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

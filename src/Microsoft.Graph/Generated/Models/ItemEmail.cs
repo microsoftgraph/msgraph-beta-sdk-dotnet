@@ -7,18 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class ItemEmail : ItemFacet, IParsable {
         /// <summary>The email address itself.</summary>
         public string Address {
-            get { return BackingStore?.Get<string>(nameof(Address)); }
-            set { BackingStore?.Set(nameof(Address), value); }
+            get { return BackingStore?.Get<string>("address"); }
+            set { BackingStore?.Set("address", value); }
         }
         /// <summary>The name or label a user has associated with a particular email address.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
-        }
-        /// <summary>The type of email address. Possible values are: unknown, work, personal, main, other.</summary>
-        public EmailType? Type {
-            get { return BackingStore?.Get<EmailType?>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +30,6 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"address", n => { Address = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetEnumValue<EmailType>(); } },
             };
         }
         /// <summary>
@@ -47,7 +41,6 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteStringValue("address", Address);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<EmailType>("type", Type);
         }
     }
 }

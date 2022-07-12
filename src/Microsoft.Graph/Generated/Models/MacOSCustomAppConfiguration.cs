@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOSCustomAppConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Bundle id for targeting.</summary>
         public string BundleId {
-            get { return BackingStore?.Get<string>(nameof(BundleId)); }
-            set { BackingStore?.Set(nameof(BundleId), value); }
+            get { return BackingStore?.Get<string>("bundleId"); }
+            set { BackingStore?.Set("bundleId", value); }
         }
         /// <summary>Configuration xml. (UTF8 encoded byte array)</summary>
         public byte[] ConfigurationXml {
-            get { return BackingStore?.Get<byte[]>(nameof(ConfigurationXml)); }
-            set { BackingStore?.Set(nameof(ConfigurationXml), value); }
+            get { return BackingStore?.Get<byte[]>("configurationXml"); }
+            set { BackingStore?.Set("configurationXml", value); }
         }
         /// <summary>Configuration file name (.plist</summary>
         public string FileName {
-            get { return BackingStore?.Get<string>(nameof(FileName)); }
-            set { BackingStore?.Set(nameof(FileName), value); }
+            get { return BackingStore?.Get<string>("fileName"); }
+            set { BackingStore?.Set("fileName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

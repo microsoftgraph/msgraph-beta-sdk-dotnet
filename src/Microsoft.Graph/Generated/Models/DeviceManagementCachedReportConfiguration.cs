@@ -8,43 +8,43 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementCachedReportConfiguration : Entity, IParsable {
         /// <summary>Time that the cached report expires</summary>
         public DateTimeOffset? ExpirationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpirationDateTime)); }
-            set { BackingStore?.Set(nameof(ExpirationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
+            set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>Filters applied on report creation.</summary>
         public string Filter {
-            get { return BackingStore?.Get<string>(nameof(Filter)); }
-            set { BackingStore?.Set(nameof(Filter), value); }
+            get { return BackingStore?.Get<string>("filter"); }
+            set { BackingStore?.Set("filter", value); }
         }
         /// <summary>Time that the cached report was last refreshed</summary>
         public DateTimeOffset? LastRefreshDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastRefreshDateTime)); }
-            set { BackingStore?.Set(nameof(LastRefreshDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshDateTime"); }
+            set { BackingStore?.Set("lastRefreshDateTime", value); }
         }
         /// <summary>Caller-managed metadata associated with the report</summary>
         public string Metadata {
-            get { return BackingStore?.Get<string>(nameof(Metadata)); }
-            set { BackingStore?.Set(nameof(Metadata), value); }
+            get { return BackingStore?.Get<string>("metadata"); }
+            set { BackingStore?.Set("metadata", value); }
         }
         /// <summary>Ordering of columns in the report</summary>
         public List<string> OrderBy {
-            get { return BackingStore?.Get<List<string>>(nameof(OrderBy)); }
-            set { BackingStore?.Set(nameof(OrderBy), value); }
+            get { return BackingStore?.Get<List<string>>("orderBy"); }
+            set { BackingStore?.Set("orderBy", value); }
         }
         /// <summary>Name of the report</summary>
         public string ReportName {
-            get { return BackingStore?.Get<string>(nameof(ReportName)); }
-            set { BackingStore?.Set(nameof(ReportName), value); }
+            get { return BackingStore?.Get<string>("reportName"); }
+            set { BackingStore?.Set("reportName", value); }
         }
         /// <summary>Columns selected from the report</summary>
         public List<string> Select {
-            get { return BackingStore?.Get<List<string>>(nameof(Select)); }
-            set { BackingStore?.Set(nameof(Select), value); }
+            get { return BackingStore?.Get<List<string>>("select"); }
+            set { BackingStore?.Set("select", value); }
         }
-        /// <summary>Status of the cached report. Possible values are: unknown, notStarted, inProgress, completed, failed.</summary>
+        /// <summary>Possible statuses associated with a generated report</summary>
         public DeviceManagementReportStatus? Status {
-            get { return BackingStore?.Get<DeviceManagementReportStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<DeviceManagementReportStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

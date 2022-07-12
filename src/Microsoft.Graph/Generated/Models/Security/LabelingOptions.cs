@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class LabelingOptions : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The assignmentMethod property</summary>
         public Microsoft.Graph.Beta.Models.Security.AssignmentMethod? AssignmentMethod {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AssignmentMethod?>(nameof(AssignmentMethod)); }
-            set { BackingStore?.Set(nameof(AssignmentMethod), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AssignmentMethod?>("assignmentMethod"); }
+            set { BackingStore?.Set("assignmentMethod", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The downgradeJustification property</summary>
         public Microsoft.Graph.Beta.Models.Security.DowngradeJustification DowngradeJustification {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DowngradeJustification>(nameof(DowngradeJustification)); }
-            set { BackingStore?.Set(nameof(DowngradeJustification), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DowngradeJustification>("downgradeJustification"); }
+            set { BackingStore?.Set("downgradeJustification", value); }
         }
         /// <summary>The extendedProperties property</summary>
         public List<KeyValuePair> ExtendedProperties {
-            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(ExtendedProperties)); }
-            set { BackingStore?.Set(nameof(ExtendedProperties), value); }
+            get { return BackingStore?.Get<List<KeyValuePair>>("extendedProperties"); }
+            set { BackingStore?.Set("extendedProperties", value); }
         }
         /// <summary>The labelId property</summary>
         public string LabelId {
-            get { return BackingStore?.Get<string>(nameof(LabelId)); }
-            set { BackingStore?.Set(nameof(LabelId), value); }
+            get { return BackingStore?.Get<string>("labelId"); }
+            set { BackingStore?.Set("labelId", value); }
         }
         /// <summary>
         /// Instantiates a new labelingOptions and sets the default values.

@@ -7,28 +7,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class MobileAppTroubleshootingEvent : DeviceManagementTroubleshootingEvent, IParsable {
         /// <summary>Intune application identifier.</summary>
         public string ApplicationId {
-            get { return BackingStore?.Get<string>(nameof(ApplicationId)); }
-            set { BackingStore?.Set(nameof(ApplicationId), value); }
+            get { return BackingStore?.Get<string>("applicationId"); }
+            set { BackingStore?.Set("applicationId", value); }
         }
         /// <summary>The collection property of AppLogUploadRequest.</summary>
         public List<AppLogCollectionRequest> AppLogCollectionRequests {
-            get { return BackingStore?.Get<List<AppLogCollectionRequest>>(nameof(AppLogCollectionRequests)); }
-            set { BackingStore?.Set(nameof(AppLogCollectionRequests), value); }
+            get { return BackingStore?.Get<List<AppLogCollectionRequest>>("appLogCollectionRequests"); }
+            set { BackingStore?.Set("appLogCollectionRequests", value); }
         }
         /// <summary>Intune Mobile Application Troubleshooting History Item</summary>
         public List<MobileAppTroubleshootingHistoryItem> History {
-            get { return BackingStore?.Get<List<MobileAppTroubleshootingHistoryItem>>(nameof(History)); }
-            set { BackingStore?.Set(nameof(History), value); }
+            get { return BackingStore?.Get<List<MobileAppTroubleshootingHistoryItem>>("history"); }
+            set { BackingStore?.Set("history", value); }
         }
         /// <summary>Device identifier created or collected by Intune.</summary>
         public string ManagedDeviceIdentifier {
-            get { return BackingStore?.Get<string>(nameof(ManagedDeviceIdentifier)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceIdentifier), value); }
+            get { return BackingStore?.Get<string>("managedDeviceIdentifier"); }
+            set { BackingStore?.Set("managedDeviceIdentifier", value); }
         }
         /// <summary>Identifier for the user that tried to enroll the device.</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

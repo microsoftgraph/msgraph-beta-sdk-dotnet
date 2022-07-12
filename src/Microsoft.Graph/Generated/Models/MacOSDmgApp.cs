@@ -7,28 +7,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOSDmgApp : MobileLobApp, IParsable {
         /// <summary>A value indicating whether the app&apos;s version will be used to detect the app after it is installed on a device. Set this to true for apps that use a self-update feature. Set this to false to install the app when it is not already installed on the device, or if the deploying app&apos;s version number does not match the version that&apos;s already installed on the device.</summary>
         public bool? IgnoreVersionDetection {
-            get { return BackingStore?.Get<bool?>(nameof(IgnoreVersionDetection)); }
-            set { BackingStore?.Set(nameof(IgnoreVersionDetection), value); }
+            get { return BackingStore?.Get<bool?>("ignoreVersionDetection"); }
+            set { BackingStore?.Set("ignoreVersionDetection", value); }
         }
         /// <summary>The list of apps expected to be installed by the DMG.</summary>
         public List<MacOSIncludedApp> IncludedApps {
-            get { return BackingStore?.Get<List<MacOSIncludedApp>>(nameof(IncludedApps)); }
-            set { BackingStore?.Set(nameof(IncludedApps), value); }
+            get { return BackingStore?.Get<List<MacOSIncludedApp>>("includedApps"); }
+            set { BackingStore?.Set("includedApps", value); }
         }
         /// <summary>The value for the minimum applicable operating system.</summary>
         public MacOSMinimumOperatingSystem MinimumSupportedOperatingSystem {
-            get { return BackingStore?.Get<MacOSMinimumOperatingSystem>(nameof(MinimumSupportedOperatingSystem)); }
-            set { BackingStore?.Set(nameof(MinimumSupportedOperatingSystem), value); }
+            get { return BackingStore?.Get<MacOSMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
+            set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
         /// <summary>The primary CFBundleIdentifier of the DMG.</summary>
         public string PrimaryBundleId {
-            get { return BackingStore?.Get<string>(nameof(PrimaryBundleId)); }
-            set { BackingStore?.Set(nameof(PrimaryBundleId), value); }
+            get { return BackingStore?.Get<string>("primaryBundleId"); }
+            set { BackingStore?.Set("primaryBundleId", value); }
         }
         /// <summary>The primary CFBundleVersion of the DMG.</summary>
         public string PrimaryBundleVersion {
-            get { return BackingStore?.Get<string>(nameof(PrimaryBundleVersion)); }
-            set { BackingStore?.Set(nameof(PrimaryBundleVersion), value); }
+            get { return BackingStore?.Get<string>("primaryBundleVersion"); }
+            set { BackingStore?.Set("primaryBundleVersion", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

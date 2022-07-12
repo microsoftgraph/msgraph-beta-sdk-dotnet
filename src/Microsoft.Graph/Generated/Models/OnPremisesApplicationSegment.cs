@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class OnPremisesApplicationSegment : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The alternateUrl property</summary>
         public string AlternateUrl {
-            get { return BackingStore?.Get<string>(nameof(AlternateUrl)); }
-            set { BackingStore?.Set(nameof(AlternateUrl), value); }
+            get { return BackingStore?.Get<string>("alternateUrl"); }
+            set { BackingStore?.Set("alternateUrl", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The corsConfigurations property</summary>
         public List<CorsConfiguration> CorsConfigurations {
-            get { return BackingStore?.Get<List<CorsConfiguration>>(nameof(CorsConfigurations)); }
-            set { BackingStore?.Set(nameof(CorsConfigurations), value); }
+            get { return BackingStore?.Get<List<CorsConfiguration>>("corsConfigurations"); }
+            set { BackingStore?.Set("corsConfigurations", value); }
         }
         /// <summary>The externalUrl property</summary>
         public string ExternalUrl {
-            get { return BackingStore?.Get<string>(nameof(ExternalUrl)); }
-            set { BackingStore?.Set(nameof(ExternalUrl), value); }
+            get { return BackingStore?.Get<string>("externalUrl"); }
+            set { BackingStore?.Set("externalUrl", value); }
         }
         /// <summary>The internalUrl property</summary>
         public string InternalUrl {
-            get { return BackingStore?.Get<string>(nameof(InternalUrl)); }
-            set { BackingStore?.Set(nameof(InternalUrl), value); }
+            get { return BackingStore?.Get<string>("internalUrl"); }
+            set { BackingStore?.Set("internalUrl", value); }
         }
         /// <summary>
         /// Instantiates a new onPremisesApplicationSegment and sets the default values.

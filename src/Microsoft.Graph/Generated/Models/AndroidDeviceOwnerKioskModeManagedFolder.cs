@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceOwnerKioskModeManagedFolder : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Unique identifier for the folder</summary>
         public string FolderIdentifier {
-            get { return BackingStore?.Get<string>(nameof(FolderIdentifier)); }
-            set { BackingStore?.Set(nameof(FolderIdentifier), value); }
+            get { return BackingStore?.Get<string>("folderIdentifier"); }
+            set { BackingStore?.Set("folderIdentifier", value); }
         }
         /// <summary>Display name for the folder</summary>
         public string FolderName {
-            get { return BackingStore?.Get<string>(nameof(FolderName)); }
-            set { BackingStore?.Set(nameof(FolderName), value); }
+            get { return BackingStore?.Get<string>("folderName"); }
+            set { BackingStore?.Set("folderName", value); }
         }
         /// <summary>Items to be added to managed folder. This collection can contain a maximum of 500 elements.</summary>
         public List<AndroidDeviceOwnerKioskModeFolderItem> Items {
-            get { return BackingStore?.Get<List<AndroidDeviceOwnerKioskModeFolderItem>>(nameof(Items)); }
-            set { BackingStore?.Set(nameof(Items), value); }
+            get { return BackingStore?.Get<List<AndroidDeviceOwnerKioskModeFolderItem>>("items"); }
+            set { BackingStore?.Set("items", value); }
         }
         /// <summary>
         /// Instantiates a new androidDeviceOwnerKioskModeManagedFolder and sets the default values.

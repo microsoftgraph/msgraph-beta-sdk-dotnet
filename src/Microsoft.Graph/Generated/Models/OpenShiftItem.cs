@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class OpenShiftItem : ShiftItem, IParsable {
         /// <summary>Count of the number of slots for the given open shift.</summary>
         public int? OpenSlotCount {
-            get { return BackingStore?.Get<int?>(nameof(OpenSlotCount)); }
-            set { BackingStore?.Set(nameof(OpenSlotCount), value); }
+            get { return BackingStore?.Get<int?>("openSlotCount"); }
+            set { BackingStore?.Set("openSlotCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

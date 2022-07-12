@@ -9,15 +9,15 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.HasPayloadLinks {
     public class HasPayloadLinksPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The payloadIds property</summary>
         public List<string> PayloadIds {
-            get { return BackingStore?.Get<List<string>>(nameof(PayloadIds)); }
-            set { BackingStore?.Set(nameof(PayloadIds), value); }
+            get { return BackingStore?.Get<List<string>>("payloadIds"); }
+            set { BackingStore?.Set("payloadIds", value); }
         }
         /// <summary>
         /// Instantiates a new hasPayloadLinksPostRequestBody and sets the default values.

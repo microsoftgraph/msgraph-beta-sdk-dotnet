@@ -9,43 +9,49 @@ namespace Microsoft.Graph.Beta.Models {
     public class ImportedDeviceIdentity : Entity, IParsable {
         /// <summary>Created Date Time of the device</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description of the device</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
-        /// <summary>The state of the device in Intune. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.</summary>
+        /// <summary>The enrollmentState property</summary>
         public Microsoft.Graph.Beta.Models.EnrollmentState? EnrollmentState {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EnrollmentState?>(nameof(EnrollmentState)); }
-            set { BackingStore?.Set(nameof(EnrollmentState), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EnrollmentState?>("enrollmentState"); }
+            set { BackingStore?.Set("enrollmentState", value); }
         }
         /// <summary>Imported Device Identifier</summary>
         public string ImportedDeviceIdentifier {
-            get { return BackingStore?.Get<string>(nameof(ImportedDeviceIdentifier)); }
-            set { BackingStore?.Set(nameof(ImportedDeviceIdentifier), value); }
+            get { return BackingStore?.Get<string>("importedDeviceIdentifier"); }
+            set { BackingStore?.Set("importedDeviceIdentifier", value); }
         }
-        /// <summary>Type of Imported Device Identity. Possible values are: unknown, imei, serialNumber.</summary>
+        /// <summary>The importedDeviceIdentityType property</summary>
         public Microsoft.Graph.Beta.Models.ImportedDeviceIdentityType? ImportedDeviceIdentityType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ImportedDeviceIdentityType?>(nameof(ImportedDeviceIdentityType)); }
-            set { BackingStore?.Set(nameof(ImportedDeviceIdentityType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ImportedDeviceIdentityType?>("importedDeviceIdentityType"); }
+            set { BackingStore?.Set("importedDeviceIdentityType", value); }
         }
         /// <summary>Last Contacted Date Time of the device</summary>
         public DateTimeOffset? LastContactedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastContactedDateTime)); }
-            set { BackingStore?.Set(nameof(LastContactedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastContactedDateTime"); }
+            set { BackingStore?.Set("lastContactedDateTime", value); }
         }
         /// <summary>Last Modified DateTime of the description</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The platform of the Device. Possible values are: unknown, ios, android, windows, windowsMobile, macOS.</summary>
+        /// <summary>The platform property</summary>
         public Microsoft.Graph.Beta.Models.Platform? Platform {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Platform?>(nameof(Platform)); }
-            set { BackingStore?.Set(nameof(Platform), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Platform?>("platform"); }
+            set { BackingStore?.Set("platform", value); }
+        }
+        /// <summary>
+        /// Instantiates a new importedDeviceIdentity and sets the default values.
+        /// </summary>
+        public ImportedDeviceIdentity() : base() {
+            Type = "#microsoft.graph.importedDeviceIdentity";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

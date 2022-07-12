@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationIntegerSettingValueConstantDefaultTemplate : DeviceManagementConfigurationIntegerSettingValueDefaultTemplate, IParsable {
         /// <summary>Default Constant Value. Valid values -2147483648 to 2147483647</summary>
         public int? ConstantValue {
-            get { return BackingStore?.Get<int?>(nameof(ConstantValue)); }
-            set { BackingStore?.Set(nameof(ConstantValue), value); }
+            get { return BackingStore?.Get<int?>("constantValue"); }
+            set { BackingStore?.Set("constantValue", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

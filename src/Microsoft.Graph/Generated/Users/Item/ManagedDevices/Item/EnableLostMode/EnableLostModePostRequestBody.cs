@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.EnableLostMode {
     public class EnableLostModePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The footer property</summary>
         public string Footer {
-            get { return BackingStore?.Get<string>(nameof(Footer)); }
-            set { BackingStore?.Set(nameof(Footer), value); }
+            get { return BackingStore?.Get<string>("footer"); }
+            set { BackingStore?.Set("footer", value); }
         }
         /// <summary>The message property</summary>
         public string Message {
-            get { return BackingStore?.Get<string>(nameof(Message)); }
-            set { BackingStore?.Set(nameof(Message), value); }
+            get { return BackingStore?.Get<string>("message"); }
+            set { BackingStore?.Set("message", value); }
         }
         /// <summary>The phoneNumber property</summary>
         public string PhoneNumber {
-            get { return BackingStore?.Get<string>(nameof(PhoneNumber)); }
-            set { BackingStore?.Set(nameof(PhoneNumber), value); }
+            get { return BackingStore?.Get<string>("phoneNumber"); }
+            set { BackingStore?.Set("phoneNumber", value); }
         }
         /// <summary>
         /// Instantiates a new enableLostModePostRequestBody and sets the default values.

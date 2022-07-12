@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class MobileAppSupersedence : MobileAppRelationship, IParsable {
         /// <summary>The total number of apps directly or indirectly superseded by the child app.</summary>
         public int? SupersededAppCount {
-            get { return BackingStore?.Get<int?>(nameof(SupersededAppCount)); }
-            set { BackingStore?.Set(nameof(SupersededAppCount), value); }
+            get { return BackingStore?.Get<int?>("supersededAppCount"); }
+            set { BackingStore?.Set("supersededAppCount", value); }
         }
-        /// <summary>The supersedence relationship type between the parent and child apps. Possible values are: update, replace.</summary>
+        /// <summary>Indicates the supersedence type associated with a relationship between two mobile apps.</summary>
         public MobileAppSupersedenceType? SupersedenceType {
-            get { return BackingStore?.Get<MobileAppSupersedenceType?>(nameof(SupersedenceType)); }
-            set { BackingStore?.Set(nameof(SupersedenceType), value); }
+            get { return BackingStore?.Get<MobileAppSupersedenceType?>("supersedenceType"); }
+            set { BackingStore?.Set("supersedenceType", value); }
         }
         /// <summary>The total number of apps directly or indirectly superseding the parent app.</summary>
         public int? SupersedingAppCount {
-            get { return BackingStore?.Get<int?>(nameof(SupersedingAppCount)); }
-            set { BackingStore?.Set(nameof(SupersedingAppCount), value); }
+            get { return BackingStore?.Get<int?>("supersedingAppCount"); }
+            set { BackingStore?.Set("supersedingAppCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

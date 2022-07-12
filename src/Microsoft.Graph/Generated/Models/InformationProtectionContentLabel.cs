@@ -8,28 +8,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class InformationProtectionContentLabel : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>Possible values are: standard, privileged, auto.</summary>
+        /// <summary>The assignmentMethod property</summary>
         public Microsoft.Graph.Beta.Models.AssignmentMethod? AssignmentMethod {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AssignmentMethod?>(nameof(AssignmentMethod)); }
-            set { BackingStore?.Set(nameof(AssignmentMethod), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AssignmentMethod?>("assignmentMethod"); }
+            set { BackingStore?.Set("assignmentMethod", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? CreationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreationDateTime)); }
-            set { BackingStore?.Set(nameof(CreationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("creationDateTime"); }
+            set { BackingStore?.Set("creationDateTime", value); }
         }
         /// <summary>Details on the label that is currently applied to the file.</summary>
         public LabelDetails Label {
-            get { return BackingStore?.Get<LabelDetails>(nameof(Label)); }
-            set { BackingStore?.Set(nameof(Label), value); }
+            get { return BackingStore?.Get<LabelDetails>("label"); }
+            set { BackingStore?.Set("label", value); }
         }
         /// <summary>
-        /// Instantiates a new InformationProtectionContentLabel and sets the default values.
+        /// Instantiates a new informationProtectionContentLabel and sets the default values.
         /// </summary>
         public InformationProtectionContentLabel() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

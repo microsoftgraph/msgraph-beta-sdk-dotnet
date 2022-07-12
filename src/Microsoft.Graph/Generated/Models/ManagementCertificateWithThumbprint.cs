@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class ManagementCertificateWithThumbprint : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Base 64 encoded management certificate</summary>
         public string Certificate {
-            get { return BackingStore?.Get<string>(nameof(Certificate)); }
-            set { BackingStore?.Set(nameof(Certificate), value); }
+            get { return BackingStore?.Get<string>("certificate"); }
+            set { BackingStore?.Set("certificate", value); }
         }
         /// <summary>The thumbprint of the management certificate</summary>
         public string Thumbprint {
-            get { return BackingStore?.Get<string>(nameof(Thumbprint)); }
-            set { BackingStore?.Set(nameof(Thumbprint), value); }
+            get { return BackingStore?.Get<string>("thumbprint"); }
+            set { BackingStore?.Set("thumbprint", value); }
         }
         /// <summary>
         /// Instantiates a new managementCertificateWithThumbprint and sets the default values.

@@ -8,28 +8,34 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidWorkProfileWiFiConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.</summary>
         public bool? ConnectAutomatically {
-            get { return BackingStore?.Get<bool?>(nameof(ConnectAutomatically)); }
-            set { BackingStore?.Set(nameof(ConnectAutomatically), value); }
+            get { return BackingStore?.Get<bool?>("connectAutomatically"); }
+            set { BackingStore?.Set("connectAutomatically", value); }
         }
         /// <summary>When set to true, this profile forces the device to connect to a network that doesn&apos;t broadcast its SSID to all devices.</summary>
         public bool? ConnectWhenNetworkNameIsHidden {
-            get { return BackingStore?.Get<bool?>(nameof(ConnectWhenNetworkNameIsHidden)); }
-            set { BackingStore?.Set(nameof(ConnectWhenNetworkNameIsHidden), value); }
+            get { return BackingStore?.Get<bool?>("connectWhenNetworkNameIsHidden"); }
+            set { BackingStore?.Set("connectWhenNetworkNameIsHidden", value); }
         }
         /// <summary>Network Name</summary>
         public string NetworkName {
-            get { return BackingStore?.Get<string>(nameof(NetworkName)); }
-            set { BackingStore?.Set(nameof(NetworkName), value); }
+            get { return BackingStore?.Get<string>("networkName"); }
+            set { BackingStore?.Set("networkName", value); }
         }
         /// <summary>This is the name of the Wi-Fi network that is broadcast to all devices.</summary>
         public string Ssid {
-            get { return BackingStore?.Get<string>(nameof(Ssid)); }
-            set { BackingStore?.Set(nameof(Ssid), value); }
+            get { return BackingStore?.Get<string>("ssid"); }
+            set { BackingStore?.Set("ssid", value); }
         }
-        /// <summary>Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wpaEnterprise, wpa2Enterprise.</summary>
+        /// <summary>Wi-Fi Security Types for Android.</summary>
         public AndroidWiFiSecurityType? WiFiSecurityType {
-            get { return BackingStore?.Get<AndroidWiFiSecurityType?>(nameof(WiFiSecurityType)); }
-            set { BackingStore?.Set(nameof(WiFiSecurityType), value); }
+            get { return BackingStore?.Get<AndroidWiFiSecurityType?>("wiFiSecurityType"); }
+            set { BackingStore?.Set("wiFiSecurityType", value); }
+        }
+        /// <summary>
+        /// Instantiates a new AndroidWorkProfileWiFiConfiguration and sets the default values.
+        /// </summary>
+        public AndroidWorkProfileWiFiConfiguration() : base() {
+            Type = "#microsoft.graph.androidWorkProfileWiFiConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

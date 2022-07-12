@@ -9,75 +9,75 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsMinimumOperatingSystem : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Windows version 10.0 or later.</summary>
         public bool? V10_0 {
-            get { return BackingStore?.Get<bool?>(nameof(V10_0)); }
-            set { BackingStore?.Set(nameof(V10_0), value); }
+            get { return BackingStore?.Get<bool?>("v10_0"); }
+            set { BackingStore?.Set("v10_0", value); }
         }
         /// <summary>Windows 10 1607 or later.</summary>
         public bool? V10_1607 {
-            get { return BackingStore?.Get<bool?>(nameof(V10_1607)); }
-            set { BackingStore?.Set(nameof(V10_1607), value); }
+            get { return BackingStore?.Get<bool?>("v10_1607"); }
+            set { BackingStore?.Set("v10_1607", value); }
         }
         /// <summary>Windows 10 1703 or later.</summary>
         public bool? V10_1703 {
-            get { return BackingStore?.Get<bool?>(nameof(V10_1703)); }
-            set { BackingStore?.Set(nameof(V10_1703), value); }
+            get { return BackingStore?.Get<bool?>("v10_1703"); }
+            set { BackingStore?.Set("v10_1703", value); }
         }
         /// <summary>Windows 10 1709 or later.</summary>
         public bool? V10_1709 {
-            get { return BackingStore?.Get<bool?>(nameof(V10_1709)); }
-            set { BackingStore?.Set(nameof(V10_1709), value); }
+            get { return BackingStore?.Get<bool?>("v10_1709"); }
+            set { BackingStore?.Set("v10_1709", value); }
         }
         /// <summary>Windows 10 1803 or later.</summary>
         public bool? V10_1803 {
-            get { return BackingStore?.Get<bool?>(nameof(V10_1803)); }
-            set { BackingStore?.Set(nameof(V10_1803), value); }
+            get { return BackingStore?.Get<bool?>("v10_1803"); }
+            set { BackingStore?.Set("v10_1803", value); }
         }
         /// <summary>Windows 10 1809 or later.</summary>
         public bool? V10_1809 {
-            get { return BackingStore?.Get<bool?>(nameof(V10_1809)); }
-            set { BackingStore?.Set(nameof(V10_1809), value); }
+            get { return BackingStore?.Get<bool?>("v10_1809"); }
+            set { BackingStore?.Set("v10_1809", value); }
         }
         /// <summary>Windows 10 1903 or later.</summary>
         public bool? V10_1903 {
-            get { return BackingStore?.Get<bool?>(nameof(V10_1903)); }
-            set { BackingStore?.Set(nameof(V10_1903), value); }
+            get { return BackingStore?.Get<bool?>("v10_1903"); }
+            set { BackingStore?.Set("v10_1903", value); }
         }
         /// <summary>Windows 10 1909 or later.</summary>
         public bool? V10_1909 {
-            get { return BackingStore?.Get<bool?>(nameof(V10_1909)); }
-            set { BackingStore?.Set(nameof(V10_1909), value); }
+            get { return BackingStore?.Get<bool?>("v10_1909"); }
+            set { BackingStore?.Set("v10_1909", value); }
         }
         /// <summary>Windows 10 2004 or later.</summary>
         public bool? V10_2004 {
-            get { return BackingStore?.Get<bool?>(nameof(V10_2004)); }
-            set { BackingStore?.Set(nameof(V10_2004), value); }
+            get { return BackingStore?.Get<bool?>("v10_2004"); }
+            set { BackingStore?.Set("v10_2004", value); }
         }
         /// <summary>Windows 10 21H1 or later.</summary>
         public bool? V10_21H1 {
-            get { return BackingStore?.Get<bool?>(nameof(V10_21H1)); }
-            set { BackingStore?.Set(nameof(V10_21H1), value); }
+            get { return BackingStore?.Get<bool?>("v10_21H1"); }
+            set { BackingStore?.Set("v10_21H1", value); }
         }
         /// <summary>Windows 10 2H20 or later.</summary>
         public bool? V10_2H20 {
-            get { return BackingStore?.Get<bool?>(nameof(V10_2H20)); }
-            set { BackingStore?.Set(nameof(V10_2H20), value); }
+            get { return BackingStore?.Get<bool?>("v10_2H20"); }
+            set { BackingStore?.Set("v10_2H20", value); }
         }
         /// <summary>Windows version 8.0 or later.</summary>
         public bool? V8_0 {
-            get { return BackingStore?.Get<bool?>(nameof(V8_0)); }
-            set { BackingStore?.Set(nameof(V8_0), value); }
+            get { return BackingStore?.Get<bool?>("v8_0"); }
+            set { BackingStore?.Set("v8_0", value); }
         }
         /// <summary>Windows version 8.1 or later.</summary>
         public bool? V8_1 {
-            get { return BackingStore?.Get<bool?>(nameof(V8_1)); }
-            set { BackingStore?.Set(nameof(V8_1), value); }
+            get { return BackingStore?.Get<bool?>("v8_1"); }
+            set { BackingStore?.Set("v8_1", value); }
         }
         /// <summary>
         /// Instantiates a new windowsMinimumOperatingSystem and sets the default values.

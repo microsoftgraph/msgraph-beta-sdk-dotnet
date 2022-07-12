@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationAssignmentPointsGradeType : EducationAssignmentGradeType, IParsable {
         /// <summary>Max points possible for this assignment.</summary>
         public float? MaxPoints {
-            get { return BackingStore?.Get<float?>(nameof(MaxPoints)); }
-            set { BackingStore?.Set(nameof(MaxPoints), value); }
+            get { return BackingStore?.Get<float?>("maxPoints"); }
+            set { BackingStore?.Set("maxPoints", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

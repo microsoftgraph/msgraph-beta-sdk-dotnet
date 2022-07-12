@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class LogicAppTriggerEndpointConfiguration : CustomExtensionEndpointConfiguration, IParsable {
         /// <summary>The name of the logic app.</summary>
         public string LogicAppWorkflowName {
-            get { return BackingStore?.Get<string>(nameof(LogicAppWorkflowName)); }
-            set { BackingStore?.Set(nameof(LogicAppWorkflowName), value); }
+            get { return BackingStore?.Get<string>("logicAppWorkflowName"); }
+            set { BackingStore?.Set("logicAppWorkflowName", value); }
         }
         /// <summary>The Azure resource group name for the logic app.</summary>
         public string ResourceGroupName {
-            get { return BackingStore?.Get<string>(nameof(ResourceGroupName)); }
-            set { BackingStore?.Set(nameof(ResourceGroupName), value); }
+            get { return BackingStore?.Get<string>("resourceGroupName"); }
+            set { BackingStore?.Set("resourceGroupName", value); }
         }
         /// <summary>Identifier of the Azure subscription for the logic app.</summary>
         public string SubscriptionId {
-            get { return BackingStore?.Get<string>(nameof(SubscriptionId)); }
-            set { BackingStore?.Set(nameof(SubscriptionId), value); }
+            get { return BackingStore?.Get<string>("subscriptionId"); }
+            set { BackingStore?.Set("subscriptionId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

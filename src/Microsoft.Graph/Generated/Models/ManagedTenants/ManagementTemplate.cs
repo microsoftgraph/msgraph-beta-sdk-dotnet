@@ -4,87 +4,87 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ManagementTemplate : Entity, IParsable {
         /// <summary>The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.</summary>
         public ManagementCategory? Category {
-            get { return BackingStore?.Get<ManagementCategory?>(nameof(Category)); }
-            set { BackingStore?.Set(nameof(Category), value); }
+            get { return BackingStore?.Get<ManagementCategory?>("category"); }
+            set { BackingStore?.Set("category", value); }
         }
         /// <summary>The createdByUserId property</summary>
         public string CreatedByUserId {
-            get { return BackingStore?.Get<string>(nameof(CreatedByUserId)); }
-            set { BackingStore?.Set(nameof(CreatedByUserId), value); }
+            get { return BackingStore?.Get<string>("createdByUserId"); }
+            set { BackingStore?.Set("createdByUserId", value); }
         }
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description for the management template. Optional. Read-only.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The display name for the management template. Required. Read-only.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The informationLinks property</summary>
         public List<Microsoft.Graph.Beta.Models.ActionUrl> InformationLinks {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ActionUrl>>(nameof(InformationLinks)); }
-            set { BackingStore?.Set(nameof(InformationLinks), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ActionUrl>>("informationLinks"); }
+            set { BackingStore?.Set("informationLinks", value); }
         }
         /// <summary>The lastActionByUserId property</summary>
         public string LastActionByUserId {
-            get { return BackingStore?.Get<string>(nameof(LastActionByUserId)); }
-            set { BackingStore?.Set(nameof(LastActionByUserId), value); }
+            get { return BackingStore?.Get<string>("lastActionByUserId"); }
+            set { BackingStore?.Set("lastActionByUserId", value); }
         }
         /// <summary>The lastActionDateTime property</summary>
         public DateTimeOffset? LastActionDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastActionDateTime)); }
-            set { BackingStore?.Set(nameof(LastActionDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
+            set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>The managementTemplateCollections property</summary>
         public List<ManagementTemplateCollection> ManagementTemplateCollections {
-            get { return BackingStore?.Get<List<ManagementTemplateCollection>>(nameof(ManagementTemplateCollections)); }
-            set { BackingStore?.Set(nameof(ManagementTemplateCollections), value); }
+            get { return BackingStore?.Get<List<ManagementTemplateCollection>>("managementTemplateCollections"); }
+            set { BackingStore?.Set("managementTemplateCollections", value); }
         }
         /// <summary>The managementTemplateSteps property</summary>
         public List<ManagementTemplateStep> ManagementTemplateSteps {
-            get { return BackingStore?.Get<List<ManagementTemplateStep>>(nameof(ManagementTemplateSteps)); }
-            set { BackingStore?.Set(nameof(ManagementTemplateSteps), value); }
+            get { return BackingStore?.Get<List<ManagementTemplateStep>>("managementTemplateSteps"); }
+            set { BackingStore?.Set("managementTemplateSteps", value); }
         }
         /// <summary>The collection of parameters used by the management template. Optional. Read-only.</summary>
         public List<TemplateParameter> Parameters {
-            get { return BackingStore?.Get<List<TemplateParameter>>(nameof(Parameters)); }
-            set { BackingStore?.Set(nameof(Parameters), value); }
+            get { return BackingStore?.Get<List<TemplateParameter>>("parameters"); }
+            set { BackingStore?.Set("parameters", value); }
         }
         /// <summary>The priority property</summary>
         public int? Priority {
-            get { return BackingStore?.Get<int?>(nameof(Priority)); }
-            set { BackingStore?.Set(nameof(Priority), value); }
+            get { return BackingStore?.Get<int?>("priority"); }
+            set { BackingStore?.Set("priority", value); }
         }
         /// <summary>The provider property</summary>
         public ManagementProvider? Provider {
-            get { return BackingStore?.Get<ManagementProvider?>(nameof(Provider)); }
-            set { BackingStore?.Set(nameof(Provider), value); }
+            get { return BackingStore?.Get<ManagementProvider?>("provider"); }
+            set { BackingStore?.Set("provider", value); }
         }
         /// <summary>The userImpact property</summary>
         public string UserImpact {
-            get { return BackingStore?.Get<string>(nameof(UserImpact)); }
-            set { BackingStore?.Set(nameof(UserImpact), value); }
+            get { return BackingStore?.Get<string>("userImpact"); }
+            set { BackingStore?.Set("userImpact", value); }
         }
         /// <summary>The version property</summary>
         public int? Version {
-            get { return BackingStore?.Get<int?>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<int?>("version"); }
+            set { BackingStore?.Set("version", value); }
         }
         /// <summary>The collection of workload actions associated with the management template. Optional. Read-only.</summary>
         public List<WorkloadAction> WorkloadActions {
-            get { return BackingStore?.Get<List<WorkloadAction>>(nameof(WorkloadActions)); }
-            set { BackingStore?.Set(nameof(WorkloadActions), value); }
+            get { return BackingStore?.Get<List<WorkloadAction>>("workloadActions"); }
+            set { BackingStore?.Set("workloadActions", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

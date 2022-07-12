@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class MessageEvent : Entity, IParsable {
         /// <summary>The dateTime property</summary>
         public DateTimeOffset? DateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DateTime)); }
-            set { BackingStore?.Set(nameof(DateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("dateTime"); }
+            set { BackingStore?.Set("dateTime", value); }
         }
         /// <summary>The description property</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The eventType property</summary>
         public MessageEventType? EventType {
-            get { return BackingStore?.Get<MessageEventType?>(nameof(EventType)); }
-            set { BackingStore?.Set(nameof(EventType), value); }
+            get { return BackingStore?.Get<MessageEventType?>("eventType"); }
+            set { BackingStore?.Set("eventType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

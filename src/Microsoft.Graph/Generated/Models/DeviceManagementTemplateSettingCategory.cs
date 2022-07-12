@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementTemplateSettingCategory : DeviceManagementSettingCategory, IParsable {
         /// <summary>The settings this category contains</summary>
         public List<DeviceManagementSettingInstance> RecommendedSettings {
-            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>(nameof(RecommendedSettings)); }
-            set { BackingStore?.Set(nameof(RecommendedSettings), value); }
+            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>("recommendedSettings"); }
+            set { BackingStore?.Set("recommendedSettings", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

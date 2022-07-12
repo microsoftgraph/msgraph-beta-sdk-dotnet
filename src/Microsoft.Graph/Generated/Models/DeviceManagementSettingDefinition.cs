@@ -9,58 +9,64 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementSettingDefinition : Entity, IParsable {
         /// <summary>Collection of constraints for the setting value</summary>
         public List<DeviceManagementConstraint> Constraints {
-            get { return BackingStore?.Get<List<DeviceManagementConstraint>>(nameof(Constraints)); }
-            set { BackingStore?.Set(nameof(Constraints), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConstraint>>("constraints"); }
+            set { BackingStore?.Set("constraints", value); }
         }
         /// <summary>Collection of dependencies on other settings</summary>
         public List<DeviceManagementSettingDependency> Dependencies {
-            get { return BackingStore?.Get<List<DeviceManagementSettingDependency>>(nameof(Dependencies)); }
-            set { BackingStore?.Set(nameof(Dependencies), value); }
+            get { return BackingStore?.Get<List<DeviceManagementSettingDependency>>("dependencies"); }
+            set { BackingStore?.Set("dependencies", value); }
         }
         /// <summary>The setting&apos;s description</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The setting&apos;s display name</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Url to setting documentation</summary>
         public string DocumentationUrl {
-            get { return BackingStore?.Get<string>(nameof(DocumentationUrl)); }
-            set { BackingStore?.Set(nameof(DocumentationUrl), value); }
+            get { return BackingStore?.Get<string>("documentationUrl"); }
+            set { BackingStore?.Set("documentationUrl", value); }
         }
         /// <summary>subtitle of the setting header for more details about the category/section</summary>
         public string HeaderSubtitle {
-            get { return BackingStore?.Get<string>(nameof(HeaderSubtitle)); }
-            set { BackingStore?.Set(nameof(HeaderSubtitle), value); }
+            get { return BackingStore?.Get<string>("headerSubtitle"); }
+            set { BackingStore?.Set("headerSubtitle", value); }
         }
         /// <summary>title of the setting header represents a category/section of a setting/settings</summary>
         public string HeaderTitle {
-            get { return BackingStore?.Get<string>(nameof(HeaderTitle)); }
-            set { BackingStore?.Set(nameof(HeaderTitle), value); }
+            get { return BackingStore?.Get<string>("headerTitle"); }
+            set { BackingStore?.Set("headerTitle", value); }
         }
         /// <summary>If the setting is top level, it can be configured without the need to be wrapped in a collection or complex setting</summary>
         public bool? IsTopLevel {
-            get { return BackingStore?.Get<bool?>(nameof(IsTopLevel)); }
-            set { BackingStore?.Set(nameof(IsTopLevel), value); }
+            get { return BackingStore?.Get<bool?>("isTopLevel"); }
+            set { BackingStore?.Set("isTopLevel", value); }
         }
         /// <summary>Keywords associated with the setting</summary>
         public List<string> Keywords {
-            get { return BackingStore?.Get<List<string>>(nameof(Keywords)); }
-            set { BackingStore?.Set(nameof(Keywords), value); }
+            get { return BackingStore?.Get<List<string>>("keywords"); }
+            set { BackingStore?.Set("keywords", value); }
         }
         /// <summary>Placeholder text as an example of valid input</summary>
         public string PlaceholderText {
-            get { return BackingStore?.Get<string>(nameof(PlaceholderText)); }
-            set { BackingStore?.Set(nameof(PlaceholderText), value); }
+            get { return BackingStore?.Get<string>("placeholderText"); }
+            set { BackingStore?.Set("placeholderText", value); }
         }
-        /// <summary>The data type of the value. Possible values are: integer, boolean, string, complex, collection, abstractComplex.</summary>
+        /// <summary>The valueType property</summary>
         public DeviceManangementIntentValueType? ValueType {
-            get { return BackingStore?.Get<DeviceManangementIntentValueType?>(nameof(ValueType)); }
-            set { BackingStore?.Set(nameof(ValueType), value); }
+            get { return BackingStore?.Get<DeviceManangementIntentValueType?>("valueType"); }
+            set { BackingStore?.Set("valueType", value); }
+        }
+        /// <summary>
+        /// Instantiates a new deviceManagementSettingDefinition and sets the default values.
+        /// </summary>
+        public DeviceManagementSettingDefinition() : base() {
+            Type = "#microsoft.graph.deviceManagementSettingDefinition";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

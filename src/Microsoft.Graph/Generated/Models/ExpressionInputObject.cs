@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class ExpressionInputObject : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Definition of the test object.</summary>
         public ObjectDefinition Definition {
-            get { return BackingStore?.Get<ObjectDefinition>(nameof(Definition)); }
-            set { BackingStore?.Set(nameof(Definition), value); }
+            get { return BackingStore?.Get<ObjectDefinition>("definition"); }
+            set { BackingStore?.Set("definition", value); }
         }
         /// <summary>Property values of the test object.</summary>
         public List<StringKeyObjectValuePair> Properties {
-            get { return BackingStore?.Get<List<StringKeyObjectValuePair>>(nameof(Properties)); }
-            set { BackingStore?.Set(nameof(Properties), value); }
+            get { return BackingStore?.Get<List<StringKeyObjectValuePair>>("properties"); }
+            set { BackingStore?.Set("properties", value); }
         }
         /// <summary>
         /// Instantiates a new expressionInputObject and sets the default values.

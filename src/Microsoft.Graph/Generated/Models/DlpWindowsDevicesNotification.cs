@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class DlpWindowsDevicesNotification : DlpNotification, IParsable {
         /// <summary>The contentName property</summary>
         public string ContentName {
-            get { return BackingStore?.Get<string>(nameof(ContentName)); }
-            set { BackingStore?.Set(nameof(ContentName), value); }
+            get { return BackingStore?.Get<string>("contentName"); }
+            set { BackingStore?.Set("contentName", value); }
         }
         /// <summary>The lastModfiedBy property</summary>
         public string LastModfiedBy {
-            get { return BackingStore?.Get<string>(nameof(LastModfiedBy)); }
-            set { BackingStore?.Set(nameof(LastModfiedBy), value); }
+            get { return BackingStore?.Get<string>("lastModfiedBy"); }
+            set { BackingStore?.Set("lastModfiedBy", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

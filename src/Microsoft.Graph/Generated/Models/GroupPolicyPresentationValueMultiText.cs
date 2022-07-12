@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyPresentationValueMultiText : GroupPolicyPresentationValue, IParsable {
         /// <summary>A collection of non-empty strings for the associated presentation.</summary>
         public List<string> Values {
-            get { return BackingStore?.Get<List<string>>(nameof(Values)); }
-            set { BackingStore?.Set(nameof(Values), value); }
+            get { return BackingStore?.Get<List<string>>("values"); }
+            set { BackingStore?.Set("values", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

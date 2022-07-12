@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class LocationConstraintItem : Location, IParsable {
         /// <summary>If set to true and the specified resource is busy, findMeetingTimes looks for another resource that is free. If set to false and the specified resource is busy, findMeetingTimes returns the resource best ranked in the user&apos;s cache without checking if it&apos;s free. Default is true.</summary>
         public bool? ResolveAvailability {
-            get { return BackingStore?.Get<bool?>(nameof(ResolveAvailability)); }
-            set { BackingStore?.Set(nameof(ResolveAvailability), value); }
+            get { return BackingStore?.Get<bool?>("resolveAvailability"); }
+            set { BackingStore?.Set("resolveAvailability", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

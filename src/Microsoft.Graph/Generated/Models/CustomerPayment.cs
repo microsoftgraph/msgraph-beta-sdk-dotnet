@@ -5,82 +5,82 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class CustomerPayment : Entity, IParsable {
         /// <summary>The amount property</summary>
         public decimal? Amount {
-            get { return BackingStore?.Get<decimal?>(nameof(Amount)); }
-            set { BackingStore?.Set(nameof(Amount), value); }
+            get { return BackingStore?.Get<decimal?>("amount"); }
+            set { BackingStore?.Set("amount", value); }
         }
         /// <summary>The appliesToInvoiceId property</summary>
         public string AppliesToInvoiceId {
-            get { return BackingStore?.Get<string>(nameof(AppliesToInvoiceId)); }
-            set { BackingStore?.Set(nameof(AppliesToInvoiceId), value); }
+            get { return BackingStore?.Get<string>("appliesToInvoiceId"); }
+            set { BackingStore?.Set("appliesToInvoiceId", value); }
         }
         /// <summary>The appliesToInvoiceNumber property</summary>
         public string AppliesToInvoiceNumber {
-            get { return BackingStore?.Get<string>(nameof(AppliesToInvoiceNumber)); }
-            set { BackingStore?.Set(nameof(AppliesToInvoiceNumber), value); }
+            get { return BackingStore?.Get<string>("appliesToInvoiceNumber"); }
+            set { BackingStore?.Set("appliesToInvoiceNumber", value); }
         }
         /// <summary>The comment property</summary>
         public string Comment {
-            get { return BackingStore?.Get<string>(nameof(Comment)); }
-            set { BackingStore?.Set(nameof(Comment), value); }
+            get { return BackingStore?.Get<string>("comment"); }
+            set { BackingStore?.Set("comment", value); }
         }
         /// <summary>The contactId property</summary>
         public string ContactId {
-            get { return BackingStore?.Get<string>(nameof(ContactId)); }
-            set { BackingStore?.Set(nameof(ContactId), value); }
+            get { return BackingStore?.Get<string>("contactId"); }
+            set { BackingStore?.Set("contactId", value); }
         }
         /// <summary>The customer property</summary>
         public Microsoft.Graph.Beta.Models.Customer Customer {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Customer>(nameof(Customer)); }
-            set { BackingStore?.Set(nameof(Customer), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Customer>("customer"); }
+            set { BackingStore?.Set("customer", value); }
         }
         /// <summary>The customerId property</summary>
         public string CustomerId {
-            get { return BackingStore?.Get<string>(nameof(CustomerId)); }
-            set { BackingStore?.Set(nameof(CustomerId), value); }
+            get { return BackingStore?.Get<string>("customerId"); }
+            set { BackingStore?.Set("customerId", value); }
         }
         /// <summary>The customerNumber property</summary>
         public string CustomerNumber {
-            get { return BackingStore?.Get<string>(nameof(CustomerNumber)); }
-            set { BackingStore?.Set(nameof(CustomerNumber), value); }
+            get { return BackingStore?.Get<string>("customerNumber"); }
+            set { BackingStore?.Set("customerNumber", value); }
         }
         /// <summary>The description property</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The documentNumber property</summary>
         public string DocumentNumber {
-            get { return BackingStore?.Get<string>(nameof(DocumentNumber)); }
-            set { BackingStore?.Set(nameof(DocumentNumber), value); }
+            get { return BackingStore?.Get<string>("documentNumber"); }
+            set { BackingStore?.Set("documentNumber", value); }
         }
         /// <summary>The externalDocumentNumber property</summary>
         public string ExternalDocumentNumber {
-            get { return BackingStore?.Get<string>(nameof(ExternalDocumentNumber)); }
-            set { BackingStore?.Set(nameof(ExternalDocumentNumber), value); }
+            get { return BackingStore?.Get<string>("externalDocumentNumber"); }
+            set { BackingStore?.Set("externalDocumentNumber", value); }
         }
         /// <summary>The journalDisplayName property</summary>
         public string JournalDisplayName {
-            get { return BackingStore?.Get<string>(nameof(JournalDisplayName)); }
-            set { BackingStore?.Set(nameof(JournalDisplayName), value); }
+            get { return BackingStore?.Get<string>("journalDisplayName"); }
+            set { BackingStore?.Set("journalDisplayName", value); }
         }
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The lineNumber property</summary>
         public int? LineNumber {
-            get { return BackingStore?.Get<int?>(nameof(LineNumber)); }
-            set { BackingStore?.Set(nameof(LineNumber), value); }
+            get { return BackingStore?.Get<int?>("lineNumber"); }
+            set { BackingStore?.Set("lineNumber", value); }
         }
         /// <summary>The postingDate property</summary>
         public Date? PostingDate {
-            get { return BackingStore?.Get<Date?>(nameof(PostingDate)); }
-            set { BackingStore?.Set(nameof(PostingDate), value); }
+            get { return BackingStore?.Get<Date?>("postingDate"); }
+            set { BackingStore?.Set("postingDate", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

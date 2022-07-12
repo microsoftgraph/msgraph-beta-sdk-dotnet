@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class AssignmentFilterTypeAndEvaluationResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>Represents the filter type. Possible values are: none, include, exclude.</summary>
+        /// <summary>Represents type of the assignment filter.</summary>
         public DeviceAndAppManagementAssignmentFilterType? AssignmentFilterType {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentFilterType?>(nameof(AssignmentFilterType)); }
-            set { BackingStore?.Set(nameof(AssignmentFilterType), value); }
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentFilterType?>("assignmentFilterType"); }
+            set { BackingStore?.Set("assignmentFilterType", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Represents the evalaution result of the filter. Possible values are: unknown, match, notMatch, inconclusive, failure, notEvaluated.</summary>
+        /// <summary>Supported evaluation results for filter.</summary>
         public AssignmentFilterEvaluationResult? EvaluationResult {
-            get { return BackingStore?.Get<AssignmentFilterEvaluationResult?>(nameof(EvaluationResult)); }
-            set { BackingStore?.Set(nameof(EvaluationResult), value); }
+            get { return BackingStore?.Get<AssignmentFilterEvaluationResult?>("evaluationResult"); }
+            set { BackingStore?.Set("evaluationResult", value); }
         }
         /// <summary>
         /// Instantiates a new assignmentFilterTypeAndEvaluationResult and sets the default values.

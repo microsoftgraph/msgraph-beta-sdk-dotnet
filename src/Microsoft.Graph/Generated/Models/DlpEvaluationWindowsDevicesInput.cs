@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class DlpEvaluationWindowsDevicesInput : DlpEvaluationInput, IParsable {
         /// <summary>The contentProperties property</summary>
         public Microsoft.Graph.Beta.Models.ContentProperties ContentProperties {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContentProperties>(nameof(ContentProperties)); }
-            set { BackingStore?.Set(nameof(ContentProperties), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContentProperties>("contentProperties"); }
+            set { BackingStore?.Set("contentProperties", value); }
         }
         /// <summary>The sharedBy property</summary>
         public string SharedBy {
-            get { return BackingStore?.Get<string>(nameof(SharedBy)); }
-            set { BackingStore?.Set(nameof(SharedBy), value); }
+            get { return BackingStore?.Get<string>("sharedBy"); }
+            set { BackingStore?.Set("sharedBy", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

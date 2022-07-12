@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class SensitiveContentEvidence : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The length property</summary>
         public int? Length {
-            get { return BackingStore?.Get<int?>(nameof(Length)); }
-            set { BackingStore?.Set(nameof(Length), value); }
+            get { return BackingStore?.Get<int?>("length"); }
+            set { BackingStore?.Set("length", value); }
         }
         /// <summary>The match property</summary>
         public string Match {
-            get { return BackingStore?.Get<string>(nameof(Match)); }
-            set { BackingStore?.Set(nameof(Match), value); }
+            get { return BackingStore?.Get<string>("match"); }
+            set { BackingStore?.Set("match", value); }
         }
         /// <summary>The offset property</summary>
         public int? Offset {
-            get { return BackingStore?.Get<int?>(nameof(Offset)); }
-            set { BackingStore?.Set(nameof(Offset), value); }
+            get { return BackingStore?.Get<int?>("offset"); }
+            set { BackingStore?.Set("offset", value); }
         }
         /// <summary>
         /// Instantiates a new sensitiveContentEvidence and sets the default values.

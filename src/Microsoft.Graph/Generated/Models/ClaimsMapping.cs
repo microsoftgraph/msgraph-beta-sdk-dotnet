@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class ClaimsMapping : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The claim that provides the display name or full name for the user. It is a required propoerty.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The claim that provides the email address of the user.</summary>
         public string Email {
-            get { return BackingStore?.Get<string>(nameof(Email)); }
-            set { BackingStore?.Set(nameof(Email), value); }
+            get { return BackingStore?.Get<string>("email"); }
+            set { BackingStore?.Set("email", value); }
         }
         /// <summary>The claim that provides the first name of the user.</summary>
         public string GivenName {
-            get { return BackingStore?.Get<string>(nameof(GivenName)); }
-            set { BackingStore?.Set(nameof(GivenName), value); }
+            get { return BackingStore?.Get<string>("givenName"); }
+            set { BackingStore?.Set("givenName", value); }
         }
         /// <summary>The claim that provides the last name of the user.</summary>
         public string Surname {
-            get { return BackingStore?.Get<string>(nameof(Surname)); }
-            set { BackingStore?.Set(nameof(Surname), value); }
+            get { return BackingStore?.Get<string>("surname"); }
+            set { BackingStore?.Set("surname", value); }
         }
         /// <summary>The claim that provides the unique identifier for the signed-in user. It is a required propoerty.</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>
         /// Instantiates a new claimsMapping and sets the default values.

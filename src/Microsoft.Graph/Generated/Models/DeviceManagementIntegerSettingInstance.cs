@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementIntegerSettingInstance : DeviceManagementSettingInstance, IParsable {
         /// <summary>The integer value</summary>
         public int? Value {
-            get { return BackingStore?.Get<int?>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<int?>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,48 +8,48 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsNotAutopilotReadyDevice : Entity, IParsable {
         /// <summary>The intune device&apos;s autopilotProfileAssigned.</summary>
         public bool? AutoPilotProfileAssigned {
-            get { return BackingStore?.Get<bool?>(nameof(AutoPilotProfileAssigned)); }
-            set { BackingStore?.Set(nameof(AutoPilotProfileAssigned), value); }
+            get { return BackingStore?.Get<bool?>("autoPilotProfileAssigned"); }
+            set { BackingStore?.Set("autoPilotProfileAssigned", value); }
         }
         /// <summary>The intune device&apos;s autopilotRegistered.</summary>
         public bool? AutoPilotRegistered {
-            get { return BackingStore?.Get<bool?>(nameof(AutoPilotRegistered)); }
-            set { BackingStore?.Set(nameof(AutoPilotRegistered), value); }
+            get { return BackingStore?.Get<bool?>("autoPilotRegistered"); }
+            set { BackingStore?.Set("autoPilotRegistered", value); }
         }
         /// <summary>The intune device&apos;s azure Ad joinType.</summary>
         public string AzureAdJoinType {
-            get { return BackingStore?.Get<string>(nameof(AzureAdJoinType)); }
-            set { BackingStore?.Set(nameof(AzureAdJoinType), value); }
+            get { return BackingStore?.Get<string>("azureAdJoinType"); }
+            set { BackingStore?.Set("azureAdJoinType", value); }
         }
         /// <summary>The intune device&apos;s azureAdRegistered.</summary>
         public bool? AzureAdRegistered {
-            get { return BackingStore?.Get<bool?>(nameof(AzureAdRegistered)); }
-            set { BackingStore?.Set(nameof(AzureAdRegistered), value); }
+            get { return BackingStore?.Get<bool?>("azureAdRegistered"); }
+            set { BackingStore?.Set("azureAdRegistered", value); }
         }
         /// <summary>The intune device&apos;s name.</summary>
         public string DeviceName {
-            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
-            set { BackingStore?.Set(nameof(DeviceName), value); }
+            get { return BackingStore?.Get<string>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
         }
         /// <summary>The intune device&apos;s managed by.</summary>
         public string ManagedBy {
-            get { return BackingStore?.Get<string>(nameof(ManagedBy)); }
-            set { BackingStore?.Set(nameof(ManagedBy), value); }
+            get { return BackingStore?.Get<string>("managedBy"); }
+            set { BackingStore?.Set("managedBy", value); }
         }
         /// <summary>The intune device&apos;s manufacturer.</summary>
         public string Manufacturer {
-            get { return BackingStore?.Get<string>(nameof(Manufacturer)); }
-            set { BackingStore?.Set(nameof(Manufacturer), value); }
+            get { return BackingStore?.Get<string>("manufacturer"); }
+            set { BackingStore?.Set("manufacturer", value); }
         }
         /// <summary>The intune device&apos;s model.</summary>
         public string Model {
-            get { return BackingStore?.Get<string>(nameof(Model)); }
-            set { BackingStore?.Set(nameof(Model), value); }
+            get { return BackingStore?.Get<string>("model"); }
+            set { BackingStore?.Set("model", value); }
         }
         /// <summary>The intune device&apos;s serial number.</summary>
         public string SerialNumber {
-            get { return BackingStore?.Get<string>(nameof(SerialNumber)); }
-            set { BackingStore?.Set(nameof(SerialNumber), value); }
+            get { return BackingStore?.Get<string>("serialNumber"); }
+            set { BackingStore?.Set("serialNumber", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

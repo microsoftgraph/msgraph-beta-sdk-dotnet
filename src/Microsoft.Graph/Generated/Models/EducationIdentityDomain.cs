@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationIdentityDomain : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The user role type to assign to the license. Possible values are: student, teacher, faculty.</summary>
+        /// <summary>The appliesTo property</summary>
         public EducationUserRole? AppliesTo {
-            get { return BackingStore?.Get<EducationUserRole?>(nameof(AppliesTo)); }
-            set { BackingStore?.Set(nameof(AppliesTo), value); }
+            get { return BackingStore?.Get<EducationUserRole?>("appliesTo"); }
+            set { BackingStore?.Set("appliesTo", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Represents the domain for the user account.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>
         /// Instantiates a new educationIdentityDomain and sets the default values.

@@ -7,28 +7,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class StatusDetails : StatusBase, IParsable {
         /// <summary>Additional details in case of error.</summary>
         public string AdditionalDetails {
-            get { return BackingStore?.Get<string>(nameof(AdditionalDetails)); }
-            set { BackingStore?.Set(nameof(AdditionalDetails), value); }
+            get { return BackingStore?.Get<string>("additionalDetails"); }
+            set { BackingStore?.Set("additionalDetails", value); }
         }
         /// <summary>Categorizes the error code. Possible values are Failure, NonServiceFailure, Success.</summary>
         public ProvisioningStatusErrorCategory? ErrorCategory {
-            get { return BackingStore?.Get<ProvisioningStatusErrorCategory?>(nameof(ErrorCategory)); }
-            set { BackingStore?.Set(nameof(ErrorCategory), value); }
+            get { return BackingStore?.Get<ProvisioningStatusErrorCategory?>("errorCategory"); }
+            set { BackingStore?.Set("errorCategory", value); }
         }
         /// <summary>Unique error code if any occurred. Learn more</summary>
         public string ErrorCode {
-            get { return BackingStore?.Get<string>(nameof(ErrorCode)); }
-            set { BackingStore?.Set(nameof(ErrorCode), value); }
+            get { return BackingStore?.Get<string>("errorCode"); }
+            set { BackingStore?.Set("errorCode", value); }
         }
         /// <summary>Summarizes the status and describes why the status happened.</summary>
         public string Reason {
-            get { return BackingStore?.Get<string>(nameof(Reason)); }
-            set { BackingStore?.Set(nameof(Reason), value); }
+            get { return BackingStore?.Get<string>("reason"); }
+            set { BackingStore?.Set("reason", value); }
         }
         /// <summary>Provides the resolution for the corresponding error.</summary>
         public string RecommendedAction {
-            get { return BackingStore?.Get<string>(nameof(RecommendedAction)); }
-            set { BackingStore?.Set(nameof(RecommendedAction), value); }
+            get { return BackingStore?.Get<string>("recommendedAction"); }
+            set { BackingStore?.Set("recommendedAction", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,58 +8,58 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOSSoftwareUpdateAccountSummary : Entity, IParsable {
         /// <summary>Summary of the updates by category.</summary>
         public List<MacOSSoftwareUpdateCategorySummary> CategorySummaries {
-            get { return BackingStore?.Get<List<MacOSSoftwareUpdateCategorySummary>>(nameof(CategorySummaries)); }
-            set { BackingStore?.Set(nameof(CategorySummaries), value); }
+            get { return BackingStore?.Get<List<MacOSSoftwareUpdateCategorySummary>>("categorySummaries"); }
+            set { BackingStore?.Set("categorySummaries", value); }
         }
         /// <summary>The device ID.</summary>
         public string DeviceId {
-            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
-            set { BackingStore?.Set(nameof(DeviceId), value); }
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>The device name.</summary>
         public string DeviceName {
-            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
-            set { BackingStore?.Set(nameof(DeviceName), value); }
+            get { return BackingStore?.Get<string>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
         }
         /// <summary>The name of the report</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Number of failed updates on the device.</summary>
         public int? FailedUpdateCount {
-            get { return BackingStore?.Get<int?>(nameof(FailedUpdateCount)); }
-            set { BackingStore?.Set(nameof(FailedUpdateCount), value); }
+            get { return BackingStore?.Get<int?>("failedUpdateCount"); }
+            set { BackingStore?.Set("failedUpdateCount", value); }
         }
         /// <summary>Last date time the report for this device was updated.</summary>
         public DateTimeOffset? LastUpdatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastUpdatedDateTime)); }
-            set { BackingStore?.Set(nameof(LastUpdatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
+            set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>The OS version.</summary>
         public string OsVersion {
-            get { return BackingStore?.Get<string>(nameof(OsVersion)); }
-            set { BackingStore?.Set(nameof(OsVersion), value); }
+            get { return BackingStore?.Get<string>("osVersion"); }
+            set { BackingStore?.Set("osVersion", value); }
         }
         /// <summary>Number of successful updates on the device.</summary>
         public int? SuccessfulUpdateCount {
-            get { return BackingStore?.Get<int?>(nameof(SuccessfulUpdateCount)); }
-            set { BackingStore?.Set(nameof(SuccessfulUpdateCount), value); }
+            get { return BackingStore?.Get<int?>("successfulUpdateCount"); }
+            set { BackingStore?.Set("successfulUpdateCount", value); }
         }
         /// <summary>Number of total updates on the device.</summary>
         public int? TotalUpdateCount {
-            get { return BackingStore?.Get<int?>(nameof(TotalUpdateCount)); }
-            set { BackingStore?.Set(nameof(TotalUpdateCount), value); }
+            get { return BackingStore?.Get<int?>("totalUpdateCount"); }
+            set { BackingStore?.Set("totalUpdateCount", value); }
         }
         /// <summary>The user ID.</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>The user principal name</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

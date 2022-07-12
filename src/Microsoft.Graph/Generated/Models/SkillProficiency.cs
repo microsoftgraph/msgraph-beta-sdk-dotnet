@@ -7,33 +7,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class SkillProficiency : ItemFacet, IParsable {
         /// <summary>Contains categories a user has associated with the skill (for example, personal, professional, hobby).</summary>
         public List<string> Categories {
-            get { return BackingStore?.Get<List<string>>(nameof(Categories)); }
-            set { BackingStore?.Set(nameof(Categories), value); }
+            get { return BackingStore?.Get<List<string>>("categories"); }
+            set { BackingStore?.Set("categories", value); }
         }
         /// <summary>Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.</summary>
         public List<string> CollaborationTags {
-            get { return BackingStore?.Get<List<string>>(nameof(CollaborationTags)); }
-            set { BackingStore?.Set(nameof(CollaborationTags), value); }
+            get { return BackingStore?.Get<List<string>>("collaborationTags"); }
+            set { BackingStore?.Set("collaborationTags", value); }
         }
         /// <summary>Contains a friendly name for the skill.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Detail of the users proficiency with this skill. Possible values are: elementary, limitedWorking, generalProfessional, advancedProfessional, expert, unknownFutureValue.</summary>
         public SkillProficiencyLevel? Proficiency {
-            get { return BackingStore?.Get<SkillProficiencyLevel?>(nameof(Proficiency)); }
-            set { BackingStore?.Set(nameof(Proficiency), value); }
+            get { return BackingStore?.Get<SkillProficiencyLevel?>("proficiency"); }
+            set { BackingStore?.Set("proficiency", value); }
         }
         /// <summary>The thumbnailUrl property</summary>
         public string ThumbnailUrl {
-            get { return BackingStore?.Get<string>(nameof(ThumbnailUrl)); }
-            set { BackingStore?.Set(nameof(ThumbnailUrl), value); }
+            get { return BackingStore?.Get<string>("thumbnailUrl"); }
+            set { BackingStore?.Set("thumbnailUrl", value); }
         }
         /// <summary>Contains a link to an information source about the skill.</summary>
         public string WebUrl {
-            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
-            set { BackingStore?.Set(nameof(WebUrl), value); }
+            get { return BackingStore?.Get<string>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

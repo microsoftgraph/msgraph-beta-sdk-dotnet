@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class EmailIdentity : Identity, IParsable {
         /// <summary>Email address of the user.</summary>
         public string Email {
-            get { return BackingStore?.Get<string>(nameof(Email)); }
-            set { BackingStore?.Set(nameof(Email), value); }
+            get { return BackingStore?.Get<string>("email"); }
+            set { BackingStore?.Set("email", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

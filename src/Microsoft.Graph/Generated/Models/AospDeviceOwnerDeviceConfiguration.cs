@@ -7,73 +7,73 @@ namespace Microsoft.Graph.Beta.Models {
     public class AospDeviceOwnerDeviceConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Indicates whether or not the user is allowed to enable unknown sources setting. When set to true, user is not allowed to enable unknown sources settings.</summary>
         public bool? AppsBlockInstallFromUnknownSources {
-            get { return BackingStore?.Get<bool?>(nameof(AppsBlockInstallFromUnknownSources)); }
-            set { BackingStore?.Set(nameof(AppsBlockInstallFromUnknownSources), value); }
+            get { return BackingStore?.Get<bool?>("appsBlockInstallFromUnknownSources"); }
+            set { BackingStore?.Set("appsBlockInstallFromUnknownSources", value); }
         }
         /// <summary>Indicates whether or not to block a user from configuring bluetooth.</summary>
         public bool? BluetoothBlockConfiguration {
-            get { return BackingStore?.Get<bool?>(nameof(BluetoothBlockConfiguration)); }
-            set { BackingStore?.Set(nameof(BluetoothBlockConfiguration), value); }
+            get { return BackingStore?.Get<bool?>("bluetoothBlockConfiguration"); }
+            set { BackingStore?.Set("bluetoothBlockConfiguration", value); }
         }
         /// <summary>Indicates whether or not to disable the use of bluetooth. When set to true, bluetooth cannot be enabled on the device.</summary>
         public bool? BluetoothBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(BluetoothBlocked)); }
-            set { BackingStore?.Set(nameof(BluetoothBlocked), value); }
+            get { return BackingStore?.Get<bool?>("bluetoothBlocked"); }
+            set { BackingStore?.Set("bluetoothBlocked", value); }
         }
         /// <summary>Indicates whether or not to disable the use of the camera.</summary>
         public bool? CameraBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(CameraBlocked)); }
-            set { BackingStore?.Set(nameof(CameraBlocked), value); }
+            get { return BackingStore?.Get<bool?>("cameraBlocked"); }
+            set { BackingStore?.Set("cameraBlocked", value); }
         }
         /// <summary>Indicates whether or not the factory reset option in settings is disabled.</summary>
         public bool? FactoryResetBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(FactoryResetBlocked)); }
-            set { BackingStore?.Set(nameof(FactoryResetBlocked), value); }
+            get { return BackingStore?.Get<bool?>("factoryResetBlocked"); }
+            set { BackingStore?.Set("factoryResetBlocked", value); }
         }
         /// <summary>Indicates the minimum length of the password required on the device. Valid values 4 to 16</summary>
         public int? PasswordMinimumLength {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinimumLength)); }
-            set { BackingStore?.Set(nameof(PasswordMinimumLength), value); }
+            get { return BackingStore?.Get<int?>("passwordMinimumLength"); }
+            set { BackingStore?.Set("passwordMinimumLength", value); }
         }
         /// <summary>Minutes of inactivity before the screen times out.</summary>
         public int? PasswordMinutesOfInactivityBeforeScreenTimeout {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinutesOfInactivityBeforeScreenTimeout)); }
-            set { BackingStore?.Set(nameof(PasswordMinutesOfInactivityBeforeScreenTimeout), value); }
+            get { return BackingStore?.Get<int?>("passwordMinutesOfInactivityBeforeScreenTimeout"); }
+            set { BackingStore?.Set("passwordMinutesOfInactivityBeforeScreenTimeout", value); }
         }
         /// <summary>Indicates the minimum password quality required on the device. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.</summary>
         public AndroidDeviceOwnerRequiredPasswordType? PasswordRequiredType {
-            get { return BackingStore?.Get<AndroidDeviceOwnerRequiredPasswordType?>(nameof(PasswordRequiredType)); }
-            set { BackingStore?.Set(nameof(PasswordRequiredType), value); }
+            get { return BackingStore?.Get<AndroidDeviceOwnerRequiredPasswordType?>("passwordRequiredType"); }
+            set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>Indicates the number of times a user can enter an incorrect password before the device is wiped. Valid values 4 to 11</summary>
         public int? PasswordSignInFailureCountBeforeFactoryReset {
-            get { return BackingStore?.Get<int?>(nameof(PasswordSignInFailureCountBeforeFactoryReset)); }
-            set { BackingStore?.Set(nameof(PasswordSignInFailureCountBeforeFactoryReset), value); }
+            get { return BackingStore?.Get<int?>("passwordSignInFailureCountBeforeFactoryReset"); }
+            set { BackingStore?.Set("passwordSignInFailureCountBeforeFactoryReset", value); }
         }
         /// <summary>Indicates whether or not to disable the capability to take screenshots.</summary>
         public bool? ScreenCaptureBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(ScreenCaptureBlocked)); }
-            set { BackingStore?.Set(nameof(ScreenCaptureBlocked), value); }
+            get { return BackingStore?.Get<bool?>("screenCaptureBlocked"); }
+            set { BackingStore?.Set("screenCaptureBlocked", value); }
         }
         /// <summary>Indicates whether or not to block the user from enabling debugging features on the device.</summary>
         public bool? SecurityAllowDebuggingFeatures {
-            get { return BackingStore?.Get<bool?>(nameof(SecurityAllowDebuggingFeatures)); }
-            set { BackingStore?.Set(nameof(SecurityAllowDebuggingFeatures), value); }
+            get { return BackingStore?.Get<bool?>("securityAllowDebuggingFeatures"); }
+            set { BackingStore?.Set("securityAllowDebuggingFeatures", value); }
         }
         /// <summary>Indicates whether or not to block external media.</summary>
         public bool? StorageBlockExternalMedia {
-            get { return BackingStore?.Get<bool?>(nameof(StorageBlockExternalMedia)); }
-            set { BackingStore?.Set(nameof(StorageBlockExternalMedia), value); }
+            get { return BackingStore?.Get<bool?>("storageBlockExternalMedia"); }
+            set { BackingStore?.Set("storageBlockExternalMedia", value); }
         }
         /// <summary>Indicates whether or not to block USB file transfer.</summary>
         public bool? StorageBlockUsbFileTransfer {
-            get { return BackingStore?.Get<bool?>(nameof(StorageBlockUsbFileTransfer)); }
-            set { BackingStore?.Set(nameof(StorageBlockUsbFileTransfer), value); }
+            get { return BackingStore?.Get<bool?>("storageBlockUsbFileTransfer"); }
+            set { BackingStore?.Set("storageBlockUsbFileTransfer", value); }
         }
         /// <summary>Indicates whether or not to block the user from editing the wifi connection settings.</summary>
         public bool? WifiBlockEditConfigurations {
-            get { return BackingStore?.Get<bool?>(nameof(WifiBlockEditConfigurations)); }
-            set { BackingStore?.Set(nameof(WifiBlockEditConfigurations), value); }
+            get { return BackingStore?.Get<bool?>("wifiBlockEditConfigurations"); }
+            set { BackingStore?.Set("wifiBlockEditConfigurations", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

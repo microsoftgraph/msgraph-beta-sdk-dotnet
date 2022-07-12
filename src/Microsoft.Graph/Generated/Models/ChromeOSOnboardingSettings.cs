@@ -8,23 +8,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class ChromeOSOnboardingSettings : Entity, IParsable {
         /// <summary>The ChromebookTenant&apos;s LastDirectorySyncDateTime</summary>
         public DateTimeOffset? LastDirectorySyncDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastDirectorySyncDateTime)); }
-            set { BackingStore?.Set(nameof(LastDirectorySyncDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastDirectorySyncDateTime"); }
+            set { BackingStore?.Set("lastDirectorySyncDateTime", value); }
         }
         /// <summary>The ChromebookTenant&apos;s LastModifiedDateTime</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The ChromebookTenant&apos;s OnboardingStatus. Possible values are: unknown, inprogress, onboarded, failed, offboarding, unknownFutureValue.</summary>
+        /// <summary>The onboarding status of the tenant.</summary>
         public Microsoft.Graph.Beta.Models.OnboardingStatus? OnboardingStatus {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnboardingStatus?>(nameof(OnboardingStatus)); }
-            set { BackingStore?.Set(nameof(OnboardingStatus), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnboardingStatus?>("onboardingStatus"); }
+            set { BackingStore?.Set("onboardingStatus", value); }
         }
         /// <summary>The ChromebookTenant&apos;s OwnerUserPrincipalName</summary>
         public string OwnerUserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(OwnerUserPrincipalName)); }
-            set { BackingStore?.Set(nameof(OwnerUserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("ownerUserPrincipalName"); }
+            set { BackingStore?.Set("ownerUserPrincipalName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

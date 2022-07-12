@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item.Tasks.Item.AttachmentS
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get content for the navigation property attachmentSessions from users
+        /// The content streams that are uploaded.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ContentRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item.Tasks.Item.AttachmentS
             return requestInfo;
         }
         /// <summary>
-        /// Update content for the navigation property attachmentSessions in users
+        /// The content streams that are uploaded.
         /// <param name="body">Binary request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item.Tasks.Item.AttachmentS
             return requestInfo;
         }
         /// <summary>
-        /// Get content for the navigation property attachmentSessions from users
+        /// The content streams that are uploaded.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item.Tasks.Item.AttachmentS
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update content for the navigation property attachmentSessions in users
+        /// The content streams that are uploaded.
         /// <param name="body">Binary request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

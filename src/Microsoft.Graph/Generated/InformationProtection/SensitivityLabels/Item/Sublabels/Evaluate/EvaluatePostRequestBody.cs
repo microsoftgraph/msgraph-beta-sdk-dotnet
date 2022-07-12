@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Beta.InformationProtection.SensitivityLabels.Item.Subl
     public class EvaluatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The currentLabel property</summary>
         public Microsoft.Graph.Beta.Models.CurrentLabel CurrentLabel {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CurrentLabel>(nameof(CurrentLabel)); }
-            set { BackingStore?.Set(nameof(CurrentLabel), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CurrentLabel>("currentLabel"); }
+            set { BackingStore?.Set("currentLabel", value); }
         }
         /// <summary>The discoveredSensitiveTypes property</summary>
         public List<DiscoveredSensitiveType> DiscoveredSensitiveTypes {
-            get { return BackingStore?.Get<List<DiscoveredSensitiveType>>(nameof(DiscoveredSensitiveTypes)); }
-            set { BackingStore?.Set(nameof(DiscoveredSensitiveTypes), value); }
+            get { return BackingStore?.Get<List<DiscoveredSensitiveType>>("discoveredSensitiveTypes"); }
+            set { BackingStore?.Set("discoveredSensitiveTypes", value); }
         }
         /// <summary>
         /// Instantiates a new evaluatePostRequestBody and sets the default values.

@@ -5,90 +5,95 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Win32LobApp : MobileLobApp, IParsable {
-        /// <summary>The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.</summary>
+        /// <summary>When TRUE, indicates that uninstall is supported from the company portal for the Windows app (Win32) with an Available assignment. When FALSE, indicates that uninstall is not supported for the Windows app (Win32) with an Available assignment. Default value is FALSE.</summary>
+        public bool? AllowAvailableUninstall {
+            get { return BackingStore?.Get<bool?>("allowAvailableUninstall"); }
+            set { BackingStore?.Set("allowAvailableUninstall", value); }
+        }
+        /// <summary>Contains properties for Windows architecture.</summary>
         public WindowsArchitecture? ApplicableArchitectures {
-            get { return BackingStore?.Get<WindowsArchitecture?>(nameof(ApplicableArchitectures)); }
-            set { BackingStore?.Set(nameof(ApplicableArchitectures), value); }
+            get { return BackingStore?.Get<WindowsArchitecture?>("applicableArchitectures"); }
+            set { BackingStore?.Set("applicableArchitectures", value); }
         }
         /// <summary>The detection rules to detect Win32 Line of Business (LoB) app.</summary>
         public List<Win32LobAppDetection> DetectionRules {
-            get { return BackingStore?.Get<List<Win32LobAppDetection>>(nameof(DetectionRules)); }
-            set { BackingStore?.Set(nameof(DetectionRules), value); }
+            get { return BackingStore?.Get<List<Win32LobAppDetection>>("detectionRules"); }
+            set { BackingStore?.Set("detectionRules", value); }
         }
         /// <summary>The version displayed in the UX for this app.</summary>
         public string DisplayVersion {
-            get { return BackingStore?.Get<string>(nameof(DisplayVersion)); }
-            set { BackingStore?.Set(nameof(DisplayVersion), value); }
+            get { return BackingStore?.Get<string>("displayVersion"); }
+            set { BackingStore?.Set("displayVersion", value); }
         }
         /// <summary>The command line to install this app</summary>
         public string InstallCommandLine {
-            get { return BackingStore?.Get<string>(nameof(InstallCommandLine)); }
-            set { BackingStore?.Set(nameof(InstallCommandLine), value); }
+            get { return BackingStore?.Get<string>("installCommandLine"); }
+            set { BackingStore?.Set("installCommandLine", value); }
         }
         /// <summary>The install experience for this app.</summary>
         public Win32LobAppInstallExperience InstallExperience {
-            get { return BackingStore?.Get<Win32LobAppInstallExperience>(nameof(InstallExperience)); }
-            set { BackingStore?.Set(nameof(InstallExperience), value); }
+            get { return BackingStore?.Get<Win32LobAppInstallExperience>("installExperience"); }
+            set { BackingStore?.Set("installExperience", value); }
         }
         /// <summary>The value for the minimum CPU speed which is required to install this app.</summary>
         public int? MinimumCpuSpeedInMHz {
-            get { return BackingStore?.Get<int?>(nameof(MinimumCpuSpeedInMHz)); }
-            set { BackingStore?.Set(nameof(MinimumCpuSpeedInMHz), value); }
+            get { return BackingStore?.Get<int?>("minimumCpuSpeedInMHz"); }
+            set { BackingStore?.Set("minimumCpuSpeedInMHz", value); }
         }
         /// <summary>The value for the minimum free disk space which is required to install this app.</summary>
         public int? MinimumFreeDiskSpaceInMB {
-            get { return BackingStore?.Get<int?>(nameof(MinimumFreeDiskSpaceInMB)); }
-            set { BackingStore?.Set(nameof(MinimumFreeDiskSpaceInMB), value); }
+            get { return BackingStore?.Get<int?>("minimumFreeDiskSpaceInMB"); }
+            set { BackingStore?.Set("minimumFreeDiskSpaceInMB", value); }
         }
         /// <summary>The value for the minimum physical memory which is required to install this app.</summary>
         public int? MinimumMemoryInMB {
-            get { return BackingStore?.Get<int?>(nameof(MinimumMemoryInMB)); }
-            set { BackingStore?.Set(nameof(MinimumMemoryInMB), value); }
+            get { return BackingStore?.Get<int?>("minimumMemoryInMB"); }
+            set { BackingStore?.Set("minimumMemoryInMB", value); }
         }
         /// <summary>The value for the minimum number of processors which is required to install this app.</summary>
         public int? MinimumNumberOfProcessors {
-            get { return BackingStore?.Get<int?>(nameof(MinimumNumberOfProcessors)); }
-            set { BackingStore?.Set(nameof(MinimumNumberOfProcessors), value); }
+            get { return BackingStore?.Get<int?>("minimumNumberOfProcessors"); }
+            set { BackingStore?.Set("minimumNumberOfProcessors", value); }
         }
         /// <summary>The value for the minimum applicable operating system.</summary>
         public WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem {
-            get { return BackingStore?.Get<WindowsMinimumOperatingSystem>(nameof(MinimumSupportedOperatingSystem)); }
-            set { BackingStore?.Set(nameof(MinimumSupportedOperatingSystem), value); }
+            get { return BackingStore?.Get<WindowsMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
+            set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
         /// <summary>The value for the minimum supported windows release.</summary>
         public string MinimumSupportedWindowsRelease {
-            get { return BackingStore?.Get<string>(nameof(MinimumSupportedWindowsRelease)); }
-            set { BackingStore?.Set(nameof(MinimumSupportedWindowsRelease), value); }
+            get { return BackingStore?.Get<string>("minimumSupportedWindowsRelease"); }
+            set { BackingStore?.Set("minimumSupportedWindowsRelease", value); }
         }
         /// <summary>The MSI details if this Win32 app is an MSI app.</summary>
         public Win32LobAppMsiInformation MsiInformation {
-            get { return BackingStore?.Get<Win32LobAppMsiInformation>(nameof(MsiInformation)); }
-            set { BackingStore?.Set(nameof(MsiInformation), value); }
+            get { return BackingStore?.Get<Win32LobAppMsiInformation>("msiInformation"); }
+            set { BackingStore?.Set("msiInformation", value); }
         }
         /// <summary>The requirement rules to detect Win32 Line of Business (LoB) app.</summary>
         public List<Win32LobAppRequirement> RequirementRules {
-            get { return BackingStore?.Get<List<Win32LobAppRequirement>>(nameof(RequirementRules)); }
-            set { BackingStore?.Set(nameof(RequirementRules), value); }
+            get { return BackingStore?.Get<List<Win32LobAppRequirement>>("requirementRules"); }
+            set { BackingStore?.Set("requirementRules", value); }
         }
         /// <summary>The return codes for post installation behavior.</summary>
         public List<Win32LobAppReturnCode> ReturnCodes {
-            get { return BackingStore?.Get<List<Win32LobAppReturnCode>>(nameof(ReturnCodes)); }
-            set { BackingStore?.Set(nameof(ReturnCodes), value); }
+            get { return BackingStore?.Get<List<Win32LobAppReturnCode>>("returnCodes"); }
+            set { BackingStore?.Set("returnCodes", value); }
         }
         /// <summary>The detection and requirement rules for this app.</summary>
         public List<Win32LobAppRule> Rules {
-            get { return BackingStore?.Get<List<Win32LobAppRule>>(nameof(Rules)); }
-            set { BackingStore?.Set(nameof(Rules), value); }
+            get { return BackingStore?.Get<List<Win32LobAppRule>>("rules"); }
+            set { BackingStore?.Set("rules", value); }
         }
         /// <summary>The relative path of the setup file in the encrypted Win32LobApp package.</summary>
         public string SetupFilePath {
-            get { return BackingStore?.Get<string>(nameof(SetupFilePath)); }
-            set { BackingStore?.Set(nameof(SetupFilePath), value); }
+            get { return BackingStore?.Get<string>("setupFilePath"); }
+            set { BackingStore?.Set("setupFilePath", value); }
         }
         /// <summary>The command line to uninstall this app</summary>
         public string UninstallCommandLine {
-            get { return BackingStore?.Get<string>(nameof(UninstallCommandLine)); }
-            set { BackingStore?.Set(nameof(UninstallCommandLine), value); }
+            get { return BackingStore?.Get<string>("uninstallCommandLine"); }
+            set { BackingStore?.Set("uninstallCommandLine", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -103,6 +108,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"allowAvailableUninstall", n => { AllowAvailableUninstall = n.GetBoolValue(); } },
                 {"applicableArchitectures", n => { ApplicableArchitectures = n.GetEnumValue<WindowsArchitecture>(); } },
                 {"detectionRules", n => { DetectionRules = n.GetCollectionOfObjectValues<Win32LobAppDetection>(Win32LobAppDetection.CreateFromDiscriminatorValue).ToList(); } },
                 {"displayVersion", n => { DisplayVersion = n.GetStringValue(); } },
@@ -129,6 +135,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteBoolValue("allowAvailableUninstall", AllowAvailableUninstall);
             writer.WriteEnumValue<WindowsArchitecture>("applicableArchitectures", ApplicableArchitectures);
             writer.WriteCollectionOfObjectValues<Win32LobAppDetection>("detectionRules", DetectionRules);
             writer.WriteStringValue("displayVersion", DisplayVersion);

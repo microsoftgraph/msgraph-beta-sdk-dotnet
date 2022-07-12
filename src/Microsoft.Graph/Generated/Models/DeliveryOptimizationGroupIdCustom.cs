@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeliveryOptimizationGroupIdCustom : DeliveryOptimizationGroupIdSource, IParsable {
         /// <summary>Specifies an arbitrary group ID that the device belongs to</summary>
         public string GroupIdCustom {
-            get { return BackingStore?.Get<string>(nameof(GroupIdCustom)); }
-            set { BackingStore?.Set(nameof(GroupIdCustom), value); }
+            get { return BackingStore?.Get<string>("groupIdCustom"); }
+            set { BackingStore?.Set("groupIdCustom", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

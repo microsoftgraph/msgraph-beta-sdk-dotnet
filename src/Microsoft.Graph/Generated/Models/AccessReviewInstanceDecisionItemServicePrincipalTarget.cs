@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessReviewInstanceDecisionItemServicePrincipalTarget : AccessReviewInstanceDecisionItemTarget, IParsable {
         /// <summary>The appId for the service principal entity being reviewed.</summary>
         public string AppId {
-            get { return BackingStore?.Get<string>(nameof(AppId)); }
-            set { BackingStore?.Set(nameof(AppId), value); }
+            get { return BackingStore?.Get<string>("appId"); }
+            set { BackingStore?.Set("appId", value); }
         }
         /// <summary>The display name of the service principal whose access is being reviewed.</summary>
         public string ServicePrincipalDisplayName {
-            get { return BackingStore?.Get<string>(nameof(ServicePrincipalDisplayName)); }
-            set { BackingStore?.Set(nameof(ServicePrincipalDisplayName), value); }
+            get { return BackingStore?.Get<string>("servicePrincipalDisplayName"); }
+            set { BackingStore?.Set("servicePrincipalDisplayName", value); }
         }
         /// <summary>The servicePrincipalId property</summary>
         public string ServicePrincipalId {
-            get { return BackingStore?.Get<string>(nameof(ServicePrincipalId)); }
-            set { BackingStore?.Set(nameof(ServicePrincipalId), value); }
+            get { return BackingStore?.Get<string>("servicePrincipalId"); }
+            set { BackingStore?.Set("servicePrincipalId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

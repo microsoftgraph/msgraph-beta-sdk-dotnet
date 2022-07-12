@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementApplicabilityRuleOsVersion : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Max OS version for Applicability Rule.</summary>
         public string MaxOSVersion {
-            get { return BackingStore?.Get<string>(nameof(MaxOSVersion)); }
-            set { BackingStore?.Set(nameof(MaxOSVersion), value); }
+            get { return BackingStore?.Get<string>("maxOSVersion"); }
+            set { BackingStore?.Set("maxOSVersion", value); }
         }
         /// <summary>Min OS version for Applicability Rule.</summary>
         public string MinOSVersion {
-            get { return BackingStore?.Get<string>(nameof(MinOSVersion)); }
-            set { BackingStore?.Set(nameof(MinOSVersion), value); }
+            get { return BackingStore?.Get<string>("minOSVersion"); }
+            set { BackingStore?.Set("minOSVersion", value); }
         }
         /// <summary>Name for object.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
-        /// <summary>Applicability Rule type. Possible values are: include, exclude.</summary>
+        /// <summary>Supported Applicability rule types for Device Configuration</summary>
         public DeviceManagementApplicabilityRuleType? RuleType {
-            get { return BackingStore?.Get<DeviceManagementApplicabilityRuleType?>(nameof(RuleType)); }
-            set { BackingStore?.Set(nameof(RuleType), value); }
+            get { return BackingStore?.Get<DeviceManagementApplicabilityRuleType?>("ruleType"); }
+            set { BackingStore?.Set("ruleType", value); }
         }
         /// <summary>
         /// Instantiates a new deviceManagementApplicabilityRuleOsVersion and sets the default values.

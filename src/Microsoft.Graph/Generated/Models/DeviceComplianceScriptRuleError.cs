@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceComplianceScriptRuleError : DeviceComplianceScriptError, IParsable {
         /// <summary>Setting name for the rule with error.</summary>
         public string SettingName {
-            get { return BackingStore?.Get<string>(nameof(SettingName)); }
-            set { BackingStore?.Set(nameof(SettingName), value); }
+            get { return BackingStore?.Get<string>("settingName"); }
+            set { BackingStore?.Set("settingName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

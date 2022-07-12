@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class NdesConnector : Entity, IParsable {
         /// <summary>The friendly name of the Ndes Connector.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Last connection time for the Ndes Connector</summary>
         public DateTimeOffset? LastConnectionDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastConnectionDateTime)); }
-            set { BackingStore?.Set(nameof(LastConnectionDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastConnectionDateTime"); }
+            set { BackingStore?.Set("lastConnectionDateTime", value); }
         }
-        /// <summary>Ndes Connector Status. Possible values are: none, active, inactive.</summary>
+        /// <summary>The current status of the Ndes Connector.</summary>
         public NdesConnectorState? State {
-            get { return BackingStore?.Get<NdesConnectorState?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<NdesConnectorState?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

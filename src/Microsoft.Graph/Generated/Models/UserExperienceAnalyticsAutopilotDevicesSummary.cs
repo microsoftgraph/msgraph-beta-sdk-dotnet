@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsAutopilotDevicesSummary : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The count of intune devices that are not autopilot registerd.</summary>
         public int? DevicesNotAutopilotRegistered {
-            get { return BackingStore?.Get<int?>(nameof(DevicesNotAutopilotRegistered)); }
-            set { BackingStore?.Set(nameof(DevicesNotAutopilotRegistered), value); }
+            get { return BackingStore?.Get<int?>("devicesNotAutopilotRegistered"); }
+            set { BackingStore?.Set("devicesNotAutopilotRegistered", value); }
         }
         /// <summary>The count of intune devices not autopilot profile assigned.</summary>
         public int? DevicesWithoutAutopilotProfileAssigned {
-            get { return BackingStore?.Get<int?>(nameof(DevicesWithoutAutopilotProfileAssigned)); }
-            set { BackingStore?.Set(nameof(DevicesWithoutAutopilotProfileAssigned), value); }
+            get { return BackingStore?.Get<int?>("devicesWithoutAutopilotProfileAssigned"); }
+            set { BackingStore?.Set("devicesWithoutAutopilotProfileAssigned", value); }
         }
         /// <summary>The count of windows 10 devices that are Intune and Comanaged.</summary>
         public int? TotalWindows10DevicesWithoutTenantAttached {
-            get { return BackingStore?.Get<int?>(nameof(TotalWindows10DevicesWithoutTenantAttached)); }
-            set { BackingStore?.Set(nameof(TotalWindows10DevicesWithoutTenantAttached), value); }
+            get { return BackingStore?.Get<int?>("totalWindows10DevicesWithoutTenantAttached"); }
+            set { BackingStore?.Set("totalWindows10DevicesWithoutTenantAttached", value); }
         }
         /// <summary>
         /// Instantiates a new userExperienceAnalyticsAutopilotDevicesSummary and sets the default values.

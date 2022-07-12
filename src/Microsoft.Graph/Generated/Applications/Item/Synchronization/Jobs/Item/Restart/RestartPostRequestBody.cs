@@ -10,15 +10,15 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Resta
     public class RestartPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The criteria property</summary>
         public SynchronizationJobRestartCriteria Criteria {
-            get { return BackingStore?.Get<SynchronizationJobRestartCriteria>(nameof(Criteria)); }
-            set { BackingStore?.Set(nameof(Criteria), value); }
+            get { return BackingStore?.Get<SynchronizationJobRestartCriteria>("criteria"); }
+            set { BackingStore?.Set("criteria", value); }
         }
         /// <summary>
         /// Instantiates a new restartPostRequestBody and sets the default values.

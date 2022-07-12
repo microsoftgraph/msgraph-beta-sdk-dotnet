@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Beta.Models {
     public class TargetPolicyEndpoints : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Use to filter the notification distribution to a specific platform or platforms. Valid values are Windows, iOS, Android and WebPush. By default, all push endpoint types (Windows, iOS, Android and WebPush) are enabled.</summary>
         public List<string> PlatformTypes {
-            get { return BackingStore?.Get<List<string>>(nameof(PlatformTypes)); }
-            set { BackingStore?.Set(nameof(PlatformTypes), value); }
+            get { return BackingStore?.Get<List<string>>("platformTypes"); }
+            set { BackingStore?.Set("platformTypes", value); }
         }
         /// <summary>
         /// Instantiates a new targetPolicyEndpoints and sets the default values.

@@ -8,60 +8,60 @@ namespace Microsoft.Graph.Beta.Models {
     public class MatchingLabel : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The applicationMode property</summary>
         public Microsoft.Graph.Beta.Models.ApplicationMode? ApplicationMode {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ApplicationMode?>(nameof(ApplicationMode)); }
-            set { BackingStore?.Set(nameof(ApplicationMode), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ApplicationMode?>("applicationMode"); }
+            set { BackingStore?.Set("applicationMode", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The description property</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The displayName property</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The id property</summary>
         public string Id {
-            get { return BackingStore?.Get<string>(nameof(Id)); }
-            set { BackingStore?.Set(nameof(Id), value); }
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
         }
         /// <summary>The isEndpointProtectionEnabled property</summary>
         public bool? IsEndpointProtectionEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsEndpointProtectionEnabled)); }
-            set { BackingStore?.Set(nameof(IsEndpointProtectionEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isEndpointProtectionEnabled"); }
+            set { BackingStore?.Set("isEndpointProtectionEnabled", value); }
         }
         /// <summary>The labelActions property</summary>
         public List<LabelActionBase> LabelActions {
-            get { return BackingStore?.Get<List<LabelActionBase>>(nameof(LabelActions)); }
-            set { BackingStore?.Set(nameof(LabelActions), value); }
+            get { return BackingStore?.Get<List<LabelActionBase>>("labelActions"); }
+            set { BackingStore?.Set("labelActions", value); }
         }
         /// <summary>The name property</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The policyTip property</summary>
         public string PolicyTip {
-            get { return BackingStore?.Get<string>(nameof(PolicyTip)); }
-            set { BackingStore?.Set(nameof(PolicyTip), value); }
+            get { return BackingStore?.Get<string>("policyTip"); }
+            set { BackingStore?.Set("policyTip", value); }
         }
         /// <summary>The priority property</summary>
         public int? Priority {
-            get { return BackingStore?.Get<int?>(nameof(Priority)); }
-            set { BackingStore?.Set(nameof(Priority), value); }
+            get { return BackingStore?.Get<int?>("priority"); }
+            set { BackingStore?.Set("priority", value); }
         }
         /// <summary>The toolTip property</summary>
         public string ToolTip {
-            get { return BackingStore?.Get<string>(nameof(ToolTip)); }
-            set { BackingStore?.Set(nameof(ToolTip), value); }
+            get { return BackingStore?.Get<string>("toolTip"); }
+            set { BackingStore?.Set("toolTip", value); }
         }
         /// <summary>
         /// Instantiates a new matchingLabel and sets the default values.

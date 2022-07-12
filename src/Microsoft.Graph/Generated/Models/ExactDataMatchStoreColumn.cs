@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class ExactDataMatchStoreColumn : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The ignoredDelimiters property</summary>
         public List<string> IgnoredDelimiters {
-            get { return BackingStore?.Get<List<string>>(nameof(IgnoredDelimiters)); }
-            set { BackingStore?.Set(nameof(IgnoredDelimiters), value); }
+            get { return BackingStore?.Get<List<string>>("ignoredDelimiters"); }
+            set { BackingStore?.Set("ignoredDelimiters", value); }
         }
         /// <summary>The isCaseInsensitive property</summary>
         public bool? IsCaseInsensitive {
-            get { return BackingStore?.Get<bool?>(nameof(IsCaseInsensitive)); }
-            set { BackingStore?.Set(nameof(IsCaseInsensitive), value); }
+            get { return BackingStore?.Get<bool?>("isCaseInsensitive"); }
+            set { BackingStore?.Set("isCaseInsensitive", value); }
         }
         /// <summary>The isSearchable property</summary>
         public bool? IsSearchable {
-            get { return BackingStore?.Get<bool?>(nameof(IsSearchable)); }
-            set { BackingStore?.Set(nameof(IsSearchable), value); }
+            get { return BackingStore?.Get<bool?>("isSearchable"); }
+            set { BackingStore?.Set("isSearchable", value); }
         }
         /// <summary>The name property</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>
         /// Instantiates a new exactDataMatchStoreColumn and sets the default values.

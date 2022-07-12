@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class VisualProperties : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The body of a visual user notification. Body is optional.</summary>
         public string Body {
-            get { return BackingStore?.Get<string>(nameof(Body)); }
-            set { BackingStore?.Set(nameof(Body), value); }
+            get { return BackingStore?.Get<string>("body"); }
+            set { BackingStore?.Set("body", value); }
         }
         /// <summary>The title of a visual user notification. This field is required for visual notification payloads.</summary>
         public string Title {
-            get { return BackingStore?.Get<string>(nameof(Title)); }
-            set { BackingStore?.Set(nameof(Title), value); }
+            get { return BackingStore?.Get<string>("title"); }
+            set { BackingStore?.Set("title", value); }
         }
         /// <summary>
         /// Instantiates a new visualProperties and sets the default values.

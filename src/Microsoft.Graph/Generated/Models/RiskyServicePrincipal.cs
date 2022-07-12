@@ -8,53 +8,59 @@ namespace Microsoft.Graph.Beta.Models {
     public class RiskyServicePrincipal : Entity, IParsable {
         /// <summary>true if the service principal account is enabled; otherwise, false.</summary>
         public bool? AccountEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(AccountEnabled)); }
-            set { BackingStore?.Set(nameof(AccountEnabled), value); }
+            get { return BackingStore?.Get<bool?>("accountEnabled"); }
+            set { BackingStore?.Set("accountEnabled", value); }
         }
         /// <summary>The globally unique identifier for the associated application (its appId property), if any.</summary>
         public string AppId {
-            get { return BackingStore?.Get<string>(nameof(AppId)); }
-            set { BackingStore?.Set(nameof(AppId), value); }
+            get { return BackingStore?.Get<string>("appId"); }
+            set { BackingStore?.Set("appId", value); }
         }
         /// <summary>The display name for the service principal.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Represents the risk history of Azure AD service principals.</summary>
         public List<RiskyServicePrincipalHistoryItem> History {
-            get { return BackingStore?.Get<List<RiskyServicePrincipalHistoryItem>>(nameof(History)); }
-            set { BackingStore?.Set(nameof(History), value); }
+            get { return BackingStore?.Get<List<RiskyServicePrincipalHistoryItem>>("history"); }
+            set { BackingStore?.Set("history", value); }
         }
         /// <summary>Indicates whether Azure AD is currently processing the service principal&apos;s risky state.</summary>
         public bool? IsProcessing {
-            get { return BackingStore?.Get<bool?>(nameof(IsProcessing)); }
-            set { BackingStore?.Set(nameof(IsProcessing), value); }
+            get { return BackingStore?.Get<bool?>("isProcessing"); }
+            set { BackingStore?.Set("isProcessing", value); }
         }
         /// <summary>Details of the detected risk. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden,  adminConfirmedUserCompromised, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.</summary>
         public Microsoft.Graph.Beta.Models.RiskDetail? RiskDetail {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskDetail?>(nameof(RiskDetail)); }
-            set { BackingStore?.Set(nameof(RiskDetail), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskDetail?>("riskDetail"); }
+            set { BackingStore?.Set("riskDetail", value); }
         }
         /// <summary>The date and time that the risk state was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z. Supports $filter (eq).</summary>
         public DateTimeOffset? RiskLastUpdatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(RiskLastUpdatedDateTime)); }
-            set { BackingStore?.Set(nameof(RiskLastUpdatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("riskLastUpdatedDateTime"); }
+            set { BackingStore?.Set("riskLastUpdatedDateTime", value); }
         }
         /// <summary>Level of the detected risky workload identity. The possible values are: low, medium, high, hidden, none, unknownFutureValue. Supports $filter (eq).</summary>
         public Microsoft.Graph.Beta.Models.RiskLevel? RiskLevel {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskLevel?>(nameof(RiskLevel)); }
-            set { BackingStore?.Set(nameof(RiskLevel), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskLevel?>("riskLevel"); }
+            set { BackingStore?.Set("riskLevel", value); }
         }
         /// <summary>State of the service principal&apos;s risk. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.RiskState? RiskState {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskState?>(nameof(RiskState)); }
-            set { BackingStore?.Set(nameof(RiskState), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskState?>("riskState"); }
+            set { BackingStore?.Set("riskState", value); }
         }
         /// <summary>Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Azure AD internally and is inherited from servicePrincipal.</summary>
         public string ServicePrincipalType {
-            get { return BackingStore?.Get<string>(nameof(ServicePrincipalType)); }
-            set { BackingStore?.Set(nameof(ServicePrincipalType), value); }
+            get { return BackingStore?.Get<string>("servicePrincipalType"); }
+            set { BackingStore?.Set("servicePrincipalType", value); }
+        }
+        /// <summary>
+        /// Instantiates a new RiskyServicePrincipal and sets the default values.
+        /// </summary>
+        public RiskyServicePrincipal() : base() {
+            Type = "#microsoft.graph.riskyServicePrincipal";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

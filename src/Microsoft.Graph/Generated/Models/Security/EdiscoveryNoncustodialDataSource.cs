@@ -4,17 +4,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class EdiscoveryNoncustodialDataSource : DataSourceContainer, IParsable {
         /// <summary>User source or SharePoint site data source as non-custodial data source.</summary>
         public Microsoft.Graph.Beta.Models.Security.DataSource DataSource {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DataSource>(nameof(DataSource)); }
-            set { BackingStore?.Set(nameof(DataSource), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DataSource>("dataSource"); }
+            set { BackingStore?.Set("dataSource", value); }
         }
         /// <summary>Operation entity that represents the latest indexing for the non-custodial data source.</summary>
         public EdiscoveryIndexOperation LastIndexOperation {
-            get { return BackingStore?.Get<EdiscoveryIndexOperation>(nameof(LastIndexOperation)); }
-            set { BackingStore?.Set(nameof(LastIndexOperation), value); }
+            get { return BackingStore?.Get<EdiscoveryIndexOperation>("lastIndexOperation"); }
+            set { BackingStore?.Set("lastIndexOperation", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

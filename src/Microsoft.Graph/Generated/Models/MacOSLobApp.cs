@@ -7,53 +7,53 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOSLobApp : MobileLobApp, IParsable {
         /// <summary>The build number of MacOS Line of Business (LoB) app.</summary>
         public string BuildNumber {
-            get { return BackingStore?.Get<string>(nameof(BuildNumber)); }
-            set { BackingStore?.Set(nameof(BuildNumber), value); }
+            get { return BackingStore?.Get<string>("buildNumber"); }
+            set { BackingStore?.Set("buildNumber", value); }
         }
         /// <summary>The bundle id.</summary>
         public string BundleId {
-            get { return BackingStore?.Get<string>(nameof(BundleId)); }
-            set { BackingStore?.Set(nameof(BundleId), value); }
+            get { return BackingStore?.Get<string>("bundleId"); }
+            set { BackingStore?.Set("bundleId", value); }
         }
         /// <summary>The app list in this bundle package</summary>
         public List<MacOSLobChildApp> ChildApps {
-            get { return BackingStore?.Get<List<MacOSLobChildApp>>(nameof(ChildApps)); }
-            set { BackingStore?.Set(nameof(ChildApps), value); }
+            get { return BackingStore?.Get<List<MacOSLobChildApp>>("childApps"); }
+            set { BackingStore?.Set("childApps", value); }
         }
         /// <summary>The identity version.</summary>
         public string IdentityVersion {
-            get { return BackingStore?.Get<string>(nameof(IdentityVersion)); }
-            set { BackingStore?.Set(nameof(IdentityVersion), value); }
+            get { return BackingStore?.Get<string>("identityVersion"); }
+            set { BackingStore?.Set("identityVersion", value); }
         }
         /// <summary>A boolean to control whether the app&apos;s version will be used to detect the app after it is installed on a device. Set this to true for macOS Line of Business (LoB) apps that use a self update feature.</summary>
         public bool? IgnoreVersionDetection {
-            get { return BackingStore?.Get<bool?>(nameof(IgnoreVersionDetection)); }
-            set { BackingStore?.Set(nameof(IgnoreVersionDetection), value); }
+            get { return BackingStore?.Get<bool?>("ignoreVersionDetection"); }
+            set { BackingStore?.Set("ignoreVersionDetection", value); }
         }
         /// <summary>A boolean to control whether the app will be installed as managed (requires macOS 11.0 and other PKG restrictions).</summary>
         public bool? InstallAsManaged {
-            get { return BackingStore?.Get<bool?>(nameof(InstallAsManaged)); }
-            set { BackingStore?.Set(nameof(InstallAsManaged), value); }
+            get { return BackingStore?.Get<bool?>("installAsManaged"); }
+            set { BackingStore?.Set("installAsManaged", value); }
         }
         /// <summary>The MD5 hash codes</summary>
         public List<string> Md5Hash {
-            get { return BackingStore?.Get<List<string>>(nameof(Md5Hash)); }
-            set { BackingStore?.Set(nameof(Md5Hash), value); }
+            get { return BackingStore?.Get<List<string>>("md5Hash"); }
+            set { BackingStore?.Set("md5Hash", value); }
         }
         /// <summary>The chunk size for MD5 hash</summary>
         public int? Md5HashChunkSize {
-            get { return BackingStore?.Get<int?>(nameof(Md5HashChunkSize)); }
-            set { BackingStore?.Set(nameof(Md5HashChunkSize), value); }
+            get { return BackingStore?.Get<int?>("md5HashChunkSize"); }
+            set { BackingStore?.Set("md5HashChunkSize", value); }
         }
         /// <summary>The value for the minimum applicable operating system.</summary>
         public MacOSMinimumOperatingSystem MinimumSupportedOperatingSystem {
-            get { return BackingStore?.Get<MacOSMinimumOperatingSystem>(nameof(MinimumSupportedOperatingSystem)); }
-            set { BackingStore?.Set(nameof(MinimumSupportedOperatingSystem), value); }
+            get { return BackingStore?.Get<MacOSMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
+            set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
         /// <summary>The version number of MacOS Line of Business (LoB) app.</summary>
         public string VersionNumber {
-            get { return BackingStore?.Get<string>(nameof(VersionNumber)); }
-            set { BackingStore?.Set(nameof(VersionNumber), value); }
+            get { return BackingStore?.Get<string>("versionNumber"); }
+            set { BackingStore?.Set("versionNumber", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

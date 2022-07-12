@@ -8,48 +8,48 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosUpdateConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Active Hours End (active hours mean the time window when updates install should not happen)</summary>
         public Time? ActiveHoursEnd {
-            get { return BackingStore?.Get<Time?>(nameof(ActiveHoursEnd)); }
-            set { BackingStore?.Set(nameof(ActiveHoursEnd), value); }
+            get { return BackingStore?.Get<Time?>("activeHoursEnd"); }
+            set { BackingStore?.Set("activeHoursEnd", value); }
         }
         /// <summary>Active Hours Start (active hours mean the time window when updates install should not happen)</summary>
         public Time? ActiveHoursStart {
-            get { return BackingStore?.Get<Time?>(nameof(ActiveHoursStart)); }
-            set { BackingStore?.Set(nameof(ActiveHoursStart), value); }
+            get { return BackingStore?.Get<Time?>("activeHoursStart"); }
+            set { BackingStore?.Set("activeHoursStart", value); }
         }
         /// <summary>If update schedule type is set to use time window scheduling, custom time windows when updates will be scheduled. This collection can contain a maximum of 20 elements.</summary>
         public List<CustomUpdateTimeWindow> CustomUpdateTimeWindows {
-            get { return BackingStore?.Get<List<CustomUpdateTimeWindow>>(nameof(CustomUpdateTimeWindows)); }
-            set { BackingStore?.Set(nameof(CustomUpdateTimeWindows), value); }
+            get { return BackingStore?.Get<List<CustomUpdateTimeWindow>>("customUpdateTimeWindows"); }
+            set { BackingStore?.Set("customUpdateTimeWindows", value); }
         }
         /// <summary>If left unspecified, devices will update to the latest version of the OS.</summary>
         public string DesiredOsVersion {
-            get { return BackingStore?.Get<string>(nameof(DesiredOsVersion)); }
-            set { BackingStore?.Set(nameof(DesiredOsVersion), value); }
+            get { return BackingStore?.Get<string>("desiredOsVersion"); }
+            set { BackingStore?.Set("desiredOsVersion", value); }
         }
         /// <summary>Days before software updates are visible to iOS devices ranging from 0 to 90 inclusive</summary>
         public int? EnforcedSoftwareUpdateDelayInDays {
-            get { return BackingStore?.Get<int?>(nameof(EnforcedSoftwareUpdateDelayInDays)); }
-            set { BackingStore?.Set(nameof(EnforcedSoftwareUpdateDelayInDays), value); }
+            get { return BackingStore?.Get<int?>("enforcedSoftwareUpdateDelayInDays"); }
+            set { BackingStore?.Set("enforcedSoftwareUpdateDelayInDays", value); }
         }
         /// <summary>Is setting enabled in UI</summary>
         public bool? IsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
-            set { BackingStore?.Set(nameof(IsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isEnabled"); }
+            set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.</summary>
         public List<string> ScheduledInstallDays {
-            get { return BackingStore?.Get<List<string>>(nameof(ScheduledInstallDays)); }
-            set { BackingStore?.Set(nameof(ScheduledInstallDays), value); }
+            get { return BackingStore?.Get<List<string>>("scheduledInstallDays"); }
+            set { BackingStore?.Set("scheduledInstallDays", value); }
         }
-        /// <summary>Update schedule type. Possible values are: updateOutsideOfActiveHours, alwaysUpdate, updateDuringTimeWindows, updateOutsideOfTimeWindows.</summary>
+        /// <summary>Update schedule type for iOS software updates.</summary>
         public IosSoftwareUpdateScheduleType? UpdateScheduleType {
-            get { return BackingStore?.Get<IosSoftwareUpdateScheduleType?>(nameof(UpdateScheduleType)); }
-            set { BackingStore?.Set(nameof(UpdateScheduleType), value); }
+            get { return BackingStore?.Get<IosSoftwareUpdateScheduleType?>("updateScheduleType"); }
+            set { BackingStore?.Set("updateScheduleType", value); }
         }
         /// <summary>UTC Time Offset indicated in minutes</summary>
         public int? UtcTimeOffsetInMinutes {
-            get { return BackingStore?.Get<int?>(nameof(UtcTimeOffsetInMinutes)); }
-            set { BackingStore?.Set(nameof(UtcTimeOffsetInMinutes), value); }
+            get { return BackingStore?.Get<int?>("utcTimeOffsetInMinutes"); }
+            set { BackingStore?.Set("utcTimeOffsetInMinutes", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

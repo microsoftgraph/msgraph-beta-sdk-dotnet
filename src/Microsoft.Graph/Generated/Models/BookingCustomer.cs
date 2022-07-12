@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class BookingCustomer : BookingPerson, IParsable {
         /// <summary>Addresses associated with the customer, including home, business and other addresses.</summary>
         public List<PhysicalAddress> Addresses {
-            get { return BackingStore?.Get<List<PhysicalAddress>>(nameof(Addresses)); }
-            set { BackingStore?.Set(nameof(Addresses), value); }
+            get { return BackingStore?.Get<List<PhysicalAddress>>("addresses"); }
+            set { BackingStore?.Set("addresses", value); }
         }
         /// <summary>Phone numbers associated with the customer, including home, business and mobile numbers.</summary>
         public List<Phone> Phones {
-            get { return BackingStore?.Get<List<Phone>>(nameof(Phones)); }
-            set { BackingStore?.Set(nameof(Phones), value); }
+            get { return BackingStore?.Get<List<Phone>>("phones"); }
+            set { BackingStore?.Set("phones", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

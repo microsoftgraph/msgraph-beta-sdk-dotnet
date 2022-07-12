@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class AppManagementPolicy : PolicyBase, IParsable {
         /// <summary>The appliesTo property</summary>
         public List<DirectoryObject> AppliesTo {
-            get { return BackingStore?.Get<List<DirectoryObject>>(nameof(AppliesTo)); }
-            set { BackingStore?.Set(nameof(AppliesTo), value); }
+            get { return BackingStore?.Get<List<DirectoryObject>>("appliesTo"); }
+            set { BackingStore?.Set("appliesTo", value); }
         }
         /// <summary>The isEnabled property</summary>
         public bool? IsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
-            set { BackingStore?.Set(nameof(IsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isEnabled"); }
+            set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>The restrictions property</summary>
         public AppManagementConfiguration Restrictions {
-            get { return BackingStore?.Get<AppManagementConfiguration>(nameof(Restrictions)); }
-            set { BackingStore?.Set(nameof(Restrictions), value); }
+            get { return BackingStore?.Get<AppManagementConfiguration>("restrictions"); }
+            set { BackingStore?.Set("restrictions", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

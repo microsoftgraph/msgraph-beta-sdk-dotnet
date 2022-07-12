@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class AdminConsent : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The admin consent state of sharing user and device data to Apple. Possible values are: notConfigured, granted, notGranted.</summary>
+        /// <summary>Admin consent state.</summary>
         public AdminConsentState? ShareAPNSData {
-            get { return BackingStore?.Get<AdminConsentState?>(nameof(ShareAPNSData)); }
-            set { BackingStore?.Set(nameof(ShareAPNSData), value); }
+            get { return BackingStore?.Get<AdminConsentState?>("shareAPNSData"); }
+            set { BackingStore?.Set("shareAPNSData", value); }
         }
-        /// <summary>Gets or sets the admin consent for sharing User experience analytics data. Possible values are: notConfigured, granted, notGranted.</summary>
+        /// <summary>Admin consent state.</summary>
         public AdminConsentState? ShareUserExperienceAnalyticsData {
-            get { return BackingStore?.Get<AdminConsentState?>(nameof(ShareUserExperienceAnalyticsData)); }
-            set { BackingStore?.Set(nameof(ShareUserExperienceAnalyticsData), value); }
+            get { return BackingStore?.Get<AdminConsentState?>("shareUserExperienceAnalyticsData"); }
+            set { BackingStore?.Set("shareUserExperienceAnalyticsData", value); }
         }
         /// <summary>
         /// Instantiates a new adminConsent and sets the default values.

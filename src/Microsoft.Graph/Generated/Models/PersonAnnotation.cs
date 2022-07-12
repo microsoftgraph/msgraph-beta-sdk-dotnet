@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class PersonAnnotation : ItemFacet, IParsable {
         /// <summary>Contains the detail of the note itself.</summary>
         public ItemBody Detail {
-            get { return BackingStore?.Get<ItemBody>(nameof(Detail)); }
-            set { BackingStore?.Set(nameof(Detail), value); }
+            get { return BackingStore?.Get<ItemBody>("detail"); }
+            set { BackingStore?.Set("detail", value); }
         }
         /// <summary>Contains a friendly name for the note.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The thumbnailUrl property</summary>
         public string ThumbnailUrl {
-            get { return BackingStore?.Get<string>(nameof(ThumbnailUrl)); }
-            set { BackingStore?.Set(nameof(ThumbnailUrl), value); }
+            get { return BackingStore?.Get<string>("thumbnailUrl"); }
+            set { BackingStore?.Set("thumbnailUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

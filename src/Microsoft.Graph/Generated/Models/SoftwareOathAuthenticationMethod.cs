@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class SoftwareOathAuthenticationMethod : AuthenticationMethod, IParsable {
         /// <summary>The secret key of the method. Always returns null.</summary>
         public string SecretKey {
-            get { return BackingStore?.Get<string>(nameof(SecretKey)); }
-            set { BackingStore?.Set(nameof(SecretKey), value); }
+            get { return BackingStore?.Get<string>("secretKey"); }
+            set { BackingStore?.Set("secretKey", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

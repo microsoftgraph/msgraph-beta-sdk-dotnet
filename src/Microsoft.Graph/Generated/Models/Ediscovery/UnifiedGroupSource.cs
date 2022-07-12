@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
     public class UnifiedGroupSource : DataSource, IParsable {
         /// <summary>The group property</summary>
         public Microsoft.Graph.Beta.Models.Group Group {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Group>(nameof(Group)); }
-            set { BackingStore?.Set(nameof(Group), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Group>("group"); }
+            set { BackingStore?.Set("group", value); }
         }
         /// <summary>Specifies which sources are included in this group. Possible values are: mailbox, site.</summary>
         public SourceType? IncludedSources {
-            get { return BackingStore?.Get<SourceType?>(nameof(IncludedSources)); }
-            set { BackingStore?.Set(nameof(IncludedSources), value); }
+            get { return BackingStore?.Get<SourceType?>("includedSources"); }
+            set { BackingStore?.Set("includedSources", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

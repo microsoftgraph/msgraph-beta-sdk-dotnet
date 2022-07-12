@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class DeploymentState : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies the reasons the deployment has its state value. Read-only.</summary>
         public List<DeploymentStateReason> Reasons {
-            get { return BackingStore?.Get<List<DeploymentStateReason>>(nameof(Reasons)); }
-            set { BackingStore?.Set(nameof(Reasons), value); }
+            get { return BackingStore?.Get<List<DeploymentStateReason>>("reasons"); }
+            set { BackingStore?.Set("reasons", value); }
         }
-        /// <summary>Specifies the requested state of the deployment. Supports a subset of the values for requestedDeploymentStateValue. Possible values are: none, paused, unknownFutureValue.</summary>
+        /// <summary>The requestedValue property</summary>
         public RequestedDeploymentStateValue? RequestedValue {
-            get { return BackingStore?.Get<RequestedDeploymentStateValue?>(nameof(RequestedValue)); }
-            set { BackingStore?.Set(nameof(RequestedValue), value); }
+            get { return BackingStore?.Get<RequestedDeploymentStateValue?>("requestedValue"); }
+            set { BackingStore?.Set("requestedValue", value); }
         }
-        /// <summary>Specifies the state of the deployment. Supports a subset of the values for deploymentStateValue. Possible values are: scheduled, offering, paused, unknownFutureValue. Read-only.</summary>
+        /// <summary>The value property</summary>
         public DeploymentStateValue? Value {
-            get { return BackingStore?.Get<DeploymentStateValue?>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<DeploymentStateValue?>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Instantiates a new deploymentState and sets the default values.

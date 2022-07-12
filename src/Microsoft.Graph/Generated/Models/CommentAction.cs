@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class CommentAction : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>If true, this activity was a reply to an existing comment thread.</summary>
         public bool? IsReply {
-            get { return BackingStore?.Get<bool?>(nameof(IsReply)); }
-            set { BackingStore?.Set(nameof(IsReply), value); }
+            get { return BackingStore?.Get<bool?>("isReply"); }
+            set { BackingStore?.Set("isReply", value); }
         }
         /// <summary>The identity of the user who started the comment thread.</summary>
         public IdentitySet ParentAuthor {
-            get { return BackingStore?.Get<IdentitySet>(nameof(ParentAuthor)); }
-            set { BackingStore?.Set(nameof(ParentAuthor), value); }
+            get { return BackingStore?.Get<IdentitySet>("parentAuthor"); }
+            set { BackingStore?.Set("parentAuthor", value); }
         }
         /// <summary>The identities of the users participating in this comment thread.</summary>
         public List<IdentitySet> Participants {
-            get { return BackingStore?.Get<List<IdentitySet>>(nameof(Participants)); }
-            set { BackingStore?.Set(nameof(Participants), value); }
+            get { return BackingStore?.Get<List<IdentitySet>>("participants"); }
+            set { BackingStore?.Set("participants", value); }
         }
         /// <summary>
         /// Instantiates a new commentAction and sets the default values.

@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class ExactMatchDataStore : ExactMatchDataStoreBase, IParsable {
         /// <summary>The sessions property</summary>
         public List<ExactMatchSession> Sessions {
-            get { return BackingStore?.Get<List<ExactMatchSession>>(nameof(Sessions)); }
-            set { BackingStore?.Set(nameof(Sessions), value); }
+            get { return BackingStore?.Get<List<ExactMatchSession>>("sessions"); }
+            set { BackingStore?.Set("sessions", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

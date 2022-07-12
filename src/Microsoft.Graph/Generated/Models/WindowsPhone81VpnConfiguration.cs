@@ -5,35 +5,35 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsPhone81VpnConfiguration : Windows81VpnConfiguration, IParsable {
-        /// <summary>Authentication method. Possible values are: certificate, usernameAndPassword, sharedSecret, derivedCredential, azureAD.</summary>
+        /// <summary>VPN Authentication Method.</summary>
         public VpnAuthenticationMethod? AuthenticationMethod {
-            get { return BackingStore?.Get<VpnAuthenticationMethod?>(nameof(AuthenticationMethod)); }
-            set { BackingStore?.Set(nameof(AuthenticationMethod), value); }
+            get { return BackingStore?.Get<VpnAuthenticationMethod?>("authenticationMethod"); }
+            set { BackingStore?.Set("authenticationMethod", value); }
         }
         /// <summary>Bypass VPN on company Wi-Fi.</summary>
         public bool? BypassVpnOnCompanyWifi {
-            get { return BackingStore?.Get<bool?>(nameof(BypassVpnOnCompanyWifi)); }
-            set { BackingStore?.Set(nameof(BypassVpnOnCompanyWifi), value); }
+            get { return BackingStore?.Get<bool?>("bypassVpnOnCompanyWifi"); }
+            set { BackingStore?.Set("bypassVpnOnCompanyWifi", value); }
         }
         /// <summary>Bypass VPN on home Wi-Fi.</summary>
         public bool? BypassVpnOnHomeWifi {
-            get { return BackingStore?.Get<bool?>(nameof(BypassVpnOnHomeWifi)); }
-            set { BackingStore?.Set(nameof(BypassVpnOnHomeWifi), value); }
+            get { return BackingStore?.Get<bool?>("bypassVpnOnHomeWifi"); }
+            set { BackingStore?.Set("bypassVpnOnHomeWifi", value); }
         }
         /// <summary>DNS suffix search list.</summary>
         public List<string> DnsSuffixSearchList {
-            get { return BackingStore?.Get<List<string>>(nameof(DnsSuffixSearchList)); }
-            set { BackingStore?.Set(nameof(DnsSuffixSearchList), value); }
+            get { return BackingStore?.Get<List<string>>("dnsSuffixSearchList"); }
+            set { BackingStore?.Set("dnsSuffixSearchList", value); }
         }
         /// <summary>Identity certificate for client authentication when authentication method is certificate.</summary>
         public WindowsPhone81CertificateProfileBase IdentityCertificate {
-            get { return BackingStore?.Get<WindowsPhone81CertificateProfileBase>(nameof(IdentityCertificate)); }
-            set { BackingStore?.Set(nameof(IdentityCertificate), value); }
+            get { return BackingStore?.Get<WindowsPhone81CertificateProfileBase>("identityCertificate"); }
+            set { BackingStore?.Set("identityCertificate", value); }
         }
         /// <summary>Remember user credentials.</summary>
         public bool? RememberUserCredentials {
-            get { return BackingStore?.Get<bool?>(nameof(RememberUserCredentials)); }
-            set { BackingStore?.Set(nameof(RememberUserCredentials), value); }
+            get { return BackingStore?.Get<bool?>("rememberUserCredentials"); }
+            set { BackingStore?.Set("rememberUserCredentials", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

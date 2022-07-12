@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationChoiceSettingInstance : DeviceManagementConfigurationSettingInstance, IParsable {
         /// <summary>The choiceSettingValue property</summary>
         public DeviceManagementConfigurationChoiceSettingValue ChoiceSettingValue {
-            get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValue>(nameof(ChoiceSettingValue)); }
-            set { BackingStore?.Set(nameof(ChoiceSettingValue), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValue>("choiceSettingValue"); }
+            set { BackingStore?.Set("choiceSettingValue", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

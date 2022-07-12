@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class AuthenticationRequirementPolicy : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Provides additional detail on the feature identified in requirementProvider.</summary>
         public string Detail {
-            get { return BackingStore?.Get<string>(nameof(Detail)); }
-            set { BackingStore?.Set(nameof(Detail), value); }
+            get { return BackingStore?.Get<string>("detail"); }
+            set { BackingStore?.Set("detail", value); }
         }
         /// <summary>Identifies what Azure AD feature requires MFA in this policy. Possible values are: user, request, servicePrincipal, v1ConditionalAccess, multiConditionalAccess, tenantSessionRiskPolicy, accountCompromisePolicies, v1ConditionalAccessDependency, v1ConditionalAccessPolicyIdRequested, mfaRegistrationRequiredByIdentityProtectionPolicy, baselineProtection, mfaRegistrationRequiredByBaselineProtection, mfaRegistrationRequiredByMultiConditionalAccess, enforcedForCspAdmins, securityDefaults, mfaRegistrationRequiredBySecurityDefaults, proofUpCodeRequest, crossTenantOutboundRule, gpsLocationCondition, riskBasedPolicy, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.RequirementProvider? RequirementProvider {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RequirementProvider?>(nameof(RequirementProvider)); }
-            set { BackingStore?.Set(nameof(RequirementProvider), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RequirementProvider?>("requirementProvider"); }
+            set { BackingStore?.Set("requirementProvider", value); }
         }
         /// <summary>
         /// Instantiates a new authenticationRequirementPolicy and sets the default values.

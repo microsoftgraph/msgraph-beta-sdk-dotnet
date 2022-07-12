@@ -10,20 +10,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class Win32LobAppRequirement : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The detection value</summary>
         public string DetectionValue {
-            get { return BackingStore?.Get<string>(nameof(DetectionValue)); }
-            set { BackingStore?.Set(nameof(DetectionValue), value); }
+            get { return BackingStore?.Get<string>("detectionValue"); }
+            set { BackingStore?.Set("detectionValue", value); }
         }
-        /// <summary>The operator for detection. Possible values are: notConfigured, equal, notEqual, greaterThan, greaterThanOrEqual, lessThan, lessThanOrEqual.</summary>
+        /// <summary>Contains properties for detection operator.</summary>
         public Win32LobAppDetectionOperator? Operator {
-            get { return BackingStore?.Get<Win32LobAppDetectionOperator?>(nameof(Operator)); }
-            set { BackingStore?.Set(nameof(Operator), value); }
+            get { return BackingStore?.Get<Win32LobAppDetectionOperator?>("operator"); }
+            set { BackingStore?.Set("operator", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new win32LobAppRequirement and sets the default values.
@@ -31,6 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
         public Win32LobAppRequirement() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.win32LobAppRequirement";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -54,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"detectionValue", n => { DetectionValue = n.GetStringValue(); } },
                 {"operator", n => { Operator = n.GetEnumValue<Win32LobAppDetectionOperator>(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -64,6 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("detectionValue", DetectionValue);
             writer.WriteEnumValue<Win32LobAppDetectionOperator>("operator", Operator);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

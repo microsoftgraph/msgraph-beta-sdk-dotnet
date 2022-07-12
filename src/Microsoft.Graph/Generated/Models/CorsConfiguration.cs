@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class CorsConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The allowedHeaders property</summary>
         public List<string> AllowedHeaders {
-            get { return BackingStore?.Get<List<string>>(nameof(AllowedHeaders)); }
-            set { BackingStore?.Set(nameof(AllowedHeaders), value); }
+            get { return BackingStore?.Get<List<string>>("allowedHeaders"); }
+            set { BackingStore?.Set("allowedHeaders", value); }
         }
         /// <summary>The allowedMethods property</summary>
         public List<string> AllowedMethods {
-            get { return BackingStore?.Get<List<string>>(nameof(AllowedMethods)); }
-            set { BackingStore?.Set(nameof(AllowedMethods), value); }
+            get { return BackingStore?.Get<List<string>>("allowedMethods"); }
+            set { BackingStore?.Set("allowedMethods", value); }
         }
         /// <summary>The allowedOrigins property</summary>
         public List<string> AllowedOrigins {
-            get { return BackingStore?.Get<List<string>>(nameof(AllowedOrigins)); }
-            set { BackingStore?.Set(nameof(AllowedOrigins), value); }
+            get { return BackingStore?.Get<List<string>>("allowedOrigins"); }
+            set { BackingStore?.Set("allowedOrigins", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The maxAgeInSeconds property</summary>
         public int? MaxAgeInSeconds {
-            get { return BackingStore?.Get<int?>(nameof(MaxAgeInSeconds)); }
-            set { BackingStore?.Set(nameof(MaxAgeInSeconds), value); }
+            get { return BackingStore?.Get<int?>("maxAgeInSeconds"); }
+            set { BackingStore?.Set("maxAgeInSeconds", value); }
         }
         /// <summary>The resource property</summary>
         public string Resource {
-            get { return BackingStore?.Get<string>(nameof(Resource)); }
-            set { BackingStore?.Set(nameof(Resource), value); }
+            get { return BackingStore?.Get<string>("resource"); }
+            set { BackingStore?.Set("resource", value); }
         }
         /// <summary>
         /// Instantiates a new corsConfiguration and sets the default values.

@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementAbstractComplexSettingInstance : DeviceManagementSettingInstance, IParsable {
         /// <summary>The definition ID for the chosen implementation of this complex setting</summary>
         public string ImplementationId {
-            get { return BackingStore?.Get<string>(nameof(ImplementationId)); }
-            set { BackingStore?.Set(nameof(ImplementationId), value); }
+            get { return BackingStore?.Get<string>("implementationId"); }
+            set { BackingStore?.Set("implementationId", value); }
         }
         /// <summary>The values that make up the complex setting</summary>
         public List<DeviceManagementSettingInstance> Value {
-            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

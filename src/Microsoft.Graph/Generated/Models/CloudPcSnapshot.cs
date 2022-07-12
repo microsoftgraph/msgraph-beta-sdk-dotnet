@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class CloudPcSnapshot : Entity, IParsable {
         /// <summary>The unique identifier for the Cloud PC.</summary>
         public string CloudPcId {
-            get { return BackingStore?.Get<string>(nameof(CloudPcId)); }
-            set { BackingStore?.Set(nameof(CloudPcId), value); }
+            get { return BackingStore?.Get<string>("cloudPcId"); }
+            set { BackingStore?.Set("cloudPcId", value); }
         }
         /// <summary>The date and time at which the snapshot was taken. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The date and time at which the snapshot was last used to restore the Cloud PC device. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastRestoredDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastRestoredDateTime)); }
-            set { BackingStore?.Set(nameof(LastRestoredDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastRestoredDateTime"); }
+            set { BackingStore?.Set("lastRestoredDateTime", value); }
         }
         /// <summary>The status of the Cloud PC snapshot. The possible values are: ready, unknownFutureValue.</summary>
         public CloudPcSnapshotStatus? Status {
-            get { return BackingStore?.Get<CloudPcSnapshotStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<CloudPcSnapshotStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

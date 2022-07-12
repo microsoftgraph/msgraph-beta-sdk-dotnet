@@ -7,28 +7,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class ProtectOnlineMeetingAction : LabelActionBase, IParsable {
         /// <summary>The allowedForwarders property</summary>
         public OnlineMeetingForwarders? AllowedForwarders {
-            get { return BackingStore?.Get<OnlineMeetingForwarders?>(nameof(AllowedForwarders)); }
-            set { BackingStore?.Set(nameof(AllowedForwarders), value); }
+            get { return BackingStore?.Get<OnlineMeetingForwarders?>("allowedForwarders"); }
+            set { BackingStore?.Set("allowedForwarders", value); }
         }
         /// <summary>The allowedPresenters property</summary>
         public OnlineMeetingPresenters? AllowedPresenters {
-            get { return BackingStore?.Get<OnlineMeetingPresenters?>(nameof(AllowedPresenters)); }
-            set { BackingStore?.Set(nameof(AllowedPresenters), value); }
+            get { return BackingStore?.Get<OnlineMeetingPresenters?>("allowedPresenters"); }
+            set { BackingStore?.Set("allowedPresenters", value); }
         }
         /// <summary>The isCopyToClipboardEnabled property</summary>
         public bool? IsCopyToClipboardEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsCopyToClipboardEnabled)); }
-            set { BackingStore?.Set(nameof(IsCopyToClipboardEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isCopyToClipboardEnabled"); }
+            set { BackingStore?.Set("isCopyToClipboardEnabled", value); }
         }
         /// <summary>The isLobbyEnabled property</summary>
         public bool? IsLobbyEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsLobbyEnabled)); }
-            set { BackingStore?.Set(nameof(IsLobbyEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isLobbyEnabled"); }
+            set { BackingStore?.Set("isLobbyEnabled", value); }
         }
         /// <summary>The lobbyBypassSettings property</summary>
         public Microsoft.Graph.Beta.Models.LobbyBypassSettings LobbyBypassSettings {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LobbyBypassSettings>(nameof(LobbyBypassSettings)); }
-            set { BackingStore?.Set(nameof(LobbyBypassSettings), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LobbyBypassSettings>("lobbyBypassSettings"); }
+            set { BackingStore?.Set("lobbyBypassSettings", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

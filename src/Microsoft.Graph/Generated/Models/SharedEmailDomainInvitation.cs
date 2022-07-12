@@ -4,22 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class SharedEmailDomainInvitation : Entity, IParsable {
         /// <summary>The expiryTime property</summary>
         public DateTimeOffset? ExpiryTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpiryTime)); }
-            set { BackingStore?.Set(nameof(ExpiryTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("expiryTime"); }
+            set { BackingStore?.Set("expiryTime", value); }
         }
         /// <summary>The invitationDomain property</summary>
         public string InvitationDomain {
-            get { return BackingStore?.Get<string>(nameof(InvitationDomain)); }
-            set { BackingStore?.Set(nameof(InvitationDomain), value); }
+            get { return BackingStore?.Get<string>("invitationDomain"); }
+            set { BackingStore?.Set("invitationDomain", value); }
         }
         /// <summary>The invitationStatus property</summary>
         public string InvitationStatus {
-            get { return BackingStore?.Get<string>(nameof(InvitationStatus)); }
-            set { BackingStore?.Set(nameof(InvitationStatus), value); }
+            get { return BackingStore?.Get<string>("invitationStatus"); }
+            set { BackingStore?.Set("invitationStatus", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

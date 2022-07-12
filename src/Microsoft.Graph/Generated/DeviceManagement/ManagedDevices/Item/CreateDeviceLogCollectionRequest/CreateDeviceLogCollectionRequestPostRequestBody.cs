@@ -10,15 +10,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.CreateDevice
     public class CreateDeviceLogCollectionRequestPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The templateType property</summary>
         public DeviceLogCollectionRequest TemplateType {
-            get { return BackingStore?.Get<DeviceLogCollectionRequest>(nameof(TemplateType)); }
-            set { BackingStore?.Set(nameof(TemplateType), value); }
+            get { return BackingStore?.Get<DeviceLogCollectionRequest>("templateType"); }
+            set { BackingStore?.Set("templateType", value); }
         }
         /// <summary>
         /// Instantiates a new createDeviceLogCollectionRequestPostRequestBody and sets the default values.

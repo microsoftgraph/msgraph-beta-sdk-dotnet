@@ -5,22 +5,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class TeamInfo : Entity, IParsable {
         /// <summary>The name of the team.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The team property</summary>
         public Microsoft.Graph.Beta.Models.Team Team {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Team>(nameof(Team)); }
-            set { BackingStore?.Set(nameof(Team), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Team>("team"); }
+            set { BackingStore?.Set("team", value); }
         }
         /// <summary>The ID of the Azure Active Directory tenant.</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+        /// <summary>
+        /// Instantiates a new teamInfo and sets the default values.
+        /// </summary>
+        public TeamInfo() : base() {
+            Type = "#microsoft.graph.teamInfo";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

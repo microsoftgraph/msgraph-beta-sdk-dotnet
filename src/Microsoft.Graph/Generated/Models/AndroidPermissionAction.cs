@@ -7,22 +7,22 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Mapping between an Android app permission and the action Android should take when that permission is requested.</summary>
     public class AndroidPermissionAction : IAdditionalDataHolder, IBackedModel, IParsable {
-        /// <summary>Type of Android permission action. Possible values are: prompt, autoGrant, autoDeny.</summary>
+        /// <summary>Android action taken when an app requests a dangerous permission.</summary>
         public AndroidPermissionActionType? Action {
-            get { return BackingStore?.Get<AndroidPermissionActionType?>(nameof(Action)); }
-            set { BackingStore?.Set(nameof(Action), value); }
+            get { return BackingStore?.Get<AndroidPermissionActionType?>("action"); }
+            set { BackingStore?.Set("action", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Android permission string, defined in the official Android documentation.  Example &apos;android.permission.READ_CONTACTS&apos;.</summary>
         public string Permission {
-            get { return BackingStore?.Get<string>(nameof(Permission)); }
-            set { BackingStore?.Set(nameof(Permission), value); }
+            get { return BackingStore?.Get<string>("permission"); }
+            set { BackingStore?.Set("permission", value); }
         }
         /// <summary>
         /// Instantiates a new androidPermissionAction and sets the default values.

@@ -8,8 +8,14 @@ namespace Microsoft.Graph.Beta.Models {
     public class AppleExpeditedCheckinConfigurationBase : DeviceConfiguration, IParsable {
         /// <summary>Gets or sets whether to enable expedited device check-ins.</summary>
         public bool? EnableExpeditedCheckin {
-            get { return BackingStore?.Get<bool?>(nameof(EnableExpeditedCheckin)); }
-            set { BackingStore?.Set(nameof(EnableExpeditedCheckin), value); }
+            get { return BackingStore?.Get<bool?>("enableExpeditedCheckin"); }
+            set { BackingStore?.Set("enableExpeditedCheckin", value); }
+        }
+        /// <summary>
+        /// Instantiates a new AppleExpeditedCheckinConfigurationBase and sets the default values.
+        /// </summary>
+        public AppleExpeditedCheckinConfigurationBase() : base() {
+            Type = "#microsoft.graph.appleExpeditedCheckinConfigurationBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

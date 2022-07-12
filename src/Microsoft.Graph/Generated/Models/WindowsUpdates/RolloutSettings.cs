@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class RolloutSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies the number of devices that are offered at the same time. Has no effect when endDateTime is set. When endDateTime and devicesPerOffer are both not set, all devices in the deployment are offered content at the same time.</summary>
         public int? DevicesPerOffer {
-            get { return BackingStore?.Get<int?>(nameof(DevicesPerOffer)); }
-            set { BackingStore?.Set(nameof(DevicesPerOffer), value); }
+            get { return BackingStore?.Get<int?>("devicesPerOffer"); }
+            set { BackingStore?.Set("devicesPerOffer", value); }
         }
         /// <summary>Specifies duration between each set of devices being offered the update. Has an effect when endDateTime or devicesPerOffer are defined. Default value is P1D (1 day).</summary>
         public string DurationBetweenOffers {
-            get { return BackingStore?.Get<string>(nameof(DurationBetweenOffers)); }
-            set { BackingStore?.Set(nameof(DurationBetweenOffers), value); }
+            get { return BackingStore?.Get<string>("durationBetweenOffers"); }
+            set { BackingStore?.Set("durationBetweenOffers", value); }
         }
         /// <summary>Specifies the date before which all devices currently in the deployment are offered the update. Devices added after this date are offered immediately. When endDateTime and devicesPerOffer are both not set, all devices in the deployment are offered content at the same time.</summary>
         public DateTimeOffset? EndDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
-            set { BackingStore?.Set(nameof(EndDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
+            set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>Date on which devices in the deployment start receiving the update. When not set, the deployment starts as soon as devices are assigned.</summary>
         public DateTimeOffset? StartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
-            set { BackingStore?.Set(nameof(StartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>
         /// Instantiates a new rolloutSettings and sets the default values.

@@ -8,23 +8,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class RoleScopeTag : Entity, IParsable {
         /// <summary>The list of assignments for this Role Scope Tag.</summary>
         public List<RoleScopeTagAutoAssignment> Assignments {
-            get { return BackingStore?.Get<List<RoleScopeTagAutoAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<RoleScopeTagAutoAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>Description of the Role Scope Tag.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The display or friendly name of the Role Scope Tag.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Description of the Role Scope Tag. This property is read-only.</summary>
         public bool? IsBuiltIn {
-            get { return BackingStore?.Get<bool?>(nameof(IsBuiltIn)); }
-            set { BackingStore?.Set(nameof(IsBuiltIn), value); }
+            get { return BackingStore?.Get<bool?>("isBuiltIn"); }
+            set { BackingStore?.Set("isBuiltIn", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

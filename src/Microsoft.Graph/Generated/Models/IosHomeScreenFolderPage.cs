@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosHomeScreenFolderPage : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>A list of apps and web clips to appear on a page within a folder. This collection can contain a maximum of 500 elements.</summary>
         public List<IosHomeScreenApp> Apps {
-            get { return BackingStore?.Get<List<IosHomeScreenApp>>(nameof(Apps)); }
-            set { BackingStore?.Set(nameof(Apps), value); }
+            get { return BackingStore?.Get<List<IosHomeScreenApp>>("apps"); }
+            set { BackingStore?.Set("apps", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Name of the folder page</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>
         /// Instantiates a new iosHomeScreenFolderPage and sets the default values.

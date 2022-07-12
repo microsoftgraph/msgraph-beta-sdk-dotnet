@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementSettingRegexConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>The RegEx pattern to match against</summary>
         public string Regex {
-            get { return BackingStore?.Get<string>(nameof(Regex)); }
-            set { BackingStore?.Set(nameof(Regex), value); }
+            get { return BackingStore?.Get<string>("regex"); }
+            set { BackingStore?.Set("regex", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

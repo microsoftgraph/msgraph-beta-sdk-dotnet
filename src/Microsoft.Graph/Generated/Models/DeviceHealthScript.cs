@@ -8,98 +8,98 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceHealthScript : Entity, IParsable {
         /// <summary>The list of group assignments for the device health script</summary>
         public List<DeviceHealthScriptAssignment> Assignments {
-            get { return BackingStore?.Get<List<DeviceHealthScriptAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<DeviceHealthScriptAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>The timestamp of when the device health script was created. This property is read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Description of the device health script</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The entire content of the detection powershell script</summary>
         public byte[] DetectionScriptContent {
-            get { return BackingStore?.Get<byte[]>(nameof(DetectionScriptContent)); }
-            set { BackingStore?.Set(nameof(DetectionScriptContent), value); }
+            get { return BackingStore?.Get<byte[]>("detectionScriptContent"); }
+            set { BackingStore?.Set("detectionScriptContent", value); }
         }
         /// <summary>List of ComplexType DetectionScriptParameters objects.</summary>
         public List<DeviceHealthScriptParameter> DetectionScriptParameters {
-            get { return BackingStore?.Get<List<DeviceHealthScriptParameter>>(nameof(DetectionScriptParameters)); }
-            set { BackingStore?.Set(nameof(DetectionScriptParameters), value); }
+            get { return BackingStore?.Get<List<DeviceHealthScriptParameter>>("detectionScriptParameters"); }
+            set { BackingStore?.Set("detectionScriptParameters", value); }
         }
         /// <summary>List of run states for the device health script across all devices</summary>
         public List<DeviceHealthScriptDeviceState> DeviceRunStates {
-            get { return BackingStore?.Get<List<DeviceHealthScriptDeviceState>>(nameof(DeviceRunStates)); }
-            set { BackingStore?.Set(nameof(DeviceRunStates), value); }
+            get { return BackingStore?.Get<List<DeviceHealthScriptDeviceState>>("deviceRunStates"); }
+            set { BackingStore?.Set("deviceRunStates", value); }
         }
         /// <summary>Name of the device health script</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Indicate whether the script signature needs be checked</summary>
         public bool? EnforceSignatureCheck {
-            get { return BackingStore?.Get<bool?>(nameof(EnforceSignatureCheck)); }
-            set { BackingStore?.Set(nameof(EnforceSignatureCheck), value); }
+            get { return BackingStore?.Get<bool?>("enforceSignatureCheck"); }
+            set { BackingStore?.Set("enforceSignatureCheck", value); }
         }
         /// <summary>Highest available version for a Microsoft Proprietary script</summary>
         public string HighestAvailableVersion {
-            get { return BackingStore?.Get<string>(nameof(HighestAvailableVersion)); }
-            set { BackingStore?.Set(nameof(HighestAvailableVersion), value); }
+            get { return BackingStore?.Get<string>("highestAvailableVersion"); }
+            set { BackingStore?.Set("highestAvailableVersion", value); }
         }
         /// <summary>Determines if this is Microsoft Proprietary Script. Proprietary scripts are read-only</summary>
         public bool? IsGlobalScript {
-            get { return BackingStore?.Get<bool?>(nameof(IsGlobalScript)); }
-            set { BackingStore?.Set(nameof(IsGlobalScript), value); }
+            get { return BackingStore?.Get<bool?>("isGlobalScript"); }
+            set { BackingStore?.Set("isGlobalScript", value); }
         }
         /// <summary>The timestamp of when the device health script was modified. This property is read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Name of the device health script publisher</summary>
         public string Publisher {
-            get { return BackingStore?.Get<string>(nameof(Publisher)); }
-            set { BackingStore?.Set(nameof(Publisher), value); }
+            get { return BackingStore?.Get<string>("publisher"); }
+            set { BackingStore?.Set("publisher", value); }
         }
         /// <summary>The entire content of the remediation powershell script</summary>
         public byte[] RemediationScriptContent {
-            get { return BackingStore?.Get<byte[]>(nameof(RemediationScriptContent)); }
-            set { BackingStore?.Set(nameof(RemediationScriptContent), value); }
+            get { return BackingStore?.Get<byte[]>("remediationScriptContent"); }
+            set { BackingStore?.Set("remediationScriptContent", value); }
         }
         /// <summary>List of ComplexType RemediationScriptParameters objects.</summary>
         public List<DeviceHealthScriptParameter> RemediationScriptParameters {
-            get { return BackingStore?.Get<List<DeviceHealthScriptParameter>>(nameof(RemediationScriptParameters)); }
-            set { BackingStore?.Set(nameof(RemediationScriptParameters), value); }
+            get { return BackingStore?.Get<List<DeviceHealthScriptParameter>>("remediationScriptParameters"); }
+            set { BackingStore?.Set("remediationScriptParameters", value); }
         }
         /// <summary>List of Scope Tag IDs for the device health script</summary>
         public List<string> RoleScopeTagIds {
-            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTagIds)); }
-            set { BackingStore?.Set(nameof(RoleScopeTagIds), value); }
+            get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
         }
         /// <summary>Indicate whether PowerShell script(s) should run as 32-bit</summary>
         public bool? RunAs32Bit {
-            get { return BackingStore?.Get<bool?>(nameof(RunAs32Bit)); }
-            set { BackingStore?.Set(nameof(RunAs32Bit), value); }
+            get { return BackingStore?.Get<bool?>("runAs32Bit"); }
+            set { BackingStore?.Set("runAs32Bit", value); }
         }
-        /// <summary>Indicates the type of execution context. Possible values are: system, user.</summary>
+        /// <summary>Indicates the type of execution context the app runs in.</summary>
         public RunAsAccountType? RunAsAccount {
-            get { return BackingStore?.Get<RunAsAccountType?>(nameof(RunAsAccount)); }
-            set { BackingStore?.Set(nameof(RunAsAccount), value); }
+            get { return BackingStore?.Get<RunAsAccountType?>("runAsAccount"); }
+            set { BackingStore?.Set("runAsAccount", value); }
         }
         /// <summary>High level run summary for device health script.</summary>
         public DeviceHealthScriptRunSummary RunSummary {
-            get { return BackingStore?.Get<DeviceHealthScriptRunSummary>(nameof(RunSummary)); }
-            set { BackingStore?.Set(nameof(RunSummary), value); }
+            get { return BackingStore?.Get<DeviceHealthScriptRunSummary>("runSummary"); }
+            set { BackingStore?.Set("runSummary", value); }
         }
         /// <summary>Version of the device health script</summary>
         public string Version {
-            get { return BackingStore?.Get<string>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<string>("version"); }
+            set { BackingStore?.Set("version", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

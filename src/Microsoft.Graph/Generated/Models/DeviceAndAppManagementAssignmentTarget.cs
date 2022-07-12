@@ -10,20 +10,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceAndAppManagementAssignmentTarget : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Id of the filter for the target assignment.</summary>
         public string DeviceAndAppManagementAssignmentFilterId {
-            get { return BackingStore?.Get<string>(nameof(DeviceAndAppManagementAssignmentFilterId)); }
-            set { BackingStore?.Set(nameof(DeviceAndAppManagementAssignmentFilterId), value); }
+            get { return BackingStore?.Get<string>("deviceAndAppManagementAssignmentFilterId"); }
+            set { BackingStore?.Set("deviceAndAppManagementAssignmentFilterId", value); }
         }
-        /// <summary>The type of filter of the target assignment i.e. Exclude or Include. Possible values are: none, include, exclude.</summary>
+        /// <summary>Represents type of the assignment filter.</summary>
         public Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilterType? DeviceAndAppManagementAssignmentFilterType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilterType?>(nameof(DeviceAndAppManagementAssignmentFilterType)); }
-            set { BackingStore?.Set(nameof(DeviceAndAppManagementAssignmentFilterType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilterType?>("deviceAndAppManagementAssignmentFilterType"); }
+            set { BackingStore?.Set("deviceAndAppManagementAssignmentFilterType", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new deviceAndAppManagementAssignmentTarget and sets the default values.
@@ -31,6 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceAndAppManagementAssignmentTarget() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.deviceAndAppManagementAssignmentTarget";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"deviceAndAppManagementAssignmentFilterId", n => { DeviceAndAppManagementAssignmentFilterId = n.GetStringValue(); } },
                 {"deviceAndAppManagementAssignmentFilterType", n => { DeviceAndAppManagementAssignmentFilterType = n.GetEnumValue<DeviceAndAppManagementAssignmentFilterType>(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -65,6 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("deviceAndAppManagementAssignmentFilterId", DeviceAndAppManagementAssignmentFilterId);
             writer.WriteEnumValue<DeviceAndAppManagementAssignmentFilterType>("deviceAndAppManagementAssignmentFilterType", DeviceAndAppManagementAssignmentFilterType);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

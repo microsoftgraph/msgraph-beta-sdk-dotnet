@@ -8,8 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class AssignmentFilterEvaluationStatusDetails : Entity, IParsable {
         /// <summary>PayloadId on which filter has been applied.</summary>
         public string PayloadId {
-            get { return BackingStore?.Get<string>(nameof(PayloadId)); }
-            set { BackingStore?.Set(nameof(PayloadId), value); }
+            get { return BackingStore?.Get<string>("payloadId"); }
+            set { BackingStore?.Set("payloadId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

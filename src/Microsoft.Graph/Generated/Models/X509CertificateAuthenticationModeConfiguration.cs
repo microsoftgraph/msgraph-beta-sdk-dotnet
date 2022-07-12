@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class X509CertificateAuthenticationModeConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Rules are configured in addition to the authentication mode to bind a specific x509CertificateRuleType to an x509CertificateAuthenticationMode. For example, bind the policyOID with identifier 1.32.132.343 to x509CertificateMultiFactor authentication mode.</summary>
         public List<X509CertificateRule> Rules {
-            get { return BackingStore?.Get<List<X509CertificateRule>>(nameof(Rules)); }
-            set { BackingStore?.Set(nameof(Rules), value); }
+            get { return BackingStore?.Get<List<X509CertificateRule>>("rules"); }
+            set { BackingStore?.Set("rules", value); }
         }
         /// <summary>The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue.</summary>
         public X509CertificateAuthenticationMode? X509CertificateAuthenticationDefaultMode {
-            get { return BackingStore?.Get<X509CertificateAuthenticationMode?>(nameof(X509CertificateAuthenticationDefaultMode)); }
-            set { BackingStore?.Set(nameof(X509CertificateAuthenticationDefaultMode), value); }
+            get { return BackingStore?.Get<X509CertificateAuthenticationMode?>("x509CertificateAuthenticationDefaultMode"); }
+            set { BackingStore?.Set("x509CertificateAuthenticationDefaultMode", value); }
         }
         /// <summary>
         /// Instantiates a new x509CertificateAuthenticationModeConfiguration and sets the default values.

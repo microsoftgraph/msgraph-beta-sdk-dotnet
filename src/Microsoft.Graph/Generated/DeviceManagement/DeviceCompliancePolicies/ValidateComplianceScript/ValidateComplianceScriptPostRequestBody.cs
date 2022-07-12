@@ -10,15 +10,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Validat
     public class ValidateComplianceScriptPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceCompliancePolicyScript property</summary>
         public Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript DeviceCompliancePolicyScript {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript>(nameof(DeviceCompliancePolicyScript)); }
-            set { BackingStore?.Set(nameof(DeviceCompliancePolicyScript), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript>("deviceCompliancePolicyScript"); }
+            set { BackingStore?.Set("deviceCompliancePolicyScript", value); }
         }
         /// <summary>
         /// Instantiates a new validateComplianceScriptPostRequestBody and sets the default values.

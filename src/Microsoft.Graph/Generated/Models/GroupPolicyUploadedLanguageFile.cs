@@ -9,35 +9,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyUploadedLanguageFile : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The contents of the uploaded ADML file.</summary>
         public byte[] Content {
-            get { return BackingStore?.Get<byte[]>(nameof(Content)); }
-            set { BackingStore?.Set(nameof(Content), value); }
+            get { return BackingStore?.Get<byte[]>("content"); }
+            set { BackingStore?.Set("content", value); }
         }
         /// <summary>The file name of the uploaded ADML file.</summary>
         public string FileName {
-            get { return BackingStore?.Get<string>(nameof(FileName)); }
-            set { BackingStore?.Set(nameof(FileName), value); }
+            get { return BackingStore?.Get<string>("fileName"); }
+            set { BackingStore?.Set("fileName", value); }
         }
         /// <summary>Key of the entity.</summary>
         public string Id {
-            get { return BackingStore?.Get<string>(nameof(Id)); }
-            set { BackingStore?.Set(nameof(Id), value); }
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
         }
         /// <summary>The language code of the uploaded ADML file.</summary>
         public string LanguageCode {
-            get { return BackingStore?.Get<string>(nameof(LanguageCode)); }
-            set { BackingStore?.Set(nameof(LanguageCode), value); }
+            get { return BackingStore?.Get<string>("languageCode"); }
+            set { BackingStore?.Set("languageCode", value); }
         }
         /// <summary>The date and time the entity was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>
         /// Instantiates a new groupPolicyUploadedLanguageFile and sets the default values.

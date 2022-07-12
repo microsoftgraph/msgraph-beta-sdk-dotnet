@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class VerifiedCustomDomainCertificatesMetadata : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The expiry date of the custom domain certificate. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ExpiryDate {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpiryDate)); }
-            set { BackingStore?.Set(nameof(ExpiryDate), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("expiryDate"); }
+            set { BackingStore?.Set("expiryDate", value); }
         }
         /// <summary>The issue date of the custom domain. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? IssueDate {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(IssueDate)); }
-            set { BackingStore?.Set(nameof(IssueDate), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("issueDate"); }
+            set { BackingStore?.Set("issueDate", value); }
         }
         /// <summary>The issuer name of the custom domain certificate.</summary>
         public string IssuerName {
-            get { return BackingStore?.Get<string>(nameof(IssuerName)); }
-            set { BackingStore?.Set(nameof(IssuerName), value); }
+            get { return BackingStore?.Get<string>("issuerName"); }
+            set { BackingStore?.Set("issuerName", value); }
         }
         /// <summary>The subject name of the custom domain certificate.</summary>
         public string SubjectName {
-            get { return BackingStore?.Get<string>(nameof(SubjectName)); }
-            set { BackingStore?.Set(nameof(SubjectName), value); }
+            get { return BackingStore?.Get<string>("subjectName"); }
+            set { BackingStore?.Set("subjectName", value); }
         }
         /// <summary>The thumbprint associated with the custom domain certificate.</summary>
         public string Thumbprint {
-            get { return BackingStore?.Get<string>(nameof(Thumbprint)); }
-            set { BackingStore?.Set(nameof(Thumbprint), value); }
+            get { return BackingStore?.Get<string>("thumbprint"); }
+            set { BackingStore?.Set("thumbprint", value); }
         }
         /// <summary>
         /// Instantiates a new verifiedCustomDomainCertificatesMetadata and sets the default values.

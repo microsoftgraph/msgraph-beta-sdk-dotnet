@@ -4,62 +4,62 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class CredentialUserRegistrationsSummary : Entity, IParsable {
         /// <summary>Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.</summary>
         public DateTimeOffset? LastRefreshedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastRefreshedDateTime)); }
-            set { BackingStore?.Set(nameof(LastRefreshedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshedDateTime"); }
+            set { BackingStore?.Set("lastRefreshedDateTime", value); }
         }
         /// <summary>The number of users that are capable of performing multi-factor authentication or self service password reset. Optional. Read-only.</summary>
         public int? MfaAndSsprCapableUserCount {
-            get { return BackingStore?.Get<int?>(nameof(MfaAndSsprCapableUserCount)); }
-            set { BackingStore?.Set(nameof(MfaAndSsprCapableUserCount), value); }
+            get { return BackingStore?.Get<int?>("mfaAndSsprCapableUserCount"); }
+            set { BackingStore?.Set("mfaAndSsprCapableUserCount", value); }
         }
         /// <summary>The state of a conditional access policy that enforces multi-factor authentication. Optional. Read-only.</summary>
         public string MfaConditionalAccessPolicyState {
-            get { return BackingStore?.Get<string>(nameof(MfaConditionalAccessPolicyState)); }
-            set { BackingStore?.Set(nameof(MfaConditionalAccessPolicyState), value); }
+            get { return BackingStore?.Get<string>("mfaConditionalAccessPolicyState"); }
+            set { BackingStore?.Set("mfaConditionalAccessPolicyState", value); }
         }
         /// <summary>The number of users in the multi-factor authentication exclusion security group (Microsoft 365 Lighthouse - MFA exclusions). Optional. Read-only.</summary>
         public int? MfaExcludedUserCount {
-            get { return BackingStore?.Get<int?>(nameof(MfaExcludedUserCount)); }
-            set { BackingStore?.Set(nameof(MfaExcludedUserCount), value); }
+            get { return BackingStore?.Get<int?>("mfaExcludedUserCount"); }
+            set { BackingStore?.Set("mfaExcludedUserCount", value); }
         }
         /// <summary>The number of users registered for multi-factor authentication. Optional. Read-only.</summary>
         public int? MfaRegisteredUserCount {
-            get { return BackingStore?.Get<int?>(nameof(MfaRegisteredUserCount)); }
-            set { BackingStore?.Set(nameof(MfaRegisteredUserCount), value); }
+            get { return BackingStore?.Get<int?>("mfaRegisteredUserCount"); }
+            set { BackingStore?.Set("mfaRegisteredUserCount", value); }
         }
         /// <summary>A flag indicating whether Identity Security Defaults is enabled. Optional. Read-only.</summary>
         public bool? SecurityDefaultsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(SecurityDefaultsEnabled)); }
-            set { BackingStore?.Set(nameof(SecurityDefaultsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("securityDefaultsEnabled"); }
+            set { BackingStore?.Set("securityDefaultsEnabled", value); }
         }
         /// <summary>The number of users enabled for self service password reset. Optional. Read-only.</summary>
         public int? SsprEnabledUserCount {
-            get { return BackingStore?.Get<int?>(nameof(SsprEnabledUserCount)); }
-            set { BackingStore?.Set(nameof(SsprEnabledUserCount), value); }
+            get { return BackingStore?.Get<int?>("ssprEnabledUserCount"); }
+            set { BackingStore?.Set("ssprEnabledUserCount", value); }
         }
         /// <summary>The number of users registered for self service password reset. Optional. Read-only.</summary>
         public int? SsprRegisteredUserCount {
-            get { return BackingStore?.Get<int?>(nameof(SsprRegisteredUserCount)); }
-            set { BackingStore?.Set(nameof(SsprRegisteredUserCount), value); }
+            get { return BackingStore?.Get<int?>("ssprRegisteredUserCount"); }
+            set { BackingStore?.Set("ssprRegisteredUserCount", value); }
         }
         /// <summary>The display name for the managed tenant. Required. Read-only.</summary>
         public string TenantDisplayName {
-            get { return BackingStore?.Get<string>(nameof(TenantDisplayName)); }
-            set { BackingStore?.Set(nameof(TenantDisplayName), value); }
+            get { return BackingStore?.Get<string>("tenantDisplayName"); }
+            set { BackingStore?.Set("tenantDisplayName", value); }
         }
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>The total number of users in the given managed tenant. Optional. Read-only.</summary>
         public int? TotalUserCount {
-            get { return BackingStore?.Get<int?>(nameof(TotalUserCount)); }
-            set { BackingStore?.Set(nameof(TotalUserCount), value); }
+            get { return BackingStore?.Get<int?>("totalUserCount"); }
+            set { BackingStore?.Set("totalUserCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

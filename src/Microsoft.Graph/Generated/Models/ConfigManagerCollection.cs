@@ -8,33 +8,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class ConfigManagerCollection : Entity, IParsable {
         /// <summary>The collection identifier in SCCM.</summary>
         public string CollectionIdentifier {
-            get { return BackingStore?.Get<string>(nameof(CollectionIdentifier)); }
-            set { BackingStore?.Set(nameof(CollectionIdentifier), value); }
+            get { return BackingStore?.Get<string>("collectionIdentifier"); }
+            set { BackingStore?.Set("collectionIdentifier", value); }
         }
         /// <summary>The created date.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The DisplayName.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The Hierarchy Identifier.</summary>
         public string HierarchyIdentifier {
-            get { return BackingStore?.Get<string>(nameof(HierarchyIdentifier)); }
-            set { BackingStore?.Set(nameof(HierarchyIdentifier), value); }
+            get { return BackingStore?.Get<string>("hierarchyIdentifier"); }
+            set { BackingStore?.Set("hierarchyIdentifier", value); }
         }
         /// <summary>The HierarchyName.</summary>
         public string HierarchyName {
-            get { return BackingStore?.Get<string>(nameof(HierarchyName)); }
-            set { BackingStore?.Set(nameof(HierarchyName), value); }
+            get { return BackingStore?.Get<string>("hierarchyName"); }
+            set { BackingStore?.Set("hierarchyName", value); }
         }
         /// <summary>The last modified date.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class AddWatermark : MarkContent, IParsable {
         /// <summary>The orientation property</summary>
         public PageOrientation? Orientation {
-            get { return BackingStore?.Get<PageOrientation?>(nameof(Orientation)); }
-            set { BackingStore?.Set(nameof(Orientation), value); }
+            get { return BackingStore?.Get<PageOrientation?>("orientation"); }
+            set { BackingStore?.Set("orientation", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

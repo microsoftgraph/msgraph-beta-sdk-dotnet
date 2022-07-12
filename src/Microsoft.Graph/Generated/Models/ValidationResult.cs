@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class ValidationResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The string containing the reason for why the rule passed or not. Read-only. Not nullable.</summary>
         public string Message {
-            get { return BackingStore?.Get<string>(nameof(Message)); }
-            set { BackingStore?.Set(nameof(Message), value); }
+            get { return BackingStore?.Get<string>("message"); }
+            set { BackingStore?.Set("message", value); }
         }
         /// <summary>The string containing the name of the password validation rule that the action was validated against. Read-only. Not nullable.</summary>
         public string RuleName {
-            get { return BackingStore?.Get<string>(nameof(RuleName)); }
-            set { BackingStore?.Set(nameof(RuleName), value); }
+            get { return BackingStore?.Get<string>("ruleName"); }
+            set { BackingStore?.Set("ruleName", value); }
         }
         /// <summary>Whether the password passed or failed the validation rule. Read-only. Not nullable.</summary>
         public bool? ValidationPassed {
-            get { return BackingStore?.Get<bool?>(nameof(ValidationPassed)); }
-            set { BackingStore?.Set(nameof(ValidationPassed), value); }
+            get { return BackingStore?.Get<bool?>("validationPassed"); }
+            set { BackingStore?.Set("validationPassed", value); }
         }
         /// <summary>
         /// Instantiates a new validationResult and sets the default values.

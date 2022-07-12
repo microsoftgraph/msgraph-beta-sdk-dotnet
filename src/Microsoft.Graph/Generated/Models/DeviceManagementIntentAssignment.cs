@@ -8,8 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementIntentAssignment : Entity, IParsable {
         /// <summary>The assignment target</summary>
         public DeviceAndAppManagementAssignmentTarget Target {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>(nameof(Target)); }
-            set { BackingStore?.Set(nameof(Target), value); }
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
+            set { BackingStore?.Set("target", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

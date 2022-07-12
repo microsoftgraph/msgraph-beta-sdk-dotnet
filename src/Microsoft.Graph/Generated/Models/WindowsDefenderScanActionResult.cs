@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsDefenderScanActionResult : DeviceActionResult, IParsable {
         /// <summary>Scan type either full scan or quick scan</summary>
         public string ScanType {
-            get { return BackingStore?.Get<string>(nameof(ScanType)); }
-            set { BackingStore?.Set(nameof(ScanType), value); }
+            get { return BackingStore?.Get<string>("scanType"); }
+            set { BackingStore?.Set("scanType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

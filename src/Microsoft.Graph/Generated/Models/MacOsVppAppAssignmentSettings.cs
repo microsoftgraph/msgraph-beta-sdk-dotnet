@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOsVppAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
         /// <summary>Whether or not to uninstall the app when device is removed from Intune.</summary>
         public bool? UninstallOnDeviceRemoval {
-            get { return BackingStore?.Get<bool?>(nameof(UninstallOnDeviceRemoval)); }
-            set { BackingStore?.Set(nameof(UninstallOnDeviceRemoval), value); }
+            get { return BackingStore?.Get<bool?>("uninstallOnDeviceRemoval"); }
+            set { BackingStore?.Set("uninstallOnDeviceRemoval", value); }
         }
         /// <summary>Whether or not to use device licensing.</summary>
         public bool? UseDeviceLicensing {
-            get { return BackingStore?.Get<bool?>(nameof(UseDeviceLicensing)); }
-            set { BackingStore?.Set(nameof(UseDeviceLicensing), value); }
+            get { return BackingStore?.Get<bool?>("useDeviceLicensing"); }
+            set { BackingStore?.Set("useDeviceLicensing", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

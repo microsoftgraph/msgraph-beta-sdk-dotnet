@@ -9,88 +9,94 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceConfiguration : Entity, IParsable {
         /// <summary>The list of assignments for the device configuration profile.</summary>
         public List<DeviceConfigurationAssignment> Assignments {
-            get { return BackingStore?.Get<List<DeviceConfigurationAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<DeviceConfigurationAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>DateTime the object was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Admin provided description of the Device Configuration.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The device mode applicability rule for this Policy.</summary>
         public Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleDeviceMode DeviceManagementApplicabilityRuleDeviceMode {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleDeviceMode>(nameof(DeviceManagementApplicabilityRuleDeviceMode)); }
-            set { BackingStore?.Set(nameof(DeviceManagementApplicabilityRuleDeviceMode), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleDeviceMode>("deviceManagementApplicabilityRuleDeviceMode"); }
+            set { BackingStore?.Set("deviceManagementApplicabilityRuleDeviceMode", value); }
         }
         /// <summary>The OS edition applicability for this Policy.</summary>
         public Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsEdition DeviceManagementApplicabilityRuleOsEdition {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsEdition>(nameof(DeviceManagementApplicabilityRuleOsEdition)); }
-            set { BackingStore?.Set(nameof(DeviceManagementApplicabilityRuleOsEdition), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsEdition>("deviceManagementApplicabilityRuleOsEdition"); }
+            set { BackingStore?.Set("deviceManagementApplicabilityRuleOsEdition", value); }
         }
         /// <summary>The OS version applicability rule for this Policy.</summary>
         public Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsVersion DeviceManagementApplicabilityRuleOsVersion {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsVersion>(nameof(DeviceManagementApplicabilityRuleOsVersion)); }
-            set { BackingStore?.Set(nameof(DeviceManagementApplicabilityRuleOsVersion), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsVersion>("deviceManagementApplicabilityRuleOsVersion"); }
+            set { BackingStore?.Set("deviceManagementApplicabilityRuleOsVersion", value); }
         }
         /// <summary>Device Configuration Setting State Device Summary</summary>
         public List<SettingStateDeviceSummary> DeviceSettingStateSummaries {
-            get { return BackingStore?.Get<List<SettingStateDeviceSummary>>(nameof(DeviceSettingStateSummaries)); }
-            set { BackingStore?.Set(nameof(DeviceSettingStateSummaries), value); }
+            get { return BackingStore?.Get<List<SettingStateDeviceSummary>>("deviceSettingStateSummaries"); }
+            set { BackingStore?.Set("deviceSettingStateSummaries", value); }
         }
         /// <summary>Device configuration installation status by device.</summary>
         public List<DeviceConfigurationDeviceStatus> DeviceStatuses {
-            get { return BackingStore?.Get<List<DeviceConfigurationDeviceStatus>>(nameof(DeviceStatuses)); }
-            set { BackingStore?.Set(nameof(DeviceStatuses), value); }
+            get { return BackingStore?.Get<List<DeviceConfigurationDeviceStatus>>("deviceStatuses"); }
+            set { BackingStore?.Set("deviceStatuses", value); }
         }
         /// <summary>Device Configuration devices status overview</summary>
         public DeviceConfigurationDeviceOverview DeviceStatusOverview {
-            get { return BackingStore?.Get<DeviceConfigurationDeviceOverview>(nameof(DeviceStatusOverview)); }
-            set { BackingStore?.Set(nameof(DeviceStatusOverview), value); }
+            get { return BackingStore?.Get<DeviceConfigurationDeviceOverview>("deviceStatusOverview"); }
+            set { BackingStore?.Set("deviceStatusOverview", value); }
         }
         /// <summary>Admin provided name of the device configuration.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The list of group assignments for the device configuration profile.</summary>
         public List<DeviceConfigurationGroupAssignment> GroupAssignments {
-            get { return BackingStore?.Get<List<DeviceConfigurationGroupAssignment>>(nameof(GroupAssignments)); }
-            set { BackingStore?.Set(nameof(GroupAssignments), value); }
+            get { return BackingStore?.Get<List<DeviceConfigurationGroupAssignment>>("groupAssignments"); }
+            set { BackingStore?.Set("groupAssignments", value); }
         }
         /// <summary>DateTime the object was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>List of Scope Tags for this Entity instance.</summary>
         public List<string> RoleScopeTagIds {
-            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTagIds)); }
-            set { BackingStore?.Set(nameof(RoleScopeTagIds), value); }
+            get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
         }
         /// <summary>Indicates whether or not the underlying Device Configuration supports the assignment of scope tags. Assigning to the ScopeTags property is not allowed when this value is false and entities will not be visible to scoped users. This occurs for Legacy policies created in Silverlight and can be resolved by deleting and recreating the policy in the Azure Portal. This property is read-only.</summary>
         public bool? SupportsScopeTags {
-            get { return BackingStore?.Get<bool?>(nameof(SupportsScopeTags)); }
-            set { BackingStore?.Set(nameof(SupportsScopeTags), value); }
+            get { return BackingStore?.Get<bool?>("supportsScopeTags"); }
+            set { BackingStore?.Set("supportsScopeTags", value); }
         }
         /// <summary>Device configuration installation status by user.</summary>
         public List<DeviceConfigurationUserStatus> UserStatuses {
-            get { return BackingStore?.Get<List<DeviceConfigurationUserStatus>>(nameof(UserStatuses)); }
-            set { BackingStore?.Set(nameof(UserStatuses), value); }
+            get { return BackingStore?.Get<List<DeviceConfigurationUserStatus>>("userStatuses"); }
+            set { BackingStore?.Set("userStatuses", value); }
         }
         /// <summary>Device Configuration users status overview</summary>
         public DeviceConfigurationUserOverview UserStatusOverview {
-            get { return BackingStore?.Get<DeviceConfigurationUserOverview>(nameof(UserStatusOverview)); }
-            set { BackingStore?.Set(nameof(UserStatusOverview), value); }
+            get { return BackingStore?.Get<DeviceConfigurationUserOverview>("userStatusOverview"); }
+            set { BackingStore?.Set("userStatusOverview", value); }
         }
         /// <summary>Version of the device configuration.</summary>
         public int? Version {
-            get { return BackingStore?.Get<int?>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<int?>("version"); }
+            set { BackingStore?.Set("version", value); }
+        }
+        /// <summary>
+        /// Instantiates a new deviceConfiguration and sets the default values.
+        /// </summary>
+        public DeviceConfiguration() : base() {
+            Type = "#microsoft.graph.deviceConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

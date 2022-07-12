@@ -9,13 +9,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
     public class UpdateAdDomainPasswordPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The adDomainPassword property</summary>
         public string AdDomainPassword {
-            get { return BackingStore?.Get<string>(nameof(AdDomainPassword)); }
-            set { BackingStore?.Set(nameof(AdDomainPassword), value); }
+            get { return BackingStore?.Get<string>("adDomainPassword"); }
+            set { BackingStore?.Set("adDomainPassword", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }

@@ -4,37 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ManagementAction : Entity, IParsable {
-        /// <summary>The category for the management action. Possible values are: custom, devices, identity, unknownFutureValue. Optional. Read-only.</summary>
+        /// <summary>The category property</summary>
         public ManagementCategory? Category {
-            get { return BackingStore?.Get<ManagementCategory?>(nameof(Category)); }
-            set { BackingStore?.Set(nameof(Category), value); }
+            get { return BackingStore?.Get<ManagementCategory?>("category"); }
+            set { BackingStore?.Set("category", value); }
         }
         /// <summary>The description for the management action. Optional. Read-only.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The display name for the management action. Optional. Read-only.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The reference for the management template used to generate the management action. Required. Read-only.</summary>
         public string ReferenceTemplateId {
-            get { return BackingStore?.Get<string>(nameof(ReferenceTemplateId)); }
-            set { BackingStore?.Set(nameof(ReferenceTemplateId), value); }
+            get { return BackingStore?.Get<string>("referenceTemplateId"); }
+            set { BackingStore?.Set("referenceTemplateId", value); }
         }
         /// <summary>The referenceTemplateVersion property</summary>
         public int? ReferenceTemplateVersion {
-            get { return BackingStore?.Get<int?>(nameof(ReferenceTemplateVersion)); }
-            set { BackingStore?.Set(nameof(ReferenceTemplateVersion), value); }
+            get { return BackingStore?.Get<int?>("referenceTemplateVersion"); }
+            set { BackingStore?.Set("referenceTemplateVersion", value); }
         }
         /// <summary>The collection of workload actions associated with the management action. Required. Read-only.</summary>
         public List<WorkloadAction> WorkloadActions {
-            get { return BackingStore?.Get<List<WorkloadAction>>(nameof(WorkloadActions)); }
-            set { BackingStore?.Set(nameof(WorkloadActions), value); }
+            get { return BackingStore?.Get<List<WorkloadAction>>("workloadActions"); }
+            set { BackingStore?.Set("workloadActions", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

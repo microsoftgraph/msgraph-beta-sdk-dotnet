@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Beta.Models {
     public class PlannerTaskCreation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Information about the publication process that created this task. null value indicates that the task was not created by a publication process.</summary>
         public PlannerTeamsPublicationInfo TeamsPublicationInfo {
-            get { return BackingStore?.Get<PlannerTeamsPublicationInfo>(nameof(TeamsPublicationInfo)); }
-            set { BackingStore?.Set(nameof(TeamsPublicationInfo), value); }
+            get { return BackingStore?.Get<PlannerTeamsPublicationInfo>("teamsPublicationInfo"); }
+            set { BackingStore?.Set("teamsPublicationInfo", value); }
         }
         /// <summary>
         /// Instantiates a new plannerTaskCreation and sets the default values.

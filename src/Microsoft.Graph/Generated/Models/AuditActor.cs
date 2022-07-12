@@ -9,65 +9,65 @@ namespace Microsoft.Graph.Beta.Models {
     public class AuditActor : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Name of the Application.</summary>
         public string ApplicationDisplayName {
-            get { return BackingStore?.Get<string>(nameof(ApplicationDisplayName)); }
-            set { BackingStore?.Set(nameof(ApplicationDisplayName), value); }
+            get { return BackingStore?.Get<string>("applicationDisplayName"); }
+            set { BackingStore?.Set("applicationDisplayName", value); }
         }
         /// <summary>AAD Application Id.</summary>
         public string ApplicationId {
-            get { return BackingStore?.Get<string>(nameof(ApplicationId)); }
-            set { BackingStore?.Set(nameof(ApplicationId), value); }
+            get { return BackingStore?.Get<string>("applicationId"); }
+            set { BackingStore?.Set("applicationId", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>IPAddress.</summary>
         public string IpAddress {
-            get { return BackingStore?.Get<string>(nameof(IpAddress)); }
-            set { BackingStore?.Set(nameof(IpAddress), value); }
+            get { return BackingStore?.Get<string>("ipAddress"); }
+            set { BackingStore?.Set("ipAddress", value); }
         }
         /// <summary>Remote Tenant Id</summary>
         public string RemoteTenantId {
-            get { return BackingStore?.Get<string>(nameof(RemoteTenantId)); }
-            set { BackingStore?.Set(nameof(RemoteTenantId), value); }
+            get { return BackingStore?.Get<string>("remoteTenantId"); }
+            set { BackingStore?.Set("remoteTenantId", value); }
         }
         /// <summary>Remote User Id</summary>
         public string RemoteUserId {
-            get { return BackingStore?.Get<string>(nameof(RemoteUserId)); }
-            set { BackingStore?.Set(nameof(RemoteUserId), value); }
+            get { return BackingStore?.Get<string>("remoteUserId"); }
+            set { BackingStore?.Set("remoteUserId", value); }
         }
         /// <summary>Service Principal Name (SPN).</summary>
         public string ServicePrincipalName {
-            get { return BackingStore?.Get<string>(nameof(ServicePrincipalName)); }
-            set { BackingStore?.Set(nameof(ServicePrincipalName), value); }
+            get { return BackingStore?.Get<string>("servicePrincipalName"); }
+            set { BackingStore?.Set("servicePrincipalName", value); }
         }
         /// <summary>Actor Type.</summary>
         public string Type {
-            get { return BackingStore?.Get<string>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<string>("type"); }
+            set { BackingStore?.Set("type", value); }
         }
         /// <summary>User Id.</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>List of user permissions when the audit was performed.</summary>
         public List<string> UserPermissions {
-            get { return BackingStore?.Get<List<string>>(nameof(UserPermissions)); }
-            set { BackingStore?.Set(nameof(UserPermissions), value); }
+            get { return BackingStore?.Get<List<string>>("userPermissions"); }
+            set { BackingStore?.Set("userPermissions", value); }
         }
         /// <summary>User Principal Name (UPN).</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>List of user scope tags when the audit was performed.</summary>
         public List<RoleScopeTagInfo> UserRoleScopeTags {
-            get { return BackingStore?.Get<List<RoleScopeTagInfo>>(nameof(UserRoleScopeTags)); }
-            set { BackingStore?.Set(nameof(UserRoleScopeTags), value); }
+            get { return BackingStore?.Get<List<RoleScopeTagInfo>>("userRoleScopeTags"); }
+            set { BackingStore?.Set("userRoleScopeTags", value); }
         }
         /// <summary>
         /// Instantiates a new auditActor and sets the default values.

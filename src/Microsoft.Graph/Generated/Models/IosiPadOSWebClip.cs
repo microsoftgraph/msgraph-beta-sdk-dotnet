@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosiPadOSWebClip : MobileApp, IParsable {
         /// <summary>The web app URL.</summary>
         public string AppUrl {
-            get { return BackingStore?.Get<string>(nameof(AppUrl)); }
-            set { BackingStore?.Set(nameof(AppUrl), value); }
+            get { return BackingStore?.Get<string>("appUrl"); }
+            set { BackingStore?.Set("appUrl", value); }
         }
         /// <summary>Whether or not to use managed browser. When true, the app will be required to be opened in an Intune-protected browser. When false, the app will not be required to be opened in an Intune-protected browser.</summary>
         public bool? UseManagedBrowser {
-            get { return BackingStore?.Get<bool?>(nameof(UseManagedBrowser)); }
-            set { BackingStore?.Set(nameof(UseManagedBrowser), value); }
+            get { return BackingStore?.Get<bool?>("useManagedBrowser"); }
+            set { BackingStore?.Set("useManagedBrowser", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

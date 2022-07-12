@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
     public class EvaluateApplicationPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The contentInfo property</summary>
         public Microsoft.Graph.Beta.Models.Security.ContentInfo ContentInfo {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ContentInfo>(nameof(ContentInfo)); }
-            set { BackingStore?.Set(nameof(ContentInfo), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ContentInfo>("contentInfo"); }
+            set { BackingStore?.Set("contentInfo", value); }
         }
         /// <summary>The labelingOptions property</summary>
         public Microsoft.Graph.Beta.Models.Security.LabelingOptions LabelingOptions {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.LabelingOptions>(nameof(LabelingOptions)); }
-            set { BackingStore?.Set(nameof(LabelingOptions), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.LabelingOptions>("labelingOptions"); }
+            set { BackingStore?.Set("labelingOptions", value); }
         }
         /// <summary>
         /// Instantiates a new evaluateApplicationPostRequestBody and sets the default values.

@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamworkCameraConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The cameras property</summary>
         public List<TeamworkPeripheral> Cameras {
-            get { return BackingStore?.Get<List<TeamworkPeripheral>>(nameof(Cameras)); }
-            set { BackingStore?.Set(nameof(Cameras), value); }
+            get { return BackingStore?.Get<List<TeamworkPeripheral>>("cameras"); }
+            set { BackingStore?.Set("cameras", value); }
         }
         /// <summary>The configuration for the content camera.</summary>
         public TeamworkContentCameraConfiguration ContentCameraConfiguration {
-            get { return BackingStore?.Get<TeamworkContentCameraConfiguration>(nameof(ContentCameraConfiguration)); }
-            set { BackingStore?.Set(nameof(ContentCameraConfiguration), value); }
+            get { return BackingStore?.Get<TeamworkContentCameraConfiguration>("contentCameraConfiguration"); }
+            set { BackingStore?.Set("contentCameraConfiguration", value); }
         }
         /// <summary>The defaultContentCamera property</summary>
         public TeamworkPeripheral DefaultContentCamera {
-            get { return BackingStore?.Get<TeamworkPeripheral>(nameof(DefaultContentCamera)); }
-            set { BackingStore?.Set(nameof(DefaultContentCamera), value); }
+            get { return BackingStore?.Get<TeamworkPeripheral>("defaultContentCamera"); }
+            set { BackingStore?.Set("defaultContentCamera", value); }
         }
         /// <summary>
         /// Instantiates a new teamworkCameraConfiguration and sets the default values.

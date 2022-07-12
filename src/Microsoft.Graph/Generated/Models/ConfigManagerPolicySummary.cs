@@ -9,43 +9,43 @@ namespace Microsoft.Graph.Beta.Models {
     public class ConfigManagerPolicySummary : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of devices evaluated to be compliant by the policy.</summary>
         public int? CompliantDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(CompliantDeviceCount)); }
-            set { BackingStore?.Set(nameof(CompliantDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("compliantDeviceCount"); }
+            set { BackingStore?.Set("compliantDeviceCount", value); }
         }
         /// <summary>The number of devices that have have been remediated by the policy.</summary>
         public int? EnforcedDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(EnforcedDeviceCount)); }
-            set { BackingStore?.Set(nameof(EnforcedDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("enforcedDeviceCount"); }
+            set { BackingStore?.Set("enforcedDeviceCount", value); }
         }
         /// <summary>The number of devices that failed to be evaluated by the policy.</summary>
         public int? FailedDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(FailedDeviceCount)); }
-            set { BackingStore?.Set(nameof(FailedDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("failedDeviceCount"); }
+            set { BackingStore?.Set("failedDeviceCount", value); }
         }
         /// <summary>The number of devices evaluated to be noncompliant by the policy.</summary>
         public int? NonCompliantDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(NonCompliantDeviceCount)); }
-            set { BackingStore?.Set(nameof(NonCompliantDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("nonCompliantDeviceCount"); }
+            set { BackingStore?.Set("nonCompliantDeviceCount", value); }
         }
         /// <summary>The number of devices that have acknowledged the policy but are pending evaluation.</summary>
         public int? PendingDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(PendingDeviceCount)); }
-            set { BackingStore?.Set(nameof(PendingDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("pendingDeviceCount"); }
+            set { BackingStore?.Set("pendingDeviceCount", value); }
         }
         /// <summary>The number of devices targeted by the policy.</summary>
         public int? TargetedDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(TargetedDeviceCount)); }
-            set { BackingStore?.Set(nameof(TargetedDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("targetedDeviceCount"); }
+            set { BackingStore?.Set("targetedDeviceCount", value); }
         }
         /// <summary>
-        /// Instantiates a new ConfigManagerPolicySummary and sets the default values.
+        /// Instantiates a new configManagerPolicySummary and sets the default values.
         /// </summary>
         public ConfigManagerPolicySummary() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

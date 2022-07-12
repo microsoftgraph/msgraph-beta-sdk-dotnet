@@ -4,17 +4,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class UnifiedRbacResourceNamespace : Entity, IParsable {
         /// <summary>Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>Operations that an authorized principal are allowed to perform.</summary>
         public List<UnifiedRbacResourceAction> ResourceActions {
-            get { return BackingStore?.Get<List<UnifiedRbacResourceAction>>(nameof(ResourceActions)); }
-            set { BackingStore?.Set(nameof(ResourceActions), value); }
+            get { return BackingStore?.Get<List<UnifiedRbacResourceAction>>("resourceActions"); }
+            set { BackingStore?.Set("resourceActions", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

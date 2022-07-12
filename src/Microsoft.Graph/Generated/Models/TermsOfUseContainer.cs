@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class TermsOfUseContainer : Entity, IParsable {
         /// <summary>Represents the current status of a user&apos;s response to a company&apos;s customizable terms of use agreement.</summary>
         public List<AgreementAcceptance> AgreementAcceptances {
-            get { return BackingStore?.Get<List<AgreementAcceptance>>(nameof(AgreementAcceptances)); }
-            set { BackingStore?.Set(nameof(AgreementAcceptances), value); }
+            get { return BackingStore?.Get<List<AgreementAcceptance>>("agreementAcceptances"); }
+            set { BackingStore?.Set("agreementAcceptances", value); }
         }
         /// <summary>Represents a tenant&apos;s customizable terms of use agreement that&apos;s created and managed with Azure Active Directory (Azure AD).</summary>
         public List<Agreement> Agreements {
-            get { return BackingStore?.Get<List<Agreement>>(nameof(Agreements)); }
-            set { BackingStore?.Set(nameof(Agreements), value); }
+            get { return BackingStore?.Get<List<Agreement>>("agreements"); }
+            set { BackingStore?.Set("agreements", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

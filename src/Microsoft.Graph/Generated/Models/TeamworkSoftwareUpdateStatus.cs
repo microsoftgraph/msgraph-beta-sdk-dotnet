@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamworkSoftwareUpdateStatus : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The available software version to update.</summary>
         public string AvailableVersion {
-            get { return BackingStore?.Get<string>(nameof(AvailableVersion)); }
-            set { BackingStore?.Set(nameof(AvailableVersion), value); }
+            get { return BackingStore?.Get<string>("availableVersion"); }
+            set { BackingStore?.Set("availableVersion", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The current software version.</summary>
         public string CurrentVersion {
-            get { return BackingStore?.Get<string>(nameof(CurrentVersion)); }
-            set { BackingStore?.Set(nameof(CurrentVersion), value); }
+            get { return BackingStore?.Get<string>("currentVersion"); }
+            set { BackingStore?.Set("currentVersion", value); }
         }
         /// <summary>The update status of the software. The possible values are: unknown, latest, updateAvailable, unknownFutureValue.</summary>
         public TeamworkSoftwareFreshness? SoftwareFreshness {
-            get { return BackingStore?.Get<TeamworkSoftwareFreshness?>(nameof(SoftwareFreshness)); }
-            set { BackingStore?.Set(nameof(SoftwareFreshness), value); }
+            get { return BackingStore?.Get<TeamworkSoftwareFreshness?>("softwareFreshness"); }
+            set { BackingStore?.Set("softwareFreshness", value); }
         }
         /// <summary>
         /// Instantiates a new teamworkSoftwareUpdateStatus and sets the default values.

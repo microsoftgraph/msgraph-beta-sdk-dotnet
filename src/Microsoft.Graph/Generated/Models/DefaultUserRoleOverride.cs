@@ -4,17 +4,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Casts the previous resource to application.</summary>
     public class DefaultUserRoleOverride : Entity, IParsable {
         /// <summary>The isDefault property</summary>
         public bool? IsDefault {
-            get { return BackingStore?.Get<bool?>(nameof(IsDefault)); }
-            set { BackingStore?.Set(nameof(IsDefault), value); }
+            get { return BackingStore?.Get<bool?>("isDefault"); }
+            set { BackingStore?.Set("isDefault", value); }
         }
         /// <summary>The rolePermissions property</summary>
         public List<UnifiedRolePermission> RolePermissions {
-            get { return BackingStore?.Get<List<UnifiedRolePermission>>(nameof(RolePermissions)); }
-            set { BackingStore?.Set(nameof(RolePermissions), value); }
+            get { return BackingStore?.Get<List<UnifiedRolePermission>>("rolePermissions"); }
+            set { BackingStore?.Set("rolePermissions", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

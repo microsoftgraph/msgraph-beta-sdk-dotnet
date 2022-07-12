@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class MobileAppIntentAndState : Entity, IParsable {
         /// <summary>Device identifier created or collected by Intune.</summary>
         public string ManagedDeviceIdentifier {
-            get { return BackingStore?.Get<string>(nameof(ManagedDeviceIdentifier)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceIdentifier), value); }
+            get { return BackingStore?.Get<string>("managedDeviceIdentifier"); }
+            set { BackingStore?.Set("managedDeviceIdentifier", value); }
         }
         /// <summary>The list of payload intents and states for the tenant.</summary>
         public List<MobileAppIntentAndStateDetail> MobileAppList {
-            get { return BackingStore?.Get<List<MobileAppIntentAndStateDetail>>(nameof(MobileAppList)); }
-            set { BackingStore?.Set(nameof(MobileAppList), value); }
+            get { return BackingStore?.Get<List<MobileAppIntentAndStateDetail>>("mobileAppList"); }
+            set { BackingStore?.Set("mobileAppList", value); }
         }
         /// <summary>Identifier for the user that tried to enroll the device.</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

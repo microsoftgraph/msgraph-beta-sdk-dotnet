@@ -10,25 +10,25 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.M
     public class EnrollAssetsByIdPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The ids property</summary>
         public List<string> Ids {
-            get { return BackingStore?.Get<List<string>>(nameof(Ids)); }
-            set { BackingStore?.Set(nameof(Ids), value); }
+            get { return BackingStore?.Get<List<string>>("ids"); }
+            set { BackingStore?.Set("ids", value); }
         }
         /// <summary>The memberEntityType property</summary>
         public string MemberEntityType {
-            get { return BackingStore?.Get<string>(nameof(MemberEntityType)); }
-            set { BackingStore?.Set(nameof(MemberEntityType), value); }
+            get { return BackingStore?.Get<string>("memberEntityType"); }
+            set { BackingStore?.Set("memberEntityType", value); }
         }
         /// <summary>The updateCategory property</summary>
         public Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateCategory? UpdateCategory {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateCategory?>(nameof(UpdateCategory)); }
-            set { BackingStore?.Set(nameof(UpdateCategory), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateCategory?>("updateCategory"); }
+            set { BackingStore?.Set("updateCategory", value); }
         }
         /// <summary>
         /// Instantiates a new enrollAssetsByIdPostRequestBody and sets the default values.

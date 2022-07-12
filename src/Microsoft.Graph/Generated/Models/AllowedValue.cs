@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AllowedValue : Entity, IParsable {
         /// <summary>Indicates whether the predefined value is active or deactivated. If set to false, this predefined value cannot be assigned to any additional supported directory objects.</summary>
         public bool? IsActive {
-            get { return BackingStore?.Get<bool?>(nameof(IsActive)); }
-            set { BackingStore?.Set(nameof(IsActive), value); }
+            get { return BackingStore?.Get<bool?>("isActive"); }
+            set { BackingStore?.Set("isActive", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

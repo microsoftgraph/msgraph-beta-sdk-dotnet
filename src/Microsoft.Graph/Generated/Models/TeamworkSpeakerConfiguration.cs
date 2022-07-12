@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamworkSpeakerConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The defaultCommunicationSpeaker property</summary>
         public TeamworkPeripheral DefaultCommunicationSpeaker {
-            get { return BackingStore?.Get<TeamworkPeripheral>(nameof(DefaultCommunicationSpeaker)); }
-            set { BackingStore?.Set(nameof(DefaultCommunicationSpeaker), value); }
+            get { return BackingStore?.Get<TeamworkPeripheral>("defaultCommunicationSpeaker"); }
+            set { BackingStore?.Set("defaultCommunicationSpeaker", value); }
         }
         /// <summary>The defaultSpeaker property</summary>
         public TeamworkPeripheral DefaultSpeaker {
-            get { return BackingStore?.Get<TeamworkPeripheral>(nameof(DefaultSpeaker)); }
-            set { BackingStore?.Set(nameof(DefaultSpeaker), value); }
+            get { return BackingStore?.Get<TeamworkPeripheral>("defaultSpeaker"); }
+            set { BackingStore?.Set("defaultSpeaker", value); }
         }
         /// <summary>True if the communication speaker is optional. Used to compute the health state if the communication speaker is not optional.</summary>
         public bool? IsCommunicationSpeakerOptional {
-            get { return BackingStore?.Get<bool?>(nameof(IsCommunicationSpeakerOptional)); }
-            set { BackingStore?.Set(nameof(IsCommunicationSpeakerOptional), value); }
+            get { return BackingStore?.Get<bool?>("isCommunicationSpeakerOptional"); }
+            set { BackingStore?.Set("isCommunicationSpeakerOptional", value); }
         }
         /// <summary>True if the configured speaker is optional. Used to compute the health state if the speaker is not optional.</summary>
         public bool? IsSpeakerOptional {
-            get { return BackingStore?.Get<bool?>(nameof(IsSpeakerOptional)); }
-            set { BackingStore?.Set(nameof(IsSpeakerOptional), value); }
+            get { return BackingStore?.Get<bool?>("isSpeakerOptional"); }
+            set { BackingStore?.Set("isSpeakerOptional", value); }
         }
         /// <summary>The speakers property</summary>
         public List<TeamworkPeripheral> Speakers {
-            get { return BackingStore?.Get<List<TeamworkPeripheral>>(nameof(Speakers)); }
-            set { BackingStore?.Set(nameof(Speakers), value); }
+            get { return BackingStore?.Get<List<TeamworkPeripheral>>("speakers"); }
+            set { BackingStore?.Set("speakers", value); }
         }
         /// <summary>
         /// Instantiates a new teamworkSpeakerConfiguration and sets the default values.

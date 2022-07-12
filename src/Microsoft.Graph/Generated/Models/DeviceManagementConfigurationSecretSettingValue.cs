@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationSecretSettingValue : DeviceManagementConfigurationSimpleSettingValue, IParsable {
         /// <summary>Value of the secret setting.</summary>
         public string Value {
-            get { return BackingStore?.Get<string>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<string>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
-        /// <summary>Gets or sets a value indicating the encryption state of the Value property. Possible values are: invalid, notEncrypted, encryptedValueToken.</summary>
+        /// <summary>type tracking the encryption state of a secret setting value</summary>
         public DeviceManagementConfigurationSecretSettingValueState? ValueState {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSecretSettingValueState?>(nameof(ValueState)); }
-            set { BackingStore?.Set(nameof(ValueState), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationSecretSettingValueState?>("valueState"); }
+            set { BackingStore?.Set("valueState", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

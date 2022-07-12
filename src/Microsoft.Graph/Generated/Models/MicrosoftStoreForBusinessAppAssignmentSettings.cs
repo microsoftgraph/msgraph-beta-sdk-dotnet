@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class MicrosoftStoreForBusinessAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
         /// <summary>Whether or not to use device execution context for Microsoft Store for Business mobile app.</summary>
         public bool? UseDeviceContext {
-            get { return BackingStore?.Get<bool?>(nameof(UseDeviceContext)); }
-            set { BackingStore?.Set(nameof(UseDeviceContext), value); }
+            get { return BackingStore?.Get<bool?>("useDeviceContext"); }
+            set { BackingStore?.Set("useDeviceContext", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

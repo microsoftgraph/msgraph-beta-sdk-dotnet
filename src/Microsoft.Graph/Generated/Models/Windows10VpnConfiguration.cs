@@ -7,128 +7,128 @@ namespace Microsoft.Graph.Beta.Models {
     public class Windows10VpnConfiguration : WindowsVpnConfiguration, IParsable {
         /// <summary>Associated Apps. This collection can contain a maximum of 10000 elements.</summary>
         public List<Windows10AssociatedApps> AssociatedApps {
-            get { return BackingStore?.Get<List<Windows10AssociatedApps>>(nameof(AssociatedApps)); }
-            set { BackingStore?.Set(nameof(AssociatedApps), value); }
+            get { return BackingStore?.Get<List<Windows10AssociatedApps>>("associatedApps"); }
+            set { BackingStore?.Set("associatedApps", value); }
         }
-        /// <summary>Authentication method. Possible values are: certificate, usernameAndPassword, customEapXml, derivedCredential.</summary>
+        /// <summary>Windows 10 VPN connection types.</summary>
         public Windows10VpnAuthenticationMethod? AuthenticationMethod {
-            get { return BackingStore?.Get<Windows10VpnAuthenticationMethod?>(nameof(AuthenticationMethod)); }
-            set { BackingStore?.Set(nameof(AuthenticationMethod), value); }
+            get { return BackingStore?.Get<Windows10VpnAuthenticationMethod?>("authenticationMethod"); }
+            set { BackingStore?.Set("authenticationMethod", value); }
         }
-        /// <summary>Connection type. Possible values are: pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn, automatic, ikEv2, l2tp, pptp, citrix, paloAltoGlobalProtect, ciscoAnyConnect, unknownFutureValue, microsoftTunnel.</summary>
+        /// <summary>VPN connection types.</summary>
         public Windows10VpnConnectionType? ConnectionType {
-            get { return BackingStore?.Get<Windows10VpnConnectionType?>(nameof(ConnectionType)); }
-            set { BackingStore?.Set(nameof(ConnectionType), value); }
+            get { return BackingStore?.Get<Windows10VpnConnectionType?>("connectionType"); }
+            set { BackingStore?.Set("connectionType", value); }
         }
         /// <summary>Cryptography Suite security settings for IKEv2 VPN in Windows10 and above</summary>
         public Microsoft.Graph.Beta.Models.CryptographySuite CryptographySuite {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CryptographySuite>(nameof(CryptographySuite)); }
-            set { BackingStore?.Set(nameof(CryptographySuite), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CryptographySuite>("cryptographySuite"); }
+            set { BackingStore?.Set("cryptographySuite", value); }
         }
         /// <summary>DNS rules. This collection can contain a maximum of 1000 elements.</summary>
         public List<VpnDnsRule> DnsRules {
-            get { return BackingStore?.Get<List<VpnDnsRule>>(nameof(DnsRules)); }
-            set { BackingStore?.Set(nameof(DnsRules), value); }
+            get { return BackingStore?.Get<List<VpnDnsRule>>("dnsRules"); }
+            set { BackingStore?.Set("dnsRules", value); }
         }
         /// <summary>Specify DNS suffixes to add to the DNS search list to properly route short names.</summary>
         public List<string> DnsSuffixes {
-            get { return BackingStore?.Get<List<string>>(nameof(DnsSuffixes)); }
-            set { BackingStore?.Set(nameof(DnsSuffixes), value); }
+            get { return BackingStore?.Get<List<string>>("dnsSuffixes"); }
+            set { BackingStore?.Set("dnsSuffixes", value); }
         }
         /// <summary>Extensible Authentication Protocol (EAP) XML. (UTF8 encoded byte array)</summary>
         public byte[] EapXml {
-            get { return BackingStore?.Get<byte[]>(nameof(EapXml)); }
-            set { BackingStore?.Set(nameof(EapXml), value); }
+            get { return BackingStore?.Get<byte[]>("eapXml"); }
+            set { BackingStore?.Set("eapXml", value); }
         }
         /// <summary>Enable Always On mode.</summary>
         public bool? EnableAlwaysOn {
-            get { return BackingStore?.Get<bool?>(nameof(EnableAlwaysOn)); }
-            set { BackingStore?.Set(nameof(EnableAlwaysOn), value); }
+            get { return BackingStore?.Get<bool?>("enableAlwaysOn"); }
+            set { BackingStore?.Set("enableAlwaysOn", value); }
         }
         /// <summary>Enable conditional access.</summary>
         public bool? EnableConditionalAccess {
-            get { return BackingStore?.Get<bool?>(nameof(EnableConditionalAccess)); }
-            set { BackingStore?.Set(nameof(EnableConditionalAccess), value); }
+            get { return BackingStore?.Get<bool?>("enableConditionalAccess"); }
+            set { BackingStore?.Set("enableConditionalAccess", value); }
         }
         /// <summary>Enable device tunnel.</summary>
         public bool? EnableDeviceTunnel {
-            get { return BackingStore?.Get<bool?>(nameof(EnableDeviceTunnel)); }
-            set { BackingStore?.Set(nameof(EnableDeviceTunnel), value); }
+            get { return BackingStore?.Get<bool?>("enableDeviceTunnel"); }
+            set { BackingStore?.Set("enableDeviceTunnel", value); }
         }
         /// <summary>Enable IP address registration with internal DNS.</summary>
         public bool? EnableDnsRegistration {
-            get { return BackingStore?.Get<bool?>(nameof(EnableDnsRegistration)); }
-            set { BackingStore?.Set(nameof(EnableDnsRegistration), value); }
+            get { return BackingStore?.Get<bool?>("enableDnsRegistration"); }
+            set { BackingStore?.Set("enableDnsRegistration", value); }
         }
         /// <summary>Enable single sign-on (SSO) with alternate certificate.</summary>
         public bool? EnableSingleSignOnWithAlternateCertificate {
-            get { return BackingStore?.Get<bool?>(nameof(EnableSingleSignOnWithAlternateCertificate)); }
-            set { BackingStore?.Set(nameof(EnableSingleSignOnWithAlternateCertificate), value); }
+            get { return BackingStore?.Get<bool?>("enableSingleSignOnWithAlternateCertificate"); }
+            set { BackingStore?.Set("enableSingleSignOnWithAlternateCertificate", value); }
         }
         /// <summary>Enable split tunneling.</summary>
         public bool? EnableSplitTunneling {
-            get { return BackingStore?.Get<bool?>(nameof(EnableSplitTunneling)); }
-            set { BackingStore?.Set(nameof(EnableSplitTunneling), value); }
+            get { return BackingStore?.Get<bool?>("enableSplitTunneling"); }
+            set { BackingStore?.Set("enableSplitTunneling", value); }
         }
         /// <summary>Identity certificate for client authentication when authentication method is certificate.</summary>
         public WindowsCertificateProfileBase IdentityCertificate {
-            get { return BackingStore?.Get<WindowsCertificateProfileBase>(nameof(IdentityCertificate)); }
-            set { BackingStore?.Set(nameof(IdentityCertificate), value); }
+            get { return BackingStore?.Get<WindowsCertificateProfileBase>("identityCertificate"); }
+            set { BackingStore?.Set("identityCertificate", value); }
         }
         /// <summary>ID of the Microsoft Tunnel site associated with the VPN profile.</summary>
         public string MicrosoftTunnelSiteId {
-            get { return BackingStore?.Get<string>(nameof(MicrosoftTunnelSiteId)); }
-            set { BackingStore?.Set(nameof(MicrosoftTunnelSiteId), value); }
+            get { return BackingStore?.Get<string>("microsoftTunnelSiteId"); }
+            set { BackingStore?.Set("microsoftTunnelSiteId", value); }
         }
         /// <summary>Only associated Apps can use connection (per-app VPN).</summary>
         public bool? OnlyAssociatedAppsCanUseConnection {
-            get { return BackingStore?.Get<bool?>(nameof(OnlyAssociatedAppsCanUseConnection)); }
-            set { BackingStore?.Set(nameof(OnlyAssociatedAppsCanUseConnection), value); }
+            get { return BackingStore?.Get<bool?>("onlyAssociatedAppsCanUseConnection"); }
+            set { BackingStore?.Set("onlyAssociatedAppsCanUseConnection", value); }
         }
         /// <summary>Profile target type. Possible values are: user, device, autoPilotDevice.</summary>
         public Windows10VpnProfileTarget? ProfileTarget {
-            get { return BackingStore?.Get<Windows10VpnProfileTarget?>(nameof(ProfileTarget)); }
-            set { BackingStore?.Set(nameof(ProfileTarget), value); }
+            get { return BackingStore?.Get<Windows10VpnProfileTarget?>("profileTarget"); }
+            set { BackingStore?.Set("profileTarget", value); }
         }
         /// <summary>Proxy Server.</summary>
         public Windows10VpnProxyServer ProxyServer {
-            get { return BackingStore?.Get<Windows10VpnProxyServer>(nameof(ProxyServer)); }
-            set { BackingStore?.Set(nameof(ProxyServer), value); }
+            get { return BackingStore?.Get<Windows10VpnProxyServer>("proxyServer"); }
+            set { BackingStore?.Set("proxyServer", value); }
         }
         /// <summary>Remember user credentials.</summary>
         public bool? RememberUserCredentials {
-            get { return BackingStore?.Get<bool?>(nameof(RememberUserCredentials)); }
-            set { BackingStore?.Set(nameof(RememberUserCredentials), value); }
+            get { return BackingStore?.Get<bool?>("rememberUserCredentials"); }
+            set { BackingStore?.Set("rememberUserCredentials", value); }
         }
         /// <summary>Routes (optional for third-party providers). This collection can contain a maximum of 1000 elements.</summary>
         public List<VpnRoute> Routes {
-            get { return BackingStore?.Get<List<VpnRoute>>(nameof(Routes)); }
-            set { BackingStore?.Set(nameof(Routes), value); }
+            get { return BackingStore?.Get<List<VpnRoute>>("routes"); }
+            set { BackingStore?.Set("routes", value); }
         }
         /// <summary>Single sign-on Extended Key Usage (EKU).</summary>
         public ExtendedKeyUsage SingleSignOnEku {
-            get { return BackingStore?.Get<ExtendedKeyUsage>(nameof(SingleSignOnEku)); }
-            set { BackingStore?.Set(nameof(SingleSignOnEku), value); }
+            get { return BackingStore?.Get<ExtendedKeyUsage>("singleSignOnEku"); }
+            set { BackingStore?.Set("singleSignOnEku", value); }
         }
         /// <summary>Single sign-on issuer hash.</summary>
         public string SingleSignOnIssuerHash {
-            get { return BackingStore?.Get<string>(nameof(SingleSignOnIssuerHash)); }
-            set { BackingStore?.Set(nameof(SingleSignOnIssuerHash), value); }
+            get { return BackingStore?.Get<string>("singleSignOnIssuerHash"); }
+            set { BackingStore?.Set("singleSignOnIssuerHash", value); }
         }
         /// <summary>Traffic rules. This collection can contain a maximum of 1000 elements.</summary>
         public List<VpnTrafficRule> TrafficRules {
-            get { return BackingStore?.Get<List<VpnTrafficRule>>(nameof(TrafficRules)); }
-            set { BackingStore?.Set(nameof(TrafficRules), value); }
+            get { return BackingStore?.Get<List<VpnTrafficRule>>("trafficRules"); }
+            set { BackingStore?.Set("trafficRules", value); }
         }
         /// <summary>Trusted Network Domains</summary>
         public List<string> TrustedNetworkDomains {
-            get { return BackingStore?.Get<List<string>>(nameof(TrustedNetworkDomains)); }
-            set { BackingStore?.Set(nameof(TrustedNetworkDomains), value); }
+            get { return BackingStore?.Get<List<string>>("trustedNetworkDomains"); }
+            set { BackingStore?.Set("trustedNetworkDomains", value); }
         }
         /// <summary>Windows Information Protection (WIP) domain to associate with this connection.</summary>
         public string WindowsInformationProtectionDomain {
-            get { return BackingStore?.Get<string>(nameof(WindowsInformationProtectionDomain)); }
-            set { BackingStore?.Set(nameof(WindowsInformationProtectionDomain), value); }
+            get { return BackingStore?.Get<string>("windowsInformationProtectionDomain"); }
+            set { BackingStore?.Set("windowsInformationProtectionDomain", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

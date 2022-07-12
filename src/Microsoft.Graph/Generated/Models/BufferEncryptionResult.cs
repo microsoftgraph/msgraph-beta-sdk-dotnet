@@ -8,23 +8,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class BufferEncryptionResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The encryptedBuffer property</summary>
         public byte[] EncryptedBuffer {
-            get { return BackingStore?.Get<byte[]>(nameof(EncryptedBuffer)); }
-            set { BackingStore?.Set(nameof(EncryptedBuffer), value); }
+            get { return BackingStore?.Get<byte[]>("encryptedBuffer"); }
+            set { BackingStore?.Set("encryptedBuffer", value); }
         }
         /// <summary>The publishingLicense property</summary>
         public byte[] PublishingLicense {
-            get { return BackingStore?.Get<byte[]>(nameof(PublishingLicense)); }
-            set { BackingStore?.Set(nameof(PublishingLicense), value); }
+            get { return BackingStore?.Get<byte[]>("publishingLicense"); }
+            set { BackingStore?.Set("publishingLicense", value); }
         }
         /// <summary>
-        /// Instantiates a new BufferEncryptionResult and sets the default values.
+        /// Instantiates a new bufferEncryptionResult and sets the default values.
         /// </summary>
         public BufferEncryptionResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

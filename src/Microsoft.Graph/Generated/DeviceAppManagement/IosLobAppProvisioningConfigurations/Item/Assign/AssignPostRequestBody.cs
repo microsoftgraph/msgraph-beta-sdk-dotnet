@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
     public class AssignPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The appProvisioningConfigurationGroupAssignments property</summary>
         public List<MobileAppProvisioningConfigGroupAssignment> AppProvisioningConfigurationGroupAssignments {
-            get { return BackingStore?.Get<List<MobileAppProvisioningConfigGroupAssignment>>(nameof(AppProvisioningConfigurationGroupAssignments)); }
-            set { BackingStore?.Set(nameof(AppProvisioningConfigurationGroupAssignments), value); }
+            get { return BackingStore?.Get<List<MobileAppProvisioningConfigGroupAssignment>>("appProvisioningConfigurationGroupAssignments"); }
+            set { BackingStore?.Set("appProvisioningConfigurationGroupAssignments", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The iOSLobAppProvisioningConfigAssignments property</summary>
         public List<IosLobAppProvisioningConfigurationAssignment> IOSLobAppProvisioningConfigAssignments {
-            get { return BackingStore?.Get<List<IosLobAppProvisioningConfigurationAssignment>>(nameof(IOSLobAppProvisioningConfigAssignments)); }
-            set { BackingStore?.Set(nameof(IOSLobAppProvisioningConfigAssignments), value); }
+            get { return BackingStore?.Get<List<IosLobAppProvisioningConfigurationAssignment>>("iOSLobAppProvisioningConfigAssignments"); }
+            set { BackingStore?.Set("iOSLobAppProvisioningConfigAssignments", value); }
         }
         /// <summary>
         /// Instantiates a new assignPostRequestBody and sets the default values.

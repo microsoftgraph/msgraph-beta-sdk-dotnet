@@ -8,110 +8,110 @@ namespace Microsoft.Graph.Beta.Models {
     public class PrinterDocumentConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The collate property</summary>
         public bool? Collate {
-            get { return BackingStore?.Get<bool?>(nameof(Collate)); }
-            set { BackingStore?.Set(nameof(Collate), value); }
+            get { return BackingStore?.Get<bool?>("collate"); }
+            set { BackingStore?.Set("collate", value); }
         }
         /// <summary>The colorMode property</summary>
         public PrintColorMode? ColorMode {
-            get { return BackingStore?.Get<PrintColorMode?>(nameof(ColorMode)); }
-            set { BackingStore?.Set(nameof(ColorMode), value); }
+            get { return BackingStore?.Get<PrintColorMode?>("colorMode"); }
+            set { BackingStore?.Set("colorMode", value); }
         }
         /// <summary>The copies property</summary>
         public int? Copies {
-            get { return BackingStore?.Get<int?>(nameof(Copies)); }
-            set { BackingStore?.Set(nameof(Copies), value); }
+            get { return BackingStore?.Get<int?>("copies"); }
+            set { BackingStore?.Set("copies", value); }
         }
         /// <summary>The dpi property</summary>
         public int? Dpi {
-            get { return BackingStore?.Get<int?>(nameof(Dpi)); }
-            set { BackingStore?.Set(nameof(Dpi), value); }
+            get { return BackingStore?.Get<int?>("dpi"); }
+            set { BackingStore?.Set("dpi", value); }
         }
         /// <summary>The duplexMode property</summary>
         public PrintDuplexMode? DuplexMode {
-            get { return BackingStore?.Get<PrintDuplexMode?>(nameof(DuplexMode)); }
-            set { BackingStore?.Set(nameof(DuplexMode), value); }
+            get { return BackingStore?.Get<PrintDuplexMode?>("duplexMode"); }
+            set { BackingStore?.Set("duplexMode", value); }
         }
         /// <summary>The feedDirection property</summary>
         public PrinterFeedDirection? FeedDirection {
-            get { return BackingStore?.Get<PrinterFeedDirection?>(nameof(FeedDirection)); }
-            set { BackingStore?.Set(nameof(FeedDirection), value); }
+            get { return BackingStore?.Get<PrinterFeedDirection?>("feedDirection"); }
+            set { BackingStore?.Set("feedDirection", value); }
         }
         /// <summary>The feedOrientation property</summary>
         public PrinterFeedOrientation? FeedOrientation {
-            get { return BackingStore?.Get<PrinterFeedOrientation?>(nameof(FeedOrientation)); }
-            set { BackingStore?.Set(nameof(FeedOrientation), value); }
+            get { return BackingStore?.Get<PrinterFeedOrientation?>("feedOrientation"); }
+            set { BackingStore?.Set("feedOrientation", value); }
         }
         /// <summary>The finishings property</summary>
         public List<string> Finishings {
-            get { return BackingStore?.Get<List<string>>(nameof(Finishings)); }
-            set { BackingStore?.Set(nameof(Finishings), value); }
+            get { return BackingStore?.Get<List<string>>("finishings"); }
+            set { BackingStore?.Set("finishings", value); }
         }
         /// <summary>The fitPdfToPage property</summary>
         public bool? FitPdfToPage {
-            get { return BackingStore?.Get<bool?>(nameof(FitPdfToPage)); }
-            set { BackingStore?.Set(nameof(FitPdfToPage), value); }
+            get { return BackingStore?.Get<bool?>("fitPdfToPage"); }
+            set { BackingStore?.Set("fitPdfToPage", value); }
         }
         /// <summary>The inputBin property</summary>
         public string InputBin {
-            get { return BackingStore?.Get<string>(nameof(InputBin)); }
-            set { BackingStore?.Set(nameof(InputBin), value); }
+            get { return BackingStore?.Get<string>("inputBin"); }
+            set { BackingStore?.Set("inputBin", value); }
         }
         /// <summary>The margin property</summary>
         public PrintMargin Margin {
-            get { return BackingStore?.Get<PrintMargin>(nameof(Margin)); }
-            set { BackingStore?.Set(nameof(Margin), value); }
+            get { return BackingStore?.Get<PrintMargin>("margin"); }
+            set { BackingStore?.Set("margin", value); }
         }
         /// <summary>The mediaSize property</summary>
         public string MediaSize {
-            get { return BackingStore?.Get<string>(nameof(MediaSize)); }
-            set { BackingStore?.Set(nameof(MediaSize), value); }
+            get { return BackingStore?.Get<string>("mediaSize"); }
+            set { BackingStore?.Set("mediaSize", value); }
         }
         /// <summary>The mediaType property</summary>
         public string MediaType {
-            get { return BackingStore?.Get<string>(nameof(MediaType)); }
-            set { BackingStore?.Set(nameof(MediaType), value); }
+            get { return BackingStore?.Get<string>("mediaType"); }
+            set { BackingStore?.Set("mediaType", value); }
         }
         /// <summary>The multipageLayout property</summary>
         public PrintMultipageLayout? MultipageLayout {
-            get { return BackingStore?.Get<PrintMultipageLayout?>(nameof(MultipageLayout)); }
-            set { BackingStore?.Set(nameof(MultipageLayout), value); }
+            get { return BackingStore?.Get<PrintMultipageLayout?>("multipageLayout"); }
+            set { BackingStore?.Set("multipageLayout", value); }
         }
         /// <summary>The orientation property</summary>
         public PrintOrientation? Orientation {
-            get { return BackingStore?.Get<PrintOrientation?>(nameof(Orientation)); }
-            set { BackingStore?.Set(nameof(Orientation), value); }
+            get { return BackingStore?.Get<PrintOrientation?>("orientation"); }
+            set { BackingStore?.Set("orientation", value); }
         }
         /// <summary>The outputBin property</summary>
         public string OutputBin {
-            get { return BackingStore?.Get<string>(nameof(OutputBin)); }
-            set { BackingStore?.Set(nameof(OutputBin), value); }
+            get { return BackingStore?.Get<string>("outputBin"); }
+            set { BackingStore?.Set("outputBin", value); }
         }
         /// <summary>The pageRanges property</summary>
         public List<IntegerRange> PageRanges {
-            get { return BackingStore?.Get<List<IntegerRange>>(nameof(PageRanges)); }
-            set { BackingStore?.Set(nameof(PageRanges), value); }
+            get { return BackingStore?.Get<List<IntegerRange>>("pageRanges"); }
+            set { BackingStore?.Set("pageRanges", value); }
         }
         /// <summary>The pagesPerSheet property</summary>
         public int? PagesPerSheet {
-            get { return BackingStore?.Get<int?>(nameof(PagesPerSheet)); }
-            set { BackingStore?.Set(nameof(PagesPerSheet), value); }
+            get { return BackingStore?.Get<int?>("pagesPerSheet"); }
+            set { BackingStore?.Set("pagesPerSheet", value); }
         }
         /// <summary>The quality property</summary>
         public PrintQuality? Quality {
-            get { return BackingStore?.Get<PrintQuality?>(nameof(Quality)); }
-            set { BackingStore?.Set(nameof(Quality), value); }
+            get { return BackingStore?.Get<PrintQuality?>("quality"); }
+            set { BackingStore?.Set("quality", value); }
         }
         /// <summary>The scaling property</summary>
         public PrintScaling? Scaling {
-            get { return BackingStore?.Get<PrintScaling?>(nameof(Scaling)); }
-            set { BackingStore?.Set(nameof(Scaling), value); }
+            get { return BackingStore?.Get<PrintScaling?>("scaling"); }
+            set { BackingStore?.Set("scaling", value); }
         }
         /// <summary>
         /// Instantiates a new printerDocumentConfiguration and sets the default values.

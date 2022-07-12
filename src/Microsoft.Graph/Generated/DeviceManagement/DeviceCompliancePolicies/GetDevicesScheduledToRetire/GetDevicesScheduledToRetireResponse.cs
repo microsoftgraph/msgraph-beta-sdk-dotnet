@@ -10,15 +10,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetDevi
     public class GetDevicesScheduledToRetireResponse : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The value property</summary>
         public List<RetireScheduledManagedDevice> Value {
-            get { return BackingStore?.Get<List<RetireScheduledManagedDevice>>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<List<RetireScheduledManagedDevice>>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Instantiates a new getDevicesScheduledToRetireResponse and sets the default values.

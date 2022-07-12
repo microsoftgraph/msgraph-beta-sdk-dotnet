@@ -8,28 +8,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class Office365GroupsActivityGroupCounts : Entity, IParsable {
         /// <summary>The number of active groups. A group is considered active if any of the following occurred: group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.</summary>
         public long? Active {
-            get { return BackingStore?.Get<long?>(nameof(Active)); }
-            set { BackingStore?.Set(nameof(Active), value); }
+            get { return BackingStore?.Get<long?>("active"); }
+            set { BackingStore?.Set("active", value); }
         }
         /// <summary>The date on which a number of groups were active.</summary>
         public Date? ReportDate {
-            get { return BackingStore?.Get<Date?>(nameof(ReportDate)); }
-            set { BackingStore?.Set(nameof(ReportDate), value); }
+            get { return BackingStore?.Get<Date?>("reportDate"); }
+            set { BackingStore?.Set("reportDate", value); }
         }
         /// <summary>The number of days the report covers.</summary>
         public string ReportPeriod {
-            get { return BackingStore?.Get<string>(nameof(ReportPeriod)); }
-            set { BackingStore?.Set(nameof(ReportPeriod), value); }
+            get { return BackingStore?.Get<string>("reportPeriod"); }
+            set { BackingStore?.Set("reportPeriod", value); }
         }
         /// <summary>The latest date of the content.</summary>
         public Date? ReportRefreshDate {
-            get { return BackingStore?.Get<Date?>(nameof(ReportRefreshDate)); }
-            set { BackingStore?.Set(nameof(ReportRefreshDate), value); }
+            get { return BackingStore?.Get<Date?>("reportRefreshDate"); }
+            set { BackingStore?.Set("reportRefreshDate", value); }
         }
         /// <summary>The total number of groups.</summary>
         public long? Total {
-            get { return BackingStore?.Get<long?>(nameof(Total)); }
-            set { BackingStore?.Set(nameof(Total), value); }
+            get { return BackingStore?.Get<long?>("total"); }
+            set { BackingStore?.Set("total", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

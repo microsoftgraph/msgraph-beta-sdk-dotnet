@@ -9,40 +9,40 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementSettingComparison : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Setting comparison result. Possible values are: unknown, equal, notEqual, added, removed.</summary>
+        /// <summary>Setting comparison result type</summary>
         public DeviceManagementComparisonResult? ComparisonResult {
-            get { return BackingStore?.Get<DeviceManagementComparisonResult?>(nameof(ComparisonResult)); }
-            set { BackingStore?.Set(nameof(ComparisonResult), value); }
+            get { return BackingStore?.Get<DeviceManagementComparisonResult?>("comparisonResult"); }
+            set { BackingStore?.Set("comparisonResult", value); }
         }
         /// <summary>JSON representation of current intent (or) template setting&apos;s value</summary>
         public string CurrentValueJson {
-            get { return BackingStore?.Get<string>(nameof(CurrentValueJson)); }
-            set { BackingStore?.Set(nameof(CurrentValueJson), value); }
+            get { return BackingStore?.Get<string>("currentValueJson"); }
+            set { BackingStore?.Set("currentValueJson", value); }
         }
         /// <summary>The ID of the setting definition for this instance</summary>
         public string DefinitionId {
-            get { return BackingStore?.Get<string>(nameof(DefinitionId)); }
-            set { BackingStore?.Set(nameof(DefinitionId), value); }
+            get { return BackingStore?.Get<string>("definitionId"); }
+            set { BackingStore?.Set("definitionId", value); }
         }
         /// <summary>The setting&apos;s display name</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The setting ID</summary>
         public string Id {
-            get { return BackingStore?.Get<string>(nameof(Id)); }
-            set { BackingStore?.Set(nameof(Id), value); }
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
         }
         /// <summary>JSON representation of new template setting&apos;s value</summary>
         public string NewValueJson {
-            get { return BackingStore?.Get<string>(nameof(NewValueJson)); }
-            set { BackingStore?.Set(nameof(NewValueJson), value); }
+            get { return BackingStore?.Get<string>("newValueJson"); }
+            set { BackingStore?.Set("newValueJson", value); }
         }
         /// <summary>
         /// Instantiates a new deviceManagementSettingComparison and sets the default values.

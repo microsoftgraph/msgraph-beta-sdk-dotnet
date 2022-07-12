@@ -4,32 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class TeamworkDeviceActivity : Entity, IParsable {
         /// <summary>The active peripheral devices attached to the device.</summary>
         public TeamworkActivePeripherals ActivePeripherals {
-            get { return BackingStore?.Get<TeamworkActivePeripherals>(nameof(ActivePeripherals)); }
-            set { BackingStore?.Set(nameof(ActivePeripherals), value); }
+            get { return BackingStore?.Get<TeamworkActivePeripherals>("activePeripherals"); }
+            set { BackingStore?.Set("activePeripherals", value); }
         }
         /// <summary>Identity of the user who created the device activity document.</summary>
         public IdentitySet CreatedBy {
-            get { return BackingStore?.Get<IdentitySet>(nameof(CreatedBy)); }
-            set { BackingStore?.Set(nameof(CreatedBy), value); }
+            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
         }
         /// <summary>The UTC date and time when the device activity document was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Identity of the user who last modified the device activity details.</summary>
         public IdentitySet LastModifiedBy {
-            get { return BackingStore?.Get<IdentitySet>(nameof(LastModifiedBy)); }
-            set { BackingStore?.Set(nameof(LastModifiedBy), value); }
+            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
         }
         /// <summary>The UTC date and time when the device activity detail was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

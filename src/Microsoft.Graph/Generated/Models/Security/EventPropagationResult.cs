@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class EventPropagationResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The name of the specific location in the workload associated with the event.</summary>
         public string Location {
-            get { return BackingStore?.Get<string>(nameof(Location)); }
-            set { BackingStore?.Set(nameof(Location), value); }
+            get { return BackingStore?.Get<string>("location"); }
+            set { BackingStore?.Set("location", value); }
         }
         /// <summary>The name of the workload associated with the event.</summary>
         public string ServiceName {
-            get { return BackingStore?.Get<string>(nameof(ServiceName)); }
-            set { BackingStore?.Set(nameof(ServiceName), value); }
+            get { return BackingStore?.Get<string>("serviceName"); }
+            set { BackingStore?.Set("serviceName", value); }
         }
         /// <summary>Indicates the status of the event creation request. The possible values are: none, inProcessing, failed, success.</summary>
         public EventPropagationStatus? Status {
-            get { return BackingStore?.Get<EventPropagationStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<EventPropagationStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>Additional information about the status of the event creation request.</summary>
         public string StatusInformation {
-            get { return BackingStore?.Get<string>(nameof(StatusInformation)); }
-            set { BackingStore?.Set(nameof(StatusInformation), value); }
+            get { return BackingStore?.Get<string>("statusInformation"); }
+            set { BackingStore?.Set("statusInformation", value); }
         }
         /// <summary>
         /// Instantiates a new eventPropagationResult and sets the default values.

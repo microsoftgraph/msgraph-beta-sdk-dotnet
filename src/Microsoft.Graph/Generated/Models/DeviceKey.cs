@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceKey : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceId property</summary>
         public string DeviceId {
-            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
-            set { BackingStore?.Set(nameof(DeviceId), value); }
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>The keyMaterial property</summary>
         public byte[] KeyMaterial {
-            get { return BackingStore?.Get<byte[]>(nameof(KeyMaterial)); }
-            set { BackingStore?.Set(nameof(KeyMaterial), value); }
+            get { return BackingStore?.Get<byte[]>("keyMaterial"); }
+            set { BackingStore?.Set("keyMaterial", value); }
         }
         /// <summary>The keyType property</summary>
         public string KeyType {
-            get { return BackingStore?.Get<string>(nameof(KeyType)); }
-            set { BackingStore?.Set(nameof(KeyType), value); }
+            get { return BackingStore?.Get<string>("keyType"); }
+            set { BackingStore?.Set("keyType", value); }
         }
         /// <summary>
         /// Instantiates a new deviceKey and sets the default values.

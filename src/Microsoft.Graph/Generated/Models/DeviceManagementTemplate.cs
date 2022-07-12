@@ -9,63 +9,69 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementTemplate : Entity, IParsable {
         /// <summary>Collection of setting categories within the template</summary>
         public List<DeviceManagementTemplateSettingCategory> Categories {
-            get { return BackingStore?.Get<List<DeviceManagementTemplateSettingCategory>>(nameof(Categories)); }
-            set { BackingStore?.Set(nameof(Categories), value); }
+            get { return BackingStore?.Get<List<DeviceManagementTemplateSettingCategory>>("categories"); }
+            set { BackingStore?.Set("categories", value); }
         }
         /// <summary>The template&apos;s description</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The template&apos;s display name</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Number of Intents created from this template.</summary>
         public int? IntentCount {
-            get { return BackingStore?.Get<int?>(nameof(IntentCount)); }
-            set { BackingStore?.Set(nameof(IntentCount), value); }
+            get { return BackingStore?.Get<int?>("intentCount"); }
+            set { BackingStore?.Set("intentCount", value); }
         }
         /// <summary>The template is deprecated or not. Intents cannot be created from a deprecated template.</summary>
         public bool? IsDeprecated {
-            get { return BackingStore?.Get<bool?>(nameof(IsDeprecated)); }
-            set { BackingStore?.Set(nameof(IsDeprecated), value); }
+            get { return BackingStore?.Get<bool?>("isDeprecated"); }
+            set { BackingStore?.Set("isDeprecated", value); }
         }
         /// <summary>Collection of templates this template can migrate to</summary>
         public List<DeviceManagementTemplate> MigratableTo {
-            get { return BackingStore?.Get<List<DeviceManagementTemplate>>(nameof(MigratableTo)); }
-            set { BackingStore?.Set(nameof(MigratableTo), value); }
+            get { return BackingStore?.Get<List<DeviceManagementTemplate>>("migratableTo"); }
+            set { BackingStore?.Set("migratableTo", value); }
         }
-        /// <summary>The template&apos;s platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, all.</summary>
+        /// <summary>Supported platform types for policies.</summary>
         public PolicyPlatformType? PlatformType {
-            get { return BackingStore?.Get<PolicyPlatformType?>(nameof(PlatformType)); }
-            set { BackingStore?.Set(nameof(PlatformType), value); }
+            get { return BackingStore?.Get<PolicyPlatformType?>("platformType"); }
+            set { BackingStore?.Set("platformType", value); }
         }
         /// <summary>When the template was published</summary>
         public DateTimeOffset? PublishedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(PublishedDateTime)); }
-            set { BackingStore?.Set(nameof(PublishedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("publishedDateTime"); }
+            set { BackingStore?.Set("publishedDateTime", value); }
         }
         /// <summary>Collection of all settings this template has</summary>
         public List<DeviceManagementSettingInstance> Settings {
-            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>(nameof(Settings)); }
-            set { BackingStore?.Set(nameof(Settings), value); }
+            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>("settings"); }
+            set { BackingStore?.Set("settings", value); }
         }
-        /// <summary>The template&apos;s subtype. Possible values are: none, firewall, diskEncryption, attackSurfaceReduction, endpointDetectionReponse, accountProtection, antivirus, firewallSharedAppList, firewallSharedIpList, firewallSharedPortlist.</summary>
+        /// <summary>Template subtype</summary>
         public DeviceManagementTemplateSubtype? TemplateSubtype {
-            get { return BackingStore?.Get<DeviceManagementTemplateSubtype?>(nameof(TemplateSubtype)); }
-            set { BackingStore?.Set(nameof(TemplateSubtype), value); }
+            get { return BackingStore?.Get<DeviceManagementTemplateSubtype?>("templateSubtype"); }
+            set { BackingStore?.Set("templateSubtype", value); }
         }
-        /// <summary>The template&apos;s type. Possible values are: securityBaseline, specializedDevices, advancedThreatProtectionSecurityBaseline, deviceConfiguration, custom, securityTemplate, microsoftEdgeSecurityBaseline, microsoftOffice365ProPlusSecurityBaseline, deviceCompliance, deviceConfigurationForOffice365, cloudPC, firewallSharedSettings.</summary>
+        /// <summary>Template type</summary>
         public DeviceManagementTemplateType? TemplateType {
-            get { return BackingStore?.Get<DeviceManagementTemplateType?>(nameof(TemplateType)); }
-            set { BackingStore?.Set(nameof(TemplateType), value); }
+            get { return BackingStore?.Get<DeviceManagementTemplateType?>("templateType"); }
+            set { BackingStore?.Set("templateType", value); }
         }
         /// <summary>The template&apos;s version information</summary>
         public string VersionInfo {
-            get { return BackingStore?.Get<string>(nameof(VersionInfo)); }
-            set { BackingStore?.Set(nameof(VersionInfo), value); }
+            get { return BackingStore?.Get<string>("versionInfo"); }
+            set { BackingStore?.Set("versionInfo", value); }
+        }
+        /// <summary>
+        /// Instantiates a new deviceManagementTemplate and sets the default values.
+        /// </summary>
+        public DeviceManagementTemplate() : base() {
+            Type = "#microsoft.graph.deviceManagementTemplate";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

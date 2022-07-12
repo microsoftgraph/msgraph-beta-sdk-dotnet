@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationExternalResource : EducationResource, IParsable {
         /// <summary>Location of the resource. Required.</summary>
         public string WebUrl {
-            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
-            set { BackingStore?.Set(nameof(WebUrl), value); }
+            get { return BackingStore?.Get<string>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

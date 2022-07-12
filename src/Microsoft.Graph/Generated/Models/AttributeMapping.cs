@@ -8,45 +8,45 @@ namespace Microsoft.Graph.Beta.Models {
     public class AttributeMapping : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Default value to be used in case the source property was evaluated to null. Optional.</summary>
         public string DefaultValue {
-            get { return BackingStore?.Get<string>(nameof(DefaultValue)); }
-            set { BackingStore?.Set(nameof(DefaultValue), value); }
+            get { return BackingStore?.Get<string>("defaultValue"); }
+            set { BackingStore?.Set("defaultValue", value); }
         }
         /// <summary>For internal use only.</summary>
         public bool? ExportMissingReferences {
-            get { return BackingStore?.Get<bool?>(nameof(ExportMissingReferences)); }
-            set { BackingStore?.Set(nameof(ExportMissingReferences), value); }
+            get { return BackingStore?.Get<bool?>("exportMissingReferences"); }
+            set { BackingStore?.Set("exportMissingReferences", value); }
         }
-        /// <summary>Defines when this attribute should be exported to the target directory. Possible values are: FlowWhenChanged and FlowAlways. Default is FlowWhenChanged.</summary>
+        /// <summary>The flowBehavior property</summary>
         public AttributeFlowBehavior? FlowBehavior {
-            get { return BackingStore?.Get<AttributeFlowBehavior?>(nameof(FlowBehavior)); }
-            set { BackingStore?.Set(nameof(FlowBehavior), value); }
+            get { return BackingStore?.Get<AttributeFlowBehavior?>("flowBehavior"); }
+            set { BackingStore?.Set("flowBehavior", value); }
         }
-        /// <summary>Defines when this attribute should be updated in the target directory. Possible values are: Always (default), ObjectAddOnly (only when new object is created), MultiValueAddOnly (only when the change is adding new values to a multi-valued attribute).</summary>
+        /// <summary>The flowType property</summary>
         public AttributeFlowType? FlowType {
-            get { return BackingStore?.Get<AttributeFlowType?>(nameof(FlowType)); }
-            set { BackingStore?.Set(nameof(FlowType), value); }
+            get { return BackingStore?.Get<AttributeFlowType?>("flowType"); }
+            set { BackingStore?.Set("flowType", value); }
         }
         /// <summary>If higher than 0, this attribute will be used to perform an initial match of the objects between source and target directories. The synchronization engine will try to find the matching object using attribute with lowest value of matching priority first. If not found, the attribute with the next matching priority will be used, and so on a until match is found or no more matching attributes are left. Only attributes that are expected to have unique values, such as email, should be used as matching attributes.</summary>
         public int? MatchingPriority {
-            get { return BackingStore?.Get<int?>(nameof(MatchingPriority)); }
-            set { BackingStore?.Set(nameof(MatchingPriority), value); }
+            get { return BackingStore?.Get<int?>("matchingPriority"); }
+            set { BackingStore?.Set("matchingPriority", value); }
         }
         /// <summary>Defines how a value should be extracted (or transformed) from the source object.</summary>
         public AttributeMappingSource Source {
-            get { return BackingStore?.Get<AttributeMappingSource>(nameof(Source)); }
-            set { BackingStore?.Set(nameof(Source), value); }
+            get { return BackingStore?.Get<AttributeMappingSource>("source"); }
+            set { BackingStore?.Set("source", value); }
         }
         /// <summary>Name of the attribute on the target object.</summary>
         public string TargetAttributeName {
-            get { return BackingStore?.Get<string>(nameof(TargetAttributeName)); }
-            set { BackingStore?.Set(nameof(TargetAttributeName), value); }
+            get { return BackingStore?.Get<string>("targetAttributeName"); }
+            set { BackingStore?.Set("targetAttributeName", value); }
         }
         /// <summary>
         /// Instantiates a new attributeMapping and sets the default values.

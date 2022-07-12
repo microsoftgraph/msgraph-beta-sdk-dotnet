@@ -4,67 +4,67 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class RetentionEvent : Entity, IParsable {
         /// <summary>The user who created the retentionEvent.</summary>
         public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>(nameof(CreatedBy)); }
-            set { BackingStore?.Set(nameof(CreatedBy), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
         }
         /// <summary>The date time when the retentionEvent was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Optional information about the event.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Name of the event.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The eventPropagationResults property</summary>
         public List<EventPropagationResult> EventPropagationResults {
-            get { return BackingStore?.Get<List<EventPropagationResult>>(nameof(EventPropagationResults)); }
-            set { BackingStore?.Set(nameof(EventPropagationResults), value); }
+            get { return BackingStore?.Get<List<EventPropagationResult>>("eventPropagationResults"); }
+            set { BackingStore?.Set("eventPropagationResults", value); }
         }
         /// <summary>Represents the workload (SharePoint Online, OneDrive for Business, Exchange Online) and identification information associated with a retention event.</summary>
         public List<EventQuery> EventQueries {
-            get { return BackingStore?.Get<List<EventQuery>>(nameof(EventQueries)); }
-            set { BackingStore?.Set(nameof(EventQueries), value); }
+            get { return BackingStore?.Get<List<EventQuery>>("eventQueries"); }
+            set { BackingStore?.Set("eventQueries", value); }
         }
         /// <summary>The eventStatus property</summary>
         public RetentionEventStatus EventStatus {
-            get { return BackingStore?.Get<RetentionEventStatus>(nameof(EventStatus)); }
-            set { BackingStore?.Set(nameof(EventStatus), value); }
+            get { return BackingStore?.Get<RetentionEventStatus>("eventStatus"); }
+            set { BackingStore?.Set("eventStatus", value); }
         }
         /// <summary>Optional time when the event should be triggered.</summary>
         public DateTimeOffset? EventTriggerDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EventTriggerDateTime)); }
-            set { BackingStore?.Set(nameof(EventTriggerDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("eventTriggerDateTime"); }
+            set { BackingStore?.Set("eventTriggerDateTime", value); }
         }
         /// <summary>The user who last modified the retentionEvent.</summary>
         public Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>(nameof(LastModifiedBy)); }
-            set { BackingStore?.Set(nameof(LastModifiedBy), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
         }
         /// <summary>The latest date time when the retentionEvent was modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Last time the status of the event was updated.</summary>
         public DateTimeOffset? LastStatusUpdateDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastStatusUpdateDateTime)); }
-            set { BackingStore?.Set(nameof(LastStatusUpdateDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastStatusUpdateDateTime"); }
+            set { BackingStore?.Set("lastStatusUpdateDateTime", value); }
         }
         /// <summary>Specifies the event that will start the retention period for labels that use this event type when an event is created.</summary>
         public Microsoft.Graph.Beta.Models.Security.RetentionEventType RetentionEventType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.RetentionEventType>(nameof(RetentionEventType)); }
-            set { BackingStore?.Set(nameof(RetentionEventType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.RetentionEventType>("retentionEventType"); }
+            set { BackingStore?.Set("retentionEventType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,40 +9,40 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetAssignmentFiltersStatusDetail
     public class GetAssignmentFiltersStatusDetailsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The assignmentFilterIds property</summary>
         public List<string> AssignmentFilterIds {
-            get { return BackingStore?.Get<List<string>>(nameof(AssignmentFilterIds)); }
-            set { BackingStore?.Set(nameof(AssignmentFilterIds), value); }
+            get { return BackingStore?.Get<List<string>>("assignmentFilterIds"); }
+            set { BackingStore?.Set("assignmentFilterIds", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The managedDeviceId property</summary>
         public string ManagedDeviceId {
-            get { return BackingStore?.Get<string>(nameof(ManagedDeviceId)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceId), value); }
+            get { return BackingStore?.Get<string>("managedDeviceId"); }
+            set { BackingStore?.Set("managedDeviceId", value); }
         }
         /// <summary>The payloadId property</summary>
         public string PayloadId {
-            get { return BackingStore?.Get<string>(nameof(PayloadId)); }
-            set { BackingStore?.Set(nameof(PayloadId), value); }
+            get { return BackingStore?.Get<string>("payloadId"); }
+            set { BackingStore?.Set("payloadId", value); }
         }
         /// <summary>The skip property</summary>
         public int? Skip {
-            get { return BackingStore?.Get<int?>(nameof(Skip)); }
-            set { BackingStore?.Set(nameof(Skip), value); }
+            get { return BackingStore?.Get<int?>("skip"); }
+            set { BackingStore?.Set("skip", value); }
         }
         /// <summary>The top property</summary>
         public int? Top {
-            get { return BackingStore?.Get<int?>(nameof(Top)); }
-            set { BackingStore?.Set(nameof(Top), value); }
+            get { return BackingStore?.Get<int?>("top"); }
+            set { BackingStore?.Set("top", value); }
         }
         /// <summary>The userId property</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>
         /// Instantiates a new getAssignmentFiltersStatusDetailsPostRequestBody and sets the default values.

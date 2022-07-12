@@ -8,63 +8,69 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceOwnerWiFiConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.</summary>
         public bool? ConnectAutomatically {
-            get { return BackingStore?.Get<bool?>(nameof(ConnectAutomatically)); }
-            set { BackingStore?.Set(nameof(ConnectAutomatically), value); }
+            get { return BackingStore?.Get<bool?>("connectAutomatically"); }
+            set { BackingStore?.Set("connectAutomatically", value); }
         }
         /// <summary>When set to true, this profile forces the device to connect to a network that doesn&apos;t broadcast its SSID to all devices.</summary>
         public bool? ConnectWhenNetworkNameIsHidden {
-            get { return BackingStore?.Get<bool?>(nameof(ConnectWhenNetworkNameIsHidden)); }
-            set { BackingStore?.Set(nameof(ConnectWhenNetworkNameIsHidden), value); }
+            get { return BackingStore?.Get<bool?>("connectWhenNetworkNameIsHidden"); }
+            set { BackingStore?.Set("connectWhenNetworkNameIsHidden", value); }
         }
         /// <summary>Network Name</summary>
         public string NetworkName {
-            get { return BackingStore?.Get<string>(nameof(NetworkName)); }
-            set { BackingStore?.Set(nameof(NetworkName), value); }
+            get { return BackingStore?.Get<string>("networkName"); }
+            set { BackingStore?.Set("networkName", value); }
         }
         /// <summary>This is the pre-shared key for WPA Personal Wi-Fi network.</summary>
         public string PreSharedKey {
-            get { return BackingStore?.Get<string>(nameof(PreSharedKey)); }
-            set { BackingStore?.Set(nameof(PreSharedKey), value); }
+            get { return BackingStore?.Get<string>("preSharedKey"); }
+            set { BackingStore?.Set("preSharedKey", value); }
         }
         /// <summary>This is the pre-shared key for WPA Personal Wi-Fi network.</summary>
         public bool? PreSharedKeyIsSet {
-            get { return BackingStore?.Get<bool?>(nameof(PreSharedKeyIsSet)); }
-            set { BackingStore?.Set(nameof(PreSharedKeyIsSet), value); }
+            get { return BackingStore?.Get<bool?>("preSharedKeyIsSet"); }
+            set { BackingStore?.Set("preSharedKeyIsSet", value); }
         }
         /// <summary>Specify the proxy server configuration script URL.</summary>
         public string ProxyAutomaticConfigurationUrl {
-            get { return BackingStore?.Get<string>(nameof(ProxyAutomaticConfigurationUrl)); }
-            set { BackingStore?.Set(nameof(ProxyAutomaticConfigurationUrl), value); }
+            get { return BackingStore?.Get<string>("proxyAutomaticConfigurationUrl"); }
+            set { BackingStore?.Set("proxyAutomaticConfigurationUrl", value); }
         }
         /// <summary>List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as .example.com.</summary>
         public string ProxyExclusionList {
-            get { return BackingStore?.Get<string>(nameof(ProxyExclusionList)); }
-            set { BackingStore?.Set(nameof(ProxyExclusionList), value); }
+            get { return BackingStore?.Get<string>("proxyExclusionList"); }
+            set { BackingStore?.Set("proxyExclusionList", value); }
         }
         /// <summary>Specify the proxy server IP address. Android documentation does not specify IPv4 or IPv6. For example: 192.168.1.1.</summary>
         public string ProxyManualAddress {
-            get { return BackingStore?.Get<string>(nameof(ProxyManualAddress)); }
-            set { BackingStore?.Set(nameof(ProxyManualAddress), value); }
+            get { return BackingStore?.Get<string>("proxyManualAddress"); }
+            set { BackingStore?.Set("proxyManualAddress", value); }
         }
         /// <summary>Specify the proxy server port.</summary>
         public int? ProxyManualPort {
-            get { return BackingStore?.Get<int?>(nameof(ProxyManualPort)); }
-            set { BackingStore?.Set(nameof(ProxyManualPort), value); }
+            get { return BackingStore?.Get<int?>("proxyManualPort"); }
+            set { BackingStore?.Set("proxyManualPort", value); }
         }
-        /// <summary>Specify the proxy setting for Wi-Fi configuration. Possible values include none, manual, and automatic. Possible values are: none, manual, automatic.</summary>
+        /// <summary>Wi-Fi Proxy Settings.</summary>
         public WiFiProxySetting? ProxySettings {
-            get { return BackingStore?.Get<WiFiProxySetting?>(nameof(ProxySettings)); }
-            set { BackingStore?.Set(nameof(ProxySettings), value); }
+            get { return BackingStore?.Get<WiFiProxySetting?>("proxySettings"); }
+            set { BackingStore?.Set("proxySettings", value); }
         }
         /// <summary>This is the name of the Wi-Fi network that is broadcast to all devices.</summary>
         public string Ssid {
-            get { return BackingStore?.Get<string>(nameof(Ssid)); }
-            set { BackingStore?.Set(nameof(Ssid), value); }
+            get { return BackingStore?.Get<string>("ssid"); }
+            set { BackingStore?.Set("ssid", value); }
         }
-        /// <summary>Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wep, wpaPersonal, wpaEnterprise.</summary>
+        /// <summary>Wi-Fi Security Types for Android Device Owner.</summary>
         public AndroidDeviceOwnerWiFiSecurityType? WiFiSecurityType {
-            get { return BackingStore?.Get<AndroidDeviceOwnerWiFiSecurityType?>(nameof(WiFiSecurityType)); }
-            set { BackingStore?.Set(nameof(WiFiSecurityType), value); }
+            get { return BackingStore?.Get<AndroidDeviceOwnerWiFiSecurityType?>("wiFiSecurityType"); }
+            set { BackingStore?.Set("wiFiSecurityType", value); }
+        }
+        /// <summary>
+        /// Instantiates a new AndroidDeviceOwnerWiFiConfiguration and sets the default values.
+        /// </summary>
+        public AndroidDeviceOwnerWiFiConfiguration() : base() {
+            Type = "#microsoft.graph.androidDeviceOwnerWiFiConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

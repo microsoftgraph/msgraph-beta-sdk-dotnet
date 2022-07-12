@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class BasicAuthentication : ApiAuthenticationConfigurationBase, IParsable {
         /// <summary>The password. It is not returned in the responses.</summary>
         public string Password {
-            get { return BackingStore?.Get<string>(nameof(Password)); }
-            set { BackingStore?.Set(nameof(Password), value); }
+            get { return BackingStore?.Get<string>("password"); }
+            set { BackingStore?.Set("password", value); }
         }
         /// <summary>The username.</summary>
         public string Username {
-            get { return BackingStore?.Get<string>(nameof(Username)); }
-            set { BackingStore?.Set(nameof(Username), value); }
+            get { return BackingStore?.Get<string>("username"); }
+            set { BackingStore?.Set("username", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

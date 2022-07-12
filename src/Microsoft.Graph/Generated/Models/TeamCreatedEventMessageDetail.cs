@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamCreatedEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>Initiator of the event.</summary>
         public IdentitySet Initiator {
-            get { return BackingStore?.Get<IdentitySet>(nameof(Initiator)); }
-            set { BackingStore?.Set(nameof(Initiator), value); }
+            get { return BackingStore?.Get<IdentitySet>("initiator"); }
+            set { BackingStore?.Set("initiator", value); }
         }
         /// <summary>Description for the team.</summary>
         public string TeamDescription {
-            get { return BackingStore?.Get<string>(nameof(TeamDescription)); }
-            set { BackingStore?.Set(nameof(TeamDescription), value); }
+            get { return BackingStore?.Get<string>("teamDescription"); }
+            set { BackingStore?.Set("teamDescription", value); }
         }
         /// <summary>Display name of the team.</summary>
         public string TeamDisplayName {
-            get { return BackingStore?.Get<string>(nameof(TeamDisplayName)); }
-            set { BackingStore?.Set(nameof(TeamDisplayName), value); }
+            get { return BackingStore?.Get<string>("teamDisplayName"); }
+            set { BackingStore?.Set("teamDisplayName", value); }
         }
         /// <summary>Unique identifier of the team.</summary>
         public string TeamId {
-            get { return BackingStore?.Get<string>(nameof(TeamId)); }
-            set { BackingStore?.Set(nameof(TeamId), value); }
+            get { return BackingStore?.Get<string>("teamId"); }
+            set { BackingStore?.Set("teamId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

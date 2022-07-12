@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class WebPart : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The required properties for the webPart (varies by webPart)</summary>
         public SitePageData Data {
-            get { return BackingStore?.Get<SitePageData>(nameof(Data)); }
-            set { BackingStore?.Set(nameof(Data), value); }
+            get { return BackingStore?.Get<SitePageData>("data"); }
+            set { BackingStore?.Set("data", value); }
         }
         /// <summary>A unique identifier specifying the webPart type. Read-only.</summary>
         public string Type {
-            get { return BackingStore?.Get<string>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<string>("type"); }
+            set { BackingStore?.Set("type", value); }
         }
         /// <summary>
         /// Instantiates a new webPart and sets the default values.

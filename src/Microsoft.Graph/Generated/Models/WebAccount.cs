@@ -7,33 +7,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class WebAccount : ItemFacet, IParsable {
         /// <summary>Contains the description the user has provided for the account on the service being referenced.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The service property</summary>
         public ServiceInformation Service {
-            get { return BackingStore?.Get<ServiceInformation>(nameof(Service)); }
-            set { BackingStore?.Set(nameof(Service), value); }
+            get { return BackingStore?.Get<ServiceInformation>("service"); }
+            set { BackingStore?.Set("service", value); }
         }
         /// <summary>Contains a status message from the cloud service if provided or synchronized.</summary>
         public string StatusMessage {
-            get { return BackingStore?.Get<string>(nameof(StatusMessage)); }
-            set { BackingStore?.Set(nameof(StatusMessage), value); }
+            get { return BackingStore?.Get<string>("statusMessage"); }
+            set { BackingStore?.Set("statusMessage", value); }
         }
         /// <summary>The thumbnailUrl property</summary>
         public string ThumbnailUrl {
-            get { return BackingStore?.Get<string>(nameof(ThumbnailUrl)); }
-            set { BackingStore?.Set(nameof(ThumbnailUrl), value); }
+            get { return BackingStore?.Get<string>("thumbnailUrl"); }
+            set { BackingStore?.Set("thumbnailUrl", value); }
         }
         /// <summary>The user name  displayed for the webaccount.</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>Contains a link to the user&apos;s profile on the cloud service if one exists.</summary>
         public string WebUrl {
-            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
-            set { BackingStore?.Set(nameof(WebUrl), value); }
+            get { return BackingStore?.Get<string>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsDeviceAzureADAccount : WindowsDeviceAccount, IParsable {
         /// <summary>Not yet documented</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

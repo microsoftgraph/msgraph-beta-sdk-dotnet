@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory : Entity, IParsable {
         /// <summary>The unique identifier of the device, Intune DeviceID or SCCM device id.</summary>
         public string DeviceId {
-            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
-            set { BackingStore?.Set(nameof(DeviceId), value); }
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647</summary>
         public int? EstimatedRuntimeInMinutes {
-            get { return BackingStore?.Get<int?>(nameof(EstimatedRuntimeInMinutes)); }
-            set { BackingStore?.Set(nameof(EstimatedRuntimeInMinutes), value); }
+            get { return BackingStore?.Get<int?>("estimatedRuntimeInMinutes"); }
+            set { BackingStore?.Set("estimatedRuntimeInMinutes", value); }
         }
         /// <summary>The datetime for the instance of runtime history.</summary>
         public string RuntimeDateTime {
-            get { return BackingStore?.Get<string>(nameof(RuntimeDateTime)); }
-            set { BackingStore?.Set(nameof(RuntimeDateTime), value); }
+            get { return BackingStore?.Get<string>("runtimeDateTime"); }
+            set { BackingStore?.Set("runtimeDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosDerivedCredentialAuthenticationConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Tenant level settings for the Derived Credentials to be used for authentication.</summary>
         public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings {
-            get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings>(nameof(DerivedCredentialSettings)); }
-            set { BackingStore?.Set(nameof(DerivedCredentialSettings), value); }
+            get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings"); }
+            set { BackingStore?.Set("derivedCredentialSettings", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

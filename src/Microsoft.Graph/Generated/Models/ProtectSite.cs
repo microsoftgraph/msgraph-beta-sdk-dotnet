@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class ProtectSite : LabelActionBase, IParsable {
         /// <summary>The accessType property</summary>
         public SiteAccessType? AccessType {
-            get { return BackingStore?.Get<SiteAccessType?>(nameof(AccessType)); }
-            set { BackingStore?.Set(nameof(AccessType), value); }
+            get { return BackingStore?.Get<SiteAccessType?>("accessType"); }
+            set { BackingStore?.Set("accessType", value); }
         }
         /// <summary>The conditionalAccessProtectionLevelId property</summary>
         public string ConditionalAccessProtectionLevelId {
-            get { return BackingStore?.Get<string>(nameof(ConditionalAccessProtectionLevelId)); }
-            set { BackingStore?.Set(nameof(ConditionalAccessProtectionLevelId), value); }
+            get { return BackingStore?.Get<string>("conditionalAccessProtectionLevelId"); }
+            set { BackingStore?.Set("conditionalAccessProtectionLevelId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,22 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class AccessReviewPolicy : Entity, IParsable {
         /// <summary>Description for this policy. Read-only.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Display name for this policy. Read-only.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>If true, group owners can create and manage access reviews on groups they own.</summary>
         public bool? IsGroupOwnerManagementEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsGroupOwnerManagementEnabled)); }
-            set { BackingStore?.Set(nameof(IsGroupOwnerManagementEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isGroupOwnerManagementEnabled"); }
+            set { BackingStore?.Set("isGroupOwnerManagementEnabled", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

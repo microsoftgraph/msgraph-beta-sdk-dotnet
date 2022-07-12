@@ -5,27 +5,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class DataSource : Entity, IParsable {
         /// <summary>The user who created the dataSource.</summary>
         public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>(nameof(CreatedBy)); }
-            set { BackingStore?.Set(nameof(CreatedBy), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
         }
         /// <summary>The date and time the dataSource was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The display name of the dataSource. This will be the name of the SharePoint site.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The hold status of the dataSource.The possible values are: notApplied, applied, applying, removing, partial</summary>
         public DataSourceHoldStatus? HoldStatus {
-            get { return BackingStore?.Get<DataSourceHoldStatus?>(nameof(HoldStatus)); }
-            set { BackingStore?.Set(nameof(HoldStatus), value); }
+            get { return BackingStore?.Get<DataSourceHoldStatus?>("holdStatus"); }
+            set { BackingStore?.Set("holdStatus", value); }
+        }
+        /// <summary>
+        /// Instantiates a new dataSource and sets the default values.
+        /// </summary>
+        public DataSource() : base() {
+            Type = "#microsoft.graph.security.dataSource";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

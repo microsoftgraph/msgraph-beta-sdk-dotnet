@@ -8,23 +8,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOsVppAppAssignedLicense : Entity, IParsable {
         /// <summary>The user email address.</summary>
         public string UserEmailAddress {
-            get { return BackingStore?.Get<string>(nameof(UserEmailAddress)); }
-            set { BackingStore?.Set(nameof(UserEmailAddress), value); }
+            get { return BackingStore?.Get<string>("userEmailAddress"); }
+            set { BackingStore?.Set("userEmailAddress", value); }
         }
         /// <summary>The user ID.</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>The user name.</summary>
         public string UserName {
-            get { return BackingStore?.Get<string>(nameof(UserName)); }
-            set { BackingStore?.Set(nameof(UserName), value); }
+            get { return BackingStore?.Get<string>("userName"); }
+            set { BackingStore?.Set("userName", value); }
         }
         /// <summary>The user principal name.</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

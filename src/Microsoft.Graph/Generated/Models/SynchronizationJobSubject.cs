@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class SynchronizationJobSubject : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Principals that you would like to provision.</summary>
         public SynchronizationLinkedObjects Links {
-            get { return BackingStore?.Get<SynchronizationLinkedObjects>(nameof(Links)); }
-            set { BackingStore?.Set(nameof(Links), value); }
+            get { return BackingStore?.Get<SynchronizationLinkedObjects>("links"); }
+            set { BackingStore?.Set("links", value); }
         }
         /// <summary>The identifier of an object to which a synchronizationJob is to be applied. Can be one of the following: An onPremisesDistinguishedName for synchronization from Active Directory to Azure AD.The user ID for synchronization from Azure AD to a third-party.The Worker ID of the Workday worker for synchronization from Workday to either Active Directory or Azure AD.</summary>
         public string ObjectId {
-            get { return BackingStore?.Get<string>(nameof(ObjectId)); }
-            set { BackingStore?.Set(nameof(ObjectId), value); }
+            get { return BackingStore?.Get<string>("objectId"); }
+            set { BackingStore?.Set("objectId", value); }
         }
         /// <summary>The type of the object to which a synchronizationJob is to be applied. Can be one of the following: user for synchronizing between Active Directory and Azure AD.User for synchronizing a user between Azure AD and a third-party application. Worker for synchronization a user between Workday and either Active Directory or Azure AD.Group for synchronizing a group between Azure AD and a third-party application.</summary>
         public string ObjectTypeName {
-            get { return BackingStore?.Get<string>(nameof(ObjectTypeName)); }
-            set { BackingStore?.Set(nameof(ObjectTypeName), value); }
+            get { return BackingStore?.Get<string>("objectTypeName"); }
+            set { BackingStore?.Set("objectTypeName", value); }
         }
         /// <summary>
         /// Instantiates a new synchronizationJobSubject and sets the default values.

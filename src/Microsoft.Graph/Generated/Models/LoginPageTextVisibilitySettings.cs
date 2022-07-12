@@ -8,40 +8,40 @@ namespace Microsoft.Graph.Beta.Models {
     public class LoginPageTextVisibilitySettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Option to hide the self-service password reset (SSPR) hyperlinks such as &apos;Can&apos;t access your account?&apos;, &apos;Forgot my password&apos; and &apos;Reset it now&apos; on the sign-in form.</summary>
         public bool? HideAccountResetCredentials {
-            get { return BackingStore?.Get<bool?>(nameof(HideAccountResetCredentials)); }
-            set { BackingStore?.Set(nameof(HideAccountResetCredentials), value); }
+            get { return BackingStore?.Get<bool?>("hideAccountResetCredentials"); }
+            set { BackingStore?.Set("hideAccountResetCredentials", value); }
         }
         /// <summary>Option to hide the self-service password reset (SSPR) &apos;Can&apos;t access your account?&apos; hyperlink on the sign-in form.</summary>
         public bool? HideCannotAccessYourAccount {
-            get { return BackingStore?.Get<bool?>(nameof(HideCannotAccessYourAccount)); }
-            set { BackingStore?.Set(nameof(HideCannotAccessYourAccount), value); }
+            get { return BackingStore?.Get<bool?>("hideCannotAccessYourAccount"); }
+            set { BackingStore?.Set("hideCannotAccessYourAccount", value); }
         }
         /// <summary>Option to hide the self-service password reset (SSPR) &apos;Forgot my password&apos; hyperlink on the sign-in form.</summary>
         public bool? HideForgotMyPassword {
-            get { return BackingStore?.Get<bool?>(nameof(HideForgotMyPassword)); }
-            set { BackingStore?.Set(nameof(HideForgotMyPassword), value); }
+            get { return BackingStore?.Get<bool?>("hideForgotMyPassword"); }
+            set { BackingStore?.Set("hideForgotMyPassword", value); }
         }
         /// <summary>Option to hide the &apos;Privacy &amp; Cookies&apos; hyperlink in the footer.</summary>
         public bool? HidePrivacyAndCookies {
-            get { return BackingStore?.Get<bool?>(nameof(HidePrivacyAndCookies)); }
-            set { BackingStore?.Set(nameof(HidePrivacyAndCookies), value); }
+            get { return BackingStore?.Get<bool?>("hidePrivacyAndCookies"); }
+            set { BackingStore?.Set("hidePrivacyAndCookies", value); }
         }
         /// <summary>Option to hide the self-service password reset (SSPR) &apos;reset it now&apos; hyperlink on the sign-in form.</summary>
         public bool? HideResetItNow {
-            get { return BackingStore?.Get<bool?>(nameof(HideResetItNow)); }
-            set { BackingStore?.Set(nameof(HideResetItNow), value); }
+            get { return BackingStore?.Get<bool?>("hideResetItNow"); }
+            set { BackingStore?.Set("hideResetItNow", value); }
         }
         /// <summary>Option to hide the &apos;Terms of Use&apos; hyperlink in the footer.</summary>
         public bool? HideTermsOfUse {
-            get { return BackingStore?.Get<bool?>(nameof(HideTermsOfUse)); }
-            set { BackingStore?.Set(nameof(HideTermsOfUse), value); }
+            get { return BackingStore?.Get<bool?>("hideTermsOfUse"); }
+            set { BackingStore?.Set("hideTermsOfUse", value); }
         }
         /// <summary>
         /// Instantiates a new loginPageTextVisibilitySettings and sets the default values.

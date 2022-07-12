@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamworkConnection : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether a component/peripheral is connected/disconnected or its state is unknown. The possible values are: unknown, connected, disconnected, unknownFutureValue.</summary>
         public TeamworkConnectionStatus? ConnectionStatus {
-            get { return BackingStore?.Get<TeamworkConnectionStatus?>(nameof(ConnectionStatus)); }
-            set { BackingStore?.Set(nameof(ConnectionStatus), value); }
+            get { return BackingStore?.Get<TeamworkConnectionStatus?>("connectionStatus"); }
+            set { BackingStore?.Set("connectionStatus", value); }
         }
         /// <summary>Time at which the state was last changed. For example, indicates connected since when the state is connected and disconnected since when the state is disconnected.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>
         /// Instantiates a new teamworkConnection and sets the default values.

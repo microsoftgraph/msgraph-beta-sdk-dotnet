@@ -10,25 +10,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationSettingInstanceTemplate : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates if a policy must specify this setting.</summary>
         public bool? IsRequired {
-            get { return BackingStore?.Get<bool?>(nameof(IsRequired)); }
-            set { BackingStore?.Set(nameof(IsRequired), value); }
+            get { return BackingStore?.Get<bool?>("isRequired"); }
+            set { BackingStore?.Set("isRequired", value); }
         }
         /// <summary>Setting Definition Id</summary>
         public string SettingDefinitionId {
-            get { return BackingStore?.Get<string>(nameof(SettingDefinitionId)); }
-            set { BackingStore?.Set(nameof(SettingDefinitionId), value); }
+            get { return BackingStore?.Get<string>("settingDefinitionId"); }
+            set { BackingStore?.Set("settingDefinitionId", value); }
         }
         /// <summary>Setting Instance Template Id</summary>
         public string SettingInstanceTemplateId {
-            get { return BackingStore?.Get<string>(nameof(SettingInstanceTemplateId)); }
-            set { BackingStore?.Set(nameof(SettingInstanceTemplateId), value); }
+            get { return BackingStore?.Get<string>("settingInstanceTemplateId"); }
+            set { BackingStore?.Set("settingInstanceTemplateId", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new deviceManagementConfigurationSettingInstanceTemplate and sets the default values.
@@ -36,6 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceManagementConfigurationSettingInstanceTemplate() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.deviceManagementConfigurationSettingInstanceTemplate";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -63,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isRequired", n => { IsRequired = n.GetBoolValue(); } },
                 {"settingDefinitionId", n => { SettingDefinitionId = n.GetStringValue(); } },
                 {"settingInstanceTemplateId", n => { SettingInstanceTemplateId = n.GetStringValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -74,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isRequired", IsRequired);
             writer.WriteStringValue("settingDefinitionId", SettingDefinitionId);
             writer.WriteStringValue("settingInstanceTemplateId", SettingInstanceTemplateId);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

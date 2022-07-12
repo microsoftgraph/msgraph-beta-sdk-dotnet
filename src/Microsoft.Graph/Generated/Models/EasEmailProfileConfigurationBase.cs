@@ -8,23 +8,29 @@ namespace Microsoft.Graph.Beta.Models {
     public class EasEmailProfileConfigurationBase : DeviceConfiguration, IParsable {
         /// <summary>Custom domain name value used while generating an email profile before installing on the device.</summary>
         public string CustomDomainName {
-            get { return BackingStore?.Get<string>(nameof(CustomDomainName)); }
-            set { BackingStore?.Set(nameof(CustomDomainName), value); }
+            get { return BackingStore?.Get<string>("customDomainName"); }
+            set { BackingStore?.Set("customDomainName", value); }
         }
         /// <summary>UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.</summary>
         public DomainNameSource? UserDomainNameSource {
-            get { return BackingStore?.Get<DomainNameSource?>(nameof(UserDomainNameSource)); }
-            set { BackingStore?.Set(nameof(UserDomainNameSource), value); }
+            get { return BackingStore?.Get<DomainNameSource?>("userDomainNameSource"); }
+            set { BackingStore?.Set("userDomainNameSource", value); }
         }
         /// <summary>Name of the AAD field, that will be used to retrieve UserName for email profile. Possible values are: userPrincipalName, primarySmtpAddress, samAccountName.</summary>
         public Microsoft.Graph.Beta.Models.UsernameSource? UsernameAADSource {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UsernameSource?>(nameof(UsernameAADSource)); }
-            set { BackingStore?.Set(nameof(UsernameAADSource), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UsernameSource?>("usernameAADSource"); }
+            set { BackingStore?.Set("usernameAADSource", value); }
         }
-        /// <summary>Username attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.</summary>
+        /// <summary>Possible values for username source or email source.</summary>
         public UserEmailSource? UsernameSource {
-            get { return BackingStore?.Get<UserEmailSource?>(nameof(UsernameSource)); }
-            set { BackingStore?.Set(nameof(UsernameSource), value); }
+            get { return BackingStore?.Get<UserEmailSource?>("usernameSource"); }
+            set { BackingStore?.Set("usernameSource", value); }
+        }
+        /// <summary>
+        /// Instantiates a new EasEmailProfileConfigurationBase and sets the default values.
+        /// </summary>
+        public EasEmailProfileConfigurationBase() : base() {
+            Type = "#microsoft.graph.easEmailProfileConfigurationBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

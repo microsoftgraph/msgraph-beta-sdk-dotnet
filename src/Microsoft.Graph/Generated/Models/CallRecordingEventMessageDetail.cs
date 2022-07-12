@@ -7,38 +7,38 @@ namespace Microsoft.Graph.Beta.Models {
     public class CallRecordingEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>Unique identifier of the call.</summary>
         public string CallId {
-            get { return BackingStore?.Get<string>(nameof(CallId)); }
-            set { BackingStore?.Set(nameof(CallId), value); }
+            get { return BackingStore?.Get<string>("callId"); }
+            set { BackingStore?.Set("callId", value); }
         }
         /// <summary>Display name for the call recording.</summary>
         public string CallRecordingDisplayName {
-            get { return BackingStore?.Get<string>(nameof(CallRecordingDisplayName)); }
-            set { BackingStore?.Set(nameof(CallRecordingDisplayName), value); }
+            get { return BackingStore?.Get<string>("callRecordingDisplayName"); }
+            set { BackingStore?.Set("callRecordingDisplayName", value); }
         }
         /// <summary>Duration of the call recording.</summary>
         public TimeSpan? CallRecordingDuration {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(CallRecordingDuration)); }
-            set { BackingStore?.Set(nameof(CallRecordingDuration), value); }
+            get { return BackingStore?.Get<TimeSpan?>("callRecordingDuration"); }
+            set { BackingStore?.Set("callRecordingDuration", value); }
         }
         /// <summary>Status of the call recording. Possible values are: success, failure, initial, chunkFinished, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.CallRecordingStatus? CallRecordingStatus {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallRecordingStatus?>(nameof(CallRecordingStatus)); }
-            set { BackingStore?.Set(nameof(CallRecordingStatus), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallRecordingStatus?>("callRecordingStatus"); }
+            set { BackingStore?.Set("callRecordingStatus", value); }
         }
         /// <summary>Call recording URL.</summary>
         public string CallRecordingUrl {
-            get { return BackingStore?.Get<string>(nameof(CallRecordingUrl)); }
-            set { BackingStore?.Set(nameof(CallRecordingUrl), value); }
+            get { return BackingStore?.Get<string>("callRecordingUrl"); }
+            set { BackingStore?.Set("callRecordingUrl", value); }
         }
         /// <summary>Initiator of the event.</summary>
         public IdentitySet Initiator {
-            get { return BackingStore?.Get<IdentitySet>(nameof(Initiator)); }
-            set { BackingStore?.Set(nameof(Initiator), value); }
+            get { return BackingStore?.Get<IdentitySet>("initiator"); }
+            set { BackingStore?.Set("initiator", value); }
         }
         /// <summary>Organizer of the meeting.</summary>
         public IdentitySet MeetingOrganizer {
-            get { return BackingStore?.Get<IdentitySet>(nameof(MeetingOrganizer)); }
-            set { BackingStore?.Set(nameof(MeetingOrganizer), value); }
+            get { return BackingStore?.Get<IdentitySet>("meetingOrganizer"); }
+            set { BackingStore?.Set("meetingOrganizer", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,47 +4,47 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AccessPackageResourceScope : Entity, IParsable {
         /// <summary>The accessPackageResource property</summary>
         public Microsoft.Graph.Beta.Models.AccessPackageResource AccessPackageResource {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResource>(nameof(AccessPackageResource)); }
-            set { BackingStore?.Set(nameof(AccessPackageResource), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResource>("accessPackageResource"); }
+            set { BackingStore?.Set("accessPackageResource", value); }
         }
         /// <summary>The description of the scope.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The display name of the scope.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>True if the scopes are arranged in a hierarchy and this is the top or root scope of the resource.</summary>
         public bool? IsRootScope {
-            get { return BackingStore?.Get<bool?>(nameof(IsRootScope)); }
-            set { BackingStore?.Set(nameof(IsRootScope), value); }
+            get { return BackingStore?.Get<bool?>("isRootScope"); }
+            set { BackingStore?.Set("isRootScope", value); }
         }
         /// <summary>The unique identifier for the scope in the resource as defined in the origin system.</summary>
         public string OriginId {
-            get { return BackingStore?.Get<string>(nameof(OriginId)); }
-            set { BackingStore?.Set(nameof(OriginId), value); }
+            get { return BackingStore?.Get<string>("originId"); }
+            set { BackingStore?.Set("originId", value); }
         }
         /// <summary>The origin system for the scope.</summary>
         public string OriginSystem {
-            get { return BackingStore?.Get<string>(nameof(OriginSystem)); }
-            set { BackingStore?.Set(nameof(OriginSystem), value); }
+            get { return BackingStore?.Get<string>("originSystem"); }
+            set { BackingStore?.Set("originSystem", value); }
         }
         /// <summary>The origin system for the role, if different.</summary>
         public string RoleOriginId {
-            get { return BackingStore?.Get<string>(nameof(RoleOriginId)); }
-            set { BackingStore?.Set(nameof(RoleOriginId), value); }
+            get { return BackingStore?.Get<string>("roleOriginId"); }
+            set { BackingStore?.Set("roleOriginId", value); }
         }
         /// <summary>A resource locator for the scope.</summary>
         public string Url {
-            get { return BackingStore?.Get<string>(nameof(Url)); }
-            set { BackingStore?.Set(nameof(Url), value); }
+            get { return BackingStore?.Get<string>("url"); }
+            set { BackingStore?.Set("url", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

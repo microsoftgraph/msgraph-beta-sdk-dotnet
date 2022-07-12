@@ -4,42 +4,42 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class OAuth2PermissionGrant : Entity, IParsable {
         /// <summary>The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).</summary>
         public string ClientId {
-            get { return BackingStore?.Get<string>(nameof(ClientId)); }
-            set { BackingStore?.Set(nameof(ClientId), value); }
+            get { return BackingStore?.Get<string>("clientId"); }
+            set { BackingStore?.Set("clientId", value); }
         }
         /// <summary>Indicates whether authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).</summary>
         public string ConsentType {
-            get { return BackingStore?.Get<string>(nameof(ConsentType)); }
-            set { BackingStore?.Set(nameof(ConsentType), value); }
+            get { return BackingStore?.Get<string>("consentType"); }
+            set { BackingStore?.Set("consentType", value); }
         }
         /// <summary>Currently, the end time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.</summary>
         public DateTimeOffset? ExpiryTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpiryTime)); }
-            set { BackingStore?.Set(nameof(ExpiryTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("expiryTime"); }
+            set { BackingStore?.Set("expiryTime", value); }
         }
         /// <summary>The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal. Supports $filter (eq only).</summary>
         public string PrincipalId {
-            get { return BackingStore?.Get<string>(nameof(PrincipalId)); }
-            set { BackingStore?.Set(nameof(PrincipalId), value); }
+            get { return BackingStore?.Get<string>("principalId"); }
+            set { BackingStore?.Set("principalId", value); }
         }
         /// <summary>The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).</summary>
         public string ResourceId {
-            get { return BackingStore?.Get<string>(nameof(ResourceId)); }
-            set { BackingStore?.Set(nameof(ResourceId), value); }
+            get { return BackingStore?.Get<string>("resourceId"); }
+            set { BackingStore?.Set("resourceId", value); }
         }
         /// <summary>A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.</summary>
         public string Scope {
-            get { return BackingStore?.Get<string>(nameof(Scope)); }
-            set { BackingStore?.Set(nameof(Scope), value); }
+            get { return BackingStore?.Get<string>("scope"); }
+            set { BackingStore?.Set("scope", value); }
         }
         /// <summary>Currently, the start time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.</summary>
         public DateTimeOffset? StartTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartTime)); }
-            set { BackingStore?.Set(nameof(StartTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startTime"); }
+            set { BackingStore?.Set("startTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

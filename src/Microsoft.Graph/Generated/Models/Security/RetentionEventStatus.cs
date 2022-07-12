@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class RetentionEventStatus : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The error if the status is not successful.</summary>
         public Microsoft.Graph.Beta.Models.PublicError Error {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PublicError>(nameof(Error)); }
-            set { BackingStore?.Set(nameof(Error), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PublicError>("error"); }
+            set { BackingStore?.Set("error", value); }
         }
         /// <summary>The status of the distribution. The possible values are: pending, error, success, notAvaliable.</summary>
         public EventStatusType? Status {
-            get { return BackingStore?.Get<EventStatusType?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<EventStatusType?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Instantiates a new retentionEventStatus and sets the default values.

@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class ContentInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Possible values are: default, email.</summary>
+        /// <summary>The format property</summary>
         public ContentFormat? Format {
-            get { return BackingStore?.Get<ContentFormat?>(nameof(Format)); }
-            set { BackingStore?.Set(nameof(Format), value); }
+            get { return BackingStore?.Get<ContentFormat?>("format"); }
+            set { BackingStore?.Set("format", value); }
         }
         /// <summary>Identifier used for Azure Information Protection Analytics.</summary>
         public string Identifier {
-            get { return BackingStore?.Get<string>(nameof(Identifier)); }
-            set { BackingStore?.Set(nameof(Identifier), value); }
+            get { return BackingStore?.Get<string>("identifier"); }
+            set { BackingStore?.Set("identifier", value); }
         }
         /// <summary>Existing Microsoft Purview Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.</summary>
         public List<KeyValuePair> Metadata {
-            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(Metadata)); }
-            set { BackingStore?.Set(nameof(Metadata), value); }
+            get { return BackingStore?.Get<List<KeyValuePair>>("metadata"); }
+            set { BackingStore?.Set("metadata", value); }
         }
-        /// <summary>Possible values are: rest, motion, use.</summary>
+        /// <summary>The state property</summary>
         public ContentState? State {
-            get { return BackingStore?.Get<ContentState?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<ContentState?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Instantiates a new contentInfo and sets the default values.

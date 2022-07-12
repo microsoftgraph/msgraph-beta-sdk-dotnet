@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class ChannelMembersNotificationRecipient : TeamworkNotificationRecipient, IParsable {
         /// <summary>The channel&apos;s identifier.</summary>
         public string ChannelId {
-            get { return BackingStore?.Get<string>(nameof(ChannelId)); }
-            set { BackingStore?.Set(nameof(ChannelId), value); }
+            get { return BackingStore?.Get<string>("channelId"); }
+            set { BackingStore?.Set("channelId", value); }
         }
         /// <summary>The team&apos;s identifier under which the channel resides.</summary>
         public string TeamId {
-            get { return BackingStore?.Get<string>(nameof(TeamId)); }
-            set { BackingStore?.Set(nameof(TeamId), value); }
+            get { return BackingStore?.Get<string>("teamId"); }
+            set { BackingStore?.Set("teamId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

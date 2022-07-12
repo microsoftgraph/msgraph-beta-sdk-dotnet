@@ -8,18 +8,24 @@ namespace Microsoft.Graph.Beta.Models {
     public class MarkContent : LabelActionBase, IParsable {
         /// <summary>The fontColor property</summary>
         public string FontColor {
-            get { return BackingStore?.Get<string>(nameof(FontColor)); }
-            set { BackingStore?.Set(nameof(FontColor), value); }
+            get { return BackingStore?.Get<string>("fontColor"); }
+            set { BackingStore?.Set("fontColor", value); }
         }
         /// <summary>The fontSize property</summary>
         public long? FontSize {
-            get { return BackingStore?.Get<long?>(nameof(FontSize)); }
-            set { BackingStore?.Set(nameof(FontSize), value); }
+            get { return BackingStore?.Get<long?>("fontSize"); }
+            set { BackingStore?.Set("fontSize", value); }
         }
         /// <summary>The text property</summary>
         public string Text {
-            get { return BackingStore?.Get<string>(nameof(Text)); }
-            set { BackingStore?.Set(nameof(Text), value); }
+            get { return BackingStore?.Get<string>("text"); }
+            set { BackingStore?.Set("text", value); }
+        }
+        /// <summary>
+        /// Instantiates a new MarkContent and sets the default values.
+        /// </summary>
+        public MarkContent() : base() {
+            Type = "#microsoft.graph.markContent";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,88 +8,88 @@ namespace Microsoft.Graph.Beta.Models {
     public class MobileThreatDefenseConnector : Entity, IParsable {
         /// <summary>For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about installed applications from Intune</summary>
         public bool? AllowPartnerToCollectIOSApplicationMetadata {
-            get { return BackingStore?.Get<bool?>(nameof(AllowPartnerToCollectIOSApplicationMetadata)); }
-            set { BackingStore?.Set(nameof(AllowPartnerToCollectIOSApplicationMetadata), value); }
+            get { return BackingStore?.Get<bool?>("allowPartnerToCollectIOSApplicationMetadata"); }
+            set { BackingStore?.Set("allowPartnerToCollectIOSApplicationMetadata", value); }
         }
         /// <summary>For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about personally installed applications from Intune</summary>
         public bool? AllowPartnerToCollectIOSPersonalApplicationMetadata {
-            get { return BackingStore?.Get<bool?>(nameof(AllowPartnerToCollectIOSPersonalApplicationMetadata)); }
-            set { BackingStore?.Set(nameof(AllowPartnerToCollectIOSPersonalApplicationMetadata), value); }
+            get { return BackingStore?.Get<bool?>("allowPartnerToCollectIOSPersonalApplicationMetadata"); }
+            set { BackingStore?.Set("allowPartnerToCollectIOSPersonalApplicationMetadata", value); }
         }
         /// <summary>For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant</summary>
         public bool? AndroidDeviceBlockedOnMissingPartnerData {
-            get { return BackingStore?.Get<bool?>(nameof(AndroidDeviceBlockedOnMissingPartnerData)); }
-            set { BackingStore?.Set(nameof(AndroidDeviceBlockedOnMissingPartnerData), value); }
+            get { return BackingStore?.Get<bool?>("androidDeviceBlockedOnMissingPartnerData"); }
+            set { BackingStore?.Set("androidDeviceBlockedOnMissingPartnerData", value); }
         }
         /// <summary>For Android, set whether data from the data sync partner should be used during compliance evaluations</summary>
         public bool? AndroidEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(AndroidEnabled)); }
-            set { BackingStore?.Set(nameof(AndroidEnabled), value); }
+            get { return BackingStore?.Get<bool?>("androidEnabled"); }
+            set { BackingStore?.Set("androidEnabled", value); }
         }
         /// <summary>For Android, set whether data from the data sync partner should be used during Mobile Application Management (MAM) evaluations. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation.</summary>
         public bool? AndroidMobileApplicationManagementEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(AndroidMobileApplicationManagementEnabled)); }
-            set { BackingStore?.Set(nameof(AndroidMobileApplicationManagementEnabled), value); }
+            get { return BackingStore?.Get<bool?>("androidMobileApplicationManagementEnabled"); }
+            set { BackingStore?.Set("androidMobileApplicationManagementEnabled", value); }
         }
         /// <summary>For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant</summary>
         public bool? IosDeviceBlockedOnMissingPartnerData {
-            get { return BackingStore?.Get<bool?>(nameof(IosDeviceBlockedOnMissingPartnerData)); }
-            set { BackingStore?.Set(nameof(IosDeviceBlockedOnMissingPartnerData), value); }
+            get { return BackingStore?.Get<bool?>("iosDeviceBlockedOnMissingPartnerData"); }
+            set { BackingStore?.Set("iosDeviceBlockedOnMissingPartnerData", value); }
         }
         /// <summary>For IOS, get or set whether data from the data sync partner should be used during compliance evaluations</summary>
         public bool? IosEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IosEnabled)); }
-            set { BackingStore?.Set(nameof(IosEnabled), value); }
+            get { return BackingStore?.Get<bool?>("iosEnabled"); }
+            set { BackingStore?.Set("iosEnabled", value); }
         }
         /// <summary>For IOS, get or set whether data from the data sync partner should be used during Mobile Application Management (MAM) evaluations. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation.</summary>
         public bool? IosMobileApplicationManagementEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IosMobileApplicationManagementEnabled)); }
-            set { BackingStore?.Set(nameof(IosMobileApplicationManagementEnabled), value); }
+            get { return BackingStore?.Get<bool?>("iosMobileApplicationManagementEnabled"); }
+            set { BackingStore?.Set("iosMobileApplicationManagementEnabled", value); }
         }
         /// <summary>DateTime of last Heartbeat recieved from the Data Sync Partner</summary>
         public DateTimeOffset? LastHeartbeatDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastHeartbeatDateTime)); }
-            set { BackingStore?.Set(nameof(LastHeartbeatDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastHeartbeatDateTime"); }
+            set { BackingStore?.Set("lastHeartbeatDateTime", value); }
         }
         /// <summary>For Mac, get or set whether Intune must receive data from the data sync partner prior to marking a device compliant</summary>
         public bool? MacDeviceBlockedOnMissingPartnerData {
-            get { return BackingStore?.Get<bool?>(nameof(MacDeviceBlockedOnMissingPartnerData)); }
-            set { BackingStore?.Set(nameof(MacDeviceBlockedOnMissingPartnerData), value); }
+            get { return BackingStore?.Get<bool?>("macDeviceBlockedOnMissingPartnerData"); }
+            set { BackingStore?.Set("macDeviceBlockedOnMissingPartnerData", value); }
         }
         /// <summary>For Mac, get or set whether data from the data sync partner should be used during compliance evaluations</summary>
         public bool? MacEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(MacEnabled)); }
-            set { BackingStore?.Set(nameof(MacEnabled), value); }
+            get { return BackingStore?.Get<bool?>("macEnabled"); }
+            set { BackingStore?.Set("macEnabled", value); }
         }
         /// <summary>When TRUE, configuration profile management via Microsoft Defender for Endpoint is enabled. When FALSE, configuration profile management via Microsoft Defender for Endpoint is disabled.</summary>
         public bool? MicrosoftDefenderForEndpointAttachEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(MicrosoftDefenderForEndpointAttachEnabled)); }
-            set { BackingStore?.Set(nameof(MicrosoftDefenderForEndpointAttachEnabled), value); }
+            get { return BackingStore?.Get<bool?>("microsoftDefenderForEndpointAttachEnabled"); }
+            set { BackingStore?.Set("microsoftDefenderForEndpointAttachEnabled", value); }
         }
-        /// <summary>Data Sync Partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.</summary>
+        /// <summary>Partner state of this tenant.</summary>
         public MobileThreatPartnerTenantState? PartnerState {
-            get { return BackingStore?.Get<MobileThreatPartnerTenantState?>(nameof(PartnerState)); }
-            set { BackingStore?.Set(nameof(PartnerState), value); }
+            get { return BackingStore?.Get<MobileThreatPartnerTenantState?>("partnerState"); }
+            set { BackingStore?.Set("partnerState", value); }
         }
         /// <summary>Get or Set days the per tenant tolerance to unresponsiveness for this partner integration</summary>
         public int? PartnerUnresponsivenessThresholdInDays {
-            get { return BackingStore?.Get<int?>(nameof(PartnerUnresponsivenessThresholdInDays)); }
-            set { BackingStore?.Set(nameof(PartnerUnresponsivenessThresholdInDays), value); }
+            get { return BackingStore?.Get<int?>("partnerUnresponsivenessThresholdInDays"); }
+            set { BackingStore?.Set("partnerUnresponsivenessThresholdInDays", value); }
         }
         /// <summary>Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner</summary>
         public bool? PartnerUnsupportedOsVersionBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(PartnerUnsupportedOsVersionBlocked)); }
-            set { BackingStore?.Set(nameof(PartnerUnsupportedOsVersionBlocked), value); }
+            get { return BackingStore?.Get<bool?>("partnerUnsupportedOsVersionBlocked"); }
+            set { BackingStore?.Set("partnerUnsupportedOsVersionBlocked", value); }
         }
         /// <summary>For Windows, set whether Intune must receive data from the data sync partner prior to marking a device compliant</summary>
         public bool? WindowsDeviceBlockedOnMissingPartnerData {
-            get { return BackingStore?.Get<bool?>(nameof(WindowsDeviceBlockedOnMissingPartnerData)); }
-            set { BackingStore?.Set(nameof(WindowsDeviceBlockedOnMissingPartnerData), value); }
+            get { return BackingStore?.Get<bool?>("windowsDeviceBlockedOnMissingPartnerData"); }
+            set { BackingStore?.Set("windowsDeviceBlockedOnMissingPartnerData", value); }
         }
         /// <summary>For Windows, get or set whether data from the data sync partner should be used during compliance evaluations</summary>
         public bool? WindowsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(WindowsEnabled)); }
-            set { BackingStore?.Set(nameof(WindowsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("windowsEnabled"); }
+            set { BackingStore?.Set("windowsEnabled", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

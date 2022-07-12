@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class ResetPasscodeActionResult : DeviceActionResult, IParsable {
         /// <summary>RotateBitLockerKeys action error code. Valid values 0 to 2147483647</summary>
         public int? ErrorCode {
-            get { return BackingStore?.Get<int?>(nameof(ErrorCode)); }
-            set { BackingStore?.Set(nameof(ErrorCode), value); }
+            get { return BackingStore?.Get<int?>("errorCode"); }
+            set { BackingStore?.Set("errorCode", value); }
         }
         /// <summary>Newly generated passcode for the device</summary>
         public string Passcode {
-            get { return BackingStore?.Get<string>(nameof(Passcode)); }
-            set { BackingStore?.Set(nameof(Passcode), value); }
+            get { return BackingStore?.Get<string>("passcode"); }
+            set { BackingStore?.Set("passcode", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

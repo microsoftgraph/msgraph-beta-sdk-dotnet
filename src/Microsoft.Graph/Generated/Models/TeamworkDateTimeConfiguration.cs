@@ -9,35 +9,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamworkDateTimeConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The date format for the device.</summary>
         public string DateFormat {
-            get { return BackingStore?.Get<string>(nameof(DateFormat)); }
-            set { BackingStore?.Set(nameof(DateFormat), value); }
+            get { return BackingStore?.Get<string>("dateFormat"); }
+            set { BackingStore?.Set("dateFormat", value); }
         }
         /// <summary>The time of the day when the device is turned off.</summary>
         public Time? OfficeHoursEndTime {
-            get { return BackingStore?.Get<Time?>(nameof(OfficeHoursEndTime)); }
-            set { BackingStore?.Set(nameof(OfficeHoursEndTime), value); }
+            get { return BackingStore?.Get<Time?>("officeHoursEndTime"); }
+            set { BackingStore?.Set("officeHoursEndTime", value); }
         }
         /// <summary>The time of the day when the device is turned on.</summary>
         public Time? OfficeHoursStartTime {
-            get { return BackingStore?.Get<Time?>(nameof(OfficeHoursStartTime)); }
-            set { BackingStore?.Set(nameof(OfficeHoursStartTime), value); }
+            get { return BackingStore?.Get<Time?>("officeHoursStartTime"); }
+            set { BackingStore?.Set("officeHoursStartTime", value); }
         }
         /// <summary>The time format for the device.</summary>
         public string TimeFormat {
-            get { return BackingStore?.Get<string>(nameof(TimeFormat)); }
-            set { BackingStore?.Set(nameof(TimeFormat), value); }
+            get { return BackingStore?.Get<string>("timeFormat"); }
+            set { BackingStore?.Set("timeFormat", value); }
         }
         /// <summary>The time zone to which the office hours apply.</summary>
         public string TimeZone {
-            get { return BackingStore?.Get<string>(nameof(TimeZone)); }
-            set { BackingStore?.Set(nameof(TimeZone), value); }
+            get { return BackingStore?.Get<string>("timeZone"); }
+            set { BackingStore?.Set("timeZone", value); }
         }
         /// <summary>
         /// Instantiates a new teamworkDateTimeConfiguration and sets the default values.

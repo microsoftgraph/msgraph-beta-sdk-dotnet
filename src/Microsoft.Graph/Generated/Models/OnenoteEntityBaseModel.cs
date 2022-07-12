@@ -5,12 +5,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class OnenoteEntityBaseModel : Entity, IParsable {
         /// <summary>The endpoint where you can get details about the page. Read-only.</summary>
         public string Self {
-            get { return BackingStore?.Get<string>(nameof(Self)); }
-            set { BackingStore?.Set(nameof(Self), value); }
+            get { return BackingStore?.Get<string>("self"); }
+            set { BackingStore?.Set("self", value); }
+        }
+        /// <summary>
+        /// Instantiates a new onenoteEntityBaseModel and sets the default values.
+        /// </summary>
+        public OnenoteEntityBaseModel() : base() {
+            Type = "#microsoft.graph.onenoteEntityBaseModel";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

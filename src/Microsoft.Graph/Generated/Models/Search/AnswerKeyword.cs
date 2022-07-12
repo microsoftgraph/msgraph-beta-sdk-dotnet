@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models.Search {
     public class AnswerKeyword : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A collection of keywords used to trigger the search answer.</summary>
         public List<string> Keywords {
-            get { return BackingStore?.Get<List<string>>(nameof(Keywords)); }
-            set { BackingStore?.Set(nameof(Keywords), value); }
+            get { return BackingStore?.Get<List<string>>("keywords"); }
+            set { BackingStore?.Set("keywords", value); }
         }
         /// <summary>If true, indicates that the search term contains similar words to the keywords that should trigger the search answer.</summary>
         public bool? MatchSimilarKeywords {
-            get { return BackingStore?.Get<bool?>(nameof(MatchSimilarKeywords)); }
-            set { BackingStore?.Set(nameof(MatchSimilarKeywords), value); }
+            get { return BackingStore?.Get<bool?>("matchSimilarKeywords"); }
+            set { BackingStore?.Set("matchSimilarKeywords", value); }
         }
         /// <summary>Unique keywords that will guarantee the search answer is triggered.</summary>
         public List<string> ReservedKeywords {
-            get { return BackingStore?.Get<List<string>>(nameof(ReservedKeywords)); }
-            set { BackingStore?.Set(nameof(ReservedKeywords), value); }
+            get { return BackingStore?.Get<List<string>>("reservedKeywords"); }
+            set { BackingStore?.Set("reservedKeywords", value); }
         }
         /// <summary>
         /// Instantiates a new answerKeyword and sets the default values.

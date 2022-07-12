@@ -8,1418 +8,1418 @@ namespace Microsoft.Graph.Beta.Models {
     public class Windows10GeneralConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Indicates whether or not to Block the user from adding email accounts to the device that are not associated with a Microsoft account.</summary>
         public bool? AccountsBlockAddingNonMicrosoftAccountEmail {
-            get { return BackingStore?.Get<bool?>(nameof(AccountsBlockAddingNonMicrosoftAccountEmail)); }
-            set { BackingStore?.Set(nameof(AccountsBlockAddingNonMicrosoftAccountEmail), value); }
+            get { return BackingStore?.Get<bool?>("accountsBlockAddingNonMicrosoftAccountEmail"); }
+            set { BackingStore?.Set("accountsBlockAddingNonMicrosoftAccountEmail", value); }
         }
-        /// <summary>Specifies if Windows apps can be activated by voice. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? ActivateAppsWithVoice {
-            get { return BackingStore?.Get<Enablement?>(nameof(ActivateAppsWithVoice)); }
-            set { BackingStore?.Set(nameof(ActivateAppsWithVoice), value); }
+            get { return BackingStore?.Get<Enablement?>("activateAppsWithVoice"); }
+            set { BackingStore?.Set("activateAppsWithVoice", value); }
         }
         /// <summary>Indicates whether or not to block the user from selecting an AntiTheft mode preference (Windows 10 Mobile only).</summary>
         public bool? AntiTheftModeBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(AntiTheftModeBlocked)); }
-            set { BackingStore?.Set(nameof(AntiTheftModeBlocked), value); }
+            get { return BackingStore?.Get<bool?>("antiTheftModeBlocked"); }
+            set { BackingStore?.Set("antiTheftModeBlocked", value); }
         }
         /// <summary>This policy setting permits users to change installation options that typically are available only to system administrators.</summary>
         public bool? AppManagementMSIAllowUserControlOverInstall {
-            get { return BackingStore?.Get<bool?>(nameof(AppManagementMSIAllowUserControlOverInstall)); }
-            set { BackingStore?.Set(nameof(AppManagementMSIAllowUserControlOverInstall), value); }
+            get { return BackingStore?.Get<bool?>("appManagementMSIAllowUserControlOverInstall"); }
+            set { BackingStore?.Set("appManagementMSIAllowUserControlOverInstall", value); }
         }
         /// <summary>This policy setting directs Windows Installer to use elevated permissions when it installs any program on the system.</summary>
         public bool? AppManagementMSIAlwaysInstallWithElevatedPrivileges {
-            get { return BackingStore?.Get<bool?>(nameof(AppManagementMSIAlwaysInstallWithElevatedPrivileges)); }
-            set { BackingStore?.Set(nameof(AppManagementMSIAlwaysInstallWithElevatedPrivileges), value); }
+            get { return BackingStore?.Get<bool?>("appManagementMSIAlwaysInstallWithElevatedPrivileges"); }
+            set { BackingStore?.Set("appManagementMSIAlwaysInstallWithElevatedPrivileges", value); }
         }
         /// <summary>List of semi-colon delimited Package Family Names of Windows apps. Listed Windows apps are to be launched after logon.​</summary>
         public List<string> AppManagementPackageFamilyNamesToLaunchAfterLogOn {
-            get { return BackingStore?.Get<List<string>>(nameof(AppManagementPackageFamilyNamesToLaunchAfterLogOn)); }
-            set { BackingStore?.Set(nameof(AppManagementPackageFamilyNamesToLaunchAfterLogOn), value); }
+            get { return BackingStore?.Get<List<string>>("appManagementPackageFamilyNamesToLaunchAfterLogOn"); }
+            set { BackingStore?.Set("appManagementPackageFamilyNamesToLaunchAfterLogOn", value); }
         }
-        /// <summary>Indicates whether apps from AppX packages signed with a trusted certificate can be side loaded. Possible values are: notConfigured, blocked, allowed.</summary>
+        /// <summary>State Management Setting.</summary>
         public StateManagementSetting? AppsAllowTrustedAppsSideloading {
-            get { return BackingStore?.Get<StateManagementSetting?>(nameof(AppsAllowTrustedAppsSideloading)); }
-            set { BackingStore?.Set(nameof(AppsAllowTrustedAppsSideloading), value); }
+            get { return BackingStore?.Get<StateManagementSetting?>("appsAllowTrustedAppsSideloading"); }
+            set { BackingStore?.Set("appsAllowTrustedAppsSideloading", value); }
         }
         /// <summary>Indicates whether or not to disable the launch of all apps from Windows Store that came pre-installed or were downloaded.</summary>
         public bool? AppsBlockWindowsStoreOriginatedApps {
-            get { return BackingStore?.Get<bool?>(nameof(AppsBlockWindowsStoreOriginatedApps)); }
-            set { BackingStore?.Set(nameof(AppsBlockWindowsStoreOriginatedApps), value); }
+            get { return BackingStore?.Get<bool?>("appsBlockWindowsStoreOriginatedApps"); }
+            set { BackingStore?.Set("appsBlockWindowsStoreOriginatedApps", value); }
         }
         /// <summary>Allows secondary authentication devices to work with Windows.</summary>
         public bool? AuthenticationAllowSecondaryDevice {
-            get { return BackingStore?.Get<bool?>(nameof(AuthenticationAllowSecondaryDevice)); }
-            set { BackingStore?.Set(nameof(AuthenticationAllowSecondaryDevice), value); }
+            get { return BackingStore?.Get<bool?>("authenticationAllowSecondaryDevice"); }
+            set { BackingStore?.Set("authenticationAllowSecondaryDevice", value); }
         }
         /// <summary>Specifies the preferred domain among available domains in the Azure AD tenant.</summary>
         public string AuthenticationPreferredAzureADTenantDomainName {
-            get { return BackingStore?.Get<string>(nameof(AuthenticationPreferredAzureADTenantDomainName)); }
-            set { BackingStore?.Set(nameof(AuthenticationPreferredAzureADTenantDomainName), value); }
+            get { return BackingStore?.Get<string>("authenticationPreferredAzureADTenantDomainName"); }
+            set { BackingStore?.Set("authenticationPreferredAzureADTenantDomainName", value); }
         }
-        /// <summary>Indicates whether or not Web Credential Provider will be enabled. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? AuthenticationWebSignIn {
-            get { return BackingStore?.Get<Enablement?>(nameof(AuthenticationWebSignIn)); }
-            set { BackingStore?.Set(nameof(AuthenticationWebSignIn), value); }
+            get { return BackingStore?.Get<Enablement?>("authenticationWebSignIn"); }
+            set { BackingStore?.Set("authenticationWebSignIn", value); }
         }
         /// <summary>Specify a list of allowed Bluetooth services and profiles in hex formatted strings.</summary>
         public List<string> BluetoothAllowedServices {
-            get { return BackingStore?.Get<List<string>>(nameof(BluetoothAllowedServices)); }
-            set { BackingStore?.Set(nameof(BluetoothAllowedServices), value); }
+            get { return BackingStore?.Get<List<string>>("bluetoothAllowedServices"); }
+            set { BackingStore?.Set("bluetoothAllowedServices", value); }
         }
         /// <summary>Whether or not to Block the user from using bluetooth advertising.</summary>
         public bool? BluetoothBlockAdvertising {
-            get { return BackingStore?.Get<bool?>(nameof(BluetoothBlockAdvertising)); }
-            set { BackingStore?.Set(nameof(BluetoothBlockAdvertising), value); }
+            get { return BackingStore?.Get<bool?>("bluetoothBlockAdvertising"); }
+            set { BackingStore?.Set("bluetoothBlockAdvertising", value); }
         }
         /// <summary>Whether or not to Block the user from using bluetooth discoverable mode.</summary>
         public bool? BluetoothBlockDiscoverableMode {
-            get { return BackingStore?.Get<bool?>(nameof(BluetoothBlockDiscoverableMode)); }
-            set { BackingStore?.Set(nameof(BluetoothBlockDiscoverableMode), value); }
+            get { return BackingStore?.Get<bool?>("bluetoothBlockDiscoverableMode"); }
+            set { BackingStore?.Set("bluetoothBlockDiscoverableMode", value); }
         }
         /// <summary>Whether or not to Block the user from using bluetooth.</summary>
         public bool? BluetoothBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(BluetoothBlocked)); }
-            set { BackingStore?.Set(nameof(BluetoothBlocked), value); }
+            get { return BackingStore?.Get<bool?>("bluetoothBlocked"); }
+            set { BackingStore?.Set("bluetoothBlocked", value); }
         }
         /// <summary>Whether or not to block specific bundled Bluetooth peripherals to automatically pair with the host device.</summary>
         public bool? BluetoothBlockPrePairing {
-            get { return BackingStore?.Get<bool?>(nameof(BluetoothBlockPrePairing)); }
-            set { BackingStore?.Set(nameof(BluetoothBlockPrePairing), value); }
+            get { return BackingStore?.Get<bool?>("bluetoothBlockPrePairing"); }
+            set { BackingStore?.Set("bluetoothBlockPrePairing", value); }
         }
         /// <summary>Whether or not to block the users from using Swift Pair and other proximity based scenarios.</summary>
         public bool? BluetoothBlockPromptedProximalConnections {
-            get { return BackingStore?.Get<bool?>(nameof(BluetoothBlockPromptedProximalConnections)); }
-            set { BackingStore?.Set(nameof(BluetoothBlockPromptedProximalConnections), value); }
+            get { return BackingStore?.Get<bool?>("bluetoothBlockPromptedProximalConnections"); }
+            set { BackingStore?.Set("bluetoothBlockPromptedProximalConnections", value); }
         }
         /// <summary>Whether or not to Block the user from accessing the camera of the device.</summary>
         public bool? CameraBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(CameraBlocked)); }
-            set { BackingStore?.Set(nameof(CameraBlocked), value); }
+            get { return BackingStore?.Get<bool?>("cameraBlocked"); }
+            set { BackingStore?.Set("cameraBlocked", value); }
         }
         /// <summary>Whether or not to Block the user from using data over cellular while roaming.</summary>
         public bool? CellularBlockDataWhenRoaming {
-            get { return BackingStore?.Get<bool?>(nameof(CellularBlockDataWhenRoaming)); }
-            set { BackingStore?.Set(nameof(CellularBlockDataWhenRoaming), value); }
+            get { return BackingStore?.Get<bool?>("cellularBlockDataWhenRoaming"); }
+            set { BackingStore?.Set("cellularBlockDataWhenRoaming", value); }
         }
         /// <summary>Whether or not to Block the user from using VPN over cellular.</summary>
         public bool? CellularBlockVpn {
-            get { return BackingStore?.Get<bool?>(nameof(CellularBlockVpn)); }
-            set { BackingStore?.Set(nameof(CellularBlockVpn), value); }
+            get { return BackingStore?.Get<bool?>("cellularBlockVpn"); }
+            set { BackingStore?.Set("cellularBlockVpn", value); }
         }
         /// <summary>Whether or not to Block the user from using VPN when roaming over cellular.</summary>
         public bool? CellularBlockVpnWhenRoaming {
-            get { return BackingStore?.Get<bool?>(nameof(CellularBlockVpnWhenRoaming)); }
-            set { BackingStore?.Set(nameof(CellularBlockVpnWhenRoaming), value); }
+            get { return BackingStore?.Get<bool?>("cellularBlockVpnWhenRoaming"); }
+            set { BackingStore?.Set("cellularBlockVpnWhenRoaming", value); }
         }
-        /// <summary>Whether or not to allow the cellular data channel on the device. If not configured, the cellular data channel is allowed and the user can turn it off. Possible values are: blocked, required, allowed, notConfigured.</summary>
+        /// <summary>Possible values of the ConfigurationUsage list.</summary>
         public ConfigurationUsage? CellularData {
-            get { return BackingStore?.Get<ConfigurationUsage?>(nameof(CellularData)); }
-            set { BackingStore?.Set(nameof(CellularData), value); }
+            get { return BackingStore?.Get<ConfigurationUsage?>("cellularData"); }
+            set { BackingStore?.Set("cellularData", value); }
         }
         /// <summary>Whether or not to Block the user from doing manual root certificate installation.</summary>
         public bool? CertificatesBlockManualRootCertificateInstallation {
-            get { return BackingStore?.Get<bool?>(nameof(CertificatesBlockManualRootCertificateInstallation)); }
-            set { BackingStore?.Set(nameof(CertificatesBlockManualRootCertificateInstallation), value); }
+            get { return BackingStore?.Get<bool?>("certificatesBlockManualRootCertificateInstallation"); }
+            set { BackingStore?.Set("certificatesBlockManualRootCertificateInstallation", value); }
         }
         /// <summary>Specifies the time zone to be applied to the device. This is the standard Windows name for the target time zone.</summary>
         public string ConfigureTimeZone {
-            get { return BackingStore?.Get<string>(nameof(ConfigureTimeZone)); }
-            set { BackingStore?.Set(nameof(ConfigureTimeZone), value); }
+            get { return BackingStore?.Get<string>("configureTimeZone"); }
+            set { BackingStore?.Set("configureTimeZone", value); }
         }
         /// <summary>Whether or not to block Connected Devices Service which enables discovery and connection to other devices, remote messaging, remote app sessions and other cross-device experiences.</summary>
         public bool? ConnectedDevicesServiceBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(ConnectedDevicesServiceBlocked)); }
-            set { BackingStore?.Set(nameof(ConnectedDevicesServiceBlocked), value); }
+            get { return BackingStore?.Get<bool?>("connectedDevicesServiceBlocked"); }
+            set { BackingStore?.Set("connectedDevicesServiceBlocked", value); }
         }
         /// <summary>Whether or not to Block the user from using copy paste.</summary>
         public bool? CopyPasteBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(CopyPasteBlocked)); }
-            set { BackingStore?.Set(nameof(CopyPasteBlocked), value); }
+            get { return BackingStore?.Get<bool?>("copyPasteBlocked"); }
+            set { BackingStore?.Set("copyPasteBlocked", value); }
         }
         /// <summary>Whether or not to Block the user from using Cortana.</summary>
         public bool? CortanaBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(CortanaBlocked)); }
-            set { BackingStore?.Set(nameof(CortanaBlocked), value); }
+            get { return BackingStore?.Get<bool?>("cortanaBlocked"); }
+            set { BackingStore?.Set("cortanaBlocked", value); }
         }
         /// <summary>Specify whether to allow or disallow the Federal Information Processing Standard (FIPS) policy.</summary>
         public bool? CryptographyAllowFipsAlgorithmPolicy {
-            get { return BackingStore?.Get<bool?>(nameof(CryptographyAllowFipsAlgorithmPolicy)); }
-            set { BackingStore?.Set(nameof(CryptographyAllowFipsAlgorithmPolicy), value); }
+            get { return BackingStore?.Get<bool?>("cryptographyAllowFipsAlgorithmPolicy"); }
+            set { BackingStore?.Set("cryptographyAllowFipsAlgorithmPolicy", value); }
         }
         /// <summary>This policy setting allows you to block direct memory access (DMA) for all hot pluggable PCI downstream ports until a user logs into Windows.</summary>
         public bool? DataProtectionBlockDirectMemoryAccess {
-            get { return BackingStore?.Get<bool?>(nameof(DataProtectionBlockDirectMemoryAccess)); }
-            set { BackingStore?.Set(nameof(DataProtectionBlockDirectMemoryAccess), value); }
+            get { return BackingStore?.Get<bool?>("dataProtectionBlockDirectMemoryAccess"); }
+            set { BackingStore?.Set("dataProtectionBlockDirectMemoryAccess", value); }
         }
         /// <summary>Whether or not to block end user access to Defender.</summary>
         public bool? DefenderBlockEndUserAccess {
-            get { return BackingStore?.Get<bool?>(nameof(DefenderBlockEndUserAccess)); }
-            set { BackingStore?.Set(nameof(DefenderBlockEndUserAccess), value); }
+            get { return BackingStore?.Get<bool?>("defenderBlockEndUserAccess"); }
+            set { BackingStore?.Set("defenderBlockEndUserAccess", value); }
         }
         /// <summary>Allows or disallows Windows Defender On Access Protection functionality.</summary>
         public bool? DefenderBlockOnAccessProtection {
-            get { return BackingStore?.Get<bool?>(nameof(DefenderBlockOnAccessProtection)); }
-            set { BackingStore?.Set(nameof(DefenderBlockOnAccessProtection), value); }
+            get { return BackingStore?.Get<bool?>("defenderBlockOnAccessProtection"); }
+            set { BackingStore?.Set("defenderBlockOnAccessProtection", value); }
         }
-        /// <summary>Specifies the level of cloud-delivered protection. Possible values are: notConfigured, high, highPlus, zeroTolerance.</summary>
+        /// <summary>Possible values of Cloud Block Level</summary>
         public DefenderCloudBlockLevelType? DefenderCloudBlockLevel {
-            get { return BackingStore?.Get<DefenderCloudBlockLevelType?>(nameof(DefenderCloudBlockLevel)); }
-            set { BackingStore?.Set(nameof(DefenderCloudBlockLevel), value); }
+            get { return BackingStore?.Get<DefenderCloudBlockLevelType?>("defenderCloudBlockLevel"); }
+            set { BackingStore?.Set("defenderCloudBlockLevel", value); }
         }
         /// <summary>Timeout extension for file scanning by the cloud. Valid values 0 to 50</summary>
         public int? DefenderCloudExtendedTimeout {
-            get { return BackingStore?.Get<int?>(nameof(DefenderCloudExtendedTimeout)); }
-            set { BackingStore?.Set(nameof(DefenderCloudExtendedTimeout), value); }
+            get { return BackingStore?.Get<int?>("defenderCloudExtendedTimeout"); }
+            set { BackingStore?.Set("defenderCloudExtendedTimeout", value); }
         }
         /// <summary>Timeout extension for file scanning by the cloud. Valid values 0 to 50</summary>
         public int? DefenderCloudExtendedTimeoutInSeconds {
-            get { return BackingStore?.Get<int?>(nameof(DefenderCloudExtendedTimeoutInSeconds)); }
-            set { BackingStore?.Set(nameof(DefenderCloudExtendedTimeoutInSeconds), value); }
+            get { return BackingStore?.Get<int?>("defenderCloudExtendedTimeoutInSeconds"); }
+            set { BackingStore?.Set("defenderCloudExtendedTimeoutInSeconds", value); }
         }
         /// <summary>Number of days before deleting quarantined malware. Valid values 0 to 90</summary>
         public int? DefenderDaysBeforeDeletingQuarantinedMalware {
-            get { return BackingStore?.Get<int?>(nameof(DefenderDaysBeforeDeletingQuarantinedMalware)); }
-            set { BackingStore?.Set(nameof(DefenderDaysBeforeDeletingQuarantinedMalware), value); }
+            get { return BackingStore?.Get<int?>("defenderDaysBeforeDeletingQuarantinedMalware"); }
+            set { BackingStore?.Set("defenderDaysBeforeDeletingQuarantinedMalware", value); }
         }
         /// <summary>Gets or sets Defender’s actions to take on detected Malware per threat level.</summary>
         public Microsoft.Graph.Beta.Models.DefenderDetectedMalwareActions DefenderDetectedMalwareActions {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DefenderDetectedMalwareActions>(nameof(DefenderDetectedMalwareActions)); }
-            set { BackingStore?.Set(nameof(DefenderDetectedMalwareActions), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DefenderDetectedMalwareActions>("defenderDetectedMalwareActions"); }
+            set { BackingStore?.Set("defenderDetectedMalwareActions", value); }
         }
         /// <summary>When blocked, catch-up scans for scheduled full scans will be turned off.</summary>
         public bool? DefenderDisableCatchupFullScan {
-            get { return BackingStore?.Get<bool?>(nameof(DefenderDisableCatchupFullScan)); }
-            set { BackingStore?.Set(nameof(DefenderDisableCatchupFullScan), value); }
+            get { return BackingStore?.Get<bool?>("defenderDisableCatchupFullScan"); }
+            set { BackingStore?.Set("defenderDisableCatchupFullScan", value); }
         }
         /// <summary>When blocked, catch-up scans for scheduled quick scans will be turned off.</summary>
         public bool? DefenderDisableCatchupQuickScan {
-            get { return BackingStore?.Get<bool?>(nameof(DefenderDisableCatchupQuickScan)); }
-            set { BackingStore?.Set(nameof(DefenderDisableCatchupQuickScan), value); }
+            get { return BackingStore?.Get<bool?>("defenderDisableCatchupQuickScan"); }
+            set { BackingStore?.Set("defenderDisableCatchupQuickScan", value); }
         }
         /// <summary>File extensions to exclude from scans and real time protection.</summary>
         public List<string> DefenderFileExtensionsToExclude {
-            get { return BackingStore?.Get<List<string>>(nameof(DefenderFileExtensionsToExclude)); }
-            set { BackingStore?.Set(nameof(DefenderFileExtensionsToExclude), value); }
+            get { return BackingStore?.Get<List<string>>("defenderFileExtensionsToExclude"); }
+            set { BackingStore?.Set("defenderFileExtensionsToExclude", value); }
         }
         /// <summary>Files and folder to exclude from scans and real time protection.</summary>
         public List<string> DefenderFilesAndFoldersToExclude {
-            get { return BackingStore?.Get<List<string>>(nameof(DefenderFilesAndFoldersToExclude)); }
-            set { BackingStore?.Set(nameof(DefenderFilesAndFoldersToExclude), value); }
+            get { return BackingStore?.Get<List<string>>("defenderFilesAndFoldersToExclude"); }
+            set { BackingStore?.Set("defenderFilesAndFoldersToExclude", value); }
         }
-        /// <summary>Value for monitoring file activity. Possible values are: userDefined, disable, monitorAllFiles, monitorIncomingFilesOnly, monitorOutgoingFilesOnly.</summary>
+        /// <summary>Possible values for monitoring file activity.</summary>
         public Microsoft.Graph.Beta.Models.DefenderMonitorFileActivity? DefenderMonitorFileActivity {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DefenderMonitorFileActivity?>(nameof(DefenderMonitorFileActivity)); }
-            set { BackingStore?.Set(nameof(DefenderMonitorFileActivity), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DefenderMonitorFileActivity?>("defenderMonitorFileActivity"); }
+            set { BackingStore?.Set("defenderMonitorFileActivity", value); }
         }
         /// <summary>Gets or sets Defender’s action to take on Potentially Unwanted Application (PUA), which includes software with behaviors of ad-injection, software bundling, persistent solicitation for payment or subscription, etc. Defender alerts user when PUA is being downloaded or attempts to install itself. Added in Windows 10 for desktop. Possible values are: deviceDefault, block, audit.</summary>
         public Microsoft.Graph.Beta.Models.DefenderPotentiallyUnwantedAppAction? DefenderPotentiallyUnwantedAppAction {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DefenderPotentiallyUnwantedAppAction?>(nameof(DefenderPotentiallyUnwantedAppAction)); }
-            set { BackingStore?.Set(nameof(DefenderPotentiallyUnwantedAppAction), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DefenderPotentiallyUnwantedAppAction?>("defenderPotentiallyUnwantedAppAction"); }
+            set { BackingStore?.Set("defenderPotentiallyUnwantedAppAction", value); }
         }
-        /// <summary>Gets or sets Defender’s action to take on Potentially Unwanted Application (PUA), which includes software with behaviors of ad-injection, software bundling, persistent solicitation for payment or subscription, etc. Defender alerts user when PUA is being downloaded or attempts to install itself. Added in Windows 10 for desktop. Possible values are: userDefined, enable, auditMode, warn, notConfigured.</summary>
+        /// <summary>Possible values of Defender PUA Protection</summary>
         public DefenderProtectionType? DefenderPotentiallyUnwantedAppActionSetting {
-            get { return BackingStore?.Get<DefenderProtectionType?>(nameof(DefenderPotentiallyUnwantedAppActionSetting)); }
-            set { BackingStore?.Set(nameof(DefenderPotentiallyUnwantedAppActionSetting), value); }
+            get { return BackingStore?.Get<DefenderProtectionType?>("defenderPotentiallyUnwantedAppActionSetting"); }
+            set { BackingStore?.Set("defenderPotentiallyUnwantedAppActionSetting", value); }
         }
         /// <summary>Processes to exclude from scans and real time protection.</summary>
         public List<string> DefenderProcessesToExclude {
-            get { return BackingStore?.Get<List<string>>(nameof(DefenderProcessesToExclude)); }
-            set { BackingStore?.Set(nameof(DefenderProcessesToExclude), value); }
+            get { return BackingStore?.Get<List<string>>("defenderProcessesToExclude"); }
+            set { BackingStore?.Set("defenderProcessesToExclude", value); }
         }
-        /// <summary>The configuration for how to prompt user for sample submission. Possible values are: userDefined, alwaysPrompt, promptBeforeSendingPersonalData, neverSendData, sendAllDataWithoutPrompting.</summary>
+        /// <summary>Possible values for prompting user for samples submission.</summary>
         public Microsoft.Graph.Beta.Models.DefenderPromptForSampleSubmission? DefenderPromptForSampleSubmission {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DefenderPromptForSampleSubmission?>(nameof(DefenderPromptForSampleSubmission)); }
-            set { BackingStore?.Set(nameof(DefenderPromptForSampleSubmission), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DefenderPromptForSampleSubmission?>("defenderPromptForSampleSubmission"); }
+            set { BackingStore?.Set("defenderPromptForSampleSubmission", value); }
         }
         /// <summary>Indicates whether or not to require behavior monitoring.</summary>
         public bool? DefenderRequireBehaviorMonitoring {
-            get { return BackingStore?.Get<bool?>(nameof(DefenderRequireBehaviorMonitoring)); }
-            set { BackingStore?.Set(nameof(DefenderRequireBehaviorMonitoring), value); }
+            get { return BackingStore?.Get<bool?>("defenderRequireBehaviorMonitoring"); }
+            set { BackingStore?.Set("defenderRequireBehaviorMonitoring", value); }
         }
         /// <summary>Indicates whether or not to require cloud protection.</summary>
         public bool? DefenderRequireCloudProtection {
-            get { return BackingStore?.Get<bool?>(nameof(DefenderRequireCloudProtection)); }
-            set { BackingStore?.Set(nameof(DefenderRequireCloudProtection), value); }
+            get { return BackingStore?.Get<bool?>("defenderRequireCloudProtection"); }
+            set { BackingStore?.Set("defenderRequireCloudProtection", value); }
         }
         /// <summary>Indicates whether or not to require network inspection system.</summary>
         public bool? DefenderRequireNetworkInspectionSystem {
-            get { return BackingStore?.Get<bool?>(nameof(DefenderRequireNetworkInspectionSystem)); }
-            set { BackingStore?.Set(nameof(DefenderRequireNetworkInspectionSystem), value); }
+            get { return BackingStore?.Get<bool?>("defenderRequireNetworkInspectionSystem"); }
+            set { BackingStore?.Set("defenderRequireNetworkInspectionSystem", value); }
         }
         /// <summary>Indicates whether or not to require real time monitoring.</summary>
         public bool? DefenderRequireRealTimeMonitoring {
-            get { return BackingStore?.Get<bool?>(nameof(DefenderRequireRealTimeMonitoring)); }
-            set { BackingStore?.Set(nameof(DefenderRequireRealTimeMonitoring), value); }
+            get { return BackingStore?.Get<bool?>("defenderRequireRealTimeMonitoring"); }
+            set { BackingStore?.Set("defenderRequireRealTimeMonitoring", value); }
         }
         /// <summary>Indicates whether or not to scan archive files.</summary>
         public bool? DefenderScanArchiveFiles {
-            get { return BackingStore?.Get<bool?>(nameof(DefenderScanArchiveFiles)); }
-            set { BackingStore?.Set(nameof(DefenderScanArchiveFiles), value); }
+            get { return BackingStore?.Get<bool?>("defenderScanArchiveFiles"); }
+            set { BackingStore?.Set("defenderScanArchiveFiles", value); }
         }
         /// <summary>Indicates whether or not to scan downloads.</summary>
         public bool? DefenderScanDownloads {
-            get { return BackingStore?.Get<bool?>(nameof(DefenderScanDownloads)); }
-            set { BackingStore?.Set(nameof(DefenderScanDownloads), value); }
+            get { return BackingStore?.Get<bool?>("defenderScanDownloads"); }
+            set { BackingStore?.Set("defenderScanDownloads", value); }
         }
         /// <summary>Indicates whether or not to scan incoming mail messages.</summary>
         public bool? DefenderScanIncomingMail {
-            get { return BackingStore?.Get<bool?>(nameof(DefenderScanIncomingMail)); }
-            set { BackingStore?.Set(nameof(DefenderScanIncomingMail), value); }
+            get { return BackingStore?.Get<bool?>("defenderScanIncomingMail"); }
+            set { BackingStore?.Set("defenderScanIncomingMail", value); }
         }
         /// <summary>Indicates whether or not to scan mapped network drives during full scan.</summary>
         public bool? DefenderScanMappedNetworkDrivesDuringFullScan {
-            get { return BackingStore?.Get<bool?>(nameof(DefenderScanMappedNetworkDrivesDuringFullScan)); }
-            set { BackingStore?.Set(nameof(DefenderScanMappedNetworkDrivesDuringFullScan), value); }
+            get { return BackingStore?.Get<bool?>("defenderScanMappedNetworkDrivesDuringFullScan"); }
+            set { BackingStore?.Set("defenderScanMappedNetworkDrivesDuringFullScan", value); }
         }
         /// <summary>Max CPU usage percentage during scan. Valid values 0 to 100</summary>
         public int? DefenderScanMaxCpu {
-            get { return BackingStore?.Get<int?>(nameof(DefenderScanMaxCpu)); }
-            set { BackingStore?.Set(nameof(DefenderScanMaxCpu), value); }
+            get { return BackingStore?.Get<int?>("defenderScanMaxCpu"); }
+            set { BackingStore?.Set("defenderScanMaxCpu", value); }
         }
         /// <summary>Indicates whether or not to scan files opened from a network folder.</summary>
         public bool? DefenderScanNetworkFiles {
-            get { return BackingStore?.Get<bool?>(nameof(DefenderScanNetworkFiles)); }
-            set { BackingStore?.Set(nameof(DefenderScanNetworkFiles), value); }
+            get { return BackingStore?.Get<bool?>("defenderScanNetworkFiles"); }
+            set { BackingStore?.Set("defenderScanNetworkFiles", value); }
         }
         /// <summary>Indicates whether or not to scan removable drives during full scan.</summary>
         public bool? DefenderScanRemovableDrivesDuringFullScan {
-            get { return BackingStore?.Get<bool?>(nameof(DefenderScanRemovableDrivesDuringFullScan)); }
-            set { BackingStore?.Set(nameof(DefenderScanRemovableDrivesDuringFullScan), value); }
+            get { return BackingStore?.Get<bool?>("defenderScanRemovableDrivesDuringFullScan"); }
+            set { BackingStore?.Set("defenderScanRemovableDrivesDuringFullScan", value); }
         }
         /// <summary>Indicates whether or not to scan scripts loaded in Internet Explorer browser.</summary>
         public bool? DefenderScanScriptsLoadedInInternetExplorer {
-            get { return BackingStore?.Get<bool?>(nameof(DefenderScanScriptsLoadedInInternetExplorer)); }
-            set { BackingStore?.Set(nameof(DefenderScanScriptsLoadedInInternetExplorer), value); }
+            get { return BackingStore?.Get<bool?>("defenderScanScriptsLoadedInInternetExplorer"); }
+            set { BackingStore?.Set("defenderScanScriptsLoadedInInternetExplorer", value); }
         }
-        /// <summary>The defender system scan type. Possible values are: userDefined, disabled, quick, full.</summary>
+        /// <summary>Possible values for system scan type.</summary>
         public Microsoft.Graph.Beta.Models.DefenderScanType? DefenderScanType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DefenderScanType?>(nameof(DefenderScanType)); }
-            set { BackingStore?.Set(nameof(DefenderScanType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DefenderScanType?>("defenderScanType"); }
+            set { BackingStore?.Set("defenderScanType", value); }
         }
         /// <summary>The time to perform a daily quick scan.</summary>
         public Time? DefenderScheduledQuickScanTime {
-            get { return BackingStore?.Get<Time?>(nameof(DefenderScheduledQuickScanTime)); }
-            set { BackingStore?.Set(nameof(DefenderScheduledQuickScanTime), value); }
+            get { return BackingStore?.Get<Time?>("defenderScheduledQuickScanTime"); }
+            set { BackingStore?.Set("defenderScheduledQuickScanTime", value); }
         }
         /// <summary>The defender time for the system scan.</summary>
         public Time? DefenderScheduledScanTime {
-            get { return BackingStore?.Get<Time?>(nameof(DefenderScheduledScanTime)); }
-            set { BackingStore?.Set(nameof(DefenderScheduledScanTime), value); }
+            get { return BackingStore?.Get<Time?>("defenderScheduledScanTime"); }
+            set { BackingStore?.Set("defenderScheduledScanTime", value); }
         }
         /// <summary>When enabled, low CPU priority will be used during scheduled scans.</summary>
         public bool? DefenderScheduleScanEnableLowCpuPriority {
-            get { return BackingStore?.Get<bool?>(nameof(DefenderScheduleScanEnableLowCpuPriority)); }
-            set { BackingStore?.Set(nameof(DefenderScheduleScanEnableLowCpuPriority), value); }
+            get { return BackingStore?.Get<bool?>("defenderScheduleScanEnableLowCpuPriority"); }
+            set { BackingStore?.Set("defenderScheduleScanEnableLowCpuPriority", value); }
         }
         /// <summary>The signature update interval in hours. Specify 0 not to check. Valid values 0 to 24</summary>
         public int? DefenderSignatureUpdateIntervalInHours {
-            get { return BackingStore?.Get<int?>(nameof(DefenderSignatureUpdateIntervalInHours)); }
-            set { BackingStore?.Set(nameof(DefenderSignatureUpdateIntervalInHours), value); }
+            get { return BackingStore?.Get<int?>("defenderSignatureUpdateIntervalInHours"); }
+            set { BackingStore?.Set("defenderSignatureUpdateIntervalInHours", value); }
         }
         /// <summary>Checks for the user consent level in Windows Defender to send data. Possible values are: sendSafeSamplesAutomatically, alwaysPrompt, neverSend, sendAllSamplesAutomatically.</summary>
         public Microsoft.Graph.Beta.Models.DefenderSubmitSamplesConsentType? DefenderSubmitSamplesConsentType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DefenderSubmitSamplesConsentType?>(nameof(DefenderSubmitSamplesConsentType)); }
-            set { BackingStore?.Set(nameof(DefenderSubmitSamplesConsentType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DefenderSubmitSamplesConsentType?>("defenderSubmitSamplesConsentType"); }
+            set { BackingStore?.Set("defenderSubmitSamplesConsentType", value); }
         }
-        /// <summary>Defender day of the week for the system scan. Possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday, noScheduledScan.</summary>
+        /// <summary>Possible values for a weekly schedule.</summary>
         public WeeklySchedule? DefenderSystemScanSchedule {
-            get { return BackingStore?.Get<WeeklySchedule?>(nameof(DefenderSystemScanSchedule)); }
-            set { BackingStore?.Set(nameof(DefenderSystemScanSchedule), value); }
+            get { return BackingStore?.Get<WeeklySchedule?>("defenderSystemScanSchedule"); }
+            set { BackingStore?.Set("defenderSystemScanSchedule", value); }
         }
-        /// <summary>Indicates whether or not to allow developer unlock. Possible values are: notConfigured, blocked, allowed.</summary>
+        /// <summary>State Management Setting.</summary>
         public StateManagementSetting? DeveloperUnlockSetting {
-            get { return BackingStore?.Get<StateManagementSetting?>(nameof(DeveloperUnlockSetting)); }
-            set { BackingStore?.Set(nameof(DeveloperUnlockSetting), value); }
+            get { return BackingStore?.Get<StateManagementSetting?>("developerUnlockSetting"); }
+            set { BackingStore?.Set("developerUnlockSetting", value); }
         }
         /// <summary>Indicates whether or not to Block the user from resetting their phone.</summary>
         public bool? DeviceManagementBlockFactoryResetOnMobile {
-            get { return BackingStore?.Get<bool?>(nameof(DeviceManagementBlockFactoryResetOnMobile)); }
-            set { BackingStore?.Set(nameof(DeviceManagementBlockFactoryResetOnMobile), value); }
+            get { return BackingStore?.Get<bool?>("deviceManagementBlockFactoryResetOnMobile"); }
+            set { BackingStore?.Set("deviceManagementBlockFactoryResetOnMobile", value); }
         }
         /// <summary>Indicates whether or not to Block the user from doing manual un-enrollment from device management.</summary>
         public bool? DeviceManagementBlockManualUnenroll {
-            get { return BackingStore?.Get<bool?>(nameof(DeviceManagementBlockManualUnenroll)); }
-            set { BackingStore?.Set(nameof(DeviceManagementBlockManualUnenroll), value); }
+            get { return BackingStore?.Get<bool?>("deviceManagementBlockManualUnenroll"); }
+            set { BackingStore?.Set("deviceManagementBlockManualUnenroll", value); }
         }
-        /// <summary>Gets or sets a value allowing the device to send diagnostic and usage telemetry data, such as Watson. Possible values are: userDefined, none, basic, enhanced, full.</summary>
+        /// <summary>Allow the device to send diagnostic and usage telemetry data, such as Watson.</summary>
         public DiagnosticDataSubmissionMode? DiagnosticsDataSubmissionMode {
-            get { return BackingStore?.Get<DiagnosticDataSubmissionMode?>(nameof(DiagnosticsDataSubmissionMode)); }
-            set { BackingStore?.Set(nameof(DiagnosticsDataSubmissionMode), value); }
+            get { return BackingStore?.Get<DiagnosticDataSubmissionMode?>("diagnosticsDataSubmissionMode"); }
+            set { BackingStore?.Set("diagnosticsDataSubmissionMode", value); }
         }
         /// <summary>List of legacy applications that have GDI DPI Scaling turned off.</summary>
         public List<string> DisplayAppListWithGdiDPIScalingTurnedOff {
-            get { return BackingStore?.Get<List<string>>(nameof(DisplayAppListWithGdiDPIScalingTurnedOff)); }
-            set { BackingStore?.Set(nameof(DisplayAppListWithGdiDPIScalingTurnedOff), value); }
+            get { return BackingStore?.Get<List<string>>("displayAppListWithGdiDPIScalingTurnedOff"); }
+            set { BackingStore?.Set("displayAppListWithGdiDPIScalingTurnedOff", value); }
         }
         /// <summary>List of legacy applications that have GDI DPI Scaling turned on.</summary>
         public List<string> DisplayAppListWithGdiDPIScalingTurnedOn {
-            get { return BackingStore?.Get<List<string>>(nameof(DisplayAppListWithGdiDPIScalingTurnedOn)); }
-            set { BackingStore?.Set(nameof(DisplayAppListWithGdiDPIScalingTurnedOn), value); }
+            get { return BackingStore?.Get<List<string>>("displayAppListWithGdiDPIScalingTurnedOn"); }
+            set { BackingStore?.Set("displayAppListWithGdiDPIScalingTurnedOn", value); }
         }
         /// <summary>Allow users to change Start pages on Edge. Use the EdgeHomepageUrls to specify the Start pages that the user would see by default when they open Edge.</summary>
         public bool? EdgeAllowStartPagesModification {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeAllowStartPagesModification)); }
-            set { BackingStore?.Set(nameof(EdgeAllowStartPagesModification), value); }
+            get { return BackingStore?.Get<bool?>("edgeAllowStartPagesModification"); }
+            set { BackingStore?.Set("edgeAllowStartPagesModification", value); }
         }
         /// <summary>Indicates whether or not to prevent access to about flags on Edge browser.</summary>
         public bool? EdgeBlockAccessToAboutFlags {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeBlockAccessToAboutFlags)); }
-            set { BackingStore?.Set(nameof(EdgeBlockAccessToAboutFlags), value); }
+            get { return BackingStore?.Get<bool?>("edgeBlockAccessToAboutFlags"); }
+            set { BackingStore?.Set("edgeBlockAccessToAboutFlags", value); }
         }
         /// <summary>Block the address bar dropdown functionality in Microsoft Edge. Disable this settings to minimize network connections from Microsoft Edge to Microsoft services.</summary>
         public bool? EdgeBlockAddressBarDropdown {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeBlockAddressBarDropdown)); }
-            set { BackingStore?.Set(nameof(EdgeBlockAddressBarDropdown), value); }
+            get { return BackingStore?.Get<bool?>("edgeBlockAddressBarDropdown"); }
+            set { BackingStore?.Set("edgeBlockAddressBarDropdown", value); }
         }
         /// <summary>Indicates whether or not to block auto fill.</summary>
         public bool? EdgeBlockAutofill {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeBlockAutofill)); }
-            set { BackingStore?.Set(nameof(EdgeBlockAutofill), value); }
+            get { return BackingStore?.Get<bool?>("edgeBlockAutofill"); }
+            set { BackingStore?.Set("edgeBlockAutofill", value); }
         }
         /// <summary>Block Microsoft compatibility list in Microsoft Edge. This list from Microsoft helps Edge properly display sites with known compatibility issues.</summary>
         public bool? EdgeBlockCompatibilityList {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeBlockCompatibilityList)); }
-            set { BackingStore?.Set(nameof(EdgeBlockCompatibilityList), value); }
+            get { return BackingStore?.Get<bool?>("edgeBlockCompatibilityList"); }
+            set { BackingStore?.Set("edgeBlockCompatibilityList", value); }
         }
         /// <summary>Indicates whether or not to block developer tools in the Edge browser.</summary>
         public bool? EdgeBlockDeveloperTools {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeBlockDeveloperTools)); }
-            set { BackingStore?.Set(nameof(EdgeBlockDeveloperTools), value); }
+            get { return BackingStore?.Get<bool?>("edgeBlockDeveloperTools"); }
+            set { BackingStore?.Set("edgeBlockDeveloperTools", value); }
         }
         /// <summary>Indicates whether or not to Block the user from using the Edge browser.</summary>
         public bool? EdgeBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeBlocked)); }
-            set { BackingStore?.Set(nameof(EdgeBlocked), value); }
+            get { return BackingStore?.Get<bool?>("edgeBlocked"); }
+            set { BackingStore?.Set("edgeBlocked", value); }
         }
         /// <summary>Indicates whether or not to Block the user from making changes to Favorites.</summary>
         public bool? EdgeBlockEditFavorites {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeBlockEditFavorites)); }
-            set { BackingStore?.Set(nameof(EdgeBlockEditFavorites), value); }
+            get { return BackingStore?.Get<bool?>("edgeBlockEditFavorites"); }
+            set { BackingStore?.Set("edgeBlockEditFavorites", value); }
         }
         /// <summary>Indicates whether or not to block extensions in the Edge browser.</summary>
         public bool? EdgeBlockExtensions {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeBlockExtensions)); }
-            set { BackingStore?.Set(nameof(EdgeBlockExtensions), value); }
+            get { return BackingStore?.Get<bool?>("edgeBlockExtensions"); }
+            set { BackingStore?.Set("edgeBlockExtensions", value); }
         }
         /// <summary>Allow or prevent Edge from entering the full screen mode.</summary>
         public bool? EdgeBlockFullScreenMode {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeBlockFullScreenMode)); }
-            set { BackingStore?.Set(nameof(EdgeBlockFullScreenMode), value); }
+            get { return BackingStore?.Get<bool?>("edgeBlockFullScreenMode"); }
+            set { BackingStore?.Set("edgeBlockFullScreenMode", value); }
         }
         /// <summary>Indicates whether or not to block InPrivate browsing on corporate networks, in the Edge browser.</summary>
         public bool? EdgeBlockInPrivateBrowsing {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeBlockInPrivateBrowsing)); }
-            set { BackingStore?.Set(nameof(EdgeBlockInPrivateBrowsing), value); }
+            get { return BackingStore?.Get<bool?>("edgeBlockInPrivateBrowsing"); }
+            set { BackingStore?.Set("edgeBlockInPrivateBrowsing", value); }
         }
         /// <summary>Indicates whether or not to Block the user from using JavaScript.</summary>
         public bool? EdgeBlockJavaScript {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeBlockJavaScript)); }
-            set { BackingStore?.Set(nameof(EdgeBlockJavaScript), value); }
+            get { return BackingStore?.Get<bool?>("edgeBlockJavaScript"); }
+            set { BackingStore?.Set("edgeBlockJavaScript", value); }
         }
         /// <summary>Block the collection of information by Microsoft for live tile creation when users pin a site to Start from Microsoft Edge.</summary>
         public bool? EdgeBlockLiveTileDataCollection {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeBlockLiveTileDataCollection)); }
-            set { BackingStore?.Set(nameof(EdgeBlockLiveTileDataCollection), value); }
+            get { return BackingStore?.Get<bool?>("edgeBlockLiveTileDataCollection"); }
+            set { BackingStore?.Set("edgeBlockLiveTileDataCollection", value); }
         }
         /// <summary>Indicates whether or not to Block password manager.</summary>
         public bool? EdgeBlockPasswordManager {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeBlockPasswordManager)); }
-            set { BackingStore?.Set(nameof(EdgeBlockPasswordManager), value); }
+            get { return BackingStore?.Get<bool?>("edgeBlockPasswordManager"); }
+            set { BackingStore?.Set("edgeBlockPasswordManager", value); }
         }
         /// <summary>Indicates whether or not to block popups.</summary>
         public bool? EdgeBlockPopups {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeBlockPopups)); }
-            set { BackingStore?.Set(nameof(EdgeBlockPopups), value); }
+            get { return BackingStore?.Get<bool?>("edgeBlockPopups"); }
+            set { BackingStore?.Set("edgeBlockPopups", value); }
         }
         /// <summary>Decide whether Microsoft Edge is prelaunched at Windows startup.</summary>
         public bool? EdgeBlockPrelaunch {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeBlockPrelaunch)); }
-            set { BackingStore?.Set(nameof(EdgeBlockPrelaunch), value); }
+            get { return BackingStore?.Get<bool?>("edgeBlockPrelaunch"); }
+            set { BackingStore?.Set("edgeBlockPrelaunch", value); }
         }
         /// <summary>Configure Edge to allow or block printing.</summary>
         public bool? EdgeBlockPrinting {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeBlockPrinting)); }
-            set { BackingStore?.Set(nameof(EdgeBlockPrinting), value); }
+            get { return BackingStore?.Get<bool?>("edgeBlockPrinting"); }
+            set { BackingStore?.Set("edgeBlockPrinting", value); }
         }
         /// <summary>Configure Edge to allow browsing history to be saved or to never save browsing history.</summary>
         public bool? EdgeBlockSavingHistory {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeBlockSavingHistory)); }
-            set { BackingStore?.Set(nameof(EdgeBlockSavingHistory), value); }
+            get { return BackingStore?.Get<bool?>("edgeBlockSavingHistory"); }
+            set { BackingStore?.Set("edgeBlockSavingHistory", value); }
         }
         /// <summary>Indicates whether or not to block the user from adding new search engine or changing the default search engine.</summary>
         public bool? EdgeBlockSearchEngineCustomization {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeBlockSearchEngineCustomization)); }
-            set { BackingStore?.Set(nameof(EdgeBlockSearchEngineCustomization), value); }
+            get { return BackingStore?.Get<bool?>("edgeBlockSearchEngineCustomization"); }
+            set { BackingStore?.Set("edgeBlockSearchEngineCustomization", value); }
         }
         /// <summary>Indicates whether or not to block the user from using the search suggestions in the address bar.</summary>
         public bool? EdgeBlockSearchSuggestions {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeBlockSearchSuggestions)); }
-            set { BackingStore?.Set(nameof(EdgeBlockSearchSuggestions), value); }
+            get { return BackingStore?.Get<bool?>("edgeBlockSearchSuggestions"); }
+            set { BackingStore?.Set("edgeBlockSearchSuggestions", value); }
         }
         /// <summary>Indicates whether or not to Block the user from sending the do not track header.</summary>
         public bool? EdgeBlockSendingDoNotTrackHeader {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeBlockSendingDoNotTrackHeader)); }
-            set { BackingStore?.Set(nameof(EdgeBlockSendingDoNotTrackHeader), value); }
+            get { return BackingStore?.Get<bool?>("edgeBlockSendingDoNotTrackHeader"); }
+            set { BackingStore?.Set("edgeBlockSendingDoNotTrackHeader", value); }
         }
         /// <summary>Indicates whether or not to switch the intranet traffic from Edge to Internet Explorer. Note: the name of this property is misleading; the property is obsolete, use EdgeSendIntranetTrafficToInternetExplorer instead.</summary>
         public bool? EdgeBlockSendingIntranetTrafficToInternetExplorer {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeBlockSendingIntranetTrafficToInternetExplorer)); }
-            set { BackingStore?.Set(nameof(EdgeBlockSendingIntranetTrafficToInternetExplorer), value); }
+            get { return BackingStore?.Get<bool?>("edgeBlockSendingIntranetTrafficToInternetExplorer"); }
+            set { BackingStore?.Set("edgeBlockSendingIntranetTrafficToInternetExplorer", value); }
         }
         /// <summary>Indicates whether the user can sideload extensions.</summary>
         public bool? EdgeBlockSideloadingExtensions {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeBlockSideloadingExtensions)); }
-            set { BackingStore?.Set(nameof(EdgeBlockSideloadingExtensions), value); }
+            get { return BackingStore?.Get<bool?>("edgeBlockSideloadingExtensions"); }
+            set { BackingStore?.Set("edgeBlockSideloadingExtensions", value); }
         }
         /// <summary>Configure whether Edge preloads the new tab page at Windows startup.</summary>
         public bool? EdgeBlockTabPreloading {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeBlockTabPreloading)); }
-            set { BackingStore?.Set(nameof(EdgeBlockTabPreloading), value); }
+            get { return BackingStore?.Get<bool?>("edgeBlockTabPreloading"); }
+            set { BackingStore?.Set("edgeBlockTabPreloading", value); }
         }
         /// <summary>Configure to load a blank page in Edge instead of the default New tab page and prevent users from changing it.</summary>
         public bool? EdgeBlockWebContentOnNewTabPage {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeBlockWebContentOnNewTabPage)); }
-            set { BackingStore?.Set(nameof(EdgeBlockWebContentOnNewTabPage), value); }
+            get { return BackingStore?.Get<bool?>("edgeBlockWebContentOnNewTabPage"); }
+            set { BackingStore?.Set("edgeBlockWebContentOnNewTabPage", value); }
         }
         /// <summary>Clear browsing data on exiting Microsoft Edge.</summary>
         public bool? EdgeClearBrowsingDataOnExit {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeClearBrowsingDataOnExit)); }
-            set { BackingStore?.Set(nameof(EdgeClearBrowsingDataOnExit), value); }
+            get { return BackingStore?.Get<bool?>("edgeClearBrowsingDataOnExit"); }
+            set { BackingStore?.Set("edgeClearBrowsingDataOnExit", value); }
         }
-        /// <summary>Indicates which cookies to block in the Edge browser. Possible values are: userDefined, allow, blockThirdParty, blockAll.</summary>
+        /// <summary>Possible values to specify which cookies are allowed in Microsoft Edge.</summary>
         public Microsoft.Graph.Beta.Models.EdgeCookiePolicy? EdgeCookiePolicy {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EdgeCookiePolicy?>(nameof(EdgeCookiePolicy)); }
-            set { BackingStore?.Set(nameof(EdgeCookiePolicy), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EdgeCookiePolicy?>("edgeCookiePolicy"); }
+            set { BackingStore?.Set("edgeCookiePolicy", value); }
         }
         /// <summary>Block the Microsoft web page that opens on the first use of Microsoft Edge. This policy allows enterprises, like those enrolled in zero emissions configurations, to block this page.</summary>
         public bool? EdgeDisableFirstRunPage {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeDisableFirstRunPage)); }
-            set { BackingStore?.Set(nameof(EdgeDisableFirstRunPage), value); }
+            get { return BackingStore?.Get<bool?>("edgeDisableFirstRunPage"); }
+            set { BackingStore?.Set("edgeDisableFirstRunPage", value); }
         }
         /// <summary>Indicates the enterprise mode site list location. Could be a local file, local network or http location.</summary>
         public string EdgeEnterpriseModeSiteListLocation {
-            get { return BackingStore?.Get<string>(nameof(EdgeEnterpriseModeSiteListLocation)); }
-            set { BackingStore?.Set(nameof(EdgeEnterpriseModeSiteListLocation), value); }
+            get { return BackingStore?.Get<string>("edgeEnterpriseModeSiteListLocation"); }
+            set { BackingStore?.Set("edgeEnterpriseModeSiteListLocation", value); }
         }
-        /// <summary>Get or set a value that specifies whether to set the favorites bar to always be visible or hidden on any page. Possible values are: notConfigured, hide, show.</summary>
+        /// <summary>Generic visibility state.</summary>
         public VisibilitySetting? EdgeFavoritesBarVisibility {
-            get { return BackingStore?.Get<VisibilitySetting?>(nameof(EdgeFavoritesBarVisibility)); }
-            set { BackingStore?.Set(nameof(EdgeFavoritesBarVisibility), value); }
+            get { return BackingStore?.Get<VisibilitySetting?>("edgeFavoritesBarVisibility"); }
+            set { BackingStore?.Set("edgeFavoritesBarVisibility", value); }
         }
         /// <summary>The location of the favorites list to provision. Could be a local file, local network or http location.</summary>
         public string EdgeFavoritesListLocation {
-            get { return BackingStore?.Get<string>(nameof(EdgeFavoritesListLocation)); }
-            set { BackingStore?.Set(nameof(EdgeFavoritesListLocation), value); }
+            get { return BackingStore?.Get<string>("edgeFavoritesListLocation"); }
+            set { BackingStore?.Set("edgeFavoritesListLocation", value); }
         }
         /// <summary>The first run URL for when Edge browser is opened for the first time.</summary>
         public string EdgeFirstRunUrl {
-            get { return BackingStore?.Get<string>(nameof(EdgeFirstRunUrl)); }
-            set { BackingStore?.Set(nameof(EdgeFirstRunUrl), value); }
+            get { return BackingStore?.Get<string>("edgeFirstRunUrl"); }
+            set { BackingStore?.Set("edgeFirstRunUrl", value); }
         }
         /// <summary>Causes the Home button to either hide, load the default Start page, load a New tab page, or a custom URL</summary>
         public Microsoft.Graph.Beta.Models.EdgeHomeButtonConfiguration EdgeHomeButtonConfiguration {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EdgeHomeButtonConfiguration>(nameof(EdgeHomeButtonConfiguration)); }
-            set { BackingStore?.Set(nameof(EdgeHomeButtonConfiguration), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EdgeHomeButtonConfiguration>("edgeHomeButtonConfiguration"); }
+            set { BackingStore?.Set("edgeHomeButtonConfiguration", value); }
         }
         /// <summary>Enable the Home button configuration.</summary>
         public bool? EdgeHomeButtonConfigurationEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeHomeButtonConfigurationEnabled)); }
-            set { BackingStore?.Set(nameof(EdgeHomeButtonConfigurationEnabled), value); }
+            get { return BackingStore?.Get<bool?>("edgeHomeButtonConfigurationEnabled"); }
+            set { BackingStore?.Set("edgeHomeButtonConfigurationEnabled", value); }
         }
         /// <summary>The list of URLs for homepages shodwn on MDM-enrolled devices on Edge browser.</summary>
         public List<string> EdgeHomepageUrls {
-            get { return BackingStore?.Get<List<string>>(nameof(EdgeHomepageUrls)); }
-            set { BackingStore?.Set(nameof(EdgeHomepageUrls), value); }
+            get { return BackingStore?.Get<List<string>>("edgeHomepageUrls"); }
+            set { BackingStore?.Set("edgeHomepageUrls", value); }
         }
-        /// <summary>Controls how the Microsoft Edge settings are restricted based on the configure kiosk mode. Possible values are: notConfigured, digitalSignage, normalMode, publicBrowsingSingleApp, publicBrowsingMultiApp.</summary>
+        /// <summary>Specify how the Microsoft Edge settings are restricted based on kiosk mode.</summary>
         public EdgeKioskModeRestrictionType? EdgeKioskModeRestriction {
-            get { return BackingStore?.Get<EdgeKioskModeRestrictionType?>(nameof(EdgeKioskModeRestriction)); }
-            set { BackingStore?.Set(nameof(EdgeKioskModeRestriction), value); }
+            get { return BackingStore?.Get<EdgeKioskModeRestrictionType?>("edgeKioskModeRestriction"); }
+            set { BackingStore?.Set("edgeKioskModeRestriction", value); }
         }
         /// <summary>Specifies the time in minutes from the last user activity before Microsoft Edge kiosk resets.  Valid values are 0-1440. The default is 5. 0 indicates no reset. Valid values 0 to 1440</summary>
         public int? EdgeKioskResetAfterIdleTimeInMinutes {
-            get { return BackingStore?.Get<int?>(nameof(EdgeKioskResetAfterIdleTimeInMinutes)); }
-            set { BackingStore?.Set(nameof(EdgeKioskResetAfterIdleTimeInMinutes), value); }
+            get { return BackingStore?.Get<int?>("edgeKioskResetAfterIdleTimeInMinutes"); }
+            set { BackingStore?.Set("edgeKioskResetAfterIdleTimeInMinutes", value); }
         }
         /// <summary>Specify the page opened when new tabs are created.</summary>
         public string EdgeNewTabPageURL {
-            get { return BackingStore?.Get<string>(nameof(EdgeNewTabPageURL)); }
-            set { BackingStore?.Set(nameof(EdgeNewTabPageURL), value); }
+            get { return BackingStore?.Get<string>("edgeNewTabPageURL"); }
+            set { BackingStore?.Set("edgeNewTabPageURL", value); }
         }
-        /// <summary>Specify what kind of pages are open at start. Possible values are: notConfigured, startPage, newTabPage, previousPages, specificPages.</summary>
+        /// <summary>Possible values for the EdgeOpensWith setting.</summary>
         public EdgeOpenOptions? EdgeOpensWith {
-            get { return BackingStore?.Get<EdgeOpenOptions?>(nameof(EdgeOpensWith)); }
-            set { BackingStore?.Set(nameof(EdgeOpensWith), value); }
+            get { return BackingStore?.Get<EdgeOpenOptions?>("edgeOpensWith"); }
+            set { BackingStore?.Set("edgeOpensWith", value); }
         }
         /// <summary>Allow or prevent users from overriding certificate errors.</summary>
         public bool? EdgePreventCertificateErrorOverride {
-            get { return BackingStore?.Get<bool?>(nameof(EdgePreventCertificateErrorOverride)); }
-            set { BackingStore?.Set(nameof(EdgePreventCertificateErrorOverride), value); }
+            get { return BackingStore?.Get<bool?>("edgePreventCertificateErrorOverride"); }
+            set { BackingStore?.Set("edgePreventCertificateErrorOverride", value); }
         }
         /// <summary>Specify the list of package family names of browser extensions that are required and cannot be turned off by the user.</summary>
         public List<string> EdgeRequiredExtensionPackageFamilyNames {
-            get { return BackingStore?.Get<List<string>>(nameof(EdgeRequiredExtensionPackageFamilyNames)); }
-            set { BackingStore?.Set(nameof(EdgeRequiredExtensionPackageFamilyNames), value); }
+            get { return BackingStore?.Get<List<string>>("edgeRequiredExtensionPackageFamilyNames"); }
+            set { BackingStore?.Set("edgeRequiredExtensionPackageFamilyNames", value); }
         }
         /// <summary>Indicates whether or not to Require the user to use the smart screen filter.</summary>
         public bool? EdgeRequireSmartScreen {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeRequireSmartScreen)); }
-            set { BackingStore?.Set(nameof(EdgeRequireSmartScreen), value); }
+            get { return BackingStore?.Get<bool?>("edgeRequireSmartScreen"); }
+            set { BackingStore?.Set("edgeRequireSmartScreen", value); }
         }
         /// <summary>Allows IT admins to set a default search engine for MDM-Controlled devices. Users can override this and change their default search engine provided the AllowSearchEngineCustomization policy is not set.</summary>
         public EdgeSearchEngineBase EdgeSearchEngine {
-            get { return BackingStore?.Get<EdgeSearchEngineBase>(nameof(EdgeSearchEngine)); }
-            set { BackingStore?.Set(nameof(EdgeSearchEngine), value); }
+            get { return BackingStore?.Get<EdgeSearchEngineBase>("edgeSearchEngine"); }
+            set { BackingStore?.Set("edgeSearchEngine", value); }
         }
         /// <summary>Indicates whether or not to switch the intranet traffic from Edge to Internet Explorer.</summary>
         public bool? EdgeSendIntranetTrafficToInternetExplorer {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeSendIntranetTrafficToInternetExplorer)); }
-            set { BackingStore?.Set(nameof(EdgeSendIntranetTrafficToInternetExplorer), value); }
+            get { return BackingStore?.Get<bool?>("edgeSendIntranetTrafficToInternetExplorer"); }
+            set { BackingStore?.Set("edgeSendIntranetTrafficToInternetExplorer", value); }
         }
-        /// <summary>Controls the message displayed by Edge before switching to Internet Explorer. Possible values are: notConfigured, disabled, enabled, keepGoing.</summary>
+        /// <summary>What message will be displayed by Edge before switching to Internet Explorer.</summary>
         public InternetExplorerMessageSetting? EdgeShowMessageWhenOpeningInternetExplorerSites {
-            get { return BackingStore?.Get<InternetExplorerMessageSetting?>(nameof(EdgeShowMessageWhenOpeningInternetExplorerSites)); }
-            set { BackingStore?.Set(nameof(EdgeShowMessageWhenOpeningInternetExplorerSites), value); }
+            get { return BackingStore?.Get<InternetExplorerMessageSetting?>("edgeShowMessageWhenOpeningInternetExplorerSites"); }
+            set { BackingStore?.Set("edgeShowMessageWhenOpeningInternetExplorerSites", value); }
         }
         /// <summary>Enable favorites sync between Internet Explorer and Microsoft Edge. Additions, deletions, modifications and order changes to favorites are shared between browsers.</summary>
         public bool? EdgeSyncFavoritesWithInternetExplorer {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeSyncFavoritesWithInternetExplorer)); }
-            set { BackingStore?.Set(nameof(EdgeSyncFavoritesWithInternetExplorer), value); }
+            get { return BackingStore?.Get<bool?>("edgeSyncFavoritesWithInternetExplorer"); }
+            set { BackingStore?.Set("edgeSyncFavoritesWithInternetExplorer", value); }
         }
-        /// <summary>Specifies what type of telemetry data (none, intranet, internet, both) is sent to Microsoft 365 Analytics. Possible values are: notConfigured, intranet, internet, intranetAndInternet.</summary>
+        /// <summary>Type of browsing data sent to Microsoft 365 analytics</summary>
         public EdgeTelemetryMode? EdgeTelemetryForMicrosoft365Analytics {
-            get { return BackingStore?.Get<EdgeTelemetryMode?>(nameof(EdgeTelemetryForMicrosoft365Analytics)); }
-            set { BackingStore?.Set(nameof(EdgeTelemetryForMicrosoft365Analytics), value); }
+            get { return BackingStore?.Get<EdgeTelemetryMode?>("edgeTelemetryForMicrosoft365Analytics"); }
+            set { BackingStore?.Set("edgeTelemetryForMicrosoft365Analytics", value); }
         }
         /// <summary>Allow users with administrative rights to delete all user data and settings using CTRL + Win + R at the device lock screen so that the device can be automatically re-configured and re-enrolled into management.</summary>
         public bool? EnableAutomaticRedeployment {
-            get { return BackingStore?.Get<bool?>(nameof(EnableAutomaticRedeployment)); }
-            set { BackingStore?.Set(nameof(EnableAutomaticRedeployment), value); }
+            get { return BackingStore?.Get<bool?>("enableAutomaticRedeployment"); }
+            set { BackingStore?.Set("enableAutomaticRedeployment", value); }
         }
         /// <summary>This setting allows you to specify battery charge level at which Energy Saver is turned on. While on battery, Energy Saver is automatically turned on at (and below) the specified battery charge level. Valid input range (0-100). Valid values 0 to 100</summary>
         public int? EnergySaverOnBatteryThresholdPercentage {
-            get { return BackingStore?.Get<int?>(nameof(EnergySaverOnBatteryThresholdPercentage)); }
-            set { BackingStore?.Set(nameof(EnergySaverOnBatteryThresholdPercentage), value); }
+            get { return BackingStore?.Get<int?>("energySaverOnBatteryThresholdPercentage"); }
+            set { BackingStore?.Set("energySaverOnBatteryThresholdPercentage", value); }
         }
         /// <summary>This setting allows you to specify battery charge level at which Energy Saver is turned on. While plugged in, Energy Saver is automatically turned on at (and below) the specified battery charge level. Valid input range (0-100). Valid values 0 to 100</summary>
         public int? EnergySaverPluggedInThresholdPercentage {
-            get { return BackingStore?.Get<int?>(nameof(EnergySaverPluggedInThresholdPercentage)); }
-            set { BackingStore?.Set(nameof(EnergySaverPluggedInThresholdPercentage), value); }
+            get { return BackingStore?.Get<int?>("energySaverPluggedInThresholdPercentage"); }
+            set { BackingStore?.Set("energySaverPluggedInThresholdPercentage", value); }
         }
         /// <summary>Endpoint for discovering cloud printers.</summary>
         public string EnterpriseCloudPrintDiscoveryEndPoint {
-            get { return BackingStore?.Get<string>(nameof(EnterpriseCloudPrintDiscoveryEndPoint)); }
-            set { BackingStore?.Set(nameof(EnterpriseCloudPrintDiscoveryEndPoint), value); }
+            get { return BackingStore?.Get<string>("enterpriseCloudPrintDiscoveryEndPoint"); }
+            set { BackingStore?.Set("enterpriseCloudPrintDiscoveryEndPoint", value); }
         }
         /// <summary>Maximum number of printers that should be queried from a discovery endpoint. This is a mobile only setting. Valid values 1 to 65535</summary>
         public int? EnterpriseCloudPrintDiscoveryMaxLimit {
-            get { return BackingStore?.Get<int?>(nameof(EnterpriseCloudPrintDiscoveryMaxLimit)); }
-            set { BackingStore?.Set(nameof(EnterpriseCloudPrintDiscoveryMaxLimit), value); }
+            get { return BackingStore?.Get<int?>("enterpriseCloudPrintDiscoveryMaxLimit"); }
+            set { BackingStore?.Set("enterpriseCloudPrintDiscoveryMaxLimit", value); }
         }
         /// <summary>OAuth resource URI for printer discovery service as configured in Azure portal.</summary>
         public string EnterpriseCloudPrintMopriaDiscoveryResourceIdentifier {
-            get { return BackingStore?.Get<string>(nameof(EnterpriseCloudPrintMopriaDiscoveryResourceIdentifier)); }
-            set { BackingStore?.Set(nameof(EnterpriseCloudPrintMopriaDiscoveryResourceIdentifier), value); }
+            get { return BackingStore?.Get<string>("enterpriseCloudPrintMopriaDiscoveryResourceIdentifier"); }
+            set { BackingStore?.Set("enterpriseCloudPrintMopriaDiscoveryResourceIdentifier", value); }
         }
         /// <summary>Authentication endpoint for acquiring OAuth tokens.</summary>
         public string EnterpriseCloudPrintOAuthAuthority {
-            get { return BackingStore?.Get<string>(nameof(EnterpriseCloudPrintOAuthAuthority)); }
-            set { BackingStore?.Set(nameof(EnterpriseCloudPrintOAuthAuthority), value); }
+            get { return BackingStore?.Get<string>("enterpriseCloudPrintOAuthAuthority"); }
+            set { BackingStore?.Set("enterpriseCloudPrintOAuthAuthority", value); }
         }
         /// <summary>GUID of a client application authorized to retrieve OAuth tokens from the OAuth Authority.</summary>
         public string EnterpriseCloudPrintOAuthClientIdentifier {
-            get { return BackingStore?.Get<string>(nameof(EnterpriseCloudPrintOAuthClientIdentifier)); }
-            set { BackingStore?.Set(nameof(EnterpriseCloudPrintOAuthClientIdentifier), value); }
+            get { return BackingStore?.Get<string>("enterpriseCloudPrintOAuthClientIdentifier"); }
+            set { BackingStore?.Set("enterpriseCloudPrintOAuthClientIdentifier", value); }
         }
         /// <summary>OAuth resource URI for print service as configured in the Azure portal.</summary>
         public string EnterpriseCloudPrintResourceIdentifier {
-            get { return BackingStore?.Get<string>(nameof(EnterpriseCloudPrintResourceIdentifier)); }
-            set { BackingStore?.Set(nameof(EnterpriseCloudPrintResourceIdentifier), value); }
+            get { return BackingStore?.Get<string>("enterpriseCloudPrintResourceIdentifier"); }
+            set { BackingStore?.Set("enterpriseCloudPrintResourceIdentifier", value); }
         }
         /// <summary>Indicates whether or not to enable device discovery UX.</summary>
         public bool? ExperienceBlockDeviceDiscovery {
-            get { return BackingStore?.Get<bool?>(nameof(ExperienceBlockDeviceDiscovery)); }
-            set { BackingStore?.Set(nameof(ExperienceBlockDeviceDiscovery), value); }
+            get { return BackingStore?.Get<bool?>("experienceBlockDeviceDiscovery"); }
+            set { BackingStore?.Set("experienceBlockDeviceDiscovery", value); }
         }
         /// <summary>Indicates whether or not to allow the error dialog from displaying if no SIM card is detected.</summary>
         public bool? ExperienceBlockErrorDialogWhenNoSIM {
-            get { return BackingStore?.Get<bool?>(nameof(ExperienceBlockErrorDialogWhenNoSIM)); }
-            set { BackingStore?.Set(nameof(ExperienceBlockErrorDialogWhenNoSIM), value); }
+            get { return BackingStore?.Get<bool?>("experienceBlockErrorDialogWhenNoSIM"); }
+            set { BackingStore?.Set("experienceBlockErrorDialogWhenNoSIM", value); }
         }
         /// <summary>Indicates whether or not to enable task switching on the device.</summary>
         public bool? ExperienceBlockTaskSwitcher {
-            get { return BackingStore?.Get<bool?>(nameof(ExperienceBlockTaskSwitcher)); }
-            set { BackingStore?.Set(nameof(ExperienceBlockTaskSwitcher), value); }
+            get { return BackingStore?.Get<bool?>("experienceBlockTaskSwitcher"); }
+            set { BackingStore?.Set("experienceBlockTaskSwitcher", value); }
         }
-        /// <summary>Allow or prevent the syncing of Microsoft Edge Browser settings. Option for IT admins to prevent syncing across devices, but allow user override. Possible values are: notConfigured, blockedWithUserOverride, blocked.</summary>
+        /// <summary>Allow(Not Configured) or prevent(Block) the syncing of Microsoft Edge Browser settings. Option to prevent syncing across devices, but allow user override.</summary>
         public BrowserSyncSetting? ExperienceDoNotSyncBrowserSettings {
-            get { return BackingStore?.Get<BrowserSyncSetting?>(nameof(ExperienceDoNotSyncBrowserSettings)); }
-            set { BackingStore?.Set(nameof(ExperienceDoNotSyncBrowserSettings), value); }
+            get { return BackingStore?.Get<BrowserSyncSetting?>("experienceDoNotSyncBrowserSettings"); }
+            set { BackingStore?.Set("experienceDoNotSyncBrowserSettings", value); }
         }
-        /// <summary>Controls if the user can configure search to Find My Files mode, which searches files in secondary hard drives and also outside of the user profile. Find My Files does not allow users to search files or locations to which they do not have access. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? FindMyFiles {
-            get { return BackingStore?.Get<Enablement?>(nameof(FindMyFiles)); }
-            set { BackingStore?.Set(nameof(FindMyFiles), value); }
+            get { return BackingStore?.Get<Enablement?>("findMyFiles"); }
+            set { BackingStore?.Set("findMyFiles", value); }
         }
         /// <summary>Indicates whether or not to block DVR and broadcasting.</summary>
         public bool? GameDvrBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(GameDvrBlocked)); }
-            set { BackingStore?.Set(nameof(GameDvrBlocked), value); }
+            get { return BackingStore?.Get<bool?>("gameDvrBlocked"); }
+            set { BackingStore?.Set("gameDvrBlocked", value); }
         }
-        /// <summary>Controls the user access to the ink workspace, from the desktop and from above the lock screen. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Values for the InkWorkspaceAccess setting.</summary>
         public InkAccessSetting? InkWorkspaceAccess {
-            get { return BackingStore?.Get<InkAccessSetting?>(nameof(InkWorkspaceAccess)); }
-            set { BackingStore?.Set(nameof(InkWorkspaceAccess), value); }
+            get { return BackingStore?.Get<InkAccessSetting?>("inkWorkspaceAccess"); }
+            set { BackingStore?.Set("inkWorkspaceAccess", value); }
         }
-        /// <summary>Controls the user access to the ink workspace, from the desktop and from above the lock screen. Possible values are: notConfigured, blocked, allowed.</summary>
+        /// <summary>State Management Setting.</summary>
         public StateManagementSetting? InkWorkspaceAccessState {
-            get { return BackingStore?.Get<StateManagementSetting?>(nameof(InkWorkspaceAccessState)); }
-            set { BackingStore?.Set(nameof(InkWorkspaceAccessState), value); }
+            get { return BackingStore?.Get<StateManagementSetting?>("inkWorkspaceAccessState"); }
+            set { BackingStore?.Set("inkWorkspaceAccessState", value); }
         }
         /// <summary>Specify whether to show recommended app suggestions in the ink workspace.</summary>
         public bool? InkWorkspaceBlockSuggestedApps {
-            get { return BackingStore?.Get<bool?>(nameof(InkWorkspaceBlockSuggestedApps)); }
-            set { BackingStore?.Set(nameof(InkWorkspaceBlockSuggestedApps), value); }
+            get { return BackingStore?.Get<bool?>("inkWorkspaceBlockSuggestedApps"); }
+            set { BackingStore?.Set("inkWorkspaceBlockSuggestedApps", value); }
         }
         /// <summary>Indicates whether or not to Block the user from using internet sharing.</summary>
         public bool? InternetSharingBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(InternetSharingBlocked)); }
-            set { BackingStore?.Set(nameof(InternetSharingBlocked), value); }
+            get { return BackingStore?.Get<bool?>("internetSharingBlocked"); }
+            set { BackingStore?.Set("internetSharingBlocked", value); }
         }
         /// <summary>Indicates whether or not to Block the user from location services.</summary>
         public bool? LocationServicesBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(LocationServicesBlocked)); }
-            set { BackingStore?.Set(nameof(LocationServicesBlocked), value); }
+            get { return BackingStore?.Get<bool?>("locationServicesBlocked"); }
+            set { BackingStore?.Set("locationServicesBlocked", value); }
         }
-        /// <summary>This policy setting specifies whether Windows apps can be activated by voice while the system is locked. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? LockScreenActivateAppsWithVoice {
-            get { return BackingStore?.Get<Enablement?>(nameof(LockScreenActivateAppsWithVoice)); }
-            set { BackingStore?.Set(nameof(LockScreenActivateAppsWithVoice), value); }
+            get { return BackingStore?.Get<Enablement?>("lockScreenActivateAppsWithVoice"); }
+            set { BackingStore?.Set("lockScreenActivateAppsWithVoice", value); }
         }
         /// <summary>Specify whether to show a user-configurable setting to control the screen timeout while on the lock screen of Windows 10 Mobile devices. If this policy is set to Allow, the value set by lockScreenTimeoutInSeconds is ignored.</summary>
         public bool? LockScreenAllowTimeoutConfiguration {
-            get { return BackingStore?.Get<bool?>(nameof(LockScreenAllowTimeoutConfiguration)); }
-            set { BackingStore?.Set(nameof(LockScreenAllowTimeoutConfiguration), value); }
+            get { return BackingStore?.Get<bool?>("lockScreenAllowTimeoutConfiguration"); }
+            set { BackingStore?.Set("lockScreenAllowTimeoutConfiguration", value); }
         }
         /// <summary>Indicates whether or not to block action center notifications over lock screen.</summary>
         public bool? LockScreenBlockActionCenterNotifications {
-            get { return BackingStore?.Get<bool?>(nameof(LockScreenBlockActionCenterNotifications)); }
-            set { BackingStore?.Set(nameof(LockScreenBlockActionCenterNotifications), value); }
+            get { return BackingStore?.Get<bool?>("lockScreenBlockActionCenterNotifications"); }
+            set { BackingStore?.Set("lockScreenBlockActionCenterNotifications", value); }
         }
         /// <summary>Indicates whether or not the user can interact with Cortana using speech while the system is locked.</summary>
         public bool? LockScreenBlockCortana {
-            get { return BackingStore?.Get<bool?>(nameof(LockScreenBlockCortana)); }
-            set { BackingStore?.Set(nameof(LockScreenBlockCortana), value); }
+            get { return BackingStore?.Get<bool?>("lockScreenBlockCortana"); }
+            set { BackingStore?.Set("lockScreenBlockCortana", value); }
         }
         /// <summary>Indicates whether to allow toast notifications above the device lock screen.</summary>
         public bool? LockScreenBlockToastNotifications {
-            get { return BackingStore?.Get<bool?>(nameof(LockScreenBlockToastNotifications)); }
-            set { BackingStore?.Set(nameof(LockScreenBlockToastNotifications), value); }
+            get { return BackingStore?.Get<bool?>("lockScreenBlockToastNotifications"); }
+            set { BackingStore?.Set("lockScreenBlockToastNotifications", value); }
         }
         /// <summary>Set the duration (in seconds) from the screen locking to the screen turning off for Windows 10 Mobile devices. Supported values are 11-1800. Valid values 11 to 1800</summary>
         public int? LockScreenTimeoutInSeconds {
-            get { return BackingStore?.Get<int?>(nameof(LockScreenTimeoutInSeconds)); }
-            set { BackingStore?.Set(nameof(LockScreenTimeoutInSeconds), value); }
+            get { return BackingStore?.Get<int?>("lockScreenTimeoutInSeconds"); }
+            set { BackingStore?.Set("lockScreenTimeoutInSeconds", value); }
         }
         /// <summary>Disables the ability to quickly switch between users that are logged on simultaneously without logging off.</summary>
         public bool? LogonBlockFastUserSwitching {
-            get { return BackingStore?.Get<bool?>(nameof(LogonBlockFastUserSwitching)); }
-            set { BackingStore?.Set(nameof(LogonBlockFastUserSwitching), value); }
+            get { return BackingStore?.Get<bool?>("logonBlockFastUserSwitching"); }
+            set { BackingStore?.Set("logonBlockFastUserSwitching", value); }
         }
         /// <summary>Indicates whether or not to block the MMS send/receive functionality on the device.</summary>
         public bool? MessagingBlockMMS {
-            get { return BackingStore?.Get<bool?>(nameof(MessagingBlockMMS)); }
-            set { BackingStore?.Set(nameof(MessagingBlockMMS), value); }
+            get { return BackingStore?.Get<bool?>("messagingBlockMMS"); }
+            set { BackingStore?.Set("messagingBlockMMS", value); }
         }
         /// <summary>Indicates whether or not to block the RCS send/receive functionality on the device.</summary>
         public bool? MessagingBlockRichCommunicationServices {
-            get { return BackingStore?.Get<bool?>(nameof(MessagingBlockRichCommunicationServices)); }
-            set { BackingStore?.Set(nameof(MessagingBlockRichCommunicationServices), value); }
+            get { return BackingStore?.Get<bool?>("messagingBlockRichCommunicationServices"); }
+            set { BackingStore?.Set("messagingBlockRichCommunicationServices", value); }
         }
         /// <summary>Indicates whether or not to block text message back up and restore and Messaging Everywhere.</summary>
         public bool? MessagingBlockSync {
-            get { return BackingStore?.Get<bool?>(nameof(MessagingBlockSync)); }
-            set { BackingStore?.Set(nameof(MessagingBlockSync), value); }
+            get { return BackingStore?.Get<bool?>("messagingBlockSync"); }
+            set { BackingStore?.Set("messagingBlockSync", value); }
         }
         /// <summary>Indicates whether or not to Block a Microsoft account.</summary>
         public bool? MicrosoftAccountBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(MicrosoftAccountBlocked)); }
-            set { BackingStore?.Set(nameof(MicrosoftAccountBlocked), value); }
+            get { return BackingStore?.Get<bool?>("microsoftAccountBlocked"); }
+            set { BackingStore?.Set("microsoftAccountBlocked", value); }
         }
         /// <summary>Indicates whether or not to Block Microsoft account settings sync.</summary>
         public bool? MicrosoftAccountBlockSettingsSync {
-            get { return BackingStore?.Get<bool?>(nameof(MicrosoftAccountBlockSettingsSync)); }
-            set { BackingStore?.Set(nameof(MicrosoftAccountBlockSettingsSync), value); }
+            get { return BackingStore?.Get<bool?>("microsoftAccountBlockSettingsSync"); }
+            set { BackingStore?.Set("microsoftAccountBlockSettingsSync", value); }
         }
-        /// <summary>Controls the Microsoft Account Sign-In Assistant (wlidsvc) NT service. Possible values are: notConfigured, disabled.</summary>
+        /// <summary>Values for the SignInAssistantSettings.</summary>
         public SignInAssistantOptions? MicrosoftAccountSignInAssistantSettings {
-            get { return BackingStore?.Get<SignInAssistantOptions?>(nameof(MicrosoftAccountSignInAssistantSettings)); }
-            set { BackingStore?.Set(nameof(MicrosoftAccountSignInAssistantSettings), value); }
+            get { return BackingStore?.Get<SignInAssistantOptions?>("microsoftAccountSignInAssistantSettings"); }
+            set { BackingStore?.Set("microsoftAccountSignInAssistantSettings", value); }
         }
         /// <summary>If set, proxy settings will be applied to all processes and accounts in the device. Otherwise, it will be applied to the user account that’s enrolled into MDM.</summary>
         public bool? NetworkProxyApplySettingsDeviceWide {
-            get { return BackingStore?.Get<bool?>(nameof(NetworkProxyApplySettingsDeviceWide)); }
-            set { BackingStore?.Set(nameof(NetworkProxyApplySettingsDeviceWide), value); }
+            get { return BackingStore?.Get<bool?>("networkProxyApplySettingsDeviceWide"); }
+            set { BackingStore?.Set("networkProxyApplySettingsDeviceWide", value); }
         }
         /// <summary>Address to the proxy auto-config (PAC) script you want to use.</summary>
         public string NetworkProxyAutomaticConfigurationUrl {
-            get { return BackingStore?.Get<string>(nameof(NetworkProxyAutomaticConfigurationUrl)); }
-            set { BackingStore?.Set(nameof(NetworkProxyAutomaticConfigurationUrl), value); }
+            get { return BackingStore?.Get<string>("networkProxyAutomaticConfigurationUrl"); }
+            set { BackingStore?.Set("networkProxyAutomaticConfigurationUrl", value); }
         }
         /// <summary>Disable automatic detection of settings. If enabled, the system will try to find the path to a proxy auto-config (PAC) script.</summary>
         public bool? NetworkProxyDisableAutoDetect {
-            get { return BackingStore?.Get<bool?>(nameof(NetworkProxyDisableAutoDetect)); }
-            set { BackingStore?.Set(nameof(NetworkProxyDisableAutoDetect), value); }
+            get { return BackingStore?.Get<bool?>("networkProxyDisableAutoDetect"); }
+            set { BackingStore?.Set("networkProxyDisableAutoDetect", value); }
         }
         /// <summary>Specifies manual proxy server settings.</summary>
         public Windows10NetworkProxyServer NetworkProxyServer {
-            get { return BackingStore?.Get<Windows10NetworkProxyServer>(nameof(NetworkProxyServer)); }
-            set { BackingStore?.Set(nameof(NetworkProxyServer), value); }
+            get { return BackingStore?.Get<Windows10NetworkProxyServer>("networkProxyServer"); }
+            set { BackingStore?.Set("networkProxyServer", value); }
         }
         /// <summary>Indicates whether or not to Block the user from using near field communication.</summary>
         public bool? NfcBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(NfcBlocked)); }
-            set { BackingStore?.Set(nameof(NfcBlocked), value); }
+            get { return BackingStore?.Get<bool?>("nfcBlocked"); }
+            set { BackingStore?.Set("nfcBlocked", value); }
         }
         /// <summary>Gets or sets a value allowing IT admins to prevent apps and features from working with files on OneDrive.</summary>
         public bool? OneDriveDisableFileSync {
-            get { return BackingStore?.Get<bool?>(nameof(OneDriveDisableFileSync)); }
-            set { BackingStore?.Set(nameof(OneDriveDisableFileSync), value); }
+            get { return BackingStore?.Get<bool?>("oneDriveDisableFileSync"); }
+            set { BackingStore?.Set("oneDriveDisableFileSync", value); }
         }
         /// <summary>Specify whether PINs or passwords such as &apos;1111&apos; or &apos;1234&apos; are allowed. For Windows 10 desktops, it also controls the use of picture passwords.</summary>
         public bool? PasswordBlockSimple {
-            get { return BackingStore?.Get<bool?>(nameof(PasswordBlockSimple)); }
-            set { BackingStore?.Set(nameof(PasswordBlockSimple), value); }
+            get { return BackingStore?.Get<bool?>("passwordBlockSimple"); }
+            set { BackingStore?.Set("passwordBlockSimple", value); }
         }
         /// <summary>The password expiration in days. Valid values 0 to 730</summary>
         public int? PasswordExpirationDays {
-            get { return BackingStore?.Get<int?>(nameof(PasswordExpirationDays)); }
-            set { BackingStore?.Set(nameof(PasswordExpirationDays), value); }
+            get { return BackingStore?.Get<int?>("passwordExpirationDays"); }
+            set { BackingStore?.Set("passwordExpirationDays", value); }
         }
         /// <summary>This security setting determines the period of time (in days) that a password must be used before the user can change it. Valid values 0 to 998</summary>
         public int? PasswordMinimumAgeInDays {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinimumAgeInDays)); }
-            set { BackingStore?.Set(nameof(PasswordMinimumAgeInDays), value); }
+            get { return BackingStore?.Get<int?>("passwordMinimumAgeInDays"); }
+            set { BackingStore?.Set("passwordMinimumAgeInDays", value); }
         }
         /// <summary>The number of character sets required in the password.</summary>
         public int? PasswordMinimumCharacterSetCount {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinimumCharacterSetCount)); }
-            set { BackingStore?.Set(nameof(PasswordMinimumCharacterSetCount), value); }
+            get { return BackingStore?.Get<int?>("passwordMinimumCharacterSetCount"); }
+            set { BackingStore?.Set("passwordMinimumCharacterSetCount", value); }
         }
         /// <summary>The minimum password length. Valid values 4 to 16</summary>
         public int? PasswordMinimumLength {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinimumLength)); }
-            set { BackingStore?.Set(nameof(PasswordMinimumLength), value); }
+            get { return BackingStore?.Get<int?>("passwordMinimumLength"); }
+            set { BackingStore?.Set("passwordMinimumLength", value); }
         }
         /// <summary>The minutes of inactivity before the screen times out.</summary>
         public int? PasswordMinutesOfInactivityBeforeScreenTimeout {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinutesOfInactivityBeforeScreenTimeout)); }
-            set { BackingStore?.Set(nameof(PasswordMinutesOfInactivityBeforeScreenTimeout), value); }
+            get { return BackingStore?.Get<int?>("passwordMinutesOfInactivityBeforeScreenTimeout"); }
+            set { BackingStore?.Set("passwordMinutesOfInactivityBeforeScreenTimeout", value); }
         }
         /// <summary>The number of previous passwords to prevent reuse of. Valid values 0 to 50</summary>
         public int? PasswordPreviousPasswordBlockCount {
-            get { return BackingStore?.Get<int?>(nameof(PasswordPreviousPasswordBlockCount)); }
-            set { BackingStore?.Set(nameof(PasswordPreviousPasswordBlockCount), value); }
+            get { return BackingStore?.Get<int?>("passwordPreviousPasswordBlockCount"); }
+            set { BackingStore?.Set("passwordPreviousPasswordBlockCount", value); }
         }
         /// <summary>Indicates whether or not to require the user to have a password.</summary>
         public bool? PasswordRequired {
-            get { return BackingStore?.Get<bool?>(nameof(PasswordRequired)); }
-            set { BackingStore?.Set(nameof(PasswordRequired), value); }
+            get { return BackingStore?.Get<bool?>("passwordRequired"); }
+            set { BackingStore?.Set("passwordRequired", value); }
         }
-        /// <summary>The required password type. Possible values are: deviceDefault, alphanumeric, numeric.</summary>
+        /// <summary>Possible values of required passwords.</summary>
         public RequiredPasswordType? PasswordRequiredType {
-            get { return BackingStore?.Get<RequiredPasswordType?>(nameof(PasswordRequiredType)); }
-            set { BackingStore?.Set(nameof(PasswordRequiredType), value); }
+            get { return BackingStore?.Get<RequiredPasswordType?>("passwordRequiredType"); }
+            set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>Indicates whether or not to require a password upon resuming from an idle state.</summary>
         public bool? PasswordRequireWhenResumeFromIdleState {
-            get { return BackingStore?.Get<bool?>(nameof(PasswordRequireWhenResumeFromIdleState)); }
-            set { BackingStore?.Set(nameof(PasswordRequireWhenResumeFromIdleState), value); }
+            get { return BackingStore?.Get<bool?>("passwordRequireWhenResumeFromIdleState"); }
+            set { BackingStore?.Set("passwordRequireWhenResumeFromIdleState", value); }
         }
         /// <summary>The number of sign in failures before factory reset. Valid values 0 to 999</summary>
         public int? PasswordSignInFailureCountBeforeFactoryReset {
-            get { return BackingStore?.Get<int?>(nameof(PasswordSignInFailureCountBeforeFactoryReset)); }
-            set { BackingStore?.Set(nameof(PasswordSignInFailureCountBeforeFactoryReset), value); }
+            get { return BackingStore?.Get<int?>("passwordSignInFailureCountBeforeFactoryReset"); }
+            set { BackingStore?.Set("passwordSignInFailureCountBeforeFactoryReset", value); }
         }
         /// <summary>A http or https Url to a jpg, jpeg or png image that needs to be downloaded and used as the Desktop Image or a file Url to a local image on the file system that needs to used as the Desktop Image.</summary>
         public string PersonalizationDesktopImageUrl {
-            get { return BackingStore?.Get<string>(nameof(PersonalizationDesktopImageUrl)); }
-            set { BackingStore?.Set(nameof(PersonalizationDesktopImageUrl), value); }
+            get { return BackingStore?.Get<string>("personalizationDesktopImageUrl"); }
+            set { BackingStore?.Set("personalizationDesktopImageUrl", value); }
         }
         /// <summary>A http or https Url to a jpg, jpeg or png image that neeeds to be downloaded and used as the Lock Screen Image or a file Url to a local image on the file system that needs to be used as the Lock Screen Image.</summary>
         public string PersonalizationLockScreenImageUrl {
-            get { return BackingStore?.Get<string>(nameof(PersonalizationLockScreenImageUrl)); }
-            set { BackingStore?.Set(nameof(PersonalizationLockScreenImageUrl), value); }
+            get { return BackingStore?.Get<string>("personalizationLockScreenImageUrl"); }
+            set { BackingStore?.Set("personalizationLockScreenImageUrl", value); }
         }
-        /// <summary>This setting specifies the action that Windows takes when a user presses the Power button while on battery. Possible values are: notConfigured, noAction, sleep, hibernate, shutdown.</summary>
+        /// <summary>Power action types</summary>
         public PowerActionType? PowerButtonActionOnBattery {
-            get { return BackingStore?.Get<PowerActionType?>(nameof(PowerButtonActionOnBattery)); }
-            set { BackingStore?.Set(nameof(PowerButtonActionOnBattery), value); }
+            get { return BackingStore?.Get<PowerActionType?>("powerButtonActionOnBattery"); }
+            set { BackingStore?.Set("powerButtonActionOnBattery", value); }
         }
-        /// <summary>This setting specifies the action that Windows takes when a user presses the Power button while plugged in. Possible values are: notConfigured, noAction, sleep, hibernate, shutdown.</summary>
+        /// <summary>Power action types</summary>
         public PowerActionType? PowerButtonActionPluggedIn {
-            get { return BackingStore?.Get<PowerActionType?>(nameof(PowerButtonActionPluggedIn)); }
-            set { BackingStore?.Set(nameof(PowerButtonActionPluggedIn), value); }
+            get { return BackingStore?.Get<PowerActionType?>("powerButtonActionPluggedIn"); }
+            set { BackingStore?.Set("powerButtonActionPluggedIn", value); }
         }
-        /// <summary>This setting allows you to turn off hybrid sleep while on battery. If you set this setting to disable, a hiberfile is not generated when the system transitions to sleep (Stand By). If you set this setting to enable or do not configure this policy setting, users control this setting. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? PowerHybridSleepOnBattery {
-            get { return BackingStore?.Get<Enablement?>(nameof(PowerHybridSleepOnBattery)); }
-            set { BackingStore?.Set(nameof(PowerHybridSleepOnBattery), value); }
+            get { return BackingStore?.Get<Enablement?>("powerHybridSleepOnBattery"); }
+            set { BackingStore?.Set("powerHybridSleepOnBattery", value); }
         }
-        /// <summary>This setting allows you to turn off hybrid sleep while plugged in. If you set this setting to disable, a hiberfile is not generated when the system transitions to sleep (Stand By). If you set this setting to enable or do not configure this policy setting, users control this setting. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? PowerHybridSleepPluggedIn {
-            get { return BackingStore?.Get<Enablement?>(nameof(PowerHybridSleepPluggedIn)); }
-            set { BackingStore?.Set(nameof(PowerHybridSleepPluggedIn), value); }
+            get { return BackingStore?.Get<Enablement?>("powerHybridSleepPluggedIn"); }
+            set { BackingStore?.Set("powerHybridSleepPluggedIn", value); }
         }
-        /// <summary>This setting specifies the action that Windows takes when a user closes the lid on a mobile PC while on battery. Possible values are: notConfigured, noAction, sleep, hibernate, shutdown.</summary>
+        /// <summary>Power action types</summary>
         public PowerActionType? PowerLidCloseActionOnBattery {
-            get { return BackingStore?.Get<PowerActionType?>(nameof(PowerLidCloseActionOnBattery)); }
-            set { BackingStore?.Set(nameof(PowerLidCloseActionOnBattery), value); }
+            get { return BackingStore?.Get<PowerActionType?>("powerLidCloseActionOnBattery"); }
+            set { BackingStore?.Set("powerLidCloseActionOnBattery", value); }
         }
-        /// <summary>This setting specifies the action that Windows takes when a user closes the lid on a mobile PC while plugged in. Possible values are: notConfigured, noAction, sleep, hibernate, shutdown.</summary>
+        /// <summary>Power action types</summary>
         public PowerActionType? PowerLidCloseActionPluggedIn {
-            get { return BackingStore?.Get<PowerActionType?>(nameof(PowerLidCloseActionPluggedIn)); }
-            set { BackingStore?.Set(nameof(PowerLidCloseActionPluggedIn), value); }
+            get { return BackingStore?.Get<PowerActionType?>("powerLidCloseActionPluggedIn"); }
+            set { BackingStore?.Set("powerLidCloseActionPluggedIn", value); }
         }
-        /// <summary>This setting specifies the action that Windows takes when a user presses the Sleep button while on battery. Possible values are: notConfigured, noAction, sleep, hibernate, shutdown.</summary>
+        /// <summary>Power action types</summary>
         public PowerActionType? PowerSleepButtonActionOnBattery {
-            get { return BackingStore?.Get<PowerActionType?>(nameof(PowerSleepButtonActionOnBattery)); }
-            set { BackingStore?.Set(nameof(PowerSleepButtonActionOnBattery), value); }
+            get { return BackingStore?.Get<PowerActionType?>("powerSleepButtonActionOnBattery"); }
+            set { BackingStore?.Set("powerSleepButtonActionOnBattery", value); }
         }
-        /// <summary>This setting specifies the action that Windows takes when a user presses the Sleep button while plugged in. Possible values are: notConfigured, noAction, sleep, hibernate, shutdown.</summary>
+        /// <summary>Power action types</summary>
         public PowerActionType? PowerSleepButtonActionPluggedIn {
-            get { return BackingStore?.Get<PowerActionType?>(nameof(PowerSleepButtonActionPluggedIn)); }
-            set { BackingStore?.Set(nameof(PowerSleepButtonActionPluggedIn), value); }
+            get { return BackingStore?.Get<PowerActionType?>("powerSleepButtonActionPluggedIn"); }
+            set { BackingStore?.Set("powerSleepButtonActionPluggedIn", value); }
         }
         /// <summary>Prevent user installation of additional printers from printers settings.</summary>
         public bool? PrinterBlockAddition {
-            get { return BackingStore?.Get<bool?>(nameof(PrinterBlockAddition)); }
-            set { BackingStore?.Set(nameof(PrinterBlockAddition), value); }
+            get { return BackingStore?.Get<bool?>("printerBlockAddition"); }
+            set { BackingStore?.Set("printerBlockAddition", value); }
         }
         /// <summary>Name (network host name) of an installed printer.</summary>
         public string PrinterDefaultName {
-            get { return BackingStore?.Get<string>(nameof(PrinterDefaultName)); }
-            set { BackingStore?.Set(nameof(PrinterDefaultName), value); }
+            get { return BackingStore?.Get<string>("printerDefaultName"); }
+            set { BackingStore?.Set("printerDefaultName", value); }
         }
         /// <summary>Automatically provision printers based on their names (network host names).</summary>
         public List<string> PrinterNames {
-            get { return BackingStore?.Get<List<string>>(nameof(PrinterNames)); }
-            set { BackingStore?.Set(nameof(PrinterNames), value); }
+            get { return BackingStore?.Get<List<string>>("printerNames"); }
+            set { BackingStore?.Set("printerNames", value); }
         }
         /// <summary>Indicates a list of applications with their access control levels over privacy data categories, and/or the default access levels per category. This collection can contain a maximum of 500 elements.</summary>
         public List<WindowsPrivacyDataAccessControlItem> PrivacyAccessControls {
-            get { return BackingStore?.Get<List<WindowsPrivacyDataAccessControlItem>>(nameof(PrivacyAccessControls)); }
-            set { BackingStore?.Set(nameof(PrivacyAccessControls), value); }
+            get { return BackingStore?.Get<List<WindowsPrivacyDataAccessControlItem>>("privacyAccessControls"); }
+            set { BackingStore?.Set("privacyAccessControls", value); }
         }
-        /// <summary>Enables or disables the use of advertising ID. Added in Windows 10, version 1607. Possible values are: notConfigured, blocked, allowed.</summary>
+        /// <summary>State Management Setting.</summary>
         public StateManagementSetting? PrivacyAdvertisingId {
-            get { return BackingStore?.Get<StateManagementSetting?>(nameof(PrivacyAdvertisingId)); }
-            set { BackingStore?.Set(nameof(PrivacyAdvertisingId), value); }
+            get { return BackingStore?.Get<StateManagementSetting?>("privacyAdvertisingId"); }
+            set { BackingStore?.Set("privacyAdvertisingId", value); }
         }
         /// <summary>Indicates whether or not to allow the automatic acceptance of the pairing and privacy user consent dialog when launching apps.</summary>
         public bool? PrivacyAutoAcceptPairingAndConsentPrompts {
-            get { return BackingStore?.Get<bool?>(nameof(PrivacyAutoAcceptPairingAndConsentPrompts)); }
-            set { BackingStore?.Set(nameof(PrivacyAutoAcceptPairingAndConsentPrompts), value); }
+            get { return BackingStore?.Get<bool?>("privacyAutoAcceptPairingAndConsentPrompts"); }
+            set { BackingStore?.Set("privacyAutoAcceptPairingAndConsentPrompts", value); }
         }
         /// <summary>Blocks the usage of cloud based speech services for Cortana, Dictation, or Store applications.</summary>
         public bool? PrivacyBlockActivityFeed {
-            get { return BackingStore?.Get<bool?>(nameof(PrivacyBlockActivityFeed)); }
-            set { BackingStore?.Set(nameof(PrivacyBlockActivityFeed), value); }
+            get { return BackingStore?.Get<bool?>("privacyBlockActivityFeed"); }
+            set { BackingStore?.Set("privacyBlockActivityFeed", value); }
         }
         /// <summary>Indicates whether or not to block the usage of cloud based speech services for Cortana, Dictation, or Store applications.</summary>
         public bool? PrivacyBlockInputPersonalization {
-            get { return BackingStore?.Get<bool?>(nameof(PrivacyBlockInputPersonalization)); }
-            set { BackingStore?.Set(nameof(PrivacyBlockInputPersonalization), value); }
+            get { return BackingStore?.Get<bool?>("privacyBlockInputPersonalization"); }
+            set { BackingStore?.Set("privacyBlockInputPersonalization", value); }
         }
         /// <summary>Blocks the shared experiences/discovery of recently used resources in task switcher etc.</summary>
         public bool? PrivacyBlockPublishUserActivities {
-            get { return BackingStore?.Get<bool?>(nameof(PrivacyBlockPublishUserActivities)); }
-            set { BackingStore?.Set(nameof(PrivacyBlockPublishUserActivities), value); }
+            get { return BackingStore?.Get<bool?>("privacyBlockPublishUserActivities"); }
+            set { BackingStore?.Set("privacyBlockPublishUserActivities", value); }
         }
         /// <summary>This policy prevents the privacy experience from launching during user logon for new and upgraded users.​</summary>
         public bool? PrivacyDisableLaunchExperience {
-            get { return BackingStore?.Get<bool?>(nameof(PrivacyDisableLaunchExperience)); }
-            set { BackingStore?.Set(nameof(PrivacyDisableLaunchExperience), value); }
+            get { return BackingStore?.Get<bool?>("privacyDisableLaunchExperience"); }
+            set { BackingStore?.Set("privacyDisableLaunchExperience", value); }
         }
         /// <summary>Indicates whether or not to Block the user from reset protection mode.</summary>
         public bool? ResetProtectionModeBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(ResetProtectionModeBlocked)); }
-            set { BackingStore?.Set(nameof(ResetProtectionModeBlocked), value); }
+            get { return BackingStore?.Get<bool?>("resetProtectionModeBlocked"); }
+            set { BackingStore?.Set("resetProtectionModeBlocked", value); }
         }
-        /// <summary>Specifies what filter level of safe search is required. Possible values are: userDefined, strict, moderate.</summary>
+        /// <summary>Specifies what level of safe search (filtering adult content) is required</summary>
         public SafeSearchFilterType? SafeSearchFilter {
-            get { return BackingStore?.Get<SafeSearchFilterType?>(nameof(SafeSearchFilter)); }
-            set { BackingStore?.Set(nameof(SafeSearchFilter), value); }
+            get { return BackingStore?.Get<SafeSearchFilterType?>("safeSearchFilter"); }
+            set { BackingStore?.Set("safeSearchFilter", value); }
         }
         /// <summary>Indicates whether or not to Block the user from taking Screenshots.</summary>
         public bool? ScreenCaptureBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(ScreenCaptureBlocked)); }
-            set { BackingStore?.Set(nameof(ScreenCaptureBlocked), value); }
+            get { return BackingStore?.Get<bool?>("screenCaptureBlocked"); }
+            set { BackingStore?.Set("screenCaptureBlocked", value); }
         }
         /// <summary>Specifies if search can use diacritics.</summary>
         public bool? SearchBlockDiacritics {
-            get { return BackingStore?.Get<bool?>(nameof(SearchBlockDiacritics)); }
-            set { BackingStore?.Set(nameof(SearchBlockDiacritics), value); }
+            get { return BackingStore?.Get<bool?>("searchBlockDiacritics"); }
+            set { BackingStore?.Set("searchBlockDiacritics", value); }
         }
         /// <summary>Indicates whether or not to block the web search.</summary>
         public bool? SearchBlockWebResults {
-            get { return BackingStore?.Get<bool?>(nameof(SearchBlockWebResults)); }
-            set { BackingStore?.Set(nameof(SearchBlockWebResults), value); }
+            get { return BackingStore?.Get<bool?>("searchBlockWebResults"); }
+            set { BackingStore?.Set("searchBlockWebResults", value); }
         }
         /// <summary>Specifies whether to use automatic language detection when indexing content and properties.</summary>
         public bool? SearchDisableAutoLanguageDetection {
-            get { return BackingStore?.Get<bool?>(nameof(SearchDisableAutoLanguageDetection)); }
-            set { BackingStore?.Set(nameof(SearchDisableAutoLanguageDetection), value); }
+            get { return BackingStore?.Get<bool?>("searchDisableAutoLanguageDetection"); }
+            set { BackingStore?.Set("searchDisableAutoLanguageDetection", value); }
         }
         /// <summary>Indicates whether or not to disable the search indexer backoff feature.</summary>
         public bool? SearchDisableIndexerBackoff {
-            get { return BackingStore?.Get<bool?>(nameof(SearchDisableIndexerBackoff)); }
-            set { BackingStore?.Set(nameof(SearchDisableIndexerBackoff), value); }
+            get { return BackingStore?.Get<bool?>("searchDisableIndexerBackoff"); }
+            set { BackingStore?.Set("searchDisableIndexerBackoff", value); }
         }
         /// <summary>Indicates whether or not to block indexing of WIP-protected items to prevent them from appearing in search results for Cortana or Explorer.</summary>
         public bool? SearchDisableIndexingEncryptedItems {
-            get { return BackingStore?.Get<bool?>(nameof(SearchDisableIndexingEncryptedItems)); }
-            set { BackingStore?.Set(nameof(SearchDisableIndexingEncryptedItems), value); }
+            get { return BackingStore?.Get<bool?>("searchDisableIndexingEncryptedItems"); }
+            set { BackingStore?.Set("searchDisableIndexingEncryptedItems", value); }
         }
         /// <summary>Indicates whether or not to allow users to add locations on removable drives to libraries and to be indexed.</summary>
         public bool? SearchDisableIndexingRemovableDrive {
-            get { return BackingStore?.Get<bool?>(nameof(SearchDisableIndexingRemovableDrive)); }
-            set { BackingStore?.Set(nameof(SearchDisableIndexingRemovableDrive), value); }
+            get { return BackingStore?.Get<bool?>("searchDisableIndexingRemovableDrive"); }
+            set { BackingStore?.Set("searchDisableIndexingRemovableDrive", value); }
         }
         /// <summary>Specifies if search can use location information.</summary>
         public bool? SearchDisableLocation {
-            get { return BackingStore?.Get<bool?>(nameof(SearchDisableLocation)); }
-            set { BackingStore?.Set(nameof(SearchDisableLocation), value); }
+            get { return BackingStore?.Get<bool?>("searchDisableLocation"); }
+            set { BackingStore?.Set("searchDisableLocation", value); }
         }
         /// <summary>Specifies if search can use location information.</summary>
         public bool? SearchDisableUseLocation {
-            get { return BackingStore?.Get<bool?>(nameof(SearchDisableUseLocation)); }
-            set { BackingStore?.Set(nameof(SearchDisableUseLocation), value); }
+            get { return BackingStore?.Get<bool?>("searchDisableUseLocation"); }
+            set { BackingStore?.Set("searchDisableUseLocation", value); }
         }
         /// <summary>Specifies minimum amount of hard drive space on the same drive as the index location before indexing stops.</summary>
         public bool? SearchEnableAutomaticIndexSizeManangement {
-            get { return BackingStore?.Get<bool?>(nameof(SearchEnableAutomaticIndexSizeManangement)); }
-            set { BackingStore?.Set(nameof(SearchEnableAutomaticIndexSizeManangement), value); }
+            get { return BackingStore?.Get<bool?>("searchEnableAutomaticIndexSizeManangement"); }
+            set { BackingStore?.Set("searchEnableAutomaticIndexSizeManangement", value); }
         }
         /// <summary>Indicates whether or not to block remote queries of this computer’s index.</summary>
         public bool? SearchEnableRemoteQueries {
-            get { return BackingStore?.Get<bool?>(nameof(SearchEnableRemoteQueries)); }
-            set { BackingStore?.Set(nameof(SearchEnableRemoteQueries), value); }
+            get { return BackingStore?.Get<bool?>("searchEnableRemoteQueries"); }
+            set { BackingStore?.Set("searchEnableRemoteQueries", value); }
         }
         /// <summary>Specify whether to allow automatic device encryption during OOBE when the device is Azure AD joined (desktop only).</summary>
         public bool? SecurityBlockAzureADJoinedDevicesAutoEncryption {
-            get { return BackingStore?.Get<bool?>(nameof(SecurityBlockAzureADJoinedDevicesAutoEncryption)); }
-            set { BackingStore?.Set(nameof(SecurityBlockAzureADJoinedDevicesAutoEncryption), value); }
+            get { return BackingStore?.Get<bool?>("securityBlockAzureADJoinedDevicesAutoEncryption"); }
+            set { BackingStore?.Set("securityBlockAzureADJoinedDevicesAutoEncryption", value); }
         }
         /// <summary>Indicates whether or not to block access to Accounts in Settings app.</summary>
         public bool? SettingsBlockAccountsPage {
-            get { return BackingStore?.Get<bool?>(nameof(SettingsBlockAccountsPage)); }
-            set { BackingStore?.Set(nameof(SettingsBlockAccountsPage), value); }
+            get { return BackingStore?.Get<bool?>("settingsBlockAccountsPage"); }
+            set { BackingStore?.Set("settingsBlockAccountsPage", value); }
         }
         /// <summary>Indicates whether or not to block the user from installing provisioning packages.</summary>
         public bool? SettingsBlockAddProvisioningPackage {
-            get { return BackingStore?.Get<bool?>(nameof(SettingsBlockAddProvisioningPackage)); }
-            set { BackingStore?.Set(nameof(SettingsBlockAddProvisioningPackage), value); }
+            get { return BackingStore?.Get<bool?>("settingsBlockAddProvisioningPackage"); }
+            set { BackingStore?.Set("settingsBlockAddProvisioningPackage", value); }
         }
         /// <summary>Indicates whether or not to block access to Apps in Settings app.</summary>
         public bool? SettingsBlockAppsPage {
-            get { return BackingStore?.Get<bool?>(nameof(SettingsBlockAppsPage)); }
-            set { BackingStore?.Set(nameof(SettingsBlockAppsPage), value); }
+            get { return BackingStore?.Get<bool?>("settingsBlockAppsPage"); }
+            set { BackingStore?.Set("settingsBlockAppsPage", value); }
         }
         /// <summary>Indicates whether or not to block the user from changing the language settings.</summary>
         public bool? SettingsBlockChangeLanguage {
-            get { return BackingStore?.Get<bool?>(nameof(SettingsBlockChangeLanguage)); }
-            set { BackingStore?.Set(nameof(SettingsBlockChangeLanguage), value); }
+            get { return BackingStore?.Get<bool?>("settingsBlockChangeLanguage"); }
+            set { BackingStore?.Set("settingsBlockChangeLanguage", value); }
         }
         /// <summary>Indicates whether or not to block the user from changing power and sleep settings.</summary>
         public bool? SettingsBlockChangePowerSleep {
-            get { return BackingStore?.Get<bool?>(nameof(SettingsBlockChangePowerSleep)); }
-            set { BackingStore?.Set(nameof(SettingsBlockChangePowerSleep), value); }
+            get { return BackingStore?.Get<bool?>("settingsBlockChangePowerSleep"); }
+            set { BackingStore?.Set("settingsBlockChangePowerSleep", value); }
         }
         /// <summary>Indicates whether or not to block the user from changing the region settings.</summary>
         public bool? SettingsBlockChangeRegion {
-            get { return BackingStore?.Get<bool?>(nameof(SettingsBlockChangeRegion)); }
-            set { BackingStore?.Set(nameof(SettingsBlockChangeRegion), value); }
+            get { return BackingStore?.Get<bool?>("settingsBlockChangeRegion"); }
+            set { BackingStore?.Set("settingsBlockChangeRegion", value); }
         }
         /// <summary>Indicates whether or not to block the user from changing date and time settings.</summary>
         public bool? SettingsBlockChangeSystemTime {
-            get { return BackingStore?.Get<bool?>(nameof(SettingsBlockChangeSystemTime)); }
-            set { BackingStore?.Set(nameof(SettingsBlockChangeSystemTime), value); }
+            get { return BackingStore?.Get<bool?>("settingsBlockChangeSystemTime"); }
+            set { BackingStore?.Set("settingsBlockChangeSystemTime", value); }
         }
         /// <summary>Indicates whether or not to block access to Devices in Settings app.</summary>
         public bool? SettingsBlockDevicesPage {
-            get { return BackingStore?.Get<bool?>(nameof(SettingsBlockDevicesPage)); }
-            set { BackingStore?.Set(nameof(SettingsBlockDevicesPage), value); }
+            get { return BackingStore?.Get<bool?>("settingsBlockDevicesPage"); }
+            set { BackingStore?.Set("settingsBlockDevicesPage", value); }
         }
         /// <summary>Indicates whether or not to block access to Ease of Access in Settings app.</summary>
         public bool? SettingsBlockEaseOfAccessPage {
-            get { return BackingStore?.Get<bool?>(nameof(SettingsBlockEaseOfAccessPage)); }
-            set { BackingStore?.Set(nameof(SettingsBlockEaseOfAccessPage), value); }
+            get { return BackingStore?.Get<bool?>("settingsBlockEaseOfAccessPage"); }
+            set { BackingStore?.Set("settingsBlockEaseOfAccessPage", value); }
         }
         /// <summary>Indicates whether or not to block the user from editing the device name.</summary>
         public bool? SettingsBlockEditDeviceName {
-            get { return BackingStore?.Get<bool?>(nameof(SettingsBlockEditDeviceName)); }
-            set { BackingStore?.Set(nameof(SettingsBlockEditDeviceName), value); }
+            get { return BackingStore?.Get<bool?>("settingsBlockEditDeviceName"); }
+            set { BackingStore?.Set("settingsBlockEditDeviceName", value); }
         }
         /// <summary>Indicates whether or not to block access to Gaming in Settings app.</summary>
         public bool? SettingsBlockGamingPage {
-            get { return BackingStore?.Get<bool?>(nameof(SettingsBlockGamingPage)); }
-            set { BackingStore?.Set(nameof(SettingsBlockGamingPage), value); }
+            get { return BackingStore?.Get<bool?>("settingsBlockGamingPage"); }
+            set { BackingStore?.Set("settingsBlockGamingPage", value); }
         }
         /// <summary>Indicates whether or not to block access to Network &amp; Internet in Settings app.</summary>
         public bool? SettingsBlockNetworkInternetPage {
-            get { return BackingStore?.Get<bool?>(nameof(SettingsBlockNetworkInternetPage)); }
-            set { BackingStore?.Set(nameof(SettingsBlockNetworkInternetPage), value); }
+            get { return BackingStore?.Get<bool?>("settingsBlockNetworkInternetPage"); }
+            set { BackingStore?.Set("settingsBlockNetworkInternetPage", value); }
         }
         /// <summary>Indicates whether or not to block access to Personalization in Settings app.</summary>
         public bool? SettingsBlockPersonalizationPage {
-            get { return BackingStore?.Get<bool?>(nameof(SettingsBlockPersonalizationPage)); }
-            set { BackingStore?.Set(nameof(SettingsBlockPersonalizationPage), value); }
+            get { return BackingStore?.Get<bool?>("settingsBlockPersonalizationPage"); }
+            set { BackingStore?.Set("settingsBlockPersonalizationPage", value); }
         }
         /// <summary>Indicates whether or not to block access to Privacy in Settings app.</summary>
         public bool? SettingsBlockPrivacyPage {
-            get { return BackingStore?.Get<bool?>(nameof(SettingsBlockPrivacyPage)); }
-            set { BackingStore?.Set(nameof(SettingsBlockPrivacyPage), value); }
+            get { return BackingStore?.Get<bool?>("settingsBlockPrivacyPage"); }
+            set { BackingStore?.Set("settingsBlockPrivacyPage", value); }
         }
         /// <summary>Indicates whether or not to block the runtime configuration agent from removing provisioning packages.</summary>
         public bool? SettingsBlockRemoveProvisioningPackage {
-            get { return BackingStore?.Get<bool?>(nameof(SettingsBlockRemoveProvisioningPackage)); }
-            set { BackingStore?.Set(nameof(SettingsBlockRemoveProvisioningPackage), value); }
+            get { return BackingStore?.Get<bool?>("settingsBlockRemoveProvisioningPackage"); }
+            set { BackingStore?.Set("settingsBlockRemoveProvisioningPackage", value); }
         }
         /// <summary>Indicates whether or not to block access to Settings app.</summary>
         public bool? SettingsBlockSettingsApp {
-            get { return BackingStore?.Get<bool?>(nameof(SettingsBlockSettingsApp)); }
-            set { BackingStore?.Set(nameof(SettingsBlockSettingsApp), value); }
+            get { return BackingStore?.Get<bool?>("settingsBlockSettingsApp"); }
+            set { BackingStore?.Set("settingsBlockSettingsApp", value); }
         }
         /// <summary>Indicates whether or not to block access to System in Settings app.</summary>
         public bool? SettingsBlockSystemPage {
-            get { return BackingStore?.Get<bool?>(nameof(SettingsBlockSystemPage)); }
-            set { BackingStore?.Set(nameof(SettingsBlockSystemPage), value); }
+            get { return BackingStore?.Get<bool?>("settingsBlockSystemPage"); }
+            set { BackingStore?.Set("settingsBlockSystemPage", value); }
         }
         /// <summary>Indicates whether or not to block access to Time &amp; Language in Settings app.</summary>
         public bool? SettingsBlockTimeLanguagePage {
-            get { return BackingStore?.Get<bool?>(nameof(SettingsBlockTimeLanguagePage)); }
-            set { BackingStore?.Set(nameof(SettingsBlockTimeLanguagePage), value); }
+            get { return BackingStore?.Get<bool?>("settingsBlockTimeLanguagePage"); }
+            set { BackingStore?.Set("settingsBlockTimeLanguagePage", value); }
         }
         /// <summary>Indicates whether or not to block access to Update &amp; Security in Settings app.</summary>
         public bool? SettingsBlockUpdateSecurityPage {
-            get { return BackingStore?.Get<bool?>(nameof(SettingsBlockUpdateSecurityPage)); }
-            set { BackingStore?.Set(nameof(SettingsBlockUpdateSecurityPage), value); }
+            get { return BackingStore?.Get<bool?>("settingsBlockUpdateSecurityPage"); }
+            set { BackingStore?.Set("settingsBlockUpdateSecurityPage", value); }
         }
         /// <summary>Indicates whether or not to block multiple users of the same app to share data.</summary>
         public bool? SharedUserAppDataAllowed {
-            get { return BackingStore?.Get<bool?>(nameof(SharedUserAppDataAllowed)); }
-            set { BackingStore?.Set(nameof(SharedUserAppDataAllowed), value); }
+            get { return BackingStore?.Get<bool?>("sharedUserAppDataAllowed"); }
+            set { BackingStore?.Set("sharedUserAppDataAllowed", value); }
         }
-        /// <summary>Added in Windows 10, version 1703. Allows IT Admins to control whether users are allowed to install apps from places other than the Store. Possible values are: notConfigured, anywhere, storeOnly, recommendations, preferStore.</summary>
+        /// <summary>App Install control Setting</summary>
         public AppInstallControlType? SmartScreenAppInstallControl {
-            get { return BackingStore?.Get<AppInstallControlType?>(nameof(SmartScreenAppInstallControl)); }
-            set { BackingStore?.Set(nameof(SmartScreenAppInstallControl), value); }
+            get { return BackingStore?.Get<AppInstallControlType?>("smartScreenAppInstallControl"); }
+            set { BackingStore?.Set("smartScreenAppInstallControl", value); }
         }
         /// <summary>Indicates whether or not users can override SmartScreen Filter warnings about potentially malicious websites.</summary>
         public bool? SmartScreenBlockPromptOverride {
-            get { return BackingStore?.Get<bool?>(nameof(SmartScreenBlockPromptOverride)); }
-            set { BackingStore?.Set(nameof(SmartScreenBlockPromptOverride), value); }
+            get { return BackingStore?.Get<bool?>("smartScreenBlockPromptOverride"); }
+            set { BackingStore?.Set("smartScreenBlockPromptOverride", value); }
         }
         /// <summary>Indicates whether or not users can override the SmartScreen Filter warnings about downloading unverified files</summary>
         public bool? SmartScreenBlockPromptOverrideForFiles {
-            get { return BackingStore?.Get<bool?>(nameof(SmartScreenBlockPromptOverrideForFiles)); }
-            set { BackingStore?.Set(nameof(SmartScreenBlockPromptOverrideForFiles), value); }
+            get { return BackingStore?.Get<bool?>("smartScreenBlockPromptOverrideForFiles"); }
+            set { BackingStore?.Set("smartScreenBlockPromptOverrideForFiles", value); }
         }
         /// <summary>This property will be deprecated in July 2019 and will be replaced by property SmartScreenAppInstallControl. Allows IT Admins to control whether users are allowed to install apps from places other than the Store.</summary>
         public bool? SmartScreenEnableAppInstallControl {
-            get { return BackingStore?.Get<bool?>(nameof(SmartScreenEnableAppInstallControl)); }
-            set { BackingStore?.Set(nameof(SmartScreenEnableAppInstallControl), value); }
+            get { return BackingStore?.Get<bool?>("smartScreenEnableAppInstallControl"); }
+            set { BackingStore?.Set("smartScreenEnableAppInstallControl", value); }
         }
         /// <summary>Indicates whether or not to block the user from unpinning apps from taskbar.</summary>
         public bool? StartBlockUnpinningAppsFromTaskbar {
-            get { return BackingStore?.Get<bool?>(nameof(StartBlockUnpinningAppsFromTaskbar)); }
-            set { BackingStore?.Set(nameof(StartBlockUnpinningAppsFromTaskbar), value); }
+            get { return BackingStore?.Get<bool?>("startBlockUnpinningAppsFromTaskbar"); }
+            set { BackingStore?.Set("startBlockUnpinningAppsFromTaskbar", value); }
         }
-        /// <summary>Setting the value of this collapses the app list, removes the app list entirely, or disables the corresponding toggle in the Settings app. Possible values are: userDefined, collapse, remove, disableSettingsApp.</summary>
+        /// <summary>Type of start menu app list visibility.</summary>
         public WindowsStartMenuAppListVisibilityType? StartMenuAppListVisibility {
-            get { return BackingStore?.Get<WindowsStartMenuAppListVisibilityType?>(nameof(StartMenuAppListVisibility)); }
-            set { BackingStore?.Set(nameof(StartMenuAppListVisibility), value); }
+            get { return BackingStore?.Get<WindowsStartMenuAppListVisibilityType?>("startMenuAppListVisibility"); }
+            set { BackingStore?.Set("startMenuAppListVisibility", value); }
         }
         /// <summary>Enabling this policy hides the change account setting from appearing in the user tile in the start menu.</summary>
         public bool? StartMenuHideChangeAccountSettings {
-            get { return BackingStore?.Get<bool?>(nameof(StartMenuHideChangeAccountSettings)); }
-            set { BackingStore?.Set(nameof(StartMenuHideChangeAccountSettings), value); }
+            get { return BackingStore?.Get<bool?>("startMenuHideChangeAccountSettings"); }
+            set { BackingStore?.Set("startMenuHideChangeAccountSettings", value); }
         }
         /// <summary>Enabling this policy hides the most used apps from appearing on the start menu and disables the corresponding toggle in the Settings app.</summary>
         public bool? StartMenuHideFrequentlyUsedApps {
-            get { return BackingStore?.Get<bool?>(nameof(StartMenuHideFrequentlyUsedApps)); }
-            set { BackingStore?.Set(nameof(StartMenuHideFrequentlyUsedApps), value); }
+            get { return BackingStore?.Get<bool?>("startMenuHideFrequentlyUsedApps"); }
+            set { BackingStore?.Set("startMenuHideFrequentlyUsedApps", value); }
         }
         /// <summary>Enabling this policy hides hibernate from appearing in the power button in the start menu.</summary>
         public bool? StartMenuHideHibernate {
-            get { return BackingStore?.Get<bool?>(nameof(StartMenuHideHibernate)); }
-            set { BackingStore?.Set(nameof(StartMenuHideHibernate), value); }
+            get { return BackingStore?.Get<bool?>("startMenuHideHibernate"); }
+            set { BackingStore?.Set("startMenuHideHibernate", value); }
         }
         /// <summary>Enabling this policy hides lock from appearing in the user tile in the start menu.</summary>
         public bool? StartMenuHideLock {
-            get { return BackingStore?.Get<bool?>(nameof(StartMenuHideLock)); }
-            set { BackingStore?.Set(nameof(StartMenuHideLock), value); }
+            get { return BackingStore?.Get<bool?>("startMenuHideLock"); }
+            set { BackingStore?.Set("startMenuHideLock", value); }
         }
         /// <summary>Enabling this policy hides the power button from appearing in the start menu.</summary>
         public bool? StartMenuHidePowerButton {
-            get { return BackingStore?.Get<bool?>(nameof(StartMenuHidePowerButton)); }
-            set { BackingStore?.Set(nameof(StartMenuHidePowerButton), value); }
+            get { return BackingStore?.Get<bool?>("startMenuHidePowerButton"); }
+            set { BackingStore?.Set("startMenuHidePowerButton", value); }
         }
         /// <summary>Enabling this policy hides recent jump lists from appearing on the start menu/taskbar and disables the corresponding toggle in the Settings app.</summary>
         public bool? StartMenuHideRecentJumpLists {
-            get { return BackingStore?.Get<bool?>(nameof(StartMenuHideRecentJumpLists)); }
-            set { BackingStore?.Set(nameof(StartMenuHideRecentJumpLists), value); }
+            get { return BackingStore?.Get<bool?>("startMenuHideRecentJumpLists"); }
+            set { BackingStore?.Set("startMenuHideRecentJumpLists", value); }
         }
         /// <summary>Enabling this policy hides recently added apps from appearing on the start menu and disables the corresponding toggle in the Settings app.</summary>
         public bool? StartMenuHideRecentlyAddedApps {
-            get { return BackingStore?.Get<bool?>(nameof(StartMenuHideRecentlyAddedApps)); }
-            set { BackingStore?.Set(nameof(StartMenuHideRecentlyAddedApps), value); }
+            get { return BackingStore?.Get<bool?>("startMenuHideRecentlyAddedApps"); }
+            set { BackingStore?.Set("startMenuHideRecentlyAddedApps", value); }
         }
         /// <summary>Enabling this policy hides &apos;Restart/Update and Restart&apos; from appearing in the power button in the start menu.</summary>
         public bool? StartMenuHideRestartOptions {
-            get { return BackingStore?.Get<bool?>(nameof(StartMenuHideRestartOptions)); }
-            set { BackingStore?.Set(nameof(StartMenuHideRestartOptions), value); }
+            get { return BackingStore?.Get<bool?>("startMenuHideRestartOptions"); }
+            set { BackingStore?.Set("startMenuHideRestartOptions", value); }
         }
         /// <summary>Enabling this policy hides shut down/update and shut down from appearing in the power button in the start menu.</summary>
         public bool? StartMenuHideShutDown {
-            get { return BackingStore?.Get<bool?>(nameof(StartMenuHideShutDown)); }
-            set { BackingStore?.Set(nameof(StartMenuHideShutDown), value); }
+            get { return BackingStore?.Get<bool?>("startMenuHideShutDown"); }
+            set { BackingStore?.Set("startMenuHideShutDown", value); }
         }
         /// <summary>Enabling this policy hides sign out from appearing in the user tile in the start menu.</summary>
         public bool? StartMenuHideSignOut {
-            get { return BackingStore?.Get<bool?>(nameof(StartMenuHideSignOut)); }
-            set { BackingStore?.Set(nameof(StartMenuHideSignOut), value); }
+            get { return BackingStore?.Get<bool?>("startMenuHideSignOut"); }
+            set { BackingStore?.Set("startMenuHideSignOut", value); }
         }
         /// <summary>Enabling this policy hides sleep from appearing in the power button in the start menu.</summary>
         public bool? StartMenuHideSleep {
-            get { return BackingStore?.Get<bool?>(nameof(StartMenuHideSleep)); }
-            set { BackingStore?.Set(nameof(StartMenuHideSleep), value); }
+            get { return BackingStore?.Get<bool?>("startMenuHideSleep"); }
+            set { BackingStore?.Set("startMenuHideSleep", value); }
         }
         /// <summary>Enabling this policy hides switch account from appearing in the user tile in the start menu.</summary>
         public bool? StartMenuHideSwitchAccount {
-            get { return BackingStore?.Get<bool?>(nameof(StartMenuHideSwitchAccount)); }
-            set { BackingStore?.Set(nameof(StartMenuHideSwitchAccount), value); }
+            get { return BackingStore?.Get<bool?>("startMenuHideSwitchAccount"); }
+            set { BackingStore?.Set("startMenuHideSwitchAccount", value); }
         }
         /// <summary>Enabling this policy hides the user tile from appearing in the start menu.</summary>
         public bool? StartMenuHideUserTile {
-            get { return BackingStore?.Get<bool?>(nameof(StartMenuHideUserTile)); }
-            set { BackingStore?.Set(nameof(StartMenuHideUserTile), value); }
+            get { return BackingStore?.Get<bool?>("startMenuHideUserTile"); }
+            set { BackingStore?.Set("startMenuHideUserTile", value); }
         }
         /// <summary>This policy setting allows you to import Edge assets to be used with startMenuLayoutXml policy. Start layout can contain secondary tile from Edge app which looks for Edge local asset file. Edge local asset would not exist and cause Edge secondary tile to appear empty in this case. This policy only gets applied when startMenuLayoutXml policy is modified. The value should be a UTF-8 Base64 encoded byte array.</summary>
         public byte[] StartMenuLayoutEdgeAssetsXml {
-            get { return BackingStore?.Get<byte[]>(nameof(StartMenuLayoutEdgeAssetsXml)); }
-            set { BackingStore?.Set(nameof(StartMenuLayoutEdgeAssetsXml), value); }
+            get { return BackingStore?.Get<byte[]>("startMenuLayoutEdgeAssetsXml"); }
+            set { BackingStore?.Set("startMenuLayoutEdgeAssetsXml", value); }
         }
         /// <summary>Allows admins to override the default Start menu layout and prevents the user from changing it. The layout is modified by specifying an XML file based on a layout modification schema. XML needs to be in a UTF8 encoded byte array format.</summary>
         public byte[] StartMenuLayoutXml {
-            get { return BackingStore?.Get<byte[]>(nameof(StartMenuLayoutXml)); }
-            set { BackingStore?.Set(nameof(StartMenuLayoutXml), value); }
+            get { return BackingStore?.Get<byte[]>("startMenuLayoutXml"); }
+            set { BackingStore?.Set("startMenuLayoutXml", value); }
         }
-        /// <summary>Allows admins to decide how the Start menu is displayed. Possible values are: userDefined, fullScreen, nonFullScreen.</summary>
+        /// <summary>Type of display modes for the start menu.</summary>
         public WindowsStartMenuModeType? StartMenuMode {
-            get { return BackingStore?.Get<WindowsStartMenuModeType?>(nameof(StartMenuMode)); }
-            set { BackingStore?.Set(nameof(StartMenuMode), value); }
+            get { return BackingStore?.Get<WindowsStartMenuModeType?>("startMenuMode"); }
+            set { BackingStore?.Set("startMenuMode", value); }
         }
-        /// <summary>Enforces the visibility (Show/Hide) of the Documents folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.</summary>
+        /// <summary>Generic visibility state.</summary>
         public VisibilitySetting? StartMenuPinnedFolderDocuments {
-            get { return BackingStore?.Get<VisibilitySetting?>(nameof(StartMenuPinnedFolderDocuments)); }
-            set { BackingStore?.Set(nameof(StartMenuPinnedFolderDocuments), value); }
+            get { return BackingStore?.Get<VisibilitySetting?>("startMenuPinnedFolderDocuments"); }
+            set { BackingStore?.Set("startMenuPinnedFolderDocuments", value); }
         }
-        /// <summary>Enforces the visibility (Show/Hide) of the Downloads folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.</summary>
+        /// <summary>Generic visibility state.</summary>
         public VisibilitySetting? StartMenuPinnedFolderDownloads {
-            get { return BackingStore?.Get<VisibilitySetting?>(nameof(StartMenuPinnedFolderDownloads)); }
-            set { BackingStore?.Set(nameof(StartMenuPinnedFolderDownloads), value); }
+            get { return BackingStore?.Get<VisibilitySetting?>("startMenuPinnedFolderDownloads"); }
+            set { BackingStore?.Set("startMenuPinnedFolderDownloads", value); }
         }
-        /// <summary>Enforces the visibility (Show/Hide) of the FileExplorer shortcut on the Start menu. Possible values are: notConfigured, hide, show.</summary>
+        /// <summary>Generic visibility state.</summary>
         public VisibilitySetting? StartMenuPinnedFolderFileExplorer {
-            get { return BackingStore?.Get<VisibilitySetting?>(nameof(StartMenuPinnedFolderFileExplorer)); }
-            set { BackingStore?.Set(nameof(StartMenuPinnedFolderFileExplorer), value); }
+            get { return BackingStore?.Get<VisibilitySetting?>("startMenuPinnedFolderFileExplorer"); }
+            set { BackingStore?.Set("startMenuPinnedFolderFileExplorer", value); }
         }
-        /// <summary>Enforces the visibility (Show/Hide) of the HomeGroup folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.</summary>
+        /// <summary>Generic visibility state.</summary>
         public VisibilitySetting? StartMenuPinnedFolderHomeGroup {
-            get { return BackingStore?.Get<VisibilitySetting?>(nameof(StartMenuPinnedFolderHomeGroup)); }
-            set { BackingStore?.Set(nameof(StartMenuPinnedFolderHomeGroup), value); }
+            get { return BackingStore?.Get<VisibilitySetting?>("startMenuPinnedFolderHomeGroup"); }
+            set { BackingStore?.Set("startMenuPinnedFolderHomeGroup", value); }
         }
-        /// <summary>Enforces the visibility (Show/Hide) of the Music folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.</summary>
+        /// <summary>Generic visibility state.</summary>
         public VisibilitySetting? StartMenuPinnedFolderMusic {
-            get { return BackingStore?.Get<VisibilitySetting?>(nameof(StartMenuPinnedFolderMusic)); }
-            set { BackingStore?.Set(nameof(StartMenuPinnedFolderMusic), value); }
+            get { return BackingStore?.Get<VisibilitySetting?>("startMenuPinnedFolderMusic"); }
+            set { BackingStore?.Set("startMenuPinnedFolderMusic", value); }
         }
-        /// <summary>Enforces the visibility (Show/Hide) of the Network folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.</summary>
+        /// <summary>Generic visibility state.</summary>
         public VisibilitySetting? StartMenuPinnedFolderNetwork {
-            get { return BackingStore?.Get<VisibilitySetting?>(nameof(StartMenuPinnedFolderNetwork)); }
-            set { BackingStore?.Set(nameof(StartMenuPinnedFolderNetwork), value); }
+            get { return BackingStore?.Get<VisibilitySetting?>("startMenuPinnedFolderNetwork"); }
+            set { BackingStore?.Set("startMenuPinnedFolderNetwork", value); }
         }
-        /// <summary>Enforces the visibility (Show/Hide) of the PersonalFolder shortcut on the Start menu. Possible values are: notConfigured, hide, show.</summary>
+        /// <summary>Generic visibility state.</summary>
         public VisibilitySetting? StartMenuPinnedFolderPersonalFolder {
-            get { return BackingStore?.Get<VisibilitySetting?>(nameof(StartMenuPinnedFolderPersonalFolder)); }
-            set { BackingStore?.Set(nameof(StartMenuPinnedFolderPersonalFolder), value); }
+            get { return BackingStore?.Get<VisibilitySetting?>("startMenuPinnedFolderPersonalFolder"); }
+            set { BackingStore?.Set("startMenuPinnedFolderPersonalFolder", value); }
         }
-        /// <summary>Enforces the visibility (Show/Hide) of the Pictures folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.</summary>
+        /// <summary>Generic visibility state.</summary>
         public VisibilitySetting? StartMenuPinnedFolderPictures {
-            get { return BackingStore?.Get<VisibilitySetting?>(nameof(StartMenuPinnedFolderPictures)); }
-            set { BackingStore?.Set(nameof(StartMenuPinnedFolderPictures), value); }
+            get { return BackingStore?.Get<VisibilitySetting?>("startMenuPinnedFolderPictures"); }
+            set { BackingStore?.Set("startMenuPinnedFolderPictures", value); }
         }
-        /// <summary>Enforces the visibility (Show/Hide) of the Settings folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.</summary>
+        /// <summary>Generic visibility state.</summary>
         public VisibilitySetting? StartMenuPinnedFolderSettings {
-            get { return BackingStore?.Get<VisibilitySetting?>(nameof(StartMenuPinnedFolderSettings)); }
-            set { BackingStore?.Set(nameof(StartMenuPinnedFolderSettings), value); }
+            get { return BackingStore?.Get<VisibilitySetting?>("startMenuPinnedFolderSettings"); }
+            set { BackingStore?.Set("startMenuPinnedFolderSettings", value); }
         }
-        /// <summary>Enforces the visibility (Show/Hide) of the Videos folder shortcut on the Start menu. Possible values are: notConfigured, hide, show.</summary>
+        /// <summary>Generic visibility state.</summary>
         public VisibilitySetting? StartMenuPinnedFolderVideos {
-            get { return BackingStore?.Get<VisibilitySetting?>(nameof(StartMenuPinnedFolderVideos)); }
-            set { BackingStore?.Set(nameof(StartMenuPinnedFolderVideos), value); }
+            get { return BackingStore?.Get<VisibilitySetting?>("startMenuPinnedFolderVideos"); }
+            set { BackingStore?.Set("startMenuPinnedFolderVideos", value); }
         }
         /// <summary>Indicates whether or not to Block the user from using removable storage.</summary>
         public bool? StorageBlockRemovableStorage {
-            get { return BackingStore?.Get<bool?>(nameof(StorageBlockRemovableStorage)); }
-            set { BackingStore?.Set(nameof(StorageBlockRemovableStorage), value); }
+            get { return BackingStore?.Get<bool?>("storageBlockRemovableStorage"); }
+            set { BackingStore?.Set("storageBlockRemovableStorage", value); }
         }
         /// <summary>Indicating whether or not to require encryption on a mobile device.</summary>
         public bool? StorageRequireMobileDeviceEncryption {
-            get { return BackingStore?.Get<bool?>(nameof(StorageRequireMobileDeviceEncryption)); }
-            set { BackingStore?.Set(nameof(StorageRequireMobileDeviceEncryption), value); }
+            get { return BackingStore?.Get<bool?>("storageRequireMobileDeviceEncryption"); }
+            set { BackingStore?.Set("storageRequireMobileDeviceEncryption", value); }
         }
         /// <summary>Indicates whether application data is restricted to the system drive.</summary>
         public bool? StorageRestrictAppDataToSystemVolume {
-            get { return BackingStore?.Get<bool?>(nameof(StorageRestrictAppDataToSystemVolume)); }
-            set { BackingStore?.Set(nameof(StorageRestrictAppDataToSystemVolume), value); }
+            get { return BackingStore?.Get<bool?>("storageRestrictAppDataToSystemVolume"); }
+            set { BackingStore?.Set("storageRestrictAppDataToSystemVolume", value); }
         }
         /// <summary>Indicates whether the installation of applications is restricted to the system drive.</summary>
         public bool? StorageRestrictAppInstallToSystemVolume {
-            get { return BackingStore?.Get<bool?>(nameof(StorageRestrictAppInstallToSystemVolume)); }
-            set { BackingStore?.Set(nameof(StorageRestrictAppInstallToSystemVolume), value); }
+            get { return BackingStore?.Get<bool?>("storageRestrictAppInstallToSystemVolume"); }
+            set { BackingStore?.Set("storageRestrictAppInstallToSystemVolume", value); }
         }
         /// <summary>Gets or sets the fully qualified domain name (FQDN) or IP address of a proxy server to forward Connected User Experiences and Telemetry requests.</summary>
         public string SystemTelemetryProxyServer {
-            get { return BackingStore?.Get<string>(nameof(SystemTelemetryProxyServer)); }
-            set { BackingStore?.Set(nameof(SystemTelemetryProxyServer), value); }
+            get { return BackingStore?.Get<string>("systemTelemetryProxyServer"); }
+            set { BackingStore?.Set("systemTelemetryProxyServer", value); }
         }
         /// <summary>Specify whether non-administrators can use Task Manager to end tasks.</summary>
         public bool? TaskManagerBlockEndTask {
-            get { return BackingStore?.Get<bool?>(nameof(TaskManagerBlockEndTask)); }
-            set { BackingStore?.Set(nameof(TaskManagerBlockEndTask), value); }
+            get { return BackingStore?.Get<bool?>("taskManagerBlockEndTask"); }
+            set { BackingStore?.Set("taskManagerBlockEndTask", value); }
         }
         /// <summary>Whether the device is required to connect to the network.</summary>
         public bool? TenantLockdownRequireNetworkDuringOutOfBoxExperience {
-            get { return BackingStore?.Get<bool?>(nameof(TenantLockdownRequireNetworkDuringOutOfBoxExperience)); }
-            set { BackingStore?.Set(nameof(TenantLockdownRequireNetworkDuringOutOfBoxExperience), value); }
+            get { return BackingStore?.Get<bool?>("tenantLockdownRequireNetworkDuringOutOfBoxExperience"); }
+            set { BackingStore?.Set("tenantLockdownRequireNetworkDuringOutOfBoxExperience", value); }
         }
         /// <summary>Indicates whether or not to uninstall a fixed list of built-in Windows apps.</summary>
         public bool? UninstallBuiltInApps {
-            get { return BackingStore?.Get<bool?>(nameof(UninstallBuiltInApps)); }
-            set { BackingStore?.Set(nameof(UninstallBuiltInApps), value); }
+            get { return BackingStore?.Get<bool?>("uninstallBuiltInApps"); }
+            set { BackingStore?.Set("uninstallBuiltInApps", value); }
         }
         /// <summary>Indicates whether or not to Block the user from USB connection.</summary>
         public bool? UsbBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(UsbBlocked)); }
-            set { BackingStore?.Set(nameof(UsbBlocked), value); }
+            get { return BackingStore?.Get<bool?>("usbBlocked"); }
+            set { BackingStore?.Set("usbBlocked", value); }
         }
         /// <summary>Indicates whether or not to Block the user from voice recording.</summary>
         public bool? VoiceRecordingBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(VoiceRecordingBlocked)); }
-            set { BackingStore?.Set(nameof(VoiceRecordingBlocked), value); }
+            get { return BackingStore?.Get<bool?>("voiceRecordingBlocked"); }
+            set { BackingStore?.Set("voiceRecordingBlocked", value); }
         }
         /// <summary>Indicates whether or not user&apos;s localhost IP address is displayed while making phone calls using the WebRTC</summary>
         public bool? WebRtcBlockLocalhostIpAddress {
-            get { return BackingStore?.Get<bool?>(nameof(WebRtcBlockLocalhostIpAddress)); }
-            set { BackingStore?.Set(nameof(WebRtcBlockLocalhostIpAddress), value); }
+            get { return BackingStore?.Get<bool?>("webRtcBlockLocalhostIpAddress"); }
+            set { BackingStore?.Set("webRtcBlockLocalhostIpAddress", value); }
         }
         /// <summary>Indicating whether or not to block automatically connecting to Wi-Fi hotspots. Has no impact if Wi-Fi is blocked.</summary>
         public bool? WiFiBlockAutomaticConnectHotspots {
-            get { return BackingStore?.Get<bool?>(nameof(WiFiBlockAutomaticConnectHotspots)); }
-            set { BackingStore?.Set(nameof(WiFiBlockAutomaticConnectHotspots), value); }
+            get { return BackingStore?.Get<bool?>("wiFiBlockAutomaticConnectHotspots"); }
+            set { BackingStore?.Set("wiFiBlockAutomaticConnectHotspots", value); }
         }
         /// <summary>Indicates whether or not to Block the user from using Wi-Fi.</summary>
         public bool? WiFiBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(WiFiBlocked)); }
-            set { BackingStore?.Set(nameof(WiFiBlocked), value); }
+            get { return BackingStore?.Get<bool?>("wiFiBlocked"); }
+            set { BackingStore?.Set("wiFiBlocked", value); }
         }
         /// <summary>Indicates whether or not to Block the user from using Wi-Fi manual configuration.</summary>
         public bool? WiFiBlockManualConfiguration {
-            get { return BackingStore?.Get<bool?>(nameof(WiFiBlockManualConfiguration)); }
-            set { BackingStore?.Set(nameof(WiFiBlockManualConfiguration), value); }
+            get { return BackingStore?.Get<bool?>("wiFiBlockManualConfiguration"); }
+            set { BackingStore?.Set("wiFiBlockManualConfiguration", value); }
         }
         /// <summary>Specify how often devices scan for Wi-Fi networks. Supported values are 1-500, where 100 = default, and 500 = low frequency. Valid values 1 to 500</summary>
         public int? WiFiScanInterval {
-            get { return BackingStore?.Get<int?>(nameof(WiFiScanInterval)); }
-            set { BackingStore?.Set(nameof(WiFiScanInterval), value); }
+            get { return BackingStore?.Get<int?>("wiFiScanInterval"); }
+            set { BackingStore?.Set("wiFiScanInterval", value); }
         }
         /// <summary>Windows 10 force update schedule for Apps.</summary>
         public Microsoft.Graph.Beta.Models.Windows10AppsForceUpdateSchedule Windows10AppsForceUpdateSchedule {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Windows10AppsForceUpdateSchedule>(nameof(Windows10AppsForceUpdateSchedule)); }
-            set { BackingStore?.Set(nameof(Windows10AppsForceUpdateSchedule), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Windows10AppsForceUpdateSchedule>("windows10AppsForceUpdateSchedule"); }
+            set { BackingStore?.Set("windows10AppsForceUpdateSchedule", value); }
         }
         /// <summary>Allows IT admins to block experiences that are typically for consumers only, such as Start suggestions, Membership notifications, Post-OOBE app install and redirect tiles.</summary>
         public bool? WindowsSpotlightBlockConsumerSpecificFeatures {
-            get { return BackingStore?.Get<bool?>(nameof(WindowsSpotlightBlockConsumerSpecificFeatures)); }
-            set { BackingStore?.Set(nameof(WindowsSpotlightBlockConsumerSpecificFeatures), value); }
+            get { return BackingStore?.Get<bool?>("windowsSpotlightBlockConsumerSpecificFeatures"); }
+            set { BackingStore?.Set("windowsSpotlightBlockConsumerSpecificFeatures", value); }
         }
         /// <summary>Allows IT admins to turn off all Windows Spotlight features</summary>
         public bool? WindowsSpotlightBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(WindowsSpotlightBlocked)); }
-            set { BackingStore?.Set(nameof(WindowsSpotlightBlocked), value); }
+            get { return BackingStore?.Get<bool?>("windowsSpotlightBlocked"); }
+            set { BackingStore?.Set("windowsSpotlightBlocked", value); }
         }
         /// <summary>Block suggestions from Microsoft that show after each OS clean install, upgrade or in an on-going basis to introduce users to what is new or changed</summary>
         public bool? WindowsSpotlightBlockOnActionCenter {
-            get { return BackingStore?.Get<bool?>(nameof(WindowsSpotlightBlockOnActionCenter)); }
-            set { BackingStore?.Set(nameof(WindowsSpotlightBlockOnActionCenter), value); }
+            get { return BackingStore?.Get<bool?>("windowsSpotlightBlockOnActionCenter"); }
+            set { BackingStore?.Set("windowsSpotlightBlockOnActionCenter", value); }
         }
         /// <summary>Block personalized content in Windows spotlight based on user’s device usage.</summary>
         public bool? WindowsSpotlightBlockTailoredExperiences {
-            get { return BackingStore?.Get<bool?>(nameof(WindowsSpotlightBlockTailoredExperiences)); }
-            set { BackingStore?.Set(nameof(WindowsSpotlightBlockTailoredExperiences), value); }
+            get { return BackingStore?.Get<bool?>("windowsSpotlightBlockTailoredExperiences"); }
+            set { BackingStore?.Set("windowsSpotlightBlockTailoredExperiences", value); }
         }
         /// <summary>Block third party content delivered via Windows Spotlight</summary>
         public bool? WindowsSpotlightBlockThirdPartyNotifications {
-            get { return BackingStore?.Get<bool?>(nameof(WindowsSpotlightBlockThirdPartyNotifications)); }
-            set { BackingStore?.Set(nameof(WindowsSpotlightBlockThirdPartyNotifications), value); }
+            get { return BackingStore?.Get<bool?>("windowsSpotlightBlockThirdPartyNotifications"); }
+            set { BackingStore?.Set("windowsSpotlightBlockThirdPartyNotifications", value); }
         }
         /// <summary>Block Windows Spotlight Windows welcome experience</summary>
         public bool? WindowsSpotlightBlockWelcomeExperience {
-            get { return BackingStore?.Get<bool?>(nameof(WindowsSpotlightBlockWelcomeExperience)); }
-            set { BackingStore?.Set(nameof(WindowsSpotlightBlockWelcomeExperience), value); }
+            get { return BackingStore?.Get<bool?>("windowsSpotlightBlockWelcomeExperience"); }
+            set { BackingStore?.Set("windowsSpotlightBlockWelcomeExperience", value); }
         }
         /// <summary>Allows IT admins to turn off the popup of Windows Tips.</summary>
         public bool? WindowsSpotlightBlockWindowsTips {
-            get { return BackingStore?.Get<bool?>(nameof(WindowsSpotlightBlockWindowsTips)); }
-            set { BackingStore?.Set(nameof(WindowsSpotlightBlockWindowsTips), value); }
+            get { return BackingStore?.Get<bool?>("windowsSpotlightBlockWindowsTips"); }
+            set { BackingStore?.Set("windowsSpotlightBlockWindowsTips", value); }
         }
-        /// <summary>Specifies the type of Spotlight. Possible values are: notConfigured, disabled, enabled.</summary>
+        /// <summary>Allows IT admind to set a predefined default search engine for MDM-Controlled devices</summary>
         public WindowsSpotlightEnablementSettings? WindowsSpotlightConfigureOnLockScreen {
-            get { return BackingStore?.Get<WindowsSpotlightEnablementSettings?>(nameof(WindowsSpotlightConfigureOnLockScreen)); }
-            set { BackingStore?.Set(nameof(WindowsSpotlightConfigureOnLockScreen), value); }
+            get { return BackingStore?.Get<WindowsSpotlightEnablementSettings?>("windowsSpotlightConfigureOnLockScreen"); }
+            set { BackingStore?.Set("windowsSpotlightConfigureOnLockScreen", value); }
         }
         /// <summary>Indicates whether or not to block automatic update of apps from Windows Store.</summary>
         public bool? WindowsStoreBlockAutoUpdate {
-            get { return BackingStore?.Get<bool?>(nameof(WindowsStoreBlockAutoUpdate)); }
-            set { BackingStore?.Set(nameof(WindowsStoreBlockAutoUpdate), value); }
+            get { return BackingStore?.Get<bool?>("windowsStoreBlockAutoUpdate"); }
+            set { BackingStore?.Set("windowsStoreBlockAutoUpdate", value); }
         }
         /// <summary>Indicates whether or not to Block the user from using the Windows store.</summary>
         public bool? WindowsStoreBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(WindowsStoreBlocked)); }
-            set { BackingStore?.Set(nameof(WindowsStoreBlocked), value); }
+            get { return BackingStore?.Get<bool?>("windowsStoreBlocked"); }
+            set { BackingStore?.Set("windowsStoreBlocked", value); }
         }
         /// <summary>Indicates whether or not to enable Private Store Only.</summary>
         public bool? WindowsStoreEnablePrivateStoreOnly {
-            get { return BackingStore?.Get<bool?>(nameof(WindowsStoreEnablePrivateStoreOnly)); }
-            set { BackingStore?.Set(nameof(WindowsStoreEnablePrivateStoreOnly), value); }
+            get { return BackingStore?.Get<bool?>("windowsStoreEnablePrivateStoreOnly"); }
+            set { BackingStore?.Set("windowsStoreEnablePrivateStoreOnly", value); }
         }
         /// <summary>Indicates whether or not to allow other devices from discovering this PC for projection.</summary>
         public bool? WirelessDisplayBlockProjectionToThisDevice {
-            get { return BackingStore?.Get<bool?>(nameof(WirelessDisplayBlockProjectionToThisDevice)); }
-            set { BackingStore?.Set(nameof(WirelessDisplayBlockProjectionToThisDevice), value); }
+            get { return BackingStore?.Get<bool?>("wirelessDisplayBlockProjectionToThisDevice"); }
+            set { BackingStore?.Set("wirelessDisplayBlockProjectionToThisDevice", value); }
         }
         /// <summary>Indicates whether or not to allow user input from wireless display receiver.</summary>
         public bool? WirelessDisplayBlockUserInputFromReceiver {
-            get { return BackingStore?.Get<bool?>(nameof(WirelessDisplayBlockUserInputFromReceiver)); }
-            set { BackingStore?.Set(nameof(WirelessDisplayBlockUserInputFromReceiver), value); }
+            get { return BackingStore?.Get<bool?>("wirelessDisplayBlockUserInputFromReceiver"); }
+            set { BackingStore?.Set("wirelessDisplayBlockUserInputFromReceiver", value); }
         }
         /// <summary>Indicates whether or not to require a PIN for new devices to initiate pairing.</summary>
         public bool? WirelessDisplayRequirePinForPairing {
-            get { return BackingStore?.Get<bool?>(nameof(WirelessDisplayRequirePinForPairing)); }
-            set { BackingStore?.Set(nameof(WirelessDisplayRequirePinForPairing), value); }
+            get { return BackingStore?.Get<bool?>("wirelessDisplayRequirePinForPairing"); }
+            set { BackingStore?.Set("wirelessDisplayRequirePinForPairing", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

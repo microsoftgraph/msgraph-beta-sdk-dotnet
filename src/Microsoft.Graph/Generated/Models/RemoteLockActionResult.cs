@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class RemoteLockActionResult : DeviceActionResult, IParsable {
         /// <summary>Pin to unlock the client</summary>
         public string UnlockPin {
-            get { return BackingStore?.Get<string>(nameof(UnlockPin)); }
-            set { BackingStore?.Set(nameof(UnlockPin), value); }
+            get { return BackingStore?.Get<string>("unlockPin"); }
+            set { BackingStore?.Set("unlockPin", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

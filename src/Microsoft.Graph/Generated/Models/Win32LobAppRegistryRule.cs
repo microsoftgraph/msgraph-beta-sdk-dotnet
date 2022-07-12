@@ -7,33 +7,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class Win32LobAppRegistryRule : Win32LobAppRule, IParsable {
         /// <summary>A value indicating whether to search the 32-bit registry on 64-bit systems.</summary>
         public bool? Check32BitOn64System {
-            get { return BackingStore?.Get<bool?>(nameof(Check32BitOn64System)); }
-            set { BackingStore?.Set(nameof(Check32BitOn64System), value); }
+            get { return BackingStore?.Get<bool?>("check32BitOn64System"); }
+            set { BackingStore?.Set("check32BitOn64System", value); }
         }
         /// <summary>The registry comparison value.</summary>
         public string ComparisonValue {
-            get { return BackingStore?.Get<string>(nameof(ComparisonValue)); }
-            set { BackingStore?.Set(nameof(ComparisonValue), value); }
+            get { return BackingStore?.Get<string>("comparisonValue"); }
+            set { BackingStore?.Set("comparisonValue", value); }
         }
         /// <summary>The full path of the registry entry containing the value to detect.</summary>
         public string KeyPath {
-            get { return BackingStore?.Get<string>(nameof(KeyPath)); }
-            set { BackingStore?.Set(nameof(KeyPath), value); }
+            get { return BackingStore?.Get<string>("keyPath"); }
+            set { BackingStore?.Set("keyPath", value); }
         }
-        /// <summary>The registry operation type. Possible values are: notConfigured, exists, doesNotExist, string, integer, version.</summary>
+        /// <summary>Contains all supported registry data detection type.</summary>
         public Win32LobAppRegistryRuleOperationType? OperationType {
-            get { return BackingStore?.Get<Win32LobAppRegistryRuleOperationType?>(nameof(OperationType)); }
-            set { BackingStore?.Set(nameof(OperationType), value); }
+            get { return BackingStore?.Get<Win32LobAppRegistryRuleOperationType?>("operationType"); }
+            set { BackingStore?.Set("operationType", value); }
         }
-        /// <summary>The operator for registry detection. Possible values are: notConfigured, equal, notEqual, greaterThan, greaterThanOrEqual, lessThan, lessThanOrEqual.</summary>
+        /// <summary>Contains properties for detection operator.</summary>
         public Win32LobAppRuleOperator? Operator {
-            get { return BackingStore?.Get<Win32LobAppRuleOperator?>(nameof(Operator)); }
-            set { BackingStore?.Set(nameof(Operator), value); }
+            get { return BackingStore?.Get<Win32LobAppRuleOperator?>("operator"); }
+            set { BackingStore?.Set("operator", value); }
         }
         /// <summary>The name of the registry value to detect.</summary>
         public string ValueName {
-            get { return BackingStore?.Get<string>(nameof(ValueName)); }
-            set { BackingStore?.Set(nameof(ValueName), value); }
+            get { return BackingStore?.Get<string>("valueName"); }
+            set { BackingStore?.Set("valueName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

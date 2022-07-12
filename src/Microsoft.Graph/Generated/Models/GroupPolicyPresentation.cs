@@ -9,18 +9,24 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyPresentation : Entity, IParsable {
         /// <summary>The group policy definition associated with the presentation.</summary>
         public GroupPolicyDefinition Definition {
-            get { return BackingStore?.Get<GroupPolicyDefinition>(nameof(Definition)); }
-            set { BackingStore?.Set(nameof(Definition), value); }
+            get { return BackingStore?.Get<GroupPolicyDefinition>("definition"); }
+            set { BackingStore?.Set("definition", value); }
         }
         /// <summary>Localized text label for any presentation entity. The default value is empty.</summary>
         public string Label {
-            get { return BackingStore?.Get<string>(nameof(Label)); }
-            set { BackingStore?.Set(nameof(Label), value); }
+            get { return BackingStore?.Get<string>("label"); }
+            set { BackingStore?.Set("label", value); }
         }
         /// <summary>The date and time the entity was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
+        }
+        /// <summary>
+        /// Instantiates a new groupPolicyPresentation and sets the default values.
+        /// </summary>
+        public GroupPolicyPresentation() : base() {
+            Type = "#microsoft.graph.groupPolicyPresentation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

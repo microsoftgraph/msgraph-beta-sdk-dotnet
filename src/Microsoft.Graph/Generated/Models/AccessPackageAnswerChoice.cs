@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageAnswerChoice : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The actual value of the selected choice. This is typically a string value which is understandable by applications. Required.</summary>
         public string ActualValue {
-            get { return BackingStore?.Get<string>(nameof(ActualValue)); }
-            set { BackingStore?.Set(nameof(ActualValue), value); }
+            get { return BackingStore?.Get<string>("actualValue"); }
+            set { BackingStore?.Set("actualValue", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The localized display values shown to the requestor and approvers. Required.</summary>
         public AccessPackageLocalizedContent DisplayValue {
-            get { return BackingStore?.Get<AccessPackageLocalizedContent>(nameof(DisplayValue)); }
-            set { BackingStore?.Set(nameof(DisplayValue), value); }
+            get { return BackingStore?.Get<AccessPackageLocalizedContent>("displayValue"); }
+            set { BackingStore?.Set("displayValue", value); }
         }
         /// <summary>
         /// Instantiates a new accessPackageAnswerChoice and sets the default values.

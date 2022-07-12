@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Android For Work Trusted Root Certificate configuration profile</summary>
     public class AndroidForWorkTrustedRootCertificate : DeviceConfiguration, IParsable {
         /// <summary>File name to display in UI.</summary>
         public string CertFileName {
-            get { return BackingStore?.Get<string>(nameof(CertFileName)); }
-            set { BackingStore?.Set(nameof(CertFileName), value); }
+            get { return BackingStore?.Get<string>("certFileName"); }
+            set { BackingStore?.Set("certFileName", value); }
         }
         /// <summary>Trusted Root Certificate</summary>
         public byte[] TrustedRootCertificate {
-            get { return BackingStore?.Get<byte[]>(nameof(TrustedRootCertificate)); }
-            set { BackingStore?.Set(nameof(TrustedRootCertificate), value); }
+            get { return BackingStore?.Get<byte[]>("trustedRootCertificate"); }
+            set { BackingStore?.Set("trustedRootCertificate", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

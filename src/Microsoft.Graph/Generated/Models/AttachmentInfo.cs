@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class AttachmentInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The attachmentType property</summary>
+        /// <summary>The type of the attachment. The possible values are: file, item, reference. Required.</summary>
         public Microsoft.Graph.Beta.Models.AttachmentType? AttachmentType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttachmentType?>(nameof(AttachmentType)); }
-            set { BackingStore?.Set(nameof(AttachmentType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttachmentType?>("attachmentType"); }
+            set { BackingStore?.Set("attachmentType", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The contentType property</summary>
+        /// <summary>The nature of the data in the attachment. Optional.</summary>
         public string ContentType {
-            get { return BackingStore?.Get<string>(nameof(ContentType)); }
-            set { BackingStore?.Set(nameof(ContentType), value); }
+            get { return BackingStore?.Get<string>("contentType"); }
+            set { BackingStore?.Set("contentType", value); }
         }
-        /// <summary>The name property</summary>
+        /// <summary>The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
-        /// <summary>The size property</summary>
+        /// <summary>The length of the attachment in bytes. Required.</summary>
         public long? Size {
-            get { return BackingStore?.Get<long?>(nameof(Size)); }
-            set { BackingStore?.Set(nameof(Size), value); }
+            get { return BackingStore?.Get<long?>("size"); }
+            set { BackingStore?.Set("size", value); }
         }
         /// <summary>
         /// Instantiates a new attachmentInfo and sets the default values.

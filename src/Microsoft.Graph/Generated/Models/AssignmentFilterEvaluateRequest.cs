@@ -9,35 +9,40 @@ namespace Microsoft.Graph.Beta.Models {
     public class AssignmentFilterEvaluateRequest : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Order the devices should be sorted in. Default is ascending on device name.</summary>
         public List<string> OrderBy {
-            get { return BackingStore?.Get<List<string>>(nameof(OrderBy)); }
-            set { BackingStore?.Set(nameof(OrderBy), value); }
+            get { return BackingStore?.Get<List<string>>("orderBy"); }
+            set { BackingStore?.Set("orderBy", value); }
         }
-        /// <summary>Platform type of the devices on which the Assignment Filter will be applicable. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.</summary>
+        /// <summary>Supported platform types.</summary>
         public DevicePlatformType? Platform {
-            get { return BackingStore?.Get<DevicePlatformType?>(nameof(Platform)); }
-            set { BackingStore?.Set(nameof(Platform), value); }
+            get { return BackingStore?.Get<DevicePlatformType?>("platform"); }
+            set { BackingStore?.Set("platform", value); }
         }
         /// <summary>Rule definition of the Assignment Filter.</summary>
         public string Rule {
-            get { return BackingStore?.Get<string>(nameof(Rule)); }
-            set { BackingStore?.Set(nameof(Rule), value); }
+            get { return BackingStore?.Get<string>("rule"); }
+            set { BackingStore?.Set("rule", value); }
+        }
+        /// <summary>Search keyword applied to scope found devices.</summary>
+        public string Search {
+            get { return BackingStore?.Get<string>("search"); }
+            set { BackingStore?.Set("search", value); }
         }
         /// <summary>Number of records to skip. Default value is 0</summary>
         public int? Skip {
-            get { return BackingStore?.Get<int?>(nameof(Skip)); }
-            set { BackingStore?.Set(nameof(Skip), value); }
+            get { return BackingStore?.Get<int?>("skip"); }
+            set { BackingStore?.Set("skip", value); }
         }
         /// <summary>Limit of records per request. Default value is 100, if provided less than 0 or greater than 100</summary>
         public int? Top {
-            get { return BackingStore?.Get<int?>(nameof(Top)); }
-            set { BackingStore?.Set(nameof(Top), value); }
+            get { return BackingStore?.Get<int?>("top"); }
+            set { BackingStore?.Set("top", value); }
         }
         /// <summary>
         /// Instantiates a new assignmentFilterEvaluateRequest and sets the default values.
@@ -62,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"orderBy", n => { OrderBy = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"platform", n => { Platform = n.GetEnumValue<DevicePlatformType>(); } },
                 {"rule", n => { Rule = n.GetStringValue(); } },
+                {"search", n => { Search = n.GetStringValue(); } },
                 {"skip", n => { Skip = n.GetIntValue(); } },
                 {"top", n => { Top = n.GetIntValue(); } },
             };
@@ -75,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("orderBy", OrderBy);
             writer.WriteEnumValue<DevicePlatformType>("platform", Platform);
             writer.WriteStringValue("rule", Rule);
+            writer.WriteStringValue("search", Search);
             writer.WriteIntValue("skip", Skip);
             writer.WriteIntValue("top", Top);
             writer.WriteAdditionalData(AdditionalData);

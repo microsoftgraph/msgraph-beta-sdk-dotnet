@@ -5,40 +5,40 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AddContentHeaderAction : InformationProtectionAction, IParsable {
-        /// <summary>Possible values are: left, right, center.</summary>
+        /// <summary>The alignment property</summary>
         public ContentAlignment? Alignment {
-            get { return BackingStore?.Get<ContentAlignment?>(nameof(Alignment)); }
-            set { BackingStore?.Set(nameof(Alignment), value); }
+            get { return BackingStore?.Get<ContentAlignment?>("alignment"); }
+            set { BackingStore?.Set("alignment", value); }
         }
         /// <summary>Color of the font to use for the header.</summary>
         public string FontColor {
-            get { return BackingStore?.Get<string>(nameof(FontColor)); }
-            set { BackingStore?.Set(nameof(FontColor), value); }
+            get { return BackingStore?.Get<string>("fontColor"); }
+            set { BackingStore?.Set("fontColor", value); }
         }
         /// <summary>Name of the font to use for the header.</summary>
         public string FontName {
-            get { return BackingStore?.Get<string>(nameof(FontName)); }
-            set { BackingStore?.Set(nameof(FontName), value); }
+            get { return BackingStore?.Get<string>("fontName"); }
+            set { BackingStore?.Set("fontName", value); }
         }
         /// <summary>Font size to use for the header.</summary>
         public int? FontSize {
-            get { return BackingStore?.Get<int?>(nameof(FontSize)); }
-            set { BackingStore?.Set(nameof(FontSize), value); }
+            get { return BackingStore?.Get<int?>("fontSize"); }
+            set { BackingStore?.Set("fontSize", value); }
         }
         /// <summary>The margin of the header from the top of the document.</summary>
         public int? Margin {
-            get { return BackingStore?.Get<int?>(nameof(Margin)); }
-            set { BackingStore?.Set(nameof(Margin), value); }
+            get { return BackingStore?.Get<int?>("margin"); }
+            set { BackingStore?.Set("margin", value); }
         }
         /// <summary>The contents of the header itself.</summary>
         public string Text {
-            get { return BackingStore?.Get<string>(nameof(Text)); }
-            set { BackingStore?.Set(nameof(Text), value); }
+            get { return BackingStore?.Get<string>("text"); }
+            set { BackingStore?.Set("text", value); }
         }
         /// <summary>The name of the UI element where the header should be placed.</summary>
         public string UiElementName {
-            get { return BackingStore?.Get<string>(nameof(UiElementName)); }
-            set { BackingStore?.Set(nameof(UiElementName), value); }
+            get { return BackingStore?.Get<string>("uiElementName"); }
+            set { BackingStore?.Set("uiElementName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

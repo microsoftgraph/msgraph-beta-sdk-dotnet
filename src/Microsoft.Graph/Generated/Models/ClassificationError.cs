@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class ClassificationError : ClassifcationErrorBase, IParsable {
         /// <summary>The details property</summary>
         public List<ClassifcationErrorBase> Details {
-            get { return BackingStore?.Get<List<ClassifcationErrorBase>>(nameof(Details)); }
-            set { BackingStore?.Set(nameof(Details), value); }
+            get { return BackingStore?.Get<List<ClassifcationErrorBase>>("details"); }
+            set { BackingStore?.Set("details", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

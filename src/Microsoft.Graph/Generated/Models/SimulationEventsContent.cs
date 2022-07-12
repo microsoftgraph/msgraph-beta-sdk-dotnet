@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class SimulationEventsContent : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Actual percentage of users who fell for the simulated attack in an attack simulation and training campaign.</summary>
         public double? CompromisedRate {
-            get { return BackingStore?.Get<double?>(nameof(CompromisedRate)); }
-            set { BackingStore?.Set(nameof(CompromisedRate), value); }
+            get { return BackingStore?.Get<double?>("compromisedRate"); }
+            set { BackingStore?.Set("compromisedRate", value); }
         }
         /// <summary>List of simulation events in an attack simulation and training campaign.</summary>
         public List<SimulationEvent> Events {
-            get { return BackingStore?.Get<List<SimulationEvent>>(nameof(Events)); }
-            set { BackingStore?.Set(nameof(Events), value); }
+            get { return BackingStore?.Get<List<SimulationEvent>>("events"); }
+            set { BackingStore?.Set("events", value); }
         }
         /// <summary>
         /// Instantiates a new simulationEventsContent and sets the default values.

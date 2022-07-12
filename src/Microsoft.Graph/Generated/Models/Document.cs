@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class Document : Entity, IParsable {
         /// <summary>The comments property</summary>
         public List<DocumentComment> Comments {
-            get { return BackingStore?.Get<List<DocumentComment>>(nameof(Comments)); }
-            set { BackingStore?.Set(nameof(Comments), value); }
+            get { return BackingStore?.Get<List<DocumentComment>>("comments"); }
+            set { BackingStore?.Set("comments", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,33 +7,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class ReferenceAttachment : Attachment, IParsable {
         /// <summary>Specifies whether the attachment is a link to a folder. Must set this to true if sourceUrl is a link to a folder. Optional.</summary>
         public bool? IsFolder {
-            get { return BackingStore?.Get<bool?>(nameof(IsFolder)); }
-            set { BackingStore?.Set(nameof(IsFolder), value); }
+            get { return BackingStore?.Get<bool?>("isFolder"); }
+            set { BackingStore?.Set("isFolder", value); }
         }
         /// <summary>Specifies the permissions granted for the attachment by the type of provider in providerType. Possible values are: other, view, edit, anonymousView, anonymousEdit, organizationView, organizationEdit. Optional.</summary>
         public ReferenceAttachmentPermission? Permission {
-            get { return BackingStore?.Get<ReferenceAttachmentPermission?>(nameof(Permission)); }
-            set { BackingStore?.Set(nameof(Permission), value); }
+            get { return BackingStore?.Get<ReferenceAttachmentPermission?>("permission"); }
+            set { BackingStore?.Set("permission", value); }
         }
         /// <summary>Applies to only a reference attachment of an image - URL to get a preview image. Use thumbnailUrl and previewUrl only when sourceUrl identifies an image file. Optional.</summary>
         public string PreviewUrl {
-            get { return BackingStore?.Get<string>(nameof(PreviewUrl)); }
-            set { BackingStore?.Set(nameof(PreviewUrl), value); }
+            get { return BackingStore?.Get<string>("previewUrl"); }
+            set { BackingStore?.Set("previewUrl", value); }
         }
         /// <summary>The type of provider that supports an attachment of this contentType. Possible values are: other, oneDriveBusiness, oneDriveConsumer, dropbox. Optional.</summary>
         public ReferenceAttachmentProvider? ProviderType {
-            get { return BackingStore?.Get<ReferenceAttachmentProvider?>(nameof(ProviderType)); }
-            set { BackingStore?.Set(nameof(ProviderType), value); }
+            get { return BackingStore?.Get<ReferenceAttachmentProvider?>("providerType"); }
+            set { BackingStore?.Set("providerType", value); }
         }
         /// <summary>URL to get the attachment content. If this is a URL to a folder, then for the folder to be displayed correctly in Outlook or Outlook on the web, set isFolder to true. Required.</summary>
         public string SourceUrl {
-            get { return BackingStore?.Get<string>(nameof(SourceUrl)); }
-            set { BackingStore?.Set(nameof(SourceUrl), value); }
+            get { return BackingStore?.Get<string>("sourceUrl"); }
+            set { BackingStore?.Set("sourceUrl", value); }
         }
         /// <summary>Applies to only a reference attachment of an image - URL to get a thumbnail image. Use thumbnailUrl and previewUrl only when sourceUrl identifies an image file. Optional.</summary>
         public string ThumbnailUrl {
-            get { return BackingStore?.Get<string>(nameof(ThumbnailUrl)); }
-            set { BackingStore?.Set(nameof(ThumbnailUrl), value); }
+            get { return BackingStore?.Get<string>("thumbnailUrl"); }
+            set { BackingStore?.Set("thumbnailUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

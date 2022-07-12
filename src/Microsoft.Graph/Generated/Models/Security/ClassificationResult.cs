@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class ClassificationResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The confidenceLevel property</summary>
         public int? ConfidenceLevel {
-            get { return BackingStore?.Get<int?>(nameof(ConfidenceLevel)); }
-            set { BackingStore?.Set(nameof(ConfidenceLevel), value); }
+            get { return BackingStore?.Get<int?>("confidenceLevel"); }
+            set { BackingStore?.Set("confidenceLevel", value); }
         }
         /// <summary>The count property</summary>
         public int? Count {
-            get { return BackingStore?.Get<int?>(nameof(Count)); }
-            set { BackingStore?.Set(nameof(Count), value); }
+            get { return BackingStore?.Get<int?>("count"); }
+            set { BackingStore?.Set("count", value); }
         }
         /// <summary>The sensitiveTypeId property</summary>
         public string SensitiveTypeId {
-            get { return BackingStore?.Get<string>(nameof(SensitiveTypeId)); }
-            set { BackingStore?.Set(nameof(SensitiveTypeId), value); }
+            get { return BackingStore?.Get<string>("sensitiveTypeId"); }
+            set { BackingStore?.Set("sensitiveTypeId", value); }
         }
         /// <summary>
         /// Instantiates a new classificationResult and sets the default values.

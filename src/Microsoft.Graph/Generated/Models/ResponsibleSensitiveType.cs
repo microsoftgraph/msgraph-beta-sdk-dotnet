@@ -8,40 +8,40 @@ namespace Microsoft.Graph.Beta.Models {
     public class ResponsibleSensitiveType : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The description property</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The id property</summary>
         public string Id {
-            get { return BackingStore?.Get<string>(nameof(Id)); }
-            set { BackingStore?.Set(nameof(Id), value); }
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
         }
         /// <summary>The name property</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The publisherName property</summary>
         public string PublisherName {
-            get { return BackingStore?.Get<string>(nameof(PublisherName)); }
-            set { BackingStore?.Set(nameof(PublisherName), value); }
+            get { return BackingStore?.Get<string>("publisherName"); }
+            set { BackingStore?.Set("publisherName", value); }
         }
         /// <summary>The rulePackageId property</summary>
         public string RulePackageId {
-            get { return BackingStore?.Get<string>(nameof(RulePackageId)); }
-            set { BackingStore?.Set(nameof(RulePackageId), value); }
+            get { return BackingStore?.Get<string>("rulePackageId"); }
+            set { BackingStore?.Set("rulePackageId", value); }
         }
         /// <summary>The rulePackageType property</summary>
         public string RulePackageType {
-            get { return BackingStore?.Get<string>(nameof(RulePackageType)); }
-            set { BackingStore?.Set(nameof(RulePackageType), value); }
+            get { return BackingStore?.Get<string>("rulePackageType"); }
+            set { BackingStore?.Set("rulePackageType", value); }
         }
         /// <summary>
         /// Instantiates a new responsibleSensitiveType and sets the default values.

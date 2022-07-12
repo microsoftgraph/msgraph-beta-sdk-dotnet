@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationRedirectSettingDefinition : DeviceManagementConfigurationSettingDefinition, IParsable {
         /// <summary>A deep link that points to the specific location in the Intune console where feature support must be managed from.</summary>
         public string DeepLink {
-            get { return BackingStore?.Get<string>(nameof(DeepLink)); }
-            set { BackingStore?.Set(nameof(DeepLink), value); }
+            get { return BackingStore?.Get<string>("deepLink"); }
+            set { BackingStore?.Set("deepLink", value); }
         }
         /// <summary>A message that explains that clicking the link will redirect the user to a supported page to manage the settings.</summary>
         public string RedirectMessage {
-            get { return BackingStore?.Get<string>(nameof(RedirectMessage)); }
-            set { BackingStore?.Set(nameof(RedirectMessage), value); }
+            get { return BackingStore?.Get<string>("redirectMessage"); }
+            set { BackingStore?.Set("redirectMessage", value); }
         }
         /// <summary>Indicates the reason for redirecting the user to an alternative location in the console.  For example: WiFi profiles are not supported in the settings catalog and must be created with a template policy.</summary>
         public string RedirectReason {
-            get { return BackingStore?.Get<string>(nameof(RedirectReason)); }
-            set { BackingStore?.Set(nameof(RedirectReason), value); }
+            get { return BackingStore?.Get<string>("redirectReason"); }
+            set { BackingStore?.Set("redirectReason", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

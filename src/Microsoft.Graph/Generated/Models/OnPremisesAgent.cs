@@ -7,28 +7,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class OnPremisesAgent : Entity, IParsable {
         /// <summary>List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.</summary>
         public List<OnPremisesAgentGroup> AgentGroups {
-            get { return BackingStore?.Get<List<OnPremisesAgentGroup>>(nameof(AgentGroups)); }
-            set { BackingStore?.Set(nameof(AgentGroups), value); }
+            get { return BackingStore?.Get<List<OnPremisesAgentGroup>>("agentGroups"); }
+            set { BackingStore?.Set("agentGroups", value); }
         }
         /// <summary>The external IP address as detected by the service for the agent machine. Read-only</summary>
         public string ExternalIp {
-            get { return BackingStore?.Get<string>(nameof(ExternalIp)); }
-            set { BackingStore?.Set(nameof(ExternalIp), value); }
+            get { return BackingStore?.Get<string>("externalIp"); }
+            set { BackingStore?.Set("externalIp", value); }
         }
         /// <summary>The name of the machine that the aggent is running on. Read-only</summary>
         public string MachineName {
-            get { return BackingStore?.Get<string>(nameof(MachineName)); }
-            set { BackingStore?.Set(nameof(MachineName), value); }
+            get { return BackingStore?.Get<string>("machineName"); }
+            set { BackingStore?.Set("machineName", value); }
         }
-        /// <summary>Possible values are: active, inactive.</summary>
+        /// <summary>The status property</summary>
         public AgentStatus? Status {
-            get { return BackingStore?.Get<AgentStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<AgentStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>The supportedPublishingTypes property</summary>
         public List<string> SupportedPublishingTypes {
-            get { return BackingStore?.Get<List<string>>(nameof(SupportedPublishingTypes)); }
-            set { BackingStore?.Set(nameof(SupportedPublishingTypes), value); }
+            get { return BackingStore?.Get<List<string>>("supportedPublishingTypes"); }
+            set { BackingStore?.Set("supportedPublishingTypes", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

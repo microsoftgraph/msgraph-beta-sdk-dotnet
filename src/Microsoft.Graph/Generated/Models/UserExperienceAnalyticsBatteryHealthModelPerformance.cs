@@ -8,38 +8,38 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsBatteryHealthModelPerformance : Entity, IParsable {
         /// <summary>Number of active devices for that model. Valid values -2147483648 to 2147483647</summary>
         public int? ActiveDevices {
-            get { return BackingStore?.Get<int?>(nameof(ActiveDevices)); }
-            set { BackingStore?.Set(nameof(ActiveDevices), value); }
+            get { return BackingStore?.Get<int?>("activeDevices"); }
+            set { BackingStore?.Set("activeDevices", value); }
         }
         /// <summary>The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values -2147483648 to 2147483647</summary>
         public int? AverageBatteryAgeInDays {
-            get { return BackingStore?.Get<int?>(nameof(AverageBatteryAgeInDays)); }
-            set { BackingStore?.Set(nameof(AverageBatteryAgeInDays), value); }
+            get { return BackingStore?.Get<int?>("averageBatteryAgeInDays"); }
+            set { BackingStore?.Set("averageBatteryAgeInDays", value); }
         }
         /// <summary>The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values -2147483648 to 2147483647</summary>
         public int? AverageEstimatedRuntimeInMinutes {
-            get { return BackingStore?.Get<int?>(nameof(AverageEstimatedRuntimeInMinutes)); }
-            set { BackingStore?.Set(nameof(AverageEstimatedRuntimeInMinutes), value); }
+            get { return BackingStore?.Get<int?>("averageEstimatedRuntimeInMinutes"); }
+            set { BackingStore?.Set("averageEstimatedRuntimeInMinutes", value); }
         }
         /// <summary>The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647</summary>
         public int? AverageMaxCapacityPercentage {
-            get { return BackingStore?.Get<int?>(nameof(AverageMaxCapacityPercentage)); }
-            set { BackingStore?.Set(nameof(AverageMaxCapacityPercentage), value); }
+            get { return BackingStore?.Get<int?>("averageMaxCapacityPercentage"); }
+            set { BackingStore?.Set("averageMaxCapacityPercentage", value); }
         }
         /// <summary>Name of the device manufacturer.</summary>
         public string Manufacturer {
-            get { return BackingStore?.Get<string>(nameof(Manufacturer)); }
-            set { BackingStore?.Set(nameof(Manufacturer), value); }
+            get { return BackingStore?.Get<string>("manufacturer"); }
+            set { BackingStore?.Set("manufacturer", value); }
         }
         /// <summary>The model name of the device.</summary>
         public string Model {
-            get { return BackingStore?.Get<string>(nameof(Model)); }
-            set { BackingStore?.Set(nameof(Model), value); }
+            get { return BackingStore?.Get<string>("model"); }
+            set { BackingStore?.Set("model", value); }
         }
         /// <summary>A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647</summary>
         public int? ModelBatteryHealthScore {
-            get { return BackingStore?.Get<int?>(nameof(ModelBatteryHealthScore)); }
-            set { BackingStore?.Set(nameof(ModelBatteryHealthScore), value); }
+            get { return BackingStore?.Get<int?>("modelBatteryHealthScore"); }
+            set { BackingStore?.Set("modelBatteryHealthScore", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

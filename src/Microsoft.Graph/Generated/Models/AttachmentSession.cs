@@ -4,22 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AttachmentSession : Entity, IParsable {
-        /// <summary>The content property</summary>
+        /// <summary>The content streams that are uploaded.</summary>
         public byte[] Content {
-            get { return BackingStore?.Get<byte[]>(nameof(Content)); }
-            set { BackingStore?.Set(nameof(Content), value); }
+            get { return BackingStore?.Get<byte[]>("content"); }
+            set { BackingStore?.Set("content", value); }
         }
-        /// <summary>The expirationDateTime property</summary>
+        /// <summary>The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.</summary>
         public DateTimeOffset? ExpirationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpirationDateTime)); }
-            set { BackingStore?.Set(nameof(ExpirationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
+            set { BackingStore?.Set("expirationDateTime", value); }
         }
-        /// <summary>The nextExpectedRanges property</summary>
+        /// <summary>Indicates a single value {start} that represents the location in the file where the next upload should begin.</summary>
         public List<string> NextExpectedRanges {
-            get { return BackingStore?.Get<List<string>>(nameof(NextExpectedRanges)); }
-            set { BackingStore?.Set(nameof(NextExpectedRanges), value); }
+            get { return BackingStore?.Get<List<string>>("nextExpectedRanges"); }
+            set { BackingStore?.Set("nextExpectedRanges", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsCloudManagementDevicesSummary : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Total number of  co-managed devices.</summary>
         public int? CoManagedDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(CoManagedDeviceCount)); }
-            set { BackingStore?.Set(nameof(CoManagedDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("coManagedDeviceCount"); }
+            set { BackingStore?.Set("coManagedDeviceCount", value); }
         }
         /// <summary>The count of intune devices that are not autopilot registerd.</summary>
         public int? IntuneDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(IntuneDeviceCount)); }
-            set { BackingStore?.Set(nameof(IntuneDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("intuneDeviceCount"); }
+            set { BackingStore?.Set("intuneDeviceCount", value); }
         }
         /// <summary>Total count of tenant attach devices.</summary>
         public int? TenantAttachDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(TenantAttachDeviceCount)); }
-            set { BackingStore?.Set(nameof(TenantAttachDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("tenantAttachDeviceCount"); }
+            set { BackingStore?.Set("tenantAttachDeviceCount", value); }
         }
         /// <summary>
         /// Instantiates a new userExperienceAnalyticsCloudManagementDevicesSummary and sets the default values.

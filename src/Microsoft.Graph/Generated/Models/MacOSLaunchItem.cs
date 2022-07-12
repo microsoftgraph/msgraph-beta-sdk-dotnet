@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOSLaunchItem : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Whether or not to hide the item from the Users and Groups List.</summary>
         public bool? Hide {
-            get { return BackingStore?.Get<bool?>(nameof(Hide)); }
-            set { BackingStore?.Set(nameof(Hide), value); }
+            get { return BackingStore?.Get<bool?>("hide"); }
+            set { BackingStore?.Set("hide", value); }
         }
         /// <summary>Path to the launch item.</summary>
         public string PathObject {
-            get { return BackingStore?.Get<string>(nameof(PathObject)); }
-            set { BackingStore?.Set(nameof(PathObject), value); }
+            get { return BackingStore?.Get<string>("path"); }
+            set { BackingStore?.Set("path", value); }
         }
         /// <summary>
         /// Instantiates a new macOSLaunchItem and sets the default values.

@@ -9,30 +9,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class HasPayloadLinkResultItem : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Exception information indicates if check for this item was successful or not.Empty string for no error.</summary>
         public string Error {
-            get { return BackingStore?.Get<string>(nameof(Error)); }
-            set { BackingStore?.Set(nameof(Error), value); }
+            get { return BackingStore?.Get<string>("error"); }
+            set { BackingStore?.Set("error", value); }
         }
         /// <summary>Indicate whether a payload has any link or not.</summary>
         public bool? HasLink {
-            get { return BackingStore?.Get<bool?>(nameof(HasLink)); }
-            set { BackingStore?.Set(nameof(HasLink), value); }
+            get { return BackingStore?.Get<bool?>("hasLink"); }
+            set { BackingStore?.Set("hasLink", value); }
         }
         /// <summary>Key of the Payload, In the format of Guid.</summary>
         public string PayloadId {
-            get { return BackingStore?.Get<string>(nameof(PayloadId)); }
-            set { BackingStore?.Set(nameof(PayloadId), value); }
+            get { return BackingStore?.Get<string>("payloadId"); }
+            set { BackingStore?.Set("payloadId", value); }
         }
         /// <summary>The reason where the link comes from.</summary>
         public List<string> Sources {
-            get { return BackingStore?.Get<List<string>>(nameof(Sources)); }
-            set { BackingStore?.Set(nameof(Sources), value); }
+            get { return BackingStore?.Get<List<string>>("sources"); }
+            set { BackingStore?.Set("sources", value); }
         }
         /// <summary>
         /// Instantiates a new hasPayloadLinkResultItem and sets the default values.

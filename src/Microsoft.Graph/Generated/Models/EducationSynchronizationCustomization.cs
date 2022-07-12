@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationSynchronizationCustomization : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Indicates whether the display name of the resource can be overwritten by the sync.</summary>
         public bool? AllowDisplayNameUpdate {
-            get { return BackingStore?.Get<bool?>(nameof(AllowDisplayNameUpdate)); }
-            set { BackingStore?.Set(nameof(AllowDisplayNameUpdate), value); }
+            get { return BackingStore?.Get<bool?>("allowDisplayNameUpdate"); }
+            set { BackingStore?.Set("allowDisplayNameUpdate", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether synchronization of the parent entity is deferred to a later date.</summary>
         public bool? IsSyncDeferred {
-            get { return BackingStore?.Get<bool?>(nameof(IsSyncDeferred)); }
-            set { BackingStore?.Set(nameof(IsSyncDeferred), value); }
+            get { return BackingStore?.Get<bool?>("isSyncDeferred"); }
+            set { BackingStore?.Set("isSyncDeferred", value); }
         }
         /// <summary>The collection of property names to sync. If set to null, all properties will be synchronized. Does not apply to Student Enrollments or Teacher Rosters</summary>
         public List<string> OptionalPropertiesToSync {
-            get { return BackingStore?.Get<List<string>>(nameof(OptionalPropertiesToSync)); }
-            set { BackingStore?.Set(nameof(OptionalPropertiesToSync), value); }
+            get { return BackingStore?.Get<List<string>>("optionalPropertiesToSync"); }
+            set { BackingStore?.Set("optionalPropertiesToSync", value); }
         }
         /// <summary>The date that the synchronization should start. This value should be set to a future date. If set to null, the resource will be synchronized when the profile setup completes. Only applies to Student Enrollments</summary>
         public DateTimeOffset? SynchronizationStartDate {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(SynchronizationStartDate)); }
-            set { BackingStore?.Set(nameof(SynchronizationStartDate), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("synchronizationStartDate"); }
+            set { BackingStore?.Set("synchronizationStartDate", value); }
         }
         /// <summary>
         /// Instantiates a new educationSynchronizationCustomization and sets the default values.

@@ -4,122 +4,116 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Customer : Entity, IParsable {
         /// <summary>The address property</summary>
         public PostalAddressType Address {
-            get { return BackingStore?.Get<PostalAddressType>(nameof(Address)); }
-            set { BackingStore?.Set(nameof(Address), value); }
+            get { return BackingStore?.Get<PostalAddressType>("address"); }
+            set { BackingStore?.Set("address", value); }
         }
         /// <summary>The blocked property</summary>
         public string Blocked {
-            get { return BackingStore?.Get<string>(nameof(Blocked)); }
-            set { BackingStore?.Set(nameof(Blocked), value); }
+            get { return BackingStore?.Get<string>("blocked"); }
+            set { BackingStore?.Set("blocked", value); }
         }
         /// <summary>The currency property</summary>
         public Microsoft.Graph.Beta.Models.Currency Currency {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Currency>(nameof(Currency)); }
-            set { BackingStore?.Set(nameof(Currency), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Currency>("currency"); }
+            set { BackingStore?.Set("currency", value); }
         }
         /// <summary>The currencyCode property</summary>
         public string CurrencyCode {
-            get { return BackingStore?.Get<string>(nameof(CurrencyCode)); }
-            set { BackingStore?.Set(nameof(CurrencyCode), value); }
+            get { return BackingStore?.Get<string>("currencyCode"); }
+            set { BackingStore?.Set("currencyCode", value); }
         }
         /// <summary>The currencyId property</summary>
         public string CurrencyId {
-            get { return BackingStore?.Get<string>(nameof(CurrencyId)); }
-            set { BackingStore?.Set(nameof(CurrencyId), value); }
+            get { return BackingStore?.Get<string>("currencyId"); }
+            set { BackingStore?.Set("currencyId", value); }
         }
         /// <summary>The displayName property</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The email property</summary>
         public string Email {
-            get { return BackingStore?.Get<string>(nameof(Email)); }
-            set { BackingStore?.Set(nameof(Email), value); }
+            get { return BackingStore?.Get<string>("email"); }
+            set { BackingStore?.Set("email", value); }
         }
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The number property</summary>
         public string Number {
-            get { return BackingStore?.Get<string>(nameof(Number)); }
-            set { BackingStore?.Set(nameof(Number), value); }
+            get { return BackingStore?.Get<string>("number"); }
+            set { BackingStore?.Set("number", value); }
         }
         /// <summary>The paymentMethod property</summary>
         public Microsoft.Graph.Beta.Models.PaymentMethod PaymentMethod {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PaymentMethod>(nameof(PaymentMethod)); }
-            set { BackingStore?.Set(nameof(PaymentMethod), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PaymentMethod>("paymentMethod"); }
+            set { BackingStore?.Set("paymentMethod", value); }
         }
         /// <summary>The paymentMethodId property</summary>
         public string PaymentMethodId {
-            get { return BackingStore?.Get<string>(nameof(PaymentMethodId)); }
-            set { BackingStore?.Set(nameof(PaymentMethodId), value); }
+            get { return BackingStore?.Get<string>("paymentMethodId"); }
+            set { BackingStore?.Set("paymentMethodId", value); }
         }
         /// <summary>The paymentTerm property</summary>
         public Microsoft.Graph.Beta.Models.PaymentTerm PaymentTerm {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PaymentTerm>(nameof(PaymentTerm)); }
-            set { BackingStore?.Set(nameof(PaymentTerm), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PaymentTerm>("paymentTerm"); }
+            set { BackingStore?.Set("paymentTerm", value); }
         }
         /// <summary>The paymentTermsId property</summary>
         public string PaymentTermsId {
-            get { return BackingStore?.Get<string>(nameof(PaymentTermsId)); }
-            set { BackingStore?.Set(nameof(PaymentTermsId), value); }
+            get { return BackingStore?.Get<string>("paymentTermsId"); }
+            set { BackingStore?.Set("paymentTermsId", value); }
         }
         /// <summary>The phoneNumber property</summary>
         public string PhoneNumber {
-            get { return BackingStore?.Get<string>(nameof(PhoneNumber)); }
-            set { BackingStore?.Set(nameof(PhoneNumber), value); }
+            get { return BackingStore?.Get<string>("phoneNumber"); }
+            set { BackingStore?.Set("phoneNumber", value); }
         }
         /// <summary>The picture property</summary>
         public List<Microsoft.Graph.Beta.Models.Picture> Picture {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Picture>>(nameof(Picture)); }
-            set { BackingStore?.Set(nameof(Picture), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Picture>>("picture"); }
+            set { BackingStore?.Set("picture", value); }
         }
         /// <summary>The shipmentMethod property</summary>
         public Microsoft.Graph.Beta.Models.ShipmentMethod ShipmentMethod {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ShipmentMethod>(nameof(ShipmentMethod)); }
-            set { BackingStore?.Set(nameof(ShipmentMethod), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ShipmentMethod>("shipmentMethod"); }
+            set { BackingStore?.Set("shipmentMethod", value); }
         }
         /// <summary>The shipmentMethodId property</summary>
         public string ShipmentMethodId {
-            get { return BackingStore?.Get<string>(nameof(ShipmentMethodId)); }
-            set { BackingStore?.Set(nameof(ShipmentMethodId), value); }
+            get { return BackingStore?.Get<string>("shipmentMethodId"); }
+            set { BackingStore?.Set("shipmentMethodId", value); }
         }
         /// <summary>The taxAreaDisplayName property</summary>
         public string TaxAreaDisplayName {
-            get { return BackingStore?.Get<string>(nameof(TaxAreaDisplayName)); }
-            set { BackingStore?.Set(nameof(TaxAreaDisplayName), value); }
+            get { return BackingStore?.Get<string>("taxAreaDisplayName"); }
+            set { BackingStore?.Set("taxAreaDisplayName", value); }
         }
         /// <summary>The taxAreaId property</summary>
         public string TaxAreaId {
-            get { return BackingStore?.Get<string>(nameof(TaxAreaId)); }
-            set { BackingStore?.Set(nameof(TaxAreaId), value); }
+            get { return BackingStore?.Get<string>("taxAreaId"); }
+            set { BackingStore?.Set("taxAreaId", value); }
         }
         /// <summary>The taxLiable property</summary>
         public bool? TaxLiable {
-            get { return BackingStore?.Get<bool?>(nameof(TaxLiable)); }
-            set { BackingStore?.Set(nameof(TaxLiable), value); }
+            get { return BackingStore?.Get<bool?>("taxLiable"); }
+            set { BackingStore?.Set("taxLiable", value); }
         }
         /// <summary>The taxRegistrationNumber property</summary>
         public string TaxRegistrationNumber {
-            get { return BackingStore?.Get<string>(nameof(TaxRegistrationNumber)); }
-            set { BackingStore?.Set(nameof(TaxRegistrationNumber), value); }
-        }
-        /// <summary>The type property</summary>
-        public string Type {
-            get { return BackingStore?.Get<string>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<string>("taxRegistrationNumber"); }
+            set { BackingStore?.Set("taxRegistrationNumber", value); }
         }
         /// <summary>The website property</summary>
         public string Website {
-            get { return BackingStore?.Get<string>(nameof(Website)); }
-            set { BackingStore?.Set(nameof(Website), value); }
+            get { return BackingStore?.Get<string>("website"); }
+            set { BackingStore?.Set("website", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -155,7 +149,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"taxAreaId", n => { TaxAreaId = n.GetStringValue(); } },
                 {"taxLiable", n => { TaxLiable = n.GetBoolValue(); } },
                 {"taxRegistrationNumber", n => { TaxRegistrationNumber = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetStringValue(); } },
                 {"website", n => { Website = n.GetStringValue(); } },
             };
         }
@@ -187,7 +180,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("taxAreaId", TaxAreaId);
             writer.WriteBoolValue("taxLiable", TaxLiable);
             writer.WriteStringValue("taxRegistrationNumber", TaxRegistrationNumber);
-            writer.WriteStringValue("type", Type);
             writer.WriteStringValue("website", Website);
         }
     }

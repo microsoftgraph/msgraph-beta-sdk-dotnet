@@ -8,40 +8,40 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageResourceAttribute : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Information about how to set the attribute, currently a accessPackageUserDirectoryAttributeStore object type.</summary>
         public AccessPackageResourceAttributeDestination AttributeDestination {
-            get { return BackingStore?.Get<AccessPackageResourceAttributeDestination>(nameof(AttributeDestination)); }
-            set { BackingStore?.Set(nameof(AttributeDestination), value); }
+            get { return BackingStore?.Get<AccessPackageResourceAttributeDestination>("attributeDestination"); }
+            set { BackingStore?.Set("attributeDestination", value); }
         }
         /// <summary>The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension_2b676109c7c74ae2b41549205f1947ed_personalTitle.</summary>
         public string AttributeName {
-            get { return BackingStore?.Get<string>(nameof(AttributeName)); }
-            set { BackingStore?.Set(nameof(AttributeName), value); }
+            get { return BackingStore?.Get<string>("attributeName"); }
+            set { BackingStore?.Set("attributeName", value); }
         }
         /// <summary>Information about how to populate the attribute value when an accessPackageAssignmentRequest is being fulfilled, currently a accessPackageResourceAttributeQuestion object type.</summary>
         public AccessPackageResourceAttributeSource AttributeSource {
-            get { return BackingStore?.Get<AccessPackageResourceAttributeSource>(nameof(AttributeSource)); }
-            set { BackingStore?.Set(nameof(AttributeSource), value); }
+            get { return BackingStore?.Get<AccessPackageResourceAttributeSource>("attributeSource"); }
+            set { BackingStore?.Set("attributeSource", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Unique identifier for the attribute on the access package resource. Read-only.</summary>
         public string Id {
-            get { return BackingStore?.Get<string>(nameof(Id)); }
-            set { BackingStore?.Set(nameof(Id), value); }
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
         }
         /// <summary>Specifies whether or not an existing attribute value can be edited by the requester.</summary>
         public bool? IsEditable {
-            get { return BackingStore?.Get<bool?>(nameof(IsEditable)); }
-            set { BackingStore?.Set(nameof(IsEditable), value); }
+            get { return BackingStore?.Get<bool?>("isEditable"); }
+            set { BackingStore?.Set("isEditable", value); }
         }
         /// <summary>Specifies whether the attribute will remain in the end system after an assignment ends.</summary>
         public bool? IsPersistedOnAssignmentRemoval {
-            get { return BackingStore?.Get<bool?>(nameof(IsPersistedOnAssignmentRemoval)); }
-            set { BackingStore?.Set(nameof(IsPersistedOnAssignmentRemoval), value); }
+            get { return BackingStore?.Get<bool?>("isPersistedOnAssignmentRemoval"); }
+            set { BackingStore?.Set("isPersistedOnAssignmentRemoval", value); }
         }
         /// <summary>
         /// Instantiates a new accessPackageResourceAttribute and sets the default values.

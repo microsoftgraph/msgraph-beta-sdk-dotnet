@@ -10,30 +10,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsKioskAppBase : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The app type. Possible values are: unknown, store, desktop, aumId.</summary>
+        /// <summary>The type of Windows kiosk app.</summary>
         public WindowsKioskAppType? AppType {
-            get { return BackingStore?.Get<WindowsKioskAppType?>(nameof(AppType)); }
-            set { BackingStore?.Set(nameof(AppType), value); }
+            get { return BackingStore?.Get<WindowsKioskAppType?>("appType"); }
+            set { BackingStore?.Set("appType", value); }
         }
         /// <summary>Allow the app to be auto-launched in multi-app kiosk mode</summary>
         public bool? AutoLaunch {
-            get { return BackingStore?.Get<bool?>(nameof(AutoLaunch)); }
-            set { BackingStore?.Set(nameof(AutoLaunch), value); }
+            get { return BackingStore?.Get<bool?>("autoLaunch"); }
+            set { BackingStore?.Set("autoLaunch", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Represents the friendly name of an app</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
-        /// <summary>The app tile size for the start layout. Possible values are: hidden, small, medium, wide, large.</summary>
+        /// <summary>The tile size of Windows app in the start layout.</summary>
         public WindowsAppStartLayoutTileSize? StartLayoutTileSize {
-            get { return BackingStore?.Get<WindowsAppStartLayoutTileSize?>(nameof(StartLayoutTileSize)); }
-            set { BackingStore?.Set(nameof(StartLayoutTileSize), value); }
+            get { return BackingStore?.Get<WindowsAppStartLayoutTileSize?>("startLayoutTileSize"); }
+            set { BackingStore?.Set("startLayoutTileSize", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new windowsKioskAppBase and sets the default values.
@@ -41,6 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
         public WindowsKioskAppBase() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.windowsKioskAppBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -66,6 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"autoLaunch", n => { AutoLaunch = n.GetBoolValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"startLayoutTileSize", n => { StartLayoutTileSize = n.GetEnumValue<WindowsAppStartLayoutTileSize>(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -78,6 +85,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("autoLaunch", AutoLaunch);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<WindowsAppStartLayoutTileSize>("startLayoutTileSize", StartLayoutTileSize);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

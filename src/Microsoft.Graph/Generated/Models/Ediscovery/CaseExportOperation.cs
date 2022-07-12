@@ -7,43 +7,43 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
     public class CaseExportOperation : CaseOperation, IParsable {
         /// <summary>The name of the Azure storage location where the export will be stored. This only applies to exports stored in your own Azure storage location.</summary>
         public string AzureBlobContainer {
-            get { return BackingStore?.Get<string>(nameof(AzureBlobContainer)); }
-            set { BackingStore?.Set(nameof(AzureBlobContainer), value); }
+            get { return BackingStore?.Get<string>("azureBlobContainer"); }
+            set { BackingStore?.Set("azureBlobContainer", value); }
         }
         /// <summary>The SAS token for the Azure storage location.  This only applies to exports stored in your own Azure storage location.</summary>
         public string AzureBlobToken {
-            get { return BackingStore?.Get<string>(nameof(AzureBlobToken)); }
-            set { BackingStore?.Set(nameof(AzureBlobToken), value); }
+            get { return BackingStore?.Get<string>("azureBlobToken"); }
+            set { BackingStore?.Set("azureBlobToken", value); }
         }
         /// <summary>The description provided for the export.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.</summary>
         public Microsoft.Graph.Beta.Models.Ediscovery.ExportOptions? ExportOptions {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.ExportOptions?>(nameof(ExportOptions)); }
-            set { BackingStore?.Set(nameof(ExportOptions), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.ExportOptions?>("exportOptions"); }
+            set { BackingStore?.Set("exportOptions", value); }
         }
         /// <summary>The options provided that specify the structure of the export. For more details, see reviewSet: export. Possible values are: none, directory, pst.</summary>
         public ExportFileStructure? ExportStructure {
-            get { return BackingStore?.Get<ExportFileStructure?>(nameof(ExportStructure)); }
-            set { BackingStore?.Set(nameof(ExportStructure), value); }
+            get { return BackingStore?.Get<ExportFileStructure?>("exportStructure"); }
+            set { BackingStore?.Set("exportStructure", value); }
         }
         /// <summary>The outputFolderId property</summary>
         public string OutputFolderId {
-            get { return BackingStore?.Get<string>(nameof(OutputFolderId)); }
-            set { BackingStore?.Set(nameof(OutputFolderId), value); }
+            get { return BackingStore?.Get<string>("outputFolderId"); }
+            set { BackingStore?.Set("outputFolderId", value); }
         }
         /// <summary>The name provided for the export.</summary>
         public string OutputName {
-            get { return BackingStore?.Get<string>(nameof(OutputName)); }
-            set { BackingStore?.Set(nameof(OutputName), value); }
+            get { return BackingStore?.Get<string>("outputName"); }
+            set { BackingStore?.Set("outputName", value); }
         }
         /// <summary>The review set the content is being exported from.</summary>
         public Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet ReviewSet {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet>(nameof(ReviewSet)); }
-            set { BackingStore?.Set(nameof(ReviewSet), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet>("reviewSet"); }
+            set { BackingStore?.Set("reviewSet", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupMembers : UserSet, IParsable {
         /// <summary>The name of the group in Azure AD. Read only.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The ID of the group in Azure AD.</summary>
         public string Id {
-            get { return BackingStore?.Get<string>(nameof(Id)); }
-            set { BackingStore?.Set(nameof(Id), value); }
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

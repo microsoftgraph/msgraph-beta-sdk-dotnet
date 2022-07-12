@@ -4,17 +4,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AttributeSet : Entity, IParsable {
         /// <summary>Description of the attribute set. Can be up to 128 characters long and include Unicode characters. Can be changed later.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Maximum number of custom security attributes that can be defined in this attribute set. Default value is null. If not specified, the administrator can add up to the maximum of 500 active attributes per tenant. Can be changed later.</summary>
         public int? MaxAttributesPerSet {
-            get { return BackingStore?.Get<int?>(nameof(MaxAttributesPerSet)); }
-            set { BackingStore?.Set(nameof(MaxAttributesPerSet), value); }
+            get { return BackingStore?.Get<int?>("maxAttributesPerSet"); }
+            set { BackingStore?.Set("maxAttributesPerSet", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

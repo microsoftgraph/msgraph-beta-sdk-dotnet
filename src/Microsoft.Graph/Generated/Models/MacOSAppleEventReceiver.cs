@@ -9,30 +9,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOSAppleEventReceiver : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Allow or block this app from receiving Apple events.</summary>
         public bool? Allowed {
-            get { return BackingStore?.Get<bool?>(nameof(Allowed)); }
-            set { BackingStore?.Set(nameof(Allowed), value); }
+            get { return BackingStore?.Get<bool?>("allowed"); }
+            set { BackingStore?.Set("allowed", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Code requirement for the app or binary that receives the Apple Event.</summary>
         public string CodeRequirement {
-            get { return BackingStore?.Get<string>(nameof(CodeRequirement)); }
-            set { BackingStore?.Set(nameof(CodeRequirement), value); }
+            get { return BackingStore?.Get<string>("codeRequirement"); }
+            set { BackingStore?.Set("codeRequirement", value); }
         }
         /// <summary>Bundle ID of the app or file path of the process or executable that receives the Apple Event.</summary>
         public string Identifier {
-            get { return BackingStore?.Get<string>(nameof(Identifier)); }
-            set { BackingStore?.Set(nameof(Identifier), value); }
+            get { return BackingStore?.Get<string>("identifier"); }
+            set { BackingStore?.Set("identifier", value); }
         }
-        /// <summary>Use bundle ID for an app or path for a process or executable that receives the Apple Event. Possible values are: bundleID, path.</summary>
+        /// <summary>Process identifier types for MacOS Privacy Preferences</summary>
         public MacOSProcessIdentifierType? IdentifierType {
-            get { return BackingStore?.Get<MacOSProcessIdentifierType?>(nameof(IdentifierType)); }
-            set { BackingStore?.Set(nameof(IdentifierType), value); }
+            get { return BackingStore?.Get<MacOSProcessIdentifierType?>("identifierType"); }
+            set { BackingStore?.Set("identifierType", value); }
         }
         /// <summary>
         /// Instantiates a new macOSAppleEventReceiver and sets the default values.

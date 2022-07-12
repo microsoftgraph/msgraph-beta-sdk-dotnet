@@ -4,37 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Currency : Entity, IParsable {
         /// <summary>The amountDecimalPlaces property</summary>
         public string AmountDecimalPlaces {
-            get { return BackingStore?.Get<string>(nameof(AmountDecimalPlaces)); }
-            set { BackingStore?.Set(nameof(AmountDecimalPlaces), value); }
+            get { return BackingStore?.Get<string>("amountDecimalPlaces"); }
+            set { BackingStore?.Set("amountDecimalPlaces", value); }
         }
         /// <summary>The amountRoundingPrecision property</summary>
         public decimal? AmountRoundingPrecision {
-            get { return BackingStore?.Get<decimal?>(nameof(AmountRoundingPrecision)); }
-            set { BackingStore?.Set(nameof(AmountRoundingPrecision), value); }
+            get { return BackingStore?.Get<decimal?>("amountRoundingPrecision"); }
+            set { BackingStore?.Set("amountRoundingPrecision", value); }
         }
         /// <summary>The code property</summary>
         public string Code {
-            get { return BackingStore?.Get<string>(nameof(Code)); }
-            set { BackingStore?.Set(nameof(Code), value); }
+            get { return BackingStore?.Get<string>("code"); }
+            set { BackingStore?.Set("code", value); }
         }
         /// <summary>The displayName property</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The symbol property</summary>
         public string Symbol {
-            get { return BackingStore?.Get<string>(nameof(Symbol)); }
-            set { BackingStore?.Set(nameof(Symbol), value); }
+            get { return BackingStore?.Get<string>("symbol"); }
+            set { BackingStore?.Set("symbol", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

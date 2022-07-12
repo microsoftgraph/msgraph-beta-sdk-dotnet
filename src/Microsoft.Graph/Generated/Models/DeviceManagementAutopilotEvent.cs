@@ -8,138 +8,138 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementAutopilotEvent : Entity, IParsable {
         /// <summary>Time spent in user ESP.</summary>
         public TimeSpan? AccountSetupDuration {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(AccountSetupDuration)); }
-            set { BackingStore?.Set(nameof(AccountSetupDuration), value); }
+            get { return BackingStore?.Get<TimeSpan?>("accountSetupDuration"); }
+            set { BackingStore?.Set("accountSetupDuration", value); }
         }
-        /// <summary>Deployment status for the enrollment status page account setup phase. Possible values are: unknown, success, inProgress, failure, successWithTimeout, notAttempted, disabled.</summary>
+        /// <summary>The accountSetupStatus property</summary>
         public WindowsAutopilotDeploymentState? AccountSetupStatus {
-            get { return BackingStore?.Get<WindowsAutopilotDeploymentState?>(nameof(AccountSetupStatus)); }
-            set { BackingStore?.Set(nameof(AccountSetupStatus), value); }
+            get { return BackingStore?.Get<WindowsAutopilotDeploymentState?>("accountSetupStatus"); }
+            set { BackingStore?.Set("accountSetupStatus", value); }
         }
         /// <summary>Autopilot deployment duration including enrollment.</summary>
         public TimeSpan? DeploymentDuration {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(DeploymentDuration)); }
-            set { BackingStore?.Set(nameof(DeploymentDuration), value); }
+            get { return BackingStore?.Get<TimeSpan?>("deploymentDuration"); }
+            set { BackingStore?.Set("deploymentDuration", value); }
         }
         /// <summary>Deployment end time.</summary>
         public DateTimeOffset? DeploymentEndDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DeploymentEndDateTime)); }
-            set { BackingStore?.Set(nameof(DeploymentEndDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("deploymentEndDateTime"); }
+            set { BackingStore?.Set("deploymentEndDateTime", value); }
         }
         /// <summary>Deployment start time.</summary>
         public DateTimeOffset? DeploymentStartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DeploymentStartDateTime)); }
-            set { BackingStore?.Set(nameof(DeploymentStartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("deploymentStartDateTime"); }
+            set { BackingStore?.Set("deploymentStartDateTime", value); }
         }
-        /// <summary>Deployment state like Success, Failure, InProgress, SuccessWithTimeout. Possible values are: unknown, success, inProgress, failure, successWithTimeout, notAttempted, disabled.</summary>
+        /// <summary>The deploymentState property</summary>
         public WindowsAutopilotDeploymentState? DeploymentState {
-            get { return BackingStore?.Get<WindowsAutopilotDeploymentState?>(nameof(DeploymentState)); }
-            set { BackingStore?.Set(nameof(DeploymentState), value); }
+            get { return BackingStore?.Get<WindowsAutopilotDeploymentState?>("deploymentState"); }
+            set { BackingStore?.Set("deploymentState", value); }
         }
         /// <summary>Total deployment duration from enrollment to Desktop screen.</summary>
         public TimeSpan? DeploymentTotalDuration {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(DeploymentTotalDuration)); }
-            set { BackingStore?.Set(nameof(DeploymentTotalDuration), value); }
+            get { return BackingStore?.Get<TimeSpan?>("deploymentTotalDuration"); }
+            set { BackingStore?.Set("deploymentTotalDuration", value); }
         }
         /// <summary>Device id associated with the object</summary>
         public string DeviceId {
-            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
-            set { BackingStore?.Set(nameof(DeviceId), value); }
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>Time spent in device enrollment.</summary>
         public TimeSpan? DevicePreparationDuration {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(DevicePreparationDuration)); }
-            set { BackingStore?.Set(nameof(DevicePreparationDuration), value); }
+            get { return BackingStore?.Get<TimeSpan?>("devicePreparationDuration"); }
+            set { BackingStore?.Set("devicePreparationDuration", value); }
         }
         /// <summary>Device registration date.</summary>
         public DateTimeOffset? DeviceRegisteredDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DeviceRegisteredDateTime)); }
-            set { BackingStore?.Set(nameof(DeviceRegisteredDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("deviceRegisteredDateTime"); }
+            set { BackingStore?.Set("deviceRegisteredDateTime", value); }
         }
         /// <summary>Device serial number.</summary>
         public string DeviceSerialNumber {
-            get { return BackingStore?.Get<string>(nameof(DeviceSerialNumber)); }
-            set { BackingStore?.Set(nameof(DeviceSerialNumber), value); }
+            get { return BackingStore?.Get<string>("deviceSerialNumber"); }
+            set { BackingStore?.Set("deviceSerialNumber", value); }
         }
         /// <summary>Time spent in device ESP.</summary>
         public TimeSpan? DeviceSetupDuration {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(DeviceSetupDuration)); }
-            set { BackingStore?.Set(nameof(DeviceSetupDuration), value); }
+            get { return BackingStore?.Get<TimeSpan?>("deviceSetupDuration"); }
+            set { BackingStore?.Set("deviceSetupDuration", value); }
         }
-        /// <summary>Deployment status for the enrollment status page device setup phase. Possible values are: unknown, success, inProgress, failure, successWithTimeout, notAttempted, disabled.</summary>
+        /// <summary>The deviceSetupStatus property</summary>
         public WindowsAutopilotDeploymentState? DeviceSetupStatus {
-            get { return BackingStore?.Get<WindowsAutopilotDeploymentState?>(nameof(DeviceSetupStatus)); }
-            set { BackingStore?.Set(nameof(DeviceSetupStatus), value); }
+            get { return BackingStore?.Get<WindowsAutopilotDeploymentState?>("deviceSetupStatus"); }
+            set { BackingStore?.Set("deviceSetupStatus", value); }
         }
         /// <summary>Enrollment failure details.</summary>
         public string EnrollmentFailureDetails {
-            get { return BackingStore?.Get<string>(nameof(EnrollmentFailureDetails)); }
-            set { BackingStore?.Set(nameof(EnrollmentFailureDetails), value); }
+            get { return BackingStore?.Get<string>("enrollmentFailureDetails"); }
+            set { BackingStore?.Set("enrollmentFailureDetails", value); }
         }
         /// <summary>Device enrollment start date.</summary>
         public DateTimeOffset? EnrollmentStartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EnrollmentStartDateTime)); }
-            set { BackingStore?.Set(nameof(EnrollmentStartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("enrollmentStartDateTime"); }
+            set { BackingStore?.Set("enrollmentStartDateTime", value); }
         }
-        /// <summary>Enrollment state like Enrolled, Failed. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.</summary>
+        /// <summary>The enrollmentState property</summary>
         public Microsoft.Graph.Beta.Models.EnrollmentState? EnrollmentState {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EnrollmentState?>(nameof(EnrollmentState)); }
-            set { BackingStore?.Set(nameof(EnrollmentState), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EnrollmentState?>("enrollmentState"); }
+            set { BackingStore?.Set("enrollmentState", value); }
         }
-        /// <summary>Enrollment type. Possible values are: unknown, azureADJoinedWithAutopilotProfile, offlineDomainJoined, azureADJoinedUsingDeviceAuthWithAutopilotProfile, azureADJoinedUsingDeviceAuthWithoutAutopilotProfile, azureADJoinedWithOfflineAutopilotProfile, azureADJoinedWithWhiteGlove, offlineDomainJoinedWithWhiteGlove, offlineDomainJoinedWithOfflineAutopilotProfile.</summary>
+        /// <summary>The enrollmentType property</summary>
         public WindowsAutopilotEnrollmentType? EnrollmentType {
-            get { return BackingStore?.Get<WindowsAutopilotEnrollmentType?>(nameof(EnrollmentType)); }
-            set { BackingStore?.Set(nameof(EnrollmentType), value); }
+            get { return BackingStore?.Get<WindowsAutopilotEnrollmentType?>("enrollmentType"); }
+            set { BackingStore?.Set("enrollmentType", value); }
         }
         /// <summary>Time when the event occurred .</summary>
         public DateTimeOffset? EventDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EventDateTime)); }
-            set { BackingStore?.Set(nameof(EventDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("eventDateTime"); }
+            set { BackingStore?.Set("eventDateTime", value); }
         }
         /// <summary>Managed device name.</summary>
         public string ManagedDeviceName {
-            get { return BackingStore?.Get<string>(nameof(ManagedDeviceName)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceName), value); }
+            get { return BackingStore?.Get<string>("managedDeviceName"); }
+            set { BackingStore?.Set("managedDeviceName", value); }
         }
         /// <summary>Device operating system version.</summary>
         public string OsVersion {
-            get { return BackingStore?.Get<string>(nameof(OsVersion)); }
-            set { BackingStore?.Set(nameof(OsVersion), value); }
+            get { return BackingStore?.Get<string>("osVersion"); }
+            set { BackingStore?.Set("osVersion", value); }
         }
         /// <summary>Policy and application status details for this device.</summary>
         public List<DeviceManagementAutopilotPolicyStatusDetail> PolicyStatusDetails {
-            get { return BackingStore?.Get<List<DeviceManagementAutopilotPolicyStatusDetail>>(nameof(PolicyStatusDetails)); }
-            set { BackingStore?.Set(nameof(PolicyStatusDetails), value); }
+            get { return BackingStore?.Get<List<DeviceManagementAutopilotPolicyStatusDetail>>("policyStatusDetails"); }
+            set { BackingStore?.Set("policyStatusDetails", value); }
         }
         /// <summary>Count of applications targeted.</summary>
         public int? TargetedAppCount {
-            get { return BackingStore?.Get<int?>(nameof(TargetedAppCount)); }
-            set { BackingStore?.Set(nameof(TargetedAppCount), value); }
+            get { return BackingStore?.Get<int?>("targetedAppCount"); }
+            set { BackingStore?.Set("targetedAppCount", value); }
         }
         /// <summary>Count of policies targeted.</summary>
         public int? TargetedPolicyCount {
-            get { return BackingStore?.Get<int?>(nameof(TargetedPolicyCount)); }
-            set { BackingStore?.Set(nameof(TargetedPolicyCount), value); }
+            get { return BackingStore?.Get<int?>("targetedPolicyCount"); }
+            set { BackingStore?.Set("targetedPolicyCount", value); }
         }
         /// <summary>User principal name used to enroll the device.</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>Enrollment Status Page profile name</summary>
         public string Windows10EnrollmentCompletionPageConfigurationDisplayName {
-            get { return BackingStore?.Get<string>(nameof(Windows10EnrollmentCompletionPageConfigurationDisplayName)); }
-            set { BackingStore?.Set(nameof(Windows10EnrollmentCompletionPageConfigurationDisplayName), value); }
+            get { return BackingStore?.Get<string>("windows10EnrollmentCompletionPageConfigurationDisplayName"); }
+            set { BackingStore?.Set("windows10EnrollmentCompletionPageConfigurationDisplayName", value); }
         }
         /// <summary>Enrollment Status Page profile ID</summary>
         public string Windows10EnrollmentCompletionPageConfigurationId {
-            get { return BackingStore?.Get<string>(nameof(Windows10EnrollmentCompletionPageConfigurationId)); }
-            set { BackingStore?.Set(nameof(Windows10EnrollmentCompletionPageConfigurationId), value); }
+            get { return BackingStore?.Get<string>("windows10EnrollmentCompletionPageConfigurationId"); }
+            set { BackingStore?.Set("windows10EnrollmentCompletionPageConfigurationId", value); }
         }
         /// <summary>Autopilot profile name.</summary>
         public string WindowsAutopilotDeploymentProfileDisplayName {
-            get { return BackingStore?.Get<string>(nameof(WindowsAutopilotDeploymentProfileDisplayName)); }
-            set { BackingStore?.Set(nameof(WindowsAutopilotDeploymentProfileDisplayName), value); }
+            get { return BackingStore?.Get<string>("windowsAutopilotDeploymentProfileDisplayName"); }
+            set { BackingStore?.Set("windowsAutopilotDeploymentProfileDisplayName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

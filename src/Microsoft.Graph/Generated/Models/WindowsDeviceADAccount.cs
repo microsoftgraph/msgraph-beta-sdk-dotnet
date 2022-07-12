@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsDeviceADAccount : WindowsDeviceAccount, IParsable {
         /// <summary>Not yet documented</summary>
         public string DomainName {
-            get { return BackingStore?.Get<string>(nameof(DomainName)); }
-            set { BackingStore?.Set(nameof(DomainName), value); }
+            get { return BackingStore?.Get<string>("domainName"); }
+            set { BackingStore?.Set("domainName", value); }
         }
         /// <summary>Not yet documented</summary>
         public string UserName {
-            get { return BackingStore?.Get<string>(nameof(UserName)); }
-            set { BackingStore?.Set(nameof(UserName), value); }
+            get { return BackingStore?.Get<string>("userName"); }
+            set { BackingStore?.Set("userName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class ReferencedObject : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Name of the referenced object. Must match one of the objects in the directory definition.</summary>
         public string ReferencedObjectName {
-            get { return BackingStore?.Get<string>(nameof(ReferencedObjectName)); }
-            set { BackingStore?.Set(nameof(ReferencedObjectName), value); }
+            get { return BackingStore?.Get<string>("referencedObjectName"); }
+            set { BackingStore?.Set("referencedObjectName", value); }
         }
         /// <summary>Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.</summary>
         public string ReferencedProperty {
-            get { return BackingStore?.Get<string>(nameof(ReferencedProperty)); }
-            set { BackingStore?.Set(nameof(ReferencedProperty), value); }
+            get { return BackingStore?.Get<string>("referencedProperty"); }
+            set { BackingStore?.Set("referencedProperty", value); }
         }
         /// <summary>
         /// Instantiates a new referencedObject and sets the default values.

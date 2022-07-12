@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationSettingOccurrence : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Maximum times setting can be set on device.</summary>
         public int? MaxDeviceOccurrence {
-            get { return BackingStore?.Get<int?>(nameof(MaxDeviceOccurrence)); }
-            set { BackingStore?.Set(nameof(MaxDeviceOccurrence), value); }
+            get { return BackingStore?.Get<int?>("maxDeviceOccurrence"); }
+            set { BackingStore?.Set("maxDeviceOccurrence", value); }
         }
         /// <summary>Minimum times setting can be set on device. A MinDeviceOccurrence of 0 means setting is optional</summary>
         public int? MinDeviceOccurrence {
-            get { return BackingStore?.Get<int?>(nameof(MinDeviceOccurrence)); }
-            set { BackingStore?.Set(nameof(MinDeviceOccurrence), value); }
+            get { return BackingStore?.Get<int?>("minDeviceOccurrence"); }
+            set { BackingStore?.Set("minDeviceOccurrence", value); }
         }
         /// <summary>
         /// Instantiates a new deviceManagementConfigurationSettingOccurrence and sets the default values.

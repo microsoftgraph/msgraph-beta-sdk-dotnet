@@ -7,33 +7,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class OpenIdConnectProvider : IdentityProvider, IParsable {
         /// <summary>After the OIDC provider sends an ID token back to Azure AD, Azure AD needs to be able to map the claims from the received token to the claims that Azure AD recognizes and uses. This complex type captures that mapping. It is a required property.</summary>
         public Microsoft.Graph.Beta.Models.ClaimsMapping ClaimsMapping {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ClaimsMapping>(nameof(ClaimsMapping)); }
-            set { BackingStore?.Set(nameof(ClaimsMapping), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ClaimsMapping>("claimsMapping"); }
+            set { BackingStore?.Set("claimsMapping", value); }
         }
         /// <summary>The domain hint can be used to skip directly to the sign-in page of the specified identity provider, instead of having the user make a selection among the list of available identity providers.</summary>
         public string DomainHint {
-            get { return BackingStore?.Get<string>(nameof(DomainHint)); }
-            set { BackingStore?.Set(nameof(DomainHint), value); }
+            get { return BackingStore?.Get<string>("domainHint"); }
+            set { BackingStore?.Set("domainHint", value); }
         }
         /// <summary>The URL for the metadata document of the OpenID Connect identity provider. Every OpenID Connect identity provider describes a metadata document that contains most of the information required to perform sign-in. This includes information such as the URLs to use and the location of the service&apos;s public signing keys. The OpenID Connect metadata document is always located at an endpoint that ends in .well-known/openid-configuration . For the OpenID Connect identity provider you are looking to add, you will need to provide the metadata URL. It is a required property and is read only after creation.</summary>
         public string MetadataUrl {
-            get { return BackingStore?.Get<string>(nameof(MetadataUrl)); }
-            set { BackingStore?.Set(nameof(MetadataUrl), value); }
+            get { return BackingStore?.Get<string>("metadataUrl"); }
+            set { BackingStore?.Set("metadataUrl", value); }
         }
-        /// <summary>The response mode defines the method that should be used to send the data back from the custom identity provider to Azure AD B2C. The following response modes can be used: form_post, query. query response mode means the code or token is returned as a query parameter. form_post response mode is recommended for the best security. The response is transmitted via the HTTP POST method, with the code or token being encoded in the body using the application/x-www-form-urlencoded format. It is a required property.</summary>
+        /// <summary>The responseMode property</summary>
         public OpenIdConnectResponseMode? ResponseMode {
-            get { return BackingStore?.Get<OpenIdConnectResponseMode?>(nameof(ResponseMode)); }
-            set { BackingStore?.Set(nameof(ResponseMode), value); }
+            get { return BackingStore?.Get<OpenIdConnectResponseMode?>("responseMode"); }
+            set { BackingStore?.Set("responseMode", value); }
         }
-        /// <summary>response type describes what kind of information is sent back in the initial call to the authorization_endpoint of the custom identity provider. The following response types can be used: code , id_token , token. It is a required property.</summary>
+        /// <summary>The responseType property</summary>
         public OpenIdConnectResponseTypes? ResponseType {
-            get { return BackingStore?.Get<OpenIdConnectResponseTypes?>(nameof(ResponseType)); }
-            set { BackingStore?.Set(nameof(ResponseType), value); }
+            get { return BackingStore?.Get<OpenIdConnectResponseTypes?>("responseType"); }
+            set { BackingStore?.Set("responseType", value); }
         }
         /// <summary>Scope defines the information and permissions you are looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users are not able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended separated by space. For more details about the scope limitations see RFC6749 Section 3.3. It is a required property.</summary>
         public string Scope {
-            get { return BackingStore?.Get<string>(nameof(Scope)); }
-            set { BackingStore?.Set(nameof(Scope), value); }
+            get { return BackingStore?.Get<string>("scope"); }
+            set { BackingStore?.Set("scope", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsAppIdentifier : MobileAppIdentifier, IParsable {
         /// <summary>The identifier for an app, as specified in the app store.</summary>
         public string WindowsAppId {
-            get { return BackingStore?.Get<string>(nameof(WindowsAppId)); }
-            set { BackingStore?.Set(nameof(WindowsAppId), value); }
+            get { return BackingStore?.Get<string>("windowsAppId"); }
+            set { BackingStore?.Set("windowsAppId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

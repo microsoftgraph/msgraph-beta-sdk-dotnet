@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceOwnerUserFacingMessage : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The default message displayed if the user&apos;s locale doesn&apos;t match with any of the localized messages</summary>
         public string DefaultMessage {
-            get { return BackingStore?.Get<string>(nameof(DefaultMessage)); }
-            set { BackingStore?.Set(nameof(DefaultMessage), value); }
+            get { return BackingStore?.Get<string>("defaultMessage"); }
+            set { BackingStore?.Set("defaultMessage", value); }
         }
         /// <summary>The list of &lt;locale, message&gt; pairs. This collection can contain a maximum of 500 elements.</summary>
         public List<KeyValuePair> LocalizedMessages {
-            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(LocalizedMessages)); }
-            set { BackingStore?.Set(nameof(LocalizedMessages), value); }
+            get { return BackingStore?.Get<List<KeyValuePair>>("localizedMessages"); }
+            set { BackingStore?.Set("localizedMessages", value); }
         }
         /// <summary>
         /// Instantiates a new androidDeviceOwnerUserFacingMessage and sets the default values.

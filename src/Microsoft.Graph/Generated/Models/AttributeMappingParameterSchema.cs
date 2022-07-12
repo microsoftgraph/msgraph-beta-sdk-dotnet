@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class AttributeMappingParameterSchema : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The given parameter can be provided multiple times (for example, multiple input strings in the Concatenate(string,string,...) function).</summary>
         public bool? AllowMultipleOccurrences {
-            get { return BackingStore?.Get<bool?>(nameof(AllowMultipleOccurrences)); }
-            set { BackingStore?.Set(nameof(AllowMultipleOccurrences), value); }
+            get { return BackingStore?.Get<bool?>("allowMultipleOccurrences"); }
+            set { BackingStore?.Set("allowMultipleOccurrences", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Parameter name.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>true if the parameter is required; otherwise false.</summary>
         public bool? Required {
-            get { return BackingStore?.Get<bool?>(nameof(Required)); }
-            set { BackingStore?.Set(nameof(Required), value); }
+            get { return BackingStore?.Get<bool?>("required"); }
+            set { BackingStore?.Set("required", value); }
         }
-        /// <summary>Possible values are: Boolean, Binary, Reference, Integer, String. Default is String.</summary>
+        /// <summary>The type property</summary>
         public AttributeType? Type {
-            get { return BackingStore?.Get<AttributeType?>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<AttributeType?>("type"); }
+            set { BackingStore?.Set("type", value); }
         }
         /// <summary>
         /// Instantiates a new attributeMappingParameterSchema and sets the default values.

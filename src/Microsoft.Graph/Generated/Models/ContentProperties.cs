@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class ContentProperties : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The extensions property</summary>
         public List<string> Extensions {
-            get { return BackingStore?.Get<List<string>>(nameof(Extensions)); }
-            set { BackingStore?.Set(nameof(Extensions), value); }
+            get { return BackingStore?.Get<List<string>>("extensions"); }
+            set { BackingStore?.Set("extensions", value); }
         }
         /// <summary>The lastModifiedBy property</summary>
         public string LastModifiedBy {
-            get { return BackingStore?.Get<string>(nameof(LastModifiedBy)); }
-            set { BackingStore?.Set(nameof(LastModifiedBy), value); }
+            get { return BackingStore?.Get<string>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
         }
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The metadata property</summary>
         public ContentMetadata Metadata {
-            get { return BackingStore?.Get<ContentMetadata>(nameof(Metadata)); }
-            set { BackingStore?.Set(nameof(Metadata), value); }
+            get { return BackingStore?.Get<ContentMetadata>("metadata"); }
+            set { BackingStore?.Set("metadata", value); }
         }
         /// <summary>
         /// Instantiates a new contentProperties and sets the default values.

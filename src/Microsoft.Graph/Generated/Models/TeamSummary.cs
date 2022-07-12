@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamSummary : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Count of guests in a team.</summary>
         public int? GuestsCount {
-            get { return BackingStore?.Get<int?>(nameof(GuestsCount)); }
-            set { BackingStore?.Set(nameof(GuestsCount), value); }
+            get { return BackingStore?.Get<int?>("guestsCount"); }
+            set { BackingStore?.Set("guestsCount", value); }
         }
         /// <summary>Count of members in a team.</summary>
         public int? MembersCount {
-            get { return BackingStore?.Get<int?>(nameof(MembersCount)); }
-            set { BackingStore?.Set(nameof(MembersCount), value); }
+            get { return BackingStore?.Get<int?>("membersCount"); }
+            set { BackingStore?.Set("membersCount", value); }
         }
         /// <summary>Count of owners in a team.</summary>
         public int? OwnersCount {
-            get { return BackingStore?.Get<int?>(nameof(OwnersCount)); }
-            set { BackingStore?.Set(nameof(OwnersCount), value); }
+            get { return BackingStore?.Get<int?>("ownersCount"); }
+            set { BackingStore?.Set("ownersCount", value); }
         }
         /// <summary>
         /// Instantiates a new teamSummary and sets the default values.

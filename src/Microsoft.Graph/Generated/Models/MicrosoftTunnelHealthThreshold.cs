@@ -8,23 +8,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class MicrosoftTunnelHealthThreshold : Entity, IParsable {
         /// <summary>The default threshold for being healthy</summary>
         public long? DefaultHealthyThreshold {
-            get { return BackingStore?.Get<long?>(nameof(DefaultHealthyThreshold)); }
-            set { BackingStore?.Set(nameof(DefaultHealthyThreshold), value); }
+            get { return BackingStore?.Get<long?>("defaultHealthyThreshold"); }
+            set { BackingStore?.Set("defaultHealthyThreshold", value); }
         }
         /// <summary>The default threshold for being unhealthy</summary>
         public long? DefaultUnhealthyThreshold {
-            get { return BackingStore?.Get<long?>(nameof(DefaultUnhealthyThreshold)); }
-            set { BackingStore?.Set(nameof(DefaultUnhealthyThreshold), value); }
+            get { return BackingStore?.Get<long?>("defaultUnhealthyThreshold"); }
+            set { BackingStore?.Set("defaultUnhealthyThreshold", value); }
         }
         /// <summary>The threshold for being healthy</summary>
         public long? HealthyThreshold {
-            get { return BackingStore?.Get<long?>(nameof(HealthyThreshold)); }
-            set { BackingStore?.Set(nameof(HealthyThreshold), value); }
+            get { return BackingStore?.Get<long?>("healthyThreshold"); }
+            set { BackingStore?.Set("healthyThreshold", value); }
         }
         /// <summary>The threshold for being unhealthy</summary>
         public long? UnhealthyThreshold {
-            get { return BackingStore?.Get<long?>(nameof(UnhealthyThreshold)); }
-            set { BackingStore?.Set(nameof(UnhealthyThreshold), value); }
+            get { return BackingStore?.Get<long?>("unhealthyThreshold"); }
+            set { BackingStore?.Set("unhealthyThreshold", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

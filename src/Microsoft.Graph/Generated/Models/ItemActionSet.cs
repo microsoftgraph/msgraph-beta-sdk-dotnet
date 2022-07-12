@@ -8,60 +8,60 @@ namespace Microsoft.Graph.Beta.Models {
     public class ItemActionSet : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A comment was added to the item.</summary>
         public CommentAction Comment {
-            get { return BackingStore?.Get<CommentAction>(nameof(Comment)); }
-            set { BackingStore?.Set(nameof(Comment), value); }
+            get { return BackingStore?.Get<CommentAction>("comment"); }
+            set { BackingStore?.Set("comment", value); }
         }
         /// <summary>An item was created.</summary>
         public CreateAction Create {
-            get { return BackingStore?.Get<CreateAction>(nameof(Create)); }
-            set { BackingStore?.Set(nameof(Create), value); }
+            get { return BackingStore?.Get<CreateAction>("create"); }
+            set { BackingStore?.Set("create", value); }
         }
         /// <summary>An item was deleted.</summary>
         public DeleteAction Delete {
-            get { return BackingStore?.Get<DeleteAction>(nameof(Delete)); }
-            set { BackingStore?.Set(nameof(Delete), value); }
+            get { return BackingStore?.Get<DeleteAction>("delete"); }
+            set { BackingStore?.Set("delete", value); }
         }
         /// <summary>An item was edited.</summary>
         public EditAction Edit {
-            get { return BackingStore?.Get<EditAction>(nameof(Edit)); }
-            set { BackingStore?.Set(nameof(Edit), value); }
+            get { return BackingStore?.Get<EditAction>("edit"); }
+            set { BackingStore?.Set("edit", value); }
         }
         /// <summary>A user was mentioned in the item.</summary>
         public MentionAction Mention {
-            get { return BackingStore?.Get<MentionAction>(nameof(Mention)); }
-            set { BackingStore?.Set(nameof(Mention), value); }
+            get { return BackingStore?.Get<MentionAction>("mention"); }
+            set { BackingStore?.Set("mention", value); }
         }
         /// <summary>An item was moved.</summary>
         public MoveAction Move {
-            get { return BackingStore?.Get<MoveAction>(nameof(Move)); }
-            set { BackingStore?.Set(nameof(Move), value); }
+            get { return BackingStore?.Get<MoveAction>("move"); }
+            set { BackingStore?.Set("move", value); }
         }
         /// <summary>An item was renamed.</summary>
         public RenameAction Rename {
-            get { return BackingStore?.Get<RenameAction>(nameof(Rename)); }
-            set { BackingStore?.Set(nameof(Rename), value); }
+            get { return BackingStore?.Get<RenameAction>("rename"); }
+            set { BackingStore?.Set("rename", value); }
         }
         /// <summary>An item was restored.</summary>
         public RestoreAction Restore {
-            get { return BackingStore?.Get<RestoreAction>(nameof(Restore)); }
-            set { BackingStore?.Set(nameof(Restore), value); }
+            get { return BackingStore?.Get<RestoreAction>("restore"); }
+            set { BackingStore?.Set("restore", value); }
         }
         /// <summary>An item was shared.</summary>
         public ShareAction Share {
-            get { return BackingStore?.Get<ShareAction>(nameof(Share)); }
-            set { BackingStore?.Set(nameof(Share), value); }
+            get { return BackingStore?.Get<ShareAction>("share"); }
+            set { BackingStore?.Set("share", value); }
         }
         /// <summary>An item was versioned.</summary>
         public VersionAction Version {
-            get { return BackingStore?.Get<VersionAction>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<VersionAction>("version"); }
+            set { BackingStore?.Set("version", value); }
         }
         /// <summary>
         /// Instantiates a new itemActionSet and sets the default values.

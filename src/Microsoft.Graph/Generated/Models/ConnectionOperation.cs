@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class ConnectionOperation : Entity, IParsable {
         /// <summary>The error property</summary>
         public PublicError Error {
-            get { return BackingStore?.Get<PublicError>(nameof(Error)); }
-            set { BackingStore?.Set(nameof(Error), value); }
+            get { return BackingStore?.Get<PublicError>("error"); }
+            set { BackingStore?.Set("error", value); }
         }
         /// <summary>The status property</summary>
         public ConnectionOperationStatus? Status {
-            get { return BackingStore?.Get<ConnectionOperationStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<ConnectionOperationStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

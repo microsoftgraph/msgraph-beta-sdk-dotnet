@@ -8,43 +8,43 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId : Entity, IParsable {
         /// <summary>The number of crashes for the app. Valid values -2147483648 to 2147483647</summary>
         public int? AppCrashCount {
-            get { return BackingStore?.Get<int?>(nameof(AppCrashCount)); }
-            set { BackingStore?.Set(nameof(AppCrashCount), value); }
+            get { return BackingStore?.Get<int?>("appCrashCount"); }
+            set { BackingStore?.Set("appCrashCount", value); }
         }
         /// <summary>The friendly name of the application.</summary>
         public string AppDisplayName {
-            get { return BackingStore?.Get<string>(nameof(AppDisplayName)); }
-            set { BackingStore?.Set(nameof(AppDisplayName), value); }
+            get { return BackingStore?.Get<string>("appDisplayName"); }
+            set { BackingStore?.Set("appDisplayName", value); }
         }
         /// <summary>The name of the application.</summary>
         public string AppName {
-            get { return BackingStore?.Get<string>(nameof(AppName)); }
-            set { BackingStore?.Set(nameof(AppName), value); }
+            get { return BackingStore?.Get<string>("appName"); }
+            set { BackingStore?.Set("appName", value); }
         }
         /// <summary>The publisher of the application.</summary>
         public string AppPublisher {
-            get { return BackingStore?.Get<string>(nameof(AppPublisher)); }
-            set { BackingStore?.Set(nameof(AppPublisher), value); }
+            get { return BackingStore?.Get<string>("appPublisher"); }
+            set { BackingStore?.Set("appPublisher", value); }
         }
         /// <summary>The version of the application.</summary>
         public string AppVersion {
-            get { return BackingStore?.Get<string>(nameof(AppVersion)); }
-            set { BackingStore?.Set(nameof(AppVersion), value); }
+            get { return BackingStore?.Get<string>("appVersion"); }
+            set { BackingStore?.Set("appVersion", value); }
         }
         /// <summary>The name of the device.</summary>
         public string DeviceDisplayName {
-            get { return BackingStore?.Get<string>(nameof(DeviceDisplayName)); }
-            set { BackingStore?.Set(nameof(DeviceDisplayName), value); }
+            get { return BackingStore?.Get<string>("deviceDisplayName"); }
+            set { BackingStore?.Set("deviceDisplayName", value); }
         }
         /// <summary>The id of the device.</summary>
         public string DeviceId {
-            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
-            set { BackingStore?.Set(nameof(DeviceId), value); }
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>The date and time when the statistics were last computed.</summary>
         public DateTimeOffset? ProcessedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ProcessedDateTime)); }
-            set { BackingStore?.Set(nameof(ProcessedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("processedDateTime"); }
+            set { BackingStore?.Set("processedDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

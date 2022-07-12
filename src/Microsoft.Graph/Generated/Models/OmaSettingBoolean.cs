@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class OmaSettingBoolean : OmaSetting, IParsable {
         /// <summary>Value.</summary>
         public bool? Value {
-            get { return BackingStore?.Get<bool?>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<bool?>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

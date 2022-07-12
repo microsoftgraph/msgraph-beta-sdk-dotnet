@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class ConfigurationManagerClientHealthState : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Error code for failed state.</summary>
         public int? ErrorCode {
-            get { return BackingStore?.Get<int?>(nameof(ErrorCode)); }
-            set { BackingStore?.Set(nameof(ErrorCode), value); }
+            get { return BackingStore?.Get<int?>("errorCode"); }
+            set { BackingStore?.Set("errorCode", value); }
         }
         /// <summary>Datetime for last sync with configuration manager management point.</summary>
         public DateTimeOffset? LastSyncDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSyncDateTime)); }
-            set { BackingStore?.Set(nameof(LastSyncDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
+            set { BackingStore?.Set("lastSyncDateTime", value); }
         }
-        /// <summary>Current configuration manager client state. Possible values are: unknown, installed, healthy, installFailed, updateFailed, communicationError.</summary>
+        /// <summary>Configuration manager client state</summary>
         public ConfigurationManagerClientState? State {
-            get { return BackingStore?.Get<ConfigurationManagerClientState?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<ConfigurationManagerClientState?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Instantiates a new configurationManagerClientHealthState and sets the default values.

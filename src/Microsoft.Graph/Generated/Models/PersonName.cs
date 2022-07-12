@@ -7,58 +7,58 @@ namespace Microsoft.Graph.Beta.Models {
     public class PersonName : ItemFacet, IParsable {
         /// <summary>Provides an ordered rendering of firstName and lastName depending on the locale of the user or their device.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>First name of the user.</summary>
         public string First {
-            get { return BackingStore?.Get<string>(nameof(First)); }
-            set { BackingStore?.Set(nameof(First), value); }
+            get { return BackingStore?.Get<string>("first"); }
+            set { BackingStore?.Set("first", value); }
         }
         /// <summary>Initials of the user.</summary>
         public string Initials {
-            get { return BackingStore?.Get<string>(nameof(Initials)); }
-            set { BackingStore?.Set(nameof(Initials), value); }
+            get { return BackingStore?.Get<string>("initials"); }
+            set { BackingStore?.Set("initials", value); }
         }
         /// <summary>Contains the name for the language (en-US, no-NB, en-AU) following IETF BCP47 format.</summary>
         public string LanguageTag {
-            get { return BackingStore?.Get<string>(nameof(LanguageTag)); }
-            set { BackingStore?.Set(nameof(LanguageTag), value); }
+            get { return BackingStore?.Get<string>("languageTag"); }
+            set { BackingStore?.Set("languageTag", value); }
         }
         /// <summary>Last name of the user.</summary>
         public string Last {
-            get { return BackingStore?.Get<string>(nameof(Last)); }
-            set { BackingStore?.Set(nameof(Last), value); }
+            get { return BackingStore?.Get<string>("last"); }
+            set { BackingStore?.Set("last", value); }
         }
         /// <summary>Maiden name of the user.</summary>
         public string Maiden {
-            get { return BackingStore?.Get<string>(nameof(Maiden)); }
-            set { BackingStore?.Set(nameof(Maiden), value); }
+            get { return BackingStore?.Get<string>("maiden"); }
+            set { BackingStore?.Set("maiden", value); }
         }
         /// <summary>Middle name of the user.</summary>
         public string Middle {
-            get { return BackingStore?.Get<string>(nameof(Middle)); }
-            set { BackingStore?.Set(nameof(Middle), value); }
+            get { return BackingStore?.Get<string>("middle"); }
+            set { BackingStore?.Set("middle", value); }
         }
         /// <summary>Nickname of the user.</summary>
         public string Nickname {
-            get { return BackingStore?.Get<string>(nameof(Nickname)); }
-            set { BackingStore?.Set(nameof(Nickname), value); }
+            get { return BackingStore?.Get<string>("nickname"); }
+            set { BackingStore?.Set("nickname", value); }
         }
         /// <summary>Guidance on how to pronounce the users name.</summary>
         public PersonNamePronounciation Pronunciation {
-            get { return BackingStore?.Get<PersonNamePronounciation>(nameof(Pronunciation)); }
-            set { BackingStore?.Set(nameof(Pronunciation), value); }
+            get { return BackingStore?.Get<PersonNamePronounciation>("pronunciation"); }
+            set { BackingStore?.Set("pronunciation", value); }
         }
         /// <summary>Designators used after the users name (eg: PhD.)</summary>
         public string Suffix {
-            get { return BackingStore?.Get<string>(nameof(Suffix)); }
-            set { BackingStore?.Set(nameof(Suffix), value); }
+            get { return BackingStore?.Get<string>("suffix"); }
+            set { BackingStore?.Set("suffix", value); }
         }
         /// <summary>Honorifics used to prefix a users name (eg: Dr, Sir, Madam, Mrs.)</summary>
         public string Title {
-            get { return BackingStore?.Get<string>(nameof(Title)); }
-            set { BackingStore?.Set(nameof(Title), value); }
+            get { return BackingStore?.Get<string>("title"); }
+            set { BackingStore?.Set("title", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

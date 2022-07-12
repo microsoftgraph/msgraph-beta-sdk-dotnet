@@ -5,10 +5,10 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WellKnownTaskList : BaseTaskList, IParsable {
-        /// <summary>Property indicating the list name if the given list is a well-known list.. The possible values are: none, defaultList, flaggedEmails, unknownFutureValue.</summary>
+        /// <summary>The wellKnownListName property</summary>
         public WellKnownListName_v2? WellKnownListName {
-            get { return BackingStore?.Get<WellKnownListName_v2?>(nameof(WellKnownListName)); }
-            set { BackingStore?.Set(nameof(WellKnownListName), value); }
+            get { return BackingStore?.Get<WellKnownListName_v2?>("wellKnownListName"); }
+            set { BackingStore?.Set("wellKnownListName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

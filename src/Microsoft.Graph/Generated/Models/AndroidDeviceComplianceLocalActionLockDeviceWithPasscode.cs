@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceComplianceLocalActionLockDeviceWithPasscode : AndroidDeviceComplianceLocalActionBase, IParsable {
         /// <summary>Passcode to reset to Android device. This property is read-only.</summary>
         public string Passcode {
-            get { return BackingStore?.Get<string>(nameof(Passcode)); }
-            set { BackingStore?.Set(nameof(Passcode), value); }
+            get { return BackingStore?.Get<string>("passcode"); }
+            set { BackingStore?.Set("passcode", value); }
         }
         /// <summary>Number of sign in failures before wiping device, the value can be 4-11. Valid values 4 to 11</summary>
         public int? PasscodeSignInFailureCountBeforeWipe {
-            get { return BackingStore?.Get<int?>(nameof(PasscodeSignInFailureCountBeforeWipe)); }
-            set { BackingStore?.Set(nameof(PasscodeSignInFailureCountBeforeWipe), value); }
+            get { return BackingStore?.Get<int?>("passcodeSignInFailureCountBeforeWipe"); }
+            set { BackingStore?.Set("passcodeSignInFailureCountBeforeWipe", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

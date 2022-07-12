@@ -6,100 +6,100 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Device Co-Management eligibility state</summary>
     public class ComanagementEligibleDevice : Entity, IParsable {
-        /// <summary>ClientRegistrationStatus. Possible values are: notRegistered, registered, revoked, keyConflict, approvalPending, certificateReset, notRegisteredPendingEnrollment, unknown.</summary>
+        /// <summary>Device registration status.</summary>
         public DeviceRegistrationState? ClientRegistrationStatus {
-            get { return BackingStore?.Get<DeviceRegistrationState?>(nameof(ClientRegistrationStatus)); }
-            set { BackingStore?.Set(nameof(ClientRegistrationStatus), value); }
+            get { return BackingStore?.Get<DeviceRegistrationState?>("clientRegistrationStatus"); }
+            set { BackingStore?.Set("clientRegistrationStatus", value); }
         }
         /// <summary>DeviceName</summary>
         public string DeviceName {
-            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
-            set { BackingStore?.Set(nameof(DeviceName), value); }
+            get { return BackingStore?.Get<string>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
         }
-        /// <summary>DeviceType. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.</summary>
+        /// <summary>Device type.</summary>
         public Microsoft.Graph.Beta.Models.DeviceType? DeviceType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceType?>(nameof(DeviceType)); }
-            set { BackingStore?.Set(nameof(DeviceType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceType?>("deviceType"); }
+            set { BackingStore?.Set("deviceType", value); }
         }
         /// <summary>EntitySource</summary>
         public int? EntitySource {
-            get { return BackingStore?.Get<int?>(nameof(EntitySource)); }
-            set { BackingStore?.Set(nameof(EntitySource), value); }
+            get { return BackingStore?.Get<int?>("entitySource"); }
+            set { BackingStore?.Set("entitySource", value); }
         }
-        /// <summary>ManagementAgents. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController, microsoft365ManagedMdm, msSense, intuneAosp.</summary>
+        /// <summary>Management agent type.</summary>
         public ManagementAgentType? ManagementAgents {
-            get { return BackingStore?.Get<ManagementAgentType?>(nameof(ManagementAgents)); }
-            set { BackingStore?.Set(nameof(ManagementAgents), value); }
+            get { return BackingStore?.Get<ManagementAgentType?>("managementAgents"); }
+            set { BackingStore?.Set("managementAgents", value); }
         }
-        /// <summary>ManagementState. Possible values are: managed, retirePending, retireFailed, wipePending, wipeFailed, unhealthy, deletePending, retireIssued, wipeIssued, wipeCanceled, retireCanceled, discovered.</summary>
+        /// <summary>Management state of device in Microsoft Intune.</summary>
         public Microsoft.Graph.Beta.Models.ManagementState? ManagementState {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagementState?>(nameof(ManagementState)); }
-            set { BackingStore?.Set(nameof(ManagementState), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagementState?>("managementState"); }
+            set { BackingStore?.Set("managementState", value); }
         }
         /// <summary>Manufacturer</summary>
         public string Manufacturer {
-            get { return BackingStore?.Get<string>(nameof(Manufacturer)); }
-            set { BackingStore?.Set(nameof(Manufacturer), value); }
+            get { return BackingStore?.Get<string>("manufacturer"); }
+            set { BackingStore?.Set("manufacturer", value); }
         }
         /// <summary>MDMStatus</summary>
         public string MdmStatus {
-            get { return BackingStore?.Get<string>(nameof(MdmStatus)); }
-            set { BackingStore?.Set(nameof(MdmStatus), value); }
+            get { return BackingStore?.Get<string>("mdmStatus"); }
+            set { BackingStore?.Set("mdmStatus", value); }
         }
         /// <summary>Model</summary>
         public string Model {
-            get { return BackingStore?.Get<string>(nameof(Model)); }
-            set { BackingStore?.Set(nameof(Model), value); }
+            get { return BackingStore?.Get<string>("model"); }
+            set { BackingStore?.Set("model", value); }
         }
         /// <summary>OSDescription</summary>
         public string OsDescription {
-            get { return BackingStore?.Get<string>(nameof(OsDescription)); }
-            set { BackingStore?.Set(nameof(OsDescription), value); }
+            get { return BackingStore?.Get<string>("osDescription"); }
+            set { BackingStore?.Set("osDescription", value); }
         }
         /// <summary>OSVersion</summary>
         public string OsVersion {
-            get { return BackingStore?.Get<string>(nameof(OsVersion)); }
-            set { BackingStore?.Set(nameof(OsVersion), value); }
+            get { return BackingStore?.Get<string>("osVersion"); }
+            set { BackingStore?.Set("osVersion", value); }
         }
-        /// <summary>OwnerType. Possible values are: unknown, company, personal.</summary>
+        /// <summary>Owner type of device.</summary>
         public Microsoft.Graph.Beta.Models.OwnerType? OwnerType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OwnerType?>(nameof(OwnerType)); }
-            set { BackingStore?.Set(nameof(OwnerType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OwnerType?>("ownerType"); }
+            set { BackingStore?.Set("ownerType", value); }
         }
         /// <summary>ReferenceId</summary>
         public string ReferenceId {
-            get { return BackingStore?.Get<string>(nameof(ReferenceId)); }
-            set { BackingStore?.Set(nameof(ReferenceId), value); }
+            get { return BackingStore?.Get<string>("referenceId"); }
+            set { BackingStore?.Set("referenceId", value); }
         }
         /// <summary>SerialNumber</summary>
         public string SerialNumber {
-            get { return BackingStore?.Get<string>(nameof(SerialNumber)); }
-            set { BackingStore?.Set(nameof(SerialNumber), value); }
+            get { return BackingStore?.Get<string>("serialNumber"); }
+            set { BackingStore?.Set("serialNumber", value); }
         }
-        /// <summary>ComanagementEligibleStatus. Possible values are: comanaged, eligible, eligibleButNotAzureAdJoined, needsOsUpdate, ineligible.</summary>
+        /// <summary>The status property</summary>
         public ComanagementEligibleType? Status {
-            get { return BackingStore?.Get<ComanagementEligibleType?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<ComanagementEligibleType?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>UPN</summary>
         public string Upn {
-            get { return BackingStore?.Get<string>(nameof(Upn)); }
-            set { BackingStore?.Set(nameof(Upn), value); }
+            get { return BackingStore?.Get<string>("upn"); }
+            set { BackingStore?.Set("upn", value); }
         }
         /// <summary>UserEmail</summary>
         public string UserEmail {
-            get { return BackingStore?.Get<string>(nameof(UserEmail)); }
-            set { BackingStore?.Set(nameof(UserEmail), value); }
+            get { return BackingStore?.Get<string>("userEmail"); }
+            set { BackingStore?.Set("userEmail", value); }
         }
         /// <summary>UserId</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>UserName</summary>
         public string UserName {
-            get { return BackingStore?.Get<string>(nameof(UserName)); }
-            set { BackingStore?.Set(nameof(UserName), value); }
+            get { return BackingStore?.Get<string>("userName"); }
+            set { BackingStore?.Set("userName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

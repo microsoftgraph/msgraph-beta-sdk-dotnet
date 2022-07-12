@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class ItemAddress : ItemFacet, IParsable {
         /// <summary>The detail property</summary>
         public PhysicalAddress Detail {
-            get { return BackingStore?.Get<PhysicalAddress>(nameof(Detail)); }
-            set { BackingStore?.Set(nameof(Detail), value); }
+            get { return BackingStore?.Get<PhysicalAddress>("detail"); }
+            set { BackingStore?.Set("detail", value); }
         }
         /// <summary>Friendly name the user has assigned to this address.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The geocoordinates of the address.</summary>
         public Microsoft.Graph.Beta.Models.GeoCoordinates GeoCoordinates {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GeoCoordinates>(nameof(GeoCoordinates)); }
-            set { BackingStore?.Set(nameof(GeoCoordinates), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GeoCoordinates>("geoCoordinates"); }
+            set { BackingStore?.Set("geoCoordinates", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

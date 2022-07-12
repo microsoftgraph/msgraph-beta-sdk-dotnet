@@ -8,38 +8,38 @@ namespace Microsoft.Graph.Beta.Models {
     public class MicrosoftTunnelServerLogCollectionResponse : Entity, IParsable {
         /// <summary>The end time of the logs collected</summary>
         public DateTimeOffset? EndDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
-            set { BackingStore?.Set(nameof(EndDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
+            set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>The time when the log collection is expired</summary>
         public DateTimeOffset? ExpiryDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpiryDateTime)); }
-            set { BackingStore?.Set(nameof(ExpiryDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("expiryDateTime"); }
+            set { BackingStore?.Set("expiryDateTime", value); }
         }
         /// <summary>The time when the log collection was requested</summary>
         public DateTimeOffset? RequestDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(RequestDateTime)); }
-            set { BackingStore?.Set(nameof(RequestDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("requestDateTime"); }
+            set { BackingStore?.Set("requestDateTime", value); }
         }
         /// <summary>ID of the server the log collection is requested upon</summary>
         public string ServerId {
-            get { return BackingStore?.Get<string>(nameof(ServerId)); }
-            set { BackingStore?.Set(nameof(ServerId), value); }
+            get { return BackingStore?.Get<string>("serverId"); }
+            set { BackingStore?.Set("serverId", value); }
         }
         /// <summary>The size of the logs in bytes</summary>
         public long? SizeInBytes {
-            get { return BackingStore?.Get<long?>(nameof(SizeInBytes)); }
-            set { BackingStore?.Set(nameof(SizeInBytes), value); }
+            get { return BackingStore?.Get<long?>("sizeInBytes"); }
+            set { BackingStore?.Set("sizeInBytes", value); }
         }
         /// <summary>The start time of the logs collected</summary>
         public DateTimeOffset? StartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
-            set { BackingStore?.Set(nameof(StartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
         }
-        /// <summary>The status of log collection. Possible values are: pending, completed, failed.</summary>
+        /// <summary>Enum type that represent the status of log collection.</summary>
         public MicrosoftTunnelLogCollectionStatus? Status {
-            get { return BackingStore?.Get<MicrosoftTunnelLogCollectionStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<MicrosoftTunnelLogCollectionStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

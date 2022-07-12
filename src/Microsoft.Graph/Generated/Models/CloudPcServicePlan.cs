@@ -7,33 +7,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class CloudPcServicePlan : Entity, IParsable {
         /// <summary>The name for the service plan. Read-only.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The size of the RAM in GB. Read-only.</summary>
         public int? RamInGB {
-            get { return BackingStore?.Get<int?>(nameof(RamInGB)); }
-            set { BackingStore?.Set(nameof(RamInGB), value); }
+            get { return BackingStore?.Get<int?>("ramInGB"); }
+            set { BackingStore?.Set("ramInGB", value); }
         }
         /// <summary>The size of the OS Disk in GB. Read-only.</summary>
         public int? StorageInGB {
-            get { return BackingStore?.Get<int?>(nameof(StorageInGB)); }
-            set { BackingStore?.Set(nameof(StorageInGB), value); }
-        }
-        /// <summary>The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.</summary>
-        public CloudPcServicePlanType? Type {
-            get { return BackingStore?.Get<CloudPcServicePlanType?>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<int?>("storageInGB"); }
+            set { BackingStore?.Set("storageInGB", value); }
         }
         /// <summary>The size of the user profile disk in GB. Read-only.</summary>
         public int? UserProfileInGB {
-            get { return BackingStore?.Get<int?>(nameof(UserProfileInGB)); }
-            set { BackingStore?.Set(nameof(UserProfileInGB), value); }
+            get { return BackingStore?.Get<int?>("userProfileInGB"); }
+            set { BackingStore?.Set("userProfileInGB", value); }
         }
         /// <summary>The number of vCPUs. Read-only.</summary>
         public int? VCpuCount {
-            get { return BackingStore?.Get<int?>(nameof(VCpuCount)); }
-            set { BackingStore?.Set(nameof(VCpuCount), value); }
+            get { return BackingStore?.Get<int?>("vCpuCount"); }
+            set { BackingStore?.Set("vCpuCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,7 +46,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"ramInGB", n => { RamInGB = n.GetIntValue(); } },
                 {"storageInGB", n => { StorageInGB = n.GetIntValue(); } },
-                {"type", n => { Type = n.GetEnumValue<CloudPcServicePlanType>(); } },
                 {"userProfileInGB", n => { UserProfileInGB = n.GetIntValue(); } },
                 {"vCpuCount", n => { VCpuCount = n.GetIntValue(); } },
             };
@@ -66,7 +60,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteIntValue("ramInGB", RamInGB);
             writer.WriteIntValue("storageInGB", StorageInGB);
-            writer.WriteEnumValue<CloudPcServicePlanType>("type", Type);
             writer.WriteIntValue("userProfileInGB", UserProfileInGB);
             writer.WriteIntValue("vCpuCount", VCpuCount);
         }

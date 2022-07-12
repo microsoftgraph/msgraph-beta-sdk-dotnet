@@ -7,33 +7,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class PersonInterest : ItemFacet, IParsable {
         /// <summary>Contains categories a user has associated with the interest (for example, personal, recipies).</summary>
         public List<string> Categories {
-            get { return BackingStore?.Get<List<string>>(nameof(Categories)); }
-            set { BackingStore?.Set(nameof(Categories), value); }
+            get { return BackingStore?.Get<List<string>>("categories"); }
+            set { BackingStore?.Set("categories", value); }
         }
         /// <summary>Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.</summary>
         public List<string> CollaborationTags {
-            get { return BackingStore?.Get<List<string>>(nameof(CollaborationTags)); }
-            set { BackingStore?.Set(nameof(CollaborationTags), value); }
+            get { return BackingStore?.Get<List<string>>("collaborationTags"); }
+            set { BackingStore?.Set("collaborationTags", value); }
         }
         /// <summary>Contains a description of the interest.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Contains a friendly name for the interest.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The thumbnailUrl property</summary>
         public string ThumbnailUrl {
-            get { return BackingStore?.Get<string>(nameof(ThumbnailUrl)); }
-            set { BackingStore?.Set(nameof(ThumbnailUrl), value); }
+            get { return BackingStore?.Get<string>("thumbnailUrl"); }
+            set { BackingStore?.Set("thumbnailUrl", value); }
         }
         /// <summary>Contains a link to a web page or resource about the interest.</summary>
         public string WebUrl {
-            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
-            set { BackingStore?.Set(nameof(WebUrl), value); }
+            get { return BackingStore?.Get<string>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

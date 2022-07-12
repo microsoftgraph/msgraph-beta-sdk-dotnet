@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public enum DeviceManagementConfigurationTechnologies {
         /// <summary>Setting cannot be deployed through any channel</summary>
         None,
@@ -17,6 +17,8 @@ namespace Microsoft.Graph.Beta.Models {
         ExchangeOnline,
         /// <summary>Setting can be deployed through the Linux Mdm channel</summary>
         LinuxMdm,
+        /// <summary>Setting can be deployed through device enrollment.</summary>
+        Enrollment,
         /// <summary>Sentinel member for cases where the client cannot handle the new enum values.</summary>
         UnknownFutureValue,
     }

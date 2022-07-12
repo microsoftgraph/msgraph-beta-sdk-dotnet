@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class AadUserConversationMemberResult : ActionResultPart, IParsable {
         /// <summary>The user object ID of the Azure AD user that was being added as part of the bulk operation.</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

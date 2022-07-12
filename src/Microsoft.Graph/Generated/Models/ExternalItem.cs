@@ -4,22 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ExternalItem : Entity, IParsable {
         /// <summary>The acl property</summary>
         public List<Microsoft.Graph.Beta.Models.Acl> Acl {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Acl>>(nameof(Acl)); }
-            set { BackingStore?.Set(nameof(Acl), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Acl>>("acl"); }
+            set { BackingStore?.Set("acl", value); }
         }
         /// <summary>The content property</summary>
         public ExternalItemContent Content {
-            get { return BackingStore?.Get<ExternalItemContent>(nameof(Content)); }
-            set { BackingStore?.Set(nameof(Content), value); }
+            get { return BackingStore?.Get<ExternalItemContent>("content"); }
+            set { BackingStore?.Set("content", value); }
         }
         /// <summary>The properties property</summary>
         public Microsoft.Graph.Beta.Models.Properties Properties {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Properties>(nameof(Properties)); }
-            set { BackingStore?.Set(nameof(Properties), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Properties>("properties"); }
+            set { BackingStore?.Set("properties", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

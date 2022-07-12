@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class InvokeUserFlowListener : AuthenticationListener, IParsable {
         /// <summary>The user flow that is invoked when this action executes.</summary>
         public B2xIdentityUserFlow UserFlow {
-            get { return BackingStore?.Get<B2xIdentityUserFlow>(nameof(UserFlow)); }
-            set { BackingStore?.Set(nameof(UserFlow), value); }
+            get { return BackingStore?.Get<B2xIdentityUserFlow>("userFlow"); }
+            set { BackingStore?.Set("userFlow", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

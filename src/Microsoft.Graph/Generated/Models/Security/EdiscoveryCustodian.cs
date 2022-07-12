@@ -7,33 +7,33 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class EdiscoveryCustodian : DataSourceContainer, IParsable {
         /// <summary>Date and time the custodian acknowledged a hold notification.</summary>
         public DateTimeOffset? AcknowledgedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(AcknowledgedDateTime)); }
-            set { BackingStore?.Set(nameof(AcknowledgedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("acknowledgedDateTime"); }
+            set { BackingStore?.Set("acknowledgedDateTime", value); }
         }
         /// <summary>Email address of the custodian.</summary>
         public string Email {
-            get { return BackingStore?.Get<string>(nameof(Email)); }
-            set { BackingStore?.Set(nameof(Email), value); }
+            get { return BackingStore?.Get<string>("email"); }
+            set { BackingStore?.Set("email", value); }
         }
         /// <summary>Operation entity that represents the latest indexing for the custodian.</summary>
         public EdiscoveryIndexOperation LastIndexOperation {
-            get { return BackingStore?.Get<EdiscoveryIndexOperation>(nameof(LastIndexOperation)); }
-            set { BackingStore?.Set(nameof(LastIndexOperation), value); }
+            get { return BackingStore?.Get<EdiscoveryIndexOperation>("lastIndexOperation"); }
+            set { BackingStore?.Set("lastIndexOperation", value); }
         }
         /// <summary>Data source entity for SharePoint sites associated with the custodian.</summary>
         public List<SiteSource> SiteSources {
-            get { return BackingStore?.Get<List<SiteSource>>(nameof(SiteSources)); }
-            set { BackingStore?.Set(nameof(SiteSources), value); }
+            get { return BackingStore?.Get<List<SiteSource>>("siteSources"); }
+            set { BackingStore?.Set("siteSources", value); }
         }
         /// <summary>Data source entity for groups associated with the custodian.</summary>
         public List<UnifiedGroupSource> UnifiedGroupSources {
-            get { return BackingStore?.Get<List<UnifiedGroupSource>>(nameof(UnifiedGroupSources)); }
-            set { BackingStore?.Set(nameof(UnifiedGroupSources), value); }
+            get { return BackingStore?.Get<List<UnifiedGroupSource>>("unifiedGroupSources"); }
+            set { BackingStore?.Set("unifiedGroupSources", value); }
         }
         /// <summary>Data source entity for a the custodian. This is the container for a custodian&apos;s mailbox and OneDrive for Business site.</summary>
         public List<UserSource> UserSources {
-            get { return BackingStore?.Get<List<UserSource>>(nameof(UserSources)); }
-            set { BackingStore?.Set(nameof(UserSources), value); }
+            get { return BackingStore?.Get<List<UserSource>>("userSources"); }
+            set { BackingStore?.Set("userSources", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

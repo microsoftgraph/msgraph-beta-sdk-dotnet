@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class ManagedDeviceSummarizedAppState : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>DeviceId of device represented by this object</summary>
         public string DeviceId {
-            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
-            set { BackingStore?.Set(nameof(DeviceId), value); }
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
         }
-        /// <summary>runState for the object. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.</summary>
+        /// <summary>Indicates the type of execution status of the device management script.</summary>
         public RunState? SummarizedAppState {
-            get { return BackingStore?.Get<RunState?>(nameof(SummarizedAppState)); }
-            set { BackingStore?.Set(nameof(SummarizedAppState), value); }
+            get { return BackingStore?.Get<RunState?>("summarizedAppState"); }
+            set { BackingStore?.Set("summarizedAppState", value); }
         }
         /// <summary>
         /// Instantiates a new managedDeviceSummarizedAppState and sets the default values.

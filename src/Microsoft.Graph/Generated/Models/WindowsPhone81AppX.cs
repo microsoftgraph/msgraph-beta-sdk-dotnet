@@ -6,45 +6,51 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsPhone81AppX : MobileLobApp, IParsable {
-        /// <summary>The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.</summary>
+        /// <summary>Contains properties for Windows architecture.</summary>
         public WindowsArchitecture? ApplicableArchitectures {
-            get { return BackingStore?.Get<WindowsArchitecture?>(nameof(ApplicableArchitectures)); }
-            set { BackingStore?.Set(nameof(ApplicableArchitectures), value); }
+            get { return BackingStore?.Get<WindowsArchitecture?>("applicableArchitectures"); }
+            set { BackingStore?.Set("applicableArchitectures", value); }
         }
         /// <summary>The Identity Name.</summary>
         public string IdentityName {
-            get { return BackingStore?.Get<string>(nameof(IdentityName)); }
-            set { BackingStore?.Set(nameof(IdentityName), value); }
+            get { return BackingStore?.Get<string>("identityName"); }
+            set { BackingStore?.Set("identityName", value); }
         }
         /// <summary>The Identity Publisher Hash.</summary>
         public string IdentityPublisherHash {
-            get { return BackingStore?.Get<string>(nameof(IdentityPublisherHash)); }
-            set { BackingStore?.Set(nameof(IdentityPublisherHash), value); }
+            get { return BackingStore?.Get<string>("identityPublisherHash"); }
+            set { BackingStore?.Set("identityPublisherHash", value); }
         }
         /// <summary>The Identity Resource Identifier.</summary>
         public string IdentityResourceIdentifier {
-            get { return BackingStore?.Get<string>(nameof(IdentityResourceIdentifier)); }
-            set { BackingStore?.Set(nameof(IdentityResourceIdentifier), value); }
+            get { return BackingStore?.Get<string>("identityResourceIdentifier"); }
+            set { BackingStore?.Set("identityResourceIdentifier", value); }
         }
         /// <summary>The identity version.</summary>
         public string IdentityVersion {
-            get { return BackingStore?.Get<string>(nameof(IdentityVersion)); }
-            set { BackingStore?.Set(nameof(IdentityVersion), value); }
+            get { return BackingStore?.Get<string>("identityVersion"); }
+            set { BackingStore?.Set("identityVersion", value); }
         }
         /// <summary>The minimum operating system required for a Windows mobile app.</summary>
         public WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem {
-            get { return BackingStore?.Get<WindowsMinimumOperatingSystem>(nameof(MinimumSupportedOperatingSystem)); }
-            set { BackingStore?.Set(nameof(MinimumSupportedOperatingSystem), value); }
+            get { return BackingStore?.Get<WindowsMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
+            set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
         /// <summary>The Phone Product Identifier.</summary>
         public string PhoneProductIdentifier {
-            get { return BackingStore?.Get<string>(nameof(PhoneProductIdentifier)); }
-            set { BackingStore?.Set(nameof(PhoneProductIdentifier), value); }
+            get { return BackingStore?.Get<string>("phoneProductIdentifier"); }
+            set { BackingStore?.Set("phoneProductIdentifier", value); }
         }
         /// <summary>The Phone Publisher Id.</summary>
         public string PhonePublisherId {
-            get { return BackingStore?.Get<string>(nameof(PhonePublisherId)); }
-            set { BackingStore?.Set(nameof(PhonePublisherId), value); }
+            get { return BackingStore?.Get<string>("phonePublisherId"); }
+            set { BackingStore?.Set("phonePublisherId", value); }
+        }
+        /// <summary>
+        /// Instantiates a new WindowsPhone81AppX and sets the default values.
+        /// </summary>
+        public WindowsPhone81AppX() : base() {
+            Type = "#microsoft.graph.windowsPhone81AppX";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

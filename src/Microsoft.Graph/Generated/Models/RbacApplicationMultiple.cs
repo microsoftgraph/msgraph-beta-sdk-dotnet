@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class RbacApplicationMultiple : Entity, IParsable {
         /// <summary>The resourceNamespaces property</summary>
         public List<UnifiedRbacResourceNamespace> ResourceNamespaces {
-            get { return BackingStore?.Get<List<UnifiedRbacResourceNamespace>>(nameof(ResourceNamespaces)); }
-            set { BackingStore?.Set(nameof(ResourceNamespaces), value); }
+            get { return BackingStore?.Get<List<UnifiedRbacResourceNamespace>>("resourceNamespaces"); }
+            set { BackingStore?.Set("resourceNamespaces", value); }
         }
         /// <summary>The roleAssignments property</summary>
         public List<UnifiedRoleAssignmentMultiple> RoleAssignments {
-            get { return BackingStore?.Get<List<UnifiedRoleAssignmentMultiple>>(nameof(RoleAssignments)); }
-            set { BackingStore?.Set(nameof(RoleAssignments), value); }
+            get { return BackingStore?.Get<List<UnifiedRoleAssignmentMultiple>>("roleAssignments"); }
+            set { BackingStore?.Set("roleAssignments", value); }
         }
         /// <summary>The roleDefinitions property</summary>
         public List<UnifiedRoleDefinition> RoleDefinitions {
-            get { return BackingStore?.Get<List<UnifiedRoleDefinition>>(nameof(RoleDefinitions)); }
-            set { BackingStore?.Set(nameof(RoleDefinitions), value); }
+            get { return BackingStore?.Get<List<UnifiedRoleDefinition>>("roleDefinitions"); }
+            set { BackingStore?.Set("roleDefinitions", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

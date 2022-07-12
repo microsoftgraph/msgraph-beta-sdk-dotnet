@@ -7,198 +7,198 @@ namespace Microsoft.Graph.Beta.Models {
     public class Company : Entity, IParsable {
         /// <summary>The accounts property</summary>
         public List<Account> Accounts {
-            get { return BackingStore?.Get<List<Account>>(nameof(Accounts)); }
-            set { BackingStore?.Set(nameof(Accounts), value); }
+            get { return BackingStore?.Get<List<Account>>("accounts"); }
+            set { BackingStore?.Set("accounts", value); }
         }
         /// <summary>The agedAccountsPayable property</summary>
         public List<Microsoft.Graph.Beta.Models.AgedAccountsPayable> AgedAccountsPayable {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AgedAccountsPayable>>(nameof(AgedAccountsPayable)); }
-            set { BackingStore?.Set(nameof(AgedAccountsPayable), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AgedAccountsPayable>>("agedAccountsPayable"); }
+            set { BackingStore?.Set("agedAccountsPayable", value); }
         }
         /// <summary>The agedAccountsReceivable property</summary>
         public List<Microsoft.Graph.Beta.Models.AgedAccountsReceivable> AgedAccountsReceivable {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AgedAccountsReceivable>>(nameof(AgedAccountsReceivable)); }
-            set { BackingStore?.Set(nameof(AgedAccountsReceivable), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AgedAccountsReceivable>>("agedAccountsReceivable"); }
+            set { BackingStore?.Set("agedAccountsReceivable", value); }
         }
         /// <summary>The businessProfileId property</summary>
         public string BusinessProfileId {
-            get { return BackingStore?.Get<string>(nameof(BusinessProfileId)); }
-            set { BackingStore?.Set(nameof(BusinessProfileId), value); }
+            get { return BackingStore?.Get<string>("businessProfileId"); }
+            set { BackingStore?.Set("businessProfileId", value); }
         }
         /// <summary>The companyInformation property</summary>
         public List<Microsoft.Graph.Beta.Models.CompanyInformation> CompanyInformation {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CompanyInformation>>(nameof(CompanyInformation)); }
-            set { BackingStore?.Set(nameof(CompanyInformation), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CompanyInformation>>("companyInformation"); }
+            set { BackingStore?.Set("companyInformation", value); }
         }
         /// <summary>The countriesRegions property</summary>
         public List<CountryRegion> CountriesRegions {
-            get { return BackingStore?.Get<List<CountryRegion>>(nameof(CountriesRegions)); }
-            set { BackingStore?.Set(nameof(CountriesRegions), value); }
+            get { return BackingStore?.Get<List<CountryRegion>>("countriesRegions"); }
+            set { BackingStore?.Set("countriesRegions", value); }
         }
         /// <summary>The currencies property</summary>
         public List<Currency> Currencies {
-            get { return BackingStore?.Get<List<Currency>>(nameof(Currencies)); }
-            set { BackingStore?.Set(nameof(Currencies), value); }
+            get { return BackingStore?.Get<List<Currency>>("currencies"); }
+            set { BackingStore?.Set("currencies", value); }
         }
         /// <summary>The customerPaymentJournals property</summary>
         public List<CustomerPaymentJournal> CustomerPaymentJournals {
-            get { return BackingStore?.Get<List<CustomerPaymentJournal>>(nameof(CustomerPaymentJournals)); }
-            set { BackingStore?.Set(nameof(CustomerPaymentJournals), value); }
+            get { return BackingStore?.Get<List<CustomerPaymentJournal>>("customerPaymentJournals"); }
+            set { BackingStore?.Set("customerPaymentJournals", value); }
         }
         /// <summary>The customerPayments property</summary>
         public List<CustomerPayment> CustomerPayments {
-            get { return BackingStore?.Get<List<CustomerPayment>>(nameof(CustomerPayments)); }
-            set { BackingStore?.Set(nameof(CustomerPayments), value); }
+            get { return BackingStore?.Get<List<CustomerPayment>>("customerPayments"); }
+            set { BackingStore?.Set("customerPayments", value); }
         }
         /// <summary>The customers property</summary>
         public List<Customer> Customers {
-            get { return BackingStore?.Get<List<Customer>>(nameof(Customers)); }
-            set { BackingStore?.Set(nameof(Customers), value); }
+            get { return BackingStore?.Get<List<Customer>>("customers"); }
+            set { BackingStore?.Set("customers", value); }
         }
         /// <summary>The dimensions property</summary>
         public List<Dimension> Dimensions {
-            get { return BackingStore?.Get<List<Dimension>>(nameof(Dimensions)); }
-            set { BackingStore?.Set(nameof(Dimensions), value); }
+            get { return BackingStore?.Get<List<Dimension>>("dimensions"); }
+            set { BackingStore?.Set("dimensions", value); }
         }
         /// <summary>The dimensionValues property</summary>
         public List<DimensionValue> DimensionValues {
-            get { return BackingStore?.Get<List<DimensionValue>>(nameof(DimensionValues)); }
-            set { BackingStore?.Set(nameof(DimensionValues), value); }
+            get { return BackingStore?.Get<List<DimensionValue>>("dimensionValues"); }
+            set { BackingStore?.Set("dimensionValues", value); }
         }
         /// <summary>The displayName property</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The employees property</summary>
         public List<Employee> Employees {
-            get { return BackingStore?.Get<List<Employee>>(nameof(Employees)); }
-            set { BackingStore?.Set(nameof(Employees), value); }
+            get { return BackingStore?.Get<List<Employee>>("employees"); }
+            set { BackingStore?.Set("employees", value); }
         }
         /// <summary>The generalLedgerEntries property</summary>
         public List<GeneralLedgerEntry> GeneralLedgerEntries {
-            get { return BackingStore?.Get<List<GeneralLedgerEntry>>(nameof(GeneralLedgerEntries)); }
-            set { BackingStore?.Set(nameof(GeneralLedgerEntries), value); }
+            get { return BackingStore?.Get<List<GeneralLedgerEntry>>("generalLedgerEntries"); }
+            set { BackingStore?.Set("generalLedgerEntries", value); }
         }
         /// <summary>The itemCategories property</summary>
         public List<ItemCategory> ItemCategories {
-            get { return BackingStore?.Get<List<ItemCategory>>(nameof(ItemCategories)); }
-            set { BackingStore?.Set(nameof(ItemCategories), value); }
+            get { return BackingStore?.Get<List<ItemCategory>>("itemCategories"); }
+            set { BackingStore?.Set("itemCategories", value); }
         }
         /// <summary>The items property</summary>
         public List<Item> Items {
-            get { return BackingStore?.Get<List<Item>>(nameof(Items)); }
-            set { BackingStore?.Set(nameof(Items), value); }
+            get { return BackingStore?.Get<List<Item>>("items"); }
+            set { BackingStore?.Set("items", value); }
         }
         /// <summary>The journalLines property</summary>
         public List<JournalLine> JournalLines {
-            get { return BackingStore?.Get<List<JournalLine>>(nameof(JournalLines)); }
-            set { BackingStore?.Set(nameof(JournalLines), value); }
+            get { return BackingStore?.Get<List<JournalLine>>("journalLines"); }
+            set { BackingStore?.Set("journalLines", value); }
         }
         /// <summary>The journals property</summary>
         public List<Journal> Journals {
-            get { return BackingStore?.Get<List<Journal>>(nameof(Journals)); }
-            set { BackingStore?.Set(nameof(Journals), value); }
+            get { return BackingStore?.Get<List<Journal>>("journals"); }
+            set { BackingStore?.Set("journals", value); }
         }
         /// <summary>The name property</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The paymentMethods property</summary>
         public List<PaymentMethod> PaymentMethods {
-            get { return BackingStore?.Get<List<PaymentMethod>>(nameof(PaymentMethods)); }
-            set { BackingStore?.Set(nameof(PaymentMethods), value); }
+            get { return BackingStore?.Get<List<PaymentMethod>>("paymentMethods"); }
+            set { BackingStore?.Set("paymentMethods", value); }
         }
         /// <summary>The paymentTerms property</summary>
         public List<PaymentTerm> PaymentTerms {
-            get { return BackingStore?.Get<List<PaymentTerm>>(nameof(PaymentTerms)); }
-            set { BackingStore?.Set(nameof(PaymentTerms), value); }
+            get { return BackingStore?.Get<List<PaymentTerm>>("paymentTerms"); }
+            set { BackingStore?.Set("paymentTerms", value); }
         }
         /// <summary>The picture property</summary>
         public List<Microsoft.Graph.Beta.Models.Picture> Picture {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Picture>>(nameof(Picture)); }
-            set { BackingStore?.Set(nameof(Picture), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Picture>>("picture"); }
+            set { BackingStore?.Set("picture", value); }
         }
         /// <summary>The purchaseInvoiceLines property</summary>
         public List<PurchaseInvoiceLine> PurchaseInvoiceLines {
-            get { return BackingStore?.Get<List<PurchaseInvoiceLine>>(nameof(PurchaseInvoiceLines)); }
-            set { BackingStore?.Set(nameof(PurchaseInvoiceLines), value); }
+            get { return BackingStore?.Get<List<PurchaseInvoiceLine>>("purchaseInvoiceLines"); }
+            set { BackingStore?.Set("purchaseInvoiceLines", value); }
         }
         /// <summary>The purchaseInvoices property</summary>
         public List<PurchaseInvoice> PurchaseInvoices {
-            get { return BackingStore?.Get<List<PurchaseInvoice>>(nameof(PurchaseInvoices)); }
-            set { BackingStore?.Set(nameof(PurchaseInvoices), value); }
+            get { return BackingStore?.Get<List<PurchaseInvoice>>("purchaseInvoices"); }
+            set { BackingStore?.Set("purchaseInvoices", value); }
         }
         /// <summary>The salesCreditMemoLines property</summary>
         public List<SalesCreditMemoLine> SalesCreditMemoLines {
-            get { return BackingStore?.Get<List<SalesCreditMemoLine>>(nameof(SalesCreditMemoLines)); }
-            set { BackingStore?.Set(nameof(SalesCreditMemoLines), value); }
+            get { return BackingStore?.Get<List<SalesCreditMemoLine>>("salesCreditMemoLines"); }
+            set { BackingStore?.Set("salesCreditMemoLines", value); }
         }
         /// <summary>The salesCreditMemos property</summary>
         public List<SalesCreditMemo> SalesCreditMemos {
-            get { return BackingStore?.Get<List<SalesCreditMemo>>(nameof(SalesCreditMemos)); }
-            set { BackingStore?.Set(nameof(SalesCreditMemos), value); }
+            get { return BackingStore?.Get<List<SalesCreditMemo>>("salesCreditMemos"); }
+            set { BackingStore?.Set("salesCreditMemos", value); }
         }
         /// <summary>The salesInvoiceLines property</summary>
         public List<SalesInvoiceLine> SalesInvoiceLines {
-            get { return BackingStore?.Get<List<SalesInvoiceLine>>(nameof(SalesInvoiceLines)); }
-            set { BackingStore?.Set(nameof(SalesInvoiceLines), value); }
+            get { return BackingStore?.Get<List<SalesInvoiceLine>>("salesInvoiceLines"); }
+            set { BackingStore?.Set("salesInvoiceLines", value); }
         }
         /// <summary>The salesInvoices property</summary>
         public List<SalesInvoice> SalesInvoices {
-            get { return BackingStore?.Get<List<SalesInvoice>>(nameof(SalesInvoices)); }
-            set { BackingStore?.Set(nameof(SalesInvoices), value); }
+            get { return BackingStore?.Get<List<SalesInvoice>>("salesInvoices"); }
+            set { BackingStore?.Set("salesInvoices", value); }
         }
         /// <summary>The salesOrderLines property</summary>
         public List<SalesOrderLine> SalesOrderLines {
-            get { return BackingStore?.Get<List<SalesOrderLine>>(nameof(SalesOrderLines)); }
-            set { BackingStore?.Set(nameof(SalesOrderLines), value); }
+            get { return BackingStore?.Get<List<SalesOrderLine>>("salesOrderLines"); }
+            set { BackingStore?.Set("salesOrderLines", value); }
         }
         /// <summary>The salesOrders property</summary>
         public List<SalesOrder> SalesOrders {
-            get { return BackingStore?.Get<List<SalesOrder>>(nameof(SalesOrders)); }
-            set { BackingStore?.Set(nameof(SalesOrders), value); }
+            get { return BackingStore?.Get<List<SalesOrder>>("salesOrders"); }
+            set { BackingStore?.Set("salesOrders", value); }
         }
         /// <summary>The salesQuoteLines property</summary>
         public List<SalesQuoteLine> SalesQuoteLines {
-            get { return BackingStore?.Get<List<SalesQuoteLine>>(nameof(SalesQuoteLines)); }
-            set { BackingStore?.Set(nameof(SalesQuoteLines), value); }
+            get { return BackingStore?.Get<List<SalesQuoteLine>>("salesQuoteLines"); }
+            set { BackingStore?.Set("salesQuoteLines", value); }
         }
         /// <summary>The salesQuotes property</summary>
         public List<SalesQuote> SalesQuotes {
-            get { return BackingStore?.Get<List<SalesQuote>>(nameof(SalesQuotes)); }
-            set { BackingStore?.Set(nameof(SalesQuotes), value); }
+            get { return BackingStore?.Get<List<SalesQuote>>("salesQuotes"); }
+            set { BackingStore?.Set("salesQuotes", value); }
         }
         /// <summary>The shipmentMethods property</summary>
         public List<ShipmentMethod> ShipmentMethods {
-            get { return BackingStore?.Get<List<ShipmentMethod>>(nameof(ShipmentMethods)); }
-            set { BackingStore?.Set(nameof(ShipmentMethods), value); }
+            get { return BackingStore?.Get<List<ShipmentMethod>>("shipmentMethods"); }
+            set { BackingStore?.Set("shipmentMethods", value); }
         }
         /// <summary>The systemVersion property</summary>
         public string SystemVersion {
-            get { return BackingStore?.Get<string>(nameof(SystemVersion)); }
-            set { BackingStore?.Set(nameof(SystemVersion), value); }
+            get { return BackingStore?.Get<string>("systemVersion"); }
+            set { BackingStore?.Set("systemVersion", value); }
         }
         /// <summary>The taxAreas property</summary>
         public List<TaxArea> TaxAreas {
-            get { return BackingStore?.Get<List<TaxArea>>(nameof(TaxAreas)); }
-            set { BackingStore?.Set(nameof(TaxAreas), value); }
+            get { return BackingStore?.Get<List<TaxArea>>("taxAreas"); }
+            set { BackingStore?.Set("taxAreas", value); }
         }
         /// <summary>The taxGroups property</summary>
         public List<TaxGroup> TaxGroups {
-            get { return BackingStore?.Get<List<TaxGroup>>(nameof(TaxGroups)); }
-            set { BackingStore?.Set(nameof(TaxGroups), value); }
+            get { return BackingStore?.Get<List<TaxGroup>>("taxGroups"); }
+            set { BackingStore?.Set("taxGroups", value); }
         }
         /// <summary>The unitsOfMeasure property</summary>
         public List<UnitOfMeasure> UnitsOfMeasure {
-            get { return BackingStore?.Get<List<UnitOfMeasure>>(nameof(UnitsOfMeasure)); }
-            set { BackingStore?.Set(nameof(UnitsOfMeasure), value); }
+            get { return BackingStore?.Get<List<UnitOfMeasure>>("unitsOfMeasure"); }
+            set { BackingStore?.Set("unitsOfMeasure", value); }
         }
         /// <summary>The vendors property</summary>
         public List<Vendor> Vendors {
-            get { return BackingStore?.Get<List<Vendor>>(nameof(Vendors)); }
-            set { BackingStore?.Set(nameof(Vendors), value); }
+            get { return BackingStore?.Get<List<Vendor>>("vendors"); }
+            set { BackingStore?.Set("vendors", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

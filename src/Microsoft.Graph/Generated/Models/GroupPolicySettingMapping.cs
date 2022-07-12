@@ -8,103 +8,103 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicySettingMapping : Entity, IParsable {
         /// <summary>Admx Group Policy Id</summary>
         public string AdmxSettingDefinitionId {
-            get { return BackingStore?.Get<string>(nameof(AdmxSettingDefinitionId)); }
-            set { BackingStore?.Set(nameof(AdmxSettingDefinitionId), value); }
+            get { return BackingStore?.Get<string>("admxSettingDefinitionId"); }
+            set { BackingStore?.Set("admxSettingDefinitionId", value); }
         }
         /// <summary>List of Child Ids of the group policy setting.</summary>
         public List<string> ChildIdList {
-            get { return BackingStore?.Get<List<string>>(nameof(ChildIdList)); }
-            set { BackingStore?.Set(nameof(ChildIdList), value); }
+            get { return BackingStore?.Get<List<string>>("childIdList"); }
+            set { BackingStore?.Set("childIdList", value); }
         }
         /// <summary>The Intune Setting Definition Id</summary>
         public string IntuneSettingDefinitionId {
-            get { return BackingStore?.Get<string>(nameof(IntuneSettingDefinitionId)); }
-            set { BackingStore?.Set(nameof(IntuneSettingDefinitionId), value); }
+            get { return BackingStore?.Get<string>("intuneSettingDefinitionId"); }
+            set { BackingStore?.Set("intuneSettingDefinitionId", value); }
         }
         /// <summary>The list of Intune Setting URIs this group policy setting maps to</summary>
         public List<string> IntuneSettingUriList {
-            get { return BackingStore?.Get<List<string>>(nameof(IntuneSettingUriList)); }
-            set { BackingStore?.Set(nameof(IntuneSettingUriList), value); }
+            get { return BackingStore?.Get<List<string>>("intuneSettingUriList"); }
+            set { BackingStore?.Set("intuneSettingUriList", value); }
         }
         /// <summary>Indicates if the setting is supported by Intune or not</summary>
         public bool? IsMdmSupported {
-            get { return BackingStore?.Get<bool?>(nameof(IsMdmSupported)); }
-            set { BackingStore?.Set(nameof(IsMdmSupported), value); }
+            get { return BackingStore?.Get<bool?>("isMdmSupported"); }
+            set { BackingStore?.Set("isMdmSupported", value); }
         }
         /// <summary>The CSP name this group policy setting maps to.</summary>
         public string MdmCspName {
-            get { return BackingStore?.Get<string>(nameof(MdmCspName)); }
-            set { BackingStore?.Set(nameof(MdmCspName), value); }
+            get { return BackingStore?.Get<string>("mdmCspName"); }
+            set { BackingStore?.Set("mdmCspName", value); }
         }
         /// <summary>The minimum OS version this mdm setting supports.</summary>
         public int? MdmMinimumOSVersion {
-            get { return BackingStore?.Get<int?>(nameof(MdmMinimumOSVersion)); }
-            set { BackingStore?.Set(nameof(MdmMinimumOSVersion), value); }
+            get { return BackingStore?.Get<int?>("mdmMinimumOSVersion"); }
+            set { BackingStore?.Set("mdmMinimumOSVersion", value); }
         }
         /// <summary>The MDM CSP URI this group policy setting maps to.</summary>
         public string MdmSettingUri {
-            get { return BackingStore?.Get<string>(nameof(MdmSettingUri)); }
-            set { BackingStore?.Set(nameof(MdmSettingUri), value); }
+            get { return BackingStore?.Get<string>("mdmSettingUri"); }
+            set { BackingStore?.Set("mdmSettingUri", value); }
         }
-        /// <summary>Indicates if the setting is supported in Mdm or not. Possible values are: unknown, supported, unsupported, deprecated.</summary>
+        /// <summary>Mdm Support Status of the setting.</summary>
         public Microsoft.Graph.Beta.Models.MdmSupportedState? MdmSupportedState {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MdmSupportedState?>(nameof(MdmSupportedState)); }
-            set { BackingStore?.Set(nameof(MdmSupportedState), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MdmSupportedState?>("mdmSupportedState"); }
+            set { BackingStore?.Set("mdmSupportedState", value); }
         }
         /// <summary>Parent Id of the group policy setting.</summary>
         public string ParentId {
-            get { return BackingStore?.Get<string>(nameof(ParentId)); }
-            set { BackingStore?.Set(nameof(ParentId), value); }
+            get { return BackingStore?.Get<string>("parentId"); }
+            set { BackingStore?.Set("parentId", value); }
         }
         /// <summary>The category the group policy setting is in.</summary>
         public string SettingCategory {
-            get { return BackingStore?.Get<string>(nameof(SettingCategory)); }
-            set { BackingStore?.Set(nameof(SettingCategory), value); }
+            get { return BackingStore?.Get<string>("settingCategory"); }
+            set { BackingStore?.Set("settingCategory", value); }
         }
         /// <summary>The display name of this group policy setting.</summary>
         public string SettingDisplayName {
-            get { return BackingStore?.Get<string>(nameof(SettingDisplayName)); }
-            set { BackingStore?.Set(nameof(SettingDisplayName), value); }
+            get { return BackingStore?.Get<string>("settingDisplayName"); }
+            set { BackingStore?.Set("settingDisplayName", value); }
         }
         /// <summary>The display value of this group policy setting.</summary>
         public string SettingDisplayValue {
-            get { return BackingStore?.Get<string>(nameof(SettingDisplayValue)); }
-            set { BackingStore?.Set(nameof(SettingDisplayValue), value); }
+            get { return BackingStore?.Get<string>("settingDisplayValue"); }
+            set { BackingStore?.Set("settingDisplayValue", value); }
         }
         /// <summary>The display value type of this group policy setting.</summary>
         public string SettingDisplayValueType {
-            get { return BackingStore?.Get<string>(nameof(SettingDisplayValueType)); }
-            set { BackingStore?.Set(nameof(SettingDisplayValueType), value); }
+            get { return BackingStore?.Get<string>("settingDisplayValueType"); }
+            set { BackingStore?.Set("settingDisplayValueType", value); }
         }
         /// <summary>The name of this group policy setting.</summary>
         public string SettingName {
-            get { return BackingStore?.Get<string>(nameof(SettingName)); }
-            set { BackingStore?.Set(nameof(SettingName), value); }
+            get { return BackingStore?.Get<string>("settingName"); }
+            set { BackingStore?.Set("settingName", value); }
         }
-        /// <summary>The scope of the setting. Possible values are: unknown, device, user.</summary>
+        /// <summary>Scope of the group policy setting.</summary>
         public GroupPolicySettingScope? SettingScope {
-            get { return BackingStore?.Get<GroupPolicySettingScope?>(nameof(SettingScope)); }
-            set { BackingStore?.Set(nameof(SettingScope), value); }
+            get { return BackingStore?.Get<GroupPolicySettingScope?>("settingScope"); }
+            set { BackingStore?.Set("settingScope", value); }
         }
-        /// <summary>The setting type (security or admx) of the Group Policy. Possible values are: unknown, policy, account, securityOptions, userRightsAssignment, auditSetting, windowsFirewallSettings, appLockerRuleCollection, dataSourcesSettings, devicesSettings, driveMapSettings, environmentVariables, filesSettings, folderOptions, folders, iniFiles, internetOptions, localUsersAndGroups, networkOptions, networkShares, ntServices, powerOptions, printers, regionalOptionsSettings, registrySettings, scheduledTasks, shortcutSettings, startMenuSettings.</summary>
+        /// <summary>Setting type of the group policy.</summary>
         public GroupPolicySettingType? SettingType {
-            get { return BackingStore?.Get<GroupPolicySettingType?>(nameof(SettingType)); }
-            set { BackingStore?.Set(nameof(SettingType), value); }
+            get { return BackingStore?.Get<GroupPolicySettingType?>("settingType"); }
+            set { BackingStore?.Set("settingType", value); }
         }
         /// <summary>The value of this group policy setting.</summary>
         public string SettingValue {
-            get { return BackingStore?.Get<string>(nameof(SettingValue)); }
-            set { BackingStore?.Set(nameof(SettingValue), value); }
+            get { return BackingStore?.Get<string>("settingValue"); }
+            set { BackingStore?.Set("settingValue", value); }
         }
         /// <summary>The display units of this group policy setting value</summary>
         public string SettingValueDisplayUnits {
-            get { return BackingStore?.Get<string>(nameof(SettingValueDisplayUnits)); }
-            set { BackingStore?.Set(nameof(SettingValueDisplayUnits), value); }
+            get { return BackingStore?.Get<string>("settingValueDisplayUnits"); }
+            set { BackingStore?.Set("settingValueDisplayUnits", value); }
         }
         /// <summary>The value type of this group policy setting.</summary>
         public string SettingValueType {
-            get { return BackingStore?.Get<string>(nameof(SettingValueType)); }
-            set { BackingStore?.Set(nameof(SettingValueType), value); }
+            get { return BackingStore?.Get<string>("settingValueType"); }
+            set { BackingStore?.Set("settingValueType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

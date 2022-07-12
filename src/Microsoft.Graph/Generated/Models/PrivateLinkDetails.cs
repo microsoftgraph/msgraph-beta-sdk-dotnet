@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class PrivateLinkDetails : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The unique identifier for the Private Link policy.</summary>
         public string PolicyId {
-            get { return BackingStore?.Get<string>(nameof(PolicyId)); }
-            set { BackingStore?.Set(nameof(PolicyId), value); }
+            get { return BackingStore?.Get<string>("policyId"); }
+            set { BackingStore?.Set("policyId", value); }
         }
         /// <summary>The name of the Private Link policy in Azure AD.</summary>
         public string PolicyName {
-            get { return BackingStore?.Get<string>(nameof(PolicyName)); }
-            set { BackingStore?.Set(nameof(PolicyName), value); }
+            get { return BackingStore?.Get<string>("policyName"); }
+            set { BackingStore?.Set("policyName", value); }
         }
         /// <summary>The tenant identifier of the Azure AD tenant the Private Link policy belongs to.</summary>
         public string PolicyTenantId {
-            get { return BackingStore?.Get<string>(nameof(PolicyTenantId)); }
-            set { BackingStore?.Set(nameof(PolicyTenantId), value); }
+            get { return BackingStore?.Get<string>("policyTenantId"); }
+            set { BackingStore?.Set("policyTenantId", value); }
         }
         /// <summary>The Azure Resource Manager (ARM) path for the Private Link policy resource.</summary>
         public string ResourceId {
-            get { return BackingStore?.Get<string>(nameof(ResourceId)); }
-            set { BackingStore?.Set(nameof(ResourceId), value); }
+            get { return BackingStore?.Get<string>("resourceId"); }
+            set { BackingStore?.Set("resourceId", value); }
         }
         /// <summary>
         /// Instantiates a new privateLinkDetails and sets the default values.

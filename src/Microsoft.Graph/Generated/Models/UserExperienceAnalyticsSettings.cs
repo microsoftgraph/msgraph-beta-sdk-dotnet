@@ -9,15 +9,15 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>True if Tenant attach is configured. If configured then SCCM tenant attached devices will show up in UXA reporting.</summary>
         public bool? ConfigurationManagerDataConnectorConfigured {
-            get { return BackingStore?.Get<bool?>(nameof(ConfigurationManagerDataConnectorConfigured)); }
-            set { BackingStore?.Set(nameof(ConfigurationManagerDataConnectorConfigured), value); }
+            get { return BackingStore?.Get<bool?>("configurationManagerDataConnectorConfigured"); }
+            set { BackingStore?.Set("configurationManagerDataConnectorConfigured", value); }
         }
         /// <summary>
         /// Instantiates a new userExperienceAnalyticsSettings and sets the default values.

@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class RiskUserActivity : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The possible values are none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.</summary>
         public RiskDetail? Detail {
-            get { return BackingStore?.Get<RiskDetail?>(nameof(Detail)); }
-            set { BackingStore?.Set(nameof(Detail), value); }
+            get { return BackingStore?.Get<RiskDetail?>("detail"); }
+            set { BackingStore?.Set("detail", value); }
         }
         /// <summary>The eventTypes property</summary>
         public List<string> EventTypes {
-            get { return BackingStore?.Get<List<string>>(nameof(EventTypes)); }
-            set { BackingStore?.Set(nameof(EventTypes), value); }
+            get { return BackingStore?.Get<List<string>>("eventTypes"); }
+            set { BackingStore?.Set("eventTypes", value); }
         }
         /// <summary>The type of risk event detected.</summary>
         public List<string> RiskEventTypes {
-            get { return BackingStore?.Get<List<string>>(nameof(RiskEventTypes)); }
-            set { BackingStore?.Set(nameof(RiskEventTypes), value); }
+            get { return BackingStore?.Get<List<string>>("riskEventTypes"); }
+            set { BackingStore?.Set("riskEventTypes", value); }
         }
         /// <summary>
         /// Instantiates a new riskUserActivity and sets the default values.

@@ -4,162 +4,161 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Team : Entity, IParsable {
         /// <summary>List of channels either hosted in or shared with the team (incoming channels).</summary>
         public List<Channel> AllChannels {
-            get { return BackingStore?.Get<List<Channel>>(nameof(AllChannels)); }
-            set { BackingStore?.Set(nameof(AllChannels), value); }
+            get { return BackingStore?.Get<List<Channel>>("allChannels"); }
+            set { BackingStore?.Set("allChannels", value); }
         }
         /// <summary>The collection of channels and messages associated with the team.</summary>
         public List<Channel> Channels {
-            get { return BackingStore?.Get<List<Channel>>(nameof(Channels)); }
-            set { BackingStore?.Set(nameof(Channels), value); }
+            get { return BackingStore?.Get<List<Channel>>("channels"); }
+            set { BackingStore?.Set("channels", value); }
         }
         /// <summary>An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant&apos;s directory.</summary>
         public string Classification {
-            get { return BackingStore?.Get<string>(nameof(Classification)); }
-            set { BackingStore?.Set(nameof(Classification), value); }
+            get { return BackingStore?.Get<string>("classification"); }
+            set { BackingStore?.Set("classification", value); }
         }
         /// <summary>Timestamp at which the team was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>An optional description for the team. Maximum length: 1024 characters.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Settings to configure team discoverability by others.</summary>
         public TeamDiscoverySettings DiscoverySettings {
-            get { return BackingStore?.Get<TeamDiscoverySettings>(nameof(DiscoverySettings)); }
-            set { BackingStore?.Set(nameof(DiscoverySettings), value); }
+            get { return BackingStore?.Get<TeamDiscoverySettings>("discoverySettings"); }
+            set { BackingStore?.Set("discoverySettings", value); }
         }
         /// <summary>The name of the team.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Settings to configure use of Giphy, memes, and stickers in the team.</summary>
         public TeamFunSettings FunSettings {
-            get { return BackingStore?.Get<TeamFunSettings>(nameof(FunSettings)); }
-            set { BackingStore?.Set(nameof(FunSettings), value); }
+            get { return BackingStore?.Get<TeamFunSettings>("funSettings"); }
+            set { BackingStore?.Set("funSettings", value); }
         }
         /// <summary>The group property</summary>
         public Microsoft.Graph.Beta.Models.Group Group {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Group>(nameof(Group)); }
-            set { BackingStore?.Set(nameof(Group), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Group>("group"); }
+            set { BackingStore?.Set("group", value); }
         }
         /// <summary>Settings to configure whether guests can create, update, or delete channels in the team.</summary>
         public TeamGuestSettings GuestSettings {
-            get { return BackingStore?.Get<TeamGuestSettings>(nameof(GuestSettings)); }
-            set { BackingStore?.Set(nameof(GuestSettings), value); }
+            get { return BackingStore?.Get<TeamGuestSettings>("guestSettings"); }
+            set { BackingStore?.Set("guestSettings", value); }
         }
         /// <summary>List of channels shared with the team.</summary>
         public List<Channel> IncomingChannels {
-            get { return BackingStore?.Get<List<Channel>>(nameof(IncomingChannels)); }
-            set { BackingStore?.Set(nameof(IncomingChannels), value); }
+            get { return BackingStore?.Get<List<Channel>>("incomingChannels"); }
+            set { BackingStore?.Set("incomingChannels", value); }
         }
         /// <summary>The apps installed in this team.</summary>
         public List<TeamsAppInstallation> InstalledApps {
-            get { return BackingStore?.Get<List<TeamsAppInstallation>>(nameof(InstalledApps)); }
-            set { BackingStore?.Set(nameof(InstalledApps), value); }
+            get { return BackingStore?.Get<List<TeamsAppInstallation>>("installedApps"); }
+            set { BackingStore?.Set("installedApps", value); }
         }
         /// <summary>A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.</summary>
         public string InternalId {
-            get { return BackingStore?.Get<string>(nameof(InternalId)); }
-            set { BackingStore?.Set(nameof(InternalId), value); }
+            get { return BackingStore?.Get<string>("internalId"); }
+            set { BackingStore?.Set("internalId", value); }
         }
         /// <summary>Whether this team is in read-only mode.</summary>
         public bool? IsArchived {
-            get { return BackingStore?.Get<bool?>(nameof(IsArchived)); }
-            set { BackingStore?.Set(nameof(IsArchived), value); }
+            get { return BackingStore?.Get<bool?>("isArchived"); }
+            set { BackingStore?.Set("isArchived", value); }
         }
         /// <summary>If set to true, the team is currently in the owner-only team membership state and not accessible by other team members, such as students.</summary>
         public bool? IsMembershipLimitedToOwners {
-            get { return BackingStore?.Get<bool?>(nameof(IsMembershipLimitedToOwners)); }
-            set { BackingStore?.Set(nameof(IsMembershipLimitedToOwners), value); }
+            get { return BackingStore?.Get<bool?>("isMembershipLimitedToOwners"); }
+            set { BackingStore?.Set("isMembershipLimitedToOwners", value); }
         }
         /// <summary>Members and owners of the team.</summary>
         public List<ConversationMember> Members {
-            get { return BackingStore?.Get<List<ConversationMember>>(nameof(Members)); }
-            set { BackingStore?.Set(nameof(Members), value); }
+            get { return BackingStore?.Get<List<ConversationMember>>("members"); }
+            set { BackingStore?.Set("members", value); }
         }
         /// <summary>Settings to configure whether members can perform certain actions, for example, create channels and add bots, in the team.</summary>
         public TeamMemberSettings MemberSettings {
-            get { return BackingStore?.Get<TeamMemberSettings>(nameof(MemberSettings)); }
-            set { BackingStore?.Set(nameof(MemberSettings), value); }
+            get { return BackingStore?.Get<TeamMemberSettings>("memberSettings"); }
+            set { BackingStore?.Set("memberSettings", value); }
         }
         /// <summary>Settings to configure messaging and mentions in the team.</summary>
         public TeamMessagingSettings MessagingSettings {
-            get { return BackingStore?.Get<TeamMessagingSettings>(nameof(MessagingSettings)); }
-            set { BackingStore?.Set(nameof(MessagingSettings), value); }
+            get { return BackingStore?.Get<TeamMessagingSettings>("messagingSettings"); }
+            set { BackingStore?.Set("messagingSettings", value); }
         }
         /// <summary>The async operations that ran or are running on this team.</summary>
         public List<TeamsAsyncOperation> Operations {
-            get { return BackingStore?.Get<List<TeamsAsyncOperation>>(nameof(Operations)); }
-            set { BackingStore?.Set(nameof(Operations), value); }
+            get { return BackingStore?.Get<List<TeamsAsyncOperation>>("operations"); }
+            set { BackingStore?.Set("operations", value); }
         }
         /// <summary>The list of this team&apos;s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.</summary>
         public List<User> Owners {
-            get { return BackingStore?.Get<List<User>>(nameof(Owners)); }
-            set { BackingStore?.Set(nameof(Owners), value); }
+            get { return BackingStore?.Get<List<User>>("owners"); }
+            set { BackingStore?.Set("owners", value); }
         }
         /// <summary>A collection of permissions granted to apps to access the team.</summary>
         public List<ResourceSpecificPermissionGrant> PermissionGrants {
-            get { return BackingStore?.Get<List<ResourceSpecificPermissionGrant>>(nameof(PermissionGrants)); }
-            set { BackingStore?.Set(nameof(PermissionGrants), value); }
+            get { return BackingStore?.Get<List<ResourceSpecificPermissionGrant>>("permissionGrants"); }
+            set { BackingStore?.Set("permissionGrants", value); }
         }
         /// <summary>The team photo.</summary>
         public ProfilePhoto Photo {
-            get { return BackingStore?.Get<ProfilePhoto>(nameof(Photo)); }
-            set { BackingStore?.Set(nameof(Photo), value); }
+            get { return BackingStore?.Get<ProfilePhoto>("photo"); }
+            set { BackingStore?.Set("photo", value); }
         }
         /// <summary>The general channel for the team.</summary>
         public Channel PrimaryChannel {
-            get { return BackingStore?.Get<Channel>(nameof(PrimaryChannel)); }
-            set { BackingStore?.Set(nameof(PrimaryChannel), value); }
+            get { return BackingStore?.Get<Channel>("primaryChannel"); }
+            set { BackingStore?.Set("primaryChannel", value); }
         }
         /// <summary>The schedule of shifts for this team.</summary>
         public Microsoft.Graph.Beta.Models.Schedule Schedule {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Schedule>(nameof(Schedule)); }
-            set { BackingStore?.Set(nameof(Schedule), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Schedule>("schedule"); }
+            set { BackingStore?.Set("schedule", value); }
         }
         /// <summary>Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.</summary>
         public TeamSpecialization? Specialization {
-            get { return BackingStore?.Get<TeamSpecialization?>(nameof(Specialization)); }
-            set { BackingStore?.Set(nameof(Specialization), value); }
+            get { return BackingStore?.Get<TeamSpecialization?>("specialization"); }
+            set { BackingStore?.Set("specialization", value); }
         }
         /// <summary>Contains summary information about the team, including number of owners, members, and guests.</summary>
         public TeamSummary Summary {
-            get { return BackingStore?.Get<TeamSummary>(nameof(Summary)); }
-            set { BackingStore?.Set(nameof(Summary), value); }
+            get { return BackingStore?.Get<TeamSummary>("summary"); }
+            set { BackingStore?.Set("summary", value); }
         }
         /// <summary>The tags associated with the team.</summary>
         public List<TeamworkTag> Tags {
-            get { return BackingStore?.Get<List<TeamworkTag>>(nameof(Tags)); }
-            set { BackingStore?.Set(nameof(Tags), value); }
+            get { return BackingStore?.Get<List<TeamworkTag>>("tags"); }
+            set { BackingStore?.Set("tags", value); }
         }
         /// <summary>The template this team was created from. See available templates.</summary>
         public TeamsTemplate Template {
-            get { return BackingStore?.Get<TeamsTemplate>(nameof(Template)); }
-            set { BackingStore?.Set(nameof(Template), value); }
+            get { return BackingStore?.Get<TeamsTemplate>("template"); }
+            set { BackingStore?.Set("template", value); }
         }
         /// <summary>The ID of the Azure Active Directory tenant.</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>The visibility of the group and team. Defaults to Public.</summary>
         public TeamVisibilityType? Visibility {
-            get { return BackingStore?.Get<TeamVisibilityType?>(nameof(Visibility)); }
-            set { BackingStore?.Set(nameof(Visibility), value); }
+            get { return BackingStore?.Get<TeamVisibilityType?>("visibility"); }
+            set { BackingStore?.Set("visibility", value); }
         }
         /// <summary>A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.</summary>
         public string WebUrl {
-            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
-            set { BackingStore?.Set(nameof(WebUrl), value); }
+            get { return BackingStore?.Get<string>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

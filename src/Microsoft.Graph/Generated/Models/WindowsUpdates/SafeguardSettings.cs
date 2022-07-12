@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class SafeguardSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>List of safeguards to ignore per device.</summary>
         public List<SafeguardProfile> DisabledSafeguardProfiles {
-            get { return BackingStore?.Get<List<SafeguardProfile>>(nameof(DisabledSafeguardProfiles)); }
-            set { BackingStore?.Set(nameof(DisabledSafeguardProfiles), value); }
+            get { return BackingStore?.Get<List<SafeguardProfile>>("disabledSafeguardProfiles"); }
+            set { BackingStore?.Set("disabledSafeguardProfiles", value); }
         }
         /// <summary>
         /// Instantiates a new safeguardSettings and sets the default values.

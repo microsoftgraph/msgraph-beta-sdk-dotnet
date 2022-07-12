@@ -5,20 +5,20 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MicrosoftAuthenticatorAuthenticationMethodTarget : AuthenticationMethodTarget, IParsable {
-        /// <summary>Determines which types of notifications can be used for sign-in. The possible values are: deviceBasedPush (passwordless only), push, and any.</summary>
+        /// <summary>The authenticationMode property</summary>
         public MicrosoftAuthenticatorAuthenticationMode? AuthenticationMode {
-            get { return BackingStore?.Get<MicrosoftAuthenticatorAuthenticationMode?>(nameof(AuthenticationMode)); }
-            set { BackingStore?.Set(nameof(AuthenticationMode), value); }
+            get { return BackingStore?.Get<MicrosoftAuthenticatorAuthenticationMode?>("authenticationMode"); }
+            set { BackingStore?.Set("authenticationMode", value); }
         }
-        /// <summary>Determines whether the user is shown additional context in their Authenticator app notification. In the body of the Authenticator notification, the user will be shown the app they are signing into along with the location that the authentication request originated from. Possible values are: enabled, disabled, default.</summary>
+        /// <summary>The displayAppInformationRequiredState property</summary>
         public AdvancedConfigState? DisplayAppInformationRequiredState {
-            get { return BackingStore?.Get<AdvancedConfigState?>(nameof(DisplayAppInformationRequiredState)); }
-            set { BackingStore?.Set(nameof(DisplayAppInformationRequiredState), value); }
+            get { return BackingStore?.Get<AdvancedConfigState?>("displayAppInformationRequiredState"); }
+            set { BackingStore?.Set("displayAppInformationRequiredState", value); }
         }
-        /// <summary>Requires number matching for MFA notifications. Value is ignored for phone sign-in notifications. Possible values are: enabled, disabled, default.</summary>
+        /// <summary>The numberMatchingRequiredState property</summary>
         public AdvancedConfigState? NumberMatchingRequiredState {
-            get { return BackingStore?.Get<AdvancedConfigState?>(nameof(NumberMatchingRequiredState)); }
-            set { BackingStore?.Set(nameof(NumberMatchingRequiredState), value); }
+            get { return BackingStore?.Get<AdvancedConfigState?>("numberMatchingRequiredState"); }
+            set { BackingStore?.Set("numberMatchingRequiredState", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

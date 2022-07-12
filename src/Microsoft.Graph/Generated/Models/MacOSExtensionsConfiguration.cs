@@ -7,38 +7,38 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOSExtensionsConfiguration : DeviceConfiguration, IParsable {
         /// <summary>All kernel extensions validly signed by the team identifiers in this list will be allowed to load.</summary>
         public List<string> KernelExtensionAllowedTeamIdentifiers {
-            get { return BackingStore?.Get<List<string>>(nameof(KernelExtensionAllowedTeamIdentifiers)); }
-            set { BackingStore?.Set(nameof(KernelExtensionAllowedTeamIdentifiers), value); }
+            get { return BackingStore?.Get<List<string>>("kernelExtensionAllowedTeamIdentifiers"); }
+            set { BackingStore?.Set("kernelExtensionAllowedTeamIdentifiers", value); }
         }
         /// <summary>If set to true, users can approve additional kernel extensions not explicitly allowed by configurations profiles.</summary>
         public bool? KernelExtensionOverridesAllowed {
-            get { return BackingStore?.Get<bool?>(nameof(KernelExtensionOverridesAllowed)); }
-            set { BackingStore?.Set(nameof(KernelExtensionOverridesAllowed), value); }
+            get { return BackingStore?.Get<bool?>("kernelExtensionOverridesAllowed"); }
+            set { BackingStore?.Set("kernelExtensionOverridesAllowed", value); }
         }
         /// <summary>A list of kernel extensions that will be allowed to load. . This collection can contain a maximum of 500 elements.</summary>
         public List<MacOSKernelExtension> KernelExtensionsAllowed {
-            get { return BackingStore?.Get<List<MacOSKernelExtension>>(nameof(KernelExtensionsAllowed)); }
-            set { BackingStore?.Set(nameof(KernelExtensionsAllowed), value); }
+            get { return BackingStore?.Get<List<MacOSKernelExtension>>("kernelExtensionsAllowed"); }
+            set { BackingStore?.Set("kernelExtensionsAllowed", value); }
         }
         /// <summary>Gets or sets a list of allowed macOS system extensions. This collection can contain a maximum of 500 elements.</summary>
         public List<MacOSSystemExtension> SystemExtensionsAllowed {
-            get { return BackingStore?.Get<List<MacOSSystemExtension>>(nameof(SystemExtensionsAllowed)); }
-            set { BackingStore?.Set(nameof(SystemExtensionsAllowed), value); }
+            get { return BackingStore?.Get<List<MacOSSystemExtension>>("systemExtensionsAllowed"); }
+            set { BackingStore?.Set("systemExtensionsAllowed", value); }
         }
         /// <summary>Gets or sets a list of allowed team identifiers. Any system extension signed with any of the specified team identifiers will be approved.</summary>
         public List<string> SystemExtensionsAllowedTeamIdentifiers {
-            get { return BackingStore?.Get<List<string>>(nameof(SystemExtensionsAllowedTeamIdentifiers)); }
-            set { BackingStore?.Set(nameof(SystemExtensionsAllowedTeamIdentifiers), value); }
+            get { return BackingStore?.Get<List<string>>("systemExtensionsAllowedTeamIdentifiers"); }
+            set { BackingStore?.Set("systemExtensionsAllowedTeamIdentifiers", value); }
         }
         /// <summary>Gets or sets a list of allowed macOS system extension types. This collection can contain a maximum of 500 elements.</summary>
         public List<MacOSSystemExtensionTypeMapping> SystemExtensionsAllowedTypes {
-            get { return BackingStore?.Get<List<MacOSSystemExtensionTypeMapping>>(nameof(SystemExtensionsAllowedTypes)); }
-            set { BackingStore?.Set(nameof(SystemExtensionsAllowedTypes), value); }
+            get { return BackingStore?.Get<List<MacOSSystemExtensionTypeMapping>>("systemExtensionsAllowedTypes"); }
+            set { BackingStore?.Set("systemExtensionsAllowedTypes", value); }
         }
         /// <summary>Gets or sets whether to allow the user to approve additional system extensions not explicitly allowed by configuration profiles.</summary>
         public bool? SystemExtensionsBlockOverride {
-            get { return BackingStore?.Get<bool?>(nameof(SystemExtensionsBlockOverride)); }
-            set { BackingStore?.Set(nameof(SystemExtensionsBlockOverride), value); }
+            get { return BackingStore?.Get<bool?>("systemExtensionsBlockOverride"); }
+            set { BackingStore?.Set("systemExtensionsBlockOverride", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

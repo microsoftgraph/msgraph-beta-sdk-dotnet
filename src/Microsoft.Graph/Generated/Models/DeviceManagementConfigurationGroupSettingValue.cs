@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationGroupSettingValue : DeviceManagementConfigurationSettingValue, IParsable {
         /// <summary>Collection of child setting instances contained within this GroupSetting</summary>
         public List<DeviceManagementConfigurationSettingInstance> Children {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstance>>(nameof(Children)); }
-            set { BackingStore?.Set(nameof(Children), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstance>>("children"); }
+            set { BackingStore?.Set("children", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

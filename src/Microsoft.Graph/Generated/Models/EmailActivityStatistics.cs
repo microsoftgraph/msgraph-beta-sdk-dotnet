@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class EmailActivityStatistics : ActivityStatistics, IParsable {
         /// <summary>Total hours spent on email outside of working hours, which is based on the user&apos;s Outlook calendar setting for work hours. The value is represented in ISO 8601 format for durations.</summary>
         public TimeSpan? AfterHours {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(AfterHours)); }
-            set { BackingStore?.Set(nameof(AfterHours), value); }
+            get { return BackingStore?.Get<TimeSpan?>("afterHours"); }
+            set { BackingStore?.Set("afterHours", value); }
         }
         /// <summary>Total hours spent reading email. The value is represented in ISO 8601 format for durations.</summary>
         public TimeSpan? ReadEmail {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(ReadEmail)); }
-            set { BackingStore?.Set(nameof(ReadEmail), value); }
+            get { return BackingStore?.Get<TimeSpan?>("readEmail"); }
+            set { BackingStore?.Set("readEmail", value); }
         }
         /// <summary>Total hours spent writing and sending email. The value is represented in ISO 8601 format for durations.</summary>
         public TimeSpan? SentEmail {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(SentEmail)); }
-            set { BackingStore?.Set(nameof(SentEmail), value); }
+            get { return BackingStore?.Get<TimeSpan?>("sentEmail"); }
+            set { BackingStore?.Set("sentEmail", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

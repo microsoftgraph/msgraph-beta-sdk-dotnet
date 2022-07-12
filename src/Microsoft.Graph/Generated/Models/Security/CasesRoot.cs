@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class CasesRoot : Entity, IParsable {
         /// <summary>The ediscoveryCases property</summary>
         public List<EdiscoveryCase> EdiscoveryCases {
-            get { return BackingStore?.Get<List<EdiscoveryCase>>(nameof(EdiscoveryCases)); }
-            set { BackingStore?.Set(nameof(EdiscoveryCases), value); }
+            get { return BackingStore?.Get<List<EdiscoveryCase>>("ediscoveryCases"); }
+            set { BackingStore?.Set("ediscoveryCases", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

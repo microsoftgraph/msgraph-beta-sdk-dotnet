@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class MetricTimeSeriesDataPoint : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Time of the metric time series data point</summary>
         public DateTimeOffset? DateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DateTime)); }
-            set { BackingStore?.Set(nameof(DateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("dateTime"); }
+            set { BackingStore?.Set("dateTime", value); }
         }
         /// <summary>Value of the metric time series data point</summary>
         public long? Value {
-            get { return BackingStore?.Get<long?>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<long?>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Instantiates a new metricTimeSeriesDataPoint and sets the default values.

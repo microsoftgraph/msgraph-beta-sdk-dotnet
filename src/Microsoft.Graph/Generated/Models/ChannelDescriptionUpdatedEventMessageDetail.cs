@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class ChannelDescriptionUpdatedEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>The updated description of the channel.</summary>
         public string ChannelDescription {
-            get { return BackingStore?.Get<string>(nameof(ChannelDescription)); }
-            set { BackingStore?.Set(nameof(ChannelDescription), value); }
+            get { return BackingStore?.Get<string>("channelDescription"); }
+            set { BackingStore?.Set("channelDescription", value); }
         }
         /// <summary>Unique identifier of the channel.</summary>
         public string ChannelId {
-            get { return BackingStore?.Get<string>(nameof(ChannelId)); }
-            set { BackingStore?.Set(nameof(ChannelId), value); }
+            get { return BackingStore?.Get<string>("channelId"); }
+            set { BackingStore?.Set("channelId", value); }
         }
         /// <summary>Initiator of the event.</summary>
         public IdentitySet Initiator {
-            get { return BackingStore?.Get<IdentitySet>(nameof(Initiator)); }
-            set { BackingStore?.Set(nameof(Initiator), value); }
+            get { return BackingStore?.Get<IdentitySet>("initiator"); }
+            set { BackingStore?.Set("initiator", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

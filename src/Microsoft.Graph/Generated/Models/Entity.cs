@@ -18,15 +18,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class Entity : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The id property</summary>
         public string Id {
-            get { return BackingStore?.Get<string>(nameof(Id)); }
-            set { BackingStore?.Set(nameof(Id), value); }
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new entity and sets the default values.
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public Entity() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.entity";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -167,6 +173,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.cloudPcAuditEvent" => new CloudPcAuditEvent(),
                 "#microsoft.graph.cloudPCConnectivityIssue" => new CloudPCConnectivityIssue(),
                 "#microsoft.graph.cloudPcDeviceImage" => new CloudPcDeviceImage(),
+                "#microsoft.graph.cloudPcExternalPartnerSetting" => new CloudPcExternalPartnerSetting(),
                 "#microsoft.graph.cloudPcGalleryImage" => new CloudPcGalleryImage(),
                 "#microsoft.graph.cloudPcOnPremisesConnection" => new CloudPcOnPremisesConnection(),
                 "#microsoft.graph.cloudPcOrganizationSettings" => new CloudPcOrganizationSettings(),
@@ -367,9 +374,9 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.extension" => new Extension(),
                 "#microsoft.graph.external" => new External(),
                 "#microsoft.graph.externalConnection" => new ExternalConnection(),
-                "#microsoft.graph.externalConnectors.connectionOperation" => new Microsoft.Graph.Beta.Models.ExternalConnectors.ConnectionOperation(),
+                "#microsoft.graph.externalConnectors.connectionOperation" => new ConnectionOperation(),
                 "#microsoft.graph.externalConnectors.connectionQuota" => new ConnectionQuota(),
-                "#microsoft.graph.externalConnectors.externalConnection" => new ExternalConnection(),
+                "#microsoft.graph.externalConnectors.externalConnection" => new Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalConnection(),
                 "#microsoft.graph.externalConnectors.externalGroup" => new Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalGroup(),
                 "#microsoft.graph.externalConnectors.externalItem" => new Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalItem(),
                 "#microsoft.graph.externalConnectors.identity" => new Microsoft.Graph.Beta.Models.ExternalConnectors.Identity(),
@@ -650,6 +657,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.secureScore" => new SecureScore(),
                 "#microsoft.graph.secureScoreControlProfile" => new SecureScoreControlProfile(),
                 "#microsoft.graph.security" => new Microsoft.Graph.Beta.Models.Security.Security(),
+                "#microsoft.graph.security.alert" => new Microsoft.Graph.Beta.Models.Security.Alert(),
                 "#microsoft.graph.security.case" => new Microsoft.Graph.Beta.Models.Security.Case(),
                 "#microsoft.graph.security.caseOperation" => new Microsoft.Graph.Beta.Models.Security.CaseOperation(),
                 "#microsoft.graph.security.casesRoot" => new CasesRoot(),
@@ -659,6 +667,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.security.dispositionReviewStage" => new DispositionReviewStage(),
                 "#microsoft.graph.security.ediscoveryCaseSettings" => new EdiscoveryCaseSettings(),
                 "#microsoft.graph.security.file" => new Microsoft.Graph.Beta.Models.Security.FileObject(),
+                "#microsoft.graph.security.incident" => new Incident(),
                 "#microsoft.graph.security.informationProtection" => new Microsoft.Graph.Beta.Models.Security.InformationProtection(),
                 "#microsoft.graph.security.informationProtectionPolicySetting" => new InformationProtectionPolicySetting(),
                 "#microsoft.graph.security.labelsRoot" => new LabelsRoot(),
@@ -930,6 +939,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"id", n => { Id = n.GetStringValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -939,6 +949,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

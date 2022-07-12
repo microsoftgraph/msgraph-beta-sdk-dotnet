@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamworkConfiguredPeripheral : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>True if the current peripheral is optional. If set to false, this property is also used as part of the calculation of the health state for the device.</summary>
         public bool? IsOptional {
-            get { return BackingStore?.Get<bool?>(nameof(IsOptional)); }
-            set { BackingStore?.Set(nameof(IsOptional), value); }
+            get { return BackingStore?.Get<bool?>("isOptional"); }
+            set { BackingStore?.Set("isOptional", value); }
         }
         /// <summary>The peripheral property</summary>
         public TeamworkPeripheral Peripheral {
-            get { return BackingStore?.Get<TeamworkPeripheral>(nameof(Peripheral)); }
-            set { BackingStore?.Set(nameof(Peripheral), value); }
+            get { return BackingStore?.Get<TeamworkPeripheral>("peripheral"); }
+            set { BackingStore?.Set("peripheral", value); }
         }
         /// <summary>
         /// Instantiates a new teamworkConfiguredPeripheral and sets the default values.

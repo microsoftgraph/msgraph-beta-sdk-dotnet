@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeliveryOptimizationMaxCacheSizePercentage : DeliveryOptimizationMaxCacheSize, IParsable {
         /// <summary>Specifies the maximum cache size that Delivery Optimization can utilize, as a percentage of disk size (1-100). Valid values 1 to 100</summary>
         public int? MaximumCacheSizePercentage {
-            get { return BackingStore?.Get<int?>(nameof(MaximumCacheSizePercentage)); }
-            set { BackingStore?.Set(nameof(MaximumCacheSizePercentage), value); }
+            get { return BackingStore?.Get<int?>("maximumCacheSizePercentage"); }
+            set { BackingStore?.Set("maximumCacheSizePercentage", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

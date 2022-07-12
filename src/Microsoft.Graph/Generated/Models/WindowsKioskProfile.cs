@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsKioskProfile : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The app base class used to identify the application info for the kiosk configuration</summary>
         public WindowsKioskAppConfiguration AppConfiguration {
-            get { return BackingStore?.Get<WindowsKioskAppConfiguration>(nameof(AppConfiguration)); }
-            set { BackingStore?.Set(nameof(AppConfiguration), value); }
+            get { return BackingStore?.Get<WindowsKioskAppConfiguration>("appConfiguration"); }
+            set { BackingStore?.Set("appConfiguration", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Key of the entity.</summary>
         public string ProfileId {
-            get { return BackingStore?.Get<string>(nameof(ProfileId)); }
-            set { BackingStore?.Set(nameof(ProfileId), value); }
+            get { return BackingStore?.Get<string>("profileId"); }
+            set { BackingStore?.Set("profileId", value); }
         }
         /// <summary>This is a friendly name used to identify a group of applications, the layout of these apps on the start menu and the users to whom this kiosk configuration is assigned.</summary>
         public string ProfileName {
-            get { return BackingStore?.Get<string>(nameof(ProfileName)); }
-            set { BackingStore?.Set(nameof(ProfileName), value); }
+            get { return BackingStore?.Get<string>("profileName"); }
+            set { BackingStore?.Set("profileName", value); }
         }
         /// <summary>The user accounts that will be locked to this kiosk configuration. This collection can contain a maximum of 100 elements.</summary>
         public List<WindowsKioskUser> UserAccountsConfiguration {
-            get { return BackingStore?.Get<List<WindowsKioskUser>>(nameof(UserAccountsConfiguration)); }
-            set { BackingStore?.Set(nameof(UserAccountsConfiguration), value); }
+            get { return BackingStore?.Get<List<WindowsKioskUser>>("userAccountsConfiguration"); }
+            set { BackingStore?.Set("userAccountsConfiguration", value); }
         }
         /// <summary>
         /// Instantiates a new windowsKioskProfile and sets the default values.

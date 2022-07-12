@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class ExactMatchLookupJob : ExactMatchJobBase, IParsable {
         /// <summary>The matchingRows property</summary>
         public List<LookupResultRow> MatchingRows {
-            get { return BackingStore?.Get<List<LookupResultRow>>(nameof(MatchingRows)); }
-            set { BackingStore?.Set(nameof(MatchingRows), value); }
+            get { return BackingStore?.Get<List<LookupResultRow>>("matchingRows"); }
+            set { BackingStore?.Set("matchingRows", value); }
         }
         /// <summary>The state property</summary>
         public string State {
-            get { return BackingStore?.Get<string>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<string>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

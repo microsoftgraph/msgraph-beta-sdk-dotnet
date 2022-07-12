@@ -8,48 +8,48 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsModelScores : Entity, IParsable {
         /// <summary>The user experience analytics model app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? AppReliabilityScore {
-            get { return BackingStore?.Get<double?>(nameof(AppReliabilityScore)); }
-            set { BackingStore?.Set(nameof(AppReliabilityScore), value); }
+            get { return BackingStore?.Get<double?>("appReliabilityScore"); }
+            set { BackingStore?.Set("appReliabilityScore", value); }
         }
         /// <summary>The user experience analytics model battery health score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? BatteryHealthScore {
-            get { return BackingStore?.Get<double?>(nameof(BatteryHealthScore)); }
-            set { BackingStore?.Set(nameof(BatteryHealthScore), value); }
+            get { return BackingStore?.Get<double?>("batteryHealthScore"); }
+            set { BackingStore?.Set("batteryHealthScore", value); }
         }
         /// <summary>The user experience analytics model score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? EndpointAnalyticsScore {
-            get { return BackingStore?.Get<double?>(nameof(EndpointAnalyticsScore)); }
-            set { BackingStore?.Set(nameof(EndpointAnalyticsScore), value); }
+            get { return BackingStore?.Get<double?>("endpointAnalyticsScore"); }
+            set { BackingStore?.Set("endpointAnalyticsScore", value); }
         }
-        /// <summary>The health state of the user experience analytics model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.</summary>
+        /// <summary>The healthStatus property</summary>
         public UserExperienceAnalyticsHealthState? HealthStatus {
-            get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>(nameof(HealthStatus)); }
-            set { BackingStore?.Set(nameof(HealthStatus), value); }
+            get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>("healthStatus"); }
+            set { BackingStore?.Set("healthStatus", value); }
         }
         /// <summary>A unique identifier of the user experience analytics model scores: device manufacturer.</summary>
         public string Manufacturer {
-            get { return BackingStore?.Get<string>(nameof(Manufacturer)); }
-            set { BackingStore?.Set(nameof(Manufacturer), value); }
+            get { return BackingStore?.Get<string>("manufacturer"); }
+            set { BackingStore?.Set("manufacturer", value); }
         }
         /// <summary>A unique identifier of the user experience analytics model scores: device model.</summary>
         public string Model {
-            get { return BackingStore?.Get<string>(nameof(Model)); }
-            set { BackingStore?.Set(nameof(Model), value); }
+            get { return BackingStore?.Get<string>("model"); }
+            set { BackingStore?.Set("model", value); }
         }
         /// <summary>The user experience analytics model device count. Valid values -9.22337203685478E+18 to 9.22337203685478E+18</summary>
         public long? ModelDeviceCount {
-            get { return BackingStore?.Get<long?>(nameof(ModelDeviceCount)); }
-            set { BackingStore?.Set(nameof(ModelDeviceCount), value); }
+            get { return BackingStore?.Get<long?>("modelDeviceCount"); }
+            set { BackingStore?.Set("modelDeviceCount", value); }
         }
         /// <summary>The user experience analytics model startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? StartupPerformanceScore {
-            get { return BackingStore?.Get<double?>(nameof(StartupPerformanceScore)); }
-            set { BackingStore?.Set(nameof(StartupPerformanceScore), value); }
+            get { return BackingStore?.Get<double?>("startupPerformanceScore"); }
+            set { BackingStore?.Set("startupPerformanceScore", value); }
         }
         /// <summary>The user experience analytics model work from anywhere score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? WorkFromAnywhereScore {
-            get { return BackingStore?.Get<double?>(nameof(WorkFromAnywhereScore)); }
-            set { BackingStore?.Set(nameof(WorkFromAnywhereScore), value); }
+            get { return BackingStore?.Get<double?>("workFromAnywhereScore"); }
+            set { BackingStore?.Set("workFromAnywhereScore", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

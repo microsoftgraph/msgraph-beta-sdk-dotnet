@@ -7,38 +7,38 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationPowerSchoolDataProvider : EducationSynchronizationDataProvider, IParsable {
         /// <summary>Indicates whether the source has multiple identifiers for a single student or teacher.</summary>
         public bool? AllowTeachersInMultipleSchools {
-            get { return BackingStore?.Get<bool?>(nameof(AllowTeachersInMultipleSchools)); }
-            set { BackingStore?.Set(nameof(AllowTeachersInMultipleSchools), value); }
+            get { return BackingStore?.Get<bool?>("allowTeachersInMultipleSchools"); }
+            set { BackingStore?.Set("allowTeachersInMultipleSchools", value); }
         }
         /// <summary>The client ID used to connect to PowerSchool.</summary>
         public string ClientId {
-            get { return BackingStore?.Get<string>(nameof(ClientId)); }
-            set { BackingStore?.Set(nameof(ClientId), value); }
+            get { return BackingStore?.Get<string>("clientId"); }
+            set { BackingStore?.Set("clientId", value); }
         }
         /// <summary>The client secret to authenticate the connection to the PowerSchool instance.</summary>
         public string ClientSecret {
-            get { return BackingStore?.Get<string>(nameof(ClientSecret)); }
-            set { BackingStore?.Set(nameof(ClientSecret), value); }
+            get { return BackingStore?.Get<string>("clientSecret"); }
+            set { BackingStore?.Set("clientSecret", value); }
         }
         /// <summary>The connection URL to the PowerSchool instance.</summary>
         public string ConnectionUrl {
-            get { return BackingStore?.Get<string>(nameof(ConnectionUrl)); }
-            set { BackingStore?.Set(nameof(ConnectionUrl), value); }
+            get { return BackingStore?.Get<string>("connectionUrl"); }
+            set { BackingStore?.Set("connectionUrl", value); }
         }
         /// <summary>Optional customization to be applied to the synchronization profile.</summary>
         public EducationSynchronizationCustomizations Customizations {
-            get { return BackingStore?.Get<EducationSynchronizationCustomizations>(nameof(Customizations)); }
-            set { BackingStore?.Set(nameof(Customizations), value); }
+            get { return BackingStore?.Get<EducationSynchronizationCustomizations>("customizations"); }
+            set { BackingStore?.Set("customizations", value); }
         }
         /// <summary>The list of schools to sync.</summary>
         public List<string> SchoolsIds {
-            get { return BackingStore?.Get<List<string>>(nameof(SchoolsIds)); }
-            set { BackingStore?.Set(nameof(SchoolsIds), value); }
+            get { return BackingStore?.Get<List<string>>("schoolsIds"); }
+            set { BackingStore?.Set("schoolsIds", value); }
         }
         /// <summary>The school year to sync.</summary>
         public string SchoolYear {
-            get { return BackingStore?.Get<string>(nameof(SchoolYear)); }
-            set { BackingStore?.Set(nameof(SchoolYear), value); }
+            get { return BackingStore?.Get<string>("schoolYear"); }
+            set { BackingStore?.Set("schoolYear", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

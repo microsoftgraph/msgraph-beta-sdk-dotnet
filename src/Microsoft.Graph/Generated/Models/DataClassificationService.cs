@@ -7,48 +7,48 @@ namespace Microsoft.Graph.Beta.Models {
     public class DataClassificationService : Entity, IParsable {
         /// <summary>The classifyFileJobs property</summary>
         public List<JobResponseBase> ClassifyFileJobs {
-            get { return BackingStore?.Get<List<JobResponseBase>>(nameof(ClassifyFileJobs)); }
-            set { BackingStore?.Set(nameof(ClassifyFileJobs), value); }
+            get { return BackingStore?.Get<List<JobResponseBase>>("classifyFileJobs"); }
+            set { BackingStore?.Set("classifyFileJobs", value); }
         }
         /// <summary>The classifyTextJobs property</summary>
         public List<JobResponseBase> ClassifyTextJobs {
-            get { return BackingStore?.Get<List<JobResponseBase>>(nameof(ClassifyTextJobs)); }
-            set { BackingStore?.Set(nameof(ClassifyTextJobs), value); }
+            get { return BackingStore?.Get<List<JobResponseBase>>("classifyTextJobs"); }
+            set { BackingStore?.Set("classifyTextJobs", value); }
         }
         /// <summary>The evaluateDlpPoliciesJobs property</summary>
         public List<JobResponseBase> EvaluateDlpPoliciesJobs {
-            get { return BackingStore?.Get<List<JobResponseBase>>(nameof(EvaluateDlpPoliciesJobs)); }
-            set { BackingStore?.Set(nameof(EvaluateDlpPoliciesJobs), value); }
+            get { return BackingStore?.Get<List<JobResponseBase>>("evaluateDlpPoliciesJobs"); }
+            set { BackingStore?.Set("evaluateDlpPoliciesJobs", value); }
         }
         /// <summary>The evaluateLabelJobs property</summary>
         public List<JobResponseBase> EvaluateLabelJobs {
-            get { return BackingStore?.Get<List<JobResponseBase>>(nameof(EvaluateLabelJobs)); }
-            set { BackingStore?.Set(nameof(EvaluateLabelJobs), value); }
+            get { return BackingStore?.Get<List<JobResponseBase>>("evaluateLabelJobs"); }
+            set { BackingStore?.Set("evaluateLabelJobs", value); }
         }
         /// <summary>The exactMatchDataStores property</summary>
         public List<ExactMatchDataStore> ExactMatchDataStores {
-            get { return BackingStore?.Get<List<ExactMatchDataStore>>(nameof(ExactMatchDataStores)); }
-            set { BackingStore?.Set(nameof(ExactMatchDataStores), value); }
+            get { return BackingStore?.Get<List<ExactMatchDataStore>>("exactMatchDataStores"); }
+            set { BackingStore?.Set("exactMatchDataStores", value); }
         }
         /// <summary>The exactMatchUploadAgents property</summary>
         public List<ExactMatchUploadAgent> ExactMatchUploadAgents {
-            get { return BackingStore?.Get<List<ExactMatchUploadAgent>>(nameof(ExactMatchUploadAgents)); }
-            set { BackingStore?.Set(nameof(ExactMatchUploadAgents), value); }
+            get { return BackingStore?.Get<List<ExactMatchUploadAgent>>("exactMatchUploadAgents"); }
+            set { BackingStore?.Set("exactMatchUploadAgents", value); }
         }
         /// <summary>The jobs property</summary>
         public List<JobResponseBase> Jobs {
-            get { return BackingStore?.Get<List<JobResponseBase>>(nameof(Jobs)); }
-            set { BackingStore?.Set(nameof(Jobs), value); }
+            get { return BackingStore?.Get<List<JobResponseBase>>("jobs"); }
+            set { BackingStore?.Set("jobs", value); }
         }
         /// <summary>The sensitiveTypes property</summary>
         public List<SensitiveType> SensitiveTypes {
-            get { return BackingStore?.Get<List<SensitiveType>>(nameof(SensitiveTypes)); }
-            set { BackingStore?.Set(nameof(SensitiveTypes), value); }
+            get { return BackingStore?.Get<List<SensitiveType>>("sensitiveTypes"); }
+            set { BackingStore?.Set("sensitiveTypes", value); }
         }
         /// <summary>The sensitivityLabels property</summary>
         public List<SensitivityLabel> SensitivityLabels {
-            get { return BackingStore?.Get<List<SensitivityLabel>>(nameof(SensitivityLabels)); }
-            set { BackingStore?.Set(nameof(SensitivityLabels), value); }
+            get { return BackingStore?.Get<List<SensitivityLabel>>("sensitivityLabels"); }
+            set { BackingStore?.Set("sensitivityLabels", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,80 +9,80 @@ namespace Microsoft.Graph.Beta.Models {
     public class ZebraFotaDeploymentStatus : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A boolean that indicates if a cancellation was requested on the deployment. NOTE: A cancellation request does not guarantee that the deployment was canceled.</summary>
         public bool? CancelRequested {
-            get { return BackingStore?.Get<bool?>(nameof(CancelRequested)); }
-            set { BackingStore?.Set(nameof(CancelRequested), value); }
+            get { return BackingStore?.Get<bool?>("cancelRequested"); }
+            set { BackingStore?.Set("cancelRequested", value); }
         }
         /// <summary>The date and time when this deployment was completed or canceled. The actual date time is determined by the value of state. If the state is canceled, this property holds the cancellation date/time. If the the state is completed, this property holds the completion date/time. If the deployment is not completed before the deployment end date, then completed date/time and end date/time are the same. This is always in the deployment timezone. Note: An installation that is in progress can continue past the deployment end date.</summary>
         public DateTimeOffset? CompleteOrCanceledDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CompleteOrCanceledDateTime)); }
-            set { BackingStore?.Set(nameof(CompleteOrCanceledDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("completeOrCanceledDateTime"); }
+            set { BackingStore?.Set("completeOrCanceledDateTime", value); }
         }
         /// <summary>Date and time when the deployment status was updated from Zebra</summary>
         public DateTimeOffset? LastUpdatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastUpdatedDateTime)); }
-            set { BackingStore?.Set(nameof(LastUpdatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
+            set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
-        /// <summary>See zebraFotaDeploymentState enum for possible values. Possible values are: pendingCreation, createFailed, created, inProgress, completed, pendingCancel, canceled, unknownFutureValue.</summary>
+        /// <summary>Represents the state of Zebra FOTA deployment.</summary>
         public ZebraFotaDeploymentState? State {
-            get { return BackingStore?.Get<ZebraFotaDeploymentState?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<ZebraFotaDeploymentState?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>An integer that indicates the total number of devices where installation was successful.</summary>
         public int? TotalAwaitingInstall {
-            get { return BackingStore?.Get<int?>(nameof(TotalAwaitingInstall)); }
-            set { BackingStore?.Set(nameof(TotalAwaitingInstall), value); }
+            get { return BackingStore?.Get<int?>("totalAwaitingInstall"); }
+            set { BackingStore?.Set("totalAwaitingInstall", value); }
         }
         /// <summary>An integer that indicates the total number of devices where installation was canceled.</summary>
         public int? TotalCanceled {
-            get { return BackingStore?.Get<int?>(nameof(TotalCanceled)); }
-            set { BackingStore?.Set(nameof(TotalCanceled), value); }
+            get { return BackingStore?.Get<int?>("totalCanceled"); }
+            set { BackingStore?.Set("totalCanceled", value); }
         }
         /// <summary>An integer that indicates the total number of devices that have a job in the CREATED state. Typically indicates jobs that did not reach the devices.</summary>
         public int? TotalCreated {
-            get { return BackingStore?.Get<int?>(nameof(TotalCreated)); }
-            set { BackingStore?.Set(nameof(TotalCreated), value); }
+            get { return BackingStore?.Get<int?>("totalCreated"); }
+            set { BackingStore?.Set("totalCreated", value); }
         }
         /// <summary>An integer that indicates the total number of devices in the deployment.</summary>
         public int? TotalDevices {
-            get { return BackingStore?.Get<int?>(nameof(TotalDevices)); }
-            set { BackingStore?.Set(nameof(TotalDevices), value); }
+            get { return BackingStore?.Get<int?>("totalDevices"); }
+            set { BackingStore?.Set("totalDevices", value); }
         }
         /// <summary>An integer that indicates the total number of devices where installation was successful.</summary>
         public int? TotalDownloading {
-            get { return BackingStore?.Get<int?>(nameof(TotalDownloading)); }
-            set { BackingStore?.Set(nameof(TotalDownloading), value); }
+            get { return BackingStore?.Get<int?>("totalDownloading"); }
+            set { BackingStore?.Set("totalDownloading", value); }
         }
         /// <summary>An integer that indicates the total number of devices that have failed to download the new OS file.</summary>
         public int? TotalFailedDownload {
-            get { return BackingStore?.Get<int?>(nameof(TotalFailedDownload)); }
-            set { BackingStore?.Set(nameof(TotalFailedDownload), value); }
+            get { return BackingStore?.Get<int?>("totalFailedDownload"); }
+            set { BackingStore?.Set("totalFailedDownload", value); }
         }
         /// <summary>An integer that indicates the total number of devices that have failed to install the new OS file.</summary>
         public int? TotalFailedInstall {
-            get { return BackingStore?.Get<int?>(nameof(TotalFailedInstall)); }
-            set { BackingStore?.Set(nameof(TotalFailedInstall), value); }
+            get { return BackingStore?.Get<int?>("totalFailedInstall"); }
+            set { BackingStore?.Set("totalFailedInstall", value); }
         }
         /// <summary>An integer that indicates the total number of devices that received the json and are scheduled.</summary>
         public int? TotalScheduled {
-            get { return BackingStore?.Get<int?>(nameof(TotalScheduled)); }
-            set { BackingStore?.Set(nameof(TotalScheduled), value); }
+            get { return BackingStore?.Get<int?>("totalScheduled"); }
+            set { BackingStore?.Set("totalScheduled", value); }
         }
         /// <summary>An integer that indicates the total number of devices where installation was successful.</summary>
         public int? TotalSucceededInstall {
-            get { return BackingStore?.Get<int?>(nameof(TotalSucceededInstall)); }
-            set { BackingStore?.Set(nameof(TotalSucceededInstall), value); }
+            get { return BackingStore?.Get<int?>("totalSucceededInstall"); }
+            set { BackingStore?.Set("totalSucceededInstall", value); }
         }
         /// <summary>An integer that indicates the total number of devices where no deployment status or end state has not received, even after the scheduled end date was reached.</summary>
         public int? TotalUnknown {
-            get { return BackingStore?.Get<int?>(nameof(TotalUnknown)); }
-            set { BackingStore?.Set(nameof(TotalUnknown), value); }
+            get { return BackingStore?.Get<int?>("totalUnknown"); }
+            set { BackingStore?.Set("totalUnknown", value); }
         }
         /// <summary>
         /// Instantiates a new zebraFotaDeploymentStatus and sets the default values.

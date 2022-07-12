@@ -4,72 +4,72 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class DeviceCompliancePolicySettingStateSummary : Entity, IParsable {
         /// <summary>The number of devices in a conflict state. Optional. Read-only.</summary>
         public int? ConflictDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(ConflictDeviceCount)); }
-            set { BackingStore?.Set(nameof(ConflictDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("conflictDeviceCount"); }
+            set { BackingStore?.Set("conflictDeviceCount", value); }
         }
         /// <summary>The number of devices in an error state. Optional. Read-only.</summary>
         public int? ErrorDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(ErrorDeviceCount)); }
-            set { BackingStore?.Set(nameof(ErrorDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("errorDeviceCount"); }
+            set { BackingStore?.Set("errorDeviceCount", value); }
         }
         /// <summary>The number of devices in a failed state. Optional. Read-only.</summary>
         public int? FailedDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(FailedDeviceCount)); }
-            set { BackingStore?.Set(nameof(FailedDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("failedDeviceCount"); }
+            set { BackingStore?.Set("failedDeviceCount", value); }
         }
         /// <summary>The identifer for the Microsoft Intune account. Required. Read-only.</summary>
         public string IntuneAccountId {
-            get { return BackingStore?.Get<string>(nameof(IntuneAccountId)); }
-            set { BackingStore?.Set(nameof(IntuneAccountId), value); }
+            get { return BackingStore?.Get<string>("intuneAccountId"); }
+            set { BackingStore?.Set("intuneAccountId", value); }
         }
         /// <summary>The identifier for the Intune setting. Optional. Read-only.</summary>
         public string IntuneSettingId {
-            get { return BackingStore?.Get<string>(nameof(IntuneSettingId)); }
-            set { BackingStore?.Set(nameof(IntuneSettingId), value); }
+            get { return BackingStore?.Get<string>("intuneSettingId"); }
+            set { BackingStore?.Set("intuneSettingId", value); }
         }
         /// <summary>Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.</summary>
         public DateTimeOffset? LastRefreshedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastRefreshedDateTime)); }
-            set { BackingStore?.Set(nameof(LastRefreshedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshedDateTime"); }
+            set { BackingStore?.Set("lastRefreshedDateTime", value); }
         }
         /// <summary>The number of devices in a not applicable state. Optional. Read-only.</summary>
         public int? NotApplicableDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(NotApplicableDeviceCount)); }
-            set { BackingStore?.Set(nameof(NotApplicableDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("notApplicableDeviceCount"); }
+            set { BackingStore?.Set("notApplicableDeviceCount", value); }
         }
         /// <summary>The number of devices in a pending state. Optional. Read-only.</summary>
         public int? PendingDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(PendingDeviceCount)); }
-            set { BackingStore?.Set(nameof(PendingDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("pendingDeviceCount"); }
+            set { BackingStore?.Set("pendingDeviceCount", value); }
         }
         /// <summary>The type for the device compliance policy. Optional. Read-only.</summary>
         public string PolicyType {
-            get { return BackingStore?.Get<string>(nameof(PolicyType)); }
-            set { BackingStore?.Set(nameof(PolicyType), value); }
+            get { return BackingStore?.Get<string>("policyType"); }
+            set { BackingStore?.Set("policyType", value); }
         }
         /// <summary>The name for the setting within the device compliance policy. Optional. Read-only.</summary>
         public string SettingName {
-            get { return BackingStore?.Get<string>(nameof(SettingName)); }
-            set { BackingStore?.Set(nameof(SettingName), value); }
+            get { return BackingStore?.Get<string>("settingName"); }
+            set { BackingStore?.Set("settingName", value); }
         }
         /// <summary>The number of devices in a succeeded state. Optional. Read-only.</summary>
         public int? SucceededDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(SucceededDeviceCount)); }
-            set { BackingStore?.Set(nameof(SucceededDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("succeededDeviceCount"); }
+            set { BackingStore?.Set("succeededDeviceCount", value); }
         }
         /// <summary>The display name for the managed tenant. Required. Read-only.</summary>
         public string TenantDisplayName {
-            get { return BackingStore?.Get<string>(nameof(TenantDisplayName)); }
-            set { BackingStore?.Set(nameof(TenantDisplayName), value); }
+            get { return BackingStore?.Get<string>("tenantDisplayName"); }
+            set { BackingStore?.Set("tenantDisplayName", value); }
         }
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class Windows10XVpnConfiguration : DeviceManagementResourceAccessProfileBase, IParsable {
         /// <summary>ID to the Authentication Certificate</summary>
         public string AuthenticationCertificateId {
-            get { return BackingStore?.Get<string>(nameof(AuthenticationCertificateId)); }
-            set { BackingStore?.Set(nameof(AuthenticationCertificateId), value); }
+            get { return BackingStore?.Get<string>("authenticationCertificateId"); }
+            set { BackingStore?.Set("authenticationCertificateId", value); }
         }
         /// <summary>Custom XML commands that configures the VPN connection. (UTF8 byte encoding)</summary>
         public byte[] CustomXml {
-            get { return BackingStore?.Get<byte[]>(nameof(CustomXml)); }
-            set { BackingStore?.Set(nameof(CustomXml), value); }
+            get { return BackingStore?.Get<byte[]>("customXml"); }
+            set { BackingStore?.Set("customXml", value); }
         }
         /// <summary>Custom Xml file name.</summary>
         public string CustomXmlFileName {
-            get { return BackingStore?.Get<string>(nameof(CustomXmlFileName)); }
-            set { BackingStore?.Set(nameof(CustomXmlFileName), value); }
+            get { return BackingStore?.Get<string>("customXmlFileName"); }
+            set { BackingStore?.Set("customXmlFileName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,38 +8,38 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyCategory : Entity, IParsable {
         /// <summary>The children categories</summary>
         public List<GroupPolicyCategory> Children {
-            get { return BackingStore?.Get<List<GroupPolicyCategory>>(nameof(Children)); }
-            set { BackingStore?.Set(nameof(Children), value); }
+            get { return BackingStore?.Get<List<GroupPolicyCategory>>("children"); }
+            set { BackingStore?.Set("children", value); }
         }
         /// <summary>The id of the definition file the category came from</summary>
         public GroupPolicyDefinitionFile DefinitionFile {
-            get { return BackingStore?.Get<GroupPolicyDefinitionFile>(nameof(DefinitionFile)); }
-            set { BackingStore?.Set(nameof(DefinitionFile), value); }
+            get { return BackingStore?.Get<GroupPolicyDefinitionFile>("definitionFile"); }
+            set { BackingStore?.Set("definitionFile", value); }
         }
         /// <summary>The immediate GroupPolicyDefinition children of the category</summary>
         public List<GroupPolicyDefinition> Definitions {
-            get { return BackingStore?.Get<List<GroupPolicyDefinition>>(nameof(Definitions)); }
-            set { BackingStore?.Set(nameof(Definitions), value); }
+            get { return BackingStore?.Get<List<GroupPolicyDefinition>>("definitions"); }
+            set { BackingStore?.Set("definitions", value); }
         }
         /// <summary>The string id of the category&apos;s display name</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Defines if the category is a root category</summary>
         public bool? IsRoot {
-            get { return BackingStore?.Get<bool?>(nameof(IsRoot)); }
-            set { BackingStore?.Set(nameof(IsRoot), value); }
+            get { return BackingStore?.Get<bool?>("isRoot"); }
+            set { BackingStore?.Set("isRoot", value); }
         }
         /// <summary>The date and time the entity was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The parent category</summary>
         public GroupPolicyCategory Parent {
-            get { return BackingStore?.Get<GroupPolicyCategory>(nameof(Parent)); }
-            set { BackingStore?.Set(nameof(Parent), value); }
+            get { return BackingStore?.Get<GroupPolicyCategory>("parent"); }
+            set { BackingStore?.Set("parent", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

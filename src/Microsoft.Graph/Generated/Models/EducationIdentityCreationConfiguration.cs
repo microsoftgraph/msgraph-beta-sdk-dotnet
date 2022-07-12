@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationIdentityCreationConfiguration : EducationIdentitySynchronizationConfiguration, IParsable {
         /// <summary>The userDomains property</summary>
         public List<EducationIdentityDomain> UserDomains {
-            get { return BackingStore?.Get<List<EducationIdentityDomain>>(nameof(UserDomains)); }
-            set { BackingStore?.Set(nameof(UserDomains), value); }
+            get { return BackingStore?.Get<List<EducationIdentityDomain>>("userDomains"); }
+            set { BackingStore?.Set("userDomains", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

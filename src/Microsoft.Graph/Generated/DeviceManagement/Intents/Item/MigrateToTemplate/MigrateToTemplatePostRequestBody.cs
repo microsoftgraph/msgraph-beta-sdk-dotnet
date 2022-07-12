@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.MigrateToTemplate {
     public class MigrateToTemplatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The newTemplateId property</summary>
         public string NewTemplateId {
-            get { return BackingStore?.Get<string>(nameof(NewTemplateId)); }
-            set { BackingStore?.Set(nameof(NewTemplateId), value); }
+            get { return BackingStore?.Get<string>("newTemplateId"); }
+            set { BackingStore?.Set("newTemplateId", value); }
         }
         /// <summary>The preserveCustomValues property</summary>
         public bool? PreserveCustomValues {
-            get { return BackingStore?.Get<bool?>(nameof(PreserveCustomValues)); }
-            set { BackingStore?.Set(nameof(PreserveCustomValues), value); }
+            get { return BackingStore?.Get<bool?>("preserveCustomValues"); }
+            set { BackingStore?.Set("preserveCustomValues", value); }
         }
         /// <summary>
         /// Instantiates a new migrateToTemplatePostRequestBody and sets the default values.

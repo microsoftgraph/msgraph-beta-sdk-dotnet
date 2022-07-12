@@ -4,42 +4,41 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class DeviceConfigurationUserStateSummary : Entity, IParsable {
         /// <summary>Number of compliant users</summary>
         public int? CompliantUserCount {
-            get { return BackingStore?.Get<int?>(nameof(CompliantUserCount)); }
-            set { BackingStore?.Set(nameof(CompliantUserCount), value); }
+            get { return BackingStore?.Get<int?>("compliantUserCount"); }
+            set { BackingStore?.Set("compliantUserCount", value); }
         }
         /// <summary>Number of conflict users</summary>
         public int? ConflictUserCount {
-            get { return BackingStore?.Get<int?>(nameof(ConflictUserCount)); }
-            set { BackingStore?.Set(nameof(ConflictUserCount), value); }
+            get { return BackingStore?.Get<int?>("conflictUserCount"); }
+            set { BackingStore?.Set("conflictUserCount", value); }
         }
         /// <summary>Number of error users</summary>
         public int? ErrorUserCount {
-            get { return BackingStore?.Get<int?>(nameof(ErrorUserCount)); }
-            set { BackingStore?.Set(nameof(ErrorUserCount), value); }
+            get { return BackingStore?.Get<int?>("errorUserCount"); }
+            set { BackingStore?.Set("errorUserCount", value); }
         }
         /// <summary>Number of NonCompliant users</summary>
         public int? NonCompliantUserCount {
-            get { return BackingStore?.Get<int?>(nameof(NonCompliantUserCount)); }
-            set { BackingStore?.Set(nameof(NonCompliantUserCount), value); }
+            get { return BackingStore?.Get<int?>("nonCompliantUserCount"); }
+            set { BackingStore?.Set("nonCompliantUserCount", value); }
         }
         /// <summary>Number of not applicable users</summary>
         public int? NotApplicableUserCount {
-            get { return BackingStore?.Get<int?>(nameof(NotApplicableUserCount)); }
-            set { BackingStore?.Set(nameof(NotApplicableUserCount), value); }
+            get { return BackingStore?.Get<int?>("notApplicableUserCount"); }
+            set { BackingStore?.Set("notApplicableUserCount", value); }
         }
         /// <summary>Number of remediated users</summary>
         public int? RemediatedUserCount {
-            get { return BackingStore?.Get<int?>(nameof(RemediatedUserCount)); }
-            set { BackingStore?.Set(nameof(RemediatedUserCount), value); }
+            get { return BackingStore?.Get<int?>("remediatedUserCount"); }
+            set { BackingStore?.Set("remediatedUserCount", value); }
         }
         /// <summary>Number of unknown users</summary>
         public int? UnknownUserCount {
-            get { return BackingStore?.Get<int?>(nameof(UnknownUserCount)); }
-            set { BackingStore?.Set(nameof(UnknownUserCount), value); }
+            get { return BackingStore?.Get<int?>("unknownUserCount"); }
+            set { BackingStore?.Set("unknownUserCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

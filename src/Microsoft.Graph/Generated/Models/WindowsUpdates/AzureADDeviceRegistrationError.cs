@@ -5,10 +5,10 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class AzureADDeviceRegistrationError : UpdatableAssetError, IParsable {
-        /// <summary>The reason why the registration encountered an error. Possible values are: invalidGlobalDeviceId, invalidAzureADDeviceId, missingTrustType, invalidAzureADJoin, unknownFutureValue.</summary>
+        /// <summary>The reason property</summary>
         public AzureADDeviceRegistrationErrorReason? Reason {
-            get { return BackingStore?.Get<AzureADDeviceRegistrationErrorReason?>(nameof(Reason)); }
-            set { BackingStore?.Set(nameof(Reason), value); }
+            get { return BackingStore?.Get<AzureADDeviceRegistrationErrorReason?>("reason"); }
+            set { BackingStore?.Set("reason", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

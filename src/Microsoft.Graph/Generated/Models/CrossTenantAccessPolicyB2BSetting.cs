@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class CrossTenantAccessPolicyB2BSetting : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The list of applications targeted with your cross-tenant access policy.</summary>
         public CrossTenantAccessPolicyTargetConfiguration Applications {
-            get { return BackingStore?.Get<CrossTenantAccessPolicyTargetConfiguration>(nameof(Applications)); }
-            set { BackingStore?.Set(nameof(Applications), value); }
+            get { return BackingStore?.Get<CrossTenantAccessPolicyTargetConfiguration>("applications"); }
+            set { BackingStore?.Set("applications", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The list of users and groups targeted with your cross-tenant access policy.</summary>
         public CrossTenantAccessPolicyTargetConfiguration UsersAndGroups {
-            get { return BackingStore?.Get<CrossTenantAccessPolicyTargetConfiguration>(nameof(UsersAndGroups)); }
-            set { BackingStore?.Set(nameof(UsersAndGroups), value); }
+            get { return BackingStore?.Get<CrossTenantAccessPolicyTargetConfiguration>("usersAndGroups"); }
+            set { BackingStore?.Set("usersAndGroups", value); }
         }
         /// <summary>
         /// Instantiates a new crossTenantAccessPolicyB2BSetting and sets the default values.

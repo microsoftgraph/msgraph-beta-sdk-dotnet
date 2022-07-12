@@ -9,23 +9,29 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyPresentationValue : Entity, IParsable {
         /// <summary>The date and time the object was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The group policy definition value associated with the presentation value.</summary>
         public GroupPolicyDefinitionValue DefinitionValue {
-            get { return BackingStore?.Get<GroupPolicyDefinitionValue>(nameof(DefinitionValue)); }
-            set { BackingStore?.Set(nameof(DefinitionValue), value); }
+            get { return BackingStore?.Get<GroupPolicyDefinitionValue>("definitionValue"); }
+            set { BackingStore?.Set("definitionValue", value); }
         }
         /// <summary>The date and time the object was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The group policy presentation associated with the presentation value.</summary>
         public GroupPolicyPresentation Presentation {
-            get { return BackingStore?.Get<GroupPolicyPresentation>(nameof(Presentation)); }
-            set { BackingStore?.Set(nameof(Presentation), value); }
+            get { return BackingStore?.Get<GroupPolicyPresentation>("presentation"); }
+            set { BackingStore?.Set("presentation", value); }
+        }
+        /// <summary>
+        /// Instantiates a new groupPolicyPresentationValue and sets the default values.
+        /// </summary>
+        public GroupPolicyPresentationValue() : base() {
+            Type = "#microsoft.graph.groupPolicyPresentationValue";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

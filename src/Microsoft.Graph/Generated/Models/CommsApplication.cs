@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class CommsApplication : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The calls property</summary>
         public List<Call> Calls {
-            get { return BackingStore?.Get<List<Call>>(nameof(Calls)); }
-            set { BackingStore?.Set(nameof(Calls), value); }
+            get { return BackingStore?.Get<List<Call>>("calls"); }
+            set { BackingStore?.Set("calls", value); }
         }
         /// <summary>The onlineMeetings property</summary>
         public List<OnlineMeeting> OnlineMeetings {
-            get { return BackingStore?.Get<List<OnlineMeeting>>(nameof(OnlineMeetings)); }
-            set { BackingStore?.Set(nameof(OnlineMeetings), value); }
+            get { return BackingStore?.Get<List<OnlineMeeting>>("onlineMeetings"); }
+            set { BackingStore?.Set("onlineMeetings", value); }
         }
         /// <summary>
         /// Instantiates a new CommsApplication and sets the default values.

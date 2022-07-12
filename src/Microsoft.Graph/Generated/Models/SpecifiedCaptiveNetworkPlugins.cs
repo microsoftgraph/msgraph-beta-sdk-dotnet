@@ -9,13 +9,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class SpecifiedCaptiveNetworkPlugins : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Address of the IKEv2 server. Must be a FQDN, UserFQDN, network address, or ASN1DN</summary>
         public List<string> AllowedBundleIdentifiers {
-            get { return BackingStore?.Get<List<string>>(nameof(AllowedBundleIdentifiers)); }
-            set { BackingStore?.Set(nameof(AllowedBundleIdentifiers), value); }
+            get { return BackingStore?.Get<List<string>>("allowedBundleIdentifiers"); }
+            set { BackingStore?.Set("allowedBundleIdentifiers", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }

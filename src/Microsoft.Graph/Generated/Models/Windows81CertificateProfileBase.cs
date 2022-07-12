@@ -8,13 +8,19 @@ namespace Microsoft.Graph.Beta.Models {
     public class Windows81CertificateProfileBase : WindowsCertificateProfileBase, IParsable {
         /// <summary>Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.</summary>
         public List<CustomSubjectAlternativeName> CustomSubjectAlternativeNames {
-            get { return BackingStore?.Get<List<CustomSubjectAlternativeName>>(nameof(CustomSubjectAlternativeNames)); }
-            set { BackingStore?.Set(nameof(CustomSubjectAlternativeNames), value); }
+            get { return BackingStore?.Get<List<CustomSubjectAlternativeName>>("customSubjectAlternativeNames"); }
+            set { BackingStore?.Set("customSubjectAlternativeNames", value); }
         }
         /// <summary>Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.</summary>
         public List<ExtendedKeyUsage> ExtendedKeyUsages {
-            get { return BackingStore?.Get<List<ExtendedKeyUsage>>(nameof(ExtendedKeyUsages)); }
-            set { BackingStore?.Set(nameof(ExtendedKeyUsages), value); }
+            get { return BackingStore?.Get<List<ExtendedKeyUsage>>("extendedKeyUsages"); }
+            set { BackingStore?.Set("extendedKeyUsages", value); }
+        }
+        /// <summary>
+        /// Instantiates a new Windows81CertificateProfileBase and sets the default values.
+        /// </summary>
+        public Windows81CertificateProfileBase() : base() {
+            Type = "#microsoft.graph.windows81CertificateProfileBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,23 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class SignInFrequencySessionControl : ConditionalAccessSessionControl, IParsable {
         /// <summary>The possible values are primaryAndSecondaryAuthentication, secondaryAuthentication, unknownFutureValue.</summary>
         public SignInFrequencyAuthenticationType? AuthenticationType {
-            get { return BackingStore?.Get<SignInFrequencyAuthenticationType?>(nameof(AuthenticationType)); }
-            set { BackingStore?.Set(nameof(AuthenticationType), value); }
+            get { return BackingStore?.Get<SignInFrequencyAuthenticationType?>("authenticationType"); }
+            set { BackingStore?.Set("authenticationType", value); }
         }
         /// <summary>The possible values are timeBased, everyTime, unknownFutureValue.</summary>
         public SignInFrequencyInterval? FrequencyInterval {
-            get { return BackingStore?.Get<SignInFrequencyInterval?>(nameof(FrequencyInterval)); }
-            set { BackingStore?.Set(nameof(FrequencyInterval), value); }
-        }
-        /// <summary>Possible values are: days, hours, or null if frequencyInterval is everyTime .</summary>
-        public SigninFrequencyType? Type {
-            get { return BackingStore?.Get<SigninFrequencyType?>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<SignInFrequencyInterval?>("frequencyInterval"); }
+            set { BackingStore?.Set("frequencyInterval", value); }
         }
         /// <summary>The number of days or hours.</summary>
         public int? Value {
-            get { return BackingStore?.Get<int?>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<int?>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +35,6 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"authenticationType", n => { AuthenticationType = n.GetEnumValue<SignInFrequencyAuthenticationType>(); } },
                 {"frequencyInterval", n => { FrequencyInterval = n.GetEnumValue<SignInFrequencyInterval>(); } },
-                {"type", n => { Type = n.GetEnumValue<SigninFrequencyType>(); } },
                 {"value", n => { Value = n.GetIntValue(); } },
             };
         }
@@ -53,7 +47,6 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteEnumValue<SignInFrequencyAuthenticationType>("authenticationType", AuthenticationType);
             writer.WriteEnumValue<SignInFrequencyInterval>("frequencyInterval", FrequencyInterval);
-            writer.WriteEnumValue<SigninFrequencyType>("type", Type);
             writer.WriteIntValue("value", Value);
         }
     }

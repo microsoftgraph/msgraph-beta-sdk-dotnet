@@ -7,28 +7,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsKioskMultipleApps : WindowsKioskAppConfiguration, IParsable {
         /// <summary>This setting allows access to Downloads folder in file explorer.</summary>
         public bool? AllowAccessToDownloadsFolder {
-            get { return BackingStore?.Get<bool?>(nameof(AllowAccessToDownloadsFolder)); }
-            set { BackingStore?.Set(nameof(AllowAccessToDownloadsFolder), value); }
+            get { return BackingStore?.Get<bool?>("allowAccessToDownloadsFolder"); }
+            set { BackingStore?.Set("allowAccessToDownloadsFolder", value); }
         }
         /// <summary>These are the only Windows Store Apps that will be available to launch from the Start menu. This collection can contain a maximum of 128 elements.</summary>
         public List<WindowsKioskAppBase> Apps {
-            get { return BackingStore?.Get<List<WindowsKioskAppBase>>(nameof(Apps)); }
-            set { BackingStore?.Set(nameof(Apps), value); }
+            get { return BackingStore?.Get<List<WindowsKioskAppBase>>("apps"); }
+            set { BackingStore?.Set("apps", value); }
         }
         /// <summary>This setting indicates that desktop apps are allowed. Default to true.</summary>
         public bool? DisallowDesktopApps {
-            get { return BackingStore?.Get<bool?>(nameof(DisallowDesktopApps)); }
-            set { BackingStore?.Set(nameof(DisallowDesktopApps), value); }
+            get { return BackingStore?.Get<bool?>("disallowDesktopApps"); }
+            set { BackingStore?.Set("disallowDesktopApps", value); }
         }
         /// <summary>This setting allows the admin to specify whether the Task Bar is shown or not.</summary>
         public bool? ShowTaskBar {
-            get { return BackingStore?.Get<bool?>(nameof(ShowTaskBar)); }
-            set { BackingStore?.Set(nameof(ShowTaskBar), value); }
+            get { return BackingStore?.Get<bool?>("showTaskBar"); }
+            set { BackingStore?.Set("showTaskBar", value); }
         }
         /// <summary>Allows admins to override the default Start layout and prevents the user from changing it. The layout is modified by specifying an XML file based on a layout modification schema. XML needs to be in Binary format.</summary>
         public byte[] StartMenuLayoutXml {
-            get { return BackingStore?.Get<byte[]>(nameof(StartMenuLayoutXml)); }
-            set { BackingStore?.Set(nameof(StartMenuLayoutXml), value); }
+            get { return BackingStore?.Get<byte[]>("startMenuLayoutXml"); }
+            set { BackingStore?.Set("startMenuLayoutXml", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

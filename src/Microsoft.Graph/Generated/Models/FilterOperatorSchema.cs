@@ -4,22 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the filterOperators method.</summary>
     public class FilterOperatorSchema : Entity, IParsable {
-        /// <summary>Arity of the operator. Possible values are: Binary, Unary. The default is Binary.</summary>
+        /// <summary>The arity property</summary>
         public ScopeOperatorType? Arity {
-            get { return BackingStore?.Get<ScopeOperatorType?>(nameof(Arity)); }
-            set { BackingStore?.Set(nameof(Arity), value); }
+            get { return BackingStore?.Get<ScopeOperatorType?>("arity"); }
+            set { BackingStore?.Set("arity", value); }
         }
-        /// <summary>Possible values are: All, Any. Applies only to multivalued attributes. All means that all values must satisfy the condition. Any means that at least one value has to satisfy the condition. The default is All.</summary>
+        /// <summary>The multivaluedComparisonType property</summary>
         public ScopeOperatorMultiValuedComparisonType? MultivaluedComparisonType {
-            get { return BackingStore?.Get<ScopeOperatorMultiValuedComparisonType?>(nameof(MultivaluedComparisonType)); }
-            set { BackingStore?.Set(nameof(MultivaluedComparisonType), value); }
+            get { return BackingStore?.Get<ScopeOperatorMultiValuedComparisonType?>("multivaluedComparisonType"); }
+            set { BackingStore?.Set("multivaluedComparisonType", value); }
         }
         /// <summary>Attribute types supported by the operator. Possible values are: Boolean, Binary, Reference, Integer, String.</summary>
         public List<string> SupportedAttributeTypes {
-            get { return BackingStore?.Get<List<string>>(nameof(SupportedAttributeTypes)); }
-            set { BackingStore?.Set(nameof(SupportedAttributeTypes), value); }
+            get { return BackingStore?.Get<List<string>>("supportedAttributeTypes"); }
+            set { BackingStore?.Set("supportedAttributeTypes", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

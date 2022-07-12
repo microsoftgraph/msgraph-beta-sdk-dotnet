@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class CustomExtensionHandlerInstance : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Identifier of the customAccessPackageWorkflowExtension triggered at this instance.</summary>
         public string CustomExtensionId {
-            get { return BackingStore?.Get<string>(nameof(CustomExtensionId)); }
-            set { BackingStore?.Set(nameof(CustomExtensionId), value); }
+            get { return BackingStore?.Get<string>("customExtensionId"); }
+            set { BackingStore?.Set("customExtensionId", value); }
         }
         /// <summary>The unique run ID for the logic app.</summary>
         public string ExternalCorrelationId {
-            get { return BackingStore?.Get<string>(nameof(ExternalCorrelationId)); }
-            set { BackingStore?.Set(nameof(ExternalCorrelationId), value); }
+            get { return BackingStore?.Get<string>("externalCorrelationId"); }
+            set { BackingStore?.Set("externalCorrelationId", value); }
         }
         /// <summary>Indicates the stage of the request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.</summary>
         public AccessPackageCustomExtensionStage? Stage {
-            get { return BackingStore?.Get<AccessPackageCustomExtensionStage?>(nameof(Stage)); }
-            set { BackingStore?.Set(nameof(Stage), value); }
+            get { return BackingStore?.Get<AccessPackageCustomExtensionStage?>("stage"); }
+            set { BackingStore?.Set("stage", value); }
         }
         /// <summary>Status of the request to run the access package custom extension workflow that is associated with the logic app. The possible values are: requestSent, requestReceived, unknownFutureValue.</summary>
         public AccessPackageCustomExtensionHandlerStatus? Status {
-            get { return BackingStore?.Get<AccessPackageCustomExtensionHandlerStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<AccessPackageCustomExtensionHandlerStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Instantiates a new customExtensionHandlerInstance and sets the default values.

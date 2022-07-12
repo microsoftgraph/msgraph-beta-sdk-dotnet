@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOsLobAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
         /// <summary>Whether or not to uninstall the app when device is removed from Intune.</summary>
         public bool? UninstallOnDeviceRemoval {
-            get { return BackingStore?.Get<bool?>(nameof(UninstallOnDeviceRemoval)); }
-            set { BackingStore?.Set(nameof(UninstallOnDeviceRemoval), value); }
+            get { return BackingStore?.Get<bool?>("uninstallOnDeviceRemoval"); }
+            set { BackingStore?.Set("uninstallOnDeviceRemoval", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

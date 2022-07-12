@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class ProtectByTemplateAction : InformationProtectionAction, IParsable {
         /// <summary>The templateId property</summary>
         public string TemplateId {
-            get { return BackingStore?.Get<string>(nameof(TemplateId)); }
-            set { BackingStore?.Set(nameof(TemplateId), value); }
+            get { return BackingStore?.Get<string>("templateId"); }
+            set { BackingStore?.Set("templateId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

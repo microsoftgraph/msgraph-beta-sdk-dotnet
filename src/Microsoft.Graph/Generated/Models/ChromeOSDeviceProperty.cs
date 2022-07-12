@@ -9,30 +9,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class ChromeOSDeviceProperty : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Name of the property</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>Whether this property is updatable</summary>
         public bool? Updatable {
-            get { return BackingStore?.Get<bool?>(nameof(Updatable)); }
-            set { BackingStore?.Set(nameof(Updatable), value); }
+            get { return BackingStore?.Get<bool?>("updatable"); }
+            set { BackingStore?.Set("updatable", value); }
         }
         /// <summary>Value of the property</summary>
         public string Value {
-            get { return BackingStore?.Get<string>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<string>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>Type of the value</summary>
         public string ValueType {
-            get { return BackingStore?.Get<string>(nameof(ValueType)); }
-            set { BackingStore?.Set(nameof(ValueType), value); }
+            get { return BackingStore?.Get<string>("valueType"); }
+            set { BackingStore?.Set("valueType", value); }
         }
         /// <summary>
         /// Instantiates a new chromeOSDeviceProperty and sets the default values.

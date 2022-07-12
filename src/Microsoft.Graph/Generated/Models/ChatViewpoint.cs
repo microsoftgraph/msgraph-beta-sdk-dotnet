@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class ChatViewpoint : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether the chat is hidden for the current user.</summary>
         public bool? IsHidden {
-            get { return BackingStore?.Get<bool?>(nameof(IsHidden)); }
-            set { BackingStore?.Set(nameof(IsHidden), value); }
+            get { return BackingStore?.Get<bool?>("isHidden"); }
+            set { BackingStore?.Set("isHidden", value); }
         }
         /// <summary>Represents the dateTime up until which the current user has read chatMessages in a specific chat.</summary>
         public DateTimeOffset? LastMessageReadDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastMessageReadDateTime)); }
-            set { BackingStore?.Set(nameof(LastMessageReadDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastMessageReadDateTime"); }
+            set { BackingStore?.Set("lastMessageReadDateTime", value); }
         }
         /// <summary>
         /// Instantiates a new chatViewpoint and sets the default values.

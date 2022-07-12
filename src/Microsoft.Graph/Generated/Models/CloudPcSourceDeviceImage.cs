@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class CloudPcSourceDeviceImage : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The display name for the source image.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The ID of the source image.</summary>
         public string Id {
-            get { return BackingStore?.Get<string>(nameof(Id)); }
-            set { BackingStore?.Set(nameof(Id), value); }
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
         }
         /// <summary>The display name of subscription that hosts the source image.</summary>
         public string SubscriptionDisplayName {
-            get { return BackingStore?.Get<string>(nameof(SubscriptionDisplayName)); }
-            set { BackingStore?.Set(nameof(SubscriptionDisplayName), value); }
+            get { return BackingStore?.Get<string>("subscriptionDisplayName"); }
+            set { BackingStore?.Set("subscriptionDisplayName", value); }
         }
         /// <summary>The ID of subscription that hosts the source image.</summary>
         public string SubscriptionId {
-            get { return BackingStore?.Get<string>(nameof(SubscriptionId)); }
-            set { BackingStore?.Set(nameof(SubscriptionId), value); }
+            get { return BackingStore?.Get<string>("subscriptionId"); }
+            set { BackingStore?.Set("subscriptionId", value); }
         }
         /// <summary>
         /// Instantiates a new cloudPcSourceDeviceImage and sets the default values.

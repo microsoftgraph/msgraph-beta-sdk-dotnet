@@ -7,15 +7,15 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Parameter for action triggerConfigurationManagerAction</summary>
     public class ConfigurationManagerAction : IAdditionalDataHolder, IBackedModel, IParsable {
-        /// <summary>The action type to trigger on Configuration Manager client. Possible values are: refreshMachinePolicy, refreshUserPolicy, wakeUpClient, appEvaluation, quickScan, fullScan, windowsDefenderUpdateSignatures.</summary>
+        /// <summary>Action type on Configuration Manager client</summary>
         public ConfigurationManagerActionType? Action {
-            get { return BackingStore?.Get<ConfigurationManagerActionType?>(nameof(Action)); }
-            set { BackingStore?.Set(nameof(Action), value); }
+            get { return BackingStore?.Get<ConfigurationManagerActionType?>("action"); }
+            set { BackingStore?.Set("action", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }

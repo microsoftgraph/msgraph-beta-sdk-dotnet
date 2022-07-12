@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class IPv4Range : IpRange, IParsable {
         /// <summary>Lower address.</summary>
         public string LowerAddress {
-            get { return BackingStore?.Get<string>(nameof(LowerAddress)); }
-            set { BackingStore?.Set(nameof(LowerAddress), value); }
+            get { return BackingStore?.Get<string>("lowerAddress"); }
+            set { BackingStore?.Set("lowerAddress", value); }
         }
         /// <summary>Upper address.</summary>
         public string UpperAddress {
-            get { return BackingStore?.Get<string>(nameof(UpperAddress)); }
-            set { BackingStore?.Set(nameof(UpperAddress), value); }
+            get { return BackingStore?.Get<string>("upperAddress"); }
+            set { BackingStore?.Set("upperAddress", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

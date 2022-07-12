@@ -7,33 +7,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class ManagedAndroidLobApp : ManagedMobileLobApp, IParsable {
         /// <summary>The Identity Name.</summary>
         public string IdentityName {
-            get { return BackingStore?.Get<string>(nameof(IdentityName)); }
-            set { BackingStore?.Set(nameof(IdentityName), value); }
+            get { return BackingStore?.Get<string>("identityName"); }
+            set { BackingStore?.Set("identityName", value); }
         }
         /// <summary>The identity version.</summary>
         public string IdentityVersion {
-            get { return BackingStore?.Get<string>(nameof(IdentityVersion)); }
-            set { BackingStore?.Set(nameof(IdentityVersion), value); }
+            get { return BackingStore?.Get<string>("identityVersion"); }
+            set { BackingStore?.Set("identityVersion", value); }
         }
         /// <summary>The value for the minimum applicable operating system.</summary>
         public AndroidMinimumOperatingSystem MinimumSupportedOperatingSystem {
-            get { return BackingStore?.Get<AndroidMinimumOperatingSystem>(nameof(MinimumSupportedOperatingSystem)); }
-            set { BackingStore?.Set(nameof(MinimumSupportedOperatingSystem), value); }
+            get { return BackingStore?.Get<AndroidMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
+            set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
         /// <summary>The package identifier.</summary>
         public string PackageId {
-            get { return BackingStore?.Get<string>(nameof(PackageId)); }
-            set { BackingStore?.Set(nameof(PackageId), value); }
+            get { return BackingStore?.Get<string>("packageId"); }
+            set { BackingStore?.Set("packageId", value); }
         }
         /// <summary>The version code of managed Android Line of Business (LoB) app.</summary>
         public string VersionCode {
-            get { return BackingStore?.Get<string>(nameof(VersionCode)); }
-            set { BackingStore?.Set(nameof(VersionCode), value); }
+            get { return BackingStore?.Get<string>("versionCode"); }
+            set { BackingStore?.Set("versionCode", value); }
         }
         /// <summary>The version name of managed Android Line of Business (LoB) app.</summary>
         public string VersionName {
-            get { return BackingStore?.Get<string>(nameof(VersionName)); }
-            set { BackingStore?.Set(nameof(VersionName), value); }
+            get { return BackingStore?.Get<string>("versionName"); }
+            set { BackingStore?.Set("versionName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

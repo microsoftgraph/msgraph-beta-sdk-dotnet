@@ -4,22 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Synchronization : Entity, IParsable {
         /// <summary>Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.</summary>
         public List<SynchronizationJob> Jobs {
-            get { return BackingStore?.Get<List<SynchronizationJob>>(nameof(Jobs)); }
-            set { BackingStore?.Set(nameof(Jobs), value); }
+            get { return BackingStore?.Get<List<SynchronizationJob>>("jobs"); }
+            set { BackingStore?.Set("jobs", value); }
         }
         /// <summary>Represents a collection of credentials to access provisioned cloud applications.</summary>
         public List<SynchronizationSecretKeyStringValuePair> Secrets {
-            get { return BackingStore?.Get<List<SynchronizationSecretKeyStringValuePair>>(nameof(Secrets)); }
-            set { BackingStore?.Set(nameof(Secrets), value); }
+            get { return BackingStore?.Get<List<SynchronizationSecretKeyStringValuePair>>("secrets"); }
+            set { BackingStore?.Set("secrets", value); }
         }
         /// <summary>Pre-configured synchronization settings for a particular application.</summary>
         public List<SynchronizationTemplate> Templates {
-            get { return BackingStore?.Get<List<SynchronizationTemplate>>(nameof(Templates)); }
-            set { BackingStore?.Set(nameof(Templates), value); }
+            get { return BackingStore?.Get<List<SynchronizationTemplate>>("templates"); }
+            set { BackingStore?.Set("templates", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

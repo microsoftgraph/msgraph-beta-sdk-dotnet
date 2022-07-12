@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Beta.Models {
     public class CustomExtensionClientConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The max duration in milliseconds that Azure AD will wait for a response from the logic app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.</summary>
         public int? TimeoutInMilliseconds {
-            get { return BackingStore?.Get<int?>(nameof(TimeoutInMilliseconds)); }
-            set { BackingStore?.Set(nameof(TimeoutInMilliseconds), value); }
+            get { return BackingStore?.Get<int?>("timeoutInMilliseconds"); }
+            set { BackingStore?.Set("timeoutInMilliseconds", value); }
         }
         /// <summary>
         /// Instantiates a new customExtensionClientConfiguration and sets the default values.

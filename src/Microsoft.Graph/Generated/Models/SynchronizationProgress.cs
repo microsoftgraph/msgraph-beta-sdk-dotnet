@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class SynchronizationProgress : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The numerator of a progress ratio; the number of units of changes already processed.</summary>
         public long? CompletedUnits {
-            get { return BackingStore?.Get<long?>(nameof(CompletedUnits)); }
-            set { BackingStore?.Set(nameof(CompletedUnits), value); }
+            get { return BackingStore?.Get<long?>("completedUnits"); }
+            set { BackingStore?.Set("completedUnits", value); }
         }
         /// <summary>The time of a progress observation as an offset in minutes from UTC.</summary>
         public DateTimeOffset? ProgressObservationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ProgressObservationDateTime)); }
-            set { BackingStore?.Set(nameof(ProgressObservationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("progressObservationDateTime"); }
+            set { BackingStore?.Set("progressObservationDateTime", value); }
         }
         /// <summary>The denominator of a progress ratio; a number of units of changes to be processed to accomplish synchronization.</summary>
         public long? TotalUnits {
-            get { return BackingStore?.Get<long?>(nameof(TotalUnits)); }
-            set { BackingStore?.Set(nameof(TotalUnits), value); }
+            get { return BackingStore?.Get<long?>("totalUnits"); }
+            set { BackingStore?.Set("totalUnits", value); }
         }
         /// <summary>An optional description of the units.</summary>
         public string Units {
-            get { return BackingStore?.Get<string>(nameof(Units)); }
-            set { BackingStore?.Set(nameof(Units), value); }
+            get { return BackingStore?.Get<string>("units"); }
+            set { BackingStore?.Set("units", value); }
         }
         /// <summary>
         /// Instantiates a new synchronizationProgress and sets the default values.

@@ -7,142 +7,142 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Represents per-process privacy preferences.</summary>
     public class MacOSPrivacyAccessControlItem : IAdditionalDataHolder, IBackedModel, IParsable {
-        /// <summary>Allow the app or process to control the Mac via the Accessibility subsystem. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? Accessibility {
-            get { return BackingStore?.Get<Enablement?>(nameof(Accessibility)); }
-            set { BackingStore?.Set(nameof(Accessibility), value); }
+            get { return BackingStore?.Get<Enablement?>("accessibility"); }
+            set { BackingStore?.Set("accessibility", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>Allow or block access to contact information managed by Contacts. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? AddressBook {
-            get { return BackingStore?.Get<Enablement?>(nameof(AddressBook)); }
-            set { BackingStore?.Set(nameof(AddressBook), value); }
+            get { return BackingStore?.Get<Enablement?>("addressBook"); }
+            set { BackingStore?.Set("addressBook", value); }
         }
         /// <summary>Allow or deny the app or process to send a restricted Apple event to another app or process. You will need to know the identifier, identifier type, and code requirement of the receiving app or process. This collection can contain a maximum of 500 elements.</summary>
         public List<MacOSAppleEventReceiver> AppleEventsAllowedReceivers {
-            get { return BackingStore?.Get<List<MacOSAppleEventReceiver>>(nameof(AppleEventsAllowedReceivers)); }
-            set { BackingStore?.Set(nameof(AppleEventsAllowedReceivers), value); }
+            get { return BackingStore?.Get<List<MacOSAppleEventReceiver>>("appleEventsAllowedReceivers"); }
+            set { BackingStore?.Set("appleEventsAllowedReceivers", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Block access to camera app.</summary>
         public bool? BlockCamera {
-            get { return BackingStore?.Get<bool?>(nameof(BlockCamera)); }
-            set { BackingStore?.Set(nameof(BlockCamera), value); }
+            get { return BackingStore?.Get<bool?>("blockCamera"); }
+            set { BackingStore?.Set("blockCamera", value); }
         }
         /// <summary>Block the app or process from listening to events from input devices such as mouse, keyboard, and trackpad.Requires macOS 10.15 or later.</summary>
         public bool? BlockListenEvent {
-            get { return BackingStore?.Get<bool?>(nameof(BlockListenEvent)); }
-            set { BackingStore?.Set(nameof(BlockListenEvent), value); }
+            get { return BackingStore?.Get<bool?>("blockListenEvent"); }
+            set { BackingStore?.Set("blockListenEvent", value); }
         }
         /// <summary>Block access to microphone.</summary>
         public bool? BlockMicrophone {
-            get { return BackingStore?.Get<bool?>(nameof(BlockMicrophone)); }
-            set { BackingStore?.Set(nameof(BlockMicrophone), value); }
+            get { return BackingStore?.Get<bool?>("blockMicrophone"); }
+            set { BackingStore?.Set("blockMicrophone", value); }
         }
         /// <summary>Block app from capturing contents of system display. Requires macOS 10.15 or later.</summary>
         public bool? BlockScreenCapture {
-            get { return BackingStore?.Get<bool?>(nameof(BlockScreenCapture)); }
-            set { BackingStore?.Set(nameof(BlockScreenCapture), value); }
+            get { return BackingStore?.Get<bool?>("blockScreenCapture"); }
+            set { BackingStore?.Set("blockScreenCapture", value); }
         }
-        /// <summary>Allow or block access to event information managed by Calendar. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? Calendar {
-            get { return BackingStore?.Get<Enablement?>(nameof(Calendar)); }
-            set { BackingStore?.Set(nameof(Calendar), value); }
+            get { return BackingStore?.Get<Enablement?>("calendar"); }
+            set { BackingStore?.Set("calendar", value); }
         }
         /// <summary>Enter the code requirement, which can be obtained with the command &apos;codesign –display -r –&apos; in the Terminal app. Include everything after &apos;=&gt;&apos;.</summary>
         public string CodeRequirement {
-            get { return BackingStore?.Get<string>(nameof(CodeRequirement)); }
-            set { BackingStore?.Set(nameof(CodeRequirement), value); }
+            get { return BackingStore?.Get<string>("codeRequirement"); }
+            set { BackingStore?.Set("codeRequirement", value); }
         }
         /// <summary>The display name of the app, process, or executable.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>Allow the app or process to access files managed by another app’s file provider extension. Requires macOS 10.15 or later. . Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? FileProviderPresence {
-            get { return BackingStore?.Get<Enablement?>(nameof(FileProviderPresence)); }
-            set { BackingStore?.Set(nameof(FileProviderPresence), value); }
+            get { return BackingStore?.Get<Enablement?>("fileProviderPresence"); }
+            set { BackingStore?.Set("fileProviderPresence", value); }
         }
         /// <summary>The bundle ID or path of the app, process, or executable.</summary>
         public string Identifier {
-            get { return BackingStore?.Get<string>(nameof(Identifier)); }
-            set { BackingStore?.Set(nameof(Identifier), value); }
+            get { return BackingStore?.Get<string>("identifier"); }
+            set { BackingStore?.Set("identifier", value); }
         }
-        /// <summary>A bundle ID is used to identify an app. A path is used to identify a process or executable. Possible values are: bundleID, path.</summary>
+        /// <summary>Process identifier types for MacOS Privacy Preferences</summary>
         public MacOSProcessIdentifierType? IdentifierType {
-            get { return BackingStore?.Get<MacOSProcessIdentifierType?>(nameof(IdentifierType)); }
-            set { BackingStore?.Set(nameof(IdentifierType), value); }
+            get { return BackingStore?.Get<MacOSProcessIdentifierType?>("identifierType"); }
+            set { BackingStore?.Set("identifierType", value); }
         }
-        /// <summary>Allow or block access to music and the media library. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? MediaLibrary {
-            get { return BackingStore?.Get<Enablement?>(nameof(MediaLibrary)); }
-            set { BackingStore?.Set(nameof(MediaLibrary), value); }
+            get { return BackingStore?.Get<Enablement?>("mediaLibrary"); }
+            set { BackingStore?.Set("mediaLibrary", value); }
         }
-        /// <summary>Allow or block access to images managed by Photos. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? Photos {
-            get { return BackingStore?.Get<Enablement?>(nameof(Photos)); }
-            set { BackingStore?.Set(nameof(Photos), value); }
+            get { return BackingStore?.Get<Enablement?>("photos"); }
+            set { BackingStore?.Set("photos", value); }
         }
-        /// <summary>Control access to CoreGraphics APIs, which are used to send CGEvents to the system event stream. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? PostEvent {
-            get { return BackingStore?.Get<Enablement?>(nameof(PostEvent)); }
-            set { BackingStore?.Set(nameof(PostEvent), value); }
+            get { return BackingStore?.Get<Enablement?>("postEvent"); }
+            set { BackingStore?.Set("postEvent", value); }
         }
-        /// <summary>Allow or block access to information managed by Reminders. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? Reminders {
-            get { return BackingStore?.Get<Enablement?>(nameof(Reminders)); }
-            set { BackingStore?.Set(nameof(Reminders), value); }
+            get { return BackingStore?.Get<Enablement?>("reminders"); }
+            set { BackingStore?.Set("reminders", value); }
         }
-        /// <summary>Allow or block access to system speech recognition facility. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? SpeechRecognition {
-            get { return BackingStore?.Get<Enablement?>(nameof(SpeechRecognition)); }
-            set { BackingStore?.Set(nameof(SpeechRecognition), value); }
+            get { return BackingStore?.Get<Enablement?>("speechRecognition"); }
+            set { BackingStore?.Set("speechRecognition", value); }
         }
         /// <summary>Statically validates the code requirement. Use this setting if the process invalidates its dynamic code signature.</summary>
         public bool? StaticCodeValidation {
-            get { return BackingStore?.Get<bool?>(nameof(StaticCodeValidation)); }
-            set { BackingStore?.Set(nameof(StaticCodeValidation), value); }
+            get { return BackingStore?.Get<bool?>("staticCodeValidation"); }
+            set { BackingStore?.Set("staticCodeValidation", value); }
         }
-        /// <summary>Control access to all protected files on a device. Files might be in locations such as emails, messages, apps, and administrative settings. Apply this setting with caution. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? SystemPolicyAllFiles {
-            get { return BackingStore?.Get<Enablement?>(nameof(SystemPolicyAllFiles)); }
-            set { BackingStore?.Set(nameof(SystemPolicyAllFiles), value); }
+            get { return BackingStore?.Get<Enablement?>("systemPolicyAllFiles"); }
+            set { BackingStore?.Set("systemPolicyAllFiles", value); }
         }
-        /// <summary>Allow or block access to Desktop folder. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? SystemPolicyDesktopFolder {
-            get { return BackingStore?.Get<Enablement?>(nameof(SystemPolicyDesktopFolder)); }
-            set { BackingStore?.Set(nameof(SystemPolicyDesktopFolder), value); }
+            get { return BackingStore?.Get<Enablement?>("systemPolicyDesktopFolder"); }
+            set { BackingStore?.Set("systemPolicyDesktopFolder", value); }
         }
-        /// <summary>Allow or block access to Documents folder. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? SystemPolicyDocumentsFolder {
-            get { return BackingStore?.Get<Enablement?>(nameof(SystemPolicyDocumentsFolder)); }
-            set { BackingStore?.Set(nameof(SystemPolicyDocumentsFolder), value); }
+            get { return BackingStore?.Get<Enablement?>("systemPolicyDocumentsFolder"); }
+            set { BackingStore?.Set("systemPolicyDocumentsFolder", value); }
         }
-        /// <summary>Allow or block access to Downloads folder. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? SystemPolicyDownloadsFolder {
-            get { return BackingStore?.Get<Enablement?>(nameof(SystemPolicyDownloadsFolder)); }
-            set { BackingStore?.Set(nameof(SystemPolicyDownloadsFolder), value); }
+            get { return BackingStore?.Get<Enablement?>("systemPolicyDownloadsFolder"); }
+            set { BackingStore?.Set("systemPolicyDownloadsFolder", value); }
         }
-        /// <summary>Allow or block access to network volumes. Requires macOS 10.15 or later. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? SystemPolicyNetworkVolumes {
-            get { return BackingStore?.Get<Enablement?>(nameof(SystemPolicyNetworkVolumes)); }
-            set { BackingStore?.Set(nameof(SystemPolicyNetworkVolumes), value); }
+            get { return BackingStore?.Get<Enablement?>("systemPolicyNetworkVolumes"); }
+            set { BackingStore?.Set("systemPolicyNetworkVolumes", value); }
         }
-        /// <summary>Control access to removable  volumes on the device, such as an external hard drive. Requires macOS 10.15 or later. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? SystemPolicyRemovableVolumes {
-            get { return BackingStore?.Get<Enablement?>(nameof(SystemPolicyRemovableVolumes)); }
-            set { BackingStore?.Set(nameof(SystemPolicyRemovableVolumes), value); }
+            get { return BackingStore?.Get<Enablement?>("systemPolicyRemovableVolumes"); }
+            set { BackingStore?.Set("systemPolicyRemovableVolumes", value); }
         }
-        /// <summary>Allow app or process to access files used in system administration. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? SystemPolicySystemAdminFiles {
-            get { return BackingStore?.Get<Enablement?>(nameof(SystemPolicySystemAdminFiles)); }
-            set { BackingStore?.Set(nameof(SystemPolicySystemAdminFiles), value); }
+            get { return BackingStore?.Get<Enablement?>("systemPolicySystemAdminFiles"); }
+            set { BackingStore?.Set("systemPolicySystemAdminFiles", value); }
         }
         /// <summary>
         /// Instantiates a new macOSPrivacyAccessControlItem and sets the default values.

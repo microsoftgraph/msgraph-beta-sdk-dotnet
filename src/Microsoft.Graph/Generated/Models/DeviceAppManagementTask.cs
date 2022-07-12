@@ -9,53 +9,59 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceAppManagementTask : Entity, IParsable {
         /// <summary>The name or email of the admin this task is assigned to.</summary>
         public string AssignedTo {
-            get { return BackingStore?.Get<string>(nameof(AssignedTo)); }
-            set { BackingStore?.Set(nameof(AssignedTo), value); }
+            get { return BackingStore?.Get<string>("assignedTo"); }
+            set { BackingStore?.Set("assignedTo", value); }
         }
-        /// <summary>The category. Possible values are: unknown, advancedThreatProtection.</summary>
+        /// <summary>Device app management task category.</summary>
         public DeviceAppManagementTaskCategory? Category {
-            get { return BackingStore?.Get<DeviceAppManagementTaskCategory?>(nameof(Category)); }
-            set { BackingStore?.Set(nameof(Category), value); }
+            get { return BackingStore?.Get<DeviceAppManagementTaskCategory?>("category"); }
+            set { BackingStore?.Set("category", value); }
         }
         /// <summary>The created date.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The email address of the creator.</summary>
         public string Creator {
-            get { return BackingStore?.Get<string>(nameof(Creator)); }
-            set { BackingStore?.Set(nameof(Creator), value); }
+            get { return BackingStore?.Get<string>("creator"); }
+            set { BackingStore?.Set("creator", value); }
         }
         /// <summary>Notes from the creator.</summary>
         public string CreatorNotes {
-            get { return BackingStore?.Get<string>(nameof(CreatorNotes)); }
-            set { BackingStore?.Set(nameof(CreatorNotes), value); }
+            get { return BackingStore?.Get<string>("creatorNotes"); }
+            set { BackingStore?.Set("creatorNotes", value); }
         }
         /// <summary>The description.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The name.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The due date.</summary>
         public DateTimeOffset? DueDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DueDateTime)); }
-            set { BackingStore?.Set(nameof(DueDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("dueDateTime"); }
+            set { BackingStore?.Set("dueDateTime", value); }
         }
-        /// <summary>The priority. Possible values are: none, high, low.</summary>
+        /// <summary>Device app management task priority.</summary>
         public DeviceAppManagementTaskPriority? Priority {
-            get { return BackingStore?.Get<DeviceAppManagementTaskPriority?>(nameof(Priority)); }
-            set { BackingStore?.Set(nameof(Priority), value); }
+            get { return BackingStore?.Get<DeviceAppManagementTaskPriority?>("priority"); }
+            set { BackingStore?.Set("priority", value); }
         }
-        /// <summary>The status. Possible values are: unknown, pending, active, completed, rejected.</summary>
+        /// <summary>Device app management task status.</summary>
         public DeviceAppManagementTaskStatus? Status {
-            get { return BackingStore?.Get<DeviceAppManagementTaskStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<DeviceAppManagementTaskStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+        /// <summary>
+        /// Instantiates a new deviceAppManagementTask and sets the default values.
+        /// </summary>
+        public DeviceAppManagementTask() : base() {
+            Type = "#microsoft.graph.deviceAppManagementTask";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

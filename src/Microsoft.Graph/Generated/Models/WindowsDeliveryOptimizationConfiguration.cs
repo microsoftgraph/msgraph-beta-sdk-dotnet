@@ -7,88 +7,88 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsDeliveryOptimizationConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Specifies number of seconds to delay an HTTP source in a background download that is allowed to use peer-to-peer. Valid values 0 to 4294967295</summary>
         public long? BackgroundDownloadFromHttpDelayInSeconds {
-            get { return BackingStore?.Get<long?>(nameof(BackgroundDownloadFromHttpDelayInSeconds)); }
-            set { BackingStore?.Set(nameof(BackgroundDownloadFromHttpDelayInSeconds), value); }
+            get { return BackingStore?.Get<long?>("backgroundDownloadFromHttpDelayInSeconds"); }
+            set { BackingStore?.Set("backgroundDownloadFromHttpDelayInSeconds", value); }
         }
         /// <summary>Specifies foreground and background bandwidth usage using percentages, absolutes, or hours.</summary>
         public DeliveryOptimizationBandwidth BandwidthMode {
-            get { return BackingStore?.Get<DeliveryOptimizationBandwidth>(nameof(BandwidthMode)); }
-            set { BackingStore?.Set(nameof(BandwidthMode), value); }
+            get { return BackingStore?.Get<DeliveryOptimizationBandwidth>("bandwidthMode"); }
+            set { BackingStore?.Set("bandwidthMode", value); }
         }
         /// <summary>Specifies number of seconds to delay a fall back from cache servers to an HTTP source for a background download. Valid values 0 to 2592000.</summary>
         public int? CacheServerBackgroundDownloadFallbackToHttpDelayInSeconds {
-            get { return BackingStore?.Get<int?>(nameof(CacheServerBackgroundDownloadFallbackToHttpDelayInSeconds)); }
-            set { BackingStore?.Set(nameof(CacheServerBackgroundDownloadFallbackToHttpDelayInSeconds), value); }
+            get { return BackingStore?.Get<int?>("cacheServerBackgroundDownloadFallbackToHttpDelayInSeconds"); }
+            set { BackingStore?.Set("cacheServerBackgroundDownloadFallbackToHttpDelayInSeconds", value); }
         }
         /// <summary>Specifies number of seconds to delay a fall back from cache servers to an HTTP source for a foreground download. Valid values 0 to 2592000.​</summary>
         public int? CacheServerForegroundDownloadFallbackToHttpDelayInSeconds {
-            get { return BackingStore?.Get<int?>(nameof(CacheServerForegroundDownloadFallbackToHttpDelayInSeconds)); }
-            set { BackingStore?.Set(nameof(CacheServerForegroundDownloadFallbackToHttpDelayInSeconds), value); }
+            get { return BackingStore?.Get<int?>("cacheServerForegroundDownloadFallbackToHttpDelayInSeconds"); }
+            set { BackingStore?.Set("cacheServerForegroundDownloadFallbackToHttpDelayInSeconds", value); }
         }
         /// <summary>Specifies cache servers host names.</summary>
         public List<string> CacheServerHostNames {
-            get { return BackingStore?.Get<List<string>>(nameof(CacheServerHostNames)); }
-            set { BackingStore?.Set(nameof(CacheServerHostNames), value); }
+            get { return BackingStore?.Get<List<string>>("cacheServerHostNames"); }
+            set { BackingStore?.Set("cacheServerHostNames", value); }
         }
-        /// <summary>Specifies the download method that delivery optimization can use to manage network bandwidth consumption for large content distribution scenarios. Possible values are: userDefined, httpOnly, httpWithPeeringNat, httpWithPeeringPrivateGroup, httpWithInternetPeering, simpleDownload, bypassMode.</summary>
+        /// <summary>Delivery optimization mode for peer distribution</summary>
         public WindowsDeliveryOptimizationMode? DeliveryOptimizationMode {
-            get { return BackingStore?.Get<WindowsDeliveryOptimizationMode?>(nameof(DeliveryOptimizationMode)); }
-            set { BackingStore?.Set(nameof(DeliveryOptimizationMode), value); }
+            get { return BackingStore?.Get<WindowsDeliveryOptimizationMode?>("deliveryOptimizationMode"); }
+            set { BackingStore?.Set("deliveryOptimizationMode", value); }
         }
         /// <summary>Specifies number of seconds to delay an HTTP source in a foreground download that is allowed to use peer-to-peer (0-86400). Valid values 0 to 86400</summary>
         public long? ForegroundDownloadFromHttpDelayInSeconds {
-            get { return BackingStore?.Get<long?>(nameof(ForegroundDownloadFromHttpDelayInSeconds)); }
-            set { BackingStore?.Set(nameof(ForegroundDownloadFromHttpDelayInSeconds), value); }
+            get { return BackingStore?.Get<long?>("foregroundDownloadFromHttpDelayInSeconds"); }
+            set { BackingStore?.Set("foregroundDownloadFromHttpDelayInSeconds", value); }
         }
         /// <summary>Specifies to restrict peer selection to a specfic source.</summary>
         public DeliveryOptimizationGroupIdSource GroupIdSource {
-            get { return BackingStore?.Get<DeliveryOptimizationGroupIdSource>(nameof(GroupIdSource)); }
-            set { BackingStore?.Set(nameof(GroupIdSource), value); }
+            get { return BackingStore?.Get<DeliveryOptimizationGroupIdSource>("groupIdSource"); }
+            set { BackingStore?.Set("groupIdSource", value); }
         }
         /// <summary>Specifies the maximum time in days that each file is held in the Delivery Optimization cache after downloading successfully (0-3650). Valid values 0 to 3650</summary>
         public int? MaximumCacheAgeInDays {
-            get { return BackingStore?.Get<int?>(nameof(MaximumCacheAgeInDays)); }
-            set { BackingStore?.Set(nameof(MaximumCacheAgeInDays), value); }
+            get { return BackingStore?.Get<int?>("maximumCacheAgeInDays"); }
+            set { BackingStore?.Set("maximumCacheAgeInDays", value); }
         }
         /// <summary>Specifies the maximum cache size that Delivery Optimization either as a percentage or in GB.</summary>
         public DeliveryOptimizationMaxCacheSize MaximumCacheSize {
-            get { return BackingStore?.Get<DeliveryOptimizationMaxCacheSize>(nameof(MaximumCacheSize)); }
-            set { BackingStore?.Set(nameof(MaximumCacheSize), value); }
+            get { return BackingStore?.Get<DeliveryOptimizationMaxCacheSize>("maximumCacheSize"); }
+            set { BackingStore?.Set("maximumCacheSize", value); }
         }
         /// <summary>Specifies the minimum battery percentage to allow the device to upload data (0-100). Valid values 0 to 100</summary>
         public int? MinimumBatteryPercentageAllowedToUpload {
-            get { return BackingStore?.Get<int?>(nameof(MinimumBatteryPercentageAllowedToUpload)); }
-            set { BackingStore?.Set(nameof(MinimumBatteryPercentageAllowedToUpload), value); }
+            get { return BackingStore?.Get<int?>("minimumBatteryPercentageAllowedToUpload"); }
+            set { BackingStore?.Set("minimumBatteryPercentageAllowedToUpload", value); }
         }
         /// <summary>Specifies the minimum disk size in GB to use Peer Caching (1-100000). Valid values 1 to 100000</summary>
         public int? MinimumDiskSizeAllowedToPeerInGigabytes {
-            get { return BackingStore?.Get<int?>(nameof(MinimumDiskSizeAllowedToPeerInGigabytes)); }
-            set { BackingStore?.Set(nameof(MinimumDiskSizeAllowedToPeerInGigabytes), value); }
+            get { return BackingStore?.Get<int?>("minimumDiskSizeAllowedToPeerInGigabytes"); }
+            set { BackingStore?.Set("minimumDiskSizeAllowedToPeerInGigabytes", value); }
         }
         /// <summary>Specifies the minimum content file size in MB enabled to use Peer Caching (1-100000). Valid values 1 to 100000</summary>
         public int? MinimumFileSizeToCacheInMegabytes {
-            get { return BackingStore?.Get<int?>(nameof(MinimumFileSizeToCacheInMegabytes)); }
-            set { BackingStore?.Set(nameof(MinimumFileSizeToCacheInMegabytes), value); }
+            get { return BackingStore?.Get<int?>("minimumFileSizeToCacheInMegabytes"); }
+            set { BackingStore?.Set("minimumFileSizeToCacheInMegabytes", value); }
         }
         /// <summary>Specifies the minimum RAM size in GB to use Peer Caching (1-100000). Valid values 1 to 100000</summary>
         public int? MinimumRamAllowedToPeerInGigabytes {
-            get { return BackingStore?.Get<int?>(nameof(MinimumRamAllowedToPeerInGigabytes)); }
-            set { BackingStore?.Set(nameof(MinimumRamAllowedToPeerInGigabytes), value); }
+            get { return BackingStore?.Get<int?>("minimumRamAllowedToPeerInGigabytes"); }
+            set { BackingStore?.Set("minimumRamAllowedToPeerInGigabytes", value); }
         }
         /// <summary>Specifies the drive that Delivery Optimization should use for its cache.</summary>
         public string ModifyCacheLocation {
-            get { return BackingStore?.Get<string>(nameof(ModifyCacheLocation)); }
-            set { BackingStore?.Set(nameof(ModifyCacheLocation), value); }
+            get { return BackingStore?.Get<string>("modifyCacheLocation"); }
+            set { BackingStore?.Set("modifyCacheLocation", value); }
         }
-        /// <summary>Specifies to restrict peer selection via selected option.</summary>
+        /// <summary>Values to restrict peer selection by.</summary>
         public DeliveryOptimizationRestrictPeerSelectionByOptions? RestrictPeerSelectionBy {
-            get { return BackingStore?.Get<DeliveryOptimizationRestrictPeerSelectionByOptions?>(nameof(RestrictPeerSelectionBy)); }
-            set { BackingStore?.Set(nameof(RestrictPeerSelectionBy), value); }
+            get { return BackingStore?.Get<DeliveryOptimizationRestrictPeerSelectionByOptions?>("restrictPeerSelectionBy"); }
+            set { BackingStore?.Set("restrictPeerSelectionBy", value); }
         }
-        /// <summary>Specifies whether the device is allowed to participate in Peer Caching while connected via VPN to the domain network.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? VpnPeerCaching {
-            get { return BackingStore?.Get<Enablement?>(nameof(VpnPeerCaching)); }
-            set { BackingStore?.Set(nameof(VpnPeerCaching), value); }
+            get { return BackingStore?.Get<Enablement?>("vpnPeerCaching"); }
+            set { BackingStore?.Set("vpnPeerCaching", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

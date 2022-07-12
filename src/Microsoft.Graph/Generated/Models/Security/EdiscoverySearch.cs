@@ -7,33 +7,33 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class EdiscoverySearch : Search, IParsable {
         /// <summary>Adds an additional source to the eDiscovery search.</summary>
         public List<DataSource> AdditionalSources {
-            get { return BackingStore?.Get<List<DataSource>>(nameof(AdditionalSources)); }
-            set { BackingStore?.Set(nameof(AdditionalSources), value); }
+            get { return BackingStore?.Get<List<DataSource>>("additionalSources"); }
+            set { BackingStore?.Set("additionalSources", value); }
         }
         /// <summary>Adds the results of the eDiscovery search to the specified reviewSet.</summary>
         public EdiscoveryAddToReviewSetOperation AddToReviewSetOperation {
-            get { return BackingStore?.Get<EdiscoveryAddToReviewSetOperation>(nameof(AddToReviewSetOperation)); }
-            set { BackingStore?.Set(nameof(AddToReviewSetOperation), value); }
+            get { return BackingStore?.Get<EdiscoveryAddToReviewSetOperation>("addToReviewSetOperation"); }
+            set { BackingStore?.Set("addToReviewSetOperation", value); }
         }
         /// <summary>Custodian sources that are included in the eDiscovery search.</summary>
         public List<DataSource> CustodianSources {
-            get { return BackingStore?.Get<List<DataSource>>(nameof(CustodianSources)); }
-            set { BackingStore?.Set(nameof(CustodianSources), value); }
+            get { return BackingStore?.Get<List<DataSource>>("custodianSources"); }
+            set { BackingStore?.Set("custodianSources", value); }
         }
         /// <summary>When specified, the collection will span across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.</summary>
         public Microsoft.Graph.Beta.Models.Security.DataSourceScopes? DataSourceScopes {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DataSourceScopes?>(nameof(DataSourceScopes)); }
-            set { BackingStore?.Set(nameof(DataSourceScopes), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DataSourceScopes?>("dataSourceScopes"); }
+            set { BackingStore?.Set("dataSourceScopes", value); }
         }
         /// <summary>The last estimate operation associated with the eDiscovery search.</summary>
         public EdiscoveryEstimateOperation LastEstimateStatisticsOperation {
-            get { return BackingStore?.Get<EdiscoveryEstimateOperation>(nameof(LastEstimateStatisticsOperation)); }
-            set { BackingStore?.Set(nameof(LastEstimateStatisticsOperation), value); }
+            get { return BackingStore?.Get<EdiscoveryEstimateOperation>("lastEstimateStatisticsOperation"); }
+            set { BackingStore?.Set("lastEstimateStatisticsOperation", value); }
         }
         /// <summary>noncustodialDataSource sources that are included in the eDiscovery search</summary>
         public List<EdiscoveryNoncustodialDataSource> NoncustodialSources {
-            get { return BackingStore?.Get<List<EdiscoveryNoncustodialDataSource>>(nameof(NoncustodialSources)); }
-            set { BackingStore?.Set(nameof(NoncustodialSources), value); }
+            get { return BackingStore?.Get<List<EdiscoveryNoncustodialDataSource>>("noncustodialSources"); }
+            set { BackingStore?.Set("noncustodialSources", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

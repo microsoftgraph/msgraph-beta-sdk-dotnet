@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class UserSource : DataSource, IParsable {
         /// <summary>Email address of the user&apos;s mailbox.</summary>
         public string Email {
-            get { return BackingStore?.Get<string>(nameof(Email)); }
-            set { BackingStore?.Set(nameof(Email), value); }
+            get { return BackingStore?.Get<string>("email"); }
+            set { BackingStore?.Set("email", value); }
         }
         /// <summary>Specifies which sources are included in this group. Possible values are: mailbox, site.</summary>
         public SourceType? IncludedSources {
-            get { return BackingStore?.Get<SourceType?>(nameof(IncludedSources)); }
-            set { BackingStore?.Set(nameof(IncludedSources), value); }
+            get { return BackingStore?.Get<SourceType?>("includedSources"); }
+            set { BackingStore?.Set("includedSources", value); }
         }
         /// <summary>The URL of the user&apos;s OneDrive for Business site. Read-only.</summary>
         public string SiteWebUrl {
-            get { return BackingStore?.Get<string>(nameof(SiteWebUrl)); }
-            set { BackingStore?.Set(nameof(SiteWebUrl), value); }
+            get { return BackingStore?.Get<string>("siteWebUrl"); }
+            set { BackingStore?.Set("siteWebUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,28 +7,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsDomainJoinConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Active Directory domain name to join.</summary>
         public string ActiveDirectoryDomainName {
-            get { return BackingStore?.Get<string>(nameof(ActiveDirectoryDomainName)); }
-            set { BackingStore?.Set(nameof(ActiveDirectoryDomainName), value); }
+            get { return BackingStore?.Get<string>("activeDirectoryDomainName"); }
+            set { BackingStore?.Set("activeDirectoryDomainName", value); }
         }
         /// <summary>Fixed prefix to be used for computer name.</summary>
         public string ComputerNameStaticPrefix {
-            get { return BackingStore?.Get<string>(nameof(ComputerNameStaticPrefix)); }
-            set { BackingStore?.Set(nameof(ComputerNameStaticPrefix), value); }
+            get { return BackingStore?.Get<string>("computerNameStaticPrefix"); }
+            set { BackingStore?.Set("computerNameStaticPrefix", value); }
         }
         /// <summary>Dynamically generated characters used as suffix for computer name. Valid values 3 to 14</summary>
         public int? ComputerNameSuffixRandomCharCount {
-            get { return BackingStore?.Get<int?>(nameof(ComputerNameSuffixRandomCharCount)); }
-            set { BackingStore?.Set(nameof(ComputerNameSuffixRandomCharCount), value); }
+            get { return BackingStore?.Get<int?>("computerNameSuffixRandomCharCount"); }
+            set { BackingStore?.Set("computerNameSuffixRandomCharCount", value); }
         }
         /// <summary>Reference to device configurations required for network connectivity</summary>
         public List<DeviceConfiguration> NetworkAccessConfigurations {
-            get { return BackingStore?.Get<List<DeviceConfiguration>>(nameof(NetworkAccessConfigurations)); }
-            set { BackingStore?.Set(nameof(NetworkAccessConfigurations), value); }
+            get { return BackingStore?.Get<List<DeviceConfiguration>>("networkAccessConfigurations"); }
+            set { BackingStore?.Set("networkAccessConfigurations", value); }
         }
         /// <summary>Organizational unit (OU) where the computer account will be created. If this parameter is NULL, the well known computer object container will be used as published in the domain.</summary>
         public string OrganizationalUnit {
-            get { return BackingStore?.Get<string>(nameof(OrganizationalUnit)); }
-            set { BackingStore?.Set(nameof(OrganizationalUnit), value); }
+            get { return BackingStore?.Get<string>("organizationalUnit"); }
+            set { BackingStore?.Set("organizationalUnit", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

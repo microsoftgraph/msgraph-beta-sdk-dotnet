@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class RetentionDurationInDays : RetentionDuration, IParsable {
         /// <summary>Specifies the time period in days for which an item with the applied retention label will be retained for.</summary>
         public int? Days {
-            get { return BackingStore?.Get<int?>(nameof(Days)); }
-            set { BackingStore?.Set(nameof(Days), value); }
+            get { return BackingStore?.Get<int?>("days"); }
+            set { BackingStore?.Set("days", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

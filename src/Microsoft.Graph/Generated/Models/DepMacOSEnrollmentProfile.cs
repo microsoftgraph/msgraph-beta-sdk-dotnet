@@ -7,48 +7,48 @@ namespace Microsoft.Graph.Beta.Models {
     public class DepMacOSEnrollmentProfile : DepEnrollmentBaseProfile, IParsable {
         /// <summary>Indicates if Accessibility screen is disabled</summary>
         public bool? AccessibilityScreenDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(AccessibilityScreenDisabled)); }
-            set { BackingStore?.Set(nameof(AccessibilityScreenDisabled), value); }
+            get { return BackingStore?.Get<bool?>("accessibilityScreenDisabled"); }
+            set { BackingStore?.Set("accessibilityScreenDisabled", value); }
         }
         /// <summary>Indicates if UnlockWithWatch screen is disabled</summary>
         public bool? AutoUnlockWithWatchDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(AutoUnlockWithWatchDisabled)); }
-            set { BackingStore?.Set(nameof(AutoUnlockWithWatchDisabled), value); }
+            get { return BackingStore?.Get<bool?>("autoUnlockWithWatchDisabled"); }
+            set { BackingStore?.Set("autoUnlockWithWatchDisabled", value); }
         }
         /// <summary>Indicates if iCloud Documents and Desktop screen is disabled</summary>
         public bool? ChooseYourLockScreenDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(ChooseYourLockScreenDisabled)); }
-            set { BackingStore?.Set(nameof(ChooseYourLockScreenDisabled), value); }
+            get { return BackingStore?.Get<bool?>("chooseYourLockScreenDisabled"); }
+            set { BackingStore?.Set("chooseYourLockScreenDisabled", value); }
         }
         /// <summary>Indicates if file vault is disabled</summary>
         public bool? FileVaultDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(FileVaultDisabled)); }
-            set { BackingStore?.Set(nameof(FileVaultDisabled), value); }
+            get { return BackingStore?.Get<bool?>("fileVaultDisabled"); }
+            set { BackingStore?.Set("fileVaultDisabled", value); }
         }
         /// <summary>Indicates if iCloud Analytics screen is disabled</summary>
         public bool? ICloudDiagnosticsDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(ICloudDiagnosticsDisabled)); }
-            set { BackingStore?.Set(nameof(ICloudDiagnosticsDisabled), value); }
+            get { return BackingStore?.Get<bool?>("iCloudDiagnosticsDisabled"); }
+            set { BackingStore?.Set("iCloudDiagnosticsDisabled", value); }
         }
         /// <summary>Indicates if iCloud Documents and Desktop screen is disabled</summary>
         public bool? ICloudStorageDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(ICloudStorageDisabled)); }
-            set { BackingStore?.Set(nameof(ICloudStorageDisabled), value); }
+            get { return BackingStore?.Get<bool?>("iCloudStorageDisabled"); }
+            set { BackingStore?.Set("iCloudStorageDisabled", value); }
         }
         /// <summary>Indicates if Passcode setup pane is disabled</summary>
         public bool? PassCodeDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(PassCodeDisabled)); }
-            set { BackingStore?.Set(nameof(PassCodeDisabled), value); }
+            get { return BackingStore?.Get<bool?>("passCodeDisabled"); }
+            set { BackingStore?.Set("passCodeDisabled", value); }
         }
         /// <summary>Indicates if registration is disabled</summary>
         public bool? RegistrationDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(RegistrationDisabled)); }
-            set { BackingStore?.Set(nameof(RegistrationDisabled), value); }
+            get { return BackingStore?.Get<bool?>("registrationDisabled"); }
+            set { BackingStore?.Set("registrationDisabled", value); }
         }
         /// <summary>Indicates if zoom setup pane is disabled</summary>
         public bool? ZoomDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(ZoomDisabled)); }
-            set { BackingStore?.Set(nameof(ZoomDisabled), value); }
+            get { return BackingStore?.Get<bool?>("zoomDisabled"); }
+            set { BackingStore?.Set("zoomDisabled", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

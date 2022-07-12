@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class SensitiveContentLocation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The confidence property</summary>
         public int? Confidence {
-            get { return BackingStore?.Get<int?>(nameof(Confidence)); }
-            set { BackingStore?.Set(nameof(Confidence), value); }
+            get { return BackingStore?.Get<int?>("confidence"); }
+            set { BackingStore?.Set("confidence", value); }
         }
         /// <summary>The evidences property</summary>
         public List<SensitiveContentEvidence> Evidences {
-            get { return BackingStore?.Get<List<SensitiveContentEvidence>>(nameof(Evidences)); }
-            set { BackingStore?.Set(nameof(Evidences), value); }
+            get { return BackingStore?.Get<List<SensitiveContentEvidence>>("evidences"); }
+            set { BackingStore?.Set("evidences", value); }
         }
         /// <summary>The idMatch property</summary>
         public string IdMatch {
-            get { return BackingStore?.Get<string>(nameof(IdMatch)); }
-            set { BackingStore?.Set(nameof(IdMatch), value); }
+            get { return BackingStore?.Get<string>("idMatch"); }
+            set { BackingStore?.Set("idMatch", value); }
         }
         /// <summary>The length property</summary>
         public int? Length {
-            get { return BackingStore?.Get<int?>(nameof(Length)); }
-            set { BackingStore?.Set(nameof(Length), value); }
+            get { return BackingStore?.Get<int?>("length"); }
+            set { BackingStore?.Set("length", value); }
         }
         /// <summary>The offset property</summary>
         public int? Offset {
-            get { return BackingStore?.Get<int?>(nameof(Offset)); }
-            set { BackingStore?.Set(nameof(Offset), value); }
+            get { return BackingStore?.Get<int?>("offset"); }
+            set { BackingStore?.Set("offset", value); }
         }
         /// <summary>
         /// Instantiates a new sensitiveContentLocation and sets the default values.

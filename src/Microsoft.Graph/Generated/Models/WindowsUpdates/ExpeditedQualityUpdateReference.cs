@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class ExpeditedQualityUpdateReference : QualityUpdateReference, IParsable {
         /// <summary>Specifies other content to consider as equivalent. Supports a subset of the values for equivalentContentOption. Default value is latestSecurity. Possible values are: latestSecurity, unknownFutureValue.</summary>
         public EquivalentContentOption? EquivalentContent {
-            get { return BackingStore?.Get<EquivalentContentOption?>(nameof(EquivalentContent)); }
-            set { BackingStore?.Set(nameof(EquivalentContent), value); }
+            get { return BackingStore?.Get<EquivalentContentOption?>("equivalentContent"); }
+            set { BackingStore?.Set("equivalentContent", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

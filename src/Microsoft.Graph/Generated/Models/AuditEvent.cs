@@ -8,58 +8,58 @@ namespace Microsoft.Graph.Beta.Models {
     public class AuditEvent : Entity, IParsable {
         /// <summary>Friendly name of the activity.</summary>
         public string Activity {
-            get { return BackingStore?.Get<string>(nameof(Activity)); }
-            set { BackingStore?.Set(nameof(Activity), value); }
+            get { return BackingStore?.Get<string>("activity"); }
+            set { BackingStore?.Set("activity", value); }
         }
         /// <summary>The date time in UTC when the activity was performed.</summary>
         public DateTimeOffset? ActivityDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ActivityDateTime)); }
-            set { BackingStore?.Set(nameof(ActivityDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("activityDateTime"); }
+            set { BackingStore?.Set("activityDateTime", value); }
         }
         /// <summary>The HTTP operation type of the activity.</summary>
         public string ActivityOperationType {
-            get { return BackingStore?.Get<string>(nameof(ActivityOperationType)); }
-            set { BackingStore?.Set(nameof(ActivityOperationType), value); }
+            get { return BackingStore?.Get<string>("activityOperationType"); }
+            set { BackingStore?.Set("activityOperationType", value); }
         }
         /// <summary>The result of the activity.</summary>
         public string ActivityResult {
-            get { return BackingStore?.Get<string>(nameof(ActivityResult)); }
-            set { BackingStore?.Set(nameof(ActivityResult), value); }
+            get { return BackingStore?.Get<string>("activityResult"); }
+            set { BackingStore?.Set("activityResult", value); }
         }
         /// <summary>The type of activity that was being performed.</summary>
         public string ActivityType {
-            get { return BackingStore?.Get<string>(nameof(ActivityType)); }
-            set { BackingStore?.Set(nameof(ActivityType), value); }
+            get { return BackingStore?.Get<string>("activityType"); }
+            set { BackingStore?.Set("activityType", value); }
         }
         /// <summary>AAD user and application that are associated with the audit event.</summary>
         public AuditActor Actor {
-            get { return BackingStore?.Get<AuditActor>(nameof(Actor)); }
-            set { BackingStore?.Set(nameof(Actor), value); }
+            get { return BackingStore?.Get<AuditActor>("actor"); }
+            set { BackingStore?.Set("actor", value); }
         }
         /// <summary>Audit category.</summary>
         public string Category {
-            get { return BackingStore?.Get<string>(nameof(Category)); }
-            set { BackingStore?.Set(nameof(Category), value); }
+            get { return BackingStore?.Get<string>("category"); }
+            set { BackingStore?.Set("category", value); }
         }
         /// <summary>Component name.</summary>
         public string ComponentName {
-            get { return BackingStore?.Get<string>(nameof(ComponentName)); }
-            set { BackingStore?.Set(nameof(ComponentName), value); }
+            get { return BackingStore?.Get<string>("componentName"); }
+            set { BackingStore?.Set("componentName", value); }
         }
         /// <summary>The client request Id that is used to correlate activity within the system.</summary>
         public string CorrelationId {
-            get { return BackingStore?.Get<string>(nameof(CorrelationId)); }
-            set { BackingStore?.Set(nameof(CorrelationId), value); }
+            get { return BackingStore?.Get<string>("correlationId"); }
+            set { BackingStore?.Set("correlationId", value); }
         }
         /// <summary>Event display name.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Resources being modified.</summary>
         public List<AuditResource> Resources {
-            get { return BackingStore?.Get<List<AuditResource>>(nameof(Resources)); }
-            set { BackingStore?.Set(nameof(Resources), value); }
+            get { return BackingStore?.Get<List<AuditResource>>("resources"); }
+            set { BackingStore?.Set("resources", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

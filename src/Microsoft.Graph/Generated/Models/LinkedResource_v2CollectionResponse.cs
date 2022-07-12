@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class LinkedResource_v2CollectionResponse : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The nextLink property</summary>
         public string NextLink {
-            get { return BackingStore?.Get<string>(nameof(NextLink)); }
-            set { BackingStore?.Set(nameof(NextLink), value); }
+            get { return BackingStore?.Get<string>("@odata.nextLink"); }
+            set { BackingStore?.Set("@odata.nextLink", value); }
         }
         /// <summary>The value property</summary>
         public List<LinkedResource_v2> Value {
-            get { return BackingStore?.Get<List<LinkedResource_v2>>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<List<LinkedResource_v2>>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Instantiates a new LinkedResource_v2CollectionResponse and sets the default values.

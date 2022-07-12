@@ -8,88 +8,88 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyDefinition : Entity, IParsable {
         /// <summary>The group policy category associated with the definition.</summary>
         public GroupPolicyCategory Category {
-            get { return BackingStore?.Get<GroupPolicyCategory>(nameof(Category)); }
-            set { BackingStore?.Set(nameof(Category), value); }
+            get { return BackingStore?.Get<GroupPolicyCategory>("category"); }
+            set { BackingStore?.Set("category", value); }
         }
         /// <summary>The localized full category path for the policy.</summary>
         public string CategoryPath {
-            get { return BackingStore?.Get<string>(nameof(CategoryPath)); }
-            set { BackingStore?.Set(nameof(CategoryPath), value); }
+            get { return BackingStore?.Get<string>("categoryPath"); }
+            set { BackingStore?.Set("categoryPath", value); }
         }
-        /// <summary>Identifies the type of groups the policy can be applied to. Possible values are: user, machine.</summary>
+        /// <summary>Group Policy Definition Class Type.</summary>
         public GroupPolicyDefinitionClassType? ClassType {
-            get { return BackingStore?.Get<GroupPolicyDefinitionClassType?>(nameof(ClassType)); }
-            set { BackingStore?.Set(nameof(ClassType), value); }
+            get { return BackingStore?.Get<GroupPolicyDefinitionClassType?>("classType"); }
+            set { BackingStore?.Set("classType", value); }
         }
         /// <summary>The group policy file associated with the definition.</summary>
         public GroupPolicyDefinitionFile DefinitionFile {
-            get { return BackingStore?.Get<GroupPolicyDefinitionFile>(nameof(DefinitionFile)); }
-            set { BackingStore?.Set(nameof(DefinitionFile), value); }
+            get { return BackingStore?.Get<GroupPolicyDefinitionFile>("definitionFile"); }
+            set { BackingStore?.Set("definitionFile", value); }
         }
         /// <summary>The localized policy name.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The localized explanation or help text associated with the policy. The default value is empty.</summary>
         public string ExplainText {
-            get { return BackingStore?.Get<string>(nameof(ExplainText)); }
-            set { BackingStore?.Set(nameof(ExplainText), value); }
+            get { return BackingStore?.Get<string>("explainText"); }
+            set { BackingStore?.Set("explainText", value); }
         }
         /// <summary>The category id of the parent category</summary>
         public string GroupPolicyCategoryId {
-            get { return BackingStore?.Get<string>(nameof(GroupPolicyCategoryId)); }
-            set { BackingStore?.Set(nameof(GroupPolicyCategoryId), value); }
+            get { return BackingStore?.Get<string>("groupPolicyCategoryId"); }
+            set { BackingStore?.Set("groupPolicyCategoryId", value); }
         }
         /// <summary>Signifies whether or not there are related definitions to this definition</summary>
         public bool? HasRelatedDefinitions {
-            get { return BackingStore?.Get<bool?>(nameof(HasRelatedDefinitions)); }
-            set { BackingStore?.Set(nameof(HasRelatedDefinitions), value); }
+            get { return BackingStore?.Get<bool?>("hasRelatedDefinitions"); }
+            set { BackingStore?.Set("hasRelatedDefinitions", value); }
         }
         /// <summary>The date and time the entity was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Minimum required CSP version for device configuration in this definition</summary>
         public string MinDeviceCspVersion {
-            get { return BackingStore?.Get<string>(nameof(MinDeviceCspVersion)); }
-            set { BackingStore?.Set(nameof(MinDeviceCspVersion), value); }
+            get { return BackingStore?.Get<string>("minDeviceCspVersion"); }
+            set { BackingStore?.Set("minDeviceCspVersion", value); }
         }
         /// <summary>Minimum required CSP version for user configuration in this definition</summary>
         public string MinUserCspVersion {
-            get { return BackingStore?.Get<string>(nameof(MinUserCspVersion)); }
-            set { BackingStore?.Set(nameof(MinUserCspVersion), value); }
+            get { return BackingStore?.Get<string>("minUserCspVersion"); }
+            set { BackingStore?.Set("minUserCspVersion", value); }
         }
         /// <summary>Definition of the next version of this definition</summary>
         public GroupPolicyDefinition NextVersionDefinition {
-            get { return BackingStore?.Get<GroupPolicyDefinition>(nameof(NextVersionDefinition)); }
-            set { BackingStore?.Set(nameof(NextVersionDefinition), value); }
+            get { return BackingStore?.Get<GroupPolicyDefinition>("nextVersionDefinition"); }
+            set { BackingStore?.Set("nextVersionDefinition", value); }
         }
-        /// <summary>Specifies the type of group policy. Possible values are: admxBacked, admxIngested.</summary>
+        /// <summary>Type of Group Policy File or Definition.</summary>
         public GroupPolicyType? PolicyType {
-            get { return BackingStore?.Get<GroupPolicyType?>(nameof(PolicyType)); }
-            set { BackingStore?.Set(nameof(PolicyType), value); }
+            get { return BackingStore?.Get<GroupPolicyType?>("policyType"); }
+            set { BackingStore?.Set("policyType", value); }
         }
         /// <summary>The group policy presentations associated with the definition.</summary>
         public List<GroupPolicyPresentation> Presentations {
-            get { return BackingStore?.Get<List<GroupPolicyPresentation>>(nameof(Presentations)); }
-            set { BackingStore?.Set(nameof(Presentations), value); }
+            get { return BackingStore?.Get<List<GroupPolicyPresentation>>("presentations"); }
+            set { BackingStore?.Set("presentations", value); }
         }
         /// <summary>Definition of the previous version of this definition</summary>
         public GroupPolicyDefinition PreviousVersionDefinition {
-            get { return BackingStore?.Get<GroupPolicyDefinition>(nameof(PreviousVersionDefinition)); }
-            set { BackingStore?.Set(nameof(PreviousVersionDefinition), value); }
+            get { return BackingStore?.Get<GroupPolicyDefinition>("previousVersionDefinition"); }
+            set { BackingStore?.Set("previousVersionDefinition", value); }
         }
         /// <summary>Localized string used to specify what operating system or application version is affected by the policy.</summary>
         public string SupportedOn {
-            get { return BackingStore?.Get<string>(nameof(SupportedOn)); }
-            set { BackingStore?.Set(nameof(SupportedOn), value); }
+            get { return BackingStore?.Get<string>("supportedOn"); }
+            set { BackingStore?.Set("supportedOn", value); }
         }
         /// <summary>Setting definition version</summary>
         public string Version {
-            get { return BackingStore?.Get<string>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<string>("version"); }
+            set { BackingStore?.Set("version", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

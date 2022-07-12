@@ -5,47 +5,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ItemFacet : Entity, IParsable {
         /// <summary>The audiences that are able to see the values contained within the associated entity. Possible values are: me, family, contacts, groupMembers, organization, federatedOrganizations, everyone, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.AllowedAudiences? AllowedAudiences {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AllowedAudiences?>(nameof(AllowedAudiences)); }
-            set { BackingStore?.Set(nameof(AllowedAudiences), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AllowedAudiences?>("allowedAudiences"); }
+            set { BackingStore?.Set("allowedAudiences", value); }
         }
         /// <summary>The createdBy property</summary>
         public IdentitySet CreatedBy {
-            get { return BackingStore?.Get<IdentitySet>(nameof(CreatedBy)); }
-            set { BackingStore?.Set(nameof(CreatedBy), value); }
+            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
         }
         /// <summary>Provides the dateTimeOffset for when the entity was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Contains inference detail if the entity is inferred by the creating or modifying application.</summary>
         public InferenceData Inference {
-            get { return BackingStore?.Get<InferenceData>(nameof(Inference)); }
-            set { BackingStore?.Set(nameof(Inference), value); }
+            get { return BackingStore?.Get<InferenceData>("inference"); }
+            set { BackingStore?.Set("inference", value); }
         }
         /// <summary>The isSearchable property</summary>
         public bool? IsSearchable {
-            get { return BackingStore?.Get<bool?>(nameof(IsSearchable)); }
-            set { BackingStore?.Set(nameof(IsSearchable), value); }
+            get { return BackingStore?.Get<bool?>("isSearchable"); }
+            set { BackingStore?.Set("isSearchable", value); }
         }
         /// <summary>The lastModifiedBy property</summary>
         public IdentitySet LastModifiedBy {
-            get { return BackingStore?.Get<IdentitySet>(nameof(LastModifiedBy)); }
-            set { BackingStore?.Set(nameof(LastModifiedBy), value); }
+            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
         }
         /// <summary>Provides the dateTimeOffset for when the entity was created.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Where the values within an entity originated if synced from another service.</summary>
         public PersonDataSources Source {
-            get { return BackingStore?.Get<PersonDataSources>(nameof(Source)); }
-            set { BackingStore?.Set(nameof(Source), value); }
+            get { return BackingStore?.Get<PersonDataSources>("source"); }
+            set { BackingStore?.Set("source", value); }
+        }
+        /// <summary>
+        /// Instantiates a new itemFacet and sets the default values.
+        /// </summary>
+        public ItemFacet() : base() {
+            Type = "#microsoft.graph.itemFacet";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

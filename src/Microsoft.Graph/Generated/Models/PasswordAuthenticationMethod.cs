@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class PasswordAuthenticationMethod : AuthenticationMethod, IParsable {
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreationDateTime)); }
-            set { BackingStore?.Set(nameof(CreationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("creationDateTime"); }
+            set { BackingStore?.Set("creationDateTime", value); }
         }
         /// <summary>For security, the password is always returned as null from a LIST or GET operation.</summary>
         public string Password {
-            get { return BackingStore?.Get<string>(nameof(Password)); }
-            set { BackingStore?.Set(nameof(Password), value); }
+            get { return BackingStore?.Get<string>("password"); }
+            set { BackingStore?.Set("password", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

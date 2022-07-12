@@ -4,52 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class AccessPackageSubject : Entity, IParsable {
         /// <summary>The altSecId property</summary>
         public string AltSecId {
-            get { return BackingStore?.Get<string>(nameof(AltSecId)); }
-            set { BackingStore?.Set(nameof(AltSecId), value); }
+            get { return BackingStore?.Get<string>("altSecId"); }
+            set { BackingStore?.Set("altSecId", value); }
         }
         /// <summary>The connected organization of the subject. Read-only. Nullable.</summary>
         public Microsoft.Graph.Beta.Models.ConnectedOrganization ConnectedOrganization {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConnectedOrganization>(nameof(ConnectedOrganization)); }
-            set { BackingStore?.Set(nameof(ConnectedOrganization), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConnectedOrganization>("connectedOrganization"); }
+            set { BackingStore?.Set("connectedOrganization", value); }
         }
         /// <summary>The identifier of the connected organization of the subject.</summary>
         public string ConnectedOrganizationId {
-            get { return BackingStore?.Get<string>(nameof(ConnectedOrganizationId)); }
-            set { BackingStore?.Set(nameof(ConnectedOrganizationId), value); }
+            get { return BackingStore?.Get<string>("connectedOrganizationId"); }
+            set { BackingStore?.Set("connectedOrganizationId", value); }
         }
         /// <summary>The display name of the subject.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The email address of the subject.</summary>
         public string Email {
-            get { return BackingStore?.Get<string>(nameof(Email)); }
-            set { BackingStore?.Set(nameof(Email), value); }
+            get { return BackingStore?.Get<string>("email"); }
+            set { BackingStore?.Set("email", value); }
         }
         /// <summary>The object identifier of the subject. null if the subject is not yet a user in the tenant.</summary>
         public string ObjectId {
-            get { return BackingStore?.Get<string>(nameof(ObjectId)); }
-            set { BackingStore?.Set(nameof(ObjectId), value); }
+            get { return BackingStore?.Get<string>("objectId"); }
+            set { BackingStore?.Set("objectId", value); }
         }
         /// <summary>A string representation of the principal&apos;s security identifier, if known, or null if the subject does not have a security identifier.</summary>
         public string OnPremisesSecurityIdentifier {
-            get { return BackingStore?.Get<string>(nameof(OnPremisesSecurityIdentifier)); }
-            set { BackingStore?.Set(nameof(OnPremisesSecurityIdentifier), value); }
+            get { return BackingStore?.Get<string>("onPremisesSecurityIdentifier"); }
+            set { BackingStore?.Set("onPremisesSecurityIdentifier", value); }
         }
         /// <summary>The principal name, if known, of the subject.</summary>
         public string PrincipalName {
-            get { return BackingStore?.Get<string>(nameof(PrincipalName)); }
-            set { BackingStore?.Set(nameof(PrincipalName), value); }
-        }
-        /// <summary>The resource type of the subject.</summary>
-        public string Type {
-            get { return BackingStore?.Get<string>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<string>("principalName"); }
+            set { BackingStore?.Set("principalName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -72,7 +66,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"objectId", n => { ObjectId = n.GetStringValue(); } },
                 {"onPremisesSecurityIdentifier", n => { OnPremisesSecurityIdentifier = n.GetStringValue(); } },
                 {"principalName", n => { PrincipalName = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -90,7 +83,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("objectId", ObjectId);
             writer.WriteStringValue("onPremisesSecurityIdentifier", OnPremisesSecurityIdentifier);
             writer.WriteStringValue("principalName", PrincipalName);
-            writer.WriteStringValue("type", Type);
         }
     }
 }

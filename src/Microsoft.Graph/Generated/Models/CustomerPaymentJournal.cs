@@ -4,42 +4,42 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class CustomerPaymentJournal : Entity, IParsable {
         /// <summary>The account property</summary>
         public Microsoft.Graph.Beta.Models.Account Account {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Account>(nameof(Account)); }
-            set { BackingStore?.Set(nameof(Account), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Account>("account"); }
+            set { BackingStore?.Set("account", value); }
         }
         /// <summary>The balancingAccountId property</summary>
         public string BalancingAccountId {
-            get { return BackingStore?.Get<string>(nameof(BalancingAccountId)); }
-            set { BackingStore?.Set(nameof(BalancingAccountId), value); }
+            get { return BackingStore?.Get<string>("balancingAccountId"); }
+            set { BackingStore?.Set("balancingAccountId", value); }
         }
         /// <summary>The balancingAccountNumber property</summary>
         public string BalancingAccountNumber {
-            get { return BackingStore?.Get<string>(nameof(BalancingAccountNumber)); }
-            set { BackingStore?.Set(nameof(BalancingAccountNumber), value); }
+            get { return BackingStore?.Get<string>("balancingAccountNumber"); }
+            set { BackingStore?.Set("balancingAccountNumber", value); }
         }
         /// <summary>The code property</summary>
         public string Code {
-            get { return BackingStore?.Get<string>(nameof(Code)); }
-            set { BackingStore?.Set(nameof(Code), value); }
+            get { return BackingStore?.Get<string>("code"); }
+            set { BackingStore?.Set("code", value); }
         }
         /// <summary>The customerPayments property</summary>
         public List<CustomerPayment> CustomerPayments {
-            get { return BackingStore?.Get<List<CustomerPayment>>(nameof(CustomerPayments)); }
-            set { BackingStore?.Set(nameof(CustomerPayments), value); }
+            get { return BackingStore?.Get<List<CustomerPayment>>("customerPayments"); }
+            set { BackingStore?.Set("customerPayments", value); }
         }
         /// <summary>The displayName property</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

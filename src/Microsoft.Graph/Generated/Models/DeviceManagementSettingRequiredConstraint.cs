@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementSettingRequiredConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>List of value which means not configured for the setting</summary>
         public string NotConfiguredValue {
-            get { return BackingStore?.Get<string>(nameof(NotConfiguredValue)); }
-            set { BackingStore?.Set(nameof(NotConfiguredValue), value); }
+            get { return BackingStore?.Get<string>("notConfiguredValue"); }
+            set { BackingStore?.Set("notConfiguredValue", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

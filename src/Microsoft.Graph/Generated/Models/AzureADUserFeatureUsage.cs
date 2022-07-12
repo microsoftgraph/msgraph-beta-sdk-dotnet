@@ -7,38 +7,38 @@ namespace Microsoft.Graph.Beta.Models {
     public class AzureADUserFeatureUsage : Entity, IParsable {
         /// <summary>The featureUsageDetails property</summary>
         public List<FeatureUsageDetail> FeatureUsageDetails {
-            get { return BackingStore?.Get<List<FeatureUsageDetail>>(nameof(FeatureUsageDetails)); }
-            set { BackingStore?.Set(nameof(FeatureUsageDetails), value); }
+            get { return BackingStore?.Get<List<FeatureUsageDetail>>("featureUsageDetails"); }
+            set { BackingStore?.Set("featureUsageDetails", value); }
         }
         /// <summary>The lastUpdatedDateTime property</summary>
         public DateTimeOffset? LastUpdatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastUpdatedDateTime)); }
-            set { BackingStore?.Set(nameof(LastUpdatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
+            set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>The licenseAssigned property</summary>
         public AzureADLicenseType? LicenseAssigned {
-            get { return BackingStore?.Get<AzureADLicenseType?>(nameof(LicenseAssigned)); }
-            set { BackingStore?.Set(nameof(LicenseAssigned), value); }
+            get { return BackingStore?.Get<AzureADLicenseType?>("licenseAssigned"); }
+            set { BackingStore?.Set("licenseAssigned", value); }
         }
         /// <summary>The licenseRecommended property</summary>
         public AzureADLicenseType? LicenseRecommended {
-            get { return BackingStore?.Get<AzureADLicenseType?>(nameof(LicenseRecommended)); }
-            set { BackingStore?.Set(nameof(LicenseRecommended), value); }
+            get { return BackingStore?.Get<AzureADLicenseType?>("licenseRecommended"); }
+            set { BackingStore?.Set("licenseRecommended", value); }
         }
         /// <summary>The userDisplayName property</summary>
         public string UserDisplayName {
-            get { return BackingStore?.Get<string>(nameof(UserDisplayName)); }
-            set { BackingStore?.Set(nameof(UserDisplayName), value); }
+            get { return BackingStore?.Get<string>("userDisplayName"); }
+            set { BackingStore?.Set("userDisplayName", value); }
         }
         /// <summary>The userId property</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>The userPrincipalName property</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

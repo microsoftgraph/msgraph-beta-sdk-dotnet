@@ -10,30 +10,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceHealthScriptParameter : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Whether Apply DefaultValue When Not Assigned</summary>
         public bool? ApplyDefaultValueWhenNotAssigned {
-            get { return BackingStore?.Get<bool?>(nameof(ApplyDefaultValueWhenNotAssigned)); }
-            set { BackingStore?.Set(nameof(ApplyDefaultValueWhenNotAssigned), value); }
+            get { return BackingStore?.Get<bool?>("applyDefaultValueWhenNotAssigned"); }
+            set { BackingStore?.Set("applyDefaultValueWhenNotAssigned", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The description of the param</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Whether the param is required</summary>
         public bool? IsRequired {
-            get { return BackingStore?.Get<bool?>(nameof(IsRequired)); }
-            set { BackingStore?.Set(nameof(IsRequired), value); }
+            get { return BackingStore?.Get<bool?>("isRequired"); }
+            set { BackingStore?.Set("isRequired", value); }
         }
         /// <summary>The name of the param</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new deviceHealthScriptParameter and sets the default values.
@@ -41,6 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceHealthScriptParameter() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.deviceHealthScriptParameter";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -66,6 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"isRequired", n => { IsRequired = n.GetBoolValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -78,6 +85,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("isRequired", IsRequired);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

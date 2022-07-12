@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class SubjectRightsRequestEnumeratedSiteLocation : SubjectRightsRequestSiteLocation, IParsable {
         /// <summary>Collection of site URLs that should be included. Includes the URL of each site, for example, https://www.contoso.com/site1.</summary>
         public List<string> Urls {
-            get { return BackingStore?.Get<List<string>>(nameof(Urls)); }
-            set { BackingStore?.Set(nameof(Urls), value); }
+            get { return BackingStore?.Get<List<string>>("urls"); }
+            set { BackingStore?.Set("urls", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

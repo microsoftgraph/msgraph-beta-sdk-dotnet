@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class AzureActiveDirectoryTenant : IdentitySource, IParsable {
         /// <summary>The name of the Azure Active Directory tenant. Read only.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The ID of the Azure Active Directory tenant. Read only.</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

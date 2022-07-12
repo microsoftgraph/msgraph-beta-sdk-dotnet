@@ -5,27 +5,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ExactMatchDataStoreBase : Entity, IParsable {
         /// <summary>The columns property</summary>
         public List<ExactDataMatchStoreColumn> Columns {
-            get { return BackingStore?.Get<List<ExactDataMatchStoreColumn>>(nameof(Columns)); }
-            set { BackingStore?.Set(nameof(Columns), value); }
+            get { return BackingStore?.Get<List<ExactDataMatchStoreColumn>>("columns"); }
+            set { BackingStore?.Set("columns", value); }
         }
         /// <summary>The dataLastUpdatedDateTime property</summary>
         public DateTimeOffset? DataLastUpdatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DataLastUpdatedDateTime)); }
-            set { BackingStore?.Set(nameof(DataLastUpdatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("dataLastUpdatedDateTime"); }
+            set { BackingStore?.Set("dataLastUpdatedDateTime", value); }
         }
         /// <summary>The description property</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The displayName property</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+        /// <summary>
+        /// Instantiates a new exactMatchDataStoreBase and sets the default values.
+        /// </summary>
+        public ExactMatchDataStoreBase() : base() {
+            Type = "#microsoft.graph.exactMatchDataStoreBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

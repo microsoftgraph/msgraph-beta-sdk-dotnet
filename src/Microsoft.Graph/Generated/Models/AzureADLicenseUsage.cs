@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class AzureADLicenseUsage : Entity, IParsable {
         /// <summary>The licenseInfoDetails property</summary>
         public List<LicenseInfoDetail> LicenseInfoDetails {
-            get { return BackingStore?.Get<List<LicenseInfoDetail>>(nameof(LicenseInfoDetails)); }
-            set { BackingStore?.Set(nameof(LicenseInfoDetails), value); }
+            get { return BackingStore?.Get<List<LicenseInfoDetail>>("licenseInfoDetails"); }
+            set { BackingStore?.Set("licenseInfoDetails", value); }
         }
         /// <summary>The snapshotDateTime property</summary>
         public DateTimeOffset? SnapshotDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(SnapshotDateTime)); }
-            set { BackingStore?.Set(nameof(SnapshotDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("snapshotDateTime"); }
+            set { BackingStore?.Set("snapshotDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class InformationProtection : Entity, IParsable {
         /// <summary>The labelPolicySettings property</summary>
         public InformationProtectionPolicySetting LabelPolicySettings {
-            get { return BackingStore?.Get<InformationProtectionPolicySetting>(nameof(LabelPolicySettings)); }
-            set { BackingStore?.Set(nameof(LabelPolicySettings), value); }
+            get { return BackingStore?.Get<InformationProtectionPolicySetting>("labelPolicySettings"); }
+            set { BackingStore?.Set("labelPolicySettings", value); }
         }
         /// <summary>The sensitivityLabels property</summary>
         public List<SensitivityLabel> SensitivityLabels {
-            get { return BackingStore?.Get<List<SensitivityLabel>>(nameof(SensitivityLabels)); }
-            set { BackingStore?.Set(nameof(SensitivityLabels), value); }
+            get { return BackingStore?.Get<List<SensitivityLabel>>("sensitivityLabels"); }
+            set { BackingStore?.Set("sensitivityLabels", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

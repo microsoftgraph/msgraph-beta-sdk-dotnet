@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class Windows10EnrollmentCompletionPageConfigurationPolicySetItem : PolicySetItem, IParsable {
         /// <summary>Priority of the Windows10EnrollmentCompletionPageConfigurationPolicySetItem.</summary>
         public int? Priority {
-            get { return BackingStore?.Get<int?>(nameof(Priority)); }
-            set { BackingStore?.Set(nameof(Priority), value); }
+            get { return BackingStore?.Get<int?>("priority"); }
+            set { BackingStore?.Set("priority", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -10,25 +10,25 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.ClockIn {
     public class ClockInPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The atApprovedLocation property</summary>
         public bool? AtApprovedLocation {
-            get { return BackingStore?.Get<bool?>(nameof(AtApprovedLocation)); }
-            set { BackingStore?.Set(nameof(AtApprovedLocation), value); }
+            get { return BackingStore?.Get<bool?>("atApprovedLocation"); }
+            set { BackingStore?.Set("atApprovedLocation", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The notes property</summary>
         public ItemBody Notes {
-            get { return BackingStore?.Get<ItemBody>(nameof(Notes)); }
-            set { BackingStore?.Set(nameof(Notes), value); }
+            get { return BackingStore?.Get<ItemBody>("notes"); }
+            set { BackingStore?.Set("notes", value); }
         }
         /// <summary>The onBehalfOfUserId property</summary>
         public string OnBehalfOfUserId {
-            get { return BackingStore?.Get<string>(nameof(OnBehalfOfUserId)); }
-            set { BackingStore?.Set(nameof(OnBehalfOfUserId), value); }
+            get { return BackingStore?.Get<string>("onBehalfOfUserId"); }
+            set { BackingStore?.Set("onBehalfOfUserId", value); }
         }
         /// <summary>
         /// Instantiates a new clockInPostRequestBody and sets the default values.

@@ -4,42 +4,42 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ManagementTemplateCollection : Entity, IParsable {
         /// <summary>The createdByUserId property</summary>
         public string CreatedByUserId {
-            get { return BackingStore?.Get<string>(nameof(CreatedByUserId)); }
-            set { BackingStore?.Set(nameof(CreatedByUserId), value); }
+            get { return BackingStore?.Get<string>("createdByUserId"); }
+            set { BackingStore?.Set("createdByUserId", value); }
         }
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description property</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The displayName property</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The lastActionByUserId property</summary>
         public string LastActionByUserId {
-            get { return BackingStore?.Get<string>(nameof(LastActionByUserId)); }
-            set { BackingStore?.Set(nameof(LastActionByUserId), value); }
+            get { return BackingStore?.Get<string>("lastActionByUserId"); }
+            set { BackingStore?.Set("lastActionByUserId", value); }
         }
         /// <summary>The lastActionDateTime property</summary>
         public DateTimeOffset? LastActionDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastActionDateTime)); }
-            set { BackingStore?.Set(nameof(LastActionDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
+            set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>The managementTemplates property</summary>
         public List<ManagementTemplate> ManagementTemplates {
-            get { return BackingStore?.Get<List<ManagementTemplate>>(nameof(ManagementTemplates)); }
-            set { BackingStore?.Set(nameof(ManagementTemplates), value); }
+            get { return BackingStore?.Get<List<ManagementTemplate>>("managementTemplates"); }
+            set { BackingStore?.Set("managementTemplates", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

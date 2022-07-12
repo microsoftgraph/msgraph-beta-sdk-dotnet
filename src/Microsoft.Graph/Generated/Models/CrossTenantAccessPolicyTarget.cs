@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class CrossTenantAccessPolicyTarget : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The unique identifier of the user, group, or application; one of the following keywords: AllUsers and AllApplications; or for targets that are applications, you may use reserved values.</summary>
         public string Target {
-            get { return BackingStore?.Get<string>(nameof(Target)); }
-            set { BackingStore?.Set(nameof(Target), value); }
+            get { return BackingStore?.Get<string>("target"); }
+            set { BackingStore?.Set("target", value); }
         }
         /// <summary>The type of resource that you want to target. The possible values are: user, group, application, unknownFutureValue.</summary>
         public CrossTenantAccessPolicyTargetType? TargetType {
-            get { return BackingStore?.Get<CrossTenantAccessPolicyTargetType?>(nameof(TargetType)); }
-            set { BackingStore?.Set(nameof(TargetType), value); }
+            get { return BackingStore?.Get<CrossTenantAccessPolicyTargetType?>("targetType"); }
+            set { BackingStore?.Set("targetType", value); }
         }
         /// <summary>
         /// Instantiates a new crossTenantAccessPolicyTarget and sets the default values.

@@ -8,128 +8,134 @@ namespace Microsoft.Graph.Beta.Models {
     public class MobileApp : Entity, IParsable {
         /// <summary>The list of group assignments for this mobile app.</summary>
         public List<MobileAppAssignment> Assignments {
-            get { return BackingStore?.Get<List<MobileAppAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<MobileAppAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>The list of categories for this app.</summary>
         public List<MobileAppCategory> Categories {
-            get { return BackingStore?.Get<List<MobileAppCategory>>(nameof(Categories)); }
-            set { BackingStore?.Set(nameof(Categories), value); }
+            get { return BackingStore?.Get<List<MobileAppCategory>>("categories"); }
+            set { BackingStore?.Set("categories", value); }
         }
         /// <summary>The date and time the app was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The total number of dependencies the child app has.</summary>
         public int? DependentAppCount {
-            get { return BackingStore?.Get<int?>(nameof(DependentAppCount)); }
-            set { BackingStore?.Set(nameof(DependentAppCount), value); }
+            get { return BackingStore?.Get<int?>("dependentAppCount"); }
+            set { BackingStore?.Set("dependentAppCount", value); }
         }
         /// <summary>The description of the app.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The developer of the app.</summary>
         public string Developer {
-            get { return BackingStore?.Get<string>(nameof(Developer)); }
-            set { BackingStore?.Set(nameof(Developer), value); }
+            get { return BackingStore?.Get<string>("developer"); }
+            set { BackingStore?.Set("developer", value); }
         }
         /// <summary>The list of installation states for this mobile app.</summary>
         public List<MobileAppInstallStatus> DeviceStatuses {
-            get { return BackingStore?.Get<List<MobileAppInstallStatus>>(nameof(DeviceStatuses)); }
-            set { BackingStore?.Set(nameof(DeviceStatuses), value); }
+            get { return BackingStore?.Get<List<MobileAppInstallStatus>>("deviceStatuses"); }
+            set { BackingStore?.Set("deviceStatuses", value); }
         }
         /// <summary>The admin provided or imported title of the app.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The more information Url.</summary>
         public string InformationUrl {
-            get { return BackingStore?.Get<string>(nameof(InformationUrl)); }
-            set { BackingStore?.Set(nameof(InformationUrl), value); }
+            get { return BackingStore?.Get<string>("informationUrl"); }
+            set { BackingStore?.Set("informationUrl", value); }
         }
         /// <summary>Mobile App Install Summary.</summary>
         public MobileAppInstallSummary InstallSummary {
-            get { return BackingStore?.Get<MobileAppInstallSummary>(nameof(InstallSummary)); }
-            set { BackingStore?.Set(nameof(InstallSummary), value); }
+            get { return BackingStore?.Get<MobileAppInstallSummary>("installSummary"); }
+            set { BackingStore?.Set("installSummary", value); }
         }
         /// <summary>The value indicating whether the app is assigned to at least one group.</summary>
         public bool? IsAssigned {
-            get { return BackingStore?.Get<bool?>(nameof(IsAssigned)); }
-            set { BackingStore?.Set(nameof(IsAssigned), value); }
+            get { return BackingStore?.Get<bool?>("isAssigned"); }
+            set { BackingStore?.Set("isAssigned", value); }
         }
         /// <summary>The value indicating whether the app is marked as featured by the admin.</summary>
         public bool? IsFeatured {
-            get { return BackingStore?.Get<bool?>(nameof(IsFeatured)); }
-            set { BackingStore?.Set(nameof(IsFeatured), value); }
+            get { return BackingStore?.Get<bool?>("isFeatured"); }
+            set { BackingStore?.Set("isFeatured", value); }
         }
         /// <summary>The large icon, to be displayed in the app details and used for upload of the icon.</summary>
         public MimeContent LargeIcon {
-            get { return BackingStore?.Get<MimeContent>(nameof(LargeIcon)); }
-            set { BackingStore?.Set(nameof(LargeIcon), value); }
+            get { return BackingStore?.Get<MimeContent>("largeIcon"); }
+            set { BackingStore?.Set("largeIcon", value); }
         }
         /// <summary>The date and time the app was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Notes for the app.</summary>
         public string Notes {
-            get { return BackingStore?.Get<string>(nameof(Notes)); }
-            set { BackingStore?.Set(nameof(Notes), value); }
+            get { return BackingStore?.Get<string>("notes"); }
+            set { BackingStore?.Set("notes", value); }
         }
         /// <summary>The owner of the app.</summary>
         public string Owner {
-            get { return BackingStore?.Get<string>(nameof(Owner)); }
-            set { BackingStore?.Set(nameof(Owner), value); }
+            get { return BackingStore?.Get<string>("owner"); }
+            set { BackingStore?.Set("owner", value); }
         }
         /// <summary>The privacy statement Url.</summary>
         public string PrivacyInformationUrl {
-            get { return BackingStore?.Get<string>(nameof(PrivacyInformationUrl)); }
-            set { BackingStore?.Set(nameof(PrivacyInformationUrl), value); }
+            get { return BackingStore?.Get<string>("privacyInformationUrl"); }
+            set { BackingStore?.Set("privacyInformationUrl", value); }
         }
         /// <summary>The publisher of the app.</summary>
         public string Publisher {
-            get { return BackingStore?.Get<string>(nameof(Publisher)); }
-            set { BackingStore?.Set(nameof(Publisher), value); }
+            get { return BackingStore?.Get<string>("publisher"); }
+            set { BackingStore?.Set("publisher", value); }
         }
-        /// <summary>The publishing state for the app. The app cannot be assigned unless the app is published. Possible values are: notPublished, processing, published.</summary>
+        /// <summary>Indicates the publishing state of an app.</summary>
         public MobileAppPublishingState? PublishingState {
-            get { return BackingStore?.Get<MobileAppPublishingState?>(nameof(PublishingState)); }
-            set { BackingStore?.Set(nameof(PublishingState), value); }
+            get { return BackingStore?.Get<MobileAppPublishingState?>("publishingState"); }
+            set { BackingStore?.Set("publishingState", value); }
         }
         /// <summary>List of relationships for this mobile app.</summary>
         public List<MobileAppRelationship> Relationships {
-            get { return BackingStore?.Get<List<MobileAppRelationship>>(nameof(Relationships)); }
-            set { BackingStore?.Set(nameof(Relationships), value); }
+            get { return BackingStore?.Get<List<MobileAppRelationship>>("relationships"); }
+            set { BackingStore?.Set("relationships", value); }
         }
         /// <summary>List of scope tag ids for this mobile app.</summary>
         public List<string> RoleScopeTagIds {
-            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTagIds)); }
-            set { BackingStore?.Set(nameof(RoleScopeTagIds), value); }
+            get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
         }
         /// <summary>The total number of apps this app is directly or indirectly superseded by.</summary>
         public int? SupersededAppCount {
-            get { return BackingStore?.Get<int?>(nameof(SupersededAppCount)); }
-            set { BackingStore?.Set(nameof(SupersededAppCount), value); }
+            get { return BackingStore?.Get<int?>("supersededAppCount"); }
+            set { BackingStore?.Set("supersededAppCount", value); }
         }
         /// <summary>The total number of apps this app directly or indirectly supersedes.</summary>
         public int? SupersedingAppCount {
-            get { return BackingStore?.Get<int?>(nameof(SupersedingAppCount)); }
-            set { BackingStore?.Set(nameof(SupersedingAppCount), value); }
+            get { return BackingStore?.Get<int?>("supersedingAppCount"); }
+            set { BackingStore?.Set("supersedingAppCount", value); }
         }
         /// <summary>The upload state.</summary>
         public int? UploadState {
-            get { return BackingStore?.Get<int?>(nameof(UploadState)); }
-            set { BackingStore?.Set(nameof(UploadState), value); }
+            get { return BackingStore?.Get<int?>("uploadState"); }
+            set { BackingStore?.Set("uploadState", value); }
         }
         /// <summary>The list of installation states for this mobile app.</summary>
         public List<UserAppInstallStatus> UserStatuses {
-            get { return BackingStore?.Get<List<UserAppInstallStatus>>(nameof(UserStatuses)); }
-            set { BackingStore?.Set(nameof(UserStatuses), value); }
+            get { return BackingStore?.Get<List<UserAppInstallStatus>>("userStatuses"); }
+            set { BackingStore?.Set("userStatuses", value); }
+        }
+        /// <summary>
+        /// Instantiates a new MobileApp and sets the default values.
+        /// </summary>
+        public MobileApp() : base() {
+            Type = "#microsoft.graph.mobileApp";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,77 +4,77 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class DomainSecurityProfile : Entity, IParsable {
         /// <summary>The activityGroupNames property</summary>
         public List<string> ActivityGroupNames {
-            get { return BackingStore?.Get<List<string>>(nameof(ActivityGroupNames)); }
-            set { BackingStore?.Set(nameof(ActivityGroupNames), value); }
+            get { return BackingStore?.Get<List<string>>("activityGroupNames"); }
+            set { BackingStore?.Set("activityGroupNames", value); }
         }
         /// <summary>The azureSubscriptionId property</summary>
         public string AzureSubscriptionId {
-            get { return BackingStore?.Get<string>(nameof(AzureSubscriptionId)); }
-            set { BackingStore?.Set(nameof(AzureSubscriptionId), value); }
+            get { return BackingStore?.Get<string>("azureSubscriptionId"); }
+            set { BackingStore?.Set("azureSubscriptionId", value); }
         }
         /// <summary>The azureTenantId property</summary>
         public string AzureTenantId {
-            get { return BackingStore?.Get<string>(nameof(AzureTenantId)); }
-            set { BackingStore?.Set(nameof(AzureTenantId), value); }
+            get { return BackingStore?.Get<string>("azureTenantId"); }
+            set { BackingStore?.Set("azureTenantId", value); }
         }
         /// <summary>The countHits property</summary>
         public int? CountHits {
-            get { return BackingStore?.Get<int?>(nameof(CountHits)); }
-            set { BackingStore?.Set(nameof(CountHits), value); }
+            get { return BackingStore?.Get<int?>("countHits"); }
+            set { BackingStore?.Set("countHits", value); }
         }
         /// <summary>The countInOrg property</summary>
         public int? CountInOrg {
-            get { return BackingStore?.Get<int?>(nameof(CountInOrg)); }
-            set { BackingStore?.Set(nameof(CountInOrg), value); }
+            get { return BackingStore?.Get<int?>("countInOrg"); }
+            set { BackingStore?.Set("countInOrg", value); }
         }
         /// <summary>The domainCategories property</summary>
         public List<ReputationCategory> DomainCategories {
-            get { return BackingStore?.Get<List<ReputationCategory>>(nameof(DomainCategories)); }
-            set { BackingStore?.Set(nameof(DomainCategories), value); }
+            get { return BackingStore?.Get<List<ReputationCategory>>("domainCategories"); }
+            set { BackingStore?.Set("domainCategories", value); }
         }
         /// <summary>The domainRegisteredDateTime property</summary>
         public DateTimeOffset? DomainRegisteredDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DomainRegisteredDateTime)); }
-            set { BackingStore?.Set(nameof(DomainRegisteredDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("domainRegisteredDateTime"); }
+            set { BackingStore?.Set("domainRegisteredDateTime", value); }
         }
         /// <summary>The firstSeenDateTime property</summary>
         public DateTimeOffset? FirstSeenDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(FirstSeenDateTime)); }
-            set { BackingStore?.Set(nameof(FirstSeenDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("firstSeenDateTime"); }
+            set { BackingStore?.Set("firstSeenDateTime", value); }
         }
         /// <summary>The lastSeenDateTime property</summary>
         public DateTimeOffset? LastSeenDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSeenDateTime)); }
-            set { BackingStore?.Set(nameof(LastSeenDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
+            set { BackingStore?.Set("lastSeenDateTime", value); }
         }
         /// <summary>The name property</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The registrant property</summary>
         public DomainRegistrant Registrant {
-            get { return BackingStore?.Get<DomainRegistrant>(nameof(Registrant)); }
-            set { BackingStore?.Set(nameof(Registrant), value); }
+            get { return BackingStore?.Get<DomainRegistrant>("registrant"); }
+            set { BackingStore?.Set("registrant", value); }
         }
         /// <summary>The riskScore property</summary>
         public string RiskScore {
-            get { return BackingStore?.Get<string>(nameof(RiskScore)); }
-            set { BackingStore?.Set(nameof(RiskScore), value); }
+            get { return BackingStore?.Get<string>("riskScore"); }
+            set { BackingStore?.Set("riskScore", value); }
         }
         /// <summary>The tags property</summary>
         public List<string> Tags {
-            get { return BackingStore?.Get<List<string>>(nameof(Tags)); }
-            set { BackingStore?.Set(nameof(Tags), value); }
+            get { return BackingStore?.Get<List<string>>("tags"); }
+            set { BackingStore?.Set("tags", value); }
         }
         /// <summary>The vendorInformation property</summary>
         public SecurityVendorInformation VendorInformation {
-            get { return BackingStore?.Get<SecurityVendorInformation>(nameof(VendorInformation)); }
-            set { BackingStore?.Set(nameof(VendorInformation), value); }
+            get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
+            set { BackingStore?.Set("vendorInformation", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

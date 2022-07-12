@@ -8,28 +8,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsManagementAppHealthState : Entity, IParsable {
         /// <summary>Name of the device on which Windows management app is installed.</summary>
         public string DeviceName {
-            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
-            set { BackingStore?.Set(nameof(DeviceName), value); }
+            get { return BackingStore?.Get<string>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
         }
         /// <summary>Windows 10 OS version of the device on which Windows management app is installed.</summary>
         public string DeviceOSVersion {
-            get { return BackingStore?.Get<string>(nameof(DeviceOSVersion)); }
-            set { BackingStore?.Set(nameof(DeviceOSVersion), value); }
+            get { return BackingStore?.Get<string>("deviceOSVersion"); }
+            set { BackingStore?.Set("deviceOSVersion", value); }
         }
-        /// <summary>Windows management app health state. Possible values are: unknown, healthy, unhealthy.</summary>
+        /// <summary>Indicates health state of the Windows management app.</summary>
         public Microsoft.Graph.Beta.Models.HealthState? HealthState {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.HealthState?>(nameof(HealthState)); }
-            set { BackingStore?.Set(nameof(HealthState), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.HealthState?>("healthState"); }
+            set { BackingStore?.Set("healthState", value); }
         }
         /// <summary>Windows management app installed version.</summary>
         public string InstalledVersion {
-            get { return BackingStore?.Get<string>(nameof(InstalledVersion)); }
-            set { BackingStore?.Set(nameof(InstalledVersion), value); }
+            get { return BackingStore?.Get<string>("installedVersion"); }
+            set { BackingStore?.Set("installedVersion", value); }
         }
         /// <summary>Windows management app last check-in time.</summary>
         public DateTimeOffset? LastCheckInDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastCheckInDateTime)); }
-            set { BackingStore?.Set(nameof(LastCheckInDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastCheckInDateTime"); }
+            set { BackingStore?.Set("lastCheckInDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,188 +8,188 @@ namespace Microsoft.Graph.Beta.Models {
     public class Contact : OutlookItem, IParsable {
         /// <summary>The name of the contact&apos;s assistant.</summary>
         public string AssistantName {
-            get { return BackingStore?.Get<string>(nameof(AssistantName)); }
-            set { BackingStore?.Set(nameof(AssistantName), value); }
+            get { return BackingStore?.Get<string>("assistantName"); }
+            set { BackingStore?.Set("assistantName", value); }
         }
         /// <summary>The contact&apos;s birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? Birthday {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(Birthday)); }
-            set { BackingStore?.Set(nameof(Birthday), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("birthday"); }
+            set { BackingStore?.Set("birthday", value); }
         }
         /// <summary>The names of the contact&apos;s children.</summary>
         public List<string> Children {
-            get { return BackingStore?.Get<List<string>>(nameof(Children)); }
-            set { BackingStore?.Set(nameof(Children), value); }
+            get { return BackingStore?.Get<List<string>>("children"); }
+            set { BackingStore?.Set("children", value); }
         }
         /// <summary>The name of the contact&apos;s company.</summary>
         public string CompanyName {
-            get { return BackingStore?.Get<string>(nameof(CompanyName)); }
-            set { BackingStore?.Set(nameof(CompanyName), value); }
+            get { return BackingStore?.Get<string>("companyName"); }
+            set { BackingStore?.Set("companyName", value); }
         }
         /// <summary>The contact&apos;s department.</summary>
         public string Department {
-            get { return BackingStore?.Get<string>(nameof(Department)); }
-            set { BackingStore?.Set(nameof(Department), value); }
+            get { return BackingStore?.Get<string>("department"); }
+            set { BackingStore?.Set("department", value); }
         }
         /// <summary>The contact&apos;s display name. You can specify the display name in a create or update operation. Note that later updates to other properties may cause an automatically generated value to overwrite the displayName value you have specified. To preserve a pre-existing value, always include it as displayName in an update operation.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The contact&apos;s email addresses.</summary>
         public List<TypedEmailAddress> EmailAddresses {
-            get { return BackingStore?.Get<List<TypedEmailAddress>>(nameof(EmailAddresses)); }
-            set { BackingStore?.Set(nameof(EmailAddresses), value); }
+            get { return BackingStore?.Get<List<TypedEmailAddress>>("emailAddresses"); }
+            set { BackingStore?.Set("emailAddresses", value); }
         }
         /// <summary>The collection of open extensions defined for the contact. Nullable.</summary>
         public List<Extension> Extensions {
-            get { return BackingStore?.Get<List<Extension>>(nameof(Extensions)); }
-            set { BackingStore?.Set(nameof(Extensions), value); }
+            get { return BackingStore?.Get<List<Extension>>("extensions"); }
+            set { BackingStore?.Set("extensions", value); }
         }
         /// <summary>The name the contact is filed under.</summary>
         public string FileAs {
-            get { return BackingStore?.Get<string>(nameof(FileAs)); }
-            set { BackingStore?.Set(nameof(FileAs), value); }
+            get { return BackingStore?.Get<string>("fileAs"); }
+            set { BackingStore?.Set("fileAs", value); }
         }
         /// <summary>The flag value that indicates the status, start date, due date, or completion date for the contact.</summary>
         public FollowupFlag Flag {
-            get { return BackingStore?.Get<FollowupFlag>(nameof(Flag)); }
-            set { BackingStore?.Set(nameof(Flag), value); }
+            get { return BackingStore?.Get<FollowupFlag>("flag"); }
+            set { BackingStore?.Set("flag", value); }
         }
         /// <summary>The contact&apos;s gender.</summary>
         public string Gender {
-            get { return BackingStore?.Get<string>(nameof(Gender)); }
-            set { BackingStore?.Set(nameof(Gender), value); }
+            get { return BackingStore?.Get<string>("gender"); }
+            set { BackingStore?.Set("gender", value); }
         }
         /// <summary>The contact&apos;s generation.</summary>
         public string Generation {
-            get { return BackingStore?.Get<string>(nameof(Generation)); }
-            set { BackingStore?.Set(nameof(Generation), value); }
+            get { return BackingStore?.Get<string>("generation"); }
+            set { BackingStore?.Set("generation", value); }
         }
         /// <summary>The contact&apos;s given name.</summary>
         public string GivenName {
-            get { return BackingStore?.Get<string>(nameof(GivenName)); }
-            set { BackingStore?.Set(nameof(GivenName), value); }
+            get { return BackingStore?.Get<string>("givenName"); }
+            set { BackingStore?.Set("givenName", value); }
         }
         /// <summary>The imAddresses property</summary>
         public List<string> ImAddresses {
-            get { return BackingStore?.Get<List<string>>(nameof(ImAddresses)); }
-            set { BackingStore?.Set(nameof(ImAddresses), value); }
+            get { return BackingStore?.Get<List<string>>("imAddresses"); }
+            set { BackingStore?.Set("imAddresses", value); }
         }
         /// <summary>The initials property</summary>
         public string Initials {
-            get { return BackingStore?.Get<string>(nameof(Initials)); }
-            set { BackingStore?.Set(nameof(Initials), value); }
+            get { return BackingStore?.Get<string>("initials"); }
+            set { BackingStore?.Set("initials", value); }
         }
         /// <summary>The isFavorite property</summary>
         public bool? IsFavorite {
-            get { return BackingStore?.Get<bool?>(nameof(IsFavorite)); }
-            set { BackingStore?.Set(nameof(IsFavorite), value); }
+            get { return BackingStore?.Get<bool?>("isFavorite"); }
+            set { BackingStore?.Set("isFavorite", value); }
         }
         /// <summary>The jobTitle property</summary>
         public string JobTitle {
-            get { return BackingStore?.Get<string>(nameof(JobTitle)); }
-            set { BackingStore?.Set(nameof(JobTitle), value); }
+            get { return BackingStore?.Get<string>("jobTitle"); }
+            set { BackingStore?.Set("jobTitle", value); }
         }
         /// <summary>The manager property</summary>
         public string Manager {
-            get { return BackingStore?.Get<string>(nameof(Manager)); }
-            set { BackingStore?.Set(nameof(Manager), value); }
+            get { return BackingStore?.Get<string>("manager"); }
+            set { BackingStore?.Set("manager", value); }
         }
         /// <summary>The middleName property</summary>
         public string MiddleName {
-            get { return BackingStore?.Get<string>(nameof(MiddleName)); }
-            set { BackingStore?.Set(nameof(MiddleName), value); }
+            get { return BackingStore?.Get<string>("middleName"); }
+            set { BackingStore?.Set("middleName", value); }
         }
         /// <summary>The collection of multi-value extended properties defined for the contact. Read-only. Nullable.</summary>
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties {
-            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>(nameof(MultiValueExtendedProperties)); }
-            set { BackingStore?.Set(nameof(MultiValueExtendedProperties), value); }
+            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
+            set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
         /// <summary>The nickName property</summary>
         public string NickName {
-            get { return BackingStore?.Get<string>(nameof(NickName)); }
-            set { BackingStore?.Set(nameof(NickName), value); }
+            get { return BackingStore?.Get<string>("nickName"); }
+            set { BackingStore?.Set("nickName", value); }
         }
         /// <summary>The officeLocation property</summary>
         public string OfficeLocation {
-            get { return BackingStore?.Get<string>(nameof(OfficeLocation)); }
-            set { BackingStore?.Set(nameof(OfficeLocation), value); }
+            get { return BackingStore?.Get<string>("officeLocation"); }
+            set { BackingStore?.Set("officeLocation", value); }
         }
         /// <summary>The parentFolderId property</summary>
         public string ParentFolderId {
-            get { return BackingStore?.Get<string>(nameof(ParentFolderId)); }
-            set { BackingStore?.Set(nameof(ParentFolderId), value); }
+            get { return BackingStore?.Get<string>("parentFolderId"); }
+            set { BackingStore?.Set("parentFolderId", value); }
         }
         /// <summary>The personalNotes property</summary>
         public string PersonalNotes {
-            get { return BackingStore?.Get<string>(nameof(PersonalNotes)); }
-            set { BackingStore?.Set(nameof(PersonalNotes), value); }
+            get { return BackingStore?.Get<string>("personalNotes"); }
+            set { BackingStore?.Set("personalNotes", value); }
         }
         /// <summary>The phones property</summary>
         public List<Phone> Phones {
-            get { return BackingStore?.Get<List<Phone>>(nameof(Phones)); }
-            set { BackingStore?.Set(nameof(Phones), value); }
+            get { return BackingStore?.Get<List<Phone>>("phones"); }
+            set { BackingStore?.Set("phones", value); }
         }
         /// <summary>Optional contact picture. You can get or set a photo for a contact.</summary>
         public ProfilePhoto Photo {
-            get { return BackingStore?.Get<ProfilePhoto>(nameof(Photo)); }
-            set { BackingStore?.Set(nameof(Photo), value); }
+            get { return BackingStore?.Get<ProfilePhoto>("photo"); }
+            set { BackingStore?.Set("photo", value); }
         }
         /// <summary>The postalAddresses property</summary>
         public List<PhysicalAddress> PostalAddresses {
-            get { return BackingStore?.Get<List<PhysicalAddress>>(nameof(PostalAddresses)); }
-            set { BackingStore?.Set(nameof(PostalAddresses), value); }
+            get { return BackingStore?.Get<List<PhysicalAddress>>("postalAddresses"); }
+            set { BackingStore?.Set("postalAddresses", value); }
         }
         /// <summary>The profession property</summary>
         public string Profession {
-            get { return BackingStore?.Get<string>(nameof(Profession)); }
-            set { BackingStore?.Set(nameof(Profession), value); }
+            get { return BackingStore?.Get<string>("profession"); }
+            set { BackingStore?.Set("profession", value); }
         }
         /// <summary>The collection of single-value extended properties defined for the contact. Read-only. Nullable.</summary>
         public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties {
-            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>(nameof(SingleValueExtendedProperties)); }
-            set { BackingStore?.Set(nameof(SingleValueExtendedProperties), value); }
+            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
+            set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
         /// <summary>The spouseName property</summary>
         public string SpouseName {
-            get { return BackingStore?.Get<string>(nameof(SpouseName)); }
-            set { BackingStore?.Set(nameof(SpouseName), value); }
+            get { return BackingStore?.Get<string>("spouseName"); }
+            set { BackingStore?.Set("spouseName", value); }
         }
         /// <summary>The surname property</summary>
         public string Surname {
-            get { return BackingStore?.Get<string>(nameof(Surname)); }
-            set { BackingStore?.Set(nameof(Surname), value); }
+            get { return BackingStore?.Get<string>("surname"); }
+            set { BackingStore?.Set("surname", value); }
         }
         /// <summary>The title property</summary>
         public string Title {
-            get { return BackingStore?.Get<string>(nameof(Title)); }
-            set { BackingStore?.Set(nameof(Title), value); }
+            get { return BackingStore?.Get<string>("title"); }
+            set { BackingStore?.Set("title", value); }
         }
         /// <summary>The websites property</summary>
         public List<Website> Websites {
-            get { return BackingStore?.Get<List<Website>>(nameof(Websites)); }
-            set { BackingStore?.Set(nameof(Websites), value); }
+            get { return BackingStore?.Get<List<Website>>("websites"); }
+            set { BackingStore?.Set("websites", value); }
         }
         /// <summary>The weddingAnniversary property</summary>
         public Date? WeddingAnniversary {
-            get { return BackingStore?.Get<Date?>(nameof(WeddingAnniversary)); }
-            set { BackingStore?.Set(nameof(WeddingAnniversary), value); }
+            get { return BackingStore?.Get<Date?>("weddingAnniversary"); }
+            set { BackingStore?.Set("weddingAnniversary", value); }
         }
         /// <summary>The yomiCompanyName property</summary>
         public string YomiCompanyName {
-            get { return BackingStore?.Get<string>(nameof(YomiCompanyName)); }
-            set { BackingStore?.Set(nameof(YomiCompanyName), value); }
+            get { return BackingStore?.Get<string>("yomiCompanyName"); }
+            set { BackingStore?.Set("yomiCompanyName", value); }
         }
         /// <summary>The yomiGivenName property</summary>
         public string YomiGivenName {
-            get { return BackingStore?.Get<string>(nameof(YomiGivenName)); }
-            set { BackingStore?.Set(nameof(YomiGivenName), value); }
+            get { return BackingStore?.Get<string>("yomiGivenName"); }
+            set { BackingStore?.Set("yomiGivenName", value); }
         }
         /// <summary>The yomiSurname property</summary>
         public string YomiSurname {
-            get { return BackingStore?.Get<string>(nameof(YomiSurname)); }
-            set { BackingStore?.Set(nameof(YomiSurname), value); }
+            get { return BackingStore?.Get<string>("yomiSurname"); }
+            set { BackingStore?.Set("yomiSurname", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

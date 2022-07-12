@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationIntegerSettingValueDefinition : DeviceManagementConfigurationSettingValueDefinition, IParsable {
         /// <summary>Maximum allowed value of the integer</summary>
         public long? MaximumValue {
-            get { return BackingStore?.Get<long?>(nameof(MaximumValue)); }
-            set { BackingStore?.Set(nameof(MaximumValue), value); }
+            get { return BackingStore?.Get<long?>("maximumValue"); }
+            set { BackingStore?.Set("maximumValue", value); }
         }
         /// <summary>Minimum allowed value of the integer</summary>
         public long? MinimumValue {
-            get { return BackingStore?.Get<long?>(nameof(MinimumValue)); }
-            set { BackingStore?.Set(nameof(MinimumValue), value); }
+            get { return BackingStore?.Get<long?>("minimumValue"); }
+            set { BackingStore?.Set("minimumValue", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

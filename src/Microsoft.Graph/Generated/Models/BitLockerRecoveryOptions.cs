@@ -9,45 +9,45 @@ namespace Microsoft.Graph.Beta.Models {
     public class BitLockerRecoveryOptions : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether to block certificate-based data recovery agent.</summary>
         public bool? BlockDataRecoveryAgent {
-            get { return BackingStore?.Get<bool?>(nameof(BlockDataRecoveryAgent)); }
-            set { BackingStore?.Set(nameof(BlockDataRecoveryAgent), value); }
+            get { return BackingStore?.Get<bool?>("blockDataRecoveryAgent"); }
+            set { BackingStore?.Set("blockDataRecoveryAgent", value); }
         }
         /// <summary>Indicates whether or not to enable BitLocker until recovery information is stored in AD DS.</summary>
         public bool? EnableBitLockerAfterRecoveryInformationToStore {
-            get { return BackingStore?.Get<bool?>(nameof(EnableBitLockerAfterRecoveryInformationToStore)); }
-            set { BackingStore?.Set(nameof(EnableBitLockerAfterRecoveryInformationToStore), value); }
+            get { return BackingStore?.Get<bool?>("enableBitLockerAfterRecoveryInformationToStore"); }
+            set { BackingStore?.Set("enableBitLockerAfterRecoveryInformationToStore", value); }
         }
         /// <summary>Indicates whether or not to allow BitLocker recovery information to store in AD DS.</summary>
         public bool? EnableRecoveryInformationSaveToStore {
-            get { return BackingStore?.Get<bool?>(nameof(EnableRecoveryInformationSaveToStore)); }
-            set { BackingStore?.Set(nameof(EnableRecoveryInformationSaveToStore), value); }
+            get { return BackingStore?.Get<bool?>("enableRecoveryInformationSaveToStore"); }
+            set { BackingStore?.Set("enableRecoveryInformationSaveToStore", value); }
         }
         /// <summary>Indicates whether or not to allow showing recovery options in BitLocker Setup Wizard for fixed or system disk.</summary>
         public bool? HideRecoveryOptions {
-            get { return BackingStore?.Get<bool?>(nameof(HideRecoveryOptions)); }
-            set { BackingStore?.Set(nameof(HideRecoveryOptions), value); }
+            get { return BackingStore?.Get<bool?>("hideRecoveryOptions"); }
+            set { BackingStore?.Set("hideRecoveryOptions", value); }
         }
-        /// <summary>Configure what pieces of BitLocker recovery information are stored to AD DS. Possible values are: passwordAndKey, passwordOnly.</summary>
+        /// <summary>BitLockerRecoveryInformationType types</summary>
         public BitLockerRecoveryInformationType? RecoveryInformationToStore {
-            get { return BackingStore?.Get<BitLockerRecoveryInformationType?>(nameof(RecoveryInformationToStore)); }
-            set { BackingStore?.Set(nameof(RecoveryInformationToStore), value); }
+            get { return BackingStore?.Get<BitLockerRecoveryInformationType?>("recoveryInformationToStore"); }
+            set { BackingStore?.Set("recoveryInformationToStore", value); }
         }
-        /// <summary>Indicates whether users are allowed or required to generate a 256-bit recovery key for fixed or system disk. Possible values are: blocked, required, allowed, notConfigured.</summary>
+        /// <summary>Possible values of the ConfigurationUsage list.</summary>
         public ConfigurationUsage? RecoveryKeyUsage {
-            get { return BackingStore?.Get<ConfigurationUsage?>(nameof(RecoveryKeyUsage)); }
-            set { BackingStore?.Set(nameof(RecoveryKeyUsage), value); }
+            get { return BackingStore?.Get<ConfigurationUsage?>("recoveryKeyUsage"); }
+            set { BackingStore?.Set("recoveryKeyUsage", value); }
         }
-        /// <summary>Indicates whether users are allowed or required to generate a 48-digit recovery password for fixed or system disk. Possible values are: blocked, required, allowed, notConfigured.</summary>
+        /// <summary>Possible values of the ConfigurationUsage list.</summary>
         public ConfigurationUsage? RecoveryPasswordUsage {
-            get { return BackingStore?.Get<ConfigurationUsage?>(nameof(RecoveryPasswordUsage)); }
-            set { BackingStore?.Set(nameof(RecoveryPasswordUsage), value); }
+            get { return BackingStore?.Get<ConfigurationUsage?>("recoveryPasswordUsage"); }
+            set { BackingStore?.Set("recoveryPasswordUsage", value); }
         }
         /// <summary>
         /// Instantiates a new bitLockerRecoveryOptions and sets the default values.

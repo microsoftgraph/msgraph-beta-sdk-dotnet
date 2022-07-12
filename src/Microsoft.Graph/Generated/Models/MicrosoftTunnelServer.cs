@@ -8,28 +8,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class MicrosoftTunnelServer : Entity, IParsable {
         /// <summary>The digest of the current agent image running on this server</summary>
         public string AgentImageDigest {
-            get { return BackingStore?.Get<string>(nameof(AgentImageDigest)); }
-            set { BackingStore?.Set(nameof(AgentImageDigest), value); }
+            get { return BackingStore?.Get<string>("agentImageDigest"); }
+            set { BackingStore?.Set("agentImageDigest", value); }
         }
         /// <summary>The MicrosoftTunnelServer&apos;s display name</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>When the MicrosoftTunnelServer last checked in</summary>
         public DateTimeOffset? LastCheckinDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastCheckinDateTime)); }
-            set { BackingStore?.Set(nameof(LastCheckinDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastCheckinDateTime"); }
+            set { BackingStore?.Set("lastCheckinDateTime", value); }
         }
         /// <summary>The digest of the current server image running on this server</summary>
         public string ServerImageDigest {
-            get { return BackingStore?.Get<string>(nameof(ServerImageDigest)); }
-            set { BackingStore?.Set(nameof(ServerImageDigest), value); }
+            get { return BackingStore?.Get<string>("serverImageDigest"); }
+            set { BackingStore?.Set("serverImageDigest", value); }
         }
-        /// <summary>The MicrosoftTunnelServer&apos;s health status. Possible values are: unknown, healthy, unhealthy, warning, offline, upgradeInProgress, upgradeFailed.</summary>
+        /// <summary>Enum of possible MicrosoftTunnelServer health status types</summary>
         public MicrosoftTunnelServerHealthStatus? TunnelServerHealthStatus {
-            get { return BackingStore?.Get<MicrosoftTunnelServerHealthStatus?>(nameof(TunnelServerHealthStatus)); }
-            set { BackingStore?.Set(nameof(TunnelServerHealthStatus), value); }
+            get { return BackingStore?.Get<MicrosoftTunnelServerHealthStatus?>("tunnelServerHealthStatus"); }
+            set { BackingStore?.Set("tunnelServerHealthStatus", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

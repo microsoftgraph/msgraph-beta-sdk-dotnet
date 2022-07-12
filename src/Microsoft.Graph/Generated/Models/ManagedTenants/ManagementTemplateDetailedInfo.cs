@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class ManagementTemplateDetailedInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.</summary>
+        /// <summary>The category property</summary>
         public ManagementCategory? Category {
-            get { return BackingStore?.Get<ManagementCategory?>(nameof(Category)); }
-            set { BackingStore?.Set(nameof(Category), value); }
+            get { return BackingStore?.Get<ManagementCategory?>("category"); }
+            set { BackingStore?.Set("category", value); }
         }
         /// <summary>The display name for the management template. Required. Read-only.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The unique identifier for the management template. Required. Read-only.</summary>
         public string ManagementTemplateId {
-            get { return BackingStore?.Get<string>(nameof(ManagementTemplateId)); }
-            set { BackingStore?.Set(nameof(ManagementTemplateId), value); }
+            get { return BackingStore?.Get<string>("managementTemplateId"); }
+            set { BackingStore?.Set("managementTemplateId", value); }
         }
         /// <summary>The version property</summary>
         public int? Version {
-            get { return BackingStore?.Get<int?>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<int?>("version"); }
+            set { BackingStore?.Set("version", value); }
         }
         /// <summary>
         /// Instantiates a new managementTemplateDetailedInfo and sets the default values.

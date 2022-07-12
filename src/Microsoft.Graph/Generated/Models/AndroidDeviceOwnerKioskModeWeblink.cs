@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceOwnerKioskModeWeblink : AndroidDeviceOwnerKioskModeFolderItem, IParsable {
         /// <summary>Display name for weblink</summary>
         public string Label {
-            get { return BackingStore?.Get<string>(nameof(Label)); }
-            set { BackingStore?.Set(nameof(Label), value); }
+            get { return BackingStore?.Get<string>("label"); }
+            set { BackingStore?.Set("label", value); }
         }
         /// <summary>Link for weblink</summary>
         public string Link {
-            get { return BackingStore?.Get<string>(nameof(Link)); }
-            set { BackingStore?.Set(nameof(Link), value); }
+            get { return BackingStore?.Get<string>("link"); }
+            set { BackingStore?.Set("link", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

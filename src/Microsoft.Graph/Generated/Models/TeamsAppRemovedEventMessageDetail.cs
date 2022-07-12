@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamsAppRemovedEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>Initiator of the event.</summary>
         public IdentitySet Initiator {
-            get { return BackingStore?.Get<IdentitySet>(nameof(Initiator)); }
-            set { BackingStore?.Set(nameof(Initiator), value); }
+            get { return BackingStore?.Get<IdentitySet>("initiator"); }
+            set { BackingStore?.Set("initiator", value); }
         }
         /// <summary>Display name of the teamsApp.</summary>
         public string TeamsAppDisplayName {
-            get { return BackingStore?.Get<string>(nameof(TeamsAppDisplayName)); }
-            set { BackingStore?.Set(nameof(TeamsAppDisplayName), value); }
+            get { return BackingStore?.Get<string>("teamsAppDisplayName"); }
+            set { BackingStore?.Set("teamsAppDisplayName", value); }
         }
         /// <summary>Unique identifier of the teamsApp.</summary>
         public string TeamsAppId {
-            get { return BackingStore?.Get<string>(nameof(TeamsAppId)); }
-            set { BackingStore?.Set(nameof(TeamsAppId), value); }
+            get { return BackingStore?.Get<string>("teamsAppId"); }
+            set { BackingStore?.Set("teamsAppId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

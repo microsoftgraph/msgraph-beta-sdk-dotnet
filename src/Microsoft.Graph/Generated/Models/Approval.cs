@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Approval : Entity, IParsable {
         /// <summary>The steps property</summary>
         public List<ApprovalStep> Steps {
-            get { return BackingStore?.Get<List<ApprovalStep>>(nameof(Steps)); }
-            set { BackingStore?.Set(nameof(Steps), value); }
+            get { return BackingStore?.Get<List<ApprovalStep>>("steps"); }
+            set { BackingStore?.Set("steps", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

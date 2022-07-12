@@ -8,28 +8,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class ZebraFotaDeployment : Entity, IParsable {
         /// <summary>Collection of Android FOTA Assignment</summary>
         public List<AndroidFotaDeploymentAssignment> DeploymentAssignments {
-            get { return BackingStore?.Get<List<AndroidFotaDeploymentAssignment>>(nameof(DeploymentAssignments)); }
-            set { BackingStore?.Set(nameof(DeploymentAssignments), value); }
+            get { return BackingStore?.Get<List<AndroidFotaDeploymentAssignment>>("deploymentAssignments"); }
+            set { BackingStore?.Set("deploymentAssignments", value); }
         }
         /// <summary>The Zebra FOTA deployment complex type that describes the settings required to create a FOTA deployment.</summary>
         public ZebraFotaDeploymentSettings DeploymentSettings {
-            get { return BackingStore?.Get<ZebraFotaDeploymentSettings>(nameof(DeploymentSettings)); }
-            set { BackingStore?.Set(nameof(DeploymentSettings), value); }
+            get { return BackingStore?.Get<ZebraFotaDeploymentSettings>("deploymentSettings"); }
+            set { BackingStore?.Set("deploymentSettings", value); }
         }
         /// <summary>Represents the deployment status from Zebra. The status is a high level status of the deployment as opposed being a detailed status per device.</summary>
         public ZebraFotaDeploymentStatus DeploymentStatus {
-            get { return BackingStore?.Get<ZebraFotaDeploymentStatus>(nameof(DeploymentStatus)); }
-            set { BackingStore?.Set(nameof(DeploymentStatus), value); }
+            get { return BackingStore?.Get<ZebraFotaDeploymentStatus>("deploymentStatus"); }
+            set { BackingStore?.Set("deploymentStatus", value); }
         }
         /// <summary>A human readable description of the deployment.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>A human readable name of the deployment.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

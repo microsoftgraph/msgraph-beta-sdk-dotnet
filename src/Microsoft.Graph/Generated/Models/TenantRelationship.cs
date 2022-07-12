@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class TenantRelationship : Entity, IParsable {
         /// <summary>The customer who has a delegated admin relationship with a Microsoft partner.</summary>
         public List<DelegatedAdminCustomer> DelegatedAdminCustomers {
-            get { return BackingStore?.Get<List<DelegatedAdminCustomer>>(nameof(DelegatedAdminCustomers)); }
-            set { BackingStore?.Set(nameof(DelegatedAdminCustomers), value); }
+            get { return BackingStore?.Get<List<DelegatedAdminCustomer>>("delegatedAdminCustomers"); }
+            set { BackingStore?.Set("delegatedAdminCustomers", value); }
         }
         /// <summary>The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.</summary>
         public List<DelegatedAdminRelationship> DelegatedAdminRelationships {
-            get { return BackingStore?.Get<List<DelegatedAdminRelationship>>(nameof(DelegatedAdminRelationships)); }
-            set { BackingStore?.Set(nameof(DelegatedAdminRelationships), value); }
+            get { return BackingStore?.Get<List<DelegatedAdminRelationship>>("delegatedAdminRelationships"); }
+            set { BackingStore?.Set("delegatedAdminRelationships", value); }
         }
         /// <summary>The operations available to interact with the multi-tenant management platform.</summary>
         public ManagedTenant ManagedTenants {
-            get { return BackingStore?.Get<ManagedTenant>(nameof(ManagedTenants)); }
-            set { BackingStore?.Set(nameof(ManagedTenants), value); }
+            get { return BackingStore?.Get<ManagedTenant>("managedTenants"); }
+            set { BackingStore?.Set("managedTenants", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

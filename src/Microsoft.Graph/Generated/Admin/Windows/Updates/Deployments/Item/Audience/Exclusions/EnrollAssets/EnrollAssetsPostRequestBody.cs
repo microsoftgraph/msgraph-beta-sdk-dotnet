@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.E
     public class EnrollAssetsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The assets property</summary>
         public List<UpdatableAsset> Assets {
-            get { return BackingStore?.Get<List<UpdatableAsset>>(nameof(Assets)); }
-            set { BackingStore?.Set(nameof(Assets), value); }
+            get { return BackingStore?.Get<List<UpdatableAsset>>("assets"); }
+            set { BackingStore?.Set("assets", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The updateCategory property</summary>
         public Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateCategory? UpdateCategory {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateCategory?>(nameof(UpdateCategory)); }
-            set { BackingStore?.Set(nameof(UpdateCategory), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateCategory?>("updateCategory"); }
+            set { BackingStore?.Set("updateCategory", value); }
         }
         /// <summary>
         /// Instantiates a new enrollAssetsPostRequestBody and sets the default values.

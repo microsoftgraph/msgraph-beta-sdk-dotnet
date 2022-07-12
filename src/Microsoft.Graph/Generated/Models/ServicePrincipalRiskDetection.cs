@@ -7,103 +7,103 @@ namespace Microsoft.Graph.Beta.Models {
     public class ServicePrincipalRiskDetection : Entity, IParsable {
         /// <summary>Indicates the activity type the detected risk is linked to.  The possible values are: signin, unknownFutureValue, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.</summary>
         public ActivityType? Activity {
-            get { return BackingStore?.Get<ActivityType?>(nameof(Activity)); }
-            set { BackingStore?.Set(nameof(Activity), value); }
+            get { return BackingStore?.Get<ActivityType?>("activity"); }
+            set { BackingStore?.Set("activity", value); }
         }
         /// <summary>Date and time when the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? ActivityDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ActivityDateTime)); }
-            set { BackingStore?.Set(nameof(ActivityDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("activityDateTime"); }
+            set { BackingStore?.Set("activityDateTime", value); }
         }
         /// <summary>Additional information associated with the risk detection. This string value is represented as a JSON object with the quotations escaped.</summary>
         public string AdditionalInfo {
-            get { return BackingStore?.Get<string>(nameof(AdditionalInfo)); }
-            set { BackingStore?.Set(nameof(AdditionalInfo), value); }
+            get { return BackingStore?.Get<string>("additionalInfo"); }
+            set { BackingStore?.Set("additionalInfo", value); }
         }
         /// <summary>The unique identifier for the associated application.</summary>
         public string AppId {
-            get { return BackingStore?.Get<string>(nameof(AppId)); }
-            set { BackingStore?.Set(nameof(AppId), value); }
+            get { return BackingStore?.Get<string>("appId"); }
+            set { BackingStore?.Set("appId", value); }
         }
         /// <summary>Correlation ID of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity.</summary>
         public string CorrelationId {
-            get { return BackingStore?.Get<string>(nameof(CorrelationId)); }
-            set { BackingStore?.Set(nameof(CorrelationId), value); }
+            get { return BackingStore?.Get<string>("correlationId"); }
+            set { BackingStore?.Set("correlationId", value); }
         }
         /// <summary>Date and time when the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? DetectedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DetectedDateTime)); }
-            set { BackingStore?.Set(nameof(DetectedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("detectedDateTime"); }
+            set { BackingStore?.Set("detectedDateTime", value); }
         }
         /// <summary>Timing of the detected risk , whether real-time or offline). The possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.</summary>
         public RiskDetectionTimingType? DetectionTimingType {
-            get { return BackingStore?.Get<RiskDetectionTimingType?>(nameof(DetectionTimingType)); }
-            set { BackingStore?.Set(nameof(DetectionTimingType), value); }
+            get { return BackingStore?.Get<RiskDetectionTimingType?>("detectionTimingType"); }
+            set { BackingStore?.Set("detectionTimingType", value); }
         }
         /// <summary>Provides the IP address of the client from where the risk occurred.</summary>
         public string IpAddress {
-            get { return BackingStore?.Get<string>(nameof(IpAddress)); }
-            set { BackingStore?.Set(nameof(IpAddress), value); }
+            get { return BackingStore?.Get<string>("ipAddress"); }
+            set { BackingStore?.Set("ipAddress", value); }
         }
         /// <summary>The unique identifier (GUID) for the key credential associated with the risk detection.</summary>
         public List<string> KeyIds {
-            get { return BackingStore?.Get<List<string>>(nameof(KeyIds)); }
-            set { BackingStore?.Set(nameof(KeyIds), value); }
+            get { return BackingStore?.Get<List<string>>("keyIds"); }
+            set { BackingStore?.Set("keyIds", value); }
         }
         /// <summary>Date and time when the risk detection was last updated.</summary>
         public DateTimeOffset? LastUpdatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastUpdatedDateTime)); }
-            set { BackingStore?.Set(nameof(LastUpdatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
+            set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>Location from where the sign-in was initiated.</summary>
         public SignInLocation Location {
-            get { return BackingStore?.Get<SignInLocation>(nameof(Location)); }
-            set { BackingStore?.Set(nameof(Location), value); }
+            get { return BackingStore?.Get<SignInLocation>("location"); }
+            set { BackingStore?.Set("location", value); }
         }
         /// <summary>Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity. Supports $filter (eq).</summary>
         public string RequestId {
-            get { return BackingStore?.Get<string>(nameof(RequestId)); }
-            set { BackingStore?.Set(nameof(RequestId), value); }
+            get { return BackingStore?.Get<string>("requestId"); }
+            set { BackingStore?.Set("requestId", value); }
         }
         /// <summary>Details of the detected risk. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden. The possible values are: none, hidden, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.</summary>
         public Microsoft.Graph.Beta.Models.RiskDetail? RiskDetail {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskDetail?>(nameof(RiskDetail)); }
-            set { BackingStore?.Set(nameof(RiskDetail), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskDetail?>("riskDetail"); }
+            set { BackingStore?.Set("riskDetail", value); }
         }
         /// <summary>The type of risk event detected. The possible values are:  investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, unknownFutureValue. Supports $filter (eq).</summary>
         public string RiskEventType {
-            get { return BackingStore?.Get<string>(nameof(RiskEventType)); }
-            set { BackingStore?.Set(nameof(RiskEventType), value); }
+            get { return BackingStore?.Get<string>("riskEventType"); }
+            set { BackingStore?.Set("riskEventType", value); }
         }
         /// <summary>Level of the detected risk. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden. The possible values are: low, medium, high, hidden, none, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.RiskLevel? RiskLevel {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskLevel?>(nameof(RiskLevel)); }
-            set { BackingStore?.Set(nameof(RiskLevel), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskLevel?>("riskLevel"); }
+            set { BackingStore?.Set("riskLevel", value); }
         }
         /// <summary>The state of a detected risky service principal or sign-in activity. The possible values are: none, dismissed, atRisk, confirmedCompromised, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.RiskState? RiskState {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskState?>(nameof(RiskState)); }
-            set { BackingStore?.Set(nameof(RiskState), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskState?>("riskState"); }
+            set { BackingStore?.Set("riskState", value); }
         }
         /// <summary>The display name for the service principal.</summary>
         public string ServicePrincipalDisplayName {
-            get { return BackingStore?.Get<string>(nameof(ServicePrincipalDisplayName)); }
-            set { BackingStore?.Set(nameof(ServicePrincipalDisplayName), value); }
+            get { return BackingStore?.Get<string>("servicePrincipalDisplayName"); }
+            set { BackingStore?.Set("servicePrincipalDisplayName", value); }
         }
         /// <summary>The unique identifier for the service principal. Supports $filter (eq).</summary>
         public string ServicePrincipalId {
-            get { return BackingStore?.Get<string>(nameof(ServicePrincipalId)); }
-            set { BackingStore?.Set(nameof(ServicePrincipalId), value); }
+            get { return BackingStore?.Get<string>("servicePrincipalId"); }
+            set { BackingStore?.Set("servicePrincipalId", value); }
         }
         /// <summary>Source of the risk detection. For example, identityProtection.</summary>
         public string Source {
-            get { return BackingStore?.Get<string>(nameof(Source)); }
-            set { BackingStore?.Set(nameof(Source), value); }
+            get { return BackingStore?.Get<string>("source"); }
+            set { BackingStore?.Set("source", value); }
         }
         /// <summary>Indicates the type of token issuer for the detected sign-in risk. The possible values are: AzureAD, UnknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.TokenIssuerType? TokenIssuerType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TokenIssuerType?>(nameof(TokenIssuerType)); }
-            set { BackingStore?.Set(nameof(TokenIssuerType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TokenIssuerType?>("tokenIssuerType"); }
+            set { BackingStore?.Set("tokenIssuerType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

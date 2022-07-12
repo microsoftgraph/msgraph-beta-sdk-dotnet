@@ -9,13 +9,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Choice Setting Allowed Options</summary>
         public List<DeviceManagementConfigurationOptionDefinitionTemplate> AllowedOptions {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationOptionDefinitionTemplate>>(nameof(AllowedOptions)); }
-            set { BackingStore?.Set(nameof(AllowedOptions), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationOptionDefinitionTemplate>>("allowedOptions"); }
+            set { BackingStore?.Set("allowedOptions", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }

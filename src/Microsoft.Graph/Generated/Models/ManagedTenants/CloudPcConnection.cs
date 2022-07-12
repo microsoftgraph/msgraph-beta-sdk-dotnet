@@ -4,32 +4,32 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class CloudPcConnection : Entity, IParsable {
         /// <summary>The display name of the cloud PC connection. Required. Read-only.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The health status of the cloud PC connection. Possible values are: pending, running, passed, failed, unknownFutureValue.  Required. Read-only.</summary>
         public string HealthCheckStatus {
-            get { return BackingStore?.Get<string>(nameof(HealthCheckStatus)); }
-            set { BackingStore?.Set(nameof(HealthCheckStatus), value); }
+            get { return BackingStore?.Get<string>("healthCheckStatus"); }
+            set { BackingStore?.Set("healthCheckStatus", value); }
         }
         /// <summary>Date and time the entity was last updated in the multi-tenant management platform. Required. Read-only.</summary>
         public DateTimeOffset? LastRefreshedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastRefreshedDateTime)); }
-            set { BackingStore?.Set(nameof(LastRefreshedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshedDateTime"); }
+            set { BackingStore?.Set("lastRefreshedDateTime", value); }
         }
         /// <summary>The display name for the managed tenant. Required. Read-only.</summary>
         public string TenantDisplayName {
-            get { return BackingStore?.Get<string>(nameof(TenantDisplayName)); }
-            set { BackingStore?.Set(nameof(TenantDisplayName), value); }
+            get { return BackingStore?.Get<string>("tenantDisplayName"); }
+            set { BackingStore?.Set("tenantDisplayName", value); }
         }
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -10,13 +10,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.Assign
     public class AssignedAccessMultiModeProfilesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The assignedAccessMultiModeProfiles property</summary>
         public List<WindowsAssignedAccessProfile> AssignedAccessMultiModeProfiles {
-            get { return BackingStore?.Get<List<WindowsAssignedAccessProfile>>(nameof(AssignedAccessMultiModeProfiles)); }
-            set { BackingStore?.Set(nameof(AssignedAccessMultiModeProfiles), value); }
+            get { return BackingStore?.Get<List<WindowsAssignedAccessProfile>>("assignedAccessMultiModeProfiles"); }
+            set { BackingStore?.Set("assignedAccessMultiModeProfiles", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }

@@ -4,87 +4,87 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class FileSecurityProfile : Entity, IParsable {
         /// <summary>The activityGroupNames property</summary>
         public List<string> ActivityGroupNames {
-            get { return BackingStore?.Get<List<string>>(nameof(ActivityGroupNames)); }
-            set { BackingStore?.Set(nameof(ActivityGroupNames), value); }
+            get { return BackingStore?.Get<List<string>>("activityGroupNames"); }
+            set { BackingStore?.Set("activityGroupNames", value); }
         }
         /// <summary>The azureSubscriptionId property</summary>
         public string AzureSubscriptionId {
-            get { return BackingStore?.Get<string>(nameof(AzureSubscriptionId)); }
-            set { BackingStore?.Set(nameof(AzureSubscriptionId), value); }
+            get { return BackingStore?.Get<string>("azureSubscriptionId"); }
+            set { BackingStore?.Set("azureSubscriptionId", value); }
         }
         /// <summary>The azureTenantId property</summary>
         public string AzureTenantId {
-            get { return BackingStore?.Get<string>(nameof(AzureTenantId)); }
-            set { BackingStore?.Set(nameof(AzureTenantId), value); }
+            get { return BackingStore?.Get<string>("azureTenantId"); }
+            set { BackingStore?.Set("azureTenantId", value); }
         }
         /// <summary>The certificateThumbprint property</summary>
         public string CertificateThumbprint {
-            get { return BackingStore?.Get<string>(nameof(CertificateThumbprint)); }
-            set { BackingStore?.Set(nameof(CertificateThumbprint), value); }
+            get { return BackingStore?.Get<string>("certificateThumbprint"); }
+            set { BackingStore?.Set("certificateThumbprint", value); }
         }
         /// <summary>The extensions property</summary>
         public List<string> Extensions {
-            get { return BackingStore?.Get<List<string>>(nameof(Extensions)); }
-            set { BackingStore?.Set(nameof(Extensions), value); }
+            get { return BackingStore?.Get<List<string>>("extensions"); }
+            set { BackingStore?.Set("extensions", value); }
         }
         /// <summary>The fileType property</summary>
         public string FileType {
-            get { return BackingStore?.Get<string>(nameof(FileType)); }
-            set { BackingStore?.Set(nameof(FileType), value); }
+            get { return BackingStore?.Get<string>("fileType"); }
+            set { BackingStore?.Set("fileType", value); }
         }
         /// <summary>The firstSeenDateTime property</summary>
         public DateTimeOffset? FirstSeenDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(FirstSeenDateTime)); }
-            set { BackingStore?.Set(nameof(FirstSeenDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("firstSeenDateTime"); }
+            set { BackingStore?.Set("firstSeenDateTime", value); }
         }
         /// <summary>The hashes property</summary>
         public List<FileHash> Hashes {
-            get { return BackingStore?.Get<List<FileHash>>(nameof(Hashes)); }
-            set { BackingStore?.Set(nameof(Hashes), value); }
+            get { return BackingStore?.Get<List<FileHash>>("hashes"); }
+            set { BackingStore?.Set("hashes", value); }
         }
         /// <summary>The lastSeenDateTime property</summary>
         public DateTimeOffset? LastSeenDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSeenDateTime)); }
-            set { BackingStore?.Set(nameof(LastSeenDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
+            set { BackingStore?.Set("lastSeenDateTime", value); }
         }
         /// <summary>The malwareStates property</summary>
         public List<MalwareState> MalwareStates {
-            get { return BackingStore?.Get<List<MalwareState>>(nameof(MalwareStates)); }
-            set { BackingStore?.Set(nameof(MalwareStates), value); }
+            get { return BackingStore?.Get<List<MalwareState>>("malwareStates"); }
+            set { BackingStore?.Set("malwareStates", value); }
         }
         /// <summary>The names property</summary>
         public List<string> Names {
-            get { return BackingStore?.Get<List<string>>(nameof(Names)); }
-            set { BackingStore?.Set(nameof(Names), value); }
+            get { return BackingStore?.Get<List<string>>("names"); }
+            set { BackingStore?.Set("names", value); }
         }
         /// <summary>The riskScore property</summary>
         public string RiskScore {
-            get { return BackingStore?.Get<string>(nameof(RiskScore)); }
-            set { BackingStore?.Set(nameof(RiskScore), value); }
+            get { return BackingStore?.Get<string>("riskScore"); }
+            set { BackingStore?.Set("riskScore", value); }
         }
         /// <summary>The size property</summary>
         public long? Size {
-            get { return BackingStore?.Get<long?>(nameof(Size)); }
-            set { BackingStore?.Set(nameof(Size), value); }
+            get { return BackingStore?.Get<long?>("size"); }
+            set { BackingStore?.Set("size", value); }
         }
         /// <summary>The tags property</summary>
         public List<string> Tags {
-            get { return BackingStore?.Get<List<string>>(nameof(Tags)); }
-            set { BackingStore?.Set(nameof(Tags), value); }
+            get { return BackingStore?.Get<List<string>>("tags"); }
+            set { BackingStore?.Set("tags", value); }
         }
         /// <summary>The vendorInformation property</summary>
         public SecurityVendorInformation VendorInformation {
-            get { return BackingStore?.Get<SecurityVendorInformation>(nameof(VendorInformation)); }
-            set { BackingStore?.Set(nameof(VendorInformation), value); }
+            get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
+            set { BackingStore?.Set("vendorInformation", value); }
         }
         /// <summary>The vulnerabilityStates property</summary>
         public List<VulnerabilityState> VulnerabilityStates {
-            get { return BackingStore?.Get<List<VulnerabilityState>>(nameof(VulnerabilityStates)); }
-            set { BackingStore?.Set(nameof(VulnerabilityStates), value); }
+            get { return BackingStore?.Get<List<VulnerabilityState>>("vulnerabilityStates"); }
+            set { BackingStore?.Set("vulnerabilityStates", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyPresentationValueList : GroupPolicyPresentationValue, IParsable {
         /// <summary>A list of pairs for the associated presentation.</summary>
         public List<KeyValuePair> Values {
-            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(Values)); }
-            set { BackingStore?.Set(nameof(Values), value); }
+            get { return BackingStore?.Get<List<KeyValuePair>>("values"); }
+            set { BackingStore?.Set("values", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

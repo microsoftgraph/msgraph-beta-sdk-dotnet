@@ -5,110 +5,110 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Windows10DeviceFirmwareConfigurationInterface : DeviceConfiguration, IParsable {
-        /// <summary>Defines whether a user is allowed to enable Bluetooth. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? Bluetooth {
-            get { return BackingStore?.Get<Enablement?>(nameof(Bluetooth)); }
-            set { BackingStore?.Set(nameof(Bluetooth), value); }
+            get { return BackingStore?.Get<Enablement?>("bluetooth"); }
+            set { BackingStore?.Set("bluetooth", value); }
         }
-        /// <summary>Defines whether a user is allowed to boot from built-in network adapters. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? BootFromBuiltInNetworkAdapters {
-            get { return BackingStore?.Get<Enablement?>(nameof(BootFromBuiltInNetworkAdapters)); }
-            set { BackingStore?.Set(nameof(BootFromBuiltInNetworkAdapters), value); }
+            get { return BackingStore?.Get<Enablement?>("bootFromBuiltInNetworkAdapters"); }
+            set { BackingStore?.Set("bootFromBuiltInNetworkAdapters", value); }
         }
-        /// <summary>Defines whether a user is allowed to boot from external media. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? BootFromExternalMedia {
-            get { return BackingStore?.Get<Enablement?>(nameof(BootFromExternalMedia)); }
-            set { BackingStore?.Set(nameof(BootFromExternalMedia), value); }
+            get { return BackingStore?.Get<Enablement?>("bootFromExternalMedia"); }
+            set { BackingStore?.Set("bootFromExternalMedia", value); }
         }
-        /// <summary>Defines whether built-in cameras are enabled. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? Cameras {
-            get { return BackingStore?.Get<Enablement?>(nameof(Cameras)); }
-            set { BackingStore?.Set(nameof(Cameras), value); }
+            get { return BackingStore?.Get<Enablement?>("cameras"); }
+            set { BackingStore?.Set("cameras", value); }
         }
-        /// <summary>Defines the permission level granted to users to change UEFI settings. Possible values are: notConfiguredOnly, none.</summary>
+        /// <summary>Defines the permission level granted to users to enable them change Uefi settings</summary>
         public Microsoft.Graph.Beta.Models.ChangeUefiSettingsPermission? ChangeUefiSettingsPermission {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ChangeUefiSettingsPermission?>(nameof(ChangeUefiSettingsPermission)); }
-            set { BackingStore?.Set(nameof(ChangeUefiSettingsPermission), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ChangeUefiSettingsPermission?>("changeUefiSettingsPermission"); }
+            set { BackingStore?.Set("changeUefiSettingsPermission", value); }
         }
-        /// <summary>Defines whether a user is allowed to enable Front Camera. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? FrontCamera {
-            get { return BackingStore?.Get<Enablement?>(nameof(FrontCamera)); }
-            set { BackingStore?.Set(nameof(FrontCamera), value); }
+            get { return BackingStore?.Get<Enablement?>("frontCamera"); }
+            set { BackingStore?.Set("frontCamera", value); }
         }
-        /// <summary>Defines whether a user is allowed to enable Infrared camera. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? InfraredCamera {
-            get { return BackingStore?.Get<Enablement?>(nameof(InfraredCamera)); }
-            set { BackingStore?.Set(nameof(InfraredCamera), value); }
+            get { return BackingStore?.Get<Enablement?>("infraredCamera"); }
+            set { BackingStore?.Set("infraredCamera", value); }
         }
-        /// <summary>Defines whether a user is allowed to enable Microphone. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? Microphone {
-            get { return BackingStore?.Get<Enablement?>(nameof(Microphone)); }
-            set { BackingStore?.Set(nameof(Microphone), value); }
+            get { return BackingStore?.Get<Enablement?>("microphone"); }
+            set { BackingStore?.Set("microphone", value); }
         }
-        /// <summary>Defines whether built-in microphones or speakers are enabled. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? MicrophonesAndSpeakers {
-            get { return BackingStore?.Get<Enablement?>(nameof(MicrophonesAndSpeakers)); }
-            set { BackingStore?.Set(nameof(MicrophonesAndSpeakers), value); }
+            get { return BackingStore?.Get<Enablement?>("microphonesAndSpeakers"); }
+            set { BackingStore?.Set("microphonesAndSpeakers", value); }
         }
-        /// <summary>Defines whether a user is allowed to enable Near Field Communication. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? NearFieldCommunication {
-            get { return BackingStore?.Get<Enablement?>(nameof(NearFieldCommunication)); }
-            set { BackingStore?.Set(nameof(NearFieldCommunication), value); }
+            get { return BackingStore?.Get<Enablement?>("nearFieldCommunication"); }
+            set { BackingStore?.Set("nearFieldCommunication", value); }
         }
-        /// <summary>Defines whether built-in radios e.g. WIFI, NFC, Bluetooth, are enabled. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? Radios {
-            get { return BackingStore?.Get<Enablement?>(nameof(Radios)); }
-            set { BackingStore?.Set(nameof(Radios), value); }
+            get { return BackingStore?.Get<Enablement?>("radios"); }
+            set { BackingStore?.Set("radios", value); }
         }
-        /// <summary>Defines whether a user is allowed to enable rear camera. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? RearCamera {
-            get { return BackingStore?.Get<Enablement?>(nameof(RearCamera)); }
-            set { BackingStore?.Set(nameof(RearCamera), value); }
+            get { return BackingStore?.Get<Enablement?>("rearCamera"); }
+            set { BackingStore?.Set("rearCamera", value); }
         }
-        /// <summary>Defines whether a user is allowed to enable SD Card Port. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? SdCard {
-            get { return BackingStore?.Get<Enablement?>(nameof(SdCard)); }
-            set { BackingStore?.Set(nameof(SdCard), value); }
+            get { return BackingStore?.Get<Enablement?>("sdCard"); }
+            set { BackingStore?.Set("sdCard", value); }
         }
-        /// <summary>Defines whether a user is allowed to enable Simultaneous MultiThreading. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? SimultaneousMultiThreading {
-            get { return BackingStore?.Get<Enablement?>(nameof(SimultaneousMultiThreading)); }
-            set { BackingStore?.Set(nameof(SimultaneousMultiThreading), value); }
+            get { return BackingStore?.Get<Enablement?>("simultaneousMultiThreading"); }
+            set { BackingStore?.Set("simultaneousMultiThreading", value); }
         }
-        /// <summary>Defines whether a user is allowed to enable USB Type A Port. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? UsbTypeAPort {
-            get { return BackingStore?.Get<Enablement?>(nameof(UsbTypeAPort)); }
-            set { BackingStore?.Set(nameof(UsbTypeAPort), value); }
+            get { return BackingStore?.Get<Enablement?>("usbTypeAPort"); }
+            set { BackingStore?.Set("usbTypeAPort", value); }
         }
-        /// <summary>Defines whether CPU and IO virtualization is enabled. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? VirtualizationOfCpuAndIO {
-            get { return BackingStore?.Get<Enablement?>(nameof(VirtualizationOfCpuAndIO)); }
-            set { BackingStore?.Set(nameof(VirtualizationOfCpuAndIO), value); }
+            get { return BackingStore?.Get<Enablement?>("virtualizationOfCpuAndIO"); }
+            set { BackingStore?.Set("virtualizationOfCpuAndIO", value); }
         }
-        /// <summary>Defines whether a user is allowed to enable Wake on LAN. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? WakeOnLAN {
-            get { return BackingStore?.Get<Enablement?>(nameof(WakeOnLAN)); }
-            set { BackingStore?.Set(nameof(WakeOnLAN), value); }
+            get { return BackingStore?.Get<Enablement?>("wakeOnLAN"); }
+            set { BackingStore?.Set("wakeOnLAN", value); }
         }
-        /// <summary>Defines whether a user is allowed to enable Wake On Power. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? WakeOnPower {
-            get { return BackingStore?.Get<Enablement?>(nameof(WakeOnPower)); }
-            set { BackingStore?.Set(nameof(WakeOnPower), value); }
+            get { return BackingStore?.Get<Enablement?>("wakeOnPower"); }
+            set { BackingStore?.Set("wakeOnPower", value); }
         }
-        /// <summary>Defines whether a user is allowed to enable WiFi. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? WiFi {
-            get { return BackingStore?.Get<Enablement?>(nameof(WiFi)); }
-            set { BackingStore?.Set(nameof(WiFi), value); }
+            get { return BackingStore?.Get<Enablement?>("wiFi"); }
+            set { BackingStore?.Set("wiFi", value); }
         }
-        /// <summary>Defines whether a user is allowed to enable Windows Platform Binary Table. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? WindowsPlatformBinaryTable {
-            get { return BackingStore?.Get<Enablement?>(nameof(WindowsPlatformBinaryTable)); }
-            set { BackingStore?.Set(nameof(WindowsPlatformBinaryTable), value); }
+            get { return BackingStore?.Get<Enablement?>("windowsPlatformBinaryTable"); }
+            set { BackingStore?.Set("windowsPlatformBinaryTable", value); }
         }
-        /// <summary>Defines whether a user is allowed to enable Wireless Wide Area Network. Possible values are: notConfigured, enabled, disabled.</summary>
+        /// <summary>Possible values of a property</summary>
         public Enablement? WirelessWideAreaNetwork {
-            get { return BackingStore?.Get<Enablement?>(nameof(WirelessWideAreaNetwork)); }
-            set { BackingStore?.Set(nameof(WirelessWideAreaNetwork), value); }
+            get { return BackingStore?.Get<Enablement?>("wirelessWideAreaNetwork"); }
+            set { BackingStore?.Set("wirelessWideAreaNetwork", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

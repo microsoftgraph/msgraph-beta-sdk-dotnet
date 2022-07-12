@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class LocateDeviceActionResult : DeviceActionResult, IParsable {
         /// <summary>device location</summary>
         public DeviceGeoLocation DeviceLocation {
-            get { return BackingStore?.Get<DeviceGeoLocation>(nameof(DeviceLocation)); }
-            set { BackingStore?.Set(nameof(DeviceLocation), value); }
+            get { return BackingStore?.Get<DeviceGeoLocation>("deviceLocation"); }
+            set { BackingStore?.Set("deviceLocation", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

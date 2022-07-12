@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public enum NotificationTemplateBrandingOptions {
         /// <summary>No Branding.</summary>
         None,
@@ -11,5 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
         IncludeContactInformation,
         /// <summary>Include Company Portal Link.</summary>
         IncludeCompanyPortalLink,
+        /// <summary>Include Device Details.</summary>
+        IncludeDeviceDetails,
     }
 }

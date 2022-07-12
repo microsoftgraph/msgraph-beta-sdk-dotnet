@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item
     public class UpdateStatusPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The note property</summary>
         public string Note {
-            get { return BackingStore?.Get<string>(nameof(Note)); }
-            set { BackingStore?.Set(nameof(Note), value); }
+            get { return BackingStore?.Get<string>("note"); }
+            set { BackingStore?.Set("note", value); }
         }
-        /// <summary>The status property</summary>
+        /// <summary>Device app management task status.</summary>
         public DeviceAppManagementTaskStatus? Status {
-            get { return BackingStore?.Get<DeviceAppManagementTaskStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<DeviceAppManagementTaskStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Instantiates a new updateStatusPostRequestBody and sets the default values.

@@ -5,15 +5,15 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceOwnerImportedPFXCertificateProfile : AndroidDeviceOwnerCertificateProfileBase, IParsable {
-        /// <summary>Intended Purpose of the Certificate Profile - which could be Unassigned, SmimeEncryption, SmimeSigning etc. Possible values are: unassigned, smimeEncryption, smimeSigning, vpn, wifi.</summary>
+        /// <summary>PFX Import Options.</summary>
         public Microsoft.Graph.Beta.Models.IntendedPurpose? IntendedPurpose {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IntendedPurpose?>(nameof(IntendedPurpose)); }
-            set { BackingStore?.Set(nameof(IntendedPurpose), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IntendedPurpose?>("intendedPurpose"); }
+            set { BackingStore?.Set("intendedPurpose", value); }
         }
         /// <summary>Certificate state for devices. This collection can contain a maximum of 2147483647 elements.</summary>
         public List<ManagedDeviceCertificateState> ManagedDeviceCertificateStates {
-            get { return BackingStore?.Get<List<ManagedDeviceCertificateState>>(nameof(ManagedDeviceCertificateStates)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceCertificateStates), value); }
+            get { return BackingStore?.Get<List<ManagedDeviceCertificateState>>("managedDeviceCertificateStates"); }
+            set { BackingStore?.Set("managedDeviceCertificateStates", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

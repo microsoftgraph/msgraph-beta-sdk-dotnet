@@ -7,63 +7,63 @@ namespace Microsoft.Graph.Beta.Models {
     public class OfficeSuiteApp : MobileApp, IParsable {
         /// <summary>The value to accept the EULA automatically on the enduser&apos;s device.</summary>
         public bool? AutoAcceptEula {
-            get { return BackingStore?.Get<bool?>(nameof(AutoAcceptEula)); }
-            set { BackingStore?.Set(nameof(AutoAcceptEula), value); }
+            get { return BackingStore?.Get<bool?>("autoAcceptEula"); }
+            set { BackingStore?.Set("autoAcceptEula", value); }
         }
         /// <summary>The property to represent the apps which are excluded from the selected Office365 Product Id.</summary>
         public Microsoft.Graph.Beta.Models.ExcludedApps ExcludedApps {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExcludedApps>(nameof(ExcludedApps)); }
-            set { BackingStore?.Set(nameof(ExcludedApps), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExcludedApps>("excludedApps"); }
+            set { BackingStore?.Set("excludedApps", value); }
         }
-        /// <summary>To specify the level of display for the Installation Progress Setup UI on the Device. Possible values are: none, full.</summary>
+        /// <summary>The Enum to specify the level of display for the Installation Progress Setup UI on the Device.</summary>
         public OfficeSuiteInstallProgressDisplayLevel? InstallProgressDisplayLevel {
-            get { return BackingStore?.Get<OfficeSuiteInstallProgressDisplayLevel?>(nameof(InstallProgressDisplayLevel)); }
-            set { BackingStore?.Set(nameof(InstallProgressDisplayLevel), value); }
+            get { return BackingStore?.Get<OfficeSuiteInstallProgressDisplayLevel?>("installProgressDisplayLevel"); }
+            set { BackingStore?.Set("installProgressDisplayLevel", value); }
         }
         /// <summary>The property to represent the locales which are installed when the apps from Office365 is installed. It uses standard RFC 6033. Ref: https://technet.microsoft.com/library/cc179219(v=office.16).aspx</summary>
         public List<string> LocalesToInstall {
-            get { return BackingStore?.Get<List<string>>(nameof(LocalesToInstall)); }
-            set { BackingStore?.Set(nameof(LocalesToInstall), value); }
+            get { return BackingStore?.Get<List<string>>("localesToInstall"); }
+            set { BackingStore?.Set("localesToInstall", value); }
         }
         /// <summary>The property to represent the XML configuration file that can be specified for Office ProPlus Apps. Takes precedence over all other properties. When present, the XML configuration file will be used to create the app.</summary>
         public byte[] OfficeConfigurationXml {
-            get { return BackingStore?.Get<byte[]>(nameof(OfficeConfigurationXml)); }
-            set { BackingStore?.Set(nameof(OfficeConfigurationXml), value); }
+            get { return BackingStore?.Get<byte[]>("officeConfigurationXml"); }
+            set { BackingStore?.Set("officeConfigurationXml", value); }
         }
-        /// <summary>The property to represent the Office365 app suite version. Possible values are: none, x86, x64, arm, neutral, arm64.</summary>
+        /// <summary>Contains properties for Windows architecture.</summary>
         public WindowsArchitecture? OfficePlatformArchitecture {
-            get { return BackingStore?.Get<WindowsArchitecture?>(nameof(OfficePlatformArchitecture)); }
-            set { BackingStore?.Set(nameof(OfficePlatformArchitecture), value); }
+            get { return BackingStore?.Get<WindowsArchitecture?>("officePlatformArchitecture"); }
+            set { BackingStore?.Set("officePlatformArchitecture", value); }
         }
         /// <summary>The Product Ids that represent the Office365 Suite SKU.</summary>
         public List<string> ProductIds {
-            get { return BackingStore?.Get<List<string>>(nameof(ProductIds)); }
-            set { BackingStore?.Set(nameof(ProductIds), value); }
+            get { return BackingStore?.Get<List<string>>("productIds"); }
+            set { BackingStore?.Set("productIds", value); }
         }
         /// <summary>The property to determine whether to uninstall existing Office MSI if an Office365 app suite is deployed to the device or not.</summary>
         public bool? ShouldUninstallOlderVersionsOfOffice {
-            get { return BackingStore?.Get<bool?>(nameof(ShouldUninstallOlderVersionsOfOffice)); }
-            set { BackingStore?.Set(nameof(ShouldUninstallOlderVersionsOfOffice), value); }
+            get { return BackingStore?.Get<bool?>("shouldUninstallOlderVersionsOfOffice"); }
+            set { BackingStore?.Set("shouldUninstallOlderVersionsOfOffice", value); }
         }
         /// <summary>The property to represent the specific target version for the Office365 app suite that should be remained deployed on the devices.</summary>
         public string TargetVersion {
-            get { return BackingStore?.Get<string>(nameof(TargetVersion)); }
-            set { BackingStore?.Set(nameof(TargetVersion), value); }
+            get { return BackingStore?.Get<string>("targetVersion"); }
+            set { BackingStore?.Set("targetVersion", value); }
         }
-        /// <summary>The property to represent the Office365 Update Channel. Possible values are: none, current, deferred, firstReleaseCurrent, firstReleaseDeferred, monthlyEnterprise.</summary>
+        /// <summary>The Enum to specify the Office365 Updates Channel.</summary>
         public OfficeUpdateChannel? UpdateChannel {
-            get { return BackingStore?.Get<OfficeUpdateChannel?>(nameof(UpdateChannel)); }
-            set { BackingStore?.Set(nameof(UpdateChannel), value); }
+            get { return BackingStore?.Get<OfficeUpdateChannel?>("updateChannel"); }
+            set { BackingStore?.Set("updateChannel", value); }
         }
         /// <summary>The property to represent the update version in which the specific target version is available for the Office365 app suite.</summary>
         public string UpdateVersion {
-            get { return BackingStore?.Get<string>(nameof(UpdateVersion)); }
-            set { BackingStore?.Set(nameof(UpdateVersion), value); }
+            get { return BackingStore?.Get<string>("updateVersion"); }
+            set { BackingStore?.Set("updateVersion", value); }
         }
         /// <summary>The property to represent that whether the shared computer activation is used not for Office365 app suite.</summary>
         public bool? UseSharedComputerActivation {
-            get { return BackingStore?.Get<bool?>(nameof(UseSharedComputerActivation)); }
-            set { BackingStore?.Set(nameof(UseSharedComputerActivation), value); }
+            get { return BackingStore?.Get<bool?>("useSharedComputerActivation"); }
+            set { BackingStore?.Set("useSharedComputerActivation", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

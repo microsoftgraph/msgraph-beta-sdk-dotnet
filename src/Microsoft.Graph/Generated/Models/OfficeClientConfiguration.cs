@@ -8,43 +8,49 @@ namespace Microsoft.Graph.Beta.Models {
     public class OfficeClientConfiguration : Entity, IParsable {
         /// <summary>The list of group assignments for the policy.</summary>
         public List<OfficeClientConfigurationAssignment> Assignments {
-            get { return BackingStore?.Get<List<OfficeClientConfigurationAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<OfficeClientConfigurationAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>List of office Client check-in status.</summary>
         public List<OfficeClientCheckinStatus> CheckinStatuses {
-            get { return BackingStore?.Get<List<OfficeClientCheckinStatus>>(nameof(CheckinStatuses)); }
-            set { BackingStore?.Set(nameof(CheckinStatuses), value); }
+            get { return BackingStore?.Get<List<OfficeClientCheckinStatus>>("checkinStatuses"); }
+            set { BackingStore?.Set("checkinStatuses", value); }
         }
         /// <summary>Not yet documented</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Admin provided description of the office client configuration policy.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Policy settings JSON string in binary format, these values cannot be changed by the user.</summary>
         public byte[] PolicyPayload {
-            get { return BackingStore?.Get<byte[]>(nameof(PolicyPayload)); }
-            set { BackingStore?.Set(nameof(PolicyPayload), value); }
+            get { return BackingStore?.Get<byte[]>("policyPayload"); }
+            set { BackingStore?.Set("policyPayload", value); }
         }
         /// <summary>Priority value should be unique value for each policy under a tenant and will be used for conflict resolution, lower values mean priority is high.</summary>
         public int? Priority {
-            get { return BackingStore?.Get<int?>(nameof(Priority)); }
-            set { BackingStore?.Set(nameof(Priority), value); }
+            get { return BackingStore?.Get<int?>("priority"); }
+            set { BackingStore?.Set("priority", value); }
         }
         /// <summary>User check-in summary for the policy.</summary>
         public OfficeUserCheckinSummary UserCheckinSummary {
-            get { return BackingStore?.Get<OfficeUserCheckinSummary>(nameof(UserCheckinSummary)); }
-            set { BackingStore?.Set(nameof(UserCheckinSummary), value); }
+            get { return BackingStore?.Get<OfficeUserCheckinSummary>("userCheckinSummary"); }
+            set { BackingStore?.Set("userCheckinSummary", value); }
         }
         /// <summary>Preference settings JSON string in binary format, these values can be overridden by the user.</summary>
         public byte[] UserPreferencePayload {
-            get { return BackingStore?.Get<byte[]>(nameof(UserPreferencePayload)); }
-            set { BackingStore?.Set(nameof(UserPreferencePayload), value); }
+            get { return BackingStore?.Get<byte[]>("userPreferencePayload"); }
+            set { BackingStore?.Set("userPreferencePayload", value); }
+        }
+        /// <summary>
+        /// Instantiates a new OfficeClientConfiguration and sets the default values.
+        /// </summary>
+        public OfficeClientConfiguration() : base() {
+            Type = "#microsoft.graph.officeClientConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

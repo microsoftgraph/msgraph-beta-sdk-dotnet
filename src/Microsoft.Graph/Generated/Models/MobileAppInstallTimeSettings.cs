@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class MobileAppInstallTimeSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The time at which the app should be installed.</summary>
         public DateTimeOffset? DeadlineDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DeadlineDateTime)); }
-            set { BackingStore?.Set(nameof(DeadlineDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("deadlineDateTime"); }
+            set { BackingStore?.Set("deadlineDateTime", value); }
         }
         /// <summary>The time at which the app should be available for installation.</summary>
         public DateTimeOffset? StartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
-            set { BackingStore?.Set(nameof(StartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>Whether the local device time or UTC time should be used when determining the available and deadline times.</summary>
         public bool? UseLocalTime {
-            get { return BackingStore?.Get<bool?>(nameof(UseLocalTime)); }
-            set { BackingStore?.Set(nameof(UseLocalTime), value); }
+            get { return BackingStore?.Get<bool?>("useLocalTime"); }
+            set { BackingStore?.Set("useLocalTime", value); }
         }
         /// <summary>
         /// Instantiates a new mobileAppInstallTimeSettings and sets the default values.

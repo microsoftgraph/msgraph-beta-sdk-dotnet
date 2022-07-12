@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
     public class TopicModelingSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>To learn more, see Adjust maximum number of themes dynamically.</summary>
         public bool? DynamicallyAdjustTopicCount {
-            get { return BackingStore?.Get<bool?>(nameof(DynamicallyAdjustTopicCount)); }
-            set { BackingStore?.Set(nameof(DynamicallyAdjustTopicCount), value); }
+            get { return BackingStore?.Get<bool?>("dynamicallyAdjustTopicCount"); }
+            set { BackingStore?.Set("dynamicallyAdjustTopicCount", value); }
         }
         /// <summary>To learn more, see Include numbers in themes.</summary>
         public bool? IgnoreNumbers {
-            get { return BackingStore?.Get<bool?>(nameof(IgnoreNumbers)); }
-            set { BackingStore?.Set(nameof(IgnoreNumbers), value); }
+            get { return BackingStore?.Get<bool?>("ignoreNumbers"); }
+            set { BackingStore?.Set("ignoreNumbers", value); }
         }
         /// <summary>Indicates whether themes is enabled for the case.</summary>
         public bool? IsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
-            set { BackingStore?.Set(nameof(IsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isEnabled"); }
+            set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>To learn more, see Maximum number of themes.</summary>
         public int? TopicCount {
-            get { return BackingStore?.Get<int?>(nameof(TopicCount)); }
-            set { BackingStore?.Set(nameof(TopicCount), value); }
+            get { return BackingStore?.Get<int?>("topicCount"); }
+            set { BackingStore?.Set("topicCount", value); }
         }
         /// <summary>
         /// Instantiates a new topicModelingSettings and sets the default values.

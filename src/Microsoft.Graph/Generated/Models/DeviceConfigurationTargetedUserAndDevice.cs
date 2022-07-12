@@ -9,40 +9,40 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceConfigurationTargetedUserAndDevice : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The id of the device in the checkin.</summary>
         public string DeviceId {
-            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
-            set { BackingStore?.Set(nameof(DeviceId), value); }
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>The name of the device in the checkin.</summary>
         public string DeviceName {
-            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
-            set { BackingStore?.Set(nameof(DeviceName), value); }
+            get { return BackingStore?.Get<string>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
         }
         /// <summary>Last checkin time for this user/device pair.</summary>
         public DateTimeOffset? LastCheckinDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastCheckinDateTime)); }
-            set { BackingStore?.Set(nameof(LastCheckinDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastCheckinDateTime"); }
+            set { BackingStore?.Set("lastCheckinDateTime", value); }
         }
         /// <summary>The display name of the user in the checkin</summary>
         public string UserDisplayName {
-            get { return BackingStore?.Get<string>(nameof(UserDisplayName)); }
-            set { BackingStore?.Set(nameof(UserDisplayName), value); }
+            get { return BackingStore?.Get<string>("userDisplayName"); }
+            set { BackingStore?.Set("userDisplayName", value); }
         }
         /// <summary>The id of the user in the checkin.</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>The UPN of the user in the checkin.</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Instantiates a new deviceConfigurationTargetedUserAndDevice and sets the default values.

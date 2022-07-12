@@ -7,6 +7,12 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class WindowsUpdateReference : SoftwareUpdateReference, IParsable {
         /// <summary>
+        /// Instantiates a new WindowsUpdateReference and sets the default values.
+        /// </summary>
+        public WindowsUpdateReference() : base() {
+            Type = "#microsoft.graph.windowsUpdates.windowsUpdateReference";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

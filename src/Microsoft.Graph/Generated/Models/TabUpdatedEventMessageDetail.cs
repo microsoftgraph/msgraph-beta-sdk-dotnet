@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class TabUpdatedEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>Initiator of the event.</summary>
         public IdentitySet Initiator {
-            get { return BackingStore?.Get<IdentitySet>(nameof(Initiator)); }
-            set { BackingStore?.Set(nameof(Initiator), value); }
+            get { return BackingStore?.Get<IdentitySet>("initiator"); }
+            set { BackingStore?.Set("initiator", value); }
         }
         /// <summary>Unique identifier of the tab.</summary>
         public string TabId {
-            get { return BackingStore?.Get<string>(nameof(TabId)); }
-            set { BackingStore?.Set(nameof(TabId), value); }
+            get { return BackingStore?.Get<string>("tabId"); }
+            set { BackingStore?.Set("tabId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

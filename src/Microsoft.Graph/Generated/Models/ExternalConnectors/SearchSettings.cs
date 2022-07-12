@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
     public class SearchSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed.</summary>
         public List<DisplayTemplate> SearchResultTemplates {
-            get { return BackingStore?.Get<List<DisplayTemplate>>(nameof(SearchResultTemplates)); }
-            set { BackingStore?.Set(nameof(SearchResultTemplates), value); }
+            get { return BackingStore?.Get<List<DisplayTemplate>>("searchResultTemplates"); }
+            set { BackingStore?.Set("searchResultTemplates", value); }
         }
         /// <summary>
         /// Instantiates a new searchSettings and sets the default values.

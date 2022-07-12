@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class UpdateWindow : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>End of a time window during which agents can receive updates</summary>
         public Time? UpdateWindowEndTime {
-            get { return BackingStore?.Get<Time?>(nameof(UpdateWindowEndTime)); }
-            set { BackingStore?.Set(nameof(UpdateWindowEndTime), value); }
+            get { return BackingStore?.Get<Time?>("updateWindowEndTime"); }
+            set { BackingStore?.Set("updateWindowEndTime", value); }
         }
         /// <summary>Start of a time window during which agents can receive updates</summary>
         public Time? UpdateWindowStartTime {
-            get { return BackingStore?.Get<Time?>(nameof(UpdateWindowStartTime)); }
-            set { BackingStore?.Set(nameof(UpdateWindowStartTime), value); }
+            get { return BackingStore?.Get<Time?>("updateWindowStartTime"); }
+            set { BackingStore?.Set("updateWindowStartTime", value); }
         }
         /// <summary>
         /// Instantiates a new updateWindow and sets the default values.

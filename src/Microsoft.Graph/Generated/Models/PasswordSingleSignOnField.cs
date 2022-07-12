@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class PasswordSingleSignOnField : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Title/label override for customization.</summary>
         public string CustomizedLabel {
-            get { return BackingStore?.Get<string>(nameof(CustomizedLabel)); }
-            set { BackingStore?.Set(nameof(CustomizedLabel), value); }
+            get { return BackingStore?.Get<string>("customizedLabel"); }
+            set { BackingStore?.Set("customizedLabel", value); }
         }
         /// <summary>Label that would be used if no customizedLabel is provided. Read only.</summary>
         public string DefaultLabel {
-            get { return BackingStore?.Get<string>(nameof(DefaultLabel)); }
-            set { BackingStore?.Set(nameof(DefaultLabel), value); }
+            get { return BackingStore?.Get<string>("defaultLabel"); }
+            set { BackingStore?.Set("defaultLabel", value); }
         }
         /// <summary>Id used to identity the field type. This is an internal id and possible values are param_1, param_2, param_userName, param_password.</summary>
         public string FieldId {
-            get { return BackingStore?.Get<string>(nameof(FieldId)); }
-            set { BackingStore?.Set(nameof(FieldId), value); }
+            get { return BackingStore?.Get<string>("fieldId"); }
+            set { BackingStore?.Set("fieldId", value); }
         }
         /// <summary>Type of the credential. The values can be text, password.</summary>
         public string Type {
-            get { return BackingStore?.Get<string>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<string>("type"); }
+            set { BackingStore?.Set("type", value); }
         }
         /// <summary>
         /// Instantiates a new passwordSingleSignOnField and sets the default values.

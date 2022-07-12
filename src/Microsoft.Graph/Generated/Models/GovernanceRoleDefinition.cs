@@ -4,37 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class GovernanceRoleDefinition : Entity, IParsable {
         /// <summary>The display name of the role definition.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The external id of the role definition.</summary>
         public string ExternalId {
-            get { return BackingStore?.Get<string>(nameof(ExternalId)); }
-            set { BackingStore?.Set(nameof(ExternalId), value); }
+            get { return BackingStore?.Get<string>("externalId"); }
+            set { BackingStore?.Set("externalId", value); }
         }
         /// <summary>Read-only. The associated resource for the role definition.</summary>
         public GovernanceResource Resource {
-            get { return BackingStore?.Get<GovernanceResource>(nameof(Resource)); }
-            set { BackingStore?.Set(nameof(Resource), value); }
+            get { return BackingStore?.Get<GovernanceResource>("resource"); }
+            set { BackingStore?.Set("resource", value); }
         }
         /// <summary>Required. The id of the resource associated with the role definition.</summary>
         public string ResourceId {
-            get { return BackingStore?.Get<string>(nameof(ResourceId)); }
-            set { BackingStore?.Set(nameof(ResourceId), value); }
+            get { return BackingStore?.Get<string>("resourceId"); }
+            set { BackingStore?.Set("resourceId", value); }
         }
         /// <summary>The associated role setting for the role definition.</summary>
         public GovernanceRoleSetting RoleSetting {
-            get { return BackingStore?.Get<GovernanceRoleSetting>(nameof(RoleSetting)); }
-            set { BackingStore?.Set(nameof(RoleSetting), value); }
+            get { return BackingStore?.Get<GovernanceRoleSetting>("roleSetting"); }
+            set { BackingStore?.Set("roleSetting", value); }
         }
         /// <summary>The templateId property</summary>
         public string TemplateId {
-            get { return BackingStore?.Get<string>(nameof(TemplateId)); }
-            set { BackingStore?.Set(nameof(TemplateId), value); }
+            get { return BackingStore?.Get<string>("templateId"); }
+            set { BackingStore?.Set("templateId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

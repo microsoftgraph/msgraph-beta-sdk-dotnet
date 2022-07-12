@@ -7,28 +7,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class NotifyUserAction : DlpActionInfo, IParsable {
         /// <summary>The actionLastModifiedDateTime property</summary>
         public DateTimeOffset? ActionLastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ActionLastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(ActionLastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("actionLastModifiedDateTime"); }
+            set { BackingStore?.Set("actionLastModifiedDateTime", value); }
         }
         /// <summary>The emailText property</summary>
         public string EmailText {
-            get { return BackingStore?.Get<string>(nameof(EmailText)); }
-            set { BackingStore?.Set(nameof(EmailText), value); }
+            get { return BackingStore?.Get<string>("emailText"); }
+            set { BackingStore?.Set("emailText", value); }
         }
         /// <summary>The overrideOption property</summary>
         public Microsoft.Graph.Beta.Models.OverrideOption? OverrideOption {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OverrideOption?>(nameof(OverrideOption)); }
-            set { BackingStore?.Set(nameof(OverrideOption), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OverrideOption?>("overrideOption"); }
+            set { BackingStore?.Set("overrideOption", value); }
         }
         /// <summary>The policyTip property</summary>
         public string PolicyTip {
-            get { return BackingStore?.Get<string>(nameof(PolicyTip)); }
-            set { BackingStore?.Set(nameof(PolicyTip), value); }
+            get { return BackingStore?.Get<string>("policyTip"); }
+            set { BackingStore?.Set("policyTip", value); }
         }
         /// <summary>The recipients property</summary>
         public List<string> Recipients {
-            get { return BackingStore?.Get<List<string>>(nameof(Recipients)); }
-            set { BackingStore?.Set(nameof(Recipients), value); }
+            get { return BackingStore?.Get<List<string>>("recipients"); }
+            set { BackingStore?.Set("recipients", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

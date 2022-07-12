@@ -7,33 +7,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class ContinuousAccessEvaluationPolicy : Entity, IParsable {
         /// <summary>Continuous access evaluation automatically blocks access to resources and applications in near real time when a user&apos;s access is removed or a client IP address changes. Read-only.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The value is always Continuous Access Evaluation. Read-only.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The collection of group identifiers in scope for evaluation. All groups are in scope when the collection is empty. Read-only.</summary>
         public List<string> Groups {
-            get { return BackingStore?.Get<List<string>>(nameof(Groups)); }
-            set { BackingStore?.Set(nameof(Groups), value); }
+            get { return BackingStore?.Get<List<string>>("groups"); }
+            set { BackingStore?.Set("groups", value); }
         }
         /// <summary>true to indicate whether continuous access evaluation should be performed; otherwise false. Read-only.</summary>
         public bool? IsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
-            set { BackingStore?.Set(nameof(IsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isEnabled"); }
+            set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>true to indicate that the continuous access evaluation policy settings should be or has been migrated to the conditional access policy.</summary>
         public bool? Migrate {
-            get { return BackingStore?.Get<bool?>(nameof(Migrate)); }
-            set { BackingStore?.Set(nameof(Migrate), value); }
+            get { return BackingStore?.Get<bool?>("migrate"); }
+            set { BackingStore?.Set("migrate", value); }
         }
         /// <summary>The collection of user identifiers in scope for evaluation. All users are in scope when the collection is empty. Read-only.</summary>
         public List<string> Users {
-            get { return BackingStore?.Get<List<string>>(nameof(Users)); }
-            set { BackingStore?.Set(nameof(Users), value); }
+            get { return BackingStore?.Get<List<string>>("users"); }
+            set { BackingStore?.Set("users", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

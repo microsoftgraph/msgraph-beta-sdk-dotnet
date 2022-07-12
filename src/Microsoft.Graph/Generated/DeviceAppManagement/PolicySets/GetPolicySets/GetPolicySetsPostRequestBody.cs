@@ -9,15 +9,15 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.GetPolicySets {
     public class GetPolicySetsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The policySetIds property</summary>
         public List<string> PolicySetIds {
-            get { return BackingStore?.Get<List<string>>(nameof(PolicySetIds)); }
-            set { BackingStore?.Set(nameof(PolicySetIds), value); }
+            get { return BackingStore?.Get<List<string>>("policySetIds"); }
+            set { BackingStore?.Set("policySetIds", value); }
         }
         /// <summary>
         /// Instantiates a new getPolicySetsPostRequestBody and sets the default values.

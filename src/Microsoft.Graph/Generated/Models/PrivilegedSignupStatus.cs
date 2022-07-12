@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class PrivilegedSignupStatus : Entity, IParsable {
         /// <summary>The isRegistered property</summary>
         public bool? IsRegistered {
-            get { return BackingStore?.Get<bool?>(nameof(IsRegistered)); }
-            set { BackingStore?.Set(nameof(IsRegistered), value); }
+            get { return BackingStore?.Get<bool?>("isRegistered"); }
+            set { BackingStore?.Set("isRegistered", value); }
         }
         /// <summary>The status property</summary>
         public SetupStatus? Status {
-            get { return BackingStore?.Get<SetupStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<SetupStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

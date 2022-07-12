@@ -1,5 +1,6 @@
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.ChangeUserAccountType;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.EndGracePeriod;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.GetCloudPcConnectivityHistory;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.GetCloudPcLaunchInfo;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Reboot;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Rename;
@@ -161,6 +162,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CloudPC>(requestInfo, Microsoft.Graph.Beta.Models.CloudPC.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Provides operations to call the getCloudPcConnectivityHistory method.
+        /// </summary>
+        public GetCloudPcConnectivityHistoryRequestBuilder GetCloudPcConnectivityHistory() {
+            return new GetCloudPcConnectivityHistoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Provides operations to call the getCloudPcLaunchInfo method.

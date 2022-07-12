@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class BroadcastMeetingCaptionSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether caption is enabled for this Teams live event.</summary>
         public bool? IsCaptionEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsCaptionEnabled)); }
-            set { BackingStore?.Set(nameof(IsCaptionEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isCaptionEnabled"); }
+            set { BackingStore?.Set("isCaptionEnabled", value); }
         }
         /// <summary>The spoken language.</summary>
         public string SpokenLanguage {
-            get { return BackingStore?.Get<string>(nameof(SpokenLanguage)); }
-            set { BackingStore?.Set(nameof(SpokenLanguage), value); }
+            get { return BackingStore?.Get<string>("spokenLanguage"); }
+            set { BackingStore?.Set("spokenLanguage", value); }
         }
         /// <summary>The translation languages (choose up to 6).</summary>
         public List<string> TranslationLanguages {
-            get { return BackingStore?.Get<List<string>>(nameof(TranslationLanguages)); }
-            set { BackingStore?.Set(nameof(TranslationLanguages), value); }
+            get { return BackingStore?.Get<List<string>>("translationLanguages"); }
+            set { BackingStore?.Set("translationLanguages", value); }
         }
         /// <summary>
         /// Instantiates a new broadcastMeetingCaptionSettings and sets the default values.

@@ -9,13 +9,13 @@ namespace Microsoft.Graph.Beta.Users.Item.WipeManagedAppRegistrationsByAzureAdDe
     public class WipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The azureAdDeviceId property</summary>
         public string AzureAdDeviceId {
-            get { return BackingStore?.Get<string>(nameof(AzureAdDeviceId)); }
-            set { BackingStore?.Set(nameof(AzureAdDeviceId), value); }
+            get { return BackingStore?.Get<string>("azureAdDeviceId"); }
+            set { BackingStore?.Set("azureAdDeviceId", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }

@@ -9,15 +9,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidDeviceOwnerEnrollmentProf
     public class CreateTokenPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The tokenValidityInSeconds property</summary>
         public int? TokenValidityInSeconds {
-            get { return BackingStore?.Get<int?>(nameof(TokenValidityInSeconds)); }
-            set { BackingStore?.Set(nameof(TokenValidityInSeconds), value); }
+            get { return BackingStore?.Get<int?>("tokenValidityInSeconds"); }
+            set { BackingStore?.Set("tokenValidityInSeconds", value); }
         }
         /// <summary>
         /// Instantiates a new createTokenPostRequestBody and sets the default values.
