@@ -29,6 +29,12 @@ namespace Microsoft.Graph
         public string AadDeviceId { get; set; }
     
         /// <summary>
+        /// Gets or sets connectivity result.
+        /// </summary>
+        [JsonPropertyName("connectivityResult")]
+        public CloudPcConnectivityResult ConnectivityResult { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// The display name of the Cloud PC.
         /// </summary>

@@ -426,6 +426,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets security identifier.
+        /// Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).
         /// </summary>
         [JsonPropertyName("securityIdentifier")]
         public string SecurityIdentifier { get; set; }
@@ -763,6 +764,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets transitive member of.
+        /// The groups, including nested groups, and directory roles that a user is a member of. Nullable.
         /// </summary>
         [JsonPropertyName("transitiveMemberOf")]
         public IUserTransitiveMemberOfCollectionWithReferencesPage TransitiveMemberOf { get; set; }

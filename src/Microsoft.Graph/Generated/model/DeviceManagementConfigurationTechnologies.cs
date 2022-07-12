@@ -61,6 +61,11 @@ namespace Microsoft.Graph
         LinuxMdm = 1024,
 	
         /// <summary>
+        /// Enrollment
+        /// </summary>
+        Enrollment = 4096,
+	
+        /// <summary>
         /// Unknown Future Value
         /// </summary>
         UnknownFutureValue = 1073741824,

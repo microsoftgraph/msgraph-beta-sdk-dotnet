@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Cloud Pc Supported Region.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<CloudPcSupportedRegion>))]
     public partial class CloudPcSupportedRegion : Entity
     {
     
@@ -26,6 +27,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets region status.
+        /// </summary>
+        [JsonPropertyName("regionStatus")]
+        public CloudPcSupportedRegionStatus? RegionStatus { get; set; }
     
     }
 }

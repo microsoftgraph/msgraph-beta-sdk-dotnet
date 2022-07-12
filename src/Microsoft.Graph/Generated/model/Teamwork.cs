@@ -64,6 +64,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets teams app settings.
+        /// Represents tenant-wide settings for all Teams apps in the tenant.
         /// </summary>
         [JsonPropertyName("teamsAppSettings")]
         public TeamsAppSettings TeamsAppSettings { get; set; }
