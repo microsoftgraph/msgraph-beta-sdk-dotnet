@@ -10,15 +10,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationSettingValue : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Setting value template reference</summary>
         public DeviceManagementConfigurationSettingValueTemplateReference SettingValueTemplateReference {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingValueTemplateReference>(nameof(SettingValueTemplateReference)); }
-            set { BackingStore?.Set(nameof(SettingValueTemplateReference), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationSettingValueTemplateReference>("settingValueTemplateReference"); }
+            set { BackingStore?.Set("settingValueTemplateReference", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new deviceManagementConfigurationSettingValue and sets the default values.
@@ -26,6 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceManagementConfigurationSettingValue() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.deviceManagementConfigurationSettingValue";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -48,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"settingValueTemplateReference", n => { SettingValueTemplateReference = n.GetObjectValue<DeviceManagementConfigurationSettingValueTemplateReference>(DeviceManagementConfigurationSettingValueTemplateReference.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<DeviceManagementConfigurationSettingValueTemplateReference>("settingValueTemplateReference", SettingValueTemplateReference);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

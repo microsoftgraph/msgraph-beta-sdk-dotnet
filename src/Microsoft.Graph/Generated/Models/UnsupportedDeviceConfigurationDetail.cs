@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class UnsupportedDeviceConfigurationDetail : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A message explaining why an entity is unsupported.</summary>
         public string Message {
-            get { return BackingStore?.Get<string>(nameof(Message)); }
-            set { BackingStore?.Set(nameof(Message), value); }
+            get { return BackingStore?.Get<string>("message"); }
+            set { BackingStore?.Set("message", value); }
         }
         /// <summary>If message is related to a specific property in the original entity, then the name of that property.</summary>
         public string PropertyName {
-            get { return BackingStore?.Get<string>(nameof(PropertyName)); }
-            set { BackingStore?.Set(nameof(PropertyName), value); }
+            get { return BackingStore?.Get<string>("propertyName"); }
+            set { BackingStore?.Set("propertyName", value); }
         }
         /// <summary>
         /// Instantiates a new unsupportedDeviceConfigurationDetail and sets the default values.

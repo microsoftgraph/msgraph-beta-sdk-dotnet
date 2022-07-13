@@ -8,73 +8,73 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementIntent : Entity, IParsable {
         /// <summary>Collection of assignments</summary>
         public List<DeviceManagementIntentAssignment> Assignments {
-            get { return BackingStore?.Get<List<DeviceManagementIntentAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<DeviceManagementIntentAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>Collection of setting categories within the intent</summary>
         public List<DeviceManagementIntentSettingCategory> Categories {
-            get { return BackingStore?.Get<List<DeviceManagementIntentSettingCategory>>(nameof(Categories)); }
-            set { BackingStore?.Set(nameof(Categories), value); }
+            get { return BackingStore?.Get<List<DeviceManagementIntentSettingCategory>>("categories"); }
+            set { BackingStore?.Set("categories", value); }
         }
         /// <summary>The user given description</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent</summary>
         public List<DeviceManagementIntentDeviceSettingStateSummary> DeviceSettingStateSummaries {
-            get { return BackingStore?.Get<List<DeviceManagementIntentDeviceSettingStateSummary>>(nameof(DeviceSettingStateSummaries)); }
-            set { BackingStore?.Set(nameof(DeviceSettingStateSummaries), value); }
+            get { return BackingStore?.Get<List<DeviceManagementIntentDeviceSettingStateSummary>>("deviceSettingStateSummaries"); }
+            set { BackingStore?.Set("deviceSettingStateSummaries", value); }
         }
         /// <summary>Collection of states of all devices that the intent is applied to</summary>
         public List<DeviceManagementIntentDeviceState> DeviceStates {
-            get { return BackingStore?.Get<List<DeviceManagementIntentDeviceState>>(nameof(DeviceStates)); }
-            set { BackingStore?.Set(nameof(DeviceStates), value); }
+            get { return BackingStore?.Get<List<DeviceManagementIntentDeviceState>>("deviceStates"); }
+            set { BackingStore?.Set("deviceStates", value); }
         }
         /// <summary>A summary of device states and counts of devices that belong to corresponding state for all devices that the intent is applied to</summary>
         public DeviceManagementIntentDeviceStateSummary DeviceStateSummary {
-            get { return BackingStore?.Get<DeviceManagementIntentDeviceStateSummary>(nameof(DeviceStateSummary)); }
-            set { BackingStore?.Set(nameof(DeviceStateSummary), value); }
+            get { return BackingStore?.Get<DeviceManagementIntentDeviceStateSummary>("deviceStateSummary"); }
+            set { BackingStore?.Set("deviceStateSummary", value); }
         }
         /// <summary>The user given display name</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Signifies whether or not the intent is assigned to users</summary>
         public bool? IsAssigned {
-            get { return BackingStore?.Get<bool?>(nameof(IsAssigned)); }
-            set { BackingStore?.Set(nameof(IsAssigned), value); }
+            get { return BackingStore?.Get<bool?>("isAssigned"); }
+            set { BackingStore?.Set("isAssigned", value); }
         }
         /// <summary>When the intent was last modified</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>List of Scope Tags for this Entity instance.</summary>
         public List<string> RoleScopeTagIds {
-            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTagIds)); }
-            set { BackingStore?.Set(nameof(RoleScopeTagIds), value); }
+            get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
         }
         /// <summary>Collection of all settings to be applied</summary>
         public List<DeviceManagementSettingInstance> Settings {
-            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>(nameof(Settings)); }
-            set { BackingStore?.Set(nameof(Settings), value); }
+            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>("settings"); }
+            set { BackingStore?.Set("settings", value); }
         }
         /// <summary>The ID of the template this intent was created from (if any)</summary>
         public string TemplateId {
-            get { return BackingStore?.Get<string>(nameof(TemplateId)); }
-            set { BackingStore?.Set(nameof(TemplateId), value); }
+            get { return BackingStore?.Get<string>("templateId"); }
+            set { BackingStore?.Set("templateId", value); }
         }
         /// <summary>Collection of states of all users that the intent is applied to</summary>
         public List<DeviceManagementIntentUserState> UserStates {
-            get { return BackingStore?.Get<List<DeviceManagementIntentUserState>>(nameof(UserStates)); }
-            set { BackingStore?.Set(nameof(UserStates), value); }
+            get { return BackingStore?.Get<List<DeviceManagementIntentUserState>>("userStates"); }
+            set { BackingStore?.Set("userStates", value); }
         }
         /// <summary>A summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to</summary>
         public DeviceManagementIntentUserStateSummary UserStateSummary {
-            get { return BackingStore?.Get<DeviceManagementIntentUserStateSummary>(nameof(UserStateSummary)); }
-            set { BackingStore?.Set(nameof(UserStateSummary), value); }
+            get { return BackingStore?.Get<DeviceManagementIntentUserStateSummary>("userStateSummary"); }
+            set { BackingStore?.Set("userStateSummary", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,98 +8,98 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceOwnerEnrollmentProfile : Entity, IParsable {
         /// <summary>Tenant GUID the enrollment profile belongs to.</summary>
         public string AccountId {
-            get { return BackingStore?.Get<string>(nameof(AccountId)); }
-            set { BackingStore?.Set(nameof(AccountId), value); }
+            get { return BackingStore?.Get<string>("accountId"); }
+            set { BackingStore?.Set("accountId", value); }
         }
         /// <summary>Date time the enrollment profile was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Description for the enrollment profile.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Display name for the enrollment profile.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Total number of Android devices that have enrolled using this enrollment profile.</summary>
         public int? EnrolledDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(EnrolledDeviceCount)); }
-            set { BackingStore?.Set(nameof(EnrolledDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("enrolledDeviceCount"); }
+            set { BackingStore?.Set("enrolledDeviceCount", value); }
         }
-        /// <summary>The enrollment mode of devices that use this enrollment profile. Possible values are: corporateOwnedDedicatedDevice, corporateOwnedFullyManaged, corporateOwnedWorkProfile, corporateOwnedAOSPUserlessDevice, corporateOwnedAOSPUserAssociatedDevice.</summary>
+        /// <summary>The enrollment mode for an enrollment profile.</summary>
         public AndroidDeviceOwnerEnrollmentMode? EnrollmentMode {
-            get { return BackingStore?.Get<AndroidDeviceOwnerEnrollmentMode?>(nameof(EnrollmentMode)); }
-            set { BackingStore?.Set(nameof(EnrollmentMode), value); }
+            get { return BackingStore?.Get<AndroidDeviceOwnerEnrollmentMode?>("enrollmentMode"); }
+            set { BackingStore?.Set("enrollmentMode", value); }
         }
-        /// <summary>The enrollment token type for an enrollment profile. Possible values are: default, corporateOwnedDedicatedDeviceWithAzureADSharedMode.</summary>
+        /// <summary>The enrollment token type for an enrollment profile.</summary>
         public AndroidDeviceOwnerEnrollmentTokenType? EnrollmentTokenType {
-            get { return BackingStore?.Get<AndroidDeviceOwnerEnrollmentTokenType?>(nameof(EnrollmentTokenType)); }
-            set { BackingStore?.Set(nameof(EnrollmentTokenType), value); }
+            get { return BackingStore?.Get<AndroidDeviceOwnerEnrollmentTokenType?>("enrollmentTokenType"); }
+            set { BackingStore?.Set("enrollmentTokenType", value); }
         }
         /// <summary>Total number of AOSP devices that have enrolled using the current token.</summary>
         public int? EnrollmentTokenUsageCount {
-            get { return BackingStore?.Get<int?>(nameof(EnrollmentTokenUsageCount)); }
-            set { BackingStore?.Set(nameof(EnrollmentTokenUsageCount), value); }
+            get { return BackingStore?.Get<int?>("enrollmentTokenUsageCount"); }
+            set { BackingStore?.Set("enrollmentTokenUsageCount", value); }
         }
         /// <summary>Date time the enrollment profile was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>String used to generate a QR code for the token.</summary>
         public string QrCodeContent {
-            get { return BackingStore?.Get<string>(nameof(QrCodeContent)); }
-            set { BackingStore?.Set(nameof(QrCodeContent), value); }
+            get { return BackingStore?.Get<string>("qrCodeContent"); }
+            set { BackingStore?.Set("qrCodeContent", value); }
         }
         /// <summary>String used to generate a QR code for the token.</summary>
         public MimeContent QrCodeImage {
-            get { return BackingStore?.Get<MimeContent>(nameof(QrCodeImage)); }
-            set { BackingStore?.Set(nameof(QrCodeImage), value); }
+            get { return BackingStore?.Get<MimeContent>("qrCodeImage"); }
+            set { BackingStore?.Set("qrCodeImage", value); }
         }
         /// <summary>List of Scope Tags for this Entity instance.</summary>
         public List<string> RoleScopeTagIds {
-            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTagIds)); }
-            set { BackingStore?.Set(nameof(RoleScopeTagIds), value); }
+            get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
         }
         /// <summary>Date time the most recently created token was created.</summary>
         public DateTimeOffset? TokenCreationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(TokenCreationDateTime)); }
-            set { BackingStore?.Set(nameof(TokenCreationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("tokenCreationDateTime"); }
+            set { BackingStore?.Set("tokenCreationDateTime", value); }
         }
         /// <summary>Date time the most recently created token will expire.</summary>
         public DateTimeOffset? TokenExpirationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(TokenExpirationDateTime)); }
-            set { BackingStore?.Set(nameof(TokenExpirationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("tokenExpirationDateTime"); }
+            set { BackingStore?.Set("tokenExpirationDateTime", value); }
         }
         /// <summary>Value of the most recently created token for this enrollment profile.</summary>
         public string TokenValue {
-            get { return BackingStore?.Get<string>(nameof(TokenValue)); }
-            set { BackingStore?.Set(nameof(TokenValue), value); }
+            get { return BackingStore?.Get<string>("tokenValue"); }
+            set { BackingStore?.Set("tokenValue", value); }
         }
         /// <summary>Boolean that indicates if hidden wifi networks are enabled</summary>
         public bool? WifiHidden {
-            get { return BackingStore?.Get<bool?>(nameof(WifiHidden)); }
-            set { BackingStore?.Set(nameof(WifiHidden), value); }
+            get { return BackingStore?.Get<bool?>("wifiHidden"); }
+            set { BackingStore?.Set("wifiHidden", value); }
         }
         /// <summary>String that contains the wi-fi login password</summary>
         public string WifiPassword {
-            get { return BackingStore?.Get<string>(nameof(WifiPassword)); }
-            set { BackingStore?.Set(nameof(WifiPassword), value); }
+            get { return BackingStore?.Get<string>("wifiPassword"); }
+            set { BackingStore?.Set("wifiPassword", value); }
         }
-        /// <summary>String that contains the wi-fi security type. Possible values are: none, wpa, wep.</summary>
+        /// <summary>This enum represents Wi-Fi Security Types for Android Device Owner AOSP Scenarios.</summary>
         public AospWifiSecurityType? WifiSecurityType {
-            get { return BackingStore?.Get<AospWifiSecurityType?>(nameof(WifiSecurityType)); }
-            set { BackingStore?.Set(nameof(WifiSecurityType), value); }
+            get { return BackingStore?.Get<AospWifiSecurityType?>("wifiSecurityType"); }
+            set { BackingStore?.Set("wifiSecurityType", value); }
         }
         /// <summary>String that contains the wi-fi login ssid</summary>
         public string WifiSsid {
-            get { return BackingStore?.Get<string>(nameof(WifiSsid)); }
-            set { BackingStore?.Set(nameof(WifiSsid), value); }
+            get { return BackingStore?.Get<string>("wifiSsid"); }
+            set { BackingStore?.Set("wifiSsid", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
     public class AddToReviewSetOperation : CaseOperation, IParsable {
         /// <summary>The review set to which items matching the source collection query are added to.</summary>
         public Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet ReviewSet {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet>(nameof(ReviewSet)); }
-            set { BackingStore?.Set(nameof(ReviewSet), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet>("reviewSet"); }
+            set { BackingStore?.Set("reviewSet", value); }
         }
         /// <summary>The sourceCollection that items are being added from.</summary>
         public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection SourceCollection {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>(nameof(SourceCollection)); }
-            set { BackingStore?.Set(nameof(SourceCollection), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>("sourceCollection"); }
+            set { BackingStore?.Set("sourceCollection", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

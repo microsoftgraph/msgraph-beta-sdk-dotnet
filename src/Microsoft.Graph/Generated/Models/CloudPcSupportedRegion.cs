@@ -7,8 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class CloudPcSupportedRegion : Entity, IParsable {
         /// <summary>The name for the supported region. Read-only.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+        /// <summary>The regionStatus property</summary>
+        public CloudPcSupportedRegionStatus? RegionStatus {
+            get { return BackingStore?.Get<CloudPcSupportedRegionStatus?>("regionStatus"); }
+            set { BackingStore?.Set("regionStatus", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -24,6 +29,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"regionStatus", n => { RegionStatus = n.GetEnumValue<CloudPcSupportedRegionStatus>(); } },
             };
         }
         /// <summary>
@@ -34,6 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteEnumValue<CloudPcSupportedRegionStatus>("regionStatus", RegionStatus);
         }
     }
 }

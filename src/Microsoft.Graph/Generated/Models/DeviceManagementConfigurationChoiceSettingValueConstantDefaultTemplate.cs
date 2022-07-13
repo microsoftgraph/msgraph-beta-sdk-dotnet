@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate : DeviceManagementConfigurationChoiceSettingValueDefaultTemplate, IParsable {
         /// <summary>Option Children</summary>
         public List<DeviceManagementConfigurationSettingInstanceTemplate> Children {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstanceTemplate>>(nameof(Children)); }
-            set { BackingStore?.Set(nameof(Children), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstanceTemplate>>("children"); }
+            set { BackingStore?.Set("children", value); }
         }
         /// <summary>Default Constant Value</summary>
         public string SettingDefinitionOptionId {
-            get { return BackingStore?.Get<string>(nameof(SettingDefinitionOptionId)); }
-            set { BackingStore?.Set(nameof(SettingDefinitionOptionId), value); }
+            get { return BackingStore?.Get<string>("settingDefinitionOptionId"); }
+            set { BackingStore?.Set("settingDefinitionOptionId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

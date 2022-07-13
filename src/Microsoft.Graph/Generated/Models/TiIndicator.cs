@@ -4,297 +4,297 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class TiIndicator : Entity, IParsable {
         /// <summary>The action to apply if the indicator is matched from within the targetProduct security tool. Possible values are: unknown, allow, block, alert. Required.</summary>
         public TiAction? Action {
-            get { return BackingStore?.Get<TiAction?>(nameof(Action)); }
-            set { BackingStore?.Set(nameof(Action), value); }
+            get { return BackingStore?.Get<TiAction?>("action"); }
+            set { BackingStore?.Set("action", value); }
         }
         /// <summary>The cyber threat intelligence name(s) for the parties responsible for the malicious activity covered by the threat indicator.</summary>
         public List<string> ActivityGroupNames {
-            get { return BackingStore?.Get<List<string>>(nameof(ActivityGroupNames)); }
-            set { BackingStore?.Set(nameof(ActivityGroupNames), value); }
+            get { return BackingStore?.Get<List<string>>("activityGroupNames"); }
+            set { BackingStore?.Set("activityGroupNames", value); }
         }
         /// <summary>A catchall area into which extra data from the indicator not covered by the other tiIndicator properties may be placed. Data placed into additionalInformation will typically not be utilized by the targetProduct security tool.</summary>
         public string AdditionalInformation {
-            get { return BackingStore?.Get<string>(nameof(AdditionalInformation)); }
-            set { BackingStore?.Set(nameof(AdditionalInformation), value); }
+            get { return BackingStore?.Get<string>("additionalInformation"); }
+            set { BackingStore?.Set("additionalInformation", value); }
         }
         /// <summary>Stamped by the system when the indicator is ingested. The Azure Active Directory tenant id of submitting client. Required.</summary>
         public string AzureTenantId {
-            get { return BackingStore?.Get<string>(nameof(AzureTenantId)); }
-            set { BackingStore?.Set(nameof(AzureTenantId), value); }
+            get { return BackingStore?.Get<string>("azureTenantId"); }
+            set { BackingStore?.Set("azureTenantId", value); }
         }
         /// <summary>An integer representing the confidence the data within the indicator accurately identifies malicious behavior. Acceptable values are 0 – 100 with 100 being the highest.</summary>
         public int? Confidence {
-            get { return BackingStore?.Get<int?>(nameof(Confidence)); }
-            set { BackingStore?.Set(nameof(Confidence), value); }
+            get { return BackingStore?.Get<int?>("confidence"); }
+            set { BackingStore?.Set("confidence", value); }
         }
         /// <summary>Brief description (100 characters or less) of the threat represented by the indicator. Required.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The area of the Diamond Model in which this indicator exists. Possible values are: unknown, adversary, capability, infrastructure, victim.</summary>
         public Microsoft.Graph.Beta.Models.DiamondModel? DiamondModel {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DiamondModel?>(nameof(DiamondModel)); }
-            set { BackingStore?.Set(nameof(DiamondModel), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DiamondModel?>("diamondModel"); }
+            set { BackingStore?.Set("diamondModel", value); }
         }
         /// <summary>The domainName property</summary>
         public string DomainName {
-            get { return BackingStore?.Get<string>(nameof(DomainName)); }
-            set { BackingStore?.Set(nameof(DomainName), value); }
+            get { return BackingStore?.Get<string>("domainName"); }
+            set { BackingStore?.Set("domainName", value); }
         }
         /// <summary>The emailEncoding property</summary>
         public string EmailEncoding {
-            get { return BackingStore?.Get<string>(nameof(EmailEncoding)); }
-            set { BackingStore?.Set(nameof(EmailEncoding), value); }
+            get { return BackingStore?.Get<string>("emailEncoding"); }
+            set { BackingStore?.Set("emailEncoding", value); }
         }
         /// <summary>The emailLanguage property</summary>
         public string EmailLanguage {
-            get { return BackingStore?.Get<string>(nameof(EmailLanguage)); }
-            set { BackingStore?.Set(nameof(EmailLanguage), value); }
+            get { return BackingStore?.Get<string>("emailLanguage"); }
+            set { BackingStore?.Set("emailLanguage", value); }
         }
         /// <summary>The emailRecipient property</summary>
         public string EmailRecipient {
-            get { return BackingStore?.Get<string>(nameof(EmailRecipient)); }
-            set { BackingStore?.Set(nameof(EmailRecipient), value); }
+            get { return BackingStore?.Get<string>("emailRecipient"); }
+            set { BackingStore?.Set("emailRecipient", value); }
         }
         /// <summary>The emailSenderAddress property</summary>
         public string EmailSenderAddress {
-            get { return BackingStore?.Get<string>(nameof(EmailSenderAddress)); }
-            set { BackingStore?.Set(nameof(EmailSenderAddress), value); }
+            get { return BackingStore?.Get<string>("emailSenderAddress"); }
+            set { BackingStore?.Set("emailSenderAddress", value); }
         }
         /// <summary>The emailSenderName property</summary>
         public string EmailSenderName {
-            get { return BackingStore?.Get<string>(nameof(EmailSenderName)); }
-            set { BackingStore?.Set(nameof(EmailSenderName), value); }
+            get { return BackingStore?.Get<string>("emailSenderName"); }
+            set { BackingStore?.Set("emailSenderName", value); }
         }
         /// <summary>The emailSourceDomain property</summary>
         public string EmailSourceDomain {
-            get { return BackingStore?.Get<string>(nameof(EmailSourceDomain)); }
-            set { BackingStore?.Set(nameof(EmailSourceDomain), value); }
+            get { return BackingStore?.Get<string>("emailSourceDomain"); }
+            set { BackingStore?.Set("emailSourceDomain", value); }
         }
         /// <summary>The emailSourceIpAddress property</summary>
         public string EmailSourceIpAddress {
-            get { return BackingStore?.Get<string>(nameof(EmailSourceIpAddress)); }
-            set { BackingStore?.Set(nameof(EmailSourceIpAddress), value); }
+            get { return BackingStore?.Get<string>("emailSourceIpAddress"); }
+            set { BackingStore?.Set("emailSourceIpAddress", value); }
         }
         /// <summary>The emailSubject property</summary>
         public string EmailSubject {
-            get { return BackingStore?.Get<string>(nameof(EmailSubject)); }
-            set { BackingStore?.Set(nameof(EmailSubject), value); }
+            get { return BackingStore?.Get<string>("emailSubject"); }
+            set { BackingStore?.Set("emailSubject", value); }
         }
         /// <summary>The emailXMailer property</summary>
         public string EmailXMailer {
-            get { return BackingStore?.Get<string>(nameof(EmailXMailer)); }
-            set { BackingStore?.Set(nameof(EmailXMailer), value); }
+            get { return BackingStore?.Get<string>("emailXMailer"); }
+            set { BackingStore?.Set("emailXMailer", value); }
         }
         /// <summary>DateTime string indicating when the Indicator expires. All indicators must have an expiration date to avoid stale indicators persisting in the system. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.</summary>
         public DateTimeOffset? ExpirationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpirationDateTime)); }
-            set { BackingStore?.Set(nameof(ExpirationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
+            set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>An identification number that ties the indicator back to the indicator provider’s system (e.g. a foreign key).</summary>
         public string ExternalId {
-            get { return BackingStore?.Get<string>(nameof(ExternalId)); }
-            set { BackingStore?.Set(nameof(ExternalId), value); }
+            get { return BackingStore?.Get<string>("externalId"); }
+            set { BackingStore?.Set("externalId", value); }
         }
         /// <summary>The fileCompileDateTime property</summary>
         public DateTimeOffset? FileCompileDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(FileCompileDateTime)); }
-            set { BackingStore?.Set(nameof(FileCompileDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("fileCompileDateTime"); }
+            set { BackingStore?.Set("fileCompileDateTime", value); }
         }
         /// <summary>The fileCreatedDateTime property</summary>
         public DateTimeOffset? FileCreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(FileCreatedDateTime)); }
-            set { BackingStore?.Set(nameof(FileCreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("fileCreatedDateTime"); }
+            set { BackingStore?.Set("fileCreatedDateTime", value); }
         }
         /// <summary>The fileHashType property</summary>
         public Microsoft.Graph.Beta.Models.FileHashType? FileHashType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FileHashType?>(nameof(FileHashType)); }
-            set { BackingStore?.Set(nameof(FileHashType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FileHashType?>("fileHashType"); }
+            set { BackingStore?.Set("fileHashType", value); }
         }
         /// <summary>The fileHashValue property</summary>
         public string FileHashValue {
-            get { return BackingStore?.Get<string>(nameof(FileHashValue)); }
-            set { BackingStore?.Set(nameof(FileHashValue), value); }
+            get { return BackingStore?.Get<string>("fileHashValue"); }
+            set { BackingStore?.Set("fileHashValue", value); }
         }
         /// <summary>The fileMutexName property</summary>
         public string FileMutexName {
-            get { return BackingStore?.Get<string>(nameof(FileMutexName)); }
-            set { BackingStore?.Set(nameof(FileMutexName), value); }
+            get { return BackingStore?.Get<string>("fileMutexName"); }
+            set { BackingStore?.Set("fileMutexName", value); }
         }
         /// <summary>The fileName property</summary>
         public string FileName {
-            get { return BackingStore?.Get<string>(nameof(FileName)); }
-            set { BackingStore?.Set(nameof(FileName), value); }
+            get { return BackingStore?.Get<string>("fileName"); }
+            set { BackingStore?.Set("fileName", value); }
         }
         /// <summary>The filePacker property</summary>
         public string FilePacker {
-            get { return BackingStore?.Get<string>(nameof(FilePacker)); }
-            set { BackingStore?.Set(nameof(FilePacker), value); }
+            get { return BackingStore?.Get<string>("filePacker"); }
+            set { BackingStore?.Set("filePacker", value); }
         }
         /// <summary>The filePath property</summary>
         public string FilePath {
-            get { return BackingStore?.Get<string>(nameof(FilePath)); }
-            set { BackingStore?.Set(nameof(FilePath), value); }
+            get { return BackingStore?.Get<string>("filePath"); }
+            set { BackingStore?.Set("filePath", value); }
         }
         /// <summary>The fileSize property</summary>
         public long? FileSize {
-            get { return BackingStore?.Get<long?>(nameof(FileSize)); }
-            set { BackingStore?.Set(nameof(FileSize), value); }
+            get { return BackingStore?.Get<long?>("fileSize"); }
+            set { BackingStore?.Set("fileSize", value); }
         }
         /// <summary>The fileType property</summary>
         public string FileType {
-            get { return BackingStore?.Get<string>(nameof(FileType)); }
-            set { BackingStore?.Set(nameof(FileType), value); }
+            get { return BackingStore?.Get<string>("fileType"); }
+            set { BackingStore?.Set("fileType", value); }
         }
         /// <summary>Stamped by the system when the indicator is ingested. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? IngestedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(IngestedDateTime)); }
-            set { BackingStore?.Set(nameof(IngestedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("ingestedDateTime"); }
+            set { BackingStore?.Set("ingestedDateTime", value); }
         }
         /// <summary>Used to deactivate indicators within system. By default, any indicator submitted is set as active. However, providers may submit existing indicators with this set to ‘False’ to deactivate indicators in the system.</summary>
         public bool? IsActive {
-            get { return BackingStore?.Get<bool?>(nameof(IsActive)); }
-            set { BackingStore?.Set(nameof(IsActive), value); }
+            get { return BackingStore?.Get<bool?>("isActive"); }
+            set { BackingStore?.Set("isActive", value); }
         }
         /// <summary>A JSON array of strings that describes which point or points on the Kill Chain this indicator targets. See ‘killChain values’ below for exact values.</summary>
         public List<string> KillChain {
-            get { return BackingStore?.Get<List<string>>(nameof(KillChain)); }
-            set { BackingStore?.Set(nameof(KillChain), value); }
+            get { return BackingStore?.Get<List<string>>("killChain"); }
+            set { BackingStore?.Set("killChain", value); }
         }
         /// <summary>Scenarios in which the indicator may cause false positives. This should be human-readable text.</summary>
         public string KnownFalsePositives {
-            get { return BackingStore?.Get<string>(nameof(KnownFalsePositives)); }
-            set { BackingStore?.Set(nameof(KnownFalsePositives), value); }
+            get { return BackingStore?.Get<string>("knownFalsePositives"); }
+            set { BackingStore?.Set("knownFalsePositives", value); }
         }
         /// <summary>The last time the indicator was seen. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? LastReportedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastReportedDateTime)); }
-            set { BackingStore?.Set(nameof(LastReportedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastReportedDateTime"); }
+            set { BackingStore?.Set("lastReportedDateTime", value); }
         }
         /// <summary>The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible which can be found via the Windows Defender Security Intelligence threat encyclopedia.</summary>
         public List<string> MalwareFamilyNames {
-            get { return BackingStore?.Get<List<string>>(nameof(MalwareFamilyNames)); }
-            set { BackingStore?.Set(nameof(MalwareFamilyNames), value); }
+            get { return BackingStore?.Get<List<string>>("malwareFamilyNames"); }
+            set { BackingStore?.Set("malwareFamilyNames", value); }
         }
         /// <summary>The networkCidrBlock property</summary>
         public string NetworkCidrBlock {
-            get { return BackingStore?.Get<string>(nameof(NetworkCidrBlock)); }
-            set { BackingStore?.Set(nameof(NetworkCidrBlock), value); }
+            get { return BackingStore?.Get<string>("networkCidrBlock"); }
+            set { BackingStore?.Set("networkCidrBlock", value); }
         }
         /// <summary>The networkDestinationAsn property</summary>
         public long? NetworkDestinationAsn {
-            get { return BackingStore?.Get<long?>(nameof(NetworkDestinationAsn)); }
-            set { BackingStore?.Set(nameof(NetworkDestinationAsn), value); }
+            get { return BackingStore?.Get<long?>("networkDestinationAsn"); }
+            set { BackingStore?.Set("networkDestinationAsn", value); }
         }
         /// <summary>The networkDestinationCidrBlock property</summary>
         public string NetworkDestinationCidrBlock {
-            get { return BackingStore?.Get<string>(nameof(NetworkDestinationCidrBlock)); }
-            set { BackingStore?.Set(nameof(NetworkDestinationCidrBlock), value); }
+            get { return BackingStore?.Get<string>("networkDestinationCidrBlock"); }
+            set { BackingStore?.Set("networkDestinationCidrBlock", value); }
         }
         /// <summary>The networkDestinationIPv4 property</summary>
         public string NetworkDestinationIPv4 {
-            get { return BackingStore?.Get<string>(nameof(NetworkDestinationIPv4)); }
-            set { BackingStore?.Set(nameof(NetworkDestinationIPv4), value); }
+            get { return BackingStore?.Get<string>("networkDestinationIPv4"); }
+            set { BackingStore?.Set("networkDestinationIPv4", value); }
         }
         /// <summary>The networkDestinationIPv6 property</summary>
         public string NetworkDestinationIPv6 {
-            get { return BackingStore?.Get<string>(nameof(NetworkDestinationIPv6)); }
-            set { BackingStore?.Set(nameof(NetworkDestinationIPv6), value); }
+            get { return BackingStore?.Get<string>("networkDestinationIPv6"); }
+            set { BackingStore?.Set("networkDestinationIPv6", value); }
         }
         /// <summary>The networkDestinationPort property</summary>
         public int? NetworkDestinationPort {
-            get { return BackingStore?.Get<int?>(nameof(NetworkDestinationPort)); }
-            set { BackingStore?.Set(nameof(NetworkDestinationPort), value); }
+            get { return BackingStore?.Get<int?>("networkDestinationPort"); }
+            set { BackingStore?.Set("networkDestinationPort", value); }
         }
         /// <summary>The networkIPv4 property</summary>
         public string NetworkIPv4 {
-            get { return BackingStore?.Get<string>(nameof(NetworkIPv4)); }
-            set { BackingStore?.Set(nameof(NetworkIPv4), value); }
+            get { return BackingStore?.Get<string>("networkIPv4"); }
+            set { BackingStore?.Set("networkIPv4", value); }
         }
         /// <summary>The networkIPv6 property</summary>
         public string NetworkIPv6 {
-            get { return BackingStore?.Get<string>(nameof(NetworkIPv6)); }
-            set { BackingStore?.Set(nameof(NetworkIPv6), value); }
+            get { return BackingStore?.Get<string>("networkIPv6"); }
+            set { BackingStore?.Set("networkIPv6", value); }
         }
         /// <summary>The networkPort property</summary>
         public int? NetworkPort {
-            get { return BackingStore?.Get<int?>(nameof(NetworkPort)); }
-            set { BackingStore?.Set(nameof(NetworkPort), value); }
+            get { return BackingStore?.Get<int?>("networkPort"); }
+            set { BackingStore?.Set("networkPort", value); }
         }
         /// <summary>The networkProtocol property</summary>
         public int? NetworkProtocol {
-            get { return BackingStore?.Get<int?>(nameof(NetworkProtocol)); }
-            set { BackingStore?.Set(nameof(NetworkProtocol), value); }
+            get { return BackingStore?.Get<int?>("networkProtocol"); }
+            set { BackingStore?.Set("networkProtocol", value); }
         }
         /// <summary>The networkSourceAsn property</summary>
         public long? NetworkSourceAsn {
-            get { return BackingStore?.Get<long?>(nameof(NetworkSourceAsn)); }
-            set { BackingStore?.Set(nameof(NetworkSourceAsn), value); }
+            get { return BackingStore?.Get<long?>("networkSourceAsn"); }
+            set { BackingStore?.Set("networkSourceAsn", value); }
         }
         /// <summary>The networkSourceCidrBlock property</summary>
         public string NetworkSourceCidrBlock {
-            get { return BackingStore?.Get<string>(nameof(NetworkSourceCidrBlock)); }
-            set { BackingStore?.Set(nameof(NetworkSourceCidrBlock), value); }
+            get { return BackingStore?.Get<string>("networkSourceCidrBlock"); }
+            set { BackingStore?.Set("networkSourceCidrBlock", value); }
         }
         /// <summary>The networkSourceIPv4 property</summary>
         public string NetworkSourceIPv4 {
-            get { return BackingStore?.Get<string>(nameof(NetworkSourceIPv4)); }
-            set { BackingStore?.Set(nameof(NetworkSourceIPv4), value); }
+            get { return BackingStore?.Get<string>("networkSourceIPv4"); }
+            set { BackingStore?.Set("networkSourceIPv4", value); }
         }
         /// <summary>The networkSourceIPv6 property</summary>
         public string NetworkSourceIPv6 {
-            get { return BackingStore?.Get<string>(nameof(NetworkSourceIPv6)); }
-            set { BackingStore?.Set(nameof(NetworkSourceIPv6), value); }
+            get { return BackingStore?.Get<string>("networkSourceIPv6"); }
+            set { BackingStore?.Set("networkSourceIPv6", value); }
         }
         /// <summary>The networkSourcePort property</summary>
         public int? NetworkSourcePort {
-            get { return BackingStore?.Get<int?>(nameof(NetworkSourcePort)); }
-            set { BackingStore?.Set(nameof(NetworkSourcePort), value); }
+            get { return BackingStore?.Get<int?>("networkSourcePort"); }
+            set { BackingStore?.Set("networkSourcePort", value); }
         }
         /// <summary>Determines if the indicator should trigger an event that is visible to an end-user. When set to ‘true,’ security tools will not notify the end user that a ‘hit’ has occurred. This is most often treated as audit or silent mode by security products where they will simply log that a match occurred but will not perform the action. Default value is false.</summary>
         public bool? PassiveOnly {
-            get { return BackingStore?.Get<bool?>(nameof(PassiveOnly)); }
-            set { BackingStore?.Set(nameof(PassiveOnly), value); }
+            get { return BackingStore?.Get<bool?>("passiveOnly"); }
+            set { BackingStore?.Set("passiveOnly", value); }
         }
         /// <summary>An integer representing the severity of the malicious behavior identified by the data within the indicator. Acceptable values are 0 – 5 where 5 is the most severe and zero is not severe at all. Default value is 3.</summary>
         public int? Severity {
-            get { return BackingStore?.Get<int?>(nameof(Severity)); }
-            set { BackingStore?.Set(nameof(Severity), value); }
+            get { return BackingStore?.Get<int?>("severity"); }
+            set { BackingStore?.Set("severity", value); }
         }
         /// <summary>A JSON array of strings that stores arbitrary tags/keywords.</summary>
         public List<string> Tags {
-            get { return BackingStore?.Get<List<string>>(nameof(Tags)); }
-            set { BackingStore?.Set(nameof(Tags), value); }
+            get { return BackingStore?.Get<List<string>>("tags"); }
+            set { BackingStore?.Set("tags", value); }
         }
         /// <summary>A string value representing a single security product to which the indicator should be applied. Acceptable values are: Azure Sentinel, Microsoft Defender ATP. Required</summary>
         public string TargetProduct {
-            get { return BackingStore?.Get<string>(nameof(TargetProduct)); }
-            set { BackingStore?.Set(nameof(TargetProduct), value); }
+            get { return BackingStore?.Get<string>("targetProduct"); }
+            set { BackingStore?.Set("targetProduct", value); }
         }
         /// <summary>Each indicator must have a valid Indicator Threat Type. Possible values are: Botnet, C2, CryptoMining, Darknet, DDoS, MaliciousUrl, Malware, Phishing, Proxy, PUA, WatchList. Required.</summary>
         public string ThreatType {
-            get { return BackingStore?.Get<string>(nameof(ThreatType)); }
-            set { BackingStore?.Set(nameof(ThreatType), value); }
+            get { return BackingStore?.Get<string>("threatType"); }
+            set { BackingStore?.Set("threatType", value); }
         }
         /// <summary>Traffic Light Protocol value for the indicator. Possible values are: unknown, white, green, amber, red. Required.</summary>
         public Microsoft.Graph.Beta.Models.TlpLevel? TlpLevel {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TlpLevel?>(nameof(TlpLevel)); }
-            set { BackingStore?.Set(nameof(TlpLevel), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TlpLevel?>("tlpLevel"); }
+            set { BackingStore?.Set("tlpLevel", value); }
         }
         /// <summary>The url property</summary>
         public string Url {
-            get { return BackingStore?.Get<string>(nameof(Url)); }
-            set { BackingStore?.Set(nameof(Url), value); }
+            get { return BackingStore?.Get<string>("url"); }
+            set { BackingStore?.Set("url", value); }
         }
         /// <summary>The userAgent property</summary>
         public string UserAgent {
-            get { return BackingStore?.Get<string>(nameof(UserAgent)); }
-            set { BackingStore?.Set(nameof(UserAgent), value); }
+            get { return BackingStore?.Get<string>("userAgent"); }
+            set { BackingStore?.Set("userAgent", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

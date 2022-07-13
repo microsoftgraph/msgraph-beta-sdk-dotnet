@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class TimeCardBreak : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>ID of the timeCardBreak.</summary>
         public string BreakId {
-            get { return BackingStore?.Get<string>(nameof(BreakId)); }
-            set { BackingStore?.Set(nameof(BreakId), value); }
+            get { return BackingStore?.Get<string>("breakId"); }
+            set { BackingStore?.Set("breakId", value); }
         }
         /// <summary>The start event of the timeCardBreak.</summary>
         public TimeCardEvent End {
-            get { return BackingStore?.Get<TimeCardEvent>(nameof(End)); }
-            set { BackingStore?.Set(nameof(End), value); }
+            get { return BackingStore?.Get<TimeCardEvent>("end"); }
+            set { BackingStore?.Set("end", value); }
         }
         /// <summary>Notes about the timeCardBreak.</summary>
         public ItemBody Notes {
-            get { return BackingStore?.Get<ItemBody>(nameof(Notes)); }
-            set { BackingStore?.Set(nameof(Notes), value); }
+            get { return BackingStore?.Get<ItemBody>("notes"); }
+            set { BackingStore?.Set("notes", value); }
         }
         /// <summary>The start property</summary>
         public TimeCardEvent Start {
-            get { return BackingStore?.Get<TimeCardEvent>(nameof(Start)); }
-            set { BackingStore?.Set(nameof(Start), value); }
+            get { return BackingStore?.Get<TimeCardEvent>("start"); }
+            set { BackingStore?.Set("start", value); }
         }
         /// <summary>
         /// Instantiates a new timeCardBreak and sets the default values.

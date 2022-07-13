@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class MicrosoftAccountUserConversationMember : ConversationMember, IParsable {
         /// <summary>ID of the user.</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

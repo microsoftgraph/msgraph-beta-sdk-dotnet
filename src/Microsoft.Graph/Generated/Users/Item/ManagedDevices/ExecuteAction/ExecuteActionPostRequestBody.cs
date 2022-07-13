@@ -10,65 +10,65 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.ExecuteAction {
     public class ExecuteActionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The actionName property</summary>
         public ManagedDeviceRemoteAction? ActionName {
-            get { return BackingStore?.Get<ManagedDeviceRemoteAction?>(nameof(ActionName)); }
-            set { BackingStore?.Set(nameof(ActionName), value); }
+            get { return BackingStore?.Get<ManagedDeviceRemoteAction?>("actionName"); }
+            set { BackingStore?.Set("actionName", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The carrierUrl property</summary>
         public string CarrierUrl {
-            get { return BackingStore?.Get<string>(nameof(CarrierUrl)); }
-            set { BackingStore?.Set(nameof(CarrierUrl), value); }
+            get { return BackingStore?.Get<string>("carrierUrl"); }
+            set { BackingStore?.Set("carrierUrl", value); }
         }
         /// <summary>The deprovisionReason property</summary>
         public string DeprovisionReason {
-            get { return BackingStore?.Get<string>(nameof(DeprovisionReason)); }
-            set { BackingStore?.Set(nameof(DeprovisionReason), value); }
+            get { return BackingStore?.Get<string>("deprovisionReason"); }
+            set { BackingStore?.Set("deprovisionReason", value); }
         }
         /// <summary>The deviceIds property</summary>
         public List<string> DeviceIds {
-            get { return BackingStore?.Get<List<string>>(nameof(DeviceIds)); }
-            set { BackingStore?.Set(nameof(DeviceIds), value); }
+            get { return BackingStore?.Get<List<string>>("deviceIds"); }
+            set { BackingStore?.Set("deviceIds", value); }
         }
         /// <summary>The deviceName property</summary>
         public string DeviceName {
-            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
-            set { BackingStore?.Set(nameof(DeviceName), value); }
+            get { return BackingStore?.Get<string>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
         }
         /// <summary>The keepEnrollmentData property</summary>
         public bool? KeepEnrollmentData {
-            get { return BackingStore?.Get<bool?>(nameof(KeepEnrollmentData)); }
-            set { BackingStore?.Set(nameof(KeepEnrollmentData), value); }
+            get { return BackingStore?.Get<bool?>("keepEnrollmentData"); }
+            set { BackingStore?.Set("keepEnrollmentData", value); }
         }
         /// <summary>The keepUserData property</summary>
         public bool? KeepUserData {
-            get { return BackingStore?.Get<bool?>(nameof(KeepUserData)); }
-            set { BackingStore?.Set(nameof(KeepUserData), value); }
+            get { return BackingStore?.Get<bool?>("keepUserData"); }
+            set { BackingStore?.Set("keepUserData", value); }
         }
         /// <summary>The notificationBody property</summary>
         public string NotificationBody {
-            get { return BackingStore?.Get<string>(nameof(NotificationBody)); }
-            set { BackingStore?.Set(nameof(NotificationBody), value); }
+            get { return BackingStore?.Get<string>("notificationBody"); }
+            set { BackingStore?.Set("notificationBody", value); }
         }
         /// <summary>The notificationTitle property</summary>
         public string NotificationTitle {
-            get { return BackingStore?.Get<string>(nameof(NotificationTitle)); }
-            set { BackingStore?.Set(nameof(NotificationTitle), value); }
+            get { return BackingStore?.Get<string>("notificationTitle"); }
+            set { BackingStore?.Set("notificationTitle", value); }
         }
         /// <summary>The organizationalUnitPath property</summary>
         public string OrganizationalUnitPath {
-            get { return BackingStore?.Get<string>(nameof(OrganizationalUnitPath)); }
-            set { BackingStore?.Set(nameof(OrganizationalUnitPath), value); }
+            get { return BackingStore?.Get<string>("organizationalUnitPath"); }
+            set { BackingStore?.Set("organizationalUnitPath", value); }
         }
         /// <summary>The persistEsimDataPlan property</summary>
         public bool? PersistEsimDataPlan {
-            get { return BackingStore?.Get<bool?>(nameof(PersistEsimDataPlan)); }
-            set { BackingStore?.Set(nameof(PersistEsimDataPlan), value); }
+            get { return BackingStore?.Get<bool?>("persistEsimDataPlan"); }
+            set { BackingStore?.Set("persistEsimDataPlan", value); }
         }
         /// <summary>
         /// Instantiates a new executeActionPostRequestBody and sets the default values.

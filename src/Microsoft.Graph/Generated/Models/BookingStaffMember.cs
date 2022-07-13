@@ -7,38 +7,38 @@ namespace Microsoft.Graph.Beta.Models {
     public class BookingStaffMember : BookingPerson, IParsable {
         /// <summary>True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member&apos;s availability in their personal calendar in Microsoft 365, before making a booking.</summary>
         public bool? AvailabilityIsAffectedByPersonalCalendar {
-            get { return BackingStore?.Get<bool?>(nameof(AvailabilityIsAffectedByPersonalCalendar)); }
-            set { BackingStore?.Set(nameof(AvailabilityIsAffectedByPersonalCalendar), value); }
+            get { return BackingStore?.Get<bool?>("availabilityIsAffectedByPersonalCalendar"); }
+            set { BackingStore?.Set("availabilityIsAffectedByPersonalCalendar", value); }
         }
         /// <summary>Identifies a color to represent the staff member. The color corresponds to the color palette in the Staff details page in the Bookings app.</summary>
         public int? ColorIndex {
-            get { return BackingStore?.Get<int?>(nameof(ColorIndex)); }
-            set { BackingStore?.Set(nameof(ColorIndex), value); }
+            get { return BackingStore?.Get<int?>("colorIndex"); }
+            set { BackingStore?.Set("colorIndex", value); }
         }
         /// <summary>The isEmailNotificationEnabled property</summary>
         public bool? IsEmailNotificationEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsEmailNotificationEnabled)); }
-            set { BackingStore?.Set(nameof(IsEmailNotificationEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isEmailNotificationEnabled"); }
+            set { BackingStore?.Set("isEmailNotificationEnabled", value); }
         }
-        /// <summary>The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest, unknownFutureValue, scheduler and member. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: scheduler, member. Required.</summary>
+        /// <summary>The role property</summary>
         public BookingStaffRole? Role {
-            get { return BackingStore?.Get<BookingStaffRole?>(nameof(Role)); }
-            set { BackingStore?.Set(nameof(Role), value); }
+            get { return BackingStore?.Get<BookingStaffRole?>("role"); }
+            set { BackingStore?.Set("role", value); }
         }
         /// <summary>The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.</summary>
         public string TimeZone {
-            get { return BackingStore?.Get<string>(nameof(TimeZone)); }
-            set { BackingStore?.Set(nameof(TimeZone), value); }
+            get { return BackingStore?.Get<string>("timeZone"); }
+            set { BackingStore?.Set("timeZone", value); }
         }
         /// <summary>True means the staff member&apos;s availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member&apos;s workingHours property setting.</summary>
         public bool? UseBusinessHours {
-            get { return BackingStore?.Get<bool?>(nameof(UseBusinessHours)); }
-            set { BackingStore?.Set(nameof(UseBusinessHours), value); }
+            get { return BackingStore?.Get<bool?>("useBusinessHours"); }
+            set { BackingStore?.Set("useBusinessHours", value); }
         }
         /// <summary>The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.</summary>
         public List<BookingWorkHours> WorkingHours {
-            get { return BackingStore?.Get<List<BookingWorkHours>>(nameof(WorkingHours)); }
-            set { BackingStore?.Set(nameof(WorkingHours), value); }
+            get { return BackingStore?.Get<List<BookingWorkHours>>("workingHours"); }
+            set { BackingStore?.Set("workingHours", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

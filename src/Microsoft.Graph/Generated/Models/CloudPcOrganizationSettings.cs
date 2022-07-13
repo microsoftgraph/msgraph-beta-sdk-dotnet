@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class CloudPcOrganizationSettings : Entity, IParsable {
         /// <summary>The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.</summary>
         public CloudPcOperatingSystem? OsVersion {
-            get { return BackingStore?.Get<CloudPcOperatingSystem?>(nameof(OsVersion)); }
-            set { BackingStore?.Set(nameof(OsVersion), value); }
+            get { return BackingStore?.Get<CloudPcOperatingSystem?>("osVersion"); }
+            set { BackingStore?.Set("osVersion", value); }
         }
         /// <summary>The account type of the user on provisioned Cloud PCs. The possible values are: standardUser, administrator, unknownFutureValue.</summary>
         public CloudPcUserAccountType? UserAccountType {
-            get { return BackingStore?.Get<CloudPcUserAccountType?>(nameof(UserAccountType)); }
-            set { BackingStore?.Set(nameof(UserAccountType), value); }
+            get { return BackingStore?.Get<CloudPcUserAccountType?>("userAccountType"); }
+            set { BackingStore?.Set("userAccountType", value); }
         }
         /// <summary>Represents the Cloud PC organization settings for a tenant. A tenant has only one cloudPcOrganizationSettings object. The default language value en-US.</summary>
         public CloudPcWindowsSettings WindowsSettings {
-            get { return BackingStore?.Get<CloudPcWindowsSettings>(nameof(WindowsSettings)); }
-            set { BackingStore?.Set(nameof(WindowsSettings), value); }
+            get { return BackingStore?.Get<CloudPcWindowsSettings>("windowsSettings"); }
+            set { BackingStore?.Set("windowsSettings", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

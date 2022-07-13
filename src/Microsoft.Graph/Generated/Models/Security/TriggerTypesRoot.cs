@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class TriggerTypesRoot : Entity, IParsable {
         /// <summary>The retentionEventTypes property</summary>
         public List<RetentionEventType> RetentionEventTypes {
-            get { return BackingStore?.Get<List<RetentionEventType>>(nameof(RetentionEventTypes)); }
-            set { BackingStore?.Set(nameof(RetentionEventTypes), value); }
+            get { return BackingStore?.Get<List<RetentionEventType>>("retentionEventTypes"); }
+            set { BackingStore?.Set("retentionEventTypes", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

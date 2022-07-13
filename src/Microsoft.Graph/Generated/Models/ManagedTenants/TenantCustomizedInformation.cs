@@ -4,27 +4,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class TenantCustomizedInformation : Entity, IParsable {
         /// <summary>The collection of contacts for the managed tenant. Optional.</summary>
         public List<TenantContactInformation> Contacts {
-            get { return BackingStore?.Get<List<TenantContactInformation>>(nameof(Contacts)); }
-            set { BackingStore?.Set(nameof(Contacts), value); }
+            get { return BackingStore?.Get<List<TenantContactInformation>>("contacts"); }
+            set { BackingStore?.Set("contacts", value); }
         }
         /// <summary>The display name for the managed tenant. Required. Read-only.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>The website for the managed tenant. Required.</summary>
         public string Website {
-            get { return BackingStore?.Get<string>(nameof(Website)); }
-            set { BackingStore?.Set(nameof(Website), value); }
+            get { return BackingStore?.Get<string>("website"); }
+            set { BackingStore?.Set("website", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

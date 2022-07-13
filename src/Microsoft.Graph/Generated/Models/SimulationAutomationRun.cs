@@ -4,27 +4,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class SimulationAutomationRun : Entity, IParsable {
         /// <summary>Date and time when the run ends in an attack simulation automation.</summary>
         public DateTimeOffset? EndDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
-            set { BackingStore?.Set(nameof(EndDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
+            set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>Unique identifier for the attack simulation campaign initiated in the attack simulation automation run.</summary>
         public string SimulationId {
-            get { return BackingStore?.Get<string>(nameof(SimulationId)); }
-            set { BackingStore?.Set(nameof(SimulationId), value); }
+            get { return BackingStore?.Get<string>("simulationId"); }
+            set { BackingStore?.Set("simulationId", value); }
         }
         /// <summary>Date and time when the run starts in an attack simulation automation.</summary>
         public DateTimeOffset? StartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
-            set { BackingStore?.Set(nameof(StartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>Status of the run of an attack simulation automation. The possible values are: unknown, running, succeeded, failed, skipped, unknownFutureValue.</summary>
         public SimulationAutomationRunStatus? Status {
-            get { return BackingStore?.Get<SimulationAutomationRunStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<SimulationAutomationRunStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,48 +8,48 @@ namespace Microsoft.Graph.Beta.Models {
     public class BusinessFlow : Entity, IParsable {
         /// <summary>The customData property</summary>
         public string CustomData {
-            get { return BackingStore?.Get<string>(nameof(CustomData)); }
-            set { BackingStore?.Set(nameof(CustomData), value); }
+            get { return BackingStore?.Get<string>("customData"); }
+            set { BackingStore?.Set("customData", value); }
         }
         /// <summary>The deDuplicationId property</summary>
         public string DeDuplicationId {
-            get { return BackingStore?.Get<string>(nameof(DeDuplicationId)); }
-            set { BackingStore?.Set(nameof(DeDuplicationId), value); }
+            get { return BackingStore?.Get<string>("deDuplicationId"); }
+            set { BackingStore?.Set("deDuplicationId", value); }
         }
         /// <summary>The description property</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The displayName property</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The policy property</summary>
         public GovernancePolicy Policy {
-            get { return BackingStore?.Get<GovernancePolicy>(nameof(Policy)); }
-            set { BackingStore?.Set(nameof(Policy), value); }
+            get { return BackingStore?.Get<GovernancePolicy>("policy"); }
+            set { BackingStore?.Set("policy", value); }
         }
         /// <summary>The policyTemplateId property</summary>
         public string PolicyTemplateId {
-            get { return BackingStore?.Get<string>(nameof(PolicyTemplateId)); }
-            set { BackingStore?.Set(nameof(PolicyTemplateId), value); }
+            get { return BackingStore?.Get<string>("policyTemplateId"); }
+            set { BackingStore?.Set("policyTemplateId", value); }
         }
         /// <summary>The recordVersion property</summary>
         public string RecordVersion {
-            get { return BackingStore?.Get<string>(nameof(RecordVersion)); }
-            set { BackingStore?.Set(nameof(RecordVersion), value); }
+            get { return BackingStore?.Get<string>("recordVersion"); }
+            set { BackingStore?.Set("recordVersion", value); }
         }
         /// <summary>The schemaId property</summary>
         public string SchemaId {
-            get { return BackingStore?.Get<string>(nameof(SchemaId)); }
-            set { BackingStore?.Set(nameof(SchemaId), value); }
+            get { return BackingStore?.Get<string>("schemaId"); }
+            set { BackingStore?.Set("schemaId", value); }
         }
         /// <summary>The settings property</summary>
         public BusinessFlowSettings Settings {
-            get { return BackingStore?.Get<BusinessFlowSettings>(nameof(Settings)); }
-            set { BackingStore?.Set(nameof(Settings), value); }
+            get { return BackingStore?.Get<BusinessFlowSettings>("settings"); }
+            set { BackingStore?.Set("settings", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

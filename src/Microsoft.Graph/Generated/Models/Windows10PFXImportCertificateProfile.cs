@@ -5,10 +5,10 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Windows10PFXImportCertificateProfile : DeviceConfiguration, IParsable {
-        /// <summary>Not yet documented. Possible values are: useTpmKspOtherwiseUseSoftwareKsp, useTpmKspOtherwiseFail, usePassportForWorkKspOtherwiseFail, useSoftwareKsp.</summary>
+        /// <summary>Key Storage Provider (KSP) Import Options.</summary>
         public KeyStorageProviderOption? KeyStorageProvider {
-            get { return BackingStore?.Get<KeyStorageProviderOption?>(nameof(KeyStorageProvider)); }
-            set { BackingStore?.Set(nameof(KeyStorageProvider), value); }
+            get { return BackingStore?.Get<KeyStorageProviderOption?>("keyStorageProvider"); }
+            set { BackingStore?.Set("keyStorageProvider", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

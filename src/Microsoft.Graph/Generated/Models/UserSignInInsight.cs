@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserSignInInsight : GovernanceInsight, IParsable {
         /// <summary>Indicates when the user last signed in</summary>
         public DateTimeOffset? LastSignInDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSignInDateTime)); }
-            set { BackingStore?.Set(nameof(LastSignInDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastSignInDateTime"); }
+            set { BackingStore?.Set("lastSignInDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

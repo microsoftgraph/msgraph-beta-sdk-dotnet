@@ -8,33 +8,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementScriptDeviceState : Entity, IParsable {
         /// <summary>Error code corresponding to erroneous execution of the device management script.</summary>
         public int? ErrorCode {
-            get { return BackingStore?.Get<int?>(nameof(ErrorCode)); }
-            set { BackingStore?.Set(nameof(ErrorCode), value); }
+            get { return BackingStore?.Get<int?>("errorCode"); }
+            set { BackingStore?.Set("errorCode", value); }
         }
         /// <summary>Error description corresponding to erroneous execution of the device management script.</summary>
         public string ErrorDescription {
-            get { return BackingStore?.Get<string>(nameof(ErrorDescription)); }
-            set { BackingStore?.Set(nameof(ErrorDescription), value); }
+            get { return BackingStore?.Get<string>("errorDescription"); }
+            set { BackingStore?.Set("errorDescription", value); }
         }
         /// <summary>Latest time the device management script executes.</summary>
         public DateTimeOffset? LastStateUpdateDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastStateUpdateDateTime)); }
-            set { BackingStore?.Set(nameof(LastStateUpdateDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastStateUpdateDateTime"); }
+            set { BackingStore?.Set("lastStateUpdateDateTime", value); }
         }
         /// <summary>The managed devices that executes the device management script.</summary>
         public Microsoft.Graph.Beta.Models.ManagedDevice ManagedDevice {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDevice>(nameof(ManagedDevice)); }
-            set { BackingStore?.Set(nameof(ManagedDevice), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDevice>("managedDevice"); }
+            set { BackingStore?.Set("managedDevice", value); }
         }
         /// <summary>Details of execution output.</summary>
         public string ResultMessage {
-            get { return BackingStore?.Get<string>(nameof(ResultMessage)); }
-            set { BackingStore?.Set(nameof(ResultMessage), value); }
+            get { return BackingStore?.Get<string>("resultMessage"); }
+            set { BackingStore?.Set("resultMessage", value); }
         }
-        /// <summary>State of latest run of the device management script. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.</summary>
+        /// <summary>Indicates the type of execution status of the device management script.</summary>
         public Microsoft.Graph.Beta.Models.RunState? RunState {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RunState?>(nameof(RunState)); }
-            set { BackingStore?.Set(nameof(RunState), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RunState?>("runState"); }
+            set { BackingStore?.Set("runState", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

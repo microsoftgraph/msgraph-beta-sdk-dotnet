@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Contains properties for the deployment summary of a WindowsDefenderApplicationControl supplemental policy.</summary>
     public class WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary : Entity, IParsable {
         /// <summary>Number of Devices that have successfully deployed this WindowsDefenderApplicationControl supplemental policy.</summary>
         public int? DeployedDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(DeployedDeviceCount)); }
-            set { BackingStore?.Set(nameof(DeployedDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("deployedDeviceCount"); }
+            set { BackingStore?.Set("deployedDeviceCount", value); }
         }
         /// <summary>Number of Devices that have failed to deploy this WindowsDefenderApplicationControl supplemental policy.</summary>
         public int? FailedDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(FailedDeviceCount)); }
-            set { BackingStore?.Set(nameof(FailedDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("failedDeviceCount"); }
+            set { BackingStore?.Set("failedDeviceCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

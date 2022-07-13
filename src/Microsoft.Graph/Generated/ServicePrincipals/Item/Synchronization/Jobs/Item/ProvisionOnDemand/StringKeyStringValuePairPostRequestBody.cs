@@ -10,15 +10,15 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.
     public class StringKeyStringValuePairPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The parameters property</summary>
         public List<SynchronizationJobApplicationParameters> Parameters {
-            get { return BackingStore?.Get<List<SynchronizationJobApplicationParameters>>(nameof(Parameters)); }
-            set { BackingStore?.Set(nameof(Parameters), value); }
+            get { return BackingStore?.Get<List<SynchronizationJobApplicationParameters>>("parameters"); }
+            set { BackingStore?.Set("parameters", value); }
         }
         /// <summary>
         /// Instantiates a new StringKeyStringValuePairPostRequestBody and sets the default values.

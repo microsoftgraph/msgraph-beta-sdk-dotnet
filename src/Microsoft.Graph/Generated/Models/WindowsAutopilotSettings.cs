@@ -4,22 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The windowsAutopilotSettings resource represents a Windows Autopilot Account to sync data with Windows device data sync service.</summary>
     public class WindowsAutopilotSettings : Entity, IParsable {
         /// <summary>Last data sync date time with DDS service.</summary>
         public DateTimeOffset? LastManualSyncTriggerDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastManualSyncTriggerDateTime)); }
-            set { BackingStore?.Set(nameof(LastManualSyncTriggerDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastManualSyncTriggerDateTime"); }
+            set { BackingStore?.Set("lastManualSyncTriggerDateTime", value); }
         }
         /// <summary>Last data sync date time with DDS service.</summary>
         public DateTimeOffset? LastSyncDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSyncDateTime)); }
-            set { BackingStore?.Set(nameof(LastSyncDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
+            set { BackingStore?.Set("lastSyncDateTime", value); }
         }
-        /// <summary>Indicates the status of sync with Device data sync (DDS) service. Possible values are: unknown, inProgress, completed, failed.</summary>
+        /// <summary>The syncStatus property</summary>
         public WindowsAutopilotSyncStatus? SyncStatus {
-            get { return BackingStore?.Get<WindowsAutopilotSyncStatus?>(nameof(SyncStatus)); }
-            set { BackingStore?.Set(nameof(SyncStatus), value); }
+            get { return BackingStore?.Get<WindowsAutopilotSyncStatus?>("syncStatus"); }
+            set { BackingStore?.Set("syncStatus", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,42 +4,41 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class RegionalAndLanguageSettings : Entity, IParsable {
         /// <summary>Prioritized list of languages the user reads and authors in.Returned by default. Not nullable.</summary>
         public List<LocaleInfo> AuthoringLanguages {
-            get { return BackingStore?.Get<List<LocaleInfo>>(nameof(AuthoringLanguages)); }
-            set { BackingStore?.Set(nameof(AuthoringLanguages), value); }
+            get { return BackingStore?.Get<List<LocaleInfo>>("authoringLanguages"); }
+            set { BackingStore?.Set("authoringLanguages", value); }
         }
         /// <summary>The  user&apos;s preferred user interface language (menus, buttons, ribbons, warning messages) for Microsoft web applications.Returned by default. Not nullable.</summary>
         public LocaleInfo DefaultDisplayLanguage {
-            get { return BackingStore?.Get<LocaleInfo>(nameof(DefaultDisplayLanguage)); }
-            set { BackingStore?.Set(nameof(DefaultDisplayLanguage), value); }
+            get { return BackingStore?.Get<LocaleInfo>("defaultDisplayLanguage"); }
+            set { BackingStore?.Set("defaultDisplayLanguage", value); }
         }
         /// <summary>The locale that drives the default date, time, and calendar formatting.Returned by default.</summary>
         public LocaleInfo DefaultRegionalFormat {
-            get { return BackingStore?.Get<LocaleInfo>(nameof(DefaultRegionalFormat)); }
-            set { BackingStore?.Set(nameof(DefaultRegionalFormat), value); }
+            get { return BackingStore?.Get<LocaleInfo>("defaultRegionalFormat"); }
+            set { BackingStore?.Set("defaultRegionalFormat", value); }
         }
         /// <summary>The language a user expected to use as input for text to speech scenarios.Returned by default.</summary>
         public LocaleInfo DefaultSpeechInputLanguage {
-            get { return BackingStore?.Get<LocaleInfo>(nameof(DefaultSpeechInputLanguage)); }
-            set { BackingStore?.Set(nameof(DefaultSpeechInputLanguage), value); }
+            get { return BackingStore?.Get<LocaleInfo>("defaultSpeechInputLanguage"); }
+            set { BackingStore?.Set("defaultSpeechInputLanguage", value); }
         }
         /// <summary>The language a user expects to have documents, emails, and messages translated into.Returned by default.</summary>
         public LocaleInfo DefaultTranslationLanguage {
-            get { return BackingStore?.Get<LocaleInfo>(nameof(DefaultTranslationLanguage)); }
-            set { BackingStore?.Set(nameof(DefaultTranslationLanguage), value); }
+            get { return BackingStore?.Get<LocaleInfo>("defaultTranslationLanguage"); }
+            set { BackingStore?.Set("defaultTranslationLanguage", value); }
         }
         /// <summary>Allows a user to override their defaultRegionalFormat with field specific formats.Returned by default.</summary>
         public Microsoft.Graph.Beta.Models.RegionalFormatOverrides RegionalFormatOverrides {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RegionalFormatOverrides>(nameof(RegionalFormatOverrides)); }
-            set { BackingStore?.Set(nameof(RegionalFormatOverrides), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RegionalFormatOverrides>("regionalFormatOverrides"); }
+            set { BackingStore?.Set("regionalFormatOverrides", value); }
         }
         /// <summary>The user&apos;s preferred settings when consuming translated documents, emails, messages, and websites.Returned by default. Not nullable.</summary>
         public Microsoft.Graph.Beta.Models.TranslationPreferences TranslationPreferences {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TranslationPreferences>(nameof(TranslationPreferences)); }
-            set { BackingStore?.Set(nameof(TranslationPreferences), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TranslationPreferences>("translationPreferences"); }
+            set { BackingStore?.Set("translationPreferences", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserRegistrationCount : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Provides the registration count for your tenant.</summary>
         public long? RegistrationCount {
-            get { return BackingStore?.Get<long?>(nameof(RegistrationCount)); }
-            set { BackingStore?.Set(nameof(RegistrationCount), value); }
+            get { return BackingStore?.Get<long?>("registrationCount"); }
+            set { BackingStore?.Set("registrationCount", value); }
         }
-        /// <summary>Represents the status of user registration. Possible values are: registered, enabled, capable, and mfaRegistered.</summary>
+        /// <summary>The registrationStatus property</summary>
         public RegistrationStatusType? RegistrationStatus {
-            get { return BackingStore?.Get<RegistrationStatusType?>(nameof(RegistrationStatus)); }
-            set { BackingStore?.Set(nameof(RegistrationStatus), value); }
+            get { return BackingStore?.Get<RegistrationStatusType?>("registrationStatus"); }
+            set { BackingStore?.Set("registrationStatus", value); }
         }
         /// <summary>
         /// Instantiates a new userRegistrationCount and sets the default values.

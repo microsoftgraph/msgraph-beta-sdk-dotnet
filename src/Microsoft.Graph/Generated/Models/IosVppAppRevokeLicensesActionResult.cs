@@ -7,57 +7,57 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Defines results for actions on iOS Vpp Apps, contains inherited properties for ActionResult.</summary>
     public class IosVppAppRevokeLicensesActionResult : IAdditionalDataHolder, IBackedModel, IParsable {
-        /// <summary>The reason for the revoke licenses action failure. Possible values are: none, appleFailure, internalError, expiredVppToken, expiredApplePushNotificationCertificate.</summary>
+        /// <summary>Possible types of reasons for an Apple Volume Purchase Program token action failure.</summary>
         public VppTokenActionFailureReason? ActionFailureReason {
-            get { return BackingStore?.Get<VppTokenActionFailureReason?>(nameof(ActionFailureReason)); }
-            set { BackingStore?.Set(nameof(ActionFailureReason), value); }
+            get { return BackingStore?.Get<VppTokenActionFailureReason?>("actionFailureReason"); }
+            set { BackingStore?.Set("actionFailureReason", value); }
         }
         /// <summary>Action name</summary>
         public string ActionName {
-            get { return BackingStore?.Get<string>(nameof(ActionName)); }
-            set { BackingStore?.Set(nameof(ActionName), value); }
+            get { return BackingStore?.Get<string>("actionName"); }
+            set { BackingStore?.Set("actionName", value); }
         }
-        /// <summary>State of the action. Possible values are: none, pending, canceled, active, done, failed, notSupported.</summary>
+        /// <summary>The actionState property</summary>
         public Microsoft.Graph.Beta.Models.ActionState? ActionState {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionState?>(nameof(ActionState)); }
-            set { BackingStore?.Set(nameof(ActionState), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionState?>("actionState"); }
+            set { BackingStore?.Set("actionState", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A count of the number of licenses for which revoke failed.</summary>
         public int? FailedLicensesCount {
-            get { return BackingStore?.Get<int?>(nameof(FailedLicensesCount)); }
-            set { BackingStore?.Set(nameof(FailedLicensesCount), value); }
+            get { return BackingStore?.Get<int?>("failedLicensesCount"); }
+            set { BackingStore?.Set("failedLicensesCount", value); }
         }
         /// <summary>Time the action state was last updated</summary>
         public DateTimeOffset? LastUpdatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastUpdatedDateTime)); }
-            set { BackingStore?.Set(nameof(LastUpdatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
+            set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>DeviceId associated with the action.</summary>
         public string ManagedDeviceId {
-            get { return BackingStore?.Get<string>(nameof(ManagedDeviceId)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceId), value); }
+            get { return BackingStore?.Get<string>("managedDeviceId"); }
+            set { BackingStore?.Set("managedDeviceId", value); }
         }
         /// <summary>Time the action was initiated</summary>
         public DateTimeOffset? StartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
-            set { BackingStore?.Set(nameof(StartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>A count of the number of licenses for which revoke was attempted.</summary>
         public int? TotalLicensesCount {
-            get { return BackingStore?.Get<int?>(nameof(TotalLicensesCount)); }
-            set { BackingStore?.Set(nameof(TotalLicensesCount), value); }
+            get { return BackingStore?.Get<int?>("totalLicensesCount"); }
+            set { BackingStore?.Set("totalLicensesCount", value); }
         }
         /// <summary>UserId associated with the action.</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>
         /// Instantiates a new iosVppAppRevokeLicensesActionResult and sets the default values.

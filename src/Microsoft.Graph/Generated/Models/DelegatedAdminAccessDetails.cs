@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Beta.Models {
     public class DelegatedAdminAccessDetails : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The directory roles that the Microsoft partner is assigned in the customer tenant.</summary>
         public List<UnifiedRole> UnifiedRoles {
-            get { return BackingStore?.Get<List<UnifiedRole>>(nameof(UnifiedRoles)); }
-            set { BackingStore?.Set(nameof(UnifiedRoles), value); }
+            get { return BackingStore?.Get<List<UnifiedRole>>("unifiedRoles"); }
+            set { BackingStore?.Set("unifiedRoles", value); }
         }
         /// <summary>
         /// Instantiates a new delegatedAdminAccessDetails and sets the default values.

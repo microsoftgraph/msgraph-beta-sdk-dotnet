@@ -9,30 +9,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceOwnerSystemUpdateFreezePeriod : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The day of the end date of the freeze period. Valid values 1 to 31</summary>
         public int? EndDay {
-            get { return BackingStore?.Get<int?>(nameof(EndDay)); }
-            set { BackingStore?.Set(nameof(EndDay), value); }
+            get { return BackingStore?.Get<int?>("endDay"); }
+            set { BackingStore?.Set("endDay", value); }
         }
         /// <summary>The month of the end date of the freeze period. Valid values 1 to 12</summary>
         public int? EndMonth {
-            get { return BackingStore?.Get<int?>(nameof(EndMonth)); }
-            set { BackingStore?.Set(nameof(EndMonth), value); }
+            get { return BackingStore?.Get<int?>("endMonth"); }
+            set { BackingStore?.Set("endMonth", value); }
         }
         /// <summary>The day of the start date of the freeze period. Valid values 1 to 31</summary>
         public int? StartDay {
-            get { return BackingStore?.Get<int?>(nameof(StartDay)); }
-            set { BackingStore?.Set(nameof(StartDay), value); }
+            get { return BackingStore?.Get<int?>("startDay"); }
+            set { BackingStore?.Set("startDay", value); }
         }
         /// <summary>The month of the start date of the freeze period. Valid values 1 to 12</summary>
         public int? StartMonth {
-            get { return BackingStore?.Get<int?>(nameof(StartMonth)); }
-            set { BackingStore?.Set(nameof(StartMonth), value); }
+            get { return BackingStore?.Get<int?>("startMonth"); }
+            set { BackingStore?.Set("startMonth", value); }
         }
         /// <summary>
         /// Instantiates a new androidDeviceOwnerSystemUpdateFreezePeriod and sets the default values.

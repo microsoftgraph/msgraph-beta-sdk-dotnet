@@ -9,38 +9,44 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementResourceAccessProfileBase : Entity, IParsable {
         /// <summary>The list of assignments for the device configuration profile.</summary>
         public List<DeviceManagementResourceAccessProfileAssignment> Assignments {
-            get { return BackingStore?.Get<List<DeviceManagementResourceAccessProfileAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<DeviceManagementResourceAccessProfileAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>DateTime profile was created</summary>
         public DateTimeOffset? CreationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreationDateTime)); }
-            set { BackingStore?.Set(nameof(CreationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("creationDateTime"); }
+            set { BackingStore?.Set("creationDateTime", value); }
         }
         /// <summary>Profile description</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Profile display name</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>DateTime profile was last modified</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Scope Tags</summary>
         public List<string> RoleScopeTagIds {
-            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTagIds)); }
-            set { BackingStore?.Set(nameof(RoleScopeTagIds), value); }
+            get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
         }
         /// <summary>Version of the profile</summary>
         public int? Version {
-            get { return BackingStore?.Get<int?>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<int?>("version"); }
+            set { BackingStore?.Set("version", value); }
+        }
+        /// <summary>
+        /// Instantiates a new deviceManagementResourceAccessProfileBase and sets the default values.
+        /// </summary>
+        public DeviceManagementResourceAccessProfileBase() : base() {
+            Type = "#microsoft.graph.deviceManagementResourceAccessProfileBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

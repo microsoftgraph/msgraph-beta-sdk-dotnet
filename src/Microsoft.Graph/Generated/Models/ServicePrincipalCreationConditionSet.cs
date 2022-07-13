@@ -4,32 +4,32 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Casts the previous resource to application.</summary>
     public class ServicePrincipalCreationConditionSet : Entity, IParsable {
         /// <summary>The applicationIds property</summary>
         public List<string> ApplicationIds {
-            get { return BackingStore?.Get<List<string>>(nameof(ApplicationIds)); }
-            set { BackingStore?.Set(nameof(ApplicationIds), value); }
+            get { return BackingStore?.Get<List<string>>("applicationIds"); }
+            set { BackingStore?.Set("applicationIds", value); }
         }
         /// <summary>The applicationPublisherIds property</summary>
         public List<string> ApplicationPublisherIds {
-            get { return BackingStore?.Get<List<string>>(nameof(ApplicationPublisherIds)); }
-            set { BackingStore?.Set(nameof(ApplicationPublisherIds), value); }
+            get { return BackingStore?.Get<List<string>>("applicationPublisherIds"); }
+            set { BackingStore?.Set("applicationPublisherIds", value); }
         }
         /// <summary>The applicationsFromVerifiedPublisherOnly property</summary>
         public bool? ApplicationsFromVerifiedPublisherOnly {
-            get { return BackingStore?.Get<bool?>(nameof(ApplicationsFromVerifiedPublisherOnly)); }
-            set { BackingStore?.Set(nameof(ApplicationsFromVerifiedPublisherOnly), value); }
+            get { return BackingStore?.Get<bool?>("applicationsFromVerifiedPublisherOnly"); }
+            set { BackingStore?.Set("applicationsFromVerifiedPublisherOnly", value); }
         }
         /// <summary>The applicationTenantIds property</summary>
         public List<string> ApplicationTenantIds {
-            get { return BackingStore?.Get<List<string>>(nameof(ApplicationTenantIds)); }
-            set { BackingStore?.Set(nameof(ApplicationTenantIds), value); }
+            get { return BackingStore?.Get<List<string>>("applicationTenantIds"); }
+            set { BackingStore?.Set("applicationTenantIds", value); }
         }
         /// <summary>The certifiedApplicationsOnly property</summary>
         public bool? CertifiedApplicationsOnly {
-            get { return BackingStore?.Get<bool?>(nameof(CertifiedApplicationsOnly)); }
-            set { BackingStore?.Set(nameof(CertifiedApplicationsOnly), value); }
+            get { return BackingStore?.Get<bool?>("certifiedApplicationsOnly"); }
+            set { BackingStore?.Set("certifiedApplicationsOnly", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

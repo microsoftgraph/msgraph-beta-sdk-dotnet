@@ -10,15 +10,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.ValidateFilter
     public class ValidateFilterPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceAndAppManagementAssignmentFilter property</summary>
         public Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter DeviceAndAppManagementAssignmentFilter {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter>(nameof(DeviceAndAppManagementAssignmentFilter)); }
-            set { BackingStore?.Set(nameof(DeviceAndAppManagementAssignmentFilter), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter>("deviceAndAppManagementAssignmentFilter"); }
+            set { BackingStore?.Set("deviceAndAppManagementAssignmentFilter", value); }
         }
         /// <summary>
         /// Instantiates a new validateFilterPostRequestBody and sets the default values.

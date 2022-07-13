@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class ExactMatchDetectedSensitiveContent : DetectedSensitiveContentBase, IParsable {
         /// <summary>The matches property</summary>
         public List<SensitiveContentLocation> Matches {
-            get { return BackingStore?.Get<List<SensitiveContentLocation>>(nameof(Matches)); }
-            set { BackingStore?.Set(nameof(Matches), value); }
+            get { return BackingStore?.Get<List<SensitiveContentLocation>>("matches"); }
+            set { BackingStore?.Set("matches", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

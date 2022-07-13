@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class LicenseInfoDetail : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The licenseType property</summary>
         public AzureADLicenseType? LicenseType {
-            get { return BackingStore?.Get<AzureADLicenseType?>(nameof(LicenseType)); }
-            set { BackingStore?.Set(nameof(LicenseType), value); }
+            get { return BackingStore?.Get<AzureADLicenseType?>("licenseType"); }
+            set { BackingStore?.Set("licenseType", value); }
         }
         /// <summary>The totalAssignedCount property</summary>
         public int? TotalAssignedCount {
-            get { return BackingStore?.Get<int?>(nameof(TotalAssignedCount)); }
-            set { BackingStore?.Set(nameof(TotalAssignedCount), value); }
+            get { return BackingStore?.Get<int?>("totalAssignedCount"); }
+            set { BackingStore?.Set("totalAssignedCount", value); }
         }
         /// <summary>The totalLicenseCount property</summary>
         public int? TotalLicenseCount {
-            get { return BackingStore?.Get<int?>(nameof(TotalLicenseCount)); }
-            set { BackingStore?.Set(nameof(TotalLicenseCount), value); }
+            get { return BackingStore?.Get<int?>("totalLicenseCount"); }
+            set { BackingStore?.Set("totalLicenseCount", value); }
         }
         /// <summary>The totalUsageCount property</summary>
         public int? TotalUsageCount {
-            get { return BackingStore?.Get<int?>(nameof(TotalUsageCount)); }
-            set { BackingStore?.Set(nameof(TotalUsageCount), value); }
+            get { return BackingStore?.Get<int?>("totalUsageCount"); }
+            set { BackingStore?.Set("totalUsageCount", value); }
         }
         /// <summary>
         /// Instantiates a new licenseInfoDetail and sets the default values.

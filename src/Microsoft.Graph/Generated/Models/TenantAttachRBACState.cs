@@ -9,18 +9,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class TenantAttachRBACState : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether the tenant is enabled for Tenant Attach with role management.  TRUE if enabled, FALSE if the Tenant Attach with rolemanagement is disabled.</summary>
         public bool? Enabled {
-            get { return BackingStore?.Get<bool?>(nameof(Enabled)); }
-            set { BackingStore?.Set(nameof(Enabled), value); }
+            get { return BackingStore?.Get<bool?>("enabled"); }
+            set { BackingStore?.Set("enabled", value); }
         }
         /// <summary>
-        /// Instantiates a new TenantAttachRBACState and sets the default values.
+        /// Instantiates a new tenantAttachRBACState and sets the default values.
         /// </summary>
         public TenantAttachRBACState() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

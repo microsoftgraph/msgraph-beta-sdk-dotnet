@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class LabelingOptions : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>Possible values are: standard, privileged, auto.</summary>
+        /// <summary>The assignmentMethod property</summary>
         public Microsoft.Graph.Beta.Models.AssignmentMethod? AssignmentMethod {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AssignmentMethod?>(nameof(AssignmentMethod)); }
-            set { BackingStore?.Set(nameof(AssignmentMethod), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AssignmentMethod?>("assignmentMethod"); }
+            set { BackingStore?.Set("assignmentMethod", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The downgrade justification object that indicates if downgrade was justified and, if so, the reason.</summary>
         public Microsoft.Graph.Beta.Models.DowngradeJustification DowngradeJustification {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DowngradeJustification>(nameof(DowngradeJustification)); }
-            set { BackingStore?.Set(nameof(DowngradeJustification), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DowngradeJustification>("downgradeJustification"); }
+            set { BackingStore?.Set("downgradeJustification", value); }
         }
         /// <summary>Extended properties will be parsed and returned in the standard MIP labeled metadata format as part of the label information.</summary>
         public List<KeyValuePair> ExtendedProperties {
-            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(ExtendedProperties)); }
-            set { BackingStore?.Set(nameof(ExtendedProperties), value); }
+            get { return BackingStore?.Get<List<KeyValuePair>>("extendedProperties"); }
+            set { BackingStore?.Set("extendedProperties", value); }
         }
         /// <summary>The GUID of the label that should be applied to the information.</summary>
         public string LabelId {
-            get { return BackingStore?.Get<string>(nameof(LabelId)); }
-            set { BackingStore?.Set(nameof(LabelId), value); }
+            get { return BackingStore?.Get<string>("labelId"); }
+            set { BackingStore?.Set("labelId", value); }
         }
         /// <summary>
         /// Instantiates a new labelingOptions and sets the default values.

@@ -5,10 +5,10 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EdgeSearchEngine : EdgeSearchEngineBase, IParsable {
-        /// <summary>Allows IT admins to set a predefined default search engine for MDM-Controlled devices. Possible values are: default, bing.</summary>
+        /// <summary>Allows IT admind to set a predefined default search engine for MDM-Controlled devices</summary>
         public Microsoft.Graph.Beta.Models.EdgeSearchEngineType? EdgeSearchEngineType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EdgeSearchEngineType?>(nameof(EdgeSearchEngineType)); }
-            set { BackingStore?.Set(nameof(EdgeSearchEngineType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EdgeSearchEngineType?>("edgeSearchEngineType"); }
+            set { BackingStore?.Set("edgeSearchEngineType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

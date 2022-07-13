@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public enum DeviceGuardLocalSystemAuthorityCredentialGuardType {
         /// <summary>Turns off Credential Guard remotely if configured previously without UEFI Lock.</summary>
         NotConfigured,

@@ -6,20 +6,20 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Enrollment Configuration Assignment</summary>
     public class EnrollmentConfigurationAssignment : Entity, IParsable {
-        /// <summary>Type of resource used for deployment to a group, direct or policySet. Possible values are: direct, policySets.</summary>
+        /// <summary>Represents source of assignment.</summary>
         public DeviceAndAppManagementAssignmentSource? Source {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentSource?>(nameof(Source)); }
-            set { BackingStore?.Set(nameof(Source), value); }
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentSource?>("source"); }
+            set { BackingStore?.Set("source", value); }
         }
         /// <summary>Identifier for resource used for deployment to a group</summary>
         public string SourceId {
-            get { return BackingStore?.Get<string>(nameof(SourceId)); }
-            set { BackingStore?.Set(nameof(SourceId), value); }
+            get { return BackingStore?.Get<string>("sourceId"); }
+            set { BackingStore?.Set("sourceId", value); }
         }
         /// <summary>Represents an assignment to managed devices in the tenant</summary>
         public DeviceAndAppManagementAssignmentTarget Target {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>(nameof(Target)); }
-            set { BackingStore?.Set(nameof(Target), value); }
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
+            set { BackingStore?.Set("target", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

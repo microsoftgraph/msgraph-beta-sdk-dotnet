@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class UnmanagedDeviceDiscoveryTask : DeviceAppManagementTask, IParsable {
         /// <summary>Unmanaged devices discovered in the network.</summary>
         public List<UnmanagedDevice> UnmanagedDevices {
-            get { return BackingStore?.Get<List<UnmanagedDevice>>(nameof(UnmanagedDevices)); }
-            set { BackingStore?.Set(nameof(UnmanagedDevices), value); }
+            get { return BackingStore?.Get<List<UnmanagedDevice>>("unmanagedDevices"); }
+            set { BackingStore?.Set("unmanagedDevices", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

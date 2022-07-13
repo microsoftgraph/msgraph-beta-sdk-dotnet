@@ -8,40 +8,40 @@ namespace Microsoft.Graph.Beta.Models {
     public class ApprovalStage : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The number of days that a request can be pending a response before it is automatically denied.</summary>
         public int? ApprovalStageTimeOutInDays {
-            get { return BackingStore?.Get<int?>(nameof(ApprovalStageTimeOutInDays)); }
-            set { BackingStore?.Set(nameof(ApprovalStageTimeOutInDays), value); }
+            get { return BackingStore?.Get<int?>("approvalStageTimeOutInDays"); }
+            set { BackingStore?.Set("approvalStageTimeOutInDays", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests. This can be a collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors.  When creating or updating a policy, if there are no escalation approvers, or escalation approvers are not required for the stage, the value of this property should be an empty collection.</summary>
         public List<UserSet> EscalationApprovers {
-            get { return BackingStore?.Get<List<UserSet>>(nameof(EscalationApprovers)); }
-            set { BackingStore?.Set(nameof(EscalationApprovers), value); }
+            get { return BackingStore?.Get<List<UserSet>>("escalationApprovers"); }
+            set { BackingStore?.Set("escalationApprovers", value); }
         }
         /// <summary>If escalation is required, the time a request can be pending a response from a primary approver.</summary>
         public int? EscalationTimeInMinutes {
-            get { return BackingStore?.Get<int?>(nameof(EscalationTimeInMinutes)); }
-            set { BackingStore?.Set(nameof(EscalationTimeInMinutes), value); }
+            get { return BackingStore?.Get<int?>("escalationTimeInMinutes"); }
+            set { BackingStore?.Set("escalationTimeInMinutes", value); }
         }
         /// <summary>Indicates whether the approver is required to provide a justification for approving a request.</summary>
         public bool? IsApproverJustificationRequired {
-            get { return BackingStore?.Get<bool?>(nameof(IsApproverJustificationRequired)); }
-            set { BackingStore?.Set(nameof(IsApproverJustificationRequired), value); }
+            get { return BackingStore?.Get<bool?>("isApproverJustificationRequired"); }
+            set { BackingStore?.Set("isApproverJustificationRequired", value); }
         }
         /// <summary>If true, then one or more escalation approvers are configured in this approval stage.</summary>
         public bool? IsEscalationEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsEscalationEnabled)); }
-            set { BackingStore?.Set(nameof(IsEscalationEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isEscalationEnabled"); }
+            set { BackingStore?.Set("isEscalationEnabled", value); }
         }
         /// <summary>The users who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors. When creating or updating a policy, include at least one userSet in this collection.</summary>
         public List<UserSet> PrimaryApprovers {
-            get { return BackingStore?.Get<List<UserSet>>(nameof(PrimaryApprovers)); }
-            set { BackingStore?.Set(nameof(PrimaryApprovers), value); }
+            get { return BackingStore?.Get<List<UserSet>>("primaryApprovers"); }
+            set { BackingStore?.Set("primaryApprovers", value); }
         }
         /// <summary>
         /// Instantiates a new approvalStage and sets the default values.

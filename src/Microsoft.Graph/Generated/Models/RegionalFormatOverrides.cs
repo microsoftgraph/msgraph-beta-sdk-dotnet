@@ -8,45 +8,45 @@ namespace Microsoft.Graph.Beta.Models {
     public class RegionalFormatOverrides : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The calendar to use, e.g., Gregorian Calendar.Returned by default.</summary>
         public string Calendar {
-            get { return BackingStore?.Get<string>(nameof(Calendar)); }
-            set { BackingStore?.Set(nameof(Calendar), value); }
+            get { return BackingStore?.Get<string>("calendar"); }
+            set { BackingStore?.Set("calendar", value); }
         }
         /// <summary>The first day of the week to use, e.g., Sunday.Returned by default.</summary>
         public string FirstDayOfWeek {
-            get { return BackingStore?.Get<string>(nameof(FirstDayOfWeek)); }
-            set { BackingStore?.Set(nameof(FirstDayOfWeek), value); }
+            get { return BackingStore?.Get<string>("firstDayOfWeek"); }
+            set { BackingStore?.Set("firstDayOfWeek", value); }
         }
         /// <summary>The long date time format to be used for displaying dates.Returned by default.</summary>
         public string LongDateFormat {
-            get { return BackingStore?.Get<string>(nameof(LongDateFormat)); }
-            set { BackingStore?.Set(nameof(LongDateFormat), value); }
+            get { return BackingStore?.Get<string>("longDateFormat"); }
+            set { BackingStore?.Set("longDateFormat", value); }
         }
         /// <summary>The long time format to be used for displaying time.Returned by default.</summary>
         public string LongTimeFormat {
-            get { return BackingStore?.Get<string>(nameof(LongTimeFormat)); }
-            set { BackingStore?.Set(nameof(LongTimeFormat), value); }
+            get { return BackingStore?.Get<string>("longTimeFormat"); }
+            set { BackingStore?.Set("longTimeFormat", value); }
         }
         /// <summary>The short date time format to be used for displaying dates.Returned by default.</summary>
         public string ShortDateFormat {
-            get { return BackingStore?.Get<string>(nameof(ShortDateFormat)); }
-            set { BackingStore?.Set(nameof(ShortDateFormat), value); }
+            get { return BackingStore?.Get<string>("shortDateFormat"); }
+            set { BackingStore?.Set("shortDateFormat", value); }
         }
         /// <summary>The short time format to be used for displaying time.Returned by default.</summary>
         public string ShortTimeFormat {
-            get { return BackingStore?.Get<string>(nameof(ShortTimeFormat)); }
-            set { BackingStore?.Set(nameof(ShortTimeFormat), value); }
+            get { return BackingStore?.Get<string>("shortTimeFormat"); }
+            set { BackingStore?.Set("shortTimeFormat", value); }
         }
         /// <summary>The timezone to be used for displaying time.Returned by default.</summary>
         public string TimeZone {
-            get { return BackingStore?.Get<string>(nameof(TimeZone)); }
-            set { BackingStore?.Set(nameof(TimeZone), value); }
+            get { return BackingStore?.Get<string>("timeZone"); }
+            set { BackingStore?.Set("timeZone", value); }
         }
         /// <summary>
         /// Instantiates a new regionalFormatOverrides and sets the default values.

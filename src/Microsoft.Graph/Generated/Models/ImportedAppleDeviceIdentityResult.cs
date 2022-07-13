@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class ImportedAppleDeviceIdentityResult : ImportedAppleDeviceIdentity, IParsable {
         /// <summary>Status of imported device identity</summary>
         public bool? Status {
-            get { return BackingStore?.Get<bool?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<bool?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -6,15 +6,15 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsUpdateScheduledInstall : WindowsUpdateInstallScheduleType, IParsable {
-        /// <summary>Scheduled Install Day in week. Possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday, noScheduledScan.</summary>
+        /// <summary>Possible values for a weekly schedule.</summary>
         public WeeklySchedule? ScheduledInstallDay {
-            get { return BackingStore?.Get<WeeklySchedule?>(nameof(ScheduledInstallDay)); }
-            set { BackingStore?.Set(nameof(ScheduledInstallDay), value); }
+            get { return BackingStore?.Get<WeeklySchedule?>("scheduledInstallDay"); }
+            set { BackingStore?.Set("scheduledInstallDay", value); }
         }
         /// <summary>Scheduled Install Time during day</summary>
         public Time? ScheduledInstallTime {
-            get { return BackingStore?.Get<Time?>(nameof(ScheduledInstallTime)); }
-            set { BackingStore?.Set(nameof(ScheduledInstallTime), value); }
+            get { return BackingStore?.Get<Time?>("scheduledInstallTime"); }
+            set { BackingStore?.Set("scheduledInstallTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

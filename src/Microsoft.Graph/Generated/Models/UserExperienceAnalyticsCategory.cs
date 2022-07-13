@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics category entity contains the scores and insights for the various metrics of a category.</summary>
     public class UserExperienceAnalyticsCategory : Entity, IParsable {
         /// <summary>The insights for the user experience analytics category.</summary>
         public List<UserExperienceAnalyticsInsight> Insights {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsInsight>>(nameof(Insights)); }
-            set { BackingStore?.Set(nameof(Insights), value); }
+            get { return BackingStore?.Get<List<UserExperienceAnalyticsInsight>>("insights"); }
+            set { BackingStore?.Set("insights", value); }
         }
         /// <summary>The metric values for the user experience analytics category.</summary>
         public List<UserExperienceAnalyticsMetric> MetricValues {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsMetric>>(nameof(MetricValues)); }
-            set { BackingStore?.Set(nameof(MetricValues), value); }
+            get { return BackingStore?.Get<List<UserExperienceAnalyticsMetric>>("metricValues"); }
+            set { BackingStore?.Set("metricValues", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

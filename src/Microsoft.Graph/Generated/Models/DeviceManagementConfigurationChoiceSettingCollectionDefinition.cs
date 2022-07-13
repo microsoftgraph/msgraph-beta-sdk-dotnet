@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationChoiceSettingCollectionDefinition : DeviceManagementConfigurationChoiceSettingDefinition, IParsable {
         /// <summary>Maximum number of choices in the collection. Valid values 1 to 100</summary>
         public int? MaximumCount {
-            get { return BackingStore?.Get<int?>(nameof(MaximumCount)); }
-            set { BackingStore?.Set(nameof(MaximumCount), value); }
+            get { return BackingStore?.Get<int?>("maximumCount"); }
+            set { BackingStore?.Set("maximumCount", value); }
         }
         /// <summary>Minimum number of choices in the collection. Valid values 1 to 100</summary>
         public int? MinimumCount {
-            get { return BackingStore?.Get<int?>(nameof(MinimumCount)); }
-            set { BackingStore?.Set(nameof(MinimumCount), value); }
+            get { return BackingStore?.Get<int?>("minimumCount"); }
+            set { BackingStore?.Set("minimumCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

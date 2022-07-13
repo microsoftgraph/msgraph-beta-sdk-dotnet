@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class X509CertificateRule : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The identifier of the X.509 certificate. Required.</summary>
         public string Identifier {
-            get { return BackingStore?.Get<string>(nameof(Identifier)); }
-            set { BackingStore?.Set(nameof(Identifier), value); }
+            get { return BackingStore?.Get<string>("identifier"); }
+            set { BackingStore?.Set("identifier", value); }
         }
         /// <summary>The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue. Required.</summary>
         public Microsoft.Graph.Beta.Models.X509CertificateAuthenticationMode? X509CertificateAuthenticationMode {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.X509CertificateAuthenticationMode?>(nameof(X509CertificateAuthenticationMode)); }
-            set { BackingStore?.Set(nameof(X509CertificateAuthenticationMode), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.X509CertificateAuthenticationMode?>("x509CertificateAuthenticationMode"); }
+            set { BackingStore?.Set("x509CertificateAuthenticationMode", value); }
         }
         /// <summary>The type of the X.509 certificate mode configuration rule. The possible values are: issuerSubject, policyOID, unknownFutureValue. Required.</summary>
         public Microsoft.Graph.Beta.Models.X509CertificateRuleType? X509CertificateRuleType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.X509CertificateRuleType?>(nameof(X509CertificateRuleType)); }
-            set { BackingStore?.Set(nameof(X509CertificateRuleType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.X509CertificateRuleType?>("x509CertificateRuleType"); }
+            set { BackingStore?.Set("x509CertificateRuleType", value); }
         }
         /// <summary>
         /// Instantiates a new x509CertificateRule and sets the default values.

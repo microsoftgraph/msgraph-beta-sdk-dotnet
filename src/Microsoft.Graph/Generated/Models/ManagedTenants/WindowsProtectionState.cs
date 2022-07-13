@@ -4,132 +4,132 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class WindowsProtectionState : Entity, IParsable {
         /// <summary>The anti-malware version for the managed device. Optional. Read-only.</summary>
         public string AntiMalwareVersion {
-            get { return BackingStore?.Get<string>(nameof(AntiMalwareVersion)); }
-            set { BackingStore?.Set(nameof(AntiMalwareVersion), value); }
+            get { return BackingStore?.Get<string>("antiMalwareVersion"); }
+            set { BackingStore?.Set("antiMalwareVersion", value); }
         }
         /// <summary>A flag indicating whether attention is required for the managed device. Optional. Read-only.</summary>
         public bool? AttentionRequired {
-            get { return BackingStore?.Get<bool?>(nameof(AttentionRequired)); }
-            set { BackingStore?.Set(nameof(AttentionRequired), value); }
+            get { return BackingStore?.Get<bool?>("attentionRequired"); }
+            set { BackingStore?.Set("attentionRequired", value); }
         }
         /// <summary>A flag indicating whether the managed device has been deleted. Optional. Read-only.</summary>
         public bool? DeviceDeleted {
-            get { return BackingStore?.Get<bool?>(nameof(DeviceDeleted)); }
-            set { BackingStore?.Set(nameof(DeviceDeleted), value); }
+            get { return BackingStore?.Get<bool?>("deviceDeleted"); }
+            set { BackingStore?.Set("deviceDeleted", value); }
         }
         /// <summary>The date and time the device property has been refreshed. Optional. Read-only.</summary>
         public DateTimeOffset? DevicePropertyRefreshDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DevicePropertyRefreshDateTime)); }
-            set { BackingStore?.Set(nameof(DevicePropertyRefreshDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("devicePropertyRefreshDateTime"); }
+            set { BackingStore?.Set("devicePropertyRefreshDateTime", value); }
         }
         /// <summary>The anti-virus engine version for the managed device. Optional. Read-only.</summary>
         public string EngineVersion {
-            get { return BackingStore?.Get<string>(nameof(EngineVersion)); }
-            set { BackingStore?.Set(nameof(EngineVersion), value); }
+            get { return BackingStore?.Get<string>("engineVersion"); }
+            set { BackingStore?.Set("engineVersion", value); }
         }
         /// <summary>A flag indicating whether quick scan is overdue for the managed device. Optional. Read-only.</summary>
         public bool? FullScanOverdue {
-            get { return BackingStore?.Get<bool?>(nameof(FullScanOverdue)); }
-            set { BackingStore?.Set(nameof(FullScanOverdue), value); }
+            get { return BackingStore?.Get<bool?>("fullScanOverdue"); }
+            set { BackingStore?.Set("fullScanOverdue", value); }
         }
         /// <summary>A flag indicating whether full scan is overdue for the managed device. Optional. Read-only.</summary>
         public bool? FullScanRequired {
-            get { return BackingStore?.Get<bool?>(nameof(FullScanRequired)); }
-            set { BackingStore?.Set(nameof(FullScanRequired), value); }
+            get { return BackingStore?.Get<bool?>("fullScanRequired"); }
+            set { BackingStore?.Set("fullScanRequired", value); }
         }
         /// <summary>The date and time a full scan was completed. Optional. Read-only.</summary>
         public DateTimeOffset? LastFullScanDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastFullScanDateTime)); }
-            set { BackingStore?.Set(nameof(LastFullScanDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastFullScanDateTime"); }
+            set { BackingStore?.Set("lastFullScanDateTime", value); }
         }
         /// <summary>The version anti-malware version used to perform the last full scan. Optional. Read-only.</summary>
         public string LastFullScanSignatureVersion {
-            get { return BackingStore?.Get<string>(nameof(LastFullScanSignatureVersion)); }
-            set { BackingStore?.Set(nameof(LastFullScanSignatureVersion), value); }
+            get { return BackingStore?.Get<string>("lastFullScanSignatureVersion"); }
+            set { BackingStore?.Set("lastFullScanSignatureVersion", value); }
         }
         /// <summary>The date and time a quick scan was completed. Optional. Read-only.</summary>
         public DateTimeOffset? LastQuickScanDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastQuickScanDateTime)); }
-            set { BackingStore?.Set(nameof(LastQuickScanDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastQuickScanDateTime"); }
+            set { BackingStore?.Set("lastQuickScanDateTime", value); }
         }
         /// <summary>The version anti-malware version used to perform the last full scan. Optional. Read-only.</summary>
         public string LastQuickScanSignatureVersion {
-            get { return BackingStore?.Get<string>(nameof(LastQuickScanSignatureVersion)); }
-            set { BackingStore?.Set(nameof(LastQuickScanSignatureVersion), value); }
+            get { return BackingStore?.Get<string>("lastQuickScanSignatureVersion"); }
+            set { BackingStore?.Set("lastQuickScanSignatureVersion", value); }
         }
         /// <summary>Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.</summary>
         public DateTimeOffset? LastRefreshedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastRefreshedDateTime)); }
-            set { BackingStore?.Set(nameof(LastRefreshedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshedDateTime"); }
+            set { BackingStore?.Set("lastRefreshedDateTime", value); }
         }
         /// <summary>The date and time the protection state was last reported for the managed device. Optional. Read-only.</summary>
         public DateTimeOffset? LastReportedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastReportedDateTime)); }
-            set { BackingStore?.Set(nameof(LastReportedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastReportedDateTime"); }
+            set { BackingStore?.Set("lastReportedDateTime", value); }
         }
         /// <summary>A flag indicating whether malware protection is enabled for the managed device. Optional. Read-only.</summary>
         public bool? MalwareProtectionEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(MalwareProtectionEnabled)); }
-            set { BackingStore?.Set(nameof(MalwareProtectionEnabled), value); }
+            get { return BackingStore?.Get<bool?>("malwareProtectionEnabled"); }
+            set { BackingStore?.Set("malwareProtectionEnabled", value); }
         }
         /// <summary>The health state for the managed device. Optional. Read-only.</summary>
         public string ManagedDeviceHealthState {
-            get { return BackingStore?.Get<string>(nameof(ManagedDeviceHealthState)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceHealthState), value); }
+            get { return BackingStore?.Get<string>("managedDeviceHealthState"); }
+            set { BackingStore?.Set("managedDeviceHealthState", value); }
         }
         /// <summary>The unique identifier for the managed device. Optional. Read-only.</summary>
         public string ManagedDeviceId {
-            get { return BackingStore?.Get<string>(nameof(ManagedDeviceId)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceId), value); }
+            get { return BackingStore?.Get<string>("managedDeviceId"); }
+            set { BackingStore?.Set("managedDeviceId", value); }
         }
         /// <summary>The display name for the managed device. Optional. Read-only.</summary>
         public string ManagedDeviceName {
-            get { return BackingStore?.Get<string>(nameof(ManagedDeviceName)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceName), value); }
+            get { return BackingStore?.Get<string>("managedDeviceName"); }
+            set { BackingStore?.Set("managedDeviceName", value); }
         }
         /// <summary>A flag indicating whether the network inspection system is enabled. Optional. Read-only.</summary>
         public bool? NetworkInspectionSystemEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(NetworkInspectionSystemEnabled)); }
-            set { BackingStore?.Set(nameof(NetworkInspectionSystemEnabled), value); }
+            get { return BackingStore?.Get<bool?>("networkInspectionSystemEnabled"); }
+            set { BackingStore?.Set("networkInspectionSystemEnabled", value); }
         }
         /// <summary>A flag indicating weather a quick scan is overdue. Optional. Read-only.</summary>
         public bool? QuickScanOverdue {
-            get { return BackingStore?.Get<bool?>(nameof(QuickScanOverdue)); }
-            set { BackingStore?.Set(nameof(QuickScanOverdue), value); }
+            get { return BackingStore?.Get<bool?>("quickScanOverdue"); }
+            set { BackingStore?.Set("quickScanOverdue", value); }
         }
         /// <summary>A flag indicating whether real time protection is enabled. Optional. Read-only.</summary>
         public bool? RealTimeProtectionEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(RealTimeProtectionEnabled)); }
-            set { BackingStore?.Set(nameof(RealTimeProtectionEnabled), value); }
+            get { return BackingStore?.Get<bool?>("realTimeProtectionEnabled"); }
+            set { BackingStore?.Set("realTimeProtectionEnabled", value); }
         }
         /// <summary>A flag indicating whether a reboot is required. Optional. Read-only.</summary>
         public bool? RebootRequired {
-            get { return BackingStore?.Get<bool?>(nameof(RebootRequired)); }
-            set { BackingStore?.Set(nameof(RebootRequired), value); }
+            get { return BackingStore?.Get<bool?>("rebootRequired"); }
+            set { BackingStore?.Set("rebootRequired", value); }
         }
         /// <summary>A flag indicating whether an signature update is overdue. Optional. Read-only.</summary>
         public bool? SignatureUpdateOverdue {
-            get { return BackingStore?.Get<bool?>(nameof(SignatureUpdateOverdue)); }
-            set { BackingStore?.Set(nameof(SignatureUpdateOverdue), value); }
+            get { return BackingStore?.Get<bool?>("signatureUpdateOverdue"); }
+            set { BackingStore?.Set("signatureUpdateOverdue", value); }
         }
         /// <summary>The signature version for the managed device. Optional. Read-only.</summary>
         public string SignatureVersion {
-            get { return BackingStore?.Get<string>(nameof(SignatureVersion)); }
-            set { BackingStore?.Set(nameof(SignatureVersion), value); }
+            get { return BackingStore?.Get<string>("signatureVersion"); }
+            set { BackingStore?.Set("signatureVersion", value); }
         }
         /// <summary>The display name for the managed tenant. Optional. Read-only.</summary>
         public string TenantDisplayName {
-            get { return BackingStore?.Get<string>(nameof(TenantDisplayName)); }
-            set { BackingStore?.Set(nameof(TenantDisplayName), value); }
+            get { return BackingStore?.Get<string>("tenantDisplayName"); }
+            set { BackingStore?.Set("tenantDisplayName", value); }
         }
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

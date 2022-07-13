@@ -5,12 +5,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class DirectoryObject : Entity, IParsable {
         /// <summary>Date and time when this object was deleted. Always null when the object hasn&apos;t been deleted.</summary>
         public DateTimeOffset? DeletedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DeletedDateTime)); }
-            set { BackingStore?.Set(nameof(DeletedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("deletedDateTime"); }
+            set { BackingStore?.Set("deletedDateTime", value); }
+        }
+        /// <summary>
+        /// Instantiates a new directoryObject and sets the default values.
+        /// </summary>
+        public DirectoryObject() : base() {
+            Type = "#microsoft.graph.directoryObject";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

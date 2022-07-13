@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
-    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class DeploymentAudience : Entity, IParsable {
         /// <summary>Specifies the assets to exclude from the audience.</summary>
         public List<UpdatableAsset> Exclusions {
-            get { return BackingStore?.Get<List<UpdatableAsset>>(nameof(Exclusions)); }
-            set { BackingStore?.Set(nameof(Exclusions), value); }
+            get { return BackingStore?.Get<List<UpdatableAsset>>("exclusions"); }
+            set { BackingStore?.Set("exclusions", value); }
         }
         /// <summary>Specifies the assets to include in the audience.</summary>
         public List<UpdatableAsset> Members {
-            get { return BackingStore?.Get<List<UpdatableAsset>>(nameof(Members)); }
-            set { BackingStore?.Set(nameof(Members), value); }
+            get { return BackingStore?.Get<List<UpdatableAsset>>("members"); }
+            set { BackingStore?.Set("members", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

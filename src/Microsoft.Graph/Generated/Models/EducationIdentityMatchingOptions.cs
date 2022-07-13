@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationIdentityMatchingOptions : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The user role type to assign to the license. Possible values are: student, teacher, faculty.</summary>
+        /// <summary>The appliesTo property</summary>
         public EducationUserRole? AppliesTo {
-            get { return BackingStore?.Get<EducationUserRole?>(nameof(AppliesTo)); }
-            set { BackingStore?.Set(nameof(AppliesTo), value); }
+            get { return BackingStore?.Get<EducationUserRole?>("appliesTo"); }
+            set { BackingStore?.Set("appliesTo", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The name of the source property, which should be a field name in the source data. This property is case-sensitive.</summary>
         public string SourcePropertyName {
-            get { return BackingStore?.Get<string>(nameof(SourcePropertyName)); }
-            set { BackingStore?.Set(nameof(SourcePropertyName), value); }
+            get { return BackingStore?.Get<string>("sourcePropertyName"); }
+            set { BackingStore?.Set("sourcePropertyName", value); }
         }
         /// <summary>The domain to suffix with the source property to match on the target. If provided as null, the source property will be used to match with the target property.</summary>
         public string TargetDomain {
-            get { return BackingStore?.Get<string>(nameof(TargetDomain)); }
-            set { BackingStore?.Set(nameof(TargetDomain), value); }
+            get { return BackingStore?.Get<string>("targetDomain"); }
+            set { BackingStore?.Set("targetDomain", value); }
         }
         /// <summary>The name of the target property, which should be a valid property in Azure AD. This property is case-sensitive.</summary>
         public string TargetPropertyName {
-            get { return BackingStore?.Get<string>(nameof(TargetPropertyName)); }
-            set { BackingStore?.Set(nameof(TargetPropertyName), value); }
+            get { return BackingStore?.Get<string>("targetPropertyName"); }
+            set { BackingStore?.Set("targetPropertyName", value); }
         }
         /// <summary>
         /// Instantiates a new educationIdentityMatchingOptions and sets the default values.

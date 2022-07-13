@@ -4,27 +4,26 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class PrivilegedRole : Entity, IParsable {
         /// <summary>The assignments for this role. Read-only. Nullable.</summary>
         public List<PrivilegedRoleAssignment> Assignments {
-            get { return BackingStore?.Get<List<PrivilegedRoleAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<PrivilegedRoleAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>Role name.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The settings for this role. Read-only. Nullable.</summary>
         public PrivilegedRoleSettings Settings {
-            get { return BackingStore?.Get<PrivilegedRoleSettings>(nameof(Settings)); }
-            set { BackingStore?.Set(nameof(Settings), value); }
+            get { return BackingStore?.Get<PrivilegedRoleSettings>("settings"); }
+            set { BackingStore?.Set("settings", value); }
         }
         /// <summary>The summary information for this role. Read-only. Nullable.</summary>
         public PrivilegedRoleSummary Summary {
-            get { return BackingStore?.Get<PrivilegedRoleSummary>(nameof(Summary)); }
-            set { BackingStore?.Set(nameof(Summary), value); }
+            get { return BackingStore?.Get<PrivilegedRoleSummary>("summary"); }
+            set { BackingStore?.Set("summary", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

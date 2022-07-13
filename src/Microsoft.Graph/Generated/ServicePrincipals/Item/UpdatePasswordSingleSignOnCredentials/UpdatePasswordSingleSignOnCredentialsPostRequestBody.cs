@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.UpdatePasswordSingleSignOn
     public class UpdatePasswordSingleSignOnCredentialsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The credentials property</summary>
         public List<Credential> Credentials {
-            get { return BackingStore?.Get<List<Credential>>(nameof(Credentials)); }
-            set { BackingStore?.Set(nameof(Credentials), value); }
+            get { return BackingStore?.Get<List<Credential>>("credentials"); }
+            set { BackingStore?.Set("credentials", value); }
         }
         /// <summary>The id property</summary>
         public string Id {
-            get { return BackingStore?.Get<string>(nameof(Id)); }
-            set { BackingStore?.Set(nameof(Id), value); }
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
         }
         /// <summary>
         /// Instantiates a new updatePasswordSingleSignOnCredentialsPostRequestBody and sets the default values.

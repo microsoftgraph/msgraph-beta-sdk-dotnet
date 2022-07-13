@@ -7,43 +7,43 @@ namespace Microsoft.Graph.Beta.Models {
     public class OpenIdConnectIdentityProvider : IdentityProviderBase, IParsable {
         /// <summary>After the OIDC provider sends an ID token back to Azure AD, Azure AD needs to be able to map the claims from the received token to the claims that Azure AD recognizes and uses. This complex type captures that mapping. Required.</summary>
         public Microsoft.Graph.Beta.Models.ClaimsMapping ClaimsMapping {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ClaimsMapping>(nameof(ClaimsMapping)); }
-            set { BackingStore?.Set(nameof(ClaimsMapping), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ClaimsMapping>("claimsMapping"); }
+            set { BackingStore?.Set("claimsMapping", value); }
         }
         /// <summary>The client identifier for the application obtained when registering the application with the identity provider. Required.</summary>
         public string ClientId {
-            get { return BackingStore?.Get<string>(nameof(ClientId)); }
-            set { BackingStore?.Set(nameof(ClientId), value); }
+            get { return BackingStore?.Get<string>("clientId"); }
+            set { BackingStore?.Set("clientId", value); }
         }
         /// <summary>The client secret for the application obtained when registering the application with the identity provider. The clientSecret has a dependency on responseType. When responseType is code, a secret is required for the auth code exchange.When responseType is id_token the secret is not required because there is no code exchange. The id_token is returned directly from the authorization response. This is write-only. A read operation returns ****.</summary>
         public string ClientSecret {
-            get { return BackingStore?.Get<string>(nameof(ClientSecret)); }
-            set { BackingStore?.Set(nameof(ClientSecret), value); }
+            get { return BackingStore?.Get<string>("clientSecret"); }
+            set { BackingStore?.Set("clientSecret", value); }
         }
         /// <summary>The domain hint can be used to skip directly to the sign-in page of the specified identity provider, instead of having the user make a selection among the list of available identity providers.</summary>
         public string DomainHint {
-            get { return BackingStore?.Get<string>(nameof(DomainHint)); }
-            set { BackingStore?.Set(nameof(DomainHint), value); }
+            get { return BackingStore?.Get<string>("domainHint"); }
+            set { BackingStore?.Set("domainHint", value); }
         }
         /// <summary>The URL for the metadata document of the OpenID Connect identity provider. Every OpenID Connect identity provider describes a metadata document that contains most of the information required to perform sign-in. This includes information such as the URLs to use and the location of the service&apos;s public signing keys. The OpenID Connect metadata document is always located at an endpoint that ends in .well-known/openid-configuration. Provide the metadata URL for the OpenID Connect identity provider you add. Read-only. Required.</summary>
         public string MetadataUrl {
-            get { return BackingStore?.Get<string>(nameof(MetadataUrl)); }
-            set { BackingStore?.Set(nameof(MetadataUrl), value); }
+            get { return BackingStore?.Get<string>("metadataUrl"); }
+            set { BackingStore?.Set("metadataUrl", value); }
         }
-        /// <summary>The response mode defines the method used to send data back from the custom identity provider to Azure AD B2C. Possible values: form_post, query. Required.</summary>
+        /// <summary>The responseMode property</summary>
         public OpenIdConnectResponseMode? ResponseMode {
-            get { return BackingStore?.Get<OpenIdConnectResponseMode?>(nameof(ResponseMode)); }
-            set { BackingStore?.Set(nameof(ResponseMode), value); }
+            get { return BackingStore?.Get<OpenIdConnectResponseMode?>("responseMode"); }
+            set { BackingStore?.Set("responseMode", value); }
         }
-        /// <summary>The response type describes the type of information sent back in the initial call to the authorization_endpoint of the custom identity provider. Possible values: code , id_token , token.  Required.</summary>
+        /// <summary>The responseType property</summary>
         public OpenIdConnectResponseTypes? ResponseType {
-            get { return BackingStore?.Get<OpenIdConnectResponseTypes?>(nameof(ResponseType)); }
-            set { BackingStore?.Set(nameof(ResponseType), value); }
+            get { return BackingStore?.Get<OpenIdConnectResponseTypes?>("responseType"); }
+            set { BackingStore?.Set("responseType", value); }
         }
         /// <summary>Scope defines the information and permissions you are looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users are not able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended, separated by a space. For more details about the scope limitations see RFC6749 Section 3.3. Required.</summary>
         public string Scope {
-            get { return BackingStore?.Get<string>(nameof(Scope)); }
-            set { BackingStore?.Set(nameof(Scope), value); }
+            get { return BackingStore?.Get<string>("scope"); }
+            set { BackingStore?.Set("scope", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

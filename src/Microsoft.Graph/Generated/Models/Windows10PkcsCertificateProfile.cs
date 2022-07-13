@@ -7,48 +7,48 @@ namespace Microsoft.Graph.Beta.Models {
     public class Windows10PkcsCertificateProfile : Windows10CertificateProfileBase, IParsable {
         /// <summary>Target store certificate. Possible values are: user, machine.</summary>
         public Microsoft.Graph.Beta.Models.CertificateStore? CertificateStore {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateStore?>(nameof(CertificateStore)); }
-            set { BackingStore?.Set(nameof(CertificateStore), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateStore?>("certificateStore"); }
+            set { BackingStore?.Set("certificateStore", value); }
         }
         /// <summary>PKCS Certificate Template Name</summary>
         public string CertificateTemplateName {
-            get { return BackingStore?.Get<string>(nameof(CertificateTemplateName)); }
-            set { BackingStore?.Set(nameof(CertificateTemplateName), value); }
+            get { return BackingStore?.Get<string>("certificateTemplateName"); }
+            set { BackingStore?.Set("certificateTemplateName", value); }
         }
         /// <summary>PKCS Certification Authority</summary>
         public string CertificationAuthority {
-            get { return BackingStore?.Get<string>(nameof(CertificationAuthority)); }
-            set { BackingStore?.Set(nameof(CertificationAuthority), value); }
+            get { return BackingStore?.Get<string>("certificationAuthority"); }
+            set { BackingStore?.Set("certificationAuthority", value); }
         }
         /// <summary>PKCS Certification Authority Name</summary>
         public string CertificationAuthorityName {
-            get { return BackingStore?.Get<string>(nameof(CertificationAuthorityName)); }
-            set { BackingStore?.Set(nameof(CertificationAuthorityName), value); }
+            get { return BackingStore?.Get<string>("certificationAuthorityName"); }
+            set { BackingStore?.Set("certificationAuthorityName", value); }
         }
         /// <summary>Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.</summary>
         public List<CustomSubjectAlternativeName> CustomSubjectAlternativeNames {
-            get { return BackingStore?.Get<List<CustomSubjectAlternativeName>>(nameof(CustomSubjectAlternativeNames)); }
-            set { BackingStore?.Set(nameof(CustomSubjectAlternativeNames), value); }
+            get { return BackingStore?.Get<List<CustomSubjectAlternativeName>>("customSubjectAlternativeNames"); }
+            set { BackingStore?.Set("customSubjectAlternativeNames", value); }
         }
         /// <summary>Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.</summary>
         public List<ExtendedKeyUsage> ExtendedKeyUsages {
-            get { return BackingStore?.Get<List<ExtendedKeyUsage>>(nameof(ExtendedKeyUsages)); }
-            set { BackingStore?.Set(nameof(ExtendedKeyUsages), value); }
+            get { return BackingStore?.Get<List<ExtendedKeyUsage>>("extendedKeyUsages"); }
+            set { BackingStore?.Set("extendedKeyUsages", value); }
         }
         /// <summary>Certificate state for devices. This collection can contain a maximum of 2147483647 elements.</summary>
         public List<ManagedDeviceCertificateState> ManagedDeviceCertificateStates {
-            get { return BackingStore?.Get<List<ManagedDeviceCertificateState>>(nameof(ManagedDeviceCertificateStates)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceCertificateStates), value); }
+            get { return BackingStore?.Get<List<ManagedDeviceCertificateState>>("managedDeviceCertificateStates"); }
+            set { BackingStore?.Set("managedDeviceCertificateStates", value); }
         }
         /// <summary>Custom String that defines the AAD Attribute.</summary>
         public string SubjectAlternativeNameFormatString {
-            get { return BackingStore?.Get<string>(nameof(SubjectAlternativeNameFormatString)); }
-            set { BackingStore?.Set(nameof(SubjectAlternativeNameFormatString), value); }
+            get { return BackingStore?.Get<string>("subjectAlternativeNameFormatString"); }
+            set { BackingStore?.Set("subjectAlternativeNameFormatString", value); }
         }
         /// <summary>Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US</summary>
         public string SubjectNameFormatString {
-            get { return BackingStore?.Get<string>(nameof(SubjectNameFormatString)); }
-            set { BackingStore?.Set(nameof(SubjectNameFormatString), value); }
+            get { return BackingStore?.Get<string>("subjectNameFormatString"); }
+            set { BackingStore?.Set("subjectNameFormatString", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

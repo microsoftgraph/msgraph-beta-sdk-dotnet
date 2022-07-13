@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class FileClassificationRequest : Entity, IParsable {
         /// <summary>The file property</summary>
         public byte[] FileObject {
-            get { return BackingStore?.Get<byte[]>(nameof(FileObject)); }
-            set { BackingStore?.Set(nameof(FileObject), value); }
+            get { return BackingStore?.Get<byte[]>("file"); }
+            set { BackingStore?.Set("file", value); }
         }
         /// <summary>The sensitiveTypeIds property</summary>
         public List<string> SensitiveTypeIds {
-            get { return BackingStore?.Get<List<string>>(nameof(SensitiveTypeIds)); }
-            set { BackingStore?.Set(nameof(SensitiveTypeIds), value); }
+            get { return BackingStore?.Get<List<string>>("sensitiveTypeIds"); }
+            set { BackingStore?.Set("sensitiveTypeIds", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

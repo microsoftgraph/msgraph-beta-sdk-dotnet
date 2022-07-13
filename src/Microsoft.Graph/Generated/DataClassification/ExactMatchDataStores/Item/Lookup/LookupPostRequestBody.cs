@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Look
     public class LookupPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The key property</summary>
         public string Key {
-            get { return BackingStore?.Get<string>(nameof(Key)); }
-            set { BackingStore?.Set(nameof(Key), value); }
+            get { return BackingStore?.Get<string>("key"); }
+            set { BackingStore?.Set("key", value); }
         }
         /// <summary>The resultColumnNames property</summary>
         public List<string> ResultColumnNames {
-            get { return BackingStore?.Get<List<string>>(nameof(ResultColumnNames)); }
-            set { BackingStore?.Set(nameof(ResultColumnNames), value); }
+            get { return BackingStore?.Get<List<string>>("resultColumnNames"); }
+            set { BackingStore?.Set("resultColumnNames", value); }
         }
         /// <summary>The values property</summary>
         public List<string> Values {
-            get { return BackingStore?.Get<List<string>>(nameof(Values)); }
-            set { BackingStore?.Set(nameof(Values), value); }
+            get { return BackingStore?.Get<List<string>>("values"); }
+            set { BackingStore?.Set("values", value); }
         }
         /// <summary>
         /// Instantiates a new lookupPostRequestBody and sets the default values.

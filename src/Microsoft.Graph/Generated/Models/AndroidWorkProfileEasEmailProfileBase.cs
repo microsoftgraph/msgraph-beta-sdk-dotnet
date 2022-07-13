@@ -6,40 +6,46 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidWorkProfileEasEmailProfileBase : DeviceConfiguration, IParsable {
-        /// <summary>Authentication method for Exchange ActiveSync. Possible values are: usernameAndPassword, certificate, derivedCredential.</summary>
+        /// <summary>Exchange Active Sync authentication method.</summary>
         public EasAuthenticationMethod? AuthenticationMethod {
-            get { return BackingStore?.Get<EasAuthenticationMethod?>(nameof(AuthenticationMethod)); }
-            set { BackingStore?.Set(nameof(AuthenticationMethod), value); }
+            get { return BackingStore?.Get<EasAuthenticationMethod?>("authenticationMethod"); }
+            set { BackingStore?.Set("authenticationMethod", value); }
         }
-        /// <summary>Duration of time email should be synced to. Possible values are: userDefined, oneDay, threeDays, oneWeek, twoWeeks, oneMonth, unlimited.</summary>
+        /// <summary>Possible values for email sync duration.</summary>
         public EmailSyncDuration? DurationOfEmailToSync {
-            get { return BackingStore?.Get<EmailSyncDuration?>(nameof(DurationOfEmailToSync)); }
-            set { BackingStore?.Set(nameof(DurationOfEmailToSync), value); }
+            get { return BackingStore?.Get<EmailSyncDuration?>("durationOfEmailToSync"); }
+            set { BackingStore?.Set("durationOfEmailToSync", value); }
         }
-        /// <summary>Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.</summary>
+        /// <summary>Possible values for username source or email source.</summary>
         public UserEmailSource? EmailAddressSource {
-            get { return BackingStore?.Get<UserEmailSource?>(nameof(EmailAddressSource)); }
-            set { BackingStore?.Set(nameof(EmailAddressSource), value); }
+            get { return BackingStore?.Get<UserEmailSource?>("emailAddressSource"); }
+            set { BackingStore?.Set("emailAddressSource", value); }
         }
         /// <summary>Exchange location (URL) that the mail app connects to.</summary>
         public string HostName {
-            get { return BackingStore?.Get<string>(nameof(HostName)); }
-            set { BackingStore?.Set(nameof(HostName), value); }
+            get { return BackingStore?.Get<string>("hostName"); }
+            set { BackingStore?.Set("hostName", value); }
         }
         /// <summary>Identity certificate.</summary>
         public AndroidWorkProfileCertificateProfileBase IdentityCertificate {
-            get { return BackingStore?.Get<AndroidWorkProfileCertificateProfileBase>(nameof(IdentityCertificate)); }
-            set { BackingStore?.Set(nameof(IdentityCertificate), value); }
+            get { return BackingStore?.Get<AndroidWorkProfileCertificateProfileBase>("identityCertificate"); }
+            set { BackingStore?.Set("identityCertificate", value); }
         }
         /// <summary>Indicates whether or not to use SSL.</summary>
         public bool? RequireSsl {
-            get { return BackingStore?.Get<bool?>(nameof(RequireSsl)); }
-            set { BackingStore?.Set(nameof(RequireSsl), value); }
+            get { return BackingStore?.Get<bool?>("requireSsl"); }
+            set { BackingStore?.Set("requireSsl", value); }
         }
-        /// <summary>Username attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: username, userPrincipalName, samAccountName, primarySmtpAddress.</summary>
+        /// <summary>Android username source.</summary>
         public AndroidUsernameSource? UsernameSource {
-            get { return BackingStore?.Get<AndroidUsernameSource?>(nameof(UsernameSource)); }
-            set { BackingStore?.Set(nameof(UsernameSource), value); }
+            get { return BackingStore?.Get<AndroidUsernameSource?>("usernameSource"); }
+            set { BackingStore?.Set("usernameSource", value); }
+        }
+        /// <summary>
+        /// Instantiates a new AndroidWorkProfileEasEmailProfileBase and sets the default values.
+        /// </summary>
+        public AndroidWorkProfileEasEmailProfileBase() : base() {
+            Type = "#microsoft.graph.androidWorkProfileEasEmailProfileBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

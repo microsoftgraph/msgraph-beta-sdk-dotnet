@@ -7,58 +7,58 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceOwnerVpnConfiguration : VpnConfiguration, IParsable {
         /// <summary>Whether or not to enable always-on VPN connection.</summary>
         public bool? AlwaysOn {
-            get { return BackingStore?.Get<bool?>(nameof(AlwaysOn)); }
-            set { BackingStore?.Set(nameof(AlwaysOn), value); }
+            get { return BackingStore?.Get<bool?>("alwaysOn"); }
+            set { BackingStore?.Set("alwaysOn", value); }
         }
         /// <summary>If always-on VPN connection is enabled, whether or not to lock network traffic when that VPN is disconnected.</summary>
         public bool? AlwaysOnLockdown {
-            get { return BackingStore?.Get<bool?>(nameof(AlwaysOnLockdown)); }
-            set { BackingStore?.Set(nameof(AlwaysOnLockdown), value); }
+            get { return BackingStore?.Get<bool?>("alwaysOnLockdown"); }
+            set { BackingStore?.Set("alwaysOnLockdown", value); }
         }
-        /// <summary>Connection type. Possible values are: ciscoAnyConnect, pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn, citrix, microsoftTunnel, netMotionMobility, microsoftProtect.</summary>
+        /// <summary>Android VPN connection type.</summary>
         public AndroidVpnConnectionType? ConnectionType {
-            get { return BackingStore?.Get<AndroidVpnConnectionType?>(nameof(ConnectionType)); }
-            set { BackingStore?.Set(nameof(ConnectionType), value); }
+            get { return BackingStore?.Get<AndroidVpnConnectionType?>("connectionType"); }
+            set { BackingStore?.Set("connectionType", value); }
         }
         /// <summary>Custom data to define key/value pairs specific to a VPN provider. This collection can contain a maximum of 25 elements.</summary>
         public List<KeyValue> CustomData {
-            get { return BackingStore?.Get<List<KeyValue>>(nameof(CustomData)); }
-            set { BackingStore?.Set(nameof(CustomData), value); }
+            get { return BackingStore?.Get<List<KeyValue>>("customData"); }
+            set { BackingStore?.Set("customData", value); }
         }
         /// <summary>Custom data to define key/value pairs specific to a VPN provider. This collection can contain a maximum of 25 elements.</summary>
         public List<KeyValuePair> CustomKeyValueData {
-            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(CustomKeyValueData)); }
-            set { BackingStore?.Set(nameof(CustomKeyValueData), value); }
+            get { return BackingStore?.Get<List<KeyValuePair>>("customKeyValueData"); }
+            set { BackingStore?.Set("customKeyValueData", value); }
         }
         /// <summary>Tenant level settings for the Derived Credentials to be used for authentication.</summary>
         public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings {
-            get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings>(nameof(DerivedCredentialSettings)); }
-            set { BackingStore?.Set(nameof(DerivedCredentialSettings), value); }
+            get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings"); }
+            set { BackingStore?.Set("derivedCredentialSettings", value); }
         }
         /// <summary>Identity certificate for client authentication when authentication method is certificate.</summary>
         public AndroidDeviceOwnerCertificateProfileBase IdentityCertificate {
-            get { return BackingStore?.Get<AndroidDeviceOwnerCertificateProfileBase>(nameof(IdentityCertificate)); }
-            set { BackingStore?.Set(nameof(IdentityCertificate), value); }
+            get { return BackingStore?.Get<AndroidDeviceOwnerCertificateProfileBase>("identityCertificate"); }
+            set { BackingStore?.Set("identityCertificate", value); }
         }
         /// <summary>Microsoft Tunnel site ID.</summary>
         public string MicrosoftTunnelSiteId {
-            get { return BackingStore?.Get<string>(nameof(MicrosoftTunnelSiteId)); }
-            set { BackingStore?.Set(nameof(MicrosoftTunnelSiteId), value); }
+            get { return BackingStore?.Get<string>("microsoftTunnelSiteId"); }
+            set { BackingStore?.Set("microsoftTunnelSiteId", value); }
         }
         /// <summary>Proxy server.</summary>
         public VpnProxyServer ProxyServer {
-            get { return BackingStore?.Get<VpnProxyServer>(nameof(ProxyServer)); }
-            set { BackingStore?.Set(nameof(ProxyServer), value); }
+            get { return BackingStore?.Get<VpnProxyServer>("proxyServer"); }
+            set { BackingStore?.Set("proxyServer", value); }
         }
         /// <summary>Targeted mobile apps. This collection can contain a maximum of 500 elements.</summary>
         public List<AppListItem> TargetedMobileApps {
-            get { return BackingStore?.Get<List<AppListItem>>(nameof(TargetedMobileApps)); }
-            set { BackingStore?.Set(nameof(TargetedMobileApps), value); }
+            get { return BackingStore?.Get<List<AppListItem>>("targetedMobileApps"); }
+            set { BackingStore?.Set("targetedMobileApps", value); }
         }
         /// <summary>Targeted App package IDs.</summary>
         public List<string> TargetedPackageIds {
-            get { return BackingStore?.Get<List<string>>(nameof(TargetedPackageIds)); }
-            set { BackingStore?.Set(nameof(TargetedPackageIds), value); }
+            get { return BackingStore?.Get<List<string>>("targetedPackageIds"); }
+            set { BackingStore?.Set("targetedPackageIds", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -6,40 +6,46 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AospDeviceOwnerCertificateProfileBase : DeviceConfiguration, IParsable {
-        /// <summary>Scale for the Certificate Validity Period. Possible values are: days, months, years.</summary>
+        /// <summary>Certificate Validity Period Options.</summary>
         public Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale? CertificateValidityPeriodScale {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale?>(nameof(CertificateValidityPeriodScale)); }
-            set { BackingStore?.Set(nameof(CertificateValidityPeriodScale), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale?>("certificateValidityPeriodScale"); }
+            set { BackingStore?.Set("certificateValidityPeriodScale", value); }
         }
         /// <summary>Value for the Certificate Validity Period.</summary>
         public int? CertificateValidityPeriodValue {
-            get { return BackingStore?.Get<int?>(nameof(CertificateValidityPeriodValue)); }
-            set { BackingStore?.Set(nameof(CertificateValidityPeriodValue), value); }
+            get { return BackingStore?.Get<int?>("certificateValidityPeriodValue"); }
+            set { BackingStore?.Set("certificateValidityPeriodValue", value); }
         }
         /// <summary>Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.</summary>
         public List<ExtendedKeyUsage> ExtendedKeyUsages {
-            get { return BackingStore?.Get<List<ExtendedKeyUsage>>(nameof(ExtendedKeyUsages)); }
-            set { BackingStore?.Set(nameof(ExtendedKeyUsages), value); }
+            get { return BackingStore?.Get<List<ExtendedKeyUsage>>("extendedKeyUsages"); }
+            set { BackingStore?.Set("extendedKeyUsages", value); }
         }
         /// <summary>Certificate renewal threshold percentage. Valid values 1 to 99</summary>
         public int? RenewalThresholdPercentage {
-            get { return BackingStore?.Get<int?>(nameof(RenewalThresholdPercentage)); }
-            set { BackingStore?.Set(nameof(RenewalThresholdPercentage), value); }
+            get { return BackingStore?.Get<int?>("renewalThresholdPercentage"); }
+            set { BackingStore?.Set("renewalThresholdPercentage", value); }
         }
         /// <summary>Trusted Root Certificate.</summary>
         public AospDeviceOwnerTrustedRootCertificate RootCertificate {
-            get { return BackingStore?.Get<AospDeviceOwnerTrustedRootCertificate>(nameof(RootCertificate)); }
-            set { BackingStore?.Set(nameof(RootCertificate), value); }
+            get { return BackingStore?.Get<AospDeviceOwnerTrustedRootCertificate>("rootCertificate"); }
+            set { BackingStore?.Set("rootCertificate", value); }
         }
         /// <summary>Certificate Subject Alternative Name Type. This collection can contain a maximum of 500 elements. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.</summary>
         public Microsoft.Graph.Beta.Models.SubjectAlternativeNameType? SubjectAlternativeNameType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SubjectAlternativeNameType?>(nameof(SubjectAlternativeNameType)); }
-            set { BackingStore?.Set(nameof(SubjectAlternativeNameType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SubjectAlternativeNameType?>("subjectAlternativeNameType"); }
+            set { BackingStore?.Set("subjectAlternativeNameType", value); }
         }
         /// <summary>Certificate Subject Name Format. This collection can contain a maximum of 500 elements. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.</summary>
         public Microsoft.Graph.Beta.Models.SubjectNameFormat? SubjectNameFormat {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SubjectNameFormat?>(nameof(SubjectNameFormat)); }
-            set { BackingStore?.Set(nameof(SubjectNameFormat), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SubjectNameFormat?>("subjectNameFormat"); }
+            set { BackingStore?.Set("subjectNameFormat", value); }
+        }
+        /// <summary>
+        /// Instantiates a new AospDeviceOwnerCertificateProfileBase and sets the default values.
+        /// </summary>
+        public AospDeviceOwnerCertificateProfileBase() : base() {
+            Type = "#microsoft.graph.aospDeviceOwnerCertificateProfileBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

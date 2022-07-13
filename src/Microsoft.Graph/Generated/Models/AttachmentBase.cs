@@ -5,27 +5,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AttachmentBase : Entity, IParsable {
-        /// <summary>The contentType property</summary>
+        /// <summary>The MIME type.</summary>
         public string ContentType {
-            get { return BackingStore?.Get<string>(nameof(ContentType)); }
-            set { BackingStore?.Set(nameof(ContentType), value); }
+            get { return BackingStore?.Get<string>("contentType"); }
+            set { BackingStore?.Set("contentType", value); }
         }
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The name property</summary>
+        /// <summary>The display name of the attachment. This does not need to be the actual file name.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
-        /// <summary>The size property</summary>
+        /// <summary>The length of the attachment in bytes.</summary>
         public int? Size {
-            get { return BackingStore?.Get<int?>(nameof(Size)); }
-            set { BackingStore?.Set(nameof(Size), value); }
+            get { return BackingStore?.Get<int?>("size"); }
+            set { BackingStore?.Set("size", value); }
+        }
+        /// <summary>
+        /// Instantiates a new attachmentBase and sets the default values.
+        /// </summary>
+        public AttachmentBase() : base() {
+            Type = "#microsoft.graph.attachmentBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

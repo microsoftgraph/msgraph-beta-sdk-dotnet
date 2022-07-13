@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class Win32LobAppRestartSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of minutes before the restart time to display the countdown dialog for pending restarts.</summary>
         public int? CountdownDisplayBeforeRestartInMinutes {
-            get { return BackingStore?.Get<int?>(nameof(CountdownDisplayBeforeRestartInMinutes)); }
-            set { BackingStore?.Set(nameof(CountdownDisplayBeforeRestartInMinutes), value); }
+            get { return BackingStore?.Get<int?>("countdownDisplayBeforeRestartInMinutes"); }
+            set { BackingStore?.Set("countdownDisplayBeforeRestartInMinutes", value); }
         }
         /// <summary>The number of minutes to wait before restarting the device after an app installation.</summary>
         public int? GracePeriodInMinutes {
-            get { return BackingStore?.Get<int?>(nameof(GracePeriodInMinutes)); }
-            set { BackingStore?.Set(nameof(GracePeriodInMinutes), value); }
+            get { return BackingStore?.Get<int?>("gracePeriodInMinutes"); }
+            set { BackingStore?.Set("gracePeriodInMinutes", value); }
         }
         /// <summary>The number of minutes to snooze the restart notification dialog when the snooze button is selected.</summary>
         public int? RestartNotificationSnoozeDurationInMinutes {
-            get { return BackingStore?.Get<int?>(nameof(RestartNotificationSnoozeDurationInMinutes)); }
-            set { BackingStore?.Set(nameof(RestartNotificationSnoozeDurationInMinutes), value); }
+            get { return BackingStore?.Get<int?>("restartNotificationSnoozeDurationInMinutes"); }
+            set { BackingStore?.Set("restartNotificationSnoozeDurationInMinutes", value); }
         }
         /// <summary>
         /// Instantiates a new win32LobAppRestartSettings and sets the default values.

@@ -7,47 +7,47 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>VPN On-Demand Rule definition.</summary>
     public class VpnOnDemandRule : IAdditionalDataHolder, IBackedModel, IParsable {
-        /// <summary>Action. Possible values are: connect, evaluateConnection, ignore, disconnect.</summary>
+        /// <summary>VPN On-Demand Rule Connection Action.</summary>
         public VpnOnDemandRuleConnectionAction? Action {
-            get { return BackingStore?.Get<VpnOnDemandRuleConnectionAction?>(nameof(Action)); }
-            set { BackingStore?.Set(nameof(Action), value); }
+            get { return BackingStore?.Get<VpnOnDemandRuleConnectionAction?>("action"); }
+            set { BackingStore?.Set("action", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>DNS Search Domains.</summary>
         public List<string> DnsSearchDomains {
-            get { return BackingStore?.Get<List<string>>(nameof(DnsSearchDomains)); }
-            set { BackingStore?.Set(nameof(DnsSearchDomains), value); }
+            get { return BackingStore?.Get<List<string>>("dnsSearchDomains"); }
+            set { BackingStore?.Set("dnsSearchDomains", value); }
         }
-        /// <summary>Domain Action (Only applicable when Action is evaluate connection). Possible values are: connectIfNeeded, neverConnect.</summary>
+        /// <summary>VPN On-Demand Rule Connection Domain Action.</summary>
         public VpnOnDemandRuleConnectionDomainAction? DomainAction {
-            get { return BackingStore?.Get<VpnOnDemandRuleConnectionDomainAction?>(nameof(DomainAction)); }
-            set { BackingStore?.Set(nameof(DomainAction), value); }
+            get { return BackingStore?.Get<VpnOnDemandRuleConnectionDomainAction?>("domainAction"); }
+            set { BackingStore?.Set("domainAction", value); }
         }
         /// <summary>Domains (Only applicable when Action is evaluate connection).</summary>
         public List<string> Domains {
-            get { return BackingStore?.Get<List<string>>(nameof(Domains)); }
-            set { BackingStore?.Set(nameof(Domains), value); }
+            get { return BackingStore?.Get<List<string>>("domains"); }
+            set { BackingStore?.Set("domains", value); }
         }
         /// <summary>Probe Required Url (Only applicable when Action is evaluate connection and DomainAction is connect if needed).</summary>
         public string ProbeRequiredUrl {
-            get { return BackingStore?.Get<string>(nameof(ProbeRequiredUrl)); }
-            set { BackingStore?.Set(nameof(ProbeRequiredUrl), value); }
+            get { return BackingStore?.Get<string>("probeRequiredUrl"); }
+            set { BackingStore?.Set("probeRequiredUrl", value); }
         }
         /// <summary>A URL to probe. If this URL is successfully fetched (returning a 200 HTTP status code) without redirection, this rule matches.</summary>
         public string ProbeUrl {
-            get { return BackingStore?.Get<string>(nameof(ProbeUrl)); }
-            set { BackingStore?.Set(nameof(ProbeUrl), value); }
+            get { return BackingStore?.Get<string>("probeUrl"); }
+            set { BackingStore?.Set("probeUrl", value); }
         }
         /// <summary>Network Service Set Identifiers (SSIDs).</summary>
         public List<string> Ssids {
-            get { return BackingStore?.Get<List<string>>(nameof(Ssids)); }
-            set { BackingStore?.Set(nameof(Ssids), value); }
+            get { return BackingStore?.Get<List<string>>("ssids"); }
+            set { BackingStore?.Set("ssids", value); }
         }
         /// <summary>
         /// Instantiates a new vpnOnDemandRule and sets the default values.

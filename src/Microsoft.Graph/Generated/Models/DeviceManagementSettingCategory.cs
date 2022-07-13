@@ -9,18 +9,24 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementSettingCategory : Entity, IParsable {
         /// <summary>The category name</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The category contains top level required setting</summary>
         public bool? HasRequiredSetting {
-            get { return BackingStore?.Get<bool?>(nameof(HasRequiredSetting)); }
-            set { BackingStore?.Set(nameof(HasRequiredSetting), value); }
+            get { return BackingStore?.Get<bool?>("hasRequiredSetting"); }
+            set { BackingStore?.Set("hasRequiredSetting", value); }
         }
         /// <summary>The setting definitions this category contains</summary>
         public List<DeviceManagementSettingDefinition> SettingDefinitions {
-            get { return BackingStore?.Get<List<DeviceManagementSettingDefinition>>(nameof(SettingDefinitions)); }
-            set { BackingStore?.Set(nameof(SettingDefinitions), value); }
+            get { return BackingStore?.Get<List<DeviceManagementSettingDefinition>>("settingDefinitions"); }
+            set { BackingStore?.Set("settingDefinitions", value); }
+        }
+        /// <summary>
+        /// Instantiates a new deviceManagementSettingCategory and sets the default values.
+        /// </summary>
+        public DeviceManagementSettingCategory() : base() {
+            Type = "#microsoft.graph.deviceManagementSettingCategory";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

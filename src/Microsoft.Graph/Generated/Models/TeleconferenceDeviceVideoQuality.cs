@@ -8,23 +8,29 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeleconferenceDeviceVideoQuality : TeleconferenceDeviceMediaQuality, IParsable {
         /// <summary>The average inbound stream video bit rate per second.</summary>
         public double? AverageInboundBitRate {
-            get { return BackingStore?.Get<double?>(nameof(AverageInboundBitRate)); }
-            set { BackingStore?.Set(nameof(AverageInboundBitRate), value); }
+            get { return BackingStore?.Get<double?>("averageInboundBitRate"); }
+            set { BackingStore?.Set("averageInboundBitRate", value); }
         }
         /// <summary>The average inbound stream video frame rate per second.</summary>
         public double? AverageInboundFrameRate {
-            get { return BackingStore?.Get<double?>(nameof(AverageInboundFrameRate)); }
-            set { BackingStore?.Set(nameof(AverageInboundFrameRate), value); }
+            get { return BackingStore?.Get<double?>("averageInboundFrameRate"); }
+            set { BackingStore?.Set("averageInboundFrameRate", value); }
         }
         /// <summary>The average outbound stream video bit rate per second.</summary>
         public double? AverageOutboundBitRate {
-            get { return BackingStore?.Get<double?>(nameof(AverageOutboundBitRate)); }
-            set { BackingStore?.Set(nameof(AverageOutboundBitRate), value); }
+            get { return BackingStore?.Get<double?>("averageOutboundBitRate"); }
+            set { BackingStore?.Set("averageOutboundBitRate", value); }
         }
         /// <summary>The average outbound stream video frame rate per second.</summary>
         public double? AverageOutboundFrameRate {
-            get { return BackingStore?.Get<double?>(nameof(AverageOutboundFrameRate)); }
-            set { BackingStore?.Set(nameof(AverageOutboundFrameRate), value); }
+            get { return BackingStore?.Get<double?>("averageOutboundFrameRate"); }
+            set { BackingStore?.Set("averageOutboundFrameRate", value); }
+        }
+        /// <summary>
+        /// Instantiates a new TeleconferenceDeviceVideoQuality and sets the default values.
+        /// </summary>
+        public TeleconferenceDeviceVideoQuality() : base() {
+            Type = "#microsoft.graph.teleconferenceDeviceVideoQuality";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

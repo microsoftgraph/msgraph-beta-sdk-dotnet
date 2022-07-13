@@ -8,8 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class MobileAppProvisioningConfigGroupAssignment : Entity, IParsable {
         /// <summary>The ID of the AAD group in which the app provisioning configuration is being targeted.</summary>
         public string TargetGroupId {
-            get { return BackingStore?.Get<string>(nameof(TargetGroupId)); }
-            set { BackingStore?.Set(nameof(TargetGroupId), value); }
+            get { return BackingStore?.Get<string>("targetGroupId"); }
+            set { BackingStore?.Set("targetGroupId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

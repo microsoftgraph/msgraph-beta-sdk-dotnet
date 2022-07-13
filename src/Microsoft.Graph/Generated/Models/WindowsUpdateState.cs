@@ -4,52 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class WindowsUpdateState : Entity, IParsable {
         /// <summary>Device display name.</summary>
         public string DeviceDisplayName {
-            get { return BackingStore?.Get<string>(nameof(DeviceDisplayName)); }
-            set { BackingStore?.Set(nameof(DeviceDisplayName), value); }
+            get { return BackingStore?.Get<string>("deviceDisplayName"); }
+            set { BackingStore?.Set("deviceDisplayName", value); }
         }
         /// <summary>The id of the device.</summary>
         public string DeviceId {
-            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
-            set { BackingStore?.Set(nameof(DeviceId), value); }
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>The current feature update version of the device.</summary>
         public string FeatureUpdateVersion {
-            get { return BackingStore?.Get<string>(nameof(FeatureUpdateVersion)); }
-            set { BackingStore?.Set(nameof(FeatureUpdateVersion), value); }
+            get { return BackingStore?.Get<string>("featureUpdateVersion"); }
+            set { BackingStore?.Set("featureUpdateVersion", value); }
         }
         /// <summary>The date time that the Windows Update Agent did a successful scan.</summary>
         public DateTimeOffset? LastScanDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastScanDateTime)); }
-            set { BackingStore?.Set(nameof(LastScanDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastScanDateTime"); }
+            set { BackingStore?.Set("lastScanDateTime", value); }
         }
         /// <summary>Last date time that the device sync with with Microsoft Intune.</summary>
         public DateTimeOffset? LastSyncDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSyncDateTime)); }
-            set { BackingStore?.Set(nameof(LastSyncDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
+            set { BackingStore?.Set("lastSyncDateTime", value); }
         }
         /// <summary>The Quality Update Version of the device.</summary>
         public string QualityUpdateVersion {
-            get { return BackingStore?.Get<string>(nameof(QualityUpdateVersion)); }
-            set { BackingStore?.Set(nameof(QualityUpdateVersion), value); }
+            get { return BackingStore?.Get<string>("qualityUpdateVersion"); }
+            set { BackingStore?.Set("qualityUpdateVersion", value); }
         }
-        /// <summary>Windows udpate status. Possible values are: upToDate, pendingInstallation, pendingReboot, failed.</summary>
+        /// <summary>Windows update for business configuration device states</summary>
         public WindowsUpdateStatus? Status {
-            get { return BackingStore?.Get<WindowsUpdateStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<WindowsUpdateStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>The id of the user.</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>User principal name.</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

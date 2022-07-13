@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class RoleManagement : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The cloudPC property</summary>
         public RbacApplicationMultiple CloudPC {
-            get { return BackingStore?.Get<RbacApplicationMultiple>(nameof(CloudPC)); }
-            set { BackingStore?.Set(nameof(CloudPC), value); }
+            get { return BackingStore?.Get<RbacApplicationMultiple>("cloudPC"); }
+            set { BackingStore?.Set("cloudPC", value); }
         }
         /// <summary>The RbacApplication for Device Management</summary>
         public RbacApplicationMultiple DeviceManagement {
-            get { return BackingStore?.Get<RbacApplicationMultiple>(nameof(DeviceManagement)); }
-            set { BackingStore?.Set(nameof(DeviceManagement), value); }
+            get { return BackingStore?.Get<RbacApplicationMultiple>("deviceManagement"); }
+            set { BackingStore?.Set("deviceManagement", value); }
         }
         /// <summary>The directory property</summary>
         public RbacApplication DirectoryObject {
-            get { return BackingStore?.Get<RbacApplication>(nameof(DirectoryObject)); }
-            set { BackingStore?.Set(nameof(DirectoryObject), value); }
+            get { return BackingStore?.Get<RbacApplication>("directory"); }
+            set { BackingStore?.Set("directory", value); }
         }
         /// <summary>Container for roles and assignments for entitlement management resources.</summary>
         public RbacApplication EntitlementManagement {
-            get { return BackingStore?.Get<RbacApplication>(nameof(EntitlementManagement)); }
-            set { BackingStore?.Set(nameof(EntitlementManagement), value); }
+            get { return BackingStore?.Get<RbacApplication>("entitlementManagement"); }
+            set { BackingStore?.Set("entitlementManagement", value); }
         }
         /// <summary>
         /// Instantiates a new RoleManagement and sets the default values.

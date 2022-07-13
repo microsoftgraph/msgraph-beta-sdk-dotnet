@@ -9,33 +9,39 @@ namespace Microsoft.Graph.Beta.Models {
     public class SecurityBaselineStateSummary : Entity, IParsable {
         /// <summary>Number of conflict devices</summary>
         public int? ConflictCount {
-            get { return BackingStore?.Get<int?>(nameof(ConflictCount)); }
-            set { BackingStore?.Set(nameof(ConflictCount), value); }
+            get { return BackingStore?.Get<int?>("conflictCount"); }
+            set { BackingStore?.Set("conflictCount", value); }
         }
         /// <summary>Number of error devices</summary>
         public int? ErrorCount {
-            get { return BackingStore?.Get<int?>(nameof(ErrorCount)); }
-            set { BackingStore?.Set(nameof(ErrorCount), value); }
+            get { return BackingStore?.Get<int?>("errorCount"); }
+            set { BackingStore?.Set("errorCount", value); }
         }
         /// <summary>Number of not applicable devices</summary>
         public int? NotApplicableCount {
-            get { return BackingStore?.Get<int?>(nameof(NotApplicableCount)); }
-            set { BackingStore?.Set(nameof(NotApplicableCount), value); }
+            get { return BackingStore?.Get<int?>("notApplicableCount"); }
+            set { BackingStore?.Set("notApplicableCount", value); }
         }
         /// <summary>Number of not secure devices</summary>
         public int? NotSecureCount {
-            get { return BackingStore?.Get<int?>(nameof(NotSecureCount)); }
-            set { BackingStore?.Set(nameof(NotSecureCount), value); }
+            get { return BackingStore?.Get<int?>("notSecureCount"); }
+            set { BackingStore?.Set("notSecureCount", value); }
         }
         /// <summary>Number of secure devices</summary>
         public int? SecureCount {
-            get { return BackingStore?.Get<int?>(nameof(SecureCount)); }
-            set { BackingStore?.Set(nameof(SecureCount), value); }
+            get { return BackingStore?.Get<int?>("secureCount"); }
+            set { BackingStore?.Set("secureCount", value); }
         }
         /// <summary>Number of unknown devices</summary>
         public int? UnknownCount {
-            get { return BackingStore?.Get<int?>(nameof(UnknownCount)); }
-            set { BackingStore?.Set(nameof(UnknownCount), value); }
+            get { return BackingStore?.Get<int?>("unknownCount"); }
+            set { BackingStore?.Set("unknownCount", value); }
+        }
+        /// <summary>
+        /// Instantiates a new securityBaselineStateSummary and sets the default values.
+        /// </summary>
+        public SecurityBaselineStateSummary() : base() {
+            Type = "#microsoft.graph.securityBaselineStateSummary";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

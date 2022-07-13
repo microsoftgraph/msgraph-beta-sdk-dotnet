@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadPkcs12 {
     public class UploadPkcs12PostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The key property</summary>
         public string Key {
-            get { return BackingStore?.Get<string>(nameof(Key)); }
-            set { BackingStore?.Set(nameof(Key), value); }
+            get { return BackingStore?.Get<string>("key"); }
+            set { BackingStore?.Set("key", value); }
         }
         /// <summary>The password property</summary>
         public string Password {
-            get { return BackingStore?.Get<string>(nameof(Password)); }
-            set { BackingStore?.Set(nameof(Password), value); }
+            get { return BackingStore?.Get<string>("password"); }
+            set { BackingStore?.Set("password", value); }
         }
         /// <summary>
         /// Instantiates a new uploadPkcs12PostRequestBody and sets the default values.

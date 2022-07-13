@@ -5,10 +5,10 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TeamsAppSettings : Entity, IParsable {
-        /// <summary>The isChatResourceSpecificConsentEnabled property</summary>
+        /// <summary>Indicates whether resource-specific consent for chats/meetings has been enabled for the tenant. If true, Teams apps that are allowed in the tenant and require resource-specific permissions can be installed inside chats and meetings. If false, the installation of any Teams app that requires resource-specific permissions in a chat or a meeting will be blocked.</summary>
         public bool? IsChatResourceSpecificConsentEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsChatResourceSpecificConsentEnabled)); }
-            set { BackingStore?.Set(nameof(IsChatResourceSpecificConsentEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isChatResourceSpecificConsentEnabled"); }
+            set { BackingStore?.Set("isChatResourceSpecificConsentEnabled", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

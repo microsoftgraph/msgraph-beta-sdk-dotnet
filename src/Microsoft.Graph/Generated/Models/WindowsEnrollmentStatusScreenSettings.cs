@@ -9,45 +9,45 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsEnrollmentStatusScreenSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Allow or block user to use device before profile and app installation complete</summary>
         public bool? AllowDeviceUseBeforeProfileAndAppInstallComplete {
-            get { return BackingStore?.Get<bool?>(nameof(AllowDeviceUseBeforeProfileAndAppInstallComplete)); }
-            set { BackingStore?.Set(nameof(AllowDeviceUseBeforeProfileAndAppInstallComplete), value); }
+            get { return BackingStore?.Get<bool?>("allowDeviceUseBeforeProfileAndAppInstallComplete"); }
+            set { BackingStore?.Set("allowDeviceUseBeforeProfileAndAppInstallComplete", value); }
         }
         /// <summary>Allow the user to continue using the device on installation failure</summary>
         public bool? AllowDeviceUseOnInstallFailure {
-            get { return BackingStore?.Get<bool?>(nameof(AllowDeviceUseOnInstallFailure)); }
-            set { BackingStore?.Set(nameof(AllowDeviceUseOnInstallFailure), value); }
+            get { return BackingStore?.Get<bool?>("allowDeviceUseOnInstallFailure"); }
+            set { BackingStore?.Set("allowDeviceUseOnInstallFailure", value); }
         }
         /// <summary>Allow or block log collection on installation failure</summary>
         public bool? AllowLogCollectionOnInstallFailure {
-            get { return BackingStore?.Get<bool?>(nameof(AllowLogCollectionOnInstallFailure)); }
-            set { BackingStore?.Set(nameof(AllowLogCollectionOnInstallFailure), value); }
+            get { return BackingStore?.Get<bool?>("allowLogCollectionOnInstallFailure"); }
+            set { BackingStore?.Set("allowLogCollectionOnInstallFailure", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Allow the user to retry the setup on installation failure</summary>
         public bool? BlockDeviceSetupRetryByUser {
-            get { return BackingStore?.Get<bool?>(nameof(BlockDeviceSetupRetryByUser)); }
-            set { BackingStore?.Set(nameof(BlockDeviceSetupRetryByUser), value); }
+            get { return BackingStore?.Get<bool?>("blockDeviceSetupRetryByUser"); }
+            set { BackingStore?.Set("blockDeviceSetupRetryByUser", value); }
         }
         /// <summary>Set custom error message to show upon installation failure</summary>
         public string CustomErrorMessage {
-            get { return BackingStore?.Get<string>(nameof(CustomErrorMessage)); }
-            set { BackingStore?.Set(nameof(CustomErrorMessage), value); }
+            get { return BackingStore?.Get<string>("customErrorMessage"); }
+            set { BackingStore?.Set("customErrorMessage", value); }
         }
         /// <summary>Show or hide installation progress to user</summary>
         public bool? HideInstallationProgress {
-            get { return BackingStore?.Get<bool?>(nameof(HideInstallationProgress)); }
-            set { BackingStore?.Set(nameof(HideInstallationProgress), value); }
+            get { return BackingStore?.Get<bool?>("hideInstallationProgress"); }
+            set { BackingStore?.Set("hideInstallationProgress", value); }
         }
         /// <summary>Set installation progress timeout in minutes</summary>
         public int? InstallProgressTimeoutInMinutes {
-            get { return BackingStore?.Get<int?>(nameof(InstallProgressTimeoutInMinutes)); }
-            set { BackingStore?.Set(nameof(InstallProgressTimeoutInMinutes), value); }
+            get { return BackingStore?.Get<int?>("installProgressTimeoutInMinutes"); }
+            set { BackingStore?.Set("installProgressTimeoutInMinutes", value); }
         }
         /// <summary>
         /// Instantiates a new windowsEnrollmentStatusScreenSettings and sets the default values.

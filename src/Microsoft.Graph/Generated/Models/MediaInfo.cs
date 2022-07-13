@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class MediaInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Optional, used to uniquely identity the resource. If passed the prompt uri will be cached against this resourceId as key.</summary>
         public string ResourceId {
-            get { return BackingStore?.Get<string>(nameof(ResourceId)); }
-            set { BackingStore?.Set(nameof(ResourceId), value); }
+            get { return BackingStore?.Get<string>("resourceId"); }
+            set { BackingStore?.Set("resourceId", value); }
         }
         /// <summary>Path to the prompt to be played. Currently only Wave file (.wav) format, single-channel, 16-bit samples with a 16,000 (16KHz) sampling rate is only supported.</summary>
         public string Uri {
-            get { return BackingStore?.Get<string>(nameof(Uri)); }
-            set { BackingStore?.Set(nameof(Uri), value); }
+            get { return BackingStore?.Get<string>("uri"); }
+            set { BackingStore?.Set("uri", value); }
         }
         /// <summary>
         /// Instantiates a new mediaInfo and sets the default values.

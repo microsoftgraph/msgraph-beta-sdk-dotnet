@@ -9,65 +9,65 @@ namespace Microsoft.Graph.Beta.Models {
     public class UnmanagedDevice : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Device name.</summary>
         public string DeviceName {
-            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
-            set { BackingStore?.Set(nameof(DeviceName), value); }
+            get { return BackingStore?.Get<string>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
         }
         /// <summary>Domain.</summary>
         public string Domain {
-            get { return BackingStore?.Get<string>(nameof(Domain)); }
-            set { BackingStore?.Set(nameof(Domain), value); }
+            get { return BackingStore?.Get<string>("domain"); }
+            set { BackingStore?.Set("domain", value); }
         }
         /// <summary>IP address.</summary>
         public string IpAddress {
-            get { return BackingStore?.Get<string>(nameof(IpAddress)); }
-            set { BackingStore?.Set(nameof(IpAddress), value); }
+            get { return BackingStore?.Get<string>("ipAddress"); }
+            set { BackingStore?.Set("ipAddress", value); }
         }
         /// <summary>Last logged on user.</summary>
         public string LastLoggedOnUser {
-            get { return BackingStore?.Get<string>(nameof(LastLoggedOnUser)); }
-            set { BackingStore?.Set(nameof(LastLoggedOnUser), value); }
+            get { return BackingStore?.Get<string>("lastLoggedOnUser"); }
+            set { BackingStore?.Set("lastLoggedOnUser", value); }
         }
         /// <summary>Last seen date and time.</summary>
         public DateTimeOffset? LastSeenDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSeenDateTime)); }
-            set { BackingStore?.Set(nameof(LastSeenDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
+            set { BackingStore?.Set("lastSeenDateTime", value); }
         }
         /// <summary>Location.</summary>
         public string Location {
-            get { return BackingStore?.Get<string>(nameof(Location)); }
-            set { BackingStore?.Set(nameof(Location), value); }
+            get { return BackingStore?.Get<string>("location"); }
+            set { BackingStore?.Set("location", value); }
         }
         /// <summary>MAC address.</summary>
         public string MacAddress {
-            get { return BackingStore?.Get<string>(nameof(MacAddress)); }
-            set { BackingStore?.Set(nameof(MacAddress), value); }
+            get { return BackingStore?.Get<string>("macAddress"); }
+            set { BackingStore?.Set("macAddress", value); }
         }
         /// <summary>Manufacturer.</summary>
         public string Manufacturer {
-            get { return BackingStore?.Get<string>(nameof(Manufacturer)); }
-            set { BackingStore?.Set(nameof(Manufacturer), value); }
+            get { return BackingStore?.Get<string>("manufacturer"); }
+            set { BackingStore?.Set("manufacturer", value); }
         }
         /// <summary>Model.</summary>
         public string Model {
-            get { return BackingStore?.Get<string>(nameof(Model)); }
-            set { BackingStore?.Set(nameof(Model), value); }
+            get { return BackingStore?.Get<string>("model"); }
+            set { BackingStore?.Set("model", value); }
         }
         /// <summary>Operating system.</summary>
         public string Os {
-            get { return BackingStore?.Get<string>(nameof(Os)); }
-            set { BackingStore?.Set(nameof(Os), value); }
+            get { return BackingStore?.Get<string>("os"); }
+            set { BackingStore?.Set("os", value); }
         }
         /// <summary>Operating system version.</summary>
         public string OsVersion {
-            get { return BackingStore?.Get<string>(nameof(OsVersion)); }
-            set { BackingStore?.Set(nameof(OsVersion), value); }
+            get { return BackingStore?.Get<string>("osVersion"); }
+            set { BackingStore?.Set("osVersion", value); }
         }
         /// <summary>
         /// Instantiates a new unmanagedDevice and sets the default values.

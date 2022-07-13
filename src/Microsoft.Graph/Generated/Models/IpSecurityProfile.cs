@@ -4,72 +4,72 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class IpSecurityProfile : Entity, IParsable {
         /// <summary>The activityGroupNames property</summary>
         public List<string> ActivityGroupNames {
-            get { return BackingStore?.Get<List<string>>(nameof(ActivityGroupNames)); }
-            set { BackingStore?.Set(nameof(ActivityGroupNames), value); }
+            get { return BackingStore?.Get<List<string>>("activityGroupNames"); }
+            set { BackingStore?.Set("activityGroupNames", value); }
         }
         /// <summary>The address property</summary>
         public string Address {
-            get { return BackingStore?.Get<string>(nameof(Address)); }
-            set { BackingStore?.Set(nameof(Address), value); }
+            get { return BackingStore?.Get<string>("address"); }
+            set { BackingStore?.Set("address", value); }
         }
         /// <summary>The azureSubscriptionId property</summary>
         public string AzureSubscriptionId {
-            get { return BackingStore?.Get<string>(nameof(AzureSubscriptionId)); }
-            set { BackingStore?.Set(nameof(AzureSubscriptionId), value); }
+            get { return BackingStore?.Get<string>("azureSubscriptionId"); }
+            set { BackingStore?.Set("azureSubscriptionId", value); }
         }
         /// <summary>The azureTenantId property</summary>
         public string AzureTenantId {
-            get { return BackingStore?.Get<string>(nameof(AzureTenantId)); }
-            set { BackingStore?.Set(nameof(AzureTenantId), value); }
+            get { return BackingStore?.Get<string>("azureTenantId"); }
+            set { BackingStore?.Set("azureTenantId", value); }
         }
         /// <summary>The countHits property</summary>
         public int? CountHits {
-            get { return BackingStore?.Get<int?>(nameof(CountHits)); }
-            set { BackingStore?.Set(nameof(CountHits), value); }
+            get { return BackingStore?.Get<int?>("countHits"); }
+            set { BackingStore?.Set("countHits", value); }
         }
         /// <summary>The countHosts property</summary>
         public int? CountHosts {
-            get { return BackingStore?.Get<int?>(nameof(CountHosts)); }
-            set { BackingStore?.Set(nameof(CountHosts), value); }
+            get { return BackingStore?.Get<int?>("countHosts"); }
+            set { BackingStore?.Set("countHosts", value); }
         }
         /// <summary>The firstSeenDateTime property</summary>
         public DateTimeOffset? FirstSeenDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(FirstSeenDateTime)); }
-            set { BackingStore?.Set(nameof(FirstSeenDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("firstSeenDateTime"); }
+            set { BackingStore?.Set("firstSeenDateTime", value); }
         }
         /// <summary>The ipCategories property</summary>
         public List<IpCategory> IpCategories {
-            get { return BackingStore?.Get<List<IpCategory>>(nameof(IpCategories)); }
-            set { BackingStore?.Set(nameof(IpCategories), value); }
+            get { return BackingStore?.Get<List<IpCategory>>("ipCategories"); }
+            set { BackingStore?.Set("ipCategories", value); }
         }
         /// <summary>The ipReferenceData property</summary>
         public List<Microsoft.Graph.Beta.Models.IpReferenceData> IpReferenceData {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IpReferenceData>>(nameof(IpReferenceData)); }
-            set { BackingStore?.Set(nameof(IpReferenceData), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IpReferenceData>>("ipReferenceData"); }
+            set { BackingStore?.Set("ipReferenceData", value); }
         }
         /// <summary>The lastSeenDateTime property</summary>
         public DateTimeOffset? LastSeenDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSeenDateTime)); }
-            set { BackingStore?.Set(nameof(LastSeenDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
+            set { BackingStore?.Set("lastSeenDateTime", value); }
         }
         /// <summary>The riskScore property</summary>
         public string RiskScore {
-            get { return BackingStore?.Get<string>(nameof(RiskScore)); }
-            set { BackingStore?.Set(nameof(RiskScore), value); }
+            get { return BackingStore?.Get<string>("riskScore"); }
+            set { BackingStore?.Set("riskScore", value); }
         }
         /// <summary>The tags property</summary>
         public List<string> Tags {
-            get { return BackingStore?.Get<List<string>>(nameof(Tags)); }
-            set { BackingStore?.Set(nameof(Tags), value); }
+            get { return BackingStore?.Get<List<string>>("tags"); }
+            set { BackingStore?.Set("tags", value); }
         }
         /// <summary>The vendorInformation property</summary>
         public SecurityVendorInformation VendorInformation {
-            get { return BackingStore?.Get<SecurityVendorInformation>(nameof(VendorInformation)); }
-            set { BackingStore?.Set(nameof(VendorInformation), value); }
+            get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
+            set { BackingStore?.Set("vendorInformation", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

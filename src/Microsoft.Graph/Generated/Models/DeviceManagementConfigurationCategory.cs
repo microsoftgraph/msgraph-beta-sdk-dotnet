@@ -8,58 +8,58 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationCategory : Entity, IParsable {
         /// <summary>Description of the category header</summary>
         public string CategoryDescription {
-            get { return BackingStore?.Get<string>(nameof(CategoryDescription)); }
-            set { BackingStore?.Set(nameof(CategoryDescription), value); }
+            get { return BackingStore?.Get<string>("categoryDescription"); }
+            set { BackingStore?.Set("categoryDescription", value); }
         }
         /// <summary>List of child ids of the category.</summary>
         public List<string> ChildCategoryIds {
-            get { return BackingStore?.Get<List<string>>(nameof(ChildCategoryIds)); }
-            set { BackingStore?.Set(nameof(ChildCategoryIds), value); }
+            get { return BackingStore?.Get<List<string>>("childCategoryIds"); }
+            set { BackingStore?.Set("childCategoryIds", value); }
         }
         /// <summary>Description of the item</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Display name of the item</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Help text of the item</summary>
         public string HelpText {
-            get { return BackingStore?.Get<string>(nameof(HelpText)); }
-            set { BackingStore?.Set(nameof(HelpText), value); }
+            get { return BackingStore?.Get<string>("helpText"); }
+            set { BackingStore?.Set("helpText", value); }
         }
         /// <summary>Name of the item</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>Parent id of the category.</summary>
         public string ParentCategoryId {
-            get { return BackingStore?.Get<string>(nameof(ParentCategoryId)); }
-            set { BackingStore?.Set(nameof(ParentCategoryId), value); }
+            get { return BackingStore?.Get<string>("parentCategoryId"); }
+            set { BackingStore?.Set("parentCategoryId", value); }
         }
-        /// <summary>Platforms types, which settings in the category have. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.</summary>
+        /// <summary>Supported platform types.</summary>
         public DeviceManagementConfigurationPlatforms? Platforms {
-            get { return BackingStore?.Get<DeviceManagementConfigurationPlatforms?>(nameof(Platforms)); }
-            set { BackingStore?.Set(nameof(Platforms), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationPlatforms?>("platforms"); }
+            set { BackingStore?.Set("platforms", value); }
         }
         /// <summary>Root id of the category.</summary>
         public string RootCategoryId {
-            get { return BackingStore?.Get<string>(nameof(RootCategoryId)); }
-            set { BackingStore?.Set(nameof(RootCategoryId), value); }
+            get { return BackingStore?.Get<string>("rootCategoryId"); }
+            set { BackingStore?.Set("rootCategoryId", value); }
         }
-        /// <summary>Indicates that the category contains settings that are used for Compliance or Configuration. Possible values are: none, configuration, compliance.</summary>
+        /// <summary>Supported setting types</summary>
         public DeviceManagementConfigurationSettingUsage? SettingUsage {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingUsage?>(nameof(SettingUsage)); }
-            set { BackingStore?.Set(nameof(SettingUsage), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationSettingUsage?>("settingUsage"); }
+            set { BackingStore?.Set("settingUsage", value); }
         }
-        /// <summary>Technologies types, which settings in the category have. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.</summary>
+        /// <summary>Describes which technology this setting can be deployed with</summary>
         public DeviceManagementConfigurationTechnologies? Technologies {
-            get { return BackingStore?.Get<DeviceManagementConfigurationTechnologies?>(nameof(Technologies)); }
-            set { BackingStore?.Set(nameof(Technologies), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationTechnologies?>("technologies"); }
+            set { BackingStore?.Set("technologies", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

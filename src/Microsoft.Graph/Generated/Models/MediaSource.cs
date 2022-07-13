@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Beta.Models {
     public class MediaSource : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Enumeration value that indicates the media content category.</summary>
         public MediaSourceContentCategory? ContentCategory {
-            get { return BackingStore?.Get<MediaSourceContentCategory?>(nameof(ContentCategory)); }
-            set { BackingStore?.Set(nameof(ContentCategory), value); }
+            get { return BackingStore?.Get<MediaSourceContentCategory?>("contentCategory"); }
+            set { BackingStore?.Set("contentCategory", value); }
         }
         /// <summary>
         /// Instantiates a new mediaSource and sets the default values.

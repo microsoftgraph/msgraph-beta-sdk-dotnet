@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceHealthScriptAssignment : Entity, IParsable {
         /// <summary>Determine whether we want to run detection script only or run both detection script and remediation script</summary>
         public bool? RunRemediationScript {
-            get { return BackingStore?.Get<bool?>(nameof(RunRemediationScript)); }
-            set { BackingStore?.Set(nameof(RunRemediationScript), value); }
+            get { return BackingStore?.Get<bool?>("runRemediationScript"); }
+            set { BackingStore?.Set("runRemediationScript", value); }
         }
         /// <summary>Script run schedule for the target group</summary>
         public DeviceHealthScriptRunSchedule RunSchedule {
-            get { return BackingStore?.Get<DeviceHealthScriptRunSchedule>(nameof(RunSchedule)); }
-            set { BackingStore?.Set(nameof(RunSchedule), value); }
+            get { return BackingStore?.Get<DeviceHealthScriptRunSchedule>("runSchedule"); }
+            set { BackingStore?.Set("runSchedule", value); }
         }
         /// <summary>The Azure Active Directory group we are targeting the script to</summary>
         public DeviceAndAppManagementAssignmentTarget Target {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>(nameof(Target)); }
-            set { BackingStore?.Set(nameof(Target), value); }
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
+            set { BackingStore?.Set("target", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,38 +7,38 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class AddContentFooterAction : InformationProtectionAction, IParsable {
         /// <summary>The alignment property</summary>
         public ContentAlignment? Alignment {
-            get { return BackingStore?.Get<ContentAlignment?>(nameof(Alignment)); }
-            set { BackingStore?.Set(nameof(Alignment), value); }
+            get { return BackingStore?.Get<ContentAlignment?>("alignment"); }
+            set { BackingStore?.Set("alignment", value); }
         }
         /// <summary>The fontColor property</summary>
         public string FontColor {
-            get { return BackingStore?.Get<string>(nameof(FontColor)); }
-            set { BackingStore?.Set(nameof(FontColor), value); }
+            get { return BackingStore?.Get<string>("fontColor"); }
+            set { BackingStore?.Set("fontColor", value); }
         }
         /// <summary>The fontName property</summary>
         public string FontName {
-            get { return BackingStore?.Get<string>(nameof(FontName)); }
-            set { BackingStore?.Set(nameof(FontName), value); }
+            get { return BackingStore?.Get<string>("fontName"); }
+            set { BackingStore?.Set("fontName", value); }
         }
         /// <summary>The fontSize property</summary>
         public int? FontSize {
-            get { return BackingStore?.Get<int?>(nameof(FontSize)); }
-            set { BackingStore?.Set(nameof(FontSize), value); }
+            get { return BackingStore?.Get<int?>("fontSize"); }
+            set { BackingStore?.Set("fontSize", value); }
         }
         /// <summary>The margin property</summary>
         public int? Margin {
-            get { return BackingStore?.Get<int?>(nameof(Margin)); }
-            set { BackingStore?.Set(nameof(Margin), value); }
+            get { return BackingStore?.Get<int?>("margin"); }
+            set { BackingStore?.Set("margin", value); }
         }
         /// <summary>The text property</summary>
         public string Text {
-            get { return BackingStore?.Get<string>(nameof(Text)); }
-            set { BackingStore?.Set(nameof(Text), value); }
+            get { return BackingStore?.Get<string>("text"); }
+            set { BackingStore?.Set("text", value); }
         }
         /// <summary>The uiElementName property</summary>
         public string UiElementName {
-            get { return BackingStore?.Get<string>(nameof(UiElementName)); }
-            set { BackingStore?.Set(nameof(UiElementName), value); }
+            get { return BackingStore?.Get<string>("uiElementName"); }
+            set { BackingStore?.Set("uiElementName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

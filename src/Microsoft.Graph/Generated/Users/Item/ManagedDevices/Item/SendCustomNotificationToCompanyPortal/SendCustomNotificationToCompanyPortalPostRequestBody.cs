@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SendCustomNotifica
     public class SendCustomNotificationToCompanyPortalPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The notificationBody property</summary>
         public string NotificationBody {
-            get { return BackingStore?.Get<string>(nameof(NotificationBody)); }
-            set { BackingStore?.Set(nameof(NotificationBody), value); }
+            get { return BackingStore?.Get<string>("notificationBody"); }
+            set { BackingStore?.Set("notificationBody", value); }
         }
         /// <summary>The notificationTitle property</summary>
         public string NotificationTitle {
-            get { return BackingStore?.Get<string>(nameof(NotificationTitle)); }
-            set { BackingStore?.Set(nameof(NotificationTitle), value); }
+            get { return BackingStore?.Get<string>("notificationTitle"); }
+            set { BackingStore?.Set("notificationTitle", value); }
         }
         /// <summary>
         /// Instantiates a new sendCustomNotificationToCompanyPortalPostRequestBody and sets the default values.

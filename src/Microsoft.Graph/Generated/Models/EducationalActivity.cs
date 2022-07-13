@@ -8,28 +8,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationalActivity : ItemFacet, IParsable {
         /// <summary>The month and year the user graduated or completed the activity.</summary>
         public Date? CompletionMonthYear {
-            get { return BackingStore?.Get<Date?>(nameof(CompletionMonthYear)); }
-            set { BackingStore?.Set(nameof(CompletionMonthYear), value); }
+            get { return BackingStore?.Get<Date?>("completionMonthYear"); }
+            set { BackingStore?.Set("completionMonthYear", value); }
         }
         /// <summary>The month and year the user completed the educational activity referenced.</summary>
         public Date? EndMonthYear {
-            get { return BackingStore?.Get<Date?>(nameof(EndMonthYear)); }
-            set { BackingStore?.Set(nameof(EndMonthYear), value); }
+            get { return BackingStore?.Get<Date?>("endMonthYear"); }
+            set { BackingStore?.Set("endMonthYear", value); }
         }
         /// <summary>The institution property</summary>
         public InstitutionData Institution {
-            get { return BackingStore?.Get<InstitutionData>(nameof(Institution)); }
-            set { BackingStore?.Set(nameof(Institution), value); }
+            get { return BackingStore?.Get<InstitutionData>("institution"); }
+            set { BackingStore?.Set("institution", value); }
         }
         /// <summary>The program property</summary>
         public EducationalActivityDetail Program {
-            get { return BackingStore?.Get<EducationalActivityDetail>(nameof(Program)); }
-            set { BackingStore?.Set(nameof(Program), value); }
+            get { return BackingStore?.Get<EducationalActivityDetail>("program"); }
+            set { BackingStore?.Set("program", value); }
         }
         /// <summary>The month and year the user commenced the activity referenced.</summary>
         public Date? StartMonthYear {
-            get { return BackingStore?.Get<Date?>(nameof(StartMonthYear)); }
-            set { BackingStore?.Set(nameof(StartMonthYear), value); }
+            get { return BackingStore?.Get<Date?>("startMonthYear"); }
+            set { BackingStore?.Set("startMonthYear", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

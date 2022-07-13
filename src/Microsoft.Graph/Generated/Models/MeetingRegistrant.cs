@@ -7,33 +7,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class MeetingRegistrant : MeetingRegistrantBase, IParsable {
         /// <summary>The registrant&apos;s answer to custom questions.</summary>
         public List<CustomQuestionAnswer> CustomQuestionAnswers {
-            get { return BackingStore?.Get<List<CustomQuestionAnswer>>(nameof(CustomQuestionAnswers)); }
-            set { BackingStore?.Set(nameof(CustomQuestionAnswers), value); }
+            get { return BackingStore?.Get<List<CustomQuestionAnswer>>("customQuestionAnswers"); }
+            set { BackingStore?.Set("customQuestionAnswers", value); }
         }
         /// <summary>The email address of the registrant.</summary>
         public string Email {
-            get { return BackingStore?.Get<string>(nameof(Email)); }
-            set { BackingStore?.Set(nameof(Email), value); }
+            get { return BackingStore?.Get<string>("email"); }
+            set { BackingStore?.Set("email", value); }
         }
         /// <summary>The first name of the registrant.</summary>
         public string FirstName {
-            get { return BackingStore?.Get<string>(nameof(FirstName)); }
-            set { BackingStore?.Set(nameof(FirstName), value); }
+            get { return BackingStore?.Get<string>("firstName"); }
+            set { BackingStore?.Set("firstName", value); }
         }
         /// <summary>The last name of the registrant.</summary>
         public string LastName {
-            get { return BackingStore?.Get<string>(nameof(LastName)); }
-            set { BackingStore?.Set(nameof(LastName), value); }
+            get { return BackingStore?.Get<string>("lastName"); }
+            set { BackingStore?.Set("lastName", value); }
         }
         /// <summary>Time in UTC when the registrant registers for the meeting. Read-only.</summary>
         public DateTimeOffset? RegistrationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(RegistrationDateTime)); }
-            set { BackingStore?.Set(nameof(RegistrationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("registrationDateTime"); }
+            set { BackingStore?.Set("registrationDateTime", value); }
         }
         /// <summary>The registration status of the registrant. Read-only.</summary>
         public MeetingRegistrantStatus? Status {
-            get { return BackingStore?.Get<MeetingRegistrantStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<MeetingRegistrantStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

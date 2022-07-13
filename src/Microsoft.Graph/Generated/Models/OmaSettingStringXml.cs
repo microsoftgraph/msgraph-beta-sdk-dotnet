@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class OmaSettingStringXml : OmaSetting, IParsable {
         /// <summary>File name associated with the Value property (.xml).</summary>
         public string FileName {
-            get { return BackingStore?.Get<string>(nameof(FileName)); }
-            set { BackingStore?.Set(nameof(FileName), value); }
+            get { return BackingStore?.Get<string>("fileName"); }
+            set { BackingStore?.Set("fileName", value); }
         }
         /// <summary>Value. (UTF8 encoded byte array)</summary>
         public byte[] Value {
-            get { return BackingStore?.Get<byte[]>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<byte[]>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

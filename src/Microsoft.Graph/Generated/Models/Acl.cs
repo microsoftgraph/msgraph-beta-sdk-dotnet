@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class Acl : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The accessType property</summary>
         public Microsoft.Graph.Beta.Models.AccessType? AccessType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessType?>(nameof(AccessType)); }
-            set { BackingStore?.Set(nameof(AccessType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessType?>("accessType"); }
+            set { BackingStore?.Set("accessType", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The identitySource property</summary>
         public IdentitySourceType? IdentitySource {
-            get { return BackingStore?.Get<IdentitySourceType?>(nameof(IdentitySource)); }
-            set { BackingStore?.Set(nameof(IdentitySource), value); }
+            get { return BackingStore?.Get<IdentitySourceType?>("identitySource"); }
+            set { BackingStore?.Set("identitySource", value); }
         }
         /// <summary>The type property</summary>
         public AclType? Type {
-            get { return BackingStore?.Get<AclType?>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<AclType?>("type"); }
+            set { BackingStore?.Set("type", value); }
         }
         /// <summary>The value property</summary>
         public string Value {
-            get { return BackingStore?.Get<string>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<string>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Instantiates a new acl and sets the default values.

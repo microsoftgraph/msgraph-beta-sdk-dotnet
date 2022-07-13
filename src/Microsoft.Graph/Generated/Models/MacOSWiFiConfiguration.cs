@@ -8,53 +8,59 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOSWiFiConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.</summary>
         public bool? ConnectAutomatically {
-            get { return BackingStore?.Get<bool?>(nameof(ConnectAutomatically)); }
-            set { BackingStore?.Set(nameof(ConnectAutomatically), value); }
+            get { return BackingStore?.Get<bool?>("connectAutomatically"); }
+            set { BackingStore?.Set("connectAutomatically", value); }
         }
         /// <summary>Connect when the network is not broadcasting its name (SSID). When set to true, this profile forces the device to connect to a network that doesn&apos;t broadcast its SSID to all devices.</summary>
         public bool? ConnectWhenNetworkNameIsHidden {
-            get { return BackingStore?.Get<bool?>(nameof(ConnectWhenNetworkNameIsHidden)); }
-            set { BackingStore?.Set(nameof(ConnectWhenNetworkNameIsHidden), value); }
+            get { return BackingStore?.Get<bool?>("connectWhenNetworkNameIsHidden"); }
+            set { BackingStore?.Set("connectWhenNetworkNameIsHidden", value); }
         }
         /// <summary>Network Name</summary>
         public string NetworkName {
-            get { return BackingStore?.Get<string>(nameof(NetworkName)); }
-            set { BackingStore?.Set(nameof(NetworkName), value); }
+            get { return BackingStore?.Get<string>("networkName"); }
+            set { BackingStore?.Set("networkName", value); }
         }
         /// <summary>This is the pre-shared key for WPA Personal Wi-Fi network.</summary>
         public string PreSharedKey {
-            get { return BackingStore?.Get<string>(nameof(PreSharedKey)); }
-            set { BackingStore?.Set(nameof(PreSharedKey), value); }
+            get { return BackingStore?.Get<string>("preSharedKey"); }
+            set { BackingStore?.Set("preSharedKey", value); }
         }
         /// <summary>URL of the proxy server automatic configuration script when automatic configuration is selected. This URL is typically the location of PAC (Proxy Auto Configuration) file.</summary>
         public string ProxyAutomaticConfigurationUrl {
-            get { return BackingStore?.Get<string>(nameof(ProxyAutomaticConfigurationUrl)); }
-            set { BackingStore?.Set(nameof(ProxyAutomaticConfigurationUrl), value); }
+            get { return BackingStore?.Get<string>("proxyAutomaticConfigurationUrl"); }
+            set { BackingStore?.Set("proxyAutomaticConfigurationUrl", value); }
         }
         /// <summary>IP Address or DNS hostname of the proxy server when manual configuration is selected.</summary>
         public string ProxyManualAddress {
-            get { return BackingStore?.Get<string>(nameof(ProxyManualAddress)); }
-            set { BackingStore?.Set(nameof(ProxyManualAddress), value); }
+            get { return BackingStore?.Get<string>("proxyManualAddress"); }
+            set { BackingStore?.Set("proxyManualAddress", value); }
         }
         /// <summary>Port of the proxy server when manual configuration is selected.</summary>
         public int? ProxyManualPort {
-            get { return BackingStore?.Get<int?>(nameof(ProxyManualPort)); }
-            set { BackingStore?.Set(nameof(ProxyManualPort), value); }
+            get { return BackingStore?.Get<int?>("proxyManualPort"); }
+            set { BackingStore?.Set("proxyManualPort", value); }
         }
-        /// <summary>Proxy Type for this Wi-Fi connection. Possible values are: none, manual, automatic.</summary>
+        /// <summary>Wi-Fi Proxy Settings.</summary>
         public WiFiProxySetting? ProxySettings {
-            get { return BackingStore?.Get<WiFiProxySetting?>(nameof(ProxySettings)); }
-            set { BackingStore?.Set(nameof(ProxySettings), value); }
+            get { return BackingStore?.Get<WiFiProxySetting?>("proxySettings"); }
+            set { BackingStore?.Set("proxySettings", value); }
         }
         /// <summary>This is the name of the Wi-Fi network that is broadcast to all devices.</summary>
         public string Ssid {
-            get { return BackingStore?.Get<string>(nameof(Ssid)); }
-            set { BackingStore?.Set(nameof(Ssid), value); }
+            get { return BackingStore?.Get<string>("ssid"); }
+            set { BackingStore?.Set("ssid", value); }
         }
-        /// <summary>Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.</summary>
+        /// <summary>Wi-Fi Security Types.</summary>
         public Microsoft.Graph.Beta.Models.WiFiSecurityType? WiFiSecurityType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WiFiSecurityType?>(nameof(WiFiSecurityType)); }
-            set { BackingStore?.Set(nameof(WiFiSecurityType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WiFiSecurityType?>("wiFiSecurityType"); }
+            set { BackingStore?.Set("wiFiSecurityType", value); }
+        }
+        /// <summary>
+        /// Instantiates a new MacOSWiFiConfiguration and sets the default values.
+        /// </summary>
+        public MacOSWiFiConfiguration() : base() {
+            Type = "#microsoft.graph.macOSWiFiConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

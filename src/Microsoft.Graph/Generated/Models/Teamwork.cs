@@ -5,25 +5,25 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Teamwork : Entity, IParsable {
-        /// <summary>The deletedTeams property</summary>
+        /// <summary>A collection of deleted teams.</summary>
         public List<DeletedTeam> DeletedTeams {
-            get { return BackingStore?.Get<List<DeletedTeam>>(nameof(DeletedTeams)); }
-            set { BackingStore?.Set(nameof(DeletedTeams), value); }
+            get { return BackingStore?.Get<List<DeletedTeam>>("deletedTeams"); }
+            set { BackingStore?.Set("deletedTeams", value); }
         }
         /// <summary>The Teams devices provisioned for the tenant.</summary>
         public List<TeamworkDevice> Devices {
-            get { return BackingStore?.Get<List<TeamworkDevice>>(nameof(Devices)); }
-            set { BackingStore?.Set(nameof(Devices), value); }
+            get { return BackingStore?.Get<List<TeamworkDevice>>("devices"); }
+            set { BackingStore?.Set("devices", value); }
         }
-        /// <summary>The teamsAppSettings property</summary>
+        /// <summary>Represents tenant-wide settings for all Teams apps in the tenant.</summary>
         public Microsoft.Graph.Beta.Models.TeamsAppSettings TeamsAppSettings {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsAppSettings>(nameof(TeamsAppSettings)); }
-            set { BackingStore?.Set(nameof(TeamsAppSettings), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsAppSettings>("teamsAppSettings"); }
+            set { BackingStore?.Set("teamsAppSettings", value); }
         }
         /// <summary>A workforce integration with shifts.</summary>
         public List<WorkforceIntegration> WorkforceIntegrations {
-            get { return BackingStore?.Get<List<WorkforceIntegration>>(nameof(WorkforceIntegrations)); }
-            set { BackingStore?.Set(nameof(WorkforceIntegrations), value); }
+            get { return BackingStore?.Get<List<WorkforceIntegration>>("workforceIntegrations"); }
+            set { BackingStore?.Set("workforceIntegrations", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

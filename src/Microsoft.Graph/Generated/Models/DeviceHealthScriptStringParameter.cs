@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceHealthScriptStringParameter : DeviceHealthScriptParameter, IParsable {
         /// <summary>The default value of string param</summary>
         public string DefaultValue {
-            get { return BackingStore?.Get<string>(nameof(DefaultValue)); }
-            set { BackingStore?.Set(nameof(DefaultValue), value); }
+            get { return BackingStore?.Get<string>("defaultValue"); }
+            set { BackingStore?.Set("defaultValue", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,22 +7,22 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScopes.Item.TriggerDeviceScopeAction {
     /// <summary>Provides operations to call the triggerDeviceScopeAction method.</summary>
     public class TriggerDeviceScopeActionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
-        /// <summary>The actionName property</summary>
+        /// <summary>Trigger on the service to either START or STOP computing metrics data based on a device scope configuration.</summary>
         public string ActionName {
-            get { return BackingStore?.Get<string>(nameof(ActionName)); }
-            set { BackingStore?.Set(nameof(ActionName), value); }
+            get { return BackingStore?.Get<string>("actionName"); }
+            set { BackingStore?.Set("actionName", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceScopeId property</summary>
         public string DeviceScopeId {
-            get { return BackingStore?.Get<string>(nameof(DeviceScopeId)); }
-            set { BackingStore?.Set(nameof(DeviceScopeId), value); }
+            get { return BackingStore?.Get<string>("deviceScopeId"); }
+            set { BackingStore?.Set("deviceScopeId", value); }
         }
         /// <summary>
         /// Instantiates a new triggerDeviceScopeActionPostRequestBody and sets the default values.

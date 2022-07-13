@@ -10,35 +10,35 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyText {
     public class ClassifyTextPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The fileExtension property</summary>
         public string FileExtension {
-            get { return BackingStore?.Get<string>(nameof(FileExtension)); }
-            set { BackingStore?.Set(nameof(FileExtension), value); }
+            get { return BackingStore?.Get<string>("fileExtension"); }
+            set { BackingStore?.Set("fileExtension", value); }
         }
         /// <summary>The matchTolerancesToInclude property</summary>
         public MlClassificationMatchTolerance? MatchTolerancesToInclude {
-            get { return BackingStore?.Get<MlClassificationMatchTolerance?>(nameof(MatchTolerancesToInclude)); }
-            set { BackingStore?.Set(nameof(MatchTolerancesToInclude), value); }
+            get { return BackingStore?.Get<MlClassificationMatchTolerance?>("matchTolerancesToInclude"); }
+            set { BackingStore?.Set("matchTolerancesToInclude", value); }
         }
         /// <summary>The scopesToRun property</summary>
         public SensitiveTypeScope? ScopesToRun {
-            get { return BackingStore?.Get<SensitiveTypeScope?>(nameof(ScopesToRun)); }
-            set { BackingStore?.Set(nameof(ScopesToRun), value); }
+            get { return BackingStore?.Get<SensitiveTypeScope?>("scopesToRun"); }
+            set { BackingStore?.Set("scopesToRun", value); }
         }
         /// <summary>The sensitiveTypeIds property</summary>
         public List<string> SensitiveTypeIds {
-            get { return BackingStore?.Get<List<string>>(nameof(SensitiveTypeIds)); }
-            set { BackingStore?.Set(nameof(SensitiveTypeIds), value); }
+            get { return BackingStore?.Get<List<string>>("sensitiveTypeIds"); }
+            set { BackingStore?.Set("sensitiveTypeIds", value); }
         }
         /// <summary>The text property</summary>
         public string Text {
-            get { return BackingStore?.Get<string>(nameof(Text)); }
-            set { BackingStore?.Set(nameof(Text), value); }
+            get { return BackingStore?.Get<string>("text"); }
+            set { BackingStore?.Set("text", value); }
         }
         /// <summary>
         /// Instantiates a new classifyTextPostRequestBody and sets the default values.

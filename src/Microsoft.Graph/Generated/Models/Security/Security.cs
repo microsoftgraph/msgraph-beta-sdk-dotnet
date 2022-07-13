@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Security : Entity, IParsable {
         /// <summary>The informationProtection property</summary>
         public Microsoft.Graph.Beta.Models.Security.InformationProtection InformationProtection {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.InformationProtection>(nameof(InformationProtection)); }
-            set { BackingStore?.Set(nameof(InformationProtection), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.InformationProtection>("informationProtection"); }
+            set { BackingStore?.Set("informationProtection", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

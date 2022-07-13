@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class AuthenticationEventsPolicy : Entity, IParsable {
         /// <summary>A list of applicable actions to be taken on sign-up.</summary>
         public List<AuthenticationListener> OnSignupStart {
-            get { return BackingStore?.Get<List<AuthenticationListener>>(nameof(OnSignupStart)); }
-            set { BackingStore?.Set(nameof(OnSignupStart), value); }
+            get { return BackingStore?.Get<List<AuthenticationListener>>("onSignupStart"); }
+            set { BackingStore?.Set("onSignupStart", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

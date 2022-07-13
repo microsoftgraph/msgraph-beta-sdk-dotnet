@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosWebContentFilterSpecificWebsitesAccess : IosWebContentFilterBase, IParsable {
         /// <summary>URL bookmarks which will be installed into built-in browser and user is only allowed to access websites through bookmarks. This collection can contain a maximum of 500 elements.</summary>
         public List<IosBookmark> SpecificWebsitesOnly {
-            get { return BackingStore?.Get<List<IosBookmark>>(nameof(SpecificWebsitesOnly)); }
-            set { BackingStore?.Set(nameof(SpecificWebsitesOnly), value); }
+            get { return BackingStore?.Get<List<IosBookmark>>("specificWebsitesOnly"); }
+            set { BackingStore?.Set("specificWebsitesOnly", value); }
         }
         /// <summary>URL bookmarks which will be installed into built-in browser and user is only allowed to access websites through bookmarks. This collection can contain a maximum of 500 elements.</summary>
         public List<IosBookmark> WebsiteList {
-            get { return BackingStore?.Get<List<IosBookmark>>(nameof(WebsiteList)); }
-            set { BackingStore?.Set(nameof(WebsiteList), value); }
+            get { return BackingStore?.Get<List<IosBookmark>>("websiteList"); }
+            set { BackingStore?.Set("websiteList", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

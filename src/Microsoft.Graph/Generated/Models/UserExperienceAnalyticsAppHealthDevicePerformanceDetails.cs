@@ -8,38 +8,38 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsAppHealthDevicePerformanceDetails : Entity, IParsable {
         /// <summary>The friendly name of the application for which the event occurred.</summary>
         public string AppDisplayName {
-            get { return BackingStore?.Get<string>(nameof(AppDisplayName)); }
-            set { BackingStore?.Set(nameof(AppDisplayName), value); }
+            get { return BackingStore?.Get<string>("appDisplayName"); }
+            set { BackingStore?.Set("appDisplayName", value); }
         }
         /// <summary>The publisher of the application.</summary>
         public string AppPublisher {
-            get { return BackingStore?.Get<string>(nameof(AppPublisher)); }
-            set { BackingStore?.Set(nameof(AppPublisher), value); }
+            get { return BackingStore?.Get<string>("appPublisher"); }
+            set { BackingStore?.Set("appPublisher", value); }
         }
         /// <summary>The version of the application.</summary>
         public string AppVersion {
-            get { return BackingStore?.Get<string>(nameof(AppVersion)); }
-            set { BackingStore?.Set(nameof(AppVersion), value); }
+            get { return BackingStore?.Get<string>("appVersion"); }
+            set { BackingStore?.Set("appVersion", value); }
         }
         /// <summary>The name of the device.</summary>
         public string DeviceDisplayName {
-            get { return BackingStore?.Get<string>(nameof(DeviceDisplayName)); }
-            set { BackingStore?.Set(nameof(DeviceDisplayName), value); }
+            get { return BackingStore?.Get<string>("deviceDisplayName"); }
+            set { BackingStore?.Set("deviceDisplayName", value); }
         }
         /// <summary>The id of the device.</summary>
         public string DeviceId {
-            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
-            set { BackingStore?.Set(nameof(DeviceId), value); }
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>The time the event occurred.</summary>
         public DateTimeOffset? EventDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EventDateTime)); }
-            set { BackingStore?.Set(nameof(EventDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("eventDateTime"); }
+            set { BackingStore?.Set("eventDateTime", value); }
         }
         /// <summary>The type of the event.</summary>
         public string EventType {
-            get { return BackingStore?.Get<string>(nameof(EventType)); }
-            set { BackingStore?.Set(nameof(EventType), value); }
+            get { return BackingStore?.Get<string>("eventType"); }
+            set { BackingStore?.Set("eventType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

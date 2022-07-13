@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class MediaPrompt : Prompt, IParsable {
         /// <summary>The loop property</summary>
         public int? Loop {
-            get { return BackingStore?.Get<int?>(nameof(Loop)); }
-            set { BackingStore?.Set(nameof(Loop), value); }
+            get { return BackingStore?.Get<int?>("loop"); }
+            set { BackingStore?.Set("loop", value); }
         }
         /// <summary>The mediaInfo property</summary>
         public Microsoft.Graph.Beta.Models.MediaInfo MediaInfo {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaInfo>(nameof(MediaInfo)); }
-            set { BackingStore?.Set(nameof(MediaInfo), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaInfo>("mediaInfo"); }
+            set { BackingStore?.Set("mediaInfo", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceOwnerGlobalProxyAutoConfig : AndroidDeviceOwnerGlobalProxy, IParsable {
         /// <summary>The proxy auto-config URL</summary>
         public string ProxyAutoConfigURL {
-            get { return BackingStore?.Get<string>(nameof(ProxyAutoConfigURL)); }
-            set { BackingStore?.Set(nameof(ProxyAutoConfigURL), value); }
+            get { return BackingStore?.Get<string>("proxyAutoConfigURL"); }
+            set { BackingStore?.Set("proxyAutoConfigURL", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

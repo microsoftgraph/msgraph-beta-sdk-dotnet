@@ -4,57 +4,57 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AccessPackageResourceRequest : Entity, IParsable {
         /// <summary>The accessPackageResource property</summary>
         public Microsoft.Graph.Beta.Models.AccessPackageResource AccessPackageResource {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResource>(nameof(AccessPackageResource)); }
-            set { BackingStore?.Set(nameof(AccessPackageResource), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResource>("accessPackageResource"); }
+            set { BackingStore?.Set("accessPackageResource", value); }
         }
         /// <summary>The unique ID of the access package catalog.</summary>
         public string CatalogId {
-            get { return BackingStore?.Get<string>(nameof(CatalogId)); }
-            set { BackingStore?.Set(nameof(CatalogId), value); }
+            get { return BackingStore?.Get<string>("catalogId"); }
+            set { BackingStore?.Set("catalogId", value); }
         }
         /// <summary>The executeImmediately property</summary>
         public bool? ExecuteImmediately {
-            get { return BackingStore?.Get<bool?>(nameof(ExecuteImmediately)); }
-            set { BackingStore?.Set(nameof(ExecuteImmediately), value); }
+            get { return BackingStore?.Get<bool?>("executeImmediately"); }
+            set { BackingStore?.Set("executeImmediately", value); }
         }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? ExpirationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpirationDateTime)); }
-            set { BackingStore?.Set(nameof(ExpirationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
+            set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>If set, does not add the resource.</summary>
         public bool? IsValidationOnly {
-            get { return BackingStore?.Get<bool?>(nameof(IsValidationOnly)); }
-            set { BackingStore?.Set(nameof(IsValidationOnly), value); }
+            get { return BackingStore?.Get<bool?>("isValidationOnly"); }
+            set { BackingStore?.Set("isValidationOnly", value); }
         }
         /// <summary>The requestor&apos;s justification for adding or removing the resource.</summary>
         public string Justification {
-            get { return BackingStore?.Get<string>(nameof(Justification)); }
-            set { BackingStore?.Set(nameof(Justification), value); }
+            get { return BackingStore?.Get<string>("justification"); }
+            set { BackingStore?.Set("justification", value); }
         }
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
         public AccessPackageSubject Requestor {
-            get { return BackingStore?.Get<AccessPackageSubject>(nameof(Requestor)); }
-            set { BackingStore?.Set(nameof(Requestor), value); }
+            get { return BackingStore?.Get<AccessPackageSubject>("requestor"); }
+            set { BackingStore?.Set("requestor", value); }
         }
         /// <summary>The outcome of whether the service was able to add the resource to the catalog.  The value is Delivered if the resource was added or removed. Read-Only.</summary>
         public string RequestState {
-            get { return BackingStore?.Get<string>(nameof(RequestState)); }
-            set { BackingStore?.Set(nameof(RequestState), value); }
+            get { return BackingStore?.Get<string>("requestState"); }
+            set { BackingStore?.Set("requestState", value); }
         }
         /// <summary>The requestStatus property</summary>
         public string RequestStatus {
-            get { return BackingStore?.Get<string>(nameof(RequestStatus)); }
-            set { BackingStore?.Set(nameof(RequestStatus), value); }
+            get { return BackingStore?.Get<string>("requestStatus"); }
+            set { BackingStore?.Set("requestStatus", value); }
         }
         /// <summary>Use AdminAdd to add a resource, if the caller is an administrator or resource owner, or AdminRemove to remove a resource.</summary>
         public string RequestType {
-            get { return BackingStore?.Get<string>(nameof(RequestType)); }
-            set { BackingStore?.Set(nameof(RequestType), value); }
+            get { return BackingStore?.Get<string>("requestType"); }
+            set { BackingStore?.Set("requestType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

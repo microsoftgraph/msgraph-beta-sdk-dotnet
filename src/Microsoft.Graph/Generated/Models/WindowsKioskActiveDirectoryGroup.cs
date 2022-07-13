@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsKioskActiveDirectoryGroup : WindowsKioskUser, IParsable {
         /// <summary>The name of the AD group that will be locked to this kiosk configuration</summary>
         public string GroupName {
-            get { return BackingStore?.Get<string>(nameof(GroupName)); }
-            set { BackingStore?.Set(nameof(GroupName), value); }
+            get { return BackingStore?.Get<string>("groupName"); }
+            set { BackingStore?.Set("groupName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

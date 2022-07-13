@@ -4,52 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class TeamworkDeviceOperation : Entity, IParsable {
         /// <summary>Time at which the operation reached a final state (for example, Successful, Failed, and Cancelled).</summary>
         public DateTimeOffset? CompletedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CompletedDateTime)); }
-            set { BackingStore?.Set(nameof(CompletedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
+            set { BackingStore?.Set("completedDateTime", value); }
         }
         /// <summary>Identity of the user who created the device operation.</summary>
         public IdentitySet CreatedBy {
-            get { return BackingStore?.Get<IdentitySet>(nameof(CreatedBy)); }
-            set { BackingStore?.Set(nameof(CreatedBy), value); }
+            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
         }
         /// <summary>The UTC date and time when the device operation was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Error details are available only in case of a failed status.</summary>
         public OperationError Error {
-            get { return BackingStore?.Get<OperationError>(nameof(Error)); }
-            set { BackingStore?.Set(nameof(Error), value); }
+            get { return BackingStore?.Get<OperationError>("error"); }
+            set { BackingStore?.Set("error", value); }
         }
         /// <summary>Identity of the user who last modified the device operation.</summary>
         public IdentitySet LastActionBy {
-            get { return BackingStore?.Get<IdentitySet>(nameof(LastActionBy)); }
-            set { BackingStore?.Set(nameof(LastActionBy), value); }
+            get { return BackingStore?.Get<IdentitySet>("lastActionBy"); }
+            set { BackingStore?.Set("lastActionBy", value); }
         }
         /// <summary>The UTC date and time when the device operation was last modified.</summary>
         public DateTimeOffset? LastActionDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastActionDateTime)); }
-            set { BackingStore?.Set(nameof(LastActionDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
+            set { BackingStore?.Set("lastActionDateTime", value); }
         }
-        /// <summary>Type of async operation on a device. The possible values are: deviceRestart, configUpdate, deviceDiagnostics, softwareUpdate, deviceManagementAgentConfigUpdate, remoteLogin, remoteLogout, unknownFutureValue.</summary>
+        /// <summary>The operationType property</summary>
         public TeamworkDeviceOperationType? OperationType {
-            get { return BackingStore?.Get<TeamworkDeviceOperationType?>(nameof(OperationType)); }
-            set { BackingStore?.Set(nameof(OperationType), value); }
+            get { return BackingStore?.Get<TeamworkDeviceOperationType?>("operationType"); }
+            set { BackingStore?.Set("operationType", value); }
         }
         /// <summary>Time at which the operation was started.</summary>
         public DateTimeOffset? StartedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartedDateTime)); }
-            set { BackingStore?.Set(nameof(StartedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startedDateTime"); }
+            set { BackingStore?.Set("startedDateTime", value); }
         }
         /// <summary>The current status of the async operation, for example, Queued, Scheduled, InProgress,  Successful, Cancelled, and Failed.</summary>
         public string Status {
-            get { return BackingStore?.Get<string>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<string>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

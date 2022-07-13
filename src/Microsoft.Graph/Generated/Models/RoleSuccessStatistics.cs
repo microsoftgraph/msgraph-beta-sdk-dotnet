@@ -8,55 +8,55 @@ namespace Microsoft.Graph.Beta.Models {
     public class RoleSuccessStatistics : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The permanentFail property</summary>
         public long? PermanentFail {
-            get { return BackingStore?.Get<long?>(nameof(PermanentFail)); }
-            set { BackingStore?.Set(nameof(PermanentFail), value); }
+            get { return BackingStore?.Get<long?>("permanentFail"); }
+            set { BackingStore?.Set("permanentFail", value); }
         }
         /// <summary>The permanentSuccess property</summary>
         public long? PermanentSuccess {
-            get { return BackingStore?.Get<long?>(nameof(PermanentSuccess)); }
-            set { BackingStore?.Set(nameof(PermanentSuccess), value); }
+            get { return BackingStore?.Get<long?>("permanentSuccess"); }
+            set { BackingStore?.Set("permanentSuccess", value); }
         }
         /// <summary>The removeFail property</summary>
         public long? RemoveFail {
-            get { return BackingStore?.Get<long?>(nameof(RemoveFail)); }
-            set { BackingStore?.Set(nameof(RemoveFail), value); }
+            get { return BackingStore?.Get<long?>("removeFail"); }
+            set { BackingStore?.Set("removeFail", value); }
         }
         /// <summary>The removeSuccess property</summary>
         public long? RemoveSuccess {
-            get { return BackingStore?.Get<long?>(nameof(RemoveSuccess)); }
-            set { BackingStore?.Set(nameof(RemoveSuccess), value); }
+            get { return BackingStore?.Get<long?>("removeSuccess"); }
+            set { BackingStore?.Set("removeSuccess", value); }
         }
         /// <summary>The roleId property</summary>
         public string RoleId {
-            get { return BackingStore?.Get<string>(nameof(RoleId)); }
-            set { BackingStore?.Set(nameof(RoleId), value); }
+            get { return BackingStore?.Get<string>("roleId"); }
+            set { BackingStore?.Set("roleId", value); }
         }
         /// <summary>The roleName property</summary>
         public string RoleName {
-            get { return BackingStore?.Get<string>(nameof(RoleName)); }
-            set { BackingStore?.Set(nameof(RoleName), value); }
+            get { return BackingStore?.Get<string>("roleName"); }
+            set { BackingStore?.Set("roleName", value); }
         }
         /// <summary>The temporaryFail property</summary>
         public long? TemporaryFail {
-            get { return BackingStore?.Get<long?>(nameof(TemporaryFail)); }
-            set { BackingStore?.Set(nameof(TemporaryFail), value); }
+            get { return BackingStore?.Get<long?>("temporaryFail"); }
+            set { BackingStore?.Set("temporaryFail", value); }
         }
         /// <summary>The temporarySuccess property</summary>
         public long? TemporarySuccess {
-            get { return BackingStore?.Get<long?>(nameof(TemporarySuccess)); }
-            set { BackingStore?.Set(nameof(TemporarySuccess), value); }
+            get { return BackingStore?.Get<long?>("temporarySuccess"); }
+            set { BackingStore?.Set("temporarySuccess", value); }
         }
         /// <summary>The unknownFail property</summary>
         public long? UnknownFail {
-            get { return BackingStore?.Get<long?>(nameof(UnknownFail)); }
-            set { BackingStore?.Set(nameof(UnknownFail), value); }
+            get { return BackingStore?.Get<long?>("unknownFail"); }
+            set { BackingStore?.Set("unknownFail", value); }
         }
         /// <summary>
         /// Instantiates a new roleSuccessStatistics and sets the default values.

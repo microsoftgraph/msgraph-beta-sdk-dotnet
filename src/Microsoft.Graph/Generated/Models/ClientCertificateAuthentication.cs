@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class ClientCertificateAuthentication : ApiAuthenticationConfigurationBase, IParsable {
         /// <summary>The list of certificates uploaded for this API connector.</summary>
         public List<Pkcs12CertificateInformation> CertificateList {
-            get { return BackingStore?.Get<List<Pkcs12CertificateInformation>>(nameof(CertificateList)); }
-            set { BackingStore?.Set(nameof(CertificateList), value); }
+            get { return BackingStore?.Get<List<Pkcs12CertificateInformation>>("certificateList"); }
+            set { BackingStore?.Set("certificateList", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

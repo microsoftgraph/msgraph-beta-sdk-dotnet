@@ -8,43 +8,43 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails : Entity, IParsable {
         /// <summary>The number of crashes for the app. Valid values -2147483648 to 2147483647</summary>
         public int? AppCrashCount {
-            get { return BackingStore?.Get<int?>(nameof(AppCrashCount)); }
-            set { BackingStore?.Set(nameof(AppCrashCount), value); }
+            get { return BackingStore?.Get<int?>("appCrashCount"); }
+            set { BackingStore?.Set("appCrashCount", value); }
         }
         /// <summary>The friendly name of the application.</summary>
         public string AppDisplayName {
-            get { return BackingStore?.Get<string>(nameof(AppDisplayName)); }
-            set { BackingStore?.Set(nameof(AppDisplayName), value); }
+            get { return BackingStore?.Get<string>("appDisplayName"); }
+            set { BackingStore?.Set("appDisplayName", value); }
         }
         /// <summary>The name of the application.</summary>
         public string AppName {
-            get { return BackingStore?.Get<string>(nameof(AppName)); }
-            set { BackingStore?.Set(nameof(AppName), value); }
+            get { return BackingStore?.Get<string>("appName"); }
+            set { BackingStore?.Set("appName", value); }
         }
         /// <summary>The publisher of the application.</summary>
         public string AppPublisher {
-            get { return BackingStore?.Get<string>(nameof(AppPublisher)); }
-            set { BackingStore?.Set(nameof(AppPublisher), value); }
+            get { return BackingStore?.Get<string>("appPublisher"); }
+            set { BackingStore?.Set("appPublisher", value); }
         }
         /// <summary>The version of the application.</summary>
         public string AppVersion {
-            get { return BackingStore?.Get<string>(nameof(AppVersion)); }
-            set { BackingStore?.Set(nameof(AppVersion), value); }
+            get { return BackingStore?.Get<string>("appVersion"); }
+            set { BackingStore?.Set("appVersion", value); }
         }
         /// <summary>The total number of devices that have reported one or more application crashes for this application and version. Valid values -2147483648 to 2147483647</summary>
         public int? DeviceCountWithCrashes {
-            get { return BackingStore?.Get<int?>(nameof(DeviceCountWithCrashes)); }
-            set { BackingStore?.Set(nameof(DeviceCountWithCrashes), value); }
+            get { return BackingStore?.Get<int?>("deviceCountWithCrashes"); }
+            set { BackingStore?.Set("deviceCountWithCrashes", value); }
         }
         /// <summary>Is the version of application the latest version for that app that is in use.</summary>
         public bool? IsLatestUsedVersion {
-            get { return BackingStore?.Get<bool?>(nameof(IsLatestUsedVersion)); }
-            set { BackingStore?.Set(nameof(IsLatestUsedVersion), value); }
+            get { return BackingStore?.Get<bool?>("isLatestUsedVersion"); }
+            set { BackingStore?.Set("isLatestUsedVersion", value); }
         }
         /// <summary>Is the version of application the most used version for that app.</summary>
         public bool? IsMostUsedVersion {
-            get { return BackingStore?.Get<bool?>(nameof(IsMostUsedVersion)); }
-            set { BackingStore?.Set(nameof(IsMostUsedVersion), value); }
+            get { return BackingStore?.Get<bool?>("isMostUsedVersion"); }
+            set { BackingStore?.Set("isMostUsedVersion", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

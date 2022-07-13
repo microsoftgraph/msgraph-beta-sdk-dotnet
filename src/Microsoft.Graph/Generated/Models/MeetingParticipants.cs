@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class MeetingParticipants : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Information of the meeting attendees.</summary>
         public List<MeetingParticipantInfo> Attendees {
-            get { return BackingStore?.Get<List<MeetingParticipantInfo>>(nameof(Attendees)); }
-            set { BackingStore?.Set(nameof(Attendees), value); }
+            get { return BackingStore?.Get<List<MeetingParticipantInfo>>("attendees"); }
+            set { BackingStore?.Set("attendees", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The contributors property</summary>
         public List<MeetingParticipantInfo> Contributors {
-            get { return BackingStore?.Get<List<MeetingParticipantInfo>>(nameof(Contributors)); }
-            set { BackingStore?.Set(nameof(Contributors), value); }
+            get { return BackingStore?.Get<List<MeetingParticipantInfo>>("contributors"); }
+            set { BackingStore?.Set("contributors", value); }
         }
         /// <summary>Information of the meeting organizer.</summary>
         public MeetingParticipantInfo Organizer {
-            get { return BackingStore?.Get<MeetingParticipantInfo>(nameof(Organizer)); }
-            set { BackingStore?.Set(nameof(Organizer), value); }
+            get { return BackingStore?.Get<MeetingParticipantInfo>("organizer"); }
+            set { BackingStore?.Set("organizer", value); }
         }
         /// <summary>The producers property</summary>
         public List<MeetingParticipantInfo> Producers {
-            get { return BackingStore?.Get<List<MeetingParticipantInfo>>(nameof(Producers)); }
-            set { BackingStore?.Set(nameof(Producers), value); }
+            get { return BackingStore?.Get<List<MeetingParticipantInfo>>("producers"); }
+            set { BackingStore?.Set("producers", value); }
         }
         /// <summary>
         /// Instantiates a new meetingParticipants and sets the default values.

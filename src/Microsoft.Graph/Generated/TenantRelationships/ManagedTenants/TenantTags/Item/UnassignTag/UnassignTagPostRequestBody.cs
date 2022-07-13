@@ -9,15 +9,15 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Ite
     public class UnassignTagPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The tenantIds property</summary>
         public List<string> TenantIds {
-            get { return BackingStore?.Get<List<string>>(nameof(TenantIds)); }
-            set { BackingStore?.Set(nameof(TenantIds), value); }
+            get { return BackingStore?.Get<List<string>>("tenantIds"); }
+            set { BackingStore?.Set("tenantIds", value); }
         }
         /// <summary>
         /// Instantiates a new unassignTagPostRequestBody and sets the default values.

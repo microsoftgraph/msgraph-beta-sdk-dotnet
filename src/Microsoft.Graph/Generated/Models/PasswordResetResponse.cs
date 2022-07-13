@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class PasswordResetResponse : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The newPassword property</summary>
         public string NewPassword {
-            get { return BackingStore?.Get<string>(nameof(NewPassword)); }
-            set { BackingStore?.Set(nameof(NewPassword), value); }
+            get { return BackingStore?.Get<string>("newPassword"); }
+            set { BackingStore?.Set("newPassword", value); }
         }
         /// <summary>
-        /// Instantiates a new PasswordResetResponse and sets the default values.
+        /// Instantiates a new passwordResetResponse and sets the default values.
         /// </summary>
         public PasswordResetResponse() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

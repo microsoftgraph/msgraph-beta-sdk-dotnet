@@ -8,23 +8,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class MeetingCapability : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Indicates whether anonymous users dialout is allowed in a meeting.</summary>
         public bool? AllowAnonymousUsersToDialOut {
-            get { return BackingStore?.Get<bool?>(nameof(AllowAnonymousUsersToDialOut)); }
-            set { BackingStore?.Set(nameof(AllowAnonymousUsersToDialOut), value); }
+            get { return BackingStore?.Get<bool?>("allowAnonymousUsersToDialOut"); }
+            set { BackingStore?.Set("allowAnonymousUsersToDialOut", value); }
         }
         /// <summary>Indicates whether anonymous users are allowed to start a meeting.</summary>
         public bool? AllowAnonymousUsersToStartMeeting {
-            get { return BackingStore?.Get<bool?>(nameof(AllowAnonymousUsersToStartMeeting)); }
-            set { BackingStore?.Set(nameof(AllowAnonymousUsersToStartMeeting), value); }
+            get { return BackingStore?.Get<bool?>("allowAnonymousUsersToStartMeeting"); }
+            set { BackingStore?.Set("allowAnonymousUsersToStartMeeting", value); }
         }
-        /// <summary>Possible values are: everyoneInCompany, everyone.</summary>
+        /// <summary>The autoAdmittedUsers property</summary>
         public AutoAdmittedUsersType? AutoAdmittedUsers {
-            get { return BackingStore?.Get<AutoAdmittedUsersType?>(nameof(AutoAdmittedUsers)); }
-            set { BackingStore?.Set(nameof(AutoAdmittedUsers), value); }
+            get { return BackingStore?.Get<AutoAdmittedUsersType?>("autoAdmittedUsers"); }
+            set { BackingStore?.Set("autoAdmittedUsers", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }

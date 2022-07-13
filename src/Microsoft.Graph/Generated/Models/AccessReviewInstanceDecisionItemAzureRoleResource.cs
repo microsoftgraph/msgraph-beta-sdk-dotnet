@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessReviewInstanceDecisionItemAzureRoleResource : AccessReviewInstanceDecisionItemResource, IParsable {
         /// <summary>Details of the scope this role is associated with.</summary>
         public AccessReviewInstanceDecisionItemResource Scope {
-            get { return BackingStore?.Get<AccessReviewInstanceDecisionItemResource>(nameof(Scope)); }
-            set { BackingStore?.Set(nameof(Scope), value); }
+            get { return BackingStore?.Get<AccessReviewInstanceDecisionItemResource>("scope"); }
+            set { BackingStore?.Set("scope", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

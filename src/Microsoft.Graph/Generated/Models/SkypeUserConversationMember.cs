@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class SkypeUserConversationMember : ConversationMember, IParsable {
         /// <summary>Skype ID of the user.</summary>
         public string SkypeId {
-            get { return BackingStore?.Get<string>(nameof(SkypeId)); }
-            set { BackingStore?.Set(nameof(SkypeId), value); }
+            get { return BackingStore?.Get<string>("skypeId"); }
+            set { BackingStore?.Set("skypeId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

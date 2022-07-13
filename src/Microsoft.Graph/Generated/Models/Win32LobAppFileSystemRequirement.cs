@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class Win32LobAppFileSystemRequirement : Win32LobAppRequirement, IParsable {
         /// <summary>A value indicating whether this file or folder is for checking 32-bit app on 64-bit system</summary>
         public bool? Check32BitOn64System {
-            get { return BackingStore?.Get<bool?>(nameof(Check32BitOn64System)); }
-            set { BackingStore?.Set(nameof(Check32BitOn64System), value); }
+            get { return BackingStore?.Get<bool?>("check32BitOn64System"); }
+            set { BackingStore?.Set("check32BitOn64System", value); }
         }
-        /// <summary>The file system detection type. Possible values are: notConfigured, exists, modifiedDate, createdDate, version, sizeInMB, doesNotExist.</summary>
+        /// <summary>Contains all supported file system detection type.</summary>
         public Win32LobAppFileSystemDetectionType? DetectionType {
-            get { return BackingStore?.Get<Win32LobAppFileSystemDetectionType?>(nameof(DetectionType)); }
-            set { BackingStore?.Set(nameof(DetectionType), value); }
+            get { return BackingStore?.Get<Win32LobAppFileSystemDetectionType?>("detectionType"); }
+            set { BackingStore?.Set("detectionType", value); }
         }
         /// <summary>The file or folder name to detect Win32 Line of Business (LoB) app</summary>
         public string FileOrFolderName {
-            get { return BackingStore?.Get<string>(nameof(FileOrFolderName)); }
-            set { BackingStore?.Set(nameof(FileOrFolderName), value); }
+            get { return BackingStore?.Get<string>("fileOrFolderName"); }
+            set { BackingStore?.Set("fileOrFolderName", value); }
         }
         /// <summary>The file or folder path to detect Win32 Line of Business (LoB) app</summary>
         public string PathObject {
-            get { return BackingStore?.Get<string>(nameof(PathObject)); }
-            set { BackingStore?.Set(nameof(PathObject), value); }
+            get { return BackingStore?.Get<string>("path"); }
+            set { BackingStore?.Set("path", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

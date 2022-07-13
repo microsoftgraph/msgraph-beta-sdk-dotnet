@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageResourceAttributeQuestion : AccessPackageResourceAttributeSource, IParsable {
         /// <summary>The question asked in order to get the value of the attribute</summary>
         public AccessPackageQuestion Question {
-            get { return BackingStore?.Get<AccessPackageQuestion>(nameof(Question)); }
-            set { BackingStore?.Set(nameof(Question), value); }
+            get { return BackingStore?.Get<AccessPackageQuestion>("question"); }
+            set { BackingStore?.Set("question", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

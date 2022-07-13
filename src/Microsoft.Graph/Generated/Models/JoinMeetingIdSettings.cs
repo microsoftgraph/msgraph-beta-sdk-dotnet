@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class JoinMeetingIdSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isPasscodeRequired property</summary>
+        /// <summary>Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.</summary>
         public bool? IsPasscodeRequired {
-            get { return BackingStore?.Get<bool?>(nameof(IsPasscodeRequired)); }
-            set { BackingStore?.Set(nameof(IsPasscodeRequired), value); }
+            get { return BackingStore?.Get<bool?>("isPasscodeRequired"); }
+            set { BackingStore?.Set("isPasscodeRequired", value); }
         }
-        /// <summary>The joinMeetingId property</summary>
+        /// <summary>The meeting ID to be used to join a meeting. Optional. Read-only.</summary>
         public string JoinMeetingId {
-            get { return BackingStore?.Get<string>(nameof(JoinMeetingId)); }
-            set { BackingStore?.Set(nameof(JoinMeetingId), value); }
+            get { return BackingStore?.Get<string>("joinMeetingId"); }
+            set { BackingStore?.Set("joinMeetingId", value); }
         }
-        /// <summary>The passcode property</summary>
+        /// <summary>The passcode to join a meeting.  Optional. Read-only.</summary>
         public string Passcode {
-            get { return BackingStore?.Get<string>(nameof(Passcode)); }
-            set { BackingStore?.Set(nameof(Passcode), value); }
+            get { return BackingStore?.Get<string>("passcode"); }
+            set { BackingStore?.Set("passcode", value); }
         }
         /// <summary>
         /// Instantiates a new joinMeetingIdSettings and sets the default values.

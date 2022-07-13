@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationChoiceSettingValue : DeviceManagementConfigurationSettingValue, IParsable {
         /// <summary>Child settings.</summary>
         public List<DeviceManagementConfigurationSettingInstance> Children {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstance>>(nameof(Children)); }
-            set { BackingStore?.Set(nameof(Children), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstance>>("children"); }
+            set { BackingStore?.Set("children", value); }
         }
         /// <summary>Choice setting value: an OptionDefinition ItemId.</summary>
         public string Value {
-            get { return BackingStore?.Get<string>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<string>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

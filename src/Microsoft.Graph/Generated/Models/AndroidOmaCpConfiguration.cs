@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidOmaCpConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Configuration XML that will be applied to the device. When it is read, it only provides a placeholder string since the original data is encrypted and stored.</summary>
         public byte[] ConfigurationXml {
-            get { return BackingStore?.Get<byte[]>(nameof(ConfigurationXml)); }
-            set { BackingStore?.Set(nameof(ConfigurationXml), value); }
+            get { return BackingStore?.Get<byte[]>("configurationXml"); }
+            set { BackingStore?.Set("configurationXml", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

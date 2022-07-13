@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamworkLoginStatus : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Information about the Exchange connection.</summary>
         public TeamworkConnection ExchangeConnection {
-            get { return BackingStore?.Get<TeamworkConnection>(nameof(ExchangeConnection)); }
-            set { BackingStore?.Set(nameof(ExchangeConnection), value); }
+            get { return BackingStore?.Get<TeamworkConnection>("exchangeConnection"); }
+            set { BackingStore?.Set("exchangeConnection", value); }
         }
         /// <summary>Information about the Skype for Business connection.</summary>
         public TeamworkConnection SkypeConnection {
-            get { return BackingStore?.Get<TeamworkConnection>(nameof(SkypeConnection)); }
-            set { BackingStore?.Set(nameof(SkypeConnection), value); }
+            get { return BackingStore?.Get<TeamworkConnection>("skypeConnection"); }
+            set { BackingStore?.Set("skypeConnection", value); }
         }
         /// <summary>Information about the Teams connection.</summary>
         public TeamworkConnection TeamsConnection {
-            get { return BackingStore?.Get<TeamworkConnection>(nameof(TeamsConnection)); }
-            set { BackingStore?.Set(nameof(TeamsConnection), value); }
+            get { return BackingStore?.Get<TeamworkConnection>("teamsConnection"); }
+            set { BackingStore?.Set("teamsConnection", value); }
         }
         /// <summary>
         /// Instantiates a new teamworkLoginStatus and sets the default values.

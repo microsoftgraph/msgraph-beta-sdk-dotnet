@@ -8,23 +8,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class SigningResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The signature property</summary>
         public byte[] Signature {
-            get { return BackingStore?.Get<byte[]>(nameof(Signature)); }
-            set { BackingStore?.Set(nameof(Signature), value); }
+            get { return BackingStore?.Get<byte[]>("signature"); }
+            set { BackingStore?.Set("signature", value); }
         }
         /// <summary>The signingKeyId property</summary>
         public string SigningKeyId {
-            get { return BackingStore?.Get<string>(nameof(SigningKeyId)); }
-            set { BackingStore?.Set(nameof(SigningKeyId), value); }
+            get { return BackingStore?.Get<string>("signingKeyId"); }
+            set { BackingStore?.Set("signingKeyId", value); }
         }
         /// <summary>
-        /// Instantiates a new SigningResult and sets the default values.
+        /// Instantiates a new signingResult and sets the default values.
         /// </summary>
         public SigningResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

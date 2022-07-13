@@ -8,23 +8,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class AllowedDataLocation : Entity, IParsable {
         /// <summary>The appId property</summary>
         public string AppId {
-            get { return BackingStore?.Get<string>(nameof(AppId)); }
-            set { BackingStore?.Set(nameof(AppId), value); }
+            get { return BackingStore?.Get<string>("appId"); }
+            set { BackingStore?.Set("appId", value); }
         }
         /// <summary>The domain property</summary>
         public string Domain {
-            get { return BackingStore?.Get<string>(nameof(Domain)); }
-            set { BackingStore?.Set(nameof(Domain), value); }
+            get { return BackingStore?.Get<string>("domain"); }
+            set { BackingStore?.Set("domain", value); }
         }
         /// <summary>The isDefault property</summary>
         public bool? IsDefault {
-            get { return BackingStore?.Get<bool?>(nameof(IsDefault)); }
-            set { BackingStore?.Set(nameof(IsDefault), value); }
+            get { return BackingStore?.Get<bool?>("isDefault"); }
+            set { BackingStore?.Set("isDefault", value); }
         }
         /// <summary>The location property</summary>
         public string Location {
-            get { return BackingStore?.Get<string>(nameof(Location)); }
-            set { BackingStore?.Set(nameof(Location), value); }
+            get { return BackingStore?.Get<string>("location"); }
+            set { BackingStore?.Set("location", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

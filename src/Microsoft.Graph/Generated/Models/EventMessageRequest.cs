@@ -7,28 +7,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class EventMessageRequest : EventMessage, IParsable {
         /// <summary>True if the meeting organizer allows invitees to propose a new time when responding, false otherwise. Optional. Default is true.</summary>
         public bool? AllowNewTimeProposals {
-            get { return BackingStore?.Get<bool?>(nameof(AllowNewTimeProposals)); }
-            set { BackingStore?.Set(nameof(AllowNewTimeProposals), value); }
+            get { return BackingStore?.Get<bool?>("allowNewTimeProposals"); }
+            set { BackingStore?.Set("allowNewTimeProposals", value); }
         }
         /// <summary>If the meeting update changes the meeting end time, this property specifies the previous meeting end time.</summary>
         public DateTimeTimeZone PreviousEndDateTime {
-            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(PreviousEndDateTime)); }
-            set { BackingStore?.Set(nameof(PreviousEndDateTime), value); }
+            get { return BackingStore?.Get<DateTimeTimeZone>("previousEndDateTime"); }
+            set { BackingStore?.Set("previousEndDateTime", value); }
         }
         /// <summary>If the meeting update changes the meeting location, this property specifies the previous meeting location.</summary>
         public Location PreviousLocation {
-            get { return BackingStore?.Get<Location>(nameof(PreviousLocation)); }
-            set { BackingStore?.Set(nameof(PreviousLocation), value); }
+            get { return BackingStore?.Get<Location>("previousLocation"); }
+            set { BackingStore?.Set("previousLocation", value); }
         }
         /// <summary>If the meeting update changes the meeting start time, this property specifies the previous meeting start time.</summary>
         public DateTimeTimeZone PreviousStartDateTime {
-            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(PreviousStartDateTime)); }
-            set { BackingStore?.Set(nameof(PreviousStartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeTimeZone>("previousStartDateTime"); }
+            set { BackingStore?.Set("previousStartDateTime", value); }
         }
         /// <summary>Set to true if the sender would like the invitee to send a response to the requested meeting.</summary>
         public bool? ResponseRequested {
-            get { return BackingStore?.Get<bool?>(nameof(ResponseRequested)); }
-            set { BackingStore?.Set(nameof(ResponseRequested), value); }
+            get { return BackingStore?.Get<bool?>("responseRequested"); }
+            set { BackingStore?.Set("responseRequested", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

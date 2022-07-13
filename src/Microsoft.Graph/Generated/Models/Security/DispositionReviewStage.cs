@@ -4,22 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class DispositionReviewStage : Entity, IParsable {
         /// <summary>Name representing each stage within a collection.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>A collection of reviewers at each stage.</summary>
         public List<string> ReviewersEmailAddresses {
-            get { return BackingStore?.Get<List<string>>(nameof(ReviewersEmailAddresses)); }
-            set { BackingStore?.Set(nameof(ReviewersEmailAddresses), value); }
+            get { return BackingStore?.Get<List<string>>("reviewersEmailAddresses"); }
+            set { BackingStore?.Set("reviewersEmailAddresses", value); }
         }
         /// <summary>The sequence number for each stage of the disposition review.</summary>
         public int? StageNumber {
-            get { return BackingStore?.Get<int?>(nameof(StageNumber)); }
-            set { BackingStore?.Set(nameof(StageNumber), value); }
+            get { return BackingStore?.Get<int?>("stageNumber"); }
+            set { BackingStore?.Set("stageNumber", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

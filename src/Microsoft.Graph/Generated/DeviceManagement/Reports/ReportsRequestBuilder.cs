@@ -37,6 +37,7 @@ using Microsoft.Graph.Beta.DeviceManagement.Reports.GetFailedMobileAppsSummaryRe
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetGroupPolicySettingsDeviceSettingsReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetHistoricalReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetMalwareSummaryReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetNoncompliantDevicesAndSettingsReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetPolicyNonComplianceMetadata;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetPolicyNonComplianceReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetPolicyNonComplianceSummaryReport;
@@ -223,6 +224,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports {
         /// <summary>The getMalwareSummaryReport property</summary>
         public GetMalwareSummaryReportRequestBuilder GetMalwareSummaryReport { get =>
             new GetMalwareSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The getNoncompliantDevicesAndSettingsReport property</summary>
+        public GetNoncompliantDevicesAndSettingsReportRequestBuilder GetNoncompliantDevicesAndSettingsReport { get =>
+            new GetNoncompliantDevicesAndSettingsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The getPolicyNonComplianceMetadata property</summary>
         public GetPolicyNonComplianceMetadataRequestBuilder GetPolicyNonComplianceMetadata { get =>

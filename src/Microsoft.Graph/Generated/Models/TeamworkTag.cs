@@ -4,37 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class TeamworkTag : Entity, IParsable {
         /// <summary>Tag description as it will appear to the user in Microsoft Teams.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Tag name as it will appear to the user in Microsoft Teams.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The number of users assigned to the tag.</summary>
         public int? MemberCount {
-            get { return BackingStore?.Get<int?>(nameof(MemberCount)); }
-            set { BackingStore?.Set(nameof(MemberCount), value); }
+            get { return BackingStore?.Get<int?>("memberCount"); }
+            set { BackingStore?.Set("memberCount", value); }
         }
         /// <summary>Users assigned to the tag.</summary>
         public List<TeamworkTagMember> Members {
-            get { return BackingStore?.Get<List<TeamworkTagMember>>(nameof(Members)); }
-            set { BackingStore?.Set(nameof(Members), value); }
+            get { return BackingStore?.Get<List<TeamworkTagMember>>("members"); }
+            set { BackingStore?.Set("members", value); }
         }
         /// <summary>The type of tag. Default is standard.</summary>
         public TeamworkTagType? TagType {
-            get { return BackingStore?.Get<TeamworkTagType?>(nameof(TagType)); }
-            set { BackingStore?.Set(nameof(TagType), value); }
+            get { return BackingStore?.Get<TeamworkTagType?>("tagType"); }
+            set { BackingStore?.Set("tagType", value); }
         }
         /// <summary>ID of the team in which the tag is defined.</summary>
         public string TeamId {
-            get { return BackingStore?.Get<string>(nameof(TeamId)); }
-            set { BackingStore?.Set(nameof(TeamId), value); }
+            get { return BackingStore?.Get<string>("teamId"); }
+            set { BackingStore?.Set("teamId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

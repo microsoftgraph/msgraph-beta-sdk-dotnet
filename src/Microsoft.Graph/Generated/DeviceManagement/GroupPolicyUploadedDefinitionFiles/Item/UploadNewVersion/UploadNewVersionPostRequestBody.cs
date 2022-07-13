@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFil
     public class UploadNewVersionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The content property</summary>
         public byte[] Content {
-            get { return BackingStore?.Get<byte[]>(nameof(Content)); }
-            set { BackingStore?.Set(nameof(Content), value); }
+            get { return BackingStore?.Get<byte[]>("content"); }
+            set { BackingStore?.Set("content", value); }
         }
         /// <summary>The groupPolicyUploadedLanguageFiles property</summary>
         public List<GroupPolicyUploadedLanguageFile> GroupPolicyUploadedLanguageFiles {
-            get { return BackingStore?.Get<List<GroupPolicyUploadedLanguageFile>>(nameof(GroupPolicyUploadedLanguageFiles)); }
-            set { BackingStore?.Set(nameof(GroupPolicyUploadedLanguageFiles), value); }
+            get { return BackingStore?.Get<List<GroupPolicyUploadedLanguageFile>>("groupPolicyUploadedLanguageFiles"); }
+            set { BackingStore?.Set("groupPolicyUploadedLanguageFiles", value); }
         }
         /// <summary>
         /// Instantiates a new uploadNewVersionPostRequestBody and sets the default values.

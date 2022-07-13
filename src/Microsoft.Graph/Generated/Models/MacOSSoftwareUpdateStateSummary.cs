@@ -8,33 +8,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOSSoftwareUpdateStateSummary : Entity, IParsable {
         /// <summary>Human readable name of the software update</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Last date time the report for this device and product key was updated.</summary>
         public DateTimeOffset? LastUpdatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastUpdatedDateTime)); }
-            set { BackingStore?.Set(nameof(LastUpdatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
+            set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>Product key of the software update.</summary>
         public string ProductKey {
-            get { return BackingStore?.Get<string>(nameof(ProductKey)); }
-            set { BackingStore?.Set(nameof(ProductKey), value); }
+            get { return BackingStore?.Get<string>("productKey"); }
+            set { BackingStore?.Set("productKey", value); }
         }
-        /// <summary>State of the software update. Possible values are: success, downloading, downloaded, installing, idle, available, scheduled, downloadFailed, downloadInsufficientSpace, downloadInsufficientPower, downloadInsufficientNetwork, installInsufficientSpace, installInsufficientPower, installFailed, commandFailed.</summary>
+        /// <summary>MacOS Software Update State</summary>
         public MacOSSoftwareUpdateState? State {
-            get { return BackingStore?.Get<MacOSSoftwareUpdateState?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<MacOSSoftwareUpdateState?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
-        /// <summary>Software update category. Possible values are: critical, configurationDataFile, firmware, other.</summary>
+        /// <summary>MacOS Software Update Category</summary>
         public MacOSSoftwareUpdateCategory? UpdateCategory {
-            get { return BackingStore?.Get<MacOSSoftwareUpdateCategory?>(nameof(UpdateCategory)); }
-            set { BackingStore?.Set(nameof(UpdateCategory), value); }
+            get { return BackingStore?.Get<MacOSSoftwareUpdateCategory?>("updateCategory"); }
+            set { BackingStore?.Set("updateCategory", value); }
         }
         /// <summary>Version of the software update</summary>
         public string UpdateVersion {
-            get { return BackingStore?.Get<string>(nameof(UpdateVersion)); }
-            set { BackingStore?.Set(nameof(UpdateVersion), value); }
+            get { return BackingStore?.Get<string>("updateVersion"); }
+            set { BackingStore?.Set("updateVersion", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

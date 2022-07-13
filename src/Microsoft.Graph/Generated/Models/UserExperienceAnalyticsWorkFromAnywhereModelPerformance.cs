@@ -8,48 +8,48 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsWorkFromAnywhereModelPerformance : Entity, IParsable {
         /// <summary>The user experience work from anywhere&apos;s cloud identity score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? CloudIdentityScore {
-            get { return BackingStore?.Get<double?>(nameof(CloudIdentityScore)); }
-            set { BackingStore?.Set(nameof(CloudIdentityScore), value); }
+            get { return BackingStore?.Get<double?>("cloudIdentityScore"); }
+            set { BackingStore?.Set("cloudIdentityScore", value); }
         }
         /// <summary>The user experience work from anywhere&apos;s cloud management score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? CloudManagementScore {
-            get { return BackingStore?.Get<double?>(nameof(CloudManagementScore)); }
-            set { BackingStore?.Set(nameof(CloudManagementScore), value); }
+            get { return BackingStore?.Get<double?>("cloudManagementScore"); }
+            set { BackingStore?.Set("cloudManagementScore", value); }
         }
         /// <summary>The user experience work from anywhere&apos;s cloud provisioning score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? CloudProvisioningScore {
-            get { return BackingStore?.Get<double?>(nameof(CloudProvisioningScore)); }
-            set { BackingStore?.Set(nameof(CloudProvisioningScore), value); }
+            get { return BackingStore?.Get<double?>("cloudProvisioningScore"); }
+            set { BackingStore?.Set("cloudProvisioningScore", value); }
         }
-        /// <summary>The health state of the user experience analytics work from anywhere model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.</summary>
+        /// <summary>The healthStatus property</summary>
         public UserExperienceAnalyticsHealthState? HealthStatus {
-            get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>(nameof(HealthStatus)); }
-            set { BackingStore?.Set(nameof(HealthStatus), value); }
+            get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>("healthStatus"); }
+            set { BackingStore?.Set("healthStatus", value); }
         }
         /// <summary>The user experience work from anywhere&apos;s manufacturer name of the devices.</summary>
         public string Manufacturer {
-            get { return BackingStore?.Get<string>(nameof(Manufacturer)); }
-            set { BackingStore?.Set(nameof(Manufacturer), value); }
+            get { return BackingStore?.Get<string>("manufacturer"); }
+            set { BackingStore?.Set("manufacturer", value); }
         }
         /// <summary>The user experience work from anywhere&apos;s model name of the devices.</summary>
         public string Model {
-            get { return BackingStore?.Get<string>(nameof(Model)); }
-            set { BackingStore?.Set(nameof(Model), value); }
+            get { return BackingStore?.Get<string>("model"); }
+            set { BackingStore?.Set("model", value); }
         }
         /// <summary>The user experience work from anywhere&apos;s devices count for the model. Valid values -2147483648 to 2147483647</summary>
         public int? ModelDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(ModelDeviceCount)); }
-            set { BackingStore?.Set(nameof(ModelDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("modelDeviceCount"); }
+            set { BackingStore?.Set("modelDeviceCount", value); }
         }
         /// <summary>The user experience work from anywhere windows score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? WindowsScore {
-            get { return BackingStore?.Get<double?>(nameof(WindowsScore)); }
-            set { BackingStore?.Set(nameof(WindowsScore), value); }
+            get { return BackingStore?.Get<double?>("windowsScore"); }
+            set { BackingStore?.Set("windowsScore", value); }
         }
         /// <summary>The user experience work from anywhere overall score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? WorkFromAnywhereScore {
-            get { return BackingStore?.Get<double?>(nameof(WorkFromAnywhereScore)); }
-            set { BackingStore?.Set(nameof(WorkFromAnywhereScore), value); }
+            get { return BackingStore?.Get<double?>("workFromAnywhereScore"); }
+            set { BackingStore?.Set("workFromAnywhereScore", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

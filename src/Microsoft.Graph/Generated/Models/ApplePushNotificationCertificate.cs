@@ -4,47 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Apple push notification certificate.</summary>
     public class ApplePushNotificationCertificate : Entity, IParsable {
         /// <summary>Apple Id of the account used to create the MDM push certificate.</summary>
         public string AppleIdentifier {
-            get { return BackingStore?.Get<string>(nameof(AppleIdentifier)); }
-            set { BackingStore?.Set(nameof(AppleIdentifier), value); }
+            get { return BackingStore?.Get<string>("appleIdentifier"); }
+            set { BackingStore?.Set("appleIdentifier", value); }
         }
         /// <summary>Not yet documented</summary>
         public string Certificate {
-            get { return BackingStore?.Get<string>(nameof(Certificate)); }
-            set { BackingStore?.Set(nameof(Certificate), value); }
+            get { return BackingStore?.Get<string>("certificate"); }
+            set { BackingStore?.Set("certificate", value); }
         }
         /// <summary>Certificate serial number. This property is read-only.</summary>
         public string CertificateSerialNumber {
-            get { return BackingStore?.Get<string>(nameof(CertificateSerialNumber)); }
-            set { BackingStore?.Set(nameof(CertificateSerialNumber), value); }
+            get { return BackingStore?.Get<string>("certificateSerialNumber"); }
+            set { BackingStore?.Set("certificateSerialNumber", value); }
         }
         /// <summary>The reason the certificate upload failed.</summary>
         public string CertificateUploadFailureReason {
-            get { return BackingStore?.Get<string>(nameof(CertificateUploadFailureReason)); }
-            set { BackingStore?.Set(nameof(CertificateUploadFailureReason), value); }
+            get { return BackingStore?.Get<string>("certificateUploadFailureReason"); }
+            set { BackingStore?.Set("certificateUploadFailureReason", value); }
         }
         /// <summary>The certificate upload status.</summary>
         public string CertificateUploadStatus {
-            get { return BackingStore?.Get<string>(nameof(CertificateUploadStatus)); }
-            set { BackingStore?.Set(nameof(CertificateUploadStatus), value); }
+            get { return BackingStore?.Get<string>("certificateUploadStatus"); }
+            set { BackingStore?.Set("certificateUploadStatus", value); }
         }
         /// <summary>The expiration date and time for Apple push notification certificate.</summary>
         public DateTimeOffset? ExpirationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpirationDateTime)); }
-            set { BackingStore?.Set(nameof(ExpirationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
+            set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>Last modified date and time for Apple push notification certificate.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Topic Id.</summary>
         public string TopicIdentifier {
-            get { return BackingStore?.Get<string>(nameof(TopicIdentifier)); }
-            set { BackingStore?.Set(nameof(TopicIdentifier), value); }
+            get { return BackingStore?.Get<string>("topicIdentifier"); }
+            set { BackingStore?.Set("topicIdentifier", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

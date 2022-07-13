@@ -7,133 +7,128 @@ namespace Microsoft.Graph.Beta.Models {
     public class SubjectRightsRequest : Entity, IParsable {
         /// <summary>Identity that the request is assigned to.</summary>
         public Identity AssignedTo {
-            get { return BackingStore?.Get<Identity>(nameof(AssignedTo)); }
-            set { BackingStore?.Set(nameof(AssignedTo), value); }
+            get { return BackingStore?.Get<Identity>("assignedTo"); }
+            set { BackingStore?.Set("assignedTo", value); }
         }
         /// <summary>The date and time when the request was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ClosedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ClosedDateTime)); }
-            set { BackingStore?.Set(nameof(ClosedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("closedDateTime"); }
+            set { BackingStore?.Set("closedDateTime", value); }
         }
         /// <summary>KQL based content query that should be used for search. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.</summary>
         public string ContentQuery {
-            get { return BackingStore?.Get<string>(nameof(ContentQuery)); }
-            set { BackingStore?.Set(nameof(ContentQuery), value); }
+            get { return BackingStore?.Get<string>("contentQuery"); }
+            set { BackingStore?.Set("contentQuery", value); }
         }
         /// <summary>Identity information for the entity that created the request.</summary>
         public IdentitySet CreatedBy {
-            get { return BackingStore?.Get<IdentitySet>(nameof(CreatedBy)); }
-            set { BackingStore?.Set(nameof(CreatedBy), value); }
+            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
         }
         /// <summary>The date and time when the request was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Information about the data subject.</summary>
         public Microsoft.Graph.Beta.Models.DataSubject DataSubject {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DataSubject>(nameof(DataSubject)); }
-            set { BackingStore?.Set(nameof(DataSubject), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DataSubject>("dataSubject"); }
+            set { BackingStore?.Set("dataSubject", value); }
         }
         /// <summary>The type of the data subject. Possible values are: customer, currentEmployee, formerEmployee, prospectiveEmployee, student, teacher, faculty, other, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.DataSubjectType? DataSubjectType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DataSubjectType?>(nameof(DataSubjectType)); }
-            set { BackingStore?.Set(nameof(DataSubjectType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DataSubjectType?>("dataSubjectType"); }
+            set { BackingStore?.Set("dataSubjectType", value); }
         }
         /// <summary>Description for the request.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The name of the request.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The external ID for the request that is immutable after creation and is used for tracking the request for the external system. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.</summary>
         public string ExternalId {
-            get { return BackingStore?.Get<string>(nameof(ExternalId)); }
-            set { BackingStore?.Set(nameof(ExternalId), value); }
+            get { return BackingStore?.Get<string>("externalId"); }
+            set { BackingStore?.Set("externalId", value); }
         }
         /// <summary>Collection of history change events.</summary>
         public List<SubjectRightsRequestHistory> History {
-            get { return BackingStore?.Get<List<SubjectRightsRequestHistory>>(nameof(History)); }
-            set { BackingStore?.Set(nameof(History), value); }
+            get { return BackingStore?.Get<List<SubjectRightsRequestHistory>>("history"); }
+            set { BackingStore?.Set("history", value); }
         }
         /// <summary>Include all versions of the documents. By default, the current copies of the documents will be returned. If SharePoint sites have versioning enabled, including all versions will include the historical copies of the documents. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.</summary>
         public bool? IncludeAllVersions {
-            get { return BackingStore?.Get<bool?>(nameof(IncludeAllVersions)); }
-            set { BackingStore?.Set(nameof(IncludeAllVersions), value); }
+            get { return BackingStore?.Get<bool?>("includeAllVersions"); }
+            set { BackingStore?.Set("includeAllVersions", value); }
         }
         /// <summary>Include content authored by the data subject. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.</summary>
         public bool? IncludeAuthoredContent {
-            get { return BackingStore?.Get<bool?>(nameof(IncludeAuthoredContent)); }
-            set { BackingStore?.Set(nameof(IncludeAuthoredContent), value); }
+            get { return BackingStore?.Get<bool?>("includeAuthoredContent"); }
+            set { BackingStore?.Set("includeAuthoredContent", value); }
         }
         /// <summary>Insight about the request.</summary>
         public SubjectRightsRequestDetail Insight {
-            get { return BackingStore?.Get<SubjectRightsRequestDetail>(nameof(Insight)); }
-            set { BackingStore?.Set(nameof(Insight), value); }
+            get { return BackingStore?.Get<SubjectRightsRequestDetail>("insight"); }
+            set { BackingStore?.Set("insight", value); }
         }
         /// <summary>The date and time when the request is internally due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? InternalDueDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(InternalDueDateTime)); }
-            set { BackingStore?.Set(nameof(InternalDueDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("internalDueDateTime"); }
+            set { BackingStore?.Set("internalDueDateTime", value); }
         }
         /// <summary>Identity information for the entity that last modified the request.</summary>
         public IdentitySet LastModifiedBy {
-            get { return BackingStore?.Get<IdentitySet>(nameof(LastModifiedBy)); }
-            set { BackingStore?.Set(nameof(LastModifiedBy), value); }
+            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
         }
         /// <summary>The date and time when the request was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The mailboxlocations property</summary>
         public SubjectRightsRequestMailboxLocation Mailboxlocations {
-            get { return BackingStore?.Get<SubjectRightsRequestMailboxLocation>(nameof(Mailboxlocations)); }
-            set { BackingStore?.Set(nameof(Mailboxlocations), value); }
+            get { return BackingStore?.Get<SubjectRightsRequestMailboxLocation>("mailboxlocations"); }
+            set { BackingStore?.Set("mailboxlocations", value); }
         }
         /// <summary>List of notes associated with the request.</summary>
         public List<AuthoredNote> Notes {
-            get { return BackingStore?.Get<List<AuthoredNote>>(nameof(Notes)); }
-            set { BackingStore?.Set(nameof(Notes), value); }
+            get { return BackingStore?.Get<List<AuthoredNote>>("notes"); }
+            set { BackingStore?.Set("notes", value); }
         }
         /// <summary>Pause the request after estimate has finished. By default, the data estimate will run and then pause, allowing you to preview results and then select the option to retrieve data in the UI. You can set this property to false if you want it to perform the estimate and then automatically begin with the retrieval of the content. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.</summary>
         public bool? PauseAfterEstimate {
-            get { return BackingStore?.Get<bool?>(nameof(PauseAfterEstimate)); }
-            set { BackingStore?.Set(nameof(PauseAfterEstimate), value); }
+            get { return BackingStore?.Get<bool?>("pauseAfterEstimate"); }
+            set { BackingStore?.Set("pauseAfterEstimate", value); }
         }
         /// <summary>List of regulations that this request will fulfill.</summary>
         public List<string> Regulations {
-            get { return BackingStore?.Get<List<string>>(nameof(Regulations)); }
-            set { BackingStore?.Set(nameof(Regulations), value); }
+            get { return BackingStore?.Get<List<string>>("regulations"); }
+            set { BackingStore?.Set("regulations", value); }
         }
         /// <summary>The sitelocations property</summary>
         public SubjectRightsRequestSiteLocation Sitelocations {
-            get { return BackingStore?.Get<SubjectRightsRequestSiteLocation>(nameof(Sitelocations)); }
-            set { BackingStore?.Set(nameof(Sitelocations), value); }
+            get { return BackingStore?.Get<SubjectRightsRequestSiteLocation>("sitelocations"); }
+            set { BackingStore?.Set("sitelocations", value); }
         }
         /// <summary>Information about the different stages for the request.</summary>
         public List<SubjectRightsRequestStageDetail> Stages {
-            get { return BackingStore?.Get<List<SubjectRightsRequestStageDetail>>(nameof(Stages)); }
-            set { BackingStore?.Set(nameof(Stages), value); }
+            get { return BackingStore?.Get<List<SubjectRightsRequestStageDetail>>("stages"); }
+            set { BackingStore?.Set("stages", value); }
         }
         /// <summary>The status of the request. Possible values are: active, closed, unknownFutureValue.</summary>
         public SubjectRightsRequestStatus? Status {
-            get { return BackingStore?.Get<SubjectRightsRequestStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<SubjectRightsRequestStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>Information about the Microsoft Teams team that was created for the request.</summary>
         public Microsoft.Graph.Beta.Models.Team Team {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Team>(nameof(Team)); }
-            set { BackingStore?.Set(nameof(Team), value); }
-        }
-        /// <summary>The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.</summary>
-        public SubjectRightsRequestType? Type {
-            get { return BackingStore?.Get<SubjectRightsRequestType?>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Team>("team"); }
+            set { BackingStore?.Set("team", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -173,7 +168,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"stages", n => { Stages = n.GetCollectionOfObjectValues<SubjectRightsRequestStageDetail>(SubjectRightsRequestStageDetail.CreateFromDiscriminatorValue).ToList(); } },
                 {"status", n => { Status = n.GetEnumValue<SubjectRightsRequestStatus>(); } },
                 {"team", n => { Team = n.GetObjectValue<Microsoft.Graph.Beta.Models.Team>(Microsoft.Graph.Beta.Models.Team.CreateFromDiscriminatorValue); } },
-                {"type", n => { Type = n.GetEnumValue<SubjectRightsRequestType>(); } },
             };
         }
         /// <summary>
@@ -208,7 +202,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<SubjectRightsRequestStageDetail>("stages", Stages);
             writer.WriteEnumValue<SubjectRightsRequestStatus>("status", Status);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Team>("team", Team);
-            writer.WriteEnumValue<SubjectRightsRequestType>("type", Type);
         }
     }
 }

@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementEnumConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>List of valid values for this string</summary>
         public List<DeviceManagementEnumValue> Values {
-            get { return BackingStore?.Get<List<DeviceManagementEnumValue>>(nameof(Values)); }
-            set { BackingStore?.Set(nameof(Values), value); }
+            get { return BackingStore?.Get<List<DeviceManagementEnumValue>>("values"); }
+            set { BackingStore?.Set("values", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

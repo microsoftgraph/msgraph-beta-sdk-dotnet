@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class CrossTenantAccessPolicyTargetConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Defines whether access is allowed or blocked. The possible values are: allowed, blocked, unknownFutureValue.</summary>
         public CrossTenantAccessPolicyTargetConfigurationAccessType? AccessType {
-            get { return BackingStore?.Get<CrossTenantAccessPolicyTargetConfigurationAccessType?>(nameof(AccessType)); }
-            set { BackingStore?.Set(nameof(AccessType), value); }
+            get { return BackingStore?.Get<CrossTenantAccessPolicyTargetConfigurationAccessType?>("accessType"); }
+            set { BackingStore?.Set("accessType", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies whether to target users, groups, or applications with this rule.</summary>
         public List<CrossTenantAccessPolicyTarget> Targets {
-            get { return BackingStore?.Get<List<CrossTenantAccessPolicyTarget>>(nameof(Targets)); }
-            set { BackingStore?.Set(nameof(Targets), value); }
+            get { return BackingStore?.Get<List<CrossTenantAccessPolicyTarget>>("targets"); }
+            set { BackingStore?.Set("targets", value); }
         }
         /// <summary>
         /// Instantiates a new crossTenantAccessPolicyTargetConfiguration and sets the default values.

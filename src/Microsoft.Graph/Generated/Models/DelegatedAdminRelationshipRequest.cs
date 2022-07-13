@@ -4,27 +4,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class DelegatedAdminRelationshipRequest : Entity, IParsable {
-        /// <summary>The action to be performed on the delegated admin relationship.</summary>
+        /// <summary>The action property</summary>
         public DelegatedAdminRelationshipRequestAction? Action {
-            get { return BackingStore?.Get<DelegatedAdminRelationshipRequestAction?>(nameof(Action)); }
-            set { BackingStore?.Set(nameof(Action), value); }
+            get { return BackingStore?.Get<DelegatedAdminRelationshipRequestAction?>("action"); }
+            set { BackingStore?.Set("action", value); }
         }
         /// <summary>The date and time in ISO 8601 format and in UTC time when the relationship request was created. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The date and time in ISO 8601 format and UTC time when this relationship request was last modified. Read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The status of the request. Read-only. The possible values are: created, pending, succeeded, failed, unknownFutureValue.</summary>
         public DelegatedAdminRelationshipRequestStatus? Status {
-            get { return BackingStore?.Get<DelegatedAdminRelationshipRequestStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<DelegatedAdminRelationshipRequestStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementSettingEnrollmentTypeConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>List of enrollment types</summary>
         public List<string> EnrollmentTypes {
-            get { return BackingStore?.Get<List<string>>(nameof(EnrollmentTypes)); }
-            set { BackingStore?.Set(nameof(EnrollmentTypes), value); }
+            get { return BackingStore?.Get<List<string>>("enrollmentTypes"); }
+            set { BackingStore?.Set("enrollmentTypes", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

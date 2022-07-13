@@ -8,63 +8,63 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserPFXCertificate : Entity, IParsable {
         /// <summary>Date/time when this PFX certificate was imported.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Encrypted PFX blob.</summary>
         public byte[] EncryptedPfxBlob {
-            get { return BackingStore?.Get<byte[]>(nameof(EncryptedPfxBlob)); }
-            set { BackingStore?.Set(nameof(EncryptedPfxBlob), value); }
+            get { return BackingStore?.Get<byte[]>("encryptedPfxBlob"); }
+            set { BackingStore?.Set("encryptedPfxBlob", value); }
         }
         /// <summary>Encrypted PFX password.</summary>
         public string EncryptedPfxPassword {
-            get { return BackingStore?.Get<string>(nameof(EncryptedPfxPassword)); }
-            set { BackingStore?.Set(nameof(EncryptedPfxPassword), value); }
+            get { return BackingStore?.Get<string>("encryptedPfxPassword"); }
+            set { BackingStore?.Set("encryptedPfxPassword", value); }
         }
         /// <summary>Certificate&apos;s validity expiration date/time.</summary>
         public DateTimeOffset? ExpirationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpirationDateTime)); }
-            set { BackingStore?.Set(nameof(ExpirationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
+            set { BackingStore?.Set("expirationDateTime", value); }
         }
-        /// <summary>Certificate&apos;s intended purpose from the point-of-view of deployment. Possible values are: unassigned, smimeEncryption, smimeSigning, vpn, wifi.</summary>
+        /// <summary>Supported values for the intended purpose of a user PFX certificate.</summary>
         public UserPfxIntendedPurpose? IntendedPurpose {
-            get { return BackingStore?.Get<UserPfxIntendedPurpose?>(nameof(IntendedPurpose)); }
-            set { BackingStore?.Set(nameof(IntendedPurpose), value); }
+            get { return BackingStore?.Get<UserPfxIntendedPurpose?>("intendedPurpose"); }
+            set { BackingStore?.Set("intendedPurpose", value); }
         }
         /// <summary>Name of the key (within the provider) used to encrypt the blob.</summary>
         public string KeyName {
-            get { return BackingStore?.Get<string>(nameof(KeyName)); }
-            set { BackingStore?.Set(nameof(KeyName), value); }
+            get { return BackingStore?.Get<string>("keyName"); }
+            set { BackingStore?.Set("keyName", value); }
         }
         /// <summary>Date/time when this PFX certificate was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>Padding scheme used by the provider during encryption/decryption. Possible values are: none, pkcs1, oaepSha1, oaepSha256, oaepSha384, oaepSha512.</summary>
+        /// <summary>Supported values for the padding scheme used by encryption provider.</summary>
         public UserPfxPaddingScheme? PaddingScheme {
-            get { return BackingStore?.Get<UserPfxPaddingScheme?>(nameof(PaddingScheme)); }
-            set { BackingStore?.Set(nameof(PaddingScheme), value); }
+            get { return BackingStore?.Get<UserPfxPaddingScheme?>("paddingScheme"); }
+            set { BackingStore?.Set("paddingScheme", value); }
         }
         /// <summary>Crypto provider used to encrypt this blob.</summary>
         public string ProviderName {
-            get { return BackingStore?.Get<string>(nameof(ProviderName)); }
-            set { BackingStore?.Set(nameof(ProviderName), value); }
+            get { return BackingStore?.Get<string>("providerName"); }
+            set { BackingStore?.Set("providerName", value); }
         }
         /// <summary>Certificate&apos;s validity start date/time.</summary>
         public DateTimeOffset? StartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
-            set { BackingStore?.Set(nameof(StartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>SHA-1 thumbprint of the PFX certificate.</summary>
         public string Thumbprint {
-            get { return BackingStore?.Get<string>(nameof(Thumbprint)); }
-            set { BackingStore?.Set(nameof(Thumbprint), value); }
+            get { return BackingStore?.Get<string>("thumbprint"); }
+            set { BackingStore?.Set("thumbprint", value); }
         }
         /// <summary>User Principal Name of the PFX certificate.</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

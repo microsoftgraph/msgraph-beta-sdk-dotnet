@@ -8,33 +8,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class CloudPcBulkRemoteActionResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A list of all the Intune managed device IDs that completed the bulk action with a failure.</summary>
         public List<string> FailedDeviceIds {
-            get { return BackingStore?.Get<List<string>>(nameof(FailedDeviceIds)); }
-            set { BackingStore?.Set(nameof(FailedDeviceIds), value); }
+            get { return BackingStore?.Get<List<string>>("failedDeviceIds"); }
+            set { BackingStore?.Set("failedDeviceIds", value); }
         }
         /// <summary>A list of all the Intune managed device IDs that were not found when the bulk action was attempted.</summary>
         public List<string> NotFoundDeviceIds {
-            get { return BackingStore?.Get<List<string>>(nameof(NotFoundDeviceIds)); }
-            set { BackingStore?.Set(nameof(NotFoundDeviceIds), value); }
+            get { return BackingStore?.Get<List<string>>("notFoundDeviceIds"); }
+            set { BackingStore?.Set("notFoundDeviceIds", value); }
         }
         /// <summary>A list of all the Intune managed device IDs that were identified as unsupported for the bulk action.</summary>
         public List<string> NotSupportedDeviceIds {
-            get { return BackingStore?.Get<List<string>>(nameof(NotSupportedDeviceIds)); }
-            set { BackingStore?.Set(nameof(NotSupportedDeviceIds), value); }
+            get { return BackingStore?.Get<List<string>>("notSupportedDeviceIds"); }
+            set { BackingStore?.Set("notSupportedDeviceIds", value); }
         }
         /// <summary>A list of all the Intune managed device IDs that completed the bulk action successfully.</summary>
         public List<string> SuccessfulDeviceIds {
-            get { return BackingStore?.Get<List<string>>(nameof(SuccessfulDeviceIds)); }
-            set { BackingStore?.Set(nameof(SuccessfulDeviceIds), value); }
+            get { return BackingStore?.Get<List<string>>("successfulDeviceIds"); }
+            set { BackingStore?.Set("successfulDeviceIds", value); }
         }
         /// <summary>
-        /// Instantiates a new CloudPcBulkRemoteActionResult and sets the default values.
+        /// Instantiates a new cloudPcBulkRemoteActionResult and sets the default values.
         /// </summary>
         public CloudPcBulkRemoteActionResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

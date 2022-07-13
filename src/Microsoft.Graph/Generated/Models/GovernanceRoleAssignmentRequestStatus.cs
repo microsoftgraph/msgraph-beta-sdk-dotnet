@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class GovernanceRoleAssignmentRequestStatus : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The status of the role assignment request. The value can be InProgress or Closed.</summary>
         public string Status {
-            get { return BackingStore?.Get<string>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<string>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>The details of the status of the role assignment request. It represents the evaluation results of different rules.</summary>
         public List<KeyValue> StatusDetails {
-            get { return BackingStore?.Get<List<KeyValue>>(nameof(StatusDetails)); }
-            set { BackingStore?.Set(nameof(StatusDetails), value); }
+            get { return BackingStore?.Get<List<KeyValue>>("statusDetails"); }
+            set { BackingStore?.Set("statusDetails", value); }
         }
         /// <summary>The sub status of the role assignment request. The values can be Accepted, PendingEvaluation, Granted, Denied, PendingProvisioning, Provisioned, PendingRevocation, Revoked, Canceled, Failed, PendingApprovalProvisioning, PendingApproval, FailedAsResourceIsLocked, PendingAdminDecision, AdminApproved, AdminDenied, TimedOut, and ProvisioningStarted.</summary>
         public string SubStatus {
-            get { return BackingStore?.Get<string>(nameof(SubStatus)); }
-            set { BackingStore?.Set(nameof(SubStatus), value); }
+            get { return BackingStore?.Get<string>("subStatus"); }
+            set { BackingStore?.Set("subStatus", value); }
         }
         /// <summary>
         /// Instantiates a new governanceRoleAssignmentRequestStatus and sets the default values.

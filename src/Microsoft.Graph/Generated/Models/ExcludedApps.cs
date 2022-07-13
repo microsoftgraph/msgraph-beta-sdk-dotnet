@@ -9,85 +9,85 @@ namespace Microsoft.Graph.Beta.Models {
     public class ExcludedApps : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The value for if MS Office Access should be excluded or not.</summary>
         public bool? Access {
-            get { return BackingStore?.Get<bool?>(nameof(Access)); }
-            set { BackingStore?.Set(nameof(Access), value); }
+            get { return BackingStore?.Get<bool?>("access"); }
+            set { BackingStore?.Set("access", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The value for if Microsoft Search as default should be excluded or not.</summary>
         public bool? Bing {
-            get { return BackingStore?.Get<bool?>(nameof(Bing)); }
-            set { BackingStore?.Set(nameof(Bing), value); }
+            get { return BackingStore?.Get<bool?>("bing"); }
+            set { BackingStore?.Set("bing", value); }
         }
         /// <summary>The value for if MS Office Excel should be excluded or not.</summary>
         public bool? Excel {
-            get { return BackingStore?.Get<bool?>(nameof(Excel)); }
-            set { BackingStore?.Set(nameof(Excel), value); }
+            get { return BackingStore?.Get<bool?>("excel"); }
+            set { BackingStore?.Set("excel", value); }
         }
         /// <summary>The value for if MS Office OneDrive for Business - Groove should be excluded or not.</summary>
         public bool? Groove {
-            get { return BackingStore?.Get<bool?>(nameof(Groove)); }
-            set { BackingStore?.Set(nameof(Groove), value); }
+            get { return BackingStore?.Get<bool?>("groove"); }
+            set { BackingStore?.Set("groove", value); }
         }
         /// <summary>The value for if MS Office InfoPath should be excluded or not.</summary>
         public bool? InfoPath {
-            get { return BackingStore?.Get<bool?>(nameof(InfoPath)); }
-            set { BackingStore?.Set(nameof(InfoPath), value); }
+            get { return BackingStore?.Get<bool?>("infoPath"); }
+            set { BackingStore?.Set("infoPath", value); }
         }
         /// <summary>The value for if MS Office Skype for Business - Lync should be excluded or not.</summary>
         public bool? Lync {
-            get { return BackingStore?.Get<bool?>(nameof(Lync)); }
-            set { BackingStore?.Set(nameof(Lync), value); }
+            get { return BackingStore?.Get<bool?>("lync"); }
+            set { BackingStore?.Set("lync", value); }
         }
         /// <summary>The value for if MS Office OneDrive should be excluded or not.</summary>
         public bool? OneDrive {
-            get { return BackingStore?.Get<bool?>(nameof(OneDrive)); }
-            set { BackingStore?.Set(nameof(OneDrive), value); }
+            get { return BackingStore?.Get<bool?>("oneDrive"); }
+            set { BackingStore?.Set("oneDrive", value); }
         }
         /// <summary>The value for if MS Office OneNote should be excluded or not.</summary>
         public bool? OneNote {
-            get { return BackingStore?.Get<bool?>(nameof(OneNote)); }
-            set { BackingStore?.Set(nameof(OneNote), value); }
+            get { return BackingStore?.Get<bool?>("oneNote"); }
+            set { BackingStore?.Set("oneNote", value); }
         }
         /// <summary>The value for if MS Office Outlook should be excluded or not.</summary>
         public bool? Outlook {
-            get { return BackingStore?.Get<bool?>(nameof(Outlook)); }
-            set { BackingStore?.Set(nameof(Outlook), value); }
+            get { return BackingStore?.Get<bool?>("outlook"); }
+            set { BackingStore?.Set("outlook", value); }
         }
         /// <summary>The value for if MS Office PowerPoint should be excluded or not.</summary>
         public bool? PowerPoint {
-            get { return BackingStore?.Get<bool?>(nameof(PowerPoint)); }
-            set { BackingStore?.Set(nameof(PowerPoint), value); }
+            get { return BackingStore?.Get<bool?>("powerPoint"); }
+            set { BackingStore?.Set("powerPoint", value); }
         }
         /// <summary>The value for if MS Office Publisher should be excluded or not.</summary>
         public bool? Publisher {
-            get { return BackingStore?.Get<bool?>(nameof(Publisher)); }
-            set { BackingStore?.Set(nameof(Publisher), value); }
+            get { return BackingStore?.Get<bool?>("publisher"); }
+            set { BackingStore?.Set("publisher", value); }
         }
         /// <summary>The value for if MS Office SharePointDesigner should be excluded or not.</summary>
         public bool? SharePointDesigner {
-            get { return BackingStore?.Get<bool?>(nameof(SharePointDesigner)); }
-            set { BackingStore?.Set(nameof(SharePointDesigner), value); }
+            get { return BackingStore?.Get<bool?>("sharePointDesigner"); }
+            set { BackingStore?.Set("sharePointDesigner", value); }
         }
         /// <summary>The value for if MS Office Teams should be excluded or not.</summary>
         public bool? Teams {
-            get { return BackingStore?.Get<bool?>(nameof(Teams)); }
-            set { BackingStore?.Set(nameof(Teams), value); }
+            get { return BackingStore?.Get<bool?>("teams"); }
+            set { BackingStore?.Set("teams", value); }
         }
         /// <summary>The value for if MS Office Visio should be excluded or not.</summary>
         public bool? Visio {
-            get { return BackingStore?.Get<bool?>(nameof(Visio)); }
-            set { BackingStore?.Set(nameof(Visio), value); }
+            get { return BackingStore?.Get<bool?>("visio"); }
+            set { BackingStore?.Set("visio", value); }
         }
         /// <summary>The value for if MS Office Word should be excluded or not.</summary>
         public bool? Word {
-            get { return BackingStore?.Get<bool?>(nameof(Word)); }
-            set { BackingStore?.Set(nameof(Word), value); }
+            get { return BackingStore?.Get<bool?>("word"); }
+            set { BackingStore?.Set("word", value); }
         }
         /// <summary>
         /// Instantiates a new excludedApps and sets the default values.

@@ -5,20 +5,20 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsQualityUpdateCatalogItem : WindowsUpdateCatalogItem, IParsable {
-        /// <summary>Classification of the quality update. Possible values are: all, security, nonSecurity.</summary>
+        /// <summary>Windows quality update classification</summary>
         public WindowsQualityUpdateClassification? Classification {
-            get { return BackingStore?.Get<WindowsQualityUpdateClassification?>(nameof(Classification)); }
-            set { BackingStore?.Set(nameof(Classification), value); }
+            get { return BackingStore?.Get<WindowsQualityUpdateClassification?>("classification"); }
+            set { BackingStore?.Set("classification", value); }
         }
         /// <summary>Flag indicating if update qualifies for expedite</summary>
         public bool? IsExpeditable {
-            get { return BackingStore?.Get<bool?>(nameof(IsExpeditable)); }
-            set { BackingStore?.Set(nameof(IsExpeditable), value); }
+            get { return BackingStore?.Get<bool?>("isExpeditable"); }
+            set { BackingStore?.Set("isExpeditable", value); }
         }
         /// <summary>Knowledge base article id</summary>
         public string KbArticleId {
-            get { return BackingStore?.Get<string>(nameof(KbArticleId)); }
-            set { BackingStore?.Set(nameof(KbArticleId), value); }
+            get { return BackingStore?.Get<string>("kbArticleId"); }
+            set { BackingStore?.Set("kbArticleId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

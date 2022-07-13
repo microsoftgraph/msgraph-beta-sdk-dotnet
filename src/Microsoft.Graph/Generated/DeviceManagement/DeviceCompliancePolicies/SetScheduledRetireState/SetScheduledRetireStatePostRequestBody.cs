@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.SetSche
     public class SetScheduledRetireStatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The managedDeviceIds property</summary>
         public List<string> ManagedDeviceIds {
-            get { return BackingStore?.Get<List<string>>(nameof(ManagedDeviceIds)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceIds), value); }
+            get { return BackingStore?.Get<List<string>>("managedDeviceIds"); }
+            set { BackingStore?.Set("managedDeviceIds", value); }
         }
-        /// <summary>The state property</summary>
+        /// <summary>Cancel or confirm scheduled retire </summary>
         public ScheduledRetireState? State {
-            get { return BackingStore?.Get<ScheduledRetireState?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<ScheduledRetireState?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Instantiates a new setScheduledRetireStatePostRequestBody and sets the default values.

@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class EdiscoveryReviewSet : DataSet, IParsable {
         /// <summary>Represents files within the review set.</summary>
         public List<EdiscoveryFile> Files {
-            get { return BackingStore?.Get<List<EdiscoveryFile>>(nameof(Files)); }
-            set { BackingStore?.Set(nameof(Files), value); }
+            get { return BackingStore?.Get<List<EdiscoveryFile>>("files"); }
+            set { BackingStore?.Set("files", value); }
         }
         /// <summary>Represents queries within the review set.</summary>
         public List<EdiscoveryReviewSetQuery> Queries {
-            get { return BackingStore?.Get<List<EdiscoveryReviewSetQuery>>(nameof(Queries)); }
-            set { BackingStore?.Set(nameof(Queries), value); }
+            get { return BackingStore?.Get<List<EdiscoveryReviewSetQuery>>("queries"); }
+            set { BackingStore?.Set("queries", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

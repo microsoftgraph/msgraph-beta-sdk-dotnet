@@ -7,53 +7,53 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosScepCertificateProfile : IosCertificateProfileBase, IParsable {
         /// <summary>Target store certificate. Possible values are: user, machine.</summary>
         public Microsoft.Graph.Beta.Models.CertificateStore? CertificateStore {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateStore?>(nameof(CertificateStore)); }
-            set { BackingStore?.Set(nameof(CertificateStore), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateStore?>("certificateStore"); }
+            set { BackingStore?.Set("certificateStore", value); }
         }
         /// <summary>Custom Subject Alternative Name Settings. The OnPremisesUserPrincipalName variable is support as well as others documented here: https://go.microsoft.com/fwlink/?LinkId=2027630. This collection can contain a maximum of 500 elements.</summary>
         public List<CustomSubjectAlternativeName> CustomSubjectAlternativeNames {
-            get { return BackingStore?.Get<List<CustomSubjectAlternativeName>>(nameof(CustomSubjectAlternativeNames)); }
-            set { BackingStore?.Set(nameof(CustomSubjectAlternativeNames), value); }
+            get { return BackingStore?.Get<List<CustomSubjectAlternativeName>>("customSubjectAlternativeNames"); }
+            set { BackingStore?.Set("customSubjectAlternativeNames", value); }
         }
         /// <summary>Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.</summary>
         public List<ExtendedKeyUsage> ExtendedKeyUsages {
-            get { return BackingStore?.Get<List<ExtendedKeyUsage>>(nameof(ExtendedKeyUsages)); }
-            set { BackingStore?.Set(nameof(ExtendedKeyUsages), value); }
+            get { return BackingStore?.Get<List<ExtendedKeyUsage>>("extendedKeyUsages"); }
+            set { BackingStore?.Set("extendedKeyUsages", value); }
         }
-        /// <summary>SCEP Key Size. Possible values are: size1024, size2048, size4096.</summary>
+        /// <summary>Key Size Options.</summary>
         public Microsoft.Graph.Beta.Models.KeySize? KeySize {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KeySize?>(nameof(KeySize)); }
-            set { BackingStore?.Set(nameof(KeySize), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KeySize?>("keySize"); }
+            set { BackingStore?.Set("keySize", value); }
         }
-        /// <summary>SCEP Key Usage. Possible values are: keyEncipherment, digitalSignature.</summary>
+        /// <summary>Key Usage Options.</summary>
         public KeyUsages? KeyUsage {
-            get { return BackingStore?.Get<KeyUsages?>(nameof(KeyUsage)); }
-            set { BackingStore?.Set(nameof(KeyUsage), value); }
+            get { return BackingStore?.Get<KeyUsages?>("keyUsage"); }
+            set { BackingStore?.Set("keyUsage", value); }
         }
         /// <summary>Certificate state for devices. This collection can contain a maximum of 2147483647 elements.</summary>
         public List<ManagedDeviceCertificateState> ManagedDeviceCertificateStates {
-            get { return BackingStore?.Get<List<ManagedDeviceCertificateState>>(nameof(ManagedDeviceCertificateStates)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceCertificateStates), value); }
+            get { return BackingStore?.Get<List<ManagedDeviceCertificateState>>("managedDeviceCertificateStates"); }
+            set { BackingStore?.Set("managedDeviceCertificateStates", value); }
         }
         /// <summary>Trusted Root Certificate.</summary>
         public IosTrustedRootCertificate RootCertificate {
-            get { return BackingStore?.Get<IosTrustedRootCertificate>(nameof(RootCertificate)); }
-            set { BackingStore?.Set(nameof(RootCertificate), value); }
+            get { return BackingStore?.Get<IosTrustedRootCertificate>("rootCertificate"); }
+            set { BackingStore?.Set("rootCertificate", value); }
         }
         /// <summary>SCEP Server Url(s).</summary>
         public List<string> ScepServerUrls {
-            get { return BackingStore?.Get<List<string>>(nameof(ScepServerUrls)); }
-            set { BackingStore?.Set(nameof(ScepServerUrls), value); }
+            get { return BackingStore?.Get<List<string>>("scepServerUrls"); }
+            set { BackingStore?.Set("scepServerUrls", value); }
         }
         /// <summary>Custom String that defines the AAD Attribute.</summary>
         public string SubjectAlternativeNameFormatString {
-            get { return BackingStore?.Get<string>(nameof(SubjectAlternativeNameFormatString)); }
-            set { BackingStore?.Set(nameof(SubjectAlternativeNameFormatString), value); }
+            get { return BackingStore?.Get<string>("subjectAlternativeNameFormatString"); }
+            set { BackingStore?.Set("subjectAlternativeNameFormatString", value); }
         }
         /// <summary>Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US</summary>
         public string SubjectNameFormatString {
-            get { return BackingStore?.Get<string>(nameof(SubjectNameFormatString)); }
-            set { BackingStore?.Set(nameof(SubjectNameFormatString), value); }
+            get { return BackingStore?.Get<string>("subjectNameFormatString"); }
+            set { BackingStore?.Set("subjectNameFormatString", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

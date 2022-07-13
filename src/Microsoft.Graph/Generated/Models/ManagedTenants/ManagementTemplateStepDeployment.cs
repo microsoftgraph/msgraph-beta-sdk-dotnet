@@ -4,47 +4,47 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ManagementTemplateStepDeployment : Entity, IParsable {
         /// <summary>The createdByUserId property</summary>
         public string CreatedByUserId {
-            get { return BackingStore?.Get<string>(nameof(CreatedByUserId)); }
-            set { BackingStore?.Set(nameof(CreatedByUserId), value); }
+            get { return BackingStore?.Get<string>("createdByUserId"); }
+            set { BackingStore?.Set("createdByUserId", value); }
         }
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The error property</summary>
         public GraphAPIErrorDetails Error {
-            get { return BackingStore?.Get<GraphAPIErrorDetails>(nameof(Error)); }
-            set { BackingStore?.Set(nameof(Error), value); }
+            get { return BackingStore?.Get<GraphAPIErrorDetails>("error"); }
+            set { BackingStore?.Set("error", value); }
         }
         /// <summary>The lastActionByUserId property</summary>
         public string LastActionByUserId {
-            get { return BackingStore?.Get<string>(nameof(LastActionByUserId)); }
-            set { BackingStore?.Set(nameof(LastActionByUserId), value); }
+            get { return BackingStore?.Get<string>("lastActionByUserId"); }
+            set { BackingStore?.Set("lastActionByUserId", value); }
         }
         /// <summary>The lastActionDateTime property</summary>
         public DateTimeOffset? LastActionDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastActionDateTime)); }
-            set { BackingStore?.Set(nameof(LastActionDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
+            set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>The status property</summary>
         public ManagementTemplateDeploymentStatus? Status {
-            get { return BackingStore?.Get<ManagementTemplateDeploymentStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<ManagementTemplateDeploymentStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>The templateStepVersion property</summary>
         public ManagementTemplateStepVersion TemplateStepVersion {
-            get { return BackingStore?.Get<ManagementTemplateStepVersion>(nameof(TemplateStepVersion)); }
-            set { BackingStore?.Set(nameof(TemplateStepVersion), value); }
+            get { return BackingStore?.Get<ManagementTemplateStepVersion>("templateStepVersion"); }
+            set { BackingStore?.Set("templateStepVersion", value); }
         }
         /// <summary>The tenantId property</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

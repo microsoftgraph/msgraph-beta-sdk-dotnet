@@ -9,18 +9,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class SuggestedEnrollmentLimit : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The suggested enrollment limit within a day</summary>
         public int? SuggestedDailyLimit {
-            get { return BackingStore?.Get<int?>(nameof(SuggestedDailyLimit)); }
-            set { BackingStore?.Set(nameof(SuggestedDailyLimit), value); }
+            get { return BackingStore?.Get<int?>("suggestedDailyLimit"); }
+            set { BackingStore?.Set("suggestedDailyLimit", value); }
         }
         /// <summary>
-        /// Instantiates a new SuggestedEnrollmentLimit and sets the default values.
+        /// Instantiates a new suggestedEnrollmentLimit and sets the default values.
         /// </summary>
         public SuggestedEnrollmentLimit() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

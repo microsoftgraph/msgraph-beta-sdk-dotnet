@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceHealthScriptBooleanParameter : DeviceHealthScriptParameter, IParsable {
         /// <summary>The default value of boolean param</summary>
         public bool? DefaultValue {
-            get { return BackingStore?.Get<bool?>(nameof(DefaultValue)); }
-            set { BackingStore?.Set(nameof(DefaultValue), value); }
+            get { return BackingStore?.Get<bool?>("defaultValue"); }
+            set { BackingStore?.Set("defaultValue", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

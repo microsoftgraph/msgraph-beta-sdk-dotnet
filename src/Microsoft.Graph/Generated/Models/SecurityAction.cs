@@ -4,77 +4,77 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class SecurityAction : Entity, IParsable {
         /// <summary>Reason for invoking this action.</summary>
         public string ActionReason {
-            get { return BackingStore?.Get<string>(nameof(ActionReason)); }
-            set { BackingStore?.Set(nameof(ActionReason), value); }
+            get { return BackingStore?.Get<string>("actionReason"); }
+            set { BackingStore?.Set("actionReason", value); }
         }
         /// <summary>The Application ID of the calling application that submitted (POST) the action. The appId should be extracted from the auth token and not entered manually by the calling application.</summary>
         public string AppId {
-            get { return BackingStore?.Get<string>(nameof(AppId)); }
-            set { BackingStore?.Set(nameof(AppId), value); }
+            get { return BackingStore?.Get<string>("appId"); }
+            set { BackingStore?.Set("appId", value); }
         }
         /// <summary>Azure tenant ID of the entity to determine which tenant the entity belongs to (multi-tenancy support). The azureTenantId should be extracted from the auth token and not entered manually by the calling application.</summary>
         public string AzureTenantId {
-            get { return BackingStore?.Get<string>(nameof(AzureTenantId)); }
-            set { BackingStore?.Set(nameof(AzureTenantId), value); }
+            get { return BackingStore?.Get<string>("azureTenantId"); }
+            set { BackingStore?.Set("azureTenantId", value); }
         }
         /// <summary>The clientContext property</summary>
         public string ClientContext {
-            get { return BackingStore?.Get<string>(nameof(ClientContext)); }
-            set { BackingStore?.Set(nameof(ClientContext), value); }
+            get { return BackingStore?.Get<string>("clientContext"); }
+            set { BackingStore?.Set("clientContext", value); }
         }
         /// <summary>Timestamp when the action was completed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CompletedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CompletedDateTime)); }
-            set { BackingStore?.Set(nameof(CompletedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
+            set { BackingStore?.Set("completedDateTime", value); }
         }
         /// <summary>Timestamp when the action is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Error info when the action fails.</summary>
         public ResultInfo ErrorInfo {
-            get { return BackingStore?.Get<ResultInfo>(nameof(ErrorInfo)); }
-            set { BackingStore?.Set(nameof(ErrorInfo), value); }
+            get { return BackingStore?.Get<ResultInfo>("errorInfo"); }
+            set { BackingStore?.Set("errorInfo", value); }
         }
         /// <summary>Timestamp when this action was last updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastActionDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastActionDateTime)); }
-            set { BackingStore?.Set(nameof(LastActionDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
+            set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>Action name.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>Collection of parameters (key-value pairs) necessary to invoke the action, for example, URL or fileHash to block.). Required.</summary>
         public List<KeyValuePair> Parameters {
-            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(Parameters)); }
-            set { BackingStore?.Set(nameof(Parameters), value); }
+            get { return BackingStore?.Get<List<KeyValuePair>>("parameters"); }
+            set { BackingStore?.Set("parameters", value); }
         }
         /// <summary>Collection of securityActionState to keep the history of an action.</summary>
         public List<SecurityActionState> States {
-            get { return BackingStore?.Get<List<SecurityActionState>>(nameof(States)); }
-            set { BackingStore?.Set(nameof(States), value); }
+            get { return BackingStore?.Get<List<SecurityActionState>>("states"); }
+            set { BackingStore?.Set("states", value); }
         }
         /// <summary>Status of the action. Possible values are: NotStarted, Running, Completed, Failed.</summary>
         public OperationStatus? Status {
-            get { return BackingStore?.Get<OperationStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<OperationStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>The user principal name of the signed-in user that submitted  (POST) the action. The user should be extracted from the auth token and not entered manually by the calling application.</summary>
         public string User {
-            get { return BackingStore?.Get<string>(nameof(User)); }
-            set { BackingStore?.Set(nameof(User), value); }
+            get { return BackingStore?.Get<string>("user"); }
+            set { BackingStore?.Set("user", value); }
         }
         /// <summary>Complex Type containing details about the Security product/service vendor, provider, and sub-provider (for example, vendor=Microsoft; provider=Windows Defender ATP; sub-provider=AppLocker).</summary>
         public SecurityVendorInformation VendorInformation {
-            get { return BackingStore?.Get<SecurityVendorInformation>(nameof(VendorInformation)); }
-            set { BackingStore?.Set(nameof(VendorInformation), value); }
+            get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
+            set { BackingStore?.Set("vendorInformation", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

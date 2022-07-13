@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class SharedEmailDomain : Entity, IParsable {
         /// <summary>The provisioningStatus property</summary>
         public string ProvisioningStatus {
-            get { return BackingStore?.Get<string>(nameof(ProvisioningStatus)); }
-            set { BackingStore?.Set(nameof(ProvisioningStatus), value); }
+            get { return BackingStore?.Get<string>("provisioningStatus"); }
+            set { BackingStore?.Set("provisioningStatus", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

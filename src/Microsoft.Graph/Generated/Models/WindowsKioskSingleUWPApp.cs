@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsKioskSingleUWPApp : WindowsKioskAppConfiguration, IParsable {
         /// <summary>The uwpApp property</summary>
         public WindowsKioskUWPApp UwpApp {
-            get { return BackingStore?.Get<WindowsKioskUWPApp>(nameof(UwpApp)); }
-            set { BackingStore?.Set(nameof(UwpApp), value); }
+            get { return BackingStore?.Get<WindowsKioskUWPApp>("uwpApp"); }
+            set { BackingStore?.Set("uwpApp", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

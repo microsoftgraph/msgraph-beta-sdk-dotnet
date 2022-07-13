@@ -8,33 +8,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementIntentDeviceState : Entity, IParsable {
         /// <summary>Device name that is being reported</summary>
         public string DeviceDisplayName {
-            get { return BackingStore?.Get<string>(nameof(DeviceDisplayName)); }
-            set { BackingStore?.Set(nameof(DeviceDisplayName), value); }
+            get { return BackingStore?.Get<string>("deviceDisplayName"); }
+            set { BackingStore?.Set("deviceDisplayName", value); }
         }
         /// <summary>Device id that is being reported</summary>
         public string DeviceId {
-            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
-            set { BackingStore?.Set(nameof(DeviceId), value); }
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>Last modified date time of an intent report</summary>
         public DateTimeOffset? LastReportedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastReportedDateTime)); }
-            set { BackingStore?.Set(nameof(LastReportedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastReportedDateTime"); }
+            set { BackingStore?.Set("lastReportedDateTime", value); }
         }
-        /// <summary>Device state for an intent. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.</summary>
+        /// <summary>The state property</summary>
         public ComplianceStatus? State {
-            get { return BackingStore?.Get<ComplianceStatus?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<ComplianceStatus?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>The user name that is being reported on a device</summary>
         public string UserName {
-            get { return BackingStore?.Get<string>(nameof(UserName)); }
-            set { BackingStore?.Set(nameof(UserName), value); }
+            get { return BackingStore?.Get<string>("userName"); }
+            set { BackingStore?.Set("userName", value); }
         }
         /// <summary>The user principal name that is being reported on a device</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

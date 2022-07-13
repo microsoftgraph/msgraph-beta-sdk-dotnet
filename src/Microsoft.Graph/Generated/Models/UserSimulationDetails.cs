@@ -8,55 +8,55 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserSimulationDetails : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Number of trainings assigned to a user in an attack simulation and training campaign.</summary>
         public int? AssignedTrainingsCount {
-            get { return BackingStore?.Get<int?>(nameof(AssignedTrainingsCount)); }
-            set { BackingStore?.Set(nameof(AssignedTrainingsCount), value); }
+            get { return BackingStore?.Get<int?>("assignedTrainingsCount"); }
+            set { BackingStore?.Set("assignedTrainingsCount", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Number of trainings completed by a user in an attack simulation and training campaign.</summary>
         public int? CompletedTrainingsCount {
-            get { return BackingStore?.Get<int?>(nameof(CompletedTrainingsCount)); }
-            set { BackingStore?.Set(nameof(CompletedTrainingsCount), value); }
+            get { return BackingStore?.Get<int?>("completedTrainingsCount"); }
+            set { BackingStore?.Set("completedTrainingsCount", value); }
         }
         /// <summary>Date and time of the compromising online action by a user in an attack simulation and training campaign.</summary>
         public DateTimeOffset? CompromisedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CompromisedDateTime)); }
-            set { BackingStore?.Set(nameof(CompromisedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("compromisedDateTime"); }
+            set { BackingStore?.Set("compromisedDateTime", value); }
         }
         /// <summary>Number of trainings in progress by a user in an attack simulation and training campaign.</summary>
         public int? InProgressTrainingsCount {
-            get { return BackingStore?.Get<int?>(nameof(InProgressTrainingsCount)); }
-            set { BackingStore?.Set(nameof(InProgressTrainingsCount), value); }
+            get { return BackingStore?.Get<int?>("inProgressTrainingsCount"); }
+            set { BackingStore?.Set("inProgressTrainingsCount", value); }
         }
         /// <summary>Flag representing if user was compromised in an attack simulation and training campaign.</summary>
         public bool? IsCompromised {
-            get { return BackingStore?.Get<bool?>(nameof(IsCompromised)); }
-            set { BackingStore?.Set(nameof(IsCompromised), value); }
+            get { return BackingStore?.Get<bool?>("isCompromised"); }
+            set { BackingStore?.Set("isCompromised", value); }
         }
         /// <summary>Date and time when user reported delivered payload as phish in the attack simulation and training campaign.</summary>
         public DateTimeOffset? ReportedPhishDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ReportedPhishDateTime)); }
-            set { BackingStore?.Set(nameof(ReportedPhishDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("reportedPhishDateTime"); }
+            set { BackingStore?.Set("reportedPhishDateTime", value); }
         }
         /// <summary>List of simulation events of a user in the attack simulation and training campaign.</summary>
         public List<UserSimulationEventInfo> SimulationEvents {
-            get { return BackingStore?.Get<List<UserSimulationEventInfo>>(nameof(SimulationEvents)); }
-            set { BackingStore?.Set(nameof(SimulationEvents), value); }
+            get { return BackingStore?.Get<List<UserSimulationEventInfo>>("simulationEvents"); }
+            set { BackingStore?.Set("simulationEvents", value); }
         }
         /// <summary>User in an attack simulation and training campaign.</summary>
         public AttackSimulationUser SimulationUser {
-            get { return BackingStore?.Get<AttackSimulationUser>(nameof(SimulationUser)); }
-            set { BackingStore?.Set(nameof(SimulationUser), value); }
+            get { return BackingStore?.Get<AttackSimulationUser>("simulationUser"); }
+            set { BackingStore?.Set("simulationUser", value); }
         }
         /// <summary>List of training events of a user in the attack simulation and training campaign.</summary>
         public List<UserTrainingEventInfo> TrainingEvents {
-            get { return BackingStore?.Get<List<UserTrainingEventInfo>>(nameof(TrainingEvents)); }
-            set { BackingStore?.Set(nameof(TrainingEvents), value); }
+            get { return BackingStore?.Get<List<UserTrainingEventInfo>>("trainingEvents"); }
+            set { BackingStore?.Set("trainingEvents", value); }
         }
         /// <summary>
         /// Instantiates a new userSimulationDetails and sets the default values.

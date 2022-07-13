@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyPresentationCheckBox : GroupPolicyPresentation, IParsable {
         /// <summary>Default value for the check box. The default value is false.</summary>
         public bool? DefaultChecked {
-            get { return BackingStore?.Get<bool?>(nameof(DefaultChecked)); }
-            set { BackingStore?.Set(nameof(DefaultChecked), value); }
+            get { return BackingStore?.Get<bool?>("defaultChecked"); }
+            set { BackingStore?.Set("defaultChecked", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

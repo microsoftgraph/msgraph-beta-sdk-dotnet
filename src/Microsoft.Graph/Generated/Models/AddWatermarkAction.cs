@@ -7,33 +7,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class AddWatermarkAction : InformationProtectionAction, IParsable {
         /// <summary>Color of the font to use for the watermark.</summary>
         public string FontColor {
-            get { return BackingStore?.Get<string>(nameof(FontColor)); }
-            set { BackingStore?.Set(nameof(FontColor), value); }
+            get { return BackingStore?.Get<string>("fontColor"); }
+            set { BackingStore?.Set("fontColor", value); }
         }
         /// <summary>Name of the font to use for the watermark.</summary>
         public string FontName {
-            get { return BackingStore?.Get<string>(nameof(FontName)); }
-            set { BackingStore?.Set(nameof(FontName), value); }
+            get { return BackingStore?.Get<string>("fontName"); }
+            set { BackingStore?.Set("fontName", value); }
         }
         /// <summary>Font size to use for the watermark.</summary>
         public int? FontSize {
-            get { return BackingStore?.Get<int?>(nameof(FontSize)); }
-            set { BackingStore?.Set(nameof(FontSize), value); }
+            get { return BackingStore?.Get<int?>("fontSize"); }
+            set { BackingStore?.Set("fontSize", value); }
         }
-        /// <summary>Possible values are: horizontal, diagonal.</summary>
+        /// <summary>The layout property</summary>
         public WatermarkLayout? Layout {
-            get { return BackingStore?.Get<WatermarkLayout?>(nameof(Layout)); }
-            set { BackingStore?.Set(nameof(Layout), value); }
+            get { return BackingStore?.Get<WatermarkLayout?>("layout"); }
+            set { BackingStore?.Set("layout", value); }
         }
         /// <summary>The contents of the watermark itself.</summary>
         public string Text {
-            get { return BackingStore?.Get<string>(nameof(Text)); }
-            set { BackingStore?.Set(nameof(Text), value); }
+            get { return BackingStore?.Get<string>("text"); }
+            set { BackingStore?.Set("text", value); }
         }
         /// <summary>The name of the UI element where the watermark should be placed.</summary>
         public string UiElementName {
-            get { return BackingStore?.Get<string>(nameof(UiElementName)); }
-            set { BackingStore?.Set(nameof(UiElementName), value); }
+            get { return BackingStore?.Get<string>("uiElementName"); }
+            set { BackingStore?.Set("uiElementName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class ProtectGroup : LabelActionBase, IParsable {
         /// <summary>The allowEmailFromGuestUsers property</summary>
         public bool? AllowEmailFromGuestUsers {
-            get { return BackingStore?.Get<bool?>(nameof(AllowEmailFromGuestUsers)); }
-            set { BackingStore?.Set(nameof(AllowEmailFromGuestUsers), value); }
+            get { return BackingStore?.Get<bool?>("allowEmailFromGuestUsers"); }
+            set { BackingStore?.Set("allowEmailFromGuestUsers", value); }
         }
         /// <summary>The allowGuestUsers property</summary>
         public bool? AllowGuestUsers {
-            get { return BackingStore?.Get<bool?>(nameof(AllowGuestUsers)); }
-            set { BackingStore?.Set(nameof(AllowGuestUsers), value); }
+            get { return BackingStore?.Get<bool?>("allowGuestUsers"); }
+            set { BackingStore?.Set("allowGuestUsers", value); }
         }
         /// <summary>The privacy property</summary>
         public GroupPrivacy? Privacy {
-            get { return BackingStore?.Get<GroupPrivacy?>(nameof(Privacy)); }
-            set { BackingStore?.Set(nameof(Privacy), value); }
+            get { return BackingStore?.Get<GroupPrivacy?>("privacy"); }
+            set { BackingStore?.Set("privacy", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

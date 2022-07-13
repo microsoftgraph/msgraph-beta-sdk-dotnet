@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosWebContentFilterAutoFilter : IosWebContentFilterBase, IParsable {
         /// <summary>Additional URLs allowed for access</summary>
         public List<string> AllowedUrls {
-            get { return BackingStore?.Get<List<string>>(nameof(AllowedUrls)); }
-            set { BackingStore?.Set(nameof(AllowedUrls), value); }
+            get { return BackingStore?.Get<List<string>>("allowedUrls"); }
+            set { BackingStore?.Set("allowedUrls", value); }
         }
         /// <summary>Additional URLs blocked for access</summary>
         public List<string> BlockedUrls {
-            get { return BackingStore?.Get<List<string>>(nameof(BlockedUrls)); }
-            set { BackingStore?.Set(nameof(BlockedUrls), value); }
+            get { return BackingStore?.Get<List<string>>("blockedUrls"); }
+            set { BackingStore?.Set("blockedUrls", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

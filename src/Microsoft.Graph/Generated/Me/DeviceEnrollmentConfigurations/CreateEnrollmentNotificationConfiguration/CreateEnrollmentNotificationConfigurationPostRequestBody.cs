@@ -10,15 +10,15 @@ namespace Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.CreateEnrollmen
     public class CreateEnrollmentNotificationConfigurationPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceEnrollmentNotificationConfigurations property</summary>
         public List<DeviceEnrollmentConfiguration> DeviceEnrollmentNotificationConfigurations {
-            get { return BackingStore?.Get<List<DeviceEnrollmentConfiguration>>(nameof(DeviceEnrollmentNotificationConfigurations)); }
-            set { BackingStore?.Set(nameof(DeviceEnrollmentNotificationConfigurations), value); }
+            get { return BackingStore?.Get<List<DeviceEnrollmentConfiguration>>("deviceEnrollmentNotificationConfigurations"); }
+            set { BackingStore?.Set("deviceEnrollmentNotificationConfigurations", value); }
         }
         /// <summary>
         /// Instantiates a new createEnrollmentNotificationConfigurationPostRequestBody and sets the default values.

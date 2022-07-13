@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class AttackSimulationSimulationUserCoverage : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>User in an attack simulation and training campaign.</summary>
         public Microsoft.Graph.Beta.Models.AttackSimulationUser AttackSimulationUser {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttackSimulationUser>(nameof(AttackSimulationUser)); }
-            set { BackingStore?.Set(nameof(AttackSimulationUser), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttackSimulationUser>("attackSimulationUser"); }
+            set { BackingStore?.Set("attackSimulationUser", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Number of link clicks in the received payloads by the user in attack simulation and training campaigns.</summary>
         public int? ClickCount {
-            get { return BackingStore?.Get<int?>(nameof(ClickCount)); }
-            set { BackingStore?.Set(nameof(ClickCount), value); }
+            get { return BackingStore?.Get<int?>("clickCount"); }
+            set { BackingStore?.Set("clickCount", value); }
         }
         /// <summary>Number of compromising actions by the user in attack simulation and training campaigns.</summary>
         public int? CompromisedCount {
-            get { return BackingStore?.Get<int?>(nameof(CompromisedCount)); }
-            set { BackingStore?.Set(nameof(CompromisedCount), value); }
+            get { return BackingStore?.Get<int?>("compromisedCount"); }
+            set { BackingStore?.Set("compromisedCount", value); }
         }
         /// <summary>Date and time of latest attack simulation and training campaign that the user was included in.</summary>
         public DateTimeOffset? LatestSimulationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LatestSimulationDateTime)); }
-            set { BackingStore?.Set(nameof(LatestSimulationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("latestSimulationDateTime"); }
+            set { BackingStore?.Set("latestSimulationDateTime", value); }
         }
         /// <summary>Number of attack simulation and training campaigns that the user was included in.</summary>
         public int? SimulationCount {
-            get { return BackingStore?.Get<int?>(nameof(SimulationCount)); }
-            set { BackingStore?.Set(nameof(SimulationCount), value); }
+            get { return BackingStore?.Get<int?>("simulationCount"); }
+            set { BackingStore?.Set("simulationCount", value); }
         }
         /// <summary>
         /// Instantiates a new attackSimulationSimulationUserCoverage and sets the default values.

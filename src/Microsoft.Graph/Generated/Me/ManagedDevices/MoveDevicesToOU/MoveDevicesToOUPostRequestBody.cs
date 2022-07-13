@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.MoveDevicesToOU {
     public class MoveDevicesToOUPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceIds property</summary>
         public List<string> DeviceIds {
-            get { return BackingStore?.Get<List<string>>(nameof(DeviceIds)); }
-            set { BackingStore?.Set(nameof(DeviceIds), value); }
+            get { return BackingStore?.Get<List<string>>("deviceIds"); }
+            set { BackingStore?.Set("deviceIds", value); }
         }
         /// <summary>The organizationalUnitPath property</summary>
         public string OrganizationalUnitPath {
-            get { return BackingStore?.Get<string>(nameof(OrganizationalUnitPath)); }
-            set { BackingStore?.Set(nameof(OrganizationalUnitPath), value); }
+            get { return BackingStore?.Get<string>("organizationalUnitPath"); }
+            set { BackingStore?.Set("organizationalUnitPath", value); }
         }
         /// <summary>
         /// Instantiates a new moveDevicesToOUPostRequestBody and sets the default values.

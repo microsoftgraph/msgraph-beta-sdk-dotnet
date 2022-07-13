@@ -9,28 +9,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class BulkDriverActionResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>List of driver Ids where the action is failed.</summary>
         public List<string> FailedDriverIds {
-            get { return BackingStore?.Get<List<string>>(nameof(FailedDriverIds)); }
-            set { BackingStore?.Set(nameof(FailedDriverIds), value); }
+            get { return BackingStore?.Get<List<string>>("failedDriverIds"); }
+            set { BackingStore?.Set("failedDriverIds", value); }
         }
         /// <summary>List of driver Ids that are not found.</summary>
         public List<string> NotFoundDriverIds {
-            get { return BackingStore?.Get<List<string>>(nameof(NotFoundDriverIds)); }
-            set { BackingStore?.Set(nameof(NotFoundDriverIds), value); }
+            get { return BackingStore?.Get<List<string>>("notFoundDriverIds"); }
+            set { BackingStore?.Set("notFoundDriverIds", value); }
         }
         /// <summary>List of driver Ids where the action is successful.</summary>
         public List<string> SuccessfulDriverIds {
-            get { return BackingStore?.Get<List<string>>(nameof(SuccessfulDriverIds)); }
-            set { BackingStore?.Set(nameof(SuccessfulDriverIds), value); }
+            get { return BackingStore?.Get<List<string>>("successfulDriverIds"); }
+            set { BackingStore?.Set("successfulDriverIds", value); }
         }
         /// <summary>
-        /// Instantiates a new BulkDriverActionResult and sets the default values.
+        /// Instantiates a new bulkDriverActionResult and sets the default values.
         /// </summary>
         public BulkDriverActionResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

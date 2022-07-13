@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class EncryptionReportPolicyDetails : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Policy Id for Encryption Report</summary>
         public string PolicyId {
-            get { return BackingStore?.Get<string>(nameof(PolicyId)); }
-            set { BackingStore?.Set(nameof(PolicyId), value); }
+            get { return BackingStore?.Get<string>("policyId"); }
+            set { BackingStore?.Set("policyId", value); }
         }
         /// <summary>Policy Name for Encryption Report</summary>
         public string PolicyName {
-            get { return BackingStore?.Get<string>(nameof(PolicyName)); }
-            set { BackingStore?.Set(nameof(PolicyName), value); }
+            get { return BackingStore?.Get<string>("policyName"); }
+            set { BackingStore?.Set("policyName", value); }
         }
         /// <summary>
         /// Instantiates a new encryptionReportPolicyDetails and sets the default values.

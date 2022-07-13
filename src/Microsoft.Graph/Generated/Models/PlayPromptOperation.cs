@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class PlayPromptOperation : CommsOperation, IParsable {
         /// <summary>Possible values are: unknown, completedSuccessfully, mediaOperationCanceled.</summary>
         public PlayPromptCompletionReason? CompletionReason {
-            get { return BackingStore?.Get<PlayPromptCompletionReason?>(nameof(CompletionReason)); }
-            set { BackingStore?.Set(nameof(CompletionReason), value); }
+            get { return BackingStore?.Get<PlayPromptCompletionReason?>("completionReason"); }
+            set { BackingStore?.Set("completionReason", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

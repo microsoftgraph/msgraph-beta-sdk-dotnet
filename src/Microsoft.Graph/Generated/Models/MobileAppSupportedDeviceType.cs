@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class MobileAppSupportedDeviceType : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Maximum OS version</summary>
         public string MaximumOperatingSystemVersion {
-            get { return BackingStore?.Get<string>(nameof(MaximumOperatingSystemVersion)); }
-            set { BackingStore?.Set(nameof(MaximumOperatingSystemVersion), value); }
+            get { return BackingStore?.Get<string>("maximumOperatingSystemVersion"); }
+            set { BackingStore?.Set("maximumOperatingSystemVersion", value); }
         }
         /// <summary>Minimum OS version</summary>
         public string MinimumOperatingSystemVersion {
-            get { return BackingStore?.Get<string>(nameof(MinimumOperatingSystemVersion)); }
-            set { BackingStore?.Set(nameof(MinimumOperatingSystemVersion), value); }
+            get { return BackingStore?.Get<string>("minimumOperatingSystemVersion"); }
+            set { BackingStore?.Set("minimumOperatingSystemVersion", value); }
         }
-        /// <summary>Device type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.</summary>
+        /// <summary>Device type.</summary>
         public DeviceType? Type {
-            get { return BackingStore?.Get<DeviceType?>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<DeviceType?>("type"); }
+            set { BackingStore?.Set("type", value); }
         }
         /// <summary>
         /// Instantiates a new mobileAppSupportedDeviceType and sets the default values.

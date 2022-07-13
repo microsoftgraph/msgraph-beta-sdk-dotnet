@@ -7,33 +7,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyUploadedDefinitionFile : GroupPolicyDefinitionFile, IParsable {
         /// <summary>The contents of the uploaded ADMX file.</summary>
         public byte[] Content {
-            get { return BackingStore?.Get<byte[]>(nameof(Content)); }
-            set { BackingStore?.Set(nameof(Content), value); }
+            get { return BackingStore?.Get<byte[]>("content"); }
+            set { BackingStore?.Set("content", value); }
         }
         /// <summary>The default language of the uploaded ADMX file.</summary>
         public string DefaultLanguageCode {
-            get { return BackingStore?.Get<string>(nameof(DefaultLanguageCode)); }
-            set { BackingStore?.Set(nameof(DefaultLanguageCode), value); }
+            get { return BackingStore?.Get<string>("defaultLanguageCode"); }
+            set { BackingStore?.Set("defaultLanguageCode", value); }
         }
         /// <summary>The list of operations on the uploaded ADMX file.</summary>
         public List<GroupPolicyOperation> GroupPolicyOperations {
-            get { return BackingStore?.Get<List<GroupPolicyOperation>>(nameof(GroupPolicyOperations)); }
-            set { BackingStore?.Set(nameof(GroupPolicyOperations), value); }
+            get { return BackingStore?.Get<List<GroupPolicyOperation>>("groupPolicyOperations"); }
+            set { BackingStore?.Set("groupPolicyOperations", value); }
         }
         /// <summary>The list of ADML files associated with the uploaded ADMX file.</summary>
         public List<GroupPolicyUploadedLanguageFile> GroupPolicyUploadedLanguageFiles {
-            get { return BackingStore?.Get<List<GroupPolicyUploadedLanguageFile>>(nameof(GroupPolicyUploadedLanguageFiles)); }
-            set { BackingStore?.Set(nameof(GroupPolicyUploadedLanguageFiles), value); }
+            get { return BackingStore?.Get<List<GroupPolicyUploadedLanguageFile>>("groupPolicyUploadedLanguageFiles"); }
+            set { BackingStore?.Set("groupPolicyUploadedLanguageFiles", value); }
         }
-        /// <summary>The upload status of the uploaded ADMX file. Possible values are: none, uploadInProgress, available, assigned, removalInProgress, uploadFailed, removalFailed.</summary>
+        /// <summary>Type of Group Policy uploaded definition file status.</summary>
         public GroupPolicyUploadedDefinitionFileStatus? Status {
-            get { return BackingStore?.Get<GroupPolicyUploadedDefinitionFileStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<GroupPolicyUploadedDefinitionFileStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>The uploaded time of the uploaded ADMX file.</summary>
         public DateTimeOffset? UploadDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(UploadDateTime)); }
-            set { BackingStore?.Set(nameof(UploadDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("uploadDateTime"); }
+            set { BackingStore?.Set("uploadDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

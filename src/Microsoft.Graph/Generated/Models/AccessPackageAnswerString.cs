@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageAnswerString : AccessPackageAnswer, IParsable {
         /// <summary>The value stored on the requestor&apos;s user profile, if this answer is configured to be stored as a specific attribute.</summary>
         public string Value {
-            get { return BackingStore?.Get<string>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<string>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

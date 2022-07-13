@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Schema : Entity, IParsable {
         /// <summary>The baseType property</summary>
         public string BaseType {
-            get { return BackingStore?.Get<string>(nameof(BaseType)); }
-            set { BackingStore?.Set(nameof(BaseType), value); }
+            get { return BackingStore?.Get<string>("baseType"); }
+            set { BackingStore?.Set("baseType", value); }
         }
         /// <summary>The properties property</summary>
         public List<Property> Properties {
-            get { return BackingStore?.Get<List<Property>>(nameof(Properties)); }
-            set { BackingStore?.Set(nameof(Properties), value); }
+            get { return BackingStore?.Get<List<Property>>("properties"); }
+            set { BackingStore?.Set("properties", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

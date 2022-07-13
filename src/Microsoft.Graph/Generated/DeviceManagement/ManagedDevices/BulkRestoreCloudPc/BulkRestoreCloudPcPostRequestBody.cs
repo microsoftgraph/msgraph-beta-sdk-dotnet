@@ -10,25 +10,25 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkRestoreCloudP
     public class BulkRestoreCloudPcPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The managedDeviceIds property</summary>
         public List<string> ManagedDeviceIds {
-            get { return BackingStore?.Get<List<string>>(nameof(ManagedDeviceIds)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceIds), value); }
+            get { return BackingStore?.Get<List<string>>("managedDeviceIds"); }
+            set { BackingStore?.Set("managedDeviceIds", value); }
         }
         /// <summary>The restorePointDateTime property</summary>
         public DateTimeOffset? RestorePointDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(RestorePointDateTime)); }
-            set { BackingStore?.Set(nameof(RestorePointDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("restorePointDateTime"); }
+            set { BackingStore?.Set("restorePointDateTime", value); }
         }
         /// <summary>The timeRange property</summary>
         public RestoreTimeRange? TimeRange {
-            get { return BackingStore?.Get<RestoreTimeRange?>(nameof(TimeRange)); }
-            set { BackingStore?.Set(nameof(TimeRange), value); }
+            get { return BackingStore?.Get<RestoreTimeRange?>("timeRange"); }
+            set { BackingStore?.Set("timeRange", value); }
         }
         /// <summary>
         /// Instantiates a new bulkRestoreCloudPcPostRequestBody and sets the default values.

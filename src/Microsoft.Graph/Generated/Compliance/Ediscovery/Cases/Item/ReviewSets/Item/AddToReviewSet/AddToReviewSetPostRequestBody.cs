@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
     public class AddToReviewSetPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The additionalDataOptions property</summary>
         public Microsoft.Graph.Beta.Models.Ediscovery.AdditionalDataOptions? AdditionalDataOptions {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.AdditionalDataOptions?>(nameof(AdditionalDataOptions)); }
-            set { BackingStore?.Set(nameof(AdditionalDataOptions), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.AdditionalDataOptions?>("additionalDataOptions"); }
+            set { BackingStore?.Set("additionalDataOptions", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The sourceCollection property</summary>
         public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection SourceCollection {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>(nameof(SourceCollection)); }
-            set { BackingStore?.Set(nameof(SourceCollection), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>("sourceCollection"); }
+            set { BackingStore?.Set("sourceCollection", value); }
         }
         /// <summary>
         /// Instantiates a new addToReviewSetPostRequestBody and sets the default values.

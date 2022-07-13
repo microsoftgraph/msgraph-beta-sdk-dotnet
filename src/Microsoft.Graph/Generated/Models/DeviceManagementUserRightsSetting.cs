@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementUserRightsSetting : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Representing a collection of local users or groups which will be set on device if the state of this setting is Allowed. This collection can contain a maximum of 500 elements.</summary>
         public List<DeviceManagementUserRightsLocalUserOrGroup> LocalUsersOrGroups {
-            get { return BackingStore?.Get<List<DeviceManagementUserRightsLocalUserOrGroup>>(nameof(LocalUsersOrGroups)); }
-            set { BackingStore?.Set(nameof(LocalUsersOrGroups), value); }
+            get { return BackingStore?.Get<List<DeviceManagementUserRightsLocalUserOrGroup>>("localUsersOrGroups"); }
+            set { BackingStore?.Set("localUsersOrGroups", value); }
         }
-        /// <summary>Representing the current state of this user rights setting. Possible values are: notConfigured, blocked, allowed.</summary>
+        /// <summary>State Management Setting.</summary>
         public StateManagementSetting? State {
-            get { return BackingStore?.Get<StateManagementSetting?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<StateManagementSetting?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Instantiates a new deviceManagementUserRightsSetting and sets the default values.

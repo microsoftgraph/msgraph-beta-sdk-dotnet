@@ -8,45 +8,45 @@ namespace Microsoft.Graph.Beta.Models {
     public class CloudPcOnPremisesConnectionHealthCheck : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Additional details about the health check or the recommended action.</summary>
         public string AdditionalDetails {
-            get { return BackingStore?.Get<string>(nameof(AdditionalDetails)); }
-            set { BackingStore?.Set(nameof(AdditionalDetails), value); }
+            get { return BackingStore?.Get<string>("additionalDetails"); }
+            set { BackingStore?.Set("additionalDetails", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The display name for this health check item.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The end time of the health check item. Read-only.</summary>
         public DateTimeOffset? EndDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
-            set { BackingStore?.Set(nameof(EndDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
+            set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>The type of error that occurred during this health check.</summary>
         public CloudPcOnPremisesConnectionHealthCheckErrorType? ErrorType {
-            get { return BackingStore?.Get<CloudPcOnPremisesConnectionHealthCheckErrorType?>(nameof(ErrorType)); }
-            set { BackingStore?.Set(nameof(ErrorType), value); }
+            get { return BackingStore?.Get<CloudPcOnPremisesConnectionHealthCheckErrorType?>("errorType"); }
+            set { BackingStore?.Set("errorType", value); }
         }
         /// <summary>The recommended action to fix the corresponding error.</summary>
         public string RecommendedAction {
-            get { return BackingStore?.Get<string>(nameof(RecommendedAction)); }
-            set { BackingStore?.Set(nameof(RecommendedAction), value); }
+            get { return BackingStore?.Get<string>("recommendedAction"); }
+            set { BackingStore?.Set("recommendedAction", value); }
         }
         /// <summary>The start time of the health check item. Read-only.</summary>
         public DateTimeOffset? StartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
-            set { BackingStore?.Set(nameof(StartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
         }
-        /// <summary>The status of the health check item. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.</summary>
+        /// <summary>The status property</summary>
         public CloudPcOnPremisesConnectionStatus? Status {
-            get { return BackingStore?.Get<CloudPcOnPremisesConnectionStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<CloudPcOnPremisesConnectionStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Instantiates a new cloudPcOnPremisesConnectionHealthCheck and sets the default values.

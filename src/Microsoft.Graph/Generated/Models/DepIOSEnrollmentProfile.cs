@@ -7,148 +7,148 @@ namespace Microsoft.Graph.Beta.Models {
     public class DepIOSEnrollmentProfile : DepEnrollmentBaseProfile, IParsable {
         /// <summary>Indicates if Apperance screen is disabled</summary>
         public bool? AppearanceScreenDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(AppearanceScreenDisabled)); }
-            set { BackingStore?.Set(nameof(AppearanceScreenDisabled), value); }
+            get { return BackingStore?.Get<bool?>("appearanceScreenDisabled"); }
+            set { BackingStore?.Set("appearanceScreenDisabled", value); }
         }
         /// <summary>Indicates if the device will need to wait for configured confirmation</summary>
         public bool? AwaitDeviceConfiguredConfirmation {
-            get { return BackingStore?.Get<bool?>(nameof(AwaitDeviceConfiguredConfirmation)); }
-            set { BackingStore?.Set(nameof(AwaitDeviceConfiguredConfirmation), value); }
+            get { return BackingStore?.Get<bool?>("awaitDeviceConfiguredConfirmation"); }
+            set { BackingStore?.Set("awaitDeviceConfiguredConfirmation", value); }
         }
         /// <summary>Carrier URL for activating device eSIM.</summary>
         public string CarrierActivationUrl {
-            get { return BackingStore?.Get<string>(nameof(CarrierActivationUrl)); }
-            set { BackingStore?.Set(nameof(CarrierActivationUrl), value); }
+            get { return BackingStore?.Get<string>("carrierActivationUrl"); }
+            set { BackingStore?.Set("carrierActivationUrl", value); }
         }
         /// <summary>If set, indicates which Vpp token should be used to deploy the Company Portal w/ device licensing. &apos;enableAuthenticationViaCompanyPortal&apos; must be set in order for this property to be set.</summary>
         public string CompanyPortalVppTokenId {
-            get { return BackingStore?.Get<string>(nameof(CompanyPortalVppTokenId)); }
-            set { BackingStore?.Set(nameof(CompanyPortalVppTokenId), value); }
+            get { return BackingStore?.Get<string>("companyPortalVppTokenId"); }
+            set { BackingStore?.Set("companyPortalVppTokenId", value); }
         }
         /// <summary>Indicates if Device To Device Migration is disabled</summary>
         public bool? DeviceToDeviceMigrationDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(DeviceToDeviceMigrationDisabled)); }
-            set { BackingStore?.Set(nameof(DeviceToDeviceMigrationDisabled), value); }
+            get { return BackingStore?.Get<bool?>("deviceToDeviceMigrationDisabled"); }
+            set { BackingStore?.Set("deviceToDeviceMigrationDisabled", value); }
         }
         /// <summary>This indicates whether the device is to be enrolled in a mode which enables multi user scenarios. Only applicable in shared iPads.</summary>
         public bool? EnableSharedIPad {
-            get { return BackingStore?.Get<bool?>(nameof(EnableSharedIPad)); }
-            set { BackingStore?.Set(nameof(EnableSharedIPad), value); }
+            get { return BackingStore?.Get<bool?>("enableSharedIPad"); }
+            set { BackingStore?.Set("enableSharedIPad", value); }
         }
         /// <summary>Tells the device to enable single app mode and apply app-lock during enrollment. Default is false. &apos;enableAuthenticationViaCompanyPortal&apos; and &apos;companyPortalVppTokenId&apos; must be set for this property to be set.</summary>
         public bool? EnableSingleAppEnrollmentMode {
-            get { return BackingStore?.Get<bool?>(nameof(EnableSingleAppEnrollmentMode)); }
-            set { BackingStore?.Set(nameof(EnableSingleAppEnrollmentMode), value); }
+            get { return BackingStore?.Get<bool?>("enableSingleAppEnrollmentMode"); }
+            set { BackingStore?.Set("enableSingleAppEnrollmentMode", value); }
         }
         /// <summary>Indicates if Express Language screen is disabled</summary>
         public bool? ExpressLanguageScreenDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(ExpressLanguageScreenDisabled)); }
-            set { BackingStore?.Set(nameof(ExpressLanguageScreenDisabled), value); }
+            get { return BackingStore?.Get<bool?>("expressLanguageScreenDisabled"); }
+            set { BackingStore?.Set("expressLanguageScreenDisabled", value); }
         }
         /// <summary>Indicates if temporary sessions is enabled</summary>
         public bool? ForceTemporarySession {
-            get { return BackingStore?.Get<bool?>(nameof(ForceTemporarySession)); }
-            set { BackingStore?.Set(nameof(ForceTemporarySession), value); }
+            get { return BackingStore?.Get<bool?>("forceTemporarySession"); }
+            set { BackingStore?.Set("forceTemporarySession", value); }
         }
         /// <summary>Indicates if home button sensitivity screen is disabled</summary>
         public bool? HomeButtonScreenDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(HomeButtonScreenDisabled)); }
-            set { BackingStore?.Set(nameof(HomeButtonScreenDisabled), value); }
+            get { return BackingStore?.Get<bool?>("homeButtonScreenDisabled"); }
+            set { BackingStore?.Set("homeButtonScreenDisabled", value); }
         }
         /// <summary>Indicates if iMessage and FaceTime screen is disabled</summary>
         public bool? IMessageAndFaceTimeScreenDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(IMessageAndFaceTimeScreenDisabled)); }
-            set { BackingStore?.Set(nameof(IMessageAndFaceTimeScreenDisabled), value); }
+            get { return BackingStore?.Get<bool?>("iMessageAndFaceTimeScreenDisabled"); }
+            set { BackingStore?.Set("iMessageAndFaceTimeScreenDisabled", value); }
         }
-        /// <summary>Indicates the iTunes pairing mode. Possible values are: disallow, allow, requiresCertificate.</summary>
+        /// <summary>The iTunesPairingMode property</summary>
         public Microsoft.Graph.Beta.Models.ITunesPairingMode? ITunesPairingMode {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ITunesPairingMode?>(nameof(ITunesPairingMode)); }
-            set { BackingStore?.Set(nameof(ITunesPairingMode), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ITunesPairingMode?>("iTunesPairingMode"); }
+            set { BackingStore?.Set("iTunesPairingMode", value); }
         }
         /// <summary>Management certificates for Apple Configurator</summary>
         public List<ManagementCertificateWithThumbprint> ManagementCertificates {
-            get { return BackingStore?.Get<List<ManagementCertificateWithThumbprint>>(nameof(ManagementCertificates)); }
-            set { BackingStore?.Set(nameof(ManagementCertificates), value); }
+            get { return BackingStore?.Get<List<ManagementCertificateWithThumbprint>>("managementCertificates"); }
+            set { BackingStore?.Set("managementCertificates", value); }
         }
         /// <summary>Indicates if onboarding setup screen is disabled</summary>
         public bool? OnBoardingScreenDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(OnBoardingScreenDisabled)); }
-            set { BackingStore?.Set(nameof(OnBoardingScreenDisabled), value); }
+            get { return BackingStore?.Get<bool?>("onBoardingScreenDisabled"); }
+            set { BackingStore?.Set("onBoardingScreenDisabled", value); }
         }
         /// <summary>Indicates if Passcode setup pane is disabled</summary>
         public bool? PassCodeDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(PassCodeDisabled)); }
-            set { BackingStore?.Set(nameof(PassCodeDisabled), value); }
+            get { return BackingStore?.Get<bool?>("passCodeDisabled"); }
+            set { BackingStore?.Set("passCodeDisabled", value); }
         }
         /// <summary>Indicates timeout before locked screen requires the user to enter the device passocde to unlock it</summary>
         public int? PasscodeLockGracePeriodInSeconds {
-            get { return BackingStore?.Get<int?>(nameof(PasscodeLockGracePeriodInSeconds)); }
-            set { BackingStore?.Set(nameof(PasscodeLockGracePeriodInSeconds), value); }
+            get { return BackingStore?.Get<int?>("passcodeLockGracePeriodInSeconds"); }
+            set { BackingStore?.Set("passcodeLockGracePeriodInSeconds", value); }
         }
         /// <summary>Indicates if Preferred language screen is disabled</summary>
         public bool? PreferredLanguageScreenDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(PreferredLanguageScreenDisabled)); }
-            set { BackingStore?.Set(nameof(PreferredLanguageScreenDisabled), value); }
+            get { return BackingStore?.Get<bool?>("preferredLanguageScreenDisabled"); }
+            set { BackingStore?.Set("preferredLanguageScreenDisabled", value); }
         }
         /// <summary>Indicates if Weclome screen is disabled</summary>
         public bool? RestoreCompletedScreenDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(RestoreCompletedScreenDisabled)); }
-            set { BackingStore?.Set(nameof(RestoreCompletedScreenDisabled), value); }
+            get { return BackingStore?.Get<bool?>("restoreCompletedScreenDisabled"); }
+            set { BackingStore?.Set("restoreCompletedScreenDisabled", value); }
         }
         /// <summary>Indicates if Restore from Android is disabled</summary>
         public bool? RestoreFromAndroidDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(RestoreFromAndroidDisabled)); }
-            set { BackingStore?.Set(nameof(RestoreFromAndroidDisabled), value); }
+            get { return BackingStore?.Get<bool?>("restoreFromAndroidDisabled"); }
+            set { BackingStore?.Set("restoreFromAndroidDisabled", value); }
         }
         /// <summary>This specifies the maximum number of users that can use a shared iPad. Only applicable in shared iPad mode.</summary>
         public int? SharedIPadMaximumUserCount {
-            get { return BackingStore?.Get<int?>(nameof(SharedIPadMaximumUserCount)); }
-            set { BackingStore?.Set(nameof(SharedIPadMaximumUserCount), value); }
+            get { return BackingStore?.Get<int?>("sharedIPadMaximumUserCount"); }
+            set { BackingStore?.Set("sharedIPadMaximumUserCount", value); }
         }
         /// <summary>Indicates if the SIMSetup screen is disabled</summary>
         public bool? SimSetupScreenDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(SimSetupScreenDisabled)); }
-            set { BackingStore?.Set(nameof(SimSetupScreenDisabled), value); }
+            get { return BackingStore?.Get<bool?>("simSetupScreenDisabled"); }
+            set { BackingStore?.Set("simSetupScreenDisabled", value); }
         }
         /// <summary>Indicates if the mandatory sofware update screen is disabled</summary>
         public bool? SoftwareUpdateScreenDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(SoftwareUpdateScreenDisabled)); }
-            set { BackingStore?.Set(nameof(SoftwareUpdateScreenDisabled), value); }
+            get { return BackingStore?.Get<bool?>("softwareUpdateScreenDisabled"); }
+            set { BackingStore?.Set("softwareUpdateScreenDisabled", value); }
         }
         /// <summary>Indicates timeout of temporary session</summary>
         public int? TemporarySessionTimeoutInSeconds {
-            get { return BackingStore?.Get<int?>(nameof(TemporarySessionTimeoutInSeconds)); }
-            set { BackingStore?.Set(nameof(TemporarySessionTimeoutInSeconds), value); }
+            get { return BackingStore?.Get<int?>("temporarySessionTimeoutInSeconds"); }
+            set { BackingStore?.Set("temporarySessionTimeoutInSeconds", value); }
         }
         /// <summary>Indicates if Weclome screen is disabled</summary>
         public bool? UpdateCompleteScreenDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(UpdateCompleteScreenDisabled)); }
-            set { BackingStore?.Set(nameof(UpdateCompleteScreenDisabled), value); }
+            get { return BackingStore?.Get<bool?>("updateCompleteScreenDisabled"); }
+            set { BackingStore?.Set("updateCompleteScreenDisabled", value); }
         }
         /// <summary>Indicates that this apple device is designated to support &apos;shared device mode&apos; scenarios. This is distinct from the &apos;shared iPad&apos; scenario. See https://docs.microsoft.com/mem/intune/enrollment/device-enrollment-shared-ios</summary>
         public bool? UserlessSharedAadModeEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(UserlessSharedAadModeEnabled)); }
-            set { BackingStore?.Set(nameof(UserlessSharedAadModeEnabled), value); }
+            get { return BackingStore?.Get<bool?>("userlessSharedAadModeEnabled"); }
+            set { BackingStore?.Set("userlessSharedAadModeEnabled", value); }
         }
         /// <summary>Indicates timeout of temporary session</summary>
         public int? UserSessionTimeoutInSeconds {
-            get { return BackingStore?.Get<int?>(nameof(UserSessionTimeoutInSeconds)); }
-            set { BackingStore?.Set(nameof(UserSessionTimeoutInSeconds), value); }
+            get { return BackingStore?.Get<int?>("userSessionTimeoutInSeconds"); }
+            set { BackingStore?.Set("userSessionTimeoutInSeconds", value); }
         }
         /// <summary>Indicates if the watch migration screen is disabled</summary>
         public bool? WatchMigrationScreenDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(WatchMigrationScreenDisabled)); }
-            set { BackingStore?.Set(nameof(WatchMigrationScreenDisabled), value); }
+            get { return BackingStore?.Get<bool?>("watchMigrationScreenDisabled"); }
+            set { BackingStore?.Set("watchMigrationScreenDisabled", value); }
         }
         /// <summary>Indicates if Weclome screen is disabled</summary>
         public bool? WelcomeScreenDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(WelcomeScreenDisabled)); }
-            set { BackingStore?.Set(nameof(WelcomeScreenDisabled), value); }
+            get { return BackingStore?.Get<bool?>("welcomeScreenDisabled"); }
+            set { BackingStore?.Set("welcomeScreenDisabled", value); }
         }
         /// <summary>Indicates if zoom setup pane is disabled</summary>
         public bool? ZoomDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(ZoomDisabled)); }
-            set { BackingStore?.Set(nameof(ZoomDisabled), value); }
+            get { return BackingStore?.Get<bool?>("zoomDisabled"); }
+            set { BackingStore?.Set("zoomDisabled", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

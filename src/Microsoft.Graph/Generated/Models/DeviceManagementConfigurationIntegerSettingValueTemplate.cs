@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationIntegerSettingValueTemplate : DeviceManagementConfigurationSimpleSettingValueTemplate, IParsable {
         /// <summary>Integer Setting Value Default Template.</summary>
         public DeviceManagementConfigurationIntegerSettingValueDefaultTemplate DefaultValue {
-            get { return BackingStore?.Get<DeviceManagementConfigurationIntegerSettingValueDefaultTemplate>(nameof(DefaultValue)); }
-            set { BackingStore?.Set(nameof(DefaultValue), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationIntegerSettingValueDefaultTemplate>("defaultValue"); }
+            set { BackingStore?.Set("defaultValue", value); }
         }
         /// <summary>Recommended value definition.</summary>
         public DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate RecommendedValueDefinition {
-            get { return BackingStore?.Get<DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate>(nameof(RecommendedValueDefinition)); }
-            set { BackingStore?.Set(nameof(RecommendedValueDefinition), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate>("recommendedValueDefinition"); }
+            set { BackingStore?.Set("recommendedValueDefinition", value); }
         }
         /// <summary>Required value definition.</summary>
         public DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate RequiredValueDefinition {
-            get { return BackingStore?.Get<DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate>(nameof(RequiredValueDefinition)); }
-            set { BackingStore?.Set(nameof(RequiredValueDefinition), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate>("requiredValueDefinition"); }
+            set { BackingStore?.Set("requiredValueDefinition", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

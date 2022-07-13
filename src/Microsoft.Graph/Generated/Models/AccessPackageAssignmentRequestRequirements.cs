@@ -8,60 +8,60 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageAssignmentRequestRequirements : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Answers that have already been provided.</summary>
         public List<AccessPackageAnswer> ExistingAnswers {
-            get { return BackingStore?.Get<List<AccessPackageAnswer>>(nameof(ExistingAnswers)); }
-            set { BackingStore?.Set(nameof(ExistingAnswers), value); }
+            get { return BackingStore?.Get<List<AccessPackageAnswer>>("existingAnswers"); }
+            set { BackingStore?.Set("existingAnswers", value); }
         }
         /// <summary>Indicates whether a request must be approved by an approver.</summary>
         public bool? IsApprovalRequired {
-            get { return BackingStore?.Get<bool?>(nameof(IsApprovalRequired)); }
-            set { BackingStore?.Set(nameof(IsApprovalRequired), value); }
+            get { return BackingStore?.Get<bool?>("isApprovalRequired"); }
+            set { BackingStore?.Set("isApprovalRequired", value); }
         }
         /// <summary>Indicates whether approval is required when a user tries to extend their access.</summary>
         public bool? IsApprovalRequiredForExtension {
-            get { return BackingStore?.Get<bool?>(nameof(IsApprovalRequiredForExtension)); }
-            set { BackingStore?.Set(nameof(IsApprovalRequiredForExtension), value); }
+            get { return BackingStore?.Get<bool?>("isApprovalRequiredForExtension"); }
+            set { BackingStore?.Set("isApprovalRequiredForExtension", value); }
         }
         /// <summary>Indicates whether the requestor is allowed to set a custom schedule.</summary>
         public bool? IsCustomAssignmentScheduleAllowed {
-            get { return BackingStore?.Get<bool?>(nameof(IsCustomAssignmentScheduleAllowed)); }
-            set { BackingStore?.Set(nameof(IsCustomAssignmentScheduleAllowed), value); }
+            get { return BackingStore?.Get<bool?>("isCustomAssignmentScheduleAllowed"); }
+            set { BackingStore?.Set("isCustomAssignmentScheduleAllowed", value); }
         }
         /// <summary>Indicates whether a requestor must supply justification when submitting an assignment request.</summary>
         public bool? IsRequestorJustificationRequired {
-            get { return BackingStore?.Get<bool?>(nameof(IsRequestorJustificationRequired)); }
-            set { BackingStore?.Set(nameof(IsRequestorJustificationRequired), value); }
+            get { return BackingStore?.Get<bool?>("isRequestorJustificationRequired"); }
+            set { BackingStore?.Set("isRequestorJustificationRequired", value); }
         }
         /// <summary>The description of the policy that the user is trying to request access using.</summary>
         public string PolicyDescription {
-            get { return BackingStore?.Get<string>(nameof(PolicyDescription)); }
-            set { BackingStore?.Set(nameof(PolicyDescription), value); }
+            get { return BackingStore?.Get<string>("policyDescription"); }
+            set { BackingStore?.Set("policyDescription", value); }
         }
         /// <summary>The display name of the policy that the user is trying to request access using.</summary>
         public string PolicyDisplayName {
-            get { return BackingStore?.Get<string>(nameof(PolicyDisplayName)); }
-            set { BackingStore?.Set(nameof(PolicyDisplayName), value); }
+            get { return BackingStore?.Get<string>("policyDisplayName"); }
+            set { BackingStore?.Set("policyDisplayName", value); }
         }
         /// <summary>The identifier of the policy that these requirements are associated with. This identifier can be used when creating a new assignment request.</summary>
         public string PolicyId {
-            get { return BackingStore?.Get<string>(nameof(PolicyId)); }
-            set { BackingStore?.Set(nameof(PolicyId), value); }
+            get { return BackingStore?.Get<string>("policyId"); }
+            set { BackingStore?.Set("policyId", value); }
         }
         /// <summary>Questions that are configured on the policy. The questions can be required or optional; callers can determine whether a question is required or optional based on the isRequired property on accessPackageQuestion.</summary>
         public List<AccessPackageQuestion> Questions {
-            get { return BackingStore?.Get<List<AccessPackageQuestion>>(nameof(Questions)); }
-            set { BackingStore?.Set(nameof(Questions), value); }
+            get { return BackingStore?.Get<List<AccessPackageQuestion>>("questions"); }
+            set { BackingStore?.Set("questions", value); }
         }
         /// <summary>Schedule restrictions enforced, if any.</summary>
         public RequestSchedule Schedule {
-            get { return BackingStore?.Get<RequestSchedule>(nameof(Schedule)); }
-            set { BackingStore?.Set(nameof(Schedule), value); }
+            get { return BackingStore?.Get<RequestSchedule>("schedule"); }
+            set { BackingStore?.Set("schedule", value); }
         }
         /// <summary>
         /// Instantiates a new accessPackageAssignmentRequestRequirements and sets the default values.

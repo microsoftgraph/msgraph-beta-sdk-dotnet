@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceCompliancePolicyScript : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Device compliance script Id.</summary>
         public string DeviceComplianceScriptId {
-            get { return BackingStore?.Get<string>(nameof(DeviceComplianceScriptId)); }
-            set { BackingStore?.Set(nameof(DeviceComplianceScriptId), value); }
+            get { return BackingStore?.Get<string>("deviceComplianceScriptId"); }
+            set { BackingStore?.Set("deviceComplianceScriptId", value); }
         }
         /// <summary>Json of the rules.</summary>
         public byte[] RulesContent {
-            get { return BackingStore?.Get<byte[]>(nameof(RulesContent)); }
-            set { BackingStore?.Set(nameof(RulesContent), value); }
+            get { return BackingStore?.Get<byte[]>("rulesContent"); }
+            set { BackingStore?.Set("rulesContent", value); }
         }
         /// <summary>
         /// Instantiates a new deviceCompliancePolicyScript and sets the default values.

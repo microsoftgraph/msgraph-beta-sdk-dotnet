@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the functions method.</summary>
     public class AttributeMappingFunctionSchema : Entity, IParsable {
         /// <summary>Collection of function parameters.</summary>
         public List<AttributeMappingParameterSchema> Parameters {
-            get { return BackingStore?.Get<List<AttributeMappingParameterSchema>>(nameof(Parameters)); }
-            set { BackingStore?.Set(nameof(Parameters), value); }
+            get { return BackingStore?.Get<List<AttributeMappingParameterSchema>>("parameters"); }
+            set { BackingStore?.Set("parameters", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

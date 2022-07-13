@@ -7,73 +7,73 @@ namespace Microsoft.Graph.Beta.Models {
     public class PrivilegedOperationEvent : Entity, IParsable {
         /// <summary>Detailed human readable information for the event.</summary>
         public string AdditionalInformation {
-            get { return BackingStore?.Get<string>(nameof(AdditionalInformation)); }
-            set { BackingStore?.Set(nameof(AdditionalInformation), value); }
+            get { return BackingStore?.Get<string>("additionalInformation"); }
+            set { BackingStore?.Set("additionalInformation", value); }
         }
         /// <summary>Indicates the time when the event is created.</summary>
         public DateTimeOffset? CreationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreationDateTime)); }
-            set { BackingStore?.Set(nameof(CreationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("creationDateTime"); }
+            set { BackingStore?.Set("creationDateTime", value); }
         }
         /// <summary>This is only used when the requestType is Activate, and it indicates the expiration time for the role activation.</summary>
         public DateTimeOffset? ExpirationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpirationDateTime)); }
-            set { BackingStore?.Set(nameof(ExpirationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
+            set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>Incident/Request ticket number during role activation. The value is presented only if the ticket number is provided during role activation.</summary>
         public string ReferenceKey {
-            get { return BackingStore?.Get<string>(nameof(ReferenceKey)); }
-            set { BackingStore?.Set(nameof(ReferenceKey), value); }
+            get { return BackingStore?.Get<string>("referenceKey"); }
+            set { BackingStore?.Set("referenceKey", value); }
         }
         /// <summary>Incident/Request ticketing system provided during tole activation. The value is presented only if the ticket system is provided during role activation.</summary>
         public string ReferenceSystem {
-            get { return BackingStore?.Get<string>(nameof(ReferenceSystem)); }
-            set { BackingStore?.Set(nameof(ReferenceSystem), value); }
+            get { return BackingStore?.Get<string>("referenceSystem"); }
+            set { BackingStore?.Set("referenceSystem", value); }
         }
         /// <summary>The user id of the requestor who initiates the operation.</summary>
         public string RequestorId {
-            get { return BackingStore?.Get<string>(nameof(RequestorId)); }
-            set { BackingStore?.Set(nameof(RequestorId), value); }
+            get { return BackingStore?.Get<string>("requestorId"); }
+            set { BackingStore?.Set("requestorId", value); }
         }
         /// <summary>The user name of the requestor who initiates the operation.</summary>
         public string RequestorName {
-            get { return BackingStore?.Get<string>(nameof(RequestorName)); }
-            set { BackingStore?.Set(nameof(RequestorName), value); }
+            get { return BackingStore?.Get<string>("requestorName"); }
+            set { BackingStore?.Set("requestorName", value); }
         }
         /// <summary>The request operation type. The requestType value can be: Assign (role assignment), Activate (role activation), Unassign (remove role assignment), Deactivate (role deactivation), ScanAlertsNow (scan security alerts), DismissAlert (dismiss security alert), FixAlertItem (fix a security alert issue),  AccessReview_Review (review an Access Review), AccessReview_Create (create an Access Review) , AccessReview_Update (update an Access Review), AccessReview_Delete (delete an Access Review).</summary>
         public string RequestType {
-            get { return BackingStore?.Get<string>(nameof(RequestType)); }
-            set { BackingStore?.Set(nameof(RequestType), value); }
+            get { return BackingStore?.Get<string>("requestType"); }
+            set { BackingStore?.Set("requestType", value); }
         }
         /// <summary>The id of the role that is associated with the operation.</summary>
         public string RoleId {
-            get { return BackingStore?.Get<string>(nameof(RoleId)); }
-            set { BackingStore?.Set(nameof(RoleId), value); }
+            get { return BackingStore?.Get<string>("roleId"); }
+            set { BackingStore?.Set("roleId", value); }
         }
         /// <summary>The name of the role.</summary>
         public string RoleName {
-            get { return BackingStore?.Get<string>(nameof(RoleName)); }
-            set { BackingStore?.Set(nameof(RoleName), value); }
+            get { return BackingStore?.Get<string>("roleName"); }
+            set { BackingStore?.Set("roleName", value); }
         }
         /// <summary>The tenant (organization) id.</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>The id of the user that is associated with the operation.</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>The user&apos;s email.</summary>
         public string UserMail {
-            get { return BackingStore?.Get<string>(nameof(UserMail)); }
-            set { BackingStore?.Set(nameof(UserMail), value); }
+            get { return BackingStore?.Get<string>("userMail"); }
+            set { BackingStore?.Set("userMail", value); }
         }
         /// <summary>The user&apos;s display name.</summary>
         public string UserName {
-            get { return BackingStore?.Get<string>(nameof(UserName)); }
-            set { BackingStore?.Set(nameof(UserName), value); }
+            get { return BackingStore?.Get<string>("userName"); }
+            set { BackingStore?.Set("userName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

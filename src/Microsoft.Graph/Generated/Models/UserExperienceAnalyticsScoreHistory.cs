@@ -8,8 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsScoreHistory : Entity, IParsable {
         /// <summary>The user experience analytics device startup date time.</summary>
         public DateTimeOffset? StartupDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartupDateTime)); }
-            set { BackingStore?.Set(nameof(StartupDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startupDateTime"); }
+            set { BackingStore?.Set("startupDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

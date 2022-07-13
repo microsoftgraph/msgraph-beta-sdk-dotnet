@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidMobileAppIdentifier : MobileAppIdentifier, IParsable {
         /// <summary>The identifier for an app, as specified in the play store.</summary>
         public string PackageId {
-            get { return BackingStore?.Get<string>(nameof(PackageId)); }
-            set { BackingStore?.Set(nameof(PackageId), value); }
+            get { return BackingStore?.Get<string>("packageId"); }
+            set { BackingStore?.Set("packageId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

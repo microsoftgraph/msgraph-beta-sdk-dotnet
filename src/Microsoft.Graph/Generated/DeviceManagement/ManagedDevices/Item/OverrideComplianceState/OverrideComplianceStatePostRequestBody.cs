@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.OverrideComp
     public class OverrideComplianceStatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The complianceState property</summary>
+        /// <summary>Administrator configured device compliance state Enum</summary>
         public AdministratorConfiguredDeviceComplianceState? ComplianceState {
-            get { return BackingStore?.Get<AdministratorConfiguredDeviceComplianceState?>(nameof(ComplianceState)); }
-            set { BackingStore?.Set(nameof(ComplianceState), value); }
+            get { return BackingStore?.Get<AdministratorConfiguredDeviceComplianceState?>("complianceState"); }
+            set { BackingStore?.Set("complianceState", value); }
         }
         /// <summary>The remediationUrl property</summary>
         public string RemediationUrl {
-            get { return BackingStore?.Get<string>(nameof(RemediationUrl)); }
-            set { BackingStore?.Set(nameof(RemediationUrl), value); }
+            get { return BackingStore?.Get<string>("remediationUrl"); }
+            set { BackingStore?.Set("remediationUrl", value); }
         }
         /// <summary>
         /// Instantiates a new overrideComplianceStatePostRequestBody and sets the default values.

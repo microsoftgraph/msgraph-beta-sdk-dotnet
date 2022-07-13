@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class AddHeader : MarkContent, IParsable {
         /// <summary>The alignment property</summary>
         public Microsoft.Graph.Beta.Models.Alignment? Alignment {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Alignment?>(nameof(Alignment)); }
-            set { BackingStore?.Set(nameof(Alignment), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Alignment?>("alignment"); }
+            set { BackingStore?.Set("alignment", value); }
         }
         /// <summary>The margin property</summary>
         public int? Margin {
-            get { return BackingStore?.Get<int?>(nameof(Margin)); }
-            set { BackingStore?.Set(nameof(Margin), value); }
+            get { return BackingStore?.Get<int?>("margin"); }
+            set { BackingStore?.Set("margin", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

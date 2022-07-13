@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationSimpleSettingCollectionDefinition : DeviceManagementConfigurationSimpleSettingDefinition, IParsable {
         /// <summary>Maximum number of simple settings in the collection. Valid values 1 to 100</summary>
         public int? MaximumCount {
-            get { return BackingStore?.Get<int?>(nameof(MaximumCount)); }
-            set { BackingStore?.Set(nameof(MaximumCount), value); }
+            get { return BackingStore?.Get<int?>("maximumCount"); }
+            set { BackingStore?.Set("maximumCount", value); }
         }
         /// <summary>Minimum number of simple settings in the collection. Valid values 1 to 100</summary>
         public int? MinimumCount {
-            get { return BackingStore?.Get<int?>(nameof(MinimumCount)); }
-            set { BackingStore?.Set(nameof(MinimumCount), value); }
+            get { return BackingStore?.Get<int?>("minimumCount"); }
+            set { BackingStore?.Set("minimumCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class ExtractSensitivityLabelsResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>List of sensitivity labels assigned to a file.</summary>
         public List<SensitivityLabelAssignment> Labels {
-            get { return BackingStore?.Get<List<SensitivityLabelAssignment>>(nameof(Labels)); }
-            set { BackingStore?.Set(nameof(Labels), value); }
+            get { return BackingStore?.Get<List<SensitivityLabelAssignment>>("labels"); }
+            set { BackingStore?.Set("labels", value); }
         }
         /// <summary>
-        /// Instantiates a new ExtractSensitivityLabelsResult and sets the default values.
+        /// Instantiates a new extractSensitivityLabelsResult and sets the default values.
         /// </summary>
         public ExtractSensitivityLabelsResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

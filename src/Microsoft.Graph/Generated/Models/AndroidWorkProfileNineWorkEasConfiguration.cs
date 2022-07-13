@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidWorkProfileNineWorkEasConfiguration : AndroidWorkProfileEasEmailProfileBase, IParsable {
         /// <summary>Toggles syncing the calendar. If set to false the calendar is turned off on the device.</summary>
         public bool? SyncCalendar {
-            get { return BackingStore?.Get<bool?>(nameof(SyncCalendar)); }
-            set { BackingStore?.Set(nameof(SyncCalendar), value); }
+            get { return BackingStore?.Get<bool?>("syncCalendar"); }
+            set { BackingStore?.Set("syncCalendar", value); }
         }
         /// <summary>Toggles syncing contacts. If set to false contacts are turned off on the device.</summary>
         public bool? SyncContacts {
-            get { return BackingStore?.Get<bool?>(nameof(SyncContacts)); }
-            set { BackingStore?.Set(nameof(SyncContacts), value); }
+            get { return BackingStore?.Get<bool?>("syncContacts"); }
+            set { BackingStore?.Set("syncContacts", value); }
         }
         /// <summary>Toggles syncing tasks. If set to false tasks are turned off on the device.</summary>
         public bool? SyncTasks {
-            get { return BackingStore?.Get<bool?>(nameof(SyncTasks)); }
-            set { BackingStore?.Set(nameof(SyncTasks), value); }
+            get { return BackingStore?.Get<bool?>("syncTasks"); }
+            set { BackingStore?.Set("syncTasks", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

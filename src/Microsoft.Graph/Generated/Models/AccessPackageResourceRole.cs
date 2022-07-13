@@ -4,32 +4,32 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AccessPackageResourceRole : Entity, IParsable {
         /// <summary>The accessPackageResource property</summary>
         public Microsoft.Graph.Beta.Models.AccessPackageResource AccessPackageResource {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResource>(nameof(AccessPackageResource)); }
-            set { BackingStore?.Set(nameof(AccessPackageResource), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResource>("accessPackageResource"); }
+            set { BackingStore?.Set("accessPackageResource", value); }
         }
         /// <summary>A description for the resource role.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The display name of the resource role such as the role defined by the application.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The unique identifier of the resource role in the origin system. For a SharePoint Online site, the originId will be the sequence number of the role in the site.</summary>
         public string OriginId {
-            get { return BackingStore?.Get<string>(nameof(OriginId)); }
-            set { BackingStore?.Set(nameof(OriginId), value); }
+            get { return BackingStore?.Get<string>("originId"); }
+            set { BackingStore?.Set("originId", value); }
         }
         /// <summary>The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.</summary>
         public string OriginSystem {
-            get { return BackingStore?.Get<string>(nameof(OriginSystem)); }
-            set { BackingStore?.Set(nameof(OriginSystem), value); }
+            get { return BackingStore?.Get<string>("originSystem"); }
+            set { BackingStore?.Set("originSystem", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

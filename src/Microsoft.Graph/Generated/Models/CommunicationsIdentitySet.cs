@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class CommunicationsIdentitySet : IdentitySet, IParsable {
         /// <summary>The assertedIdentity property</summary>
         public Identity AssertedIdentity {
-            get { return BackingStore?.Get<Identity>(nameof(AssertedIdentity)); }
-            set { BackingStore?.Set(nameof(AssertedIdentity), value); }
+            get { return BackingStore?.Get<Identity>("assertedIdentity"); }
+            set { BackingStore?.Set("assertedIdentity", value); }
         }
         /// <summary>The azureCommunicationServicesUser property</summary>
         public Identity AzureCommunicationServicesUser {
-            get { return BackingStore?.Get<Identity>(nameof(AzureCommunicationServicesUser)); }
-            set { BackingStore?.Set(nameof(AzureCommunicationServicesUser), value); }
+            get { return BackingStore?.Get<Identity>("azureCommunicationServicesUser"); }
+            set { BackingStore?.Set("azureCommunicationServicesUser", value); }
         }
         /// <summary>The endpointType property</summary>
         public Microsoft.Graph.Beta.Models.EndpointType? EndpointType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EndpointType?>(nameof(EndpointType)); }
-            set { BackingStore?.Set(nameof(EndpointType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EndpointType?>("endpointType"); }
+            set { BackingStore?.Set("endpointType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

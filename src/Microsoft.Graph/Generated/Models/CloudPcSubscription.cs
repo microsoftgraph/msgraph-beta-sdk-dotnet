@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the getSubscriptions method.</summary>
     public class CloudPcSubscription : Entity, IParsable {
         /// <summary>The ID of the subscription.</summary>
         public string SubscriptionId {
-            get { return BackingStore?.Get<string>(nameof(SubscriptionId)); }
-            set { BackingStore?.Set(nameof(SubscriptionId), value); }
+            get { return BackingStore?.Get<string>("subscriptionId"); }
+            set { BackingStore?.Set("subscriptionId", value); }
         }
         /// <summary>The name of the subscription.</summary>
         public string SubscriptionName {
-            get { return BackingStore?.Get<string>(nameof(SubscriptionName)); }
-            set { BackingStore?.Set(nameof(SubscriptionName), value); }
+            get { return BackingStore?.Get<string>("subscriptionName"); }
+            set { BackingStore?.Set("subscriptionName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

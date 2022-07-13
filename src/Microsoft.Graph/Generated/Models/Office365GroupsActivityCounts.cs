@@ -8,38 +8,38 @@ namespace Microsoft.Graph.Beta.Models {
     public class Office365GroupsActivityCounts : Entity, IParsable {
         /// <summary>The number of emails received by Group mailboxes.</summary>
         public long? ExchangeEmailsReceived {
-            get { return BackingStore?.Get<long?>(nameof(ExchangeEmailsReceived)); }
-            set { BackingStore?.Set(nameof(ExchangeEmailsReceived), value); }
+            get { return BackingStore?.Get<long?>("exchangeEmailsReceived"); }
+            set { BackingStore?.Set("exchangeEmailsReceived", value); }
         }
         /// <summary>The date on which a number of emails were sent to a group mailbox or a number of messages were posted, read, or liked in a Yammer group</summary>
         public Date? ReportDate {
-            get { return BackingStore?.Get<Date?>(nameof(ReportDate)); }
-            set { BackingStore?.Set(nameof(ReportDate), value); }
+            get { return BackingStore?.Get<Date?>("reportDate"); }
+            set { BackingStore?.Set("reportDate", value); }
         }
         /// <summary>The number of days the report covers.</summary>
         public string ReportPeriod {
-            get { return BackingStore?.Get<string>(nameof(ReportPeriod)); }
-            set { BackingStore?.Set(nameof(ReportPeriod), value); }
+            get { return BackingStore?.Get<string>("reportPeriod"); }
+            set { BackingStore?.Set("reportPeriod", value); }
         }
         /// <summary>The latest date of the content.</summary>
         public Date? ReportRefreshDate {
-            get { return BackingStore?.Get<Date?>(nameof(ReportRefreshDate)); }
-            set { BackingStore?.Set(nameof(ReportRefreshDate), value); }
+            get { return BackingStore?.Get<Date?>("reportRefreshDate"); }
+            set { BackingStore?.Set("reportRefreshDate", value); }
         }
         /// <summary>The number of messages liked in Yammer groups.</summary>
         public long? YammerMessagesLiked {
-            get { return BackingStore?.Get<long?>(nameof(YammerMessagesLiked)); }
-            set { BackingStore?.Set(nameof(YammerMessagesLiked), value); }
+            get { return BackingStore?.Get<long?>("yammerMessagesLiked"); }
+            set { BackingStore?.Set("yammerMessagesLiked", value); }
         }
         /// <summary>The number of messages posted to Yammer groups.</summary>
         public long? YammerMessagesPosted {
-            get { return BackingStore?.Get<long?>(nameof(YammerMessagesPosted)); }
-            set { BackingStore?.Set(nameof(YammerMessagesPosted), value); }
+            get { return BackingStore?.Get<long?>("yammerMessagesPosted"); }
+            set { BackingStore?.Set("yammerMessagesPosted", value); }
         }
         /// <summary>The number of messages read in Yammer groups.</summary>
         public long? YammerMessagesRead {
-            get { return BackingStore?.Get<long?>(nameof(YammerMessagesRead)); }
-            set { BackingStore?.Set(nameof(YammerMessagesRead), value); }
+            get { return BackingStore?.Get<long?>("yammerMessagesRead"); }
+            set { BackingStore?.Set("yammerMessagesRead", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

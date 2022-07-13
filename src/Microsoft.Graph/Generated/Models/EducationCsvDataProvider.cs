@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationCsvDataProvider : EducationSynchronizationDataProvider, IParsable {
         /// <summary>Optional customizations to be applied to the synchronization profile.</summary>
         public EducationSynchronizationCustomizations Customizations {
-            get { return BackingStore?.Get<EducationSynchronizationCustomizations>(nameof(Customizations)); }
-            set { BackingStore?.Set(nameof(Customizations), value); }
+            get { return BackingStore?.Get<EducationSynchronizationCustomizations>("customizations"); }
+            set { BackingStore?.Set("customizations", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

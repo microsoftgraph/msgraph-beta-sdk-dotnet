@@ -4,47 +4,47 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class EnterpriseCodeSigningCertificate : Entity, IParsable {
         /// <summary>The Windows Enterprise Code-Signing Certificate in the raw data format.</summary>
         public byte[] Content {
-            get { return BackingStore?.Get<byte[]>(nameof(Content)); }
-            set { BackingStore?.Set(nameof(Content), value); }
+            get { return BackingStore?.Get<byte[]>("content"); }
+            set { BackingStore?.Set("content", value); }
         }
         /// <summary>The Cert Expiration Date.</summary>
         public DateTimeOffset? ExpirationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpirationDateTime)); }
-            set { BackingStore?.Set(nameof(ExpirationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
+            set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>The Issuer value for the cert.</summary>
         public string Issuer {
-            get { return BackingStore?.Get<string>(nameof(Issuer)); }
-            set { BackingStore?.Set(nameof(Issuer), value); }
+            get { return BackingStore?.Get<string>("issuer"); }
+            set { BackingStore?.Set("issuer", value); }
         }
         /// <summary>The Issuer Name for the cert.</summary>
         public string IssuerName {
-            get { return BackingStore?.Get<string>(nameof(IssuerName)); }
-            set { BackingStore?.Set(nameof(IssuerName), value); }
+            get { return BackingStore?.Get<string>("issuerName"); }
+            set { BackingStore?.Set("issuerName", value); }
         }
-        /// <summary>The Certificate Status Provisioned or not Provisioned. Possible values are: notProvisioned, provisioned.</summary>
+        /// <summary>The status property</summary>
         public CertificateStatus? Status {
-            get { return BackingStore?.Get<CertificateStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<CertificateStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>The Subject Value for the cert.</summary>
         public string Subject {
-            get { return BackingStore?.Get<string>(nameof(Subject)); }
-            set { BackingStore?.Set(nameof(Subject), value); }
+            get { return BackingStore?.Get<string>("subject"); }
+            set { BackingStore?.Set("subject", value); }
         }
         /// <summary>The Subject Name for the cert.</summary>
         public string SubjectName {
-            get { return BackingStore?.Get<string>(nameof(SubjectName)); }
-            set { BackingStore?.Set(nameof(SubjectName), value); }
+            get { return BackingStore?.Get<string>("subjectName"); }
+            set { BackingStore?.Set("subjectName", value); }
         }
         /// <summary>The date time of CodeSigning Cert when it is uploaded.</summary>
         public DateTimeOffset? UploadDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(UploadDateTime)); }
-            set { BackingStore?.Set(nameof(UploadDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("uploadDateTime"); }
+            set { BackingStore?.Set("uploadDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

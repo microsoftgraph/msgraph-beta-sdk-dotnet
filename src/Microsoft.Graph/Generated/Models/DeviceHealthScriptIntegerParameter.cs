@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceHealthScriptIntegerParameter : DeviceHealthScriptParameter, IParsable {
         /// <summary>The default value of Integer param. Valid values -2147483648 to 2147483647</summary>
         public int? DefaultValue {
-            get { return BackingStore?.Get<int?>(nameof(DefaultValue)); }
-            set { BackingStore?.Set(nameof(DefaultValue), value); }
+            get { return BackingStore?.Get<int?>("defaultValue"); }
+            set { BackingStore?.Set("defaultValue", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

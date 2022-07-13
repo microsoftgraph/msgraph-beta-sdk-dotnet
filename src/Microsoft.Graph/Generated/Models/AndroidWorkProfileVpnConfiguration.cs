@@ -7,83 +7,83 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidWorkProfileVpnConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Whether or not to enable always-on VPN connection.</summary>
         public bool? AlwaysOn {
-            get { return BackingStore?.Get<bool?>(nameof(AlwaysOn)); }
-            set { BackingStore?.Set(nameof(AlwaysOn), value); }
+            get { return BackingStore?.Get<bool?>("alwaysOn"); }
+            set { BackingStore?.Set("alwaysOn", value); }
         }
         /// <summary>If always-on VPN connection is enabled, whether or not to lock network traffic when that VPN is disconnected.</summary>
         public bool? AlwaysOnLockdown {
-            get { return BackingStore?.Get<bool?>(nameof(AlwaysOnLockdown)); }
-            set { BackingStore?.Set(nameof(AlwaysOnLockdown), value); }
+            get { return BackingStore?.Get<bool?>("alwaysOnLockdown"); }
+            set { BackingStore?.Set("alwaysOnLockdown", value); }
         }
-        /// <summary>Authentication method. Possible values are: certificate, usernameAndPassword, sharedSecret, derivedCredential, azureAD.</summary>
+        /// <summary>VPN Authentication Method.</summary>
         public VpnAuthenticationMethod? AuthenticationMethod {
-            get { return BackingStore?.Get<VpnAuthenticationMethod?>(nameof(AuthenticationMethod)); }
-            set { BackingStore?.Set(nameof(AuthenticationMethod), value); }
+            get { return BackingStore?.Get<VpnAuthenticationMethod?>("authenticationMethod"); }
+            set { BackingStore?.Set("authenticationMethod", value); }
         }
         /// <summary>Connection name displayed to the user.</summary>
         public string ConnectionName {
-            get { return BackingStore?.Get<string>(nameof(ConnectionName)); }
-            set { BackingStore?.Set(nameof(ConnectionName), value); }
+            get { return BackingStore?.Get<string>("connectionName"); }
+            set { BackingStore?.Set("connectionName", value); }
         }
-        /// <summary>Connection type. Possible values are: ciscoAnyConnect, pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn, citrix, paloAltoGlobalProtect, microsoftTunnel, netMotionMobility, microsoftProtect.</summary>
+        /// <summary>Android Work Profile VPN connection type.</summary>
         public AndroidWorkProfileVpnConnectionType? ConnectionType {
-            get { return BackingStore?.Get<AndroidWorkProfileVpnConnectionType?>(nameof(ConnectionType)); }
-            set { BackingStore?.Set(nameof(ConnectionType), value); }
+            get { return BackingStore?.Get<AndroidWorkProfileVpnConnectionType?>("connectionType"); }
+            set { BackingStore?.Set("connectionType", value); }
         }
         /// <summary>Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.</summary>
         public List<KeyValue> CustomData {
-            get { return BackingStore?.Get<List<KeyValue>>(nameof(CustomData)); }
-            set { BackingStore?.Set(nameof(CustomData), value); }
+            get { return BackingStore?.Get<List<KeyValue>>("customData"); }
+            set { BackingStore?.Set("customData", value); }
         }
         /// <summary>Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.</summary>
         public List<KeyValuePair> CustomKeyValueData {
-            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(CustomKeyValueData)); }
-            set { BackingStore?.Set(nameof(CustomKeyValueData), value); }
+            get { return BackingStore?.Get<List<KeyValuePair>>("customKeyValueData"); }
+            set { BackingStore?.Set("customKeyValueData", value); }
         }
         /// <summary>Fingerprint is a string that will be used to verify the VPN server can be trusted, which is only applicable when connection type is Check Point Capsule VPN.</summary>
         public string Fingerprint {
-            get { return BackingStore?.Get<string>(nameof(Fingerprint)); }
-            set { BackingStore?.Set(nameof(Fingerprint), value); }
+            get { return BackingStore?.Get<string>("fingerprint"); }
+            set { BackingStore?.Set("fingerprint", value); }
         }
         /// <summary>Identity certificate for client authentication when authentication method is certificate.</summary>
         public AndroidWorkProfileCertificateProfileBase IdentityCertificate {
-            get { return BackingStore?.Get<AndroidWorkProfileCertificateProfileBase>(nameof(IdentityCertificate)); }
-            set { BackingStore?.Set(nameof(IdentityCertificate), value); }
+            get { return BackingStore?.Get<AndroidWorkProfileCertificateProfileBase>("identityCertificate"); }
+            set { BackingStore?.Set("identityCertificate", value); }
         }
         /// <summary>Microsoft Tunnel site ID.</summary>
         public string MicrosoftTunnelSiteId {
-            get { return BackingStore?.Get<string>(nameof(MicrosoftTunnelSiteId)); }
-            set { BackingStore?.Set(nameof(MicrosoftTunnelSiteId), value); }
+            get { return BackingStore?.Get<string>("microsoftTunnelSiteId"); }
+            set { BackingStore?.Set("microsoftTunnelSiteId", value); }
         }
         /// <summary>Proxy server.</summary>
         public VpnProxyServer ProxyServer {
-            get { return BackingStore?.Get<VpnProxyServer>(nameof(ProxyServer)); }
-            set { BackingStore?.Set(nameof(ProxyServer), value); }
+            get { return BackingStore?.Get<VpnProxyServer>("proxyServer"); }
+            set { BackingStore?.Set("proxyServer", value); }
         }
         /// <summary>Realm when connection type is set to Pulse Secure.</summary>
         public string Realm {
-            get { return BackingStore?.Get<string>(nameof(Realm)); }
-            set { BackingStore?.Set(nameof(Realm), value); }
+            get { return BackingStore?.Get<string>("realm"); }
+            set { BackingStore?.Set("realm", value); }
         }
         /// <summary>Role when connection type is set to Pulse Secure.</summary>
         public string Role {
-            get { return BackingStore?.Get<string>(nameof(Role)); }
-            set { BackingStore?.Set(nameof(Role), value); }
+            get { return BackingStore?.Get<string>("role"); }
+            set { BackingStore?.Set("role", value); }
         }
         /// <summary>List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.</summary>
         public List<VpnServer> Servers {
-            get { return BackingStore?.Get<List<VpnServer>>(nameof(Servers)); }
-            set { BackingStore?.Set(nameof(Servers), value); }
+            get { return BackingStore?.Get<List<VpnServer>>("servers"); }
+            set { BackingStore?.Set("servers", value); }
         }
         /// <summary>Targeted mobile apps. This collection can contain a maximum of 500 elements.</summary>
         public List<AppListItem> TargetedMobileApps {
-            get { return BackingStore?.Get<List<AppListItem>>(nameof(TargetedMobileApps)); }
-            set { BackingStore?.Set(nameof(TargetedMobileApps), value); }
+            get { return BackingStore?.Get<List<AppListItem>>("targetedMobileApps"); }
+            set { BackingStore?.Set("targetedMobileApps", value); }
         }
         /// <summary>Targeted App package IDs.</summary>
         public List<string> TargetedPackageIds {
-            get { return BackingStore?.Get<List<string>>(nameof(TargetedPackageIds)); }
-            set { BackingStore?.Set(nameof(TargetedPackageIds), value); }
+            get { return BackingStore?.Get<List<string>>("targetedPackageIds"); }
+            set { BackingStore?.Set("targetedPackageIds", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

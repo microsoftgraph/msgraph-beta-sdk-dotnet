@@ -10,30 +10,30 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.CreateInstance {
     public class CreateInstancePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The description property</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The displayName property</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The roleScopeTagIds property</summary>
         public List<string> RoleScopeTagIds {
-            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTagIds)); }
-            set { BackingStore?.Set(nameof(RoleScopeTagIds), value); }
+            get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
         }
         /// <summary>The settingsDelta property</summary>
         public List<DeviceManagementSettingInstance> SettingsDelta {
-            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>(nameof(SettingsDelta)); }
-            set { BackingStore?.Set(nameof(SettingsDelta), value); }
+            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>("settingsDelta"); }
+            set { BackingStore?.Set("settingsDelta", value); }
         }
         /// <summary>
         /// Instantiates a new createInstancePostRequestBody and sets the default values.

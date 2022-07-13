@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class ExternalIdentitiesPolicy : PolicyBase, IParsable {
         /// <summary>The allowDeletedIdentitiesDataRemoval property</summary>
         public bool? AllowDeletedIdentitiesDataRemoval {
-            get { return BackingStore?.Get<bool?>(nameof(AllowDeletedIdentitiesDataRemoval)); }
-            set { BackingStore?.Set(nameof(AllowDeletedIdentitiesDataRemoval), value); }
+            get { return BackingStore?.Get<bool?>("allowDeletedIdentitiesDataRemoval"); }
+            set { BackingStore?.Set("allowDeletedIdentitiesDataRemoval", value); }
         }
         /// <summary>The allowExternalIdentitiesToLeave property</summary>
         public bool? AllowExternalIdentitiesToLeave {
-            get { return BackingStore?.Get<bool?>(nameof(AllowExternalIdentitiesToLeave)); }
-            set { BackingStore?.Set(nameof(AllowExternalIdentitiesToLeave), value); }
+            get { return BackingStore?.Get<bool?>("allowExternalIdentitiesToLeave"); }
+            set { BackingStore?.Set("allowExternalIdentitiesToLeave", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,30 +9,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsInsight : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The unique identifier of the user experience analytics insight.</summary>
         public string InsightId {
-            get { return BackingStore?.Get<string>(nameof(InsightId)); }
-            set { BackingStore?.Set(nameof(InsightId), value); }
+            get { return BackingStore?.Get<string>("insightId"); }
+            set { BackingStore?.Set("insightId", value); }
         }
-        /// <summary>The value of the user experience analytics insight. Possible values are: none, informational, warning, error.</summary>
+        /// <summary>The severity property</summary>
         public UserExperienceAnalyticsInsightSeverity? Severity {
-            get { return BackingStore?.Get<UserExperienceAnalyticsInsightSeverity?>(nameof(Severity)); }
-            set { BackingStore?.Set(nameof(Severity), value); }
+            get { return BackingStore?.Get<UserExperienceAnalyticsInsightSeverity?>("severity"); }
+            set { BackingStore?.Set("severity", value); }
         }
         /// <summary>The unique identifier of the user experience analytics insight.</summary>
         public string UserExperienceAnalyticsMetricId {
-            get { return BackingStore?.Get<string>(nameof(UserExperienceAnalyticsMetricId)); }
-            set { BackingStore?.Set(nameof(UserExperienceAnalyticsMetricId), value); }
+            get { return BackingStore?.Get<string>("userExperienceAnalyticsMetricId"); }
+            set { BackingStore?.Set("userExperienceAnalyticsMetricId", value); }
         }
         /// <summary>The value of the user experience analytics insight.</summary>
         public List<UserExperienceAnalyticsInsightValue> Values {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsInsightValue>>(nameof(Values)); }
-            set { BackingStore?.Set(nameof(Values), value); }
+            get { return BackingStore?.Get<List<UserExperienceAnalyticsInsightValue>>("values"); }
+            set { BackingStore?.Set("values", value); }
         }
         /// <summary>
         /// Instantiates a new userExperienceAnalyticsInsight and sets the default values.

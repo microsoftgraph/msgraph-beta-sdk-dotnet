@@ -7,48 +7,48 @@ namespace Microsoft.Graph.Beta.Models {
     public class BookingCustomerInformation : BookingCustomerInformationBase, IParsable {
         /// <summary>The ID of the bookingCustomer for this appointment. If no ID is specified when an appointment is created, then a new bookingCustomer object is created. Once set, you should consider the customerId immutable.</summary>
         public string CustomerId {
-            get { return BackingStore?.Get<string>(nameof(CustomerId)); }
-            set { BackingStore?.Set(nameof(CustomerId), value); }
+            get { return BackingStore?.Get<string>("customerId"); }
+            set { BackingStore?.Set("customerId", value); }
         }
         /// <summary>It consists of the list of custom questions and answers given by the customer as part of the appointment.</summary>
         public List<BookingQuestionAnswer> CustomQuestionAnswers {
-            get { return BackingStore?.Get<List<BookingQuestionAnswer>>(nameof(CustomQuestionAnswers)); }
-            set { BackingStore?.Set(nameof(CustomQuestionAnswers), value); }
+            get { return BackingStore?.Get<List<BookingQuestionAnswer>>("customQuestionAnswers"); }
+            set { BackingStore?.Set("customQuestionAnswers", value); }
         }
         /// <summary>The SMTP address of the bookingCustomer who is booking the appointment.</summary>
         public string EmailAddress {
-            get { return BackingStore?.Get<string>(nameof(EmailAddress)); }
-            set { BackingStore?.Set(nameof(EmailAddress), value); }
+            get { return BackingStore?.Get<string>("emailAddress"); }
+            set { BackingStore?.Set("emailAddress", value); }
         }
         /// <summary>Represents location information for the bookingCustomer who is booking the appointment.</summary>
         public Microsoft.Graph.Beta.Models.Location Location {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Location>(nameof(Location)); }
-            set { BackingStore?.Set(nameof(Location), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Location>("location"); }
+            set { BackingStore?.Set("location", value); }
         }
         /// <summary>The customer&apos;s name.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>Notes from the customer associated with this appointment. You can get the value only when reading this bookingAppointment by its ID. You can set this property only when initially creating an appointment with a new customer. After that point, the value is computed from the customer represented by the customerId.</summary>
         public string Notes {
-            get { return BackingStore?.Get<string>(nameof(Notes)); }
-            set { BackingStore?.Set(nameof(Notes), value); }
+            get { return BackingStore?.Get<string>("notes"); }
+            set { BackingStore?.Set("notes", value); }
         }
         /// <summary>The customer&apos;s phone number.</summary>
         public string Phone {
-            get { return BackingStore?.Get<string>(nameof(Phone)); }
-            set { BackingStore?.Set(nameof(Phone), value); }
+            get { return BackingStore?.Get<string>("phone"); }
+            set { BackingStore?.Set("phone", value); }
         }
         /// <summary>Indicates if the SMS notifications will be sent to the customer for the appointment</summary>
         public bool? SmsNotificationsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(SmsNotificationsEnabled)); }
-            set { BackingStore?.Set(nameof(SmsNotificationsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("smsNotificationsEnabled"); }
+            set { BackingStore?.Set("smsNotificationsEnabled", value); }
         }
         /// <summary>The time zone of the customer. For a list of possible values, see dateTimeTimeZone.</summary>
         public string TimeZone {
-            get { return BackingStore?.Get<string>(nameof(TimeZone)); }
-            set { BackingStore?.Set(nameof(TimeZone), value); }
+            get { return BackingStore?.Get<string>("timeZone"); }
+            set { BackingStore?.Set("timeZone", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

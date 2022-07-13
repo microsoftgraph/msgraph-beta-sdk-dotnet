@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class SmsAuthenticationMethodTarget : AuthenticationMethodTarget, IParsable {
         /// <summary>Determines if the users or groups can use this authentication method to sign in to Azure AD. The value is always true.</summary>
         public bool? IsUsableForSignIn {
-            get { return BackingStore?.Get<bool?>(nameof(IsUsableForSignIn)); }
-            set { BackingStore?.Set(nameof(IsUsableForSignIn), value); }
+            get { return BackingStore?.Get<bool?>("isUsableForSignIn"); }
+            set { BackingStore?.Set("isUsableForSignIn", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

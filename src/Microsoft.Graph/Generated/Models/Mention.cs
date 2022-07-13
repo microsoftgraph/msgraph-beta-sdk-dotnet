@@ -4,47 +4,47 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Mention : Entity, IParsable {
         /// <summary>The name of the application where the mention is created. Optional. Not used and defaulted as null for message.</summary>
         public string Application {
-            get { return BackingStore?.Get<string>(nameof(Application)); }
-            set { BackingStore?.Set(nameof(Application), value); }
+            get { return BackingStore?.Get<string>("application"); }
+            set { BackingStore?.Set("application", value); }
         }
         /// <summary>A unique identifier that represents a parent of the resource instance. Optional. Not used and defaulted as null for message.</summary>
         public string ClientReference {
-            get { return BackingStore?.Get<string>(nameof(ClientReference)); }
-            set { BackingStore?.Set(nameof(ClientReference), value); }
+            get { return BackingStore?.Get<string>("clientReference"); }
+            set { BackingStore?.Set("clientReference", value); }
         }
         /// <summary>The email information of the user who made the mention.</summary>
         public EmailAddress CreatedBy {
-            get { return BackingStore?.Get<EmailAddress>(nameof(CreatedBy)); }
-            set { BackingStore?.Set(nameof(CreatedBy), value); }
+            get { return BackingStore?.Get<EmailAddress>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
         }
         /// <summary>The date and time that the mention is created on the client.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>A deep web link to the context of the mention in the resource instance. Optional. Not used and defaulted as null for message.</summary>
         public string DeepLink {
-            get { return BackingStore?.Get<string>(nameof(DeepLink)); }
-            set { BackingStore?.Set(nameof(DeepLink), value); }
+            get { return BackingStore?.Get<string>("deepLink"); }
+            set { BackingStore?.Set("deepLink", value); }
         }
         /// <summary>The mentioned property</summary>
         public EmailAddress Mentioned {
-            get { return BackingStore?.Get<EmailAddress>(nameof(Mentioned)); }
-            set { BackingStore?.Set(nameof(Mentioned), value); }
+            get { return BackingStore?.Get<EmailAddress>("mentioned"); }
+            set { BackingStore?.Set("mentioned", value); }
         }
         /// <summary>Optional. Not used and defaulted as null for message. To get the mentions in a message, see the bodyPreview property of the message instead.</summary>
         public string MentionText {
-            get { return BackingStore?.Get<string>(nameof(MentionText)); }
-            set { BackingStore?.Set(nameof(MentionText), value); }
+            get { return BackingStore?.Get<string>("mentionText"); }
+            set { BackingStore?.Set("mentionText", value); }
         }
         /// <summary>The date and time that the mention is created on the server. Optional. Not used and defaulted as null for message.</summary>
         public DateTimeOffset? ServerCreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ServerCreatedDateTime)); }
-            set { BackingStore?.Set(nameof(ServerCreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("serverCreatedDateTime"); }
+            set { BackingStore?.Set("serverCreatedDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

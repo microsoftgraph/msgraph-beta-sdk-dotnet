@@ -7,43 +7,43 @@ namespace Microsoft.Graph.Beta.Models {
     public class ExactMatchSession : ExactMatchSessionBase, IParsable {
         /// <summary>The checksum property</summary>
         public string Checksum {
-            get { return BackingStore?.Get<string>(nameof(Checksum)); }
-            set { BackingStore?.Set(nameof(Checksum), value); }
+            get { return BackingStore?.Get<string>("checksum"); }
+            set { BackingStore?.Set("checksum", value); }
         }
         /// <summary>The dataUploadURI property</summary>
         public string DataUploadURI {
-            get { return BackingStore?.Get<string>(nameof(DataUploadURI)); }
-            set { BackingStore?.Set(nameof(DataUploadURI), value); }
+            get { return BackingStore?.Get<string>("dataUploadURI"); }
+            set { BackingStore?.Set("dataUploadURI", value); }
         }
         /// <summary>The fields property</summary>
         public List<string> Fields {
-            get { return BackingStore?.Get<List<string>>(nameof(Fields)); }
-            set { BackingStore?.Set(nameof(Fields), value); }
+            get { return BackingStore?.Get<List<string>>("fields"); }
+            set { BackingStore?.Set("fields", value); }
         }
         /// <summary>The fileName property</summary>
         public string FileName {
-            get { return BackingStore?.Get<string>(nameof(FileName)); }
-            set { BackingStore?.Set(nameof(FileName), value); }
+            get { return BackingStore?.Get<string>("fileName"); }
+            set { BackingStore?.Set("fileName", value); }
         }
         /// <summary>The rowsPerBlock property</summary>
         public int? RowsPerBlock {
-            get { return BackingStore?.Get<int?>(nameof(RowsPerBlock)); }
-            set { BackingStore?.Set(nameof(RowsPerBlock), value); }
+            get { return BackingStore?.Get<int?>("rowsPerBlock"); }
+            set { BackingStore?.Set("rowsPerBlock", value); }
         }
         /// <summary>The salt property</summary>
         public string Salt {
-            get { return BackingStore?.Get<string>(nameof(Salt)); }
-            set { BackingStore?.Set(nameof(Salt), value); }
+            get { return BackingStore?.Get<string>("salt"); }
+            set { BackingStore?.Set("salt", value); }
         }
         /// <summary>The uploadAgent property</summary>
         public ExactMatchUploadAgent UploadAgent {
-            get { return BackingStore?.Get<ExactMatchUploadAgent>(nameof(UploadAgent)); }
-            set { BackingStore?.Set(nameof(UploadAgent), value); }
+            get { return BackingStore?.Get<ExactMatchUploadAgent>("uploadAgent"); }
+            set { BackingStore?.Set("uploadAgent", value); }
         }
         /// <summary>The uploadAgentId property</summary>
         public string UploadAgentId {
-            get { return BackingStore?.Get<string>(nameof(UploadAgentId)); }
-            set { BackingStore?.Set(nameof(UploadAgentId), value); }
+            get { return BackingStore?.Get<string>("uploadAgentId"); }
+            set { BackingStore?.Set("uploadAgentId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate : DeviceManagementConfigurationSettingInstanceTemplate, IParsable {
         /// <summary>Linked policy may append values which are not present in the template.</summary>
         public bool? AllowUnmanagedValues {
-            get { return BackingStore?.Get<bool?>(nameof(AllowUnmanagedValues)); }
-            set { BackingStore?.Set(nameof(AllowUnmanagedValues), value); }
+            get { return BackingStore?.Get<bool?>("allowUnmanagedValues"); }
+            set { BackingStore?.Set("allowUnmanagedValues", value); }
         }
         /// <summary>Group Setting Collection Value Template</summary>
         public List<DeviceManagementConfigurationGroupSettingValueTemplate> GroupSettingCollectionValueTemplate {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationGroupSettingValueTemplate>>(nameof(GroupSettingCollectionValueTemplate)); }
-            set { BackingStore?.Set(nameof(GroupSettingCollectionValueTemplate), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationGroupSettingValueTemplate>>("groupSettingCollectionValueTemplate"); }
+            set { BackingStore?.Set("groupSettingCollectionValueTemplate", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceOwnerKioskModeAppPositionItem : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Represents an item on the Android Device Owner Managed Home Screen (application, weblink or folder</summary>
         public AndroidDeviceOwnerKioskModeHomeScreenItem Item {
-            get { return BackingStore?.Get<AndroidDeviceOwnerKioskModeHomeScreenItem>(nameof(Item)); }
-            set { BackingStore?.Set(nameof(Item), value); }
+            get { return BackingStore?.Get<AndroidDeviceOwnerKioskModeHomeScreenItem>("item"); }
+            set { BackingStore?.Set("item", value); }
         }
         /// <summary>Position of the item on the grid. Valid values 0 to 9999999</summary>
         public int? Position {
-            get { return BackingStore?.Get<int?>(nameof(Position)); }
-            set { BackingStore?.Set(nameof(Position), value); }
+            get { return BackingStore?.Get<int?>("position"); }
+            set { BackingStore?.Set("position", value); }
         }
         /// <summary>
         /// Instantiates a new androidDeviceOwnerKioskModeAppPositionItem and sets the default values.

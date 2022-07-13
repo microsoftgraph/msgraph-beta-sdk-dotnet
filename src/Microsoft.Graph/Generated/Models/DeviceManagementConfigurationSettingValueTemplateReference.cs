@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationSettingValueTemplateReference : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Setting value template id</summary>
         public string SettingValueTemplateId {
-            get { return BackingStore?.Get<string>(nameof(SettingValueTemplateId)); }
-            set { BackingStore?.Set(nameof(SettingValueTemplateId), value); }
+            get { return BackingStore?.Get<string>("settingValueTemplateId"); }
+            set { BackingStore?.Set("settingValueTemplateId", value); }
         }
         /// <summary>Indicates whether to update policy setting value to match template setting default value</summary>
         public bool? UseTemplateDefault {
-            get { return BackingStore?.Get<bool?>(nameof(UseTemplateDefault)); }
-            set { BackingStore?.Set(nameof(UseTemplateDefault), value); }
+            get { return BackingStore?.Get<bool?>("useTemplateDefault"); }
+            set { BackingStore?.Set("useTemplateDefault", value); }
         }
         /// <summary>
         /// Instantiates a new deviceManagementConfigurationSettingValueTemplateReference and sets the default values.

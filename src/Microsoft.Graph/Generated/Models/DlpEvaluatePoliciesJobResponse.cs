@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DlpEvaluatePoliciesJobResponse : JobResponseBase, IParsable {
         /// <summary>The result property</summary>
         public DlpPoliciesJobResult Result {
-            get { return BackingStore?.Get<DlpPoliciesJobResult>(nameof(Result)); }
-            set { BackingStore?.Set(nameof(Result), value); }
+            get { return BackingStore?.Get<DlpPoliciesJobResult>("result"); }
+            set { BackingStore?.Set("result", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

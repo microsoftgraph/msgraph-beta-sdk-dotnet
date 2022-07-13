@@ -8,83 +8,83 @@ namespace Microsoft.Graph.Beta.Models {
     public class DepOnboardingSetting : Entity, IParsable {
         /// <summary>The Apple ID used to obtain the current token.</summary>
         public string AppleIdentifier {
-            get { return BackingStore?.Get<string>(nameof(AppleIdentifier)); }
-            set { BackingStore?.Set(nameof(AppleIdentifier), value); }
+            get { return BackingStore?.Get<string>("appleIdentifier"); }
+            set { BackingStore?.Set("appleIdentifier", value); }
         }
         /// <summary>Consent granted for data sharing with Apple Dep Service</summary>
         public bool? DataSharingConsentGranted {
-            get { return BackingStore?.Get<bool?>(nameof(DataSharingConsentGranted)); }
-            set { BackingStore?.Set(nameof(DataSharingConsentGranted), value); }
+            get { return BackingStore?.Get<bool?>("dataSharingConsentGranted"); }
+            set { BackingStore?.Set("dataSharingConsentGranted", value); }
         }
         /// <summary>Default iOS Enrollment Profile</summary>
         public DepIOSEnrollmentProfile DefaultIosEnrollmentProfile {
-            get { return BackingStore?.Get<DepIOSEnrollmentProfile>(nameof(DefaultIosEnrollmentProfile)); }
-            set { BackingStore?.Set(nameof(DefaultIosEnrollmentProfile), value); }
+            get { return BackingStore?.Get<DepIOSEnrollmentProfile>("defaultIosEnrollmentProfile"); }
+            set { BackingStore?.Set("defaultIosEnrollmentProfile", value); }
         }
         /// <summary>Default MacOs Enrollment Profile</summary>
         public DepMacOSEnrollmentProfile DefaultMacOsEnrollmentProfile {
-            get { return BackingStore?.Get<DepMacOSEnrollmentProfile>(nameof(DefaultMacOsEnrollmentProfile)); }
-            set { BackingStore?.Set(nameof(DefaultMacOsEnrollmentProfile), value); }
+            get { return BackingStore?.Get<DepMacOSEnrollmentProfile>("defaultMacOsEnrollmentProfile"); }
+            set { BackingStore?.Set("defaultMacOsEnrollmentProfile", value); }
         }
         /// <summary>The enrollment profiles.</summary>
         public List<EnrollmentProfile> EnrollmentProfiles {
-            get { return BackingStore?.Get<List<EnrollmentProfile>>(nameof(EnrollmentProfiles)); }
-            set { BackingStore?.Set(nameof(EnrollmentProfiles), value); }
+            get { return BackingStore?.Get<List<EnrollmentProfile>>("enrollmentProfiles"); }
+            set { BackingStore?.Set("enrollmentProfiles", value); }
         }
         /// <summary>The imported Apple device identities.</summary>
         public List<ImportedAppleDeviceIdentity> ImportedAppleDeviceIdentities {
-            get { return BackingStore?.Get<List<ImportedAppleDeviceIdentity>>(nameof(ImportedAppleDeviceIdentities)); }
-            set { BackingStore?.Set(nameof(ImportedAppleDeviceIdentities), value); }
+            get { return BackingStore?.Get<List<ImportedAppleDeviceIdentity>>("importedAppleDeviceIdentities"); }
+            set { BackingStore?.Set("importedAppleDeviceIdentities", value); }
         }
         /// <summary>When the service was onboarded.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>When the service last syned with Intune</summary>
         public DateTimeOffset? LastSuccessfulSyncDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSuccessfulSyncDateTime)); }
-            set { BackingStore?.Set(nameof(LastSuccessfulSyncDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastSuccessfulSyncDateTime"); }
+            set { BackingStore?.Set("lastSuccessfulSyncDateTime", value); }
         }
         /// <summary>Error code reported by Apple during last dep sync.</summary>
         public int? LastSyncErrorCode {
-            get { return BackingStore?.Get<int?>(nameof(LastSyncErrorCode)); }
-            set { BackingStore?.Set(nameof(LastSyncErrorCode), value); }
+            get { return BackingStore?.Get<int?>("lastSyncErrorCode"); }
+            set { BackingStore?.Set("lastSyncErrorCode", value); }
         }
         /// <summary>When Intune last requested a sync.</summary>
         public DateTimeOffset? LastSyncTriggeredDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSyncTriggeredDateTime)); }
-            set { BackingStore?.Set(nameof(LastSyncTriggeredDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastSyncTriggeredDateTime"); }
+            set { BackingStore?.Set("lastSyncTriggeredDateTime", value); }
         }
         /// <summary>List of Scope Tags for this Entity instance.</summary>
         public List<string> RoleScopeTagIds {
-            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTagIds)); }
-            set { BackingStore?.Set(nameof(RoleScopeTagIds), value); }
+            get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
         }
         /// <summary>Whether or not the Dep token sharing is enabled with the School Data Sync service.</summary>
         public bool? ShareTokenWithSchoolDataSyncService {
-            get { return BackingStore?.Get<bool?>(nameof(ShareTokenWithSchoolDataSyncService)); }
-            set { BackingStore?.Set(nameof(ShareTokenWithSchoolDataSyncService), value); }
+            get { return BackingStore?.Get<bool?>("shareTokenWithSchoolDataSyncService"); }
+            set { BackingStore?.Set("shareTokenWithSchoolDataSyncService", value); }
         }
         /// <summary>Gets synced device count</summary>
         public int? SyncedDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(SyncedDeviceCount)); }
-            set { BackingStore?.Set(nameof(SyncedDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("syncedDeviceCount"); }
+            set { BackingStore?.Set("syncedDeviceCount", value); }
         }
         /// <summary>When the token will expire.</summary>
         public DateTimeOffset? TokenExpirationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(TokenExpirationDateTime)); }
-            set { BackingStore?.Set(nameof(TokenExpirationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("tokenExpirationDateTime"); }
+            set { BackingStore?.Set("tokenExpirationDateTime", value); }
         }
         /// <summary>Friendly Name for Dep Token</summary>
         public string TokenName {
-            get { return BackingStore?.Get<string>(nameof(TokenName)); }
-            set { BackingStore?.Set(nameof(TokenName), value); }
+            get { return BackingStore?.Get<string>("tokenName"); }
+            set { BackingStore?.Set("tokenName", value); }
         }
-        /// <summary>Gets or sets the Dep Token Type. Possible values are: none, dep, appleSchoolManager.</summary>
+        /// <summary>The tokenType property</summary>
         public DepTokenType? TokenType {
-            get { return BackingStore?.Get<DepTokenType?>(nameof(TokenType)); }
-            set { BackingStore?.Set(nameof(TokenType), value); }
+            get { return BackingStore?.Get<DepTokenType?>("tokenType"); }
+            set { BackingStore?.Set("tokenType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

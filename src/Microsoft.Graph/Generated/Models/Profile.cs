@@ -4,102 +4,101 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Profile : Entity, IParsable {
         /// <summary>The account property</summary>
         public List<UserAccountInformation> Account {
-            get { return BackingStore?.Get<List<UserAccountInformation>>(nameof(Account)); }
-            set { BackingStore?.Set(nameof(Account), value); }
+            get { return BackingStore?.Get<List<UserAccountInformation>>("account"); }
+            set { BackingStore?.Set("account", value); }
         }
         /// <summary>Represents details of addresses associated with the user.</summary>
         public List<ItemAddress> Addresses {
-            get { return BackingStore?.Get<List<ItemAddress>>(nameof(Addresses)); }
-            set { BackingStore?.Set(nameof(Addresses), value); }
+            get { return BackingStore?.Get<List<ItemAddress>>("addresses"); }
+            set { BackingStore?.Set("addresses", value); }
         }
         /// <summary>Represents the details of meaningful dates associated with a person.</summary>
         public List<PersonAnnualEvent> Anniversaries {
-            get { return BackingStore?.Get<List<PersonAnnualEvent>>(nameof(Anniversaries)); }
-            set { BackingStore?.Set(nameof(Anniversaries), value); }
+            get { return BackingStore?.Get<List<PersonAnnualEvent>>("anniversaries"); }
+            set { BackingStore?.Set("anniversaries", value); }
         }
         /// <summary>Represents the details of awards or honors associated with a person.</summary>
         public List<PersonAward> Awards {
-            get { return BackingStore?.Get<List<PersonAward>>(nameof(Awards)); }
-            set { BackingStore?.Set(nameof(Awards), value); }
+            get { return BackingStore?.Get<List<PersonAward>>("awards"); }
+            set { BackingStore?.Set("awards", value); }
         }
         /// <summary>Represents the details of certifications associated with a person.</summary>
         public List<PersonCertification> Certifications {
-            get { return BackingStore?.Get<List<PersonCertification>>(nameof(Certifications)); }
-            set { BackingStore?.Set(nameof(Certifications), value); }
+            get { return BackingStore?.Get<List<PersonCertification>>("certifications"); }
+            set { BackingStore?.Set("certifications", value); }
         }
         /// <summary>Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.</summary>
         public List<EducationalActivity> EducationalActivities {
-            get { return BackingStore?.Get<List<EducationalActivity>>(nameof(EducationalActivities)); }
-            set { BackingStore?.Set(nameof(EducationalActivities), value); }
+            get { return BackingStore?.Get<List<EducationalActivity>>("educationalActivities"); }
+            set { BackingStore?.Set("educationalActivities", value); }
         }
         /// <summary>Represents detailed information about email addresses associated with the user.</summary>
         public List<ItemEmail> Emails {
-            get { return BackingStore?.Get<List<ItemEmail>>(nameof(Emails)); }
-            set { BackingStore?.Set(nameof(Emails), value); }
+            get { return BackingStore?.Get<List<ItemEmail>>("emails"); }
+            set { BackingStore?.Set("emails", value); }
         }
         /// <summary>Provides detailed information about interests the user has associated with themselves in various services.</summary>
         public List<PersonInterest> Interests {
-            get { return BackingStore?.Get<List<PersonInterest>>(nameof(Interests)); }
-            set { BackingStore?.Set(nameof(Interests), value); }
+            get { return BackingStore?.Get<List<PersonInterest>>("interests"); }
+            set { BackingStore?.Set("interests", value); }
         }
         /// <summary>Represents detailed information about languages that a user has added to their profile.</summary>
         public List<LanguageProficiency> Languages {
-            get { return BackingStore?.Get<List<LanguageProficiency>>(nameof(Languages)); }
-            set { BackingStore?.Set(nameof(Languages), value); }
+            get { return BackingStore?.Get<List<LanguageProficiency>>("languages"); }
+            set { BackingStore?.Set("languages", value); }
         }
         /// <summary>Represents the names a user has added to their profile.</summary>
         public List<PersonName> Names {
-            get { return BackingStore?.Get<List<PersonName>>(nameof(Names)); }
-            set { BackingStore?.Set(nameof(Names), value); }
+            get { return BackingStore?.Get<List<PersonName>>("names"); }
+            set { BackingStore?.Set("names", value); }
         }
         /// <summary>Represents notes that a user has added to their profile.</summary>
         public List<PersonAnnotation> Notes {
-            get { return BackingStore?.Get<List<PersonAnnotation>>(nameof(Notes)); }
-            set { BackingStore?.Set(nameof(Notes), value); }
+            get { return BackingStore?.Get<List<PersonAnnotation>>("notes"); }
+            set { BackingStore?.Set("notes", value); }
         }
         /// <summary>Represents patents that a user has added to their profile.</summary>
         public List<ItemPatent> Patents {
-            get { return BackingStore?.Get<List<ItemPatent>>(nameof(Patents)); }
-            set { BackingStore?.Set(nameof(Patents), value); }
+            get { return BackingStore?.Get<List<ItemPatent>>("patents"); }
+            set { BackingStore?.Set("patents", value); }
         }
         /// <summary>Represents detailed information about phone numbers associated with a user in various services.</summary>
         public List<ItemPhone> Phones {
-            get { return BackingStore?.Get<List<ItemPhone>>(nameof(Phones)); }
-            set { BackingStore?.Set(nameof(Phones), value); }
+            get { return BackingStore?.Get<List<ItemPhone>>("phones"); }
+            set { BackingStore?.Set("phones", value); }
         }
         /// <summary>Represents detailed information about work positions associated with a user&apos;s profile.</summary>
         public List<WorkPosition> Positions {
-            get { return BackingStore?.Get<List<WorkPosition>>(nameof(Positions)); }
-            set { BackingStore?.Set(nameof(Positions), value); }
+            get { return BackingStore?.Get<List<WorkPosition>>("positions"); }
+            set { BackingStore?.Set("positions", value); }
         }
         /// <summary>Represents detailed information about projects associated with a user.</summary>
         public List<ProjectParticipation> Projects {
-            get { return BackingStore?.Get<List<ProjectParticipation>>(nameof(Projects)); }
-            set { BackingStore?.Set(nameof(Projects), value); }
+            get { return BackingStore?.Get<List<ProjectParticipation>>("projects"); }
+            set { BackingStore?.Set("projects", value); }
         }
         /// <summary>Represents details of any publications a user has added to their profile.</summary>
         public List<ItemPublication> Publications {
-            get { return BackingStore?.Get<List<ItemPublication>>(nameof(Publications)); }
-            set { BackingStore?.Set(nameof(Publications), value); }
+            get { return BackingStore?.Get<List<ItemPublication>>("publications"); }
+            set { BackingStore?.Set("publications", value); }
         }
         /// <summary>Represents detailed information about skills associated with a user in various services.</summary>
         public List<SkillProficiency> Skills {
-            get { return BackingStore?.Get<List<SkillProficiency>>(nameof(Skills)); }
-            set { BackingStore?.Set(nameof(Skills), value); }
+            get { return BackingStore?.Get<List<SkillProficiency>>("skills"); }
+            set { BackingStore?.Set("skills", value); }
         }
         /// <summary>Represents web accounts the user has indicated they use or has added to their user profile.</summary>
         public List<WebAccount> WebAccounts {
-            get { return BackingStore?.Get<List<WebAccount>>(nameof(WebAccounts)); }
-            set { BackingStore?.Set(nameof(WebAccounts), value); }
+            get { return BackingStore?.Get<List<WebAccount>>("webAccounts"); }
+            set { BackingStore?.Set("webAccounts", value); }
         }
         /// <summary>Represents detailed information about websites associated with a user in various services.</summary>
         public List<PersonWebsite> Websites {
-            get { return BackingStore?.Get<List<PersonWebsite>>(nameof(Websites)); }
-            set { BackingStore?.Set(nameof(Websites), value); }
+            get { return BackingStore?.Get<List<PersonWebsite>>("websites"); }
+            set { BackingStore?.Set("websites", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

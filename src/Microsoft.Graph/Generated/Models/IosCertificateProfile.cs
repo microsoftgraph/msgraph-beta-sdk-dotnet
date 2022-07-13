@@ -5,8 +5,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Device Configuration.</summary>
     public class IosCertificateProfile : DeviceConfiguration, IParsable {
+        /// <summary>
+        /// Instantiates a new iosCertificateProfile and sets the default values.
+        /// </summary>
+        public IosCertificateProfile() : base() {
+            Type = "#microsoft.graph.iosCertificateProfile";
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

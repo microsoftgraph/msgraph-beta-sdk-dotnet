@@ -9,45 +9,45 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities
     public class UpdateDevicePropertiesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The addressableUserName property</summary>
         public string AddressableUserName {
-            get { return BackingStore?.Get<string>(nameof(AddressableUserName)); }
-            set { BackingStore?.Set(nameof(AddressableUserName), value); }
+            get { return BackingStore?.Get<string>("addressableUserName"); }
+            set { BackingStore?.Set("addressableUserName", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceAccountPassword property</summary>
         public string DeviceAccountPassword {
-            get { return BackingStore?.Get<string>(nameof(DeviceAccountPassword)); }
-            set { BackingStore?.Set(nameof(DeviceAccountPassword), value); }
+            get { return BackingStore?.Get<string>("deviceAccountPassword"); }
+            set { BackingStore?.Set("deviceAccountPassword", value); }
         }
         /// <summary>The deviceAccountUpn property</summary>
         public string DeviceAccountUpn {
-            get { return BackingStore?.Get<string>(nameof(DeviceAccountUpn)); }
-            set { BackingStore?.Set(nameof(DeviceAccountUpn), value); }
+            get { return BackingStore?.Get<string>("deviceAccountUpn"); }
+            set { BackingStore?.Set("deviceAccountUpn", value); }
         }
         /// <summary>The deviceFriendlyName property</summary>
         public string DeviceFriendlyName {
-            get { return BackingStore?.Get<string>(nameof(DeviceFriendlyName)); }
-            set { BackingStore?.Set(nameof(DeviceFriendlyName), value); }
+            get { return BackingStore?.Get<string>("deviceFriendlyName"); }
+            set { BackingStore?.Set("deviceFriendlyName", value); }
         }
         /// <summary>The displayName property</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The groupTag property</summary>
         public string GroupTag {
-            get { return BackingStore?.Get<string>(nameof(GroupTag)); }
-            set { BackingStore?.Set(nameof(GroupTag), value); }
+            get { return BackingStore?.Get<string>("groupTag"); }
+            set { BackingStore?.Set("groupTag", value); }
         }
         /// <summary>The userPrincipalName property</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Instantiates a new updateDevicePropertiesPostRequestBody and sets the default values.

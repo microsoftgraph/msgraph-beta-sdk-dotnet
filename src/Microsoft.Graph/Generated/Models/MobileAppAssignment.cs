@@ -6,30 +6,30 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>A class containing the properties used for Group Assignment of a Mobile App.</summary>
     public class MobileAppAssignment : Entity, IParsable {
-        /// <summary>The install intent defined by the admin. Possible values are: available, required, uninstall, availableWithoutEnrollment.</summary>
+        /// <summary>Possible values for the install intent chosen by the admin.</summary>
         public InstallIntent? Intent {
-            get { return BackingStore?.Get<InstallIntent?>(nameof(Intent)); }
-            set { BackingStore?.Set(nameof(Intent), value); }
+            get { return BackingStore?.Get<InstallIntent?>("intent"); }
+            set { BackingStore?.Set("intent", value); }
         }
         /// <summary>The settings for target assignment defined by the admin.</summary>
         public MobileAppAssignmentSettings Settings {
-            get { return BackingStore?.Get<MobileAppAssignmentSettings>(nameof(Settings)); }
-            set { BackingStore?.Set(nameof(Settings), value); }
+            get { return BackingStore?.Get<MobileAppAssignmentSettings>("settings"); }
+            set { BackingStore?.Set("settings", value); }
         }
-        /// <summary>The resource type which is the source for the assignment. Possible values are: direct, policySets.</summary>
+        /// <summary>Represents source of assignment.</summary>
         public DeviceAndAppManagementAssignmentSource? Source {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentSource?>(nameof(Source)); }
-            set { BackingStore?.Set(nameof(Source), value); }
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentSource?>("source"); }
+            set { BackingStore?.Set("source", value); }
         }
         /// <summary>The identifier of the source of the assignment.</summary>
         public string SourceId {
-            get { return BackingStore?.Get<string>(nameof(SourceId)); }
-            set { BackingStore?.Set(nameof(SourceId), value); }
+            get { return BackingStore?.Get<string>("sourceId"); }
+            set { BackingStore?.Set("sourceId", value); }
         }
         /// <summary>The target group assignment defined by the admin.</summary>
         public DeviceAndAppManagementAssignmentTarget Target {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>(nameof(Target)); }
-            set { BackingStore?.Set(nameof(Target), value); }
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
+            set { BackingStore?.Set("target", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

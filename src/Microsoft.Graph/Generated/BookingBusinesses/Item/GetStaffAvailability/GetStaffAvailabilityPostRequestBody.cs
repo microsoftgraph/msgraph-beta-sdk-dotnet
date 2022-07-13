@@ -10,25 +10,25 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.GetStaffAvailability {
     public class GetStaffAvailabilityPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The endDateTime property</summary>
         public DateTimeTimeZone EndDateTime {
-            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(EndDateTime)); }
-            set { BackingStore?.Set(nameof(EndDateTime), value); }
+            get { return BackingStore?.Get<DateTimeTimeZone>("endDateTime"); }
+            set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>The staffIds property</summary>
         public List<string> StaffIds {
-            get { return BackingStore?.Get<List<string>>(nameof(StaffIds)); }
-            set { BackingStore?.Set(nameof(StaffIds), value); }
+            get { return BackingStore?.Get<List<string>>("staffIds"); }
+            set { BackingStore?.Set("staffIds", value); }
         }
         /// <summary>The startDateTime property</summary>
         public DateTimeTimeZone StartDateTime {
-            get { return BackingStore?.Get<DateTimeTimeZone>(nameof(StartDateTime)); }
-            set { BackingStore?.Set(nameof(StartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeTimeZone>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>
         /// Instantiates a new getStaffAvailabilityPostRequestBody and sets the default values.

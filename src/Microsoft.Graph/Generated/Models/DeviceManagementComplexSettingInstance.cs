@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementComplexSettingInstance : DeviceManagementSettingInstance, IParsable {
         /// <summary>The values that make up the complex setting</summary>
         public List<DeviceManagementSettingInstance> Value {
-            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

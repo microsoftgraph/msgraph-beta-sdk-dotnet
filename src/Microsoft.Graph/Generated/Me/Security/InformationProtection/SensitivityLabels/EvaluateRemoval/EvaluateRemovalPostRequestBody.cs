@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabe
     public class EvaluateRemovalPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The contentInfo property</summary>
         public Microsoft.Graph.Beta.Models.Security.ContentInfo ContentInfo {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ContentInfo>(nameof(ContentInfo)); }
-            set { BackingStore?.Set(nameof(ContentInfo), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ContentInfo>("contentInfo"); }
+            set { BackingStore?.Set("contentInfo", value); }
         }
         /// <summary>The downgradeJustification property</summary>
         public Microsoft.Graph.Beta.Models.Security.DowngradeJustification DowngradeJustification {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DowngradeJustification>(nameof(DowngradeJustification)); }
-            set { BackingStore?.Set(nameof(DowngradeJustification), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DowngradeJustification>("downgradeJustification"); }
+            set { BackingStore?.Set("downgradeJustification", value); }
         }
         /// <summary>
         /// Instantiates a new evaluateRemovalPostRequestBody and sets the default values.

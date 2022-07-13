@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class DocumentSetVersionItem : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The unique identifier for the item.</summary>
         public string ItemId {
-            get { return BackingStore?.Get<string>(nameof(ItemId)); }
-            set { BackingStore?.Set(nameof(ItemId), value); }
+            get { return BackingStore?.Get<string>("itemId"); }
+            set { BackingStore?.Set("itemId", value); }
         }
         /// <summary>The title of the item.</summary>
         public string Title {
-            get { return BackingStore?.Get<string>(nameof(Title)); }
-            set { BackingStore?.Set(nameof(Title), value); }
+            get { return BackingStore?.Get<string>("title"); }
+            set { BackingStore?.Set("title", value); }
         }
         /// <summary>The version ID of the item.</summary>
         public string VersionId {
-            get { return BackingStore?.Get<string>(nameof(VersionId)); }
-            set { BackingStore?.Set(nameof(VersionId), value); }
+            get { return BackingStore?.Get<string>("versionId"); }
+            set { BackingStore?.Set("versionId", value); }
         }
         /// <summary>
         /// Instantiates a new documentSetVersionItem and sets the default values.

@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class AuditUserIdentity : UserIdentity, IParsable {
         /// <summary>For user sign ins, the identifier of the tenant that the user is a member of.</summary>
         public string HomeTenantId {
-            get { return BackingStore?.Get<string>(nameof(HomeTenantId)); }
-            set { BackingStore?.Set(nameof(HomeTenantId), value); }
+            get { return BackingStore?.Get<string>("homeTenantId"); }
+            set { BackingStore?.Set("homeTenantId", value); }
         }
         /// <summary>For user sign ins, the name of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.</summary>
         public string HomeTenantName {
-            get { return BackingStore?.Get<string>(nameof(HomeTenantName)); }
-            set { BackingStore?.Set(nameof(HomeTenantName), value); }
+            get { return BackingStore?.Get<string>("homeTenantName"); }
+            set { BackingStore?.Set("homeTenantName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

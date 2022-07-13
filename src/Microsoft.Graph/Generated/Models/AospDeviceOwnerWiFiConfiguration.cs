@@ -8,38 +8,44 @@ namespace Microsoft.Graph.Beta.Models {
     public class AospDeviceOwnerWiFiConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.</summary>
         public bool? ConnectAutomatically {
-            get { return BackingStore?.Get<bool?>(nameof(ConnectAutomatically)); }
-            set { BackingStore?.Set(nameof(ConnectAutomatically), value); }
+            get { return BackingStore?.Get<bool?>("connectAutomatically"); }
+            set { BackingStore?.Set("connectAutomatically", value); }
         }
         /// <summary>When set to true, this profile forces the device to connect to a network that doesn&apos;t broadcast its SSID to all devices.</summary>
         public bool? ConnectWhenNetworkNameIsHidden {
-            get { return BackingStore?.Get<bool?>(nameof(ConnectWhenNetworkNameIsHidden)); }
-            set { BackingStore?.Set(nameof(ConnectWhenNetworkNameIsHidden), value); }
+            get { return BackingStore?.Get<bool?>("connectWhenNetworkNameIsHidden"); }
+            set { BackingStore?.Set("connectWhenNetworkNameIsHidden", value); }
         }
         /// <summary>Network Name</summary>
         public string NetworkName {
-            get { return BackingStore?.Get<string>(nameof(NetworkName)); }
-            set { BackingStore?.Set(nameof(NetworkName), value); }
+            get { return BackingStore?.Get<string>("networkName"); }
+            set { BackingStore?.Set("networkName", value); }
         }
         /// <summary>This is the pre-shared key for WPA Personal Wi-Fi network.</summary>
         public string PreSharedKey {
-            get { return BackingStore?.Get<string>(nameof(PreSharedKey)); }
-            set { BackingStore?.Set(nameof(PreSharedKey), value); }
+            get { return BackingStore?.Get<string>("preSharedKey"); }
+            set { BackingStore?.Set("preSharedKey", value); }
         }
         /// <summary>This is the pre-shared key for WPA Personal Wi-Fi network.</summary>
         public bool? PreSharedKeyIsSet {
-            get { return BackingStore?.Get<bool?>(nameof(PreSharedKeyIsSet)); }
-            set { BackingStore?.Set(nameof(PreSharedKeyIsSet), value); }
+            get { return BackingStore?.Get<bool?>("preSharedKeyIsSet"); }
+            set { BackingStore?.Set("preSharedKeyIsSet", value); }
         }
         /// <summary>This is the name of the Wi-Fi network that is broadcast to all devices.</summary>
         public string Ssid {
-            get { return BackingStore?.Get<string>(nameof(Ssid)); }
-            set { BackingStore?.Set(nameof(Ssid), value); }
+            get { return BackingStore?.Get<string>("ssid"); }
+            set { BackingStore?.Set("ssid", value); }
         }
-        /// <summary>Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wep, wpaPersonal, wpaEnterprise.</summary>
+        /// <summary>Wi-Fi Security Types for AOSP Device Owner.</summary>
         public AospDeviceOwnerWiFiSecurityType? WiFiSecurityType {
-            get { return BackingStore?.Get<AospDeviceOwnerWiFiSecurityType?>(nameof(WiFiSecurityType)); }
-            set { BackingStore?.Set(nameof(WiFiSecurityType), value); }
+            get { return BackingStore?.Get<AospDeviceOwnerWiFiSecurityType?>("wiFiSecurityType"); }
+            set { BackingStore?.Set("wiFiSecurityType", value); }
+        }
+        /// <summary>
+        /// Instantiates a new AospDeviceOwnerWiFiConfiguration and sets the default values.
+        /// </summary>
+        public AospDeviceOwnerWiFiConfiguration() : base() {
+            Type = "#microsoft.graph.aospDeviceOwnerWiFiConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

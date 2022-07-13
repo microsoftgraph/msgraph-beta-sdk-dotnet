@@ -4,137 +4,136 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.TenantAdmin {
-    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class Settings : Entity, IParsable {
         /// <summary>Collection of trusted domain GUIDs for the OneDrive sync app.</summary>
         public List<string> AllowedDomainGuidsForSyncApp {
-            get { return BackingStore?.Get<List<string>>(nameof(AllowedDomainGuidsForSyncApp)); }
-            set { BackingStore?.Set(nameof(AllowedDomainGuidsForSyncApp), value); }
+            get { return BackingStore?.Get<List<string>>("allowedDomainGuidsForSyncApp"); }
+            set { BackingStore?.Set("allowedDomainGuidsForSyncApp", value); }
         }
         /// <summary>Collection of managed paths available for site creation. Read-only.</summary>
         public List<string> AvailableManagedPathsForSiteCreation {
-            get { return BackingStore?.Get<List<string>>(nameof(AvailableManagedPathsForSiteCreation)); }
-            set { BackingStore?.Set(nameof(AvailableManagedPathsForSiteCreation), value); }
+            get { return BackingStore?.Get<List<string>>("availableManagedPathsForSiteCreation"); }
+            set { BackingStore?.Set("availableManagedPathsForSiteCreation", value); }
         }
         /// <summary>The number of days for preserving a deleted user&apos;s OneDrive.</summary>
         public int? DeletedUserPersonalSiteRetentionPeriodInDays {
-            get { return BackingStore?.Get<int?>(nameof(DeletedUserPersonalSiteRetentionPeriodInDays)); }
-            set { BackingStore?.Set(nameof(DeletedUserPersonalSiteRetentionPeriodInDays), value); }
+            get { return BackingStore?.Get<int?>("deletedUserPersonalSiteRetentionPeriodInDays"); }
+            set { BackingStore?.Set("deletedUserPersonalSiteRetentionPeriodInDays", value); }
         }
         /// <summary>Collection of file extensions not uploaded by the OneDrive sync app.</summary>
         public List<string> ExcludedFileExtensionsForSyncApp {
-            get { return BackingStore?.Get<List<string>>(nameof(ExcludedFileExtensionsForSyncApp)); }
-            set { BackingStore?.Set(nameof(ExcludedFileExtensionsForSyncApp), value); }
+            get { return BackingStore?.Get<List<string>>("excludedFileExtensionsForSyncApp"); }
+            set { BackingStore?.Set("excludedFileExtensionsForSyncApp", value); }
         }
         /// <summary>Specifies the image tagging option for the tenant. Possible values are: disabled, basic, enhanced.</summary>
         public ImageTaggingChoice? ImageTaggingOption {
-            get { return BackingStore?.Get<ImageTaggingChoice?>(nameof(ImageTaggingOption)); }
-            set { BackingStore?.Set(nameof(ImageTaggingOption), value); }
+            get { return BackingStore?.Get<ImageTaggingChoice?>("imageTaggingOption"); }
+            set { BackingStore?.Set("imageTaggingOption", value); }
         }
         /// <summary>Indicates whether comments are allowed on modern site pages in SharePoint.</summary>
         public bool? IsCommentingOnSitePagesEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsCommentingOnSitePagesEnabled)); }
-            set { BackingStore?.Set(nameof(IsCommentingOnSitePagesEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isCommentingOnSitePagesEnabled"); }
+            set { BackingStore?.Set("isCommentingOnSitePagesEnabled", value); }
         }
         /// <summary>Indicates whether push notifications are enabled for OneDrive events.</summary>
         public bool? IsFileActivityNotificationEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsFileActivityNotificationEnabled)); }
-            set { BackingStore?.Set(nameof(IsFileActivityNotificationEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isFileActivityNotificationEnabled"); }
+            set { BackingStore?.Set("isFileActivityNotificationEnabled", value); }
         }
         /// <summary>Indicates whetherif Fluid Framework is allowed on SharePoint sites.</summary>
         public bool? IsLoopEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsLoopEnabled)); }
-            set { BackingStore?.Set(nameof(IsLoopEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isLoopEnabled"); }
+            set { BackingStore?.Set("isLoopEnabled", value); }
         }
         /// <summary>Indicates whether files can be synced using the OneDrive sync app for Mac.</summary>
         public bool? IsMacSyncAppEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsMacSyncAppEnabled)); }
-            set { BackingStore?.Set(nameof(IsMacSyncAppEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isMacSyncAppEnabled"); }
+            set { BackingStore?.Set("isMacSyncAppEnabled", value); }
         }
         /// <summary>Indicates whether guests are allowed to reshare files, folders, and sites they don&apos;t own.</summary>
         public bool? IsResharingByExternalUsersEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsResharingByExternalUsersEnabled)); }
-            set { BackingStore?.Set(nameof(IsResharingByExternalUsersEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isResharingByExternalUsersEnabled"); }
+            set { BackingStore?.Set("isResharingByExternalUsersEnabled", value); }
         }
         /// <summary>Indicates whether mobile push notifications are enabled for SharePoint.</summary>
         public bool? IsSharePointMobileNotificationEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsSharePointMobileNotificationEnabled)); }
-            set { BackingStore?.Set(nameof(IsSharePointMobileNotificationEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isSharePointMobileNotificationEnabled"); }
+            set { BackingStore?.Set("isSharePointMobileNotificationEnabled", value); }
         }
         /// <summary>Indicates whether the newsfeed is allowed on the modern site pages in SharePoint.</summary>
         public bool? IsSharePointNewsfeedEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsSharePointNewsfeedEnabled)); }
-            set { BackingStore?.Set(nameof(IsSharePointNewsfeedEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isSharePointNewsfeedEnabled"); }
+            set { BackingStore?.Set("isSharePointNewsfeedEnabled", value); }
         }
         /// <summary>Indicates whether users are allowed to create sites.</summary>
         public bool? IsSiteCreationEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsSiteCreationEnabled)); }
-            set { BackingStore?.Set(nameof(IsSiteCreationEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isSiteCreationEnabled"); }
+            set { BackingStore?.Set("isSiteCreationEnabled", value); }
         }
         /// <summary>Indicates whether the UI commands for creating sites are shown.</summary>
         public bool? IsSiteCreationUIEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsSiteCreationUIEnabled)); }
-            set { BackingStore?.Set(nameof(IsSiteCreationUIEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isSiteCreationUIEnabled"); }
+            set { BackingStore?.Set("isSiteCreationUIEnabled", value); }
         }
         /// <summary>Indicates whether creating new modern pages is allowed on SharePoint sites.</summary>
         public bool? IsSitePagesCreationEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsSitePagesCreationEnabled)); }
-            set { BackingStore?.Set(nameof(IsSitePagesCreationEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isSitePagesCreationEnabled"); }
+            set { BackingStore?.Set("isSitePagesCreationEnabled", value); }
         }
         /// <summary>Indicates whether site storage space is automatically managed or if specific storage limits are set per site.</summary>
         public bool? IsSitesStorageLimitAutomatic {
-            get { return BackingStore?.Get<bool?>(nameof(IsSitesStorageLimitAutomatic)); }
-            set { BackingStore?.Set(nameof(IsSitesStorageLimitAutomatic), value); }
+            get { return BackingStore?.Get<bool?>("isSitesStorageLimitAutomatic"); }
+            set { BackingStore?.Set("isSitesStorageLimitAutomatic", value); }
         }
         /// <summary>Indicates whether the sync button in OneDrive is hidden.</summary>
         public bool? IsSyncButtonHiddenOnPersonalSite {
-            get { return BackingStore?.Get<bool?>(nameof(IsSyncButtonHiddenOnPersonalSite)); }
-            set { BackingStore?.Set(nameof(IsSyncButtonHiddenOnPersonalSite), value); }
+            get { return BackingStore?.Get<bool?>("isSyncButtonHiddenOnPersonalSite"); }
+            set { BackingStore?.Set("isSyncButtonHiddenOnPersonalSite", value); }
         }
         /// <summary>Indicates whether users are allowed to sync files only on PCs joined to specific domains.</summary>
         public bool? IsUnmanagedSyncAppForTenantRestricted {
-            get { return BackingStore?.Get<bool?>(nameof(IsUnmanagedSyncAppForTenantRestricted)); }
-            set { BackingStore?.Set(nameof(IsUnmanagedSyncAppForTenantRestricted), value); }
+            get { return BackingStore?.Get<bool?>("isUnmanagedSyncAppForTenantRestricted"); }
+            set { BackingStore?.Set("isUnmanagedSyncAppForTenantRestricted", value); }
         }
         /// <summary>The default OneDrive storage limit for all new and existing users who are assigned a qualifying license. Measured in megabytes (MB).</summary>
         public long? PersonalSiteDefaultStorageLimitInMB {
-            get { return BackingStore?.Get<long?>(nameof(PersonalSiteDefaultStorageLimitInMB)); }
-            set { BackingStore?.Set(nameof(PersonalSiteDefaultStorageLimitInMB), value); }
+            get { return BackingStore?.Get<long?>("personalSiteDefaultStorageLimitInMB"); }
+            set { BackingStore?.Set("personalSiteDefaultStorageLimitInMB", value); }
         }
         /// <summary>Collection of email domains that are allowed for sharing outside the organization.</summary>
         public List<string> SharingAllowedDomainList {
-            get { return BackingStore?.Get<List<string>>(nameof(SharingAllowedDomainList)); }
-            set { BackingStore?.Set(nameof(SharingAllowedDomainList), value); }
+            get { return BackingStore?.Get<List<string>>("sharingAllowedDomainList"); }
+            set { BackingStore?.Set("sharingAllowedDomainList", value); }
         }
         /// <summary>Collection of email domains that are blocked for sharing outside the organization.</summary>
         public List<string> SharingBlockedDomainList {
-            get { return BackingStore?.Get<List<string>>(nameof(SharingBlockedDomainList)); }
-            set { BackingStore?.Set(nameof(SharingBlockedDomainList), value); }
+            get { return BackingStore?.Get<List<string>>("sharingBlockedDomainList"); }
+            set { BackingStore?.Set("sharingBlockedDomainList", value); }
         }
         /// <summary>Sharing capability for the tenant. Possible values are: disabled, externalUserSharingOnly, externalUserAndGuestSharing, existingExternalUserSharingOnly.</summary>
         public SharingCapabilities? SharingCapability {
-            get { return BackingStore?.Get<SharingCapabilities?>(nameof(SharingCapability)); }
-            set { BackingStore?.Set(nameof(SharingCapability), value); }
+            get { return BackingStore?.Get<SharingCapabilities?>("sharingCapability"); }
+            set { BackingStore?.Set("sharingCapability", value); }
         }
         /// <summary>Specifies the external sharing mode for domains. Possible values are: none, allowList, blockList.</summary>
         public Microsoft.Graph.Beta.Models.TenantAdmin.SharingDomainRestrictionMode? SharingDomainRestrictionMode {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TenantAdmin.SharingDomainRestrictionMode?>(nameof(SharingDomainRestrictionMode)); }
-            set { BackingStore?.Set(nameof(SharingDomainRestrictionMode), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TenantAdmin.SharingDomainRestrictionMode?>("sharingDomainRestrictionMode"); }
+            set { BackingStore?.Set("sharingDomainRestrictionMode", value); }
         }
         /// <summary>The value of the team site managed path. This is the path under which new team sites will be created.</summary>
         public string SiteCreationDefaultManagedPath {
-            get { return BackingStore?.Get<string>(nameof(SiteCreationDefaultManagedPath)); }
-            set { BackingStore?.Set(nameof(SiteCreationDefaultManagedPath), value); }
+            get { return BackingStore?.Get<string>("siteCreationDefaultManagedPath"); }
+            set { BackingStore?.Set("siteCreationDefaultManagedPath", value); }
         }
         /// <summary>The default storage quota for a new site upon creation. Measured in megabytes (MB).</summary>
         public int? SiteCreationDefaultStorageLimitInMB {
-            get { return BackingStore?.Get<int?>(nameof(SiteCreationDefaultStorageLimitInMB)); }
-            set { BackingStore?.Set(nameof(SiteCreationDefaultStorageLimitInMB), value); }
+            get { return BackingStore?.Get<int?>("siteCreationDefaultStorageLimitInMB"); }
+            set { BackingStore?.Set("siteCreationDefaultStorageLimitInMB", value); }
         }
         /// <summary>The default timezone of a tenant for newly created sites.</summary>
         public string TenantDefaultTimezone {
-            get { return BackingStore?.Get<string>(nameof(TenantDefaultTimezone)); }
-            set { BackingStore?.Set(nameof(TenantDefaultTimezone), value); }
+            get { return BackingStore?.Get<string>("tenantDefaultTimezone"); }
+            set { BackingStore?.Set("tenantDefaultTimezone", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

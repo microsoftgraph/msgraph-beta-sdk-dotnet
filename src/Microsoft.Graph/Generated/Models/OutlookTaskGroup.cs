@@ -4,32 +4,32 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class OutlookTaskGroup : Entity, IParsable {
         /// <summary>The version of the task group.</summary>
         public string ChangeKey {
-            get { return BackingStore?.Get<string>(nameof(ChangeKey)); }
-            set { BackingStore?.Set(nameof(ChangeKey), value); }
+            get { return BackingStore?.Get<string>("changeKey"); }
+            set { BackingStore?.Set("changeKey", value); }
         }
         /// <summary>The unique GUID identifier for the task group.</summary>
         public string GroupKey {
-            get { return BackingStore?.Get<string>(nameof(GroupKey)); }
-            set { BackingStore?.Set(nameof(GroupKey), value); }
+            get { return BackingStore?.Get<string>("groupKey"); }
+            set { BackingStore?.Set("groupKey", value); }
         }
         /// <summary>True if the task group is the default task group.</summary>
         public bool? IsDefaultGroup {
-            get { return BackingStore?.Get<bool?>(nameof(IsDefaultGroup)); }
-            set { BackingStore?.Set(nameof(IsDefaultGroup), value); }
+            get { return BackingStore?.Get<bool?>("isDefaultGroup"); }
+            set { BackingStore?.Set("isDefaultGroup", value); }
         }
         /// <summary>The name of the task group.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The collection of task folders in the task group. Read-only. Nullable.</summary>
         public List<OutlookTaskFolder> TaskFolders {
-            get { return BackingStore?.Get<List<OutlookTaskFolder>>(nameof(TaskFolders)); }
-            set { BackingStore?.Set(nameof(TaskFolders), value); }
+            get { return BackingStore?.Get<List<OutlookTaskFolder>>("taskFolders"); }
+            set { BackingStore?.Set("taskFolders", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

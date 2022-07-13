@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class VpnRoute : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Destination prefix (IPv4/v6 address).</summary>
         public string DestinationPrefix {
-            get { return BackingStore?.Get<string>(nameof(DestinationPrefix)); }
-            set { BackingStore?.Set(nameof(DestinationPrefix), value); }
+            get { return BackingStore?.Get<string>("destinationPrefix"); }
+            set { BackingStore?.Set("destinationPrefix", value); }
         }
         /// <summary>Prefix size. (1-32). Valid values 1 to 32</summary>
         public int? PrefixSize {
-            get { return BackingStore?.Get<int?>(nameof(PrefixSize)); }
-            set { BackingStore?.Set(nameof(PrefixSize), value); }
+            get { return BackingStore?.Get<int?>("prefixSize"); }
+            set { BackingStore?.Set("prefixSize", value); }
         }
         /// <summary>
         /// Instantiates a new vpnRoute and sets the default values.

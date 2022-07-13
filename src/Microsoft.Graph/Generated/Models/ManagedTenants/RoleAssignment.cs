@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class RoleAssignment : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The type of the admin relationship(s) associated with the role assignment. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges.</summary>
         public DelegatedPrivilegeStatus? AssignmentType {
-            get { return BackingStore?.Get<DelegatedPrivilegeStatus?>(nameof(AssignmentType)); }
-            set { BackingStore?.Set(nameof(AssignmentType), value); }
+            get { return BackingStore?.Get<DelegatedPrivilegeStatus?>("assignmentType"); }
+            set { BackingStore?.Set("assignmentType", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The collection of roles assigned.</summary>
         public List<RoleDefinition> Roles {
-            get { return BackingStore?.Get<List<RoleDefinition>>(nameof(Roles)); }
-            set { BackingStore?.Set(nameof(Roles), value); }
+            get { return BackingStore?.Get<List<RoleDefinition>>("roles"); }
+            set { BackingStore?.Set("roles", value); }
         }
         /// <summary>
         /// Instantiates a new roleAssignment and sets the default values.

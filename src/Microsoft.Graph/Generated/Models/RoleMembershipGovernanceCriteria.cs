@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class RoleMembershipGovernanceCriteria : GovernanceCriteria, IParsable {
         /// <summary>The roleId property</summary>
         public string RoleId {
-            get { return BackingStore?.Get<string>(nameof(RoleId)); }
-            set { BackingStore?.Set(nameof(RoleId), value); }
+            get { return BackingStore?.Get<string>("roleId"); }
+            set { BackingStore?.Set("roleId", value); }
         }
         /// <summary>The roleTemplateId property</summary>
         public string RoleTemplateId {
-            get { return BackingStore?.Get<string>(nameof(RoleTemplateId)); }
-            set { BackingStore?.Set(nameof(RoleTemplateId), value); }
+            get { return BackingStore?.Get<string>("roleTemplateId"); }
+            set { BackingStore?.Set("roleTemplateId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

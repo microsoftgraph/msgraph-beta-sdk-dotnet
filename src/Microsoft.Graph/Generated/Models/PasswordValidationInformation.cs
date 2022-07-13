@@ -8,23 +8,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class PasswordValidationInformation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies whether the password is valid based on the calculation of the results in the validationResults property. Not nullable. Read-only.</summary>
         public bool? IsValid {
-            get { return BackingStore?.Get<bool?>(nameof(IsValid)); }
-            set { BackingStore?.Set(nameof(IsValid), value); }
+            get { return BackingStore?.Get<bool?>("isValid"); }
+            set { BackingStore?.Set("isValid", value); }
         }
         /// <summary>The list of password validation rules and whether the password passed those rules. Not nullable. Read-only.</summary>
         public List<ValidationResult> ValidationResults {
-            get { return BackingStore?.Get<List<ValidationResult>>(nameof(ValidationResults)); }
-            set { BackingStore?.Set(nameof(ValidationResults), value); }
+            get { return BackingStore?.Get<List<ValidationResult>>("validationResults"); }
+            set { BackingStore?.Set("validationResults", value); }
         }
         /// <summary>
-        /// Instantiates a new PasswordValidationInformation and sets the default values.
+        /// Instantiates a new passwordValidationInformation and sets the default values.
         /// </summary>
         public PasswordValidationInformation() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

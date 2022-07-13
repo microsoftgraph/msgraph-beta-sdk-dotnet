@@ -4,32 +4,32 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ProviderTenantSetting : Entity, IParsable {
         /// <summary>The azureTenantId property</summary>
         public string AzureTenantId {
-            get { return BackingStore?.Get<string>(nameof(AzureTenantId)); }
-            set { BackingStore?.Set(nameof(AzureTenantId), value); }
+            get { return BackingStore?.Get<string>("azureTenantId"); }
+            set { BackingStore?.Set("azureTenantId", value); }
         }
         /// <summary>The enabled property</summary>
         public bool? Enabled {
-            get { return BackingStore?.Get<bool?>(nameof(Enabled)); }
-            set { BackingStore?.Set(nameof(Enabled), value); }
+            get { return BackingStore?.Get<bool?>("enabled"); }
+            set { BackingStore?.Set("enabled", value); }
         }
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The provider property</summary>
         public string Provider {
-            get { return BackingStore?.Get<string>(nameof(Provider)); }
-            set { BackingStore?.Set(nameof(Provider), value); }
+            get { return BackingStore?.Get<string>("provider"); }
+            set { BackingStore?.Set("provider", value); }
         }
         /// <summary>The vendor property</summary>
         public string Vendor {
-            get { return BackingStore?.Get<string>(nameof(Vendor)); }
-            set { BackingStore?.Set(nameof(Vendor), value); }
+            get { return BackingStore?.Get<string>("vendor"); }
+            set { BackingStore?.Set("vendor", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

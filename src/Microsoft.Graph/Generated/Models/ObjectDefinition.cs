@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class ObjectDefinition : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The attributes property</summary>
         public List<AttributeDefinition> Attributes {
-            get { return BackingStore?.Get<List<AttributeDefinition>>(nameof(Attributes)); }
-            set { BackingStore?.Set(nameof(Attributes), value); }
+            get { return BackingStore?.Get<List<AttributeDefinition>>("attributes"); }
+            set { BackingStore?.Set("attributes", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The metadata property</summary>
         public List<MetadataEntry> Metadata {
-            get { return BackingStore?.Get<List<MetadataEntry>>(nameof(Metadata)); }
-            set { BackingStore?.Set(nameof(Metadata), value); }
+            get { return BackingStore?.Get<List<MetadataEntry>>("metadata"); }
+            set { BackingStore?.Set("metadata", value); }
         }
         /// <summary>The name property</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The supportedApis property</summary>
         public List<string> SupportedApis {
-            get { return BackingStore?.Get<List<string>>(nameof(SupportedApis)); }
-            set { BackingStore?.Set(nameof(SupportedApis), value); }
+            get { return BackingStore?.Get<List<string>>("supportedApis"); }
+            set { BackingStore?.Set("supportedApis", value); }
         }
         /// <summary>
         /// Instantiates a new objectDefinition and sets the default values.

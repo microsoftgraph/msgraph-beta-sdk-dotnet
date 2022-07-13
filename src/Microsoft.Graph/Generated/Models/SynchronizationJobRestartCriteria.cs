@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Beta.Models {
     public class SynchronizationJobRestartCriteria : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Comma-separated combination of the following values: Full, QuarantineState, Watermark, Escrows, ConnectorDataStore. Use Full if you want all of the options.</summary>
         public SynchronizationJobRestartScope? ResetScope {
-            get { return BackingStore?.Get<SynchronizationJobRestartScope?>(nameof(ResetScope)); }
-            set { BackingStore?.Set(nameof(ResetScope), value); }
+            get { return BackingStore?.Get<SynchronizationJobRestartScope?>("resetScope"); }
+            set { BackingStore?.Set("resetScope", value); }
         }
         /// <summary>
         /// Instantiates a new synchronizationJobRestartCriteria and sets the default values.

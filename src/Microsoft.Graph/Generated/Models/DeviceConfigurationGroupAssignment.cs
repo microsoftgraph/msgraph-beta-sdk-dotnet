@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceConfigurationGroupAssignment : Entity, IParsable {
         /// <summary>The navigation link to the Device Configuration being targeted.</summary>
         public Microsoft.Graph.Beta.Models.DeviceConfiguration DeviceConfiguration {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceConfiguration>(nameof(DeviceConfiguration)); }
-            set { BackingStore?.Set(nameof(DeviceConfiguration), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceConfiguration>("deviceConfiguration"); }
+            set { BackingStore?.Set("deviceConfiguration", value); }
         }
         /// <summary>Indicates if this group is should be excluded. Defaults that the group should be included</summary>
         public bool? ExcludeGroup {
-            get { return BackingStore?.Get<bool?>(nameof(ExcludeGroup)); }
-            set { BackingStore?.Set(nameof(ExcludeGroup), value); }
+            get { return BackingStore?.Get<bool?>("excludeGroup"); }
+            set { BackingStore?.Set("excludeGroup", value); }
         }
         /// <summary>The Id of the AAD group we are targeting the device configuration to.</summary>
         public string TargetGroupId {
-            get { return BackingStore?.Get<string>(nameof(TargetGroupId)); }
-            set { BackingStore?.Set(nameof(TargetGroupId), value); }
+            get { return BackingStore?.Get<string>("targetGroupId"); }
+            set { BackingStore?.Set("targetGroupId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

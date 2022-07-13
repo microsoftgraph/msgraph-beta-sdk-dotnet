@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class StringKeyAttributeMappingSourceValuePair : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The name of the parameter.</summary>
         public string Key {
-            get { return BackingStore?.Get<string>(nameof(Key)); }
-            set { BackingStore?.Set(nameof(Key), value); }
+            get { return BackingStore?.Get<string>("key"); }
+            set { BackingStore?.Set("key", value); }
         }
         /// <summary>The value of the parameter.</summary>
         public AttributeMappingSource Value {
-            get { return BackingStore?.Get<AttributeMappingSource>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<AttributeMappingSource>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Instantiates a new stringKeyAttributeMappingSourceValuePair and sets the default values.

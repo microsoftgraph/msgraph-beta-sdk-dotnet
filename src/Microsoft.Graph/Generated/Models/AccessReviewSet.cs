@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessReviewSet : Entity, IParsable {
         /// <summary>Represents an Azure AD access review decision on an instance of a review.</summary>
         public List<AccessReviewInstanceDecisionItem> Decisions {
-            get { return BackingStore?.Get<List<AccessReviewInstanceDecisionItem>>(nameof(Decisions)); }
-            set { BackingStore?.Set(nameof(Decisions), value); }
+            get { return BackingStore?.Get<List<AccessReviewInstanceDecisionItem>>("decisions"); }
+            set { BackingStore?.Set("decisions", value); }
         }
         /// <summary>Represents the template and scheduling for an access review.</summary>
         public List<AccessReviewScheduleDefinition> Definitions {
-            get { return BackingStore?.Get<List<AccessReviewScheduleDefinition>>(nameof(Definitions)); }
-            set { BackingStore?.Set(nameof(Definitions), value); }
+            get { return BackingStore?.Get<List<AccessReviewScheduleDefinition>>("definitions"); }
+            set { BackingStore?.Set("definitions", value); }
         }
         /// <summary>Represents a collection of access review history data and the scopes used to collect that data.</summary>
         public List<AccessReviewHistoryDefinition> HistoryDefinitions {
-            get { return BackingStore?.Get<List<AccessReviewHistoryDefinition>>(nameof(HistoryDefinitions)); }
-            set { BackingStore?.Set(nameof(HistoryDefinitions), value); }
+            get { return BackingStore?.Get<List<AccessReviewHistoryDefinition>>("historyDefinitions"); }
+            set { BackingStore?.Set("historyDefinitions", value); }
         }
         /// <summary>Resource that enables administrators to manage directory-level access review policies in their tenant.</summary>
         public AccessReviewPolicy Policy {
-            get { return BackingStore?.Get<AccessReviewPolicy>(nameof(Policy)); }
-            set { BackingStore?.Set(nameof(Policy), value); }
+            get { return BackingStore?.Get<AccessReviewPolicy>("policy"); }
+            set { BackingStore?.Set("policy", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

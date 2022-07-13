@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosLobAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
         /// <summary>Whether or not the app can be removed by the user.</summary>
         public bool? IsRemovable {
-            get { return BackingStore?.Get<bool?>(nameof(IsRemovable)); }
-            set { BackingStore?.Set(nameof(IsRemovable), value); }
+            get { return BackingStore?.Get<bool?>("isRemovable"); }
+            set { BackingStore?.Set("isRemovable", value); }
         }
         /// <summary>Whether or not to uninstall the app when device is removed from Intune.</summary>
         public bool? UninstallOnDeviceRemoval {
-            get { return BackingStore?.Get<bool?>(nameof(UninstallOnDeviceRemoval)); }
-            set { BackingStore?.Set(nameof(UninstallOnDeviceRemoval), value); }
+            get { return BackingStore?.Get<bool?>("uninstallOnDeviceRemoval"); }
+            set { BackingStore?.Set("uninstallOnDeviceRemoval", value); }
         }
         /// <summary>The VPN Configuration Id to apply for this app.</summary>
         public string VpnConfigurationId {
-            get { return BackingStore?.Get<string>(nameof(VpnConfigurationId)); }
-            set { BackingStore?.Set(nameof(VpnConfigurationId), value); }
+            get { return BackingStore?.Get<string>("vpnConfigurationId"); }
+            set { BackingStore?.Set("vpnConfigurationId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

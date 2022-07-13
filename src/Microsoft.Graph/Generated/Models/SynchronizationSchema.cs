@@ -4,22 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class SynchronizationSchema : Entity, IParsable {
         /// <summary>Contains the collection of directories and all of their objects.</summary>
         public List<DirectoryDefinition> Directories {
-            get { return BackingStore?.Get<List<DirectoryDefinition>>(nameof(Directories)); }
-            set { BackingStore?.Set(nameof(Directories), value); }
+            get { return BackingStore?.Get<List<DirectoryDefinition>>("directories"); }
+            set { BackingStore?.Set("directories", value); }
         }
         /// <summary>A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.</summary>
         public List<SynchronizationRule> SynchronizationRules {
-            get { return BackingStore?.Get<List<SynchronizationRule>>(nameof(SynchronizationRules)); }
-            set { BackingStore?.Set(nameof(SynchronizationRules), value); }
+            get { return BackingStore?.Get<List<SynchronizationRule>>("synchronizationRules"); }
+            set { BackingStore?.Set("synchronizationRules", value); }
         }
         /// <summary>The version of the schema, updated automatically with every schema change.</summary>
         public string Version {
-            get { return BackingStore?.Get<string>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<string>("version"); }
+            set { BackingStore?.Set("version", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

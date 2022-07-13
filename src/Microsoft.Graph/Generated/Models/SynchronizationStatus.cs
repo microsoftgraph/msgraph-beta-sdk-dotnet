@@ -8,70 +8,70 @@ namespace Microsoft.Graph.Beta.Models {
     public class SynchronizationStatus : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>High-level status code of the synchronization job. Possible values are: NotConfigured, NotRun, Active, Paused, Quarantine.</summary>
+        /// <summary>The code property</summary>
         public SynchronizationStatusCode? Code {
-            get { return BackingStore?.Get<SynchronizationStatusCode?>(nameof(Code)); }
-            set { BackingStore?.Set(nameof(Code), value); }
+            get { return BackingStore?.Get<SynchronizationStatusCode?>("code"); }
+            set { BackingStore?.Set("code", value); }
         }
         /// <summary>Number of consecutive times this job failed.</summary>
         public long? CountSuccessiveCompleteFailures {
-            get { return BackingStore?.Get<long?>(nameof(CountSuccessiveCompleteFailures)); }
-            set { BackingStore?.Set(nameof(CountSuccessiveCompleteFailures), value); }
+            get { return BackingStore?.Get<long?>("countSuccessiveCompleteFailures"); }
+            set { BackingStore?.Set("countSuccessiveCompleteFailures", value); }
         }
         /// <summary>true if the job&apos;s escrows (object-level errors) were pruned during initial synchronization. Escrows can be pruned if during the initial synchronization, you reach the threshold of errors that would normally put the job in quarantine. Instead of going into quarantine, the synchronization process clears the job&apos;s errors and continues until the initial synchronization is completed. When the initial synchronization is completed, the job will pause and wait for the customer to clean up the errors.</summary>
         public bool? EscrowsPruned {
-            get { return BackingStore?.Get<bool?>(nameof(EscrowsPruned)); }
-            set { BackingStore?.Set(nameof(EscrowsPruned), value); }
+            get { return BackingStore?.Get<bool?>("escrowsPruned"); }
+            set { BackingStore?.Set("escrowsPruned", value); }
         }
         /// <summary>Details of the last execution of the job.</summary>
         public SynchronizationTaskExecution LastExecution {
-            get { return BackingStore?.Get<SynchronizationTaskExecution>(nameof(LastExecution)); }
-            set { BackingStore?.Set(nameof(LastExecution), value); }
+            get { return BackingStore?.Get<SynchronizationTaskExecution>("lastExecution"); }
+            set { BackingStore?.Set("lastExecution", value); }
         }
         /// <summary>Details of the last execution of this job, which didn&apos;t have any errors.</summary>
         public SynchronizationTaskExecution LastSuccessfulExecution {
-            get { return BackingStore?.Get<SynchronizationTaskExecution>(nameof(LastSuccessfulExecution)); }
-            set { BackingStore?.Set(nameof(LastSuccessfulExecution), value); }
+            get { return BackingStore?.Get<SynchronizationTaskExecution>("lastSuccessfulExecution"); }
+            set { BackingStore?.Set("lastSuccessfulExecution", value); }
         }
         /// <summary>Details of the last execution of the job, which exported objects into the target directory.</summary>
         public SynchronizationTaskExecution LastSuccessfulExecutionWithExports {
-            get { return BackingStore?.Get<SynchronizationTaskExecution>(nameof(LastSuccessfulExecutionWithExports)); }
-            set { BackingStore?.Set(nameof(LastSuccessfulExecutionWithExports), value); }
+            get { return BackingStore?.Get<SynchronizationTaskExecution>("lastSuccessfulExecutionWithExports"); }
+            set { BackingStore?.Set("lastSuccessfulExecutionWithExports", value); }
         }
         /// <summary>Details of the progress of a job toward completion.</summary>
         public List<SynchronizationProgress> Progress {
-            get { return BackingStore?.Get<List<SynchronizationProgress>>(nameof(Progress)); }
-            set { BackingStore?.Set(nameof(Progress), value); }
+            get { return BackingStore?.Get<List<SynchronizationProgress>>("progress"); }
+            set { BackingStore?.Set("progress", value); }
         }
         /// <summary>If job is in quarantine, quarantine details.</summary>
         public SynchronizationQuarantine Quarantine {
-            get { return BackingStore?.Get<SynchronizationQuarantine>(nameof(Quarantine)); }
-            set { BackingStore?.Set(nameof(Quarantine), value); }
+            get { return BackingStore?.Get<SynchronizationQuarantine>("quarantine"); }
+            set { BackingStore?.Set("quarantine", value); }
         }
         /// <summary>The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? SteadyStateFirstAchievedTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(SteadyStateFirstAchievedTime)); }
-            set { BackingStore?.Set(nameof(SteadyStateFirstAchievedTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("steadyStateFirstAchievedTime"); }
+            set { BackingStore?.Set("steadyStateFirstAchievedTime", value); }
         }
         /// <summary>The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? SteadyStateLastAchievedTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(SteadyStateLastAchievedTime)); }
-            set { BackingStore?.Set(nameof(SteadyStateLastAchievedTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("steadyStateLastAchievedTime"); }
+            set { BackingStore?.Set("steadyStateLastAchievedTime", value); }
         }
         /// <summary>Count of synchronized objects, listed by object type.</summary>
         public List<StringKeyLongValuePair> SynchronizedEntryCountByType {
-            get { return BackingStore?.Get<List<StringKeyLongValuePair>>(nameof(SynchronizedEntryCountByType)); }
-            set { BackingStore?.Set(nameof(SynchronizedEntryCountByType), value); }
+            get { return BackingStore?.Get<List<StringKeyLongValuePair>>("synchronizedEntryCountByType"); }
+            set { BackingStore?.Set("synchronizedEntryCountByType", value); }
         }
         /// <summary>In the event of an error, the URL with the troubleshooting steps for the issue.</summary>
         public string TroubleshootingUrl {
-            get { return BackingStore?.Get<string>(nameof(TroubleshootingUrl)); }
-            set { BackingStore?.Set(nameof(TroubleshootingUrl), value); }
+            get { return BackingStore?.Get<string>("troubleshootingUrl"); }
+            set { BackingStore?.Set("troubleshootingUrl", value); }
         }
         /// <summary>
         /// Instantiates a new synchronizationStatus and sets the default values.

@@ -9,20 +9,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class CallOptions : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The hideBotAfterEscalation property</summary>
         public bool? HideBotAfterEscalation {
-            get { return BackingStore?.Get<bool?>(nameof(HideBotAfterEscalation)); }
-            set { BackingStore?.Set(nameof(HideBotAfterEscalation), value); }
+            get { return BackingStore?.Get<bool?>("hideBotAfterEscalation"); }
+            set { BackingStore?.Set("hideBotAfterEscalation", value); }
         }
         /// <summary>Indicates whether content sharing notifications should be enabled for the call.</summary>
         public bool? IsContentSharingNotificationEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsContentSharingNotificationEnabled)); }
-            set { BackingStore?.Set(nameof(IsContentSharingNotificationEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isContentSharingNotificationEnabled"); }
+            set { BackingStore?.Set("isContentSharingNotificationEnabled", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new callOptions and sets the default values.
@@ -30,6 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         public CallOptions() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.callOptions";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -52,6 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"hideBotAfterEscalation", n => { HideBotAfterEscalation = n.GetBoolValue(); } },
                 {"isContentSharingNotificationEnabled", n => { IsContentSharingNotificationEnabled = n.GetBoolValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -62,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("hideBotAfterEscalation", HideBotAfterEscalation);
             writer.WriteBoolValue("isContentSharingNotificationEnabled", IsContentSharingNotificationEnabled);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

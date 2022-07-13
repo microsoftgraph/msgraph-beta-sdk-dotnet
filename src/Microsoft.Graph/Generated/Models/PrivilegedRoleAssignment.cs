@@ -4,37 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class PrivilegedRoleAssignment : Entity, IParsable {
         /// <summary>The UTC DateTime when the temporary privileged role assignment will be expired. For permanent role assignment, the value is null.</summary>
         public DateTimeOffset? ExpirationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpirationDateTime)); }
-            set { BackingStore?.Set(nameof(ExpirationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
+            set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>true if the role assignment is activated. false if the role assignment is deactivated.</summary>
         public bool? IsElevated {
-            get { return BackingStore?.Get<bool?>(nameof(IsElevated)); }
-            set { BackingStore?.Set(nameof(IsElevated), value); }
+            get { return BackingStore?.Get<bool?>("isElevated"); }
+            set { BackingStore?.Set("isElevated", value); }
         }
         /// <summary>Result message set by the service.</summary>
         public string ResultMessage {
-            get { return BackingStore?.Get<string>(nameof(ResultMessage)); }
-            set { BackingStore?.Set(nameof(ResultMessage), value); }
+            get { return BackingStore?.Get<string>("resultMessage"); }
+            set { BackingStore?.Set("resultMessage", value); }
         }
         /// <summary>Role identifier. In GUID string format.</summary>
         public string RoleId {
-            get { return BackingStore?.Get<string>(nameof(RoleId)); }
-            set { BackingStore?.Set(nameof(RoleId), value); }
+            get { return BackingStore?.Get<string>("roleId"); }
+            set { BackingStore?.Set("roleId", value); }
         }
         /// <summary>Read-only. Nullable. The associated role information.</summary>
         public PrivilegedRole RoleInfo {
-            get { return BackingStore?.Get<PrivilegedRole>(nameof(RoleInfo)); }
-            set { BackingStore?.Set(nameof(RoleInfo), value); }
+            get { return BackingStore?.Get<PrivilegedRole>("roleInfo"); }
+            set { BackingStore?.Set("roleInfo", value); }
         }
         /// <summary>User identifier. In GUID string format.</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

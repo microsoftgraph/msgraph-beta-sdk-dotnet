@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class RemoveContentHeaderAction : InformationProtectionAction, IParsable {
         /// <summary>The uiElementNames property</summary>
         public List<string> UiElementNames {
-            get { return BackingStore?.Get<List<string>>(nameof(UiElementNames)); }
-            set { BackingStore?.Set(nameof(UiElementNames), value); }
+            get { return BackingStore?.Get<List<string>>("uiElementNames"); }
+            set { BackingStore?.Set("uiElementNames", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

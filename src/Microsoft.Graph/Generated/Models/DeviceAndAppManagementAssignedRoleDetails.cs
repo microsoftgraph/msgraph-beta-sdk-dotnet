@@ -9,23 +9,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceAndAppManagementAssignedRoleDetails : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Role Assignment IDs for the specifc Role Assignments assigned to a user. This property is read-only.</summary>
         public List<string> RoleAssignmentIds {
-            get { return BackingStore?.Get<List<string>>(nameof(RoleAssignmentIds)); }
-            set { BackingStore?.Set(nameof(RoleAssignmentIds), value); }
+            get { return BackingStore?.Get<List<string>>("roleAssignmentIds"); }
+            set { BackingStore?.Set("roleAssignmentIds", value); }
         }
         /// <summary>Role Definition IDs for the specifc Role Definitions assigned to a user. This property is read-only.</summary>
         public List<string> RoleDefinitionIds {
-            get { return BackingStore?.Get<List<string>>(nameof(RoleDefinitionIds)); }
-            set { BackingStore?.Set(nameof(RoleDefinitionIds), value); }
+            get { return BackingStore?.Get<List<string>>("roleDefinitionIds"); }
+            set { BackingStore?.Set("roleDefinitionIds", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceAndAppManagementAssignedRoleDetails and sets the default values.
+        /// Instantiates a new deviceAndAppManagementAssignedRoleDetails and sets the default values.
         /// </summary>
         public DeviceAndAppManagementAssignedRoleDetails() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

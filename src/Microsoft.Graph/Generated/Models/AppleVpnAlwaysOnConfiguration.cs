@@ -9,60 +9,60 @@ namespace Microsoft.Graph.Beta.Models {
     public class AppleVpnAlwaysOnConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Determine whether AirPrint service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.</summary>
         public VpnServiceExceptionAction? AirPrintExceptionAction {
-            get { return BackingStore?.Get<VpnServiceExceptionAction?>(nameof(AirPrintExceptionAction)); }
-            set { BackingStore?.Set(nameof(AirPrintExceptionAction), value); }
+            get { return BackingStore?.Get<VpnServiceExceptionAction?>("airPrintExceptionAction"); }
+            set { BackingStore?.Set("airPrintExceptionAction", value); }
         }
         /// <summary>Specifies whether traffic from all captive network plugins should be allowed outside the vpn</summary>
         public bool? AllowAllCaptiveNetworkPlugins {
-            get { return BackingStore?.Get<bool?>(nameof(AllowAllCaptiveNetworkPlugins)); }
-            set { BackingStore?.Set(nameof(AllowAllCaptiveNetworkPlugins), value); }
+            get { return BackingStore?.Get<bool?>("allowAllCaptiveNetworkPlugins"); }
+            set { BackingStore?.Set("allowAllCaptiveNetworkPlugins", value); }
         }
         /// <summary>Determines whether traffic from the Websheet app is allowed outside of the VPN</summary>
         public bool? AllowCaptiveWebSheet {
-            get { return BackingStore?.Get<bool?>(nameof(AllowCaptiveWebSheet)); }
-            set { BackingStore?.Set(nameof(AllowCaptiveWebSheet), value); }
+            get { return BackingStore?.Get<bool?>("allowCaptiveWebSheet"); }
+            set { BackingStore?.Set("allowCaptiveWebSheet", value); }
         }
         /// <summary>Determines whether all, some, or no non-native captive networking apps are allowed</summary>
         public SpecifiedCaptiveNetworkPlugins AllowedCaptiveNetworkPlugins {
-            get { return BackingStore?.Get<SpecifiedCaptiveNetworkPlugins>(nameof(AllowedCaptiveNetworkPlugins)); }
-            set { BackingStore?.Set(nameof(AllowedCaptiveNetworkPlugins), value); }
+            get { return BackingStore?.Get<SpecifiedCaptiveNetworkPlugins>("allowedCaptiveNetworkPlugins"); }
+            set { BackingStore?.Set("allowedCaptiveNetworkPlugins", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Determine whether Cellular service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.</summary>
         public VpnServiceExceptionAction? CellularExceptionAction {
-            get { return BackingStore?.Get<VpnServiceExceptionAction?>(nameof(CellularExceptionAction)); }
-            set { BackingStore?.Set(nameof(CellularExceptionAction), value); }
+            get { return BackingStore?.Get<VpnServiceExceptionAction?>("cellularExceptionAction"); }
+            set { BackingStore?.Set("cellularExceptionAction", value); }
         }
         /// <summary>Specifies how often in seconds to send a network address translation keepalive package through the VPN</summary>
         public int? NatKeepAliveIntervalInSeconds {
-            get { return BackingStore?.Get<int?>(nameof(NatKeepAliveIntervalInSeconds)); }
-            set { BackingStore?.Set(nameof(NatKeepAliveIntervalInSeconds), value); }
+            get { return BackingStore?.Get<int?>("natKeepAliveIntervalInSeconds"); }
+            set { BackingStore?.Set("natKeepAliveIntervalInSeconds", value); }
         }
         /// <summary>Enable hardware offloading of NAT keepalive signals when the device is asleep</summary>
         public bool? NatKeepAliveOffloadEnable {
-            get { return BackingStore?.Get<bool?>(nameof(NatKeepAliveOffloadEnable)); }
-            set { BackingStore?.Set(nameof(NatKeepAliveOffloadEnable), value); }
+            get { return BackingStore?.Get<bool?>("natKeepAliveOffloadEnable"); }
+            set { BackingStore?.Set("natKeepAliveOffloadEnable", value); }
         }
-        /// <summary>Determines what connections the specific tunnel configuration applies to. Possible values are: wifiAndCellular, cellular, wifi.</summary>
+        /// <summary>The type of tunnels that will be present to the VPN client for configuration</summary>
         public VpnTunnelConfigurationType? TunnelConfiguration {
-            get { return BackingStore?.Get<VpnTunnelConfigurationType?>(nameof(TunnelConfiguration)); }
-            set { BackingStore?.Set(nameof(TunnelConfiguration), value); }
+            get { return BackingStore?.Get<VpnTunnelConfigurationType?>("tunnelConfiguration"); }
+            set { BackingStore?.Set("tunnelConfiguration", value); }
         }
         /// <summary>Allow the user to toggle the VPN configuration using the UI</summary>
         public bool? UserToggleEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(UserToggleEnabled)); }
-            set { BackingStore?.Set(nameof(UserToggleEnabled), value); }
+            get { return BackingStore?.Get<bool?>("userToggleEnabled"); }
+            set { BackingStore?.Set("userToggleEnabled", value); }
         }
         /// <summary>Determine whether voicemail service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.</summary>
         public VpnServiceExceptionAction? VoicemailExceptionAction {
-            get { return BackingStore?.Get<VpnServiceExceptionAction?>(nameof(VoicemailExceptionAction)); }
-            set { BackingStore?.Set(nameof(VoicemailExceptionAction), value); }
+            get { return BackingStore?.Get<VpnServiceExceptionAction?>("voicemailExceptionAction"); }
+            set { BackingStore?.Set("voicemailExceptionAction", value); }
         }
         /// <summary>
         /// Instantiates a new appleVpnAlwaysOnConfiguration and sets the default values.

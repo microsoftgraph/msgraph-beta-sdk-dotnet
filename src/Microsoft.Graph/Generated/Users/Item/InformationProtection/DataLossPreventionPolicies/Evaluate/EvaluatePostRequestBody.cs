@@ -10,25 +10,25 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.DataLossPreventi
     public class EvaluatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The evaluationInput property</summary>
         public DlpEvaluationInput EvaluationInput {
-            get { return BackingStore?.Get<DlpEvaluationInput>(nameof(EvaluationInput)); }
-            set { BackingStore?.Set(nameof(EvaluationInput), value); }
+            get { return BackingStore?.Get<DlpEvaluationInput>("evaluationInput"); }
+            set { BackingStore?.Set("evaluationInput", value); }
         }
         /// <summary>The notificationInfo property</summary>
         public DlpNotification NotificationInfo {
-            get { return BackingStore?.Get<DlpNotification>(nameof(NotificationInfo)); }
-            set { BackingStore?.Set(nameof(NotificationInfo), value); }
+            get { return BackingStore?.Get<DlpNotification>("notificationInfo"); }
+            set { BackingStore?.Set("notificationInfo", value); }
         }
         /// <summary>The target property</summary>
         public string Target {
-            get { return BackingStore?.Get<string>(nameof(Target)); }
-            set { BackingStore?.Set(nameof(Target), value); }
+            get { return BackingStore?.Get<string>("target"); }
+            set { BackingStore?.Set("target", value); }
         }
         /// <summary>
         /// Instantiates a new evaluatePostRequestBody and sets the default values.

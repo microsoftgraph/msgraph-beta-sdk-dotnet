@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationFeedbackResourceOutcome : EducationOutcome, IParsable {
         /// <summary>The actual feedback resource.</summary>
         public EducationResource FeedbackResource {
-            get { return BackingStore?.Get<EducationResource>(nameof(FeedbackResource)); }
-            set { BackingStore?.Set(nameof(FeedbackResource), value); }
+            get { return BackingStore?.Get<EducationResource>("feedbackResource"); }
+            set { BackingStore?.Set("feedbackResource", value); }
         }
         /// <summary>The status of the feedback resource. The possible values are: notPublished, pendingPublish, published, failedPublish, and unknownFutureValue.</summary>
         public EducationFeedbackResourceOutcomeStatus? ResourceStatus {
-            get { return BackingStore?.Get<EducationFeedbackResourceOutcomeStatus?>(nameof(ResourceStatus)); }
-            set { BackingStore?.Set(nameof(ResourceStatus), value); }
+            get { return BackingStore?.Get<EducationFeedbackResourceOutcomeStatus?>("resourceStatus"); }
+            set { BackingStore?.Set("resourceStatus", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

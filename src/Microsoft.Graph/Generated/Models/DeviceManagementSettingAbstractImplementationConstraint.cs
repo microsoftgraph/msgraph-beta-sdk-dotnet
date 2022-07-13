@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementSettingAbstractImplementationConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>List of value which means not configured for the setting</summary>
         public List<string> AllowedAbstractImplementationDefinitionIds {
-            get { return BackingStore?.Get<List<string>>(nameof(AllowedAbstractImplementationDefinitionIds)); }
-            set { BackingStore?.Set(nameof(AllowedAbstractImplementationDefinitionIds), value); }
+            get { return BackingStore?.Get<List<string>>("allowedAbstractImplementationDefinitionIds"); }
+            set { BackingStore?.Set("allowedAbstractImplementationDefinitionIds", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

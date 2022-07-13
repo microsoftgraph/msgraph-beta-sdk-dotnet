@@ -8,53 +8,53 @@ namespace Microsoft.Graph.Beta.Models {
     public class CloudPcReviewStatus : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The resource ID of the Azure Storage account in which the Cloud PC snapshot is being saved.</summary>
         public string AzureStorageAccountId {
-            get { return BackingStore?.Get<string>(nameof(AzureStorageAccountId)); }
-            set { BackingStore?.Set(nameof(AzureStorageAccountId), value); }
+            get { return BackingStore?.Get<string>("azureStorageAccountId"); }
+            set { BackingStore?.Set("azureStorageAccountId", value); }
         }
         /// <summary>The name of the Azure Storage account in which the Cloud PC snapshot is being saved.</summary>
         public string AzureStorageAccountName {
-            get { return BackingStore?.Get<string>(nameof(AzureStorageAccountName)); }
-            set { BackingStore?.Set(nameof(AzureStorageAccountName), value); }
+            get { return BackingStore?.Get<string>("azureStorageAccountName"); }
+            set { BackingStore?.Set("azureStorageAccountName", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>True if the Cloud PC is set to in review by the administrator.</summary>
         public bool? InReview {
-            get { return BackingStore?.Get<bool?>(nameof(InReview)); }
-            set { BackingStore?.Set(nameof(InReview), value); }
+            get { return BackingStore?.Get<bool?>("inReview"); }
+            set { BackingStore?.Set("inReview", value); }
         }
         /// <summary>The specific date and time of the Cloud PC snapshot that was taken and saved automatically, when the Cloud PC is set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? RestorePointDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(RestorePointDateTime)); }
-            set { BackingStore?.Set(nameof(RestorePointDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("restorePointDateTime"); }
+            set { BackingStore?.Set("restorePointDateTime", value); }
         }
         /// <summary>The specific date and time when the Cloud PC was set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ReviewStartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ReviewStartDateTime)); }
-            set { BackingStore?.Set(nameof(ReviewStartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("reviewStartDateTime"); }
+            set { BackingStore?.Set("reviewStartDateTime", value); }
         }
         /// <summary>The ID of the Azure subscription in which the Cloud PC snapshot is being saved, in GUID format.</summary>
         public string SubscriptionId {
-            get { return BackingStore?.Get<string>(nameof(SubscriptionId)); }
-            set { BackingStore?.Set(nameof(SubscriptionId), value); }
+            get { return BackingStore?.Get<string>("subscriptionId"); }
+            set { BackingStore?.Set("subscriptionId", value); }
         }
         /// <summary>The name of the Azure subscription in which the Cloud PC snapshot is being saved.</summary>
         public string SubscriptionName {
-            get { return BackingStore?.Get<string>(nameof(SubscriptionName)); }
-            set { BackingStore?.Set(nameof(SubscriptionName), value); }
+            get { return BackingStore?.Get<string>("subscriptionName"); }
+            set { BackingStore?.Set("subscriptionName", value); }
         }
-        /// <summary>The access level of the end user on the Cloud PC. Possible values are: unrestricted, restricted.</summary>
+        /// <summary>The userAccessLevel property</summary>
         public CloudPcUserAccessLevel? UserAccessLevel {
-            get { return BackingStore?.Get<CloudPcUserAccessLevel?>(nameof(UserAccessLevel)); }
-            set { BackingStore?.Set(nameof(UserAccessLevel), value); }
+            get { return BackingStore?.Get<CloudPcUserAccessLevel?>("userAccessLevel"); }
+            set { BackingStore?.Set("userAccessLevel", value); }
         }
         /// <summary>
-        /// Instantiates a new CloudPcReviewStatus and sets the default values.
+        /// Instantiates a new cloudPcReviewStatus and sets the default values.
         /// </summary>
         public CloudPcReviewStatus() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

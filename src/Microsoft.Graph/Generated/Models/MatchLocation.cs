@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class MatchLocation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The length property</summary>
         public int? Length {
-            get { return BackingStore?.Get<int?>(nameof(Length)); }
-            set { BackingStore?.Set(nameof(Length), value); }
+            get { return BackingStore?.Get<int?>("length"); }
+            set { BackingStore?.Set("length", value); }
         }
         /// <summary>The offset property</summary>
         public int? Offset {
-            get { return BackingStore?.Get<int?>(nameof(Offset)); }
-            set { BackingStore?.Set(nameof(Offset), value); }
+            get { return BackingStore?.Get<int?>("offset"); }
+            set { BackingStore?.Set("offset", value); }
         }
         /// <summary>
         /// Instantiates a new matchLocation and sets the default values.

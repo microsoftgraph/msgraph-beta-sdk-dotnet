@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Beta.Models {
     public class DecisionItemPrincipalResourceMembership : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Type of membership that the principal has to the resource. Multi-valued. The possible values are: direct, indirect, unknownFutureValue.</summary>
+        /// <summary>The membershipType property</summary>
         public DecisionItemPrincipalResourceMembershipType? MembershipType {
-            get { return BackingStore?.Get<DecisionItemPrincipalResourceMembershipType?>(nameof(MembershipType)); }
-            set { BackingStore?.Set(nameof(MembershipType), value); }
+            get { return BackingStore?.Get<DecisionItemPrincipalResourceMembershipType?>("membershipType"); }
+            set { BackingStore?.Set("membershipType", value); }
         }
         /// <summary>
         /// Instantiates a new decisionItemPrincipalResourceMembership and sets the default values.

@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class StrongAuthenticationDetail : Entity, IParsable {
         /// <summary>The encryptedPinHashHistory property</summary>
         public byte[] EncryptedPinHashHistory {
-            get { return BackingStore?.Get<byte[]>(nameof(EncryptedPinHashHistory)); }
-            set { BackingStore?.Set(nameof(EncryptedPinHashHistory), value); }
+            get { return BackingStore?.Get<byte[]>("encryptedPinHashHistory"); }
+            set { BackingStore?.Set("encryptedPinHashHistory", value); }
         }
         /// <summary>The proofupTime property</summary>
         public long? ProofupTime {
-            get { return BackingStore?.Get<long?>(nameof(ProofupTime)); }
-            set { BackingStore?.Set(nameof(ProofupTime), value); }
+            get { return BackingStore?.Get<long?>("proofupTime"); }
+            set { BackingStore?.Set("proofupTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

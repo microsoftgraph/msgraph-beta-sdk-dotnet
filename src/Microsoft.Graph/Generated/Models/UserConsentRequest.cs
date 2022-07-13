@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserConsentRequest : Request, IParsable {
         /// <summary>Approval decisions associated with a request.</summary>
         public Microsoft.Graph.Beta.Models.Approval Approval {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Approval>(nameof(Approval)); }
-            set { BackingStore?.Set(nameof(Approval), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Approval>("approval"); }
+            set { BackingStore?.Set("approval", value); }
         }
         /// <summary>The user&apos;s justification for requiring access to the app. Supports $filter (eq only) and $orderby.</summary>
         public string Reason {
-            get { return BackingStore?.Get<string>(nameof(Reason)); }
-            set { BackingStore?.Set(nameof(Reason), value); }
+            get { return BackingStore?.Get<string>("reason"); }
+            set { BackingStore?.Set("reason", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

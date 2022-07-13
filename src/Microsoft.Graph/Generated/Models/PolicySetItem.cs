@@ -9,43 +9,49 @@ namespace Microsoft.Graph.Beta.Models {
     public class PolicySetItem : Entity, IParsable {
         /// <summary>Creation time of the PolicySetItem.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>DisplayName of the PolicySetItem.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>Error code if any occured. Possible values are: noError, unauthorized, notFound, deleted.</summary>
+        /// <summary>The errorCode property</summary>
         public Microsoft.Graph.Beta.Models.ErrorCode? ErrorCode {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ErrorCode?>(nameof(ErrorCode)); }
-            set { BackingStore?.Set(nameof(ErrorCode), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ErrorCode?>("errorCode"); }
+            set { BackingStore?.Set("errorCode", value); }
         }
         /// <summary>Tags of the guided deployment</summary>
         public List<string> GuidedDeploymentTags {
-            get { return BackingStore?.Get<List<string>>(nameof(GuidedDeploymentTags)); }
-            set { BackingStore?.Set(nameof(GuidedDeploymentTags), value); }
+            get { return BackingStore?.Get<List<string>>("guidedDeploymentTags"); }
+            set { BackingStore?.Set("guidedDeploymentTags", value); }
         }
         /// <summary>policySetType of the PolicySetItem.</summary>
         public string ItemType {
-            get { return BackingStore?.Get<string>(nameof(ItemType)); }
-            set { BackingStore?.Set(nameof(ItemType), value); }
+            get { return BackingStore?.Get<string>("itemType"); }
+            set { BackingStore?.Set("itemType", value); }
         }
         /// <summary>Last modified time of the PolicySetItem.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>PayloadId of the PolicySetItem.</summary>
         public string PayloadId {
-            get { return BackingStore?.Get<string>(nameof(PayloadId)); }
-            set { BackingStore?.Set(nameof(PayloadId), value); }
+            get { return BackingStore?.Get<string>("payloadId"); }
+            set { BackingStore?.Set("payloadId", value); }
         }
-        /// <summary>Status of the PolicySetItem. Possible values are: unknown, validating, partialSuccess, success, error, notAssigned.</summary>
+        /// <summary>The enum to specify the status of PolicySet.</summary>
         public PolicySetStatus? Status {
-            get { return BackingStore?.Get<PolicySetStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<PolicySetStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+        /// <summary>
+        /// Instantiates a new policySetItem and sets the default values.
+        /// </summary>
+        public PolicySetItem() : base() {
+            Type = "#microsoft.graph.policySetItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

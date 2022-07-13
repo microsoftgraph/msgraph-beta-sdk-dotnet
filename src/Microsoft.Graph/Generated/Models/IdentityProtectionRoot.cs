@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class IdentityProtectionRoot : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Risk detection in Azure AD Identity Protection and the associated information about the detection.</summary>
         public List<RiskDetection> RiskDetections {
-            get { return BackingStore?.Get<List<RiskDetection>>(nameof(RiskDetections)); }
-            set { BackingStore?.Set(nameof(RiskDetections), value); }
+            get { return BackingStore?.Get<List<RiskDetection>>("riskDetections"); }
+            set { BackingStore?.Set("riskDetections", value); }
         }
         /// <summary>Azure AD service principals that are at risk.</summary>
         public List<RiskyServicePrincipal> RiskyServicePrincipals {
-            get { return BackingStore?.Get<List<RiskyServicePrincipal>>(nameof(RiskyServicePrincipals)); }
-            set { BackingStore?.Set(nameof(RiskyServicePrincipals), value); }
+            get { return BackingStore?.Get<List<RiskyServicePrincipal>>("riskyServicePrincipals"); }
+            set { BackingStore?.Set("riskyServicePrincipals", value); }
         }
         /// <summary>Users that are flagged as at-risk by Azure AD Identity Protection.</summary>
         public List<RiskyUser> RiskyUsers {
-            get { return BackingStore?.Get<List<RiskyUser>>(nameof(RiskyUsers)); }
-            set { BackingStore?.Set(nameof(RiskyUsers), value); }
+            get { return BackingStore?.Get<List<RiskyUser>>("riskyUsers"); }
+            set { BackingStore?.Set("riskyUsers", value); }
         }
         /// <summary>Represents information about detected at-risk service principals in an Azure AD tenant.</summary>
         public List<ServicePrincipalRiskDetection> ServicePrincipalRiskDetections {
-            get { return BackingStore?.Get<List<ServicePrincipalRiskDetection>>(nameof(ServicePrincipalRiskDetections)); }
-            set { BackingStore?.Set(nameof(ServicePrincipalRiskDetections), value); }
+            get { return BackingStore?.Get<List<ServicePrincipalRiskDetection>>("servicePrincipalRiskDetections"); }
+            set { BackingStore?.Set("servicePrincipalRiskDetections", value); }
         }
         /// <summary>
         /// Instantiates a new IdentityProtectionRoot and sets the default values.

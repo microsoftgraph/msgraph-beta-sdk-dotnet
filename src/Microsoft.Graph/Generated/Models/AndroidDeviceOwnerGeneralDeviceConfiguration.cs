@@ -7,663 +7,673 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceOwnerGeneralDeviceConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Indicates whether or not adding or removing accounts is disabled.</summary>
         public bool? AccountsBlockModification {
-            get { return BackingStore?.Get<bool?>(nameof(AccountsBlockModification)); }
-            set { BackingStore?.Set(nameof(AccountsBlockModification), value); }
+            get { return BackingStore?.Get<bool?>("accountsBlockModification"); }
+            set { BackingStore?.Set("accountsBlockModification", value); }
         }
         /// <summary>Indicates whether or not the user is allowed to enable to unknown sources setting.</summary>
         public bool? AppsAllowInstallFromUnknownSources {
-            get { return BackingStore?.Get<bool?>(nameof(AppsAllowInstallFromUnknownSources)); }
-            set { BackingStore?.Set(nameof(AppsAllowInstallFromUnknownSources), value); }
+            get { return BackingStore?.Get<bool?>("appsAllowInstallFromUnknownSources"); }
+            set { BackingStore?.Set("appsAllowInstallFromUnknownSources", value); }
         }
         /// <summary>Indicates the value of the app auto update policy. Possible values are: notConfigured, userChoice, never, wiFiOnly, always.</summary>
         public AndroidDeviceOwnerAppAutoUpdatePolicyType? AppsAutoUpdatePolicy {
-            get { return BackingStore?.Get<AndroidDeviceOwnerAppAutoUpdatePolicyType?>(nameof(AppsAutoUpdatePolicy)); }
-            set { BackingStore?.Set(nameof(AppsAutoUpdatePolicy), value); }
+            get { return BackingStore?.Get<AndroidDeviceOwnerAppAutoUpdatePolicyType?>("appsAutoUpdatePolicy"); }
+            set { BackingStore?.Set("appsAutoUpdatePolicy", value); }
         }
         /// <summary>Indicates the permission policy for requests for runtime permissions if one is not defined for the app specifically. Possible values are: deviceDefault, prompt, autoGrant, autoDeny.</summary>
         public AndroidDeviceOwnerDefaultAppPermissionPolicyType? AppsDefaultPermissionPolicy {
-            get { return BackingStore?.Get<AndroidDeviceOwnerDefaultAppPermissionPolicyType?>(nameof(AppsDefaultPermissionPolicy)); }
-            set { BackingStore?.Set(nameof(AppsDefaultPermissionPolicy), value); }
+            get { return BackingStore?.Get<AndroidDeviceOwnerDefaultAppPermissionPolicyType?>("appsDefaultPermissionPolicy"); }
+            set { BackingStore?.Set("appsDefaultPermissionPolicy", value); }
         }
         /// <summary>Whether or not to recommend all apps skip any first-time-use hints they may have added.</summary>
         public bool? AppsRecommendSkippingFirstUseHints {
-            get { return BackingStore?.Get<bool?>(nameof(AppsRecommendSkippingFirstUseHints)); }
-            set { BackingStore?.Set(nameof(AppsRecommendSkippingFirstUseHints), value); }
+            get { return BackingStore?.Get<bool?>("appsRecommendSkippingFirstUseHints"); }
+            set { BackingStore?.Set("appsRecommendSkippingFirstUseHints", value); }
         }
         /// <summary>A list of managed apps that will have their data cleared during a global sign-out in AAD shared device mode. This collection can contain a maximum of 500 elements.</summary>
         public List<AppListItem> AzureAdSharedDeviceDataClearApps {
-            get { return BackingStore?.Get<List<AppListItem>>(nameof(AzureAdSharedDeviceDataClearApps)); }
-            set { BackingStore?.Set(nameof(AzureAdSharedDeviceDataClearApps), value); }
+            get { return BackingStore?.Get<List<AppListItem>>("azureAdSharedDeviceDataClearApps"); }
+            set { BackingStore?.Set("azureAdSharedDeviceDataClearApps", value); }
         }
         /// <summary>Indicates whether or not to block a user from configuring bluetooth.</summary>
         public bool? BluetoothBlockConfiguration {
-            get { return BackingStore?.Get<bool?>(nameof(BluetoothBlockConfiguration)); }
-            set { BackingStore?.Set(nameof(BluetoothBlockConfiguration), value); }
+            get { return BackingStore?.Get<bool?>("bluetoothBlockConfiguration"); }
+            set { BackingStore?.Set("bluetoothBlockConfiguration", value); }
         }
         /// <summary>Indicates whether or not to block a user from sharing contacts via bluetooth.</summary>
         public bool? BluetoothBlockContactSharing {
-            get { return BackingStore?.Get<bool?>(nameof(BluetoothBlockContactSharing)); }
-            set { BackingStore?.Set(nameof(BluetoothBlockContactSharing), value); }
+            get { return BackingStore?.Get<bool?>("bluetoothBlockContactSharing"); }
+            set { BackingStore?.Set("bluetoothBlockContactSharing", value); }
         }
         /// <summary>Indicates whether or not to disable the use of the camera.</summary>
         public bool? CameraBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(CameraBlocked)); }
-            set { BackingStore?.Set(nameof(CameraBlocked), value); }
+            get { return BackingStore?.Get<bool?>("cameraBlocked"); }
+            set { BackingStore?.Set("cameraBlocked", value); }
         }
         /// <summary>Indicates whether or not to block Wi-Fi tethering.</summary>
         public bool? CellularBlockWiFiTethering {
-            get { return BackingStore?.Get<bool?>(nameof(CellularBlockWiFiTethering)); }
-            set { BackingStore?.Set(nameof(CellularBlockWiFiTethering), value); }
+            get { return BackingStore?.Get<bool?>("cellularBlockWiFiTethering"); }
+            set { BackingStore?.Set("cellularBlockWiFiTethering", value); }
         }
         /// <summary>Indicates whether or not to block users from any certificate credential configuration.</summary>
         public bool? CertificateCredentialConfigurationDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(CertificateCredentialConfigurationDisabled)); }
-            set { BackingStore?.Set(nameof(CertificateCredentialConfigurationDisabled), value); }
+            get { return BackingStore?.Get<bool?>("certificateCredentialConfigurationDisabled"); }
+            set { BackingStore?.Set("certificateCredentialConfigurationDisabled", value); }
         }
         /// <summary>Indicates whether or not text copied from one profile (personal or work) can be pasted in the other.</summary>
         public bool? CrossProfilePoliciesAllowCopyPaste {
-            get { return BackingStore?.Get<bool?>(nameof(CrossProfilePoliciesAllowCopyPaste)); }
-            set { BackingStore?.Set(nameof(CrossProfilePoliciesAllowCopyPaste), value); }
+            get { return BackingStore?.Get<bool?>("crossProfilePoliciesAllowCopyPaste"); }
+            set { BackingStore?.Set("crossProfilePoliciesAllowCopyPaste", value); }
         }
         /// <summary>Indicates whether data from one profile (personal or work) can be shared with apps in the other profile. Possible values are: notConfigured, crossProfileDataSharingBlocked, dataSharingFromWorkToPersonalBlocked, crossProfileDataSharingAllowed, unkownFutureValue.</summary>
         public AndroidDeviceOwnerCrossProfileDataSharing? CrossProfilePoliciesAllowDataSharing {
-            get { return BackingStore?.Get<AndroidDeviceOwnerCrossProfileDataSharing?>(nameof(CrossProfilePoliciesAllowDataSharing)); }
-            set { BackingStore?.Set(nameof(CrossProfilePoliciesAllowDataSharing), value); }
+            get { return BackingStore?.Get<AndroidDeviceOwnerCrossProfileDataSharing?>("crossProfilePoliciesAllowDataSharing"); }
+            set { BackingStore?.Set("crossProfilePoliciesAllowDataSharing", value); }
         }
         /// <summary>Indicates whether or not contacts stored in work profile are shown in personal profile contact searches/incoming calls.</summary>
         public bool? CrossProfilePoliciesShowWorkContactsInPersonalProfile {
-            get { return BackingStore?.Get<bool?>(nameof(CrossProfilePoliciesShowWorkContactsInPersonalProfile)); }
-            set { BackingStore?.Set(nameof(CrossProfilePoliciesShowWorkContactsInPersonalProfile), value); }
+            get { return BackingStore?.Get<bool?>("crossProfilePoliciesShowWorkContactsInPersonalProfile"); }
+            set { BackingStore?.Set("crossProfilePoliciesShowWorkContactsInPersonalProfile", value); }
         }
         /// <summary>Indicates whether or not to block a user from data roaming.</summary>
         public bool? DataRoamingBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(DataRoamingBlocked)); }
-            set { BackingStore?.Set(nameof(DataRoamingBlocked), value); }
+            get { return BackingStore?.Get<bool?>("dataRoamingBlocked"); }
+            set { BackingStore?.Set("dataRoamingBlocked", value); }
         }
         /// <summary>Indicates whether or not to block the user from manually changing the date or time on the device</summary>
         public bool? DateTimeConfigurationBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(DateTimeConfigurationBlocked)); }
-            set { BackingStore?.Set(nameof(DateTimeConfigurationBlocked), value); }
+            get { return BackingStore?.Get<bool?>("dateTimeConfigurationBlocked"); }
+            set { BackingStore?.Set("dateTimeConfigurationBlocked", value); }
         }
         /// <summary>Represents the customized detailed help text provided to users when they attempt to modify managed settings on their device.</summary>
         public AndroidDeviceOwnerUserFacingMessage DetailedHelpText {
-            get { return BackingStore?.Get<AndroidDeviceOwnerUserFacingMessage>(nameof(DetailedHelpText)); }
-            set { BackingStore?.Set(nameof(DetailedHelpText), value); }
+            get { return BackingStore?.Get<AndroidDeviceOwnerUserFacingMessage>("detailedHelpText"); }
+            set { BackingStore?.Set("detailedHelpText", value); }
         }
-        /// <summary>Indicates which enrollment profile you want to configure. Possible values are: notConfigured, dedicatedDevice, fullyManaged.</summary>
+        /// <summary>Represents the customized lock screen message provided to users when they attempt to modify managed settings on their device.</summary>
+        public AndroidDeviceOwnerUserFacingMessage DeviceOwnerLockScreenMessage {
+            get { return BackingStore?.Get<AndroidDeviceOwnerUserFacingMessage>("deviceOwnerLockScreenMessage"); }
+            set { BackingStore?.Set("deviceOwnerLockScreenMessage", value); }
+        }
+        /// <summary>Android Device Owner Enrollment Profile types.</summary>
         public AndroidDeviceOwnerEnrollmentProfileType? EnrollmentProfile {
-            get { return BackingStore?.Get<AndroidDeviceOwnerEnrollmentProfileType?>(nameof(EnrollmentProfile)); }
-            set { BackingStore?.Set(nameof(EnrollmentProfile), value); }
+            get { return BackingStore?.Get<AndroidDeviceOwnerEnrollmentProfileType?>("enrollmentProfile"); }
+            set { BackingStore?.Set("enrollmentProfile", value); }
         }
         /// <summary>Indicates whether or not the factory reset option in settings is disabled.</summary>
         public bool? FactoryResetBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(FactoryResetBlocked)); }
-            set { BackingStore?.Set(nameof(FactoryResetBlocked), value); }
+            get { return BackingStore?.Get<bool?>("factoryResetBlocked"); }
+            set { BackingStore?.Set("factoryResetBlocked", value); }
         }
         /// <summary>List of Google account emails that will be required to authenticate after a device is factory reset before it can be set up.</summary>
         public List<string> FactoryResetDeviceAdministratorEmails {
-            get { return BackingStore?.Get<List<string>>(nameof(FactoryResetDeviceAdministratorEmails)); }
-            set { BackingStore?.Set(nameof(FactoryResetDeviceAdministratorEmails), value); }
+            get { return BackingStore?.Get<List<string>>("factoryResetDeviceAdministratorEmails"); }
+            set { BackingStore?.Set("factoryResetDeviceAdministratorEmails", value); }
         }
         /// <summary>Proxy is set up directly with host, port and excluded hosts.</summary>
         public AndroidDeviceOwnerGlobalProxy GlobalProxy {
-            get { return BackingStore?.Get<AndroidDeviceOwnerGlobalProxy>(nameof(GlobalProxy)); }
-            set { BackingStore?.Set(nameof(GlobalProxy), value); }
+            get { return BackingStore?.Get<AndroidDeviceOwnerGlobalProxy>("globalProxy"); }
+            set { BackingStore?.Set("globalProxy", value); }
         }
         /// <summary>Indicates whether or not google accounts will be blocked.</summary>
         public bool? GoogleAccountsBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(GoogleAccountsBlocked)); }
-            set { BackingStore?.Set(nameof(GoogleAccountsBlocked), value); }
+            get { return BackingStore?.Get<bool?>("googleAccountsBlocked"); }
+            set { BackingStore?.Set("googleAccountsBlocked", value); }
         }
         /// <summary>Indicates whether a user can access the device&apos;s Settings app while in Kiosk Mode.</summary>
         public bool? KioskCustomizationDeviceSettingsBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(KioskCustomizationDeviceSettingsBlocked)); }
-            set { BackingStore?.Set(nameof(KioskCustomizationDeviceSettingsBlocked), value); }
+            get { return BackingStore?.Get<bool?>("kioskCustomizationDeviceSettingsBlocked"); }
+            set { BackingStore?.Set("kioskCustomizationDeviceSettingsBlocked", value); }
         }
         /// <summary>Whether the power menu is shown when a user long presses the Power button of a device in Kiosk Mode.</summary>
         public bool? KioskCustomizationPowerButtonActionsBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(KioskCustomizationPowerButtonActionsBlocked)); }
-            set { BackingStore?.Set(nameof(KioskCustomizationPowerButtonActionsBlocked), value); }
+            get { return BackingStore?.Get<bool?>("kioskCustomizationPowerButtonActionsBlocked"); }
+            set { BackingStore?.Set("kioskCustomizationPowerButtonActionsBlocked", value); }
         }
         /// <summary>Indicates whether system info and notifications are disabled in Kiosk Mode. Possible values are: notConfigured, notificationsAndSystemInfoEnabled, systemInfoOnly.</summary>
         public AndroidDeviceOwnerKioskCustomizationStatusBar? KioskCustomizationStatusBar {
-            get { return BackingStore?.Get<AndroidDeviceOwnerKioskCustomizationStatusBar?>(nameof(KioskCustomizationStatusBar)); }
-            set { BackingStore?.Set(nameof(KioskCustomizationStatusBar), value); }
+            get { return BackingStore?.Get<AndroidDeviceOwnerKioskCustomizationStatusBar?>("kioskCustomizationStatusBar"); }
+            set { BackingStore?.Set("kioskCustomizationStatusBar", value); }
         }
         /// <summary>Indicates whether system error dialogs for crashed or unresponsive apps are shown in Kiosk Mode.</summary>
         public bool? KioskCustomizationSystemErrorWarnings {
-            get { return BackingStore?.Get<bool?>(nameof(KioskCustomizationSystemErrorWarnings)); }
-            set { BackingStore?.Set(nameof(KioskCustomizationSystemErrorWarnings), value); }
+            get { return BackingStore?.Get<bool?>("kioskCustomizationSystemErrorWarnings"); }
+            set { BackingStore?.Set("kioskCustomizationSystemErrorWarnings", value); }
         }
         /// <summary>Indicates which navigation features are enabled in Kiosk Mode. Possible values are: notConfigured, navigationEnabled, homeButtonOnly.</summary>
         public AndroidDeviceOwnerKioskCustomizationSystemNavigation? KioskCustomizationSystemNavigation {
-            get { return BackingStore?.Get<AndroidDeviceOwnerKioskCustomizationSystemNavigation?>(nameof(KioskCustomizationSystemNavigation)); }
-            set { BackingStore?.Set(nameof(KioskCustomizationSystemNavigation), value); }
+            get { return BackingStore?.Get<AndroidDeviceOwnerKioskCustomizationSystemNavigation?>("kioskCustomizationSystemNavigation"); }
+            set { BackingStore?.Set("kioskCustomizationSystemNavigation", value); }
         }
         /// <summary>Whether or not to enable app ordering in Kiosk Mode.</summary>
         public bool? KioskModeAppOrderEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeAppOrderEnabled)); }
-            set { BackingStore?.Set(nameof(KioskModeAppOrderEnabled), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeAppOrderEnabled"); }
+            set { BackingStore?.Set("kioskModeAppOrderEnabled", value); }
         }
         /// <summary>The ordering of items on Kiosk Mode Managed Home Screen. This collection can contain a maximum of 500 elements.</summary>
         public List<AndroidDeviceOwnerKioskModeAppPositionItem> KioskModeAppPositions {
-            get { return BackingStore?.Get<List<AndroidDeviceOwnerKioskModeAppPositionItem>>(nameof(KioskModeAppPositions)); }
-            set { BackingStore?.Set(nameof(KioskModeAppPositions), value); }
+            get { return BackingStore?.Get<List<AndroidDeviceOwnerKioskModeAppPositionItem>>("kioskModeAppPositions"); }
+            set { BackingStore?.Set("kioskModeAppPositions", value); }
         }
         /// <summary>A list of managed apps that will be shown when the device is in Kiosk Mode. This collection can contain a maximum of 500 elements.</summary>
         public List<AppListItem> KioskModeApps {
-            get { return BackingStore?.Get<List<AppListItem>>(nameof(KioskModeApps)); }
-            set { BackingStore?.Set(nameof(KioskModeApps), value); }
+            get { return BackingStore?.Get<List<AppListItem>>("kioskModeApps"); }
+            set { BackingStore?.Set("kioskModeApps", value); }
         }
         /// <summary>Whether or not to alphabetize applications within a folder in Kiosk Mode.</summary>
         public bool? KioskModeAppsInFolderOrderedByName {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeAppsInFolderOrderedByName)); }
-            set { BackingStore?.Set(nameof(KioskModeAppsInFolderOrderedByName), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeAppsInFolderOrderedByName"); }
+            set { BackingStore?.Set("kioskModeAppsInFolderOrderedByName", value); }
         }
         /// <summary>Whether or not to allow a user to configure Bluetooth settings in Kiosk Mode.</summary>
         public bool? KioskModeBluetoothConfigurationEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeBluetoothConfigurationEnabled)); }
-            set { BackingStore?.Set(nameof(KioskModeBluetoothConfigurationEnabled), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeBluetoothConfigurationEnabled"); }
+            set { BackingStore?.Set("kioskModeBluetoothConfigurationEnabled", value); }
         }
         /// <summary>Whether or not to allow a user to easy access to the debug menu in Kiosk Mode.</summary>
         public bool? KioskModeDebugMenuEasyAccessEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeDebugMenuEasyAccessEnabled)); }
-            set { BackingStore?.Set(nameof(KioskModeDebugMenuEasyAccessEnabled), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeDebugMenuEasyAccessEnabled"); }
+            set { BackingStore?.Set("kioskModeDebugMenuEasyAccessEnabled", value); }
         }
         /// <summary>Exit code to allow a user to escape from Kiosk Mode when the device is in Kiosk Mode.</summary>
         public string KioskModeExitCode {
-            get { return BackingStore?.Get<string>(nameof(KioskModeExitCode)); }
-            set { BackingStore?.Set(nameof(KioskModeExitCode), value); }
+            get { return BackingStore?.Get<string>("kioskModeExitCode"); }
+            set { BackingStore?.Set("kioskModeExitCode", value); }
         }
         /// <summary>Whether or not to allow a user to use the flashlight in Kiosk Mode.</summary>
         public bool? KioskModeFlashlightConfigurationEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeFlashlightConfigurationEnabled)); }
-            set { BackingStore?.Set(nameof(KioskModeFlashlightConfigurationEnabled), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeFlashlightConfigurationEnabled"); }
+            set { BackingStore?.Set("kioskModeFlashlightConfigurationEnabled", value); }
         }
         /// <summary>Folder icon configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, darkSquare, darkCircle, lightSquare, lightCircle.</summary>
         public AndroidDeviceOwnerKioskModeFolderIcon? KioskModeFolderIcon {
-            get { return BackingStore?.Get<AndroidDeviceOwnerKioskModeFolderIcon?>(nameof(KioskModeFolderIcon)); }
-            set { BackingStore?.Set(nameof(KioskModeFolderIcon), value); }
+            get { return BackingStore?.Get<AndroidDeviceOwnerKioskModeFolderIcon?>("kioskModeFolderIcon"); }
+            set { BackingStore?.Set("kioskModeFolderIcon", value); }
         }
         /// <summary>Number of rows for Managed Home Screen grid with app ordering enabled in Kiosk Mode. Valid values 1 to 9999999</summary>
         public int? KioskModeGridHeight {
-            get { return BackingStore?.Get<int?>(nameof(KioskModeGridHeight)); }
-            set { BackingStore?.Set(nameof(KioskModeGridHeight), value); }
+            get { return BackingStore?.Get<int?>("kioskModeGridHeight"); }
+            set { BackingStore?.Set("kioskModeGridHeight", value); }
         }
         /// <summary>Number of columns for Managed Home Screen grid with app ordering enabled in Kiosk Mode. Valid values 1 to 9999999</summary>
         public int? KioskModeGridWidth {
-            get { return BackingStore?.Get<int?>(nameof(KioskModeGridWidth)); }
-            set { BackingStore?.Set(nameof(KioskModeGridWidth), value); }
+            get { return BackingStore?.Get<int?>("kioskModeGridWidth"); }
+            set { BackingStore?.Set("kioskModeGridWidth", value); }
         }
         /// <summary>Icon size configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, smallest, small, regular, large, largest.</summary>
         public AndroidDeviceOwnerKioskModeIconSize? KioskModeIconSize {
-            get { return BackingStore?.Get<AndroidDeviceOwnerKioskModeIconSize?>(nameof(KioskModeIconSize)); }
-            set { BackingStore?.Set(nameof(KioskModeIconSize), value); }
+            get { return BackingStore?.Get<AndroidDeviceOwnerKioskModeIconSize?>("kioskModeIconSize"); }
+            set { BackingStore?.Set("kioskModeIconSize", value); }
         }
         /// <summary>Whether or not to lock home screen to the end user in Kiosk Mode.</summary>
         public bool? KioskModeLockHomeScreen {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeLockHomeScreen)); }
-            set { BackingStore?.Set(nameof(KioskModeLockHomeScreen), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeLockHomeScreen"); }
+            set { BackingStore?.Set("kioskModeLockHomeScreen", value); }
         }
         /// <summary>A list of managed folders for a device in Kiosk Mode. This collection can contain a maximum of 500 elements.</summary>
         public List<AndroidDeviceOwnerKioskModeManagedFolder> KioskModeManagedFolders {
-            get { return BackingStore?.Get<List<AndroidDeviceOwnerKioskModeManagedFolder>>(nameof(KioskModeManagedFolders)); }
-            set { BackingStore?.Set(nameof(KioskModeManagedFolders), value); }
+            get { return BackingStore?.Get<List<AndroidDeviceOwnerKioskModeManagedFolder>>("kioskModeManagedFolders"); }
+            set { BackingStore?.Set("kioskModeManagedFolders", value); }
         }
         /// <summary>Whether or not to automatically sign-out of MHS and Shared device mode applications after inactive for Managed Home Screen.</summary>
         public bool? KioskModeManagedHomeScreenAutoSignout {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeManagedHomeScreenAutoSignout)); }
-            set { BackingStore?.Set(nameof(KioskModeManagedHomeScreenAutoSignout), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeManagedHomeScreenAutoSignout"); }
+            set { BackingStore?.Set("kioskModeManagedHomeScreenAutoSignout", value); }
         }
         /// <summary>Number of seconds to give user notice before automatically signing them out for Managed Home Screen. Valid values 0 to 9999999</summary>
         public int? KioskModeManagedHomeScreenInactiveSignOutDelayInSeconds {
-            get { return BackingStore?.Get<int?>(nameof(KioskModeManagedHomeScreenInactiveSignOutDelayInSeconds)); }
-            set { BackingStore?.Set(nameof(KioskModeManagedHomeScreenInactiveSignOutDelayInSeconds), value); }
+            get { return BackingStore?.Get<int?>("kioskModeManagedHomeScreenInactiveSignOutDelayInSeconds"); }
+            set { BackingStore?.Set("kioskModeManagedHomeScreenInactiveSignOutDelayInSeconds", value); }
         }
         /// <summary>Number of seconds device is inactive before automatically signing user out for Managed Home Screen. Valid values 0 to 9999999</summary>
         public int? KioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds {
-            get { return BackingStore?.Get<int?>(nameof(KioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds)); }
-            set { BackingStore?.Set(nameof(KioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds), value); }
+            get { return BackingStore?.Get<int?>("kioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds"); }
+            set { BackingStore?.Set("kioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds", value); }
         }
         /// <summary>Complexity of PIN for sign-in session for Managed Home Screen. Possible values are: notConfigured, simple, complex.</summary>
         public Microsoft.Graph.Beta.Models.KioskModeManagedHomeScreenPinComplexity? KioskModeManagedHomeScreenPinComplexity {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KioskModeManagedHomeScreenPinComplexity?>(nameof(KioskModeManagedHomeScreenPinComplexity)); }
-            set { BackingStore?.Set(nameof(KioskModeManagedHomeScreenPinComplexity), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KioskModeManagedHomeScreenPinComplexity?>("kioskModeManagedHomeScreenPinComplexity"); }
+            set { BackingStore?.Set("kioskModeManagedHomeScreenPinComplexity", value); }
         }
         /// <summary>Whether or not require user to set a PIN for sign-in session for Managed Home Screen.</summary>
         public bool? KioskModeManagedHomeScreenPinRequired {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeManagedHomeScreenPinRequired)); }
-            set { BackingStore?.Set(nameof(KioskModeManagedHomeScreenPinRequired), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeManagedHomeScreenPinRequired"); }
+            set { BackingStore?.Set("kioskModeManagedHomeScreenPinRequired", value); }
         }
         /// <summary>Whether or not required user to enter session PIN if screensaver has appeared for Managed Home Screen.</summary>
         public bool? KioskModeManagedHomeScreenPinRequiredToResume {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeManagedHomeScreenPinRequiredToResume)); }
-            set { BackingStore?.Set(nameof(KioskModeManagedHomeScreenPinRequiredToResume), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeManagedHomeScreenPinRequiredToResume"); }
+            set { BackingStore?.Set("kioskModeManagedHomeScreenPinRequiredToResume", value); }
         }
         /// <summary>Custom URL background for sign-in screen for Managed Home Screen.</summary>
         public string KioskModeManagedHomeScreenSignInBackground {
-            get { return BackingStore?.Get<string>(nameof(KioskModeManagedHomeScreenSignInBackground)); }
-            set { BackingStore?.Set(nameof(KioskModeManagedHomeScreenSignInBackground), value); }
+            get { return BackingStore?.Get<string>("kioskModeManagedHomeScreenSignInBackground"); }
+            set { BackingStore?.Set("kioskModeManagedHomeScreenSignInBackground", value); }
         }
         /// <summary>Custom URL branding logo for sign-in screen and session pin page for Managed Home Screen.</summary>
         public string KioskModeManagedHomeScreenSignInBrandingLogo {
-            get { return BackingStore?.Get<string>(nameof(KioskModeManagedHomeScreenSignInBrandingLogo)); }
-            set { BackingStore?.Set(nameof(KioskModeManagedHomeScreenSignInBrandingLogo), value); }
+            get { return BackingStore?.Get<string>("kioskModeManagedHomeScreenSignInBrandingLogo"); }
+            set { BackingStore?.Set("kioskModeManagedHomeScreenSignInBrandingLogo", value); }
         }
         /// <summary>Whether or not show sign-in screen for Managed Home Screen.</summary>
         public bool? KioskModeManagedHomeScreenSignInEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeManagedHomeScreenSignInEnabled)); }
-            set { BackingStore?.Set(nameof(KioskModeManagedHomeScreenSignInEnabled), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeManagedHomeScreenSignInEnabled"); }
+            set { BackingStore?.Set("kioskModeManagedHomeScreenSignInEnabled", value); }
         }
         /// <summary>Whether or not to display the Managed Settings entry point on the managed home screen in Kiosk Mode.</summary>
         public bool? KioskModeManagedSettingsEntryDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeManagedSettingsEntryDisabled)); }
-            set { BackingStore?.Set(nameof(KioskModeManagedSettingsEntryDisabled), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeManagedSettingsEntryDisabled"); }
+            set { BackingStore?.Set("kioskModeManagedSettingsEntryDisabled", value); }
         }
         /// <summary>Whether or not to allow a user to change the media volume in Kiosk Mode.</summary>
         public bool? KioskModeMediaVolumeConfigurationEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeMediaVolumeConfigurationEnabled)); }
-            set { BackingStore?.Set(nameof(KioskModeMediaVolumeConfigurationEnabled), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeMediaVolumeConfigurationEnabled"); }
+            set { BackingStore?.Set("kioskModeMediaVolumeConfigurationEnabled", value); }
         }
         /// <summary>Screen orientation configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, portrait, landscape, autoRotate.</summary>
         public AndroidDeviceOwnerKioskModeScreenOrientation? KioskModeScreenOrientation {
-            get { return BackingStore?.Get<AndroidDeviceOwnerKioskModeScreenOrientation?>(nameof(KioskModeScreenOrientation)); }
-            set { BackingStore?.Set(nameof(KioskModeScreenOrientation), value); }
+            get { return BackingStore?.Get<AndroidDeviceOwnerKioskModeScreenOrientation?>("kioskModeScreenOrientation"); }
+            set { BackingStore?.Set("kioskModeScreenOrientation", value); }
         }
         /// <summary>Whether or not to enable screen saver mode or not in Kiosk Mode.</summary>
         public bool? KioskModeScreenSaverConfigurationEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeScreenSaverConfigurationEnabled)); }
-            set { BackingStore?.Set(nameof(KioskModeScreenSaverConfigurationEnabled), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeScreenSaverConfigurationEnabled"); }
+            set { BackingStore?.Set("kioskModeScreenSaverConfigurationEnabled", value); }
         }
         /// <summary>Whether or not the device screen should show the screen saver if audio/video is playing in Kiosk Mode.</summary>
         public bool? KioskModeScreenSaverDetectMediaDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeScreenSaverDetectMediaDisabled)); }
-            set { BackingStore?.Set(nameof(KioskModeScreenSaverDetectMediaDisabled), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeScreenSaverDetectMediaDisabled"); }
+            set { BackingStore?.Set("kioskModeScreenSaverDetectMediaDisabled", value); }
         }
         /// <summary>The number of seconds that the device will display the screen saver for in Kiosk Mode. Valid values 0 to 9999999</summary>
         public int? KioskModeScreenSaverDisplayTimeInSeconds {
-            get { return BackingStore?.Get<int?>(nameof(KioskModeScreenSaverDisplayTimeInSeconds)); }
-            set { BackingStore?.Set(nameof(KioskModeScreenSaverDisplayTimeInSeconds), value); }
+            get { return BackingStore?.Get<int?>("kioskModeScreenSaverDisplayTimeInSeconds"); }
+            set { BackingStore?.Set("kioskModeScreenSaverDisplayTimeInSeconds", value); }
         }
         /// <summary>URL for an image that will be the device&apos;s screen saver in Kiosk Mode.</summary>
         public string KioskModeScreenSaverImageUrl {
-            get { return BackingStore?.Get<string>(nameof(KioskModeScreenSaverImageUrl)); }
-            set { BackingStore?.Set(nameof(KioskModeScreenSaverImageUrl), value); }
+            get { return BackingStore?.Get<string>("kioskModeScreenSaverImageUrl"); }
+            set { BackingStore?.Set("kioskModeScreenSaverImageUrl", value); }
         }
         /// <summary>The number of seconds the device needs to be inactive for before the screen saver is shown in Kiosk Mode. Valid values 1 to 9999999</summary>
         public int? KioskModeScreenSaverStartDelayInSeconds {
-            get { return BackingStore?.Get<int?>(nameof(KioskModeScreenSaverStartDelayInSeconds)); }
-            set { BackingStore?.Set(nameof(KioskModeScreenSaverStartDelayInSeconds), value); }
+            get { return BackingStore?.Get<int?>("kioskModeScreenSaverStartDelayInSeconds"); }
+            set { BackingStore?.Set("kioskModeScreenSaverStartDelayInSeconds", value); }
         }
         /// <summary>Whether or not to display application notification badges in Kiosk Mode.</summary>
         public bool? KioskModeShowAppNotificationBadge {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeShowAppNotificationBadge)); }
-            set { BackingStore?.Set(nameof(KioskModeShowAppNotificationBadge), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeShowAppNotificationBadge"); }
+            set { BackingStore?.Set("kioskModeShowAppNotificationBadge", value); }
         }
         /// <summary>Whether or not to allow a user to access basic device information.</summary>
         public bool? KioskModeShowDeviceInfo {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeShowDeviceInfo)); }
-            set { BackingStore?.Set(nameof(KioskModeShowDeviceInfo), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeShowDeviceInfo"); }
+            set { BackingStore?.Set("kioskModeShowDeviceInfo", value); }
         }
         /// <summary>Whether or not to use single app kiosk mode or multi-app kiosk mode. Possible values are: notConfigured, singleAppMode, multiAppMode.</summary>
         public KioskModeType? KioskModeUseManagedHomeScreenApp {
-            get { return BackingStore?.Get<KioskModeType?>(nameof(KioskModeUseManagedHomeScreenApp)); }
-            set { BackingStore?.Set(nameof(KioskModeUseManagedHomeScreenApp), value); }
+            get { return BackingStore?.Get<KioskModeType?>("kioskModeUseManagedHomeScreenApp"); }
+            set { BackingStore?.Set("kioskModeUseManagedHomeScreenApp", value); }
         }
         /// <summary>Whether or not to display a virtual home button when the device is in Kiosk Mode.</summary>
         public bool? KioskModeVirtualHomeButtonEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeVirtualHomeButtonEnabled)); }
-            set { BackingStore?.Set(nameof(KioskModeVirtualHomeButtonEnabled), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeVirtualHomeButtonEnabled"); }
+            set { BackingStore?.Set("kioskModeVirtualHomeButtonEnabled", value); }
         }
         /// <summary>Indicates whether the virtual home button is a swipe up home button or a floating home button. Possible values are: notConfigured, swipeUp, floating.</summary>
         public AndroidDeviceOwnerVirtualHomeButtonType? KioskModeVirtualHomeButtonType {
-            get { return BackingStore?.Get<AndroidDeviceOwnerVirtualHomeButtonType?>(nameof(KioskModeVirtualHomeButtonType)); }
-            set { BackingStore?.Set(nameof(KioskModeVirtualHomeButtonType), value); }
+            get { return BackingStore?.Get<AndroidDeviceOwnerVirtualHomeButtonType?>("kioskModeVirtualHomeButtonType"); }
+            set { BackingStore?.Set("kioskModeVirtualHomeButtonType", value); }
         }
         /// <summary>URL to a publicly accessible image to use for the wallpaper when the device is in Kiosk Mode.</summary>
         public string KioskModeWallpaperUrl {
-            get { return BackingStore?.Get<string>(nameof(KioskModeWallpaperUrl)); }
-            set { BackingStore?.Set(nameof(KioskModeWallpaperUrl), value); }
+            get { return BackingStore?.Get<string>("kioskModeWallpaperUrl"); }
+            set { BackingStore?.Set("kioskModeWallpaperUrl", value); }
         }
         /// <summary>The restricted set of WIFI SSIDs available for the user to configure in Kiosk Mode. This collection can contain a maximum of 500 elements.</summary>
         public List<string> KioskModeWifiAllowedSsids {
-            get { return BackingStore?.Get<List<string>>(nameof(KioskModeWifiAllowedSsids)); }
-            set { BackingStore?.Set(nameof(KioskModeWifiAllowedSsids), value); }
+            get { return BackingStore?.Get<List<string>>("kioskModeWifiAllowedSsids"); }
+            set { BackingStore?.Set("kioskModeWifiAllowedSsids", value); }
         }
         /// <summary>Whether or not to allow a user to configure Wi-Fi settings in Kiosk Mode.</summary>
         public bool? KioskModeWiFiConfigurationEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(KioskModeWiFiConfigurationEnabled)); }
-            set { BackingStore?.Set(nameof(KioskModeWiFiConfigurationEnabled), value); }
+            get { return BackingStore?.Get<bool?>("kioskModeWiFiConfigurationEnabled"); }
+            set { BackingStore?.Set("kioskModeWiFiConfigurationEnabled", value); }
         }
         /// <summary>Indicates whether or not to block unmuting the microphone on the device.</summary>
         public bool? MicrophoneForceMute {
-            get { return BackingStore?.Get<bool?>(nameof(MicrophoneForceMute)); }
-            set { BackingStore?.Set(nameof(MicrophoneForceMute), value); }
+            get { return BackingStore?.Get<bool?>("microphoneForceMute"); }
+            set { BackingStore?.Set("microphoneForceMute", value); }
         }
         /// <summary>Indicates whether or not to you want configure Microsoft Launcher.</summary>
         public bool? MicrosoftLauncherConfigurationEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(MicrosoftLauncherConfigurationEnabled)); }
-            set { BackingStore?.Set(nameof(MicrosoftLauncherConfigurationEnabled), value); }
+            get { return BackingStore?.Get<bool?>("microsoftLauncherConfigurationEnabled"); }
+            set { BackingStore?.Set("microsoftLauncherConfigurationEnabled", value); }
         }
         /// <summary>Indicates whether or not the user can modify the wallpaper to personalize their device.</summary>
         public bool? MicrosoftLauncherCustomWallpaperAllowUserModification {
-            get { return BackingStore?.Get<bool?>(nameof(MicrosoftLauncherCustomWallpaperAllowUserModification)); }
-            set { BackingStore?.Set(nameof(MicrosoftLauncherCustomWallpaperAllowUserModification), value); }
+            get { return BackingStore?.Get<bool?>("microsoftLauncherCustomWallpaperAllowUserModification"); }
+            set { BackingStore?.Set("microsoftLauncherCustomWallpaperAllowUserModification", value); }
         }
         /// <summary>Indicates whether or not to configure the wallpaper on the targeted devices.</summary>
         public bool? MicrosoftLauncherCustomWallpaperEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(MicrosoftLauncherCustomWallpaperEnabled)); }
-            set { BackingStore?.Set(nameof(MicrosoftLauncherCustomWallpaperEnabled), value); }
+            get { return BackingStore?.Get<bool?>("microsoftLauncherCustomWallpaperEnabled"); }
+            set { BackingStore?.Set("microsoftLauncherCustomWallpaperEnabled", value); }
         }
         /// <summary>Indicates the URL for the image file to use as the wallpaper on the targeted devices.</summary>
         public string MicrosoftLauncherCustomWallpaperImageUrl {
-            get { return BackingStore?.Get<string>(nameof(MicrosoftLauncherCustomWallpaperImageUrl)); }
-            set { BackingStore?.Set(nameof(MicrosoftLauncherCustomWallpaperImageUrl), value); }
+            get { return BackingStore?.Get<string>("microsoftLauncherCustomWallpaperImageUrl"); }
+            set { BackingStore?.Set("microsoftLauncherCustomWallpaperImageUrl", value); }
         }
         /// <summary>Indicates whether or not the user can modify the device dock configuration on the device.</summary>
         public bool? MicrosoftLauncherDockPresenceAllowUserModification {
-            get { return BackingStore?.Get<bool?>(nameof(MicrosoftLauncherDockPresenceAllowUserModification)); }
-            set { BackingStore?.Set(nameof(MicrosoftLauncherDockPresenceAllowUserModification), value); }
+            get { return BackingStore?.Get<bool?>("microsoftLauncherDockPresenceAllowUserModification"); }
+            set { BackingStore?.Set("microsoftLauncherDockPresenceAllowUserModification", value); }
         }
         /// <summary>Indicates whether or not you want to configure the device dock. Possible values are: notConfigured, show, hide, disabled.</summary>
         public MicrosoftLauncherDockPresence? MicrosoftLauncherDockPresenceConfiguration {
-            get { return BackingStore?.Get<MicrosoftLauncherDockPresence?>(nameof(MicrosoftLauncherDockPresenceConfiguration)); }
-            set { BackingStore?.Set(nameof(MicrosoftLauncherDockPresenceConfiguration), value); }
+            get { return BackingStore?.Get<MicrosoftLauncherDockPresence?>("microsoftLauncherDockPresenceConfiguration"); }
+            set { BackingStore?.Set("microsoftLauncherDockPresenceConfiguration", value); }
         }
         /// <summary>Indicates whether or not the user can modify the launcher feed on the device.</summary>
         public bool? MicrosoftLauncherFeedAllowUserModification {
-            get { return BackingStore?.Get<bool?>(nameof(MicrosoftLauncherFeedAllowUserModification)); }
-            set { BackingStore?.Set(nameof(MicrosoftLauncherFeedAllowUserModification), value); }
+            get { return BackingStore?.Get<bool?>("microsoftLauncherFeedAllowUserModification"); }
+            set { BackingStore?.Set("microsoftLauncherFeedAllowUserModification", value); }
         }
         /// <summary>Indicates whether or not you want to enable the launcher feed on the device.</summary>
         public bool? MicrosoftLauncherFeedEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(MicrosoftLauncherFeedEnabled)); }
-            set { BackingStore?.Set(nameof(MicrosoftLauncherFeedEnabled), value); }
+            get { return BackingStore?.Get<bool?>("microsoftLauncherFeedEnabled"); }
+            set { BackingStore?.Set("microsoftLauncherFeedEnabled", value); }
         }
         /// <summary>Indicates the search bar placement configuration on the device. Possible values are: notConfigured, top, bottom, hide.</summary>
         public MicrosoftLauncherSearchBarPlacement? MicrosoftLauncherSearchBarPlacementConfiguration {
-            get { return BackingStore?.Get<MicrosoftLauncherSearchBarPlacement?>(nameof(MicrosoftLauncherSearchBarPlacementConfiguration)); }
-            set { BackingStore?.Set(nameof(MicrosoftLauncherSearchBarPlacementConfiguration), value); }
+            get { return BackingStore?.Get<MicrosoftLauncherSearchBarPlacement?>("microsoftLauncherSearchBarPlacementConfiguration"); }
+            set { BackingStore?.Set("microsoftLauncherSearchBarPlacementConfiguration", value); }
         }
         /// <summary>Indicates whether or not the device will allow connecting to a temporary network connection at boot time.</summary>
         public bool? NetworkEscapeHatchAllowed {
-            get { return BackingStore?.Get<bool?>(nameof(NetworkEscapeHatchAllowed)); }
-            set { BackingStore?.Set(nameof(NetworkEscapeHatchAllowed), value); }
+            get { return BackingStore?.Get<bool?>("networkEscapeHatchAllowed"); }
+            set { BackingStore?.Set("networkEscapeHatchAllowed", value); }
         }
         /// <summary>Indicates whether or not to block NFC outgoing beam.</summary>
         public bool? NfcBlockOutgoingBeam {
-            get { return BackingStore?.Get<bool?>(nameof(NfcBlockOutgoingBeam)); }
-            set { BackingStore?.Set(nameof(NfcBlockOutgoingBeam), value); }
+            get { return BackingStore?.Get<bool?>("nfcBlockOutgoingBeam"); }
+            set { BackingStore?.Set("nfcBlockOutgoingBeam", value); }
         }
         /// <summary>Indicates whether or not the keyguard is disabled.</summary>
         public bool? PasswordBlockKeyguard {
-            get { return BackingStore?.Get<bool?>(nameof(PasswordBlockKeyguard)); }
-            set { BackingStore?.Set(nameof(PasswordBlockKeyguard), value); }
+            get { return BackingStore?.Get<bool?>("passwordBlockKeyguard"); }
+            set { BackingStore?.Set("passwordBlockKeyguard", value); }
         }
         /// <summary>List of device keyguard features to block. This collection can contain a maximum of 7 elements.</summary>
         public List<string> PasswordBlockKeyguardFeatures {
-            get { return BackingStore?.Get<List<string>>(nameof(PasswordBlockKeyguardFeatures)); }
-            set { BackingStore?.Set(nameof(PasswordBlockKeyguardFeatures), value); }
+            get { return BackingStore?.Get<List<string>>("passwordBlockKeyguardFeatures"); }
+            set { BackingStore?.Set("passwordBlockKeyguardFeatures", value); }
         }
         /// <summary>Indicates the amount of time that a password can be set for before it expires and a new password will be required. Valid values 1 to 365</summary>
         public int? PasswordExpirationDays {
-            get { return BackingStore?.Get<int?>(nameof(PasswordExpirationDays)); }
-            set { BackingStore?.Set(nameof(PasswordExpirationDays), value); }
+            get { return BackingStore?.Get<int?>("passwordExpirationDays"); }
+            set { BackingStore?.Set("passwordExpirationDays", value); }
         }
         /// <summary>Indicates the minimum length of the password required on the device. Valid values 4 to 16</summary>
         public int? PasswordMinimumLength {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinimumLength)); }
-            set { BackingStore?.Set(nameof(PasswordMinimumLength), value); }
+            get { return BackingStore?.Get<int?>("passwordMinimumLength"); }
+            set { BackingStore?.Set("passwordMinimumLength", value); }
         }
         /// <summary>Indicates the minimum number of letter characters required for device password. Valid values 1 to 16</summary>
         public int? PasswordMinimumLetterCharacters {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinimumLetterCharacters)); }
-            set { BackingStore?.Set(nameof(PasswordMinimumLetterCharacters), value); }
+            get { return BackingStore?.Get<int?>("passwordMinimumLetterCharacters"); }
+            set { BackingStore?.Set("passwordMinimumLetterCharacters", value); }
         }
         /// <summary>Indicates the minimum number of lower case characters required for device password. Valid values 1 to 16</summary>
         public int? PasswordMinimumLowerCaseCharacters {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinimumLowerCaseCharacters)); }
-            set { BackingStore?.Set(nameof(PasswordMinimumLowerCaseCharacters), value); }
+            get { return BackingStore?.Get<int?>("passwordMinimumLowerCaseCharacters"); }
+            set { BackingStore?.Set("passwordMinimumLowerCaseCharacters", value); }
         }
         /// <summary>Indicates the minimum number of non-letter characters required for device password. Valid values 1 to 16</summary>
         public int? PasswordMinimumNonLetterCharacters {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinimumNonLetterCharacters)); }
-            set { BackingStore?.Set(nameof(PasswordMinimumNonLetterCharacters), value); }
+            get { return BackingStore?.Get<int?>("passwordMinimumNonLetterCharacters"); }
+            set { BackingStore?.Set("passwordMinimumNonLetterCharacters", value); }
         }
         /// <summary>Indicates the minimum number of numeric characters required for device password. Valid values 1 to 16</summary>
         public int? PasswordMinimumNumericCharacters {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinimumNumericCharacters)); }
-            set { BackingStore?.Set(nameof(PasswordMinimumNumericCharacters), value); }
+            get { return BackingStore?.Get<int?>("passwordMinimumNumericCharacters"); }
+            set { BackingStore?.Set("passwordMinimumNumericCharacters", value); }
         }
         /// <summary>Indicates the minimum number of symbol characters required for device password. Valid values 1 to 16</summary>
         public int? PasswordMinimumSymbolCharacters {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinimumSymbolCharacters)); }
-            set { BackingStore?.Set(nameof(PasswordMinimumSymbolCharacters), value); }
+            get { return BackingStore?.Get<int?>("passwordMinimumSymbolCharacters"); }
+            set { BackingStore?.Set("passwordMinimumSymbolCharacters", value); }
         }
         /// <summary>Indicates the minimum number of upper case letter characters required for device password. Valid values 1 to 16</summary>
         public int? PasswordMinimumUpperCaseCharacters {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinimumUpperCaseCharacters)); }
-            set { BackingStore?.Set(nameof(PasswordMinimumUpperCaseCharacters), value); }
+            get { return BackingStore?.Get<int?>("passwordMinimumUpperCaseCharacters"); }
+            set { BackingStore?.Set("passwordMinimumUpperCaseCharacters", value); }
         }
         /// <summary>Minutes of inactivity before the screen times out.</summary>
         public int? PasswordMinutesOfInactivityBeforeScreenTimeout {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinutesOfInactivityBeforeScreenTimeout)); }
-            set { BackingStore?.Set(nameof(PasswordMinutesOfInactivityBeforeScreenTimeout), value); }
+            get { return BackingStore?.Get<int?>("passwordMinutesOfInactivityBeforeScreenTimeout"); }
+            set { BackingStore?.Set("passwordMinutesOfInactivityBeforeScreenTimeout", value); }
         }
         /// <summary>Indicates the length of password history, where the user will not be able to enter a new password that is the same as any password in the history. Valid values 0 to 24</summary>
         public int? PasswordPreviousPasswordCountToBlock {
-            get { return BackingStore?.Get<int?>(nameof(PasswordPreviousPasswordCountToBlock)); }
-            set { BackingStore?.Set(nameof(PasswordPreviousPasswordCountToBlock), value); }
+            get { return BackingStore?.Get<int?>("passwordPreviousPasswordCountToBlock"); }
+            set { BackingStore?.Set("passwordPreviousPasswordCountToBlock", value); }
         }
         /// <summary>Indicates the minimum password quality required on the device. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.</summary>
         public AndroidDeviceOwnerRequiredPasswordType? PasswordRequiredType {
-            get { return BackingStore?.Get<AndroidDeviceOwnerRequiredPasswordType?>(nameof(PasswordRequiredType)); }
-            set { BackingStore?.Set(nameof(PasswordRequiredType), value); }
+            get { return BackingStore?.Get<AndroidDeviceOwnerRequiredPasswordType?>("passwordRequiredType"); }
+            set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>Indicates the timeout period after which a device must be unlocked using a form of strong authentication. Possible values are: deviceDefault, daily, unkownFutureValue.</summary>
         public AndroidDeviceOwnerRequiredPasswordUnlock? PasswordRequireUnlock {
-            get { return BackingStore?.Get<AndroidDeviceOwnerRequiredPasswordUnlock?>(nameof(PasswordRequireUnlock)); }
-            set { BackingStore?.Set(nameof(PasswordRequireUnlock), value); }
+            get { return BackingStore?.Get<AndroidDeviceOwnerRequiredPasswordUnlock?>("passwordRequireUnlock"); }
+            set { BackingStore?.Set("passwordRequireUnlock", value); }
         }
         /// <summary>Indicates the number of times a user can enter an incorrect password before the device is wiped. Valid values 4 to 11</summary>
         public int? PasswordSignInFailureCountBeforeFactoryReset {
-            get { return BackingStore?.Get<int?>(nameof(PasswordSignInFailureCountBeforeFactoryReset)); }
-            set { BackingStore?.Set(nameof(PasswordSignInFailureCountBeforeFactoryReset), value); }
+            get { return BackingStore?.Get<int?>("passwordSignInFailureCountBeforeFactoryReset"); }
+            set { BackingStore?.Set("passwordSignInFailureCountBeforeFactoryReset", value); }
         }
         /// <summary>Indicates whether the user can install apps from unknown sources on the personal profile.</summary>
         public bool? PersonalProfileAppsAllowInstallFromUnknownSources {
-            get { return BackingStore?.Get<bool?>(nameof(PersonalProfileAppsAllowInstallFromUnknownSources)); }
-            set { BackingStore?.Set(nameof(PersonalProfileAppsAllowInstallFromUnknownSources), value); }
+            get { return BackingStore?.Get<bool?>("personalProfileAppsAllowInstallFromUnknownSources"); }
+            set { BackingStore?.Set("personalProfileAppsAllowInstallFromUnknownSources", value); }
         }
         /// <summary>Indicates whether to disable the use of the camera on the personal profile.</summary>
         public bool? PersonalProfileCameraBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(PersonalProfileCameraBlocked)); }
-            set { BackingStore?.Set(nameof(PersonalProfileCameraBlocked), value); }
+            get { return BackingStore?.Get<bool?>("personalProfileCameraBlocked"); }
+            set { BackingStore?.Set("personalProfileCameraBlocked", value); }
         }
         /// <summary>Policy applied to applications in the personal profile. This collection can contain a maximum of 500 elements.</summary>
         public List<AppListItem> PersonalProfilePersonalApplications {
-            get { return BackingStore?.Get<List<AppListItem>>(nameof(PersonalProfilePersonalApplications)); }
-            set { BackingStore?.Set(nameof(PersonalProfilePersonalApplications), value); }
+            get { return BackingStore?.Get<List<AppListItem>>("personalProfilePersonalApplications"); }
+            set { BackingStore?.Set("personalProfilePersonalApplications", value); }
         }
         /// <summary>Used together with PersonalProfilePersonalApplications to control how apps in the personal profile are allowed or blocked. Possible values are: notConfigured, blockedApps, allowedApps.</summary>
         public PersonalProfilePersonalPlayStoreMode? PersonalProfilePlayStoreMode {
-            get { return BackingStore?.Get<PersonalProfilePersonalPlayStoreMode?>(nameof(PersonalProfilePlayStoreMode)); }
-            set { BackingStore?.Set(nameof(PersonalProfilePlayStoreMode), value); }
+            get { return BackingStore?.Get<PersonalProfilePersonalPlayStoreMode?>("personalProfilePlayStoreMode"); }
+            set { BackingStore?.Set("personalProfilePlayStoreMode", value); }
         }
         /// <summary>Indicates whether to disable the capability to take screenshots on the personal profile.</summary>
         public bool? PersonalProfileScreenCaptureBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(PersonalProfileScreenCaptureBlocked)); }
-            set { BackingStore?.Set(nameof(PersonalProfileScreenCaptureBlocked), value); }
+            get { return BackingStore?.Get<bool?>("personalProfileScreenCaptureBlocked"); }
+            set { BackingStore?.Set("personalProfileScreenCaptureBlocked", value); }
         }
         /// <summary>Indicates the Play Store mode of the device. Possible values are: notConfigured, allowList, blockList.</summary>
         public AndroidDeviceOwnerPlayStoreMode? PlayStoreMode {
-            get { return BackingStore?.Get<AndroidDeviceOwnerPlayStoreMode?>(nameof(PlayStoreMode)); }
-            set { BackingStore?.Set(nameof(PlayStoreMode), value); }
+            get { return BackingStore?.Get<AndroidDeviceOwnerPlayStoreMode?>("playStoreMode"); }
+            set { BackingStore?.Set("playStoreMode", value); }
         }
         /// <summary>Indicates whether or not to disable the capability to take screenshots.</summary>
         public bool? ScreenCaptureBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(ScreenCaptureBlocked)); }
-            set { BackingStore?.Set(nameof(ScreenCaptureBlocked), value); }
+            get { return BackingStore?.Get<bool?>("screenCaptureBlocked"); }
+            set { BackingStore?.Set("screenCaptureBlocked", value); }
+        }
+        /// <summary>Represents the security common criteria mode enabled provided to users when they attempt to modify managed settings on their device.</summary>
+        public bool? SecurityCommonCriteriaModeEnabled {
+            get { return BackingStore?.Get<bool?>("securityCommonCriteriaModeEnabled"); }
+            set { BackingStore?.Set("securityCommonCriteriaModeEnabled", value); }
         }
         /// <summary>Indicates whether or not the user is allowed to access developer settings like developer options and safe boot on the device.</summary>
         public bool? SecurityDeveloperSettingsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(SecurityDeveloperSettingsEnabled)); }
-            set { BackingStore?.Set(nameof(SecurityDeveloperSettingsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("securityDeveloperSettingsEnabled"); }
+            set { BackingStore?.Set("securityDeveloperSettingsEnabled", value); }
         }
         /// <summary>Indicates whether or not verify apps is required.</summary>
         public bool? SecurityRequireVerifyApps {
-            get { return BackingStore?.Get<bool?>(nameof(SecurityRequireVerifyApps)); }
-            set { BackingStore?.Set(nameof(SecurityRequireVerifyApps), value); }
+            get { return BackingStore?.Get<bool?>("securityRequireVerifyApps"); }
+            set { BackingStore?.Set("securityRequireVerifyApps", value); }
         }
         /// <summary>Represents the customized short help text provided to users when they attempt to modify managed settings on their device.</summary>
         public AndroidDeviceOwnerUserFacingMessage ShortHelpText {
-            get { return BackingStore?.Get<AndroidDeviceOwnerUserFacingMessage>(nameof(ShortHelpText)); }
-            set { BackingStore?.Set(nameof(ShortHelpText), value); }
+            get { return BackingStore?.Get<AndroidDeviceOwnerUserFacingMessage>("shortHelpText"); }
+            set { BackingStore?.Set("shortHelpText", value); }
         }
         /// <summary>Indicates whether or the status bar is disabled, including notifications, quick settings and other screen overlays.</summary>
         public bool? StatusBarBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(StatusBarBlocked)); }
-            set { BackingStore?.Set(nameof(StatusBarBlocked), value); }
+            get { return BackingStore?.Get<bool?>("statusBarBlocked"); }
+            set { BackingStore?.Set("statusBarBlocked", value); }
         }
         /// <summary>List of modes in which the device&apos;s display will stay powered-on. This collection can contain a maximum of 4 elements.</summary>
         public List<string> StayOnModes {
-            get { return BackingStore?.Get<List<string>>(nameof(StayOnModes)); }
-            set { BackingStore?.Set(nameof(StayOnModes), value); }
+            get { return BackingStore?.Get<List<string>>("stayOnModes"); }
+            set { BackingStore?.Set("stayOnModes", value); }
         }
         /// <summary>Indicates whether or not to allow USB mass storage.</summary>
         public bool? StorageAllowUsb {
-            get { return BackingStore?.Get<bool?>(nameof(StorageAllowUsb)); }
-            set { BackingStore?.Set(nameof(StorageAllowUsb), value); }
+            get { return BackingStore?.Get<bool?>("storageAllowUsb"); }
+            set { BackingStore?.Set("storageAllowUsb", value); }
         }
         /// <summary>Indicates whether or not to block external media.</summary>
         public bool? StorageBlockExternalMedia {
-            get { return BackingStore?.Get<bool?>(nameof(StorageBlockExternalMedia)); }
-            set { BackingStore?.Set(nameof(StorageBlockExternalMedia), value); }
+            get { return BackingStore?.Get<bool?>("storageBlockExternalMedia"); }
+            set { BackingStore?.Set("storageBlockExternalMedia", value); }
         }
         /// <summary>Indicates whether or not to block USB file transfer.</summary>
         public bool? StorageBlockUsbFileTransfer {
-            get { return BackingStore?.Get<bool?>(nameof(StorageBlockUsbFileTransfer)); }
-            set { BackingStore?.Set(nameof(StorageBlockUsbFileTransfer), value); }
+            get { return BackingStore?.Get<bool?>("storageBlockUsbFileTransfer"); }
+            set { BackingStore?.Set("storageBlockUsbFileTransfer", value); }
         }
         /// <summary>Indicates the annually repeating time periods during which system updates are postponed. This collection can contain a maximum of 500 elements.</summary>
         public List<AndroidDeviceOwnerSystemUpdateFreezePeriod> SystemUpdateFreezePeriods {
-            get { return BackingStore?.Get<List<AndroidDeviceOwnerSystemUpdateFreezePeriod>>(nameof(SystemUpdateFreezePeriods)); }
-            set { BackingStore?.Set(nameof(SystemUpdateFreezePeriods), value); }
+            get { return BackingStore?.Get<List<AndroidDeviceOwnerSystemUpdateFreezePeriod>>("systemUpdateFreezePeriods"); }
+            set { BackingStore?.Set("systemUpdateFreezePeriods", value); }
         }
         /// <summary>The type of system update configuration. Possible values are: deviceDefault, postpone, windowed, automatic.</summary>
         public AndroidDeviceOwnerSystemUpdateInstallType? SystemUpdateInstallType {
-            get { return BackingStore?.Get<AndroidDeviceOwnerSystemUpdateInstallType?>(nameof(SystemUpdateInstallType)); }
-            set { BackingStore?.Set(nameof(SystemUpdateInstallType), value); }
+            get { return BackingStore?.Get<AndroidDeviceOwnerSystemUpdateInstallType?>("systemUpdateInstallType"); }
+            set { BackingStore?.Set("systemUpdateInstallType", value); }
         }
         /// <summary>Indicates the number of minutes after midnight that the system update window ends. Valid values 0 to 1440</summary>
         public int? SystemUpdateWindowEndMinutesAfterMidnight {
-            get { return BackingStore?.Get<int?>(nameof(SystemUpdateWindowEndMinutesAfterMidnight)); }
-            set { BackingStore?.Set(nameof(SystemUpdateWindowEndMinutesAfterMidnight), value); }
+            get { return BackingStore?.Get<int?>("systemUpdateWindowEndMinutesAfterMidnight"); }
+            set { BackingStore?.Set("systemUpdateWindowEndMinutesAfterMidnight", value); }
         }
         /// <summary>Indicates the number of minutes after midnight that the system update window starts. Valid values 0 to 1440</summary>
         public int? SystemUpdateWindowStartMinutesAfterMidnight {
-            get { return BackingStore?.Get<int?>(nameof(SystemUpdateWindowStartMinutesAfterMidnight)); }
-            set { BackingStore?.Set(nameof(SystemUpdateWindowStartMinutesAfterMidnight), value); }
+            get { return BackingStore?.Get<int?>("systemUpdateWindowStartMinutesAfterMidnight"); }
+            set { BackingStore?.Set("systemUpdateWindowStartMinutesAfterMidnight", value); }
         }
         /// <summary>Whether or not to block Android system prompt windows, like toasts, phone activities, and system alerts.</summary>
         public bool? SystemWindowsBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(SystemWindowsBlocked)); }
-            set { BackingStore?.Set(nameof(SystemWindowsBlocked), value); }
+            get { return BackingStore?.Get<bool?>("systemWindowsBlocked"); }
+            set { BackingStore?.Set("systemWindowsBlocked", value); }
         }
         /// <summary>Indicates whether or not adding users and profiles is disabled.</summary>
         public bool? UsersBlockAdd {
-            get { return BackingStore?.Get<bool?>(nameof(UsersBlockAdd)); }
-            set { BackingStore?.Set(nameof(UsersBlockAdd), value); }
+            get { return BackingStore?.Get<bool?>("usersBlockAdd"); }
+            set { BackingStore?.Set("usersBlockAdd", value); }
         }
         /// <summary>Indicates whether or not to disable removing other users from the device.</summary>
         public bool? UsersBlockRemove {
-            get { return BackingStore?.Get<bool?>(nameof(UsersBlockRemove)); }
-            set { BackingStore?.Set(nameof(UsersBlockRemove), value); }
+            get { return BackingStore?.Get<bool?>("usersBlockRemove"); }
+            set { BackingStore?.Set("usersBlockRemove", value); }
         }
         /// <summary>Indicates whether or not adjusting the master volume is disabled.</summary>
         public bool? VolumeBlockAdjustment {
-            get { return BackingStore?.Get<bool?>(nameof(VolumeBlockAdjustment)); }
-            set { BackingStore?.Set(nameof(VolumeBlockAdjustment), value); }
+            get { return BackingStore?.Get<bool?>("volumeBlockAdjustment"); }
+            set { BackingStore?.Set("volumeBlockAdjustment", value); }
         }
         /// <summary>If an always on VPN package name is specified, whether or not to lock network traffic when that VPN is disconnected.</summary>
         public bool? VpnAlwaysOnLockdownMode {
-            get { return BackingStore?.Get<bool?>(nameof(VpnAlwaysOnLockdownMode)); }
-            set { BackingStore?.Set(nameof(VpnAlwaysOnLockdownMode), value); }
+            get { return BackingStore?.Get<bool?>("vpnAlwaysOnLockdownMode"); }
+            set { BackingStore?.Set("vpnAlwaysOnLockdownMode", value); }
         }
         /// <summary>Android app package name for app that will handle an always-on VPN connection.</summary>
         public string VpnAlwaysOnPackageIdentifier {
-            get { return BackingStore?.Get<string>(nameof(VpnAlwaysOnPackageIdentifier)); }
-            set { BackingStore?.Set(nameof(VpnAlwaysOnPackageIdentifier), value); }
+            get { return BackingStore?.Get<string>("vpnAlwaysOnPackageIdentifier"); }
+            set { BackingStore?.Set("vpnAlwaysOnPackageIdentifier", value); }
         }
         /// <summary>Indicates whether or not to block the user from editing the wifi connection settings.</summary>
         public bool? WifiBlockEditConfigurations {
-            get { return BackingStore?.Get<bool?>(nameof(WifiBlockEditConfigurations)); }
-            set { BackingStore?.Set(nameof(WifiBlockEditConfigurations), value); }
+            get { return BackingStore?.Get<bool?>("wifiBlockEditConfigurations"); }
+            set { BackingStore?.Set("wifiBlockEditConfigurations", value); }
         }
         /// <summary>Indicates whether or not to block the user from editing just the networks defined by the policy.</summary>
         public bool? WifiBlockEditPolicyDefinedConfigurations {
-            get { return BackingStore?.Get<bool?>(nameof(WifiBlockEditPolicyDefinedConfigurations)); }
-            set { BackingStore?.Set(nameof(WifiBlockEditPolicyDefinedConfigurations), value); }
+            get { return BackingStore?.Get<bool?>("wifiBlockEditPolicyDefinedConfigurations"); }
+            set { BackingStore?.Set("wifiBlockEditPolicyDefinedConfigurations", value); }
         }
         /// <summary>Indicates the number of days that a work profile password can be set before it expires and a new password will be required. Valid values 1 to 365</summary>
         public int? WorkProfilePasswordExpirationDays {
-            get { return BackingStore?.Get<int?>(nameof(WorkProfilePasswordExpirationDays)); }
-            set { BackingStore?.Set(nameof(WorkProfilePasswordExpirationDays), value); }
+            get { return BackingStore?.Get<int?>("workProfilePasswordExpirationDays"); }
+            set { BackingStore?.Set("workProfilePasswordExpirationDays", value); }
         }
         /// <summary>Indicates the minimum length of the work profile password. Valid values 4 to 16</summary>
         public int? WorkProfilePasswordMinimumLength {
-            get { return BackingStore?.Get<int?>(nameof(WorkProfilePasswordMinimumLength)); }
-            set { BackingStore?.Set(nameof(WorkProfilePasswordMinimumLength), value); }
+            get { return BackingStore?.Get<int?>("workProfilePasswordMinimumLength"); }
+            set { BackingStore?.Set("workProfilePasswordMinimumLength", value); }
         }
         /// <summary>Indicates the minimum number of letter characters required for the work profile password. Valid values 1 to 16</summary>
         public int? WorkProfilePasswordMinimumLetterCharacters {
-            get { return BackingStore?.Get<int?>(nameof(WorkProfilePasswordMinimumLetterCharacters)); }
-            set { BackingStore?.Set(nameof(WorkProfilePasswordMinimumLetterCharacters), value); }
+            get { return BackingStore?.Get<int?>("workProfilePasswordMinimumLetterCharacters"); }
+            set { BackingStore?.Set("workProfilePasswordMinimumLetterCharacters", value); }
         }
         /// <summary>Indicates the minimum number of lower-case characters required for the work profile password. Valid values 1 to 16</summary>
         public int? WorkProfilePasswordMinimumLowerCaseCharacters {
-            get { return BackingStore?.Get<int?>(nameof(WorkProfilePasswordMinimumLowerCaseCharacters)); }
-            set { BackingStore?.Set(nameof(WorkProfilePasswordMinimumLowerCaseCharacters), value); }
+            get { return BackingStore?.Get<int?>("workProfilePasswordMinimumLowerCaseCharacters"); }
+            set { BackingStore?.Set("workProfilePasswordMinimumLowerCaseCharacters", value); }
         }
         /// <summary>Indicates the minimum number of non-letter characters required for the work profile password. Valid values 1 to 16</summary>
         public int? WorkProfilePasswordMinimumNonLetterCharacters {
-            get { return BackingStore?.Get<int?>(nameof(WorkProfilePasswordMinimumNonLetterCharacters)); }
-            set { BackingStore?.Set(nameof(WorkProfilePasswordMinimumNonLetterCharacters), value); }
+            get { return BackingStore?.Get<int?>("workProfilePasswordMinimumNonLetterCharacters"); }
+            set { BackingStore?.Set("workProfilePasswordMinimumNonLetterCharacters", value); }
         }
         /// <summary>Indicates the minimum number of numeric characters required for the work profile password. Valid values 1 to 16</summary>
         public int? WorkProfilePasswordMinimumNumericCharacters {
-            get { return BackingStore?.Get<int?>(nameof(WorkProfilePasswordMinimumNumericCharacters)); }
-            set { BackingStore?.Set(nameof(WorkProfilePasswordMinimumNumericCharacters), value); }
+            get { return BackingStore?.Get<int?>("workProfilePasswordMinimumNumericCharacters"); }
+            set { BackingStore?.Set("workProfilePasswordMinimumNumericCharacters", value); }
         }
         /// <summary>Indicates the minimum number of symbol characters required for the work profile password. Valid values 1 to 16</summary>
         public int? WorkProfilePasswordMinimumSymbolCharacters {
-            get { return BackingStore?.Get<int?>(nameof(WorkProfilePasswordMinimumSymbolCharacters)); }
-            set { BackingStore?.Set(nameof(WorkProfilePasswordMinimumSymbolCharacters), value); }
+            get { return BackingStore?.Get<int?>("workProfilePasswordMinimumSymbolCharacters"); }
+            set { BackingStore?.Set("workProfilePasswordMinimumSymbolCharacters", value); }
         }
         /// <summary>Indicates the minimum number of upper-case letter characters required for the work profile password. Valid values 1 to 16</summary>
         public int? WorkProfilePasswordMinimumUpperCaseCharacters {
-            get { return BackingStore?.Get<int?>(nameof(WorkProfilePasswordMinimumUpperCaseCharacters)); }
-            set { BackingStore?.Set(nameof(WorkProfilePasswordMinimumUpperCaseCharacters), value); }
+            get { return BackingStore?.Get<int?>("workProfilePasswordMinimumUpperCaseCharacters"); }
+            set { BackingStore?.Set("workProfilePasswordMinimumUpperCaseCharacters", value); }
         }
         /// <summary>Indicates the length of the work profile password history, where the user will not be able to enter a new password that is the same as any password in the history. Valid values 0 to 24</summary>
         public int? WorkProfilePasswordPreviousPasswordCountToBlock {
-            get { return BackingStore?.Get<int?>(nameof(WorkProfilePasswordPreviousPasswordCountToBlock)); }
-            set { BackingStore?.Set(nameof(WorkProfilePasswordPreviousPasswordCountToBlock), value); }
+            get { return BackingStore?.Get<int?>("workProfilePasswordPreviousPasswordCountToBlock"); }
+            set { BackingStore?.Set("workProfilePasswordPreviousPasswordCountToBlock", value); }
         }
         /// <summary>Indicates the minimum password quality required on the work profile password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.</summary>
         public AndroidDeviceOwnerRequiredPasswordType? WorkProfilePasswordRequiredType {
-            get { return BackingStore?.Get<AndroidDeviceOwnerRequiredPasswordType?>(nameof(WorkProfilePasswordRequiredType)); }
-            set { BackingStore?.Set(nameof(WorkProfilePasswordRequiredType), value); }
+            get { return BackingStore?.Get<AndroidDeviceOwnerRequiredPasswordType?>("workProfilePasswordRequiredType"); }
+            set { BackingStore?.Set("workProfilePasswordRequiredType", value); }
         }
         /// <summary>Indicates the timeout period after which a work profile must be unlocked using a form of strong authentication. Possible values are: deviceDefault, daily, unkownFutureValue.</summary>
         public AndroidDeviceOwnerRequiredPasswordUnlock? WorkProfilePasswordRequireUnlock {
-            get { return BackingStore?.Get<AndroidDeviceOwnerRequiredPasswordUnlock?>(nameof(WorkProfilePasswordRequireUnlock)); }
-            set { BackingStore?.Set(nameof(WorkProfilePasswordRequireUnlock), value); }
+            get { return BackingStore?.Get<AndroidDeviceOwnerRequiredPasswordUnlock?>("workProfilePasswordRequireUnlock"); }
+            set { BackingStore?.Set("workProfilePasswordRequireUnlock", value); }
         }
         /// <summary>Indicates the number of times a user can enter an incorrect work profile password before the device is wiped. Valid values 4 to 11</summary>
         public int? WorkProfilePasswordSignInFailureCountBeforeFactoryReset {
-            get { return BackingStore?.Get<int?>(nameof(WorkProfilePasswordSignInFailureCountBeforeFactoryReset)); }
-            set { BackingStore?.Set(nameof(WorkProfilePasswordSignInFailureCountBeforeFactoryReset), value); }
+            get { return BackingStore?.Get<int?>("workProfilePasswordSignInFailureCountBeforeFactoryReset"); }
+            set { BackingStore?.Set("workProfilePasswordSignInFailureCountBeforeFactoryReset", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -695,6 +705,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"dataRoamingBlocked", n => { DataRoamingBlocked = n.GetBoolValue(); } },
                 {"dateTimeConfigurationBlocked", n => { DateTimeConfigurationBlocked = n.GetBoolValue(); } },
                 {"detailedHelpText", n => { DetailedHelpText = n.GetObjectValue<AndroidDeviceOwnerUserFacingMessage>(AndroidDeviceOwnerUserFacingMessage.CreateFromDiscriminatorValue); } },
+                {"deviceOwnerLockScreenMessage", n => { DeviceOwnerLockScreenMessage = n.GetObjectValue<AndroidDeviceOwnerUserFacingMessage>(AndroidDeviceOwnerUserFacingMessage.CreateFromDiscriminatorValue); } },
                 {"enrollmentProfile", n => { EnrollmentProfile = n.GetEnumValue<AndroidDeviceOwnerEnrollmentProfileType>(); } },
                 {"factoryResetBlocked", n => { FactoryResetBlocked = n.GetBoolValue(); } },
                 {"factoryResetDeviceAdministratorEmails", n => { FactoryResetDeviceAdministratorEmails = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
@@ -778,6 +789,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"personalProfileScreenCaptureBlocked", n => { PersonalProfileScreenCaptureBlocked = n.GetBoolValue(); } },
                 {"playStoreMode", n => { PlayStoreMode = n.GetEnumValue<AndroidDeviceOwnerPlayStoreMode>(); } },
                 {"screenCaptureBlocked", n => { ScreenCaptureBlocked = n.GetBoolValue(); } },
+                {"securityCommonCriteriaModeEnabled", n => { SecurityCommonCriteriaModeEnabled = n.GetBoolValue(); } },
                 {"securityDeveloperSettingsEnabled", n => { SecurityDeveloperSettingsEnabled = n.GetBoolValue(); } },
                 {"securityRequireVerifyApps", n => { SecurityRequireVerifyApps = n.GetBoolValue(); } },
                 {"shortHelpText", n => { ShortHelpText = n.GetObjectValue<AndroidDeviceOwnerUserFacingMessage>(AndroidDeviceOwnerUserFacingMessage.CreateFromDiscriminatorValue); } },
@@ -836,6 +848,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("dataRoamingBlocked", DataRoamingBlocked);
             writer.WriteBoolValue("dateTimeConfigurationBlocked", DateTimeConfigurationBlocked);
             writer.WriteObjectValue<AndroidDeviceOwnerUserFacingMessage>("detailedHelpText", DetailedHelpText);
+            writer.WriteObjectValue<AndroidDeviceOwnerUserFacingMessage>("deviceOwnerLockScreenMessage", DeviceOwnerLockScreenMessage);
             writer.WriteEnumValue<AndroidDeviceOwnerEnrollmentProfileType>("enrollmentProfile", EnrollmentProfile);
             writer.WriteBoolValue("factoryResetBlocked", FactoryResetBlocked);
             writer.WriteCollectionOfPrimitiveValues<string>("factoryResetDeviceAdministratorEmails", FactoryResetDeviceAdministratorEmails);
@@ -919,6 +932,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("personalProfileScreenCaptureBlocked", PersonalProfileScreenCaptureBlocked);
             writer.WriteEnumValue<AndroidDeviceOwnerPlayStoreMode>("playStoreMode", PlayStoreMode);
             writer.WriteBoolValue("screenCaptureBlocked", ScreenCaptureBlocked);
+            writer.WriteBoolValue("securityCommonCriteriaModeEnabled", SecurityCommonCriteriaModeEnabled);
             writer.WriteBoolValue("securityDeveloperSettingsEnabled", SecurityDeveloperSettingsEnabled);
             writer.WriteBoolValue("securityRequireVerifyApps", SecurityRequireVerifyApps);
             writer.WriteObjectValue<AndroidDeviceOwnerUserFacingMessage>("shortHelpText", ShortHelpText);

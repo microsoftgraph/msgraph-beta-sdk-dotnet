@@ -5,55 +5,55 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidForWorkVpnConfiguration : DeviceConfiguration, IParsable {
-        /// <summary>Authentication method. Possible values are: certificate, usernameAndPassword, sharedSecret, derivedCredential, azureAD.</summary>
+        /// <summary>VPN Authentication Method.</summary>
         public VpnAuthenticationMethod? AuthenticationMethod {
-            get { return BackingStore?.Get<VpnAuthenticationMethod?>(nameof(AuthenticationMethod)); }
-            set { BackingStore?.Set(nameof(AuthenticationMethod), value); }
+            get { return BackingStore?.Get<VpnAuthenticationMethod?>("authenticationMethod"); }
+            set { BackingStore?.Set("authenticationMethod", value); }
         }
         /// <summary>Connection name displayed to the user.</summary>
         public string ConnectionName {
-            get { return BackingStore?.Get<string>(nameof(ConnectionName)); }
-            set { BackingStore?.Set(nameof(ConnectionName), value); }
+            get { return BackingStore?.Get<string>("connectionName"); }
+            set { BackingStore?.Set("connectionName", value); }
         }
-        /// <summary>Connection type. Possible values are: ciscoAnyConnect, pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn, citrix.</summary>
+        /// <summary>Android For Work VPN connection type.</summary>
         public AndroidForWorkVpnConnectionType? ConnectionType {
-            get { return BackingStore?.Get<AndroidForWorkVpnConnectionType?>(nameof(ConnectionType)); }
-            set { BackingStore?.Set(nameof(ConnectionType), value); }
+            get { return BackingStore?.Get<AndroidForWorkVpnConnectionType?>("connectionType"); }
+            set { BackingStore?.Set("connectionType", value); }
         }
         /// <summary>Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.</summary>
         public List<KeyValue> CustomData {
-            get { return BackingStore?.Get<List<KeyValue>>(nameof(CustomData)); }
-            set { BackingStore?.Set(nameof(CustomData), value); }
+            get { return BackingStore?.Get<List<KeyValue>>("customData"); }
+            set { BackingStore?.Set("customData", value); }
         }
         /// <summary>Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.</summary>
         public List<KeyValuePair> CustomKeyValueData {
-            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(CustomKeyValueData)); }
-            set { BackingStore?.Set(nameof(CustomKeyValueData), value); }
+            get { return BackingStore?.Get<List<KeyValuePair>>("customKeyValueData"); }
+            set { BackingStore?.Set("customKeyValueData", value); }
         }
         /// <summary>Fingerprint is a string that will be used to verify the VPN server can be trusted, which is only applicable when connection type is Check Point Capsule VPN.</summary>
         public string Fingerprint {
-            get { return BackingStore?.Get<string>(nameof(Fingerprint)); }
-            set { BackingStore?.Set(nameof(Fingerprint), value); }
+            get { return BackingStore?.Get<string>("fingerprint"); }
+            set { BackingStore?.Set("fingerprint", value); }
         }
         /// <summary>Identity certificate for client authentication when authentication method is certificate.</summary>
         public AndroidForWorkCertificateProfileBase IdentityCertificate {
-            get { return BackingStore?.Get<AndroidForWorkCertificateProfileBase>(nameof(IdentityCertificate)); }
-            set { BackingStore?.Set(nameof(IdentityCertificate), value); }
+            get { return BackingStore?.Get<AndroidForWorkCertificateProfileBase>("identityCertificate"); }
+            set { BackingStore?.Set("identityCertificate", value); }
         }
         /// <summary>Realm when connection type is set to Pulse Secure.</summary>
         public string Realm {
-            get { return BackingStore?.Get<string>(nameof(Realm)); }
-            set { BackingStore?.Set(nameof(Realm), value); }
+            get { return BackingStore?.Get<string>("realm"); }
+            set { BackingStore?.Set("realm", value); }
         }
         /// <summary>Role when connection type is set to Pulse Secure.</summary>
         public string Role {
-            get { return BackingStore?.Get<string>(nameof(Role)); }
-            set { BackingStore?.Set(nameof(Role), value); }
+            get { return BackingStore?.Get<string>("role"); }
+            set { BackingStore?.Set("role", value); }
         }
         /// <summary>List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.</summary>
         public List<VpnServer> Servers {
-            get { return BackingStore?.Get<List<VpnServer>>(nameof(Servers)); }
-            set { BackingStore?.Set(nameof(Servers), value); }
+            get { return BackingStore?.Get<List<VpnServer>>("servers"); }
+            set { BackingStore?.Set("servers", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

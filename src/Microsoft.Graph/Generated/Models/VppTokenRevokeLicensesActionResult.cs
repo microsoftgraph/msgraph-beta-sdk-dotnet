@@ -5,20 +5,20 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class VppTokenRevokeLicensesActionResult : VppTokenActionResult, IParsable {
-        /// <summary>The reason for the revoke licenses action failure. Possible values are: none, appleFailure, internalError, expiredVppToken, expiredApplePushNotificationCertificate.</summary>
+        /// <summary>Possible types of reasons for an Apple Volume Purchase Program token action failure.</summary>
         public VppTokenActionFailureReason? ActionFailureReason {
-            get { return BackingStore?.Get<VppTokenActionFailureReason?>(nameof(ActionFailureReason)); }
-            set { BackingStore?.Set(nameof(ActionFailureReason), value); }
+            get { return BackingStore?.Get<VppTokenActionFailureReason?>("actionFailureReason"); }
+            set { BackingStore?.Set("actionFailureReason", value); }
         }
         /// <summary>A count of the number of licenses that failed to revoke.</summary>
         public int? FailedLicensesCount {
-            get { return BackingStore?.Get<int?>(nameof(FailedLicensesCount)); }
-            set { BackingStore?.Set(nameof(FailedLicensesCount), value); }
+            get { return BackingStore?.Get<int?>("failedLicensesCount"); }
+            set { BackingStore?.Set("failedLicensesCount", value); }
         }
         /// <summary>A count of the number of licenses that were attempted to revoke.</summary>
         public int? TotalLicensesCount {
-            get { return BackingStore?.Get<int?>(nameof(TotalLicensesCount)); }
-            set { BackingStore?.Set(nameof(TotalLicensesCount), value); }
+            get { return BackingStore?.Get<int?>("totalLicensesCount"); }
+            set { BackingStore?.Set("totalLicensesCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

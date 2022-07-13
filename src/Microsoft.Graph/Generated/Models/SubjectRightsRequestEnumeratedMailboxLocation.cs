@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class SubjectRightsRequestEnumeratedMailboxLocation : SubjectRightsRequestMailboxLocation, IParsable {
         /// <summary>Collection of mailboxes that should be included in the search. Includes the UPN (user principal name) of each mailbox, for example, Monica.Thompson@contoso.com.</summary>
         public List<string> Upns {
-            get { return BackingStore?.Get<List<string>>(nameof(Upns)); }
-            set { BackingStore?.Set(nameof(Upns), value); }
+            get { return BackingStore?.Get<List<string>>("upns"); }
+            set { BackingStore?.Set("upns", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

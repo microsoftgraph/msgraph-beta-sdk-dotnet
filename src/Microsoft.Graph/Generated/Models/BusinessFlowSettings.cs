@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class BusinessFlowSettings : AccessReviewSettings, IParsable {
         /// <summary>The durationInDays property</summary>
         public int? DurationInDays {
-            get { return BackingStore?.Get<int?>(nameof(DurationInDays)); }
-            set { BackingStore?.Set(nameof(DurationInDays), value); }
+            get { return BackingStore?.Get<int?>("durationInDays"); }
+            set { BackingStore?.Set("durationInDays", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

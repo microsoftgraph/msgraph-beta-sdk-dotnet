@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidManagedAppRegistration : ManagedAppRegistration, IParsable {
         /// <summary>The patch version for the current android app registration</summary>
         public string PatchVersion {
-            get { return BackingStore?.Get<string>(nameof(PatchVersion)); }
-            set { BackingStore?.Set(nameof(PatchVersion), value); }
+            get { return BackingStore?.Get<string>("patchVersion"); }
+            set { BackingStore?.Set("patchVersion", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

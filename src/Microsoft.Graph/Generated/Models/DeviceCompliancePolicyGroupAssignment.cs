@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceCompliancePolicyGroupAssignment : Entity, IParsable {
         /// <summary>The navigation link to the  device compliance polic targeted.</summary>
         public Microsoft.Graph.Beta.Models.DeviceCompliancePolicy DeviceCompliancePolicy {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceCompliancePolicy>(nameof(DeviceCompliancePolicy)); }
-            set { BackingStore?.Set(nameof(DeviceCompliancePolicy), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceCompliancePolicy>("deviceCompliancePolicy"); }
+            set { BackingStore?.Set("deviceCompliancePolicy", value); }
         }
         /// <summary>Indicates if this group is should be excluded. Defaults that the group should be included</summary>
         public bool? ExcludeGroup {
-            get { return BackingStore?.Get<bool?>(nameof(ExcludeGroup)); }
-            set { BackingStore?.Set(nameof(ExcludeGroup), value); }
+            get { return BackingStore?.Get<bool?>("excludeGroup"); }
+            set { BackingStore?.Set("excludeGroup", value); }
         }
         /// <summary>The Id of the AAD group we are targeting the device compliance policy to.</summary>
         public string TargetGroupId {
-            get { return BackingStore?.Get<string>(nameof(TargetGroupId)); }
-            set { BackingStore?.Set(nameof(TargetGroupId), value); }
+            get { return BackingStore?.Get<string>("targetGroupId"); }
+            set { BackingStore?.Set("targetGroupId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

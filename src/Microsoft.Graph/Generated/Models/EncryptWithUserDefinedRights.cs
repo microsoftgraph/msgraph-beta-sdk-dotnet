@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class EncryptWithUserDefinedRights : EncryptContent, IParsable {
         /// <summary>The allowAdHocPermissions property</summary>
         public bool? AllowAdHocPermissions {
-            get { return BackingStore?.Get<bool?>(nameof(AllowAdHocPermissions)); }
-            set { BackingStore?.Set(nameof(AllowAdHocPermissions), value); }
+            get { return BackingStore?.Get<bool?>("allowAdHocPermissions"); }
+            set { BackingStore?.Set("allowAdHocPermissions", value); }
         }
         /// <summary>The allowMailForwarding property</summary>
         public bool? AllowMailForwarding {
-            get { return BackingStore?.Get<bool?>(nameof(AllowMailForwarding)); }
-            set { BackingStore?.Set(nameof(AllowMailForwarding), value); }
+            get { return BackingStore?.Get<bool?>("allowMailForwarding"); }
+            set { BackingStore?.Set("allowMailForwarding", value); }
         }
         /// <summary>The decryptionRightsManagementTemplateId property</summary>
         public string DecryptionRightsManagementTemplateId {
-            get { return BackingStore?.Get<string>(nameof(DecryptionRightsManagementTemplateId)); }
-            set { BackingStore?.Set(nameof(DecryptionRightsManagementTemplateId), value); }
+            get { return BackingStore?.Get<string>("decryptionRightsManagementTemplateId"); }
+            set { BackingStore?.Set("decryptionRightsManagementTemplateId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

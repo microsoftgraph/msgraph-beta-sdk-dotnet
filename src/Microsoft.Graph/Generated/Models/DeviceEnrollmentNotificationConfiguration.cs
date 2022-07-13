@@ -5,30 +5,30 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceEnrollmentNotificationConfiguration : DeviceEnrollmentConfiguration, IParsable {
-        /// <summary>Branding Options for the Enrollment Notification. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation, includeCompanyPortalLink, includeDeviceDetails.</summary>
+        /// <summary>Branding Options for the Message Template. Branding is defined in the Intune Admin Console.</summary>
         public EnrollmentNotificationBrandingOptions? BrandingOptions {
-            get { return BackingStore?.Get<EnrollmentNotificationBrandingOptions?>(nameof(BrandingOptions)); }
-            set { BackingStore?.Set(nameof(BrandingOptions), value); }
+            get { return BackingStore?.Get<EnrollmentNotificationBrandingOptions?>("brandingOptions"); }
+            set { BackingStore?.Set("brandingOptions", value); }
         }
         /// <summary>DefaultLocale for the Enrollment Notification</summary>
         public string DefaultLocale {
-            get { return BackingStore?.Get<string>(nameof(DefaultLocale)); }
-            set { BackingStore?.Set(nameof(DefaultLocale), value); }
+            get { return BackingStore?.Get<string>("defaultLocale"); }
+            set { BackingStore?.Set("defaultLocale", value); }
         }
         /// <summary>Notification Message Template Id</summary>
         public string NotificationMessageTemplateId {
-            get { return BackingStore?.Get<string>(nameof(NotificationMessageTemplateId)); }
-            set { BackingStore?.Set(nameof(NotificationMessageTemplateId), value); }
+            get { return BackingStore?.Get<string>("notificationMessageTemplateId"); }
+            set { BackingStore?.Set("notificationMessageTemplateId", value); }
         }
-        /// <summary>Platform type of the Enrollment Notification. Possible values are: allPlatforms, ios, windows, windowsPhone, android, androidForWork, mac.</summary>
+        /// <summary>This enum indicates the platform type for which the enrollment restriction applies.</summary>
         public EnrollmentRestrictionPlatformType? PlatformType {
-            get { return BackingStore?.Get<EnrollmentRestrictionPlatformType?>(nameof(PlatformType)); }
-            set { BackingStore?.Set(nameof(PlatformType), value); }
+            get { return BackingStore?.Get<EnrollmentRestrictionPlatformType?>("platformType"); }
+            set { BackingStore?.Set("platformType", value); }
         }
-        /// <summary>Template type of the Enrollment Notification. Possible values are: email, push, unknownFutureValue.</summary>
+        /// <summary>This enum indicates the Template type for which the enrollment notification applies.</summary>
         public EnrollmentNotificationTemplateType? TemplateType {
-            get { return BackingStore?.Get<EnrollmentNotificationTemplateType?>(nameof(TemplateType)); }
-            set { BackingStore?.Set(nameof(TemplateType), value); }
+            get { return BackingStore?.Get<EnrollmentNotificationTemplateType?>("templateType"); }
+            set { BackingStore?.Set("templateType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

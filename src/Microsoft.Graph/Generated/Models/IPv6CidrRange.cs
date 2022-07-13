@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class IPv6CidrRange : IpRange, IParsable {
         /// <summary>IPv6 address in CIDR notation. Not nullable.</summary>
         public string CidrAddress {
-            get { return BackingStore?.Get<string>(nameof(CidrAddress)); }
-            set { BackingStore?.Set(nameof(CidrAddress), value); }
+            get { return BackingStore?.Get<string>("cidrAddress"); }
+            set { BackingStore?.Set("cidrAddress", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,28 +8,34 @@ namespace Microsoft.Graph.Beta.Models {
     public class Windows81VpnConfiguration : WindowsVpnConfiguration, IParsable {
         /// <summary>Value indicating whether this policy only applies to Windows 8.1. This property is read-only.</summary>
         public bool? ApplyOnlyToWindows81 {
-            get { return BackingStore?.Get<bool?>(nameof(ApplyOnlyToWindows81)); }
-            set { BackingStore?.Set(nameof(ApplyOnlyToWindows81), value); }
+            get { return BackingStore?.Get<bool?>("applyOnlyToWindows81"); }
+            set { BackingStore?.Set("applyOnlyToWindows81", value); }
         }
-        /// <summary>Connection type. Possible values are: pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn.</summary>
+        /// <summary>Windows VPN connection type.</summary>
         public WindowsVpnConnectionType? ConnectionType {
-            get { return BackingStore?.Get<WindowsVpnConnectionType?>(nameof(ConnectionType)); }
-            set { BackingStore?.Set(nameof(ConnectionType), value); }
+            get { return BackingStore?.Get<WindowsVpnConnectionType?>("connectionType"); }
+            set { BackingStore?.Set("connectionType", value); }
         }
         /// <summary>Enable split tunneling for the VPN.</summary>
         public bool? EnableSplitTunneling {
-            get { return BackingStore?.Get<bool?>(nameof(EnableSplitTunneling)); }
-            set { BackingStore?.Set(nameof(EnableSplitTunneling), value); }
+            get { return BackingStore?.Get<bool?>("enableSplitTunneling"); }
+            set { BackingStore?.Set("enableSplitTunneling", value); }
         }
         /// <summary>Login group or domain when connection type is set to Dell SonicWALL Mobile Connection.</summary>
         public string LoginGroupOrDomain {
-            get { return BackingStore?.Get<string>(nameof(LoginGroupOrDomain)); }
-            set { BackingStore?.Set(nameof(LoginGroupOrDomain), value); }
+            get { return BackingStore?.Get<string>("loginGroupOrDomain"); }
+            set { BackingStore?.Set("loginGroupOrDomain", value); }
         }
         /// <summary>Proxy Server.</summary>
         public Windows81VpnProxyServer ProxyServer {
-            get { return BackingStore?.Get<Windows81VpnProxyServer>(nameof(ProxyServer)); }
-            set { BackingStore?.Set(nameof(ProxyServer), value); }
+            get { return BackingStore?.Get<Windows81VpnProxyServer>("proxyServer"); }
+            set { BackingStore?.Set("proxyServer", value); }
+        }
+        /// <summary>
+        /// Instantiates a new Windows81VpnConfiguration and sets the default values.
+        /// </summary>
+        public Windows81VpnConfiguration() : base() {
+            Type = "#microsoft.graph.windows81VpnConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

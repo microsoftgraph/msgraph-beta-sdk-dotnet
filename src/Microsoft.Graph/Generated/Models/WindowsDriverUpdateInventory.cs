@@ -8,48 +8,48 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsDriverUpdateInventory : Entity, IParsable {
         /// <summary>The number of devices for which this driver is applicable.</summary>
         public int? ApplicableDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(ApplicableDeviceCount)); }
-            set { BackingStore?.Set(nameof(ApplicableDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("applicableDeviceCount"); }
+            set { BackingStore?.Set("applicableDeviceCount", value); }
         }
-        /// <summary>The approval status for this driver. Possible values are: needsReview, declined, approved, suspended.</summary>
+        /// <summary>An enum type to represent approval status of a driver.</summary>
         public DriverApprovalStatus? ApprovalStatus {
-            get { return BackingStore?.Get<DriverApprovalStatus?>(nameof(ApprovalStatus)); }
-            set { BackingStore?.Set(nameof(ApprovalStatus), value); }
+            get { return BackingStore?.Get<DriverApprovalStatus?>("approvalStatus"); }
+            set { BackingStore?.Set("approvalStatus", value); }
         }
-        /// <summary>The category for this driver. Possible values are: recommended, previouslyApproved, other.</summary>
+        /// <summary>An enum type to represent which category a driver belongs to.</summary>
         public DriverCategory? Category {
-            get { return BackingStore?.Get<DriverCategory?>(nameof(Category)); }
-            set { BackingStore?.Set(nameof(Category), value); }
+            get { return BackingStore?.Get<DriverCategory?>("category"); }
+            set { BackingStore?.Set("category", value); }
         }
         /// <summary>The date time when a driver should be deployed if approvalStatus is approved.</summary>
         public DateTimeOffset? DeployDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DeployDateTime)); }
-            set { BackingStore?.Set(nameof(DeployDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("deployDateTime"); }
+            set { BackingStore?.Set("deployDateTime", value); }
         }
         /// <summary>The class of the driver.</summary>
         public string DriverClass {
-            get { return BackingStore?.Get<string>(nameof(DriverClass)); }
-            set { BackingStore?.Set(nameof(DriverClass), value); }
+            get { return BackingStore?.Get<string>("driverClass"); }
+            set { BackingStore?.Set("driverClass", value); }
         }
         /// <summary>The manufacturer of the driver.</summary>
         public string Manufacturer {
-            get { return BackingStore?.Get<string>(nameof(Manufacturer)); }
-            set { BackingStore?.Set(nameof(Manufacturer), value); }
+            get { return BackingStore?.Get<string>("manufacturer"); }
+            set { BackingStore?.Set("manufacturer", value); }
         }
         /// <summary>The name of the driver.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The release date time of the driver.</summary>
         public DateTimeOffset? ReleaseDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ReleaseDateTime)); }
-            set { BackingStore?.Set(nameof(ReleaseDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("releaseDateTime"); }
+            set { BackingStore?.Set("releaseDateTime", value); }
         }
         /// <summary>The version of the driver.</summary>
         public string Version {
-            get { return BackingStore?.Get<string>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<string>("version"); }
+            set { BackingStore?.Set("version", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

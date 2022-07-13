@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class PayloadTypes : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The notification content of a raw user notification that will be delivered to and consumed by the app client on all supported platforms (Windows, iOS, Android or WebPush) receiving this notification. At least one of Payload.RawContent or Payload.VisualContent needs to be valid for a POST Notification request.</summary>
         public string RawContent {
-            get { return BackingStore?.Get<string>(nameof(RawContent)); }
-            set { BackingStore?.Set(nameof(RawContent), value); }
+            get { return BackingStore?.Get<string>("rawContent"); }
+            set { BackingStore?.Set("rawContent", value); }
         }
         /// <summary>The visual content of a visual user notification, which will be consumed by the notification platform on each supported platform (Windows, iOS and Android only) and rendered for the user. At least one of Payload.RawContent or Payload.VisualContent needs to be valid for a POST Notification request.</summary>
         public VisualProperties VisualContent {
-            get { return BackingStore?.Get<VisualProperties>(nameof(VisualContent)); }
-            set { BackingStore?.Set(nameof(VisualContent), value); }
+            get { return BackingStore?.Get<VisualProperties>("visualContent"); }
+            set { BackingStore?.Set("visualContent", value); }
         }
         /// <summary>
         /// Instantiates a new payloadTypes and sets the default values.

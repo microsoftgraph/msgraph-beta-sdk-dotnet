@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class Win32LobAppPowerShellScriptDetection : Win32LobAppDetection, IParsable {
         /// <summary>A value indicating whether signature check is enforced</summary>
         public bool? EnforceSignatureCheck {
-            get { return BackingStore?.Get<bool?>(nameof(EnforceSignatureCheck)); }
-            set { BackingStore?.Set(nameof(EnforceSignatureCheck), value); }
+            get { return BackingStore?.Get<bool?>("enforceSignatureCheck"); }
+            set { BackingStore?.Set("enforceSignatureCheck", value); }
         }
         /// <summary>A value indicating whether this script should run as 32-bit</summary>
         public bool? RunAs32Bit {
-            get { return BackingStore?.Get<bool?>(nameof(RunAs32Bit)); }
-            set { BackingStore?.Set(nameof(RunAs32Bit), value); }
+            get { return BackingStore?.Get<bool?>("runAs32Bit"); }
+            set { BackingStore?.Set("runAs32Bit", value); }
         }
         /// <summary>The base64 encoded script content to detect Win32 Line of Business (LoB) app</summary>
         public string ScriptContent {
-            get { return BackingStore?.Get<string>(nameof(ScriptContent)); }
-            set { BackingStore?.Set(nameof(ScriptContent), value); }
+            get { return BackingStore?.Get<string>("scriptContent"); }
+            set { BackingStore?.Set("scriptContent", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

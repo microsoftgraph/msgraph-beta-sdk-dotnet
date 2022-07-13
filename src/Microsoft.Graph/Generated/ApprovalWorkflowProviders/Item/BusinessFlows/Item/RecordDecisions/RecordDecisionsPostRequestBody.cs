@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlows.Item
     public class RecordDecisionsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The justification property</summary>
         public string Justification {
-            get { return BackingStore?.Get<string>(nameof(Justification)); }
-            set { BackingStore?.Set(nameof(Justification), value); }
+            get { return BackingStore?.Get<string>("justification"); }
+            set { BackingStore?.Set("justification", value); }
         }
         /// <summary>The reviewResult property</summary>
         public string ReviewResult {
-            get { return BackingStore?.Get<string>(nameof(ReviewResult)); }
-            set { BackingStore?.Set(nameof(ReviewResult), value); }
+            get { return BackingStore?.Get<string>("reviewResult"); }
+            set { BackingStore?.Set("reviewResult", value); }
         }
         /// <summary>
         /// Instantiates a new recordDecisionsPostRequestBody and sets the default values.

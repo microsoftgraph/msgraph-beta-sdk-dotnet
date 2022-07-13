@@ -4,42 +4,42 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AccessPackageAssignmentResourceRole : Entity, IParsable {
         /// <summary>The access package assignments resulting in this role assignment. Read-only. Nullable.</summary>
         public List<AccessPackageAssignment> AccessPackageAssignments {
-            get { return BackingStore?.Get<List<AccessPackageAssignment>>(nameof(AccessPackageAssignments)); }
-            set { BackingStore?.Set(nameof(AccessPackageAssignments), value); }
+            get { return BackingStore?.Get<List<AccessPackageAssignment>>("accessPackageAssignments"); }
+            set { BackingStore?.Set("accessPackageAssignments", value); }
         }
         /// <summary>The accessPackageResourceRole property</summary>
         public Microsoft.Graph.Beta.Models.AccessPackageResourceRole AccessPackageResourceRole {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceRole>(nameof(AccessPackageResourceRole)); }
-            set { BackingStore?.Set(nameof(AccessPackageResourceRole), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceRole>("accessPackageResourceRole"); }
+            set { BackingStore?.Set("accessPackageResourceRole", value); }
         }
         /// <summary>The accessPackageResourceScope property</summary>
         public Microsoft.Graph.Beta.Models.AccessPackageResourceScope AccessPackageResourceScope {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceScope>(nameof(AccessPackageResourceScope)); }
-            set { BackingStore?.Set(nameof(AccessPackageResourceScope), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceScope>("accessPackageResourceScope"); }
+            set { BackingStore?.Set("accessPackageResourceScope", value); }
         }
         /// <summary>Read-only. Nullable. Supports $filter (eq) on objectId and $expand query parameters.</summary>
         public Microsoft.Graph.Beta.Models.AccessPackageSubject AccessPackageSubject {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageSubject>(nameof(AccessPackageSubject)); }
-            set { BackingStore?.Set(nameof(AccessPackageSubject), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageSubject>("accessPackageSubject"); }
+            set { BackingStore?.Set("accessPackageSubject", value); }
         }
         /// <summary>A unique identifier relative to the origin system, corresponding to the originId property of the accessPackageResourceRole.</summary>
         public string OriginId {
-            get { return BackingStore?.Get<string>(nameof(OriginId)); }
-            set { BackingStore?.Set(nameof(OriginId), value); }
+            get { return BackingStore?.Get<string>("originId"); }
+            set { BackingStore?.Set("originId", value); }
         }
         /// <summary>The system where the role assignment is to be created or has been created for an access package assignment, such as SharePointOnline, AadGroup or AadApplication, corresponding to the originSystem property of the accessPackageResourceRole.</summary>
         public string OriginSystem {
-            get { return BackingStore?.Get<string>(nameof(OriginSystem)); }
-            set { BackingStore?.Set(nameof(OriginSystem), value); }
+            get { return BackingStore?.Get<string>("originSystem"); }
+            set { BackingStore?.Set("originSystem", value); }
         }
         /// <summary>The value is PendingFulfillment when the access package assignment has not yet been delivered to the origin system, and Fulfilled when the access package assignment has been delivered to the origin system.</summary>
         public string Status {
-            get { return BackingStore?.Get<string>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<string>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

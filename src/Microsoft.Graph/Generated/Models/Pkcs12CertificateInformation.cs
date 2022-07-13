@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class Pkcs12CertificateInformation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Represents whether the certificate is the active certificate to be used for calling the API connector. The active certificate is the most recently uploaded certificate which is not yet expired but whose notBefore time is in the past.</summary>
         public bool? IsActive {
-            get { return BackingStore?.Get<bool?>(nameof(IsActive)); }
-            set { BackingStore?.Set(nameof(IsActive), value); }
+            get { return BackingStore?.Get<bool?>("isActive"); }
+            set { BackingStore?.Set("isActive", value); }
         }
         /// <summary>The certificate&apos;s expiry. This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)</summary>
         public long? NotAfter {
-            get { return BackingStore?.Get<long?>(nameof(NotAfter)); }
-            set { BackingStore?.Set(nameof(NotAfter), value); }
+            get { return BackingStore?.Get<long?>("notAfter"); }
+            set { BackingStore?.Set("notAfter", value); }
         }
         /// <summary>The certificate&apos;s issue time (not before). This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)</summary>
         public long? NotBefore {
-            get { return BackingStore?.Get<long?>(nameof(NotBefore)); }
-            set { BackingStore?.Set(nameof(NotBefore), value); }
+            get { return BackingStore?.Get<long?>("notBefore"); }
+            set { BackingStore?.Set("notBefore", value); }
         }
         /// <summary>The certificate thumbprint.</summary>
         public string Thumbprint {
-            get { return BackingStore?.Get<string>(nameof(Thumbprint)); }
-            set { BackingStore?.Set(nameof(Thumbprint), value); }
+            get { return BackingStore?.Get<string>("thumbprint"); }
+            set { BackingStore?.Set("thumbprint", value); }
         }
         /// <summary>
         /// Instantiates a new pkcs12CertificateInformation and sets the default values.

@@ -5,10 +5,10 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.CallRecords {
     public class ServiceUserAgent : UserAgent, IParsable {
-        /// <summary>Identifies the role of the service used by this endpoint. Possible values are: unknown, customBot, skypeForBusinessMicrosoftTeamsGateway, skypeForBusinessAudioVideoMcu, skypeForBusinessApplicationSharingMcu, skypeForBusinessCallQueues, skypeForBusinessAutoAttendant, mediationServer, mediationServerCloudConnectorEdition, exchangeUnifiedMessagingService, mediaController, conferencingAnnouncementService, conferencingAttendant, audioTeleconferencerController, skypeForBusinessUnifiedCommunicationApplicationPlatform, responseGroupServiceAnnouncementService, gateway, skypeTranslator, skypeForBusinessAttendant, responseGroupService, voicemail, unknownFutureValue.</summary>
+        /// <summary>The role property</summary>
         public ServiceRole? Role {
-            get { return BackingStore?.Get<ServiceRole?>(nameof(Role)); }
-            set { BackingStore?.Set(nameof(Role), value); }
+            get { return BackingStore?.Get<ServiceRole?>("role"); }
+            set { BackingStore?.Set("role", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

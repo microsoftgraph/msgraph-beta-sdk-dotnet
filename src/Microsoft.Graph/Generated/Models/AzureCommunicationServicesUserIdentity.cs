@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class AzureCommunicationServicesUserIdentity : Identity, IParsable {
         /// <summary>The azureCommunicationServicesResourceId property</summary>
         public string AzureCommunicationServicesResourceId {
-            get { return BackingStore?.Get<string>(nameof(AzureCommunicationServicesResourceId)); }
-            set { BackingStore?.Set(nameof(AzureCommunicationServicesResourceId), value); }
+            get { return BackingStore?.Get<string>("azureCommunicationServicesResourceId"); }
+            set { BackingStore?.Set("azureCommunicationServicesResourceId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

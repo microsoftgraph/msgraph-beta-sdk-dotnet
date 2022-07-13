@@ -5,20 +5,20 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MobileAppDependency : MobileAppRelationship, IParsable {
-        /// <summary>The type of dependency relationship between the parent and child apps. Possible values are: detect, autoInstall.</summary>
+        /// <summary>Indicates the dependency type associated with a relationship between two mobile apps.</summary>
         public MobileAppDependencyType? DependencyType {
-            get { return BackingStore?.Get<MobileAppDependencyType?>(nameof(DependencyType)); }
-            set { BackingStore?.Set(nameof(DependencyType), value); }
+            get { return BackingStore?.Get<MobileAppDependencyType?>("dependencyType"); }
+            set { BackingStore?.Set("dependencyType", value); }
         }
         /// <summary>The total number of apps that directly or indirectly depend on the parent app.</summary>
         public int? DependentAppCount {
-            get { return BackingStore?.Get<int?>(nameof(DependentAppCount)); }
-            set { BackingStore?.Set(nameof(DependentAppCount), value); }
+            get { return BackingStore?.Get<int?>("dependentAppCount"); }
+            set { BackingStore?.Set("dependentAppCount", value); }
         }
         /// <summary>The total number of apps the child app directly or indirectly depends on.</summary>
         public int? DependsOnAppCount {
-            get { return BackingStore?.Get<int?>(nameof(DependsOnAppCount)); }
-            set { BackingStore?.Set(nameof(DependsOnAppCount), value); }
+            get { return BackingStore?.Get<int?>("dependsOnAppCount"); }
+            set { BackingStore?.Set("dependsOnAppCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,30 +9,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class ClassifcationErrorBase : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The code property</summary>
         public string Code {
-            get { return BackingStore?.Get<string>(nameof(Code)); }
-            set { BackingStore?.Set(nameof(Code), value); }
+            get { return BackingStore?.Get<string>("code"); }
+            set { BackingStore?.Set("code", value); }
         }
         /// <summary>The innerError property</summary>
         public ClassificationInnerError InnerError {
-            get { return BackingStore?.Get<ClassificationInnerError>(nameof(InnerError)); }
-            set { BackingStore?.Set(nameof(InnerError), value); }
+            get { return BackingStore?.Get<ClassificationInnerError>("innerError"); }
+            set { BackingStore?.Set("innerError", value); }
         }
         /// <summary>The message property</summary>
         public string Message {
-            get { return BackingStore?.Get<string>(nameof(Message)); }
-            set { BackingStore?.Set(nameof(Message), value); }
+            get { return BackingStore?.Get<string>("message"); }
+            set { BackingStore?.Set("message", value); }
         }
         /// <summary>The target property</summary>
         public string Target {
-            get { return BackingStore?.Get<string>(nameof(Target)); }
-            set { BackingStore?.Set(nameof(Target), value); }
+            get { return BackingStore?.Get<string>("target"); }
+            set { BackingStore?.Set("target", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new classifcationErrorBase and sets the default values.
@@ -40,6 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ClassifcationErrorBase() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.classifcationErrorBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -63,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"innerError", n => { InnerError = n.GetObjectValue<ClassificationInnerError>(ClassificationInnerError.CreateFromDiscriminatorValue); } },
                 {"message", n => { Message = n.GetStringValue(); } },
                 {"target", n => { Target = n.GetStringValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,6 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<ClassificationInnerError>("innerError", InnerError);
             writer.WriteStringValue("message", Message);
             writer.WriteStringValue("target", Target);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

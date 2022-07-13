@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserRegistrationFeatureCount : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Number of users registered or capable for Multi-Factor Authentication, Self-Service Password Reset and Passwordless Authentication. Possible values are: ssprRegistered, ssprEnabled, ssprCapable, passwordlessCapable, mfaCapable.</summary>
+        /// <summary>The feature property</summary>
         public AuthenticationMethodFeature? Feature {
-            get { return BackingStore?.Get<AuthenticationMethodFeature?>(nameof(Feature)); }
-            set { BackingStore?.Set(nameof(Feature), value); }
+            get { return BackingStore?.Get<AuthenticationMethodFeature?>("feature"); }
+            set { BackingStore?.Set("feature", value); }
         }
         /// <summary>Number of users.</summary>
         public long? UserCount {
-            get { return BackingStore?.Get<long?>(nameof(UserCount)); }
-            set { BackingStore?.Set(nameof(UserCount), value); }
+            get { return BackingStore?.Get<long?>("userCount"); }
+            set { BackingStore?.Set("userCount", value); }
         }
         /// <summary>
         /// Instantiates a new userRegistrationFeatureCount and sets the default values.

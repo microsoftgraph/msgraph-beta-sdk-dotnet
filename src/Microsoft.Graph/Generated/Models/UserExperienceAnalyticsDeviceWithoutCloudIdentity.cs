@@ -8,13 +8,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsDeviceWithoutCloudIdentity : Entity, IParsable {
         /// <summary>Azure Active Directory Device Id</summary>
         public string AzureAdDeviceId {
-            get { return BackingStore?.Get<string>(nameof(AzureAdDeviceId)); }
-            set { BackingStore?.Set(nameof(AzureAdDeviceId), value); }
+            get { return BackingStore?.Get<string>("azureAdDeviceId"); }
+            set { BackingStore?.Set("azureAdDeviceId", value); }
         }
         /// <summary>The tenant attach device&apos;s name.</summary>
         public string DeviceName {
-            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
-            set { BackingStore?.Set(nameof(DeviceName), value); }
+            get { return BackingStore?.Get<string>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

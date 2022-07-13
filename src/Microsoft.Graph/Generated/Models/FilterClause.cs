@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class FilterClause : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Name of the operator to be applied to the source and target operands. Must be one of the supported operators. Supported operators can be discovered.</summary>
         public string OperatorName {
-            get { return BackingStore?.Get<string>(nameof(OperatorName)); }
-            set { BackingStore?.Set(nameof(OperatorName), value); }
+            get { return BackingStore?.Get<string>("operatorName"); }
+            set { BackingStore?.Set("operatorName", value); }
         }
         /// <summary>Name of source operand (the operand being tested). The source operand name must match one of the attribute names on the source object.</summary>
         public string SourceOperandName {
-            get { return BackingStore?.Get<string>(nameof(SourceOperandName)); }
-            set { BackingStore?.Set(nameof(SourceOperandName), value); }
+            get { return BackingStore?.Get<string>("sourceOperandName"); }
+            set { BackingStore?.Set("sourceOperandName", value); }
         }
         /// <summary>Values that the source operand will be tested against.</summary>
         public FilterOperand TargetOperand {
-            get { return BackingStore?.Get<FilterOperand>(nameof(TargetOperand)); }
-            set { BackingStore?.Set(nameof(TargetOperand), value); }
+            get { return BackingStore?.Get<FilterOperand>("targetOperand"); }
+            set { BackingStore?.Set("targetOperand", value); }
         }
         /// <summary>
         /// Instantiates a new filterClause and sets the default values.

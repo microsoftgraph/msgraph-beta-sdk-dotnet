@@ -10,30 +10,30 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Update {
     public class UpdatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The addedPolicySetItems property</summary>
         public List<PolicySetItem> AddedPolicySetItems {
-            get { return BackingStore?.Get<List<PolicySetItem>>(nameof(AddedPolicySetItems)); }
-            set { BackingStore?.Set(nameof(AddedPolicySetItems), value); }
+            get { return BackingStore?.Get<List<PolicySetItem>>("addedPolicySetItems"); }
+            set { BackingStore?.Set("addedPolicySetItems", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The assignments property</summary>
         public List<PolicySetAssignment> Assignments {
-            get { return BackingStore?.Get<List<PolicySetAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<PolicySetAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deletedPolicySetItems property</summary>
         public List<string> DeletedPolicySetItems {
-            get { return BackingStore?.Get<List<string>>(nameof(DeletedPolicySetItems)); }
-            set { BackingStore?.Set(nameof(DeletedPolicySetItems), value); }
+            get { return BackingStore?.Get<List<string>>("deletedPolicySetItems"); }
+            set { BackingStore?.Set("deletedPolicySetItems", value); }
         }
         /// <summary>The updatedPolicySetItems property</summary>
         public List<PolicySetItem> UpdatedPolicySetItems {
-            get { return BackingStore?.Get<List<PolicySetItem>>(nameof(UpdatedPolicySetItems)); }
-            set { BackingStore?.Set(nameof(UpdatedPolicySetItems), value); }
+            get { return BackingStore?.Get<List<PolicySetItem>>("updatedPolicySetItems"); }
+            set { BackingStore?.Set("updatedPolicySetItems", value); }
         }
         /// <summary>
         /// Instantiates a new updatePostRequestBody and sets the default values.

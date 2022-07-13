@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class RedirectUriSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Identifies the specific URI within the redirectURIs collection in SAML SSO flows. Defaults to null. The index is unique across all the redirectUris for the application.</summary>
         public int? Index {
-            get { return BackingStore?.Get<int?>(nameof(Index)); }
-            set { BackingStore?.Set(nameof(Index), value); }
+            get { return BackingStore?.Get<int?>("index"); }
+            set { BackingStore?.Set("index", value); }
         }
         /// <summary>Specifies the URI that tokens are sent to.</summary>
         public string Uri {
-            get { return BackingStore?.Get<string>(nameof(Uri)); }
-            set { BackingStore?.Set(nameof(Uri), value); }
+            get { return BackingStore?.Get<string>("uri"); }
+            set { BackingStore?.Set("uri", value); }
         }
         /// <summary>
         /// Instantiates a new redirectUriSettings and sets the default values.

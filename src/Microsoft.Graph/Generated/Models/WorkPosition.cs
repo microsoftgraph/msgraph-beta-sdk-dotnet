@@ -7,28 +7,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkPosition : ItemFacet, IParsable {
         /// <summary>Categories that the user has associated with this position.</summary>
         public List<string> Categories {
-            get { return BackingStore?.Get<List<string>>(nameof(Categories)); }
-            set { BackingStore?.Set(nameof(Categories), value); }
+            get { return BackingStore?.Get<List<string>>("categories"); }
+            set { BackingStore?.Set("categories", value); }
         }
         /// <summary>Colleagues that are associated with this position.</summary>
         public List<RelatedPerson> Colleagues {
-            get { return BackingStore?.Get<List<RelatedPerson>>(nameof(Colleagues)); }
-            set { BackingStore?.Set(nameof(Colleagues), value); }
+            get { return BackingStore?.Get<List<RelatedPerson>>("colleagues"); }
+            set { BackingStore?.Set("colleagues", value); }
         }
         /// <summary>The detail property</summary>
         public PositionDetail Detail {
-            get { return BackingStore?.Get<PositionDetail>(nameof(Detail)); }
-            set { BackingStore?.Set(nameof(Detail), value); }
+            get { return BackingStore?.Get<PositionDetail>("detail"); }
+            set { BackingStore?.Set("detail", value); }
         }
         /// <summary>Denotes whether or not the position is current.</summary>
         public bool? IsCurrent {
-            get { return BackingStore?.Get<bool?>(nameof(IsCurrent)); }
-            set { BackingStore?.Set(nameof(IsCurrent), value); }
+            get { return BackingStore?.Get<bool?>("isCurrent"); }
+            set { BackingStore?.Set("isCurrent", value); }
         }
         /// <summary>Contains detail of the user&apos;s manager in this position.</summary>
         public RelatedPerson Manager {
-            get { return BackingStore?.Get<RelatedPerson>(nameof(Manager)); }
-            set { BackingStore?.Set(nameof(Manager), value); }
+            get { return BackingStore?.Get<RelatedPerson>("manager"); }
+            set { BackingStore?.Set("manager", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

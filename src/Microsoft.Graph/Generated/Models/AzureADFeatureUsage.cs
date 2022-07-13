@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class AzureADFeatureUsage : Entity, IParsable {
         /// <summary>The featureName property</summary>
         public string FeatureName {
-            get { return BackingStore?.Get<string>(nameof(FeatureName)); }
-            set { BackingStore?.Set(nameof(FeatureName), value); }
+            get { return BackingStore?.Get<string>("featureName"); }
+            set { BackingStore?.Set("featureName", value); }
         }
         /// <summary>The snapshotDateTime property</summary>
         public DateTimeOffset? SnapshotDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(SnapshotDateTime)); }
-            set { BackingStore?.Set(nameof(SnapshotDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("snapshotDateTime"); }
+            set { BackingStore?.Set("snapshotDateTime", value); }
         }
         /// <summary>The usage property</summary>
         public int? Usage {
-            get { return BackingStore?.Get<int?>(nameof(Usage)); }
-            set { BackingStore?.Set(nameof(Usage), value); }
+            get { return BackingStore?.Get<int?>("usage"); }
+            set { BackingStore?.Set("usage", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,28 +8,34 @@ namespace Microsoft.Graph.Beta.Models {
     public class DetectedSensitiveContent : DetectedSensitiveContentBase, IParsable {
         /// <summary>The classificationAttributes property</summary>
         public List<ClassificationAttribute> ClassificationAttributes {
-            get { return BackingStore?.Get<List<ClassificationAttribute>>(nameof(ClassificationAttributes)); }
-            set { BackingStore?.Set(nameof(ClassificationAttributes), value); }
+            get { return BackingStore?.Get<List<ClassificationAttribute>>("classificationAttributes"); }
+            set { BackingStore?.Set("classificationAttributes", value); }
         }
         /// <summary>The classificationMethod property</summary>
         public Microsoft.Graph.Beta.Models.ClassificationMethod? ClassificationMethod {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ClassificationMethod?>(nameof(ClassificationMethod)); }
-            set { BackingStore?.Set(nameof(ClassificationMethod), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ClassificationMethod?>("classificationMethod"); }
+            set { BackingStore?.Set("classificationMethod", value); }
         }
         /// <summary>The matches property</summary>
         public List<SensitiveContentLocation> Matches {
-            get { return BackingStore?.Get<List<SensitiveContentLocation>>(nameof(Matches)); }
-            set { BackingStore?.Set(nameof(Matches), value); }
+            get { return BackingStore?.Get<List<SensitiveContentLocation>>("matches"); }
+            set { BackingStore?.Set("matches", value); }
         }
         /// <summary>The scope property</summary>
         public SensitiveTypeScope? Scope {
-            get { return BackingStore?.Get<SensitiveTypeScope?>(nameof(Scope)); }
-            set { BackingStore?.Set(nameof(Scope), value); }
+            get { return BackingStore?.Get<SensitiveTypeScope?>("scope"); }
+            set { BackingStore?.Set("scope", value); }
         }
         /// <summary>The sensitiveTypeSource property</summary>
         public Microsoft.Graph.Beta.Models.SensitiveTypeSource? SensitiveTypeSource {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SensitiveTypeSource?>(nameof(SensitiveTypeSource)); }
-            set { BackingStore?.Set(nameof(SensitiveTypeSource), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SensitiveTypeSource?>("sensitiveTypeSource"); }
+            set { BackingStore?.Set("sensitiveTypeSource", value); }
+        }
+        /// <summary>
+        /// Instantiates a new DetectedSensitiveContent and sets the default values.
+        /// </summary>
+        public DetectedSensitiveContent() : base() {
+            Type = "#microsoft.graph.detectedSensitiveContent";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

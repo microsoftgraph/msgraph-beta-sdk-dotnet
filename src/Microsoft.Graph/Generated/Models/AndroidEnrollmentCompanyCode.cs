@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidEnrollmentCompanyCode : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Enrollment Token used by the User to enroll their device.</summary>
         public string EnrollmentToken {
-            get { return BackingStore?.Get<string>(nameof(EnrollmentToken)); }
-            set { BackingStore?.Set(nameof(EnrollmentToken), value); }
+            get { return BackingStore?.Get<string>("enrollmentToken"); }
+            set { BackingStore?.Set("enrollmentToken", value); }
         }
         /// <summary>String used to generate a QR code for the token.</summary>
         public string QrCodeContent {
-            get { return BackingStore?.Get<string>(nameof(QrCodeContent)); }
-            set { BackingStore?.Set(nameof(QrCodeContent), value); }
+            get { return BackingStore?.Get<string>("qrCodeContent"); }
+            set { BackingStore?.Set("qrCodeContent", value); }
         }
         /// <summary>Generated QR code for the token.</summary>
         public MimeContent QrCodeImage {
-            get { return BackingStore?.Get<MimeContent>(nameof(QrCodeImage)); }
-            set { BackingStore?.Set(nameof(QrCodeImage), value); }
+            get { return BackingStore?.Get<MimeContent>("qrCodeImage"); }
+            set { BackingStore?.Set("qrCodeImage", value); }
         }
         /// <summary>
         /// Instantiates a new androidEnrollmentCompanyCode and sets the default values.

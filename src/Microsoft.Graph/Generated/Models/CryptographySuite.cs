@@ -9,40 +9,40 @@ namespace Microsoft.Graph.Beta.Models {
     public class CryptographySuite : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Authentication Transform Constants. Possible values are: md5_96, sha1_96, sha_256_128, aes128Gcm, aes192Gcm, aes256Gcm.</summary>
         public AuthenticationTransformConstant? AuthenticationTransformConstants {
-            get { return BackingStore?.Get<AuthenticationTransformConstant?>(nameof(AuthenticationTransformConstants)); }
-            set { BackingStore?.Set(nameof(AuthenticationTransformConstants), value); }
+            get { return BackingStore?.Get<AuthenticationTransformConstant?>("authenticationTransformConstants"); }
+            set { BackingStore?.Set("authenticationTransformConstants", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Cipher Transform Constants. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.</summary>
         public VpnEncryptionAlgorithmType? CipherTransformConstants {
-            get { return BackingStore?.Get<VpnEncryptionAlgorithmType?>(nameof(CipherTransformConstants)); }
-            set { BackingStore?.Set(nameof(CipherTransformConstants), value); }
+            get { return BackingStore?.Get<VpnEncryptionAlgorithmType?>("cipherTransformConstants"); }
+            set { BackingStore?.Set("cipherTransformConstants", value); }
         }
         /// <summary>Diffie Hellman Group. Possible values are: group1, group2, group14, ecp256, ecp384, group24.</summary>
         public DiffieHellmanGroup? DhGroup {
-            get { return BackingStore?.Get<DiffieHellmanGroup?>(nameof(DhGroup)); }
-            set { BackingStore?.Set(nameof(DhGroup), value); }
+            get { return BackingStore?.Get<DiffieHellmanGroup?>("dhGroup"); }
+            set { BackingStore?.Set("dhGroup", value); }
         }
         /// <summary>Encryption Method. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.</summary>
         public VpnEncryptionAlgorithmType? EncryptionMethod {
-            get { return BackingStore?.Get<VpnEncryptionAlgorithmType?>(nameof(EncryptionMethod)); }
-            set { BackingStore?.Set(nameof(EncryptionMethod), value); }
+            get { return BackingStore?.Get<VpnEncryptionAlgorithmType?>("encryptionMethod"); }
+            set { BackingStore?.Set("encryptionMethod", value); }
         }
         /// <summary>Integrity Check Method. Possible values are: sha2_256, sha1_96, sha1_160, sha2_384, sha2_512, md5.</summary>
         public VpnIntegrityAlgorithmType? IntegrityCheckMethod {
-            get { return BackingStore?.Get<VpnIntegrityAlgorithmType?>(nameof(IntegrityCheckMethod)); }
-            set { BackingStore?.Set(nameof(IntegrityCheckMethod), value); }
+            get { return BackingStore?.Get<VpnIntegrityAlgorithmType?>("integrityCheckMethod"); }
+            set { BackingStore?.Set("integrityCheckMethod", value); }
         }
         /// <summary>Perfect Forward Secrecy Group. Possible values are: pfs1, pfs2, pfs2048, ecp256, ecp384, pfsMM, pfs24.</summary>
         public PerfectForwardSecrecyGroup? PfsGroup {
-            get { return BackingStore?.Get<PerfectForwardSecrecyGroup?>(nameof(PfsGroup)); }
-            set { BackingStore?.Set(nameof(PfsGroup), value); }
+            get { return BackingStore?.Get<PerfectForwardSecrecyGroup?>("pfsGroup"); }
+            set { BackingStore?.Set("pfsGroup", value); }
         }
         /// <summary>
         /// Instantiates a new cryptographySuite and sets the default values.

@@ -7,138 +7,138 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosEasEmailProfileConfiguration : EasEmailProfileConfigurationBase, IParsable {
         /// <summary>Account name.</summary>
         public string AccountName {
-            get { return BackingStore?.Get<string>(nameof(AccountName)); }
-            set { BackingStore?.Set(nameof(AccountName), value); }
+            get { return BackingStore?.Get<string>("accountName"); }
+            set { BackingStore?.Set("accountName", value); }
         }
         /// <summary>Authentication method for this Email profile. Possible values are: usernameAndPassword, certificate, derivedCredential.</summary>
         public EasAuthenticationMethod? AuthenticationMethod {
-            get { return BackingStore?.Get<EasAuthenticationMethod?>(nameof(AuthenticationMethod)); }
-            set { BackingStore?.Set(nameof(AuthenticationMethod), value); }
+            get { return BackingStore?.Get<EasAuthenticationMethod?>("authenticationMethod"); }
+            set { BackingStore?.Set("authenticationMethod", value); }
         }
         /// <summary>Indicates whether or not to block moving messages to other email accounts.</summary>
         public bool? BlockMovingMessagesToOtherEmailAccounts {
-            get { return BackingStore?.Get<bool?>(nameof(BlockMovingMessagesToOtherEmailAccounts)); }
-            set { BackingStore?.Set(nameof(BlockMovingMessagesToOtherEmailAccounts), value); }
+            get { return BackingStore?.Get<bool?>("blockMovingMessagesToOtherEmailAccounts"); }
+            set { BackingStore?.Set("blockMovingMessagesToOtherEmailAccounts", value); }
         }
         /// <summary>Indicates whether or not to block sending email from third party apps.</summary>
         public bool? BlockSendingEmailFromThirdPartyApps {
-            get { return BackingStore?.Get<bool?>(nameof(BlockSendingEmailFromThirdPartyApps)); }
-            set { BackingStore?.Set(nameof(BlockSendingEmailFromThirdPartyApps), value); }
+            get { return BackingStore?.Get<bool?>("blockSendingEmailFromThirdPartyApps"); }
+            set { BackingStore?.Set("blockSendingEmailFromThirdPartyApps", value); }
         }
         /// <summary>Indicates whether or not to block syncing recently used email addresses, for instance - when composing new email.</summary>
         public bool? BlockSyncingRecentlyUsedEmailAddresses {
-            get { return BackingStore?.Get<bool?>(nameof(BlockSyncingRecentlyUsedEmailAddresses)); }
-            set { BackingStore?.Set(nameof(BlockSyncingRecentlyUsedEmailAddresses), value); }
+            get { return BackingStore?.Get<bool?>("blockSyncingRecentlyUsedEmailAddresses"); }
+            set { BackingStore?.Set("blockSyncingRecentlyUsedEmailAddresses", value); }
         }
         /// <summary>Tenant level settings for the Derived Credentials to be used for authentication.</summary>
         public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings {
-            get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings>(nameof(DerivedCredentialSettings)); }
-            set { BackingStore?.Set(nameof(DerivedCredentialSettings), value); }
+            get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings"); }
+            set { BackingStore?.Set("derivedCredentialSettings", value); }
         }
-        /// <summary>Duration of time email should be synced back to. . Possible values are: userDefined, oneDay, threeDays, oneWeek, twoWeeks, oneMonth, unlimited.</summary>
+        /// <summary>Possible values for email sync duration.</summary>
         public EmailSyncDuration? DurationOfEmailToSync {
-            get { return BackingStore?.Get<EmailSyncDuration?>(nameof(DurationOfEmailToSync)); }
-            set { BackingStore?.Set(nameof(DurationOfEmailToSync), value); }
+            get { return BackingStore?.Get<EmailSyncDuration?>("durationOfEmailToSync"); }
+            set { BackingStore?.Set("durationOfEmailToSync", value); }
         }
         /// <summary>Exchange data to sync. Possible values are: none, calendars, contacts, email, notes, reminders.</summary>
         public Microsoft.Graph.Beta.Models.EasServices? EasServices {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EasServices?>(nameof(EasServices)); }
-            set { BackingStore?.Set(nameof(EasServices), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EasServices?>("easServices"); }
+            set { BackingStore?.Set("easServices", value); }
         }
         /// <summary>Allow users to change sync settings.</summary>
         public bool? EasServicesUserOverrideEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(EasServicesUserOverrideEnabled)); }
-            set { BackingStore?.Set(nameof(EasServicesUserOverrideEnabled), value); }
+            get { return BackingStore?.Get<bool?>("easServicesUserOverrideEnabled"); }
+            set { BackingStore?.Set("easServicesUserOverrideEnabled", value); }
         }
-        /// <summary>Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.</summary>
+        /// <summary>Possible values for username source or email source.</summary>
         public UserEmailSource? EmailAddressSource {
-            get { return BackingStore?.Get<UserEmailSource?>(nameof(EmailAddressSource)); }
-            set { BackingStore?.Set(nameof(EmailAddressSource), value); }
+            get { return BackingStore?.Get<UserEmailSource?>("emailAddressSource"); }
+            set { BackingStore?.Set("emailAddressSource", value); }
         }
         /// <summary>Encryption Certificate type for this Email profile. Possible values are: none, certificate, derivedCredential.</summary>
         public EmailCertificateType? EncryptionCertificateType {
-            get { return BackingStore?.Get<EmailCertificateType?>(nameof(EncryptionCertificateType)); }
-            set { BackingStore?.Set(nameof(EncryptionCertificateType), value); }
+            get { return BackingStore?.Get<EmailCertificateType?>("encryptionCertificateType"); }
+            set { BackingStore?.Set("encryptionCertificateType", value); }
         }
         /// <summary>Exchange location that (URL) that the native mail app connects to.</summary>
         public string HostName {
-            get { return BackingStore?.Get<string>(nameof(HostName)); }
-            set { BackingStore?.Set(nameof(HostName), value); }
+            get { return BackingStore?.Get<string>("hostName"); }
+            set { BackingStore?.Set("hostName", value); }
         }
         /// <summary>Identity certificate.</summary>
         public IosCertificateProfileBase IdentityCertificate {
-            get { return BackingStore?.Get<IosCertificateProfileBase>(nameof(IdentityCertificate)); }
-            set { BackingStore?.Set(nameof(IdentityCertificate), value); }
+            get { return BackingStore?.Get<IosCertificateProfileBase>("identityCertificate"); }
+            set { BackingStore?.Set("identityCertificate", value); }
         }
         /// <summary>Profile ID of the Per-App VPN policy to be used to access emails from the native Mail client</summary>
         public string PerAppVPNProfileId {
-            get { return BackingStore?.Get<string>(nameof(PerAppVPNProfileId)); }
-            set { BackingStore?.Set(nameof(PerAppVPNProfileId), value); }
+            get { return BackingStore?.Get<string>("perAppVPNProfileId"); }
+            set { BackingStore?.Set("perAppVPNProfileId", value); }
         }
         /// <summary>Indicates whether or not to use S/MIME certificate.</summary>
         public bool? RequireSmime {
-            get { return BackingStore?.Get<bool?>(nameof(RequireSmime)); }
-            set { BackingStore?.Set(nameof(RequireSmime), value); }
+            get { return BackingStore?.Get<bool?>("requireSmime"); }
+            set { BackingStore?.Set("requireSmime", value); }
         }
         /// <summary>Indicates whether or not to use SSL.</summary>
         public bool? RequireSsl {
-            get { return BackingStore?.Get<bool?>(nameof(RequireSsl)); }
-            set { BackingStore?.Set(nameof(RequireSsl), value); }
+            get { return BackingStore?.Get<bool?>("requireSsl"); }
+            set { BackingStore?.Set("requireSsl", value); }
         }
         /// <summary>Signing Certificate type for this Email profile. Possible values are: none, certificate, derivedCredential.</summary>
         public EmailCertificateType? SigningCertificateType {
-            get { return BackingStore?.Get<EmailCertificateType?>(nameof(SigningCertificateType)); }
-            set { BackingStore?.Set(nameof(SigningCertificateType), value); }
+            get { return BackingStore?.Get<EmailCertificateType?>("signingCertificateType"); }
+            set { BackingStore?.Set("signingCertificateType", value); }
         }
         /// <summary>Indicates whether or not to allow unencrypted emails.</summary>
         public bool? SmimeEnablePerMessageSwitch {
-            get { return BackingStore?.Get<bool?>(nameof(SmimeEnablePerMessageSwitch)); }
-            set { BackingStore?.Set(nameof(SmimeEnablePerMessageSwitch), value); }
+            get { return BackingStore?.Get<bool?>("smimeEnablePerMessageSwitch"); }
+            set { BackingStore?.Set("smimeEnablePerMessageSwitch", value); }
         }
         /// <summary>If set to true S/MIME encryption is enabled by default.</summary>
         public bool? SmimeEncryptByDefaultEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(SmimeEncryptByDefaultEnabled)); }
-            set { BackingStore?.Set(nameof(SmimeEncryptByDefaultEnabled), value); }
+            get { return BackingStore?.Get<bool?>("smimeEncryptByDefaultEnabled"); }
+            set { BackingStore?.Set("smimeEncryptByDefaultEnabled", value); }
         }
         /// <summary>If set to true, the user can toggle the encryption by default setting.</summary>
         public bool? SmimeEncryptByDefaultUserOverrideEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(SmimeEncryptByDefaultUserOverrideEnabled)); }
-            set { BackingStore?.Set(nameof(SmimeEncryptByDefaultUserOverrideEnabled), value); }
+            get { return BackingStore?.Get<bool?>("smimeEncryptByDefaultUserOverrideEnabled"); }
+            set { BackingStore?.Set("smimeEncryptByDefaultUserOverrideEnabled", value); }
         }
         /// <summary>S/MIME encryption certificate.</summary>
         public IosCertificateProfile SmimeEncryptionCertificate {
-            get { return BackingStore?.Get<IosCertificateProfile>(nameof(SmimeEncryptionCertificate)); }
-            set { BackingStore?.Set(nameof(SmimeEncryptionCertificate), value); }
+            get { return BackingStore?.Get<IosCertificateProfile>("smimeEncryptionCertificate"); }
+            set { BackingStore?.Set("smimeEncryptionCertificate", value); }
         }
         /// <summary>If set to true the user can select the S/MIME encryption identity.</summary>
         public bool? SmimeEncryptionCertificateUserOverrideEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(SmimeEncryptionCertificateUserOverrideEnabled)); }
-            set { BackingStore?.Set(nameof(SmimeEncryptionCertificateUserOverrideEnabled), value); }
+            get { return BackingStore?.Get<bool?>("smimeEncryptionCertificateUserOverrideEnabled"); }
+            set { BackingStore?.Set("smimeEncryptionCertificateUserOverrideEnabled", value); }
         }
         /// <summary>S/MIME signing certificate.</summary>
         public IosCertificateProfile SmimeSigningCertificate {
-            get { return BackingStore?.Get<IosCertificateProfile>(nameof(SmimeSigningCertificate)); }
-            set { BackingStore?.Set(nameof(SmimeSigningCertificate), value); }
+            get { return BackingStore?.Get<IosCertificateProfile>("smimeSigningCertificate"); }
+            set { BackingStore?.Set("smimeSigningCertificate", value); }
         }
         /// <summary>If set to true, the user can select the signing identity.</summary>
         public bool? SmimeSigningCertificateUserOverrideEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(SmimeSigningCertificateUserOverrideEnabled)); }
-            set { BackingStore?.Set(nameof(SmimeSigningCertificateUserOverrideEnabled), value); }
+            get { return BackingStore?.Get<bool?>("smimeSigningCertificateUserOverrideEnabled"); }
+            set { BackingStore?.Set("smimeSigningCertificateUserOverrideEnabled", value); }
         }
         /// <summary>If set to true S/MIME signing is enabled for this account</summary>
         public bool? SmimeSigningEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(SmimeSigningEnabled)); }
-            set { BackingStore?.Set(nameof(SmimeSigningEnabled), value); }
+            get { return BackingStore?.Get<bool?>("smimeSigningEnabled"); }
+            set { BackingStore?.Set("smimeSigningEnabled", value); }
         }
         /// <summary>If set to true, the user can toggle S/MIME signing on or off.</summary>
         public bool? SmimeSigningUserOverrideEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(SmimeSigningUserOverrideEnabled)); }
-            set { BackingStore?.Set(nameof(SmimeSigningUserOverrideEnabled), value); }
+            get { return BackingStore?.Get<bool?>("smimeSigningUserOverrideEnabled"); }
+            set { BackingStore?.Set("smimeSigningUserOverrideEnabled", value); }
         }
         /// <summary>Specifies whether the connection should use OAuth for authentication.</summary>
         public bool? UseOAuth {
-            get { return BackingStore?.Get<bool?>(nameof(UseOAuth)); }
-            set { BackingStore?.Set(nameof(UseOAuth), value); }
+            get { return BackingStore?.Get<bool?>("useOAuth"); }
+            set { BackingStore?.Set("useOAuth", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

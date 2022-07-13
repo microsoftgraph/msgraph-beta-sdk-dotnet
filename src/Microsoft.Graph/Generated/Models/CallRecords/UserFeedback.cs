@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
     public class UserFeedback : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The rating provided by the user of this endpoint about the quality of this Session. Possible values are: notRated, bad, poor, fair, good, excellent, unknownFutureValue.</summary>
+        /// <summary>The rating property</summary>
         public UserFeedbackRating? Rating {
-            get { return BackingStore?.Get<UserFeedbackRating?>(nameof(Rating)); }
-            set { BackingStore?.Set(nameof(Rating), value); }
+            get { return BackingStore?.Get<UserFeedbackRating?>("rating"); }
+            set { BackingStore?.Set("rating", value); }
         }
         /// <summary>The feedback text provided by the user of this endpoint for the session.</summary>
         public string Text {
-            get { return BackingStore?.Get<string>(nameof(Text)); }
-            set { BackingStore?.Set(nameof(Text), value); }
+            get { return BackingStore?.Get<string>("text"); }
+            set { BackingStore?.Set("text", value); }
         }
         /// <summary>The set of feedback tokens provided by the user of this endpoint for the session. This is a set of Boolean properties. The property names should not be relied upon since they may change depending on what tokens are offered to the user.</summary>
         public FeedbackTokenSet Tokens {
-            get { return BackingStore?.Get<FeedbackTokenSet>(nameof(Tokens)); }
-            set { BackingStore?.Set(nameof(Tokens), value); }
+            get { return BackingStore?.Get<FeedbackTokenSet>("tokens"); }
+            set { BackingStore?.Set("tokens", value); }
         }
         /// <summary>
         /// Instantiates a new userFeedback and sets the default values.

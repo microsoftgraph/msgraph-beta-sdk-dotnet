@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementSettingAppConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>Acceptable app types to allow for this setting</summary>
         public List<string> SupportedTypes {
-            get { return BackingStore?.Get<List<string>>(nameof(SupportedTypes)); }
-            set { BackingStore?.Set(nameof(SupportedTypes), value); }
+            get { return BackingStore?.Get<List<string>>("supportedTypes"); }
+            set { BackingStore?.Set("supportedTypes", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

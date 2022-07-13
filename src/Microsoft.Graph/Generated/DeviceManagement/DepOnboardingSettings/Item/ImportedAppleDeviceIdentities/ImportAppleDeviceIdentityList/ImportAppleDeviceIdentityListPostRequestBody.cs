@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Impor
     public class ImportAppleDeviceIdentityListPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The importedAppleDeviceIdentities property</summary>
         public List<ImportedAppleDeviceIdentity> ImportedAppleDeviceIdentities {
-            get { return BackingStore?.Get<List<ImportedAppleDeviceIdentity>>(nameof(ImportedAppleDeviceIdentities)); }
-            set { BackingStore?.Set(nameof(ImportedAppleDeviceIdentities), value); }
+            get { return BackingStore?.Get<List<ImportedAppleDeviceIdentity>>("importedAppleDeviceIdentities"); }
+            set { BackingStore?.Set("importedAppleDeviceIdentities", value); }
         }
         /// <summary>The overwriteImportedDeviceIdentities property</summary>
         public bool? OverwriteImportedDeviceIdentities {
-            get { return BackingStore?.Get<bool?>(nameof(OverwriteImportedDeviceIdentities)); }
-            set { BackingStore?.Set(nameof(OverwriteImportedDeviceIdentities), value); }
+            get { return BackingStore?.Get<bool?>("overwriteImportedDeviceIdentities"); }
+            set { BackingStore?.Set("overwriteImportedDeviceIdentities", value); }
         }
         /// <summary>
         /// Instantiates a new importAppleDeviceIdentityListPostRequestBody and sets the default values.

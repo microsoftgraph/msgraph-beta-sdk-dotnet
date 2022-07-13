@@ -6,25 +6,31 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TargetedManagedAppProtection : ManagedAppProtection, IParsable {
-        /// <summary>Public Apps selection: group or individual. Possible values are: selectedPublicApps, allCoreMicrosoftApps, allMicrosoftApps, allApps.</summary>
+        /// <summary>Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps</summary>
         public TargetedManagedAppGroupType? AppGroupType {
-            get { return BackingStore?.Get<TargetedManagedAppGroupType?>(nameof(AppGroupType)); }
-            set { BackingStore?.Set(nameof(AppGroupType), value); }
+            get { return BackingStore?.Get<TargetedManagedAppGroupType?>("appGroupType"); }
+            set { BackingStore?.Set("appGroupType", value); }
         }
         /// <summary>Navigation property to list of inclusion and exclusion groups to which the policy is deployed.</summary>
         public List<TargetedManagedAppPolicyAssignment> Assignments {
-            get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>Indicates if the policy is deployed to any inclusion groups or not.</summary>
         public bool? IsAssigned {
-            get { return BackingStore?.Get<bool?>(nameof(IsAssigned)); }
-            set { BackingStore?.Set(nameof(IsAssigned), value); }
+            get { return BackingStore?.Get<bool?>("isAssigned"); }
+            set { BackingStore?.Set("isAssigned", value); }
         }
-        /// <summary>The intended app management levels for this policy. Possible values are: unspecified, unmanaged, mdm, androidEnterprise.</summary>
+        /// <summary>Management levels for apps</summary>
         public AppManagementLevel? TargetedAppManagementLevels {
-            get { return BackingStore?.Get<AppManagementLevel?>(nameof(TargetedAppManagementLevels)); }
-            set { BackingStore?.Set(nameof(TargetedAppManagementLevels), value); }
+            get { return BackingStore?.Get<AppManagementLevel?>("targetedAppManagementLevels"); }
+            set { BackingStore?.Set("targetedAppManagementLevels", value); }
+        }
+        /// <summary>
+        /// Instantiates a new TargetedManagedAppProtection and sets the default values.
+        /// </summary>
+        public TargetedManagedAppProtection() : base() {
+            Type = "#microsoft.graph.targetedManagedAppProtection";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

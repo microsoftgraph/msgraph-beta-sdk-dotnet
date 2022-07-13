@@ -9,40 +9,40 @@ namespace Microsoft.Graph.Beta.Models {
     public class CertificateConnectorSetting : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Certificate expire time</summary>
         public DateTimeOffset? CertExpiryTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CertExpiryTime)); }
-            set { BackingStore?.Set(nameof(CertExpiryTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("certExpiryTime"); }
+            set { BackingStore?.Set("certExpiryTime", value); }
         }
         /// <summary>Version of certificate connector</summary>
         public string ConnectorVersion {
-            get { return BackingStore?.Get<string>(nameof(ConnectorVersion)); }
-            set { BackingStore?.Set(nameof(ConnectorVersion), value); }
+            get { return BackingStore?.Get<string>("connectorVersion"); }
+            set { BackingStore?.Set("connectorVersion", value); }
         }
         /// <summary>Certificate connector enrollment error</summary>
         public string EnrollmentError {
-            get { return BackingStore?.Get<string>(nameof(EnrollmentError)); }
-            set { BackingStore?.Set(nameof(EnrollmentError), value); }
+            get { return BackingStore?.Get<string>("enrollmentError"); }
+            set { BackingStore?.Set("enrollmentError", value); }
         }
         /// <summary>Last time certificate connector connected</summary>
         public DateTimeOffset? LastConnectorConnectionTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastConnectorConnectionTime)); }
-            set { BackingStore?.Set(nameof(LastConnectorConnectionTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastConnectorConnectionTime"); }
+            set { BackingStore?.Set("lastConnectorConnectionTime", value); }
         }
         /// <summary>Version of last uploaded certificate connector</summary>
         public long? LastUploadVersion {
-            get { return BackingStore?.Get<long?>(nameof(LastUploadVersion)); }
-            set { BackingStore?.Set(nameof(LastUploadVersion), value); }
+            get { return BackingStore?.Get<long?>("lastUploadVersion"); }
+            set { BackingStore?.Set("lastUploadVersion", value); }
         }
         /// <summary>Certificate connector status</summary>
         public int? Status {
-            get { return BackingStore?.Get<int?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<int?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Instantiates a new certificateConnectorSetting and sets the default values.

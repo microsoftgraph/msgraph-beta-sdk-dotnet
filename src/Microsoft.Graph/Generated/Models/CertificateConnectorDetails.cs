@@ -8,23 +8,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class CertificateConnectorDetails : Entity, IParsable {
         /// <summary>Connector name (set during enrollment).</summary>
         public string ConnectorName {
-            get { return BackingStore?.Get<string>(nameof(ConnectorName)); }
-            set { BackingStore?.Set(nameof(ConnectorName), value); }
+            get { return BackingStore?.Get<string>("connectorName"); }
+            set { BackingStore?.Set("connectorName", value); }
         }
         /// <summary>Date/time when this connector was enrolled.</summary>
         public DateTimeOffset? EnrollmentDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EnrollmentDateTime)); }
-            set { BackingStore?.Set(nameof(EnrollmentDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("enrollmentDateTime"); }
+            set { BackingStore?.Set("enrollmentDateTime", value); }
         }
         /// <summary>Date/time when this connector last connected to the service.</summary>
         public DateTimeOffset? LastCheckinDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastCheckinDateTime)); }
-            set { BackingStore?.Set(nameof(LastCheckinDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastCheckinDateTime"); }
+            set { BackingStore?.Set("lastCheckinDateTime", value); }
         }
         /// <summary>Name of the machine hosting this connector service.</summary>
         public string MachineName {
-            get { return BackingStore?.Get<string>(nameof(MachineName)); }
-            set { BackingStore?.Set(nameof(MachineName), value); }
+            get { return BackingStore?.Get<string>("machineName"); }
+            set { BackingStore?.Set("machineName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

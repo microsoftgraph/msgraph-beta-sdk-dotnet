@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class ActivateDeviceEsimActionResult : DeviceActionResult, IParsable {
         /// <summary>Carrier Url to activate the device eSIM</summary>
         public string CarrierUrl {
-            get { return BackingStore?.Get<string>(nameof(CarrierUrl)); }
-            set { BackingStore?.Set(nameof(CarrierUrl), value); }
+            get { return BackingStore?.Get<string>("carrierUrl"); }
+            set { BackingStore?.Set("carrierUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

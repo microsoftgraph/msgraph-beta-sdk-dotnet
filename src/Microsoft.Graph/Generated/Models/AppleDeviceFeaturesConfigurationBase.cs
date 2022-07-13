@@ -8,8 +8,14 @@ namespace Microsoft.Graph.Beta.Models {
     public class AppleDeviceFeaturesConfigurationBase : DeviceConfiguration, IParsable {
         /// <summary>An array of AirPrint printers that should always be shown. This collection can contain a maximum of 500 elements.</summary>
         public List<AirPrintDestination> AirPrintDestinations {
-            get { return BackingStore?.Get<List<AirPrintDestination>>(nameof(AirPrintDestinations)); }
-            set { BackingStore?.Set(nameof(AirPrintDestinations), value); }
+            get { return BackingStore?.Get<List<AirPrintDestination>>("airPrintDestinations"); }
+            set { BackingStore?.Set("airPrintDestinations", value); }
+        }
+        /// <summary>
+        /// Instantiates a new AppleDeviceFeaturesConfigurationBase and sets the default values.
+        /// </summary>
+        public AppleDeviceFeaturesConfigurationBase() : base() {
+            Type = "#microsoft.graph.appleDeviceFeaturesConfigurationBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

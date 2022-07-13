@@ -4,62 +4,66 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class VirtualEndpoint : Entity, IParsable {
         /// <summary>Cloud PC audit event.</summary>
         public List<CloudPcAuditEvent> AuditEvents {
-            get { return BackingStore?.Get<List<CloudPcAuditEvent>>(nameof(AuditEvents)); }
-            set { BackingStore?.Set(nameof(AuditEvents), value); }
+            get { return BackingStore?.Get<List<CloudPcAuditEvent>>("auditEvents"); }
+            set { BackingStore?.Set("auditEvents", value); }
         }
         /// <summary>Cloud managed virtual desktops.</summary>
         public List<CloudPC> CloudPCs {
-            get { return BackingStore?.Get<List<CloudPC>>(nameof(CloudPCs)); }
-            set { BackingStore?.Set(nameof(CloudPCs), value); }
+            get { return BackingStore?.Get<List<CloudPC>>("cloudPCs"); }
+            set { BackingStore?.Set("cloudPCs", value); }
         }
         /// <summary>The image resource on Cloud PC.</summary>
         public List<CloudPcDeviceImage> DeviceImages {
-            get { return BackingStore?.Get<List<CloudPcDeviceImage>>(nameof(DeviceImages)); }
-            set { BackingStore?.Set(nameof(DeviceImages), value); }
+            get { return BackingStore?.Get<List<CloudPcDeviceImage>>("deviceImages"); }
+            set { BackingStore?.Set("deviceImages", value); }
+        }
+        /// <summary>The externalPartnerSettings property</summary>
+        public List<CloudPcExternalPartnerSetting> ExternalPartnerSettings {
+            get { return BackingStore?.Get<List<CloudPcExternalPartnerSetting>>("externalPartnerSettings"); }
+            set { BackingStore?.Set("externalPartnerSettings", value); }
         }
         /// <summary>The gallery image resource on Cloud PC.</summary>
         public List<CloudPcGalleryImage> GalleryImages {
-            get { return BackingStore?.Get<List<CloudPcGalleryImage>>(nameof(GalleryImages)); }
-            set { BackingStore?.Set(nameof(GalleryImages), value); }
+            get { return BackingStore?.Get<List<CloudPcGalleryImage>>("galleryImages"); }
+            set { BackingStore?.Set("galleryImages", value); }
         }
         /// <summary>A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.</summary>
         public List<CloudPcOnPremisesConnection> OnPremisesConnections {
-            get { return BackingStore?.Get<List<CloudPcOnPremisesConnection>>(nameof(OnPremisesConnections)); }
-            set { BackingStore?.Set(nameof(OnPremisesConnections), value); }
+            get { return BackingStore?.Get<List<CloudPcOnPremisesConnection>>("onPremisesConnections"); }
+            set { BackingStore?.Set("onPremisesConnections", value); }
         }
         /// <summary>The Cloud PC organization settings for a tenant.</summary>
         public CloudPcOrganizationSettings OrganizationSettings {
-            get { return BackingStore?.Get<CloudPcOrganizationSettings>(nameof(OrganizationSettings)); }
-            set { BackingStore?.Set(nameof(OrganizationSettings), value); }
+            get { return BackingStore?.Get<CloudPcOrganizationSettings>("organizationSettings"); }
+            set { BackingStore?.Set("organizationSettings", value); }
         }
         /// <summary>Cloud PC provisioning policy.</summary>
         public List<CloudPcProvisioningPolicy> ProvisioningPolicies {
-            get { return BackingStore?.Get<List<CloudPcProvisioningPolicy>>(nameof(ProvisioningPolicies)); }
-            set { BackingStore?.Set(nameof(ProvisioningPolicies), value); }
+            get { return BackingStore?.Get<List<CloudPcProvisioningPolicy>>("provisioningPolicies"); }
+            set { BackingStore?.Set("provisioningPolicies", value); }
         }
         /// <summary>Cloud PC service plans.</summary>
         public List<CloudPcServicePlan> ServicePlans {
-            get { return BackingStore?.Get<List<CloudPcServicePlan>>(nameof(ServicePlans)); }
-            set { BackingStore?.Set(nameof(ServicePlans), value); }
+            get { return BackingStore?.Get<List<CloudPcServicePlan>>("servicePlans"); }
+            set { BackingStore?.Set("servicePlans", value); }
         }
         /// <summary>Cloud PC snapshots.</summary>
         public List<CloudPcSnapshot> Snapshots {
-            get { return BackingStore?.Get<List<CloudPcSnapshot>>(nameof(Snapshots)); }
-            set { BackingStore?.Set(nameof(Snapshots), value); }
+            get { return BackingStore?.Get<List<CloudPcSnapshot>>("snapshots"); }
+            set { BackingStore?.Set("snapshots", value); }
         }
         /// <summary>Cloud PC supported regions.</summary>
         public List<CloudPcSupportedRegion> SupportedRegions {
-            get { return BackingStore?.Get<List<CloudPcSupportedRegion>>(nameof(SupportedRegions)); }
-            set { BackingStore?.Set(nameof(SupportedRegions), value); }
+            get { return BackingStore?.Get<List<CloudPcSupportedRegion>>("supportedRegions"); }
+            set { BackingStore?.Set("supportedRegions", value); }
         }
         /// <summary>Cloud PC user settings.</summary>
         public List<CloudPcUserSetting> UserSettings {
-            get { return BackingStore?.Get<List<CloudPcUserSetting>>(nameof(UserSettings)); }
-            set { BackingStore?.Set(nameof(UserSettings), value); }
+            get { return BackingStore?.Get<List<CloudPcUserSetting>>("userSettings"); }
+            set { BackingStore?.Set("userSettings", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -77,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"auditEvents", n => { AuditEvents = n.GetCollectionOfObjectValues<CloudPcAuditEvent>(CloudPcAuditEvent.CreateFromDiscriminatorValue).ToList(); } },
                 {"cloudPCs", n => { CloudPCs = n.GetCollectionOfObjectValues<CloudPC>(CloudPC.CreateFromDiscriminatorValue).ToList(); } },
                 {"deviceImages", n => { DeviceImages = n.GetCollectionOfObjectValues<CloudPcDeviceImage>(CloudPcDeviceImage.CreateFromDiscriminatorValue).ToList(); } },
+                {"externalPartnerSettings", n => { ExternalPartnerSettings = n.GetCollectionOfObjectValues<CloudPcExternalPartnerSetting>(CloudPcExternalPartnerSetting.CreateFromDiscriminatorValue).ToList(); } },
                 {"galleryImages", n => { GalleryImages = n.GetCollectionOfObjectValues<CloudPcGalleryImage>(CloudPcGalleryImage.CreateFromDiscriminatorValue).ToList(); } },
                 {"onPremisesConnections", n => { OnPremisesConnections = n.GetCollectionOfObjectValues<CloudPcOnPremisesConnection>(CloudPcOnPremisesConnection.CreateFromDiscriminatorValue).ToList(); } },
                 {"organizationSettings", n => { OrganizationSettings = n.GetObjectValue<CloudPcOrganizationSettings>(CloudPcOrganizationSettings.CreateFromDiscriminatorValue); } },
@@ -97,6 +102,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<CloudPcAuditEvent>("auditEvents", AuditEvents);
             writer.WriteCollectionOfObjectValues<CloudPC>("cloudPCs", CloudPCs);
             writer.WriteCollectionOfObjectValues<CloudPcDeviceImage>("deviceImages", DeviceImages);
+            writer.WriteCollectionOfObjectValues<CloudPcExternalPartnerSetting>("externalPartnerSettings", ExternalPartnerSettings);
             writer.WriteCollectionOfObjectValues<CloudPcGalleryImage>("galleryImages", GalleryImages);
             writer.WriteCollectionOfObjectValues<CloudPcOnPremisesConnection>("onPremisesConnections", OnPremisesConnections);
             writer.WriteObjectValue<CloudPcOrganizationSettings>("organizationSettings", OrganizationSettings);

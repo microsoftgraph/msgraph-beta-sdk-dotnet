@@ -4,42 +4,41 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class PaymentTerm : Entity, IParsable {
         /// <summary>The calculateDiscountOnCreditMemos property</summary>
         public bool? CalculateDiscountOnCreditMemos {
-            get { return BackingStore?.Get<bool?>(nameof(CalculateDiscountOnCreditMemos)); }
-            set { BackingStore?.Set(nameof(CalculateDiscountOnCreditMemos), value); }
+            get { return BackingStore?.Get<bool?>("calculateDiscountOnCreditMemos"); }
+            set { BackingStore?.Set("calculateDiscountOnCreditMemos", value); }
         }
         /// <summary>The code property</summary>
         public string Code {
-            get { return BackingStore?.Get<string>(nameof(Code)); }
-            set { BackingStore?.Set(nameof(Code), value); }
+            get { return BackingStore?.Get<string>("code"); }
+            set { BackingStore?.Set("code", value); }
         }
         /// <summary>The discountDateCalculation property</summary>
         public string DiscountDateCalculation {
-            get { return BackingStore?.Get<string>(nameof(DiscountDateCalculation)); }
-            set { BackingStore?.Set(nameof(DiscountDateCalculation), value); }
+            get { return BackingStore?.Get<string>("discountDateCalculation"); }
+            set { BackingStore?.Set("discountDateCalculation", value); }
         }
         /// <summary>The discountPercent property</summary>
         public decimal? DiscountPercent {
-            get { return BackingStore?.Get<decimal?>(nameof(DiscountPercent)); }
-            set { BackingStore?.Set(nameof(DiscountPercent), value); }
+            get { return BackingStore?.Get<decimal?>("discountPercent"); }
+            set { BackingStore?.Set("discountPercent", value); }
         }
         /// <summary>The displayName property</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The dueDateCalculation property</summary>
         public string DueDateCalculation {
-            get { return BackingStore?.Get<string>(nameof(DueDateCalculation)); }
-            set { BackingStore?.Set(nameof(DueDateCalculation), value); }
+            get { return BackingStore?.Get<string>("dueDateCalculation"); }
+            set { BackingStore?.Set("dueDateCalculation", value); }
         }
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

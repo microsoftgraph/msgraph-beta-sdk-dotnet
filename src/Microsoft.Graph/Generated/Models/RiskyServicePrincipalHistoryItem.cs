@@ -4,22 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class RiskyServicePrincipalHistoryItem : RiskyServicePrincipal, IParsable {
         /// <summary>The activity related to service principal risk level change.</summary>
         public RiskServicePrincipalActivity Activity {
-            get { return BackingStore?.Get<RiskServicePrincipalActivity>(nameof(Activity)); }
-            set { BackingStore?.Set(nameof(Activity), value); }
+            get { return BackingStore?.Get<RiskServicePrincipalActivity>("activity"); }
+            set { BackingStore?.Set("activity", value); }
         }
         /// <summary>The identifier of the actor of the operation.</summary>
         public string InitiatedBy {
-            get { return BackingStore?.Get<string>(nameof(InitiatedBy)); }
-            set { BackingStore?.Set(nameof(InitiatedBy), value); }
+            get { return BackingStore?.Get<string>("initiatedBy"); }
+            set { BackingStore?.Set("initiatedBy", value); }
         }
         /// <summary>The identifier of the service principal.</summary>
         public string ServicePrincipalId {
-            get { return BackingStore?.Get<string>(nameof(ServicePrincipalId)); }
-            set { BackingStore?.Set(nameof(ServicePrincipalId), value); }
+            get { return BackingStore?.Get<string>("servicePrincipalId"); }
+            set { BackingStore?.Set("servicePrincipalId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

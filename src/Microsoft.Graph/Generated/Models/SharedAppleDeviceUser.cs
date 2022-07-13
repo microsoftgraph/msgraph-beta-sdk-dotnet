@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class SharedAppleDeviceUser : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Data quota</summary>
         public long? DataQuota {
-            get { return BackingStore?.Get<long?>(nameof(DataQuota)); }
-            set { BackingStore?.Set(nameof(DataQuota), value); }
+            get { return BackingStore?.Get<long?>("dataQuota"); }
+            set { BackingStore?.Set("dataQuota", value); }
         }
         /// <summary>Data to sync</summary>
         public bool? DataToSync {
-            get { return BackingStore?.Get<bool?>(nameof(DataToSync)); }
-            set { BackingStore?.Set(nameof(DataToSync), value); }
+            get { return BackingStore?.Get<bool?>("dataToSync"); }
+            set { BackingStore?.Set("dataToSync", value); }
         }
         /// <summary>Data quota</summary>
         public long? DataUsed {
-            get { return BackingStore?.Get<long?>(nameof(DataUsed)); }
-            set { BackingStore?.Set(nameof(DataUsed), value); }
+            get { return BackingStore?.Get<long?>("dataUsed"); }
+            set { BackingStore?.Set("dataUsed", value); }
         }
         /// <summary>User name</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Instantiates a new sharedAppleDeviceUser and sets the default values.

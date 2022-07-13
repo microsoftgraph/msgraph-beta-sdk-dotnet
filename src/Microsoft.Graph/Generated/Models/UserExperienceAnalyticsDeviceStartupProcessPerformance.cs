@@ -8,43 +8,43 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsDeviceStartupProcessPerformance : Entity, IParsable {
         /// <summary>User experience analytics device startup process summarized count.</summary>
         public long? DeviceCount {
-            get { return BackingStore?.Get<long?>(nameof(DeviceCount)); }
-            set { BackingStore?.Set(nameof(DeviceCount), value); }
+            get { return BackingStore?.Get<long?>("deviceCount"); }
+            set { BackingStore?.Set("deviceCount", value); }
         }
         /// <summary>User experience analytics device startup process median impact in milliseconds.</summary>
         public int? MedianImpactInMs {
-            get { return BackingStore?.Get<int?>(nameof(MedianImpactInMs)); }
-            set { BackingStore?.Set(nameof(MedianImpactInMs), value); }
+            get { return BackingStore?.Get<int?>("medianImpactInMs"); }
+            set { BackingStore?.Set("medianImpactInMs", value); }
         }
         /// <summary>User experience analytics device startup process median impact in milliseconds.</summary>
         public long? MedianImpactInMs2 {
-            get { return BackingStore?.Get<long?>(nameof(MedianImpactInMs2)); }
-            set { BackingStore?.Set(nameof(MedianImpactInMs2), value); }
+            get { return BackingStore?.Get<long?>("medianImpactInMs2"); }
+            set { BackingStore?.Set("medianImpactInMs2", value); }
         }
         /// <summary>User experience analytics device startup process name.</summary>
         public string ProcessName {
-            get { return BackingStore?.Get<string>(nameof(ProcessName)); }
-            set { BackingStore?.Set(nameof(ProcessName), value); }
+            get { return BackingStore?.Get<string>("processName"); }
+            set { BackingStore?.Set("processName", value); }
         }
         /// <summary>The user experience analytics device startup process product name.</summary>
         public string ProductName {
-            get { return BackingStore?.Get<string>(nameof(ProductName)); }
-            set { BackingStore?.Set(nameof(ProductName), value); }
+            get { return BackingStore?.Get<string>("productName"); }
+            set { BackingStore?.Set("productName", value); }
         }
         /// <summary>The User experience analytics device startup process publisher.</summary>
         public string Publisher {
-            get { return BackingStore?.Get<string>(nameof(Publisher)); }
-            set { BackingStore?.Set(nameof(Publisher), value); }
+            get { return BackingStore?.Get<string>("publisher"); }
+            set { BackingStore?.Set("publisher", value); }
         }
         /// <summary>User experience analytics device startup process total impact in milliseconds.</summary>
         public int? TotalImpactInMs {
-            get { return BackingStore?.Get<int?>(nameof(TotalImpactInMs)); }
-            set { BackingStore?.Set(nameof(TotalImpactInMs), value); }
+            get { return BackingStore?.Get<int?>("totalImpactInMs"); }
+            set { BackingStore?.Set("totalImpactInMs", value); }
         }
         /// <summary>User experience analytics device startup process total impact in milliseconds.</summary>
         public long? TotalImpactInMs2 {
-            get { return BackingStore?.Get<long?>(nameof(TotalImpactInMs2)); }
-            set { BackingStore?.Set(nameof(TotalImpactInMs2), value); }
+            get { return BackingStore?.Get<long?>("totalImpactInMs2"); }
+            set { BackingStore?.Set("totalImpactInMs2", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

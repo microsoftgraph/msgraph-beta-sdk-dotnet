@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationTeamsAppResource : EducationResource, IParsable {
         /// <summary>URL that points to the app&apos;s icon.</summary>
         public string AppIconWebUrl {
-            get { return BackingStore?.Get<string>(nameof(AppIconWebUrl)); }
-            set { BackingStore?.Set(nameof(AppIconWebUrl), value); }
+            get { return BackingStore?.Get<string>("appIconWebUrl"); }
+            set { BackingStore?.Set("appIconWebUrl", value); }
         }
         /// <summary>Teams App ID of the application.</summary>
         public string AppId {
-            get { return BackingStore?.Get<string>(nameof(AppId)); }
-            set { BackingStore?.Set(nameof(AppId), value); }
+            get { return BackingStore?.Get<string>("appId"); }
+            set { BackingStore?.Set("appId", value); }
         }
         /// <summary>URL for the app resource that will be opened by Teams.</summary>
         public string TeamsEmbeddedContentUrl {
-            get { return BackingStore?.Get<string>(nameof(TeamsEmbeddedContentUrl)); }
-            set { BackingStore?.Set(nameof(TeamsEmbeddedContentUrl), value); }
+            get { return BackingStore?.Get<string>("teamsEmbeddedContentUrl"); }
+            set { BackingStore?.Set("teamsEmbeddedContentUrl", value); }
         }
         /// <summary>URL for the app resource that can be opened in the browser.</summary>
         public string WebUrl {
-            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
-            set { BackingStore?.Set(nameof(WebUrl), value); }
+            get { return BackingStore?.Get<string>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

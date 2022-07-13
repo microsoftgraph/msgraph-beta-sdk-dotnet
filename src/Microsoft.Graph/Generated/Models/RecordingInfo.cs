@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class RecordingInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The participant who initiated the recording.</summary>
         public ParticipantInfo InitiatedBy {
-            get { return BackingStore?.Get<ParticipantInfo>(nameof(InitiatedBy)); }
-            set { BackingStore?.Set(nameof(InitiatedBy), value); }
+            get { return BackingStore?.Get<ParticipantInfo>("initiatedBy"); }
+            set { BackingStore?.Set("initiatedBy", value); }
         }
         /// <summary>The identities of recording initiator.</summary>
         public IdentitySet Initiator {
-            get { return BackingStore?.Get<IdentitySet>(nameof(Initiator)); }
-            set { BackingStore?.Set(nameof(Initiator), value); }
+            get { return BackingStore?.Get<IdentitySet>("initiator"); }
+            set { BackingStore?.Set("initiator", value); }
         }
-        /// <summary>Possible values are: unknown, notRecording, recording, or failed.</summary>
+        /// <summary>The recordingStatus property</summary>
         public Microsoft.Graph.Beta.Models.RecordingStatus? RecordingStatus {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RecordingStatus?>(nameof(RecordingStatus)); }
-            set { BackingStore?.Set(nameof(RecordingStatus), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RecordingStatus?>("recordingStatus"); }
+            set { BackingStore?.Set("recordingStatus", value); }
         }
         /// <summary>
         /// Instantiates a new recordingInfo and sets the default values.

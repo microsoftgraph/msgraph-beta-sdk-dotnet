@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class NumberRange : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Lower number.</summary>
         public int? LowerNumber {
-            get { return BackingStore?.Get<int?>(nameof(LowerNumber)); }
-            set { BackingStore?.Set(nameof(LowerNumber), value); }
+            get { return BackingStore?.Get<int?>("lowerNumber"); }
+            set { BackingStore?.Set("lowerNumber", value); }
         }
         /// <summary>Upper number.</summary>
         public int? UpperNumber {
-            get { return BackingStore?.Get<int?>(nameof(UpperNumber)); }
-            set { BackingStore?.Set(nameof(UpperNumber), value); }
+            get { return BackingStore?.Get<int?>("upperNumber"); }
+            set { BackingStore?.Set("upperNumber", value); }
         }
         /// <summary>
         /// Instantiates a new numberRange and sets the default values.

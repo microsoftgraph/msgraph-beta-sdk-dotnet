@@ -7,43 +7,43 @@ namespace Microsoft.Graph.Beta.Models {
     public class MeetingRegistration : MeetingRegistrationBase, IParsable {
         /// <summary>Custom registration questions.</summary>
         public List<MeetingRegistrationQuestion> CustomQuestions {
-            get { return BackingStore?.Get<List<MeetingRegistrationQuestion>>(nameof(CustomQuestions)); }
-            set { BackingStore?.Set(nameof(CustomQuestions), value); }
+            get { return BackingStore?.Get<List<MeetingRegistrationQuestion>>("customQuestions"); }
+            set { BackingStore?.Set("customQuestions", value); }
         }
         /// <summary>The description of the meeting.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The meeting end time in UTC.</summary>
         public DateTimeOffset? EndDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
-            set { BackingStore?.Set(nameof(EndDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
+            set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>The number of times the registration page has been visited. Read-only.</summary>
         public int? RegistrationPageViewCount {
-            get { return BackingStore?.Get<int?>(nameof(RegistrationPageViewCount)); }
-            set { BackingStore?.Set(nameof(RegistrationPageViewCount), value); }
+            get { return BackingStore?.Get<int?>("registrationPageViewCount"); }
+            set { BackingStore?.Set("registrationPageViewCount", value); }
         }
         /// <summary>The URL of the registration page. Read-only.</summary>
         public string RegistrationPageWebUrl {
-            get { return BackingStore?.Get<string>(nameof(RegistrationPageWebUrl)); }
-            set { BackingStore?.Set(nameof(RegistrationPageWebUrl), value); }
+            get { return BackingStore?.Get<string>("registrationPageWebUrl"); }
+            set { BackingStore?.Set("registrationPageWebUrl", value); }
         }
         /// <summary>The meeting speaker&apos;s information.</summary>
         public List<MeetingSpeaker> Speakers {
-            get { return BackingStore?.Get<List<MeetingSpeaker>>(nameof(Speakers)); }
-            set { BackingStore?.Set(nameof(Speakers), value); }
+            get { return BackingStore?.Get<List<MeetingSpeaker>>("speakers"); }
+            set { BackingStore?.Set("speakers", value); }
         }
         /// <summary>The meeting start time in UTC.</summary>
         public DateTimeOffset? StartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
-            set { BackingStore?.Set(nameof(StartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The subject of the meeting.</summary>
         public string Subject {
-            get { return BackingStore?.Get<string>(nameof(Subject)); }
-            set { BackingStore?.Set(nameof(Subject), value); }
+            get { return BackingStore?.Get<string>("subject"); }
+            set { BackingStore?.Set("subject", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

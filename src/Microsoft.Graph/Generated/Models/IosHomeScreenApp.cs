@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosHomeScreenApp : IosHomeScreenItem, IParsable {
         /// <summary>BundleID of the app if isWebClip is false or the URL of a web clip if isWebClip is true.</summary>
         public string BundleID {
-            get { return BackingStore?.Get<string>(nameof(BundleID)); }
-            set { BackingStore?.Set(nameof(BundleID), value); }
+            get { return BackingStore?.Get<string>("bundleID"); }
+            set { BackingStore?.Set("bundleID", value); }
         }
         /// <summary>When true, the bundle ID will be handled as a URL for a web clip.</summary>
         public bool? IsWebClip {
-            get { return BackingStore?.Get<bool?>(nameof(IsWebClip)); }
-            set { BackingStore?.Set(nameof(IsWebClip), value); }
+            get { return BackingStore?.Get<bool?>("isWebClip"); }
+            set { BackingStore?.Set("isWebClip", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

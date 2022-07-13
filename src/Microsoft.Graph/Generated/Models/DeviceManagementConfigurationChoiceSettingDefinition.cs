@@ -8,13 +8,19 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationChoiceSettingDefinition : DeviceManagementConfigurationSettingDefinition, IParsable {
         /// <summary>Default option for choice setting</summary>
         public string DefaultOptionId {
-            get { return BackingStore?.Get<string>(nameof(DefaultOptionId)); }
-            set { BackingStore?.Set(nameof(DefaultOptionId), value); }
+            get { return BackingStore?.Get<string>("defaultOptionId"); }
+            set { BackingStore?.Set("defaultOptionId", value); }
         }
         /// <summary>Options for the setting that can be selected</summary>
         public List<DeviceManagementConfigurationOptionDefinition> Options {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationOptionDefinition>>(nameof(Options)); }
-            set { BackingStore?.Set(nameof(Options), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationOptionDefinition>>("options"); }
+            set { BackingStore?.Set("options", value); }
+        }
+        /// <summary>
+        /// Instantiates a new DeviceManagementConfigurationChoiceSettingDefinition and sets the default values.
+        /// </summary>
+        public DeviceManagementConfigurationChoiceSettingDefinition() : base() {
+            Type = "#microsoft.graph.deviceManagementConfigurationChoiceSettingDefinition";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class MobileAppTroubleshootingAppPolicyCreationHistory : MobileAppTroubleshootingHistoryItem, IParsable {
         /// <summary>Error code for the failure, empty if no failure.</summary>
         public string ErrorCode {
-            get { return BackingStore?.Get<string>(nameof(ErrorCode)); }
-            set { BackingStore?.Set(nameof(ErrorCode), value); }
+            get { return BackingStore?.Get<string>("errorCode"); }
+            set { BackingStore?.Set("errorCode", value); }
         }
-        /// <summary>Status of the item. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.</summary>
+        /// <summary>Indicates the type of execution status of the device management script.</summary>
         public Microsoft.Graph.Beta.Models.RunState? RunState {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RunState?>(nameof(RunState)); }
-            set { BackingStore?.Set(nameof(RunState), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RunState?>("runState"); }
+            set { BackingStore?.Set("runState", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

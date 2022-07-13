@@ -4,77 +4,76 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class AccessPackageCatalog : Entity, IParsable {
         /// <summary>The roles in each resource in a catalog. Read-only.</summary>
         public List<AccessPackageResourceRole> AccessPackageResourceRoles {
-            get { return BackingStore?.Get<List<AccessPackageResourceRole>>(nameof(AccessPackageResourceRoles)); }
-            set { BackingStore?.Set(nameof(AccessPackageResourceRoles), value); }
+            get { return BackingStore?.Get<List<AccessPackageResourceRole>>("accessPackageResourceRoles"); }
+            set { BackingStore?.Set("accessPackageResourceRoles", value); }
         }
         /// <summary>The accessPackageResources property</summary>
         public List<AccessPackageResource> AccessPackageResources {
-            get { return BackingStore?.Get<List<AccessPackageResource>>(nameof(AccessPackageResources)); }
-            set { BackingStore?.Set(nameof(AccessPackageResources), value); }
+            get { return BackingStore?.Get<List<AccessPackageResource>>("accessPackageResources"); }
+            set { BackingStore?.Set("accessPackageResources", value); }
         }
         /// <summary>The accessPackageResourceScopes property</summary>
         public List<AccessPackageResourceScope> AccessPackageResourceScopes {
-            get { return BackingStore?.Get<List<AccessPackageResourceScope>>(nameof(AccessPackageResourceScopes)); }
-            set { BackingStore?.Set(nameof(AccessPackageResourceScopes), value); }
+            get { return BackingStore?.Get<List<AccessPackageResourceScope>>("accessPackageResourceScopes"); }
+            set { BackingStore?.Set("accessPackageResourceScopes", value); }
         }
         /// <summary>The access packages in this catalog. Read-only. Nullable. Supports $expand.</summary>
         public List<AccessPackage> AccessPackages {
-            get { return BackingStore?.Get<List<AccessPackage>>(nameof(AccessPackages)); }
-            set { BackingStore?.Set(nameof(AccessPackages), value); }
+            get { return BackingStore?.Get<List<AccessPackage>>("accessPackages"); }
+            set { BackingStore?.Set("accessPackages", value); }
         }
         /// <summary>Has the value Published if the access packages are available for management.</summary>
         public string CatalogStatus {
-            get { return BackingStore?.Get<string>(nameof(CatalogStatus)); }
-            set { BackingStore?.Set(nameof(CatalogStatus), value); }
+            get { return BackingStore?.Get<string>("catalogStatus"); }
+            set { BackingStore?.Set("catalogStatus", value); }
         }
         /// <summary>One of UserManaged or ServiceDefault.</summary>
         public string CatalogType {
-            get { return BackingStore?.Get<string>(nameof(CatalogType)); }
-            set { BackingStore?.Set(nameof(CatalogType), value); }
+            get { return BackingStore?.Get<string>("catalogType"); }
+            set { BackingStore?.Set("catalogType", value); }
         }
         /// <summary>UPN of the user who created this resource. Read-only.</summary>
         public string CreatedBy {
-            get { return BackingStore?.Get<string>(nameof(CreatedBy)); }
-            set { BackingStore?.Set(nameof(CreatedBy), value); }
+            get { return BackingStore?.Get<string>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
         }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The customAccessPackageWorkflowExtensions property</summary>
         public List<CustomAccessPackageWorkflowExtension> CustomAccessPackageWorkflowExtensions {
-            get { return BackingStore?.Get<List<CustomAccessPackageWorkflowExtension>>(nameof(CustomAccessPackageWorkflowExtensions)); }
-            set { BackingStore?.Set(nameof(CustomAccessPackageWorkflowExtensions), value); }
+            get { return BackingStore?.Get<List<CustomAccessPackageWorkflowExtension>>("customAccessPackageWorkflowExtensions"); }
+            set { BackingStore?.Set("customAccessPackageWorkflowExtensions", value); }
         }
         /// <summary>The description of the access package catalog.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The display name of the access package catalog. Supports $filter (eq, contains).</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Whether the access packages in this catalog can be requested by users outside of the tenant.</summary>
         public bool? IsExternallyVisible {
-            get { return BackingStore?.Get<bool?>(nameof(IsExternallyVisible)); }
-            set { BackingStore?.Set(nameof(IsExternallyVisible), value); }
+            get { return BackingStore?.Get<bool?>("isExternallyVisible"); }
+            set { BackingStore?.Set("isExternallyVisible", value); }
         }
         /// <summary>The UPN of the user who last modified this resource. Read-only.</summary>
         public string ModifiedBy {
-            get { return BackingStore?.Get<string>(nameof(ModifiedBy)); }
-            set { BackingStore?.Set(nameof(ModifiedBy), value); }
+            get { return BackingStore?.Get<string>("modifiedBy"); }
+            set { BackingStore?.Set("modifiedBy", value); }
         }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? ModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(ModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }
+            set { BackingStore?.Set("modifiedDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

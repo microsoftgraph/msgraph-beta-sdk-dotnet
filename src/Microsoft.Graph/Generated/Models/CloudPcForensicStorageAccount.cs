@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the getStorageAccounts method.</summary>
     public class CloudPcForensicStorageAccount : Entity, IParsable {
         /// <summary>The ID of the storage account.</summary>
         public string StorageAccountId {
-            get { return BackingStore?.Get<string>(nameof(StorageAccountId)); }
-            set { BackingStore?.Set(nameof(StorageAccountId), value); }
+            get { return BackingStore?.Get<string>("storageAccountId"); }
+            set { BackingStore?.Set("storageAccountId", value); }
         }
         /// <summary>The name of the storage account.</summary>
         public string StorageAccountName {
-            get { return BackingStore?.Get<string>(nameof(StorageAccountName)); }
-            set { BackingStore?.Set(nameof(StorageAccountName), value); }
+            get { return BackingStore?.Get<string>("storageAccountName"); }
+            set { BackingStore?.Set("storageAccountName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

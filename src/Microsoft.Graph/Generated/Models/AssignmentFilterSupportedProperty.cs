@@ -9,40 +9,40 @@ namespace Microsoft.Graph.Beta.Models {
     public class AssignmentFilterSupportedProperty : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The data type of the property.</summary>
         public string DataType {
-            get { return BackingStore?.Get<string>(nameof(DataType)); }
-            set { BackingStore?.Set(nameof(DataType), value); }
+            get { return BackingStore?.Get<string>("dataType"); }
+            set { BackingStore?.Set("dataType", value); }
         }
         /// <summary>Indicates whether the property is a collection type or not.</summary>
         public bool? IsCollection {
-            get { return BackingStore?.Get<bool?>(nameof(IsCollection)); }
-            set { BackingStore?.Set(nameof(IsCollection), value); }
+            get { return BackingStore?.Get<bool?>("isCollection"); }
+            set { BackingStore?.Set("isCollection", value); }
         }
         /// <summary>Name of the property.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>Regex string to do validation on the property value.</summary>
         public string PropertyRegexConstraint {
-            get { return BackingStore?.Get<string>(nameof(PropertyRegexConstraint)); }
-            set { BackingStore?.Set(nameof(PropertyRegexConstraint), value); }
+            get { return BackingStore?.Get<string>("propertyRegexConstraint"); }
+            set { BackingStore?.Set("propertyRegexConstraint", value); }
         }
         /// <summary>List of all supported operators on this property.</summary>
         public List<string> SupportedOperators {
-            get { return BackingStore?.Get<List<string>>(nameof(SupportedOperators)); }
-            set { BackingStore?.Set(nameof(SupportedOperators), value); }
+            get { return BackingStore?.Get<List<string>>("supportedOperators"); }
+            set { BackingStore?.Set("supportedOperators", value); }
         }
         /// <summary>List of all supported values for this propery, empty if everything is supported.</summary>
         public List<string> SupportedValues {
-            get { return BackingStore?.Get<List<string>>(nameof(SupportedValues)); }
-            set { BackingStore?.Set(nameof(SupportedValues), value); }
+            get { return BackingStore?.Get<List<string>>("supportedValues"); }
+            set { BackingStore?.Set("supportedValues", value); }
         }
         /// <summary>
         /// Instantiates a new assignmentFilterSupportedProperty and sets the default values.

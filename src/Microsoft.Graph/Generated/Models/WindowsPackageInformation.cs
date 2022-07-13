@@ -9,45 +9,45 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsPackageInformation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The Windows architecture for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.</summary>
+        /// <summary>Contains properties for Windows architecture.</summary>
         public WindowsArchitecture? ApplicableArchitecture {
-            get { return BackingStore?.Get<WindowsArchitecture?>(nameof(ApplicableArchitecture)); }
-            set { BackingStore?.Set(nameof(ApplicableArchitecture), value); }
+            get { return BackingStore?.Get<WindowsArchitecture?>("applicableArchitecture"); }
+            set { BackingStore?.Set("applicableArchitecture", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Display Name.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The Identity Name.</summary>
         public string IdentityName {
-            get { return BackingStore?.Get<string>(nameof(IdentityName)); }
-            set { BackingStore?.Set(nameof(IdentityName), value); }
+            get { return BackingStore?.Get<string>("identityName"); }
+            set { BackingStore?.Set("identityName", value); }
         }
         /// <summary>The Identity Publisher.</summary>
         public string IdentityPublisher {
-            get { return BackingStore?.Get<string>(nameof(IdentityPublisher)); }
-            set { BackingStore?.Set(nameof(IdentityPublisher), value); }
+            get { return BackingStore?.Get<string>("identityPublisher"); }
+            set { BackingStore?.Set("identityPublisher", value); }
         }
         /// <summary>The Identity Resource Identifier.</summary>
         public string IdentityResourceIdentifier {
-            get { return BackingStore?.Get<string>(nameof(IdentityResourceIdentifier)); }
-            set { BackingStore?.Set(nameof(IdentityResourceIdentifier), value); }
+            get { return BackingStore?.Get<string>("identityResourceIdentifier"); }
+            set { BackingStore?.Set("identityResourceIdentifier", value); }
         }
         /// <summary>The Identity Version.</summary>
         public string IdentityVersion {
-            get { return BackingStore?.Get<string>(nameof(IdentityVersion)); }
-            set { BackingStore?.Set(nameof(IdentityVersion), value); }
+            get { return BackingStore?.Get<string>("identityVersion"); }
+            set { BackingStore?.Set("identityVersion", value); }
         }
         /// <summary>The value for the minimum applicable operating system.</summary>
         public WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem {
-            get { return BackingStore?.Get<WindowsMinimumOperatingSystem>(nameof(MinimumSupportedOperatingSystem)); }
-            set { BackingStore?.Set(nameof(MinimumSupportedOperatingSystem), value); }
+            get { return BackingStore?.Get<WindowsMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
+            set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
         /// <summary>
         /// Instantiates a new windowsPackageInformation and sets the default values.

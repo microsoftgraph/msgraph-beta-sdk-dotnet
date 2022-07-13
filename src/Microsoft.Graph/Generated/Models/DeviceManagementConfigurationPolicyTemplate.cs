@@ -8,63 +8,63 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationPolicyTemplate : Entity, IParsable {
         /// <summary>Allow unmanaged setting templates</summary>
         public bool? AllowUnmanagedSettings {
-            get { return BackingStore?.Get<bool?>(nameof(AllowUnmanagedSettings)); }
-            set { BackingStore?.Set(nameof(AllowUnmanagedSettings), value); }
+            get { return BackingStore?.Get<bool?>("allowUnmanagedSettings"); }
+            set { BackingStore?.Set("allowUnmanagedSettings", value); }
         }
         /// <summary>Template base identifier</summary>
         public string BaseId {
-            get { return BackingStore?.Get<string>(nameof(BaseId)); }
-            set { BackingStore?.Set(nameof(BaseId), value); }
+            get { return BackingStore?.Get<string>("baseId"); }
+            set { BackingStore?.Set("baseId", value); }
         }
         /// <summary>Template description</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Template display name</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Description of template version</summary>
         public string DisplayVersion {
-            get { return BackingStore?.Get<string>(nameof(DisplayVersion)); }
-            set { BackingStore?.Set(nameof(DisplayVersion), value); }
+            get { return BackingStore?.Get<string>("displayVersion"); }
+            set { BackingStore?.Set("displayVersion", value); }
         }
-        /// <summary>Indicate current lifecycle state of template. Possible values are: invalid, draft, active, superseded, deprecated, retired.</summary>
+        /// <summary>Describes current lifecycle state of a template</summary>
         public DeviceManagementTemplateLifecycleState? LifecycleState {
-            get { return BackingStore?.Get<DeviceManagementTemplateLifecycleState?>(nameof(LifecycleState)); }
-            set { BackingStore?.Set(nameof(LifecycleState), value); }
+            get { return BackingStore?.Get<DeviceManagementTemplateLifecycleState?>("lifecycleState"); }
+            set { BackingStore?.Set("lifecycleState", value); }
         }
-        /// <summary>Platforms for this template. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.</summary>
+        /// <summary>Supported platform types.</summary>
         public DeviceManagementConfigurationPlatforms? Platforms {
-            get { return BackingStore?.Get<DeviceManagementConfigurationPlatforms?>(nameof(Platforms)); }
-            set { BackingStore?.Set(nameof(Platforms), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationPlatforms?>("platforms"); }
+            set { BackingStore?.Set("platforms", value); }
         }
         /// <summary>Number of setting templates. Valid values 0 to 2147483647. This property is read-only.</summary>
         public int? SettingTemplateCount {
-            get { return BackingStore?.Get<int?>(nameof(SettingTemplateCount)); }
-            set { BackingStore?.Set(nameof(SettingTemplateCount), value); }
+            get { return BackingStore?.Get<int?>("settingTemplateCount"); }
+            set { BackingStore?.Set("settingTemplateCount", value); }
         }
         /// <summary>Setting templates</summary>
         public List<DeviceManagementConfigurationSettingTemplate> SettingTemplates {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingTemplate>>(nameof(SettingTemplates)); }
-            set { BackingStore?.Set(nameof(SettingTemplates), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingTemplate>>("settingTemplates"); }
+            set { BackingStore?.Set("settingTemplates", value); }
         }
-        /// <summary>Technologies for this template. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.</summary>
+        /// <summary>Describes which technology this setting can be deployed with</summary>
         public DeviceManagementConfigurationTechnologies? Technologies {
-            get { return BackingStore?.Get<DeviceManagementConfigurationTechnologies?>(nameof(Technologies)); }
-            set { BackingStore?.Set(nameof(Technologies), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationTechnologies?>("technologies"); }
+            set { BackingStore?.Set("technologies", value); }
         }
-        /// <summary>TemplateFamily for this template. Possible values are: none, endpointSecurityAntivirus, endpointSecurityDiskEncryption, endpointSecurityFirewall, endpointSecurityEndpointDetectionAndResponse, endpointSecurityAttackSurfaceReduction, endpointSecurityAccountProtection, endpointSecurityApplicationControl, baseline.</summary>
+        /// <summary>Describes the TemplateFamily for the Template entity</summary>
         public DeviceManagementConfigurationTemplateFamily? TemplateFamily {
-            get { return BackingStore?.Get<DeviceManagementConfigurationTemplateFamily?>(nameof(TemplateFamily)); }
-            set { BackingStore?.Set(nameof(TemplateFamily), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationTemplateFamily?>("templateFamily"); }
+            set { BackingStore?.Set("templateFamily", value); }
         }
         /// <summary>Template version. Valid values 1 to 2147483647. This property is read-only.</summary>
         public int? Version {
-            get { return BackingStore?.Get<int?>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<int?>("version"); }
+            set { BackingStore?.Set("version", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

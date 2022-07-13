@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class ChatMessageMentionedIdentitySet : IdentitySet, IParsable {
         /// <summary>If present, represents a conversation (for example, team or channel) @mentioned in a message.</summary>
         public TeamworkConversationIdentity Conversation {
-            get { return BackingStore?.Get<TeamworkConversationIdentity>(nameof(Conversation)); }
-            set { BackingStore?.Set(nameof(Conversation), value); }
+            get { return BackingStore?.Get<TeamworkConversationIdentity>("conversation"); }
+            set { BackingStore?.Set("conversation", value); }
         }
         /// <summary>If present, represents a tag @mentioned in a team message.</summary>
         public TeamworkTagIdentity Tag {
-            get { return BackingStore?.Get<TeamworkTagIdentity>(nameof(Tag)); }
-            set { BackingStore?.Set(nameof(Tag), value); }
+            get { return BackingStore?.Get<TeamworkTagIdentity>("tag"); }
+            set { BackingStore?.Set("tag", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,63 +7,63 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkbookRangeView : Entity, IParsable {
         /// <summary>Represents the cell addresses</summary>
         public Json CellAddresses {
-            get { return BackingStore?.Get<Json>(nameof(CellAddresses)); }
-            set { BackingStore?.Set(nameof(CellAddresses), value); }
+            get { return BackingStore?.Get<Json>("cellAddresses"); }
+            set { BackingStore?.Set("cellAddresses", value); }
         }
         /// <summary>Returns the number of visible columns. Read-only.</summary>
         public int? ColumnCount {
-            get { return BackingStore?.Get<int?>(nameof(ColumnCount)); }
-            set { BackingStore?.Set(nameof(ColumnCount), value); }
+            get { return BackingStore?.Get<int?>("columnCount"); }
+            set { BackingStore?.Set("columnCount", value); }
         }
         /// <summary>Represents the formula in A1-style notation.</summary>
         public Json Formulas {
-            get { return BackingStore?.Get<Json>(nameof(Formulas)); }
-            set { BackingStore?.Set(nameof(Formulas), value); }
+            get { return BackingStore?.Get<Json>("formulas"); }
+            set { BackingStore?.Set("formulas", value); }
         }
         /// <summary>Represents the formula in A1-style notation, in the user&apos;s language and number-formatting locale. For example, the English &apos;=SUM(A1, 1.5)&apos; formula would become &apos;=SUMME(A1; 1,5)&apos; in German.</summary>
         public Json FormulasLocal {
-            get { return BackingStore?.Get<Json>(nameof(FormulasLocal)); }
-            set { BackingStore?.Set(nameof(FormulasLocal), value); }
+            get { return BackingStore?.Get<Json>("formulasLocal"); }
+            set { BackingStore?.Set("formulasLocal", value); }
         }
         /// <summary>Represents the formula in R1C1-style notation.</summary>
         public Json FormulasR1C1 {
-            get { return BackingStore?.Get<Json>(nameof(FormulasR1C1)); }
-            set { BackingStore?.Set(nameof(FormulasR1C1), value); }
+            get { return BackingStore?.Get<Json>("formulasR1C1"); }
+            set { BackingStore?.Set("formulasR1C1", value); }
         }
         /// <summary>Index of the range.</summary>
         public int? Index {
-            get { return BackingStore?.Get<int?>(nameof(Index)); }
-            set { BackingStore?.Set(nameof(Index), value); }
+            get { return BackingStore?.Get<int?>("index"); }
+            set { BackingStore?.Set("index", value); }
         }
         /// <summary>Represents Excel&apos;s number format code for the given cell. Read-only.</summary>
         public Json NumberFormat {
-            get { return BackingStore?.Get<Json>(nameof(NumberFormat)); }
-            set { BackingStore?.Set(nameof(NumberFormat), value); }
+            get { return BackingStore?.Get<Json>("numberFormat"); }
+            set { BackingStore?.Set("numberFormat", value); }
         }
         /// <summary>Returns the number of visible rows. Read-only.</summary>
         public int? RowCount {
-            get { return BackingStore?.Get<int?>(nameof(RowCount)); }
-            set { BackingStore?.Set(nameof(RowCount), value); }
+            get { return BackingStore?.Get<int?>("rowCount"); }
+            set { BackingStore?.Set("rowCount", value); }
         }
         /// <summary>Represents a collection of range views associated with the range. Read-only. Read-only.</summary>
         public List<WorkbookRangeView> Rows {
-            get { return BackingStore?.Get<List<WorkbookRangeView>>(nameof(Rows)); }
-            set { BackingStore?.Set(nameof(Rows), value); }
+            get { return BackingStore?.Get<List<WorkbookRangeView>>("rows"); }
+            set { BackingStore?.Set("rows", value); }
         }
         /// <summary>Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.</summary>
         public Json Text {
-            get { return BackingStore?.Get<Json>(nameof(Text)); }
-            set { BackingStore?.Set(nameof(Text), value); }
+            get { return BackingStore?.Get<Json>("text"); }
+            set { BackingStore?.Set("text", value); }
         }
         /// <summary>Represents the raw values of the specified range view. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.</summary>
         public Json Values {
-            get { return BackingStore?.Get<Json>(nameof(Values)); }
-            set { BackingStore?.Set(nameof(Values), value); }
+            get { return BackingStore?.Get<Json>("values"); }
+            set { BackingStore?.Set("values", value); }
         }
         /// <summary>Represents the type of data of each cell. Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.</summary>
         public Json ValueTypes {
-            get { return BackingStore?.Get<Json>(nameof(ValueTypes)); }
-            set { BackingStore?.Set(nameof(ValueTypes), value); }
+            get { return BackingStore?.Get<Json>("valueTypes"); }
+            set { BackingStore?.Set("valueTypes", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

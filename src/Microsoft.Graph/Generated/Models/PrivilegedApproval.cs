@@ -7,58 +7,58 @@ namespace Microsoft.Graph.Beta.Models {
     public class PrivilegedApproval : Entity, IParsable {
         /// <summary>The approvalDuration property</summary>
         public TimeSpan? ApprovalDuration {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(ApprovalDuration)); }
-            set { BackingStore?.Set(nameof(ApprovalDuration), value); }
+            get { return BackingStore?.Get<TimeSpan?>("approvalDuration"); }
+            set { BackingStore?.Set("approvalDuration", value); }
         }
         /// <summary>Possible values are: pending, approved, denied, aborted, canceled.</summary>
         public Microsoft.Graph.Beta.Models.ApprovalState? ApprovalState {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ApprovalState?>(nameof(ApprovalState)); }
-            set { BackingStore?.Set(nameof(ApprovalState), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ApprovalState?>("approvalState"); }
+            set { BackingStore?.Set("approvalState", value); }
         }
         /// <summary>The approvalType property</summary>
         public string ApprovalType {
-            get { return BackingStore?.Get<string>(nameof(ApprovalType)); }
-            set { BackingStore?.Set(nameof(ApprovalType), value); }
+            get { return BackingStore?.Get<string>("approvalType"); }
+            set { BackingStore?.Set("approvalType", value); }
         }
         /// <summary>The approverReason property</summary>
         public string ApproverReason {
-            get { return BackingStore?.Get<string>(nameof(ApproverReason)); }
-            set { BackingStore?.Set(nameof(ApproverReason), value); }
+            get { return BackingStore?.Get<string>("approverReason"); }
+            set { BackingStore?.Set("approverReason", value); }
         }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? EndDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndDateTime)); }
-            set { BackingStore?.Set(nameof(EndDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
+            set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>Read-only. The role assignment request for this approval object</summary>
         public PrivilegedRoleAssignmentRequest Request {
-            get { return BackingStore?.Get<PrivilegedRoleAssignmentRequest>(nameof(Request)); }
-            set { BackingStore?.Set(nameof(Request), value); }
+            get { return BackingStore?.Get<PrivilegedRoleAssignmentRequest>("request"); }
+            set { BackingStore?.Set("request", value); }
         }
         /// <summary>The requestorReason property</summary>
         public string RequestorReason {
-            get { return BackingStore?.Get<string>(nameof(RequestorReason)); }
-            set { BackingStore?.Set(nameof(RequestorReason), value); }
+            get { return BackingStore?.Get<string>("requestorReason"); }
+            set { BackingStore?.Set("requestorReason", value); }
         }
         /// <summary>The roleId property</summary>
         public string RoleId {
-            get { return BackingStore?.Get<string>(nameof(RoleId)); }
-            set { BackingStore?.Set(nameof(RoleId), value); }
+            get { return BackingStore?.Get<string>("roleId"); }
+            set { BackingStore?.Set("roleId", value); }
         }
         /// <summary>The roleInfo property</summary>
         public PrivilegedRole RoleInfo {
-            get { return BackingStore?.Get<PrivilegedRole>(nameof(RoleInfo)); }
-            set { BackingStore?.Set(nameof(RoleInfo), value); }
+            get { return BackingStore?.Get<PrivilegedRole>("roleInfo"); }
+            set { BackingStore?.Set("roleInfo", value); }
         }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? StartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
-            set { BackingStore?.Set(nameof(StartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The userId property</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

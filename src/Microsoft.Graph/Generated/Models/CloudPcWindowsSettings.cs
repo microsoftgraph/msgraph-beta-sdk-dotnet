@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Beta.Models {
     public class CloudPcWindowsSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Windows language/region tag to use for language pack configuration and localization of the Cloud PC. The default value is en-US, which corresponds to English (United States).</summary>
         public string Language {
-            get { return BackingStore?.Get<string>(nameof(Language)); }
-            set { BackingStore?.Set(nameof(Language), value); }
+            get { return BackingStore?.Get<string>("language"); }
+            set { BackingStore?.Set("language", value); }
         }
         /// <summary>
         /// Instantiates a new cloudPcWindowsSettings and sets the default values.

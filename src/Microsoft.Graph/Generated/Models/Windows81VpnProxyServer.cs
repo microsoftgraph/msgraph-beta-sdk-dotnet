@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class Windows81VpnProxyServer : VpnProxyServer, IParsable {
         /// <summary>Automatically detect proxy settings.</summary>
         public bool? AutomaticallyDetectProxySettings {
-            get { return BackingStore?.Get<bool?>(nameof(AutomaticallyDetectProxySettings)); }
-            set { BackingStore?.Set(nameof(AutomaticallyDetectProxySettings), value); }
+            get { return BackingStore?.Get<bool?>("automaticallyDetectProxySettings"); }
+            set { BackingStore?.Set("automaticallyDetectProxySettings", value); }
         }
         /// <summary>Bypass proxy server for local address.</summary>
         public bool? BypassProxyServerForLocalAddress {
-            get { return BackingStore?.Get<bool?>(nameof(BypassProxyServerForLocalAddress)); }
-            set { BackingStore?.Set(nameof(BypassProxyServerForLocalAddress), value); }
+            get { return BackingStore?.Get<bool?>("bypassProxyServerForLocalAddress"); }
+            set { BackingStore?.Set("bypassProxyServerForLocalAddress", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

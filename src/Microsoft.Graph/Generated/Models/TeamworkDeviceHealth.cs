@@ -4,52 +4,51 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class TeamworkDeviceHealth : Entity, IParsable {
         /// <summary>The connection property</summary>
         public TeamworkConnection Connection {
-            get { return BackingStore?.Get<TeamworkConnection>(nameof(Connection)); }
-            set { BackingStore?.Set(nameof(Connection), value); }
+            get { return BackingStore?.Get<TeamworkConnection>("connection"); }
+            set { BackingStore?.Set("connection", value); }
         }
         /// <summary>Identity of the user who created the device health document.</summary>
         public IdentitySet CreatedBy {
-            get { return BackingStore?.Get<IdentitySet>(nameof(CreatedBy)); }
-            set { BackingStore?.Set(nameof(CreatedBy), value); }
+            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
         }
         /// <summary>The UTC date and time when the device health document was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Health details about the device hardware.</summary>
         public TeamworkHardwareHealth HardwareHealth {
-            get { return BackingStore?.Get<TeamworkHardwareHealth>(nameof(HardwareHealth)); }
-            set { BackingStore?.Set(nameof(HardwareHealth), value); }
+            get { return BackingStore?.Get<TeamworkHardwareHealth>("hardwareHealth"); }
+            set { BackingStore?.Set("hardwareHealth", value); }
         }
         /// <summary>Identity of the user who last modified the device health details.</summary>
         public IdentitySet LastModifiedBy {
-            get { return BackingStore?.Get<IdentitySet>(nameof(LastModifiedBy)); }
-            set { BackingStore?.Set(nameof(LastModifiedBy), value); }
+            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
         }
         /// <summary>The UTC date and time when the device health detail was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The login status of Microsoft Teams, Skype for Business, and Exchange.</summary>
         public TeamworkLoginStatus LoginStatus {
-            get { return BackingStore?.Get<TeamworkLoginStatus>(nameof(LoginStatus)); }
-            set { BackingStore?.Set(nameof(LoginStatus), value); }
+            get { return BackingStore?.Get<TeamworkLoginStatus>("loginStatus"); }
+            set { BackingStore?.Set("loginStatus", value); }
         }
         /// <summary>Health details about all peripherals (for example, speaker and microphone) attached to a device.</summary>
         public TeamworkPeripheralsHealth PeripheralsHealth {
-            get { return BackingStore?.Get<TeamworkPeripheralsHealth>(nameof(PeripheralsHealth)); }
-            set { BackingStore?.Set(nameof(PeripheralsHealth), value); }
+            get { return BackingStore?.Get<TeamworkPeripheralsHealth>("peripheralsHealth"); }
+            set { BackingStore?.Set("peripheralsHealth", value); }
         }
         /// <summary>Software updates available for the device.</summary>
         public TeamworkSoftwareUpdateHealth SoftwareUpdateHealth {
-            get { return BackingStore?.Get<TeamworkSoftwareUpdateHealth>(nameof(SoftwareUpdateHealth)); }
-            set { BackingStore?.Set(nameof(SoftwareUpdateHealth), value); }
+            get { return BackingStore?.Get<TeamworkSoftwareUpdateHealth>("softwareUpdateHealth"); }
+            set { BackingStore?.Set("softwareUpdateHealth", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

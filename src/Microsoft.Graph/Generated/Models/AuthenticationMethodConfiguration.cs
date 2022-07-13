@@ -8,8 +8,14 @@ namespace Microsoft.Graph.Beta.Models {
     public class AuthenticationMethodConfiguration : Entity, IParsable {
         /// <summary>The state of the policy. Possible values are: enabled, disabled.</summary>
         public AuthenticationMethodState? State {
-            get { return BackingStore?.Get<AuthenticationMethodState?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<AuthenticationMethodState?>("state"); }
+            set { BackingStore?.Set("state", value); }
+        }
+        /// <summary>
+        /// Instantiates a new AuthenticationMethodConfiguration and sets the default values.
+        /// </summary>
+        public AuthenticationMethodConfiguration() : base() {
+            Type = "#microsoft.graph.authenticationMethodConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

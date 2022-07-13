@@ -7,58 +7,58 @@ namespace Microsoft.Graph.Beta.Models {
     public class RelyingPartyDetailedSummary : Entity, IParsable {
         /// <summary>Number of failed sign in on Active Directory Federation Service in the period specified.</summary>
         public long? FailedSignInCount {
-            get { return BackingStore?.Get<long?>(nameof(FailedSignInCount)); }
-            set { BackingStore?.Set(nameof(FailedSignInCount), value); }
+            get { return BackingStore?.Get<long?>("failedSignInCount"); }
+            set { BackingStore?.Set("failedSignInCount", value); }
         }
-        /// <summary>Indication of whether the application can be moved to Azure AD or require more investigation. Possible values are: ready, needsReview, additionalStepsRequired, unknownFutureValue.</summary>
+        /// <summary>The migrationStatus property</summary>
         public Microsoft.Graph.Beta.Models.MigrationStatus? MigrationStatus {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MigrationStatus?>(nameof(MigrationStatus)); }
-            set { BackingStore?.Set(nameof(MigrationStatus), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MigrationStatus?>("migrationStatus"); }
+            set { BackingStore?.Set("migrationStatus", value); }
         }
         /// <summary>Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.</summary>
         public List<KeyValuePair> MigrationValidationDetails {
-            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(MigrationValidationDetails)); }
-            set { BackingStore?.Set(nameof(MigrationValidationDetails), value); }
+            get { return BackingStore?.Get<List<KeyValuePair>>("migrationValidationDetails"); }
+            set { BackingStore?.Set("migrationValidationDetails", value); }
         }
         /// <summary>This identifier is used to identify the relying party to this Federation Service. It is used when issuing claims to the relying party.</summary>
         public string RelyingPartyId {
-            get { return BackingStore?.Get<string>(nameof(RelyingPartyId)); }
-            set { BackingStore?.Set(nameof(RelyingPartyId), value); }
+            get { return BackingStore?.Get<string>("relyingPartyId"); }
+            set { BackingStore?.Set("relyingPartyId", value); }
         }
         /// <summary>Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to log in.</summary>
         public string RelyingPartyName {
-            get { return BackingStore?.Get<string>(nameof(RelyingPartyName)); }
-            set { BackingStore?.Set(nameof(RelyingPartyName), value); }
+            get { return BackingStore?.Get<string>("relyingPartyName"); }
+            set { BackingStore?.Set("relyingPartyName", value); }
         }
         /// <summary>Specifies where the relying party expects to receive the token.</summary>
         public List<string> ReplyUrls {
-            get { return BackingStore?.Get<List<string>>(nameof(ReplyUrls)); }
-            set { BackingStore?.Set(nameof(ReplyUrls), value); }
+            get { return BackingStore?.Get<List<string>>("replyUrls"); }
+            set { BackingStore?.Set("replyUrls", value); }
         }
         /// <summary>Uniquely identifies the Active Directory forest.</summary>
         public string ServiceId {
-            get { return BackingStore?.Get<string>(nameof(ServiceId)); }
-            set { BackingStore?.Set(nameof(ServiceId), value); }
+            get { return BackingStore?.Get<string>("serviceId"); }
+            set { BackingStore?.Set("serviceId", value); }
         }
         /// <summary>Number of successful / (number of successful + number of failed sign ins) on Active Directory Federation Service in the period specified.</summary>
         public double? SignInSuccessRate {
-            get { return BackingStore?.Get<double?>(nameof(SignInSuccessRate)); }
-            set { BackingStore?.Set(nameof(SignInSuccessRate), value); }
+            get { return BackingStore?.Get<double?>("signInSuccessRate"); }
+            set { BackingStore?.Set("signInSuccessRate", value); }
         }
         /// <summary>Number of successful sign ins on Active Directory Federation Service.</summary>
         public long? SuccessfulSignInCount {
-            get { return BackingStore?.Get<long?>(nameof(SuccessfulSignInCount)); }
-            set { BackingStore?.Set(nameof(SuccessfulSignInCount), value); }
+            get { return BackingStore?.Get<long?>("successfulSignInCount"); }
+            set { BackingStore?.Set("successfulSignInCount", value); }
         }
         /// <summary>Number of successful + failed sign ins failed sign ins on Active Directory Federation Service in the period specified.</summary>
         public long? TotalSignInCount {
-            get { return BackingStore?.Get<long?>(nameof(TotalSignInCount)); }
-            set { BackingStore?.Set(nameof(TotalSignInCount), value); }
+            get { return BackingStore?.Get<long?>("totalSignInCount"); }
+            set { BackingStore?.Set("totalSignInCount", value); }
         }
         /// <summary>Number of unique users that have signed into the application.</summary>
         public long? UniqueUserCount {
-            get { return BackingStore?.Get<long?>(nameof(UniqueUserCount)); }
-            set { BackingStore?.Set(nameof(UniqueUserCount), value); }
+            get { return BackingStore?.Get<long?>("uniqueUserCount"); }
+            set { BackingStore?.Set("uniqueUserCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

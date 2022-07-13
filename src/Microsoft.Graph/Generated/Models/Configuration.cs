@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class Configuration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The authorizedAppIds property</summary>
         public List<string> AuthorizedAppIds {
-            get { return BackingStore?.Get<List<string>>(nameof(AuthorizedAppIds)); }
-            set { BackingStore?.Set(nameof(AuthorizedAppIds), value); }
+            get { return BackingStore?.Get<List<string>>("authorizedAppIds"); }
+            set { BackingStore?.Set("authorizedAppIds", value); }
         }
         /// <summary>The authorizedApps property</summary>
         public List<string> AuthorizedApps {
-            get { return BackingStore?.Get<List<string>>(nameof(AuthorizedApps)); }
-            set { BackingStore?.Set(nameof(AuthorizedApps), value); }
+            get { return BackingStore?.Get<List<string>>("authorizedApps"); }
+            set { BackingStore?.Set("authorizedApps", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }

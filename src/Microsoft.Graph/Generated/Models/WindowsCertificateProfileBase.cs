@@ -6,35 +6,41 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsCertificateProfileBase : DeviceConfiguration, IParsable {
-        /// <summary>Scale for the Certificate Validity Period. Possible values are: days, months, years.</summary>
+        /// <summary>Certificate Validity Period Options.</summary>
         public Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale? CertificateValidityPeriodScale {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale?>(nameof(CertificateValidityPeriodScale)); }
-            set { BackingStore?.Set(nameof(CertificateValidityPeriodScale), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale?>("certificateValidityPeriodScale"); }
+            set { BackingStore?.Set("certificateValidityPeriodScale", value); }
         }
         /// <summary>Value for the Certificate Validity Period</summary>
         public int? CertificateValidityPeriodValue {
-            get { return BackingStore?.Get<int?>(nameof(CertificateValidityPeriodValue)); }
-            set { BackingStore?.Set(nameof(CertificateValidityPeriodValue), value); }
+            get { return BackingStore?.Get<int?>("certificateValidityPeriodValue"); }
+            set { BackingStore?.Set("certificateValidityPeriodValue", value); }
         }
-        /// <summary>Key Storage Provider (KSP). Possible values are: useTpmKspOtherwiseUseSoftwareKsp, useTpmKspOtherwiseFail, usePassportForWorkKspOtherwiseFail, useSoftwareKsp.</summary>
+        /// <summary>Key Storage Provider (KSP) Import Options.</summary>
         public KeyStorageProviderOption? KeyStorageProvider {
-            get { return BackingStore?.Get<KeyStorageProviderOption?>(nameof(KeyStorageProvider)); }
-            set { BackingStore?.Set(nameof(KeyStorageProvider), value); }
+            get { return BackingStore?.Get<KeyStorageProviderOption?>("keyStorageProvider"); }
+            set { BackingStore?.Set("keyStorageProvider", value); }
         }
         /// <summary>Certificate renewal threshold percentage. Valid values 1 to 99</summary>
         public int? RenewalThresholdPercentage {
-            get { return BackingStore?.Get<int?>(nameof(RenewalThresholdPercentage)); }
-            set { BackingStore?.Set(nameof(RenewalThresholdPercentage), value); }
+            get { return BackingStore?.Get<int?>("renewalThresholdPercentage"); }
+            set { BackingStore?.Set("renewalThresholdPercentage", value); }
         }
         /// <summary>Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.</summary>
         public Microsoft.Graph.Beta.Models.SubjectAlternativeNameType? SubjectAlternativeNameType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SubjectAlternativeNameType?>(nameof(SubjectAlternativeNameType)); }
-            set { BackingStore?.Set(nameof(SubjectAlternativeNameType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SubjectAlternativeNameType?>("subjectAlternativeNameType"); }
+            set { BackingStore?.Set("subjectAlternativeNameType", value); }
         }
-        /// <summary>Certificate Subject Name Format. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.</summary>
+        /// <summary>Subject Name Format Options.</summary>
         public Microsoft.Graph.Beta.Models.SubjectNameFormat? SubjectNameFormat {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SubjectNameFormat?>(nameof(SubjectNameFormat)); }
-            set { BackingStore?.Set(nameof(SubjectNameFormat), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SubjectNameFormat?>("subjectNameFormat"); }
+            set { BackingStore?.Set("subjectNameFormat", value); }
+        }
+        /// <summary>
+        /// Instantiates a new WindowsCertificateProfileBase and sets the default values.
+        /// </summary>
+        public WindowsCertificateProfileBase() : base() {
+            Type = "#microsoft.graph.windowsCertificateProfileBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

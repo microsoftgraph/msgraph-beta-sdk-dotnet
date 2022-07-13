@@ -9,33 +9,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceScopeActionResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The triggered action name. Possible values are: .</summary>
+        /// <summary>Trigger on the service to either START or STOP computing metrics data based on a device scope configuration.</summary>
         public string DeviceScopeAction {
-            get { return BackingStore?.Get<string>(nameof(DeviceScopeAction)); }
-            set { BackingStore?.Set(nameof(DeviceScopeAction), value); }
+            get { return BackingStore?.Get<string>("deviceScopeAction"); }
+            set { BackingStore?.Set("deviceScopeAction", value); }
         }
         /// <summary>The unique identifier of the device scope the action was triggered on.</summary>
         public string DeviceScopeId {
-            get { return BackingStore?.Get<string>(nameof(DeviceScopeId)); }
-            set { BackingStore?.Set(nameof(DeviceScopeId), value); }
+            get { return BackingStore?.Get<string>("deviceScopeId"); }
+            set { BackingStore?.Set("deviceScopeId", value); }
         }
         /// <summary>The message indicates the reason the device scope action failed to trigger.</summary>
         public string FailedMessage {
-            get { return BackingStore?.Get<string>(nameof(FailedMessage)); }
-            set { BackingStore?.Set(nameof(FailedMessage), value); }
+            get { return BackingStore?.Get<string>("failedMessage"); }
+            set { BackingStore?.Set("failedMessage", value); }
         }
-        /// <summary>Indicates the status of the attempt device scope action. When succeeded, the action was succeessfully triggered, When failed, the action was failed to trigger. Possible values are: failed, succeeded, unknownFutureValue.</summary>
+        /// <summary>Indicates the status of the attempted device scope action</summary>
         public DeviceScopeActionStatus? Status {
-            get { return BackingStore?.Get<DeviceScopeActionStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<DeviceScopeActionStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceScopeActionResult and sets the default values.
+        /// Instantiates a new deviceScopeActionResult and sets the default values.
         /// </summary>
         public DeviceScopeActionResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

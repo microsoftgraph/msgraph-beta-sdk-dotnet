@@ -4,22 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics Regression Summary.</summary>
     public class UserExperienceAnalyticsRegressionSummary : Entity, IParsable {
         /// <summary>The metric values for the user experience analytics Manufacturer regression.</summary>
         public List<UserExperienceAnalyticsMetric> ManufacturerRegression {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsMetric>>(nameof(ManufacturerRegression)); }
-            set { BackingStore?.Set(nameof(ManufacturerRegression), value); }
+            get { return BackingStore?.Get<List<UserExperienceAnalyticsMetric>>("manufacturerRegression"); }
+            set { BackingStore?.Set("manufacturerRegression", value); }
         }
         /// <summary>The metric values for the user experience analytics model regression.</summary>
         public List<UserExperienceAnalyticsMetric> ModelRegression {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsMetric>>(nameof(ModelRegression)); }
-            set { BackingStore?.Set(nameof(ModelRegression), value); }
+            get { return BackingStore?.Get<List<UserExperienceAnalyticsMetric>>("modelRegression"); }
+            set { BackingStore?.Set("modelRegression", value); }
         }
         /// <summary>The metric values for the user experience analytics operating system regression.</summary>
         public List<UserExperienceAnalyticsMetric> OperatingSystemRegression {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsMetric>>(nameof(OperatingSystemRegression)); }
-            set { BackingStore?.Set(nameof(OperatingSystemRegression), value); }
+            get { return BackingStore?.Get<List<UserExperienceAnalyticsMetric>>("operatingSystemRegression"); }
+            set { BackingStore?.Set("operatingSystemRegression", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,13 +8,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementComplianceScheduledActionForRule : Entity, IParsable {
         /// <summary>Name of the rule which this scheduled action applies to.</summary>
         public string RuleName {
-            get { return BackingStore?.Get<string>(nameof(RuleName)); }
-            set { BackingStore?.Set(nameof(RuleName), value); }
+            get { return BackingStore?.Get<string>("ruleName"); }
+            set { BackingStore?.Set("ruleName", value); }
         }
         /// <summary>The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.</summary>
         public List<DeviceManagementComplianceActionItem> ScheduledActionConfigurations {
-            get { return BackingStore?.Get<List<DeviceManagementComplianceActionItem>>(nameof(ScheduledActionConfigurations)); }
-            set { BackingStore?.Set(nameof(ScheduledActionConfigurations), value); }
+            get { return BackingStore?.Get<List<DeviceManagementComplianceActionItem>>("scheduledActionConfigurations"); }
+            set { BackingStore?.Set("scheduledActionConfigurations", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

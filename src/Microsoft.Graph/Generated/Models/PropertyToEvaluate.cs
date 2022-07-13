@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class PropertyToEvaluate : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Provides the property name.</summary>
         public string PropertyName {
-            get { return BackingStore?.Get<string>(nameof(PropertyName)); }
-            set { BackingStore?.Set(nameof(PropertyName), value); }
+            get { return BackingStore?.Get<string>("propertyName"); }
+            set { BackingStore?.Set("propertyName", value); }
         }
         /// <summary>Provides the property value.</summary>
         public string PropertyValue {
-            get { return BackingStore?.Get<string>(nameof(PropertyValue)); }
-            set { BackingStore?.Set(nameof(PropertyValue), value); }
+            get { return BackingStore?.Get<string>("propertyValue"); }
+            set { BackingStore?.Set("propertyValue", value); }
         }
         /// <summary>
         /// Instantiates a new propertyToEvaluate and sets the default values.

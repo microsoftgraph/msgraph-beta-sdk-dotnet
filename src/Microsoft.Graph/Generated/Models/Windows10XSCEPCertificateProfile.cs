@@ -5,70 +5,70 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Windows10XSCEPCertificateProfile : Windows10XCertificateProfile, IParsable {
-        /// <summary>Target store certificate. Possible values are: user, machine.</summary>
+        /// <summary>CertificateStore types</summary>
         public Microsoft.Graph.Beta.Models.CertificateStore? CertificateStore {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateStore?>(nameof(CertificateStore)); }
-            set { BackingStore?.Set(nameof(CertificateStore), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateStore?>("certificateStore"); }
+            set { BackingStore?.Set("certificateStore", value); }
         }
-        /// <summary>Scale for the Certificate Validity Period. Possible values are: days, months, years.</summary>
+        /// <summary>Certificate Validity Period Options.</summary>
         public Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale? CertificateValidityPeriodScale {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale?>(nameof(CertificateValidityPeriodScale)); }
-            set { BackingStore?.Set(nameof(CertificateValidityPeriodScale), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale?>("certificateValidityPeriodScale"); }
+            set { BackingStore?.Set("certificateValidityPeriodScale", value); }
         }
         /// <summary>Value for the Certificate Validity Period</summary>
         public int? CertificateValidityPeriodValue {
-            get { return BackingStore?.Get<int?>(nameof(CertificateValidityPeriodValue)); }
-            set { BackingStore?.Set(nameof(CertificateValidityPeriodValue), value); }
+            get { return BackingStore?.Get<int?>("certificateValidityPeriodValue"); }
+            set { BackingStore?.Set("certificateValidityPeriodValue", value); }
         }
         /// <summary>Extended Key Usage (EKU) settings.</summary>
         public List<ExtendedKeyUsage> ExtendedKeyUsages {
-            get { return BackingStore?.Get<List<ExtendedKeyUsage>>(nameof(ExtendedKeyUsages)); }
-            set { BackingStore?.Set(nameof(ExtendedKeyUsages), value); }
+            get { return BackingStore?.Get<List<ExtendedKeyUsage>>("extendedKeyUsages"); }
+            set { BackingStore?.Set("extendedKeyUsages", value); }
         }
         /// <summary>SCEP Hash Algorithm.</summary>
         public List<string> HashAlgorithm {
-            get { return BackingStore?.Get<List<string>>(nameof(HashAlgorithm)); }
-            set { BackingStore?.Set(nameof(HashAlgorithm), value); }
+            get { return BackingStore?.Get<List<string>>("hashAlgorithm"); }
+            set { BackingStore?.Set("hashAlgorithm", value); }
         }
-        /// <summary>SCEP Key Size. Possible values are: size1024, size2048, size4096.</summary>
+        /// <summary>Key Size Options.</summary>
         public Microsoft.Graph.Beta.Models.KeySize? KeySize {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KeySize?>(nameof(KeySize)); }
-            set { BackingStore?.Set(nameof(KeySize), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KeySize?>("keySize"); }
+            set { BackingStore?.Set("keySize", value); }
         }
-        /// <summary>Key Storage Provider (KSP). Possible values are: useTpmKspOtherwiseUseSoftwareKsp, useTpmKspOtherwiseFail, usePassportForWorkKspOtherwiseFail, useSoftwareKsp.</summary>
+        /// <summary>Key Storage Provider (KSP) Import Options.</summary>
         public KeyStorageProviderOption? KeyStorageProvider {
-            get { return BackingStore?.Get<KeyStorageProviderOption?>(nameof(KeyStorageProvider)); }
-            set { BackingStore?.Set(nameof(KeyStorageProvider), value); }
+            get { return BackingStore?.Get<KeyStorageProviderOption?>("keyStorageProvider"); }
+            set { BackingStore?.Set("keyStorageProvider", value); }
         }
-        /// <summary>SCEP Key Usage. Possible values are: keyEncipherment, digitalSignature.</summary>
+        /// <summary>Key Usage Options.</summary>
         public KeyUsages? KeyUsage {
-            get { return BackingStore?.Get<KeyUsages?>(nameof(KeyUsage)); }
-            set { BackingStore?.Set(nameof(KeyUsage), value); }
+            get { return BackingStore?.Get<KeyUsages?>("keyUsage"); }
+            set { BackingStore?.Set("keyUsage", value); }
         }
         /// <summary>Certificate renewal threshold percentage</summary>
         public int? RenewalThresholdPercentage {
-            get { return BackingStore?.Get<int?>(nameof(RenewalThresholdPercentage)); }
-            set { BackingStore?.Set(nameof(RenewalThresholdPercentage), value); }
+            get { return BackingStore?.Get<int?>("renewalThresholdPercentage"); }
+            set { BackingStore?.Set("renewalThresholdPercentage", value); }
         }
         /// <summary>Trusted Root Certificate ID</summary>
         public string RootCertificateId {
-            get { return BackingStore?.Get<string>(nameof(RootCertificateId)); }
-            set { BackingStore?.Set(nameof(RootCertificateId), value); }
+            get { return BackingStore?.Get<string>("rootCertificateId"); }
+            set { BackingStore?.Set("rootCertificateId", value); }
         }
         /// <summary>SCEP Server Url(s).</summary>
         public List<string> ScepServerUrls {
-            get { return BackingStore?.Get<List<string>>(nameof(ScepServerUrls)); }
-            set { BackingStore?.Set(nameof(ScepServerUrls), value); }
+            get { return BackingStore?.Get<List<string>>("scepServerUrls"); }
+            set { BackingStore?.Set("scepServerUrls", value); }
         }
         /// <summary>Custom AAD Attributes.</summary>
         public List<Windows10XCustomSubjectAlternativeName> SubjectAlternativeNameFormats {
-            get { return BackingStore?.Get<List<Windows10XCustomSubjectAlternativeName>>(nameof(SubjectAlternativeNameFormats)); }
-            set { BackingStore?.Set(nameof(SubjectAlternativeNameFormats), value); }
+            get { return BackingStore?.Get<List<Windows10XCustomSubjectAlternativeName>>("subjectAlternativeNameFormats"); }
+            set { BackingStore?.Set("subjectAlternativeNameFormats", value); }
         }
         /// <summary>Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US</summary>
         public string SubjectNameFormatString {
-            get { return BackingStore?.Get<string>(nameof(SubjectNameFormatString)); }
-            set { BackingStore?.Set(nameof(SubjectNameFormatString), value); }
+            get { return BackingStore?.Get<string>("subjectNameFormatString"); }
+            set { BackingStore?.Set("subjectNameFormatString", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

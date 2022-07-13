@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsWebApp : MobileApp, IParsable {
         /// <summary>The web app URL.</summary>
         public string AppUrl {
-            get { return BackingStore?.Get<string>(nameof(AppUrl)); }
-            set { BackingStore?.Set(nameof(AppUrl), value); }
+            get { return BackingStore?.Get<string>("appUrl"); }
+            set { BackingStore?.Set("appUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

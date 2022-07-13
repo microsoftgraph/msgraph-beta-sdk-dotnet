@@ -4,52 +4,51 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ListItem : BaseItem, IParsable {
         /// <summary>The list of recent activities that took place on this item.</summary>
         public List<ItemActivityOLD> Activities {
-            get { return BackingStore?.Get<List<ItemActivityOLD>>(nameof(Activities)); }
-            set { BackingStore?.Set(nameof(Activities), value); }
+            get { return BackingStore?.Get<List<ItemActivityOLD>>("activities"); }
+            set { BackingStore?.Set("activities", value); }
         }
         /// <summary>Analytics about the view activities that took place on this item.</summary>
         public ItemAnalytics Analytics {
-            get { return BackingStore?.Get<ItemAnalytics>(nameof(Analytics)); }
-            set { BackingStore?.Set(nameof(Analytics), value); }
+            get { return BackingStore?.Get<ItemAnalytics>("analytics"); }
+            set { BackingStore?.Set("analytics", value); }
         }
         /// <summary>The content type of this list item</summary>
         public ContentTypeInfo ContentType {
-            get { return BackingStore?.Get<ContentTypeInfo>(nameof(ContentType)); }
-            set { BackingStore?.Set(nameof(ContentType), value); }
+            get { return BackingStore?.Get<ContentTypeInfo>("contentType"); }
+            set { BackingStore?.Set("contentType", value); }
         }
         /// <summary>The deleted property</summary>
         public Microsoft.Graph.Beta.Models.Deleted Deleted {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Deleted>(nameof(Deleted)); }
-            set { BackingStore?.Set(nameof(Deleted), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Deleted>("deleted"); }
+            set { BackingStore?.Set("deleted", value); }
         }
         /// <summary>Version information for a document set version created by a user.</summary>
         public List<DocumentSetVersion> DocumentSetVersions {
-            get { return BackingStore?.Get<List<DocumentSetVersion>>(nameof(DocumentSetVersions)); }
-            set { BackingStore?.Set(nameof(DocumentSetVersions), value); }
+            get { return BackingStore?.Get<List<DocumentSetVersion>>("documentSetVersions"); }
+            set { BackingStore?.Set("documentSetVersions", value); }
         }
         /// <summary>For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]</summary>
         public Microsoft.Graph.Beta.Models.DriveItem DriveItem {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem>(nameof(DriveItem)); }
-            set { BackingStore?.Set(nameof(DriveItem), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem>("driveItem"); }
+            set { BackingStore?.Set("driveItem", value); }
         }
         /// <summary>The values of the columns set on this list item.</summary>
         public FieldValueSet Fields {
-            get { return BackingStore?.Get<FieldValueSet>(nameof(Fields)); }
-            set { BackingStore?.Set(nameof(Fields), value); }
+            get { return BackingStore?.Get<FieldValueSet>("fields"); }
+            set { BackingStore?.Set("fields", value); }
         }
         /// <summary>Returns identifiers useful for SharePoint REST compatibility. Read-only.</summary>
         public Microsoft.Graph.Beta.Models.SharepointIds SharepointIds {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharepointIds>(nameof(SharepointIds)); }
-            set { BackingStore?.Set(nameof(SharepointIds), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharepointIds>("sharepointIds"); }
+            set { BackingStore?.Set("sharepointIds", value); }
         }
         /// <summary>The list of previous versions of the list item.</summary>
         public List<ListItemVersion> Versions {
-            get { return BackingStore?.Get<List<ListItemVersion>>(nameof(Versions)); }
-            set { BackingStore?.Set(nameof(Versions), value); }
+            get { return BackingStore?.Get<List<ListItemVersion>>("versions"); }
+            set { BackingStore?.Set("versions", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

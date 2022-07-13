@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamworkTeamsClientConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The configuration of the Microsoft Teams client user account for a device.</summary>
         public TeamworkAccountConfiguration AccountConfiguration {
-            get { return BackingStore?.Get<TeamworkAccountConfiguration>(nameof(AccountConfiguration)); }
-            set { BackingStore?.Set(nameof(AccountConfiguration), value); }
+            get { return BackingStore?.Get<TeamworkAccountConfiguration>("accountConfiguration"); }
+            set { BackingStore?.Set("accountConfiguration", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The configuration of Microsoft Teams client features for a device.</summary>
         public TeamworkFeaturesConfiguration FeaturesConfiguration {
-            get { return BackingStore?.Get<TeamworkFeaturesConfiguration>(nameof(FeaturesConfiguration)); }
-            set { BackingStore?.Set(nameof(FeaturesConfiguration), value); }
+            get { return BackingStore?.Get<TeamworkFeaturesConfiguration>("featuresConfiguration"); }
+            set { BackingStore?.Set("featuresConfiguration", value); }
         }
         /// <summary>
         /// Instantiates a new teamworkTeamsClientConfiguration and sets the default values.

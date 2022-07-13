@@ -9,35 +9,40 @@ namespace Microsoft.Graph.Beta.Models {
     public class DetectedSensitiveContentBase : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The confidence property</summary>
         public int? Confidence {
-            get { return BackingStore?.Get<int?>(nameof(Confidence)); }
-            set { BackingStore?.Set(nameof(Confidence), value); }
+            get { return BackingStore?.Get<int?>("confidence"); }
+            set { BackingStore?.Set("confidence", value); }
         }
         /// <summary>The displayName property</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The id property</summary>
         public string Id {
-            get { return BackingStore?.Get<string>(nameof(Id)); }
-            set { BackingStore?.Set(nameof(Id), value); }
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
         }
         /// <summary>The recommendedConfidence property</summary>
         public int? RecommendedConfidence {
-            get { return BackingStore?.Get<int?>(nameof(RecommendedConfidence)); }
-            set { BackingStore?.Set(nameof(RecommendedConfidence), value); }
+            get { return BackingStore?.Get<int?>("recommendedConfidence"); }
+            set { BackingStore?.Set("recommendedConfidence", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>The uniqueCount property</summary>
         public int? UniqueCount {
-            get { return BackingStore?.Get<int?>(nameof(UniqueCount)); }
-            set { BackingStore?.Set(nameof(UniqueCount), value); }
+            get { return BackingStore?.Get<int?>("uniqueCount"); }
+            set { BackingStore?.Set("uniqueCount", value); }
         }
         /// <summary>
         /// Instantiates a new detectedSensitiveContentBase and sets the default values.
@@ -45,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DetectedSensitiveContentBase() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.detectedSensitiveContentBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -69,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"id", n => { Id = n.GetStringValue(); } },
                 {"recommendedConfidence", n => { RecommendedConfidence = n.GetIntValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
                 {"uniqueCount", n => { UniqueCount = n.GetIntValue(); } },
             };
         }
@@ -82,6 +89,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("recommendedConfidence", RecommendedConfidence);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteIntValue("uniqueCount", UniqueCount);
             writer.WriteAdditionalData(AdditionalData);
         }

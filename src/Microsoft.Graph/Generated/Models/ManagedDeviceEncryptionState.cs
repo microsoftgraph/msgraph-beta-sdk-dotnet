@@ -8,58 +8,58 @@ namespace Microsoft.Graph.Beta.Models {
     public class ManagedDeviceEncryptionState : Entity, IParsable {
         /// <summary>Advanced BitLocker State. Possible values are: success, noUserConsent, osVolumeUnprotected, osVolumeTpmRequired, osVolumeTpmOnlyRequired, osVolumeTpmPinRequired, osVolumeTpmStartupKeyRequired, osVolumeTpmPinStartupKeyRequired, osVolumeEncryptionMethodMismatch, recoveryKeyBackupFailed, fixedDriveNotEncrypted, fixedDriveEncryptionMethodMismatch, loggedOnUserNonAdmin, windowsRecoveryEnvironmentNotConfigured, tpmNotAvailable, tpmNotReady, networkError.</summary>
         public AdvancedBitLockerState? AdvancedBitLockerStates {
-            get { return BackingStore?.Get<AdvancedBitLockerState?>(nameof(AdvancedBitLockerStates)); }
-            set { BackingStore?.Set(nameof(AdvancedBitLockerStates), value); }
+            get { return BackingStore?.Get<AdvancedBitLockerState?>("advancedBitLockerStates"); }
+            set { BackingStore?.Set("advancedBitLockerStates", value); }
         }
         /// <summary>Device name</summary>
         public string DeviceName {
-            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
-            set { BackingStore?.Set(nameof(DeviceName), value); }
+            get { return BackingStore?.Get<string>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
         }
-        /// <summary>Platform of the device. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, blackberry, palm, unknown.</summary>
+        /// <summary>Device type.</summary>
         public DeviceTypes? DeviceType {
-            get { return BackingStore?.Get<DeviceTypes?>(nameof(DeviceType)); }
-            set { BackingStore?.Set(nameof(DeviceType), value); }
+            get { return BackingStore?.Get<DeviceTypes?>("deviceType"); }
+            set { BackingStore?.Set("deviceType", value); }
         }
-        /// <summary>Encryption policy setting state. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.</summary>
+        /// <summary>The encryptionPolicySettingState property</summary>
         public ComplianceStatus? EncryptionPolicySettingState {
-            get { return BackingStore?.Get<ComplianceStatus?>(nameof(EncryptionPolicySettingState)); }
-            set { BackingStore?.Set(nameof(EncryptionPolicySettingState), value); }
+            get { return BackingStore?.Get<ComplianceStatus?>("encryptionPolicySettingState"); }
+            set { BackingStore?.Set("encryptionPolicySettingState", value); }
         }
-        /// <summary>Encryption readiness state. Possible values are: notReady, ready.</summary>
+        /// <summary>Encryption readiness state</summary>
         public Microsoft.Graph.Beta.Models.EncryptionReadinessState? EncryptionReadinessState {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EncryptionReadinessState?>(nameof(EncryptionReadinessState)); }
-            set { BackingStore?.Set(nameof(EncryptionReadinessState), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EncryptionReadinessState?>("encryptionReadinessState"); }
+            set { BackingStore?.Set("encryptionReadinessState", value); }
         }
-        /// <summary>Device encryption state. Possible values are: notEncrypted, encrypted.</summary>
+        /// <summary>Encryption state</summary>
         public Microsoft.Graph.Beta.Models.EncryptionState? EncryptionState {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EncryptionState?>(nameof(EncryptionState)); }
-            set { BackingStore?.Set(nameof(EncryptionState), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EncryptionState?>("encryptionState"); }
+            set { BackingStore?.Set("encryptionState", value); }
         }
         /// <summary>FileVault State. Possible values are: success, driveEncryptedByUser, userDeferredEncryption, escrowNotEnabled.</summary>
         public FileVaultState? FileVaultStates {
-            get { return BackingStore?.Get<FileVaultState?>(nameof(FileVaultStates)); }
-            set { BackingStore?.Set(nameof(FileVaultStates), value); }
+            get { return BackingStore?.Get<FileVaultState?>("fileVaultStates"); }
+            set { BackingStore?.Set("fileVaultStates", value); }
         }
         /// <summary>Operating system version of the device</summary>
         public string OsVersion {
-            get { return BackingStore?.Get<string>(nameof(OsVersion)); }
-            set { BackingStore?.Set(nameof(OsVersion), value); }
+            get { return BackingStore?.Get<string>("osVersion"); }
+            set { BackingStore?.Set("osVersion", value); }
         }
         /// <summary>Policy Details</summary>
         public List<EncryptionReportPolicyDetails> PolicyDetails {
-            get { return BackingStore?.Get<List<EncryptionReportPolicyDetails>>(nameof(PolicyDetails)); }
-            set { BackingStore?.Set(nameof(PolicyDetails), value); }
+            get { return BackingStore?.Get<List<EncryptionReportPolicyDetails>>("policyDetails"); }
+            set { BackingStore?.Set("policyDetails", value); }
         }
         /// <summary>Device TPM Version</summary>
         public string TpmSpecificationVersion {
-            get { return BackingStore?.Get<string>(nameof(TpmSpecificationVersion)); }
-            set { BackingStore?.Set(nameof(TpmSpecificationVersion), value); }
+            get { return BackingStore?.Get<string>("tpmSpecificationVersion"); }
+            set { BackingStore?.Set("tpmSpecificationVersion", value); }
         }
         /// <summary>User name</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

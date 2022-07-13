@@ -7,88 +7,88 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidEasEmailProfileConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Exchange ActiveSync account name, displayed to users as name of EAS (this) profile.</summary>
         public string AccountName {
-            get { return BackingStore?.Get<string>(nameof(AccountName)); }
-            set { BackingStore?.Set(nameof(AccountName), value); }
+            get { return BackingStore?.Get<string>("accountName"); }
+            set { BackingStore?.Set("accountName", value); }
         }
-        /// <summary>Authentication method for Exchange ActiveSync. Possible values are: usernameAndPassword, certificate, derivedCredential.</summary>
+        /// <summary>Exchange Active Sync authentication method.</summary>
         public EasAuthenticationMethod? AuthenticationMethod {
-            get { return BackingStore?.Get<EasAuthenticationMethod?>(nameof(AuthenticationMethod)); }
-            set { BackingStore?.Set(nameof(AuthenticationMethod), value); }
+            get { return BackingStore?.Get<EasAuthenticationMethod?>("authenticationMethod"); }
+            set { BackingStore?.Set("authenticationMethod", value); }
         }
         /// <summary>Custom domain name value used while generating an email profile before installing on the device.</summary>
         public string CustomDomainName {
-            get { return BackingStore?.Get<string>(nameof(CustomDomainName)); }
-            set { BackingStore?.Set(nameof(CustomDomainName), value); }
+            get { return BackingStore?.Get<string>("customDomainName"); }
+            set { BackingStore?.Set("customDomainName", value); }
         }
-        /// <summary>Duration of time email should be synced to. Possible values are: userDefined, oneDay, threeDays, oneWeek, twoWeeks, oneMonth, unlimited.</summary>
+        /// <summary>Possible values for email sync duration.</summary>
         public EmailSyncDuration? DurationOfEmailToSync {
-            get { return BackingStore?.Get<EmailSyncDuration?>(nameof(DurationOfEmailToSync)); }
-            set { BackingStore?.Set(nameof(DurationOfEmailToSync), value); }
+            get { return BackingStore?.Get<EmailSyncDuration?>("durationOfEmailToSync"); }
+            set { BackingStore?.Set("durationOfEmailToSync", value); }
         }
-        /// <summary>Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.</summary>
+        /// <summary>Possible values for username source or email source.</summary>
         public UserEmailSource? EmailAddressSource {
-            get { return BackingStore?.Get<UserEmailSource?>(nameof(EmailAddressSource)); }
-            set { BackingStore?.Set(nameof(EmailAddressSource), value); }
+            get { return BackingStore?.Get<UserEmailSource?>("emailAddressSource"); }
+            set { BackingStore?.Set("emailAddressSource", value); }
         }
-        /// <summary>Email sync schedule. Possible values are: userDefined, asMessagesArrive, manual, fifteenMinutes, thirtyMinutes, sixtyMinutes, basedOnMyUsage.</summary>
+        /// <summary>Possible values for email sync schedule.</summary>
         public Microsoft.Graph.Beta.Models.EmailSyncSchedule? EmailSyncSchedule {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailSyncSchedule?>(nameof(EmailSyncSchedule)); }
-            set { BackingStore?.Set(nameof(EmailSyncSchedule), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailSyncSchedule?>("emailSyncSchedule"); }
+            set { BackingStore?.Set("emailSyncSchedule", value); }
         }
         /// <summary>Exchange location (URL) that the native mail app connects to.</summary>
         public string HostName {
-            get { return BackingStore?.Get<string>(nameof(HostName)); }
-            set { BackingStore?.Set(nameof(HostName), value); }
+            get { return BackingStore?.Get<string>("hostName"); }
+            set { BackingStore?.Set("hostName", value); }
         }
         /// <summary>Identity certificate.</summary>
         public AndroidCertificateProfileBase IdentityCertificate {
-            get { return BackingStore?.Get<AndroidCertificateProfileBase>(nameof(IdentityCertificate)); }
-            set { BackingStore?.Set(nameof(IdentityCertificate), value); }
+            get { return BackingStore?.Get<AndroidCertificateProfileBase>("identityCertificate"); }
+            set { BackingStore?.Set("identityCertificate", value); }
         }
         /// <summary>Indicates whether or not to use S/MIME certificate.</summary>
         public bool? RequireSmime {
-            get { return BackingStore?.Get<bool?>(nameof(RequireSmime)); }
-            set { BackingStore?.Set(nameof(RequireSmime), value); }
+            get { return BackingStore?.Get<bool?>("requireSmime"); }
+            set { BackingStore?.Set("requireSmime", value); }
         }
         /// <summary>Indicates whether or not to use SSL.</summary>
         public bool? RequireSsl {
-            get { return BackingStore?.Get<bool?>(nameof(RequireSsl)); }
-            set { BackingStore?.Set(nameof(RequireSsl), value); }
+            get { return BackingStore?.Get<bool?>("requireSsl"); }
+            set { BackingStore?.Set("requireSsl", value); }
         }
         /// <summary>S/MIME signing certificate.</summary>
         public AndroidCertificateProfileBase SmimeSigningCertificate {
-            get { return BackingStore?.Get<AndroidCertificateProfileBase>(nameof(SmimeSigningCertificate)); }
-            set { BackingStore?.Set(nameof(SmimeSigningCertificate), value); }
+            get { return BackingStore?.Get<AndroidCertificateProfileBase>("smimeSigningCertificate"); }
+            set { BackingStore?.Set("smimeSigningCertificate", value); }
         }
         /// <summary>Toggles syncing the calendar. If set to false calendar is turned off on the device.</summary>
         public bool? SyncCalendar {
-            get { return BackingStore?.Get<bool?>(nameof(SyncCalendar)); }
-            set { BackingStore?.Set(nameof(SyncCalendar), value); }
+            get { return BackingStore?.Get<bool?>("syncCalendar"); }
+            set { BackingStore?.Set("syncCalendar", value); }
         }
         /// <summary>Toggles syncing contacts. If set to false contacts are turned off on the device.</summary>
         public bool? SyncContacts {
-            get { return BackingStore?.Get<bool?>(nameof(SyncContacts)); }
-            set { BackingStore?.Set(nameof(SyncContacts), value); }
+            get { return BackingStore?.Get<bool?>("syncContacts"); }
+            set { BackingStore?.Set("syncContacts", value); }
         }
         /// <summary>Toggles syncing notes. If set to false notes are turned off on the device.</summary>
         public bool? SyncNotes {
-            get { return BackingStore?.Get<bool?>(nameof(SyncNotes)); }
-            set { BackingStore?.Set(nameof(SyncNotes), value); }
+            get { return BackingStore?.Get<bool?>("syncNotes"); }
+            set { BackingStore?.Set("syncNotes", value); }
         }
         /// <summary>Toggles syncing tasks. If set to false tasks are turned off on the device.</summary>
         public bool? SyncTasks {
-            get { return BackingStore?.Get<bool?>(nameof(SyncTasks)); }
-            set { BackingStore?.Set(nameof(SyncTasks), value); }
+            get { return BackingStore?.Get<bool?>("syncTasks"); }
+            set { BackingStore?.Set("syncTasks", value); }
         }
         /// <summary>UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.</summary>
         public DomainNameSource? UserDomainNameSource {
-            get { return BackingStore?.Get<DomainNameSource?>(nameof(UserDomainNameSource)); }
-            set { BackingStore?.Set(nameof(UserDomainNameSource), value); }
+            get { return BackingStore?.Get<DomainNameSource?>("userDomainNameSource"); }
+            set { BackingStore?.Set("userDomainNameSource", value); }
         }
-        /// <summary>Username attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: username, userPrincipalName, samAccountName, primarySmtpAddress.</summary>
+        /// <summary>Android username source.</summary>
         public AndroidUsernameSource? UsernameSource {
-            get { return BackingStore?.Get<AndroidUsernameSource?>(nameof(UsernameSource)); }
-            set { BackingStore?.Set(nameof(UsernameSource), value); }
+            get { return BackingStore?.Get<AndroidUsernameSource?>("usernameSource"); }
+            set { BackingStore?.Set("usernameSource", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

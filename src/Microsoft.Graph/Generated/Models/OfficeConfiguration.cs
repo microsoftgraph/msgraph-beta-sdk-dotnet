@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class OfficeConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>List of office Client configuration.</summary>
         public List<OfficeClientConfiguration> ClientConfigurations {
-            get { return BackingStore?.Get<List<OfficeClientConfiguration>>(nameof(ClientConfigurations)); }
-            set { BackingStore?.Set(nameof(ClientConfigurations), value); }
+            get { return BackingStore?.Get<List<OfficeClientConfiguration>>("clientConfigurations"); }
+            set { BackingStore?.Set("clientConfigurations", value); }
         }
         /// <summary>List of office Client check-in status.</summary>
         public List<OfficeClientCheckinStatus> TenantCheckinStatuses {
-            get { return BackingStore?.Get<List<OfficeClientCheckinStatus>>(nameof(TenantCheckinStatuses)); }
-            set { BackingStore?.Set(nameof(TenantCheckinStatuses), value); }
+            get { return BackingStore?.Get<List<OfficeClientCheckinStatus>>("tenantCheckinStatuses"); }
+            set { BackingStore?.Set("tenantCheckinStatuses", value); }
         }
         /// <summary>Entity that describes tenant check-in statues</summary>
         public OfficeUserCheckinSummary TenantUserCheckinSummary {
-            get { return BackingStore?.Get<OfficeUserCheckinSummary>(nameof(TenantUserCheckinSummary)); }
-            set { BackingStore?.Set(nameof(TenantUserCheckinSummary), value); }
+            get { return BackingStore?.Get<OfficeUserCheckinSummary>("tenantUserCheckinSummary"); }
+            set { BackingStore?.Set("tenantUserCheckinSummary", value); }
         }
         /// <summary>
         /// Instantiates a new OfficeConfiguration and sets the default values.

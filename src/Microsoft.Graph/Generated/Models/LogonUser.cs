@@ -8,45 +8,45 @@ namespace Microsoft.Graph.Beta.Models {
     public class LogonUser : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Domain of user account used to logon.</summary>
         public string AccountDomain {
-            get { return BackingStore?.Get<string>(nameof(AccountDomain)); }
-            set { BackingStore?.Set(nameof(AccountDomain), value); }
+            get { return BackingStore?.Get<string>("accountDomain"); }
+            set { BackingStore?.Set("accountDomain", value); }
         }
         /// <summary>Account name of user account used to logon.</summary>
         public string AccountName {
-            get { return BackingStore?.Get<string>(nameof(AccountName)); }
-            set { BackingStore?.Set(nameof(AccountName), value); }
+            get { return BackingStore?.Get<string>("accountName"); }
+            set { BackingStore?.Set("accountName", value); }
         }
         /// <summary>User Account type, per Windows definition. Possible values are: unknown, standard, power, administrator.</summary>
         public UserAccountSecurityType? AccountType {
-            get { return BackingStore?.Get<UserAccountSecurityType?>(nameof(AccountType)); }
-            set { BackingStore?.Set(nameof(AccountType), value); }
+            get { return BackingStore?.Get<UserAccountSecurityType?>("accountType"); }
+            set { BackingStore?.Set("accountType", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>DateTime at which the earliest logon by this user account occurred (provider-determined period). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? FirstSeenDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(FirstSeenDateTime)); }
-            set { BackingStore?.Set(nameof(FirstSeenDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("firstSeenDateTime"); }
+            set { BackingStore?.Set("firstSeenDateTime", value); }
         }
         /// <summary>DateTime at which the latest logon by this user account occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastSeenDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSeenDateTime)); }
-            set { BackingStore?.Set(nameof(LastSeenDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
+            set { BackingStore?.Set("lastSeenDateTime", value); }
         }
         /// <summary>User logon ID.</summary>
         public string LogonId {
-            get { return BackingStore?.Get<string>(nameof(LogonId)); }
-            set { BackingStore?.Set(nameof(LogonId), value); }
+            get { return BackingStore?.Get<string>("logonId"); }
+            set { BackingStore?.Set("logonId", value); }
         }
         /// <summary>Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.</summary>
         public List<string> LogonTypes {
-            get { return BackingStore?.Get<List<string>>(nameof(LogonTypes)); }
-            set { BackingStore?.Set(nameof(LogonTypes), value); }
+            get { return BackingStore?.Get<List<string>>("logonTypes"); }
+            set { BackingStore?.Set("logonTypes", value); }
         }
         /// <summary>
         /// Instantiates a new logonUser and sets the default values.

@@ -4,42 +4,42 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class OutlookTaskFolder : Entity, IParsable {
         /// <summary>The version of the task folder.</summary>
         public string ChangeKey {
-            get { return BackingStore?.Get<string>(nameof(ChangeKey)); }
-            set { BackingStore?.Set(nameof(ChangeKey), value); }
+            get { return BackingStore?.Get<string>("changeKey"); }
+            set { BackingStore?.Set("changeKey", value); }
         }
         /// <summary>True if the folder is the default task folder.</summary>
         public bool? IsDefaultFolder {
-            get { return BackingStore?.Get<bool?>(nameof(IsDefaultFolder)); }
-            set { BackingStore?.Set(nameof(IsDefaultFolder), value); }
+            get { return BackingStore?.Get<bool?>("isDefaultFolder"); }
+            set { BackingStore?.Set("isDefaultFolder", value); }
         }
         /// <summary>The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.</summary>
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties {
-            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>(nameof(MultiValueExtendedProperties)); }
-            set { BackingStore?.Set(nameof(MultiValueExtendedProperties), value); }
+            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
+            set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
         /// <summary>The name of the task folder.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The unique GUID identifier for the task folder&apos;s parent group.</summary>
         public string ParentGroupKey {
-            get { return BackingStore?.Get<string>(nameof(ParentGroupKey)); }
-            set { BackingStore?.Set(nameof(ParentGroupKey), value); }
+            get { return BackingStore?.Get<string>("parentGroupKey"); }
+            set { BackingStore?.Set("parentGroupKey", value); }
         }
         /// <summary>The collection of single-value extended properties defined for the task folder. Read-only. Nullable.</summary>
         public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties {
-            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>(nameof(SingleValueExtendedProperties)); }
-            set { BackingStore?.Set(nameof(SingleValueExtendedProperties), value); }
+            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
+            set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
         /// <summary>The tasks in this task folder. Read-only. Nullable.</summary>
         public List<OutlookTask> Tasks {
-            get { return BackingStore?.Get<List<OutlookTask>>(nameof(Tasks)); }
-            set { BackingStore?.Set(nameof(Tasks), value); }
+            get { return BackingStore?.Get<List<OutlookTask>>("tasks"); }
+            set { BackingStore?.Set("tasks", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,22 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class PlannerPlanDetails : PlannerDelta, IParsable {
         /// <summary>An object that specifies the descriptions of the 25 categories that can be associated with tasks in the plan</summary>
         public PlannerCategoryDescriptions CategoryDescriptions {
-            get { return BackingStore?.Get<PlannerCategoryDescriptions>(nameof(CategoryDescriptions)); }
-            set { BackingStore?.Set(nameof(CategoryDescriptions), value); }
+            get { return BackingStore?.Get<PlannerCategoryDescriptions>("categoryDescriptions"); }
+            set { BackingStore?.Set("categoryDescriptions", value); }
         }
         /// <summary>Read-only. A collection of additional information associated with plannerPlanContext entries that are defined for the plannerPlan container.</summary>
         public PlannerPlanContextDetailsCollection ContextDetails {
-            get { return BackingStore?.Get<PlannerPlanContextDetailsCollection>(nameof(ContextDetails)); }
-            set { BackingStore?.Set(nameof(ContextDetails), value); }
+            get { return BackingStore?.Get<PlannerPlanContextDetailsCollection>("contextDetails"); }
+            set { BackingStore?.Set("contextDetails", value); }
         }
         /// <summary>The set of user IDs that this plan is shared with. If you are using Microsoft 365 groups, use the groups API to manage group membership to share the group&apos;s plan. You can also add existing members of the group to this collection, although it is not required in order for them to access the plan owned by the group.</summary>
         public PlannerUserIds SharedWith {
-            get { return BackingStore?.Get<PlannerUserIds>(nameof(SharedWith)); }
-            set { BackingStore?.Set(nameof(SharedWith), value); }
+            get { return BackingStore?.Get<PlannerUserIds>("sharedWith"); }
+            set { BackingStore?.Set("sharedWith", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

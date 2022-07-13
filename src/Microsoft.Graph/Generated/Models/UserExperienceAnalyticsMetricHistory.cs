@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsMetricHistory : Entity, IParsable {
         /// <summary>The user experience analytics device id.</summary>
         public string DeviceId {
-            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
-            set { BackingStore?.Set(nameof(DeviceId), value); }
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>The user experience analytics metric date time.</summary>
         public DateTimeOffset? MetricDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(MetricDateTime)); }
-            set { BackingStore?.Set(nameof(MetricDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("metricDateTime"); }
+            set { BackingStore?.Set("metricDateTime", value); }
         }
         /// <summary>The user experience analytics metric type.</summary>
         public string MetricType {
-            get { return BackingStore?.Get<string>(nameof(MetricType)); }
-            set { BackingStore?.Set(nameof(MetricType), value); }
+            get { return BackingStore?.Get<string>("metricType"); }
+            set { BackingStore?.Set("metricType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

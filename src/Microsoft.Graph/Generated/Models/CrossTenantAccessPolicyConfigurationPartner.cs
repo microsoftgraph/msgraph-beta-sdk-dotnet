@@ -8,45 +8,45 @@ namespace Microsoft.Graph.Beta.Models {
     public class CrossTenantAccessPolicyConfigurationPartner : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Defines your partner-specific configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.</summary>
         public CrossTenantAccessPolicyB2BSetting B2bCollaborationInbound {
-            get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>(nameof(B2bCollaborationInbound)); }
-            set { BackingStore?.Set(nameof(B2bCollaborationInbound), value); }
+            get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>("b2bCollaborationInbound"); }
+            set { BackingStore?.Set("b2bCollaborationInbound", value); }
         }
         /// <summary>Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.</summary>
         public CrossTenantAccessPolicyB2BSetting B2bCollaborationOutbound {
-            get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>(nameof(B2bCollaborationOutbound)); }
-            set { BackingStore?.Set(nameof(B2bCollaborationOutbound), value); }
+            get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>("b2bCollaborationOutbound"); }
+            set { BackingStore?.Set("b2bCollaborationOutbound", value); }
         }
         /// <summary>Defines your partner-specific configuration for users from other organizations accessing your resources via Azure B2B direct connect.</summary>
         public CrossTenantAccessPolicyB2BSetting B2bDirectConnectInbound {
-            get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>(nameof(B2bDirectConnectInbound)); }
-            set { BackingStore?.Set(nameof(B2bDirectConnectInbound), value); }
+            get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>("b2bDirectConnectInbound"); }
+            set { BackingStore?.Set("b2bDirectConnectInbound", value); }
         }
         /// <summary>Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.</summary>
         public CrossTenantAccessPolicyB2BSetting B2bDirectConnectOutbound {
-            get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>(nameof(B2bDirectConnectOutbound)); }
-            set { BackingStore?.Set(nameof(B2bDirectConnectOutbound), value); }
+            get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>("b2bDirectConnectOutbound"); }
+            set { BackingStore?.Set("b2bDirectConnectOutbound", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Determines the partner-specific configuration for trusting other Conditional Access claims from external Azure AD organizations.</summary>
         public CrossTenantAccessPolicyInboundTrust InboundTrust {
-            get { return BackingStore?.Get<CrossTenantAccessPolicyInboundTrust>(nameof(InboundTrust)); }
-            set { BackingStore?.Set(nameof(InboundTrust), value); }
+            get { return BackingStore?.Get<CrossTenantAccessPolicyInboundTrust>("inboundTrust"); }
+            set { BackingStore?.Set("inboundTrust", value); }
         }
         /// <summary>Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.</summary>
         public bool? IsServiceProvider {
-            get { return BackingStore?.Get<bool?>(nameof(IsServiceProvider)); }
-            set { BackingStore?.Set(nameof(IsServiceProvider), value); }
+            get { return BackingStore?.Get<bool?>("isServiceProvider"); }
+            set { BackingStore?.Set("isServiceProvider", value); }
         }
         /// <summary>The tenant identifier for the partner Azure AD organization. Read-only. Key.</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>
         /// Instantiates a new crossTenantAccessPolicyConfigurationPartner and sets the default values.

@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.ResourceNamespace
     public class ImportResourceActionsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The format property</summary>
         public string Format {
-            get { return BackingStore?.Get<string>(nameof(Format)); }
-            set { BackingStore?.Set(nameof(Format), value); }
+            get { return BackingStore?.Get<string>("format"); }
+            set { BackingStore?.Set("format", value); }
         }
         /// <summary>The overwriteResourceNamespace property</summary>
         public bool? OverwriteResourceNamespace {
-            get { return BackingStore?.Get<bool?>(nameof(OverwriteResourceNamespace)); }
-            set { BackingStore?.Set(nameof(OverwriteResourceNamespace), value); }
+            get { return BackingStore?.Get<bool?>("overwriteResourceNamespace"); }
+            set { BackingStore?.Set("overwriteResourceNamespace", value); }
         }
         /// <summary>The value property</summary>
         public string Value {
-            get { return BackingStore?.Get<string>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<string>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Instantiates a new importResourceActionsPostRequestBody and sets the default values.

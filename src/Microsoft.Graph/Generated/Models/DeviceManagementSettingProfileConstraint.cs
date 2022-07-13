@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementSettingProfileConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>The source of the entity</summary>
         public string Source {
-            get { return BackingStore?.Get<string>(nameof(Source)); }
-            set { BackingStore?.Set(nameof(Source), value); }
+            get { return BackingStore?.Get<string>("source"); }
+            set { BackingStore?.Set("source", value); }
         }
         /// <summary>A collection of types this entity carries</summary>
         public List<string> Types {
-            get { return BackingStore?.Get<List<string>>(nameof(Types)); }
-            set { BackingStore?.Set(nameof(Types), value); }
+            get { return BackingStore?.Get<List<string>>("types"); }
+            set { BackingStore?.Set("types", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

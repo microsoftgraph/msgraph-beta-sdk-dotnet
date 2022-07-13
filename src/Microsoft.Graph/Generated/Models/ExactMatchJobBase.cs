@@ -5,32 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ExactMatchJobBase : Entity, IParsable {
         /// <summary>The completionDateTime property</summary>
         public DateTimeOffset? CompletionDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CompletionDateTime)); }
-            set { BackingStore?.Set(nameof(CompletionDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("completionDateTime"); }
+            set { BackingStore?.Set("completionDateTime", value); }
         }
         /// <summary>The creationDateTime property</summary>
         public DateTimeOffset? CreationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreationDateTime)); }
-            set { BackingStore?.Set(nameof(CreationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("creationDateTime"); }
+            set { BackingStore?.Set("creationDateTime", value); }
         }
         /// <summary>The error property</summary>
         public ClassificationError Error {
-            get { return BackingStore?.Get<ClassificationError>(nameof(Error)); }
-            set { BackingStore?.Set(nameof(Error), value); }
+            get { return BackingStore?.Get<ClassificationError>("error"); }
+            set { BackingStore?.Set("error", value); }
         }
         /// <summary>The lastUpdatedDateTime property</summary>
         public DateTimeOffset? LastUpdatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastUpdatedDateTime)); }
-            set { BackingStore?.Set(nameof(LastUpdatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
+            set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>The startDateTime property</summary>
         public DateTimeOffset? StartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
-            set { BackingStore?.Set(nameof(StartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
+        }
+        /// <summary>
+        /// Instantiates a new exactMatchJobBase and sets the default values.
+        /// </summary>
+        public ExactMatchJobBase() : base() {
+            Type = "#microsoft.graph.exactMatchJobBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

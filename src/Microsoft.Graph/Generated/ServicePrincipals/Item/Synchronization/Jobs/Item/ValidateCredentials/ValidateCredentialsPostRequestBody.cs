@@ -10,30 +10,30 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.
     public class ValidateCredentialsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The applicationIdentifier property</summary>
         public string ApplicationIdentifier {
-            get { return BackingStore?.Get<string>(nameof(ApplicationIdentifier)); }
-            set { BackingStore?.Set(nameof(ApplicationIdentifier), value); }
+            get { return BackingStore?.Get<string>("applicationIdentifier"); }
+            set { BackingStore?.Set("applicationIdentifier", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The credentials property</summary>
         public List<SynchronizationSecretKeyStringValuePair> Credentials {
-            get { return BackingStore?.Get<List<SynchronizationSecretKeyStringValuePair>>(nameof(Credentials)); }
-            set { BackingStore?.Set(nameof(Credentials), value); }
+            get { return BackingStore?.Get<List<SynchronizationSecretKeyStringValuePair>>("credentials"); }
+            set { BackingStore?.Set("credentials", value); }
         }
         /// <summary>The templateId property</summary>
         public string TemplateId {
-            get { return BackingStore?.Get<string>(nameof(TemplateId)); }
-            set { BackingStore?.Set(nameof(TemplateId), value); }
+            get { return BackingStore?.Get<string>("templateId"); }
+            set { BackingStore?.Set("templateId", value); }
         }
         /// <summary>The useSavedCredentials property</summary>
         public bool? UseSavedCredentials {
-            get { return BackingStore?.Get<bool?>(nameof(UseSavedCredentials)); }
-            set { BackingStore?.Set(nameof(UseSavedCredentials), value); }
+            get { return BackingStore?.Get<bool?>("useSavedCredentials"); }
+            set { BackingStore?.Set("useSavedCredentials", value); }
         }
         /// <summary>
         /// Instantiates a new validateCredentialsPostRequestBody and sets the default values.

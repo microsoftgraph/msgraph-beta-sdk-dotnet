@@ -5,25 +5,25 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Win32LobAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
-        /// <summary>The delivery optimization priority for this app assignment. This setting is not supported in National Cloud environments. Possible values are: notConfigured, foreground.</summary>
+        /// <summary>Contains value for delivery optimization priority.</summary>
         public Win32LobAppDeliveryOptimizationPriority? DeliveryOptimizationPriority {
-            get { return BackingStore?.Get<Win32LobAppDeliveryOptimizationPriority?>(nameof(DeliveryOptimizationPriority)); }
-            set { BackingStore?.Set(nameof(DeliveryOptimizationPriority), value); }
+            get { return BackingStore?.Get<Win32LobAppDeliveryOptimizationPriority?>("deliveryOptimizationPriority"); }
+            set { BackingStore?.Set("deliveryOptimizationPriority", value); }
         }
         /// <summary>The install time settings to apply for this app assignment.</summary>
         public MobileAppInstallTimeSettings InstallTimeSettings {
-            get { return BackingStore?.Get<MobileAppInstallTimeSettings>(nameof(InstallTimeSettings)); }
-            set { BackingStore?.Set(nameof(InstallTimeSettings), value); }
+            get { return BackingStore?.Get<MobileAppInstallTimeSettings>("installTimeSettings"); }
+            set { BackingStore?.Set("installTimeSettings", value); }
         }
-        /// <summary>The notification status for this app assignment. Possible values are: showAll, showReboot, hideAll.</summary>
+        /// <summary>Contains value for notification status.</summary>
         public Win32LobAppNotification? Notifications {
-            get { return BackingStore?.Get<Win32LobAppNotification?>(nameof(Notifications)); }
-            set { BackingStore?.Set(nameof(Notifications), value); }
+            get { return BackingStore?.Get<Win32LobAppNotification?>("notifications"); }
+            set { BackingStore?.Set("notifications", value); }
         }
         /// <summary>The reboot settings to apply for this app assignment.</summary>
         public Win32LobAppRestartSettings RestartSettings {
-            get { return BackingStore?.Get<Win32LobAppRestartSettings>(nameof(RestartSettings)); }
-            set { BackingStore?.Set(nameof(RestartSettings), value); }
+            get { return BackingStore?.Get<Win32LobAppRestartSettings>("restartSettings"); }
+            set { BackingStore?.Set("restartSettings", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

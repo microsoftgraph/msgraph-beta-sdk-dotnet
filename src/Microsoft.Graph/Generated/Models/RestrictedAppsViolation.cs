@@ -8,48 +8,48 @@ namespace Microsoft.Graph.Beta.Models {
     public class RestrictedAppsViolation : Entity, IParsable {
         /// <summary>Device configuration profile unique identifier, must be Guid</summary>
         public string DeviceConfigurationId {
-            get { return BackingStore?.Get<string>(nameof(DeviceConfigurationId)); }
-            set { BackingStore?.Set(nameof(DeviceConfigurationId), value); }
+            get { return BackingStore?.Get<string>("deviceConfigurationId"); }
+            set { BackingStore?.Set("deviceConfigurationId", value); }
         }
         /// <summary>Device configuration profile name</summary>
         public string DeviceConfigurationName {
-            get { return BackingStore?.Get<string>(nameof(DeviceConfigurationName)); }
-            set { BackingStore?.Set(nameof(DeviceConfigurationName), value); }
+            get { return BackingStore?.Get<string>("deviceConfigurationName"); }
+            set { BackingStore?.Set("deviceConfigurationName", value); }
         }
         /// <summary>Device name</summary>
         public string DeviceName {
-            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
-            set { BackingStore?.Set(nameof(DeviceName), value); }
+            get { return BackingStore?.Get<string>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
         }
         /// <summary>Managed device unique identifier, must be Guid</summary>
         public string ManagedDeviceId {
-            get { return BackingStore?.Get<string>(nameof(ManagedDeviceId)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceId), value); }
+            get { return BackingStore?.Get<string>("managedDeviceId"); }
+            set { BackingStore?.Set("managedDeviceId", value); }
         }
-        /// <summary>Platform type. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, androidAOSP, all.</summary>
+        /// <summary>Supported platform types for policies.</summary>
         public PolicyPlatformType? PlatformType {
-            get { return BackingStore?.Get<PolicyPlatformType?>(nameof(PlatformType)); }
-            set { BackingStore?.Set(nameof(PlatformType), value); }
+            get { return BackingStore?.Get<PolicyPlatformType?>("platformType"); }
+            set { BackingStore?.Set("platformType", value); }
         }
         /// <summary>List of violated restricted apps</summary>
         public List<ManagedDeviceReportedApp> RestrictedApps {
-            get { return BackingStore?.Get<List<ManagedDeviceReportedApp>>(nameof(RestrictedApps)); }
-            set { BackingStore?.Set(nameof(RestrictedApps), value); }
+            get { return BackingStore?.Get<List<ManagedDeviceReportedApp>>("restrictedApps"); }
+            set { BackingStore?.Set("restrictedApps", value); }
         }
-        /// <summary>Restricted apps state. Possible values are: prohibitedApps, notApprovedApps.</summary>
+        /// <summary>Restricted apps state</summary>
         public Microsoft.Graph.Beta.Models.RestrictedAppsState? RestrictedAppsState {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RestrictedAppsState?>(nameof(RestrictedAppsState)); }
-            set { BackingStore?.Set(nameof(RestrictedAppsState), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RestrictedAppsState?>("restrictedAppsState"); }
+            set { BackingStore?.Set("restrictedAppsState", value); }
         }
         /// <summary>User unique identifier, must be Guid</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>User name</summary>
         public string UserName {
-            get { return BackingStore?.Get<string>(nameof(UserName)); }
-            set { BackingStore?.Set(nameof(UserName), value); }
+            get { return BackingStore?.Get<string>("userName"); }
+            set { BackingStore?.Set("userName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

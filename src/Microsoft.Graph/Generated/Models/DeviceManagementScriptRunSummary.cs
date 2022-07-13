@@ -4,27 +4,26 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Contains properties for the run summary of a device management script.</summary>
     public class DeviceManagementScriptRunSummary : Entity, IParsable {
         /// <summary>Error device count.</summary>
         public int? ErrorDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(ErrorDeviceCount)); }
-            set { BackingStore?.Set(nameof(ErrorDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("errorDeviceCount"); }
+            set { BackingStore?.Set("errorDeviceCount", value); }
         }
         /// <summary>Error user count.</summary>
         public int? ErrorUserCount {
-            get { return BackingStore?.Get<int?>(nameof(ErrorUserCount)); }
-            set { BackingStore?.Set(nameof(ErrorUserCount), value); }
+            get { return BackingStore?.Get<int?>("errorUserCount"); }
+            set { BackingStore?.Set("errorUserCount", value); }
         }
         /// <summary>Success device count.</summary>
         public int? SuccessDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(SuccessDeviceCount)); }
-            set { BackingStore?.Set(nameof(SuccessDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("successDeviceCount"); }
+            set { BackingStore?.Set("successDeviceCount", value); }
         }
         /// <summary>Success user count.</summary>
         public int? SuccessUserCount {
-            get { return BackingStore?.Get<int?>(nameof(SuccessUserCount)); }
-            set { BackingStore?.Set(nameof(SuccessUserCount), value); }
+            get { return BackingStore?.Get<int?>("successUserCount"); }
+            set { BackingStore?.Set("successUserCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

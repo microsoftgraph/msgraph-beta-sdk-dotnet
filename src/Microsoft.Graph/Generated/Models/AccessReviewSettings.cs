@@ -9,55 +9,60 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessReviewSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Indicates whether showing recommendations to reviewers is enabled.</summary>
         public bool? AccessRecommendationsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(AccessRecommendationsEnabled)); }
-            set { BackingStore?.Set(nameof(AccessRecommendationsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("accessRecommendationsEnabled"); }
+            set { BackingStore?.Set("accessRecommendationsEnabled", value); }
         }
         /// <summary>The number of days of user activities to show to reviewers.</summary>
         public int? ActivityDurationInDays {
-            get { return BackingStore?.Get<int?>(nameof(ActivityDurationInDays)); }
-            set { BackingStore?.Set(nameof(ActivityDurationInDays), value); }
+            get { return BackingStore?.Get<int?>("activityDurationInDays"); }
+            set { BackingStore?.Set("activityDurationInDays", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Indicates whether the auto-apply capability, to automatically change the target object access resource, is enabled.  If not enabled, a user must, after the review completes, apply the access review.</summary>
         public bool? AutoApplyReviewResultsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(AutoApplyReviewResultsEnabled)); }
-            set { BackingStore?.Set(nameof(AutoApplyReviewResultsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("autoApplyReviewResultsEnabled"); }
+            set { BackingStore?.Set("autoApplyReviewResultsEnabled", value); }
         }
         /// <summary>Indicates whether a decision should be set if the reviewer did not supply one. For use when auto-apply is enabled. If you don&apos;t want to have a review decision recorded unless the reviewer makes an explicit choice, set it to false.</summary>
         public bool? AutoReviewEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(AutoReviewEnabled)); }
-            set { BackingStore?.Set(nameof(AutoReviewEnabled), value); }
+            get { return BackingStore?.Get<bool?>("autoReviewEnabled"); }
+            set { BackingStore?.Set("autoReviewEnabled", value); }
         }
         /// <summary>Detailed settings for how the feature should set the review decision. For use when auto-apply is enabled.</summary>
         public Microsoft.Graph.Beta.Models.AutoReviewSettings AutoReviewSettings {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AutoReviewSettings>(nameof(AutoReviewSettings)); }
-            set { BackingStore?.Set(nameof(AutoReviewSettings), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AutoReviewSettings>("autoReviewSettings"); }
+            set { BackingStore?.Set("autoReviewSettings", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether reviewers are required to provide a justification when reviewing access.</summary>
         public bool? JustificationRequiredOnApproval {
-            get { return BackingStore?.Get<bool?>(nameof(JustificationRequiredOnApproval)); }
-            set { BackingStore?.Set(nameof(JustificationRequiredOnApproval), value); }
+            get { return BackingStore?.Get<bool?>("justificationRequiredOnApproval"); }
+            set { BackingStore?.Set("justificationRequiredOnApproval", value); }
         }
         /// <summary>Indicates whether sending mails to reviewers and the review creator is enabled.</summary>
         public bool? MailNotificationsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(MailNotificationsEnabled)); }
-            set { BackingStore?.Set(nameof(MailNotificationsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("mailNotificationsEnabled"); }
+            set { BackingStore?.Set("mailNotificationsEnabled", value); }
         }
         /// <summary>Detailed settings for recurrence.</summary>
         public AccessReviewRecurrenceSettings RecurrenceSettings {
-            get { return BackingStore?.Get<AccessReviewRecurrenceSettings>(nameof(RecurrenceSettings)); }
-            set { BackingStore?.Set(nameof(RecurrenceSettings), value); }
+            get { return BackingStore?.Get<AccessReviewRecurrenceSettings>("recurrenceSettings"); }
+            set { BackingStore?.Set("recurrenceSettings", value); }
         }
         /// <summary>Indicates whether sending reminder emails to reviewers is enabled.</summary>
         public bool? RemindersEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(RemindersEnabled)); }
-            set { BackingStore?.Set(nameof(RemindersEnabled), value); }
+            get { return BackingStore?.Get<bool?>("remindersEnabled"); }
+            set { BackingStore?.Set("remindersEnabled", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new accessReviewSettings and sets the default values.
@@ -65,6 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AccessReviewSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.accessReviewSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -93,6 +99,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"mailNotificationsEnabled", n => { MailNotificationsEnabled = n.GetBoolValue(); } },
                 {"recurrenceSettings", n => { RecurrenceSettings = n.GetObjectValue<AccessReviewRecurrenceSettings>(AccessReviewRecurrenceSettings.CreateFromDiscriminatorValue); } },
                 {"remindersEnabled", n => { RemindersEnabled = n.GetBoolValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -110,6 +117,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("mailNotificationsEnabled", MailNotificationsEnabled);
             writer.WriteObjectValue<AccessReviewRecurrenceSettings>("recurrenceSettings", RecurrenceSettings);
             writer.WriteBoolValue("remindersEnabled", RemindersEnabled);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

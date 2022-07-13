@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOSAssociatedDomainsItem : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The application identifier of the app to associate domains with.</summary>
         public string ApplicationIdentifier {
-            get { return BackingStore?.Get<string>(nameof(ApplicationIdentifier)); }
-            set { BackingStore?.Set(nameof(ApplicationIdentifier), value); }
+            get { return BackingStore?.Get<string>("applicationIdentifier"); }
+            set { BackingStore?.Set("applicationIdentifier", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Determines whether data should be downloaded directly or via a CDN.</summary>
         public bool? DirectDownloadsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(DirectDownloadsEnabled)); }
-            set { BackingStore?.Set(nameof(DirectDownloadsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("directDownloadsEnabled"); }
+            set { BackingStore?.Set("directDownloadsEnabled", value); }
         }
         /// <summary>The list of domains to associate.</summary>
         public List<string> Domains {
-            get { return BackingStore?.Get<List<string>>(nameof(Domains)); }
-            set { BackingStore?.Set(nameof(Domains), value); }
+            get { return BackingStore?.Get<List<string>>("domains"); }
+            set { BackingStore?.Set("domains", value); }
         }
         /// <summary>
         /// Instantiates a new macOSAssociatedDomainsItem and sets the default values.

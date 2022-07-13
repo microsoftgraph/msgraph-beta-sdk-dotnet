@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class OemWarrantyInformationOnboarding : Entity, IParsable {
         /// <summary>Specifies whether warranty API is available. This property is read-only.</summary>
         public bool? Available {
-            get { return BackingStore?.Get<bool?>(nameof(Available)); }
-            set { BackingStore?.Set(nameof(Available), value); }
+            get { return BackingStore?.Get<bool?>("available"); }
+            set { BackingStore?.Set("available", value); }
         }
         /// <summary>Specifies whether warranty query is enabled for given OEM. This property is read-only.</summary>
         public bool? Enabled {
-            get { return BackingStore?.Get<bool?>(nameof(Enabled)); }
-            set { BackingStore?.Set(nameof(Enabled), value); }
+            get { return BackingStore?.Get<bool?>("enabled"); }
+            set { BackingStore?.Set("enabled", value); }
         }
         /// <summary>OEM name. This property is read-only.</summary>
         public string OemName {
-            get { return BackingStore?.Get<string>(nameof(OemName)); }
-            set { BackingStore?.Set(nameof(OemName), value); }
+            get { return BackingStore?.Get<string>("oemName"); }
+            set { BackingStore?.Set("oemName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceConfigurationConflictSummary : Entity, IParsable {
         /// <summary>The set of policies in conflict with the given setting</summary>
         public List<SettingSource> ConflictingDeviceConfigurations {
-            get { return BackingStore?.Get<List<SettingSource>>(nameof(ConflictingDeviceConfigurations)); }
-            set { BackingStore?.Set(nameof(ConflictingDeviceConfigurations), value); }
+            get { return BackingStore?.Get<List<SettingSource>>("conflictingDeviceConfigurations"); }
+            set { BackingStore?.Set("conflictingDeviceConfigurations", value); }
         }
         /// <summary>The set of settings in conflict with the given policies</summary>
         public List<string> ContributingSettings {
-            get { return BackingStore?.Get<List<string>>(nameof(ContributingSettings)); }
-            set { BackingStore?.Set(nameof(ContributingSettings), value); }
+            get { return BackingStore?.Get<List<string>>("contributingSettings"); }
+            set { BackingStore?.Set("contributingSettings", value); }
         }
         /// <summary>The count of checkins impacted by the conflicting policies and settings</summary>
         public int? DeviceCheckinsImpacted {
-            get { return BackingStore?.Get<int?>(nameof(DeviceCheckinsImpacted)); }
-            set { BackingStore?.Set(nameof(DeviceCheckinsImpacted), value); }
+            get { return BackingStore?.Get<int?>("deviceCheckinsImpacted"); }
+            set { BackingStore?.Set("deviceCheckinsImpacted", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Beta.Organization.Item.ActivateService {
     public class ActivateServicePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The service property</summary>
         public string Service {
-            get { return BackingStore?.Get<string>(nameof(Service)); }
-            set { BackingStore?.Set(nameof(Service), value); }
+            get { return BackingStore?.Get<string>("service"); }
+            set { BackingStore?.Set("service", value); }
         }
         /// <summary>The servicePlanId property</summary>
         public string ServicePlanId {
-            get { return BackingStore?.Get<string>(nameof(ServicePlanId)); }
-            set { BackingStore?.Set(nameof(ServicePlanId), value); }
+            get { return BackingStore?.Get<string>("servicePlanId"); }
+            set { BackingStore?.Set("servicePlanId", value); }
         }
         /// <summary>The skuId property</summary>
         public string SkuId {
-            get { return BackingStore?.Get<string>(nameof(SkuId)); }
-            set { BackingStore?.Set(nameof(SkuId), value); }
+            get { return BackingStore?.Get<string>("skuId"); }
+            set { BackingStore?.Set("skuId", value); }
         }
         /// <summary>
         /// Instantiates a new activateServicePostRequestBody and sets the default values.

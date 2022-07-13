@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessReviewReviewerScope : AccessReviewScope, IParsable {
         /// <summary>The query specifying who will be the reviewer. See table for examples.</summary>
         public string Query {
-            get { return BackingStore?.Get<string>(nameof(Query)); }
-            set { BackingStore?.Set(nameof(Query), value); }
+            get { return BackingStore?.Get<string>("query"); }
+            set { BackingStore?.Set("query", value); }
         }
         /// <summary>In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.</summary>
         public string QueryRoot {
-            get { return BackingStore?.Get<string>(nameof(QueryRoot)); }
-            set { BackingStore?.Set(nameof(QueryRoot), value); }
+            get { return BackingStore?.Get<string>("queryRoot"); }
+            set { BackingStore?.Set("queryRoot", value); }
         }
         /// <summary>The type of query. Examples include MicrosoftGraph and ARM.</summary>
         public string QueryType {
-            get { return BackingStore?.Get<string>(nameof(QueryType)); }
-            set { BackingStore?.Set(nameof(QueryType), value); }
+            get { return BackingStore?.Get<string>("queryType"); }
+            set { BackingStore?.Set("queryType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

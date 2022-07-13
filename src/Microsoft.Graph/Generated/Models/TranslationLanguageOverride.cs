@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class TranslationLanguageOverride : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The language to apply the override.Returned by default. Not nullable.</summary>
         public string LanguageTag {
-            get { return BackingStore?.Get<string>(nameof(LanguageTag)); }
-            set { BackingStore?.Set(nameof(LanguageTag), value); }
+            get { return BackingStore?.Get<string>("languageTag"); }
+            set { BackingStore?.Set("languageTag", value); }
         }
         /// <summary>The translation override behavior for the language, if any.Returned by default. Not nullable.</summary>
         public Microsoft.Graph.Beta.Models.TranslationBehavior? TranslationBehavior {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TranslationBehavior?>(nameof(TranslationBehavior)); }
-            set { BackingStore?.Set(nameof(TranslationBehavior), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TranslationBehavior?>("translationBehavior"); }
+            set { BackingStore?.Set("translationBehavior", value); }
         }
         /// <summary>
         /// Instantiates a new translationLanguageOverride and sets the default values.

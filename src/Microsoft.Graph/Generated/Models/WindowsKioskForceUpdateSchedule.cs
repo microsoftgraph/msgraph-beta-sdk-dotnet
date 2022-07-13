@@ -9,35 +9,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsKioskForceUpdateSchedule : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Day of month. Valid values 1 to 31</summary>
         public int? DayofMonth {
-            get { return BackingStore?.Get<int?>(nameof(DayofMonth)); }
-            set { BackingStore?.Set(nameof(DayofMonth), value); }
+            get { return BackingStore?.Get<int?>("dayofMonth"); }
+            set { BackingStore?.Set("dayofMonth", value); }
         }
-        /// <summary>Day of week. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.</summary>
+        /// <summary>The dayofWeek property</summary>
         public Microsoft.Graph.Beta.Models.DayOfWeek? DayofWeek {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DayOfWeek?>(nameof(DayofWeek)); }
-            set { BackingStore?.Set(nameof(DayofWeek), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DayOfWeek?>("dayofWeek"); }
+            set { BackingStore?.Set("dayofWeek", value); }
         }
-        /// <summary>Recurrence schedule. Possible values are: none, daily, weekly, monthly.</summary>
+        /// <summary>Possible values for App update on Windows10 recurrence.</summary>
         public Windows10AppsUpdateRecurrence? Recurrence {
-            get { return BackingStore?.Get<Windows10AppsUpdateRecurrence?>(nameof(Recurrence)); }
-            set { BackingStore?.Set(nameof(Recurrence), value); }
+            get { return BackingStore?.Get<Windows10AppsUpdateRecurrence?>("recurrence"); }
+            set { BackingStore?.Set("recurrence", value); }
         }
         /// <summary>If true, runs the task immediately if StartDateTime is in the past, else, runs at the next recurrence.</summary>
         public bool? RunImmediatelyIfAfterStartDateTime {
-            get { return BackingStore?.Get<bool?>(nameof(RunImmediatelyIfAfterStartDateTime)); }
-            set { BackingStore?.Set(nameof(RunImmediatelyIfAfterStartDateTime), value); }
+            get { return BackingStore?.Get<bool?>("runImmediatelyIfAfterStartDateTime"); }
+            set { BackingStore?.Set("runImmediatelyIfAfterStartDateTime", value); }
         }
         /// <summary>The start time for the force restart.</summary>
         public DateTimeOffset? StartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
-            set { BackingStore?.Set(nameof(StartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>
         /// Instantiates a new windowsKioskForceUpdateSchedule and sets the default values.

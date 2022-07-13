@@ -9,30 +9,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationSettingApplicability : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>description of the setting</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
-        /// <summary>Device Mode that setting can be applied on. Possible values are: none, kiosk.</summary>
+        /// <summary>Describes applicability for the mode the device is in</summary>
         public DeviceManagementConfigurationDeviceMode? DeviceMode {
-            get { return BackingStore?.Get<DeviceManagementConfigurationDeviceMode?>(nameof(DeviceMode)); }
-            set { BackingStore?.Set(nameof(DeviceMode), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationDeviceMode?>("deviceMode"); }
+            set { BackingStore?.Set("deviceMode", value); }
         }
-        /// <summary>Platform setting can be applied on. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.</summary>
+        /// <summary>Supported platform types.</summary>
         public DeviceManagementConfigurationPlatforms? Platform {
-            get { return BackingStore?.Get<DeviceManagementConfigurationPlatforms?>(nameof(Platform)); }
-            set { BackingStore?.Set(nameof(Platform), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationPlatforms?>("platform"); }
+            set { BackingStore?.Set("platform", value); }
         }
-        /// <summary>Which technology channels this setting can be deployed through. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.</summary>
+        /// <summary>Describes which technology this setting can be deployed with</summary>
         public DeviceManagementConfigurationTechnologies? Technologies {
-            get { return BackingStore?.Get<DeviceManagementConfigurationTechnologies?>(nameof(Technologies)); }
-            set { BackingStore?.Set(nameof(Technologies), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationTechnologies?>("technologies"); }
+            set { BackingStore?.Set("technologies", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new deviceManagementConfigurationSettingApplicability and sets the default values.
@@ -40,6 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceManagementConfigurationSettingApplicability() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.deviceManagementConfigurationSettingApplicability";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -64,6 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"deviceMode", n => { DeviceMode = n.GetEnumValue<DeviceManagementConfigurationDeviceMode>(); } },
                 {"platform", n => { Platform = n.GetEnumValue<DeviceManagementConfigurationPlatforms>(); } },
                 {"technologies", n => { Technologies = n.GetEnumValue<DeviceManagementConfigurationTechnologies>(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,6 +83,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<DeviceManagementConfigurationDeviceMode>("deviceMode", DeviceMode);
             writer.WriteEnumValue<DeviceManagementConfigurationPlatforms>("platform", Platform);
             writer.WriteEnumValue<DeviceManagementConfigurationTechnologies>("technologies", Technologies);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

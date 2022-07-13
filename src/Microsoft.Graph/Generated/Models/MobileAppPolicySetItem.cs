@@ -5,15 +5,15 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MobileAppPolicySetItem : PolicySetItem, IParsable {
-        /// <summary>Install intent of the MobileAppPolicySetItem. Possible values are: available, required, uninstall, availableWithoutEnrollment.</summary>
+        /// <summary>Possible values for the install intent chosen by the admin.</summary>
         public InstallIntent? Intent {
-            get { return BackingStore?.Get<InstallIntent?>(nameof(Intent)); }
-            set { BackingStore?.Set(nameof(Intent), value); }
+            get { return BackingStore?.Get<InstallIntent?>("intent"); }
+            set { BackingStore?.Set("intent", value); }
         }
         /// <summary>Settings of the MobileAppPolicySetItem.</summary>
         public MobileAppAssignmentSettings Settings {
-            get { return BackingStore?.Get<MobileAppAssignmentSettings>(nameof(Settings)); }
-            set { BackingStore?.Set(nameof(Settings), value); }
+            get { return BackingStore?.Get<MobileAppAssignmentSettings>("settings"); }
+            set { BackingStore?.Set("settings", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

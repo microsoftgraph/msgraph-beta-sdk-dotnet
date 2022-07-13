@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class HybridAgentUpdaterConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Indicates if updater configuration will be skipped and the agent will receive an update when the next version of the agent is available.</summary>
         public bool? AllowUpdateConfigurationOverride {
-            get { return BackingStore?.Get<bool?>(nameof(AllowUpdateConfigurationOverride)); }
-            set { BackingStore?.Set(nameof(AllowUpdateConfigurationOverride), value); }
+            get { return BackingStore?.Get<bool?>("allowUpdateConfigurationOverride"); }
+            set { BackingStore?.Set("allowUpdateConfigurationOverride", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? DeferUpdateDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DeferUpdateDateTime)); }
-            set { BackingStore?.Set(nameof(DeferUpdateDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("deferUpdateDateTime"); }
+            set { BackingStore?.Set("deferUpdateDateTime", value); }
         }
         /// <summary>The updateWindow property</summary>
         public Microsoft.Graph.Beta.Models.UpdateWindow UpdateWindow {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UpdateWindow>(nameof(UpdateWindow)); }
-            set { BackingStore?.Set(nameof(UpdateWindow), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UpdateWindow>("updateWindow"); }
+            set { BackingStore?.Set("updateWindow", value); }
         }
         /// <summary>
         /// Instantiates a new hybridAgentUpdaterConfiguration and sets the default values.

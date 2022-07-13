@@ -7,28 +7,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class ApplicationSignInDetailedSummary : Entity, IParsable {
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? AggregatedEventDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(AggregatedEventDateTime)); }
-            set { BackingStore?.Set(nameof(AggregatedEventDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("aggregatedEventDateTime"); }
+            set { BackingStore?.Set("aggregatedEventDateTime", value); }
         }
         /// <summary>Name of the application that the user signed in to.</summary>
         public string AppDisplayName {
-            get { return BackingStore?.Get<string>(nameof(AppDisplayName)); }
-            set { BackingStore?.Set(nameof(AppDisplayName), value); }
+            get { return BackingStore?.Get<string>("appDisplayName"); }
+            set { BackingStore?.Set("appDisplayName", value); }
         }
         /// <summary>ID of the application that the user signed in to.</summary>
         public string AppId {
-            get { return BackingStore?.Get<string>(nameof(AppId)); }
-            set { BackingStore?.Set(nameof(AppId), value); }
+            get { return BackingStore?.Get<string>("appId"); }
+            set { BackingStore?.Set("appId", value); }
         }
         /// <summary>Count of sign-ins made by the application.</summary>
         public long? SignInCount {
-            get { return BackingStore?.Get<long?>(nameof(SignInCount)); }
-            set { BackingStore?.Set(nameof(SignInCount), value); }
+            get { return BackingStore?.Get<long?>("signInCount"); }
+            set { BackingStore?.Set("signInCount", value); }
         }
         /// <summary>Details of the sign-in status.</summary>
         public SignInStatus Status {
-            get { return BackingStore?.Get<SignInStatus>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<SignInStatus>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

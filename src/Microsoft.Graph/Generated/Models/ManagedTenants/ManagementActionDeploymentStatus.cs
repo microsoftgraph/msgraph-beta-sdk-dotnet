@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class ManagementActionDeploymentStatus : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The identifier for the management action. Required. Read-only.</summary>
         public string ManagementActionId {
-            get { return BackingStore?.Get<string>(nameof(ManagementActionId)); }
-            set { BackingStore?.Set(nameof(ManagementActionId), value); }
+            get { return BackingStore?.Get<string>("managementActionId"); }
+            set { BackingStore?.Set("managementActionId", value); }
         }
         /// <summary>The management template identifier that was used to generate the management action. Required. Read-only.</summary>
         public string ManagementTemplateId {
-            get { return BackingStore?.Get<string>(nameof(ManagementTemplateId)); }
-            set { BackingStore?.Set(nameof(ManagementTemplateId), value); }
+            get { return BackingStore?.Get<string>("managementTemplateId"); }
+            set { BackingStore?.Set("managementTemplateId", value); }
         }
         /// <summary>The managementTemplateVersion property</summary>
         public int? ManagementTemplateVersion {
-            get { return BackingStore?.Get<int?>(nameof(ManagementTemplateVersion)); }
-            set { BackingStore?.Set(nameof(ManagementTemplateVersion), value); }
+            get { return BackingStore?.Get<int?>("managementTemplateVersion"); }
+            set { BackingStore?.Set("managementTemplateVersion", value); }
         }
-        /// <summary>The status of the management action. Possible values are: toAddress, completed, error, timeOut, inProgress, planned, resolvedBy3rdParty, resolvedThroughAlternateMitigation, riskAccepted, unknownFutureValue. Required.</summary>
+        /// <summary>The status property</summary>
         public ManagementActionStatus? Status {
-            get { return BackingStore?.Get<ManagementActionStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<ManagementActionStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>The collection of workload action deployment statues for the given management action. Optional.</summary>
         public List<WorkloadActionDeploymentStatus> WorkloadActionDeploymentStatuses {
-            get { return BackingStore?.Get<List<WorkloadActionDeploymentStatus>>(nameof(WorkloadActionDeploymentStatuses)); }
-            set { BackingStore?.Set(nameof(WorkloadActionDeploymentStatuses), value); }
+            get { return BackingStore?.Get<List<WorkloadActionDeploymentStatus>>("workloadActionDeploymentStatuses"); }
+            set { BackingStore?.Set("workloadActionDeploymentStatuses", value); }
         }
         /// <summary>
         /// Instantiates a new managementActionDeploymentStatus and sets the default values.

@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.EncryptBuffer {
     public class EncryptBufferPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The buffer property</summary>
         public byte[] Buffer {
-            get { return BackingStore?.Get<byte[]>(nameof(Buffer)); }
-            set { BackingStore?.Set(nameof(Buffer), value); }
+            get { return BackingStore?.Get<byte[]>("buffer"); }
+            set { BackingStore?.Set("buffer", value); }
         }
         /// <summary>The labelId property</summary>
         public string LabelId {
-            get { return BackingStore?.Get<string>(nameof(LabelId)); }
-            set { BackingStore?.Set(nameof(LabelId), value); }
+            get { return BackingStore?.Get<string>("labelId"); }
+            set { BackingStore?.Set("labelId", value); }
         }
         /// <summary>
         /// Instantiates a new encryptBufferPostRequestBody and sets the default values.

@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsManagementAppHealthSummary : Entity, IParsable {
         /// <summary>Healthy device count.</summary>
         public int? HealthyDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(HealthyDeviceCount)); }
-            set { BackingStore?.Set(nameof(HealthyDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("healthyDeviceCount"); }
+            set { BackingStore?.Set("healthyDeviceCount", value); }
         }
         /// <summary>Unhealthy device count.</summary>
         public int? UnhealthyDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(UnhealthyDeviceCount)); }
-            set { BackingStore?.Set(nameof(UnhealthyDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("unhealthyDeviceCount"); }
+            set { BackingStore?.Set("unhealthyDeviceCount", value); }
         }
         /// <summary>Unknown device count.</summary>
         public int? UnknownDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(UnknownDeviceCount)); }
-            set { BackingStore?.Set(nameof(UnknownDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("unknownDeviceCount"); }
+            set { BackingStore?.Set("unknownDeviceCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -10,15 +10,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPl
     public class QueryByPlatformTypePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The platformType property</summary>
+        /// <summary>Supported platform types for policies.</summary>
         public PolicyPlatformType? PlatformType {
-            get { return BackingStore?.Get<PolicyPlatformType?>(nameof(PlatformType)); }
-            set { BackingStore?.Set(nameof(PlatformType), value); }
+            get { return BackingStore?.Get<PolicyPlatformType?>("platformType"); }
+            set { BackingStore?.Set("platformType", value); }
         }
         /// <summary>
         /// Instantiates a new queryByPlatformTypePostRequestBody and sets the default values.

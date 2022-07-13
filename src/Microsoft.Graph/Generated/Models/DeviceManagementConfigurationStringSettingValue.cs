@@ -8,8 +8,14 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationStringSettingValue : DeviceManagementConfigurationSimpleSettingValue, IParsable {
         /// <summary>Value of the string setting.</summary>
         public string Value {
-            get { return BackingStore?.Get<string>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<string>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+        /// <summary>
+        /// Instantiates a new DeviceManagementConfigurationStringSettingValue and sets the default values.
+        /// </summary>
+        public DeviceManagementConfigurationStringSettingValue() : base() {
+            Type = "#microsoft.graph.deviceManagementConfigurationStringSettingValue";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

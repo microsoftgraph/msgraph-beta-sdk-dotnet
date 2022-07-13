@@ -7,27 +7,27 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Blocked actions on the company portal as per platform and device ownership types</summary>
     public class CompanyPortalBlockedAction : IAdditionalDataHolder, IBackedModel, IParsable {
-        /// <summary>Device Action. Possible values are: unknown, remove, reset.</summary>
+        /// <summary>Action on a device that can be executed in the Company Portal</summary>
         public CompanyPortalAction? Action {
-            get { return BackingStore?.Get<CompanyPortalAction?>(nameof(Action)); }
-            set { BackingStore?.Set(nameof(Action), value); }
+            get { return BackingStore?.Get<CompanyPortalAction?>("action"); }
+            set { BackingStore?.Set("action", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Device ownership type. Possible values are: unknown, company, personal.</summary>
+        /// <summary>Owner type of device.</summary>
         public Microsoft.Graph.Beta.Models.OwnerType? OwnerType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OwnerType?>(nameof(OwnerType)); }
-            set { BackingStore?.Set(nameof(OwnerType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OwnerType?>("ownerType"); }
+            set { BackingStore?.Set("ownerType", value); }
         }
-        /// <summary>Device OS/Platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.</summary>
+        /// <summary>Supported platform types.</summary>
         public DevicePlatformType? Platform {
-            get { return BackingStore?.Get<DevicePlatformType?>(nameof(Platform)); }
-            set { BackingStore?.Set(nameof(Platform), value); }
+            get { return BackingStore?.Get<DevicePlatformType?>("platform"); }
+            set { BackingStore?.Set("platform", value); }
         }
         /// <summary>
         /// Instantiates a new companyPortalBlockedAction and sets the default values.

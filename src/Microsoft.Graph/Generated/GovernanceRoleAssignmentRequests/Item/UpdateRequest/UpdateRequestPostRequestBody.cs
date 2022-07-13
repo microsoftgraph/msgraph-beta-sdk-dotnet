@@ -10,30 +10,30 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item.UpdateReque
     public class UpdateRequestPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The assignmentState property</summary>
         public string AssignmentState {
-            get { return BackingStore?.Get<string>(nameof(AssignmentState)); }
-            set { BackingStore?.Set(nameof(AssignmentState), value); }
+            get { return BackingStore?.Get<string>("assignmentState"); }
+            set { BackingStore?.Set("assignmentState", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The decision property</summary>
         public string Decision {
-            get { return BackingStore?.Get<string>(nameof(Decision)); }
-            set { BackingStore?.Set(nameof(Decision), value); }
+            get { return BackingStore?.Get<string>("decision"); }
+            set { BackingStore?.Set("decision", value); }
         }
         /// <summary>The reason property</summary>
         public string Reason {
-            get { return BackingStore?.Get<string>(nameof(Reason)); }
-            set { BackingStore?.Set(nameof(Reason), value); }
+            get { return BackingStore?.Get<string>("reason"); }
+            set { BackingStore?.Set("reason", value); }
         }
         /// <summary>The schedule property</summary>
         public GovernanceSchedule Schedule {
-            get { return BackingStore?.Get<GovernanceSchedule>(nameof(Schedule)); }
-            set { BackingStore?.Set(nameof(Schedule), value); }
+            get { return BackingStore?.Get<GovernanceSchedule>("schedule"); }
+            set { BackingStore?.Set("schedule", value); }
         }
         /// <summary>
         /// Instantiates a new updateRequestPostRequestBody and sets the default values.

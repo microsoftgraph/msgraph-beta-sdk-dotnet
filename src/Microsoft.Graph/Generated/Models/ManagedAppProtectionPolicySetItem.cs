@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class ManagedAppProtectionPolicySetItem : PolicySetItem, IParsable {
         /// <summary>TargetedAppManagementLevels of the ManagedAppPolicySetItem.</summary>
         public string TargetedAppManagementLevels {
-            get { return BackingStore?.Get<string>(nameof(TargetedAppManagementLevels)); }
-            set { BackingStore?.Set(nameof(TargetedAppManagementLevels), value); }
+            get { return BackingStore?.Get<string>("targetedAppManagementLevels"); }
+            set { BackingStore?.Set("targetedAppManagementLevels", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

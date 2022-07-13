@@ -4,22 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ManagementActionTenantDeploymentStatus : Entity, IParsable {
         /// <summary>The collection of deployment status for each instance of a management action. Optional.</summary>
         public List<ManagementActionDeploymentStatus> Statuses {
-            get { return BackingStore?.Get<List<ManagementActionDeploymentStatus>>(nameof(Statuses)); }
-            set { BackingStore?.Set(nameof(Statuses), value); }
+            get { return BackingStore?.Get<List<ManagementActionDeploymentStatus>>("statuses"); }
+            set { BackingStore?.Set("statuses", value); }
         }
         /// <summary>The identifier for the tenant group that is associated with the management action. Required. Read-only.</summary>
         public string TenantGroupId {
-            get { return BackingStore?.Get<string>(nameof(TenantGroupId)); }
-            set { BackingStore?.Set(nameof(TenantGroupId), value); }
+            get { return BackingStore?.Get<string>("tenantGroupId"); }
+            set { BackingStore?.Set("tenantGroupId", value); }
         }
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

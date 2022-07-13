@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class TenantAppManagementPolicy : PolicyBase, IParsable {
         /// <summary>Restrictions that apply as default to all application objects in the tenant.</summary>
         public AppManagementConfiguration ApplicationRestrictions {
-            get { return BackingStore?.Get<AppManagementConfiguration>(nameof(ApplicationRestrictions)); }
-            set { BackingStore?.Set(nameof(ApplicationRestrictions), value); }
+            get { return BackingStore?.Get<AppManagementConfiguration>("applicationRestrictions"); }
+            set { BackingStore?.Set("applicationRestrictions", value); }
         }
         /// <summary>Denotes whether the policy is enabled. Default value is false.</summary>
         public bool? IsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
-            set { BackingStore?.Set(nameof(IsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isEnabled"); }
+            set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>Restrictions that apply as default to all service principal objects in the tenant.</summary>
         public AppManagementConfiguration ServicePrincipalRestrictions {
-            get { return BackingStore?.Get<AppManagementConfiguration>(nameof(ServicePrincipalRestrictions)); }
-            set { BackingStore?.Set(nameof(ServicePrincipalRestrictions), value); }
+            get { return BackingStore?.Get<AppManagementConfiguration>("servicePrincipalRestrictions"); }
+            set { BackingStore?.Set("servicePrincipalRestrictions", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

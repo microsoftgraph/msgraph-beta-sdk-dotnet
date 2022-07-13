@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class AppleVppTokenTroubleshootingEvent : DeviceManagementTroubleshootingEvent, IParsable {
         /// <summary>Apple Volume Purchase Program Token Identifier.</summary>
         public string TokenId {
-            get { return BackingStore?.Get<string>(nameof(TokenId)); }
-            set { BackingStore?.Set(nameof(TokenId), value); }
+            get { return BackingStore?.Get<string>("tokenId"); }
+            set { BackingStore?.Set("tokenId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

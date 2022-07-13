@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class LookupResultRow : Entity, IParsable {
         /// <summary>The row property</summary>
         public string Row {
-            get { return BackingStore?.Get<string>(nameof(Row)); }
-            set { BackingStore?.Set(nameof(Row), value); }
+            get { return BackingStore?.Get<string>("row"); }
+            set { BackingStore?.Set("row", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

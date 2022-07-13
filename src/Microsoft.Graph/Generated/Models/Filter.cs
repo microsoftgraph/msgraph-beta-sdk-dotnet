@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class Filter : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>*Experimental* Filter group set used to decide whether given object belongs and should be processed as part of this object mapping. An object is considered in scope if ANY of the groups in the collection is evaluated to true.</summary>
         public List<FilterGroup> CategoryFilterGroups {
-            get { return BackingStore?.Get<List<FilterGroup>>(nameof(CategoryFilterGroups)); }
-            set { BackingStore?.Set(nameof(CategoryFilterGroups), value); }
+            get { return BackingStore?.Get<List<FilterGroup>>("categoryFilterGroups"); }
+            set { BackingStore?.Set("categoryFilterGroups", value); }
         }
         /// <summary>Filter group set used to decide whether given object is in scope for provisioning. This is the filter which should be used in most cases. If an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is not satisfied any longer, such object will get de-provisioned&apos;. An object is considered in scope if ANY of the groups in the collection is evaluated to true.</summary>
         public List<FilterGroup> Groups {
-            get { return BackingStore?.Get<List<FilterGroup>>(nameof(Groups)); }
-            set { BackingStore?.Set(nameof(Groups), value); }
+            get { return BackingStore?.Get<List<FilterGroup>>("groups"); }
+            set { BackingStore?.Set("groups", value); }
         }
         /// <summary>*Experimental* Filter group set used to filter out objects at the early stage of reading them from the directory. If an object doesn&apos;t satisfy this filter it will not be processed further. Important to understand is that if an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is no longer satisfied, such object will NOT get de-provisioned. An object is considered in scope if ANY of the groups in the collection is evaluated to true.</summary>
         public List<FilterGroup> InputFilterGroups {
-            get { return BackingStore?.Get<List<FilterGroup>>(nameof(InputFilterGroups)); }
-            set { BackingStore?.Set(nameof(InputFilterGroups), value); }
+            get { return BackingStore?.Get<List<FilterGroup>>("inputFilterGroups"); }
+            set { BackingStore?.Set("inputFilterGroups", value); }
         }
         /// <summary>
         /// Instantiates a new filter and sets the default values.

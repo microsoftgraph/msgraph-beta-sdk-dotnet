@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class ChannelModerationSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Indicates whether bots are allowed to post messages.</summary>
         public bool? AllowNewMessageFromBots {
-            get { return BackingStore?.Get<bool?>(nameof(AllowNewMessageFromBots)); }
-            set { BackingStore?.Set(nameof(AllowNewMessageFromBots), value); }
+            get { return BackingStore?.Get<bool?>("allowNewMessageFromBots"); }
+            set { BackingStore?.Set("allowNewMessageFromBots", value); }
         }
         /// <summary>Indicates whether connectors are allowed to post messages.</summary>
         public bool? AllowNewMessageFromConnectors {
-            get { return BackingStore?.Get<bool?>(nameof(AllowNewMessageFromConnectors)); }
-            set { BackingStore?.Set(nameof(AllowNewMessageFromConnectors), value); }
+            get { return BackingStore?.Get<bool?>("allowNewMessageFromConnectors"); }
+            set { BackingStore?.Set("allowNewMessageFromConnectors", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates who is allowed to reply to the teams channel. Possible values are: everyone, authorAndModerators, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.ReplyRestriction? ReplyRestriction {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ReplyRestriction?>(nameof(ReplyRestriction)); }
-            set { BackingStore?.Set(nameof(ReplyRestriction), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ReplyRestriction?>("replyRestriction"); }
+            set { BackingStore?.Set("replyRestriction", value); }
         }
         /// <summary>Indicates who is allowed to post messages to teams channel. Possible values are: everyone, everyoneExceptGuests, moderators, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.UserNewMessageRestriction? UserNewMessageRestriction {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserNewMessageRestriction?>(nameof(UserNewMessageRestriction)); }
-            set { BackingStore?.Set(nameof(UserNewMessageRestriction), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserNewMessageRestriction?>("userNewMessageRestriction"); }
+            set { BackingStore?.Set("userNewMessageRestriction", value); }
         }
         /// <summary>
         /// Instantiates a new channelModerationSettings and sets the default values.

@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class OutOfOfficeSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>True if either:It is currently in the out of office time window configured on the Outlook or Teams client.There is currently an event on the user&apos;s calendar that&apos;s marked as Show as Out of OfficeOtherwise, false.</summary>
         public bool? IsOutOfOffice {
-            get { return BackingStore?.Get<bool?>(nameof(IsOutOfOffice)); }
-            set { BackingStore?.Set(nameof(IsOutOfOffice), value); }
+            get { return BackingStore?.Get<bool?>("isOutOfOffice"); }
+            set { BackingStore?.Set("isOutOfOffice", value); }
         }
         /// <summary>The out of office message that the user configured on Outlook client (Automatic Replies (Out of Office)) or the Teams client (Schedule out of office).</summary>
         public string Message {
-            get { return BackingStore?.Get<string>(nameof(Message)); }
-            set { BackingStore?.Set(nameof(Message), value); }
+            get { return BackingStore?.Get<string>("message"); }
+            set { BackingStore?.Set("message", value); }
         }
         /// <summary>
         /// Instantiates a new outOfOfficeSettings and sets the default values.

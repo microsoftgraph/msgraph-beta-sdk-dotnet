@@ -8,40 +8,40 @@ namespace Microsoft.Graph.Beta.Models {
     public class WebApplication : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Home page or landing page of the application.</summary>
         public string HomePageUrl {
-            get { return BackingStore?.Get<string>(nameof(HomePageUrl)); }
-            set { BackingStore?.Set(nameof(HomePageUrl), value); }
+            get { return BackingStore?.Get<string>("homePageUrl"); }
+            set { BackingStore?.Set("homePageUrl", value); }
         }
         /// <summary>Specifies whether this web application can request tokens using the OAuth 2.0 implicit flow.</summary>
         public Microsoft.Graph.Beta.Models.ImplicitGrantSettings ImplicitGrantSettings {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ImplicitGrantSettings>(nameof(ImplicitGrantSettings)); }
-            set { BackingStore?.Set(nameof(ImplicitGrantSettings), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ImplicitGrantSettings>("implicitGrantSettings"); }
+            set { BackingStore?.Set("implicitGrantSettings", value); }
         }
         /// <summary>Specifies the URL that will be used by Microsoft&apos;s authorization service to logout an user using front-channel, back-channel or SAML logout protocols.</summary>
         public string LogoutUrl {
-            get { return BackingStore?.Get<string>(nameof(LogoutUrl)); }
-            set { BackingStore?.Set(nameof(LogoutUrl), value); }
+            get { return BackingStore?.Get<string>("logoutUrl"); }
+            set { BackingStore?.Set("logoutUrl", value); }
         }
         /// <summary>The oauth2AllowImplicitFlow property</summary>
         public bool? Oauth2AllowImplicitFlow {
-            get { return BackingStore?.Get<bool?>(nameof(Oauth2AllowImplicitFlow)); }
-            set { BackingStore?.Set(nameof(Oauth2AllowImplicitFlow), value); }
+            get { return BackingStore?.Get<bool?>("oauth2AllowImplicitFlow"); }
+            set { BackingStore?.Set("oauth2AllowImplicitFlow", value); }
         }
         /// <summary>Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.</summary>
         public List<string> RedirectUris {
-            get { return BackingStore?.Get<List<string>>(nameof(RedirectUris)); }
-            set { BackingStore?.Set(nameof(RedirectUris), value); }
+            get { return BackingStore?.Get<List<string>>("redirectUris"); }
+            set { BackingStore?.Set("redirectUris", value); }
         }
         /// <summary>Specifies the index of the URLs where user tokens are sent for sign-in. This is only valid for applications using SAML.</summary>
         public List<Microsoft.Graph.Beta.Models.RedirectUriSettings> RedirectUriSettings {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RedirectUriSettings>>(nameof(RedirectUriSettings)); }
-            set { BackingStore?.Set(nameof(RedirectUriSettings), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RedirectUriSettings>>("redirectUriSettings"); }
+            set { BackingStore?.Set("redirectUriSettings", value); }
         }
         /// <summary>
         /// Instantiates a new webApplication and sets the default values.

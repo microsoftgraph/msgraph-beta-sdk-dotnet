@@ -5,42 +5,47 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class CaseOperation : Entity, IParsable {
         /// <summary>The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData</summary>
         public CaseAction? Action {
-            get { return BackingStore?.Get<CaseAction?>(nameof(Action)); }
-            set { BackingStore?.Set(nameof(Action), value); }
+            get { return BackingStore?.Get<CaseAction?>("action"); }
+            set { BackingStore?.Set("action", value); }
         }
         /// <summary>The date and time the operation was completed.</summary>
         public DateTimeOffset? CompletedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CompletedDateTime)); }
-            set { BackingStore?.Set(nameof(CompletedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
+            set { BackingStore?.Set("completedDateTime", value); }
         }
         /// <summary>The user that created the operation.</summary>
         public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>(nameof(CreatedBy)); }
-            set { BackingStore?.Set(nameof(CreatedBy), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
         }
         /// <summary>The date and time the operation was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The progress of the operation.</summary>
         public int? PercentProgress {
-            get { return BackingStore?.Get<int?>(nameof(PercentProgress)); }
-            set { BackingStore?.Set(nameof(PercentProgress), value); }
+            get { return BackingStore?.Get<int?>("percentProgress"); }
+            set { BackingStore?.Set("percentProgress", value); }
         }
         /// <summary>Contains success and failure-specific result information.</summary>
         public Microsoft.Graph.Beta.Models.ResultInfo ResultInfo {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResultInfo>(nameof(ResultInfo)); }
-            set { BackingStore?.Set(nameof(ResultInfo), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResultInfo>("resultInfo"); }
+            set { BackingStore?.Set("resultInfo", value); }
         }
         /// <summary>The status of the case operation. Possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed.</summary>
         public CaseOperationStatus? Status {
-            get { return BackingStore?.Get<CaseOperationStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<CaseOperationStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+        /// <summary>
+        /// Instantiates a new caseOperation and sets the default values.
+        /// </summary>
+        public CaseOperation() : base() {
+            Type = "#microsoft.graph.ediscovery.caseOperation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

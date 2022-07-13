@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models.Search {
     public class Acronym : SearchAnswer, IParsable {
         /// <summary>What the acronym stands for.</summary>
         public string StandsFor {
-            get { return BackingStore?.Get<string>(nameof(StandsFor)); }
-            set { BackingStore?.Set(nameof(StandsFor), value); }
+            get { return BackingStore?.Get<string>("standsFor"); }
+            set { BackingStore?.Set("standsFor", value); }
         }
-        /// <summary>State of the acronym. Possible values are: published, draft, excluded, or unknownFutureValue.</summary>
+        /// <summary>The state property</summary>
         public AnswerState? State {
-            get { return BackingStore?.Get<AnswerState?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<AnswerState?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

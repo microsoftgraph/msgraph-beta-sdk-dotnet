@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class CallActivityStatistics : ActivityStatistics, IParsable {
         /// <summary>Time spent on calls outside of working hours, which is based on the user&apos;s Outlook calendar setting for work hours. The value is represented in ISO 8601 format for durations.</summary>
         public TimeSpan? AfterHours {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(AfterHours)); }
-            set { BackingStore?.Set(nameof(AfterHours), value); }
+            get { return BackingStore?.Get<TimeSpan?>("afterHours"); }
+            set { BackingStore?.Set("afterHours", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

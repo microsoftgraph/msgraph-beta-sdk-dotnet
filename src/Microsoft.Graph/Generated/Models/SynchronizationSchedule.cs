@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class SynchronizationSchedule : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Date and time when this job will expire. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? Expiration {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(Expiration)); }
-            set { BackingStore?.Set(nameof(Expiration), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("expiration"); }
+            set { BackingStore?.Set("expiration", value); }
         }
         /// <summary>The interval between synchronization iterations.</summary>
         public TimeSpan? Interval {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(Interval)); }
-            set { BackingStore?.Set(nameof(Interval), value); }
+            get { return BackingStore?.Get<TimeSpan?>("interval"); }
+            set { BackingStore?.Set("interval", value); }
         }
-        /// <summary>Possible values are: Active, Disabled.</summary>
+        /// <summary>The state property</summary>
         public SynchronizationScheduleState? State {
-            get { return BackingStore?.Get<SynchronizationScheduleState?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<SynchronizationScheduleState?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Instantiates a new synchronizationSchedule and sets the default values.

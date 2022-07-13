@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate : DeviceManagementConfigurationStringSettingValueDefaultTemplate, IParsable {
         /// <summary>Default Constant Value</summary>
         public string ConstantValue {
-            get { return BackingStore?.Get<string>(nameof(ConstantValue)); }
-            set { BackingStore?.Set(nameof(ConstantValue), value); }
+            get { return BackingStore?.Get<string>("constantValue"); }
+            set { BackingStore?.Set("constantValue", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

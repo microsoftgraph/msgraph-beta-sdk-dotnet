@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Beta.Models {
     public class MentionAction : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The identities of the users mentioned in this action.</summary>
         public List<IdentitySet> Mentionees {
-            get { return BackingStore?.Get<List<IdentitySet>>(nameof(Mentionees)); }
-            set { BackingStore?.Set(nameof(Mentionees), value); }
+            get { return BackingStore?.Get<List<IdentitySet>>("mentionees"); }
+            set { BackingStore?.Set("mentionees", value); }
         }
         /// <summary>
         /// Instantiates a new mentionAction and sets the default values.

@@ -8,13 +8,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class TermsAndConditionsGroupAssignment : Entity, IParsable {
         /// <summary>Unique identifier of a group that the T&amp;C policy is assigned to.</summary>
         public string TargetGroupId {
-            get { return BackingStore?.Get<string>(nameof(TargetGroupId)); }
-            set { BackingStore?.Set(nameof(TargetGroupId), value); }
+            get { return BackingStore?.Get<string>("targetGroupId"); }
+            set { BackingStore?.Set("targetGroupId", value); }
         }
         /// <summary>Navigation link to the terms and conditions that are assigned.</summary>
         public Microsoft.Graph.Beta.Models.TermsAndConditions TermsAndConditions {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TermsAndConditions>(nameof(TermsAndConditions)); }
-            set { BackingStore?.Set(nameof(TermsAndConditions), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TermsAndConditions>("termsAndConditions"); }
+            set { BackingStore?.Set("termsAndConditions", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

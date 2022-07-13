@@ -8,63 +8,63 @@ namespace Microsoft.Graph.Beta.Models {
     public class CloudPcGalleryImage : Entity, IParsable {
         /// <summary>The official display name of the gallery image. Read-only.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The date in which this image is no longer within long-term support. The Cloud PC will continue to provide short-term support. Read-only.</summary>
         public Date? EndDate {
-            get { return BackingStore?.Get<Date?>(nameof(EndDate)); }
-            set { BackingStore?.Set(nameof(EndDate), value); }
+            get { return BackingStore?.Get<Date?>("endDate"); }
+            set { BackingStore?.Set("endDate", value); }
         }
         /// <summary>The date when the image is no longer available. Read-only.</summary>
         public Date? ExpirationDate {
-            get { return BackingStore?.Get<Date?>(nameof(ExpirationDate)); }
-            set { BackingStore?.Set(nameof(ExpirationDate), value); }
+            get { return BackingStore?.Get<Date?>("expirationDate"); }
+            set { BackingStore?.Set("expirationDate", value); }
         }
         /// <summary>The offer name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.</summary>
         public string Offer {
-            get { return BackingStore?.Get<string>(nameof(Offer)); }
-            set { BackingStore?.Set(nameof(Offer), value); }
+            get { return BackingStore?.Get<string>("offer"); }
+            set { BackingStore?.Set("offer", value); }
         }
         /// <summary>The official display offer name of the gallery image. For example, Windows 10 Enterprise + OS Optimizations. Read-only.</summary>
         public string OfferDisplayName {
-            get { return BackingStore?.Get<string>(nameof(OfferDisplayName)); }
-            set { BackingStore?.Set(nameof(OfferDisplayName), value); }
+            get { return BackingStore?.Get<string>("offerDisplayName"); }
+            set { BackingStore?.Set("offerDisplayName", value); }
         }
         /// <summary>The publisher name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.</summary>
         public string Publisher {
-            get { return BackingStore?.Get<string>(nameof(Publisher)); }
-            set { BackingStore?.Set(nameof(Publisher), value); }
+            get { return BackingStore?.Get<string>("publisher"); }
+            set { BackingStore?.Set("publisher", value); }
         }
         /// <summary>Recommended Cloud PC SKU for this gallery image. Read-only.</summary>
         public string RecommendedSku {
-            get { return BackingStore?.Get<string>(nameof(RecommendedSku)); }
-            set { BackingStore?.Set(nameof(RecommendedSku), value); }
+            get { return BackingStore?.Get<string>("recommendedSku"); }
+            set { BackingStore?.Set("recommendedSku", value); }
         }
         /// <summary>The size of this image in gigabytes. Read-only.</summary>
         public int? SizeInGB {
-            get { return BackingStore?.Get<int?>(nameof(SizeInGB)); }
-            set { BackingStore?.Set(nameof(SizeInGB), value); }
+            get { return BackingStore?.Get<int?>("sizeInGB"); }
+            set { BackingStore?.Set("sizeInGB", value); }
         }
         /// <summary>The SKU name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.</summary>
         public string Sku {
-            get { return BackingStore?.Get<string>(nameof(Sku)); }
-            set { BackingStore?.Set(nameof(Sku), value); }
+            get { return BackingStore?.Get<string>("sku"); }
+            set { BackingStore?.Set("sku", value); }
         }
         /// <summary>The official display stock keeping unit (SKU) name of this gallery image. For example, 2004. Read-only.</summary>
         public string SkuDisplayName {
-            get { return BackingStore?.Get<string>(nameof(SkuDisplayName)); }
-            set { BackingStore?.Set(nameof(SkuDisplayName), value); }
+            get { return BackingStore?.Get<string>("skuDisplayName"); }
+            set { BackingStore?.Set("skuDisplayName", value); }
         }
         /// <summary>The date when the image becomes available. Read-only.</summary>
         public Date? StartDate {
-            get { return BackingStore?.Get<Date?>(nameof(StartDate)); }
-            set { BackingStore?.Set(nameof(StartDate), value); }
+            get { return BackingStore?.Get<Date?>("startDate"); }
+            set { BackingStore?.Set("startDate", value); }
         }
         /// <summary>The status of the gallery image on the Cloud PC. Possible values are: supported, supportedWithWarning, notSupported, unknownFutureValue. Read-only.</summary>
         public CloudPcGalleryImageStatus? Status {
-            get { return BackingStore?.Get<CloudPcGalleryImageStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<CloudPcGalleryImageStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

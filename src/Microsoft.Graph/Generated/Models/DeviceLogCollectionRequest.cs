@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceLogCollectionRequest : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The unique identifier</summary>
         public string Id {
-            get { return BackingStore?.Get<string>(nameof(Id)); }
-            set { BackingStore?.Set(nameof(Id), value); }
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
         }
-        /// <summary>The template type that is sent with the collection request. Possible values are: predefined.</summary>
+        /// <summary>Enum for the template type used for collecting logs</summary>
         public DeviceLogCollectionTemplateType? TemplateType {
-            get { return BackingStore?.Get<DeviceLogCollectionTemplateType?>(nameof(TemplateType)); }
-            set { BackingStore?.Set(nameof(TemplateType), value); }
+            get { return BackingStore?.Get<DeviceLogCollectionTemplateType?>("templateType"); }
+            set { BackingStore?.Set("templateType", value); }
         }
         /// <summary>
         /// Instantiates a new deviceLogCollectionRequest and sets the default values.

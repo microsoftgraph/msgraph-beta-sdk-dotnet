@@ -10,15 +10,15 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.AcquireAccessTo
     public class AcquireAccessTokenPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The credentials property</summary>
         public List<SynchronizationSecretKeyStringValuePair> Credentials {
-            get { return BackingStore?.Get<List<SynchronizationSecretKeyStringValuePair>>(nameof(Credentials)); }
-            set { BackingStore?.Set(nameof(Credentials), value); }
+            get { return BackingStore?.Get<List<SynchronizationSecretKeyStringValuePair>>("credentials"); }
+            set { BackingStore?.Set("credentials", value); }
         }
         /// <summary>
         /// Instantiates a new acquireAccessTokenPostRequestBody and sets the default values.

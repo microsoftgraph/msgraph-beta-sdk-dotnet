@@ -4,27 +4,26 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class OrganizationSettings : Entity, IParsable {
         /// <summary>Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. List itemInsights returns the settings to display or return item insights in an organization.</summary>
         public InsightsSettings ItemInsights {
-            get { return BackingStore?.Get<InsightsSettings>(nameof(ItemInsights)); }
-            set { BackingStore?.Set(nameof(ItemInsights), value); }
+            get { return BackingStore?.Get<InsightsSettings>("itemInsights"); }
+            set { BackingStore?.Set("itemInsights", value); }
         }
         /// <summary>The microsoftApplicationDataAccess property</summary>
         public MicrosoftApplicationDataAccessSettings MicrosoftApplicationDataAccess {
-            get { return BackingStore?.Get<MicrosoftApplicationDataAccessSettings>(nameof(MicrosoftApplicationDataAccess)); }
-            set { BackingStore?.Set(nameof(MicrosoftApplicationDataAccess), value); }
+            get { return BackingStore?.Get<MicrosoftApplicationDataAccessSettings>("microsoftApplicationDataAccess"); }
+            set { BackingStore?.Set("microsoftApplicationDataAccess", value); }
         }
         /// <summary>Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.</summary>
         public InsightsSettings PeopleInsights {
-            get { return BackingStore?.Get<InsightsSettings>(nameof(PeopleInsights)); }
-            set { BackingStore?.Set(nameof(PeopleInsights), value); }
+            get { return BackingStore?.Get<InsightsSettings>("peopleInsights"); }
+            set { BackingStore?.Set("peopleInsights", value); }
         }
         /// <summary>Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.</summary>
         public List<ProfileCardProperty> ProfileCardProperties {
-            get { return BackingStore?.Get<List<ProfileCardProperty>>(nameof(ProfileCardProperties)); }
-            set { BackingStore?.Set(nameof(ProfileCardProperties), value); }
+            get { return BackingStore?.Get<List<ProfileCardProperty>>("profileCardProperties"); }
+            set { BackingStore?.Set("profileCardProperties", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

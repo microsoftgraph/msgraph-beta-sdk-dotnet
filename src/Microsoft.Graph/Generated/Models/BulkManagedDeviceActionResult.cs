@@ -8,33 +8,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class BulkManagedDeviceActionResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Failed devices</summary>
         public List<string> FailedDeviceIds {
-            get { return BackingStore?.Get<List<string>>(nameof(FailedDeviceIds)); }
-            set { BackingStore?.Set(nameof(FailedDeviceIds), value); }
+            get { return BackingStore?.Get<List<string>>("failedDeviceIds"); }
+            set { BackingStore?.Set("failedDeviceIds", value); }
         }
         /// <summary>Not found devices</summary>
         public List<string> NotFoundDeviceIds {
-            get { return BackingStore?.Get<List<string>>(nameof(NotFoundDeviceIds)); }
-            set { BackingStore?.Set(nameof(NotFoundDeviceIds), value); }
+            get { return BackingStore?.Get<List<string>>("notFoundDeviceIds"); }
+            set { BackingStore?.Set("notFoundDeviceIds", value); }
         }
         /// <summary>Not supported devices</summary>
         public List<string> NotSupportedDeviceIds {
-            get { return BackingStore?.Get<List<string>>(nameof(NotSupportedDeviceIds)); }
-            set { BackingStore?.Set(nameof(NotSupportedDeviceIds), value); }
+            get { return BackingStore?.Get<List<string>>("notSupportedDeviceIds"); }
+            set { BackingStore?.Set("notSupportedDeviceIds", value); }
         }
         /// <summary>Successful devices</summary>
         public List<string> SuccessfulDeviceIds {
-            get { return BackingStore?.Get<List<string>>(nameof(SuccessfulDeviceIds)); }
-            set { BackingStore?.Set(nameof(SuccessfulDeviceIds), value); }
+            get { return BackingStore?.Get<List<string>>("successfulDeviceIds"); }
+            set { BackingStore?.Set("successfulDeviceIds", value); }
         }
         /// <summary>
-        /// Instantiates a new BulkManagedDeviceActionResult and sets the default values.
+        /// Instantiates a new bulkManagedDeviceActionResult and sets the default values.
         /// </summary>
         public BulkManagedDeviceActionResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

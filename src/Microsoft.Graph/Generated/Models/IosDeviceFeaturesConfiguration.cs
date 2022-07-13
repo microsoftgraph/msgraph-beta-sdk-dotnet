@@ -7,78 +7,78 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosDeviceFeaturesConfiguration : AppleDeviceFeaturesConfigurationBase, IParsable {
         /// <summary>Asset tag information for the device, displayed on the login window and lock screen.</summary>
         public string AssetTagTemplate {
-            get { return BackingStore?.Get<string>(nameof(AssetTagTemplate)); }
-            set { BackingStore?.Set(nameof(AssetTagTemplate), value); }
+            get { return BackingStore?.Get<string>("assetTagTemplate"); }
+            set { BackingStore?.Set("assetTagTemplate", value); }
         }
         /// <summary>Gets or sets iOS Web Content Filter settings, supervised mode only</summary>
         public IosWebContentFilterBase ContentFilterSettings {
-            get { return BackingStore?.Get<IosWebContentFilterBase>(nameof(ContentFilterSettings)); }
-            set { BackingStore?.Set(nameof(ContentFilterSettings), value); }
+            get { return BackingStore?.Get<IosWebContentFilterBase>("contentFilterSettings"); }
+            set { BackingStore?.Set("contentFilterSettings", value); }
         }
         /// <summary>A list of app and folders to appear on the Home Screen Dock. This collection can contain a maximum of 500 elements.</summary>
         public List<IosHomeScreenItem> HomeScreenDockIcons {
-            get { return BackingStore?.Get<List<IosHomeScreenItem>>(nameof(HomeScreenDockIcons)); }
-            set { BackingStore?.Set(nameof(HomeScreenDockIcons), value); }
+            get { return BackingStore?.Get<List<IosHomeScreenItem>>("homeScreenDockIcons"); }
+            set { BackingStore?.Set("homeScreenDockIcons", value); }
         }
         /// <summary>Gets or sets the number of rows to render when configuring iOS home screen layout settings. If this value is configured, homeScreenGridWidth must be configured as well.</summary>
         public int? HomeScreenGridHeight {
-            get { return BackingStore?.Get<int?>(nameof(HomeScreenGridHeight)); }
-            set { BackingStore?.Set(nameof(HomeScreenGridHeight), value); }
+            get { return BackingStore?.Get<int?>("homeScreenGridHeight"); }
+            set { BackingStore?.Set("homeScreenGridHeight", value); }
         }
         /// <summary>Gets or sets the number of columns to render when configuring iOS home screen layout settings. If this value is configured, homeScreenGridHeight must be configured as well.</summary>
         public int? HomeScreenGridWidth {
-            get { return BackingStore?.Get<int?>(nameof(HomeScreenGridWidth)); }
-            set { BackingStore?.Set(nameof(HomeScreenGridWidth), value); }
+            get { return BackingStore?.Get<int?>("homeScreenGridWidth"); }
+            set { BackingStore?.Set("homeScreenGridWidth", value); }
         }
         /// <summary>A list of pages on the Home Screen. This collection can contain a maximum of 500 elements.</summary>
         public List<IosHomeScreenPage> HomeScreenPages {
-            get { return BackingStore?.Get<List<IosHomeScreenPage>>(nameof(HomeScreenPages)); }
-            set { BackingStore?.Set(nameof(HomeScreenPages), value); }
+            get { return BackingStore?.Get<List<IosHomeScreenPage>>("homeScreenPages"); }
+            set { BackingStore?.Set("homeScreenPages", value); }
         }
         /// <summary>Identity Certificate for the renewal of Kerberos ticket used in single sign-on settings.</summary>
         public IosCertificateProfileBase IdentityCertificateForClientAuthentication {
-            get { return BackingStore?.Get<IosCertificateProfileBase>(nameof(IdentityCertificateForClientAuthentication)); }
-            set { BackingStore?.Set(nameof(IdentityCertificateForClientAuthentication), value); }
+            get { return BackingStore?.Get<IosCertificateProfileBase>("identityCertificateForClientAuthentication"); }
+            set { BackingStore?.Set("identityCertificateForClientAuthentication", value); }
         }
         /// <summary>Gets or sets a single sign-on extension profile.</summary>
         public Microsoft.Graph.Beta.Models.IosSingleSignOnExtension IosSingleSignOnExtension {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosSingleSignOnExtension>(nameof(IosSingleSignOnExtension)); }
-            set { BackingStore?.Set(nameof(IosSingleSignOnExtension), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosSingleSignOnExtension>("iosSingleSignOnExtension"); }
+            set { BackingStore?.Set("iosSingleSignOnExtension", value); }
         }
         /// <summary>A footnote displayed on the login window and lock screen. Available in iOS 9.3.1 and later.</summary>
         public string LockScreenFootnote {
-            get { return BackingStore?.Get<string>(nameof(LockScreenFootnote)); }
-            set { BackingStore?.Set(nameof(LockScreenFootnote), value); }
+            get { return BackingStore?.Get<string>("lockScreenFootnote"); }
+            set { BackingStore?.Set("lockScreenFootnote", value); }
         }
         /// <summary>Notification settings for each bundle id. Applicable to devices in supervised mode only (iOS 9.3 and later). This collection can contain a maximum of 500 elements.</summary>
         public List<IosNotificationSettings> NotificationSettings {
-            get { return BackingStore?.Get<List<IosNotificationSettings>>(nameof(NotificationSettings)); }
-            set { BackingStore?.Set(nameof(NotificationSettings), value); }
+            get { return BackingStore?.Get<List<IosNotificationSettings>>("notificationSettings"); }
+            set { BackingStore?.Set("notificationSettings", value); }
         }
         /// <summary>Gets or sets a single sign-on extension profile. Deprecated: use IOSSingleSignOnExtension instead.</summary>
         public Microsoft.Graph.Beta.Models.SingleSignOnExtension SingleSignOnExtension {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SingleSignOnExtension>(nameof(SingleSignOnExtension)); }
-            set { BackingStore?.Set(nameof(SingleSignOnExtension), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SingleSignOnExtension>("singleSignOnExtension"); }
+            set { BackingStore?.Set("singleSignOnExtension", value); }
         }
         /// <summary>PKINIT Certificate for the authentication with single sign-on extension settings.</summary>
         public IosCertificateProfileBase SingleSignOnExtensionPkinitCertificate {
-            get { return BackingStore?.Get<IosCertificateProfileBase>(nameof(SingleSignOnExtensionPkinitCertificate)); }
-            set { BackingStore?.Set(nameof(SingleSignOnExtensionPkinitCertificate), value); }
+            get { return BackingStore?.Get<IosCertificateProfileBase>("singleSignOnExtensionPkinitCertificate"); }
+            set { BackingStore?.Set("singleSignOnExtensionPkinitCertificate", value); }
         }
         /// <summary>The Kerberos login settings that enable apps on receiving devices to authenticate smoothly.</summary>
         public IosSingleSignOnSettings SingleSignOnSettings {
-            get { return BackingStore?.Get<IosSingleSignOnSettings>(nameof(SingleSignOnSettings)); }
-            set { BackingStore?.Set(nameof(SingleSignOnSettings), value); }
+            get { return BackingStore?.Get<IosSingleSignOnSettings>("singleSignOnSettings"); }
+            set { BackingStore?.Set("singleSignOnSettings", value); }
         }
-        /// <summary>A wallpaper display location specifier. Possible values are: notConfigured, lockScreen, homeScreen, lockAndHomeScreens.</summary>
+        /// <summary>An enum type for wallpaper display location specifier.</summary>
         public IosWallpaperDisplayLocation? WallpaperDisplayLocation {
-            get { return BackingStore?.Get<IosWallpaperDisplayLocation?>(nameof(WallpaperDisplayLocation)); }
-            set { BackingStore?.Set(nameof(WallpaperDisplayLocation), value); }
+            get { return BackingStore?.Get<IosWallpaperDisplayLocation?>("wallpaperDisplayLocation"); }
+            set { BackingStore?.Set("wallpaperDisplayLocation", value); }
         }
         /// <summary>A wallpaper image must be in either PNG or JPEG format. It requires a supervised device with iOS 8 or later version.</summary>
         public MimeContent WallpaperImage {
-            get { return BackingStore?.Get<MimeContent>(nameof(WallpaperImage)); }
-            set { BackingStore?.Set(nameof(WallpaperImage), value); }
+            get { return BackingStore?.Get<MimeContent>("wallpaperImage"); }
+            set { BackingStore?.Set("wallpaperImage", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

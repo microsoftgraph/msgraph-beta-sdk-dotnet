@@ -4,47 +4,47 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ExternalConnection : Entity, IParsable {
         /// <summary>The configuration property</summary>
         public Microsoft.Graph.Beta.Models.Configuration Configuration {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Configuration>(nameof(Configuration)); }
-            set { BackingStore?.Set(nameof(Configuration), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Configuration>("configuration"); }
+            set { BackingStore?.Set("configuration", value); }
         }
         /// <summary>The description property</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The groups property</summary>
         public List<ExternalGroup> Groups {
-            get { return BackingStore?.Get<List<ExternalGroup>>(nameof(Groups)); }
-            set { BackingStore?.Set(nameof(Groups), value); }
+            get { return BackingStore?.Get<List<ExternalGroup>>("groups"); }
+            set { BackingStore?.Set("groups", value); }
         }
         /// <summary>The items property</summary>
         public List<ExternalItem> Items {
-            get { return BackingStore?.Get<List<ExternalItem>>(nameof(Items)); }
-            set { BackingStore?.Set(nameof(Items), value); }
+            get { return BackingStore?.Get<List<ExternalItem>>("items"); }
+            set { BackingStore?.Set("items", value); }
         }
         /// <summary>The name property</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The operations property</summary>
         public List<ConnectionOperation> Operations {
-            get { return BackingStore?.Get<List<ConnectionOperation>>(nameof(Operations)); }
-            set { BackingStore?.Set(nameof(Operations), value); }
+            get { return BackingStore?.Get<List<ConnectionOperation>>("operations"); }
+            set { BackingStore?.Set("operations", value); }
         }
         /// <summary>The schema property</summary>
         public Microsoft.Graph.Beta.Models.Schema Schema {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Schema>(nameof(Schema)); }
-            set { BackingStore?.Set(nameof(Schema), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Schema>("schema"); }
+            set { BackingStore?.Set("schema", value); }
         }
         /// <summary>The state property</summary>
         public ConnectionState? State {
-            get { return BackingStore?.Get<ConnectionState?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<ConnectionState?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

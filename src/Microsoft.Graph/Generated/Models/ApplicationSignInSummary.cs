@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class ApplicationSignInSummary : Entity, IParsable {
         /// <summary>Name of the application that the user signed into.</summary>
         public string AppDisplayName {
-            get { return BackingStore?.Get<string>(nameof(AppDisplayName)); }
-            set { BackingStore?.Set(nameof(AppDisplayName), value); }
+            get { return BackingStore?.Get<string>("appDisplayName"); }
+            set { BackingStore?.Set("appDisplayName", value); }
         }
         /// <summary>Count of failed sign-ins made by the application.</summary>
         public long? FailedSignInCount {
-            get { return BackingStore?.Get<long?>(nameof(FailedSignInCount)); }
-            set { BackingStore?.Set(nameof(FailedSignInCount), value); }
+            get { return BackingStore?.Get<long?>("failedSignInCount"); }
+            set { BackingStore?.Set("failedSignInCount", value); }
         }
         /// <summary>Count of successful sign-ins made by the application.</summary>
         public long? SuccessfulSignInCount {
-            get { return BackingStore?.Get<long?>(nameof(SuccessfulSignInCount)); }
-            set { BackingStore?.Set(nameof(SuccessfulSignInCount), value); }
+            get { return BackingStore?.Get<long?>("successfulSignInCount"); }
+            set { BackingStore?.Set("successfulSignInCount", value); }
         }
         /// <summary>Percentage of successful sign-ins made by the application.</summary>
         public double? SuccessPercentage {
-            get { return BackingStore?.Get<double?>(nameof(SuccessPercentage)); }
-            set { BackingStore?.Set(nameof(SuccessPercentage), value); }
+            get { return BackingStore?.Get<double?>("successPercentage"); }
+            set { BackingStore?.Set("successPercentage", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

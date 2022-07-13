@@ -9,40 +9,40 @@ namespace Microsoft.Graph.Beta.Models {
     public class OutOfBoxExperienceSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>AAD join authentication type. Possible values are: singleUser, shared.</summary>
+        /// <summary>The deviceUsageType property</summary>
         public WindowsDeviceUsageType? DeviceUsageType {
-            get { return BackingStore?.Get<WindowsDeviceUsageType?>(nameof(DeviceUsageType)); }
-            set { BackingStore?.Set(nameof(DeviceUsageType), value); }
+            get { return BackingStore?.Get<WindowsDeviceUsageType?>("deviceUsageType"); }
+            set { BackingStore?.Set("deviceUsageType", value); }
         }
         /// <summary>If set to true, then the user can&apos;t start over with different account, on company sign-in</summary>
         public bool? HideEscapeLink {
-            get { return BackingStore?.Get<bool?>(nameof(HideEscapeLink)); }
-            set { BackingStore?.Set(nameof(HideEscapeLink), value); }
+            get { return BackingStore?.Get<bool?>("hideEscapeLink"); }
+            set { BackingStore?.Set("hideEscapeLink", value); }
         }
         /// <summary>Show or hide EULA to user</summary>
         public bool? HideEULA {
-            get { return BackingStore?.Get<bool?>(nameof(HideEULA)); }
-            set { BackingStore?.Set(nameof(HideEULA), value); }
+            get { return BackingStore?.Get<bool?>("hideEULA"); }
+            set { BackingStore?.Set("hideEULA", value); }
         }
         /// <summary>Show or hide privacy settings to user</summary>
         public bool? HidePrivacySettings {
-            get { return BackingStore?.Get<bool?>(nameof(HidePrivacySettings)); }
-            set { BackingStore?.Set(nameof(HidePrivacySettings), value); }
+            get { return BackingStore?.Get<bool?>("hidePrivacySettings"); }
+            set { BackingStore?.Set("hidePrivacySettings", value); }
         }
         /// <summary>If set, then skip the keyboard selection page if Language and Region are set</summary>
         public bool? SkipKeyboardSelectionPage {
-            get { return BackingStore?.Get<bool?>(nameof(SkipKeyboardSelectionPage)); }
-            set { BackingStore?.Set(nameof(SkipKeyboardSelectionPage), value); }
+            get { return BackingStore?.Get<bool?>("skipKeyboardSelectionPage"); }
+            set { BackingStore?.Set("skipKeyboardSelectionPage", value); }
         }
-        /// <summary>Type of user. Possible values are: administrator, standard.</summary>
+        /// <summary>The userType property</summary>
         public WindowsUserType? UserType {
-            get { return BackingStore?.Get<WindowsUserType?>(nameof(UserType)); }
-            set { BackingStore?.Set(nameof(UserType), value); }
+            get { return BackingStore?.Get<WindowsUserType?>("userType"); }
+            set { BackingStore?.Set("userType", value); }
         }
         /// <summary>
         /// Instantiates a new outOfBoxExperienceSettings and sets the default values.

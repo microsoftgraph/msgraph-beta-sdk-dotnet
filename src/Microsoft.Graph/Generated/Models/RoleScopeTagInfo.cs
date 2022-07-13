@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class RoleScopeTagInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Scope Tag Display name.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Scope Tag Id.</summary>
         public string RoleScopeTagId {
-            get { return BackingStore?.Get<string>(nameof(RoleScopeTagId)); }
-            set { BackingStore?.Set(nameof(RoleScopeTagId), value); }
+            get { return BackingStore?.Get<string>("roleScopeTagId"); }
+            set { BackingStore?.Set("roleScopeTagId", value); }
         }
         /// <summary>
         /// Instantiates a new roleScopeTagInfo and sets the default values.

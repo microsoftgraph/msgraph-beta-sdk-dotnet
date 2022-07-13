@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamsAppSettings {
             return requestInfo;
         }
         /// <summary>
-        /// Get teamsAppSettings from teamwork
+        /// Represents tenant-wide settings for all Teams apps in the tenant.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<TeamsAppSettingsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamsAppSettings {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get teamsAppSettings from teamwork
+        /// Represents tenant-wide settings for all Teams apps in the tenant.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamsAppSettings {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get teamsAppSettings from teamwork</summary>
+        /// <summary>Represents tenant-wide settings for all Teams apps in the tenant.</summary>
         public class TeamsAppSettingsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

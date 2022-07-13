@@ -10,15 +10,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.Ass
     public class AssignPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceHealthScriptAssignments property</summary>
         public List<DeviceHealthScriptAssignment> DeviceHealthScriptAssignments {
-            get { return BackingStore?.Get<List<DeviceHealthScriptAssignment>>(nameof(DeviceHealthScriptAssignments)); }
-            set { BackingStore?.Set(nameof(DeviceHealthScriptAssignments), value); }
+            get { return BackingStore?.Get<List<DeviceHealthScriptAssignment>>("deviceHealthScriptAssignments"); }
+            set { BackingStore?.Set("deviceHealthScriptAssignments", value); }
         }
         /// <summary>
         /// Instantiates a new assignPostRequestBody and sets the default values.

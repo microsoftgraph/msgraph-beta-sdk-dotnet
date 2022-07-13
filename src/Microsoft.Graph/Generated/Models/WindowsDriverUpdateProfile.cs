@@ -6,65 +6,65 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Windows Driver Update Profile</summary>
     public class WindowsDriverUpdateProfile : Entity, IParsable {
-        /// <summary>Driver update profile approval type. For example, manual or automatic approval. Possible values are: manual, automatic.</summary>
+        /// <summary>An enum type to represent approval type of a driver update profile.</summary>
         public DriverUpdateProfileApprovalType? ApprovalType {
-            get { return BackingStore?.Get<DriverUpdateProfileApprovalType?>(nameof(ApprovalType)); }
-            set { BackingStore?.Set(nameof(ApprovalType), value); }
+            get { return BackingStore?.Get<DriverUpdateProfileApprovalType?>("approvalType"); }
+            set { BackingStore?.Set("approvalType", value); }
         }
         /// <summary>The list of group assignments of the profile.</summary>
         public List<WindowsDriverUpdateProfileAssignment> Assignments {
-            get { return BackingStore?.Get<List<WindowsDriverUpdateProfileAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<WindowsDriverUpdateProfileAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>The date time that the profile was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Deployment deferral settings in days, only applicable when ApprovalType is set to automatic approval.</summary>
         public int? DeploymentDeferralInDays {
-            get { return BackingStore?.Get<int?>(nameof(DeploymentDeferralInDays)); }
-            set { BackingStore?.Set(nameof(DeploymentDeferralInDays), value); }
+            get { return BackingStore?.Get<int?>("deploymentDeferralInDays"); }
+            set { BackingStore?.Set("deploymentDeferralInDays", value); }
         }
         /// <summary>The description of the profile which is specified by the user.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Number of devices reporting for this profile</summary>
         public int? DeviceReporting {
-            get { return BackingStore?.Get<int?>(nameof(DeviceReporting)); }
-            set { BackingStore?.Set(nameof(DeviceReporting), value); }
+            get { return BackingStore?.Get<int?>("deviceReporting"); }
+            set { BackingStore?.Set("deviceReporting", value); }
         }
         /// <summary>The display name for the profile.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Driver inventories for this profile.</summary>
         public List<WindowsDriverUpdateInventory> DriverInventories {
-            get { return BackingStore?.Get<List<WindowsDriverUpdateInventory>>(nameof(DriverInventories)); }
-            set { BackingStore?.Set(nameof(DriverInventories), value); }
+            get { return BackingStore?.Get<List<WindowsDriverUpdateInventory>>("driverInventories"); }
+            set { BackingStore?.Set("driverInventories", value); }
         }
         /// <summary>Driver inventory sync status for this profile.</summary>
         public WindowsDriverUpdateProfileInventorySyncStatus InventorySyncStatus {
-            get { return BackingStore?.Get<WindowsDriverUpdateProfileInventorySyncStatus>(nameof(InventorySyncStatus)); }
-            set { BackingStore?.Set(nameof(InventorySyncStatus), value); }
+            get { return BackingStore?.Get<WindowsDriverUpdateProfileInventorySyncStatus>("inventorySyncStatus"); }
+            set { BackingStore?.Set("inventorySyncStatus", value); }
         }
         /// <summary>The date time that the profile was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Number of new driver updates available for this profile.</summary>
         public int? NewUpdates {
-            get { return BackingStore?.Get<int?>(nameof(NewUpdates)); }
-            set { BackingStore?.Set(nameof(NewUpdates), value); }
+            get { return BackingStore?.Get<int?>("newUpdates"); }
+            set { BackingStore?.Set("newUpdates", value); }
         }
         /// <summary>List of Scope Tags for this Driver Update entity.</summary>
         public List<string> RoleScopeTagIds {
-            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTagIds)); }
-            set { BackingStore?.Set(nameof(RoleScopeTagIds), value); }
+            get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

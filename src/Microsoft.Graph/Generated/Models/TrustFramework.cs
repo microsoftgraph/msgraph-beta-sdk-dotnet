@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class TrustFramework : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The keySets property</summary>
         public List<TrustFrameworkKeySet> KeySets {
-            get { return BackingStore?.Get<List<TrustFrameworkKeySet>>(nameof(KeySets)); }
-            set { BackingStore?.Set(nameof(KeySets), value); }
+            get { return BackingStore?.Get<List<TrustFrameworkKeySet>>("keySets"); }
+            set { BackingStore?.Set("keySets", value); }
         }
         /// <summary>The policies property</summary>
         public List<TrustFrameworkPolicy> Policies {
-            get { return BackingStore?.Get<List<TrustFrameworkPolicy>>(nameof(Policies)); }
-            set { BackingStore?.Set(nameof(Policies), value); }
+            get { return BackingStore?.Get<List<TrustFrameworkPolicy>>("policies"); }
+            set { BackingStore?.Set("policies", value); }
         }
         /// <summary>
         /// Instantiates a new TrustFramework and sets the default values.

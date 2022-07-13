@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementSettingFileConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>Acceptable file extensions to upload for this setting</summary>
         public List<string> SupportedExtensions {
-            get { return BackingStore?.Get<List<string>>(nameof(SupportedExtensions)); }
-            set { BackingStore?.Set(nameof(SupportedExtensions), value); }
+            get { return BackingStore?.Get<List<string>>("supportedExtensions"); }
+            set { BackingStore?.Set("supportedExtensions", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

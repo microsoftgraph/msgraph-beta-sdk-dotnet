@@ -9,58 +9,58 @@ namespace Microsoft.Graph.Beta.Models {
     public class ComanagedDevicesSummary : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Number of devices with CompliancePolicy swung-over. This property is read-only.</summary>
         public int? CompliancePolicyCount {
-            get { return BackingStore?.Get<int?>(nameof(CompliancePolicyCount)); }
-            set { BackingStore?.Set(nameof(CompliancePolicyCount), value); }
+            get { return BackingStore?.Get<int?>("compliancePolicyCount"); }
+            set { BackingStore?.Set("compliancePolicyCount", value); }
         }
         /// <summary>Number of devices with ConfigurationSettings swung-over. This property is read-only.</summary>
         public int? ConfigurationSettingsCount {
-            get { return BackingStore?.Get<int?>(nameof(ConfigurationSettingsCount)); }
-            set { BackingStore?.Set(nameof(ConfigurationSettingsCount), value); }
+            get { return BackingStore?.Get<int?>("configurationSettingsCount"); }
+            set { BackingStore?.Set("configurationSettingsCount", value); }
         }
         /// <summary>Number of devices with EndpointProtection swung-over. This property is read-only.</summary>
         public int? EndpointProtectionCount {
-            get { return BackingStore?.Get<int?>(nameof(EndpointProtectionCount)); }
-            set { BackingStore?.Set(nameof(EndpointProtectionCount), value); }
+            get { return BackingStore?.Get<int?>("endpointProtectionCount"); }
+            set { BackingStore?.Set("endpointProtectionCount", value); }
         }
         /// <summary>Number of devices with Inventory swung-over. This property is read-only.</summary>
         public int? InventoryCount {
-            get { return BackingStore?.Get<int?>(nameof(InventoryCount)); }
-            set { BackingStore?.Set(nameof(InventoryCount), value); }
+            get { return BackingStore?.Get<int?>("inventoryCount"); }
+            set { BackingStore?.Set("inventoryCount", value); }
         }
         /// <summary>Number of devices with ModernApps swung-over. This property is read-only.</summary>
         public int? ModernAppsCount {
-            get { return BackingStore?.Get<int?>(nameof(ModernAppsCount)); }
-            set { BackingStore?.Set(nameof(ModernAppsCount), value); }
+            get { return BackingStore?.Get<int?>("modernAppsCount"); }
+            set { BackingStore?.Set("modernAppsCount", value); }
         }
         /// <summary>Number of devices with OfficeApps swung-over. This property is read-only.</summary>
         public int? OfficeAppsCount {
-            get { return BackingStore?.Get<int?>(nameof(OfficeAppsCount)); }
-            set { BackingStore?.Set(nameof(OfficeAppsCount), value); }
+            get { return BackingStore?.Get<int?>("officeAppsCount"); }
+            set { BackingStore?.Set("officeAppsCount", value); }
         }
         /// <summary>Number of devices with ResourceAccess swung-over. This property is read-only.</summary>
         public int? ResourceAccessCount {
-            get { return BackingStore?.Get<int?>(nameof(ResourceAccessCount)); }
-            set { BackingStore?.Set(nameof(ResourceAccessCount), value); }
+            get { return BackingStore?.Get<int?>("resourceAccessCount"); }
+            set { BackingStore?.Set("resourceAccessCount", value); }
         }
         /// <summary>Number of Co-Managed Devices. This property is read-only.</summary>
         public int? TotalComanagedCount {
-            get { return BackingStore?.Get<int?>(nameof(TotalComanagedCount)); }
-            set { BackingStore?.Set(nameof(TotalComanagedCount), value); }
+            get { return BackingStore?.Get<int?>("totalComanagedCount"); }
+            set { BackingStore?.Set("totalComanagedCount", value); }
         }
         /// <summary>Number of devices with WindowsUpdateForBusiness swung-over. This property is read-only.</summary>
         public int? WindowsUpdateForBusinessCount {
-            get { return BackingStore?.Get<int?>(nameof(WindowsUpdateForBusinessCount)); }
-            set { BackingStore?.Set(nameof(WindowsUpdateForBusinessCount), value); }
+            get { return BackingStore?.Get<int?>("windowsUpdateForBusinessCount"); }
+            set { BackingStore?.Set("windowsUpdateForBusinessCount", value); }
         }
         /// <summary>
-        /// Instantiates a new ComanagedDevicesSummary and sets the default values.
+        /// Instantiates a new comanagedDevicesSummary and sets the default values.
         /// </summary>
         public ComanagedDevicesSummary() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

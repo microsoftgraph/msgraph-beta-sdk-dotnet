@@ -8,38 +8,38 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementIntentDeviceSettingStateSummary : Entity, IParsable {
         /// <summary>Number of compliant devices</summary>
         public int? CompliantCount {
-            get { return BackingStore?.Get<int?>(nameof(CompliantCount)); }
-            set { BackingStore?.Set(nameof(CompliantCount), value); }
+            get { return BackingStore?.Get<int?>("compliantCount"); }
+            set { BackingStore?.Set("compliantCount", value); }
         }
         /// <summary>Number of devices in conflict</summary>
         public int? ConflictCount {
-            get { return BackingStore?.Get<int?>(nameof(ConflictCount)); }
-            set { BackingStore?.Set(nameof(ConflictCount), value); }
+            get { return BackingStore?.Get<int?>("conflictCount"); }
+            set { BackingStore?.Set("conflictCount", value); }
         }
         /// <summary>Number of error devices</summary>
         public int? ErrorCount {
-            get { return BackingStore?.Get<int?>(nameof(ErrorCount)); }
-            set { BackingStore?.Set(nameof(ErrorCount), value); }
+            get { return BackingStore?.Get<int?>("errorCount"); }
+            set { BackingStore?.Set("errorCount", value); }
         }
         /// <summary>Number of non compliant devices</summary>
         public int? NonCompliantCount {
-            get { return BackingStore?.Get<int?>(nameof(NonCompliantCount)); }
-            set { BackingStore?.Set(nameof(NonCompliantCount), value); }
+            get { return BackingStore?.Get<int?>("nonCompliantCount"); }
+            set { BackingStore?.Set("nonCompliantCount", value); }
         }
         /// <summary>Number of not applicable devices</summary>
         public int? NotApplicableCount {
-            get { return BackingStore?.Get<int?>(nameof(NotApplicableCount)); }
-            set { BackingStore?.Set(nameof(NotApplicableCount), value); }
+            get { return BackingStore?.Get<int?>("notApplicableCount"); }
+            set { BackingStore?.Set("notApplicableCount", value); }
         }
         /// <summary>Number of remediated devices</summary>
         public int? RemediatedCount {
-            get { return BackingStore?.Get<int?>(nameof(RemediatedCount)); }
-            set { BackingStore?.Set(nameof(RemediatedCount), value); }
+            get { return BackingStore?.Get<int?>("remediatedCount"); }
+            set { BackingStore?.Set("remediatedCount", value); }
         }
         /// <summary>Name of a setting</summary>
         public string SettingName {
-            get { return BackingStore?.Get<string>(nameof(SettingName)); }
-            set { BackingStore?.Set(nameof(SettingName), value); }
+            get { return BackingStore?.Get<string>("settingName"); }
+            set { BackingStore?.Set("settingName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

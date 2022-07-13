@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOSVpnConfiguration : AppleVpnConfiguration, IParsable {
         /// <summary>Identity certificate for client authentication when authentication method is certificate.</summary>
         public MacOSCertificateProfileBase IdentityCertificate {
-            get { return BackingStore?.Get<MacOSCertificateProfileBase>(nameof(IdentityCertificate)); }
-            set { BackingStore?.Set(nameof(IdentityCertificate), value); }
+            get { return BackingStore?.Get<MacOSCertificateProfileBase>("identityCertificate"); }
+            set { BackingStore?.Set("identityCertificate", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

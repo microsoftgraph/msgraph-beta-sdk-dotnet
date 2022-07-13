@@ -8,53 +8,53 @@ namespace Microsoft.Graph.Beta.Models {
     public class PolicySet : Entity, IParsable {
         /// <summary>Assignments of the PolicySet.</summary>
         public List<PolicySetAssignment> Assignments {
-            get { return BackingStore?.Get<List<PolicySetAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<PolicySetAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>Creation time of the PolicySet.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Description of the PolicySet.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>DisplayName of the PolicySet.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>Error code if any occured. Possible values are: noError, unauthorized, notFound, deleted.</summary>
+        /// <summary>The errorCode property</summary>
         public Microsoft.Graph.Beta.Models.ErrorCode? ErrorCode {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ErrorCode?>(nameof(ErrorCode)); }
-            set { BackingStore?.Set(nameof(ErrorCode), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ErrorCode?>("errorCode"); }
+            set { BackingStore?.Set("errorCode", value); }
         }
         /// <summary>Tags of the guided deployment</summary>
         public List<string> GuidedDeploymentTags {
-            get { return BackingStore?.Get<List<string>>(nameof(GuidedDeploymentTags)); }
-            set { BackingStore?.Set(nameof(GuidedDeploymentTags), value); }
+            get { return BackingStore?.Get<List<string>>("guidedDeploymentTags"); }
+            set { BackingStore?.Set("guidedDeploymentTags", value); }
         }
         /// <summary>Items of the PolicySet with maximum count 100.</summary>
         public List<PolicySetItem> Items {
-            get { return BackingStore?.Get<List<PolicySetItem>>(nameof(Items)); }
-            set { BackingStore?.Set(nameof(Items), value); }
+            get { return BackingStore?.Get<List<PolicySetItem>>("items"); }
+            set { BackingStore?.Set("items", value); }
         }
         /// <summary>Last modified time of the PolicySet.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>RoleScopeTags of the PolicySet</summary>
         public List<string> RoleScopeTags {
-            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTags)); }
-            set { BackingStore?.Set(nameof(RoleScopeTags), value); }
+            get { return BackingStore?.Get<List<string>>("roleScopeTags"); }
+            set { BackingStore?.Set("roleScopeTags", value); }
         }
-        /// <summary>Validation/assignment status of the PolicySet. Possible values are: unknown, validating, partialSuccess, success, error, notAssigned.</summary>
+        /// <summary>The enum to specify the status of PolicySet.</summary>
         public PolicySetStatus? Status {
-            get { return BackingStore?.Get<PolicySetStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<PolicySetStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

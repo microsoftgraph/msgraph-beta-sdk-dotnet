@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class DowngradeJustification : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The isDowngradeJustified property</summary>
         public bool? IsDowngradeJustified {
-            get { return BackingStore?.Get<bool?>(nameof(IsDowngradeJustified)); }
-            set { BackingStore?.Set(nameof(IsDowngradeJustified), value); }
+            get { return BackingStore?.Get<bool?>("isDowngradeJustified"); }
+            set { BackingStore?.Set("isDowngradeJustified", value); }
         }
         /// <summary>The justificationMessage property</summary>
         public string JustificationMessage {
-            get { return BackingStore?.Get<string>(nameof(JustificationMessage)); }
-            set { BackingStore?.Set(nameof(JustificationMessage), value); }
+            get { return BackingStore?.Get<string>("justificationMessage"); }
+            set { BackingStore?.Set("justificationMessage", value); }
         }
         /// <summary>
         /// Instantiates a new downgradeJustification and sets the default values.

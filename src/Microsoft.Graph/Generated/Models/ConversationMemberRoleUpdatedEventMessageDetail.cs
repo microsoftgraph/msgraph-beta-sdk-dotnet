@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class ConversationMemberRoleUpdatedEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>Roles for the coversation member user.</summary>
         public List<string> ConversationMemberRoles {
-            get { return BackingStore?.Get<List<string>>(nameof(ConversationMemberRoles)); }
-            set { BackingStore?.Set(nameof(ConversationMemberRoles), value); }
+            get { return BackingStore?.Get<List<string>>("conversationMemberRoles"); }
+            set { BackingStore?.Set("conversationMemberRoles", value); }
         }
         /// <summary>Identity of the conversation member user.</summary>
         public TeamworkUserIdentity ConversationMemberUser {
-            get { return BackingStore?.Get<TeamworkUserIdentity>(nameof(ConversationMemberUser)); }
-            set { BackingStore?.Set(nameof(ConversationMemberUser), value); }
+            get { return BackingStore?.Get<TeamworkUserIdentity>("conversationMemberUser"); }
+            set { BackingStore?.Set("conversationMemberUser", value); }
         }
         /// <summary>Initiator of the event.</summary>
         public IdentitySet Initiator {
-            get { return BackingStore?.Get<IdentitySet>(nameof(Initiator)); }
-            set { BackingStore?.Set(nameof(Initiator), value); }
+            get { return BackingStore?.Get<IdentitySet>("initiator"); }
+            set { BackingStore?.Set("initiator", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

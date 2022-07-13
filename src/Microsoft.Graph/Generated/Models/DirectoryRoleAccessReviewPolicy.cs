@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DirectoryRoleAccessReviewPolicy : Entity, IParsable {
         /// <summary>The settings property</summary>
         public AccessReviewScheduleSettings Settings {
-            get { return BackingStore?.Get<AccessReviewScheduleSettings>(nameof(Settings)); }
-            set { BackingStore?.Set(nameof(Settings), value); }
+            get { return BackingStore?.Get<AccessReviewScheduleSettings>("settings"); }
+            set { BackingStore?.Set("settings", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

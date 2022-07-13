@@ -4,32 +4,32 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class SynchronizationJob : Entity, IParsable {
         /// <summary>Schedule used to run the job. Read-only.</summary>
         public SynchronizationSchedule Schedule {
-            get { return BackingStore?.Get<SynchronizationSchedule>(nameof(Schedule)); }
-            set { BackingStore?.Set(nameof(Schedule), value); }
+            get { return BackingStore?.Get<SynchronizationSchedule>("schedule"); }
+            set { BackingStore?.Set("schedule", value); }
         }
         /// <summary>The synchronization schema configured for the job.</summary>
         public SynchronizationSchema Schema {
-            get { return BackingStore?.Get<SynchronizationSchema>(nameof(Schema)); }
-            set { BackingStore?.Set(nameof(Schema), value); }
+            get { return BackingStore?.Get<SynchronizationSchema>("schema"); }
+            set { BackingStore?.Set("schema", value); }
         }
         /// <summary>Status of the job, which includes when the job was last run, current job state, and errors.</summary>
         public SynchronizationStatus Status {
-            get { return BackingStore?.Get<SynchronizationStatus>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<SynchronizationStatus>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>Settings associated with the job. Some settings are inherited from the template.</summary>
         public List<KeyValuePair> SynchronizationJobSettings {
-            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(SynchronizationJobSettings)); }
-            set { BackingStore?.Set(nameof(SynchronizationJobSettings), value); }
+            get { return BackingStore?.Get<List<KeyValuePair>>("synchronizationJobSettings"); }
+            set { BackingStore?.Set("synchronizationJobSettings", value); }
         }
         /// <summary>Identifier of the synchronization template this job is based on.</summary>
         public string TemplateId {
-            get { return BackingStore?.Get<string>(nameof(TemplateId)); }
-            set { BackingStore?.Set(nameof(TemplateId), value); }
+            get { return BackingStore?.Get<string>("templateId"); }
+            set { BackingStore?.Set("templateId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

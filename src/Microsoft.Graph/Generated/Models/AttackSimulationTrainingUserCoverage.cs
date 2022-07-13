@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class AttackSimulationTrainingUserCoverage : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>User in an attack simulation and training campaign.</summary>
         public Microsoft.Graph.Beta.Models.AttackSimulationUser AttackSimulationUser {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttackSimulationUser>(nameof(AttackSimulationUser)); }
-            set { BackingStore?.Set(nameof(AttackSimulationUser), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttackSimulationUser>("attackSimulationUser"); }
+            set { BackingStore?.Set("attackSimulationUser", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>List of assigned trainings&apos; and their statuses for the user.</summary>
         public List<UserTrainingStatusInfo> UserTrainings {
-            get { return BackingStore?.Get<List<UserTrainingStatusInfo>>(nameof(UserTrainings)); }
-            set { BackingStore?.Set(nameof(UserTrainings), value); }
+            get { return BackingStore?.Get<List<UserTrainingStatusInfo>>("userTrainings"); }
+            set { BackingStore?.Set("userTrainings", value); }
         }
         /// <summary>
         /// Instantiates a new attackSimulationTrainingUserCoverage and sets the default values.

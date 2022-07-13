@@ -7,33 +7,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationSynchronizationCustomizations : EducationSynchronizationCustomizationsBase, IParsable {
         /// <summary>Customizations for School entities.</summary>
         public EducationSynchronizationCustomization School {
-            get { return BackingStore?.Get<EducationSynchronizationCustomization>(nameof(School)); }
-            set { BackingStore?.Set(nameof(School), value); }
+            get { return BackingStore?.Get<EducationSynchronizationCustomization>("school"); }
+            set { BackingStore?.Set("school", value); }
         }
         /// <summary>Customizations for Section entities.</summary>
         public EducationSynchronizationCustomization Section {
-            get { return BackingStore?.Get<EducationSynchronizationCustomization>(nameof(Section)); }
-            set { BackingStore?.Set(nameof(Section), value); }
+            get { return BackingStore?.Get<EducationSynchronizationCustomization>("section"); }
+            set { BackingStore?.Set("section", value); }
         }
         /// <summary>Customizations for Student entities.</summary>
         public EducationSynchronizationCustomization Student {
-            get { return BackingStore?.Get<EducationSynchronizationCustomization>(nameof(Student)); }
-            set { BackingStore?.Set(nameof(Student), value); }
+            get { return BackingStore?.Get<EducationSynchronizationCustomization>("student"); }
+            set { BackingStore?.Set("student", value); }
         }
         /// <summary>Customizations for Student Enrollments.</summary>
         public EducationSynchronizationCustomization StudentEnrollment {
-            get { return BackingStore?.Get<EducationSynchronizationCustomization>(nameof(StudentEnrollment)); }
-            set { BackingStore?.Set(nameof(StudentEnrollment), value); }
+            get { return BackingStore?.Get<EducationSynchronizationCustomization>("studentEnrollment"); }
+            set { BackingStore?.Set("studentEnrollment", value); }
         }
         /// <summary>Customizations for Teacher entities.</summary>
         public EducationSynchronizationCustomization Teacher {
-            get { return BackingStore?.Get<EducationSynchronizationCustomization>(nameof(Teacher)); }
-            set { BackingStore?.Set(nameof(Teacher), value); }
+            get { return BackingStore?.Get<EducationSynchronizationCustomization>("teacher"); }
+            set { BackingStore?.Set("teacher", value); }
         }
         /// <summary>Customizations for Teacher Rosters.</summary>
         public EducationSynchronizationCustomization TeacherRoster {
-            get { return BackingStore?.Get<EducationSynchronizationCustomization>(nameof(TeacherRoster)); }
-            set { BackingStore?.Set(nameof(TeacherRoster), value); }
+            get { return BackingStore?.Get<EducationSynchronizationCustomization>("teacherRoster"); }
+            set { BackingStore?.Set("teacherRoster", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

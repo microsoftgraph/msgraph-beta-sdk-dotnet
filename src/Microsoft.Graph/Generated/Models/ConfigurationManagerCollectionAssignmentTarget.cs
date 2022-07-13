@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class ConfigurationManagerCollectionAssignmentTarget : DeviceAndAppManagementAssignmentTarget, IParsable {
         /// <summary>The collection Id that is the target of the assignment.</summary>
         public string CollectionId {
-            get { return BackingStore?.Get<string>(nameof(CollectionId)); }
-            set { BackingStore?.Set(nameof(CollectionId), value); }
+            get { return BackingStore?.Get<string>("collectionId"); }
+            set { BackingStore?.Set("collectionId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

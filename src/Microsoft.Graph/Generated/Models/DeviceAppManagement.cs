@@ -7,158 +7,158 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceAppManagement : Entity, IParsable {
         /// <summary>Android managed app policies.</summary>
         public List<AndroidManagedAppProtection> AndroidManagedAppProtections {
-            get { return BackingStore?.Get<List<AndroidManagedAppProtection>>(nameof(AndroidManagedAppProtections)); }
-            set { BackingStore?.Set(nameof(AndroidManagedAppProtections), value); }
+            get { return BackingStore?.Get<List<AndroidManagedAppProtection>>("androidManagedAppProtections"); }
+            set { BackingStore?.Set("androidManagedAppProtections", value); }
         }
         /// <summary>Default managed app policies.</summary>
         public List<DefaultManagedAppProtection> DefaultManagedAppProtections {
-            get { return BackingStore?.Get<List<DefaultManagedAppProtection>>(nameof(DefaultManagedAppProtections)); }
-            set { BackingStore?.Set(nameof(DefaultManagedAppProtections), value); }
+            get { return BackingStore?.Get<List<DefaultManagedAppProtection>>("defaultManagedAppProtections"); }
+            set { BackingStore?.Set("defaultManagedAppProtections", value); }
         }
         /// <summary>Device app management tasks.</summary>
         public List<DeviceAppManagementTask> DeviceAppManagementTasks {
-            get { return BackingStore?.Get<List<DeviceAppManagementTask>>(nameof(DeviceAppManagementTasks)); }
-            set { BackingStore?.Set(nameof(DeviceAppManagementTasks), value); }
+            get { return BackingStore?.Get<List<DeviceAppManagementTask>>("deviceAppManagementTasks"); }
+            set { BackingStore?.Set("deviceAppManagementTasks", value); }
         }
         /// <summary>The Windows Enterprise Code Signing Certificate.</summary>
         public List<EnterpriseCodeSigningCertificate> EnterpriseCodeSigningCertificates {
-            get { return BackingStore?.Get<List<EnterpriseCodeSigningCertificate>>(nameof(EnterpriseCodeSigningCertificates)); }
-            set { BackingStore?.Set(nameof(EnterpriseCodeSigningCertificates), value); }
+            get { return BackingStore?.Get<List<EnterpriseCodeSigningCertificate>>("enterpriseCodeSigningCertificates"); }
+            set { BackingStore?.Set("enterpriseCodeSigningCertificates", value); }
         }
         /// <summary>The IOS Lob App Provisioning Configurations.</summary>
         public List<IosLobAppProvisioningConfiguration> IosLobAppProvisioningConfigurations {
-            get { return BackingStore?.Get<List<IosLobAppProvisioningConfiguration>>(nameof(IosLobAppProvisioningConfigurations)); }
-            set { BackingStore?.Set(nameof(IosLobAppProvisioningConfigurations), value); }
+            get { return BackingStore?.Get<List<IosLobAppProvisioningConfiguration>>("iosLobAppProvisioningConfigurations"); }
+            set { BackingStore?.Set("iosLobAppProvisioningConfigurations", value); }
         }
         /// <summary>iOS managed app policies.</summary>
         public List<IosManagedAppProtection> IosManagedAppProtections {
-            get { return BackingStore?.Get<List<IosManagedAppProtection>>(nameof(IosManagedAppProtections)); }
-            set { BackingStore?.Set(nameof(IosManagedAppProtections), value); }
+            get { return BackingStore?.Get<List<IosManagedAppProtection>>("iosManagedAppProtections"); }
+            set { BackingStore?.Set("iosManagedAppProtections", value); }
         }
         /// <summary>Whether the account is enabled for syncing applications from the Microsoft Store for Business.</summary>
         public bool? IsEnabledForMicrosoftStoreForBusiness {
-            get { return BackingStore?.Get<bool?>(nameof(IsEnabledForMicrosoftStoreForBusiness)); }
-            set { BackingStore?.Set(nameof(IsEnabledForMicrosoftStoreForBusiness), value); }
+            get { return BackingStore?.Get<bool?>("isEnabledForMicrosoftStoreForBusiness"); }
+            set { BackingStore?.Set("isEnabledForMicrosoftStoreForBusiness", value); }
         }
         /// <summary>Managed app policies.</summary>
         public List<ManagedAppPolicy> ManagedAppPolicies {
-            get { return BackingStore?.Get<List<ManagedAppPolicy>>(nameof(ManagedAppPolicies)); }
-            set { BackingStore?.Set(nameof(ManagedAppPolicies), value); }
+            get { return BackingStore?.Get<List<ManagedAppPolicy>>("managedAppPolicies"); }
+            set { BackingStore?.Set("managedAppPolicies", value); }
         }
         /// <summary>The managed app registrations.</summary>
         public List<ManagedAppRegistration> ManagedAppRegistrations {
-            get { return BackingStore?.Get<List<ManagedAppRegistration>>(nameof(ManagedAppRegistrations)); }
-            set { BackingStore?.Set(nameof(ManagedAppRegistrations), value); }
+            get { return BackingStore?.Get<List<ManagedAppRegistration>>("managedAppRegistrations"); }
+            set { BackingStore?.Set("managedAppRegistrations", value); }
         }
         /// <summary>The managed app statuses.</summary>
         public List<ManagedAppStatus> ManagedAppStatuses {
-            get { return BackingStore?.Get<List<ManagedAppStatus>>(nameof(ManagedAppStatuses)); }
-            set { BackingStore?.Set(nameof(ManagedAppStatuses), value); }
+            get { return BackingStore?.Get<List<ManagedAppStatus>>("managedAppStatuses"); }
+            set { BackingStore?.Set("managedAppStatuses", value); }
         }
         /// <summary>The mobile eBook categories.</summary>
         public List<ManagedEBookCategory> ManagedEBookCategories {
-            get { return BackingStore?.Get<List<ManagedEBookCategory>>(nameof(ManagedEBookCategories)); }
-            set { BackingStore?.Set(nameof(ManagedEBookCategories), value); }
+            get { return BackingStore?.Get<List<ManagedEBookCategory>>("managedEBookCategories"); }
+            set { BackingStore?.Set("managedEBookCategories", value); }
         }
         /// <summary>The Managed eBook.</summary>
         public List<ManagedEBook> ManagedEBooks {
-            get { return BackingStore?.Get<List<ManagedEBook>>(nameof(ManagedEBooks)); }
-            set { BackingStore?.Set(nameof(ManagedEBooks), value); }
+            get { return BackingStore?.Get<List<ManagedEBook>>("managedEBooks"); }
+            set { BackingStore?.Set("managedEBooks", value); }
         }
         /// <summary>Windows information protection for apps running on devices which are MDM enrolled.</summary>
         public List<MdmWindowsInformationProtectionPolicy> MdmWindowsInformationProtectionPolicies {
-            get { return BackingStore?.Get<List<MdmWindowsInformationProtectionPolicy>>(nameof(MdmWindowsInformationProtectionPolicies)); }
-            set { BackingStore?.Set(nameof(MdmWindowsInformationProtectionPolicies), value); }
+            get { return BackingStore?.Get<List<MdmWindowsInformationProtectionPolicy>>("mdmWindowsInformationProtectionPolicies"); }
+            set { BackingStore?.Set("mdmWindowsInformationProtectionPolicies", value); }
         }
-        /// <summary>The locale information used to sync applications from the Microsoft Store for Business. Cultures that are specific to a country/region. The names of these cultures follow RFC 4646 (Windows Vista and later). The format is &lt;languagecode2&gt;-&lt;country/regioncode2&gt;, where &lt;languagecode2&gt; is a lowercase two-letter code derived from ISO 639-1 and &lt;country/regioncode2&gt; is an uppercase two-letter code derived from ISO 3166. For example, en-US for English (United States) is a specific culture.</summary>
+        /// <summary>The locale information used to sync applications from the Microsoft Store for Business. Cultures that are specific to a country/region. The names of these cultures follow RFC 4646 (Windows Vista and later). The format is -&lt;country/regioncode2&gt;, where  is a lowercase two-letter code derived from ISO 639-1 and &lt;country/regioncode2&gt; is an uppercase two-letter code derived from ISO 3166. For example, en-US for English (United States) is a specific culture.</summary>
         public string MicrosoftStoreForBusinessLanguage {
-            get { return BackingStore?.Get<string>(nameof(MicrosoftStoreForBusinessLanguage)); }
-            set { BackingStore?.Set(nameof(MicrosoftStoreForBusinessLanguage), value); }
+            get { return BackingStore?.Get<string>("microsoftStoreForBusinessLanguage"); }
+            set { BackingStore?.Set("microsoftStoreForBusinessLanguage", value); }
         }
         /// <summary>The last time an application sync from the Microsoft Store for Business was completed.</summary>
         public DateTimeOffset? MicrosoftStoreForBusinessLastCompletedApplicationSyncTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(MicrosoftStoreForBusinessLastCompletedApplicationSyncTime)); }
-            set { BackingStore?.Set(nameof(MicrosoftStoreForBusinessLastCompletedApplicationSyncTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("microsoftStoreForBusinessLastCompletedApplicationSyncTime"); }
+            set { BackingStore?.Set("microsoftStoreForBusinessLastCompletedApplicationSyncTime", value); }
         }
         /// <summary>The last time the apps from the Microsoft Store for Business were synced successfully for the account.</summary>
         public DateTimeOffset? MicrosoftStoreForBusinessLastSuccessfulSyncDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(MicrosoftStoreForBusinessLastSuccessfulSyncDateTime)); }
-            set { BackingStore?.Set(nameof(MicrosoftStoreForBusinessLastSuccessfulSyncDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("microsoftStoreForBusinessLastSuccessfulSyncDateTime"); }
+            set { BackingStore?.Set("microsoftStoreForBusinessLastSuccessfulSyncDateTime", value); }
         }
-        /// <summary>The end user portal information is used to sync applications from the Microsoft Store for Business to Intune Company Portal. There are three options to pick from [&apos;Company portal only&apos;, &apos;Company portal and private store&apos;, &apos;Private store only&apos;]. Possible values are: none, companyPortal, privateStore.</summary>
+        /// <summary>Portal to which admin syncs available Microsoft Store for Business apps. This is available in the Intune Admin Console.</summary>
         public MicrosoftStoreForBusinessPortalSelectionOptions? MicrosoftStoreForBusinessPortalSelection {
-            get { return BackingStore?.Get<MicrosoftStoreForBusinessPortalSelectionOptions?>(nameof(MicrosoftStoreForBusinessPortalSelection)); }
-            set { BackingStore?.Set(nameof(MicrosoftStoreForBusinessPortalSelection), value); }
+            get { return BackingStore?.Get<MicrosoftStoreForBusinessPortalSelectionOptions?>("microsoftStoreForBusinessPortalSelection"); }
+            set { BackingStore?.Set("microsoftStoreForBusinessPortalSelection", value); }
         }
         /// <summary>The mobile app categories.</summary>
         public List<MobileAppCategory> MobileAppCategories {
-            get { return BackingStore?.Get<List<MobileAppCategory>>(nameof(MobileAppCategories)); }
-            set { BackingStore?.Set(nameof(MobileAppCategories), value); }
+            get { return BackingStore?.Get<List<MobileAppCategory>>("mobileAppCategories"); }
+            set { BackingStore?.Set("mobileAppCategories", value); }
         }
         /// <summary>The Managed Device Mobile Application Configurations.</summary>
         public List<ManagedDeviceMobileAppConfiguration> MobileAppConfigurations {
-            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfiguration>>(nameof(MobileAppConfigurations)); }
-            set { BackingStore?.Set(nameof(MobileAppConfigurations), value); }
+            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfiguration>>("mobileAppConfigurations"); }
+            set { BackingStore?.Set("mobileAppConfigurations", value); }
         }
         /// <summary>The mobile apps.</summary>
         public List<MobileApp> MobileApps {
-            get { return BackingStore?.Get<List<MobileApp>>(nameof(MobileApps)); }
-            set { BackingStore?.Set(nameof(MobileApps), value); }
+            get { return BackingStore?.Get<List<MobileApp>>("mobileApps"); }
+            set { BackingStore?.Set("mobileApps", value); }
         }
         /// <summary>The PolicySet of Policies and Applications</summary>
         public List<PolicySet> PolicySets {
-            get { return BackingStore?.Get<List<PolicySet>>(nameof(PolicySets)); }
-            set { BackingStore?.Set(nameof(PolicySets), value); }
+            get { return BackingStore?.Get<List<PolicySet>>("policySets"); }
+            set { BackingStore?.Set("policySets", value); }
         }
         /// <summary>Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.</summary>
         public List<SideLoadingKey> SideLoadingKeys {
-            get { return BackingStore?.Get<List<SideLoadingKey>>(nameof(SideLoadingKeys)); }
-            set { BackingStore?.Set(nameof(SideLoadingKeys), value); }
+            get { return BackingStore?.Get<List<SideLoadingKey>>("sideLoadingKeys"); }
+            set { BackingStore?.Set("sideLoadingKeys", value); }
         }
         /// <summary>The WinPhone Symantec Code Signing Certificate.</summary>
         public Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate SymantecCodeSigningCertificate {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate>(nameof(SymantecCodeSigningCertificate)); }
-            set { BackingStore?.Set(nameof(SymantecCodeSigningCertificate), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate>("symantecCodeSigningCertificate"); }
+            set { BackingStore?.Set("symantecCodeSigningCertificate", value); }
         }
         /// <summary>Targeted managed app configurations.</summary>
         public List<TargetedManagedAppConfiguration> TargetedManagedAppConfigurations {
-            get { return BackingStore?.Get<List<TargetedManagedAppConfiguration>>(nameof(TargetedManagedAppConfigurations)); }
-            set { BackingStore?.Set(nameof(TargetedManagedAppConfigurations), value); }
+            get { return BackingStore?.Get<List<TargetedManagedAppConfiguration>>("targetedManagedAppConfigurations"); }
+            set { BackingStore?.Set("targetedManagedAppConfigurations", value); }
         }
         /// <summary>List of Vpp tokens for this organization.</summary>
         public List<VppToken> VppTokens {
-            get { return BackingStore?.Get<List<VppToken>>(nameof(VppTokens)); }
-            set { BackingStore?.Set(nameof(VppTokens), value); }
+            get { return BackingStore?.Get<List<VppToken>>("vppTokens"); }
+            set { BackingStore?.Set("vppTokens", value); }
         }
         /// <summary>The collection of Windows Defender Application Control Supplemental Policies.</summary>
         public List<WindowsDefenderApplicationControlSupplementalPolicy> WdacSupplementalPolicies {
-            get { return BackingStore?.Get<List<WindowsDefenderApplicationControlSupplementalPolicy>>(nameof(WdacSupplementalPolicies)); }
-            set { BackingStore?.Set(nameof(WdacSupplementalPolicies), value); }
+            get { return BackingStore?.Get<List<WindowsDefenderApplicationControlSupplementalPolicy>>("wdacSupplementalPolicies"); }
+            set { BackingStore?.Set("wdacSupplementalPolicies", value); }
         }
         /// <summary>Windows information protection device registrations that are not MDM enrolled.</summary>
         public List<WindowsInformationProtectionDeviceRegistration> WindowsInformationProtectionDeviceRegistrations {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionDeviceRegistration>>(nameof(WindowsInformationProtectionDeviceRegistrations)); }
-            set { BackingStore?.Set(nameof(WindowsInformationProtectionDeviceRegistrations), value); }
+            get { return BackingStore?.Get<List<WindowsInformationProtectionDeviceRegistration>>("windowsInformationProtectionDeviceRegistrations"); }
+            set { BackingStore?.Set("windowsInformationProtectionDeviceRegistrations", value); }
         }
         /// <summary>Windows information protection for apps running on devices which are not MDM enrolled.</summary>
         public List<WindowsInformationProtectionPolicy> WindowsInformationProtectionPolicies {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionPolicy>>(nameof(WindowsInformationProtectionPolicies)); }
-            set { BackingStore?.Set(nameof(WindowsInformationProtectionPolicies), value); }
+            get { return BackingStore?.Get<List<WindowsInformationProtectionPolicy>>("windowsInformationProtectionPolicies"); }
+            set { BackingStore?.Set("windowsInformationProtectionPolicies", value); }
         }
         /// <summary>Windows information protection wipe actions.</summary>
         public List<WindowsInformationProtectionWipeAction> WindowsInformationProtectionWipeActions {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionWipeAction>>(nameof(WindowsInformationProtectionWipeActions)); }
-            set { BackingStore?.Set(nameof(WindowsInformationProtectionWipeActions), value); }
+            get { return BackingStore?.Get<List<WindowsInformationProtectionWipeAction>>("windowsInformationProtectionWipeActions"); }
+            set { BackingStore?.Set("windowsInformationProtectionWipeActions", value); }
         }
         /// <summary>Windows managed app policies.</summary>
         public List<WindowsManagedAppProtection> WindowsManagedAppProtections {
-            get { return BackingStore?.Get<List<WindowsManagedAppProtection>>(nameof(WindowsManagedAppProtections)); }
-            set { BackingStore?.Set(nameof(WindowsManagedAppProtections), value); }
+            get { return BackingStore?.Get<List<WindowsManagedAppProtection>>("windowsManagedAppProtections"); }
+            set { BackingStore?.Set("windowsManagedAppProtections", value); }
         }
         /// <summary>Windows management app.</summary>
         public Microsoft.Graph.Beta.Models.WindowsManagementApp WindowsManagementApp {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsManagementApp>(nameof(WindowsManagementApp)); }
-            set { BackingStore?.Set(nameof(WindowsManagementApp), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsManagementApp>("windowsManagementApp"); }
+            set { BackingStore?.Set("windowsManagementApp", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

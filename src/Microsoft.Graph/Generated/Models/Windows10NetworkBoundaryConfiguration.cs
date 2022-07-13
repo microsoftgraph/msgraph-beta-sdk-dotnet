@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class Windows10NetworkBoundaryConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Windows Network Isolation Policy</summary>
         public Microsoft.Graph.Beta.Models.WindowsNetworkIsolationPolicy WindowsNetworkIsolationPolicy {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsNetworkIsolationPolicy>(nameof(WindowsNetworkIsolationPolicy)); }
-            set { BackingStore?.Set(nameof(WindowsNetworkIsolationPolicy), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsNetworkIsolationPolicy>("windowsNetworkIsolationPolicy"); }
+            set { BackingStore?.Set("windowsNetworkIsolationPolicy", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

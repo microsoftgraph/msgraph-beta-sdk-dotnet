@@ -7,33 +7,33 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class AddWatermarkAction : InformationProtectionAction, IParsable {
         /// <summary>The fontColor property</summary>
         public string FontColor {
-            get { return BackingStore?.Get<string>(nameof(FontColor)); }
-            set { BackingStore?.Set(nameof(FontColor), value); }
+            get { return BackingStore?.Get<string>("fontColor"); }
+            set { BackingStore?.Set("fontColor", value); }
         }
         /// <summary>The fontName property</summary>
         public string FontName {
-            get { return BackingStore?.Get<string>(nameof(FontName)); }
-            set { BackingStore?.Set(nameof(FontName), value); }
+            get { return BackingStore?.Get<string>("fontName"); }
+            set { BackingStore?.Set("fontName", value); }
         }
         /// <summary>The fontSize property</summary>
         public int? FontSize {
-            get { return BackingStore?.Get<int?>(nameof(FontSize)); }
-            set { BackingStore?.Set(nameof(FontSize), value); }
+            get { return BackingStore?.Get<int?>("fontSize"); }
+            set { BackingStore?.Set("fontSize", value); }
         }
         /// <summary>The layout property</summary>
         public WatermarkLayout? Layout {
-            get { return BackingStore?.Get<WatermarkLayout?>(nameof(Layout)); }
-            set { BackingStore?.Set(nameof(Layout), value); }
+            get { return BackingStore?.Get<WatermarkLayout?>("layout"); }
+            set { BackingStore?.Set("layout", value); }
         }
         /// <summary>The text property</summary>
         public string Text {
-            get { return BackingStore?.Get<string>(nameof(Text)); }
-            set { BackingStore?.Set(nameof(Text), value); }
+            get { return BackingStore?.Get<string>("text"); }
+            set { BackingStore?.Set("text", value); }
         }
         /// <summary>The uiElementName property</summary>
         public string UiElementName {
-            get { return BackingStore?.Get<string>(nameof(UiElementName)); }
-            set { BackingStore?.Set(nameof(UiElementName), value); }
+            get { return BackingStore?.Get<string>("uiElementName"); }
+            set { BackingStore?.Set("uiElementName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class Windows10XCustomSubjectAlternativeName : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Custom SAN Name</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
-        /// <summary>Custom SAN Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.</summary>
+        /// <summary>Subject Alternative Name Options.</summary>
         public SubjectAlternativeNameType? SanType {
-            get { return BackingStore?.Get<SubjectAlternativeNameType?>(nameof(SanType)); }
-            set { BackingStore?.Set(nameof(SanType), value); }
+            get { return BackingStore?.Get<SubjectAlternativeNameType?>("sanType"); }
+            set { BackingStore?.Set("sanType", value); }
         }
         /// <summary>
         /// Instantiates a new windows10XCustomSubjectAlternativeName and sets the default values.

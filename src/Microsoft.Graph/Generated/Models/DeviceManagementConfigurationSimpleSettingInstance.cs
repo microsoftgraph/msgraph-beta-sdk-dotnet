@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationSimpleSettingInstance : DeviceManagementConfigurationSettingInstance, IParsable {
         /// <summary>The simpleSettingValue property</summary>
         public DeviceManagementConfigurationSimpleSettingValue SimpleSettingValue {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSimpleSettingValue>(nameof(SimpleSettingValue)); }
-            set { BackingStore?.Set(nameof(SimpleSettingValue), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationSimpleSettingValue>("simpleSettingValue"); }
+            set { BackingStore?.Set("simpleSettingValue", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,55 +9,55 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceGeoLocation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Altitude, given in meters above sea level</summary>
         public double? Altitude {
-            get { return BackingStore?.Get<double?>(nameof(Altitude)); }
-            set { BackingStore?.Set(nameof(Altitude), value); }
+            get { return BackingStore?.Get<double?>("altitude"); }
+            set { BackingStore?.Set("altitude", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Heading in degrees from true north</summary>
         public double? Heading {
-            get { return BackingStore?.Get<double?>(nameof(Heading)); }
-            set { BackingStore?.Set(nameof(Heading), value); }
+            get { return BackingStore?.Get<double?>("heading"); }
+            set { BackingStore?.Set("heading", value); }
         }
         /// <summary>Accuracy of longitude and latitude in meters</summary>
         public double? HorizontalAccuracy {
-            get { return BackingStore?.Get<double?>(nameof(HorizontalAccuracy)); }
-            set { BackingStore?.Set(nameof(HorizontalAccuracy), value); }
+            get { return BackingStore?.Get<double?>("horizontalAccuracy"); }
+            set { BackingStore?.Set("horizontalAccuracy", value); }
         }
         /// <summary>Time at which location was recorded, relative to UTC</summary>
         public DateTimeOffset? LastCollectedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastCollectedDateTime)); }
-            set { BackingStore?.Set(nameof(LastCollectedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastCollectedDateTime"); }
+            set { BackingStore?.Set("lastCollectedDateTime", value); }
         }
         /// <summary>Time at which location was recorded, relative to UTC</summary>
         public DateTimeOffset? LastCollectedDateTimeUtc {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastCollectedDateTimeUtc)); }
-            set { BackingStore?.Set(nameof(LastCollectedDateTimeUtc), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastCollectedDateTimeUtc"); }
+            set { BackingStore?.Set("lastCollectedDateTimeUtc", value); }
         }
         /// <summary>Latitude coordinate of the device&apos;s location</summary>
         public double? Latitude {
-            get { return BackingStore?.Get<double?>(nameof(Latitude)); }
-            set { BackingStore?.Set(nameof(Latitude), value); }
+            get { return BackingStore?.Get<double?>("latitude"); }
+            set { BackingStore?.Set("latitude", value); }
         }
         /// <summary>Longitude coordinate of the device&apos;s location</summary>
         public double? Longitude {
-            get { return BackingStore?.Get<double?>(nameof(Longitude)); }
-            set { BackingStore?.Set(nameof(Longitude), value); }
+            get { return BackingStore?.Get<double?>("longitude"); }
+            set { BackingStore?.Set("longitude", value); }
         }
         /// <summary>Speed the device is traveling in meters per second</summary>
         public double? Speed {
-            get { return BackingStore?.Get<double?>(nameof(Speed)); }
-            set { BackingStore?.Set(nameof(Speed), value); }
+            get { return BackingStore?.Get<double?>("speed"); }
+            set { BackingStore?.Set("speed", value); }
         }
         /// <summary>Accuracy of altitude in meters</summary>
         public double? VerticalAccuracy {
-            get { return BackingStore?.Get<double?>(nameof(VerticalAccuracy)); }
-            set { BackingStore?.Set(nameof(VerticalAccuracy), value); }
+            get { return BackingStore?.Get<double?>("verticalAccuracy"); }
+            set { BackingStore?.Set("verticalAccuracy", value); }
         }
         /// <summary>
         /// Instantiates a new deviceGeoLocation and sets the default values.

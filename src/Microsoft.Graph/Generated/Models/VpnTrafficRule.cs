@@ -9,60 +9,60 @@ namespace Microsoft.Graph.Beta.Models {
     public class VpnTrafficRule : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>App identifier, if this traffic rule is triggered by an app.</summary>
         public string AppId {
-            get { return BackingStore?.Get<string>(nameof(AppId)); }
-            set { BackingStore?.Set(nameof(AppId), value); }
+            get { return BackingStore?.Get<string>("appId"); }
+            set { BackingStore?.Set("appId", value); }
         }
-        /// <summary>App type, if this traffic rule is triggered by an app. Possible values are: none, desktop, universal.</summary>
+        /// <summary>Indicates the type of app that a VPN traffic rule is associated with.</summary>
         public VpnTrafficRuleAppType? AppType {
-            get { return BackingStore?.Get<VpnTrafficRuleAppType?>(nameof(AppType)); }
-            set { BackingStore?.Set(nameof(AppType), value); }
+            get { return BackingStore?.Get<VpnTrafficRuleAppType?>("appType"); }
+            set { BackingStore?.Set("appType", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Claims associated with this traffic rule.</summary>
         public string Claims {
-            get { return BackingStore?.Get<string>(nameof(Claims)); }
-            set { BackingStore?.Set(nameof(Claims), value); }
+            get { return BackingStore?.Get<string>("claims"); }
+            set { BackingStore?.Set("claims", value); }
         }
         /// <summary>Local address range. This collection can contain a maximum of 500 elements.</summary>
         public List<IPv4Range> LocalAddressRanges {
-            get { return BackingStore?.Get<List<IPv4Range>>(nameof(LocalAddressRanges)); }
-            set { BackingStore?.Set(nameof(LocalAddressRanges), value); }
+            get { return BackingStore?.Get<List<IPv4Range>>("localAddressRanges"); }
+            set { BackingStore?.Set("localAddressRanges", value); }
         }
         /// <summary>Local port range can be set only when protocol is either TCP or UDP (6 or 17). This collection can contain a maximum of 500 elements.</summary>
         public List<NumberRange> LocalPortRanges {
-            get { return BackingStore?.Get<List<NumberRange>>(nameof(LocalPortRanges)); }
-            set { BackingStore?.Set(nameof(LocalPortRanges), value); }
+            get { return BackingStore?.Get<List<NumberRange>>("localPortRanges"); }
+            set { BackingStore?.Set("localPortRanges", value); }
         }
         /// <summary>Name.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>Protocols (0-255). Valid values 0 to 255</summary>
         public int? Protocols {
-            get { return BackingStore?.Get<int?>(nameof(Protocols)); }
-            set { BackingStore?.Set(nameof(Protocols), value); }
+            get { return BackingStore?.Get<int?>("protocols"); }
+            set { BackingStore?.Set("protocols", value); }
         }
         /// <summary>Remote address range. This collection can contain a maximum of 500 elements.</summary>
         public List<IPv4Range> RemoteAddressRanges {
-            get { return BackingStore?.Get<List<IPv4Range>>(nameof(RemoteAddressRanges)); }
-            set { BackingStore?.Set(nameof(RemoteAddressRanges), value); }
+            get { return BackingStore?.Get<List<IPv4Range>>("remoteAddressRanges"); }
+            set { BackingStore?.Set("remoteAddressRanges", value); }
         }
         /// <summary>Remote port range can be set only when protocol is either TCP or UDP (6 or 17). This collection can contain a maximum of 500 elements.</summary>
         public List<NumberRange> RemotePortRanges {
-            get { return BackingStore?.Get<List<NumberRange>>(nameof(RemotePortRanges)); }
-            set { BackingStore?.Set(nameof(RemotePortRanges), value); }
+            get { return BackingStore?.Get<List<NumberRange>>("remotePortRanges"); }
+            set { BackingStore?.Set("remotePortRanges", value); }
         }
-        /// <summary>When app triggered, indicates whether to enable split tunneling along this route. Possible values are: none, splitTunnel, forceTunnel.</summary>
+        /// <summary>Specifies the routing policy for a VPN traffic rule.</summary>
         public VpnTrafficRuleRoutingPolicyType? RoutingPolicyType {
-            get { return BackingStore?.Get<VpnTrafficRuleRoutingPolicyType?>(nameof(RoutingPolicyType)); }
-            set { BackingStore?.Set(nameof(RoutingPolicyType), value); }
+            get { return BackingStore?.Get<VpnTrafficRuleRoutingPolicyType?>("routingPolicyType"); }
+            set { BackingStore?.Set("routingPolicyType", value); }
         }
         /// <summary>
         /// Instantiates a new vpnTrafficRule and sets the default values.

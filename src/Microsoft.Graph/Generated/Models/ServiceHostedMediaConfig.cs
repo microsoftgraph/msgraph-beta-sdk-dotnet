@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class ServiceHostedMediaConfig : MediaConfig, IParsable {
         /// <summary>The list of media to pre-fetch.</summary>
         public List<MediaInfo> PreFetchMedia {
-            get { return BackingStore?.Get<List<MediaInfo>>(nameof(PreFetchMedia)); }
-            set { BackingStore?.Set(nameof(PreFetchMedia), value); }
+            get { return BackingStore?.Get<List<MediaInfo>>("preFetchMedia"); }
+            set { BackingStore?.Set("preFetchMedia", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

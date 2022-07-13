@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsKioskUWPApp : WindowsKioskAppBase, IParsable {
         /// <summary>This references an Intune App that will be target to the same assignments as Kiosk configuration</summary>
         public string AppId {
-            get { return BackingStore?.Get<string>(nameof(AppId)); }
-            set { BackingStore?.Set(nameof(AppId), value); }
+            get { return BackingStore?.Get<string>("appId"); }
+            set { BackingStore?.Set("appId", value); }
         }
         /// <summary>This is the only Application User Model ID (AUMID) that will be available to launch use while in Kiosk Mode</summary>
         public string AppUserModelId {
-            get { return BackingStore?.Get<string>(nameof(AppUserModelId)); }
-            set { BackingStore?.Set(nameof(AppUserModelId), value); }
+            get { return BackingStore?.Get<string>("appUserModelId"); }
+            set { BackingStore?.Set("appUserModelId", value); }
         }
         /// <summary>This references an contained App from an Intune App</summary>
         public string ContainedAppId {
-            get { return BackingStore?.Get<string>(nameof(ContainedAppId)); }
-            set { BackingStore?.Set(nameof(ContainedAppId), value); }
+            get { return BackingStore?.Get<string>("containedAppId"); }
+            set { BackingStore?.Set("containedAppId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

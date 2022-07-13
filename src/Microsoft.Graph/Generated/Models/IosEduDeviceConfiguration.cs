@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosEduDeviceConfiguration : DeviceConfiguration, IParsable {
         /// <summary>The Trusted Root and PFX certificates for Device</summary>
         public IosEduCertificateSettings DeviceCertificateSettings {
-            get { return BackingStore?.Get<IosEduCertificateSettings>(nameof(DeviceCertificateSettings)); }
-            set { BackingStore?.Set(nameof(DeviceCertificateSettings), value); }
+            get { return BackingStore?.Get<IosEduCertificateSettings>("deviceCertificateSettings"); }
+            set { BackingStore?.Set("deviceCertificateSettings", value); }
         }
         /// <summary>The Trusted Root and PFX certificates for Student</summary>
         public IosEduCertificateSettings StudentCertificateSettings {
-            get { return BackingStore?.Get<IosEduCertificateSettings>(nameof(StudentCertificateSettings)); }
-            set { BackingStore?.Set(nameof(StudentCertificateSettings), value); }
+            get { return BackingStore?.Get<IosEduCertificateSettings>("studentCertificateSettings"); }
+            set { BackingStore?.Set("studentCertificateSettings", value); }
         }
         /// <summary>Trusted Root and PFX certificates for iOS EDU.</summary>
         public IosEduCertificateSettings TeacherCertificateSettings {
-            get { return BackingStore?.Get<IosEduCertificateSettings>(nameof(TeacherCertificateSettings)); }
-            set { BackingStore?.Set(nameof(TeacherCertificateSettings), value); }
+            get { return BackingStore?.Get<IosEduCertificateSettings>("teacherCertificateSettings"); }
+            set { BackingStore?.Set("teacherCertificateSettings", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

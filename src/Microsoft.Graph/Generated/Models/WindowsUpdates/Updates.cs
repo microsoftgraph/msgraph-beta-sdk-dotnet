@@ -4,27 +4,26 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
-    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class Updates : Entity, IParsable {
         /// <summary>Catalog of content that can be approved for deployment by the deployment service. Read-only.</summary>
         public Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog Catalog {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog>(nameof(Catalog)); }
-            set { BackingStore?.Set(nameof(Catalog), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog>("catalog"); }
+            set { BackingStore?.Set("catalog", value); }
         }
         /// <summary>Deployments created using the deployment service. Read-only.</summary>
         public List<Deployment> Deployments {
-            get { return BackingStore?.Get<List<Deployment>>(nameof(Deployments)); }
-            set { BackingStore?.Set(nameof(Deployments), value); }
+            get { return BackingStore?.Get<List<Deployment>>("deployments"); }
+            set { BackingStore?.Set("deployments", value); }
         }
         /// <summary>The resourceConnections property</summary>
         public List<ResourceConnection> ResourceConnections {
-            get { return BackingStore?.Get<List<ResourceConnection>>(nameof(ResourceConnections)); }
-            set { BackingStore?.Set(nameof(ResourceConnections), value); }
+            get { return BackingStore?.Get<List<ResourceConnection>>("resourceConnections"); }
+            set { BackingStore?.Set("resourceConnections", value); }
         }
         /// <summary>Assets registered with the deployment service that can receive updates. Read-only.</summary>
         public List<UpdatableAsset> UpdatableAssets {
-            get { return BackingStore?.Get<List<UpdatableAsset>>(nameof(UpdatableAssets)); }
-            set { BackingStore?.Set(nameof(UpdatableAssets), value); }
+            get { return BackingStore?.Get<List<UpdatableAsset>>("updatableAssets"); }
+            set { BackingStore?.Set("updatableAssets", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,62 +4,62 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class WindowsDefenderApplicationControlSupplementalPolicy : Entity, IParsable {
         /// <summary>The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.</summary>
         public List<WindowsDefenderApplicationControlSupplementalPolicyAssignment> Assignments {
-            get { return BackingStore?.Get<List<WindowsDefenderApplicationControlSupplementalPolicyAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<WindowsDefenderApplicationControlSupplementalPolicyAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>The WindowsDefenderApplicationControl supplemental policy content in byte array format.</summary>
         public byte[] Content {
-            get { return BackingStore?.Get<byte[]>(nameof(Content)); }
-            set { BackingStore?.Set(nameof(Content), value); }
+            get { return BackingStore?.Get<byte[]>("content"); }
+            set { BackingStore?.Set("content", value); }
         }
         /// <summary>The WindowsDefenderApplicationControl supplemental policy content&apos;s file name.</summary>
         public string ContentFileName {
-            get { return BackingStore?.Get<string>(nameof(ContentFileName)); }
-            set { BackingStore?.Set(nameof(ContentFileName), value); }
+            get { return BackingStore?.Get<string>("contentFileName"); }
+            set { BackingStore?.Set("contentFileName", value); }
         }
         /// <summary>The date and time when the WindowsDefenderApplicationControl supplemental policy was uploaded.</summary>
         public DateTimeOffset? CreationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreationDateTime)); }
-            set { BackingStore?.Set(nameof(CreationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("creationDateTime"); }
+            set { BackingStore?.Set("creationDateTime", value); }
         }
         /// <summary>WindowsDefenderApplicationControl supplemental policy deployment summary.</summary>
         public WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary DeploySummary {
-            get { return BackingStore?.Get<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>(nameof(DeploySummary)); }
-            set { BackingStore?.Set(nameof(DeploySummary), value); }
+            get { return BackingStore?.Get<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>("deploySummary"); }
+            set { BackingStore?.Set("deploySummary", value); }
         }
         /// <summary>The description of WindowsDefenderApplicationControl supplemental policy.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.</summary>
         public List<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus> DeviceStatuses {
-            get { return BackingStore?.Get<List<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>>(nameof(DeviceStatuses)); }
-            set { BackingStore?.Set(nameof(DeviceStatuses), value); }
+            get { return BackingStore?.Get<List<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>>("deviceStatuses"); }
+            set { BackingStore?.Set("deviceStatuses", value); }
         }
         /// <summary>The display name of WindowsDefenderApplicationControl supplemental policy.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The date and time when the WindowsDefenderApplicationControl supplemental policy was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>List of Scope Tags for this WindowsDefenderApplicationControl supplemental policy entity.</summary>
         public List<string> RoleScopeTagIds {
-            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTagIds)); }
-            set { BackingStore?.Set(nameof(RoleScopeTagIds), value); }
+            get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
         }
         /// <summary>The WindowsDefenderApplicationControl supplemental policy&apos;s version.</summary>
         public string Version {
-            get { return BackingStore?.Get<string>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<string>("version"); }
+            set { BackingStore?.Set("version", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

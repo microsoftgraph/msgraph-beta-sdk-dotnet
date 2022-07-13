@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RemoveDevice
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action removeDeviceFirmwareConfigurationInterfaceManagement
+        /// Remove device from Device Firmware Configuration Interface management
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<RemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RemoveDevice
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action removeDeviceFirmwareConfigurationInterfaceManagement
+        /// Remove device from Device Firmware Configuration Interface management
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

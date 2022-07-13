@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class CloudPcManagementGroupAssignmentTarget : CloudPcManagementAssignmentTarget, IParsable {
         /// <summary>The id of the assignment&apos;s target group</summary>
         public string GroupId {
-            get { return BackingStore?.Get<string>(nameof(GroupId)); }
-            set { BackingStore?.Set(nameof(GroupId), value); }
+            get { return BackingStore?.Get<string>("groupId"); }
+            set { BackingStore?.Set("groupId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

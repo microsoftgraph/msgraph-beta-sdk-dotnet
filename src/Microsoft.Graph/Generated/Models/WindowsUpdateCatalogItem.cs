@@ -9,18 +9,24 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsUpdateCatalogItem : Entity, IParsable {
         /// <summary>The display name for the catalog item.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The last supported date for a catalog item</summary>
         public DateTimeOffset? EndOfSupportDate {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EndOfSupportDate)); }
-            set { BackingStore?.Set(nameof(EndOfSupportDate), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("endOfSupportDate"); }
+            set { BackingStore?.Set("endOfSupportDate", value); }
         }
         /// <summary>The date the catalog item was released</summary>
         public DateTimeOffset? ReleaseDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ReleaseDateTime)); }
-            set { BackingStore?.Set(nameof(ReleaseDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("releaseDateTime"); }
+            set { BackingStore?.Set("releaseDateTime", value); }
+        }
+        /// <summary>
+        /// Instantiates a new windowsUpdateCatalogItem and sets the default values.
+        /// </summary>
+        public WindowsUpdateCatalogItem() : base() {
+            Type = "#microsoft.graph.windowsUpdateCatalogItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

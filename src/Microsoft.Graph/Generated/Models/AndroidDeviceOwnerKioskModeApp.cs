@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceOwnerKioskModeApp : AndroidDeviceOwnerKioskModeFolderItem, IParsable {
         /// <summary>Class name of application</summary>
         public string ClassName {
-            get { return BackingStore?.Get<string>(nameof(ClassName)); }
-            set { BackingStore?.Set(nameof(ClassName), value); }
+            get { return BackingStore?.Get<string>("className"); }
+            set { BackingStore?.Set("className", value); }
         }
         /// <summary>Package name of application</summary>
         public string Package {
-            get { return BackingStore?.Get<string>(nameof(Package)); }
-            set { BackingStore?.Set(nameof(Package), value); }
+            get { return BackingStore?.Get<string>("package"); }
+            set { BackingStore?.Set("package", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidManagedStoreAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
         /// <summary>The track IDs to enable for this app assignment.</summary>
         public List<string> AndroidManagedStoreAppTrackIds {
-            get { return BackingStore?.Get<List<string>>(nameof(AndroidManagedStoreAppTrackIds)); }
-            set { BackingStore?.Set(nameof(AndroidManagedStoreAppTrackIds), value); }
+            get { return BackingStore?.Get<List<string>>("androidManagedStoreAppTrackIds"); }
+            set { BackingStore?.Set("androidManagedStoreAppTrackIds", value); }
         }
-        /// <summary>The prioritization of automatic updates for this app assignment. Possible values are: default, postponed, priority, unknownFutureValue.</summary>
+        /// <summary>Prioritization for automatic updates of Android Managed Store apps set on assignment.</summary>
         public AndroidManagedStoreAutoUpdateMode? AutoUpdateMode {
-            get { return BackingStore?.Get<AndroidManagedStoreAutoUpdateMode?>(nameof(AutoUpdateMode)); }
-            set { BackingStore?.Set(nameof(AutoUpdateMode), value); }
+            get { return BackingStore?.Get<AndroidManagedStoreAutoUpdateMode?>("autoUpdateMode"); }
+            set { BackingStore?.Set("autoUpdateMode", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

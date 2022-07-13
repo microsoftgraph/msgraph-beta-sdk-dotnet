@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class MembersAddedEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>Initiator of the event.</summary>
         public IdentitySet Initiator {
-            get { return BackingStore?.Get<IdentitySet>(nameof(Initiator)); }
-            set { BackingStore?.Set(nameof(Initiator), value); }
+            get { return BackingStore?.Get<IdentitySet>("initiator"); }
+            set { BackingStore?.Set("initiator", value); }
         }
         /// <summary>List of members added.</summary>
         public List<TeamworkUserIdentity> Members {
-            get { return BackingStore?.Get<List<TeamworkUserIdentity>>(nameof(Members)); }
-            set { BackingStore?.Set(nameof(Members), value); }
+            get { return BackingStore?.Get<List<TeamworkUserIdentity>>("members"); }
+            set { BackingStore?.Set("members", value); }
         }
         /// <summary>The timestamp denoting how far back a conversation&apos;s history is shared with the conversation members.</summary>
         public DateTimeOffset? VisibleHistoryStartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(VisibleHistoryStartDateTime)); }
-            set { BackingStore?.Set(nameof(VisibleHistoryStartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("visibleHistoryStartDateTime"); }
+            set { BackingStore?.Set("visibleHistoryStartDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,80 +8,80 @@ namespace Microsoft.Graph.Beta.Models {
     public class SynchronizationTaskExecution : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Identifier of the job run.</summary>
         public string ActivityIdentifier {
-            get { return BackingStore?.Get<string>(nameof(ActivityIdentifier)); }
-            set { BackingStore?.Set(nameof(ActivityIdentifier), value); }
+            get { return BackingStore?.Get<string>("activityIdentifier"); }
+            set { BackingStore?.Set("activityIdentifier", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Count of processed entries that were assigned for this application.</summary>
         public long? CountEntitled {
-            get { return BackingStore?.Get<long?>(nameof(CountEntitled)); }
-            set { BackingStore?.Set(nameof(CountEntitled), value); }
+            get { return BackingStore?.Get<long?>("countEntitled"); }
+            set { BackingStore?.Set("countEntitled", value); }
         }
         /// <summary>Count of processed entries that were assigned for provisioning.</summary>
         public long? CountEntitledForProvisioning {
-            get { return BackingStore?.Get<long?>(nameof(CountEntitledForProvisioning)); }
-            set { BackingStore?.Set(nameof(CountEntitledForProvisioning), value); }
+            get { return BackingStore?.Get<long?>("countEntitledForProvisioning"); }
+            set { BackingStore?.Set("countEntitledForProvisioning", value); }
         }
         /// <summary>Count of entries that were escrowed (errors).</summary>
         public long? CountEscrowed {
-            get { return BackingStore?.Get<long?>(nameof(CountEscrowed)); }
-            set { BackingStore?.Set(nameof(CountEscrowed), value); }
+            get { return BackingStore?.Get<long?>("countEscrowed"); }
+            set { BackingStore?.Set("countEscrowed", value); }
         }
         /// <summary>Count of entries that were escrowed, including system-generated escrows.</summary>
         public long? CountEscrowedRaw {
-            get { return BackingStore?.Get<long?>(nameof(CountEscrowedRaw)); }
-            set { BackingStore?.Set(nameof(CountEscrowedRaw), value); }
+            get { return BackingStore?.Get<long?>("countEscrowedRaw"); }
+            set { BackingStore?.Set("countEscrowedRaw", value); }
         }
         /// <summary>Count of exported entries.</summary>
         public long? CountExported {
-            get { return BackingStore?.Get<long?>(nameof(CountExported)); }
-            set { BackingStore?.Set(nameof(CountExported), value); }
+            get { return BackingStore?.Get<long?>("countExported"); }
+            set { BackingStore?.Set("countExported", value); }
         }
         /// <summary>Count of entries that were expected to be exported.</summary>
         public long? CountExports {
-            get { return BackingStore?.Get<long?>(nameof(CountExports)); }
-            set { BackingStore?.Set(nameof(CountExports), value); }
+            get { return BackingStore?.Get<long?>("countExports"); }
+            set { BackingStore?.Set("countExports", value); }
         }
         /// <summary>Count of imported entries.</summary>
         public long? CountImported {
-            get { return BackingStore?.Get<long?>(nameof(CountImported)); }
-            set { BackingStore?.Set(nameof(CountImported), value); }
+            get { return BackingStore?.Get<long?>("countImported"); }
+            set { BackingStore?.Set("countImported", value); }
         }
         /// <summary>Count of imported delta-changes.</summary>
         public long? CountImportedDeltas {
-            get { return BackingStore?.Get<long?>(nameof(CountImportedDeltas)); }
-            set { BackingStore?.Set(nameof(CountImportedDeltas), value); }
+            get { return BackingStore?.Get<long?>("countImportedDeltas"); }
+            set { BackingStore?.Set("countImportedDeltas", value); }
         }
         /// <summary>Count of imported delta-changes pertaining to reference changes.</summary>
         public long? CountImportedReferenceDeltas {
-            get { return BackingStore?.Get<long?>(nameof(CountImportedReferenceDeltas)); }
-            set { BackingStore?.Set(nameof(CountImportedReferenceDeltas), value); }
+            get { return BackingStore?.Get<long?>("countImportedReferenceDeltas"); }
+            set { BackingStore?.Set("countImportedReferenceDeltas", value); }
         }
         /// <summary>If an error was encountered, contains a synchronizationError object with details.</summary>
         public SynchronizationError Error {
-            get { return BackingStore?.Get<SynchronizationError>(nameof(Error)); }
-            set { BackingStore?.Set(nameof(Error), value); }
+            get { return BackingStore?.Get<SynchronizationError>("error"); }
+            set { BackingStore?.Set("error", value); }
         }
-        /// <summary>Code summarizing the result of this run. Possible values are: Succeeded, Failed, EntryLevelErrors.</summary>
+        /// <summary>The state property</summary>
         public SynchronizationTaskExecutionResult? State {
-            get { return BackingStore?.Get<SynchronizationTaskExecutionResult?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<SynchronizationTaskExecutionResult?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>Time when this job run began. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? TimeBegan {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(TimeBegan)); }
-            set { BackingStore?.Set(nameof(TimeBegan), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("timeBegan"); }
+            set { BackingStore?.Set("timeBegan", value); }
         }
         /// <summary>Time when this job run ended. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? TimeEnded {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(TimeEnded)); }
-            set { BackingStore?.Set(nameof(TimeEnded), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("timeEnded"); }
+            set { BackingStore?.Set("timeEnded", value); }
         }
         /// <summary>
         /// Instantiates a new synchronizationTaskExecution and sets the default values.

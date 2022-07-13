@@ -4,37 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AccessPackageResourceRoleScope : Entity, IParsable {
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
         public Microsoft.Graph.Beta.Models.AccessPackageResourceRole AccessPackageResourceRole {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceRole>(nameof(AccessPackageResourceRole)); }
-            set { BackingStore?.Set(nameof(AccessPackageResourceRole), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceRole>("accessPackageResourceRole"); }
+            set { BackingStore?.Set("accessPackageResourceRole", value); }
         }
         /// <summary>The accessPackageResourceScope property</summary>
         public Microsoft.Graph.Beta.Models.AccessPackageResourceScope AccessPackageResourceScope {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceScope>(nameof(AccessPackageResourceScope)); }
-            set { BackingStore?.Set(nameof(AccessPackageResourceScope), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceScope>("accessPackageResourceScope"); }
+            set { BackingStore?.Set("accessPackageResourceScope", value); }
         }
         /// <summary>The createdBy property</summary>
         public string CreatedBy {
-            get { return BackingStore?.Get<string>(nameof(CreatedBy)); }
-            set { BackingStore?.Set(nameof(CreatedBy), value); }
+            get { return BackingStore?.Get<string>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
         }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The modifiedBy property</summary>
         public string ModifiedBy {
-            get { return BackingStore?.Get<string>(nameof(ModifiedBy)); }
-            set { BackingStore?.Set(nameof(ModifiedBy), value); }
+            get { return BackingStore?.Get<string>("modifiedBy"); }
+            set { BackingStore?.Set("modifiedBy", value); }
         }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? ModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(ModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }
+            set { BackingStore?.Set("modifiedDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

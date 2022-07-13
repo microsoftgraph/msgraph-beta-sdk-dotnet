@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class MuteParticipantsOperation : CommsOperation, IParsable {
         /// <summary>The participants property</summary>
         public List<string> Participants {
-            get { return BackingStore?.Get<List<string>>(nameof(Participants)); }
-            set { BackingStore?.Set(nameof(Participants), value); }
+            get { return BackingStore?.Get<List<string>>("participants"); }
+            set { BackingStore?.Set("participants", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

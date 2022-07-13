@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageLocalizedText : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The ISO code for the intended language. Required.</summary>
         public string LanguageCode {
-            get { return BackingStore?.Get<string>(nameof(LanguageCode)); }
-            set { BackingStore?.Set(nameof(LanguageCode), value); }
+            get { return BackingStore?.Get<string>("languageCode"); }
+            set { BackingStore?.Set("languageCode", value); }
         }
         /// <summary>The text in the specific language. Required.</summary>
         public string Text {
-            get { return BackingStore?.Get<string>(nameof(Text)); }
-            set { BackingStore?.Set(nameof(Text), value); }
+            get { return BackingStore?.Get<string>("text"); }
+            set { BackingStore?.Set("text", value); }
         }
         /// <summary>
         /// Instantiates a new accessPackageLocalizedText and sets the default values.

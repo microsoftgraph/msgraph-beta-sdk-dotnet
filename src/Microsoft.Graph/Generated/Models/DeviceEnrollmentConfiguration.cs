@@ -9,48 +9,54 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceEnrollmentConfiguration : Entity, IParsable {
         /// <summary>The list of group assignments for the device configuration profile</summary>
         public List<EnrollmentConfigurationAssignment> Assignments {
-            get { return BackingStore?.Get<List<EnrollmentConfigurationAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<EnrollmentConfigurationAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>Created date time in UTC of the device enrollment configuration</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description of the device enrollment configuration</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
-        /// <summary>Support for Enrollment Configuration Type</summary>
+        /// <summary>Describes the TemplateFamily for the Template entity</summary>
         public Microsoft.Graph.Beta.Models.DeviceEnrollmentConfigurationType? DeviceEnrollmentConfigurationType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfigurationType?>(nameof(DeviceEnrollmentConfigurationType)); }
-            set { BackingStore?.Set(nameof(DeviceEnrollmentConfigurationType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfigurationType?>("deviceEnrollmentConfigurationType"); }
+            set { BackingStore?.Set("deviceEnrollmentConfigurationType", value); }
         }
         /// <summary>The display name of the device enrollment configuration</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Last modified date time in UTC of the device enrollment configuration</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Priority is used when a user exists in multiple groups that are assigned enrollment configuration. Users are subject only to the configuration with the lowest priority value.</summary>
         public int? Priority {
-            get { return BackingStore?.Get<int?>(nameof(Priority)); }
-            set { BackingStore?.Set(nameof(Priority), value); }
+            get { return BackingStore?.Get<int?>("priority"); }
+            set { BackingStore?.Set("priority", value); }
         }
         /// <summary>Optional role scope tags for the enrollment restrictions.</summary>
         public List<string> RoleScopeTagIds {
-            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTagIds)); }
-            set { BackingStore?.Set(nameof(RoleScopeTagIds), value); }
+            get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
         }
         /// <summary>The version of the device enrollment configuration</summary>
         public int? Version {
-            get { return BackingStore?.Get<int?>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<int?>("version"); }
+            set { BackingStore?.Set("version", value); }
+        }
+        /// <summary>
+        /// Instantiates a new deviceEnrollmentConfiguration and sets the default values.
+        /// </summary>
+        public DeviceEnrollmentConfiguration() : base() {
+            Type = "#microsoft.graph.deviceEnrollmentConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

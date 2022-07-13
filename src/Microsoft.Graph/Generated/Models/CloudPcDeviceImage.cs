@@ -8,53 +8,53 @@ namespace Microsoft.Graph.Beta.Models {
     public class CloudPcDeviceImage : Entity, IParsable {
         /// <summary>The image&apos;s display name.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The date the image became unavailable.</summary>
         public Date? ExpirationDate {
-            get { return BackingStore?.Get<Date?>(nameof(ExpirationDate)); }
-            set { BackingStore?.Set(nameof(ExpirationDate), value); }
+            get { return BackingStore?.Get<Date?>("expirationDate"); }
+            set { BackingStore?.Set("expirationDate", value); }
         }
         /// <summary>The data and time that the image was last modified. The time is shown in ISO 8601 format and  Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as &apos;2014-01-01T00:00:00Z&apos;.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The image&apos;s operating system. For example: Windows 10 Enterprise.</summary>
         public string OperatingSystem {
-            get { return BackingStore?.Get<string>(nameof(OperatingSystem)); }
-            set { BackingStore?.Set(nameof(OperatingSystem), value); }
+            get { return BackingStore?.Get<string>("operatingSystem"); }
+            set { BackingStore?.Set("operatingSystem", value); }
         }
         /// <summary>The image&apos;s OS build version. For example: 1909.</summary>
         public string OsBuildNumber {
-            get { return BackingStore?.Get<string>(nameof(OsBuildNumber)); }
-            set { BackingStore?.Set(nameof(OsBuildNumber), value); }
+            get { return BackingStore?.Get<string>("osBuildNumber"); }
+            set { BackingStore?.Set("osBuildNumber", value); }
         }
         /// <summary>The OS status of this image. Possible values are: supported, supportedWithWarning, unknownFutureValue.</summary>
         public CloudPcDeviceImageOsStatus? OsStatus {
-            get { return BackingStore?.Get<CloudPcDeviceImageOsStatus?>(nameof(OsStatus)); }
-            set { BackingStore?.Set(nameof(OsStatus), value); }
+            get { return BackingStore?.Get<CloudPcDeviceImageOsStatus?>("osStatus"); }
+            set { BackingStore?.Set("osStatus", value); }
         }
         /// <summary>The ID of the source image resource on Azure. Required format: &apos;/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}&apos;.</summary>
         public string SourceImageResourceId {
-            get { return BackingStore?.Get<string>(nameof(SourceImageResourceId)); }
-            set { BackingStore?.Set(nameof(SourceImageResourceId), value); }
+            get { return BackingStore?.Get<string>("sourceImageResourceId"); }
+            set { BackingStore?.Set("sourceImageResourceId", value); }
         }
         /// <summary>The status of the image on Cloud PC. Possible values are: pending, ready, failed.</summary>
         public CloudPcDeviceImageStatus? Status {
-            get { return BackingStore?.Get<CloudPcDeviceImageStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<CloudPcDeviceImageStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>The details of the image&apos;s status, which indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, and sourceImageNotGeneralized.</summary>
         public CloudPcDeviceImageStatusDetails? StatusDetails {
-            get { return BackingStore?.Get<CloudPcDeviceImageStatusDetails?>(nameof(StatusDetails)); }
-            set { BackingStore?.Set(nameof(StatusDetails), value); }
+            get { return BackingStore?.Get<CloudPcDeviceImageStatusDetails?>("statusDetails"); }
+            set { BackingStore?.Set("statusDetails", value); }
         }
         /// <summary>The image version. For example: 0.0.1, 1.5.13.</summary>
         public string Version {
-            get { return BackingStore?.Get<string>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<string>("version"); }
+            set { BackingStore?.Set("version", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

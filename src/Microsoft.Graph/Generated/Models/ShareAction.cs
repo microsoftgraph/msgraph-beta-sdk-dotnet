@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Beta.Models {
     public class ShareAction : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The identities the item was shared with in this action.</summary>
         public List<IdentitySet> Recipients {
-            get { return BackingStore?.Get<List<IdentitySet>>(nameof(Recipients)); }
-            set { BackingStore?.Set(nameof(Recipients), value); }
+            get { return BackingStore?.Get<List<IdentitySet>>("recipients"); }
+            set { BackingStore?.Set("recipients", value); }
         }
         /// <summary>
         /// Instantiates a new shareAction and sets the default values.

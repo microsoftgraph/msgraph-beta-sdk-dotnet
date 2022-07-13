@@ -5,22 +5,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class OfficeGraphInsights : Entity, IParsable {
         /// <summary>Access this property from the derived type itemInsights.</summary>
         public List<SharedInsight> Shared {
-            get { return BackingStore?.Get<List<SharedInsight>>(nameof(Shared)); }
-            set { BackingStore?.Set(nameof(Shared), value); }
+            get { return BackingStore?.Get<List<SharedInsight>>("shared"); }
+            set { BackingStore?.Set("shared", value); }
         }
         /// <summary>Access this property from the derived type itemInsights.</summary>
         public List<Microsoft.Graph.Beta.Models.Trending> Trending {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Trending>>(nameof(Trending)); }
-            set { BackingStore?.Set(nameof(Trending), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Trending>>("trending"); }
+            set { BackingStore?.Set("trending", value); }
         }
         /// <summary>Access this property from the derived type itemInsights.</summary>
         public List<UsedInsight> Used {
-            get { return BackingStore?.Get<List<UsedInsight>>(nameof(Used)); }
-            set { BackingStore?.Set(nameof(Used), value); }
+            get { return BackingStore?.Get<List<UsedInsight>>("used"); }
+            set { BackingStore?.Set("used", value); }
+        }
+        /// <summary>
+        /// Instantiates a new officeGraphInsights and sets the default values.
+        /// </summary>
+        public OfficeGraphInsights() : base() {
+            Type = "#microsoft.graph.officeGraphInsights";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,13 +9,19 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceHealthScriptTimeSchedule : DeviceHealthScriptRunSchedule, IParsable {
         /// <summary>At what time the script is scheduled to run. This collection can contain a maximum of 20 elements.</summary>
         public Time? Time {
-            get { return BackingStore?.Get<Time?>(nameof(Time)); }
-            set { BackingStore?.Set(nameof(Time), value); }
+            get { return BackingStore?.Get<Time?>("time"); }
+            set { BackingStore?.Set("time", value); }
         }
         /// <summary>Indicate if the time is Utc or client local time.</summary>
         public bool? UseUtc {
-            get { return BackingStore?.Get<bool?>(nameof(UseUtc)); }
-            set { BackingStore?.Set(nameof(UseUtc), value); }
+            get { return BackingStore?.Get<bool?>("useUtc"); }
+            set { BackingStore?.Set("useUtc", value); }
+        }
+        /// <summary>
+        /// Instantiates a new DeviceHealthScriptTimeSchedule and sets the default values.
+        /// </summary>
+        public DeviceHealthScriptTimeSchedule() : base() {
+            Type = "#microsoft.graph.deviceHealthScriptTimeSchedule";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

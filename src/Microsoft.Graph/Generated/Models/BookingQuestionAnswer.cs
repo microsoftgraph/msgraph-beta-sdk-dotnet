@@ -8,45 +8,45 @@ namespace Microsoft.Graph.Beta.Models {
     public class BookingQuestionAnswer : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The answer given by the user in case the answerInputType is text.</summary>
         public string Answer {
-            get { return BackingStore?.Get<string>(nameof(Answer)); }
-            set { BackingStore?.Set(nameof(Answer), value); }
+            get { return BackingStore?.Get<string>("answer"); }
+            set { BackingStore?.Set("answer", value); }
         }
         /// <summary>The expected answer type. The possible values are: text, radioButton, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.AnswerInputType? AnswerInputType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AnswerInputType?>(nameof(AnswerInputType)); }
-            set { BackingStore?.Set(nameof(AnswerInputType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AnswerInputType?>("answerInputType"); }
+            set { BackingStore?.Set("answerInputType", value); }
         }
         /// <summary>In case the answerInputType is radioButton, this will consists of a list of possible answer values.</summary>
         public List<string> AnswerOptions {
-            get { return BackingStore?.Get<List<string>>(nameof(AnswerOptions)); }
-            set { BackingStore?.Set(nameof(AnswerOptions), value); }
+            get { return BackingStore?.Get<List<string>>("answerOptions"); }
+            set { BackingStore?.Set("answerOptions", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether it is mandatory to answer the custom question.</summary>
         public bool? IsRequired {
-            get { return BackingStore?.Get<bool?>(nameof(IsRequired)); }
-            set { BackingStore?.Set(nameof(IsRequired), value); }
+            get { return BackingStore?.Get<bool?>("isRequired"); }
+            set { BackingStore?.Set("isRequired", value); }
         }
         /// <summary>The question.</summary>
         public string Question {
-            get { return BackingStore?.Get<string>(nameof(Question)); }
-            set { BackingStore?.Set(nameof(Question), value); }
+            get { return BackingStore?.Get<string>("question"); }
+            set { BackingStore?.Set("question", value); }
         }
         /// <summary>The ID of the custom question.</summary>
         public string QuestionId {
-            get { return BackingStore?.Get<string>(nameof(QuestionId)); }
-            set { BackingStore?.Set(nameof(QuestionId), value); }
+            get { return BackingStore?.Get<string>("questionId"); }
+            set { BackingStore?.Set("questionId", value); }
         }
         /// <summary>The answers selected by the user.</summary>
         public List<string> SelectedOptions {
-            get { return BackingStore?.Get<List<string>>(nameof(SelectedOptions)); }
-            set { BackingStore?.Set(nameof(SelectedOptions), value); }
+            get { return BackingStore?.Get<List<string>>("selectedOptions"); }
+            set { BackingStore?.Set("selectedOptions", value); }
         }
         /// <summary>
         /// Instantiates a new bookingQuestionAnswer and sets the default values.

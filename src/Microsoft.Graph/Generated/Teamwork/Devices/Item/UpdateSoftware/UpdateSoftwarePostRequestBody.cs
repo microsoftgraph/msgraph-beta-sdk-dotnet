@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.UpdateSoftware {
     public class UpdateSoftwarePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The softwareType property</summary>
         public TeamworkSoftwareType? SoftwareType {
-            get { return BackingStore?.Get<TeamworkSoftwareType?>(nameof(SoftwareType)); }
-            set { BackingStore?.Set(nameof(SoftwareType), value); }
+            get { return BackingStore?.Get<TeamworkSoftwareType?>("softwareType"); }
+            set { BackingStore?.Set("softwareType", value); }
         }
         /// <summary>The softwareVersion property</summary>
         public string SoftwareVersion {
-            get { return BackingStore?.Get<string>(nameof(SoftwareVersion)); }
-            set { BackingStore?.Set(nameof(SoftwareVersion), value); }
+            get { return BackingStore?.Get<string>("softwareVersion"); }
+            set { BackingStore?.Set("softwareVersion", value); }
         }
         /// <summary>
         /// Instantiates a new updateSoftwarePostRequestBody and sets the default values.

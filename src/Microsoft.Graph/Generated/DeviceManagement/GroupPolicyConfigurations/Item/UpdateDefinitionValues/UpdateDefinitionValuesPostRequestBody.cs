@@ -10,25 +10,25 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.U
     public class UpdateDefinitionValuesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The added property</summary>
         public List<GroupPolicyDefinitionValue> Added {
-            get { return BackingStore?.Get<List<GroupPolicyDefinitionValue>>(nameof(Added)); }
-            set { BackingStore?.Set(nameof(Added), value); }
+            get { return BackingStore?.Get<List<GroupPolicyDefinitionValue>>("added"); }
+            set { BackingStore?.Set("added", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deletedIds property</summary>
         public List<string> DeletedIds {
-            get { return BackingStore?.Get<List<string>>(nameof(DeletedIds)); }
-            set { BackingStore?.Set(nameof(DeletedIds), value); }
+            get { return BackingStore?.Get<List<string>>("deletedIds"); }
+            set { BackingStore?.Set("deletedIds", value); }
         }
         /// <summary>The updated property</summary>
         public List<GroupPolicyDefinitionValue> Updated {
-            get { return BackingStore?.Get<List<GroupPolicyDefinitionValue>>(nameof(Updated)); }
-            set { BackingStore?.Set(nameof(Updated), value); }
+            get { return BackingStore?.Get<List<GroupPolicyDefinitionValue>>("updated"); }
+            set { BackingStore?.Set("updated", value); }
         }
         /// <summary>
         /// Instantiates a new updateDefinitionValuesPostRequestBody and sets the default values.

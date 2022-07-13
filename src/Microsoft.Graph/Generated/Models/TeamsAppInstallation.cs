@@ -5,17 +5,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class TeamsAppInstallation : Entity, IParsable {
         /// <summary>The app that is installed.</summary>
         public Microsoft.Graph.Beta.Models.TeamsApp TeamsApp {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsApp>(nameof(TeamsApp)); }
-            set { BackingStore?.Set(nameof(TeamsApp), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsApp>("teamsApp"); }
+            set { BackingStore?.Set("teamsApp", value); }
         }
         /// <summary>The details of this version of the app.</summary>
         public Microsoft.Graph.Beta.Models.TeamsAppDefinition TeamsAppDefinition {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsAppDefinition>(nameof(TeamsAppDefinition)); }
-            set { BackingStore?.Set(nameof(TeamsAppDefinition), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsAppDefinition>("teamsAppDefinition"); }
+            set { BackingStore?.Set("teamsAppDefinition", value); }
+        }
+        /// <summary>
+        /// Instantiates a new teamsAppInstallation and sets the default values.
+        /// </summary>
+        public TeamsAppInstallation() : base() {
+            Type = "#microsoft.graph.teamsAppInstallation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

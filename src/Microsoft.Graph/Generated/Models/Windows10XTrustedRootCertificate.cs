@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class Windows10XTrustedRootCertificate : DeviceManagementResourceAccessProfileBase, IParsable {
         /// <summary>File name to display in UI.</summary>
         public string CertFileName {
-            get { return BackingStore?.Get<string>(nameof(CertFileName)); }
-            set { BackingStore?.Set(nameof(CertFileName), value); }
+            get { return BackingStore?.Get<string>("certFileName"); }
+            set { BackingStore?.Set("certFileName", value); }
         }
-        /// <summary>Destination store location for the Trusted Root Certificate. Possible values are: computerCertStoreRoot, computerCertStoreIntermediate, userCertStoreIntermediate.</summary>
+        /// <summary>Possible values for the Certificate Destination Store.</summary>
         public CertificateDestinationStore? DestinationStore {
-            get { return BackingStore?.Get<CertificateDestinationStore?>(nameof(DestinationStore)); }
-            set { BackingStore?.Set(nameof(DestinationStore), value); }
+            get { return BackingStore?.Get<CertificateDestinationStore?>("destinationStore"); }
+            set { BackingStore?.Set("destinationStore", value); }
         }
         /// <summary>Trusted Root Certificate</summary>
         public byte[] TrustedRootCertificate {
-            get { return BackingStore?.Get<byte[]>(nameof(TrustedRootCertificate)); }
-            set { BackingStore?.Set(nameof(TrustedRootCertificate), value); }
+            get { return BackingStore?.Get<byte[]>("trustedRootCertificate"); }
+            set { BackingStore?.Set("trustedRootCertificate", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

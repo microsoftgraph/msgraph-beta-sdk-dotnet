@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeliveryOptimizationBandwidthHoursWithPercentage : DeliveryOptimizationBandwidth, IParsable {
         /// <summary>Background download percentage hours.</summary>
         public DeliveryOptimizationBandwidthBusinessHoursLimit BandwidthBackgroundPercentageHours {
-            get { return BackingStore?.Get<DeliveryOptimizationBandwidthBusinessHoursLimit>(nameof(BandwidthBackgroundPercentageHours)); }
-            set { BackingStore?.Set(nameof(BandwidthBackgroundPercentageHours), value); }
+            get { return BackingStore?.Get<DeliveryOptimizationBandwidthBusinessHoursLimit>("bandwidthBackgroundPercentageHours"); }
+            set { BackingStore?.Set("bandwidthBackgroundPercentageHours", value); }
         }
         /// <summary>Foreground download percentage hours.</summary>
         public DeliveryOptimizationBandwidthBusinessHoursLimit BandwidthForegroundPercentageHours {
-            get { return BackingStore?.Get<DeliveryOptimizationBandwidthBusinessHoursLimit>(nameof(BandwidthForegroundPercentageHours)); }
-            set { BackingStore?.Set(nameof(BandwidthForegroundPercentageHours), value); }
+            get { return BackingStore?.Get<DeliveryOptimizationBandwidthBusinessHoursLimit>("bandwidthForegroundPercentageHours"); }
+            set { BackingStore?.Set("bandwidthForegroundPercentageHours", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -10,15 +10,15 @@ namespace Microsoft.Graph.Beta.Print.Reports.GetOffice365ActiveUserDetailWithPer
     public class GetOffice365ActiveUserDetailWithPeriodResponse : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The value property</summary>
         public List<Office365ActiveUserDetail> Value {
-            get { return BackingStore?.Get<List<Office365ActiveUserDetail>>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<List<Office365ActiveUserDetail>>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Instantiates a new getOffice365ActiveUserDetailWithPeriodResponse and sets the default values.

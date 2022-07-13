@@ -4,27 +4,26 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class OutlookUser : Entity, IParsable {
         /// <summary>A list of categories defined for the user.</summary>
         public List<OutlookCategory> MasterCategories {
-            get { return BackingStore?.Get<List<OutlookCategory>>(nameof(MasterCategories)); }
-            set { BackingStore?.Set(nameof(MasterCategories), value); }
+            get { return BackingStore?.Get<List<OutlookCategory>>("masterCategories"); }
+            set { BackingStore?.Set("masterCategories", value); }
         }
         /// <summary>The taskFolders property</summary>
         public List<OutlookTaskFolder> TaskFolders {
-            get { return BackingStore?.Get<List<OutlookTaskFolder>>(nameof(TaskFolders)); }
-            set { BackingStore?.Set(nameof(TaskFolders), value); }
+            get { return BackingStore?.Get<List<OutlookTaskFolder>>("taskFolders"); }
+            set { BackingStore?.Set("taskFolders", value); }
         }
         /// <summary>The taskGroups property</summary>
         public List<OutlookTaskGroup> TaskGroups {
-            get { return BackingStore?.Get<List<OutlookTaskGroup>>(nameof(TaskGroups)); }
-            set { BackingStore?.Set(nameof(TaskGroups), value); }
+            get { return BackingStore?.Get<List<OutlookTaskGroup>>("taskGroups"); }
+            set { BackingStore?.Set("taskGroups", value); }
         }
         /// <summary>The tasks property</summary>
         public List<OutlookTask> Tasks {
-            get { return BackingStore?.Get<List<OutlookTask>>(nameof(Tasks)); }
-            set { BackingStore?.Set(nameof(Tasks), value); }
+            get { return BackingStore?.Get<List<OutlookTask>>("tasks"); }
+            set { BackingStore?.Set("tasks", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

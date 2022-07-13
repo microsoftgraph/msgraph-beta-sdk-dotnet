@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class MoveAction : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The name of the location the item was moved from.</summary>
         public string From {
-            get { return BackingStore?.Get<string>(nameof(From)); }
-            set { BackingStore?.Set(nameof(From), value); }
+            get { return BackingStore?.Get<string>("from"); }
+            set { BackingStore?.Set("from", value); }
         }
         /// <summary>The name of the location the item was moved to.</summary>
         public string To {
-            get { return BackingStore?.Get<string>(nameof(To)); }
-            set { BackingStore?.Set(nameof(To), value); }
+            get { return BackingStore?.Get<string>("to"); }
+            set { BackingStore?.Set("to", value); }
         }
         /// <summary>
         /// Instantiates a new moveAction and sets the default values.

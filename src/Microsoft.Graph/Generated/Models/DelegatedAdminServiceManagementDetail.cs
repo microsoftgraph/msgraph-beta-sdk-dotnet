@@ -4,17 +4,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class DelegatedAdminServiceManagementDetail : Entity, IParsable {
         /// <summary>The URL of the management portal for the managed service. Read-only.</summary>
         public string ServiceManagementUrl {
-            get { return BackingStore?.Get<string>(nameof(ServiceManagementUrl)); }
-            set { BackingStore?.Set(nameof(ServiceManagementUrl), value); }
+            get { return BackingStore?.Get<string>("serviceManagementUrl"); }
+            set { BackingStore?.Set("serviceManagementUrl", value); }
         }
         /// <summary>The name of a managed service. Read-only.</summary>
         public string ServiceName {
-            get { return BackingStore?.Get<string>(nameof(ServiceName)); }
-            set { BackingStore?.Set(nameof(ServiceName), value); }
+            get { return BackingStore?.Get<string>("serviceName"); }
+            set { BackingStore?.Set("serviceName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

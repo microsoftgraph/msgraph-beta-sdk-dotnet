@@ -7,73 +7,73 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsIdentityProtectionConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Boolean value used to enable enhanced anti-spoofing for facial feature recognition on Windows Hello face authentication.</summary>
         public bool? EnhancedAntiSpoofingForFacialFeaturesEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(EnhancedAntiSpoofingForFacialFeaturesEnabled)); }
-            set { BackingStore?.Set(nameof(EnhancedAntiSpoofingForFacialFeaturesEnabled), value); }
+            get { return BackingStore?.Get<bool?>("enhancedAntiSpoofingForFacialFeaturesEnabled"); }
+            set { BackingStore?.Set("enhancedAntiSpoofingForFacialFeaturesEnabled", value); }
         }
         /// <summary>Integer value specifies the period (in days) that a PIN can be used before the system requires the user to change it. Valid values are 0 to 730 inclusive. Valid values 0 to 730</summary>
         public int? PinExpirationInDays {
-            get { return BackingStore?.Get<int?>(nameof(PinExpirationInDays)); }
-            set { BackingStore?.Set(nameof(PinExpirationInDays), value); }
+            get { return BackingStore?.Get<int?>("pinExpirationInDays"); }
+            set { BackingStore?.Set("pinExpirationInDays", value); }
         }
-        /// <summary>This value configures the use of lowercase characters in the Windows Hello for Business PIN. Possible values are: blocked, required, allowed, notConfigured.</summary>
+        /// <summary>Possible values of the ConfigurationUsage list.</summary>
         public ConfigurationUsage? PinLowercaseCharactersUsage {
-            get { return BackingStore?.Get<ConfigurationUsage?>(nameof(PinLowercaseCharactersUsage)); }
-            set { BackingStore?.Set(nameof(PinLowercaseCharactersUsage), value); }
+            get { return BackingStore?.Get<ConfigurationUsage?>("pinLowercaseCharactersUsage"); }
+            set { BackingStore?.Set("pinLowercaseCharactersUsage", value); }
         }
         /// <summary>Integer value that sets the maximum number of characters allowed for the work PIN. Valid values are 4 to 127 inclusive and greater than or equal to the value set for the minimum PIN. Valid values 4 to 127</summary>
         public int? PinMaximumLength {
-            get { return BackingStore?.Get<int?>(nameof(PinMaximumLength)); }
-            set { BackingStore?.Set(nameof(PinMaximumLength), value); }
+            get { return BackingStore?.Get<int?>("pinMaximumLength"); }
+            set { BackingStore?.Set("pinMaximumLength", value); }
         }
         /// <summary>Integer value that sets the minimum number of characters required for the Windows Hello for Business PIN. Valid values are 4 to 127 inclusive and less than or equal to the value set for the maximum PIN. Valid values 4 to 127</summary>
         public int? PinMinimumLength {
-            get { return BackingStore?.Get<int?>(nameof(PinMinimumLength)); }
-            set { BackingStore?.Set(nameof(PinMinimumLength), value); }
+            get { return BackingStore?.Get<int?>("pinMinimumLength"); }
+            set { BackingStore?.Set("pinMinimumLength", value); }
         }
         /// <summary>Controls the ability to prevent users from using past PINs. This must be set between 0 and 50, inclusive, and the current PIN of the user is included in that count. If set to 0, previous PINs are not stored. PIN history is not preserved through a PIN reset. Valid values 0 to 50</summary>
         public int? PinPreviousBlockCount {
-            get { return BackingStore?.Get<int?>(nameof(PinPreviousBlockCount)); }
-            set { BackingStore?.Set(nameof(PinPreviousBlockCount), value); }
+            get { return BackingStore?.Get<int?>("pinPreviousBlockCount"); }
+            set { BackingStore?.Set("pinPreviousBlockCount", value); }
         }
         /// <summary>Boolean value that enables a user to change their PIN by using the Windows Hello for Business PIN recovery service.</summary>
         public bool? PinRecoveryEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(PinRecoveryEnabled)); }
-            set { BackingStore?.Set(nameof(PinRecoveryEnabled), value); }
+            get { return BackingStore?.Get<bool?>("pinRecoveryEnabled"); }
+            set { BackingStore?.Set("pinRecoveryEnabled", value); }
         }
-        /// <summary>Controls the ability to use special characters in the Windows Hello for Business PIN. Possible values are: blocked, required, allowed, notConfigured.</summary>
+        /// <summary>Possible values of the ConfigurationUsage list.</summary>
         public ConfigurationUsage? PinSpecialCharactersUsage {
-            get { return BackingStore?.Get<ConfigurationUsage?>(nameof(PinSpecialCharactersUsage)); }
-            set { BackingStore?.Set(nameof(PinSpecialCharactersUsage), value); }
+            get { return BackingStore?.Get<ConfigurationUsage?>("pinSpecialCharactersUsage"); }
+            set { BackingStore?.Set("pinSpecialCharactersUsage", value); }
         }
-        /// <summary>This value configures the use of uppercase characters in the Windows Hello for Business PIN. Possible values are: blocked, required, allowed, notConfigured.</summary>
+        /// <summary>Possible values of the ConfigurationUsage list.</summary>
         public ConfigurationUsage? PinUppercaseCharactersUsage {
-            get { return BackingStore?.Get<ConfigurationUsage?>(nameof(PinUppercaseCharactersUsage)); }
-            set { BackingStore?.Set(nameof(PinUppercaseCharactersUsage), value); }
+            get { return BackingStore?.Get<ConfigurationUsage?>("pinUppercaseCharactersUsage"); }
+            set { BackingStore?.Set("pinUppercaseCharactersUsage", value); }
         }
         /// <summary>Controls whether to require a Trusted Platform Module (TPM) for provisioning Windows Hello for Business. A TPM provides an additional security benefit in that data stored on it cannot be used on other devices. If set to False, all devices can provision Windows Hello for Business even if there is not a usable TPM.</summary>
         public bool? SecurityDeviceRequired {
-            get { return BackingStore?.Get<bool?>(nameof(SecurityDeviceRequired)); }
-            set { BackingStore?.Set(nameof(SecurityDeviceRequired), value); }
+            get { return BackingStore?.Get<bool?>("securityDeviceRequired"); }
+            set { BackingStore?.Set("securityDeviceRequired", value); }
         }
         /// <summary>Controls the use of biometric gestures, such as face and fingerprint, as an alternative to the Windows Hello for Business PIN.  If set to False, biometric gestures are not allowed. Users must still configure a PIN as a backup in case of failures.</summary>
         public bool? UnlockWithBiometricsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(UnlockWithBiometricsEnabled)); }
-            set { BackingStore?.Set(nameof(UnlockWithBiometricsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("unlockWithBiometricsEnabled"); }
+            set { BackingStore?.Set("unlockWithBiometricsEnabled", value); }
         }
         /// <summary>Boolean value that enables Windows Hello for Business to use certificates to authenticate on-premise resources.</summary>
         public bool? UseCertificatesForOnPremisesAuthEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(UseCertificatesForOnPremisesAuthEnabled)); }
-            set { BackingStore?.Set(nameof(UseCertificatesForOnPremisesAuthEnabled), value); }
+            get { return BackingStore?.Get<bool?>("useCertificatesForOnPremisesAuthEnabled"); }
+            set { BackingStore?.Set("useCertificatesForOnPremisesAuthEnabled", value); }
         }
         /// <summary>Boolean value used to enable the Windows Hello security key as a logon credential.</summary>
         public bool? UseSecurityKeyForSignin {
-            get { return BackingStore?.Get<bool?>(nameof(UseSecurityKeyForSignin)); }
-            set { BackingStore?.Set(nameof(UseSecurityKeyForSignin), value); }
+            get { return BackingStore?.Get<bool?>("useSecurityKeyForSignin"); }
+            set { BackingStore?.Set("useSecurityKeyForSignin", value); }
         }
         /// <summary>Boolean value that blocks Windows Hello for Business as a method for signing into Windows.</summary>
         public bool? WindowsHelloForBusinessBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(WindowsHelloForBusinessBlocked)); }
-            set { BackingStore?.Set(nameof(WindowsHelloForBusinessBlocked), value); }
+            get { return BackingStore?.Get<bool?>("windowsHelloForBusinessBlocked"); }
+            set { BackingStore?.Set("windowsHelloForBusinessBlocked", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

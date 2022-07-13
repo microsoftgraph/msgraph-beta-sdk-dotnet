@@ -9,70 +9,70 @@ namespace Microsoft.Graph.Beta.Models {
     public class BitLockerSystemDrivePolicy : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Select the encryption method for operating system drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.</summary>
         public BitLockerEncryptionMethod? EncryptionMethod {
-            get { return BackingStore?.Get<BitLockerEncryptionMethod?>(nameof(EncryptionMethod)); }
-            set { BackingStore?.Set(nameof(EncryptionMethod), value); }
+            get { return BackingStore?.Get<BitLockerEncryptionMethod?>("encryptionMethod"); }
+            set { BackingStore?.Set("encryptionMethod", value); }
         }
         /// <summary>Indicates the minimum length of startup pin. Valid values 4 to 20</summary>
         public int? MinimumPinLength {
-            get { return BackingStore?.Get<int?>(nameof(MinimumPinLength)); }
-            set { BackingStore?.Set(nameof(MinimumPinLength), value); }
+            get { return BackingStore?.Get<int?>("minimumPinLength"); }
+            set { BackingStore?.Set("minimumPinLength", value); }
         }
         /// <summary>Enable pre-boot recovery message and Url. If requireStartupAuthentication is false, this value does not affect.</summary>
         public bool? PrebootRecoveryEnableMessageAndUrl {
-            get { return BackingStore?.Get<bool?>(nameof(PrebootRecoveryEnableMessageAndUrl)); }
-            set { BackingStore?.Set(nameof(PrebootRecoveryEnableMessageAndUrl), value); }
+            get { return BackingStore?.Get<bool?>("prebootRecoveryEnableMessageAndUrl"); }
+            set { BackingStore?.Set("prebootRecoveryEnableMessageAndUrl", value); }
         }
         /// <summary>Defines a custom recovery message.</summary>
         public string PrebootRecoveryMessage {
-            get { return BackingStore?.Get<string>(nameof(PrebootRecoveryMessage)); }
-            set { BackingStore?.Set(nameof(PrebootRecoveryMessage), value); }
+            get { return BackingStore?.Get<string>("prebootRecoveryMessage"); }
+            set { BackingStore?.Set("prebootRecoveryMessage", value); }
         }
         /// <summary>Defines a custom recovery URL.</summary>
         public string PrebootRecoveryUrl {
-            get { return BackingStore?.Get<string>(nameof(PrebootRecoveryUrl)); }
-            set { BackingStore?.Set(nameof(PrebootRecoveryUrl), value); }
+            get { return BackingStore?.Get<string>("prebootRecoveryUrl"); }
+            set { BackingStore?.Set("prebootRecoveryUrl", value); }
         }
         /// <summary>Allows to recover BitLocker encrypted operating system drives in the absence of the required startup key information. This policy setting is applied when you turn on BitLocker.</summary>
         public BitLockerRecoveryOptions RecoveryOptions {
-            get { return BackingStore?.Get<BitLockerRecoveryOptions>(nameof(RecoveryOptions)); }
-            set { BackingStore?.Set(nameof(RecoveryOptions), value); }
+            get { return BackingStore?.Get<BitLockerRecoveryOptions>("recoveryOptions"); }
+            set { BackingStore?.Set("recoveryOptions", value); }
         }
         /// <summary>Indicates whether to allow BitLocker without a compatible TPM (requires a password or a startup key on a USB flash drive).</summary>
         public bool? StartupAuthenticationBlockWithoutTpmChip {
-            get { return BackingStore?.Get<bool?>(nameof(StartupAuthenticationBlockWithoutTpmChip)); }
-            set { BackingStore?.Set(nameof(StartupAuthenticationBlockWithoutTpmChip), value); }
+            get { return BackingStore?.Get<bool?>("startupAuthenticationBlockWithoutTpmChip"); }
+            set { BackingStore?.Set("startupAuthenticationBlockWithoutTpmChip", value); }
         }
         /// <summary>Require additional authentication at startup.</summary>
         public bool? StartupAuthenticationRequired {
-            get { return BackingStore?.Get<bool?>(nameof(StartupAuthenticationRequired)); }
-            set { BackingStore?.Set(nameof(StartupAuthenticationRequired), value); }
+            get { return BackingStore?.Get<bool?>("startupAuthenticationRequired"); }
+            set { BackingStore?.Set("startupAuthenticationRequired", value); }
         }
-        /// <summary>Indicates if TPM startup key is allowed/required/disallowed. Possible values are: blocked, required, allowed, notConfigured.</summary>
+        /// <summary>Possible values of the ConfigurationUsage list.</summary>
         public ConfigurationUsage? StartupAuthenticationTpmKeyUsage {
-            get { return BackingStore?.Get<ConfigurationUsage?>(nameof(StartupAuthenticationTpmKeyUsage)); }
-            set { BackingStore?.Set(nameof(StartupAuthenticationTpmKeyUsage), value); }
+            get { return BackingStore?.Get<ConfigurationUsage?>("startupAuthenticationTpmKeyUsage"); }
+            set { BackingStore?.Set("startupAuthenticationTpmKeyUsage", value); }
         }
-        /// <summary>Indicates if TPM startup pin key and key are allowed/required/disallowed. Possible values are: blocked, required, allowed, notConfigured.</summary>
+        /// <summary>Possible values of the ConfigurationUsage list.</summary>
         public ConfigurationUsage? StartupAuthenticationTpmPinAndKeyUsage {
-            get { return BackingStore?.Get<ConfigurationUsage?>(nameof(StartupAuthenticationTpmPinAndKeyUsage)); }
-            set { BackingStore?.Set(nameof(StartupAuthenticationTpmPinAndKeyUsage), value); }
+            get { return BackingStore?.Get<ConfigurationUsage?>("startupAuthenticationTpmPinAndKeyUsage"); }
+            set { BackingStore?.Set("startupAuthenticationTpmPinAndKeyUsage", value); }
         }
-        /// <summary>Indicates if TPM startup pin is allowed/required/disallowed. Possible values are: blocked, required, allowed, notConfigured.</summary>
+        /// <summary>Possible values of the ConfigurationUsage list.</summary>
         public ConfigurationUsage? StartupAuthenticationTpmPinUsage {
-            get { return BackingStore?.Get<ConfigurationUsage?>(nameof(StartupAuthenticationTpmPinUsage)); }
-            set { BackingStore?.Set(nameof(StartupAuthenticationTpmPinUsage), value); }
+            get { return BackingStore?.Get<ConfigurationUsage?>("startupAuthenticationTpmPinUsage"); }
+            set { BackingStore?.Set("startupAuthenticationTpmPinUsage", value); }
         }
-        /// <summary>Indicates if TPM startup is allowed/required/disallowed. Possible values are: blocked, required, allowed, notConfigured.</summary>
+        /// <summary>Possible values of the ConfigurationUsage list.</summary>
         public ConfigurationUsage? StartupAuthenticationTpmUsage {
-            get { return BackingStore?.Get<ConfigurationUsage?>(nameof(StartupAuthenticationTpmUsage)); }
-            set { BackingStore?.Set(nameof(StartupAuthenticationTpmUsage), value); }
+            get { return BackingStore?.Get<ConfigurationUsage?>("startupAuthenticationTpmUsage"); }
+            set { BackingStore?.Set("startupAuthenticationTpmUsage", value); }
         }
         /// <summary>
         /// Instantiates a new bitLockerSystemDrivePolicy and sets the default values.

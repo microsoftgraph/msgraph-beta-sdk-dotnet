@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class UnsupportedDeviceConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Details describing why the entity is unsupported. This collection can contain a maximum of 1000 elements.</summary>
         public List<UnsupportedDeviceConfigurationDetail> Details {
-            get { return BackingStore?.Get<List<UnsupportedDeviceConfigurationDetail>>(nameof(Details)); }
-            set { BackingStore?.Set(nameof(Details), value); }
+            get { return BackingStore?.Get<List<UnsupportedDeviceConfigurationDetail>>("details"); }
+            set { BackingStore?.Set("details", value); }
         }
         /// <summary>The type of entity that would be returned otherwise.</summary>
         public string OriginalEntityTypeName {
-            get { return BackingStore?.Get<string>(nameof(OriginalEntityTypeName)); }
-            set { BackingStore?.Set(nameof(OriginalEntityTypeName), value); }
+            get { return BackingStore?.Get<string>("originalEntityTypeName"); }
+            set { BackingStore?.Set("originalEntityTypeName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

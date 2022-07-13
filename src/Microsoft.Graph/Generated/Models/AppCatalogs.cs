@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Beta.Models {
     public class AppCatalogs : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The teamsApps property</summary>
         public List<TeamsApp> TeamsApps {
-            get { return BackingStore?.Get<List<TeamsApp>>(nameof(TeamsApps)); }
-            set { BackingStore?.Set(nameof(TeamsApps), value); }
+            get { return BackingStore?.Get<List<TeamsApp>>("teamsApps"); }
+            set { BackingStore?.Set("teamsApps", value); }
         }
         /// <summary>
         /// Instantiates a new AppCatalogs and sets the default values.

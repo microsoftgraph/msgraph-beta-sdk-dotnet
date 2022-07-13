@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class EvaluateLabelJobResponse : JobResponseBase, IParsable {
         /// <summary>The result property</summary>
         public EvaluateLabelJobResultGroup Result {
-            get { return BackingStore?.Get<EvaluateLabelJobResultGroup>(nameof(Result)); }
-            set { BackingStore?.Set(nameof(Result), value); }
+            get { return BackingStore?.Get<EvaluateLabelJobResultGroup>("result"); }
+            set { BackingStore?.Set("result", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

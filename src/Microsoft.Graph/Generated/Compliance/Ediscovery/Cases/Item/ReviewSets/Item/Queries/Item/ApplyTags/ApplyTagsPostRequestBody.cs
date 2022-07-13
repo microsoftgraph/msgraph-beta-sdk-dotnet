@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
     public class ApplyTagsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The tagsToAdd property</summary>
         public List<Tag> TagsToAdd {
-            get { return BackingStore?.Get<List<Tag>>(nameof(TagsToAdd)); }
-            set { BackingStore?.Set(nameof(TagsToAdd), value); }
+            get { return BackingStore?.Get<List<Tag>>("tagsToAdd"); }
+            set { BackingStore?.Set("tagsToAdd", value); }
         }
         /// <summary>The tagsToRemove property</summary>
         public List<Tag> TagsToRemove {
-            get { return BackingStore?.Get<List<Tag>>(nameof(TagsToRemove)); }
-            set { BackingStore?.Set(nameof(TagsToRemove), value); }
+            get { return BackingStore?.Get<List<Tag>>("tagsToRemove"); }
+            set { BackingStore?.Set("tagsToRemove", value); }
         }
         /// <summary>
         /// Instantiates a new applyTagsPostRequestBody and sets the default values.

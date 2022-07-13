@@ -4,57 +4,57 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class SensitivityLabel : Entity, IParsable {
         /// <summary>The color property</summary>
         public string Color {
-            get { return BackingStore?.Get<string>(nameof(Color)); }
-            set { BackingStore?.Set(nameof(Color), value); }
+            get { return BackingStore?.Get<string>("color"); }
+            set { BackingStore?.Set("color", value); }
         }
         /// <summary>The contentFormats property</summary>
         public List<string> ContentFormats {
-            get { return BackingStore?.Get<List<string>>(nameof(ContentFormats)); }
-            set { BackingStore?.Set(nameof(ContentFormats), value); }
+            get { return BackingStore?.Get<List<string>>("contentFormats"); }
+            set { BackingStore?.Set("contentFormats", value); }
         }
         /// <summary>The description property</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The hasProtection property</summary>
         public bool? HasProtection {
-            get { return BackingStore?.Get<bool?>(nameof(HasProtection)); }
-            set { BackingStore?.Set(nameof(HasProtection), value); }
+            get { return BackingStore?.Get<bool?>("hasProtection"); }
+            set { BackingStore?.Set("hasProtection", value); }
         }
         /// <summary>The isActive property</summary>
         public bool? IsActive {
-            get { return BackingStore?.Get<bool?>(nameof(IsActive)); }
-            set { BackingStore?.Set(nameof(IsActive), value); }
+            get { return BackingStore?.Get<bool?>("isActive"); }
+            set { BackingStore?.Set("isActive", value); }
         }
         /// <summary>The isAppliable property</summary>
         public bool? IsAppliable {
-            get { return BackingStore?.Get<bool?>(nameof(IsAppliable)); }
-            set { BackingStore?.Set(nameof(IsAppliable), value); }
+            get { return BackingStore?.Get<bool?>("isAppliable"); }
+            set { BackingStore?.Set("isAppliable", value); }
         }
         /// <summary>The name property</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The parent property</summary>
         public SensitivityLabel Parent {
-            get { return BackingStore?.Get<SensitivityLabel>(nameof(Parent)); }
-            set { BackingStore?.Set(nameof(Parent), value); }
+            get { return BackingStore?.Get<SensitivityLabel>("parent"); }
+            set { BackingStore?.Set("parent", value); }
         }
         /// <summary>The sensitivity property</summary>
         public int? Sensitivity {
-            get { return BackingStore?.Get<int?>(nameof(Sensitivity)); }
-            set { BackingStore?.Set(nameof(Sensitivity), value); }
+            get { return BackingStore?.Get<int?>("sensitivity"); }
+            set { BackingStore?.Set("sensitivity", value); }
         }
         /// <summary>The tooltip property</summary>
         public string Tooltip {
-            get { return BackingStore?.Get<string>(nameof(Tooltip)); }
-            set { BackingStore?.Set(nameof(Tooltip), value); }
+            get { return BackingStore?.Get<string>("tooltip"); }
+            set { BackingStore?.Set("tooltip", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

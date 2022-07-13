@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamworkAccountConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The account used to sync the calendar.</summary>
         public TeamworkOnPremisesCalendarSyncConfiguration OnPremisesCalendarSyncConfiguration {
-            get { return BackingStore?.Get<TeamworkOnPremisesCalendarSyncConfiguration>(nameof(OnPremisesCalendarSyncConfiguration)); }
-            set { BackingStore?.Set(nameof(OnPremisesCalendarSyncConfiguration), value); }
+            get { return BackingStore?.Get<TeamworkOnPremisesCalendarSyncConfiguration>("onPremisesCalendarSyncConfiguration"); }
+            set { BackingStore?.Set("onPremisesCalendarSyncConfiguration", value); }
         }
         /// <summary>The supported client for Teams Rooms devices. The possible values are: unknown, skypeDefaultAndTeams, teamsDefaultAndSkype, skypeOnly, teamsOnly, unknownFutureValue.</summary>
         public TeamworkSupportedClient? SupportedClient {
-            get { return BackingStore?.Get<TeamworkSupportedClient?>(nameof(SupportedClient)); }
-            set { BackingStore?.Set(nameof(SupportedClient), value); }
+            get { return BackingStore?.Get<TeamworkSupportedClient?>("supportedClient"); }
+            set { BackingStore?.Set("supportedClient", value); }
         }
         /// <summary>
         /// Instantiates a new teamworkAccountConfiguration and sets the default values.

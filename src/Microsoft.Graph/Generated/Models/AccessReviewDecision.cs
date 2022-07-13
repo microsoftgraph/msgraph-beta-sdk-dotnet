@@ -8,48 +8,48 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessReviewDecision : Entity, IParsable {
         /// <summary>The feature- generated recommendation shown to the reviewer, one of Approve, Deny or NotAvailable.</summary>
         public string AccessRecommendation {
-            get { return BackingStore?.Get<string>(nameof(AccessRecommendation)); }
-            set { BackingStore?.Set(nameof(AccessRecommendation), value); }
+            get { return BackingStore?.Get<string>("accessRecommendation"); }
+            set { BackingStore?.Set("accessRecommendation", value); }
         }
         /// <summary>The feature-generated id of the access review.</summary>
         public string AccessReviewId {
-            get { return BackingStore?.Get<string>(nameof(AccessReviewId)); }
-            set { BackingStore?.Set(nameof(AccessReviewId), value); }
+            get { return BackingStore?.Get<string>("accessReviewId"); }
+            set { BackingStore?.Set("accessReviewId", value); }
         }
         /// <summary>When the review completes, if the results were manually applied, the user identity of the user who applied the decision. If the review was auto-applied, the userPrincipalName is empty.</summary>
         public UserIdentity AppliedBy {
-            get { return BackingStore?.Get<UserIdentity>(nameof(AppliedBy)); }
-            set { BackingStore?.Set(nameof(AppliedBy), value); }
+            get { return BackingStore?.Get<UserIdentity>("appliedBy"); }
+            set { BackingStore?.Set("appliedBy", value); }
         }
         /// <summary>The date and time when the review decision was applied.</summary>
         public DateTimeOffset? AppliedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(AppliedDateTime)); }
-            set { BackingStore?.Set(nameof(AppliedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("appliedDateTime"); }
+            set { BackingStore?.Set("appliedDateTime", value); }
         }
         /// <summary>The outcome of applying the decision, one of NotApplied, Success, Failed, NotFound or NotSupported.</summary>
         public string ApplyResult {
-            get { return BackingStore?.Get<string>(nameof(ApplyResult)); }
-            set { BackingStore?.Set(nameof(ApplyResult), value); }
+            get { return BackingStore?.Get<string>("applyResult"); }
+            set { BackingStore?.Set("applyResult", value); }
         }
         /// <summary>The reviewer&apos;s business justification, if supplied.</summary>
         public string Justification {
-            get { return BackingStore?.Get<string>(nameof(Justification)); }
-            set { BackingStore?.Set(nameof(Justification), value); }
+            get { return BackingStore?.Get<string>("justification"); }
+            set { BackingStore?.Set("justification", value); }
         }
         /// <summary>The identity of the reviewer. If the recommendation was used as the review, the userPrincipalName is empty.</summary>
         public UserIdentity ReviewedBy {
-            get { return BackingStore?.Get<UserIdentity>(nameof(ReviewedBy)); }
-            set { BackingStore?.Set(nameof(ReviewedBy), value); }
+            get { return BackingStore?.Get<UserIdentity>("reviewedBy"); }
+            set { BackingStore?.Set("reviewedBy", value); }
         }
         /// <summary>The reviewedDateTime property</summary>
         public DateTimeOffset? ReviewedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ReviewedDateTime)); }
-            set { BackingStore?.Set(nameof(ReviewedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("reviewedDateTime"); }
+            set { BackingStore?.Set("reviewedDateTime", value); }
         }
         /// <summary>The result of the review, one of NotReviewed, Deny, DontKnow or Approve.</summary>
         public string ReviewResult {
-            get { return BackingStore?.Get<string>(nameof(ReviewResult)); }
-            set { BackingStore?.Set(nameof(ReviewResult), value); }
+            get { return BackingStore?.Get<string>("reviewResult"); }
+            set { BackingStore?.Set("reviewResult", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

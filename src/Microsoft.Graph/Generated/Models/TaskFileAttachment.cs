@@ -5,10 +5,10 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TaskFileAttachment : AttachmentBase, IParsable {
-        /// <summary>The contentBytes property</summary>
+        /// <summary>The base64-encoded contents of the file.</summary>
         public byte[] ContentBytes {
-            get { return BackingStore?.Get<byte[]>(nameof(ContentBytes)); }
-            set { BackingStore?.Set(nameof(ContentBytes), value); }
+            get { return BackingStore?.Get<byte[]>("contentBytes"); }
+            set { BackingStore?.Set("contentBytes", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

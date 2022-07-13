@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsKioskSingleWin32App : WindowsKioskAppConfiguration, IParsable {
         /// <summary>The win32App property</summary>
         public WindowsKioskWin32App Win32App {
-            get { return BackingStore?.Get<WindowsKioskWin32App>(nameof(Win32App)); }
-            set { BackingStore?.Set(nameof(Win32App), value); }
+            get { return BackingStore?.Get<WindowsKioskWin32App>("win32App"); }
+            set { BackingStore?.Set("win32App", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

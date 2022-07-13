@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class SmsAuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable {
         /// <summary>A collection of users or groups who are enabled to use the authentication method.</summary>
         public List<SmsAuthenticationMethodTarget> IncludeTargets {
-            get { return BackingStore?.Get<List<SmsAuthenticationMethodTarget>>(nameof(IncludeTargets)); }
-            set { BackingStore?.Set(nameof(IncludeTargets), value); }
+            get { return BackingStore?.Get<List<SmsAuthenticationMethodTarget>>("includeTargets"); }
+            set { BackingStore?.Set("includeTargets", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

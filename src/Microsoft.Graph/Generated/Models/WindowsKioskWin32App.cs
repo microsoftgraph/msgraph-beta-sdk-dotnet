@@ -7,28 +7,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsKioskWin32App : WindowsKioskAppBase, IParsable {
         /// <summary>This is the classicapppath to be used by v4 Win32 app while in Kiosk Mode</summary>
         public string ClassicAppPath {
-            get { return BackingStore?.Get<string>(nameof(ClassicAppPath)); }
-            set { BackingStore?.Set(nameof(ClassicAppPath), value); }
+            get { return BackingStore?.Get<string>("classicAppPath"); }
+            set { BackingStore?.Set("classicAppPath", value); }
         }
         /// <summary>Edge kiosk (url) for Edge kiosk mode</summary>
         public string EdgeKiosk {
-            get { return BackingStore?.Get<string>(nameof(EdgeKiosk)); }
-            set { BackingStore?.Set(nameof(EdgeKiosk), value); }
+            get { return BackingStore?.Get<string>("edgeKiosk"); }
+            set { BackingStore?.Set("edgeKiosk", value); }
         }
         /// <summary>Edge kiosk idle timeout in minutes for Edge kiosk mode. Valid values 0 to 1440</summary>
         public int? EdgeKioskIdleTimeoutMinutes {
-            get { return BackingStore?.Get<int?>(nameof(EdgeKioskIdleTimeoutMinutes)); }
-            set { BackingStore?.Set(nameof(EdgeKioskIdleTimeoutMinutes), value); }
+            get { return BackingStore?.Get<int?>("edgeKioskIdleTimeoutMinutes"); }
+            set { BackingStore?.Set("edgeKioskIdleTimeoutMinutes", value); }
         }
-        /// <summary>Edge kiosk type for Edge kiosk mode. Possible values are: publicBrowsing, fullScreen.</summary>
+        /// <summary>Edge kiosk type</summary>
         public WindowsEdgeKioskType? EdgeKioskType {
-            get { return BackingStore?.Get<WindowsEdgeKioskType?>(nameof(EdgeKioskType)); }
-            set { BackingStore?.Set(nameof(EdgeKioskType), value); }
+            get { return BackingStore?.Get<WindowsEdgeKioskType?>("edgeKioskType"); }
+            set { BackingStore?.Set("edgeKioskType", value); }
         }
         /// <summary>Edge first run flag for Edge kiosk mode</summary>
         public bool? EdgeNoFirstRun {
-            get { return BackingStore?.Get<bool?>(nameof(EdgeNoFirstRun)); }
-            set { BackingStore?.Set(nameof(EdgeNoFirstRun), value); }
+            get { return BackingStore?.Get<bool?>("edgeNoFirstRun"); }
+            set { BackingStore?.Set("edgeNoFirstRun", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

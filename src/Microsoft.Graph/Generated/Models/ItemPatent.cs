@@ -8,38 +8,38 @@ namespace Microsoft.Graph.Beta.Models {
     public class ItemPatent : ItemFacet, IParsable {
         /// <summary>Descpription of the patent or filing.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Title of the patent or filing.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Indicates the patent is pending.</summary>
         public bool? IsPending {
-            get { return BackingStore?.Get<bool?>(nameof(IsPending)); }
-            set { BackingStore?.Set(nameof(IsPending), value); }
+            get { return BackingStore?.Get<bool?>("isPending"); }
+            set { BackingStore?.Set("isPending", value); }
         }
         /// <summary>The date that the patent was granted.</summary>
         public Date? IssuedDate {
-            get { return BackingStore?.Get<Date?>(nameof(IssuedDate)); }
-            set { BackingStore?.Set(nameof(IssuedDate), value); }
+            get { return BackingStore?.Get<Date?>("issuedDate"); }
+            set { BackingStore?.Set("issuedDate", value); }
         }
         /// <summary>Authority which granted the patent.</summary>
         public string IssuingAuthority {
-            get { return BackingStore?.Get<string>(nameof(IssuingAuthority)); }
-            set { BackingStore?.Set(nameof(IssuingAuthority), value); }
+            get { return BackingStore?.Get<string>("issuingAuthority"); }
+            set { BackingStore?.Set("issuingAuthority", value); }
         }
         /// <summary>The patent number.</summary>
         public string Number {
-            get { return BackingStore?.Get<string>(nameof(Number)); }
-            set { BackingStore?.Set(nameof(Number), value); }
+            get { return BackingStore?.Get<string>("number"); }
+            set { BackingStore?.Set("number", value); }
         }
         /// <summary>URL referencing the patent or filing.</summary>
         public string WebUrl {
-            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
-            set { BackingStore?.Set(nameof(WebUrl), value); }
+            get { return BackingStore?.Get<string>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

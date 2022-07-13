@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class OperatingSystemVersionRange : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The description of this range (e.g. Valid 1702 builds)</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The highest inclusive version that this range contains.</summary>
         public string HighestVersion {
-            get { return BackingStore?.Get<string>(nameof(HighestVersion)); }
-            set { BackingStore?.Set(nameof(HighestVersion), value); }
+            get { return BackingStore?.Get<string>("highestVersion"); }
+            set { BackingStore?.Set("highestVersion", value); }
         }
         /// <summary>The lowest inclusive version that this range contains.</summary>
         public string LowestVersion {
-            get { return BackingStore?.Get<string>(nameof(LowestVersion)); }
-            set { BackingStore?.Set(nameof(LowestVersion), value); }
+            get { return BackingStore?.Get<string>("lowestVersion"); }
+            set { BackingStore?.Set("lowestVersion", value); }
         }
         /// <summary>
         /// Instantiates a new operatingSystemVersionRange and sets the default values.

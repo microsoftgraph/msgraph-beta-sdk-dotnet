@@ -7,33 +7,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyPresentationLongDecimalTextBox : GroupPolicyPresentation, IParsable {
         /// <summary>An unsigned integer that specifies the initial value for the decimal text box. The default value is 1.</summary>
         public long? DefaultValue {
-            get { return BackingStore?.Get<long?>(nameof(DefaultValue)); }
-            set { BackingStore?.Set(nameof(DefaultValue), value); }
+            get { return BackingStore?.Get<long?>("defaultValue"); }
+            set { BackingStore?.Set("defaultValue", value); }
         }
         /// <summary>An unsigned long that specifies the maximum allowed value. The default value is 9999.</summary>
         public long? MaxValue {
-            get { return BackingStore?.Get<long?>(nameof(MaxValue)); }
-            set { BackingStore?.Set(nameof(MaxValue), value); }
+            get { return BackingStore?.Get<long?>("maxValue"); }
+            set { BackingStore?.Set("maxValue", value); }
         }
         /// <summary>An unsigned long that specifies the minimum allowed value. The default value is 0.</summary>
         public long? MinValue {
-            get { return BackingStore?.Get<long?>(nameof(MinValue)); }
-            set { BackingStore?.Set(nameof(MinValue), value); }
+            get { return BackingStore?.Get<long?>("minValue"); }
+            set { BackingStore?.Set("minValue", value); }
         }
         /// <summary>Requirement to enter a value in the parameter box. The default value is false.</summary>
         public bool? Required {
-            get { return BackingStore?.Get<bool?>(nameof(Required)); }
-            set { BackingStore?.Set(nameof(Required), value); }
+            get { return BackingStore?.Get<bool?>("required"); }
+            set { BackingStore?.Set("required", value); }
         }
         /// <summary>If true, create a spin control; otherwise, create a text box for numeric entry. The default value is true.</summary>
         public bool? Spin {
-            get { return BackingStore?.Get<bool?>(nameof(Spin)); }
-            set { BackingStore?.Set(nameof(Spin), value); }
+            get { return BackingStore?.Get<bool?>("spin"); }
+            set { BackingStore?.Set("spin", value); }
         }
         /// <summary>An unsigned integer that specifies the increment of change for the spin control. The default value is 1.</summary>
         public long? SpinStep {
-            get { return BackingStore?.Get<long?>(nameof(SpinStep)); }
-            set { BackingStore?.Set(nameof(SpinStep), value); }
+            get { return BackingStore?.Get<long?>("spinStep"); }
+            set { BackingStore?.Set("spinStep", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class ConfigurationManagerClientInformation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Configuration Manager Client Id from SCCM</summary>
         public string ClientIdentifier {
-            get { return BackingStore?.Get<string>(nameof(ClientIdentifier)); }
-            set { BackingStore?.Set(nameof(ClientIdentifier), value); }
+            get { return BackingStore?.Get<string>("clientIdentifier"); }
+            set { BackingStore?.Set("clientIdentifier", value); }
         }
         /// <summary>Configuration Manager Client blocked status from SCCM</summary>
         public bool? IsBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(IsBlocked)); }
-            set { BackingStore?.Set(nameof(IsBlocked), value); }
+            get { return BackingStore?.Get<bool?>("isBlocked"); }
+            set { BackingStore?.Set("isBlocked", value); }
         }
         /// <summary>
         /// Instantiates a new configurationManagerClientInformation and sets the default values.

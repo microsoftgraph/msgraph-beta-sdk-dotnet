@@ -5,15 +5,15 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class JoinMeetingIdMeetingInfo : MeetingInfo, IParsable {
-        /// <summary>The joinMeetingId property</summary>
+        /// <summary>The ID used to join the meeting.</summary>
         public string JoinMeetingId {
-            get { return BackingStore?.Get<string>(nameof(JoinMeetingId)); }
-            set { BackingStore?.Set(nameof(JoinMeetingId), value); }
+            get { return BackingStore?.Get<string>("joinMeetingId"); }
+            set { BackingStore?.Set("joinMeetingId", value); }
         }
-        /// <summary>The passcode property</summary>
+        /// <summary>The passcode used to join the meeting. Optional.</summary>
         public string Passcode {
-            get { return BackingStore?.Get<string>(nameof(Passcode)); }
-            set { BackingStore?.Set(nameof(Passcode), value); }
+            get { return BackingStore?.Get<string>("passcode"); }
+            set { BackingStore?.Set("passcode", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

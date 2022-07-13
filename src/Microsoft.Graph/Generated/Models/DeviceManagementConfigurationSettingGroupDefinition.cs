@@ -8,18 +8,24 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationSettingGroupDefinition : DeviceManagementConfigurationSettingDefinition, IParsable {
         /// <summary>Dependent child settings to this group of settings</summary>
         public List<string> ChildIds {
-            get { return BackingStore?.Get<List<string>>(nameof(ChildIds)); }
-            set { BackingStore?.Set(nameof(ChildIds), value); }
+            get { return BackingStore?.Get<List<string>>("childIds"); }
+            set { BackingStore?.Set("childIds", value); }
         }
         /// <summary>List of child settings that depend on this setting</summary>
         public List<DeviceManagementConfigurationSettingDependedOnBy> DependedOnBy {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDependedOnBy>>(nameof(DependedOnBy)); }
-            set { BackingStore?.Set(nameof(DependedOnBy), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDependedOnBy>>("dependedOnBy"); }
+            set { BackingStore?.Set("dependedOnBy", value); }
         }
         /// <summary>List of Dependencies for the setting group</summary>
         public List<DeviceManagementConfigurationDependentOn> DependentOn {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationDependentOn>>(nameof(DependentOn)); }
-            set { BackingStore?.Set(nameof(DependentOn), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationDependentOn>>("dependentOn"); }
+            set { BackingStore?.Set("dependentOn", value); }
+        }
+        /// <summary>
+        /// Instantiates a new DeviceManagementConfigurationSettingGroupDefinition and sets the default values.
+        /// </summary>
+        public DeviceManagementConfigurationSettingGroupDefinition() : base() {
+            Type = "#microsoft.graph.deviceManagementConfigurationSettingGroupDefinition";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

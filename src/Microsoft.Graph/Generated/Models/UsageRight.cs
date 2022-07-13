@@ -4,22 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class UsageRight : Entity, IParsable {
         /// <summary>Product id corresponding to the usage right.</summary>
         public string CatalogId {
-            get { return BackingStore?.Get<string>(nameof(CatalogId)); }
-            set { BackingStore?.Set(nameof(CatalogId), value); }
+            get { return BackingStore?.Get<string>("catalogId"); }
+            set { BackingStore?.Set("catalogId", value); }
         }
         /// <summary>Identifier of the service corresponding to the usage right.</summary>
         public string ServiceIdentifier {
-            get { return BackingStore?.Get<string>(nameof(ServiceIdentifier)); }
-            set { BackingStore?.Set(nameof(ServiceIdentifier), value); }
+            get { return BackingStore?.Get<string>("serviceIdentifier"); }
+            set { BackingStore?.Set("serviceIdentifier", value); }
         }
-        /// <summary>The state of the usage right. Possible values are: active, inactive, warning, suspended.</summary>
+        /// <summary>The state property</summary>
         public UsageRightState? State {
-            get { return BackingStore?.Get<UsageRightState?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<UsageRightState?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

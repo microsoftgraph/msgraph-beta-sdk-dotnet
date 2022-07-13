@@ -4,32 +4,32 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class OnPremisesAgentGroup : Entity, IParsable {
         /// <summary>List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.</summary>
         public List<OnPremisesAgent> Agents {
-            get { return BackingStore?.Get<List<OnPremisesAgent>>(nameof(Agents)); }
-            set { BackingStore?.Set(nameof(Agents), value); }
+            get { return BackingStore?.Get<List<OnPremisesAgent>>("agents"); }
+            set { BackingStore?.Set("agents", value); }
         }
         /// <summary>Display name of the onPremisesAgentGroup.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Indicates if the onPremisesAgentGroup is the default agent group. Only a single agent group can be the default onPremisesAgentGroup and is set by the system.</summary>
         public bool? IsDefault {
-            get { return BackingStore?.Get<bool?>(nameof(IsDefault)); }
-            set { BackingStore?.Set(nameof(IsDefault), value); }
+            get { return BackingStore?.Get<bool?>("isDefault"); }
+            set { BackingStore?.Set("isDefault", value); }
         }
         /// <summary>List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.</summary>
         public List<PublishedResource> PublishedResources {
-            get { return BackingStore?.Get<List<PublishedResource>>(nameof(PublishedResources)); }
-            set { BackingStore?.Set(nameof(PublishedResources), value); }
+            get { return BackingStore?.Get<List<PublishedResource>>("publishedResources"); }
+            set { BackingStore?.Set("publishedResources", value); }
         }
-        /// <summary>Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.</summary>
+        /// <summary>The publishingType property</summary>
         public OnPremisesPublishingType? PublishingType {
-            get { return BackingStore?.Get<OnPremisesPublishingType?>(nameof(PublishingType)); }
-            set { BackingStore?.Set(nameof(PublishingType), value); }
+            get { return BackingStore?.Get<OnPremisesPublishingType?>("publishingType"); }
+            set { BackingStore?.Set("publishingType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class TrainingEventsContent : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>List of assigned trainings and their information in an attack simulation and training campaign.</summary>
         public List<AssignedTrainingInfo> AssignedTrainingsInfos {
-            get { return BackingStore?.Get<List<AssignedTrainingInfo>>(nameof(AssignedTrainingsInfos)); }
-            set { BackingStore?.Set(nameof(AssignedTrainingsInfos), value); }
+            get { return BackingStore?.Get<List<AssignedTrainingInfo>>("assignedTrainingsInfos"); }
+            set { BackingStore?.Set("assignedTrainingsInfos", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Number of users who were assigned trainings in an attack simulation and training campaign.</summary>
         public int? TrainingsAssignedUserCount {
-            get { return BackingStore?.Get<int?>(nameof(TrainingsAssignedUserCount)); }
-            set { BackingStore?.Set(nameof(TrainingsAssignedUserCount), value); }
+            get { return BackingStore?.Get<int?>("trainingsAssignedUserCount"); }
+            set { BackingStore?.Set("trainingsAssignedUserCount", value); }
         }
         /// <summary>
         /// Instantiates a new trainingEventsContent and sets the default values.

@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class ProvisionedIdentity : Identity, IParsable {
         /// <summary>Details of the identity.</summary>
         public DetailsInfo Details {
-            get { return BackingStore?.Get<DetailsInfo>(nameof(Details)); }
-            set { BackingStore?.Set(nameof(Details), value); }
+            get { return BackingStore?.Get<DetailsInfo>("details"); }
+            set { BackingStore?.Set("details", value); }
         }
         /// <summary>Type of identity that has been provisioned, such as &apos;user&apos; or &apos;group&apos;.</summary>
         public string IdentityType {
-            get { return BackingStore?.Get<string>(nameof(IdentityType)); }
-            set { BackingStore?.Set(nameof(IdentityType), value); }
+            get { return BackingStore?.Get<string>("identityType"); }
+            set { BackingStore?.Set("identityType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

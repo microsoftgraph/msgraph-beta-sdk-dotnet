@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class SynchronizationJobApplicationParameters : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The identifier of the synchronizationRule to be applied. This rule ID is defined in the schema for a given synchronization job or template.</summary>
         public string RuleId {
-            get { return BackingStore?.Get<string>(nameof(RuleId)); }
-            set { BackingStore?.Set(nameof(RuleId), value); }
+            get { return BackingStore?.Get<string>("ruleId"); }
+            set { BackingStore?.Set("ruleId", value); }
         }
         /// <summary>The identifiers of one or more objects to which a synchronizationJob is to be applied.</summary>
         public List<SynchronizationJobSubject> Subjects {
-            get { return BackingStore?.Get<List<SynchronizationJobSubject>>(nameof(Subjects)); }
-            set { BackingStore?.Set(nameof(Subjects), value); }
+            get { return BackingStore?.Get<List<SynchronizationJobSubject>>("subjects"); }
+            set { BackingStore?.Set("subjects", value); }
         }
         /// <summary>
         /// Instantiates a new synchronizationJobApplicationParameters and sets the default values.

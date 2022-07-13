@@ -8,8 +8,14 @@ namespace Microsoft.Graph.Beta.Models {
     public class BookingNamedEntity : Entity, IParsable {
         /// <summary>A name for the derived entity, which interfaces with customers.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+        /// <summary>
+        /// Instantiates a new BookingNamedEntity and sets the default values.
+        /// </summary>
+        public BookingNamedEntity() : base() {
+            Type = "#microsoft.graph.bookingNamedEntity";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

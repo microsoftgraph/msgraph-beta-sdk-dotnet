@@ -7,38 +7,38 @@ namespace Microsoft.Graph.Beta.Models {
     public class CredentialUserRegistrationDetails : Entity, IParsable {
         /// <summary>Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.</summary>
         public List<string> AuthMethods {
-            get { return BackingStore?.Get<List<string>>(nameof(AuthMethods)); }
-            set { BackingStore?.Set(nameof(AuthMethods), value); }
+            get { return BackingStore?.Get<List<string>>("authMethods"); }
+            set { BackingStore?.Set("authMethods", value); }
         }
         /// <summary>Indicates whether the user is ready to perform self-service password reset or MFA.</summary>
         public bool? IsCapable {
-            get { return BackingStore?.Get<bool?>(nameof(IsCapable)); }
-            set { BackingStore?.Set(nameof(IsCapable), value); }
+            get { return BackingStore?.Get<bool?>("isCapable"); }
+            set { BackingStore?.Set("isCapable", value); }
         }
         /// <summary>Indicates whether the user enabled to perform self-service password reset.</summary>
         public bool? IsEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsEnabled)); }
-            set { BackingStore?.Set(nameof(IsEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isEnabled"); }
+            set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>Indicates whether the user is registered for MFA.</summary>
         public bool? IsMfaRegistered {
-            get { return BackingStore?.Get<bool?>(nameof(IsMfaRegistered)); }
-            set { BackingStore?.Set(nameof(IsMfaRegistered), value); }
+            get { return BackingStore?.Get<bool?>("isMfaRegistered"); }
+            set { BackingStore?.Set("isMfaRegistered", value); }
         }
         /// <summary>Indicates whether the user has registered any authentication methods for self-service password reset.</summary>
         public bool? IsRegistered {
-            get { return BackingStore?.Get<bool?>(nameof(IsRegistered)); }
-            set { BackingStore?.Set(nameof(IsRegistered), value); }
+            get { return BackingStore?.Get<bool?>("isRegistered"); }
+            set { BackingStore?.Set("isRegistered", value); }
         }
         /// <summary>Provides the user name of the corresponding user.</summary>
         public string UserDisplayName {
-            get { return BackingStore?.Get<string>(nameof(UserDisplayName)); }
-            set { BackingStore?.Set(nameof(UserDisplayName), value); }
+            get { return BackingStore?.Get<string>("userDisplayName"); }
+            set { BackingStore?.Set("userDisplayName", value); }
         }
         /// <summary>Provides the user principal name of the corresponding user.</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

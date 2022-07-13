@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public enum CloudPcOnPremisesConnectionHealthCheckErrorType {
         DnsCheckFqdnNotFound,
         DnsCheckNameWithInvalidCharacter,
@@ -41,6 +41,9 @@ namespace Microsoft.Graph.Beta.Models {
         ResourceAvailabilityCheckSubnetWithExternalResources,
         ResourceAvailabilityCheckResourceGroupLockedForReadonly,
         ResourceAvailabilityCheckResourceGroupLockedForDelete,
+        ResourceAvailabilityCheckNoIntuneReaderRoleError,
+        ResourceAvailabilityCheckIntuneDefaultWindowsRestrictionViolation,
+        ResourceAvailabilityCheckIntuneCustomWindowsRestrictionViolation,
         ResourceAvailabilityCheckTransientServiceError,
         ResourceAvailabilityCheckUnknownError,
         PermissionCheckNoSubscriptionReaderRole,

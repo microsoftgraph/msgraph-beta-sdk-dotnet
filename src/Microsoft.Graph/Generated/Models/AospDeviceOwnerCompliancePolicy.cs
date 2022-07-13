@@ -7,48 +7,48 @@ namespace Microsoft.Graph.Beta.Models {
     public class AospDeviceOwnerCompliancePolicy : DeviceCompliancePolicy, IParsable {
         /// <summary>Minimum Android security patch level.</summary>
         public string MinAndroidSecurityPatchLevel {
-            get { return BackingStore?.Get<string>(nameof(MinAndroidSecurityPatchLevel)); }
-            set { BackingStore?.Set(nameof(MinAndroidSecurityPatchLevel), value); }
+            get { return BackingStore?.Get<string>("minAndroidSecurityPatchLevel"); }
+            set { BackingStore?.Set("minAndroidSecurityPatchLevel", value); }
         }
         /// <summary>Maximum Android version.</summary>
         public string OsMaximumVersion {
-            get { return BackingStore?.Get<string>(nameof(OsMaximumVersion)); }
-            set { BackingStore?.Set(nameof(OsMaximumVersion), value); }
+            get { return BackingStore?.Get<string>("osMaximumVersion"); }
+            set { BackingStore?.Set("osMaximumVersion", value); }
         }
         /// <summary>Minimum Android version.</summary>
         public string OsMinimumVersion {
-            get { return BackingStore?.Get<string>(nameof(OsMinimumVersion)); }
-            set { BackingStore?.Set(nameof(OsMinimumVersion), value); }
+            get { return BackingStore?.Get<string>("osMinimumVersion"); }
+            set { BackingStore?.Set("osMinimumVersion", value); }
         }
         /// <summary>Minimum password length. Valid values 4 to 16</summary>
         public int? PasswordMinimumLength {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinimumLength)); }
-            set { BackingStore?.Set(nameof(PasswordMinimumLength), value); }
+            get { return BackingStore?.Get<int?>("passwordMinimumLength"); }
+            set { BackingStore?.Set("passwordMinimumLength", value); }
         }
         /// <summary>Minutes of inactivity before a password is required. Valid values 1 to 8640</summary>
         public int? PasswordMinutesOfInactivityBeforeLock {
-            get { return BackingStore?.Get<int?>(nameof(PasswordMinutesOfInactivityBeforeLock)); }
-            set { BackingStore?.Set(nameof(PasswordMinutesOfInactivityBeforeLock), value); }
+            get { return BackingStore?.Get<int?>("passwordMinutesOfInactivityBeforeLock"); }
+            set { BackingStore?.Set("passwordMinutesOfInactivityBeforeLock", value); }
         }
         /// <summary>Require a password to unlock device.</summary>
         public bool? PasswordRequired {
-            get { return BackingStore?.Get<bool?>(nameof(PasswordRequired)); }
-            set { BackingStore?.Set(nameof(PasswordRequired), value); }
+            get { return BackingStore?.Get<bool?>("passwordRequired"); }
+            set { BackingStore?.Set("passwordRequired", value); }
         }
         /// <summary>Type of characters in password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.</summary>
         public AndroidDeviceOwnerRequiredPasswordType? PasswordRequiredType {
-            get { return BackingStore?.Get<AndroidDeviceOwnerRequiredPasswordType?>(nameof(PasswordRequiredType)); }
-            set { BackingStore?.Set(nameof(PasswordRequiredType), value); }
+            get { return BackingStore?.Get<AndroidDeviceOwnerRequiredPasswordType?>("passwordRequiredType"); }
+            set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>Devices must not be jailbroken or rooted.</summary>
         public bool? SecurityBlockJailbrokenDevices {
-            get { return BackingStore?.Get<bool?>(nameof(SecurityBlockJailbrokenDevices)); }
-            set { BackingStore?.Set(nameof(SecurityBlockJailbrokenDevices), value); }
+            get { return BackingStore?.Get<bool?>("securityBlockJailbrokenDevices"); }
+            set { BackingStore?.Set("securityBlockJailbrokenDevices", value); }
         }
         /// <summary>Require encryption on Android devices.</summary>
         public bool? StorageRequireEncryption {
-            get { return BackingStore?.Get<bool?>(nameof(StorageRequireEncryption)); }
-            set { BackingStore?.Set(nameof(StorageRequireEncryption), value); }
+            get { return BackingStore?.Get<bool?>("storageRequireEncryption"); }
+            set { BackingStore?.Set("storageRequireEncryption", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

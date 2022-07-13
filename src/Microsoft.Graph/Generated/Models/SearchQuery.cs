@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class SearchQuery : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The query_string property</summary>
         public SearchQueryString Query_string {
-            get { return BackingStore?.Get<SearchQueryString>(nameof(Query_string)); }
-            set { BackingStore?.Set(nameof(Query_string), value); }
+            get { return BackingStore?.Get<SearchQueryString>("query_string"); }
+            set { BackingStore?.Set("query_string", value); }
         }
         /// <summary>The search query containing the search terms. Required.</summary>
         public string QueryString {
-            get { return BackingStore?.Get<string>(nameof(QueryString)); }
-            set { BackingStore?.Set(nameof(QueryString), value); }
+            get { return BackingStore?.Get<string>("queryString"); }
+            set { BackingStore?.Set("queryString", value); }
         }
         /// <summary>Provides a way to decorate the query string. Supports both KQL and query variables. Optional.</summary>
         public string QueryTemplate {
-            get { return BackingStore?.Get<string>(nameof(QueryTemplate)); }
-            set { BackingStore?.Set(nameof(QueryTemplate), value); }
+            get { return BackingStore?.Get<string>("queryTemplate"); }
+            set { BackingStore?.Set("queryTemplate", value); }
         }
         /// <summary>
         /// Instantiates a new searchQuery and sets the default values.

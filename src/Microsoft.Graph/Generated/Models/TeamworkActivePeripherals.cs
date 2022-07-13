@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamworkActivePeripherals : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The communicationSpeaker property</summary>
         public TeamworkPeripheral CommunicationSpeaker {
-            get { return BackingStore?.Get<TeamworkPeripheral>(nameof(CommunicationSpeaker)); }
-            set { BackingStore?.Set(nameof(CommunicationSpeaker), value); }
+            get { return BackingStore?.Get<TeamworkPeripheral>("communicationSpeaker"); }
+            set { BackingStore?.Set("communicationSpeaker", value); }
         }
         /// <summary>The contentCamera property</summary>
         public TeamworkPeripheral ContentCamera {
-            get { return BackingStore?.Get<TeamworkPeripheral>(nameof(ContentCamera)); }
-            set { BackingStore?.Set(nameof(ContentCamera), value); }
+            get { return BackingStore?.Get<TeamworkPeripheral>("contentCamera"); }
+            set { BackingStore?.Set("contentCamera", value); }
         }
         /// <summary>The microphone property</summary>
         public TeamworkPeripheral Microphone {
-            get { return BackingStore?.Get<TeamworkPeripheral>(nameof(Microphone)); }
-            set { BackingStore?.Set(nameof(Microphone), value); }
+            get { return BackingStore?.Get<TeamworkPeripheral>("microphone"); }
+            set { BackingStore?.Set("microphone", value); }
         }
         /// <summary>The roomCamera property</summary>
         public TeamworkPeripheral RoomCamera {
-            get { return BackingStore?.Get<TeamworkPeripheral>(nameof(RoomCamera)); }
-            set { BackingStore?.Set(nameof(RoomCamera), value); }
+            get { return BackingStore?.Get<TeamworkPeripheral>("roomCamera"); }
+            set { BackingStore?.Set("roomCamera", value); }
         }
         /// <summary>The speaker property</summary>
         public TeamworkPeripheral Speaker {
-            get { return BackingStore?.Get<TeamworkPeripheral>(nameof(Speaker)); }
-            set { BackingStore?.Set(nameof(Speaker), value); }
+            get { return BackingStore?.Get<TeamworkPeripheral>("speaker"); }
+            set { BackingStore?.Set("speaker", value); }
         }
         /// <summary>
         /// Instantiates a new teamworkActivePeripherals and sets the default values.

@@ -8,28 +8,34 @@ namespace Microsoft.Graph.Beta.Models {
     public class CustomCalloutExtension : Entity, IParsable {
         /// <summary>Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.</summary>
         public CustomExtensionAuthenticationConfiguration AuthenticationConfiguration {
-            get { return BackingStore?.Get<CustomExtensionAuthenticationConfiguration>(nameof(AuthenticationConfiguration)); }
-            set { BackingStore?.Set(nameof(AuthenticationConfiguration), value); }
+            get { return BackingStore?.Get<CustomExtensionAuthenticationConfiguration>("authenticationConfiguration"); }
+            set { BackingStore?.Set("authenticationConfiguration", value); }
         }
         /// <summary>HTTP connection settings that define how long Azure AD can wait for a connection to a logic app, how many times you can retry a timed-out connection and the exception scenarios when retries are allowed.</summary>
         public CustomExtensionClientConfiguration ClientConfiguration {
-            get { return BackingStore?.Get<CustomExtensionClientConfiguration>(nameof(ClientConfiguration)); }
-            set { BackingStore?.Set(nameof(ClientConfiguration), value); }
+            get { return BackingStore?.Get<CustomExtensionClientConfiguration>("clientConfiguration"); }
+            set { BackingStore?.Set("clientConfiguration", value); }
         }
         /// <summary>Description for the customCalloutExtension object.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Display name for the customCalloutExtension object.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The type and details for configuring the endpoint to call the logic app&apos;s workflow.</summary>
         public CustomExtensionEndpointConfiguration EndpointConfiguration {
-            get { return BackingStore?.Get<CustomExtensionEndpointConfiguration>(nameof(EndpointConfiguration)); }
-            set { BackingStore?.Set(nameof(EndpointConfiguration), value); }
+            get { return BackingStore?.Get<CustomExtensionEndpointConfiguration>("endpointConfiguration"); }
+            set { BackingStore?.Set("endpointConfiguration", value); }
+        }
+        /// <summary>
+        /// Instantiates a new CustomCalloutExtension and sets the default values.
+        /// </summary>
+        public CustomCalloutExtension() : base() {
+            Type = "#microsoft.graph.customCalloutExtension";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,53 +8,53 @@ namespace Microsoft.Graph.Beta.Models {
     public class PersonCertification : ItemFacet, IParsable {
         /// <summary>The referenceable identifier for the certification.</summary>
         public string CertificationId {
-            get { return BackingStore?.Get<string>(nameof(CertificationId)); }
-            set { BackingStore?.Set(nameof(CertificationId), value); }
+            get { return BackingStore?.Get<string>("certificationId"); }
+            set { BackingStore?.Set("certificationId", value); }
         }
         /// <summary>Description of the certification.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Title of the certification.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The date that the certification expires.</summary>
         public Date? EndDate {
-            get { return BackingStore?.Get<Date?>(nameof(EndDate)); }
-            set { BackingStore?.Set(nameof(EndDate), value); }
+            get { return BackingStore?.Get<Date?>("endDate"); }
+            set { BackingStore?.Set("endDate", value); }
         }
         /// <summary>The date that the certification was issued.</summary>
         public Date? IssuedDate {
-            get { return BackingStore?.Get<Date?>(nameof(IssuedDate)); }
-            set { BackingStore?.Set(nameof(IssuedDate), value); }
+            get { return BackingStore?.Get<Date?>("issuedDate"); }
+            set { BackingStore?.Set("issuedDate", value); }
         }
         /// <summary>Authority which granted the certification.</summary>
         public string IssuingAuthority {
-            get { return BackingStore?.Get<string>(nameof(IssuingAuthority)); }
-            set { BackingStore?.Set(nameof(IssuingAuthority), value); }
+            get { return BackingStore?.Get<string>("issuingAuthority"); }
+            set { BackingStore?.Set("issuingAuthority", value); }
         }
         /// <summary>Company which granted the certification.</summary>
         public string IssuingCompany {
-            get { return BackingStore?.Get<string>(nameof(IssuingCompany)); }
-            set { BackingStore?.Set(nameof(IssuingCompany), value); }
+            get { return BackingStore?.Get<string>("issuingCompany"); }
+            set { BackingStore?.Set("issuingCompany", value); }
         }
         /// <summary>The date that the certification became valid.</summary>
         public Date? StartDate {
-            get { return BackingStore?.Get<Date?>(nameof(StartDate)); }
-            set { BackingStore?.Set(nameof(StartDate), value); }
+            get { return BackingStore?.Get<Date?>("startDate"); }
+            set { BackingStore?.Set("startDate", value); }
         }
         /// <summary>URL referencing a thumbnail of the certification.</summary>
         public string ThumbnailUrl {
-            get { return BackingStore?.Get<string>(nameof(ThumbnailUrl)); }
-            set { BackingStore?.Set(nameof(ThumbnailUrl), value); }
+            get { return BackingStore?.Get<string>("thumbnailUrl"); }
+            set { BackingStore?.Set("thumbnailUrl", value); }
         }
         /// <summary>URL referencing the certification.</summary>
         public string WebUrl {
-            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
-            set { BackingStore?.Set(nameof(WebUrl), value); }
+            get { return BackingStore?.Get<string>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

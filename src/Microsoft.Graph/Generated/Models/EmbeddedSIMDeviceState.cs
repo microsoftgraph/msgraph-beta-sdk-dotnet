@@ -8,43 +8,43 @@ namespace Microsoft.Graph.Beta.Models {
     public class EmbeddedSIMDeviceState : Entity, IParsable {
         /// <summary>The time the embedded SIM device status was created. Generated service side.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Device name to which the subscription was provisioned e.g. DESKTOP-JOE</summary>
         public string DeviceName {
-            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
-            set { BackingStore?.Set(nameof(DeviceName), value); }
+            get { return BackingStore?.Get<string>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
         }
         /// <summary>The time the embedded SIM device last checked in. Updated service side.</summary>
         public DateTimeOffset? LastSyncDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSyncDateTime)); }
-            set { BackingStore?.Set(nameof(LastSyncDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
+            set { BackingStore?.Set("lastSyncDateTime", value); }
         }
         /// <summary>The time the embedded SIM device status was last modified. Updated service side.</summary>
         public DateTimeOffset? ModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(ModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }
+            set { BackingStore?.Set("modifiedDateTime", value); }
         }
-        /// <summary>The state of the profile operation applied to the device. Possible values are: notEvaluated, failed, installing, installed, deleting, error, deleted, removedByUser.</summary>
+        /// <summary>Describes the various states for an embedded SIM activation code.</summary>
         public EmbeddedSIMDeviceStateValue? State {
-            get { return BackingStore?.Get<EmbeddedSIMDeviceStateValue?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<EmbeddedSIMDeviceStateValue?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>String description of the provisioning state.</summary>
         public string StateDetails {
-            get { return BackingStore?.Get<string>(nameof(StateDetails)); }
-            set { BackingStore?.Set(nameof(StateDetails), value); }
+            get { return BackingStore?.Get<string>("stateDetails"); }
+            set { BackingStore?.Set("stateDetails", value); }
         }
         /// <summary>The Universal Integrated Circuit Card Identifier (UICCID) identifying the hardware onto which a profile is to be deployed.</summary>
         public string UniversalIntegratedCircuitCardIdentifier {
-            get { return BackingStore?.Get<string>(nameof(UniversalIntegratedCircuitCardIdentifier)); }
-            set { BackingStore?.Set(nameof(UniversalIntegratedCircuitCardIdentifier), value); }
+            get { return BackingStore?.Get<string>("universalIntegratedCircuitCardIdentifier"); }
+            set { BackingStore?.Set("universalIntegratedCircuitCardIdentifier", value); }
         }
         /// <summary>Username which the subscription was provisioned to e.g. joe@contoso.com</summary>
         public string UserName {
-            get { return BackingStore?.Get<string>(nameof(UserName)); }
-            set { BackingStore?.Set(nameof(UserName), value); }
+            get { return BackingStore?.Get<string>("userName"); }
+            set { BackingStore?.Set("userName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,55 +8,55 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class TenantStatusInformation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue. Optional. Read-only.</summary>
         public Microsoft.Graph.Beta.Models.ManagedTenants.DelegatedPrivilegeStatus? DelegatedPrivilegeStatus {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.DelegatedPrivilegeStatus?>(nameof(DelegatedPrivilegeStatus)); }
-            set { BackingStore?.Set(nameof(DelegatedPrivilegeStatus), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.DelegatedPrivilegeStatus?>("delegatedPrivilegeStatus"); }
+            set { BackingStore?.Set("delegatedPrivilegeStatus", value); }
         }
         /// <summary>The date and time the delegated admin privileges status was updated. Optional. Read-only.</summary>
         public DateTimeOffset? LastDelegatedPrivilegeRefreshDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastDelegatedPrivilegeRefreshDateTime)); }
-            set { BackingStore?.Set(nameof(LastDelegatedPrivilegeRefreshDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastDelegatedPrivilegeRefreshDateTime"); }
+            set { BackingStore?.Set("lastDelegatedPrivilegeRefreshDateTime", value); }
         }
         /// <summary>The identifier for the account that offboarded the managed tenant. Optional. Read-only.</summary>
         public string OffboardedByUserId {
-            get { return BackingStore?.Get<string>(nameof(OffboardedByUserId)); }
-            set { BackingStore?.Set(nameof(OffboardedByUserId), value); }
+            get { return BackingStore?.Get<string>("offboardedByUserId"); }
+            set { BackingStore?.Set("offboardedByUserId", value); }
         }
         /// <summary>The date and time when the managed tenant was offboarded. Optional. Read-only.</summary>
         public DateTimeOffset? OffboardedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(OffboardedDateTime)); }
-            set { BackingStore?.Set(nameof(OffboardedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("offboardedDateTime"); }
+            set { BackingStore?.Set("offboardedDateTime", value); }
         }
         /// <summary>The identifier for the account that onboarded the managed tenant. Optional. Read-only.</summary>
         public string OnboardedByUserId {
-            get { return BackingStore?.Get<string>(nameof(OnboardedByUserId)); }
-            set { BackingStore?.Set(nameof(OnboardedByUserId), value); }
+            get { return BackingStore?.Get<string>("onboardedByUserId"); }
+            set { BackingStore?.Set("onboardedByUserId", value); }
         }
         /// <summary>The date and time when the managed tenant was onboarded. Optional. Read-only.</summary>
         public DateTimeOffset? OnboardedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(OnboardedDateTime)); }
-            set { BackingStore?.Set(nameof(OnboardedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("onboardedDateTime"); }
+            set { BackingStore?.Set("onboardedDateTime", value); }
         }
         /// <summary>The onboarding status for the managed tenant.. Possible values are: ineligible, inProcess, active, inactive, unknownFutureValue. Optional. Read-only.</summary>
         public TenantOnboardingStatus? OnboardingStatus {
-            get { return BackingStore?.Get<TenantOnboardingStatus?>(nameof(OnboardingStatus)); }
-            set { BackingStore?.Set(nameof(OnboardingStatus), value); }
+            get { return BackingStore?.Get<TenantOnboardingStatus?>("onboardingStatus"); }
+            set { BackingStore?.Set("onboardingStatus", value); }
         }
         /// <summary>Organization&apos;s onboarding eligibility reason in Microsoft 365 Lighthouse.. Possible values are: none, contractType, delegatedAdminPrivileges,usersCount,license and unknownFutureValue. Optional. Read-only.</summary>
         public Microsoft.Graph.Beta.Models.ManagedTenants.TenantOnboardingEligibilityReason? TenantOnboardingEligibilityReason {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.TenantOnboardingEligibilityReason?>(nameof(TenantOnboardingEligibilityReason)); }
-            set { BackingStore?.Set(nameof(TenantOnboardingEligibilityReason), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.TenantOnboardingEligibilityReason?>("tenantOnboardingEligibilityReason"); }
+            set { BackingStore?.Set("tenantOnboardingEligibilityReason", value); }
         }
         /// <summary>The collection of workload statues for the managed tenant. Optional. Read-only.</summary>
         public List<WorkloadStatus> WorkloadStatuses {
-            get { return BackingStore?.Get<List<WorkloadStatus>>(nameof(WorkloadStatuses)); }
-            set { BackingStore?.Set(nameof(WorkloadStatuses), value); }
+            get { return BackingStore?.Get<List<WorkloadStatus>>("workloadStatuses"); }
+            set { BackingStore?.Set("workloadStatuses", value); }
         }
         /// <summary>
         /// Instantiates a new tenantStatusInformation and sets the default values.

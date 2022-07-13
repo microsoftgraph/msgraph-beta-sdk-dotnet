@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class DocumentComment : Entity, IParsable {
         /// <summary>The content property</summary>
         public string Content {
-            get { return BackingStore?.Get<string>(nameof(Content)); }
-            set { BackingStore?.Set(nameof(Content), value); }
+            get { return BackingStore?.Get<string>("content"); }
+            set { BackingStore?.Set("content", value); }
         }
         /// <summary>The replies property</summary>
         public List<DocumentCommentReply> Replies {
-            get { return BackingStore?.Get<List<DocumentCommentReply>>(nameof(Replies)); }
-            set { BackingStore?.Set(nameof(Replies), value); }
+            get { return BackingStore?.Get<List<DocumentCommentReply>>("replies"); }
+            set { BackingStore?.Set("replies", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

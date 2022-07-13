@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class OmaSettingFloatingPoint : OmaSetting, IParsable {
         /// <summary>Value.</summary>
         public float? Value {
-            get { return BackingStore?.Get<float?>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<float?>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

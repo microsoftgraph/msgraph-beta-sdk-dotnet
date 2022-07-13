@@ -1,5 +1,6 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
+using Microsoft.Graph.Beta.Security.Alerts_v2;
 using Microsoft.Graph.Beta.Security.Alerts;
 using Microsoft.Graph.Beta.Security.AttackSimulation;
 using Microsoft.Graph.Beta.Security.Cases;
@@ -7,10 +8,12 @@ using Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles;
 using Microsoft.Graph.Beta.Security.DomainSecurityProfiles;
 using Microsoft.Graph.Beta.Security.FileSecurityProfiles;
 using Microsoft.Graph.Beta.Security.HostSecurityProfiles;
+using Microsoft.Graph.Beta.Security.Incidents;
 using Microsoft.Graph.Beta.Security.InformationProtection;
 using Microsoft.Graph.Beta.Security.IpSecurityProfiles;
 using Microsoft.Graph.Beta.Security.Labels;
 using Microsoft.Graph.Beta.Security.ProviderTenantSettings;
+using Microsoft.Graph.Beta.Security.RunHuntingQuery;
 using Microsoft.Graph.Beta.Security.SecureScoreControlProfiles;
 using Microsoft.Graph.Beta.Security.SecureScores;
 using Microsoft.Graph.Beta.Security.SecurityActions;
@@ -33,6 +36,10 @@ namespace Microsoft.Graph.Beta.Security {
         /// <summary>The alerts property</summary>
         public AlertsRequestBuilder Alerts { get =>
             new AlertsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The alerts_v2 property</summary>
+        public Alerts_v2RequestBuilder Alerts_v2 { get =>
+            new Alerts_v2RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The attackSimulation property</summary>
         public AttackSimulationRequestBuilder AttackSimulation { get =>
@@ -58,6 +65,10 @@ namespace Microsoft.Graph.Beta.Security {
         public HostSecurityProfilesRequestBuilder HostSecurityProfiles { get =>
             new HostSecurityProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The incidents property</summary>
+        public IncidentsRequestBuilder Incidents { get =>
+            new IncidentsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The informationProtection property</summary>
         public InformationProtectionRequestBuilder InformationProtection { get =>
             new InformationProtectionRequestBuilder(PathParameters, RequestAdapter);
@@ -78,6 +89,10 @@ namespace Microsoft.Graph.Beta.Security {
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The runHuntingQuery property</summary>
+        public RunHuntingQueryRequestBuilder RunHuntingQuery { get =>
+            new RunHuntingQueryRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The secureScoreControlProfiles property</summary>
         public SecureScoreControlProfilesRequestBuilder SecureScoreControlProfiles { get =>
             new SecureScoreControlProfilesRequestBuilder(PathParameters, RequestAdapter);

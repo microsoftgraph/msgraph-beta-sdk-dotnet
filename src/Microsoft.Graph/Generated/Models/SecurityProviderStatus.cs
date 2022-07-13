@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class SecurityProviderStatus : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The enabled property</summary>
         public bool? Enabled {
-            get { return BackingStore?.Get<bool?>(nameof(Enabled)); }
-            set { BackingStore?.Set(nameof(Enabled), value); }
+            get { return BackingStore?.Get<bool?>("enabled"); }
+            set { BackingStore?.Set("enabled", value); }
         }
         /// <summary>The endpoint property</summary>
         public string Endpoint {
-            get { return BackingStore?.Get<string>(nameof(Endpoint)); }
-            set { BackingStore?.Set(nameof(Endpoint), value); }
+            get { return BackingStore?.Get<string>("endpoint"); }
+            set { BackingStore?.Set("endpoint", value); }
         }
         /// <summary>The provider property</summary>
         public string Provider {
-            get { return BackingStore?.Get<string>(nameof(Provider)); }
-            set { BackingStore?.Set(nameof(Provider), value); }
+            get { return BackingStore?.Get<string>("provider"); }
+            set { BackingStore?.Set("provider", value); }
         }
         /// <summary>The region property</summary>
         public string Region {
-            get { return BackingStore?.Get<string>(nameof(Region)); }
-            set { BackingStore?.Set(nameof(Region), value); }
+            get { return BackingStore?.Get<string>("region"); }
+            set { BackingStore?.Set("region", value); }
         }
         /// <summary>The vendor property</summary>
         public string Vendor {
-            get { return BackingStore?.Get<string>(nameof(Vendor)); }
-            set { BackingStore?.Set(nameof(Vendor), value); }
+            get { return BackingStore?.Get<string>("vendor"); }
+            set { BackingStore?.Set("vendor", value); }
         }
         /// <summary>
         /// Instantiates a new securityProviderStatus and sets the default values.

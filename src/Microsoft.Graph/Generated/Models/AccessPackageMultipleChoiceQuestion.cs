@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageMultipleChoiceQuestion : AccessPackageQuestion, IParsable {
         /// <summary>Indicates whether requestor can select multiple choices as their answer.</summary>
         public bool? AllowsMultipleSelection {
-            get { return BackingStore?.Get<bool?>(nameof(AllowsMultipleSelection)); }
-            set { BackingStore?.Set(nameof(AllowsMultipleSelection), value); }
+            get { return BackingStore?.Get<bool?>("allowsMultipleSelection"); }
+            set { BackingStore?.Set("allowsMultipleSelection", value); }
         }
         /// <summary>List of answer choices.</summary>
         public List<AccessPackageAnswerChoice> Choices {
-            get { return BackingStore?.Get<List<AccessPackageAnswerChoice>>(nameof(Choices)); }
-            set { BackingStore?.Set(nameof(Choices), value); }
+            get { return BackingStore?.Get<List<AccessPackageAnswerChoice>>("choices"); }
+            set { BackingStore?.Set("choices", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

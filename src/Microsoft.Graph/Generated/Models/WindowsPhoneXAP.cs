@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsPhoneXAP : MobileLobApp, IParsable {
         /// <summary>The identity version.</summary>
         public string IdentityVersion {
-            get { return BackingStore?.Get<string>(nameof(IdentityVersion)); }
-            set { BackingStore?.Set(nameof(IdentityVersion), value); }
+            get { return BackingStore?.Get<string>("identityVersion"); }
+            set { BackingStore?.Set("identityVersion", value); }
         }
         /// <summary>The minimum operating system required for a Windows mobile app.</summary>
         public WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem {
-            get { return BackingStore?.Get<WindowsMinimumOperatingSystem>(nameof(MinimumSupportedOperatingSystem)); }
-            set { BackingStore?.Set(nameof(MinimumSupportedOperatingSystem), value); }
+            get { return BackingStore?.Get<WindowsMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
+            set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
         /// <summary>The Product Identifier.</summary>
         public string ProductIdentifier {
-            get { return BackingStore?.Get<string>(nameof(ProductIdentifier)); }
-            set { BackingStore?.Set(nameof(ProductIdentifier), value); }
+            get { return BackingStore?.Get<string>("productIdentifier"); }
+            set { BackingStore?.Set("productIdentifier", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

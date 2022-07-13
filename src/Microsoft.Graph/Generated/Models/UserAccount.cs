@@ -8,40 +8,40 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserAccount : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The displayName property</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The lastSeenDateTime property</summary>
         public DateTimeOffset? LastSeenDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSeenDateTime)); }
-            set { BackingStore?.Set(nameof(LastSeenDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
+            set { BackingStore?.Set("lastSeenDateTime", value); }
         }
         /// <summary>The riskScore property</summary>
         public string RiskScore {
-            get { return BackingStore?.Get<string>(nameof(RiskScore)); }
-            set { BackingStore?.Set(nameof(RiskScore), value); }
+            get { return BackingStore?.Get<string>("riskScore"); }
+            set { BackingStore?.Set("riskScore", value); }
         }
         /// <summary>The service property</summary>
         public string Service {
-            get { return BackingStore?.Get<string>(nameof(Service)); }
-            set { BackingStore?.Set(nameof(Service), value); }
+            get { return BackingStore?.Get<string>("service"); }
+            set { BackingStore?.Set("service", value); }
         }
         /// <summary>The signinName property</summary>
         public string SigninName {
-            get { return BackingStore?.Get<string>(nameof(SigninName)); }
-            set { BackingStore?.Set(nameof(SigninName), value); }
+            get { return BackingStore?.Get<string>("signinName"); }
+            set { BackingStore?.Set("signinName", value); }
         }
         /// <summary>The status property</summary>
         public AccountStatus? Status {
-            get { return BackingStore?.Get<AccountStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<AccountStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Instantiates a new userAccount and sets the default values.

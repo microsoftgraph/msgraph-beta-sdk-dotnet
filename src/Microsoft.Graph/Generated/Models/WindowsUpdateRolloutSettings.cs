@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsUpdateRolloutSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The feature update&apos;s ending  of release date and time to be set, update, and displayed for a feature Update profile for example: 2020-06-09T10:00:00Z.</summary>
         public DateTimeOffset? OfferEndDateTimeInUTC {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(OfferEndDateTimeInUTC)); }
-            set { BackingStore?.Set(nameof(OfferEndDateTimeInUTC), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("offerEndDateTimeInUTC"); }
+            set { BackingStore?.Set("offerEndDateTimeInUTC", value); }
         }
         /// <summary>The number of day(s) between each set of offers to be set, updated, and displayed for a feature update profile, for example: if OfferStartDateTimeInUTC is 2020-06-09T10:00:00Z, and OfferIntervalInDays is 1, then the next two sets of offers will be made consecutively on 2020-06-10T10:00:00Z (next day at the same specified time) and 2020-06-11T10:00:00Z (next next day at the same specified time) with 1 day in between each set of offers.</summary>
         public int? OfferIntervalInDays {
-            get { return BackingStore?.Get<int?>(nameof(OfferIntervalInDays)); }
-            set { BackingStore?.Set(nameof(OfferIntervalInDays), value); }
+            get { return BackingStore?.Get<int?>("offerIntervalInDays"); }
+            set { BackingStore?.Set("offerIntervalInDays", value); }
         }
         /// <summary>The feature update&apos;s starting date and time to be set, update, and displayed for a feature Update profile for example: 2020-06-09T10:00:00Z.</summary>
         public DateTimeOffset? OfferStartDateTimeInUTC {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(OfferStartDateTimeInUTC)); }
-            set { BackingStore?.Set(nameof(OfferStartDateTimeInUTC), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("offerStartDateTimeInUTC"); }
+            set { BackingStore?.Set("offerStartDateTimeInUTC", value); }
         }
         /// <summary>
         /// Instantiates a new windowsUpdateRolloutSettings and sets the default values.

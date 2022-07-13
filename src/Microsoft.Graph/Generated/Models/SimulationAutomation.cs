@@ -4,57 +4,57 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class SimulationAutomation : Entity, IParsable {
         /// <summary>Identity of the user who created the attack simulation automation.</summary>
         public EmailIdentity CreatedBy {
-            get { return BackingStore?.Get<EmailIdentity>(nameof(CreatedBy)); }
-            set { BackingStore?.Set(nameof(CreatedBy), value); }
+            get { return BackingStore?.Get<EmailIdentity>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
         }
         /// <summary>Date and time when the attack simulation automation was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Description of the attack simulation automation.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Display name of the attack simulation automation. Supports $filter and $orderby.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Identity of the user who most recently modified the attack simulation automation.</summary>
         public EmailIdentity LastModifiedBy {
-            get { return BackingStore?.Get<EmailIdentity>(nameof(LastModifiedBy)); }
-            set { BackingStore?.Set(nameof(LastModifiedBy), value); }
+            get { return BackingStore?.Get<EmailIdentity>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
         }
         /// <summary>Date and time when the attack simulation automation was most recently modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Date and time of the latest run of the attack simulation automation.</summary>
         public DateTimeOffset? LastRunDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastRunDateTime)); }
-            set { BackingStore?.Set(nameof(LastRunDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastRunDateTime"); }
+            set { BackingStore?.Set("lastRunDateTime", value); }
         }
         /// <summary>Date and time of the upcoming run of the attack simulation automation.</summary>
         public DateTimeOffset? NextRunDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(NextRunDateTime)); }
-            set { BackingStore?.Set(nameof(NextRunDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("nextRunDateTime"); }
+            set { BackingStore?.Set("nextRunDateTime", value); }
         }
         /// <summary>A collection of simulation automation runs.</summary>
         public List<SimulationAutomationRun> Runs {
-            get { return BackingStore?.Get<List<SimulationAutomationRun>>(nameof(Runs)); }
-            set { BackingStore?.Set(nameof(Runs), value); }
+            get { return BackingStore?.Get<List<SimulationAutomationRun>>("runs"); }
+            set { BackingStore?.Set("runs", value); }
         }
         /// <summary>Status of the attack simulation automation. Supports $filter and $orderby. The possible values are: unknown, draft, notRunning, running, completed, unknownFutureValue.</summary>
         public SimulationAutomationStatus? Status {
-            get { return BackingStore?.Get<SimulationAutomationStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<SimulationAutomationStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

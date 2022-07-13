@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
     public class Ediscoveryroot : Entity, IParsable {
         /// <summary>The cases property</summary>
         public List<Case> Cases {
-            get { return BackingStore?.Get<List<Case>>(nameof(Cases)); }
-            set { BackingStore?.Set(nameof(Cases), value); }
+            get { return BackingStore?.Get<List<Case>>("cases"); }
+            set { BackingStore?.Set("cases", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

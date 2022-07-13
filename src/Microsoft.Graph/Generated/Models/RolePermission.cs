@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class RolePermission : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Allowed Actions - Deprecated</summary>
         public List<string> Actions {
-            get { return BackingStore?.Get<List<string>>(nameof(Actions)); }
-            set { BackingStore?.Set(nameof(Actions), value); }
+            get { return BackingStore?.Get<List<string>>("actions"); }
+            set { BackingStore?.Set("actions", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Resource Actions each containing a set of allowed and not allowed permissions.</summary>
         public List<ResourceAction> ResourceActions {
-            get { return BackingStore?.Get<List<ResourceAction>>(nameof(ResourceActions)); }
-            set { BackingStore?.Set(nameof(ResourceActions), value); }
+            get { return BackingStore?.Get<List<ResourceAction>>("resourceActions"); }
+            set { BackingStore?.Set("resourceActions", value); }
         }
         /// <summary>
         /// Instantiates a new rolePermission and sets the default values.

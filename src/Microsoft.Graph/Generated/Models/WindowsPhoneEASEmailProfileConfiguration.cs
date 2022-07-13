@@ -7,53 +7,53 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsPhoneEASEmailProfileConfiguration : EasEmailProfileConfigurationBase, IParsable {
         /// <summary>Account name.</summary>
         public string AccountName {
-            get { return BackingStore?.Get<string>(nameof(AccountName)); }
-            set { BackingStore?.Set(nameof(AccountName), value); }
+            get { return BackingStore?.Get<string>("accountName"); }
+            set { BackingStore?.Set("accountName", value); }
         }
         /// <summary>Value indicating whether this policy only applies to Windows 8.1. This property is read-only.</summary>
         public bool? ApplyOnlyToWindowsPhone81 {
-            get { return BackingStore?.Get<bool?>(nameof(ApplyOnlyToWindowsPhone81)); }
-            set { BackingStore?.Set(nameof(ApplyOnlyToWindowsPhone81), value); }
+            get { return BackingStore?.Get<bool?>("applyOnlyToWindowsPhone81"); }
+            set { BackingStore?.Set("applyOnlyToWindowsPhone81", value); }
         }
-        /// <summary>Duration of email to sync. Possible values are: userDefined, oneDay, threeDays, oneWeek, twoWeeks, oneMonth, unlimited.</summary>
+        /// <summary>Possible values for email sync duration.</summary>
         public EmailSyncDuration? DurationOfEmailToSync {
-            get { return BackingStore?.Get<EmailSyncDuration?>(nameof(DurationOfEmailToSync)); }
-            set { BackingStore?.Set(nameof(DurationOfEmailToSync), value); }
+            get { return BackingStore?.Get<EmailSyncDuration?>("durationOfEmailToSync"); }
+            set { BackingStore?.Set("durationOfEmailToSync", value); }
         }
         /// <summary>Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.</summary>
         public UserEmailSource? EmailAddressSource {
-            get { return BackingStore?.Get<UserEmailSource?>(nameof(EmailAddressSource)); }
-            set { BackingStore?.Set(nameof(EmailAddressSource), value); }
+            get { return BackingStore?.Get<UserEmailSource?>("emailAddressSource"); }
+            set { BackingStore?.Set("emailAddressSource", value); }
         }
-        /// <summary>Email sync schedule. Possible values are: userDefined, asMessagesArrive, manual, fifteenMinutes, thirtyMinutes, sixtyMinutes, basedOnMyUsage.</summary>
+        /// <summary>Possible values for email sync schedule.</summary>
         public Microsoft.Graph.Beta.Models.EmailSyncSchedule? EmailSyncSchedule {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailSyncSchedule?>(nameof(EmailSyncSchedule)); }
-            set { BackingStore?.Set(nameof(EmailSyncSchedule), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailSyncSchedule?>("emailSyncSchedule"); }
+            set { BackingStore?.Set("emailSyncSchedule", value); }
         }
         /// <summary>Exchange location that (URL) that the native mail app connects to.</summary>
         public string HostName {
-            get { return BackingStore?.Get<string>(nameof(HostName)); }
-            set { BackingStore?.Set(nameof(HostName), value); }
+            get { return BackingStore?.Get<string>("hostName"); }
+            set { BackingStore?.Set("hostName", value); }
         }
         /// <summary>Indicates whether or not to use SSL.</summary>
         public bool? RequireSsl {
-            get { return BackingStore?.Get<bool?>(nameof(RequireSsl)); }
-            set { BackingStore?.Set(nameof(RequireSsl), value); }
+            get { return BackingStore?.Get<bool?>("requireSsl"); }
+            set { BackingStore?.Set("requireSsl", value); }
         }
         /// <summary>Whether or not to sync the calendar.</summary>
         public bool? SyncCalendar {
-            get { return BackingStore?.Get<bool?>(nameof(SyncCalendar)); }
-            set { BackingStore?.Set(nameof(SyncCalendar), value); }
+            get { return BackingStore?.Get<bool?>("syncCalendar"); }
+            set { BackingStore?.Set("syncCalendar", value); }
         }
         /// <summary>Whether or not to sync contacts.</summary>
         public bool? SyncContacts {
-            get { return BackingStore?.Get<bool?>(nameof(SyncContacts)); }
-            set { BackingStore?.Set(nameof(SyncContacts), value); }
+            get { return BackingStore?.Get<bool?>("syncContacts"); }
+            set { BackingStore?.Set("syncContacts", value); }
         }
         /// <summary>Whether or not to sync tasks.</summary>
         public bool? SyncTasks {
-            get { return BackingStore?.Get<bool?>(nameof(SyncTasks)); }
-            set { BackingStore?.Set(nameof(SyncTasks), value); }
+            get { return BackingStore?.Get<bool?>("syncTasks"); }
+            set { BackingStore?.Set("syncTasks", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

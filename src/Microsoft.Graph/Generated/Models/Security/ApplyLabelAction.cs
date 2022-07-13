@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class ApplyLabelAction : InformationProtectionAction, IParsable {
         /// <summary>The actions property</summary>
         public List<InformationProtectionAction> Actions {
-            get { return BackingStore?.Get<List<InformationProtectionAction>>(nameof(Actions)); }
-            set { BackingStore?.Set(nameof(Actions), value); }
+            get { return BackingStore?.Get<List<InformationProtectionAction>>("actions"); }
+            set { BackingStore?.Set("actions", value); }
         }
         /// <summary>The actionSource property</summary>
         public Microsoft.Graph.Beta.Models.Security.ActionSource? ActionSource {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ActionSource?>(nameof(ActionSource)); }
-            set { BackingStore?.Set(nameof(ActionSource), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ActionSource?>("actionSource"); }
+            set { BackingStore?.Set("actionSource", value); }
         }
         /// <summary>The responsibleSensitiveTypeIds property</summary>
         public List<string> ResponsibleSensitiveTypeIds {
-            get { return BackingStore?.Get<List<string>>(nameof(ResponsibleSensitiveTypeIds)); }
-            set { BackingStore?.Set(nameof(ResponsibleSensitiveTypeIds), value); }
+            get { return BackingStore?.Get<List<string>>("responsibleSensitiveTypeIds"); }
+            set { BackingStore?.Set("responsibleSensitiveTypeIds", value); }
         }
         /// <summary>The sensitivityLabelId property</summary>
         public string SensitivityLabelId {
-            get { return BackingStore?.Get<string>(nameof(SensitivityLabelId)); }
-            set { BackingStore?.Set(nameof(SensitivityLabelId), value); }
+            get { return BackingStore?.Get<string>("sensitivityLabelId"); }
+            set { BackingStore?.Set("sensitivityLabelId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

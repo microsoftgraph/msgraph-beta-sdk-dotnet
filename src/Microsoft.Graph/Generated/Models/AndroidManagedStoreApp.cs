@@ -8,48 +8,54 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidManagedStoreApp : MobileApp, IParsable {
         /// <summary>The Identity Name.</summary>
         public string AppIdentifier {
-            get { return BackingStore?.Get<string>(nameof(AppIdentifier)); }
-            set { BackingStore?.Set(nameof(AppIdentifier), value); }
+            get { return BackingStore?.Get<string>("appIdentifier"); }
+            set { BackingStore?.Set("appIdentifier", value); }
         }
         /// <summary>The Play for Work Store app URL.</summary>
         public string AppStoreUrl {
-            get { return BackingStore?.Get<string>(nameof(AppStoreUrl)); }
-            set { BackingStore?.Set(nameof(AppStoreUrl), value); }
+            get { return BackingStore?.Get<string>("appStoreUrl"); }
+            set { BackingStore?.Set("appStoreUrl", value); }
         }
         /// <summary>The tracks that are visible to this enterprise.</summary>
         public List<AndroidManagedStoreAppTrack> AppTracks {
-            get { return BackingStore?.Get<List<AndroidManagedStoreAppTrack>>(nameof(AppTracks)); }
-            set { BackingStore?.Set(nameof(AppTracks), value); }
+            get { return BackingStore?.Get<List<AndroidManagedStoreAppTrack>>("appTracks"); }
+            set { BackingStore?.Set("appTracks", value); }
         }
         /// <summary>Indicates whether the app is only available to a given enterprise&apos;s users.</summary>
         public bool? IsPrivate {
-            get { return BackingStore?.Get<bool?>(nameof(IsPrivate)); }
-            set { BackingStore?.Set(nameof(IsPrivate), value); }
+            get { return BackingStore?.Get<bool?>("isPrivate"); }
+            set { BackingStore?.Set("isPrivate", value); }
         }
         /// <summary>Indicates whether the app is a preinstalled system app.</summary>
         public bool? IsSystemApp {
-            get { return BackingStore?.Get<bool?>(nameof(IsSystemApp)); }
-            set { BackingStore?.Set(nameof(IsSystemApp), value); }
+            get { return BackingStore?.Get<bool?>("isSystemApp"); }
+            set { BackingStore?.Set("isSystemApp", value); }
         }
         /// <summary>The package identifier.</summary>
         public string PackageId {
-            get { return BackingStore?.Get<string>(nameof(PackageId)); }
-            set { BackingStore?.Set(nameof(PackageId), value); }
+            get { return BackingStore?.Get<string>("packageId"); }
+            set { BackingStore?.Set("packageId", value); }
         }
         /// <summary>Whether this app supports OEMConfig policy.</summary>
         public bool? SupportsOemConfig {
-            get { return BackingStore?.Get<bool?>(nameof(SupportsOemConfig)); }
-            set { BackingStore?.Set(nameof(SupportsOemConfig), value); }
+            get { return BackingStore?.Get<bool?>("supportsOemConfig"); }
+            set { BackingStore?.Set("supportsOemConfig", value); }
         }
         /// <summary>The total number of VPP licenses.</summary>
         public int? TotalLicenseCount {
-            get { return BackingStore?.Get<int?>(nameof(TotalLicenseCount)); }
-            set { BackingStore?.Set(nameof(TotalLicenseCount), value); }
+            get { return BackingStore?.Get<int?>("totalLicenseCount"); }
+            set { BackingStore?.Set("totalLicenseCount", value); }
         }
         /// <summary>The number of VPP licenses in use.</summary>
         public int? UsedLicenseCount {
-            get { return BackingStore?.Get<int?>(nameof(UsedLicenseCount)); }
-            set { BackingStore?.Set(nameof(UsedLicenseCount), value); }
+            get { return BackingStore?.Get<int?>("usedLicenseCount"); }
+            set { BackingStore?.Set("usedLicenseCount", value); }
+        }
+        /// <summary>
+        /// Instantiates a new AndroidManagedStoreApp and sets the default values.
+        /// </summary>
+        public AndroidManagedStoreApp() : base() {
+            Type = "#microsoft.graph.androidManagedStoreApp";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

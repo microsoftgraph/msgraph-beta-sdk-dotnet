@@ -7,38 +7,38 @@ namespace Microsoft.Graph.Beta.Models {
     public class LanguageProficiency : ItemFacet, IParsable {
         /// <summary>Contains the long-form name for the language.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The proficiency property</summary>
         public LanguageProficiencyLevel? Proficiency {
-            get { return BackingStore?.Get<LanguageProficiencyLevel?>(nameof(Proficiency)); }
-            set { BackingStore?.Set(nameof(Proficiency), value); }
+            get { return BackingStore?.Get<LanguageProficiencyLevel?>("proficiency"); }
+            set { BackingStore?.Set("proficiency", value); }
         }
         /// <summary>Represents the users reading comprehension for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.</summary>
         public LanguageProficiencyLevel? Reading {
-            get { return BackingStore?.Get<LanguageProficiencyLevel?>(nameof(Reading)); }
-            set { BackingStore?.Set(nameof(Reading), value); }
+            get { return BackingStore?.Get<LanguageProficiencyLevel?>("reading"); }
+            set { BackingStore?.Set("reading", value); }
         }
         /// <summary>Represents the users spoken proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.</summary>
         public LanguageProficiencyLevel? Spoken {
-            get { return BackingStore?.Get<LanguageProficiencyLevel?>(nameof(Spoken)); }
-            set { BackingStore?.Set(nameof(Spoken), value); }
+            get { return BackingStore?.Get<LanguageProficiencyLevel?>("spoken"); }
+            set { BackingStore?.Set("spoken", value); }
         }
         /// <summary>Contains the four-character BCP47 name for the language (en-US, no-NB, en-AU).</summary>
         public string Tag {
-            get { return BackingStore?.Get<string>(nameof(Tag)); }
-            set { BackingStore?.Set(nameof(Tag), value); }
+            get { return BackingStore?.Get<string>("tag"); }
+            set { BackingStore?.Set("tag", value); }
         }
         /// <summary>The thumbnailUrl property</summary>
         public string ThumbnailUrl {
-            get { return BackingStore?.Get<string>(nameof(ThumbnailUrl)); }
-            set { BackingStore?.Set(nameof(ThumbnailUrl), value); }
+            get { return BackingStore?.Get<string>("thumbnailUrl"); }
+            set { BackingStore?.Set("thumbnailUrl", value); }
         }
         /// <summary>Represents the users written proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.</summary>
         public LanguageProficiencyLevel? Written {
-            get { return BackingStore?.Get<LanguageProficiencyLevel?>(nameof(Written)); }
-            set { BackingStore?.Set(nameof(Written), value); }
+            get { return BackingStore?.Get<LanguageProficiencyLevel?>("written"); }
+            set { BackingStore?.Set("written", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

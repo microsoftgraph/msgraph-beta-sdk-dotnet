@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOSSystemExtensionTypeMapping : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>Gets or sets the allowed macOS system extension types. Possible values are: driverExtensionsAllowed, networkExtensionsAllowed, endpointSecurityExtensionsAllowed.</summary>
+        /// <summary>Flag enum representing the allowed macOS system extension types.</summary>
         public MacOSSystemExtensionType? AllowedTypes {
-            get { return BackingStore?.Get<MacOSSystemExtensionType?>(nameof(AllowedTypes)); }
-            set { BackingStore?.Set(nameof(AllowedTypes), value); }
+            get { return BackingStore?.Get<MacOSSystemExtensionType?>("allowedTypes"); }
+            set { BackingStore?.Set("allowedTypes", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Gets or sets the team identifier used to sign the system extension.</summary>
         public string TeamIdentifier {
-            get { return BackingStore?.Get<string>(nameof(TeamIdentifier)); }
-            set { BackingStore?.Set(nameof(TeamIdentifier), value); }
+            get { return BackingStore?.Get<string>("teamIdentifier"); }
+            set { BackingStore?.Set("teamIdentifier", value); }
         }
         /// <summary>
         /// Instantiates a new macOSSystemExtensionTypeMapping and sets the default values.

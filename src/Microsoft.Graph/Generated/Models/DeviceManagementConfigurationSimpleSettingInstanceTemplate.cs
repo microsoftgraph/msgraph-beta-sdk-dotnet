@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationSimpleSettingInstanceTemplate : DeviceManagementConfigurationSettingInstanceTemplate, IParsable {
         /// <summary>Simple Setting Value Template</summary>
         public DeviceManagementConfigurationSimpleSettingValueTemplate SimpleSettingValueTemplate {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSimpleSettingValueTemplate>(nameof(SimpleSettingValueTemplate)); }
-            set { BackingStore?.Set(nameof(SimpleSettingValueTemplate), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationSimpleSettingValueTemplate>("simpleSettingValueTemplate"); }
+            set { BackingStore?.Set("simpleSettingValueTemplate", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

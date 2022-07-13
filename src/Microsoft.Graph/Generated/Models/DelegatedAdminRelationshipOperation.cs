@@ -4,32 +4,32 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class DelegatedAdminRelationshipOperation : Entity, IParsable {
         /// <summary>The time in ISO 8601 format and in UTC time when the long-running operation was created. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The data (payload) for the operation. Read-only.</summary>
         public string Data {
-            get { return BackingStore?.Get<string>(nameof(Data)); }
-            set { BackingStore?.Set(nameof(Data), value); }
+            get { return BackingStore?.Get<string>("data"); }
+            set { BackingStore?.Set("data", value); }
         }
         /// <summary>The time in ISO 8601 format and in UTC time when the long-running operation was last modified. Read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The type of long-running operation. The possible values are: delegatedAdminAccessAssignmentUpdate, unknownFutureValue. Read-only.</summary>
+        /// <summary>The operationType property</summary>
         public DelegatedAdminRelationshipOperationType? OperationType {
-            get { return BackingStore?.Get<DelegatedAdminRelationshipOperationType?>(nameof(OperationType)); }
-            set { BackingStore?.Set(nameof(OperationType), value); }
+            get { return BackingStore?.Get<DelegatedAdminRelationshipOperationType?>("operationType"); }
+            set { BackingStore?.Set("operationType", value); }
         }
-        /// <summary>The status of the operation. Read-only. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue. Read-only. Supports $orderBy.</summary>
+        /// <summary>The status property</summary>
         public LongRunningOperationStatus? Status {
-            get { return BackingStore?.Get<LongRunningOperationStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<LongRunningOperationStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

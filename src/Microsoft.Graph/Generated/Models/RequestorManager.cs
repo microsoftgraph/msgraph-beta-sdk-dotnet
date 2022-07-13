@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class RequestorManager : UserSet, IParsable {
         /// <summary>The hierarchical level of the manager with respect to the requestor. For example, the direct manager of a requestor would have a managerLevel of 1, while the manager of the requestor&apos;s manager would have a managerLevel of 2. Default value for managerLevel is 1. Possible values for this property range from 1 to 2.</summary>
         public int? ManagerLevel {
-            get { return BackingStore?.Get<int?>(nameof(ManagerLevel)); }
-            set { BackingStore?.Set(nameof(ManagerLevel), value); }
+            get { return BackingStore?.Get<int?>("managerLevel"); }
+            set { BackingStore?.Set("managerLevel", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

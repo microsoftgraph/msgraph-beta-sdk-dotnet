@@ -8,48 +8,54 @@ namespace Microsoft.Graph.Beta.Models {
     public class RiskyUser : Entity, IParsable {
         /// <summary>The activity related to user risk level change</summary>
         public List<RiskyUserHistoryItem> History {
-            get { return BackingStore?.Get<List<RiskyUserHistoryItem>>(nameof(History)); }
-            set { BackingStore?.Set(nameof(History), value); }
+            get { return BackingStore?.Get<List<RiskyUserHistoryItem>>("history"); }
+            set { BackingStore?.Set("history", value); }
         }
         /// <summary>Indicates whether the user is deleted. Possible values are: true, false.</summary>
         public bool? IsDeleted {
-            get { return BackingStore?.Get<bool?>(nameof(IsDeleted)); }
-            set { BackingStore?.Set(nameof(IsDeleted), value); }
+            get { return BackingStore?.Get<bool?>("isDeleted"); }
+            set { BackingStore?.Set("isDeleted", value); }
         }
         /// <summary>Indicates whether a user&apos;s risky state is being processed by the backend.</summary>
         public bool? IsProcessing {
-            get { return BackingStore?.Get<bool?>(nameof(IsProcessing)); }
-            set { BackingStore?.Set(nameof(IsProcessing), value); }
+            get { return BackingStore?.Get<bool?>("isProcessing"); }
+            set { BackingStore?.Set("isProcessing", value); }
         }
         /// <summary>The possible values are none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.RiskDetail? RiskDetail {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskDetail?>(nameof(RiskDetail)); }
-            set { BackingStore?.Set(nameof(RiskDetail), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskDetail?>("riskDetail"); }
+            set { BackingStore?.Set("riskDetail", value); }
         }
         /// <summary>The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? RiskLastUpdatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(RiskLastUpdatedDateTime)); }
-            set { BackingStore?.Set(nameof(RiskLastUpdatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("riskLastUpdatedDateTime"); }
+            set { BackingStore?.Set("riskLastUpdatedDateTime", value); }
         }
         /// <summary>Level of the detected risky user. The possible values are low, medium, high, hidden, none, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.RiskLevel? RiskLevel {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskLevel?>(nameof(RiskLevel)); }
-            set { BackingStore?.Set(nameof(RiskLevel), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskLevel?>("riskLevel"); }
+            set { BackingStore?.Set("riskLevel", value); }
         }
         /// <summary>State of the user&apos;s risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.RiskState? RiskState {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskState?>(nameof(RiskState)); }
-            set { BackingStore?.Set(nameof(RiskState), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskState?>("riskState"); }
+            set { BackingStore?.Set("riskState", value); }
         }
         /// <summary>Risky user display name.</summary>
         public string UserDisplayName {
-            get { return BackingStore?.Get<string>(nameof(UserDisplayName)); }
-            set { BackingStore?.Set(nameof(UserDisplayName), value); }
+            get { return BackingStore?.Get<string>("userDisplayName"); }
+            set { BackingStore?.Set("userDisplayName", value); }
         }
         /// <summary>Risky user principal name.</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+        /// <summary>
+        /// Instantiates a new RiskyUser and sets the default values.
+        /// </summary>
+        public RiskyUser() : base() {
+            Type = "#microsoft.graph.riskyUser";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

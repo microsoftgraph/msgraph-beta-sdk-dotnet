@@ -4,32 +4,32 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class DelegatedAdminAccessAssignment : Entity, IParsable {
         /// <summary>The accessContainer property</summary>
         public DelegatedAdminAccessContainer AccessContainer {
-            get { return BackingStore?.Get<DelegatedAdminAccessContainer>(nameof(AccessContainer)); }
-            set { BackingStore?.Set(nameof(AccessContainer), value); }
+            get { return BackingStore?.Get<DelegatedAdminAccessContainer>("accessContainer"); }
+            set { BackingStore?.Set("accessContainer", value); }
         }
         /// <summary>The accessDetails property</summary>
         public DelegatedAdminAccessDetails AccessDetails {
-            get { return BackingStore?.Get<DelegatedAdminAccessDetails>(nameof(AccessDetails)); }
-            set { BackingStore?.Set(nameof(AccessDetails), value); }
+            get { return BackingStore?.Get<DelegatedAdminAccessDetails>("accessDetails"); }
+            set { BackingStore?.Set("accessDetails", value); }
         }
         /// <summary>The date and time in ISO 8601 format and in UTC time when the access assignment was created. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The date and time in ISO 8601 and in UTC time when this access assignment was last modified. Read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The status of the access assignment. Read-only. The possible values are: pending, active, deleting, deleted, error, unknownFutureValue.</summary>
         public DelegatedAdminAccessAssignmentStatus? Status {
-            get { return BackingStore?.Get<DelegatedAdminAccessAssignmentStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<DelegatedAdminAccessAssignmentStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

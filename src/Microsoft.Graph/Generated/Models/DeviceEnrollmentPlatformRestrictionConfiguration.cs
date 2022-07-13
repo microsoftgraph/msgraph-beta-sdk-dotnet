@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceEnrollmentPlatformRestrictionConfiguration : DeviceEnrollmentConfiguration, IParsable {
         /// <summary>Restrictions based on platform, platform operating system version, and device ownership</summary>
         public DeviceEnrollmentPlatformRestriction PlatformRestriction {
-            get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction>(nameof(PlatformRestriction)); }
-            set { BackingStore?.Set(nameof(PlatformRestriction), value); }
+            get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction>("platformRestriction"); }
+            set { BackingStore?.Set("platformRestriction", value); }
         }
-        /// <summary>Type of platform for which this restriction applies. Possible values are: allPlatforms, ios, windows, windowsPhone, android, androidForWork, mac.</summary>
+        /// <summary>This enum indicates the platform type for which the enrollment restriction applies.</summary>
         public EnrollmentRestrictionPlatformType? PlatformType {
-            get { return BackingStore?.Get<EnrollmentRestrictionPlatformType?>(nameof(PlatformType)); }
-            set { BackingStore?.Set(nameof(PlatformType), value); }
+            get { return BackingStore?.Get<EnrollmentRestrictionPlatformType?>("platformType"); }
+            set { BackingStore?.Set("platformType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

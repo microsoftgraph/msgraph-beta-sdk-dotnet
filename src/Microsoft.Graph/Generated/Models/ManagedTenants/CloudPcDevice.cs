@@ -4,67 +4,67 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class CloudPcDevice : Entity, IParsable {
         /// <summary>The status of the cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed. Required. Read-only.</summary>
         public string CloudPcStatus {
-            get { return BackingStore?.Get<string>(nameof(CloudPcStatus)); }
-            set { BackingStore?.Set(nameof(CloudPcStatus), value); }
+            get { return BackingStore?.Get<string>("cloudPcStatus"); }
+            set { BackingStore?.Set("cloudPcStatus", value); }
         }
         /// <summary>The deviceSpecification property</summary>
         public string DeviceSpecification {
-            get { return BackingStore?.Get<string>(nameof(DeviceSpecification)); }
-            set { BackingStore?.Set(nameof(DeviceSpecification), value); }
+            get { return BackingStore?.Get<string>("deviceSpecification"); }
+            set { BackingStore?.Set("deviceSpecification", value); }
         }
         /// <summary>The display name for the cloud PC. Required. Read-only.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Date and time the entity was last updated in the multi-tenant management platform. Required. Read-only.</summary>
         public DateTimeOffset? LastRefreshedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastRefreshedDateTime)); }
-            set { BackingStore?.Set(nameof(LastRefreshedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshedDateTime"); }
+            set { BackingStore?.Set("lastRefreshedDateTime", value); }
         }
         /// <summary>The managed device identifier for the cloud PC. Optional. Read-only.</summary>
         public string ManagedDeviceId {
-            get { return BackingStore?.Get<string>(nameof(ManagedDeviceId)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceId), value); }
+            get { return BackingStore?.Get<string>("managedDeviceId"); }
+            set { BackingStore?.Set("managedDeviceId", value); }
         }
         /// <summary>The managed device display name for the cloud PC. Optional. Read-only.</summary>
         public string ManagedDeviceName {
-            get { return BackingStore?.Get<string>(nameof(ManagedDeviceName)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceName), value); }
+            get { return BackingStore?.Get<string>("managedDeviceName"); }
+            set { BackingStore?.Set("managedDeviceName", value); }
         }
         /// <summary>The provisioning policy identifier for the cloud PC. Required. Read-only.</summary>
         public string ProvisioningPolicyId {
-            get { return BackingStore?.Get<string>(nameof(ProvisioningPolicyId)); }
-            set { BackingStore?.Set(nameof(ProvisioningPolicyId), value); }
+            get { return BackingStore?.Get<string>("provisioningPolicyId"); }
+            set { BackingStore?.Set("provisioningPolicyId", value); }
         }
         /// <summary>The service plan name for the cloud PC. Required. Read-only.</summary>
         public string ServicePlanName {
-            get { return BackingStore?.Get<string>(nameof(ServicePlanName)); }
-            set { BackingStore?.Set(nameof(ServicePlanName), value); }
+            get { return BackingStore?.Get<string>("servicePlanName"); }
+            set { BackingStore?.Set("servicePlanName", value); }
         }
         /// <summary>The servicePlanType property</summary>
         public string ServicePlanType {
-            get { return BackingStore?.Get<string>(nameof(ServicePlanType)); }
-            set { BackingStore?.Set(nameof(ServicePlanType), value); }
+            get { return BackingStore?.Get<string>("servicePlanType"); }
+            set { BackingStore?.Set("servicePlanType", value); }
         }
         /// <summary>The display name for the managed tenant. Required. Read-only.</summary>
         public string TenantDisplayName {
-            get { return BackingStore?.Get<string>(nameof(TenantDisplayName)); }
-            set { BackingStore?.Set(nameof(TenantDisplayName), value); }
+            get { return BackingStore?.Get<string>("tenantDisplayName"); }
+            set { BackingStore?.Set("tenantDisplayName", value); }
         }
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>The user principal name (UPN) of the user assigned to the cloud PC. Required. Read-only.</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

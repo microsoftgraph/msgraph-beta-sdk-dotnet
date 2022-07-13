@@ -7,33 +7,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class Account : Entity, IParsable {
         /// <summary>The blocked property</summary>
         public bool? Blocked {
-            get { return BackingStore?.Get<bool?>(nameof(Blocked)); }
-            set { BackingStore?.Set(nameof(Blocked), value); }
+            get { return BackingStore?.Get<bool?>("blocked"); }
+            set { BackingStore?.Set("blocked", value); }
         }
         /// <summary>The category property</summary>
         public string Category {
-            get { return BackingStore?.Get<string>(nameof(Category)); }
-            set { BackingStore?.Set(nameof(Category), value); }
+            get { return BackingStore?.Get<string>("category"); }
+            set { BackingStore?.Set("category", value); }
         }
         /// <summary>The displayName property</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The number property</summary>
         public string Number {
-            get { return BackingStore?.Get<string>(nameof(Number)); }
-            set { BackingStore?.Set(nameof(Number), value); }
+            get { return BackingStore?.Get<string>("number"); }
+            set { BackingStore?.Set("number", value); }
         }
         /// <summary>The subCategory property</summary>
         public string SubCategory {
-            get { return BackingStore?.Get<string>(nameof(SubCategory)); }
-            set { BackingStore?.Set(nameof(SubCategory), value); }
+            get { return BackingStore?.Get<string>("subCategory"); }
+            set { BackingStore?.Set("subCategory", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

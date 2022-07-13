@@ -8,48 +8,48 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOSSoftwareUpdateCategorySummary : Entity, IParsable {
         /// <summary>The device ID.</summary>
         public string DeviceId {
-            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
-            set { BackingStore?.Set(nameof(DeviceId), value); }
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>The name of the report</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Number of failed updates on the device</summary>
         public int? FailedUpdateCount {
-            get { return BackingStore?.Get<int?>(nameof(FailedUpdateCount)); }
-            set { BackingStore?.Set(nameof(FailedUpdateCount), value); }
+            get { return BackingStore?.Get<int?>("failedUpdateCount"); }
+            set { BackingStore?.Set("failedUpdateCount", value); }
         }
         /// <summary>Last date time the report for this device was updated.</summary>
         public DateTimeOffset? LastUpdatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastUpdatedDateTime)); }
-            set { BackingStore?.Set(nameof(LastUpdatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
+            set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>Number of successful updates on the device</summary>
         public int? SuccessfulUpdateCount {
-            get { return BackingStore?.Get<int?>(nameof(SuccessfulUpdateCount)); }
-            set { BackingStore?.Set(nameof(SuccessfulUpdateCount), value); }
+            get { return BackingStore?.Get<int?>("successfulUpdateCount"); }
+            set { BackingStore?.Set("successfulUpdateCount", value); }
         }
         /// <summary>Number of total updates on the device</summary>
         public int? TotalUpdateCount {
-            get { return BackingStore?.Get<int?>(nameof(TotalUpdateCount)); }
-            set { BackingStore?.Set(nameof(TotalUpdateCount), value); }
+            get { return BackingStore?.Get<int?>("totalUpdateCount"); }
+            set { BackingStore?.Set("totalUpdateCount", value); }
         }
-        /// <summary>Software update type. Possible values are: critical, configurationDataFile, firmware, other.</summary>
+        /// <summary>MacOS Software Update Category</summary>
         public MacOSSoftwareUpdateCategory? UpdateCategory {
-            get { return BackingStore?.Get<MacOSSoftwareUpdateCategory?>(nameof(UpdateCategory)); }
-            set { BackingStore?.Set(nameof(UpdateCategory), value); }
+            get { return BackingStore?.Get<MacOSSoftwareUpdateCategory?>("updateCategory"); }
+            set { BackingStore?.Set("updateCategory", value); }
         }
         /// <summary>Summary of the update states.</summary>
         public List<MacOSSoftwareUpdateStateSummary> UpdateStateSummaries {
-            get { return BackingStore?.Get<List<MacOSSoftwareUpdateStateSummary>>(nameof(UpdateStateSummaries)); }
-            set { BackingStore?.Set(nameof(UpdateStateSummaries), value); }
+            get { return BackingStore?.Get<List<MacOSSoftwareUpdateStateSummary>>("updateStateSummaries"); }
+            set { BackingStore?.Set("updateStateSummaries", value); }
         }
         /// <summary>The user ID.</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

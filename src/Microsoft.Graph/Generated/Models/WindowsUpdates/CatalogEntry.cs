@@ -9,18 +9,24 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class CatalogEntry : Entity, IParsable {
         /// <summary>The date on which the content is no longer available to deploy using the service. Read-only.</summary>
         public DateTimeOffset? DeployableUntilDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DeployableUntilDateTime)); }
-            set { BackingStore?.Set(nameof(DeployableUntilDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("deployableUntilDateTime"); }
+            set { BackingStore?.Set("deployableUntilDateTime", value); }
         }
         /// <summary>The display name of the content. Read-only.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The release date for the content. Read-only.</summary>
         public DateTimeOffset? ReleaseDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ReleaseDateTime)); }
-            set { BackingStore?.Set(nameof(ReleaseDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("releaseDateTime"); }
+            set { BackingStore?.Set("releaseDateTime", value); }
+        }
+        /// <summary>
+        /// Instantiates a new catalogEntry and sets the default values.
+        /// </summary>
+        public CatalogEntry() : base() {
+            Type = "#microsoft.graph.windowsUpdates.catalogEntry";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

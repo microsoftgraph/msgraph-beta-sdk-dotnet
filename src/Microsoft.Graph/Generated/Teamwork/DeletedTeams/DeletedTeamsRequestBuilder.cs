@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get deletedTeams from teamwork
+        /// A collection of deleted teams.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<DeletedTeamsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams {
             return new GetAllMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Get deletedTeams from teamwork
+        /// A collection of deleted teams.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams {
             };
             return await RequestAdapter.SendAsync<DeletedTeam>(requestInfo, DeletedTeam.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get deletedTeams from teamwork</summary>
+        /// <summary>A collection of deleted teams.</summary>
         public class DeletedTeamsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

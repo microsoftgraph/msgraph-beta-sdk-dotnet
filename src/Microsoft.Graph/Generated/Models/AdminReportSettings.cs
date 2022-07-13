@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class AdminReportSettings : Entity, IParsable {
         /// <summary>The displayConcealedNames property</summary>
         public bool? DisplayConcealedNames {
-            get { return BackingStore?.Get<bool?>(nameof(DisplayConcealedNames)); }
-            set { BackingStore?.Set(nameof(DisplayConcealedNames), value); }
+            get { return BackingStore?.Get<bool?>("displayConcealedNames"); }
+            set { BackingStore?.Set("displayConcealedNames", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

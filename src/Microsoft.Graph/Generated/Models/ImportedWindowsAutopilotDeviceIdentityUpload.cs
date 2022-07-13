@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class ImportedWindowsAutopilotDeviceIdentityUpload : Entity, IParsable {
         /// <summary>DateTime when the entity is created.</summary>
         public DateTimeOffset? CreatedDateTimeUtc {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTimeUtc)); }
-            set { BackingStore?.Set(nameof(CreatedDateTimeUtc), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTimeUtc"); }
+            set { BackingStore?.Set("createdDateTimeUtc", value); }
         }
         /// <summary>Collection of all Autopilot devices as a part of this upload.</summary>
         public List<ImportedWindowsAutopilotDeviceIdentity> DeviceIdentities {
-            get { return BackingStore?.Get<List<ImportedWindowsAutopilotDeviceIdentity>>(nameof(DeviceIdentities)); }
-            set { BackingStore?.Set(nameof(DeviceIdentities), value); }
+            get { return BackingStore?.Get<List<ImportedWindowsAutopilotDeviceIdentity>>("deviceIdentities"); }
+            set { BackingStore?.Set("deviceIdentities", value); }
         }
-        /// <summary>Upload status.</summary>
+        /// <summary>The status property</summary>
         public ImportedWindowsAutopilotDeviceIdentityUploadStatus? Status {
-            get { return BackingStore?.Get<ImportedWindowsAutopilotDeviceIdentityUploadStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<ImportedWindowsAutopilotDeviceIdentityUploadStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

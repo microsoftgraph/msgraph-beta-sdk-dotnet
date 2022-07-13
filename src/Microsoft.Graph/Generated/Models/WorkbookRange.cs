@@ -7,103 +7,103 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkbookRange : Entity, IParsable {
         /// <summary>Represents the range reference in A1-style. Address value will contain the Sheet reference (e.g. Sheet1!A1:B4). Read-only.</summary>
         public string Address {
-            get { return BackingStore?.Get<string>(nameof(Address)); }
-            set { BackingStore?.Set(nameof(Address), value); }
+            get { return BackingStore?.Get<string>("address"); }
+            set { BackingStore?.Set("address", value); }
         }
         /// <summary>Represents range reference for the specified range in the language of the user. Read-only.</summary>
         public string AddressLocal {
-            get { return BackingStore?.Get<string>(nameof(AddressLocal)); }
-            set { BackingStore?.Set(nameof(AddressLocal), value); }
+            get { return BackingStore?.Get<string>("addressLocal"); }
+            set { BackingStore?.Set("addressLocal", value); }
         }
         /// <summary>Number of cells in the range. Read-only.</summary>
         public int? CellCount {
-            get { return BackingStore?.Get<int?>(nameof(CellCount)); }
-            set { BackingStore?.Set(nameof(CellCount), value); }
+            get { return BackingStore?.Get<int?>("cellCount"); }
+            set { BackingStore?.Set("cellCount", value); }
         }
         /// <summary>Represents the total number of columns in the range. Read-only.</summary>
         public int? ColumnCount {
-            get { return BackingStore?.Get<int?>(nameof(ColumnCount)); }
-            set { BackingStore?.Set(nameof(ColumnCount), value); }
+            get { return BackingStore?.Get<int?>("columnCount"); }
+            set { BackingStore?.Set("columnCount", value); }
         }
         /// <summary>Represents if all columns of the current range are hidden.</summary>
         public bool? ColumnHidden {
-            get { return BackingStore?.Get<bool?>(nameof(ColumnHidden)); }
-            set { BackingStore?.Set(nameof(ColumnHidden), value); }
+            get { return BackingStore?.Get<bool?>("columnHidden"); }
+            set { BackingStore?.Set("columnHidden", value); }
         }
         /// <summary>Represents the column number of the first cell in the range. Zero-indexed. Read-only.</summary>
         public int? ColumnIndex {
-            get { return BackingStore?.Get<int?>(nameof(ColumnIndex)); }
-            set { BackingStore?.Set(nameof(ColumnIndex), value); }
+            get { return BackingStore?.Get<int?>("columnIndex"); }
+            set { BackingStore?.Set("columnIndex", value); }
         }
         /// <summary>Returns a format object, encapsulating the range&apos;s font, fill, borders, alignment, and other properties. Read-only.</summary>
         public WorkbookRangeFormat Format {
-            get { return BackingStore?.Get<WorkbookRangeFormat>(nameof(Format)); }
-            set { BackingStore?.Set(nameof(Format), value); }
+            get { return BackingStore?.Get<WorkbookRangeFormat>("format"); }
+            set { BackingStore?.Set("format", value); }
         }
         /// <summary>Represents the formula in A1-style notation.</summary>
         public Json Formulas {
-            get { return BackingStore?.Get<Json>(nameof(Formulas)); }
-            set { BackingStore?.Set(nameof(Formulas), value); }
+            get { return BackingStore?.Get<Json>("formulas"); }
+            set { BackingStore?.Set("formulas", value); }
         }
         /// <summary>Represents the formula in A1-style notation, in the user&apos;s language and number-formatting locale.  For example, the English &apos;=SUM(A1, 1.5)&apos; formula would become &apos;=SUMME(A1; 1,5)&apos; in German.</summary>
         public Json FormulasLocal {
-            get { return BackingStore?.Get<Json>(nameof(FormulasLocal)); }
-            set { BackingStore?.Set(nameof(FormulasLocal), value); }
+            get { return BackingStore?.Get<Json>("formulasLocal"); }
+            set { BackingStore?.Set("formulasLocal", value); }
         }
         /// <summary>Represents the formula in R1C1-style notation.</summary>
         public Json FormulasR1C1 {
-            get { return BackingStore?.Get<Json>(nameof(FormulasR1C1)); }
-            set { BackingStore?.Set(nameof(FormulasR1C1), value); }
+            get { return BackingStore?.Get<Json>("formulasR1C1"); }
+            set { BackingStore?.Set("formulasR1C1", value); }
         }
         /// <summary>Represents if all cells of the current range are hidden. Read-only.</summary>
         public bool? Hidden {
-            get { return BackingStore?.Get<bool?>(nameof(Hidden)); }
-            set { BackingStore?.Set(nameof(Hidden), value); }
+            get { return BackingStore?.Get<bool?>("hidden"); }
+            set { BackingStore?.Set("hidden", value); }
         }
         /// <summary>Represents Excel&apos;s number format code for the given cell.</summary>
         public Json NumberFormat {
-            get { return BackingStore?.Get<Json>(nameof(NumberFormat)); }
-            set { BackingStore?.Set(nameof(NumberFormat), value); }
+            get { return BackingStore?.Get<Json>("numberFormat"); }
+            set { BackingStore?.Set("numberFormat", value); }
         }
         /// <summary>Returns the total number of rows in the range. Read-only.</summary>
         public int? RowCount {
-            get { return BackingStore?.Get<int?>(nameof(RowCount)); }
-            set { BackingStore?.Set(nameof(RowCount), value); }
+            get { return BackingStore?.Get<int?>("rowCount"); }
+            set { BackingStore?.Set("rowCount", value); }
         }
         /// <summary>Represents if all rows of the current range are hidden.</summary>
         public bool? RowHidden {
-            get { return BackingStore?.Get<bool?>(nameof(RowHidden)); }
-            set { BackingStore?.Set(nameof(RowHidden), value); }
+            get { return BackingStore?.Get<bool?>("rowHidden"); }
+            set { BackingStore?.Set("rowHidden", value); }
         }
         /// <summary>Returns the row number of the first cell in the range. Zero-indexed. Read-only.</summary>
         public int? RowIndex {
-            get { return BackingStore?.Get<int?>(nameof(RowIndex)); }
-            set { BackingStore?.Set(nameof(RowIndex), value); }
+            get { return BackingStore?.Get<int?>("rowIndex"); }
+            set { BackingStore?.Set("rowIndex", value); }
         }
         /// <summary>The worksheet containing the current range. Read-only.</summary>
         public WorkbookRangeSort Sort {
-            get { return BackingStore?.Get<WorkbookRangeSort>(nameof(Sort)); }
-            set { BackingStore?.Set(nameof(Sort), value); }
+            get { return BackingStore?.Get<WorkbookRangeSort>("sort"); }
+            set { BackingStore?.Set("sort", value); }
         }
         /// <summary>Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.</summary>
         public Json Text {
-            get { return BackingStore?.Get<Json>(nameof(Text)); }
-            set { BackingStore?.Set(nameof(Text), value); }
+            get { return BackingStore?.Get<Json>("text"); }
+            set { BackingStore?.Set("text", value); }
         }
         /// <summary>Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.</summary>
         public Json Values {
-            get { return BackingStore?.Get<Json>(nameof(Values)); }
-            set { BackingStore?.Set(nameof(Values), value); }
+            get { return BackingStore?.Get<Json>("values"); }
+            set { BackingStore?.Set("values", value); }
         }
         /// <summary>Represents the type of data of each cell. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error. Read-only.</summary>
         public Json ValueTypes {
-            get { return BackingStore?.Get<Json>(nameof(ValueTypes)); }
-            set { BackingStore?.Set(nameof(ValueTypes), value); }
+            get { return BackingStore?.Get<Json>("valueTypes"); }
+            set { BackingStore?.Set("valueTypes", value); }
         }
         /// <summary>The worksheet containing the current range. Read-only.</summary>
         public WorkbookWorksheet Worksheet {
-            get { return BackingStore?.Get<WorkbookWorksheet>(nameof(Worksheet)); }
-            set { BackingStore?.Set(nameof(Worksheet), value); }
+            get { return BackingStore?.Get<WorkbookWorksheet>("worksheet"); }
+            set { BackingStore?.Set("worksheet", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

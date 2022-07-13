@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class StaffAvailabilityItem : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Each item in this collection indicates a slot and the status of the staff member.</summary>
         public List<AvailabilityItem> AvailabilityItems {
-            get { return BackingStore?.Get<List<AvailabilityItem>>(nameof(AvailabilityItems)); }
-            set { BackingStore?.Set(nameof(AvailabilityItems), value); }
+            get { return BackingStore?.Get<List<AvailabilityItem>>("availabilityItems"); }
+            set { BackingStore?.Set("availabilityItems", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The ID of the staff member.</summary>
         public string StaffId {
-            get { return BackingStore?.Get<string>(nameof(StaffId)); }
-            set { BackingStore?.Set(nameof(StaffId), value); }
+            get { return BackingStore?.Get<string>("staffId"); }
+            set { BackingStore?.Set("staffId", value); }
         }
         /// <summary>
         /// Instantiates a new staffAvailabilityItem and sets the default values.

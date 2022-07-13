@@ -10,15 +10,15 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.Root.Permissions.Item.Revo
     public class RevokeGrantsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The grantees property</summary>
         public List<DriveRecipient> Grantees {
-            get { return BackingStore?.Get<List<DriveRecipient>>(nameof(Grantees)); }
-            set { BackingStore?.Set(nameof(Grantees), value); }
+            get { return BackingStore?.Get<List<DriveRecipient>>("grantees"); }
+            set { BackingStore?.Set("grantees", value); }
         }
         /// <summary>
         /// Instantiates a new revokeGrantsPostRequestBody and sets the default values.

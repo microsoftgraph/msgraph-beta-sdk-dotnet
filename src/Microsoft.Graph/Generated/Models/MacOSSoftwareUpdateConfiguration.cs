@@ -5,40 +5,40 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MacOSSoftwareUpdateConfiguration : DeviceConfiguration, IParsable {
-        /// <summary>Update behavior for all other updates. Possible values are: notConfigured, default, downloadOnly, installASAP, notifyOnly, installLater.</summary>
+        /// <summary>Update behavior options for macOS software updates.</summary>
         public MacOSSoftwareUpdateBehavior? AllOtherUpdateBehavior {
-            get { return BackingStore?.Get<MacOSSoftwareUpdateBehavior?>(nameof(AllOtherUpdateBehavior)); }
-            set { BackingStore?.Set(nameof(AllOtherUpdateBehavior), value); }
+            get { return BackingStore?.Get<MacOSSoftwareUpdateBehavior?>("allOtherUpdateBehavior"); }
+            set { BackingStore?.Set("allOtherUpdateBehavior", value); }
         }
-        /// <summary>Update behavior for configuration data file updates. Possible values are: notConfigured, default, downloadOnly, installASAP, notifyOnly, installLater.</summary>
+        /// <summary>Update behavior options for macOS software updates.</summary>
         public MacOSSoftwareUpdateBehavior? ConfigDataUpdateBehavior {
-            get { return BackingStore?.Get<MacOSSoftwareUpdateBehavior?>(nameof(ConfigDataUpdateBehavior)); }
-            set { BackingStore?.Set(nameof(ConfigDataUpdateBehavior), value); }
+            get { return BackingStore?.Get<MacOSSoftwareUpdateBehavior?>("configDataUpdateBehavior"); }
+            set { BackingStore?.Set("configDataUpdateBehavior", value); }
         }
-        /// <summary>Update behavior for critical updates. Possible values are: notConfigured, default, downloadOnly, installASAP, notifyOnly, installLater.</summary>
+        /// <summary>Update behavior options for macOS software updates.</summary>
         public MacOSSoftwareUpdateBehavior? CriticalUpdateBehavior {
-            get { return BackingStore?.Get<MacOSSoftwareUpdateBehavior?>(nameof(CriticalUpdateBehavior)); }
-            set { BackingStore?.Set(nameof(CriticalUpdateBehavior), value); }
+            get { return BackingStore?.Get<MacOSSoftwareUpdateBehavior?>("criticalUpdateBehavior"); }
+            set { BackingStore?.Set("criticalUpdateBehavior", value); }
         }
         /// <summary>Custom Time windows when updates will be allowed or blocked. This collection can contain a maximum of 20 elements.</summary>
         public List<CustomUpdateTimeWindow> CustomUpdateTimeWindows {
-            get { return BackingStore?.Get<List<CustomUpdateTimeWindow>>(nameof(CustomUpdateTimeWindows)); }
-            set { BackingStore?.Set(nameof(CustomUpdateTimeWindows), value); }
+            get { return BackingStore?.Get<List<CustomUpdateTimeWindow>>("customUpdateTimeWindows"); }
+            set { BackingStore?.Set("customUpdateTimeWindows", value); }
         }
-        /// <summary>Update behavior for firmware updates. Possible values are: notConfigured, default, downloadOnly, installASAP, notifyOnly, installLater.</summary>
+        /// <summary>Update behavior options for macOS software updates.</summary>
         public MacOSSoftwareUpdateBehavior? FirmwareUpdateBehavior {
-            get { return BackingStore?.Get<MacOSSoftwareUpdateBehavior?>(nameof(FirmwareUpdateBehavior)); }
-            set { BackingStore?.Set(nameof(FirmwareUpdateBehavior), value); }
+            get { return BackingStore?.Get<MacOSSoftwareUpdateBehavior?>("firmwareUpdateBehavior"); }
+            set { BackingStore?.Set("firmwareUpdateBehavior", value); }
         }
-        /// <summary>Update schedule type. Possible values are: alwaysUpdate, updateDuringTimeWindows, updateOutsideOfTimeWindows.</summary>
+        /// <summary>Update schedule type for macOS software updates.</summary>
         public MacOSSoftwareUpdateScheduleType? UpdateScheduleType {
-            get { return BackingStore?.Get<MacOSSoftwareUpdateScheduleType?>(nameof(UpdateScheduleType)); }
-            set { BackingStore?.Set(nameof(UpdateScheduleType), value); }
+            get { return BackingStore?.Get<MacOSSoftwareUpdateScheduleType?>("updateScheduleType"); }
+            set { BackingStore?.Set("updateScheduleType", value); }
         }
         /// <summary>Minutes indicating UTC offset for each update time window</summary>
         public int? UpdateTimeWindowUtcOffsetInMinutes {
-            get { return BackingStore?.Get<int?>(nameof(UpdateTimeWindowUtcOffsetInMinutes)); }
-            set { BackingStore?.Set(nameof(UpdateTimeWindowUtcOffsetInMinutes), value); }
+            get { return BackingStore?.Get<int?>("updateTimeWindowUtcOffsetInMinutes"); }
+            set { BackingStore?.Set("updateTimeWindowUtcOffsetInMinutes", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

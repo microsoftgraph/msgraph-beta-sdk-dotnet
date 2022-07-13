@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Beta.Models {
     public class PrinterShareViewpoint : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The lastUsedDateTime property</summary>
         public DateTimeOffset? LastUsedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastUsedDateTime)); }
-            set { BackingStore?.Set(nameof(LastUsedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastUsedDateTime"); }
+            set { BackingStore?.Set("lastUsedDateTime", value); }
         }
         /// <summary>
         /// Instantiates a new printerShareViewpoint and sets the default values.

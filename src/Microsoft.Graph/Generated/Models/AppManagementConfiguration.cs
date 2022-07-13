@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class AppManagementConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Collection of keyCredential restrictions settings to be applied to an application or service principal.</summary>
         public List<KeyCredentialConfiguration> KeyCredentials {
-            get { return BackingStore?.Get<List<KeyCredentialConfiguration>>(nameof(KeyCredentials)); }
-            set { BackingStore?.Set(nameof(KeyCredentials), value); }
+            get { return BackingStore?.Get<List<KeyCredentialConfiguration>>("keyCredentials"); }
+            set { BackingStore?.Set("keyCredentials", value); }
         }
         /// <summary>Collection of password restrictions settings to be applied to an application or service principal.</summary>
         public List<PasswordCredentialConfiguration> PasswordCredentials {
-            get { return BackingStore?.Get<List<PasswordCredentialConfiguration>>(nameof(PasswordCredentials)); }
-            set { BackingStore?.Set(nameof(PasswordCredentials), value); }
+            get { return BackingStore?.Get<List<PasswordCredentialConfiguration>>("passwordCredentials"); }
+            set { BackingStore?.Set("passwordCredentials", value); }
         }
         /// <summary>
         /// Instantiates a new appManagementConfiguration and sets the default values.

@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.Assign
     public class AssignPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The assignments property</summary>
         public List<DeviceConfigurationAssignment> Assignments {
-            get { return BackingStore?.Get<List<DeviceConfigurationAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<DeviceConfigurationAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceConfigurationGroupAssignments property</summary>
         public List<DeviceConfigurationGroupAssignment> DeviceConfigurationGroupAssignments {
-            get { return BackingStore?.Get<List<DeviceConfigurationGroupAssignment>>(nameof(DeviceConfigurationGroupAssignments)); }
-            set { BackingStore?.Set(nameof(DeviceConfigurationGroupAssignments), value); }
+            get { return BackingStore?.Get<List<DeviceConfigurationGroupAssignment>>("deviceConfigurationGroupAssignments"); }
+            set { BackingStore?.Set("deviceConfigurationGroupAssignments", value); }
         }
         /// <summary>
         /// Instantiates a new assignPostRequestBody and sets the default values.

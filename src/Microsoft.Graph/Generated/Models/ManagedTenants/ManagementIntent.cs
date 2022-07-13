@@ -4,22 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ManagementIntent : Entity, IParsable {
         /// <summary>The display name for the management intent. Optional. Read-only.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>A flag indicating whether the management intent is global. Required. Read-only.</summary>
         public bool? IsGlobal {
-            get { return BackingStore?.Get<bool?>(nameof(IsGlobal)); }
-            set { BackingStore?.Set(nameof(IsGlobal), value); }
+            get { return BackingStore?.Get<bool?>("isGlobal"); }
+            set { BackingStore?.Set("isGlobal", value); }
         }
         /// <summary>The collection of management templates associated with the management intent. Optional. Read-only.</summary>
         public List<ManagementTemplateDetailedInfo> ManagementTemplates {
-            get { return BackingStore?.Get<List<ManagementTemplateDetailedInfo>>(nameof(ManagementTemplates)); }
-            set { BackingStore?.Set(nameof(ManagementTemplates), value); }
+            get { return BackingStore?.Get<List<ManagementTemplateDetailedInfo>>("managementTemplates"); }
+            set { BackingStore?.Set("managementTemplates", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

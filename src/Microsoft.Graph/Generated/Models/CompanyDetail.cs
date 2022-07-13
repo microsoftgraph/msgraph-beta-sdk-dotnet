@@ -8,40 +8,40 @@ namespace Microsoft.Graph.Beta.Models {
     public class CompanyDetail : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Address of the company.</summary>
         public PhysicalAddress Address {
-            get { return BackingStore?.Get<PhysicalAddress>(nameof(Address)); }
-            set { BackingStore?.Set(nameof(Address), value); }
+            get { return BackingStore?.Get<PhysicalAddress>("address"); }
+            set { BackingStore?.Set("address", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Department Name within a company.</summary>
         public string Department {
-            get { return BackingStore?.Get<string>(nameof(Department)); }
-            set { BackingStore?.Set(nameof(Department), value); }
+            get { return BackingStore?.Get<string>("department"); }
+            set { BackingStore?.Set("department", value); }
         }
         /// <summary>Company name.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Office Location of the person referred to.</summary>
         public string OfficeLocation {
-            get { return BackingStore?.Get<string>(nameof(OfficeLocation)); }
-            set { BackingStore?.Set(nameof(OfficeLocation), value); }
+            get { return BackingStore?.Get<string>("officeLocation"); }
+            set { BackingStore?.Set("officeLocation", value); }
         }
         /// <summary>Pronunciation guide for the company name.</summary>
         public string Pronunciation {
-            get { return BackingStore?.Get<string>(nameof(Pronunciation)); }
-            set { BackingStore?.Set(nameof(Pronunciation), value); }
+            get { return BackingStore?.Get<string>("pronunciation"); }
+            set { BackingStore?.Set("pronunciation", value); }
         }
         /// <summary>Link to the company home page.</summary>
         public string WebUrl {
-            get { return BackingStore?.Get<string>(nameof(WebUrl)); }
-            set { BackingStore?.Set(nameof(WebUrl), value); }
+            get { return BackingStore?.Get<string>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
         }
         /// <summary>
         /// Instantiates a new companyDetail and sets the default values.

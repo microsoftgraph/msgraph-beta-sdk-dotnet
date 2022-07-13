@@ -7,23 +7,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class RedirectSingleSignOnExtension : SingleSignOnExtension, IParsable {
         /// <summary>Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.</summary>
         public List<KeyTypedValuePair> Configurations {
-            get { return BackingStore?.Get<List<KeyTypedValuePair>>(nameof(Configurations)); }
-            set { BackingStore?.Set(nameof(Configurations), value); }
+            get { return BackingStore?.Get<List<KeyTypedValuePair>>("configurations"); }
+            set { BackingStore?.Set("configurations", value); }
         }
         /// <summary>Gets or sets the bundle ID of the app extension that performs SSO for the specified URLs.</summary>
         public string ExtensionIdentifier {
-            get { return BackingStore?.Get<string>(nameof(ExtensionIdentifier)); }
-            set { BackingStore?.Set(nameof(ExtensionIdentifier), value); }
+            get { return BackingStore?.Get<string>("extensionIdentifier"); }
+            set { BackingStore?.Set("extensionIdentifier", value); }
         }
         /// <summary>Gets or sets the team ID of the app extension that performs SSO for the specified URLs.</summary>
         public string TeamIdentifier {
-            get { return BackingStore?.Get<string>(nameof(TeamIdentifier)); }
-            set { BackingStore?.Set(nameof(TeamIdentifier), value); }
+            get { return BackingStore?.Get<string>("teamIdentifier"); }
+            set { BackingStore?.Set("teamIdentifier", value); }
         }
         /// <summary>One or more URL prefixes of identity providers on whose behalf the app extension performs single sign-on. URLs must begin with http:// or https://. All URL prefixes must be unique for all profiles.</summary>
         public List<string> UrlPrefixes {
-            get { return BackingStore?.Get<List<string>>(nameof(UrlPrefixes)); }
-            set { BackingStore?.Set(nameof(UrlPrefixes), value); }
+            get { return BackingStore?.Get<List<string>>("urlPrefixes"); }
+            set { BackingStore?.Set("urlPrefixes", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

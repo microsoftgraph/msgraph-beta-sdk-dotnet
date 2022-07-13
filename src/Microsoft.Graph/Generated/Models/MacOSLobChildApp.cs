@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOSLobChildApp : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The build number of MacOS Line of Business (LoB) app.</summary>
         public string BuildNumber {
-            get { return BackingStore?.Get<string>(nameof(BuildNumber)); }
-            set { BackingStore?.Set(nameof(BuildNumber), value); }
+            get { return BackingStore?.Get<string>("buildNumber"); }
+            set { BackingStore?.Set("buildNumber", value); }
         }
         /// <summary>The Identity Name.</summary>
         public string BundleId {
-            get { return BackingStore?.Get<string>(nameof(BundleId)); }
-            set { BackingStore?.Set(nameof(BundleId), value); }
+            get { return BackingStore?.Get<string>("bundleId"); }
+            set { BackingStore?.Set("bundleId", value); }
         }
         /// <summary>The version number of MacOS Line of Business (LoB) app.</summary>
         public string VersionNumber {
-            get { return BackingStore?.Get<string>(nameof(VersionNumber)); }
-            set { BackingStore?.Set(nameof(VersionNumber), value); }
+            get { return BackingStore?.Get<string>("versionNumber"); }
+            set { BackingStore?.Set("versionNumber", value); }
         }
         /// <summary>
         /// Instantiates a new macOSLobChildApp and sets the default values.

@@ -8,40 +8,40 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamworkSoftwareUpdateHealth : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The software update available for the admin agent.</summary>
         public TeamworkSoftwareUpdateStatus AdminAgentSoftwareUpdateStatus {
-            get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus>(nameof(AdminAgentSoftwareUpdateStatus)); }
-            set { BackingStore?.Set(nameof(AdminAgentSoftwareUpdateStatus), value); }
+            get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus>("adminAgentSoftwareUpdateStatus"); }
+            set { BackingStore?.Set("adminAgentSoftwareUpdateStatus", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The software update available for the company portal.</summary>
         public TeamworkSoftwareUpdateStatus CompanyPortalSoftwareUpdateStatus {
-            get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus>(nameof(CompanyPortalSoftwareUpdateStatus)); }
-            set { BackingStore?.Set(nameof(CompanyPortalSoftwareUpdateStatus), value); }
+            get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus>("companyPortalSoftwareUpdateStatus"); }
+            set { BackingStore?.Set("companyPortalSoftwareUpdateStatus", value); }
         }
         /// <summary>The software update available for the firmware.</summary>
         public TeamworkSoftwareUpdateStatus FirmwareSoftwareUpdateStatus {
-            get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus>(nameof(FirmwareSoftwareUpdateStatus)); }
-            set { BackingStore?.Set(nameof(FirmwareSoftwareUpdateStatus), value); }
+            get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus>("firmwareSoftwareUpdateStatus"); }
+            set { BackingStore?.Set("firmwareSoftwareUpdateStatus", value); }
         }
         /// <summary>The software update available for the operating system.</summary>
         public TeamworkSoftwareUpdateStatus OperatingSystemSoftwareUpdateStatus {
-            get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus>(nameof(OperatingSystemSoftwareUpdateStatus)); }
-            set { BackingStore?.Set(nameof(OperatingSystemSoftwareUpdateStatus), value); }
+            get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus>("operatingSystemSoftwareUpdateStatus"); }
+            set { BackingStore?.Set("operatingSystemSoftwareUpdateStatus", value); }
         }
         /// <summary>The software update available for the partner agent.</summary>
         public TeamworkSoftwareUpdateStatus PartnerAgentSoftwareUpdateStatus {
-            get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus>(nameof(PartnerAgentSoftwareUpdateStatus)); }
-            set { BackingStore?.Set(nameof(PartnerAgentSoftwareUpdateStatus), value); }
+            get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus>("partnerAgentSoftwareUpdateStatus"); }
+            set { BackingStore?.Set("partnerAgentSoftwareUpdateStatus", value); }
         }
         /// <summary>The software update available for the Teams client.</summary>
         public TeamworkSoftwareUpdateStatus TeamsClientSoftwareUpdateStatus {
-            get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus>(nameof(TeamsClientSoftwareUpdateStatus)); }
-            set { BackingStore?.Set(nameof(TeamsClientSoftwareUpdateStatus), value); }
+            get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus>("teamsClientSoftwareUpdateStatus"); }
+            set { BackingStore?.Set("teamsClientSoftwareUpdateStatus", value); }
         }
         /// <summary>
         /// Instantiates a new teamworkSoftwareUpdateHealth and sets the default values.

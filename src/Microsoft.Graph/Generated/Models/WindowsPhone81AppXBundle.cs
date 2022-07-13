@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsPhone81AppXBundle : WindowsPhone81AppX, IParsable {
         /// <summary>The list of AppX Package Information.</summary>
         public List<WindowsPackageInformation> AppXPackageInformationList {
-            get { return BackingStore?.Get<List<WindowsPackageInformation>>(nameof(AppXPackageInformationList)); }
-            set { BackingStore?.Set(nameof(AppXPackageInformationList), value); }
+            get { return BackingStore?.Get<List<WindowsPackageInformation>>("appXPackageInformationList"); }
+            set { BackingStore?.Set("appXPackageInformationList", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,13 +8,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsUpdateActiveHoursInstall : WindowsUpdateInstallScheduleType, IParsable {
         /// <summary>Active Hours End</summary>
         public Time? ActiveHoursEnd {
-            get { return BackingStore?.Get<Time?>(nameof(ActiveHoursEnd)); }
-            set { BackingStore?.Set(nameof(ActiveHoursEnd), value); }
+            get { return BackingStore?.Get<Time?>("activeHoursEnd"); }
+            set { BackingStore?.Set("activeHoursEnd", value); }
         }
         /// <summary>Active Hours Start</summary>
         public Time? ActiveHoursStart {
-            get { return BackingStore?.Get<Time?>(nameof(ActiveHoursStart)); }
-            set { BackingStore?.Set(nameof(ActiveHoursStart), value); }
+            get { return BackingStore?.Get<Time?>("activeHoursStart"); }
+            set { BackingStore?.Set("activeHoursStart", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

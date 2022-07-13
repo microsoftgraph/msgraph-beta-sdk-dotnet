@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Beta.Models {
     public class ConnectionInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The endpoint that is used by Entitlement Management to communicate with the access package resource.</summary>
         public string Url {
-            get { return BackingStore?.Get<string>(nameof(Url)); }
-            set { BackingStore?.Set(nameof(Url), value); }
+            get { return BackingStore?.Get<string>("url"); }
+            set { BackingStore?.Set("url", value); }
         }
         /// <summary>
         /// Instantiates a new connectionInfo and sets the default values.

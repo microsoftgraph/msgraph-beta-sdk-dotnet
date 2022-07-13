@@ -7,58 +7,58 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosEnterpriseWiFiConfiguration : IosWiFiConfiguration, IParsable {
         /// <summary>Authentication Method when EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.</summary>
         public WiFiAuthenticationMethod? AuthenticationMethod {
-            get { return BackingStore?.Get<WiFiAuthenticationMethod?>(nameof(AuthenticationMethod)); }
-            set { BackingStore?.Set(nameof(AuthenticationMethod), value); }
+            get { return BackingStore?.Get<WiFiAuthenticationMethod?>("authenticationMethod"); }
+            set { BackingStore?.Set("authenticationMethod", value); }
         }
         /// <summary>Tenant level settings for the Derived Credentials to be used for authentication.</summary>
         public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings {
-            get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings>(nameof(DerivedCredentialSettings)); }
-            set { BackingStore?.Set(nameof(DerivedCredentialSettings), value); }
+            get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings"); }
+            set { BackingStore?.Set("derivedCredentialSettings", value); }
         }
         /// <summary>EAP-FAST Configuration Option when EAP-FAST is the selected EAP Type. Possible values are: noProtectedAccessCredential, useProtectedAccessCredential, useProtectedAccessCredentialAndProvision, useProtectedAccessCredentialAndProvisionAnonymously.</summary>
         public Microsoft.Graph.Beta.Models.EapFastConfiguration? EapFastConfiguration {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EapFastConfiguration?>(nameof(EapFastConfiguration)); }
-            set { BackingStore?.Set(nameof(EapFastConfiguration), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EapFastConfiguration?>("eapFastConfiguration"); }
+            set { BackingStore?.Set("eapFastConfiguration", value); }
         }
-        /// <summary>Extensible Authentication Protocol (EAP). Indicates the type of EAP protocol set on the Wi-Fi endpoint (router). Possible values are: eapTls, leap, eapSim, eapTtls, peap, eapFast, teap.</summary>
+        /// <summary>Extensible Authentication Protocol (EAP) configuration types.</summary>
         public Microsoft.Graph.Beta.Models.EapType? EapType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EapType?>(nameof(EapType)); }
-            set { BackingStore?.Set(nameof(EapType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EapType?>("eapType"); }
+            set { BackingStore?.Set("eapType", value); }
         }
         /// <summary>Identity Certificate for client authentication when EAP Type is configured to EAP-TLS, EAP-TTLS (with Certificate Authentication), or PEAP (with Certificate Authentication).</summary>
         public IosCertificateProfileBase IdentityCertificateForClientAuthentication {
-            get { return BackingStore?.Get<IosCertificateProfileBase>(nameof(IdentityCertificateForClientAuthentication)); }
-            set { BackingStore?.Set(nameof(IdentityCertificateForClientAuthentication), value); }
+            get { return BackingStore?.Get<IosCertificateProfileBase>("identityCertificateForClientAuthentication"); }
+            set { BackingStore?.Set("identityCertificateForClientAuthentication", value); }
         }
         /// <summary>Non-EAP Method for Authentication when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.</summary>
         public NonEapAuthenticationMethodForEapTtlsType? InnerAuthenticationProtocolForEapTtls {
-            get { return BackingStore?.Get<NonEapAuthenticationMethodForEapTtlsType?>(nameof(InnerAuthenticationProtocolForEapTtls)); }
-            set { BackingStore?.Set(nameof(InnerAuthenticationProtocolForEapTtls), value); }
+            get { return BackingStore?.Get<NonEapAuthenticationMethodForEapTtlsType?>("innerAuthenticationProtocolForEapTtls"); }
+            set { BackingStore?.Set("innerAuthenticationProtocolForEapTtls", value); }
         }
         /// <summary>Enable identity privacy (Outer Identity) when EAP Type is configured to EAP - TTLS, EAP - FAST or PEAP. This property masks usernames with the text you enter. For example, if you use &apos;anonymous&apos;, each user that authenticates with this Wi-Fi connection using their real username is displayed as &apos;anonymous&apos;.</summary>
         public string OuterIdentityPrivacyTemporaryValue {
-            get { return BackingStore?.Get<string>(nameof(OuterIdentityPrivacyTemporaryValue)); }
-            set { BackingStore?.Set(nameof(OuterIdentityPrivacyTemporaryValue), value); }
+            get { return BackingStore?.Get<string>("outerIdentityPrivacyTemporaryValue"); }
+            set { BackingStore?.Set("outerIdentityPrivacyTemporaryValue", value); }
         }
         /// <summary>Password format string used to build the password to connect to wifi</summary>
         public string PasswordFormatString {
-            get { return BackingStore?.Get<string>(nameof(PasswordFormatString)); }
-            set { BackingStore?.Set(nameof(PasswordFormatString), value); }
+            get { return BackingStore?.Get<string>("passwordFormatString"); }
+            set { BackingStore?.Set("passwordFormatString", value); }
         }
         /// <summary>Trusted Root Certificates for Server Validation when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. If you provide this value you do not need to provide trustedServerCertificateNames, and vice versa. This collection can contain a maximum of 500 elements.</summary>
         public List<IosTrustedRootCertificate> RootCertificatesForServerValidation {
-            get { return BackingStore?.Get<List<IosTrustedRootCertificate>>(nameof(RootCertificatesForServerValidation)); }
-            set { BackingStore?.Set(nameof(RootCertificatesForServerValidation), value); }
+            get { return BackingStore?.Get<List<IosTrustedRootCertificate>>("rootCertificatesForServerValidation"); }
+            set { BackingStore?.Set("rootCertificatesForServerValidation", value); }
         }
         /// <summary>Trusted server certificate names when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. This is the common name used in the certificates issued by your trusted certificate authority (CA). If you provide this information, you can bypass the dynamic trust dialog that is displayed on end users&apos; devices when they connect to this Wi-Fi network.</summary>
         public List<string> TrustedServerCertificateNames {
-            get { return BackingStore?.Get<List<string>>(nameof(TrustedServerCertificateNames)); }
-            set { BackingStore?.Set(nameof(TrustedServerCertificateNames), value); }
+            get { return BackingStore?.Get<List<string>>("trustedServerCertificateNames"); }
+            set { BackingStore?.Set("trustedServerCertificateNames", value); }
         }
         /// <summary>Username format string used to build the username to connect to wifi</summary>
         public string UsernameFormatString {
-            get { return BackingStore?.Get<string>(nameof(UsernameFormatString)); }
-            set { BackingStore?.Set(nameof(UsernameFormatString), value); }
+            get { return BackingStore?.Get<string>("usernameFormatString"); }
+            set { BackingStore?.Set("usernameFormatString", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

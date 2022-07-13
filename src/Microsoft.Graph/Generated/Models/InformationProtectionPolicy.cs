@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class InformationProtectionPolicy : Entity, IParsable {
         /// <summary>The labels property</summary>
         public List<InformationProtectionLabel> Labels {
-            get { return BackingStore?.Get<List<InformationProtectionLabel>>(nameof(Labels)); }
-            set { BackingStore?.Set(nameof(Labels), value); }
+            get { return BackingStore?.Get<List<InformationProtectionLabel>>("labels"); }
+            set { BackingStore?.Set("labels", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

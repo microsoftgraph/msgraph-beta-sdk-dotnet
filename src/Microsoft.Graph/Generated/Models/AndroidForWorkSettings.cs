@@ -4,52 +4,51 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Settings for Android For Work.</summary>
     public class AndroidForWorkSettings : Entity, IParsable {
-        /// <summary>Bind status of the tenant with the Google EMM API. Possible values are: notBound, bound, boundAndValidated, unbinding.</summary>
+        /// <summary>Bind status of the tenant with the Google EMM API</summary>
         public AndroidForWorkBindStatus? BindStatus {
-            get { return BackingStore?.Get<AndroidForWorkBindStatus?>(nameof(BindStatus)); }
-            set { BackingStore?.Set(nameof(BindStatus), value); }
+            get { return BackingStore?.Get<AndroidForWorkBindStatus?>("bindStatus"); }
+            set { BackingStore?.Set("bindStatus", value); }
         }
         /// <summary>Indicates if this account is flighting for Android Device Owner Management with CloudDPC.</summary>
         public bool? DeviceOwnerManagementEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(DeviceOwnerManagementEnabled)); }
-            set { BackingStore?.Set(nameof(DeviceOwnerManagementEnabled), value); }
+            get { return BackingStore?.Get<bool?>("deviceOwnerManagementEnabled"); }
+            set { BackingStore?.Set("deviceOwnerManagementEnabled", value); }
         }
-        /// <summary>Indicates which users can enroll devices in Android for Work device management. Possible values are: none, all, targeted, targetedAsEnrollmentRestrictions.</summary>
+        /// <summary>Android for Work device management targeting type for the account</summary>
         public AndroidForWorkEnrollmentTarget? EnrollmentTarget {
-            get { return BackingStore?.Get<AndroidForWorkEnrollmentTarget?>(nameof(EnrollmentTarget)); }
-            set { BackingStore?.Set(nameof(EnrollmentTarget), value); }
+            get { return BackingStore?.Get<AndroidForWorkEnrollmentTarget?>("enrollmentTarget"); }
+            set { BackingStore?.Set("enrollmentTarget", value); }
         }
         /// <summary>Last completion time for app sync</summary>
         public DateTimeOffset? LastAppSyncDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastAppSyncDateTime)); }
-            set { BackingStore?.Set(nameof(LastAppSyncDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastAppSyncDateTime"); }
+            set { BackingStore?.Set("lastAppSyncDateTime", value); }
         }
-        /// <summary>Last application sync result. Possible values are: success, credentialsNotValid, androidForWorkApiError, managementServiceError, unknownError, none.</summary>
+        /// <summary>Sync status of the tenant with the Google EMM API</summary>
         public AndroidForWorkSyncStatus? LastAppSyncStatus {
-            get { return BackingStore?.Get<AndroidForWorkSyncStatus?>(nameof(LastAppSyncStatus)); }
-            set { BackingStore?.Set(nameof(LastAppSyncStatus), value); }
+            get { return BackingStore?.Get<AndroidForWorkSyncStatus?>("lastAppSyncStatus"); }
+            set { BackingStore?.Set("lastAppSyncStatus", value); }
         }
         /// <summary>Last modification time for Android for Work settings</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Organization name used when onboarding Android for Work</summary>
         public string OwnerOrganizationName {
-            get { return BackingStore?.Get<string>(nameof(OwnerOrganizationName)); }
-            set { BackingStore?.Set(nameof(OwnerOrganizationName), value); }
+            get { return BackingStore?.Get<string>("ownerOrganizationName"); }
+            set { BackingStore?.Set("ownerOrganizationName", value); }
         }
         /// <summary>Owner UPN that created the enterprise</summary>
         public string OwnerUserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(OwnerUserPrincipalName)); }
-            set { BackingStore?.Set(nameof(OwnerUserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("ownerUserPrincipalName"); }
+            set { BackingStore?.Set("ownerUserPrincipalName", value); }
         }
         /// <summary>Specifies which AAD groups can enroll devices in Android for Work device management if enrollmentTarget is set to &apos;Targeted&apos;</summary>
         public List<string> TargetGroupIds {
-            get { return BackingStore?.Get<List<string>>(nameof(TargetGroupIds)); }
-            set { BackingStore?.Set(nameof(TargetGroupIds), value); }
+            get { return BackingStore?.Get<List<string>>("targetGroupIds"); }
+            set { BackingStore?.Set("targetGroupIds", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

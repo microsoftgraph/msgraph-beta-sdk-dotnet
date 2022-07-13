@@ -8,23 +8,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class PasswordSingleSignOnCredentialSet : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A list of credential objects that define the complete sign in flow.</summary>
         public List<Credential> Credentials {
-            get { return BackingStore?.Get<List<Credential>>(nameof(Credentials)); }
-            set { BackingStore?.Set(nameof(Credentials), value); }
+            get { return BackingStore?.Get<List<Credential>>("credentials"); }
+            set { BackingStore?.Set("credentials", value); }
         }
         /// <summary>The ID of the user or group this credential set belongs to.</summary>
         public string Id {
-            get { return BackingStore?.Get<string>(nameof(Id)); }
-            set { BackingStore?.Set(nameof(Id), value); }
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
         }
         /// <summary>
-        /// Instantiates a new PasswordSingleSignOnCredentialSet and sets the default values.
+        /// Instantiates a new passwordSingleSignOnCredentialSet and sets the default values.
         /// </summary>
         public PasswordSingleSignOnCredentialSet() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -8,48 +8,48 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementReusablePolicySetting : Entity, IParsable {
         /// <summary>reusable setting creation date and time. This property is read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>reusable setting description supplied by user.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>reusable setting display name supplied by user.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>date and time when reusable setting was last modified. This property is read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>configuration policies referencing the current reusable setting. This property is read-only.</summary>
         public List<DeviceManagementConfigurationPolicy> ReferencingConfigurationPolicies {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationPolicy>>(nameof(ReferencingConfigurationPolicies)); }
-            set { BackingStore?.Set(nameof(ReferencingConfigurationPolicies), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationPolicy>>("referencingConfigurationPolicies"); }
+            set { BackingStore?.Set("referencingConfigurationPolicies", value); }
         }
         /// <summary>count of configuration policies referencing the current reusable setting. Valid values 0 to 2147483647. This property is read-only.</summary>
         public int? ReferencingConfigurationPolicyCount {
-            get { return BackingStore?.Get<int?>(nameof(ReferencingConfigurationPolicyCount)); }
-            set { BackingStore?.Set(nameof(ReferencingConfigurationPolicyCount), value); }
+            get { return BackingStore?.Get<int?>("referencingConfigurationPolicyCount"); }
+            set { BackingStore?.Set("referencingConfigurationPolicyCount", value); }
         }
         /// <summary>setting definition id associated with this reusable setting.</summary>
         public string SettingDefinitionId {
-            get { return BackingStore?.Get<string>(nameof(SettingDefinitionId)); }
-            set { BackingStore?.Set(nameof(SettingDefinitionId), value); }
+            get { return BackingStore?.Get<string>("settingDefinitionId"); }
+            set { BackingStore?.Set("settingDefinitionId", value); }
         }
         /// <summary>reusable setting configuration instance</summary>
         public DeviceManagementConfigurationSettingInstance SettingInstance {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstance>(nameof(SettingInstance)); }
-            set { BackingStore?.Set(nameof(SettingInstance), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstance>("settingInstance"); }
+            set { BackingStore?.Set("settingInstance", value); }
         }
         /// <summary>version number for reusable setting. Valid values 0 to 2147483647. This property is read-only.</summary>
         public int? Version {
-            get { return BackingStore?.Get<int?>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<int?>("version"); }
+            set { BackingStore?.Set("version", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

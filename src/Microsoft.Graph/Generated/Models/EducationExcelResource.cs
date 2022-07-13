@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationExcelResource : EducationResource, IParsable {
         /// <summary>Pointer to the Excel file object.</summary>
         public string FileUrl {
-            get { return BackingStore?.Get<string>(nameof(FileUrl)); }
-            set { BackingStore?.Set(nameof(FileUrl), value); }
+            get { return BackingStore?.Get<string>("fileUrl"); }
+            set { BackingStore?.Set("fileUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

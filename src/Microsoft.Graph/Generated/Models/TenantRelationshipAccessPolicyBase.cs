@@ -8,8 +8,14 @@ namespace Microsoft.Graph.Beta.Models {
     public class TenantRelationshipAccessPolicyBase : PolicyBase, IParsable {
         /// <summary>The definition property</summary>
         public List<string> Definition {
-            get { return BackingStore?.Get<List<string>>(nameof(Definition)); }
-            set { BackingStore?.Set(nameof(Definition), value); }
+            get { return BackingStore?.Get<List<string>>("definition"); }
+            set { BackingStore?.Set("definition", value); }
+        }
+        /// <summary>
+        /// Instantiates a new TenantRelationshipAccessPolicyBase and sets the default values.
+        /// </summary>
+        public TenantRelationshipAccessPolicyBase() : base() {
+            Type = "#microsoft.graph.tenantRelationshipAccessPolicyBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

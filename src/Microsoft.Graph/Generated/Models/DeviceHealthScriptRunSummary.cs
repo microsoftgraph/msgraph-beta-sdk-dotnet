@@ -4,62 +4,61 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Contains properties for the run summary of a device management script.</summary>
     public class DeviceHealthScriptRunSummary : Entity, IParsable {
         /// <summary>Number of devices on which the detection script execution encountered an error and did not complete</summary>
         public int? DetectionScriptErrorDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(DetectionScriptErrorDeviceCount)); }
-            set { BackingStore?.Set(nameof(DetectionScriptErrorDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("detectionScriptErrorDeviceCount"); }
+            set { BackingStore?.Set("detectionScriptErrorDeviceCount", value); }
         }
         /// <summary>Number of devices for which the detection script was not applicable</summary>
         public int? DetectionScriptNotApplicableDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(DetectionScriptNotApplicableDeviceCount)); }
-            set { BackingStore?.Set(nameof(DetectionScriptNotApplicableDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("detectionScriptNotApplicableDeviceCount"); }
+            set { BackingStore?.Set("detectionScriptNotApplicableDeviceCount", value); }
         }
         /// <summary>Number of devices which have not yet run the latest version of the device health script</summary>
         public int? DetectionScriptPendingDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(DetectionScriptPendingDeviceCount)); }
-            set { BackingStore?.Set(nameof(DetectionScriptPendingDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("detectionScriptPendingDeviceCount"); }
+            set { BackingStore?.Set("detectionScriptPendingDeviceCount", value); }
         }
         /// <summary>Number of devices for which the detection script found an issue</summary>
         public int? IssueDetectedDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(IssueDetectedDeviceCount)); }
-            set { BackingStore?.Set(nameof(IssueDetectedDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("issueDetectedDeviceCount"); }
+            set { BackingStore?.Set("issueDetectedDeviceCount", value); }
         }
         /// <summary>Number of devices that were remediated over the last 30 days</summary>
         public int? IssueRemediatedCumulativeDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(IssueRemediatedCumulativeDeviceCount)); }
-            set { BackingStore?.Set(nameof(IssueRemediatedCumulativeDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("issueRemediatedCumulativeDeviceCount"); }
+            set { BackingStore?.Set("issueRemediatedCumulativeDeviceCount", value); }
         }
         /// <summary>Number of devices for which the remediation script was able to resolve the detected issue</summary>
         public int? IssueRemediatedDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(IssueRemediatedDeviceCount)); }
-            set { BackingStore?.Set(nameof(IssueRemediatedDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("issueRemediatedDeviceCount"); }
+            set { BackingStore?.Set("issueRemediatedDeviceCount", value); }
         }
         /// <summary>Number of devices for which the remediation script executed successfully but failed to resolve the detected issue</summary>
         public int? IssueReoccurredDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(IssueReoccurredDeviceCount)); }
-            set { BackingStore?.Set(nameof(IssueReoccurredDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("issueReoccurredDeviceCount"); }
+            set { BackingStore?.Set("issueReoccurredDeviceCount", value); }
         }
         /// <summary>Last run time for the script across all devices</summary>
         public DateTimeOffset? LastScriptRunDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastScriptRunDateTime)); }
-            set { BackingStore?.Set(nameof(LastScriptRunDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastScriptRunDateTime"); }
+            set { BackingStore?.Set("lastScriptRunDateTime", value); }
         }
         /// <summary>Number of devices for which the detection script did not find an issue and the device is healthy</summary>
         public int? NoIssueDetectedDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(NoIssueDetectedDeviceCount)); }
-            set { BackingStore?.Set(nameof(NoIssueDetectedDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("noIssueDetectedDeviceCount"); }
+            set { BackingStore?.Set("noIssueDetectedDeviceCount", value); }
         }
         /// <summary>Number of devices for which the remediation script execution encountered an error and did not complete</summary>
         public int? RemediationScriptErrorDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(RemediationScriptErrorDeviceCount)); }
-            set { BackingStore?.Set(nameof(RemediationScriptErrorDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("remediationScriptErrorDeviceCount"); }
+            set { BackingStore?.Set("remediationScriptErrorDeviceCount", value); }
         }
         /// <summary>Number of devices for which remediation was skipped</summary>
         public int? RemediationSkippedDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(RemediationSkippedDeviceCount)); }
-            set { BackingStore?.Set(nameof(RemediationSkippedDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("remediationSkippedDeviceCount"); }
+            set { BackingStore?.Set("remediationSkippedDeviceCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

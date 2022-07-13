@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class VpnServer : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Address (IP address, FQDN or URL)</summary>
         public string Address {
-            get { return BackingStore?.Get<string>(nameof(Address)); }
-            set { BackingStore?.Set(nameof(Address), value); }
+            get { return BackingStore?.Get<string>("address"); }
+            set { BackingStore?.Set("address", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Description.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Default server.</summary>
         public bool? IsDefaultServer {
-            get { return BackingStore?.Get<bool?>(nameof(IsDefaultServer)); }
-            set { BackingStore?.Set(nameof(IsDefaultServer), value); }
+            get { return BackingStore?.Get<bool?>("isDefaultServer"); }
+            set { BackingStore?.Set("isDefaultServer", value); }
         }
         /// <summary>
         /// Instantiates a new vpnServer and sets the default values.

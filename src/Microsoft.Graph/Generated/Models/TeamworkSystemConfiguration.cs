@@ -8,70 +8,70 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamworkSystemConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The date and time configurations for a device.</summary>
         public TeamworkDateTimeConfiguration DateTimeConfiguration {
-            get { return BackingStore?.Get<TeamworkDateTimeConfiguration>(nameof(DateTimeConfiguration)); }
-            set { BackingStore?.Set(nameof(DateTimeConfiguration), value); }
+            get { return BackingStore?.Get<TeamworkDateTimeConfiguration>("dateTimeConfiguration"); }
+            set { BackingStore?.Set("dateTimeConfiguration", value); }
         }
         /// <summary>The default password for the device. Write-Only.</summary>
         public string DefaultPassword {
-            get { return BackingStore?.Get<string>(nameof(DefaultPassword)); }
-            set { BackingStore?.Set(nameof(DefaultPassword), value); }
+            get { return BackingStore?.Get<string>("defaultPassword"); }
+            set { BackingStore?.Set("defaultPassword", value); }
         }
         /// <summary>The device lock timeout in seconds.</summary>
         public TimeSpan? DeviceLockTimeout {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(DeviceLockTimeout)); }
-            set { BackingStore?.Set(nameof(DeviceLockTimeout), value); }
+            get { return BackingStore?.Get<TimeSpan?>("deviceLockTimeout"); }
+            set { BackingStore?.Set("deviceLockTimeout", value); }
         }
         /// <summary>True if the device lock is enabled.</summary>
         public bool? IsDeviceLockEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsDeviceLockEnabled)); }
-            set { BackingStore?.Set(nameof(IsDeviceLockEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isDeviceLockEnabled"); }
+            set { BackingStore?.Set("isDeviceLockEnabled", value); }
         }
         /// <summary>True if logging is enabled.</summary>
         public bool? IsLoggingEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsLoggingEnabled)); }
-            set { BackingStore?.Set(nameof(IsLoggingEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isLoggingEnabled"); }
+            set { BackingStore?.Set("isLoggingEnabled", value); }
         }
         /// <summary>True if power saving is enabled.</summary>
         public bool? IsPowerSavingEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsPowerSavingEnabled)); }
-            set { BackingStore?.Set(nameof(IsPowerSavingEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isPowerSavingEnabled"); }
+            set { BackingStore?.Set("isPowerSavingEnabled", value); }
         }
         /// <summary>True if screen capture is enabled.</summary>
         public bool? IsScreenCaptureEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsScreenCaptureEnabled)); }
-            set { BackingStore?.Set(nameof(IsScreenCaptureEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isScreenCaptureEnabled"); }
+            set { BackingStore?.Set("isScreenCaptureEnabled", value); }
         }
         /// <summary>True if silent mode is enabled.</summary>
         public bool? IsSilentModeEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsSilentModeEnabled)); }
-            set { BackingStore?.Set(nameof(IsSilentModeEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isSilentModeEnabled"); }
+            set { BackingStore?.Set("isSilentModeEnabled", value); }
         }
         /// <summary>The language option for the device.</summary>
         public string Language {
-            get { return BackingStore?.Get<string>(nameof(Language)); }
-            set { BackingStore?.Set(nameof(Language), value); }
+            get { return BackingStore?.Get<string>("language"); }
+            set { BackingStore?.Set("language", value); }
         }
         /// <summary>The pin that unlocks the device. Write-Only.</summary>
         public string LockPin {
-            get { return BackingStore?.Get<string>(nameof(LockPin)); }
-            set { BackingStore?.Set(nameof(LockPin), value); }
+            get { return BackingStore?.Get<string>("lockPin"); }
+            set { BackingStore?.Set("lockPin", value); }
         }
         /// <summary>The logging level for the device.</summary>
         public string LoggingLevel {
-            get { return BackingStore?.Get<string>(nameof(LoggingLevel)); }
-            set { BackingStore?.Set(nameof(LoggingLevel), value); }
+            get { return BackingStore?.Get<string>("loggingLevel"); }
+            set { BackingStore?.Set("loggingLevel", value); }
         }
         /// <summary>The network configuration for the device.</summary>
         public TeamworkNetworkConfiguration NetworkConfiguration {
-            get { return BackingStore?.Get<TeamworkNetworkConfiguration>(nameof(NetworkConfiguration)); }
-            set { BackingStore?.Set(nameof(NetworkConfiguration), value); }
+            get { return BackingStore?.Get<TeamworkNetworkConfiguration>("networkConfiguration"); }
+            set { BackingStore?.Set("networkConfiguration", value); }
         }
         /// <summary>
         /// Instantiates a new teamworkSystemConfiguration and sets the default values.

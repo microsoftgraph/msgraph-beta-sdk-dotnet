@@ -8,73 +8,73 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyMigrationReport : Entity, IParsable {
         /// <summary>The date and time at which the GroupPolicyMigrationReport was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The name of Group Policy Object from the GPO Xml Content</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The date and time at which the GroupPolicyMigrationReport was created.</summary>
         public DateTimeOffset? GroupPolicyCreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(GroupPolicyCreatedDateTime)); }
-            set { BackingStore?.Set(nameof(GroupPolicyCreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("groupPolicyCreatedDateTime"); }
+            set { BackingStore?.Set("groupPolicyCreatedDateTime", value); }
         }
         /// <summary>The date and time at which the GroupPolicyMigrationReport was last modified.</summary>
         public DateTimeOffset? GroupPolicyLastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(GroupPolicyLastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(GroupPolicyLastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("groupPolicyLastModifiedDateTime"); }
+            set { BackingStore?.Set("groupPolicyLastModifiedDateTime", value); }
         }
         /// <summary>The Group Policy Object GUID from GPO Xml content</summary>
         public string GroupPolicyObjectId {
-            get { return BackingStore?.Get<string>(nameof(GroupPolicyObjectId)); }
-            set { BackingStore?.Set(nameof(GroupPolicyObjectId), value); }
+            get { return BackingStore?.Get<string>("groupPolicyObjectId"); }
+            set { BackingStore?.Set("groupPolicyObjectId", value); }
         }
         /// <summary>A list of group policy settings to MDM/Intune mappings.</summary>
         public List<GroupPolicySettingMapping> GroupPolicySettingMappings {
-            get { return BackingStore?.Get<List<GroupPolicySettingMapping>>(nameof(GroupPolicySettingMappings)); }
-            set { BackingStore?.Set(nameof(GroupPolicySettingMappings), value); }
+            get { return BackingStore?.Get<List<GroupPolicySettingMapping>>("groupPolicySettingMappings"); }
+            set { BackingStore?.Set("groupPolicySettingMappings", value); }
         }
         /// <summary>The date and time at which the GroupPolicyMigrationReport was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The Intune coverage for the associated Group Policy Object file. Possible values are: none, partial, complete, error, notApplicable.</summary>
+        /// <summary>Indicates if the Group Policy Object file is covered and ready for Intune migration.</summary>
         public GroupPolicyMigrationReadiness? MigrationReadiness {
-            get { return BackingStore?.Get<GroupPolicyMigrationReadiness?>(nameof(MigrationReadiness)); }
-            set { BackingStore?.Set(nameof(MigrationReadiness), value); }
+            get { return BackingStore?.Get<GroupPolicyMigrationReadiness?>("migrationReadiness"); }
+            set { BackingStore?.Set("migrationReadiness", value); }
         }
         /// <summary>The distinguished name of the OU.</summary>
         public string OuDistinguishedName {
-            get { return BackingStore?.Get<string>(nameof(OuDistinguishedName)); }
-            set { BackingStore?.Set(nameof(OuDistinguishedName), value); }
+            get { return BackingStore?.Get<string>("ouDistinguishedName"); }
+            set { BackingStore?.Set("ouDistinguishedName", value); }
         }
         /// <summary>The number of Group Policy Settings supported by Intune.</summary>
         public int? SupportedSettingsCount {
-            get { return BackingStore?.Get<int?>(nameof(SupportedSettingsCount)); }
-            set { BackingStore?.Set(nameof(SupportedSettingsCount), value); }
+            get { return BackingStore?.Get<int?>("supportedSettingsCount"); }
+            set { BackingStore?.Set("supportedSettingsCount", value); }
         }
         /// <summary>The Percentage of Group Policy Settings supported by Intune.</summary>
         public int? SupportedSettingsPercent {
-            get { return BackingStore?.Get<int?>(nameof(SupportedSettingsPercent)); }
-            set { BackingStore?.Set(nameof(SupportedSettingsPercent), value); }
+            get { return BackingStore?.Get<int?>("supportedSettingsPercent"); }
+            set { BackingStore?.Set("supportedSettingsPercent", value); }
         }
         /// <summary>The Targeted in AD property from GPO Xml Content</summary>
         public bool? TargetedInActiveDirectory {
-            get { return BackingStore?.Get<bool?>(nameof(TargetedInActiveDirectory)); }
-            set { BackingStore?.Set(nameof(TargetedInActiveDirectory), value); }
+            get { return BackingStore?.Get<bool?>("targetedInActiveDirectory"); }
+            set { BackingStore?.Set("targetedInActiveDirectory", value); }
         }
         /// <summary>The total number of Group Policy Settings from GPO file.</summary>
         public int? TotalSettingsCount {
-            get { return BackingStore?.Get<int?>(nameof(TotalSettingsCount)); }
-            set { BackingStore?.Set(nameof(TotalSettingsCount), value); }
+            get { return BackingStore?.Get<int?>("totalSettingsCount"); }
+            set { BackingStore?.Set("totalSettingsCount", value); }
         }
         /// <summary>A list of unsupported group policy extensions inside the Group Policy Object.</summary>
         public List<UnsupportedGroupPolicyExtension> UnsupportedGroupPolicyExtensions {
-            get { return BackingStore?.Get<List<UnsupportedGroupPolicyExtension>>(nameof(UnsupportedGroupPolicyExtensions)); }
-            set { BackingStore?.Set(nameof(UnsupportedGroupPolicyExtensions), value); }
+            get { return BackingStore?.Get<List<UnsupportedGroupPolicyExtension>>("unsupportedGroupPolicyExtensions"); }
+            set { BackingStore?.Set("unsupportedGroupPolicyExtensions", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

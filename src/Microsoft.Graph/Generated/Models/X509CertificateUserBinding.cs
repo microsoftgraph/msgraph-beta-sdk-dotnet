@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class X509CertificateUserBinding : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The priority of the binding. Azure AD uses the binding with the highest priority. This value must be a non-negative integer and unique in the collection of objects in the certificateUserBindings property of an x509CertificateAuthenticationMethodConfiguration object. Required</summary>
         public int? Priority {
-            get { return BackingStore?.Get<int?>(nameof(Priority)); }
-            set { BackingStore?.Set(nameof(Priority), value); }
+            get { return BackingStore?.Get<int?>("priority"); }
+            set { BackingStore?.Set("priority", value); }
         }
         /// <summary>Defines the Azure AD user property of the user object to use for the binding. The possible values are: userPrincipalName, onPremisesUserPrincipalName, email. Required.</summary>
         public string UserProperty {
-            get { return BackingStore?.Get<string>(nameof(UserProperty)); }
-            set { BackingStore?.Set(nameof(UserProperty), value); }
+            get { return BackingStore?.Get<string>("userProperty"); }
+            set { BackingStore?.Set("userProperty", value); }
         }
         /// <summary>The field on the X.509 certificate to use for the binding. The possible values are: PrincipalName, RFC822Name.</summary>
         public string X509CertificateField {
-            get { return BackingStore?.Get<string>(nameof(X509CertificateField)); }
-            set { BackingStore?.Set(nameof(X509CertificateField), value); }
+            get { return BackingStore?.Get<string>("x509CertificateField"); }
+            set { BackingStore?.Set("x509CertificateField", value); }
         }
         /// <summary>
         /// Instantiates a new x509CertificateUserBinding and sets the default values.

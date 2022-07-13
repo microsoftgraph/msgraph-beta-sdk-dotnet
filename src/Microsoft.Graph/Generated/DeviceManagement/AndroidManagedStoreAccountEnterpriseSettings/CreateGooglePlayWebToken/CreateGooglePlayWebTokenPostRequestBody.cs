@@ -9,15 +9,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
     public class CreateGooglePlayWebTokenPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The parentUri property</summary>
         public string ParentUri {
-            get { return BackingStore?.Get<string>(nameof(ParentUri)); }
-            set { BackingStore?.Set(nameof(ParentUri), value); }
+            get { return BackingStore?.Get<string>("parentUri"); }
+            set { BackingStore?.Set("parentUri", value); }
         }
         /// <summary>
         /// Instantiates a new createGooglePlayWebTokenPostRequestBody and sets the default values.

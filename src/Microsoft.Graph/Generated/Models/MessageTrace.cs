@@ -7,43 +7,43 @@ namespace Microsoft.Graph.Beta.Models {
     public class MessageTrace : Entity, IParsable {
         /// <summary>The destinationIPAddress property</summary>
         public string DestinationIPAddress {
-            get { return BackingStore?.Get<string>(nameof(DestinationIPAddress)); }
-            set { BackingStore?.Set(nameof(DestinationIPAddress), value); }
+            get { return BackingStore?.Get<string>("destinationIPAddress"); }
+            set { BackingStore?.Set("destinationIPAddress", value); }
         }
         /// <summary>The messageId property</summary>
         public string MessageId {
-            get { return BackingStore?.Get<string>(nameof(MessageId)); }
-            set { BackingStore?.Set(nameof(MessageId), value); }
+            get { return BackingStore?.Get<string>("messageId"); }
+            set { BackingStore?.Set("messageId", value); }
         }
         /// <summary>The receivedDateTime property</summary>
         public DateTimeOffset? ReceivedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ReceivedDateTime)); }
-            set { BackingStore?.Set(nameof(ReceivedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("receivedDateTime"); }
+            set { BackingStore?.Set("receivedDateTime", value); }
         }
         /// <summary>The recipients property</summary>
         public List<MessageRecipient> Recipients {
-            get { return BackingStore?.Get<List<MessageRecipient>>(nameof(Recipients)); }
-            set { BackingStore?.Set(nameof(Recipients), value); }
+            get { return BackingStore?.Get<List<MessageRecipient>>("recipients"); }
+            set { BackingStore?.Set("recipients", value); }
         }
         /// <summary>The senderEmail property</summary>
         public string SenderEmail {
-            get { return BackingStore?.Get<string>(nameof(SenderEmail)); }
-            set { BackingStore?.Set(nameof(SenderEmail), value); }
+            get { return BackingStore?.Get<string>("senderEmail"); }
+            set { BackingStore?.Set("senderEmail", value); }
         }
         /// <summary>The size property</summary>
         public int? Size {
-            get { return BackingStore?.Get<int?>(nameof(Size)); }
-            set { BackingStore?.Set(nameof(Size), value); }
+            get { return BackingStore?.Get<int?>("size"); }
+            set { BackingStore?.Set("size", value); }
         }
         /// <summary>The sourceIPAddress property</summary>
         public string SourceIPAddress {
-            get { return BackingStore?.Get<string>(nameof(SourceIPAddress)); }
-            set { BackingStore?.Set(nameof(SourceIPAddress), value); }
+            get { return BackingStore?.Get<string>("sourceIPAddress"); }
+            set { BackingStore?.Set("sourceIPAddress", value); }
         }
         /// <summary>The subject property</summary>
         public string Subject {
-            get { return BackingStore?.Get<string>(nameof(Subject)); }
-            set { BackingStore?.Set(nameof(Subject), value); }
+            get { return BackingStore?.Get<string>("subject"); }
+            set { BackingStore?.Set("subject", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,53 +8,53 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsBaseline : Entity, IParsable {
         /// <summary>The user experience analytics app health metrics.</summary>
         public UserExperienceAnalyticsCategory AppHealthMetrics {
-            get { return BackingStore?.Get<UserExperienceAnalyticsCategory>(nameof(AppHealthMetrics)); }
-            set { BackingStore?.Set(nameof(AppHealthMetrics), value); }
+            get { return BackingStore?.Get<UserExperienceAnalyticsCategory>("appHealthMetrics"); }
+            set { BackingStore?.Set("appHealthMetrics", value); }
         }
         /// <summary>The user experience analytics battery health metrics.</summary>
         public UserExperienceAnalyticsCategory BatteryHealthMetrics {
-            get { return BackingStore?.Get<UserExperienceAnalyticsCategory>(nameof(BatteryHealthMetrics)); }
-            set { BackingStore?.Set(nameof(BatteryHealthMetrics), value); }
+            get { return BackingStore?.Get<UserExperienceAnalyticsCategory>("batteryHealthMetrics"); }
+            set { BackingStore?.Set("batteryHealthMetrics", value); }
         }
         /// <summary>The user experience analytics best practices metrics.</summary>
         public UserExperienceAnalyticsCategory BestPracticesMetrics {
-            get { return BackingStore?.Get<UserExperienceAnalyticsCategory>(nameof(BestPracticesMetrics)); }
-            set { BackingStore?.Set(nameof(BestPracticesMetrics), value); }
+            get { return BackingStore?.Get<UserExperienceAnalyticsCategory>("bestPracticesMetrics"); }
+            set { BackingStore?.Set("bestPracticesMetrics", value); }
         }
         /// <summary>The date the custom baseline was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The user experience analytics device boot performance metrics.</summary>
         public UserExperienceAnalyticsCategory DeviceBootPerformanceMetrics {
-            get { return BackingStore?.Get<UserExperienceAnalyticsCategory>(nameof(DeviceBootPerformanceMetrics)); }
-            set { BackingStore?.Set(nameof(DeviceBootPerformanceMetrics), value); }
+            get { return BackingStore?.Get<UserExperienceAnalyticsCategory>("deviceBootPerformanceMetrics"); }
+            set { BackingStore?.Set("deviceBootPerformanceMetrics", value); }
         }
         /// <summary>The name of the user experience analytics baseline.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Signifies if the current baseline is the commercial median baseline or a custom baseline.</summary>
         public bool? IsBuiltIn {
-            get { return BackingStore?.Get<bool?>(nameof(IsBuiltIn)); }
-            set { BackingStore?.Set(nameof(IsBuiltIn), value); }
+            get { return BackingStore?.Get<bool?>("isBuiltIn"); }
+            set { BackingStore?.Set("isBuiltIn", value); }
         }
         /// <summary>The user experience analytics reboot analytics metrics.</summary>
         public UserExperienceAnalyticsCategory RebootAnalyticsMetrics {
-            get { return BackingStore?.Get<UserExperienceAnalyticsCategory>(nameof(RebootAnalyticsMetrics)); }
-            set { BackingStore?.Set(nameof(RebootAnalyticsMetrics), value); }
+            get { return BackingStore?.Get<UserExperienceAnalyticsCategory>("rebootAnalyticsMetrics"); }
+            set { BackingStore?.Set("rebootAnalyticsMetrics", value); }
         }
         /// <summary>The user experience analytics resource performance metrics.</summary>
         public UserExperienceAnalyticsCategory ResourcePerformanceMetrics {
-            get { return BackingStore?.Get<UserExperienceAnalyticsCategory>(nameof(ResourcePerformanceMetrics)); }
-            set { BackingStore?.Set(nameof(ResourcePerformanceMetrics), value); }
+            get { return BackingStore?.Get<UserExperienceAnalyticsCategory>("resourcePerformanceMetrics"); }
+            set { BackingStore?.Set("resourcePerformanceMetrics", value); }
         }
         /// <summary>The user experience analytics work from anywhere metrics.</summary>
         public UserExperienceAnalyticsCategory WorkFromAnywhereMetrics {
-            get { return BackingStore?.Get<UserExperienceAnalyticsCategory>(nameof(WorkFromAnywhereMetrics)); }
-            set { BackingStore?.Set(nameof(WorkFromAnywhereMetrics), value); }
+            get { return BackingStore?.Get<UserExperienceAnalyticsCategory>("workFromAnywhereMetrics"); }
+            set { BackingStore?.Set("workFromAnywhereMetrics", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

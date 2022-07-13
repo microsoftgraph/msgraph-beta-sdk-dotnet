@@ -9,83 +9,83 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsWorkFromAnywhereDevicesSummary : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The value of work from anywhere autopilot devices summary.</summary>
         public UserExperienceAnalyticsAutopilotDevicesSummary AutopilotDevicesSummary {
-            get { return BackingStore?.Get<UserExperienceAnalyticsAutopilotDevicesSummary>(nameof(AutopilotDevicesSummary)); }
-            set { BackingStore?.Set(nameof(AutopilotDevicesSummary), value); }
+            get { return BackingStore?.Get<UserExperienceAnalyticsAutopilotDevicesSummary>("autopilotDevicesSummary"); }
+            set { BackingStore?.Set("autopilotDevicesSummary", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The user experience analytics work from anywhere Cloud Identity devices summary.</summary>
         public UserExperienceAnalyticsCloudIdentityDevicesSummary CloudIdentityDevicesSummary {
-            get { return BackingStore?.Get<UserExperienceAnalyticsCloudIdentityDevicesSummary>(nameof(CloudIdentityDevicesSummary)); }
-            set { BackingStore?.Set(nameof(CloudIdentityDevicesSummary), value); }
+            get { return BackingStore?.Get<UserExperienceAnalyticsCloudIdentityDevicesSummary>("cloudIdentityDevicesSummary"); }
+            set { BackingStore?.Set("cloudIdentityDevicesSummary", value); }
         }
         /// <summary>The user experience work from anywhere Cloud management devices summary.</summary>
         public UserExperienceAnalyticsCloudManagementDevicesSummary CloudManagementDevicesSummary {
-            get { return BackingStore?.Get<UserExperienceAnalyticsCloudManagementDevicesSummary>(nameof(CloudManagementDevicesSummary)); }
-            set { BackingStore?.Set(nameof(CloudManagementDevicesSummary), value); }
+            get { return BackingStore?.Get<UserExperienceAnalyticsCloudManagementDevicesSummary>("cloudManagementDevicesSummary"); }
+            set { BackingStore?.Set("cloudManagementDevicesSummary", value); }
         }
         /// <summary>Total number of co-managed devices. Valid values -2147483648 to 2147483647</summary>
         public int? CoManagedDevices {
-            get { return BackingStore?.Get<int?>(nameof(CoManagedDevices)); }
-            set { BackingStore?.Set(nameof(CoManagedDevices), value); }
+            get { return BackingStore?.Get<int?>("coManagedDevices"); }
+            set { BackingStore?.Set("coManagedDevices", value); }
         }
         /// <summary>The count of intune devices that are not autopilot registerd. Valid values -2147483648 to 2147483647</summary>
         public int? DevicesNotAutopilotRegistered {
-            get { return BackingStore?.Get<int?>(nameof(DevicesNotAutopilotRegistered)); }
-            set { BackingStore?.Set(nameof(DevicesNotAutopilotRegistered), value); }
+            get { return BackingStore?.Get<int?>("devicesNotAutopilotRegistered"); }
+            set { BackingStore?.Set("devicesNotAutopilotRegistered", value); }
         }
         /// <summary>The count of intune devices not autopilot profile assigned. Valid values -2147483648 to 2147483647</summary>
         public int? DevicesWithoutAutopilotProfileAssigned {
-            get { return BackingStore?.Get<int?>(nameof(DevicesWithoutAutopilotProfileAssigned)); }
-            set { BackingStore?.Set(nameof(DevicesWithoutAutopilotProfileAssigned), value); }
+            get { return BackingStore?.Get<int?>("devicesWithoutAutopilotProfileAssigned"); }
+            set { BackingStore?.Set("devicesWithoutAutopilotProfileAssigned", value); }
         }
         /// <summary>The count of devices that are not cloud identity. Valid values -2147483648 to 2147483647</summary>
         public int? DevicesWithoutCloudIdentity {
-            get { return BackingStore?.Get<int?>(nameof(DevicesWithoutCloudIdentity)); }
-            set { BackingStore?.Set(nameof(DevicesWithoutCloudIdentity), value); }
+            get { return BackingStore?.Get<int?>("devicesWithoutCloudIdentity"); }
+            set { BackingStore?.Set("devicesWithoutCloudIdentity", value); }
         }
         /// <summary>The count of intune devices that are not autopilot registerd. Valid values -2147483648 to 2147483647</summary>
         public int? IntuneDevices {
-            get { return BackingStore?.Get<int?>(nameof(IntuneDevices)); }
-            set { BackingStore?.Set(nameof(IntuneDevices), value); }
+            get { return BackingStore?.Get<int?>("intuneDevices"); }
+            set { BackingStore?.Set("intuneDevices", value); }
         }
         /// <summary>Total count of tenant attach devices. Valid values -2147483648 to 2147483647</summary>
         public int? TenantAttachDevices {
-            get { return BackingStore?.Get<int?>(nameof(TenantAttachDevices)); }
-            set { BackingStore?.Set(nameof(TenantAttachDevices), value); }
+            get { return BackingStore?.Get<int?>("tenantAttachDevices"); }
+            set { BackingStore?.Set("tenantAttachDevices", value); }
         }
         /// <summary>The total count of devices. Valid values -2147483648 to 2147483647</summary>
         public int? TotalDevices {
-            get { return BackingStore?.Get<int?>(nameof(TotalDevices)); }
-            set { BackingStore?.Set(nameof(TotalDevices), value); }
+            get { return BackingStore?.Get<int?>("totalDevices"); }
+            set { BackingStore?.Set("totalDevices", value); }
         }
         /// <summary>The count of Windows 10 devices that have unsupported OS versions. Valid values -2147483648 to 2147483647</summary>
         public int? UnsupportedOSversionDevices {
-            get { return BackingStore?.Get<int?>(nameof(UnsupportedOSversionDevices)); }
-            set { BackingStore?.Set(nameof(UnsupportedOSversionDevices), value); }
+            get { return BackingStore?.Get<int?>("unsupportedOSversionDevices"); }
+            set { BackingStore?.Set("unsupportedOSversionDevices", value); }
         }
         /// <summary>The count of windows 10 devices. Valid values -2147483648 to 2147483647</summary>
         public int? Windows10Devices {
-            get { return BackingStore?.Get<int?>(nameof(Windows10Devices)); }
-            set { BackingStore?.Set(nameof(Windows10Devices), value); }
+            get { return BackingStore?.Get<int?>("windows10Devices"); }
+            set { BackingStore?.Set("windows10Devices", value); }
         }
         /// <summary>The user experience analytics work from anywhere Windows 10 devices summary.</summary>
         public UserExperienceAnalyticsWindows10DevicesSummary Windows10DevicesSummary {
-            get { return BackingStore?.Get<UserExperienceAnalyticsWindows10DevicesSummary>(nameof(Windows10DevicesSummary)); }
-            set { BackingStore?.Set(nameof(Windows10DevicesSummary), value); }
+            get { return BackingStore?.Get<UserExperienceAnalyticsWindows10DevicesSummary>("windows10DevicesSummary"); }
+            set { BackingStore?.Set("windows10DevicesSummary", value); }
         }
         /// <summary>The count of windows 10 devices that are Intune and Comanaged. Valid values -2147483648 to 2147483647</summary>
         public int? Windows10DevicesWithoutTenantAttach {
-            get { return BackingStore?.Get<int?>(nameof(Windows10DevicesWithoutTenantAttach)); }
-            set { BackingStore?.Set(nameof(Windows10DevicesWithoutTenantAttach), value); }
+            get { return BackingStore?.Get<int?>("windows10DevicesWithoutTenantAttach"); }
+            set { BackingStore?.Set("windows10DevicesWithoutTenantAttach", value); }
         }
         /// <summary>
-        /// Instantiates a new UserExperienceAnalyticsWorkFromAnywhereDevicesSummary and sets the default values.
+        /// Instantiates a new userExperienceAnalyticsWorkFromAnywhereDevicesSummary and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsWorkFromAnywhereDevicesSummary() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class EdiscoveryAddToReviewSetOperation : CaseOperation, IParsable {
         /// <summary>eDiscovery review set to which items matching source collection query gets added.</summary>
         public EdiscoveryReviewSet ReviewSet {
-            get { return BackingStore?.Get<EdiscoveryReviewSet>(nameof(ReviewSet)); }
-            set { BackingStore?.Set(nameof(ReviewSet), value); }
+            get { return BackingStore?.Get<EdiscoveryReviewSet>("reviewSet"); }
+            set { BackingStore?.Set("reviewSet", value); }
         }
         /// <summary>eDiscovery search that gets added to review set.</summary>
         public EdiscoverySearch Search {
-            get { return BackingStore?.Get<EdiscoverySearch>(nameof(Search)); }
-            set { BackingStore?.Set(nameof(Search), value); }
+            get { return BackingStore?.Get<EdiscoverySearch>("search"); }
+            set { BackingStore?.Set("search", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

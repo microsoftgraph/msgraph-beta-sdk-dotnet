@@ -8,50 +8,50 @@ namespace Microsoft.Graph.Beta.Models {
     public class MatchingDlpRule : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The actions property</summary>
         public List<DlpActionInfo> Actions {
-            get { return BackingStore?.Get<List<DlpActionInfo>>(nameof(Actions)); }
-            set { BackingStore?.Set(nameof(Actions), value); }
+            get { return BackingStore?.Get<List<DlpActionInfo>>("actions"); }
+            set { BackingStore?.Set("actions", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The isMostRestrictive property</summary>
         public bool? IsMostRestrictive {
-            get { return BackingStore?.Get<bool?>(nameof(IsMostRestrictive)); }
-            set { BackingStore?.Set(nameof(IsMostRestrictive), value); }
+            get { return BackingStore?.Get<bool?>("isMostRestrictive"); }
+            set { BackingStore?.Set("isMostRestrictive", value); }
         }
         /// <summary>The policyId property</summary>
         public string PolicyId {
-            get { return BackingStore?.Get<string>(nameof(PolicyId)); }
-            set { BackingStore?.Set(nameof(PolicyId), value); }
+            get { return BackingStore?.Get<string>("policyId"); }
+            set { BackingStore?.Set("policyId", value); }
         }
         /// <summary>The policyName property</summary>
         public string PolicyName {
-            get { return BackingStore?.Get<string>(nameof(PolicyName)); }
-            set { BackingStore?.Set(nameof(PolicyName), value); }
+            get { return BackingStore?.Get<string>("policyName"); }
+            set { BackingStore?.Set("policyName", value); }
         }
         /// <summary>The priority property</summary>
         public int? Priority {
-            get { return BackingStore?.Get<int?>(nameof(Priority)); }
-            set { BackingStore?.Set(nameof(Priority), value); }
+            get { return BackingStore?.Get<int?>("priority"); }
+            set { BackingStore?.Set("priority", value); }
         }
         /// <summary>The ruleId property</summary>
         public string RuleId {
-            get { return BackingStore?.Get<string>(nameof(RuleId)); }
-            set { BackingStore?.Set(nameof(RuleId), value); }
+            get { return BackingStore?.Get<string>("ruleId"); }
+            set { BackingStore?.Set("ruleId", value); }
         }
         /// <summary>The ruleMode property</summary>
         public Microsoft.Graph.Beta.Models.RuleMode? RuleMode {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RuleMode?>(nameof(RuleMode)); }
-            set { BackingStore?.Set(nameof(RuleMode), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RuleMode?>("ruleMode"); }
+            set { BackingStore?.Set("ruleMode", value); }
         }
         /// <summary>The ruleName property</summary>
         public string RuleName {
-            get { return BackingStore?.Get<string>(nameof(RuleName)); }
-            set { BackingStore?.Set(nameof(RuleName), value); }
+            get { return BackingStore?.Get<string>("ruleName"); }
+            set { BackingStore?.Set("ruleName", value); }
         }
         /// <summary>
         /// Instantiates a new matchingDlpRule and sets the default values.

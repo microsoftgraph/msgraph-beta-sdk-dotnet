@@ -7,68 +7,68 @@ namespace Microsoft.Graph.Beta.Models {
     public class ReportRoot : Entity, IParsable {
         /// <summary>Represents a detailed summary of an application sign-in.</summary>
         public List<Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary> ApplicationSignInDetailedSummary {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary>>(nameof(ApplicationSignInDetailedSummary)); }
-            set { BackingStore?.Set(nameof(ApplicationSignInDetailedSummary), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary>>("applicationSignInDetailedSummary"); }
+            set { BackingStore?.Set("applicationSignInDetailedSummary", value); }
         }
         /// <summary>Container for navigation properties for Azure AD authentication methods resources.</summary>
         public AuthenticationMethodsRoot AuthenticationMethods {
-            get { return BackingStore?.Get<AuthenticationMethodsRoot>(nameof(AuthenticationMethods)); }
-            set { BackingStore?.Set(nameof(AuthenticationMethods), value); }
+            get { return BackingStore?.Get<AuthenticationMethodsRoot>("authenticationMethods"); }
+            set { BackingStore?.Set("authenticationMethods", value); }
         }
         /// <summary>Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.</summary>
         public List<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails> CredentialUserRegistrationDetails {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails>>(nameof(CredentialUserRegistrationDetails)); }
-            set { BackingStore?.Set(nameof(CredentialUserRegistrationDetails), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails>>("credentialUserRegistrationDetails"); }
+            set { BackingStore?.Set("credentialUserRegistrationDetails", value); }
         }
         /// <summary>The dailyPrintUsageByPrinter property</summary>
         public List<PrintUsageByPrinter> DailyPrintUsageByPrinter {
-            get { return BackingStore?.Get<List<PrintUsageByPrinter>>(nameof(DailyPrintUsageByPrinter)); }
-            set { BackingStore?.Set(nameof(DailyPrintUsageByPrinter), value); }
+            get { return BackingStore?.Get<List<PrintUsageByPrinter>>("dailyPrintUsageByPrinter"); }
+            set { BackingStore?.Set("dailyPrintUsageByPrinter", value); }
         }
         /// <summary>The dailyPrintUsageByUser property</summary>
         public List<PrintUsageByUser> DailyPrintUsageByUser {
-            get { return BackingStore?.Get<List<PrintUsageByUser>>(nameof(DailyPrintUsageByUser)); }
-            set { BackingStore?.Set(nameof(DailyPrintUsageByUser), value); }
+            get { return BackingStore?.Get<List<PrintUsageByUser>>("dailyPrintUsageByUser"); }
+            set { BackingStore?.Set("dailyPrintUsageByUser", value); }
         }
         /// <summary>The dailyPrintUsageSummariesByPrinter property</summary>
         public List<PrintUsageByPrinter> DailyPrintUsageSummariesByPrinter {
-            get { return BackingStore?.Get<List<PrintUsageByPrinter>>(nameof(DailyPrintUsageSummariesByPrinter)); }
-            set { BackingStore?.Set(nameof(DailyPrintUsageSummariesByPrinter), value); }
+            get { return BackingStore?.Get<List<PrintUsageByPrinter>>("dailyPrintUsageSummariesByPrinter"); }
+            set { BackingStore?.Set("dailyPrintUsageSummariesByPrinter", value); }
         }
         /// <summary>The dailyPrintUsageSummariesByUser property</summary>
         public List<PrintUsageByUser> DailyPrintUsageSummariesByUser {
-            get { return BackingStore?.Get<List<PrintUsageByUser>>(nameof(DailyPrintUsageSummariesByUser)); }
-            set { BackingStore?.Set(nameof(DailyPrintUsageSummariesByUser), value); }
+            get { return BackingStore?.Get<List<PrintUsageByUser>>("dailyPrintUsageSummariesByUser"); }
+            set { BackingStore?.Set("dailyPrintUsageSummariesByUser", value); }
         }
         /// <summary>The monthlyPrintUsageByPrinter property</summary>
         public List<PrintUsageByPrinter> MonthlyPrintUsageByPrinter {
-            get { return BackingStore?.Get<List<PrintUsageByPrinter>>(nameof(MonthlyPrintUsageByPrinter)); }
-            set { BackingStore?.Set(nameof(MonthlyPrintUsageByPrinter), value); }
+            get { return BackingStore?.Get<List<PrintUsageByPrinter>>("monthlyPrintUsageByPrinter"); }
+            set { BackingStore?.Set("monthlyPrintUsageByPrinter", value); }
         }
         /// <summary>The monthlyPrintUsageByUser property</summary>
         public List<PrintUsageByUser> MonthlyPrintUsageByUser {
-            get { return BackingStore?.Get<List<PrintUsageByUser>>(nameof(MonthlyPrintUsageByUser)); }
-            set { BackingStore?.Set(nameof(MonthlyPrintUsageByUser), value); }
+            get { return BackingStore?.Get<List<PrintUsageByUser>>("monthlyPrintUsageByUser"); }
+            set { BackingStore?.Set("monthlyPrintUsageByUser", value); }
         }
         /// <summary>The monthlyPrintUsageSummariesByPrinter property</summary>
         public List<PrintUsageByPrinter> MonthlyPrintUsageSummariesByPrinter {
-            get { return BackingStore?.Get<List<PrintUsageByPrinter>>(nameof(MonthlyPrintUsageSummariesByPrinter)); }
-            set { BackingStore?.Set(nameof(MonthlyPrintUsageSummariesByPrinter), value); }
+            get { return BackingStore?.Get<List<PrintUsageByPrinter>>("monthlyPrintUsageSummariesByPrinter"); }
+            set { BackingStore?.Set("monthlyPrintUsageSummariesByPrinter", value); }
         }
         /// <summary>The monthlyPrintUsageSummariesByUser property</summary>
         public List<PrintUsageByUser> MonthlyPrintUsageSummariesByUser {
-            get { return BackingStore?.Get<List<PrintUsageByUser>>(nameof(MonthlyPrintUsageSummariesByUser)); }
-            set { BackingStore?.Set(nameof(MonthlyPrintUsageSummariesByUser), value); }
+            get { return BackingStore?.Get<List<PrintUsageByUser>>("monthlyPrintUsageSummariesByUser"); }
+            set { BackingStore?.Set("monthlyPrintUsageSummariesByUser", value); }
         }
         /// <summary>The security property</summary>
         public SecurityReportsRoot Security {
-            get { return BackingStore?.Get<SecurityReportsRoot>(nameof(Security)); }
-            set { BackingStore?.Set(nameof(Security), value); }
+            get { return BackingStore?.Get<SecurityReportsRoot>("security"); }
+            set { BackingStore?.Set("security", value); }
         }
         /// <summary>Represents the self-service password reset (SSPR) usage for a given tenant.</summary>
         public List<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails> UserCredentialUsageDetails {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>>(nameof(UserCredentialUsageDetails)); }
-            set { BackingStore?.Set(nameof(UserCredentialUsageDetails), value); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>>("userCredentialUsageDetails"); }
+            set { BackingStore?.Set("userCredentialUsageDetails", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,43 +7,43 @@ namespace Microsoft.Graph.Beta.Models {
     public class Note : OutlookItem, IParsable {
         /// <summary>The attachments property</summary>
         public List<Attachment> Attachments {
-            get { return BackingStore?.Get<List<Attachment>>(nameof(Attachments)); }
-            set { BackingStore?.Set(nameof(Attachments), value); }
+            get { return BackingStore?.Get<List<Attachment>>("attachments"); }
+            set { BackingStore?.Set("attachments", value); }
         }
         /// <summary>The body property</summary>
         public ItemBody Body {
-            get { return BackingStore?.Get<ItemBody>(nameof(Body)); }
-            set { BackingStore?.Set(nameof(Body), value); }
+            get { return BackingStore?.Get<ItemBody>("body"); }
+            set { BackingStore?.Set("body", value); }
         }
         /// <summary>The extensions property</summary>
         public List<Extension> Extensions {
-            get { return BackingStore?.Get<List<Extension>>(nameof(Extensions)); }
-            set { BackingStore?.Set(nameof(Extensions), value); }
+            get { return BackingStore?.Get<List<Extension>>("extensions"); }
+            set { BackingStore?.Set("extensions", value); }
         }
         /// <summary>The hasAttachments property</summary>
         public bool? HasAttachments {
-            get { return BackingStore?.Get<bool?>(nameof(HasAttachments)); }
-            set { BackingStore?.Set(nameof(HasAttachments), value); }
+            get { return BackingStore?.Get<bool?>("hasAttachments"); }
+            set { BackingStore?.Set("hasAttachments", value); }
         }
         /// <summary>The isDeleted property</summary>
         public bool? IsDeleted {
-            get { return BackingStore?.Get<bool?>(nameof(IsDeleted)); }
-            set { BackingStore?.Set(nameof(IsDeleted), value); }
+            get { return BackingStore?.Get<bool?>("isDeleted"); }
+            set { BackingStore?.Set("isDeleted", value); }
         }
         /// <summary>The multiValueExtendedProperties property</summary>
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties {
-            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>(nameof(MultiValueExtendedProperties)); }
-            set { BackingStore?.Set(nameof(MultiValueExtendedProperties), value); }
+            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
+            set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
         /// <summary>The singleValueExtendedProperties property</summary>
         public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties {
-            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>(nameof(SingleValueExtendedProperties)); }
-            set { BackingStore?.Set(nameof(SingleValueExtendedProperties), value); }
+            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
+            set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
         /// <summary>The subject property</summary>
         public string Subject {
-            get { return BackingStore?.Get<string>(nameof(Subject)); }
-            set { BackingStore?.Set(nameof(Subject), value); }
+            get { return BackingStore?.Get<string>("subject"); }
+            set { BackingStore?.Set("subject", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

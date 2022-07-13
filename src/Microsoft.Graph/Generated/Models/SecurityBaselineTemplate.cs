@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class SecurityBaselineTemplate : DeviceManagementTemplate, IParsable {
         /// <summary>The security baseline per category device state summary</summary>
         public List<SecurityBaselineCategoryStateSummary> CategoryDeviceStateSummaries {
-            get { return BackingStore?.Get<List<SecurityBaselineCategoryStateSummary>>(nameof(CategoryDeviceStateSummaries)); }
-            set { BackingStore?.Set(nameof(CategoryDeviceStateSummaries), value); }
+            get { return BackingStore?.Get<List<SecurityBaselineCategoryStateSummary>>("categoryDeviceStateSummaries"); }
+            set { BackingStore?.Set("categoryDeviceStateSummaries", value); }
         }
         /// <summary>The security baseline device states</summary>
         public List<SecurityBaselineDeviceState> DeviceStates {
-            get { return BackingStore?.Get<List<SecurityBaselineDeviceState>>(nameof(DeviceStates)); }
-            set { BackingStore?.Set(nameof(DeviceStates), value); }
+            get { return BackingStore?.Get<List<SecurityBaselineDeviceState>>("deviceStates"); }
+            set { BackingStore?.Set("deviceStates", value); }
         }
         /// <summary>The security baseline device state summary</summary>
         public SecurityBaselineStateSummary DeviceStateSummary {
-            get { return BackingStore?.Get<SecurityBaselineStateSummary>(nameof(DeviceStateSummary)); }
-            set { BackingStore?.Set(nameof(DeviceStateSummary), value); }
+            get { return BackingStore?.Get<SecurityBaselineStateSummary>("deviceStateSummary"); }
+            set { BackingStore?.Set("deviceStateSummary", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

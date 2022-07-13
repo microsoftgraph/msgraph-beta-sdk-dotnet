@@ -8,23 +8,29 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationSimpleSettingDefinition : DeviceManagementConfigurationSettingDefinition, IParsable {
         /// <summary>Default setting value for this setting</summary>
         public DeviceManagementConfigurationSettingValue DefaultValue {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingValue>(nameof(DefaultValue)); }
-            set { BackingStore?.Set(nameof(DefaultValue), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationSettingValue>("defaultValue"); }
+            set { BackingStore?.Set("defaultValue", value); }
         }
         /// <summary>list of child settings that depend on this setting</summary>
         public List<DeviceManagementConfigurationSettingDependedOnBy> DependedOnBy {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDependedOnBy>>(nameof(DependedOnBy)); }
-            set { BackingStore?.Set(nameof(DependedOnBy), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDependedOnBy>>("dependedOnBy"); }
+            set { BackingStore?.Set("dependedOnBy", value); }
         }
         /// <summary>list of parent settings this setting is dependent on</summary>
         public List<DeviceManagementConfigurationDependentOn> DependentOn {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationDependentOn>>(nameof(DependentOn)); }
-            set { BackingStore?.Set(nameof(DependentOn), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationDependentOn>>("dependentOn"); }
+            set { BackingStore?.Set("dependentOn", value); }
         }
         /// <summary>Definition of the value for this setting</summary>
         public DeviceManagementConfigurationSettingValueDefinition ValueDefinition {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingValueDefinition>(nameof(ValueDefinition)); }
-            set { BackingStore?.Set(nameof(ValueDefinition), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationSettingValueDefinition>("valueDefinition"); }
+            set { BackingStore?.Set("valueDefinition", value); }
+        }
+        /// <summary>
+        /// Instantiates a new DeviceManagementConfigurationSimpleSettingDefinition and sets the default values.
+        /// </summary>
+        public DeviceManagementConfigurationSimpleSettingDefinition() : base() {
+            Type = "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

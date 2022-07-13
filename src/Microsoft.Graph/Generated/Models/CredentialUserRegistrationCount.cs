@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class CredentialUserRegistrationCount : Entity, IParsable {
         /// <summary>Provides the total user count in the tenant.</summary>
         public long? TotalUserCount {
-            get { return BackingStore?.Get<long?>(nameof(TotalUserCount)); }
-            set { BackingStore?.Set(nameof(TotalUserCount), value); }
+            get { return BackingStore?.Get<long?>("totalUserCount"); }
+            set { BackingStore?.Set("totalUserCount", value); }
         }
         /// <summary>A collection of registration count and status information for users in your tenant.</summary>
         public List<UserRegistrationCount> UserRegistrationCounts {
-            get { return BackingStore?.Get<List<UserRegistrationCount>>(nameof(UserRegistrationCounts)); }
-            set { BackingStore?.Set(nameof(UserRegistrationCounts), value); }
+            get { return BackingStore?.Get<List<UserRegistrationCount>>("userRegistrationCounts"); }
+            set { BackingStore?.Set("userRegistrationCounts", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

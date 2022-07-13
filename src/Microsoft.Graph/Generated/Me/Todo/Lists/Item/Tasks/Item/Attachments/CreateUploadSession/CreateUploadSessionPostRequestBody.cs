@@ -10,13 +10,13 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item.Attachments.CreateU
     public class CreateUploadSessionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The attachmentInfo property</summary>
         public Microsoft.Graph.Beta.Models.AttachmentInfo AttachmentInfo {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttachmentInfo>(nameof(AttachmentInfo)); }
-            set { BackingStore?.Set(nameof(AttachmentInfo), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttachmentInfo>("attachmentInfo"); }
+            set { BackingStore?.Set("attachmentInfo", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }

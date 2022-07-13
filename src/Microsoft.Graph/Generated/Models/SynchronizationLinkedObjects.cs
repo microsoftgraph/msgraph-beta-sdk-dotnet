@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class SynchronizationLinkedObjects : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The manager property</summary>
         public SynchronizationJobSubject Manager {
-            get { return BackingStore?.Get<SynchronizationJobSubject>(nameof(Manager)); }
-            set { BackingStore?.Set(nameof(Manager), value); }
+            get { return BackingStore?.Get<SynchronizationJobSubject>("manager"); }
+            set { BackingStore?.Set("manager", value); }
         }
         /// <summary>All group members that you would like to provision.</summary>
         public List<SynchronizationJobSubject> Members {
-            get { return BackingStore?.Get<List<SynchronizationJobSubject>>(nameof(Members)); }
-            set { BackingStore?.Set(nameof(Members), value); }
+            get { return BackingStore?.Get<List<SynchronizationJobSubject>>("members"); }
+            set { BackingStore?.Set("members", value); }
         }
         /// <summary>The owners property</summary>
         public List<SynchronizationJobSubject> Owners {
-            get { return BackingStore?.Get<List<SynchronizationJobSubject>>(nameof(Owners)); }
-            set { BackingStore?.Set(nameof(Owners), value); }
+            get { return BackingStore?.Get<List<SynchronizationJobSubject>>("owners"); }
+            set { BackingStore?.Set("owners", value); }
         }
         /// <summary>
         /// Instantiates a new synchronizationLinkedObjects and sets the default values.

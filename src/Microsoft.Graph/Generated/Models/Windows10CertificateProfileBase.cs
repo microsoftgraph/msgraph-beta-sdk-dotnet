@@ -7,6 +7,12 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Windows10CertificateProfileBase : WindowsCertificateProfileBase, IParsable {
         /// <summary>
+        /// Instantiates a new Windows10CertificateProfileBase and sets the default values.
+        /// </summary>
+        public Windows10CertificateProfileBase() : base() {
+            Type = "#microsoft.graph.windows10CertificateProfileBase";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

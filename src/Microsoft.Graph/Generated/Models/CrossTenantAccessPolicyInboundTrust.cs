@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class CrossTenantAccessPolicyInboundTrust : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies whether compliant devices from external Azure AD organizations are trusted.</summary>
         public bool? IsCompliantDeviceAccepted {
-            get { return BackingStore?.Get<bool?>(nameof(IsCompliantDeviceAccepted)); }
-            set { BackingStore?.Set(nameof(IsCompliantDeviceAccepted), value); }
+            get { return BackingStore?.Get<bool?>("isCompliantDeviceAccepted"); }
+            set { BackingStore?.Set("isCompliantDeviceAccepted", value); }
         }
         /// <summary>Specifies whether hybrid Azure AD joined devices from external Azure AD organizations are trusted.</summary>
         public bool? IsHybridAzureADJoinedDeviceAccepted {
-            get { return BackingStore?.Get<bool?>(nameof(IsHybridAzureADJoinedDeviceAccepted)); }
-            set { BackingStore?.Set(nameof(IsHybridAzureADJoinedDeviceAccepted), value); }
+            get { return BackingStore?.Get<bool?>("isHybridAzureADJoinedDeviceAccepted"); }
+            set { BackingStore?.Set("isHybridAzureADJoinedDeviceAccepted", value); }
         }
         /// <summary>Specifies whether MFA from external Azure AD organizations is trusted.</summary>
         public bool? IsMfaAccepted {
-            get { return BackingStore?.Get<bool?>(nameof(IsMfaAccepted)); }
-            set { BackingStore?.Set(nameof(IsMfaAccepted), value); }
+            get { return BackingStore?.Get<bool?>("isMfaAccepted"); }
+            set { BackingStore?.Set("isMfaAccepted", value); }
         }
         /// <summary>
         /// Instantiates a new crossTenantAccessPolicyInboundTrust and sets the default values.

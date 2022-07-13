@@ -8,55 +8,55 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamworkNetworkConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The default gateway is the path used to pass information when the destination is unknown to the device.</summary>
         public string DefaultGateway {
-            get { return BackingStore?.Get<string>(nameof(DefaultGateway)); }
-            set { BackingStore?.Set(nameof(DefaultGateway), value); }
+            get { return BackingStore?.Get<string>("defaultGateway"); }
+            set { BackingStore?.Set("defaultGateway", value); }
         }
         /// <summary>The network domain of the device, for example, contoso.com.</summary>
         public string DomainName {
-            get { return BackingStore?.Get<string>(nameof(DomainName)); }
-            set { BackingStore?.Set(nameof(DomainName), value); }
+            get { return BackingStore?.Get<string>("domainName"); }
+            set { BackingStore?.Set("domainName", value); }
         }
         /// <summary>The device name on a network.</summary>
         public string HostName {
-            get { return BackingStore?.Get<string>(nameof(HostName)); }
-            set { BackingStore?.Set(nameof(HostName), value); }
+            get { return BackingStore?.Get<string>("hostName"); }
+            set { BackingStore?.Set("hostName", value); }
         }
         /// <summary>The IP address is a numerical label that uniquely identifies every device connected to the internet.</summary>
         public string IpAddress {
-            get { return BackingStore?.Get<string>(nameof(IpAddress)); }
-            set { BackingStore?.Set(nameof(IpAddress), value); }
+            get { return BackingStore?.Get<string>("ipAddress"); }
+            set { BackingStore?.Set("ipAddress", value); }
         }
         /// <summary>True if DHCP is enabled.</summary>
         public bool? IsDhcpEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsDhcpEnabled)); }
-            set { BackingStore?.Set(nameof(IsDhcpEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isDhcpEnabled"); }
+            set { BackingStore?.Set("isDhcpEnabled", value); }
         }
         /// <summary>True if the PC port is enabled.</summary>
         public bool? IsPCPortEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(IsPCPortEnabled)); }
-            set { BackingStore?.Set(nameof(IsPCPortEnabled), value); }
+            get { return BackingStore?.Get<bool?>("isPCPortEnabled"); }
+            set { BackingStore?.Set("isPCPortEnabled", value); }
         }
         /// <summary>A primary DNS is the first point of contact for a device that translates the hostname into an IP address.</summary>
         public string PrimaryDns {
-            get { return BackingStore?.Get<string>(nameof(PrimaryDns)); }
-            set { BackingStore?.Set(nameof(PrimaryDns), value); }
+            get { return BackingStore?.Get<string>("primaryDns"); }
+            set { BackingStore?.Set("primaryDns", value); }
         }
         /// <summary>A secondary DNS is used when the primary DNS is not available.</summary>
         public string SecondaryDns {
-            get { return BackingStore?.Get<string>(nameof(SecondaryDns)); }
-            set { BackingStore?.Set(nameof(SecondaryDns), value); }
+            get { return BackingStore?.Get<string>("secondaryDns"); }
+            set { BackingStore?.Set("secondaryDns", value); }
         }
         /// <summary>A subnet mask is a number that distinguishes the network address and the host address within an IP address.</summary>
         public string SubnetMask {
-            get { return BackingStore?.Get<string>(nameof(SubnetMask)); }
-            set { BackingStore?.Set(nameof(SubnetMask), value); }
+            get { return BackingStore?.Get<string>("subnetMask"); }
+            set { BackingStore?.Set("subnetMask", value); }
         }
         /// <summary>
         /// Instantiates a new teamworkNetworkConfiguration and sets the default values.

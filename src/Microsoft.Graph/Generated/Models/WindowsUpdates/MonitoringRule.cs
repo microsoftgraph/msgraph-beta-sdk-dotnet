@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class MonitoringRule : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The action triggered when the threshold for the given signal is met. Possible values are: alertError, pauseDeployment, unknownFutureValue.</summary>
         public MonitoringAction? Action {
-            get { return BackingStore?.Get<MonitoringAction?>(nameof(Action)); }
-            set { BackingStore?.Set(nameof(Action), value); }
+            get { return BackingStore?.Get<MonitoringAction?>("action"); }
+            set { BackingStore?.Set("action", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The signal to monitor. Possible values are: rollback, unknownFutureValue.</summary>
         public MonitoringSignal? Signal {
-            get { return BackingStore?.Get<MonitoringSignal?>(nameof(Signal)); }
-            set { BackingStore?.Set(nameof(Signal), value); }
+            get { return BackingStore?.Get<MonitoringSignal?>("signal"); }
+            set { BackingStore?.Set("signal", value); }
         }
         /// <summary>The threshold for a signal at which to trigger action. An integer from 1 to 100 (inclusive).</summary>
         public int? Threshold {
-            get { return BackingStore?.Get<int?>(nameof(Threshold)); }
-            set { BackingStore?.Set(nameof(Threshold), value); }
+            get { return BackingStore?.Get<int?>("threshold"); }
+            set { BackingStore?.Set("threshold", value); }
         }
         /// <summary>
         /// Instantiates a new monitoringRule and sets the default values.

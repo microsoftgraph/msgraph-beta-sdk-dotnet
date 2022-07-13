@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class ConditionalAccessDevices : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Filter that defines the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them. Cannot be set if includeDevices or excludeDevices is set.</summary>
         public ConditionalAccessFilter DeviceFilter {
-            get { return BackingStore?.Get<ConditionalAccessFilter>(nameof(DeviceFilter)); }
-            set { BackingStore?.Set(nameof(DeviceFilter), value); }
+            get { return BackingStore?.Get<ConditionalAccessFilter>("deviceFilter"); }
+            set { BackingStore?.Set("deviceFilter", value); }
         }
         /// <summary>States excluded from the scope of the policy. Possible values: Compliant, DomainJoined. Cannot be set if deviceFIlter is set.</summary>
         public List<string> ExcludeDevices {
-            get { return BackingStore?.Get<List<string>>(nameof(ExcludeDevices)); }
-            set { BackingStore?.Set(nameof(ExcludeDevices), value); }
+            get { return BackingStore?.Get<List<string>>("excludeDevices"); }
+            set { BackingStore?.Set("excludeDevices", value); }
         }
         /// <summary>The excludeDeviceStates property</summary>
         public List<string> ExcludeDeviceStates {
-            get { return BackingStore?.Get<List<string>>(nameof(ExcludeDeviceStates)); }
-            set { BackingStore?.Set(nameof(ExcludeDeviceStates), value); }
+            get { return BackingStore?.Get<List<string>>("excludeDeviceStates"); }
+            set { BackingStore?.Set("excludeDeviceStates", value); }
         }
         /// <summary>States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFIlter is set.</summary>
         public List<string> IncludeDevices {
-            get { return BackingStore?.Get<List<string>>(nameof(IncludeDevices)); }
-            set { BackingStore?.Set(nameof(IncludeDevices), value); }
+            get { return BackingStore?.Get<List<string>>("includeDevices"); }
+            set { BackingStore?.Set("includeDevices", value); }
         }
         /// <summary>The includeDeviceStates property</summary>
         public List<string> IncludeDeviceStates {
-            get { return BackingStore?.Get<List<string>>(nameof(IncludeDeviceStates)); }
-            set { BackingStore?.Set(nameof(IncludeDeviceStates), value); }
+            get { return BackingStore?.Get<List<string>>("includeDeviceStates"); }
+            set { BackingStore?.Set("includeDeviceStates", value); }
         }
         /// <summary>
         /// Instantiates a new conditionalAccessDevices and sets the default values.

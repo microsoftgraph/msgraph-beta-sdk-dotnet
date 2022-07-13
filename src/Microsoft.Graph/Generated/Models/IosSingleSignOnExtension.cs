@@ -7,6 +7,12 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class IosSingleSignOnExtension : SingleSignOnExtension, IParsable {
         /// <summary>
+        /// Instantiates a new IosSingleSignOnExtension and sets the default values.
+        /// </summary>
+        public IosSingleSignOnExtension() : base() {
+            Type = "#microsoft.graph.iosSingleSignOnExtension";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

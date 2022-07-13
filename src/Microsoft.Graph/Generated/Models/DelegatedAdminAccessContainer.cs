@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class DelegatedAdminAccessContainer : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The identifier of the access container (for example, a security group). For &apos;securityGroup&apos; access containers, this must be a valid ID of an Azure AD security group in the Microsoft partner&apos;s tenant.</summary>
         public string AccessContainerId {
-            get { return BackingStore?.Get<string>(nameof(AccessContainerId)); }
-            set { BackingStore?.Set(nameof(AccessContainerId), value); }
+            get { return BackingStore?.Get<string>("accessContainerId"); }
+            set { BackingStore?.Set("accessContainerId", value); }
         }
-        /// <summary>The type of access container (for example, security group) that will be assigned one or more roles through a delegated admin relationship. The possible values are: securityGroup, unknownFutureValue.</summary>
+        /// <summary>The accessContainerType property</summary>
         public DelegatedAdminAccessContainerType? AccessContainerType {
-            get { return BackingStore?.Get<DelegatedAdminAccessContainerType?>(nameof(AccessContainerType)); }
-            set { BackingStore?.Set(nameof(AccessContainerType), value); }
+            get { return BackingStore?.Get<DelegatedAdminAccessContainerType?>("accessContainerType"); }
+            set { BackingStore?.Set("accessContainerType", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }

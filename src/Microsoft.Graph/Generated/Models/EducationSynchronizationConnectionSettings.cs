@@ -9,20 +9,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationSynchronizationConnectionSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Client ID used to connect to the provider.</summary>
         public string ClientId {
-            get { return BackingStore?.Get<string>(nameof(ClientId)); }
-            set { BackingStore?.Set(nameof(ClientId), value); }
+            get { return BackingStore?.Get<string>("clientId"); }
+            set { BackingStore?.Set("clientId", value); }
         }
         /// <summary>Client secret to authenticate the connection to the provider.</summary>
         public string ClientSecret {
-            get { return BackingStore?.Get<string>(nameof(ClientSecret)); }
-            set { BackingStore?.Set(nameof(ClientSecret), value); }
+            get { return BackingStore?.Get<string>("clientSecret"); }
+            set { BackingStore?.Set("clientSecret", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new educationSynchronizationConnectionSettings and sets the default values.
@@ -30,6 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         public EducationSynchronizationConnectionSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.educationSynchronizationConnectionSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -52,6 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"clientId", n => { ClientId = n.GetStringValue(); } },
                 {"clientSecret", n => { ClientSecret = n.GetStringValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -62,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("clientId", ClientId);
             writer.WriteStringValue("clientSecret", ClientSecret);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

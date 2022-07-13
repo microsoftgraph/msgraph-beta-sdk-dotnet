@@ -7,68 +7,68 @@ namespace Microsoft.Graph.Beta.Models {
     public class EntitlementManagement : Entity, IParsable {
         /// <summary>Approval stages for decisions associated with access package assignment requests.</summary>
         public List<Approval> AccessPackageAssignmentApprovals {
-            get { return BackingStore?.Get<List<Approval>>(nameof(AccessPackageAssignmentApprovals)); }
-            set { BackingStore?.Set(nameof(AccessPackageAssignmentApprovals), value); }
+            get { return BackingStore?.Get<List<Approval>>("accessPackageAssignmentApprovals"); }
+            set { BackingStore?.Set("accessPackageAssignmentApprovals", value); }
         }
         /// <summary>Represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.</summary>
         public List<AccessPackageAssignmentPolicy> AccessPackageAssignmentPolicies {
-            get { return BackingStore?.Get<List<AccessPackageAssignmentPolicy>>(nameof(AccessPackageAssignmentPolicies)); }
-            set { BackingStore?.Set(nameof(AccessPackageAssignmentPolicies), value); }
+            get { return BackingStore?.Get<List<AccessPackageAssignmentPolicy>>("accessPackageAssignmentPolicies"); }
+            set { BackingStore?.Set("accessPackageAssignmentPolicies", value); }
         }
         /// <summary>Represents access package assignment requests created by or on behalf of a user.</summary>
         public List<AccessPackageAssignmentRequest> AccessPackageAssignmentRequests {
-            get { return BackingStore?.Get<List<AccessPackageAssignmentRequest>>(nameof(AccessPackageAssignmentRequests)); }
-            set { BackingStore?.Set(nameof(AccessPackageAssignmentRequests), value); }
+            get { return BackingStore?.Get<List<AccessPackageAssignmentRequest>>("accessPackageAssignmentRequests"); }
+            set { BackingStore?.Set("accessPackageAssignmentRequests", value); }
         }
         /// <summary>Represents the resource-specific role which a subject has been assigned through an access package assignment.</summary>
         public List<AccessPackageAssignmentResourceRole> AccessPackageAssignmentResourceRoles {
-            get { return BackingStore?.Get<List<AccessPackageAssignmentResourceRole>>(nameof(AccessPackageAssignmentResourceRoles)); }
-            set { BackingStore?.Set(nameof(AccessPackageAssignmentResourceRoles), value); }
+            get { return BackingStore?.Get<List<AccessPackageAssignmentResourceRole>>("accessPackageAssignmentResourceRoles"); }
+            set { BackingStore?.Set("accessPackageAssignmentResourceRoles", value); }
         }
         /// <summary>The assignment of an access package to a subject for a period of time.</summary>
         public List<AccessPackageAssignment> AccessPackageAssignments {
-            get { return BackingStore?.Get<List<AccessPackageAssignment>>(nameof(AccessPackageAssignments)); }
-            set { BackingStore?.Set(nameof(AccessPackageAssignments), value); }
+            get { return BackingStore?.Get<List<AccessPackageAssignment>>("accessPackageAssignments"); }
+            set { BackingStore?.Set("accessPackageAssignments", value); }
         }
         /// <summary>A container of access packages.</summary>
         public List<AccessPackageCatalog> AccessPackageCatalogs {
-            get { return BackingStore?.Get<List<AccessPackageCatalog>>(nameof(AccessPackageCatalogs)); }
-            set { BackingStore?.Set(nameof(AccessPackageCatalogs), value); }
+            get { return BackingStore?.Get<List<AccessPackageCatalog>>("accessPackageCatalogs"); }
+            set { BackingStore?.Set("accessPackageCatalogs", value); }
         }
         /// <summary>A reference to the geolocation environment in which a resource is located.</summary>
         public List<AccessPackageResourceEnvironment> AccessPackageResourceEnvironments {
-            get { return BackingStore?.Get<List<AccessPackageResourceEnvironment>>(nameof(AccessPackageResourceEnvironments)); }
-            set { BackingStore?.Set(nameof(AccessPackageResourceEnvironments), value); }
+            get { return BackingStore?.Get<List<AccessPackageResourceEnvironment>>("accessPackageResourceEnvironments"); }
+            set { BackingStore?.Set("accessPackageResourceEnvironments", value); }
         }
         /// <summary>Represents a request to add or remove a resource to or from a catalog respectively.</summary>
         public List<AccessPackageResourceRequest> AccessPackageResourceRequests {
-            get { return BackingStore?.Get<List<AccessPackageResourceRequest>>(nameof(AccessPackageResourceRequests)); }
-            set { BackingStore?.Set(nameof(AccessPackageResourceRequests), value); }
+            get { return BackingStore?.Get<List<AccessPackageResourceRequest>>("accessPackageResourceRequests"); }
+            set { BackingStore?.Set("accessPackageResourceRequests", value); }
         }
         /// <summary>A reference to both a scope within a resource, and a role in that resource for that scope.</summary>
         public List<AccessPackageResourceRoleScope> AccessPackageResourceRoleScopes {
-            get { return BackingStore?.Get<List<AccessPackageResourceRoleScope>>(nameof(AccessPackageResourceRoleScopes)); }
-            set { BackingStore?.Set(nameof(AccessPackageResourceRoleScopes), value); }
+            get { return BackingStore?.Get<List<AccessPackageResourceRoleScope>>("accessPackageResourceRoleScopes"); }
+            set { BackingStore?.Set("accessPackageResourceRoleScopes", value); }
         }
         /// <summary>A reference to a resource associated with an access package catalog.</summary>
         public List<AccessPackageResource> AccessPackageResources {
-            get { return BackingStore?.Get<List<AccessPackageResource>>(nameof(AccessPackageResources)); }
-            set { BackingStore?.Set(nameof(AccessPackageResources), value); }
+            get { return BackingStore?.Get<List<AccessPackageResource>>("accessPackageResources"); }
+            set { BackingStore?.Set("accessPackageResources", value); }
         }
         /// <summary>Represents access package objects.</summary>
         public List<AccessPackage> AccessPackages {
-            get { return BackingStore?.Get<List<AccessPackage>>(nameof(AccessPackages)); }
-            set { BackingStore?.Set(nameof(AccessPackages), value); }
+            get { return BackingStore?.Get<List<AccessPackage>>("accessPackages"); }
+            set { BackingStore?.Set("accessPackages", value); }
         }
         /// <summary>Represents references to a directory or domain of another organization whose users can request access.</summary>
         public List<ConnectedOrganization> ConnectedOrganizations {
-            get { return BackingStore?.Get<List<ConnectedOrganization>>(nameof(ConnectedOrganizations)); }
-            set { BackingStore?.Set(nameof(ConnectedOrganizations), value); }
+            get { return BackingStore?.Get<List<ConnectedOrganization>>("connectedOrganizations"); }
+            set { BackingStore?.Set("connectedOrganizations", value); }
         }
         /// <summary>Represents the settings that control the behavior of Azure AD entitlement management.</summary>
         public EntitlementManagementSettings Settings {
-            get { return BackingStore?.Get<EntitlementManagementSettings>(nameof(Settings)); }
-            set { BackingStore?.Set(nameof(Settings), value); }
+            get { return BackingStore?.Get<EntitlementManagementSettings>("settings"); }
+            set { BackingStore?.Set("settings", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

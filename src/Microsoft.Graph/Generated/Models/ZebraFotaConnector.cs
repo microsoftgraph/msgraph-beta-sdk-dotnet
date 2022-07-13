@@ -4,32 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The Zebra FOTA connector entity that represents the tenant&apos;s authorization status for Intune to call Zebra Update Services.</summary>
     public class ZebraFotaConnector : Entity, IParsable {
         /// <summary>Complete account enrollment authorization URL. This corresponds to verification_uri_complete in the Zebra API documentations.</summary>
         public string EnrollmentAuthorizationUrl {
-            get { return BackingStore?.Get<string>(nameof(EnrollmentAuthorizationUrl)); }
-            set { BackingStore?.Set(nameof(EnrollmentAuthorizationUrl), value); }
+            get { return BackingStore?.Get<string>("enrollmentAuthorizationUrl"); }
+            set { BackingStore?.Set("enrollmentAuthorizationUrl", value); }
         }
         /// <summary>Tenant enrollment token from Zebra. The token is used to enroll Zebra devices in the FOTA Service via app config.</summary>
         public string EnrollmentToken {
-            get { return BackingStore?.Get<string>(nameof(EnrollmentToken)); }
-            set { BackingStore?.Set(nameof(EnrollmentToken), value); }
+            get { return BackingStore?.Get<string>("enrollmentToken"); }
+            set { BackingStore?.Set("enrollmentToken", value); }
         }
         /// <summary>Flag indicating if required Firmware Over-the-Air (FOTA) Apps have been approved.</summary>
         public bool? FotaAppsApproved {
-            get { return BackingStore?.Get<bool?>(nameof(FotaAppsApproved)); }
-            set { BackingStore?.Set(nameof(FotaAppsApproved), value); }
+            get { return BackingStore?.Get<bool?>("fotaAppsApproved"); }
+            set { BackingStore?.Set("fotaAppsApproved", value); }
         }
         /// <summary>Date and time when the account was last synched with Zebra</summary>
         public DateTimeOffset? LastSyncDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastSyncDateTime)); }
-            set { BackingStore?.Set(nameof(LastSyncDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
+            set { BackingStore?.Set("lastSyncDateTime", value); }
         }
-        /// <summary>The Zebra connector state. Possible values are: none, connected, disconnected, unknownFutureValue.</summary>
+        /// <summary>Represents various states for Zebra FOTA connector.</summary>
         public ZebraFotaConnectorState? State {
-            get { return BackingStore?.Get<ZebraFotaConnectorState?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<ZebraFotaConnectorState?>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

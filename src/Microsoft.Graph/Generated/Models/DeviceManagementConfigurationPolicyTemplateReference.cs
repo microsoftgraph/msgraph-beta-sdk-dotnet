@@ -9,30 +9,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationPolicyTemplateReference : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Template Display Name of the referenced template. This property is read-only.</summary>
         public string TemplateDisplayName {
-            get { return BackingStore?.Get<string>(nameof(TemplateDisplayName)); }
-            set { BackingStore?.Set(nameof(TemplateDisplayName), value); }
+            get { return BackingStore?.Get<string>("templateDisplayName"); }
+            set { BackingStore?.Set("templateDisplayName", value); }
         }
         /// <summary>Template Display Version of the referenced Template. This property is read-only.</summary>
         public string TemplateDisplayVersion {
-            get { return BackingStore?.Get<string>(nameof(TemplateDisplayVersion)); }
-            set { BackingStore?.Set(nameof(TemplateDisplayVersion), value); }
+            get { return BackingStore?.Get<string>("templateDisplayVersion"); }
+            set { BackingStore?.Set("templateDisplayVersion", value); }
         }
-        /// <summary>Template Family of the referenced Template. This property is read-only. Possible values are: none, endpointSecurityAntivirus, endpointSecurityDiskEncryption, endpointSecurityFirewall, endpointSecurityEndpointDetectionAndResponse, endpointSecurityAttackSurfaceReduction, endpointSecurityAccountProtection, endpointSecurityApplicationControl, baseline.</summary>
+        /// <summary>Describes the TemplateFamily for the Template entity</summary>
         public DeviceManagementConfigurationTemplateFamily? TemplateFamily {
-            get { return BackingStore?.Get<DeviceManagementConfigurationTemplateFamily?>(nameof(TemplateFamily)); }
-            set { BackingStore?.Set(nameof(TemplateFamily), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationTemplateFamily?>("templateFamily"); }
+            set { BackingStore?.Set("templateFamily", value); }
         }
         /// <summary>Template id</summary>
         public string TemplateId {
-            get { return BackingStore?.Get<string>(nameof(TemplateId)); }
-            set { BackingStore?.Set(nameof(TemplateId), value); }
+            get { return BackingStore?.Get<string>("templateId"); }
+            set { BackingStore?.Set("templateId", value); }
         }
         /// <summary>
         /// Instantiates a new deviceManagementConfigurationPolicyTemplateReference and sets the default values.

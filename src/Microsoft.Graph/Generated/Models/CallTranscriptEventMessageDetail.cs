@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class CallTranscriptEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>Unique identifier of the call.</summary>
         public string CallId {
-            get { return BackingStore?.Get<string>(nameof(CallId)); }
-            set { BackingStore?.Set(nameof(CallId), value); }
+            get { return BackingStore?.Get<string>("callId"); }
+            set { BackingStore?.Set("callId", value); }
         }
         /// <summary>Unique identifier for a call transcript.</summary>
         public string CallTranscriptICalUid {
-            get { return BackingStore?.Get<string>(nameof(CallTranscriptICalUid)); }
-            set { BackingStore?.Set(nameof(CallTranscriptICalUid), value); }
+            get { return BackingStore?.Get<string>("callTranscriptICalUid"); }
+            set { BackingStore?.Set("callTranscriptICalUid", value); }
         }
         /// <summary>The organizer of the meeting.</summary>
         public IdentitySet MeetingOrganizer {
-            get { return BackingStore?.Get<IdentitySet>(nameof(MeetingOrganizer)); }
-            set { BackingStore?.Set(nameof(MeetingOrganizer), value); }
+            get { return BackingStore?.Get<IdentitySet>("meetingOrganizer"); }
+            set { BackingStore?.Set("meetingOrganizer", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

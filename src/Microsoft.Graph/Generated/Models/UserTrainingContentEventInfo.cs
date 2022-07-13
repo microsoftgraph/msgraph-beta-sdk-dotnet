@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserTrainingContentEventInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Browser of the user from where the training event was generated.</summary>
         public string Browser {
-            get { return BackingStore?.Get<string>(nameof(Browser)); }
-            set { BackingStore?.Set(nameof(Browser), value); }
+            get { return BackingStore?.Get<string>("browser"); }
+            set { BackingStore?.Set("browser", value); }
         }
         /// <summary>Date and time of the training content playback by the user.</summary>
         public DateTimeOffset? ContentDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ContentDateTime)); }
-            set { BackingStore?.Set(nameof(ContentDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("contentDateTime"); }
+            set { BackingStore?.Set("contentDateTime", value); }
         }
         /// <summary>IP address of the user for the training event.</summary>
         public string IpAddress {
-            get { return BackingStore?.Get<string>(nameof(IpAddress)); }
-            set { BackingStore?.Set(nameof(IpAddress), value); }
+            get { return BackingStore?.Get<string>("ipAddress"); }
+            set { BackingStore?.Set("ipAddress", value); }
         }
         /// <summary>The operating system, platform, and device details of the user for the training event.</summary>
         public string OsPlatformDeviceDetails {
-            get { return BackingStore?.Get<string>(nameof(OsPlatformDeviceDetails)); }
-            set { BackingStore?.Set(nameof(OsPlatformDeviceDetails), value); }
+            get { return BackingStore?.Get<string>("osPlatformDeviceDetails"); }
+            set { BackingStore?.Set("osPlatformDeviceDetails", value); }
         }
         /// <summary>Potential improvement in security posture of the tenant after completion of the training by the user.</summary>
         public double? PotentialScoreImpact {
-            get { return BackingStore?.Get<double?>(nameof(PotentialScoreImpact)); }
-            set { BackingStore?.Set(nameof(PotentialScoreImpact), value); }
+            get { return BackingStore?.Get<double?>("potentialScoreImpact"); }
+            set { BackingStore?.Set("potentialScoreImpact", value); }
         }
         /// <summary>
         /// Instantiates a new userTrainingContentEventInfo and sets the default values.

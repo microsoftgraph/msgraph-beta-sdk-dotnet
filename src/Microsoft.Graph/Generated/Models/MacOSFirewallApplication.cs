@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOSFirewallApplication : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Whether or not incoming connections are allowed.</summary>
         public bool? AllowsIncomingConnections {
-            get { return BackingStore?.Get<bool?>(nameof(AllowsIncomingConnections)); }
-            set { BackingStore?.Set(nameof(AllowsIncomingConnections), value); }
+            get { return BackingStore?.Get<bool?>("allowsIncomingConnections"); }
+            set { BackingStore?.Set("allowsIncomingConnections", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>BundleId of the application.</summary>
         public string BundleId {
-            get { return BackingStore?.Get<string>(nameof(BundleId)); }
-            set { BackingStore?.Set(nameof(BundleId), value); }
+            get { return BackingStore?.Get<string>("bundleId"); }
+            set { BackingStore?.Set("bundleId", value); }
         }
         /// <summary>
         /// Instantiates a new macOSFirewallApplication and sets the default values.

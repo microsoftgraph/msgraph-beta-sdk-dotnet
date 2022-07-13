@@ -8,38 +8,38 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsAppHealthDeviceModelPerformance : Entity, IParsable {
         /// <summary>The number of active devices for the model. Valid values -2147483648 to 2147483647</summary>
         public int? ActiveDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(ActiveDeviceCount)); }
-            set { BackingStore?.Set(nameof(ActiveDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("activeDeviceCount"); }
+            set { BackingStore?.Set("activeDeviceCount", value); }
         }
         /// <summary>The manufacturer name of the device.</summary>
         public string DeviceManufacturer {
-            get { return BackingStore?.Get<string>(nameof(DeviceManufacturer)); }
-            set { BackingStore?.Set(nameof(DeviceManufacturer), value); }
+            get { return BackingStore?.Get<string>("deviceManufacturer"); }
+            set { BackingStore?.Set("deviceManufacturer", value); }
         }
         /// <summary>The model name of the device.</summary>
         public string DeviceModel {
-            get { return BackingStore?.Get<string>(nameof(DeviceModel)); }
-            set { BackingStore?.Set(nameof(DeviceModel), value); }
+            get { return BackingStore?.Get<string>("deviceModel"); }
+            set { BackingStore?.Set("deviceModel", value); }
         }
-        /// <summary>The health state of the user experience analytics model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.</summary>
+        /// <summary>The healthStatus property</summary>
         public UserExperienceAnalyticsHealthState? HealthStatus {
-            get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>(nameof(HealthStatus)); }
-            set { BackingStore?.Set(nameof(HealthStatus), value); }
+            get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>("healthStatus"); }
+            set { BackingStore?.Set("healthStatus", value); }
         }
         /// <summary>The mean time to failure for the model device in minutes. Valid values -2147483648 to 2147483647</summary>
         public int? MeanTimeToFailureInMinutes {
-            get { return BackingStore?.Get<int?>(nameof(MeanTimeToFailureInMinutes)); }
-            set { BackingStore?.Set(nameof(MeanTimeToFailureInMinutes), value); }
+            get { return BackingStore?.Get<int?>("meanTimeToFailureInMinutes"); }
+            set { BackingStore?.Set("meanTimeToFailureInMinutes", value); }
         }
         /// <summary>The app health score of the device model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? ModelAppHealthScore {
-            get { return BackingStore?.Get<double?>(nameof(ModelAppHealthScore)); }
-            set { BackingStore?.Set(nameof(ModelAppHealthScore), value); }
+            get { return BackingStore?.Get<double?>("modelAppHealthScore"); }
+            set { BackingStore?.Set("modelAppHealthScore", value); }
         }
         /// <summary>The overall app health status of the device model.</summary>
         public string ModelAppHealthStatus {
-            get { return BackingStore?.Get<string>(nameof(ModelAppHealthStatus)); }
-            set { BackingStore?.Set(nameof(ModelAppHealthStatus), value); }
+            get { return BackingStore?.Get<string>("modelAppHealthStatus"); }
+            set { BackingStore?.Set("modelAppHealthStatus", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

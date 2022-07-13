@@ -9,38 +9,38 @@ namespace Microsoft.Graph.Beta.Models {
     public class AssignmentFilterStatusDetails : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Device properties used for filter evaluation during device check-in time.</summary>
         public List<KeyValuePair> DeviceProperties {
-            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(DeviceProperties)); }
-            set { BackingStore?.Set(nameof(DeviceProperties), value); }
+            get { return BackingStore?.Get<List<KeyValuePair>>("deviceProperties"); }
+            set { BackingStore?.Set("deviceProperties", value); }
         }
         /// <summary>Evaluation result summaries for each filter associated to device and payload</summary>
         public List<AssignmentFilterEvaluationSummary> EvalutionSummaries {
-            get { return BackingStore?.Get<List<AssignmentFilterEvaluationSummary>>(nameof(EvalutionSummaries)); }
-            set { BackingStore?.Set(nameof(EvalutionSummaries), value); }
+            get { return BackingStore?.Get<List<AssignmentFilterEvaluationSummary>>("evalutionSummaries"); }
+            set { BackingStore?.Set("evalutionSummaries", value); }
         }
         /// <summary>Unique identifier for the device object.</summary>
         public string ManagedDeviceId {
-            get { return BackingStore?.Get<string>(nameof(ManagedDeviceId)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceId), value); }
+            get { return BackingStore?.Get<string>("managedDeviceId"); }
+            set { BackingStore?.Set("managedDeviceId", value); }
         }
         /// <summary>Unique identifier for payload object.</summary>
         public string PayloadId {
-            get { return BackingStore?.Get<string>(nameof(PayloadId)); }
-            set { BackingStore?.Set(nameof(PayloadId), value); }
+            get { return BackingStore?.Get<string>("payloadId"); }
+            set { BackingStore?.Set("payloadId", value); }
         }
         /// <summary>Unique identifier for UserId object. Can be null</summary>
         public string UserId {
-            get { return BackingStore?.Get<string>(nameof(UserId)); }
-            set { BackingStore?.Set(nameof(UserId), value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
         /// <summary>
-        /// Instantiates a new AssignmentFilterStatusDetails and sets the default values.
+        /// Instantiates a new assignmentFilterStatusDetails and sets the default values.
         /// </summary>
         public AssignmentFilterStatusDetails() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

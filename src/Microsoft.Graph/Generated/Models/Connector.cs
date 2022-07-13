@@ -4,27 +4,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Casts the previous resource to application.</summary>
     public class Connector : Entity, IParsable {
         /// <summary>The external IP address as detected by the the connector server. Read-only.</summary>
         public string ExternalIp {
-            get { return BackingStore?.Get<string>(nameof(ExternalIp)); }
-            set { BackingStore?.Set(nameof(ExternalIp), value); }
+            get { return BackingStore?.Get<string>("externalIp"); }
+            set { BackingStore?.Set("externalIp", value); }
         }
         /// <summary>The machine name the connector is installed and running on.</summary>
         public string MachineName {
-            get { return BackingStore?.Get<string>(nameof(MachineName)); }
-            set { BackingStore?.Set(nameof(MachineName), value); }
+            get { return BackingStore?.Get<string>("machineName"); }
+            set { BackingStore?.Set("machineName", value); }
         }
         /// <summary>The connectorGroup that the connector is a member of. Read-only.</summary>
         public List<ConnectorGroup> MemberOf {
-            get { return BackingStore?.Get<List<ConnectorGroup>>(nameof(MemberOf)); }
-            set { BackingStore?.Set(nameof(MemberOf), value); }
+            get { return BackingStore?.Get<List<ConnectorGroup>>("memberOf"); }
+            set { BackingStore?.Set("memberOf", value); }
         }
-        /// <summary>Indicates the status of the connector. Possible values are: active, inactive. Read-only.</summary>
+        /// <summary>The status property</summary>
         public ConnectorStatus? Status {
-            get { return BackingStore?.Get<ConnectorStatus?>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<ConnectorStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

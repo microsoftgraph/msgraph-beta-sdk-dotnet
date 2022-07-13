@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class CloudPcStatusDetails : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Any additional information about the Cloud PC status.</summary>
         public List<KeyValuePair> AdditionalInformation {
-            get { return BackingStore?.Get<List<KeyValuePair>>(nameof(AdditionalInformation)); }
-            set { BackingStore?.Set(nameof(AdditionalInformation), value); }
+            get { return BackingStore?.Get<List<KeyValuePair>>("additionalInformation"); }
+            set { BackingStore?.Set("additionalInformation", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The code associated with the Cloud PC status.</summary>
         public string Code {
-            get { return BackingStore?.Get<string>(nameof(Code)); }
-            set { BackingStore?.Set(nameof(Code), value); }
+            get { return BackingStore?.Get<string>("code"); }
+            set { BackingStore?.Set("code", value); }
         }
         /// <summary>The status message.</summary>
         public string Message {
-            get { return BackingStore?.Get<string>(nameof(Message)); }
-            set { BackingStore?.Set(nameof(Message), value); }
+            get { return BackingStore?.Get<string>("message"); }
+            set { BackingStore?.Set("message", value); }
         }
         /// <summary>
         /// Instantiates a new cloudPcStatusDetails and sets the default values.

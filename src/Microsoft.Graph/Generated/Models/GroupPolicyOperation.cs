@@ -8,23 +8,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyOperation : Entity, IParsable {
         /// <summary>The date and time the entity was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The group policy operation status. Possible values are: unknown, inProgress, success, failed.</summary>
+        /// <summary>Type of Group Policy operation status.</summary>
         public GroupPolicyOperationStatus? OperationStatus {
-            get { return BackingStore?.Get<GroupPolicyOperationStatus?>(nameof(OperationStatus)); }
-            set { BackingStore?.Set(nameof(OperationStatus), value); }
+            get { return BackingStore?.Get<GroupPolicyOperationStatus?>("operationStatus"); }
+            set { BackingStore?.Set("operationStatus", value); }
         }
-        /// <summary>The type of group policy operation. Possible values are: none, upload, uploadNewVersion, addLanguageFiles, removeLanguageFiles, updateLanguageFiles, remove.</summary>
+        /// <summary>Type of Group Policy operation.</summary>
         public GroupPolicyOperationType? OperationType {
-            get { return BackingStore?.Get<GroupPolicyOperationType?>(nameof(OperationType)); }
-            set { BackingStore?.Set(nameof(OperationType), value); }
+            get { return BackingStore?.Get<GroupPolicyOperationType?>("operationType"); }
+            set { BackingStore?.Set("operationType", value); }
         }
         /// <summary>The group policy operation status detail.</summary>
         public string StatusDetails {
-            get { return BackingStore?.Get<string>(nameof(StatusDetails)); }
-            set { BackingStore?.Set(nameof(StatusDetails), value); }
+            get { return BackingStore?.Get<string>("statusDetails"); }
+            set { BackingStore?.Set("statusDetails", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

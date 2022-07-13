@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class TenantContract : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The type of relationship that exists between the managing entity and tenant. Optional. Read-only.</summary>
         public int? ContractType {
-            get { return BackingStore?.Get<int?>(nameof(ContractType)); }
-            set { BackingStore?.Set(nameof(ContractType), value); }
+            get { return BackingStore?.Get<int?>("contractType"); }
+            set { BackingStore?.Set("contractType", value); }
         }
         /// <summary>The default domain name for the tenant. Required. Read-only.</summary>
         public string DefaultDomainName {
-            get { return BackingStore?.Get<string>(nameof(DefaultDomainName)); }
-            set { BackingStore?.Set(nameof(DefaultDomainName), value); }
+            get { return BackingStore?.Get<string>("defaultDomainName"); }
+            set { BackingStore?.Set("defaultDomainName", value); }
         }
         /// <summary>The display name for the tenant. Optional. Read-only.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>
         /// Instantiates a new tenantContract and sets the default values.

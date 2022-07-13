@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyPresentationListBox : GroupPolicyPresentation, IParsable {
         /// <summary>If this option is specified true the user must specify the registry subkey value and the registry subkey name. The list box shows two columns, one for the name and one for the data. The default value is false.</summary>
         public bool? ExplicitValue {
-            get { return BackingStore?.Get<bool?>(nameof(ExplicitValue)); }
-            set { BackingStore?.Set(nameof(ExplicitValue), value); }
+            get { return BackingStore?.Get<bool?>("explicitValue"); }
+            set { BackingStore?.Set("explicitValue", value); }
         }
         /// <summary>Not yet documented</summary>
         public string ValuePrefix {
-            get { return BackingStore?.Get<string>(nameof(ValuePrefix)); }
-            set { BackingStore?.Set(nameof(ValuePrefix), value); }
+            get { return BackingStore?.Get<string>("valuePrefix"); }
+            set { BackingStore?.Set("valuePrefix", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

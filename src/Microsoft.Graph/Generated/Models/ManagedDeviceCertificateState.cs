@@ -4,127 +4,127 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ManagedDeviceCertificateState : Entity, IParsable {
         /// <summary>Extended key usage</summary>
         public string CertificateEnhancedKeyUsage {
-            get { return BackingStore?.Get<string>(nameof(CertificateEnhancedKeyUsage)); }
-            set { BackingStore?.Set(nameof(CertificateEnhancedKeyUsage), value); }
+            get { return BackingStore?.Get<string>("certificateEnhancedKeyUsage"); }
+            set { BackingStore?.Set("certificateEnhancedKeyUsage", value); }
         }
         /// <summary>Error code</summary>
         public int? CertificateErrorCode {
-            get { return BackingStore?.Get<int?>(nameof(CertificateErrorCode)); }
-            set { BackingStore?.Set(nameof(CertificateErrorCode), value); }
+            get { return BackingStore?.Get<int?>("certificateErrorCode"); }
+            set { BackingStore?.Set("certificateErrorCode", value); }
         }
         /// <summary>Certificate expiry date</summary>
         public DateTimeOffset? CertificateExpirationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CertificateExpirationDateTime)); }
-            set { BackingStore?.Set(nameof(CertificateExpirationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("certificateExpirationDateTime"); }
+            set { BackingStore?.Set("certificateExpirationDateTime", value); }
         }
         /// <summary>Issuance date</summary>
         public DateTimeOffset? CertificateIssuanceDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CertificateIssuanceDateTime)); }
-            set { BackingStore?.Set(nameof(CertificateIssuanceDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("certificateIssuanceDateTime"); }
+            set { BackingStore?.Set("certificateIssuanceDateTime", value); }
         }
-        /// <summary>Issuance State. Possible values are: unknown, challengeIssued, challengeIssueFailed, requestCreationFailed, requestSubmitFailed, challengeValidationSucceeded, challengeValidationFailed, issueFailed, issuePending, issued, responseProcessingFailed, responsePending, enrollmentSucceeded, enrollmentNotNeeded, revoked, removedFromCollection, renewVerified, installFailed, installed, deleteFailed, deleted, renewalRequested, requested.</summary>
+        /// <summary>Certificate Issuance State Options.</summary>
         public CertificateIssuanceStates? CertificateIssuanceState {
-            get { return BackingStore?.Get<CertificateIssuanceStates?>(nameof(CertificateIssuanceState)); }
-            set { BackingStore?.Set(nameof(CertificateIssuanceState), value); }
+            get { return BackingStore?.Get<CertificateIssuanceStates?>("certificateIssuanceState"); }
+            set { BackingStore?.Set("certificateIssuanceState", value); }
         }
         /// <summary>Issuer</summary>
         public string CertificateIssuer {
-            get { return BackingStore?.Get<string>(nameof(CertificateIssuer)); }
-            set { BackingStore?.Set(nameof(CertificateIssuer), value); }
+            get { return BackingStore?.Get<string>("certificateIssuer"); }
+            set { BackingStore?.Set("certificateIssuer", value); }
         }
         /// <summary>Key length</summary>
         public int? CertificateKeyLength {
-            get { return BackingStore?.Get<int?>(nameof(CertificateKeyLength)); }
-            set { BackingStore?.Set(nameof(CertificateKeyLength), value); }
+            get { return BackingStore?.Get<int?>("certificateKeyLength"); }
+            set { BackingStore?.Set("certificateKeyLength", value); }
         }
-        /// <summary>Key Storage Provider. Possible values are: useTpmKspOtherwiseUseSoftwareKsp, useTpmKspOtherwiseFail, usePassportForWorkKspOtherwiseFail, useSoftwareKsp.</summary>
+        /// <summary>Key Storage Provider (KSP) Import Options.</summary>
         public KeyStorageProviderOption? CertificateKeyStorageProvider {
-            get { return BackingStore?.Get<KeyStorageProviderOption?>(nameof(CertificateKeyStorageProvider)); }
-            set { BackingStore?.Set(nameof(CertificateKeyStorageProvider), value); }
+            get { return BackingStore?.Get<KeyStorageProviderOption?>("certificateKeyStorageProvider"); }
+            set { BackingStore?.Set("certificateKeyStorageProvider", value); }
         }
-        /// <summary>Key usage. Possible values are: keyEncipherment, digitalSignature.</summary>
+        /// <summary>Key Usage Options.</summary>
         public KeyUsages? CertificateKeyUsage {
-            get { return BackingStore?.Get<KeyUsages?>(nameof(CertificateKeyUsage)); }
-            set { BackingStore?.Set(nameof(CertificateKeyUsage), value); }
+            get { return BackingStore?.Get<KeyUsages?>("certificateKeyUsage"); }
+            set { BackingStore?.Set("certificateKeyUsage", value); }
         }
         /// <summary>Last certificate issuance state change</summary>
         public DateTimeOffset? CertificateLastIssuanceStateChangedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CertificateLastIssuanceStateChangedDateTime)); }
-            set { BackingStore?.Set(nameof(CertificateLastIssuanceStateChangedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("certificateLastIssuanceStateChangedDateTime"); }
+            set { BackingStore?.Set("certificateLastIssuanceStateChangedDateTime", value); }
         }
         /// <summary>Certificate profile display name</summary>
         public string CertificateProfileDisplayName {
-            get { return BackingStore?.Get<string>(nameof(CertificateProfileDisplayName)); }
-            set { BackingStore?.Set(nameof(CertificateProfileDisplayName), value); }
+            get { return BackingStore?.Get<string>("certificateProfileDisplayName"); }
+            set { BackingStore?.Set("certificateProfileDisplayName", value); }
         }
-        /// <summary>Revoke status. Possible values are: none, pending, issued, failed, revoked.</summary>
+        /// <summary>Certificate Revocation Status.</summary>
         public CertificateRevocationStatus? CertificateRevokeStatus {
-            get { return BackingStore?.Get<CertificateRevocationStatus?>(nameof(CertificateRevokeStatus)); }
-            set { BackingStore?.Set(nameof(CertificateRevokeStatus), value); }
+            get { return BackingStore?.Get<CertificateRevocationStatus?>("certificateRevokeStatus"); }
+            set { BackingStore?.Set("certificateRevokeStatus", value); }
         }
         /// <summary>Serial number</summary>
         public string CertificateSerialNumber {
-            get { return BackingStore?.Get<string>(nameof(CertificateSerialNumber)); }
-            set { BackingStore?.Set(nameof(CertificateSerialNumber), value); }
+            get { return BackingStore?.Get<string>("certificateSerialNumber"); }
+            set { BackingStore?.Set("certificateSerialNumber", value); }
         }
-        /// <summary>Subject alternative name format. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.</summary>
+        /// <summary>Subject Alternative Name Options.</summary>
         public SubjectAlternativeNameType? CertificateSubjectAlternativeNameFormat {
-            get { return BackingStore?.Get<SubjectAlternativeNameType?>(nameof(CertificateSubjectAlternativeNameFormat)); }
-            set { BackingStore?.Set(nameof(CertificateSubjectAlternativeNameFormat), value); }
+            get { return BackingStore?.Get<SubjectAlternativeNameType?>("certificateSubjectAlternativeNameFormat"); }
+            set { BackingStore?.Set("certificateSubjectAlternativeNameFormat", value); }
         }
         /// <summary>Subject alternative name format string for custom formats</summary>
         public string CertificateSubjectAlternativeNameFormatString {
-            get { return BackingStore?.Get<string>(nameof(CertificateSubjectAlternativeNameFormatString)); }
-            set { BackingStore?.Set(nameof(CertificateSubjectAlternativeNameFormatString), value); }
+            get { return BackingStore?.Get<string>("certificateSubjectAlternativeNameFormatString"); }
+            set { BackingStore?.Set("certificateSubjectAlternativeNameFormatString", value); }
         }
-        /// <summary>Subject name format. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.</summary>
+        /// <summary>Subject Name Format Options.</summary>
         public SubjectNameFormat? CertificateSubjectNameFormat {
-            get { return BackingStore?.Get<SubjectNameFormat?>(nameof(CertificateSubjectNameFormat)); }
-            set { BackingStore?.Set(nameof(CertificateSubjectNameFormat), value); }
+            get { return BackingStore?.Get<SubjectNameFormat?>("certificateSubjectNameFormat"); }
+            set { BackingStore?.Set("certificateSubjectNameFormat", value); }
         }
         /// <summary>Subject name format string for custom subject name formats</summary>
         public string CertificateSubjectNameFormatString {
-            get { return BackingStore?.Get<string>(nameof(CertificateSubjectNameFormatString)); }
-            set { BackingStore?.Set(nameof(CertificateSubjectNameFormatString), value); }
+            get { return BackingStore?.Get<string>("certificateSubjectNameFormatString"); }
+            set { BackingStore?.Set("certificateSubjectNameFormatString", value); }
         }
         /// <summary>Thumbprint</summary>
         public string CertificateThumbprint {
-            get { return BackingStore?.Get<string>(nameof(CertificateThumbprint)); }
-            set { BackingStore?.Set(nameof(CertificateThumbprint), value); }
+            get { return BackingStore?.Get<string>("certificateThumbprint"); }
+            set { BackingStore?.Set("certificateThumbprint", value); }
         }
         /// <summary>Validity period</summary>
         public int? CertificateValidityPeriod {
-            get { return BackingStore?.Get<int?>(nameof(CertificateValidityPeriod)); }
-            set { BackingStore?.Set(nameof(CertificateValidityPeriod), value); }
+            get { return BackingStore?.Get<int?>("certificateValidityPeriod"); }
+            set { BackingStore?.Set("certificateValidityPeriod", value); }
         }
-        /// <summary>Validity period units. Possible values are: days, months, years.</summary>
+        /// <summary>Certificate Validity Period Options.</summary>
         public CertificateValidityPeriodScale? CertificateValidityPeriodUnits {
-            get { return BackingStore?.Get<CertificateValidityPeriodScale?>(nameof(CertificateValidityPeriodUnits)); }
-            set { BackingStore?.Set(nameof(CertificateValidityPeriodUnits), value); }
+            get { return BackingStore?.Get<CertificateValidityPeriodScale?>("certificateValidityPeriodUnits"); }
+            set { BackingStore?.Set("certificateValidityPeriodUnits", value); }
         }
         /// <summary>Device display name</summary>
         public string DeviceDisplayName {
-            get { return BackingStore?.Get<string>(nameof(DeviceDisplayName)); }
-            set { BackingStore?.Set(nameof(DeviceDisplayName), value); }
+            get { return BackingStore?.Get<string>("deviceDisplayName"); }
+            set { BackingStore?.Set("deviceDisplayName", value); }
         }
-        /// <summary>Device platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown, androidAOSP.</summary>
+        /// <summary>Supported platform types.</summary>
         public DevicePlatformType? DevicePlatform {
-            get { return BackingStore?.Get<DevicePlatformType?>(nameof(DevicePlatform)); }
-            set { BackingStore?.Set(nameof(DevicePlatform), value); }
+            get { return BackingStore?.Get<DevicePlatformType?>("devicePlatform"); }
+            set { BackingStore?.Set("devicePlatform", value); }
         }
         /// <summary>Last certificate issuance state change</summary>
         public DateTimeOffset? LastCertificateStateChangeDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastCertificateStateChangeDateTime)); }
-            set { BackingStore?.Set(nameof(LastCertificateStateChangeDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastCertificateStateChangeDateTime"); }
+            set { BackingStore?.Set("lastCertificateStateChangeDateTime", value); }
         }
         /// <summary>User display name</summary>
         public string UserDisplayName {
-            get { return BackingStore?.Get<string>(nameof(UserDisplayName)); }
-            set { BackingStore?.Set(nameof(UserDisplayName), value); }
+            get { return BackingStore?.Get<string>("userDisplayName"); }
+            set { BackingStore?.Set("userDisplayName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

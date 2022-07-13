@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserRegistrationFeatureSummary : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Total number of users accounts, excluding those that are blocked</summary>
         public long? TotalUserCount {
-            get { return BackingStore?.Get<long?>(nameof(TotalUserCount)); }
-            set { BackingStore?.Set(nameof(TotalUserCount), value); }
+            get { return BackingStore?.Get<long?>("totalUserCount"); }
+            set { BackingStore?.Set("totalUserCount", value); }
         }
         /// <summary>Number of users registered or capable for Multi-Factor Authentication, Self-Service Password Reset and Passwordless Authentication.</summary>
         public List<UserRegistrationFeatureCount> UserRegistrationFeatureCounts {
-            get { return BackingStore?.Get<List<UserRegistrationFeatureCount>>(nameof(UserRegistrationFeatureCounts)); }
-            set { BackingStore?.Set(nameof(UserRegistrationFeatureCounts), value); }
+            get { return BackingStore?.Get<List<UserRegistrationFeatureCount>>("userRegistrationFeatureCounts"); }
+            set { BackingStore?.Set("userRegistrationFeatureCounts", value); }
         }
         /// <summary>User role type. Possible values are: all, privilegedAdmin, admin, user.</summary>
         public IncludedUserRoles? UserRoles {
-            get { return BackingStore?.Get<IncludedUserRoles?>(nameof(UserRoles)); }
-            set { BackingStore?.Set(nameof(UserRoles), value); }
+            get { return BackingStore?.Get<IncludedUserRoles?>("userRoles"); }
+            set { BackingStore?.Set("userRoles", value); }
         }
         /// <summary>User type. Possible values are: all, member, guest.</summary>
         public IncludedUserTypes? UserTypes {
-            get { return BackingStore?.Get<IncludedUserTypes?>(nameof(UserTypes)); }
-            set { BackingStore?.Set(nameof(UserTypes), value); }
+            get { return BackingStore?.Get<IncludedUserTypes?>("userTypes"); }
+            set { BackingStore?.Set("userTypes", value); }
         }
         /// <summary>
         /// Instantiates a new UserRegistrationFeatureSummary and sets the default values.

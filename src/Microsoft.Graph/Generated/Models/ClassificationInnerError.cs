@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class ClassificationInnerError : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The activityId property</summary>
         public string ActivityId {
-            get { return BackingStore?.Get<string>(nameof(ActivityId)); }
-            set { BackingStore?.Set(nameof(ActivityId), value); }
+            get { return BackingStore?.Get<string>("activityId"); }
+            set { BackingStore?.Set("activityId", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The clientRequestId property</summary>
         public string ClientRequestId {
-            get { return BackingStore?.Get<string>(nameof(ClientRequestId)); }
-            set { BackingStore?.Set(nameof(ClientRequestId), value); }
+            get { return BackingStore?.Get<string>("clientRequestId"); }
+            set { BackingStore?.Set("clientRequestId", value); }
         }
         /// <summary>The code property</summary>
         public string Code {
-            get { return BackingStore?.Get<string>(nameof(Code)); }
-            set { BackingStore?.Set(nameof(Code), value); }
+            get { return BackingStore?.Get<string>("code"); }
+            set { BackingStore?.Set("code", value); }
         }
         /// <summary>The errorDateTime property</summary>
         public DateTimeOffset? ErrorDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ErrorDateTime)); }
-            set { BackingStore?.Set(nameof(ErrorDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("errorDateTime"); }
+            set { BackingStore?.Set("errorDateTime", value); }
         }
         /// <summary>
         /// Instantiates a new classificationInnerError and sets the default values.

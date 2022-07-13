@@ -7,78 +7,78 @@ namespace Microsoft.Graph.Beta.Models {
     public class StrongAuthenticationPhoneAppDetail : Entity, IParsable {
         /// <summary>The authenticationType property</summary>
         public string AuthenticationType {
-            get { return BackingStore?.Get<string>(nameof(AuthenticationType)); }
-            set { BackingStore?.Set(nameof(AuthenticationType), value); }
+            get { return BackingStore?.Get<string>("authenticationType"); }
+            set { BackingStore?.Set("authenticationType", value); }
         }
         /// <summary>The authenticatorFlavor property</summary>
         public string AuthenticatorFlavor {
-            get { return BackingStore?.Get<string>(nameof(AuthenticatorFlavor)); }
-            set { BackingStore?.Set(nameof(AuthenticatorFlavor), value); }
+            get { return BackingStore?.Get<string>("authenticatorFlavor"); }
+            set { BackingStore?.Set("authenticatorFlavor", value); }
         }
         /// <summary>The deviceId property</summary>
         public string DeviceId {
-            get { return BackingStore?.Get<string>(nameof(DeviceId)); }
-            set { BackingStore?.Set(nameof(DeviceId), value); }
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>The deviceName property</summary>
         public string DeviceName {
-            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
-            set { BackingStore?.Set(nameof(DeviceName), value); }
+            get { return BackingStore?.Get<string>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
         }
         /// <summary>The deviceTag property</summary>
         public string DeviceTag {
-            get { return BackingStore?.Get<string>(nameof(DeviceTag)); }
-            set { BackingStore?.Set(nameof(DeviceTag), value); }
+            get { return BackingStore?.Get<string>("deviceTag"); }
+            set { BackingStore?.Set("deviceTag", value); }
         }
         /// <summary>The deviceToken property</summary>
         public string DeviceToken {
-            get { return BackingStore?.Get<string>(nameof(DeviceToken)); }
-            set { BackingStore?.Set(nameof(DeviceToken), value); }
+            get { return BackingStore?.Get<string>("deviceToken"); }
+            set { BackingStore?.Set("deviceToken", value); }
         }
         /// <summary>The hashFunction property</summary>
         public string HashFunction {
-            get { return BackingStore?.Get<string>(nameof(HashFunction)); }
-            set { BackingStore?.Set(nameof(HashFunction), value); }
+            get { return BackingStore?.Get<string>("hashFunction"); }
+            set { BackingStore?.Set("hashFunction", value); }
         }
         /// <summary>The lastAuthenticatedDateTime property</summary>
         public DateTimeOffset? LastAuthenticatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastAuthenticatedDateTime)); }
-            set { BackingStore?.Set(nameof(LastAuthenticatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastAuthenticatedDateTime"); }
+            set { BackingStore?.Set("lastAuthenticatedDateTime", value); }
         }
         /// <summary>The notificationType property</summary>
         public string NotificationType {
-            get { return BackingStore?.Get<string>(nameof(NotificationType)); }
-            set { BackingStore?.Set(nameof(NotificationType), value); }
+            get { return BackingStore?.Get<string>("notificationType"); }
+            set { BackingStore?.Set("notificationType", value); }
         }
         /// <summary>The oathSecretKey property</summary>
         public string OathSecretKey {
-            get { return BackingStore?.Get<string>(nameof(OathSecretKey)); }
-            set { BackingStore?.Set(nameof(OathSecretKey), value); }
+            get { return BackingStore?.Get<string>("oathSecretKey"); }
+            set { BackingStore?.Set("oathSecretKey", value); }
         }
         /// <summary>The oathTokenMetadata property</summary>
         public Microsoft.Graph.Beta.Models.OathTokenMetadata OathTokenMetadata {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OathTokenMetadata>(nameof(OathTokenMetadata)); }
-            set { BackingStore?.Set(nameof(OathTokenMetadata), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OathTokenMetadata>("oathTokenMetadata"); }
+            set { BackingStore?.Set("oathTokenMetadata", value); }
         }
         /// <summary>The oathTokenTimeDriftInSeconds property</summary>
         public int? OathTokenTimeDriftInSeconds {
-            get { return BackingStore?.Get<int?>(nameof(OathTokenTimeDriftInSeconds)); }
-            set { BackingStore?.Set(nameof(OathTokenTimeDriftInSeconds), value); }
+            get { return BackingStore?.Get<int?>("oathTokenTimeDriftInSeconds"); }
+            set { BackingStore?.Set("oathTokenTimeDriftInSeconds", value); }
         }
         /// <summary>The phoneAppVersion property</summary>
         public string PhoneAppVersion {
-            get { return BackingStore?.Get<string>(nameof(PhoneAppVersion)); }
-            set { BackingStore?.Set(nameof(PhoneAppVersion), value); }
+            get { return BackingStore?.Get<string>("phoneAppVersion"); }
+            set { BackingStore?.Set("phoneAppVersion", value); }
         }
         /// <summary>The tenantDeviceId property</summary>
         public string TenantDeviceId {
-            get { return BackingStore?.Get<string>(nameof(TenantDeviceId)); }
-            set { BackingStore?.Set(nameof(TenantDeviceId), value); }
+            get { return BackingStore?.Get<string>("tenantDeviceId"); }
+            set { BackingStore?.Set("tenantDeviceId", value); }
         }
         /// <summary>The tokenGenerationIntervalInSeconds property</summary>
         public int? TokenGenerationIntervalInSeconds {
-            get { return BackingStore?.Get<int?>(nameof(TokenGenerationIntervalInSeconds)); }
-            set { BackingStore?.Set(nameof(TokenGenerationIntervalInSeconds), value); }
+            get { return BackingStore?.Get<int?>("tokenGenerationIntervalInSeconds"); }
+            set { BackingStore?.Set("tokenGenerationIntervalInSeconds", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

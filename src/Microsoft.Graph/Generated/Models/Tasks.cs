@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Tasks : Entity, IParsable {
         /// <summary>All tasks in the users mailbox.</summary>
         public List<BaseTask> Alltasks {
-            get { return BackingStore?.Get<List<BaseTask>>(nameof(Alltasks)); }
-            set { BackingStore?.Set(nameof(Alltasks), value); }
+            get { return BackingStore?.Get<List<BaseTask>>("alltasks"); }
+            set { BackingStore?.Set("alltasks", value); }
         }
         /// <summary>The task lists in the users mailbox.</summary>
         public List<BaseTaskList> Lists {
-            get { return BackingStore?.Get<List<BaseTaskList>>(nameof(Lists)); }
-            set { BackingStore?.Set(nameof(Lists), value); }
+            get { return BackingStore?.Get<List<BaseTaskList>>("lists"); }
+            set { BackingStore?.Set("lists", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

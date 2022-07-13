@@ -4,62 +4,61 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics hardware readiness entity contains account level information about hardware blockers for windows upgrade.</summary>
     public class UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric : Entity, IParsable {
         /// <summary>The percentage of devices for which OS check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? OsCheckFailedPercentage {
-            get { return BackingStore?.Get<double?>(nameof(OsCheckFailedPercentage)); }
-            set { BackingStore?.Set(nameof(OsCheckFailedPercentage), value); }
+            get { return BackingStore?.Get<double?>("osCheckFailedPercentage"); }
+            set { BackingStore?.Set("osCheckFailedPercentage", value); }
         }
         /// <summary>The percentage of devices for which processor hardware 64-bit architecture check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? Processor64BitCheckFailedPercentage {
-            get { return BackingStore?.Get<double?>(nameof(Processor64BitCheckFailedPercentage)); }
-            set { BackingStore?.Set(nameof(Processor64BitCheckFailedPercentage), value); }
+            get { return BackingStore?.Get<double?>("processor64BitCheckFailedPercentage"); }
+            set { BackingStore?.Set("processor64BitCheckFailedPercentage", value); }
         }
         /// <summary>The percentage of devices for which processor hardware core count check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? ProcessorCoreCountCheckFailedPercentage {
-            get { return BackingStore?.Get<double?>(nameof(ProcessorCoreCountCheckFailedPercentage)); }
-            set { BackingStore?.Set(nameof(ProcessorCoreCountCheckFailedPercentage), value); }
+            get { return BackingStore?.Get<double?>("processorCoreCountCheckFailedPercentage"); }
+            set { BackingStore?.Set("processorCoreCountCheckFailedPercentage", value); }
         }
         /// <summary>The percentage of devices for which processor hardware family check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? ProcessorFamilyCheckFailedPercentage {
-            get { return BackingStore?.Get<double?>(nameof(ProcessorFamilyCheckFailedPercentage)); }
-            set { BackingStore?.Set(nameof(ProcessorFamilyCheckFailedPercentage), value); }
+            get { return BackingStore?.Get<double?>("processorFamilyCheckFailedPercentage"); }
+            set { BackingStore?.Set("processorFamilyCheckFailedPercentage", value); }
         }
         /// <summary>The percentage of devices for which processor hardware speed check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? ProcessorSpeedCheckFailedPercentage {
-            get { return BackingStore?.Get<double?>(nameof(ProcessorSpeedCheckFailedPercentage)); }
-            set { BackingStore?.Set(nameof(ProcessorSpeedCheckFailedPercentage), value); }
+            get { return BackingStore?.Get<double?>("processorSpeedCheckFailedPercentage"); }
+            set { BackingStore?.Set("processorSpeedCheckFailedPercentage", value); }
         }
         /// <summary>The percentage of devices for which RAM hardware check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? RamCheckFailedPercentage {
-            get { return BackingStore?.Get<double?>(nameof(RamCheckFailedPercentage)); }
-            set { BackingStore?.Set(nameof(RamCheckFailedPercentage), value); }
+            get { return BackingStore?.Get<double?>("ramCheckFailedPercentage"); }
+            set { BackingStore?.Set("ramCheckFailedPercentage", value); }
         }
         /// <summary>The percentage of devices for which secure boot hardware check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? SecureBootCheckFailedPercentage {
-            get { return BackingStore?.Get<double?>(nameof(SecureBootCheckFailedPercentage)); }
-            set { BackingStore?.Set(nameof(SecureBootCheckFailedPercentage), value); }
+            get { return BackingStore?.Get<double?>("secureBootCheckFailedPercentage"); }
+            set { BackingStore?.Set("secureBootCheckFailedPercentage", value); }
         }
         /// <summary>The percentage of devices for which storage hardware check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? StorageCheckFailedPercentage {
-            get { return BackingStore?.Get<double?>(nameof(StorageCheckFailedPercentage)); }
-            set { BackingStore?.Set(nameof(StorageCheckFailedPercentage), value); }
+            get { return BackingStore?.Get<double?>("storageCheckFailedPercentage"); }
+            set { BackingStore?.Set("storageCheckFailedPercentage", value); }
         }
         /// <summary>The count of total devices in an organization. Valid values -2147483648 to 2147483647</summary>
         public int? TotalDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(TotalDeviceCount)); }
-            set { BackingStore?.Set(nameof(TotalDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("totalDeviceCount"); }
+            set { BackingStore?.Set("totalDeviceCount", value); }
         }
         /// <summary>The percentage of devices for which Trusted Platform Module (TPM) hardware check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? TpmCheckFailedPercentage {
-            get { return BackingStore?.Get<double?>(nameof(TpmCheckFailedPercentage)); }
-            set { BackingStore?.Set(nameof(TpmCheckFailedPercentage), value); }
+            get { return BackingStore?.Get<double?>("tpmCheckFailedPercentage"); }
+            set { BackingStore?.Set("tpmCheckFailedPercentage", value); }
         }
         /// <summary>The count of devices in an organization eligible for windows upgrade. Valid values -2147483648 to 2147483647</summary>
         public int? UpgradeEligibleDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(UpgradeEligibleDeviceCount)); }
-            set { BackingStore?.Set(nameof(UpgradeEligibleDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("upgradeEligibleDeviceCount"); }
+            set { BackingStore?.Set("upgradeEligibleDeviceCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

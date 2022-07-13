@@ -1,6 +1,7 @@
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerSettings;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GalleryImages;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePermissions;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnections;
@@ -34,6 +35,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
         /// <summary>The deviceImages property</summary>
         public DeviceImagesRequestBuilder DeviceImages { get =>
             new DeviceImagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The externalPartnerSettings property</summary>
+        public ExternalPartnerSettingsRequestBuilder ExternalPartnerSettings { get =>
+            new ExternalPartnerSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The galleryImages property</summary>
         public GalleryImagesRequestBuilder GalleryImages { get =>

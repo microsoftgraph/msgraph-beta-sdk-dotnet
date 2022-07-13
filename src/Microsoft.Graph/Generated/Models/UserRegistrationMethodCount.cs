@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserRegistrationMethodCount : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Name of authentication method.</summary>
         public string AuthenticationMethod {
-            get { return BackingStore?.Get<string>(nameof(AuthenticationMethod)); }
-            set { BackingStore?.Set(nameof(AuthenticationMethod), value); }
+            get { return BackingStore?.Get<string>("authenticationMethod"); }
+            set { BackingStore?.Set("authenticationMethod", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Number of users registered.</summary>
         public long? UserCount {
-            get { return BackingStore?.Get<long?>(nameof(UserCount)); }
-            set { BackingStore?.Set(nameof(UserCount), value); }
+            get { return BackingStore?.Get<long?>("userCount"); }
+            set { BackingStore?.Set("userCount", value); }
         }
         /// <summary>
         /// Instantiates a new userRegistrationMethodCount and sets the default values.

@@ -8,13 +8,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class TimeClockSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The aprroved location of the timeClock.</summary>
         public GeoCoordinates ApprovedLocation {
-            get { return BackingStore?.Get<GeoCoordinates>(nameof(ApprovedLocation)); }
-            set { BackingStore?.Set(nameof(ApprovedLocation), value); }
+            get { return BackingStore?.Get<GeoCoordinates>("approvedLocation"); }
+            set { BackingStore?.Set("approvedLocation", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }

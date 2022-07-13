@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Remote assistance settings for the account</summary>
     public class RemoteAssistanceSettings : Entity, IParsable {
         /// <summary>Indicates if sessions to unenrolled devices are allowed for the account. This setting is configurable by the admin. Default value is false.</summary>
         public bool? AllowSessionsToUnenrolledDevices {
-            get { return BackingStore?.Get<bool?>(nameof(AllowSessionsToUnenrolledDevices)); }
-            set { BackingStore?.Set(nameof(AllowSessionsToUnenrolledDevices), value); }
+            get { return BackingStore?.Get<bool?>("allowSessionsToUnenrolledDevices"); }
+            set { BackingStore?.Set("allowSessionsToUnenrolledDevices", value); }
         }
-        /// <summary>The current state of remote assistance for the account. Possible values are: disabled, enabled. This setting is configurable by the admin. Remote assistance settings that have not yet been configured by the admin have a disabled state. Returned by default. Possible values are: disabled, enabled.</summary>
+        /// <summary>State of remote assistance for the account</summary>
         public Microsoft.Graph.Beta.Models.RemoteAssistanceState? RemoteAssistanceState {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RemoteAssistanceState?>(nameof(RemoteAssistanceState)); }
-            set { BackingStore?.Set(nameof(RemoteAssistanceState), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RemoteAssistanceState?>("remoteAssistanceState"); }
+            set { BackingStore?.Set("remoteAssistanceState", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

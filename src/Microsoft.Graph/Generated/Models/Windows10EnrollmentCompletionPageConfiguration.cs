@@ -7,53 +7,58 @@ namespace Microsoft.Graph.Beta.Models {
     public class Windows10EnrollmentCompletionPageConfiguration : DeviceEnrollmentConfiguration, IParsable {
         /// <summary>Allow or block device reset on installation failure</summary>
         public bool? AllowDeviceResetOnInstallFailure {
-            get { return BackingStore?.Get<bool?>(nameof(AllowDeviceResetOnInstallFailure)); }
-            set { BackingStore?.Set(nameof(AllowDeviceResetOnInstallFailure), value); }
+            get { return BackingStore?.Get<bool?>("allowDeviceResetOnInstallFailure"); }
+            set { BackingStore?.Set("allowDeviceResetOnInstallFailure", value); }
         }
         /// <summary>Allow the user to continue using the device on installation failure</summary>
         public bool? AllowDeviceUseOnInstallFailure {
-            get { return BackingStore?.Get<bool?>(nameof(AllowDeviceUseOnInstallFailure)); }
-            set { BackingStore?.Set(nameof(AllowDeviceUseOnInstallFailure), value); }
+            get { return BackingStore?.Get<bool?>("allowDeviceUseOnInstallFailure"); }
+            set { BackingStore?.Set("allowDeviceUseOnInstallFailure", value); }
         }
         /// <summary>Allow or block log collection on installation failure</summary>
         public bool? AllowLogCollectionOnInstallFailure {
-            get { return BackingStore?.Get<bool?>(nameof(AllowLogCollectionOnInstallFailure)); }
-            set { BackingStore?.Set(nameof(AllowLogCollectionOnInstallFailure), value); }
+            get { return BackingStore?.Get<bool?>("allowLogCollectionOnInstallFailure"); }
+            set { BackingStore?.Set("allowLogCollectionOnInstallFailure", value); }
+        }
+        /// <summary>Install all required apps as non blocking apps during white glove</summary>
+        public bool? AllowNonBlockingAppInstallation {
+            get { return BackingStore?.Get<bool?>("allowNonBlockingAppInstallation"); }
+            set { BackingStore?.Set("allowNonBlockingAppInstallation", value); }
         }
         /// <summary>Allow the user to retry the setup on installation failure</summary>
         public bool? BlockDeviceSetupRetryByUser {
-            get { return BackingStore?.Get<bool?>(nameof(BlockDeviceSetupRetryByUser)); }
-            set { BackingStore?.Set(nameof(BlockDeviceSetupRetryByUser), value); }
+            get { return BackingStore?.Get<bool?>("blockDeviceSetupRetryByUser"); }
+            set { BackingStore?.Set("blockDeviceSetupRetryByUser", value); }
         }
         /// <summary>Set custom error message to show upon installation failure</summary>
         public string CustomErrorMessage {
-            get { return BackingStore?.Get<string>(nameof(CustomErrorMessage)); }
-            set { BackingStore?.Set(nameof(CustomErrorMessage), value); }
+            get { return BackingStore?.Get<string>("customErrorMessage"); }
+            set { BackingStore?.Set("customErrorMessage", value); }
         }
         /// <summary>Only show installation progress for first user post enrollment</summary>
         public bool? DisableUserStatusTrackingAfterFirstUser {
-            get { return BackingStore?.Get<bool?>(nameof(DisableUserStatusTrackingAfterFirstUser)); }
-            set { BackingStore?.Set(nameof(DisableUserStatusTrackingAfterFirstUser), value); }
+            get { return BackingStore?.Get<bool?>("disableUserStatusTrackingAfterFirstUser"); }
+            set { BackingStore?.Set("disableUserStatusTrackingAfterFirstUser", value); }
         }
         /// <summary>Set installation progress timeout in minutes</summary>
         public int? InstallProgressTimeoutInMinutes {
-            get { return BackingStore?.Get<int?>(nameof(InstallProgressTimeoutInMinutes)); }
-            set { BackingStore?.Set(nameof(InstallProgressTimeoutInMinutes), value); }
+            get { return BackingStore?.Get<int?>("installProgressTimeoutInMinutes"); }
+            set { BackingStore?.Set("installProgressTimeoutInMinutes", value); }
         }
         /// <summary>Selected applications to track the installation status</summary>
         public List<string> SelectedMobileAppIds {
-            get { return BackingStore?.Get<List<string>>(nameof(SelectedMobileAppIds)); }
-            set { BackingStore?.Set(nameof(SelectedMobileAppIds), value); }
+            get { return BackingStore?.Get<List<string>>("selectedMobileAppIds"); }
+            set { BackingStore?.Set("selectedMobileAppIds", value); }
         }
         /// <summary>Show or hide installation progress to user</summary>
         public bool? ShowInstallationProgress {
-            get { return BackingStore?.Get<bool?>(nameof(ShowInstallationProgress)); }
-            set { BackingStore?.Set(nameof(ShowInstallationProgress), value); }
+            get { return BackingStore?.Get<bool?>("showInstallationProgress"); }
+            set { BackingStore?.Set("showInstallationProgress", value); }
         }
         /// <summary>Only show installation progress for Autopilot enrollment scenarios</summary>
         public bool? TrackInstallProgressForAutopilotOnly {
-            get { return BackingStore?.Get<bool?>(nameof(TrackInstallProgressForAutopilotOnly)); }
-            set { BackingStore?.Set(nameof(TrackInstallProgressForAutopilotOnly), value); }
+            get { return BackingStore?.Get<bool?>("trackInstallProgressForAutopilotOnly"); }
+            set { BackingStore?.Set("trackInstallProgressForAutopilotOnly", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -71,6 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"allowDeviceResetOnInstallFailure", n => { AllowDeviceResetOnInstallFailure = n.GetBoolValue(); } },
                 {"allowDeviceUseOnInstallFailure", n => { AllowDeviceUseOnInstallFailure = n.GetBoolValue(); } },
                 {"allowLogCollectionOnInstallFailure", n => { AllowLogCollectionOnInstallFailure = n.GetBoolValue(); } },
+                {"allowNonBlockingAppInstallation", n => { AllowNonBlockingAppInstallation = n.GetBoolValue(); } },
                 {"blockDeviceSetupRetryByUser", n => { BlockDeviceSetupRetryByUser = n.GetBoolValue(); } },
                 {"customErrorMessage", n => { CustomErrorMessage = n.GetStringValue(); } },
                 {"disableUserStatusTrackingAfterFirstUser", n => { DisableUserStatusTrackingAfterFirstUser = n.GetBoolValue(); } },
@@ -90,6 +96,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("allowDeviceResetOnInstallFailure", AllowDeviceResetOnInstallFailure);
             writer.WriteBoolValue("allowDeviceUseOnInstallFailure", AllowDeviceUseOnInstallFailure);
             writer.WriteBoolValue("allowLogCollectionOnInstallFailure", AllowLogCollectionOnInstallFailure);
+            writer.WriteBoolValue("allowNonBlockingAppInstallation", AllowNonBlockingAppInstallation);
             writer.WriteBoolValue("blockDeviceSetupRetryByUser", BlockDeviceSetupRetryByUser);
             writer.WriteStringValue("customErrorMessage", CustomErrorMessage);
             writer.WriteBoolValue("disableUserStatusTrackingAfterFirstUser", DisableUserStatusTrackingAfterFirstUser);

@@ -5,67 +5,73 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class FileObject : Entity, IParsable {
         /// <summary>The content property</summary>
         public byte[] Content {
-            get { return BackingStore?.Get<byte[]>(nameof(Content)); }
-            set { BackingStore?.Set(nameof(Content), value); }
+            get { return BackingStore?.Get<byte[]>("content"); }
+            set { BackingStore?.Set("content", value); }
         }
         /// <summary>The dateTime property</summary>
         public DateTimeOffset? DateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DateTime)); }
-            set { BackingStore?.Set(nameof(DateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("dateTime"); }
+            set { BackingStore?.Set("dateTime", value); }
         }
         /// <summary>The extension property</summary>
         public string Extension {
-            get { return BackingStore?.Get<string>(nameof(Extension)); }
-            set { BackingStore?.Set(nameof(Extension), value); }
+            get { return BackingStore?.Get<string>("extension"); }
+            set { BackingStore?.Set("extension", value); }
         }
         /// <summary>The extractedTextContent property</summary>
         public byte[] ExtractedTextContent {
-            get { return BackingStore?.Get<byte[]>(nameof(ExtractedTextContent)); }
-            set { BackingStore?.Set(nameof(ExtractedTextContent), value); }
+            get { return BackingStore?.Get<byte[]>("extractedTextContent"); }
+            set { BackingStore?.Set("extractedTextContent", value); }
         }
         /// <summary>The mediaType property</summary>
         public string MediaType {
-            get { return BackingStore?.Get<string>(nameof(MediaType)); }
-            set { BackingStore?.Set(nameof(MediaType), value); }
+            get { return BackingStore?.Get<string>("mediaType"); }
+            set { BackingStore?.Set("mediaType", value); }
         }
         /// <summary>The name property</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The otherProperties property</summary>
         public StringValueDictionary OtherProperties {
-            get { return BackingStore?.Get<StringValueDictionary>(nameof(OtherProperties)); }
-            set { BackingStore?.Set(nameof(OtherProperties), value); }
+            get { return BackingStore?.Get<StringValueDictionary>("otherProperties"); }
+            set { BackingStore?.Set("otherProperties", value); }
         }
         /// <summary>The processingStatus property</summary>
         public FileProcessingStatus? ProcessingStatus {
-            get { return BackingStore?.Get<FileProcessingStatus?>(nameof(ProcessingStatus)); }
-            set { BackingStore?.Set(nameof(ProcessingStatus), value); }
+            get { return BackingStore?.Get<FileProcessingStatus?>("processingStatus"); }
+            set { BackingStore?.Set("processingStatus", value); }
         }
         /// <summary>The senderOrAuthors property</summary>
         public List<string> SenderOrAuthors {
-            get { return BackingStore?.Get<List<string>>(nameof(SenderOrAuthors)); }
-            set { BackingStore?.Set(nameof(SenderOrAuthors), value); }
+            get { return BackingStore?.Get<List<string>>("senderOrAuthors"); }
+            set { BackingStore?.Set("senderOrAuthors", value); }
         }
         /// <summary>The size property</summary>
         public long? Size {
-            get { return BackingStore?.Get<long?>(nameof(Size)); }
-            set { BackingStore?.Set(nameof(Size), value); }
+            get { return BackingStore?.Get<long?>("size"); }
+            set { BackingStore?.Set("size", value); }
         }
         /// <summary>The sourceType property</summary>
         public Microsoft.Graph.Beta.Models.Security.SourceType? SourceType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.SourceType?>(nameof(SourceType)); }
-            set { BackingStore?.Set(nameof(SourceType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.SourceType?>("sourceType"); }
+            set { BackingStore?.Set("sourceType", value); }
         }
         /// <summary>The subjectTitle property</summary>
         public string SubjectTitle {
-            get { return BackingStore?.Get<string>(nameof(SubjectTitle)); }
-            set { BackingStore?.Set(nameof(SubjectTitle), value); }
+            get { return BackingStore?.Get<string>("subjectTitle"); }
+            set { BackingStore?.Set("subjectTitle", value); }
+        }
+        /// <summary>
+        /// Instantiates a new fileObject and sets the default values.
+        /// </summary>
+        public FileObject() : base() {
+            Type = "#microsoft.graph.security.file";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationIdentityMatchingConfiguration : EducationIdentitySynchronizationConfiguration, IParsable {
         /// <summary>Mapping between the user account and the options to use to uniquely identify the user to update.</summary>
         public List<EducationIdentityMatchingOptions> MatchingOptions {
-            get { return BackingStore?.Get<List<EducationIdentityMatchingOptions>>(nameof(MatchingOptions)); }
-            set { BackingStore?.Set(nameof(MatchingOptions), value); }
+            get { return BackingStore?.Get<List<EducationIdentityMatchingOptions>>("matchingOptions"); }
+            set { BackingStore?.Set("matchingOptions", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.MarkChatReadForUser {
     public class MarkChatReadForUserPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The tenantId property</summary>
         public string TenantId {
-            get { return BackingStore?.Get<string>(nameof(TenantId)); }
-            set { BackingStore?.Set(nameof(TenantId), value); }
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>The user property</summary>
         public TeamworkUserIdentity User {
-            get { return BackingStore?.Get<TeamworkUserIdentity>(nameof(User)); }
-            set { BackingStore?.Set(nameof(User), value); }
+            get { return BackingStore?.Get<TeamworkUserIdentity>("user"); }
+            set { BackingStore?.Set("user", value); }
         }
         /// <summary>
         /// Instantiates a new markChatReadForUserPostRequestBody and sets the default values.

@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class VerificationResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The signatureValid property</summary>
         public bool? SignatureValid {
-            get { return BackingStore?.Get<bool?>(nameof(SignatureValid)); }
-            set { BackingStore?.Set(nameof(SignatureValid), value); }
+            get { return BackingStore?.Get<bool?>("signatureValid"); }
+            set { BackingStore?.Set("signatureValid", value); }
         }
         /// <summary>
-        /// Instantiates a new VerificationResult and sets the default values.
+        /// Instantiates a new verificationResult and sets the default values.
         /// </summary>
         public VerificationResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

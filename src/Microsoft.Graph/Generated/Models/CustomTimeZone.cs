@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class CustomTimeZone : TimeZoneBase, IParsable {
         /// <summary>The time offset of the time zone from Coordinated Universal Time (UTC). This value is in minutes. Time zones that are ahead of UTC have a positive offset; time zones that are behind UTC have a negative offset.</summary>
         public int? Bias {
-            get { return BackingStore?.Get<int?>(nameof(Bias)); }
-            set { BackingStore?.Set(nameof(Bias), value); }
+            get { return BackingStore?.Get<int?>("bias"); }
+            set { BackingStore?.Set("bias", value); }
         }
         /// <summary>Specifies when the time zone switches from standard time to daylight saving time.</summary>
         public DaylightTimeZoneOffset DaylightOffset {
-            get { return BackingStore?.Get<DaylightTimeZoneOffset>(nameof(DaylightOffset)); }
-            set { BackingStore?.Set(nameof(DaylightOffset), value); }
+            get { return BackingStore?.Get<DaylightTimeZoneOffset>("daylightOffset"); }
+            set { BackingStore?.Set("daylightOffset", value); }
         }
         /// <summary>Specifies when the time zone switches from daylight saving time to standard time.</summary>
         public StandardTimeZoneOffset StandardOffset {
-            get { return BackingStore?.Get<StandardTimeZoneOffset>(nameof(StandardOffset)); }
-            set { BackingStore?.Set(nameof(StandardOffset), value); }
+            get { return BackingStore?.Get<StandardTimeZoneOffset>("standardOffset"); }
+            set { BackingStore?.Set("standardOffset", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

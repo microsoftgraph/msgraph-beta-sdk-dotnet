@@ -7,123 +7,123 @@ namespace Microsoft.Graph.Beta.Models {
     public class DepEnrollmentProfile : EnrollmentProfile, IParsable {
         /// <summary>Indicates if Apple id setup pane is disabled</summary>
         public bool? AppleIdDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(AppleIdDisabled)); }
-            set { BackingStore?.Set(nameof(AppleIdDisabled), value); }
+            get { return BackingStore?.Get<bool?>("appleIdDisabled"); }
+            set { BackingStore?.Set("appleIdDisabled", value); }
         }
         /// <summary>Indicates if Apple pay setup pane is disabled</summary>
         public bool? ApplePayDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(ApplePayDisabled)); }
-            set { BackingStore?.Set(nameof(ApplePayDisabled), value); }
+            get { return BackingStore?.Get<bool?>("applePayDisabled"); }
+            set { BackingStore?.Set("applePayDisabled", value); }
         }
         /// <summary>Indicates if the device will need to wait for configured confirmation</summary>
         public bool? AwaitDeviceConfiguredConfirmation {
-            get { return BackingStore?.Get<bool?>(nameof(AwaitDeviceConfiguredConfirmation)); }
-            set { BackingStore?.Set(nameof(AwaitDeviceConfiguredConfirmation), value); }
+            get { return BackingStore?.Get<bool?>("awaitDeviceConfiguredConfirmation"); }
+            set { BackingStore?.Set("awaitDeviceConfiguredConfirmation", value); }
         }
         /// <summary>Indicates if diagnostics setup pane is disabled</summary>
         public bool? DiagnosticsDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(DiagnosticsDisabled)); }
-            set { BackingStore?.Set(nameof(DiagnosticsDisabled), value); }
+            get { return BackingStore?.Get<bool?>("diagnosticsDisabled"); }
+            set { BackingStore?.Set("diagnosticsDisabled", value); }
         }
         /// <summary>This indicates whether the device is to be enrolled in a mode which enables multi user scenarios. Only applicable in shared iPads.</summary>
         public bool? EnableSharedIPad {
-            get { return BackingStore?.Get<bool?>(nameof(EnableSharedIPad)); }
-            set { BackingStore?.Set(nameof(EnableSharedIPad), value); }
+            get { return BackingStore?.Get<bool?>("enableSharedIPad"); }
+            set { BackingStore?.Set("enableSharedIPad", value); }
         }
         /// <summary>Indicates if this is the default profile</summary>
         public bool? IsDefault {
-            get { return BackingStore?.Get<bool?>(nameof(IsDefault)); }
-            set { BackingStore?.Set(nameof(IsDefault), value); }
+            get { return BackingStore?.Get<bool?>("isDefault"); }
+            set { BackingStore?.Set("isDefault", value); }
         }
         /// <summary>Indicates if the profile is mandatory</summary>
         public bool? IsMandatory {
-            get { return BackingStore?.Get<bool?>(nameof(IsMandatory)); }
-            set { BackingStore?.Set(nameof(IsMandatory), value); }
+            get { return BackingStore?.Get<bool?>("isMandatory"); }
+            set { BackingStore?.Set("isMandatory", value); }
         }
-        /// <summary>Indicates the iTunes pairing mode. Possible values are: disallow, allow, requiresCertificate.</summary>
+        /// <summary>The iTunesPairingMode property</summary>
         public Microsoft.Graph.Beta.Models.ITunesPairingMode? ITunesPairingMode {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ITunesPairingMode?>(nameof(ITunesPairingMode)); }
-            set { BackingStore?.Set(nameof(ITunesPairingMode), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ITunesPairingMode?>("iTunesPairingMode"); }
+            set { BackingStore?.Set("iTunesPairingMode", value); }
         }
         /// <summary>Indicates if Location service setup pane is disabled</summary>
         public bool? LocationDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(LocationDisabled)); }
-            set { BackingStore?.Set(nameof(LocationDisabled), value); }
+            get { return BackingStore?.Get<bool?>("locationDisabled"); }
+            set { BackingStore?.Set("locationDisabled", value); }
         }
         /// <summary>Indicates if Mac OS file vault is disabled</summary>
         public bool? MacOSFileVaultDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(MacOSFileVaultDisabled)); }
-            set { BackingStore?.Set(nameof(MacOSFileVaultDisabled), value); }
+            get { return BackingStore?.Get<bool?>("macOSFileVaultDisabled"); }
+            set { BackingStore?.Set("macOSFileVaultDisabled", value); }
         }
         /// <summary>Indicates if Mac OS registration is disabled</summary>
         public bool? MacOSRegistrationDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(MacOSRegistrationDisabled)); }
-            set { BackingStore?.Set(nameof(MacOSRegistrationDisabled), value); }
+            get { return BackingStore?.Get<bool?>("macOSRegistrationDisabled"); }
+            set { BackingStore?.Set("macOSRegistrationDisabled", value); }
         }
         /// <summary>Management certificates for Apple Configurator</summary>
         public List<ManagementCertificateWithThumbprint> ManagementCertificates {
-            get { return BackingStore?.Get<List<ManagementCertificateWithThumbprint>>(nameof(ManagementCertificates)); }
-            set { BackingStore?.Set(nameof(ManagementCertificates), value); }
+            get { return BackingStore?.Get<List<ManagementCertificateWithThumbprint>>("managementCertificates"); }
+            set { BackingStore?.Set("managementCertificates", value); }
         }
         /// <summary>Indicates if Passcode setup pane is disabled</summary>
         public bool? PassCodeDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(PassCodeDisabled)); }
-            set { BackingStore?.Set(nameof(PassCodeDisabled), value); }
+            get { return BackingStore?.Get<bool?>("passCodeDisabled"); }
+            set { BackingStore?.Set("passCodeDisabled", value); }
         }
         /// <summary>Indicates if the profile removal option is disabled</summary>
         public bool? ProfileRemovalDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(ProfileRemovalDisabled)); }
-            set { BackingStore?.Set(nameof(ProfileRemovalDisabled), value); }
+            get { return BackingStore?.Get<bool?>("profileRemovalDisabled"); }
+            set { BackingStore?.Set("profileRemovalDisabled", value); }
         }
         /// <summary>Indicates if Restore setup pane is blocked</summary>
         public bool? RestoreBlocked {
-            get { return BackingStore?.Get<bool?>(nameof(RestoreBlocked)); }
-            set { BackingStore?.Set(nameof(RestoreBlocked), value); }
+            get { return BackingStore?.Get<bool?>("restoreBlocked"); }
+            set { BackingStore?.Set("restoreBlocked", value); }
         }
         /// <summary>Indicates if Restore from Android is disabled</summary>
         public bool? RestoreFromAndroidDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(RestoreFromAndroidDisabled)); }
-            set { BackingStore?.Set(nameof(RestoreFromAndroidDisabled), value); }
+            get { return BackingStore?.Get<bool?>("restoreFromAndroidDisabled"); }
+            set { BackingStore?.Set("restoreFromAndroidDisabled", value); }
         }
         /// <summary>This specifies the maximum number of users that can use a shared iPad. Only applicable in shared iPad mode.</summary>
         public int? SharedIPadMaximumUserCount {
-            get { return BackingStore?.Get<int?>(nameof(SharedIPadMaximumUserCount)); }
-            set { BackingStore?.Set(nameof(SharedIPadMaximumUserCount), value); }
+            get { return BackingStore?.Get<int?>("sharedIPadMaximumUserCount"); }
+            set { BackingStore?.Set("sharedIPadMaximumUserCount", value); }
         }
         /// <summary>Indicates if siri setup pane is disabled</summary>
         public bool? SiriDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(SiriDisabled)); }
-            set { BackingStore?.Set(nameof(SiriDisabled), value); }
+            get { return BackingStore?.Get<bool?>("siriDisabled"); }
+            set { BackingStore?.Set("siriDisabled", value); }
         }
         /// <summary>Supervised mode, True to enable, false otherwise. See https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.</summary>
         public bool? SupervisedModeEnabled {
-            get { return BackingStore?.Get<bool?>(nameof(SupervisedModeEnabled)); }
-            set { BackingStore?.Set(nameof(SupervisedModeEnabled), value); }
+            get { return BackingStore?.Get<bool?>("supervisedModeEnabled"); }
+            set { BackingStore?.Set("supervisedModeEnabled", value); }
         }
         /// <summary>Support department information</summary>
         public string SupportDepartment {
-            get { return BackingStore?.Get<string>(nameof(SupportDepartment)); }
-            set { BackingStore?.Set(nameof(SupportDepartment), value); }
+            get { return BackingStore?.Get<string>("supportDepartment"); }
+            set { BackingStore?.Set("supportDepartment", value); }
         }
         /// <summary>Support phone number</summary>
         public string SupportPhoneNumber {
-            get { return BackingStore?.Get<string>(nameof(SupportPhoneNumber)); }
-            set { BackingStore?.Set(nameof(SupportPhoneNumber), value); }
+            get { return BackingStore?.Get<string>("supportPhoneNumber"); }
+            set { BackingStore?.Set("supportPhoneNumber", value); }
         }
         /// <summary>Indicates if &apos;Terms and Conditions&apos; setup pane is disabled</summary>
         public bool? TermsAndConditionsDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(TermsAndConditionsDisabled)); }
-            set { BackingStore?.Set(nameof(TermsAndConditionsDisabled), value); }
+            get { return BackingStore?.Get<bool?>("termsAndConditionsDisabled"); }
+            set { BackingStore?.Set("termsAndConditionsDisabled", value); }
         }
         /// <summary>Indicates if touch id setup pane is disabled</summary>
         public bool? TouchIdDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(TouchIdDisabled)); }
-            set { BackingStore?.Set(nameof(TouchIdDisabled), value); }
+            get { return BackingStore?.Get<bool?>("touchIdDisabled"); }
+            set { BackingStore?.Set("touchIdDisabled", value); }
         }
         /// <summary>Indicates if zoom setup pane is disabled</summary>
         public bool? ZoomDisabled {
-            get { return BackingStore?.Get<bool?>(nameof(ZoomDisabled)); }
-            set { BackingStore?.Set(nameof(ZoomDisabled), value); }
+            get { return BackingStore?.Get<bool?>("zoomDisabled"); }
+            set { BackingStore?.Set("zoomDisabled", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

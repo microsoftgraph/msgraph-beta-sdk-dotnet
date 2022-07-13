@@ -9,15 +9,15 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.BulkReprovisionCloudPc {
     public class BulkReprovisionCloudPcPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The managedDeviceIds property</summary>
         public List<string> ManagedDeviceIds {
-            get { return BackingStore?.Get<List<string>>(nameof(ManagedDeviceIds)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceIds), value); }
+            get { return BackingStore?.Get<List<string>>("managedDeviceIds"); }
+            set { BackingStore?.Set("managedDeviceIds", value); }
         }
         /// <summary>
         /// Instantiates a new bulkReprovisionCloudPcPostRequestBody and sets the default values.

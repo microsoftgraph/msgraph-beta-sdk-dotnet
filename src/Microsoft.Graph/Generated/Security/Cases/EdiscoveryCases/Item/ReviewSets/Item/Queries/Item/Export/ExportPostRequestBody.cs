@@ -10,40 +10,40 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
     public class ExportPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The azureBlobContainer property</summary>
         public string AzureBlobContainer {
-            get { return BackingStore?.Get<string>(nameof(AzureBlobContainer)); }
-            set { BackingStore?.Set(nameof(AzureBlobContainer), value); }
+            get { return BackingStore?.Get<string>("azureBlobContainer"); }
+            set { BackingStore?.Set("azureBlobContainer", value); }
         }
         /// <summary>The azureBlobToken property</summary>
         public string AzureBlobToken {
-            get { return BackingStore?.Get<string>(nameof(AzureBlobToken)); }
-            set { BackingStore?.Set(nameof(AzureBlobToken), value); }
+            get { return BackingStore?.Get<string>("azureBlobToken"); }
+            set { BackingStore?.Set("azureBlobToken", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The description property</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The exportOptions property</summary>
         public Microsoft.Graph.Beta.Models.Security.ExportOptions? ExportOptions {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ExportOptions?>(nameof(ExportOptions)); }
-            set { BackingStore?.Set(nameof(ExportOptions), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ExportOptions?>("exportOptions"); }
+            set { BackingStore?.Set("exportOptions", value); }
         }
         /// <summary>The exportStructure property</summary>
         public ExportFileStructure? ExportStructure {
-            get { return BackingStore?.Get<ExportFileStructure?>(nameof(ExportStructure)); }
-            set { BackingStore?.Set(nameof(ExportStructure), value); }
+            get { return BackingStore?.Get<ExportFileStructure?>("exportStructure"); }
+            set { BackingStore?.Set("exportStructure", value); }
         }
         /// <summary>The outputName property</summary>
         public string OutputName {
-            get { return BackingStore?.Get<string>(nameof(OutputName)); }
-            set { BackingStore?.Set(nameof(OutputName), value); }
+            get { return BackingStore?.Get<string>("outputName"); }
+            set { BackingStore?.Set("outputName", value); }
         }
         /// <summary>
         /// Instantiates a new exportPostRequestBody and sets the default values.

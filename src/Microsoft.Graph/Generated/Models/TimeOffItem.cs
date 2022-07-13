@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class TimeOffItem : ScheduleEntity, IParsable {
         /// <summary>ID of the timeOffReason for this timeOffItem. Required.</summary>
         public string TimeOffReasonId {
-            get { return BackingStore?.Get<string>(nameof(TimeOffReasonId)); }
-            set { BackingStore?.Set(nameof(TimeOffReasonId), value); }
+            get { return BackingStore?.Get<string>("timeOffReasonId"); }
+            set { BackingStore?.Set("timeOffReasonId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

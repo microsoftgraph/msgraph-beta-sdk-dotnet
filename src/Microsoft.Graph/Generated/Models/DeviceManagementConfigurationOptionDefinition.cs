@@ -8,50 +8,50 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationOptionDefinition : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>List of Settings that depends on this option</summary>
         public List<DeviceManagementConfigurationSettingDependedOnBy> DependedOnBy {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDependedOnBy>>(nameof(DependedOnBy)); }
-            set { BackingStore?.Set(nameof(DependedOnBy), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDependedOnBy>>("dependedOnBy"); }
+            set { BackingStore?.Set("dependedOnBy", value); }
         }
         /// <summary>List of dependent settings for this option</summary>
         public List<DeviceManagementConfigurationDependentOn> DependentOn {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationDependentOn>>(nameof(DependentOn)); }
-            set { BackingStore?.Set(nameof(DependentOn), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationDependentOn>>("dependentOn"); }
+            set { BackingStore?.Set("dependentOn", value); }
         }
         /// <summary>Description of the option</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Friendly name of the option</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Help text of the option</summary>
         public string HelpText {
-            get { return BackingStore?.Get<string>(nameof(HelpText)); }
-            set { BackingStore?.Set(nameof(HelpText), value); }
+            get { return BackingStore?.Get<string>("helpText"); }
+            set { BackingStore?.Set("helpText", value); }
         }
         /// <summary>Identifier of option</summary>
         public string ItemId {
-            get { return BackingStore?.Get<string>(nameof(ItemId)); }
-            set { BackingStore?.Set(nameof(ItemId), value); }
+            get { return BackingStore?.Get<string>("itemId"); }
+            set { BackingStore?.Set("itemId", value); }
         }
         /// <summary>Name of the option</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>Value of the option</summary>
         public DeviceManagementConfigurationSettingValue OptionValue {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingValue>(nameof(OptionValue)); }
-            set { BackingStore?.Set(nameof(OptionValue), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationSettingValue>("optionValue"); }
+            set { BackingStore?.Set("optionValue", value); }
         }
         /// <summary>
         /// Instantiates a new deviceManagementConfigurationOptionDefinition and sets the default values.

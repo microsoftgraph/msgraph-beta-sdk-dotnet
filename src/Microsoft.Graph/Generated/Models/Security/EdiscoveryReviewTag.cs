@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class EdiscoveryReviewTag : Tag, IParsable {
         /// <summary>Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.</summary>
         public Microsoft.Graph.Beta.Models.Security.ChildSelectability? ChildSelectability {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ChildSelectability?>(nameof(ChildSelectability)); }
-            set { BackingStore?.Set(nameof(ChildSelectability), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ChildSelectability?>("childSelectability"); }
+            set { BackingStore?.Set("childSelectability", value); }
         }
         /// <summary>Returns the tags that are a child of a tag.</summary>
         public List<EdiscoveryReviewTag> ChildTags {
-            get { return BackingStore?.Get<List<EdiscoveryReviewTag>>(nameof(ChildTags)); }
-            set { BackingStore?.Set(nameof(ChildTags), value); }
+            get { return BackingStore?.Get<List<EdiscoveryReviewTag>>("childTags"); }
+            set { BackingStore?.Set("childTags", value); }
         }
         /// <summary>Returns the parent tag of the specified tag.</summary>
         public EdiscoveryReviewTag Parent {
-            get { return BackingStore?.Get<EdiscoveryReviewTag>(nameof(Parent)); }
-            set { BackingStore?.Set(nameof(Parent), value); }
+            get { return BackingStore?.Get<EdiscoveryReviewTag>("parent"); }
+            set { BackingStore?.Set("parent", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

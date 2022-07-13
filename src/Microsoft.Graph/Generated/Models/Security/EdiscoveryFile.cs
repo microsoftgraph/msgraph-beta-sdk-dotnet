@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class EdiscoveryFile : FileObject, IParsable {
         /// <summary>Custodians associated with the file.</summary>
         public EdiscoveryCustodian Custodian {
-            get { return BackingStore?.Get<EdiscoveryCustodian>(nameof(Custodian)); }
-            set { BackingStore?.Set(nameof(Custodian), value); }
+            get { return BackingStore?.Get<EdiscoveryCustodian>("custodian"); }
+            set { BackingStore?.Set("custodian", value); }
         }
         /// <summary>Tags associated with the file.</summary>
         public List<EdiscoveryReviewTag> Tags {
-            get { return BackingStore?.Get<List<EdiscoveryReviewTag>>(nameof(Tags)); }
-            set { BackingStore?.Set(nameof(Tags), value); }
+            get { return BackingStore?.Get<List<EdiscoveryReviewTag>>("tags"); }
+            set { BackingStore?.Set("tags", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

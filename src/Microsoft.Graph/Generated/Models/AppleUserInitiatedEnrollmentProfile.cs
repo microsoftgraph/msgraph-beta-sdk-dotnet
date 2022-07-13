@@ -8,48 +8,48 @@ namespace Microsoft.Graph.Beta.Models {
     public class AppleUserInitiatedEnrollmentProfile : Entity, IParsable {
         /// <summary>The list of assignments for this profile.</summary>
         public List<AppleEnrollmentProfileAssignment> Assignments {
-            get { return BackingStore?.Get<List<AppleEnrollmentProfileAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<AppleEnrollmentProfileAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>List of available enrollment type options</summary>
         public List<AppleOwnerTypeEnrollmentType> AvailableEnrollmentTypeOptions {
-            get { return BackingStore?.Get<List<AppleOwnerTypeEnrollmentType>>(nameof(AvailableEnrollmentTypeOptions)); }
-            set { BackingStore?.Set(nameof(AvailableEnrollmentTypeOptions), value); }
+            get { return BackingStore?.Get<List<AppleOwnerTypeEnrollmentType>>("availableEnrollmentTypeOptions"); }
+            set { BackingStore?.Set("availableEnrollmentTypeOptions", value); }
         }
         /// <summary>Profile creation time</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The default profile enrollment type. Possible values are: unknown, device, user.</summary>
+        /// <summary>The defaultEnrollmentType property</summary>
         public AppleUserInitiatedEnrollmentType? DefaultEnrollmentType {
-            get { return BackingStore?.Get<AppleUserInitiatedEnrollmentType?>(nameof(DefaultEnrollmentType)); }
-            set { BackingStore?.Set(nameof(DefaultEnrollmentType), value); }
+            get { return BackingStore?.Get<AppleUserInitiatedEnrollmentType?>("defaultEnrollmentType"); }
+            set { BackingStore?.Set("defaultEnrollmentType", value); }
         }
         /// <summary>Description of the profile</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Name of the profile</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Profile last modified time</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The platform of the Device. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown, androidAOSP.</summary>
+        /// <summary>Supported platform types.</summary>
         public DevicePlatformType? Platform {
-            get { return BackingStore?.Get<DevicePlatformType?>(nameof(Platform)); }
-            set { BackingStore?.Set(nameof(Platform), value); }
+            get { return BackingStore?.Get<DevicePlatformType?>("platform"); }
+            set { BackingStore?.Set("platform", value); }
         }
         /// <summary>Priority, 0 is highest</summary>
         public int? Priority {
-            get { return BackingStore?.Get<int?>(nameof(Priority)); }
-            set { BackingStore?.Set(nameof(Priority), value); }
+            get { return BackingStore?.Get<int?>("priority"); }
+            set { BackingStore?.Set("priority", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,23 +8,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class ApprovalWorkflowProvider : Entity, IParsable {
         /// <summary>The businessFlows property</summary>
         public List<BusinessFlow> BusinessFlows {
-            get { return BackingStore?.Get<List<BusinessFlow>>(nameof(BusinessFlows)); }
-            set { BackingStore?.Set(nameof(BusinessFlows), value); }
+            get { return BackingStore?.Get<List<BusinessFlow>>("businessFlows"); }
+            set { BackingStore?.Set("businessFlows", value); }
         }
         /// <summary>The businessFlowsWithRequestsAwaitingMyDecision property</summary>
         public List<BusinessFlow> BusinessFlowsWithRequestsAwaitingMyDecision {
-            get { return BackingStore?.Get<List<BusinessFlow>>(nameof(BusinessFlowsWithRequestsAwaitingMyDecision)); }
-            set { BackingStore?.Set(nameof(BusinessFlowsWithRequestsAwaitingMyDecision), value); }
+            get { return BackingStore?.Get<List<BusinessFlow>>("businessFlowsWithRequestsAwaitingMyDecision"); }
+            set { BackingStore?.Set("businessFlowsWithRequestsAwaitingMyDecision", value); }
         }
         /// <summary>The displayName property</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The policyTemplates property</summary>
         public List<GovernancePolicyTemplate> PolicyTemplates {
-            get { return BackingStore?.Get<List<GovernancePolicyTemplate>>(nameof(PolicyTemplates)); }
-            set { BackingStore?.Set(nameof(PolicyTemplates), value); }
+            get { return BackingStore?.Get<List<GovernancePolicyTemplate>>("policyTemplates"); }
+            set { BackingStore?.Set("policyTemplates", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

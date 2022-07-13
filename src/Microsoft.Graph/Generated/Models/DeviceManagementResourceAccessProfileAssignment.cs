@@ -6,20 +6,20 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Entity that describes tenant level settings for derived credentials</summary>
     public class DeviceManagementResourceAccessProfileAssignment : Entity, IParsable {
-        /// <summary>The assignment intent for the resource access profile. Possible values are: apply, remove.</summary>
+        /// <summary>The administrator intent for the assignment of the profile.</summary>
         public DeviceManagementResourceAccessProfileIntent? Intent {
-            get { return BackingStore?.Get<DeviceManagementResourceAccessProfileIntent?>(nameof(Intent)); }
-            set { BackingStore?.Set(nameof(Intent), value); }
+            get { return BackingStore?.Get<DeviceManagementResourceAccessProfileIntent?>("intent"); }
+            set { BackingStore?.Set("intent", value); }
         }
         /// <summary>The identifier of the source of the assignment.</summary>
         public string SourceId {
-            get { return BackingStore?.Get<string>(nameof(SourceId)); }
-            set { BackingStore?.Set(nameof(SourceId), value); }
+            get { return BackingStore?.Get<string>("sourceId"); }
+            set { BackingStore?.Set("sourceId", value); }
         }
         /// <summary>Base type for assignment targets.</summary>
         public DeviceAndAppManagementAssignmentTarget Target {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>(nameof(Target)); }
-            set { BackingStore?.Set(nameof(Target), value); }
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
+            set { BackingStore?.Set("target", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

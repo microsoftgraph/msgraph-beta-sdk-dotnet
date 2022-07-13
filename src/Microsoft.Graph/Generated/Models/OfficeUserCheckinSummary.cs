@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class OfficeUserCheckinSummary : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Total failed user check ins for the last 3 months.</summary>
         public int? FailedUserCount {
-            get { return BackingStore?.Get<int?>(nameof(FailedUserCount)); }
-            set { BackingStore?.Set(nameof(FailedUserCount), value); }
+            get { return BackingStore?.Get<int?>("failedUserCount"); }
+            set { BackingStore?.Set("failedUserCount", value); }
         }
         /// <summary>Total successful user check ins for the last 3 months.</summary>
         public int? SucceededUserCount {
-            get { return BackingStore?.Get<int?>(nameof(SucceededUserCount)); }
-            set { BackingStore?.Set(nameof(SucceededUserCount), value); }
+            get { return BackingStore?.Get<int?>("succeededUserCount"); }
+            set { BackingStore?.Set("succeededUserCount", value); }
         }
         /// <summary>
         /// Instantiates a new officeUserCheckinSummary and sets the default values.

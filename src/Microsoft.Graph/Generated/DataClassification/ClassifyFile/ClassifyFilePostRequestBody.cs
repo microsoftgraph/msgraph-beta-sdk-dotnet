@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyFile {
     public class ClassifyFilePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The file property</summary>
         public byte[] FileObject {
-            get { return BackingStore?.Get<byte[]>(nameof(FileObject)); }
-            set { BackingStore?.Set(nameof(FileObject), value); }
+            get { return BackingStore?.Get<byte[]>("file"); }
+            set { BackingStore?.Set("file", value); }
         }
         /// <summary>The sensitiveTypeIds property</summary>
         public List<string> SensitiveTypeIds {
-            get { return BackingStore?.Get<List<string>>(nameof(SensitiveTypeIds)); }
-            set { BackingStore?.Set(nameof(SensitiveTypeIds), value); }
+            get { return BackingStore?.Get<List<string>>("sensitiveTypeIds"); }
+            set { BackingStore?.Set("sensitiveTypeIds", value); }
         }
         /// <summary>
         /// Instantiates a new classifyFilePostRequestBody and sets the default values.

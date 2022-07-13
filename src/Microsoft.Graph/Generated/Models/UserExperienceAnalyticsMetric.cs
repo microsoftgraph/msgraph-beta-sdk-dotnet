@@ -8,13 +8,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsMetric : Entity, IParsable {
         /// <summary>The unit of the user experience analytics metric.</summary>
         public string Unit {
-            get { return BackingStore?.Get<string>(nameof(Unit)); }
-            set { BackingStore?.Set(nameof(Unit), value); }
+            get { return BackingStore?.Get<string>("unit"); }
+            set { BackingStore?.Set("unit", value); }
         }
         /// <summary>The value of the user experience analytics metric.</summary>
         public double? Value {
-            get { return BackingStore?.Get<double?>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<double?>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

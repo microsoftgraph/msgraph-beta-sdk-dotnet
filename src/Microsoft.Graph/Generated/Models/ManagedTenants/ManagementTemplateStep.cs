@@ -4,67 +4,67 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ManagementTemplateStep : Entity, IParsable {
         /// <summary>The acceptedVersion property</summary>
         public ManagementTemplateStepVersion AcceptedVersion {
-            get { return BackingStore?.Get<ManagementTemplateStepVersion>(nameof(AcceptedVersion)); }
-            set { BackingStore?.Set(nameof(AcceptedVersion), value); }
+            get { return BackingStore?.Get<ManagementTemplateStepVersion>("acceptedVersion"); }
+            set { BackingStore?.Set("acceptedVersion", value); }
         }
         /// <summary>The category property</summary>
         public ManagementCategory? Category {
-            get { return BackingStore?.Get<ManagementCategory?>(nameof(Category)); }
-            set { BackingStore?.Set(nameof(Category), value); }
+            get { return BackingStore?.Get<ManagementCategory?>("category"); }
+            set { BackingStore?.Set("category", value); }
         }
         /// <summary>The createdByUserId property</summary>
         public string CreatedByUserId {
-            get { return BackingStore?.Get<string>(nameof(CreatedByUserId)); }
-            set { BackingStore?.Set(nameof(CreatedByUserId), value); }
+            get { return BackingStore?.Get<string>("createdByUserId"); }
+            set { BackingStore?.Set("createdByUserId", value); }
         }
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description property</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The displayName property</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The lastActionByUserId property</summary>
         public string LastActionByUserId {
-            get { return BackingStore?.Get<string>(nameof(LastActionByUserId)); }
-            set { BackingStore?.Set(nameof(LastActionByUserId), value); }
+            get { return BackingStore?.Get<string>("lastActionByUserId"); }
+            set { BackingStore?.Set("lastActionByUserId", value); }
         }
         /// <summary>The lastActionDateTime property</summary>
         public DateTimeOffset? LastActionDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastActionDateTime)); }
-            set { BackingStore?.Set(nameof(LastActionDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
+            set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>The managementTemplate property</summary>
         public Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate ManagementTemplate {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate>(nameof(ManagementTemplate)); }
-            set { BackingStore?.Set(nameof(ManagementTemplate), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate>("managementTemplate"); }
+            set { BackingStore?.Set("managementTemplate", value); }
         }
         /// <summary>The portalLink property</summary>
         public Microsoft.Graph.Beta.Models.ActionUrl PortalLink {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionUrl>(nameof(PortalLink)); }
-            set { BackingStore?.Set(nameof(PortalLink), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionUrl>("portalLink"); }
+            set { BackingStore?.Set("portalLink", value); }
         }
         /// <summary>The priority property</summary>
         public int? Priority {
-            get { return BackingStore?.Get<int?>(nameof(Priority)); }
-            set { BackingStore?.Set(nameof(Priority), value); }
+            get { return BackingStore?.Get<int?>("priority"); }
+            set { BackingStore?.Set("priority", value); }
         }
         /// <summary>The versions property</summary>
         public List<ManagementTemplateStepVersion> Versions {
-            get { return BackingStore?.Get<List<ManagementTemplateStepVersion>>(nameof(Versions)); }
-            set { BackingStore?.Set(nameof(Versions), value); }
+            get { return BackingStore?.Get<List<ManagementTemplateStepVersion>>("versions"); }
+            set { BackingStore?.Set("versions", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,30 +9,30 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.Item.RoleInfo.Se
     public class SelfActivatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The duration property</summary>
         public string Duration {
-            get { return BackingStore?.Get<string>(nameof(Duration)); }
-            set { BackingStore?.Set(nameof(Duration), value); }
+            get { return BackingStore?.Get<string>("duration"); }
+            set { BackingStore?.Set("duration", value); }
         }
         /// <summary>The reason property</summary>
         public string Reason {
-            get { return BackingStore?.Get<string>(nameof(Reason)); }
-            set { BackingStore?.Set(nameof(Reason), value); }
+            get { return BackingStore?.Get<string>("reason"); }
+            set { BackingStore?.Set("reason", value); }
         }
         /// <summary>The ticketNumber property</summary>
         public string TicketNumber {
-            get { return BackingStore?.Get<string>(nameof(TicketNumber)); }
-            set { BackingStore?.Set(nameof(TicketNumber), value); }
+            get { return BackingStore?.Get<string>("ticketNumber"); }
+            set { BackingStore?.Set("ticketNumber", value); }
         }
         /// <summary>The ticketSystem property</summary>
         public string TicketSystem {
-            get { return BackingStore?.Get<string>(nameof(TicketSystem)); }
-            set { BackingStore?.Set(nameof(TicketSystem), value); }
+            get { return BackingStore?.Get<string>("ticketSystem"); }
+            set { BackingStore?.Set("ticketSystem", value); }
         }
         /// <summary>
         /// Instantiates a new selfActivatePostRequestBody and sets the default values.

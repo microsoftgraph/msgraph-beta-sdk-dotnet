@@ -8,8 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class BusinessFlowTemplate : Entity, IParsable {
         /// <summary>The name of the business flow template</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,25 +9,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class DlpEvaluationInput : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The accessScope property</summary>
         public Microsoft.Graph.Beta.Models.AccessScope? AccessScope {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessScope?>(nameof(AccessScope)); }
-            set { BackingStore?.Set(nameof(AccessScope), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessScope?>("accessScope"); }
+            set { BackingStore?.Set("accessScope", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The currentLabel property</summary>
         public Microsoft.Graph.Beta.Models.CurrentLabel CurrentLabel {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CurrentLabel>(nameof(CurrentLabel)); }
-            set { BackingStore?.Set(nameof(CurrentLabel), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CurrentLabel>("currentLabel"); }
+            set { BackingStore?.Set("currentLabel", value); }
         }
         /// <summary>The discoveredSensitiveTypes property</summary>
         public List<DiscoveredSensitiveType> DiscoveredSensitiveTypes {
-            get { return BackingStore?.Get<List<DiscoveredSensitiveType>>(nameof(DiscoveredSensitiveTypes)); }
-            set { BackingStore?.Set(nameof(DiscoveredSensitiveTypes), value); }
+            get { return BackingStore?.Get<List<DiscoveredSensitiveType>>("discoveredSensitiveTypes"); }
+            set { BackingStore?.Set("discoveredSensitiveTypes", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new dlpEvaluationInput and sets the default values.
@@ -35,6 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DlpEvaluationInput() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.dlpEvaluationInput";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"accessScope", n => { AccessScope = n.GetEnumValue<AccessScope>(); } },
                 {"currentLabel", n => { CurrentLabel = n.GetObjectValue<Microsoft.Graph.Beta.Models.CurrentLabel>(Microsoft.Graph.Beta.Models.CurrentLabel.CreateFromDiscriminatorValue); } },
                 {"discoveredSensitiveTypes", n => { DiscoveredSensitiveTypes = n.GetCollectionOfObjectValues<DiscoveredSensitiveType>(DiscoveredSensitiveType.CreateFromDiscriminatorValue).ToList(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -68,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<AccessScope>("accessScope", AccessScope);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CurrentLabel>("currentLabel", CurrentLabel);
             writer.WriteCollectionOfObjectValues<DiscoveredSensitiveType>("discoveredSensitiveTypes", DiscoveredSensitiveTypes);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

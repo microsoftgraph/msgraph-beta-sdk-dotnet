@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessReviewNotificationRecipientQueryScope : AccessReviewNotificationRecipientScope, IParsable {
         /// <summary>This represents the query for who the recipients are. For example, /groups/{group id}/members for group members and /users/{user id} for a specific user.</summary>
         public string Query {
-            get { return BackingStore?.Get<string>(nameof(Query)); }
-            set { BackingStore?.Set(nameof(Query), value); }
+            get { return BackingStore?.Get<string>("query"); }
+            set { BackingStore?.Set("query", value); }
         }
         /// <summary>In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query that is, ./manager) is specified.</summary>
         public string QueryRoot {
-            get { return BackingStore?.Get<string>(nameof(QueryRoot)); }
-            set { BackingStore?.Set(nameof(QueryRoot), value); }
+            get { return BackingStore?.Get<string>("queryRoot"); }
+            set { BackingStore?.Set("queryRoot", value); }
         }
         /// <summary>Indicates the type of query. Allowed value is MicrosoftGraph.</summary>
         public string QueryType {
-            get { return BackingStore?.Get<string>(nameof(QueryType)); }
-            set { BackingStore?.Set(nameof(QueryType), value); }
+            get { return BackingStore?.Get<string>("queryType"); }
+            set { BackingStore?.Set("queryType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -10,20 +10,20 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.ImportD
     public class ImportDeviceIdentityListPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The importedDeviceIdentities property</summary>
         public List<ImportedDeviceIdentity> ImportedDeviceIdentities {
-            get { return BackingStore?.Get<List<ImportedDeviceIdentity>>(nameof(ImportedDeviceIdentities)); }
-            set { BackingStore?.Set(nameof(ImportedDeviceIdentities), value); }
+            get { return BackingStore?.Get<List<ImportedDeviceIdentity>>("importedDeviceIdentities"); }
+            set { BackingStore?.Set("importedDeviceIdentities", value); }
         }
         /// <summary>The overwriteImportedDeviceIdentities property</summary>
         public bool? OverwriteImportedDeviceIdentities {
-            get { return BackingStore?.Get<bool?>(nameof(OverwriteImportedDeviceIdentities)); }
-            set { BackingStore?.Set(nameof(OverwriteImportedDeviceIdentities), value); }
+            get { return BackingStore?.Get<bool?>("overwriteImportedDeviceIdentities"); }
+            set { BackingStore?.Set("overwriteImportedDeviceIdentities", value); }
         }
         /// <summary>
         /// Instantiates a new importDeviceIdentityListPostRequestBody and sets the default values.

@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class Media : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>If a file has a transcript, this setting controls if the closed captions / transcription for the media file should be shown to people during viewing. Read-Write.</summary>
         public bool? IsTranscriptionShown {
-            get { return BackingStore?.Get<bool?>(nameof(IsTranscriptionShown)); }
-            set { BackingStore?.Set(nameof(IsTranscriptionShown), value); }
+            get { return BackingStore?.Get<bool?>("isTranscriptionShown"); }
+            set { BackingStore?.Set("isTranscriptionShown", value); }
         }
         /// <summary>Information about the source of media. Read-only.</summary>
         public Microsoft.Graph.Beta.Models.MediaSource MediaSource {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaSource>(nameof(MediaSource)); }
-            set { BackingStore?.Set(nameof(MediaSource), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaSource>("mediaSource"); }
+            set { BackingStore?.Set("mediaSource", value); }
         }
         /// <summary>
         /// Instantiates a new media and sets the default values.

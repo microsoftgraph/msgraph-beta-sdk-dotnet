@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class TokenMeetingInfo : MeetingInfo, IParsable {
         /// <summary>The token used to join the call.</summary>
         public string Token {
-            get { return BackingStore?.Get<string>(nameof(Token)); }
-            set { BackingStore?.Set(nameof(Token), value); }
+            get { return BackingStore?.Get<string>("token"); }
+            set { BackingStore?.Set("token", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

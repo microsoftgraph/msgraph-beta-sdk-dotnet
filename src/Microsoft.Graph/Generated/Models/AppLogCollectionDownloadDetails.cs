@@ -8,28 +8,28 @@ namespace Microsoft.Graph.Beta.Models {
     public class AppLogCollectionDownloadDetails : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>DecryptionAlgorithm for Content. Possible values are: aes256.</summary>
+        /// <summary>The appLogDecryptionAlgorithm property</summary>
         public Microsoft.Graph.Beta.Models.AppLogDecryptionAlgorithm? AppLogDecryptionAlgorithm {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppLogDecryptionAlgorithm?>(nameof(AppLogDecryptionAlgorithm)); }
-            set { BackingStore?.Set(nameof(AppLogDecryptionAlgorithm), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppLogDecryptionAlgorithm?>("appLogDecryptionAlgorithm"); }
+            set { BackingStore?.Set("appLogDecryptionAlgorithm", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>DecryptionKey as string</summary>
         public string DecryptionKey {
-            get { return BackingStore?.Get<string>(nameof(DecryptionKey)); }
-            set { BackingStore?.Set(nameof(DecryptionKey), value); }
+            get { return BackingStore?.Get<string>("decryptionKey"); }
+            set { BackingStore?.Set("decryptionKey", value); }
         }
         /// <summary>Download SAS Url for completed AppLogUploadRequest</summary>
         public string DownloadUrl {
-            get { return BackingStore?.Get<string>(nameof(DownloadUrl)); }
-            set { BackingStore?.Set(nameof(DownloadUrl), value); }
+            get { return BackingStore?.Get<string>("downloadUrl"); }
+            set { BackingStore?.Set("downloadUrl", value); }
         }
         /// <summary>
-        /// Instantiates a new AppLogCollectionDownloadDetails and sets the default values.
+        /// Instantiates a new appLogCollectionDownloadDetails and sets the default values.
         /// </summary>
         public AppLogCollectionDownloadDetails() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

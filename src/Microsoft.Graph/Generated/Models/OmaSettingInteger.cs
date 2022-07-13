@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class OmaSettingInteger : OmaSetting, IParsable {
         /// <summary>By setting to true, the CSP (configuration service provider) specified in the OMA-URI will perform a get, instead of set</summary>
         public bool? IsReadOnly {
-            get { return BackingStore?.Get<bool?>(nameof(IsReadOnly)); }
-            set { BackingStore?.Set(nameof(IsReadOnly), value); }
+            get { return BackingStore?.Get<bool?>("isReadOnly"); }
+            set { BackingStore?.Set("isReadOnly", value); }
         }
         /// <summary>Value.</summary>
         public int? Value {
-            get { return BackingStore?.Get<int?>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<int?>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationOptionDefinitionTemplate : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Option Children</summary>
         public List<DeviceManagementConfigurationSettingInstanceTemplate> Children {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstanceTemplate>>(nameof(Children)); }
-            set { BackingStore?.Set(nameof(Children), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstanceTemplate>>("children"); }
+            set { BackingStore?.Set("children", value); }
         }
         /// <summary>Option ItemId</summary>
         public string ItemId {
-            get { return BackingStore?.Get<string>(nameof(ItemId)); }
-            set { BackingStore?.Set(nameof(ItemId), value); }
+            get { return BackingStore?.Get<string>("itemId"); }
+            set { BackingStore?.Set("itemId", value); }
         }
         /// <summary>
         /// Instantiates a new deviceManagementConfigurationOptionDefinitionTemplate and sets the default values.

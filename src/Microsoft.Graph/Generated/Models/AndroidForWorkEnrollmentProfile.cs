@@ -8,53 +8,53 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidForWorkEnrollmentProfile : Entity, IParsable {
         /// <summary>Tenant GUID the enrollment profile belongs to.</summary>
         public string AccountId {
-            get { return BackingStore?.Get<string>(nameof(AccountId)); }
-            set { BackingStore?.Set(nameof(AccountId), value); }
+            get { return BackingStore?.Get<string>("accountId"); }
+            set { BackingStore?.Set("accountId", value); }
         }
         /// <summary>Date time the enrollment profile was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Description for the enrollment profile.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Display name for the enrollment profile.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Total number of Android devices that have enrolled using this enrollment profile.</summary>
         public int? EnrolledDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(EnrolledDeviceCount)); }
-            set { BackingStore?.Set(nameof(EnrolledDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("enrolledDeviceCount"); }
+            set { BackingStore?.Set("enrolledDeviceCount", value); }
         }
         /// <summary>Date time the enrollment profile was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>String used to generate a QR code for the token.</summary>
         public string QrCodeContent {
-            get { return BackingStore?.Get<string>(nameof(QrCodeContent)); }
-            set { BackingStore?.Set(nameof(QrCodeContent), value); }
+            get { return BackingStore?.Get<string>("qrCodeContent"); }
+            set { BackingStore?.Set("qrCodeContent", value); }
         }
         /// <summary>String used to generate a QR code for the token.</summary>
         public MimeContent QrCodeImage {
-            get { return BackingStore?.Get<MimeContent>(nameof(QrCodeImage)); }
-            set { BackingStore?.Set(nameof(QrCodeImage), value); }
+            get { return BackingStore?.Get<MimeContent>("qrCodeImage"); }
+            set { BackingStore?.Set("qrCodeImage", value); }
         }
         /// <summary>Date time the most recently created token will expire.</summary>
         public DateTimeOffset? TokenExpirationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(TokenExpirationDateTime)); }
-            set { BackingStore?.Set(nameof(TokenExpirationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("tokenExpirationDateTime"); }
+            set { BackingStore?.Set("tokenExpirationDateTime", value); }
         }
         /// <summary>Value of the most recently created token for this enrollment profile.</summary>
         public string TokenValue {
-            get { return BackingStore?.Get<string>(nameof(TokenValue)); }
-            set { BackingStore?.Set(nameof(TokenValue), value); }
+            get { return BackingStore?.Get<string>("tokenValue"); }
+            set { BackingStore?.Set("tokenValue", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

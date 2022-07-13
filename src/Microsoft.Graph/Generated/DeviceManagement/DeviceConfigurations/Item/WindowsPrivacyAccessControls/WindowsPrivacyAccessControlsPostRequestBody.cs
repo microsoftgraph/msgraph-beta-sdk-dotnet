@@ -10,15 +10,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.Window
     public class WindowsPrivacyAccessControlsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The windowsPrivacyAccessControls property</summary>
         public List<WindowsPrivacyDataAccessControlItem> WindowsPrivacyAccessControls {
-            get { return BackingStore?.Get<List<WindowsPrivacyDataAccessControlItem>>(nameof(WindowsPrivacyAccessControls)); }
-            set { BackingStore?.Set(nameof(WindowsPrivacyAccessControls), value); }
+            get { return BackingStore?.Get<List<WindowsPrivacyDataAccessControlItem>>("windowsPrivacyAccessControls"); }
+            set { BackingStore?.Set("windowsPrivacyAccessControls", value); }
         }
         /// <summary>
         /// Instantiates a new windowsPrivacyAccessControlsPostRequestBody and sets the default values.

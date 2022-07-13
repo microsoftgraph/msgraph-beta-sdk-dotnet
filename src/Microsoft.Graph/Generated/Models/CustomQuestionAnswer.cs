@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class CustomQuestionAnswer : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Display name of the custom registration question. Read-only.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>ID the custom registration question. Read-only.</summary>
         public string QuestionId {
-            get { return BackingStore?.Get<string>(nameof(QuestionId)); }
-            set { BackingStore?.Set(nameof(QuestionId), value); }
+            get { return BackingStore?.Get<string>("questionId"); }
+            set { BackingStore?.Set("questionId", value); }
         }
         /// <summary>Answer to the custom registration question.</summary>
         public string Value {
-            get { return BackingStore?.Get<string>(nameof(Value)); }
-            set { BackingStore?.Set(nameof(Value), value); }
+            get { return BackingStore?.Get<string>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
         /// <summary>
         /// Instantiates a new customQuestionAnswer and sets the default values.

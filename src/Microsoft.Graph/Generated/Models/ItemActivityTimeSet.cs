@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class ItemActivityTimeSet : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The lastRecordedDateTime property</summary>
         public DateTimeOffset? LastRecordedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastRecordedDateTime)); }
-            set { BackingStore?.Set(nameof(LastRecordedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastRecordedDateTime"); }
+            set { BackingStore?.Set("lastRecordedDateTime", value); }
         }
         /// <summary>When the activity was observed to take place.</summary>
         public DateTimeOffset? ObservedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ObservedDateTime)); }
-            set { BackingStore?.Set(nameof(ObservedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("observedDateTime"); }
+            set { BackingStore?.Set("observedDateTime", value); }
         }
         /// <summary>When the observation was recorded on the service.</summary>
         public DateTimeOffset? RecordedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(RecordedDateTime)); }
-            set { BackingStore?.Set(nameof(RecordedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("recordedDateTime"); }
+            set { BackingStore?.Set("recordedDateTime", value); }
         }
         /// <summary>
         /// Instantiates a new itemActivityTimeSet and sets the default values.

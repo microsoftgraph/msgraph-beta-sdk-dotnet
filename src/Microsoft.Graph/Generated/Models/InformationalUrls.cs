@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class InformationalUrls : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The appSignUpUrl property</summary>
         public string AppSignUpUrl {
-            get { return BackingStore?.Get<string>(nameof(AppSignUpUrl)); }
-            set { BackingStore?.Set(nameof(AppSignUpUrl), value); }
+            get { return BackingStore?.Get<string>("appSignUpUrl"); }
+            set { BackingStore?.Set("appSignUpUrl", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The singleSignOnDocumentationUrl property</summary>
         public string SingleSignOnDocumentationUrl {
-            get { return BackingStore?.Get<string>(nameof(SingleSignOnDocumentationUrl)); }
-            set { BackingStore?.Set(nameof(SingleSignOnDocumentationUrl), value); }
+            get { return BackingStore?.Get<string>("singleSignOnDocumentationUrl"); }
+            set { BackingStore?.Set("singleSignOnDocumentationUrl", value); }
         }
         /// <summary>
         /// Instantiates a new informationalUrls and sets the default values.

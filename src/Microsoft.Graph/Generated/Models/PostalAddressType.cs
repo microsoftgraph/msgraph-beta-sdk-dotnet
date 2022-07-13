@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class PostalAddressType : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The city property</summary>
         public string City {
-            get { return BackingStore?.Get<string>(nameof(City)); }
-            set { BackingStore?.Set(nameof(City), value); }
+            get { return BackingStore?.Get<string>("city"); }
+            set { BackingStore?.Set("city", value); }
         }
         /// <summary>The countryLetterCode property</summary>
         public string CountryLetterCode {
-            get { return BackingStore?.Get<string>(nameof(CountryLetterCode)); }
-            set { BackingStore?.Set(nameof(CountryLetterCode), value); }
+            get { return BackingStore?.Get<string>("countryLetterCode"); }
+            set { BackingStore?.Set("countryLetterCode", value); }
         }
         /// <summary>The postalCode property</summary>
         public string PostalCode {
-            get { return BackingStore?.Get<string>(nameof(PostalCode)); }
-            set { BackingStore?.Set(nameof(PostalCode), value); }
+            get { return BackingStore?.Get<string>("postalCode"); }
+            set { BackingStore?.Set("postalCode", value); }
         }
         /// <summary>The state property</summary>
         public string State {
-            get { return BackingStore?.Get<string>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<string>("state"); }
+            set { BackingStore?.Set("state", value); }
         }
         /// <summary>The street property</summary>
         public string Street {
-            get { return BackingStore?.Get<string>(nameof(Street)); }
-            set { BackingStore?.Set(nameof(Street), value); }
+            get { return BackingStore?.Get<string>("street"); }
+            set { BackingStore?.Set("street", value); }
         }
         /// <summary>
         /// Instantiates a new postalAddressType and sets the default values.

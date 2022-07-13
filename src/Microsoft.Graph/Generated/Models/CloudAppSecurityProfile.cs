@@ -4,92 +4,87 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class CloudAppSecurityProfile : Entity, IParsable {
         /// <summary>The azureSubscriptionId property</summary>
         public string AzureSubscriptionId {
-            get { return BackingStore?.Get<string>(nameof(AzureSubscriptionId)); }
-            set { BackingStore?.Set(nameof(AzureSubscriptionId), value); }
+            get { return BackingStore?.Get<string>("azureSubscriptionId"); }
+            set { BackingStore?.Set("azureSubscriptionId", value); }
         }
         /// <summary>The azureTenantId property</summary>
         public string AzureTenantId {
-            get { return BackingStore?.Get<string>(nameof(AzureTenantId)); }
-            set { BackingStore?.Set(nameof(AzureTenantId), value); }
+            get { return BackingStore?.Get<string>("azureTenantId"); }
+            set { BackingStore?.Set("azureTenantId", value); }
         }
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The deploymentPackageUrl property</summary>
         public string DeploymentPackageUrl {
-            get { return BackingStore?.Get<string>(nameof(DeploymentPackageUrl)); }
-            set { BackingStore?.Set(nameof(DeploymentPackageUrl), value); }
+            get { return BackingStore?.Get<string>("deploymentPackageUrl"); }
+            set { BackingStore?.Set("deploymentPackageUrl", value); }
         }
         /// <summary>The destinationServiceName property</summary>
         public string DestinationServiceName {
-            get { return BackingStore?.Get<string>(nameof(DestinationServiceName)); }
-            set { BackingStore?.Set(nameof(DestinationServiceName), value); }
+            get { return BackingStore?.Get<string>("destinationServiceName"); }
+            set { BackingStore?.Set("destinationServiceName", value); }
         }
         /// <summary>The isSigned property</summary>
         public bool? IsSigned {
-            get { return BackingStore?.Get<bool?>(nameof(IsSigned)); }
-            set { BackingStore?.Set(nameof(IsSigned), value); }
+            get { return BackingStore?.Get<bool?>("isSigned"); }
+            set { BackingStore?.Set("isSigned", value); }
         }
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The manifest property</summary>
         public string Manifest {
-            get { return BackingStore?.Get<string>(nameof(Manifest)); }
-            set { BackingStore?.Set(nameof(Manifest), value); }
+            get { return BackingStore?.Get<string>("manifest"); }
+            set { BackingStore?.Set("manifest", value); }
         }
         /// <summary>The name property</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The permissionsRequired property</summary>
         public ApplicationPermissionsRequired? PermissionsRequired {
-            get { return BackingStore?.Get<ApplicationPermissionsRequired?>(nameof(PermissionsRequired)); }
-            set { BackingStore?.Set(nameof(PermissionsRequired), value); }
+            get { return BackingStore?.Get<ApplicationPermissionsRequired?>("permissionsRequired"); }
+            set { BackingStore?.Set("permissionsRequired", value); }
         }
         /// <summary>The platform property</summary>
         public string Platform {
-            get { return BackingStore?.Get<string>(nameof(Platform)); }
-            set { BackingStore?.Set(nameof(Platform), value); }
+            get { return BackingStore?.Get<string>("platform"); }
+            set { BackingStore?.Set("platform", value); }
         }
         /// <summary>The policyName property</summary>
         public string PolicyName {
-            get { return BackingStore?.Get<string>(nameof(PolicyName)); }
-            set { BackingStore?.Set(nameof(PolicyName), value); }
+            get { return BackingStore?.Get<string>("policyName"); }
+            set { BackingStore?.Set("policyName", value); }
         }
         /// <summary>The publisher property</summary>
         public string Publisher {
-            get { return BackingStore?.Get<string>(nameof(Publisher)); }
-            set { BackingStore?.Set(nameof(Publisher), value); }
+            get { return BackingStore?.Get<string>("publisher"); }
+            set { BackingStore?.Set("publisher", value); }
         }
         /// <summary>The riskScore property</summary>
         public string RiskScore {
-            get { return BackingStore?.Get<string>(nameof(RiskScore)); }
-            set { BackingStore?.Set(nameof(RiskScore), value); }
+            get { return BackingStore?.Get<string>("riskScore"); }
+            set { BackingStore?.Set("riskScore", value); }
         }
         /// <summary>The tags property</summary>
         public List<string> Tags {
-            get { return BackingStore?.Get<List<string>>(nameof(Tags)); }
-            set { BackingStore?.Set(nameof(Tags), value); }
-        }
-        /// <summary>The type property</summary>
-        public string Type {
-            get { return BackingStore?.Get<string>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<List<string>>("tags"); }
+            set { BackingStore?.Set("tags", value); }
         }
         /// <summary>The vendorInformation property</summary>
         public SecurityVendorInformation VendorInformation {
-            get { return BackingStore?.Get<SecurityVendorInformation>(nameof(VendorInformation)); }
-            set { BackingStore?.Set(nameof(VendorInformation), value); }
+            get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
+            set { BackingStore?.Set("vendorInformation", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -119,7 +114,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"publisher", n => { Publisher = n.GetStringValue(); } },
                 {"riskScore", n => { RiskScore = n.GetStringValue(); } },
                 {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"type", n => { Type = n.GetStringValue(); } },
                 {"vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
             };
         }
@@ -145,7 +139,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("publisher", Publisher);
             writer.WriteStringValue("riskScore", RiskScore);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
-            writer.WriteStringValue("type", Type);
             writer.WriteObjectValue<SecurityVendorInformation>("vendorInformation", VendorInformation);
         }
     }

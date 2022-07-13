@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class AnonymousGuestConversationMember : ConversationMember, IParsable {
         /// <summary>Unique ID that represents the user. Note: This ID can change if the user leaves and rejoins the meeting, or joins from a different device.</summary>
         public string AnonymousGuestId {
-            get { return BackingStore?.Get<string>(nameof(AnonymousGuestId)); }
-            set { BackingStore?.Set(nameof(AnonymousGuestId), value); }
+            get { return BackingStore?.Get<string>("anonymousGuestId"); }
+            set { BackingStore?.Set("anonymousGuestId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

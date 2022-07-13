@@ -8,35 +8,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class PlannerTeamsPublicationInfo : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The date and time when this task was last modified by the publication process. Read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The identifier of the publication. Read-only.</summary>
         public string PublicationId {
-            get { return BackingStore?.Get<string>(nameof(PublicationId)); }
-            set { BackingStore?.Set(nameof(PublicationId), value); }
+            get { return BackingStore?.Get<string>("publicationId"); }
+            set { BackingStore?.Set("publicationId", value); }
         }
         /// <summary>The identifier of the plannerPlan this task was originally placed in. Read-only.</summary>
         public string PublishedToPlanId {
-            get { return BackingStore?.Get<string>(nameof(PublishedToPlanId)); }
-            set { BackingStore?.Set(nameof(PublishedToPlanId), value); }
+            get { return BackingStore?.Get<string>("publishedToPlanId"); }
+            set { BackingStore?.Set("publishedToPlanId", value); }
         }
         /// <summary>The identifier of the team that initiated the publication process. Read-only.</summary>
         public string PublishingTeamId {
-            get { return BackingStore?.Get<string>(nameof(PublishingTeamId)); }
-            set { BackingStore?.Set(nameof(PublishingTeamId), value); }
+            get { return BackingStore?.Get<string>("publishingTeamId"); }
+            set { BackingStore?.Set("publishingTeamId", value); }
         }
         /// <summary>The display name of the team that initiated the publication process. This display name is for reference only, and might not represent the most up-to-date name of the team. Read-only.</summary>
         public string PublishingTeamName {
-            get { return BackingStore?.Get<string>(nameof(PublishingTeamName)); }
-            set { BackingStore?.Set(nameof(PublishingTeamName), value); }
+            get { return BackingStore?.Get<string>("publishingTeamName"); }
+            set { BackingStore?.Set("publishingTeamName", value); }
         }
         /// <summary>
         /// Instantiates a new plannerTeamsPublicationInfo and sets the default values.

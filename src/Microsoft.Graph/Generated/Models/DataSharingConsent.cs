@@ -8,33 +8,33 @@ namespace Microsoft.Graph.Beta.Models {
     public class DataSharingConsent : Entity, IParsable {
         /// <summary>The time consent was granted for this account</summary>
         public DateTimeOffset? GrantDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(GrantDateTime)); }
-            set { BackingStore?.Set(nameof(GrantDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("grantDateTime"); }
+            set { BackingStore?.Set("grantDateTime", value); }
         }
         /// <summary>The granted state for the data sharing consent</summary>
         public bool? Granted {
-            get { return BackingStore?.Get<bool?>(nameof(Granted)); }
-            set { BackingStore?.Set(nameof(Granted), value); }
+            get { return BackingStore?.Get<bool?>("granted"); }
+            set { BackingStore?.Set("granted", value); }
         }
         /// <summary>The Upn of the user that granted consent for this account</summary>
         public string GrantedByUpn {
-            get { return BackingStore?.Get<string>(nameof(GrantedByUpn)); }
-            set { BackingStore?.Set(nameof(GrantedByUpn), value); }
+            get { return BackingStore?.Get<string>("grantedByUpn"); }
+            set { BackingStore?.Set("grantedByUpn", value); }
         }
         /// <summary>The UserId of the user that granted consent for this account</summary>
         public string GrantedByUserId {
-            get { return BackingStore?.Get<string>(nameof(GrantedByUserId)); }
-            set { BackingStore?.Set(nameof(GrantedByUserId), value); }
+            get { return BackingStore?.Get<string>("grantedByUserId"); }
+            set { BackingStore?.Set("grantedByUserId", value); }
         }
         /// <summary>The display name of the service work flow</summary>
         public string ServiceDisplayName {
-            get { return BackingStore?.Get<string>(nameof(ServiceDisplayName)); }
-            set { BackingStore?.Set(nameof(ServiceDisplayName), value); }
+            get { return BackingStore?.Get<string>("serviceDisplayName"); }
+            set { BackingStore?.Set("serviceDisplayName", value); }
         }
         /// <summary>The TermsUrl for the data sharing consent</summary>
         public string TermsUrl {
-            get { return BackingStore?.Get<string>(nameof(TermsUrl)); }
-            set { BackingStore?.Set(nameof(TermsUrl), value); }
+            get { return BackingStore?.Get<string>("termsUrl"); }
+            set { BackingStore?.Set("termsUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,103 +8,103 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsDevicePerformance : Entity, IParsable {
         /// <summary>Average (mean) number of Blue Screens per device in the last 14 days. Valid values 0 to 9999999</summary>
         public double? AverageBlueScreens {
-            get { return BackingStore?.Get<double?>(nameof(AverageBlueScreens)); }
-            set { BackingStore?.Set(nameof(AverageBlueScreens), value); }
+            get { return BackingStore?.Get<double?>("averageBlueScreens"); }
+            set { BackingStore?.Set("averageBlueScreens", value); }
         }
         /// <summary>Average (mean) number of Restarts per device in the last 14 days. Valid values 0 to 9999999</summary>
         public double? AverageRestarts {
-            get { return BackingStore?.Get<double?>(nameof(AverageRestarts)); }
-            set { BackingStore?.Set(nameof(AverageRestarts), value); }
+            get { return BackingStore?.Get<double?>("averageRestarts"); }
+            set { BackingStore?.Set("averageRestarts", value); }
         }
         /// <summary>Number of Blue Screens in the last 14 days. Valid values 0 to 9999999</summary>
         public int? BlueScreenCount {
-            get { return BackingStore?.Get<int?>(nameof(BlueScreenCount)); }
-            set { BackingStore?.Set(nameof(BlueScreenCount), value); }
+            get { return BackingStore?.Get<int?>("blueScreenCount"); }
+            set { BackingStore?.Set("blueScreenCount", value); }
         }
         /// <summary>The user experience analytics device boot score.</summary>
         public int? BootScore {
-            get { return BackingStore?.Get<int?>(nameof(BootScore)); }
-            set { BackingStore?.Set(nameof(BootScore), value); }
+            get { return BackingStore?.Get<int?>("bootScore"); }
+            set { BackingStore?.Set("bootScore", value); }
         }
         /// <summary>The user experience analytics device core boot time in milliseconds.</summary>
         public int? CoreBootTimeInMs {
-            get { return BackingStore?.Get<int?>(nameof(CoreBootTimeInMs)); }
-            set { BackingStore?.Set(nameof(CoreBootTimeInMs), value); }
+            get { return BackingStore?.Get<int?>("coreBootTimeInMs"); }
+            set { BackingStore?.Set("coreBootTimeInMs", value); }
         }
         /// <summary>The user experience analytics device core login time in milliseconds.</summary>
         public int? CoreLoginTimeInMs {
-            get { return BackingStore?.Get<int?>(nameof(CoreLoginTimeInMs)); }
-            set { BackingStore?.Set(nameof(CoreLoginTimeInMs), value); }
+            get { return BackingStore?.Get<int?>("coreLoginTimeInMs"); }
+            set { BackingStore?.Set("coreLoginTimeInMs", value); }
         }
         /// <summary>User experience analytics summarized device count.</summary>
         public long? DeviceCount {
-            get { return BackingStore?.Get<long?>(nameof(DeviceCount)); }
-            set { BackingStore?.Set(nameof(DeviceCount), value); }
+            get { return BackingStore?.Get<long?>("deviceCount"); }
+            set { BackingStore?.Set("deviceCount", value); }
         }
         /// <summary>The user experience analytics device name.</summary>
         public string DeviceName {
-            get { return BackingStore?.Get<string>(nameof(DeviceName)); }
-            set { BackingStore?.Set(nameof(DeviceName), value); }
+            get { return BackingStore?.Get<string>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
         }
-        /// <summary>The user experience analytics device disk type. Possible values are: unknown, hdd, ssd, unknownFutureValue.</summary>
+        /// <summary>The diskType property</summary>
         public Microsoft.Graph.Beta.Models.DiskType? DiskType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DiskType?>(nameof(DiskType)); }
-            set { BackingStore?.Set(nameof(DiskType), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DiskType?>("diskType"); }
+            set { BackingStore?.Set("diskType", value); }
         }
         /// <summary>The user experience analytics device group policy boot time in milliseconds.</summary>
         public int? GroupPolicyBootTimeInMs {
-            get { return BackingStore?.Get<int?>(nameof(GroupPolicyBootTimeInMs)); }
-            set { BackingStore?.Set(nameof(GroupPolicyBootTimeInMs), value); }
+            get { return BackingStore?.Get<int?>("groupPolicyBootTimeInMs"); }
+            set { BackingStore?.Set("groupPolicyBootTimeInMs", value); }
         }
         /// <summary>The user experience analytics device group policy login time in milliseconds.</summary>
         public int? GroupPolicyLoginTimeInMs {
-            get { return BackingStore?.Get<int?>(nameof(GroupPolicyLoginTimeInMs)); }
-            set { BackingStore?.Set(nameof(GroupPolicyLoginTimeInMs), value); }
+            get { return BackingStore?.Get<int?>("groupPolicyLoginTimeInMs"); }
+            set { BackingStore?.Set("groupPolicyLoginTimeInMs", value); }
         }
-        /// <summary>The health state of the user experience analytics device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.</summary>
+        /// <summary>The healthStatus property</summary>
         public UserExperienceAnalyticsHealthState? HealthStatus {
-            get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>(nameof(HealthStatus)); }
-            set { BackingStore?.Set(nameof(HealthStatus), value); }
+            get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>("healthStatus"); }
+            set { BackingStore?.Set("healthStatus", value); }
         }
         /// <summary>The user experience analytics device login score.</summary>
         public int? LoginScore {
-            get { return BackingStore?.Get<int?>(nameof(LoginScore)); }
-            set { BackingStore?.Set(nameof(LoginScore), value); }
+            get { return BackingStore?.Get<int?>("loginScore"); }
+            set { BackingStore?.Set("loginScore", value); }
         }
         /// <summary>The user experience analytics device manufacturer.</summary>
         public string Manufacturer {
-            get { return BackingStore?.Get<string>(nameof(Manufacturer)); }
-            set { BackingStore?.Set(nameof(Manufacturer), value); }
+            get { return BackingStore?.Get<string>("manufacturer"); }
+            set { BackingStore?.Set("manufacturer", value); }
         }
         /// <summary>The user experience analytics device model.</summary>
         public string Model {
-            get { return BackingStore?.Get<string>(nameof(Model)); }
-            set { BackingStore?.Set(nameof(Model), value); }
+            get { return BackingStore?.Get<string>("model"); }
+            set { BackingStore?.Set("model", value); }
         }
         /// <summary>The user experience analytics model level startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? ModelStartupPerformanceScore {
-            get { return BackingStore?.Get<double?>(nameof(ModelStartupPerformanceScore)); }
-            set { BackingStore?.Set(nameof(ModelStartupPerformanceScore), value); }
+            get { return BackingStore?.Get<double?>("modelStartupPerformanceScore"); }
+            set { BackingStore?.Set("modelStartupPerformanceScore", value); }
         }
         /// <summary>The user experience analytics device Operating System version.</summary>
         public string OperatingSystemVersion {
-            get { return BackingStore?.Get<string>(nameof(OperatingSystemVersion)); }
-            set { BackingStore?.Set(nameof(OperatingSystemVersion), value); }
+            get { return BackingStore?.Get<string>("operatingSystemVersion"); }
+            set { BackingStore?.Set("operatingSystemVersion", value); }
         }
         /// <summary>The user experience analytics responsive desktop time in milliseconds.</summary>
         public int? ResponsiveDesktopTimeInMs {
-            get { return BackingStore?.Get<int?>(nameof(ResponsiveDesktopTimeInMs)); }
-            set { BackingStore?.Set(nameof(ResponsiveDesktopTimeInMs), value); }
+            get { return BackingStore?.Get<int?>("responsiveDesktopTimeInMs"); }
+            set { BackingStore?.Set("responsiveDesktopTimeInMs", value); }
         }
         /// <summary>Number of Restarts in the last 14 days. Valid values 0 to 9999999</summary>
         public int? RestartCount {
-            get { return BackingStore?.Get<int?>(nameof(RestartCount)); }
-            set { BackingStore?.Set(nameof(RestartCount), value); }
+            get { return BackingStore?.Get<int?>("restartCount"); }
+            set { BackingStore?.Set("restartCount", value); }
         }
         /// <summary>The user experience analytics device startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? StartupPerformanceScore {
-            get { return BackingStore?.Get<double?>(nameof(StartupPerformanceScore)); }
-            set { BackingStore?.Set(nameof(StartupPerformanceScore), value); }
+            get { return BackingStore?.Get<double?>("startupPerformanceScore"); }
+            set { BackingStore?.Set("startupPerformanceScore", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

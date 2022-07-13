@@ -10,30 +10,35 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceActionResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Action name</summary>
         public string ActionName {
-            get { return BackingStore?.Get<string>(nameof(ActionName)); }
-            set { BackingStore?.Set(nameof(ActionName), value); }
+            get { return BackingStore?.Get<string>("actionName"); }
+            set { BackingStore?.Set("actionName", value); }
         }
-        /// <summary>State of the action. Possible values are: none, pending, canceled, active, done, failed, notSupported.</summary>
+        /// <summary>The actionState property</summary>
         public Microsoft.Graph.Beta.Models.ActionState? ActionState {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionState?>(nameof(ActionState)); }
-            set { BackingStore?.Set(nameof(ActionState), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionState?>("actionState"); }
+            set { BackingStore?.Set("actionState", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Time the action state was last updated</summary>
         public DateTimeOffset? LastUpdatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastUpdatedDateTime)); }
-            set { BackingStore?.Set(nameof(LastUpdatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
+            set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>Time the action was initiated</summary>
         public DateTimeOffset? StartDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(StartDateTime)); }
-            set { BackingStore?.Set(nameof(StartDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
+        }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new deviceActionResult and sets the default values.
@@ -41,6 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceActionResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Type = "#microsoft.graph.deviceActionResult";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -72,6 +78,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"actionState", n => { ActionState = n.GetEnumValue<ActionState>(); } },
                 {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -84,6 +91,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<ActionState>("actionState", ActionState);
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
+            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

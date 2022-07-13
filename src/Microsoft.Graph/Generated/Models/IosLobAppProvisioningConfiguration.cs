@@ -8,68 +8,68 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosLobAppProvisioningConfiguration : Entity, IParsable {
         /// <summary>The associated group assignments for IosLobAppProvisioningConfiguration.</summary>
         public List<IosLobAppProvisioningConfigurationAssignment> Assignments {
-            get { return BackingStore?.Get<List<IosLobAppProvisioningConfigurationAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<IosLobAppProvisioningConfigurationAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>DateTime the object was created.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Admin provided description of the Device Configuration.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The list of device installation states for this mobile app configuration.</summary>
         public List<ManagedDeviceMobileAppConfigurationDeviceStatus> DeviceStatuses {
-            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationDeviceStatus>>(nameof(DeviceStatuses)); }
-            set { BackingStore?.Set(nameof(DeviceStatuses), value); }
+            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationDeviceStatus>>("deviceStatuses"); }
+            set { BackingStore?.Set("deviceStatuses", value); }
         }
         /// <summary>Admin provided name of the device configuration.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Optional profile expiration date and time.</summary>
         public DateTimeOffset? ExpirationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpirationDateTime)); }
-            set { BackingStore?.Set(nameof(ExpirationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
+            set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>The associated group assignments.</summary>
         public List<MobileAppProvisioningConfigGroupAssignment> GroupAssignments {
-            get { return BackingStore?.Get<List<MobileAppProvisioningConfigGroupAssignment>>(nameof(GroupAssignments)); }
-            set { BackingStore?.Set(nameof(GroupAssignments), value); }
+            get { return BackingStore?.Get<List<MobileAppProvisioningConfigGroupAssignment>>("groupAssignments"); }
+            set { BackingStore?.Set("groupAssignments", value); }
         }
         /// <summary>DateTime the object was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Payload. (UTF8 encoded byte array)</summary>
         public byte[] Payload {
-            get { return BackingStore?.Get<byte[]>(nameof(Payload)); }
-            set { BackingStore?.Set(nameof(Payload), value); }
+            get { return BackingStore?.Get<byte[]>("payload"); }
+            set { BackingStore?.Set("payload", value); }
         }
         /// <summary>Payload file name (.mobileprovision</summary>
         public string PayloadFileName {
-            get { return BackingStore?.Get<string>(nameof(PayloadFileName)); }
-            set { BackingStore?.Set(nameof(PayloadFileName), value); }
+            get { return BackingStore?.Get<string>("payloadFileName"); }
+            set { BackingStore?.Set("payloadFileName", value); }
         }
         /// <summary>List of Scope Tags for this iOS LOB app provisioning configuration entity.</summary>
         public List<string> RoleScopeTagIds {
-            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTagIds)); }
-            set { BackingStore?.Set(nameof(RoleScopeTagIds), value); }
+            get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
         }
         /// <summary>The list of user installation states for this mobile app configuration.</summary>
         public List<ManagedDeviceMobileAppConfigurationUserStatus> UserStatuses {
-            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationUserStatus>>(nameof(UserStatuses)); }
-            set { BackingStore?.Set(nameof(UserStatuses), value); }
+            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationUserStatus>>("userStatuses"); }
+            set { BackingStore?.Set("userStatuses", value); }
         }
         /// <summary>Version of the device configuration.</summary>
         public int? Version {
-            get { return BackingStore?.Get<int?>(nameof(Version)); }
-            set { BackingStore?.Set(nameof(Version), value); }
+            get { return BackingStore?.Get<int?>("version"); }
+            set { BackingStore?.Set("version", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

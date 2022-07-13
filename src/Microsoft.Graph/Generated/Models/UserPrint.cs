@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserPrint : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The recentPrinterShares property</summary>
         public List<PrinterShare> RecentPrinterShares {
-            get { return BackingStore?.Get<List<PrinterShare>>(nameof(RecentPrinterShares)); }
-            set { BackingStore?.Set(nameof(RecentPrinterShares), value); }
+            get { return BackingStore?.Get<List<PrinterShare>>("recentPrinterShares"); }
+            set { BackingStore?.Set("recentPrinterShares", value); }
         }
         /// <summary>
         /// Instantiates a new userPrint and sets the default values.

@@ -4,57 +4,56 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Contains properties for the installation summary of a mobile app.</summary>
     public class MobileAppInstallSummary : Entity, IParsable {
         /// <summary>Number of Devices that have failed to install this app.</summary>
         public int? FailedDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(FailedDeviceCount)); }
-            set { BackingStore?.Set(nameof(FailedDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("failedDeviceCount"); }
+            set { BackingStore?.Set("failedDeviceCount", value); }
         }
         /// <summary>Number of Users that have 1 or more device that failed to install this app.</summary>
         public int? FailedUserCount {
-            get { return BackingStore?.Get<int?>(nameof(FailedUserCount)); }
-            set { BackingStore?.Set(nameof(FailedUserCount), value); }
+            get { return BackingStore?.Get<int?>("failedUserCount"); }
+            set { BackingStore?.Set("failedUserCount", value); }
         }
         /// <summary>Number of Devices that have successfully installed this app.</summary>
         public int? InstalledDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(InstalledDeviceCount)); }
-            set { BackingStore?.Set(nameof(InstalledDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("installedDeviceCount"); }
+            set { BackingStore?.Set("installedDeviceCount", value); }
         }
         /// <summary>Number of Users whose devices have all succeeded to install this app.</summary>
         public int? InstalledUserCount {
-            get { return BackingStore?.Get<int?>(nameof(InstalledUserCount)); }
-            set { BackingStore?.Set(nameof(InstalledUserCount), value); }
+            get { return BackingStore?.Get<int?>("installedUserCount"); }
+            set { BackingStore?.Set("installedUserCount", value); }
         }
         /// <summary>Number of Devices that are not applicable for this app.</summary>
         public int? NotApplicableDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(NotApplicableDeviceCount)); }
-            set { BackingStore?.Set(nameof(NotApplicableDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("notApplicableDeviceCount"); }
+            set { BackingStore?.Set("notApplicableDeviceCount", value); }
         }
         /// <summary>Number of Users whose devices were all not applicable for this app.</summary>
         public int? NotApplicableUserCount {
-            get { return BackingStore?.Get<int?>(nameof(NotApplicableUserCount)); }
-            set { BackingStore?.Set(nameof(NotApplicableUserCount), value); }
+            get { return BackingStore?.Get<int?>("notApplicableUserCount"); }
+            set { BackingStore?.Set("notApplicableUserCount", value); }
         }
         /// <summary>Number of Devices that does not have this app installed.</summary>
         public int? NotInstalledDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(NotInstalledDeviceCount)); }
-            set { BackingStore?.Set(nameof(NotInstalledDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("notInstalledDeviceCount"); }
+            set { BackingStore?.Set("notInstalledDeviceCount", value); }
         }
         /// <summary>Number of Users that have 1 or more devices that did not install this app.</summary>
         public int? NotInstalledUserCount {
-            get { return BackingStore?.Get<int?>(nameof(NotInstalledUserCount)); }
-            set { BackingStore?.Set(nameof(NotInstalledUserCount), value); }
+            get { return BackingStore?.Get<int?>("notInstalledUserCount"); }
+            set { BackingStore?.Set("notInstalledUserCount", value); }
         }
         /// <summary>Number of Devices that have been notified to install this app.</summary>
         public int? PendingInstallDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(PendingInstallDeviceCount)); }
-            set { BackingStore?.Set(nameof(PendingInstallDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("pendingInstallDeviceCount"); }
+            set { BackingStore?.Set("pendingInstallDeviceCount", value); }
         }
         /// <summary>Number of Users that have 1 or more device that have been notified to install this app and have 0 devices with failures.</summary>
         public int? PendingInstallUserCount {
-            get { return BackingStore?.Get<int?>(nameof(PendingInstallUserCount)); }
-            set { BackingStore?.Set(nameof(PendingInstallUserCount), value); }
+            get { return BackingStore?.Get<int?>("pendingInstallUserCount"); }
+            set { BackingStore?.Set("pendingInstallUserCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,43 +8,43 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceLogCollectionResponse : Entity, IParsable {
         /// <summary>The error code, if any. Valid values -9.22337203685478E+18 to 9.22337203685478E+18</summary>
         public long? ErrorCode {
-            get { return BackingStore?.Get<long?>(nameof(ErrorCode)); }
-            set { BackingStore?.Set(nameof(ErrorCode), value); }
+            get { return BackingStore?.Get<long?>("errorCode"); }
+            set { BackingStore?.Set("errorCode", value); }
         }
         /// <summary>The DateTime of the expiration of the logs</summary>
         public DateTimeOffset? ExpirationDateTimeUTC {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ExpirationDateTimeUTC)); }
-            set { BackingStore?.Set(nameof(ExpirationDateTimeUTC), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTimeUTC"); }
+            set { BackingStore?.Set("expirationDateTimeUTC", value); }
         }
         /// <summary>The UPN for who initiated the request</summary>
         public string InitiatedByUserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(InitiatedByUserPrincipalName)); }
-            set { BackingStore?.Set(nameof(InitiatedByUserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("initiatedByUserPrincipalName"); }
+            set { BackingStore?.Set("initiatedByUserPrincipalName", value); }
         }
         /// <summary>The device Id</summary>
         public string ManagedDeviceId {
-            get { return BackingStore?.Get<string>(nameof(ManagedDeviceId)); }
-            set { BackingStore?.Set(nameof(ManagedDeviceId), value); }
+            get { return BackingStore?.Get<string>("managedDeviceId"); }
+            set { BackingStore?.Set("managedDeviceId", value); }
         }
         /// <summary>The DateTime the request was received</summary>
         public DateTimeOffset? ReceivedDateTimeUTC {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(ReceivedDateTimeUTC)); }
-            set { BackingStore?.Set(nameof(ReceivedDateTimeUTC), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("receivedDateTimeUTC"); }
+            set { BackingStore?.Set("receivedDateTimeUTC", value); }
         }
         /// <summary>The DateTime of the request</summary>
         public DateTimeOffset? RequestedDateTimeUTC {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(RequestedDateTimeUTC)); }
-            set { BackingStore?.Set(nameof(RequestedDateTimeUTC), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("requestedDateTimeUTC"); }
+            set { BackingStore?.Set("requestedDateTimeUTC", value); }
         }
         /// <summary>The size of the logs. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? Size {
-            get { return BackingStore?.Get<double?>(nameof(Size)); }
-            set { BackingStore?.Set(nameof(Size), value); }
+            get { return BackingStore?.Get<double?>("size"); }
+            set { BackingStore?.Set("size", value); }
         }
         /// <summary>The status of the log collection request</summary>
         public string Status {
-            get { return BackingStore?.Get<string>(nameof(Status)); }
-            set { BackingStore?.Set(nameof(Status), value); }
+            get { return BackingStore?.Get<string>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

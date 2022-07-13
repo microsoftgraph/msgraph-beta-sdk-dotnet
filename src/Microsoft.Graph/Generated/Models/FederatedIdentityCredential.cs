@@ -4,32 +4,32 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class FederatedIdentityCredential : Entity, IParsable {
         /// <summary>Lists the audiences that can appear in the external token. This field is mandatory, and defaults to &apos;api://AzureADTokenExchange&apos;. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Azure AD in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. Required.</summary>
         public List<string> Audiences {
-            get { return BackingStore?.Get<List<string>>(nameof(Audiences)); }
-            set { BackingStore?.Set(nameof(Audiences), value); }
+            get { return BackingStore?.Get<List<string>>("audiences"); }
+            set { BackingStore?.Set("audiences", value); }
         }
         /// <summary>The un-validated, user-provided description of the federated identity credential. Optional.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>The URL of the external identity provider and must match the issuer claim of the external token being exchanged. The combination of the values of issuer and subject must be unique on the app. Required.</summary>
         public string Issuer {
-            get { return BackingStore?.Get<string>(nameof(Issuer)); }
-            set { BackingStore?.Set(nameof(Issuer), value); }
+            get { return BackingStore?.Get<string>("issuer"); }
+            set { BackingStore?.Set("issuer", value); }
         }
         /// <summary>is the unique identifier for the federated identity credential, which has a character limit of 120 characters and must be URL friendly. It is immutable once created. Required. Not nullable. Supports $filter (eq).</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Azure AD. The combination of issuer and subject must be unique on the app. Supports $filter (eq).</summary>
         public string Subject {
-            get { return BackingStore?.Get<string>(nameof(Subject)); }
-            set { BackingStore?.Set(nameof(Subject), value); }
+            get { return BackingStore?.Get<string>("subject"); }
+            set { BackingStore?.Set("subject", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

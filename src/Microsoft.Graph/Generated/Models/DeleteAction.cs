@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeleteAction : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The name of the item that was deleted.</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>File or Folder, depending on the type of the deleted item.</summary>
         public string ObjectType {
-            get { return BackingStore?.Get<string>(nameof(ObjectType)); }
-            set { BackingStore?.Set(nameof(ObjectType), value); }
+            get { return BackingStore?.Get<string>("objectType"); }
+            set { BackingStore?.Set("objectType", value); }
         }
         /// <summary>
         /// Instantiates a new deleteAction and sets the default values.

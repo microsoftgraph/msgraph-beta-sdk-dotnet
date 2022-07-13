@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class BufferDecryptionResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The decryptedBuffer property</summary>
         public byte[] DecryptedBuffer {
-            get { return BackingStore?.Get<byte[]>(nameof(DecryptedBuffer)); }
-            set { BackingStore?.Set(nameof(DecryptedBuffer), value); }
+            get { return BackingStore?.Get<byte[]>("decryptedBuffer"); }
+            set { BackingStore?.Set("decryptedBuffer", value); }
         }
         /// <summary>
-        /// Instantiates a new BufferDecryptionResult and sets the default values.
+        /// Instantiates a new bufferDecryptionResult and sets the default values.
         /// </summary>
         public BufferDecryptionResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

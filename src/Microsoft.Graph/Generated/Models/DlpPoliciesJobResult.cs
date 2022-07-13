@@ -8,25 +8,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class DlpPoliciesJobResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The auditCorrelationId property</summary>
         public string AuditCorrelationId {
-            get { return BackingStore?.Get<string>(nameof(AuditCorrelationId)); }
-            set { BackingStore?.Set(nameof(AuditCorrelationId), value); }
+            get { return BackingStore?.Get<string>("auditCorrelationId"); }
+            set { BackingStore?.Set("auditCorrelationId", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The evaluationDateTime property</summary>
         public DateTimeOffset? EvaluationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(EvaluationDateTime)); }
-            set { BackingStore?.Set(nameof(EvaluationDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("evaluationDateTime"); }
+            set { BackingStore?.Set("evaluationDateTime", value); }
         }
         /// <summary>The matchingRules property</summary>
         public List<MatchingDlpRule> MatchingRules {
-            get { return BackingStore?.Get<List<MatchingDlpRule>>(nameof(MatchingRules)); }
-            set { BackingStore?.Set(nameof(MatchingRules), value); }
+            get { return BackingStore?.Get<List<MatchingDlpRule>>("matchingRules"); }
+            set { BackingStore?.Set("matchingRules", value); }
         }
         /// <summary>
         /// Instantiates a new dlpPoliciesJobResult and sets the default values.

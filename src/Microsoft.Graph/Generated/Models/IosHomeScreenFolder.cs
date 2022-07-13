@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosHomeScreenFolder : IosHomeScreenItem, IParsable {
         /// <summary>Pages of Home Screen Layout Icons which must be applications or web clips. This collection can contain a maximum of 500 elements.</summary>
         public List<IosHomeScreenFolderPage> Pages {
-            get { return BackingStore?.Get<List<IosHomeScreenFolderPage>>(nameof(Pages)); }
-            set { BackingStore?.Set(nameof(Pages), value); }
+            get { return BackingStore?.Get<List<IosHomeScreenFolderPage>>("pages"); }
+            set { BackingStore?.Set("pages", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

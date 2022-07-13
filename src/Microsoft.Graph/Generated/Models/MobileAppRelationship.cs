@@ -9,28 +9,34 @@ namespace Microsoft.Graph.Beta.Models {
     public class MobileAppRelationship : Entity, IParsable {
         /// <summary>The target mobile app&apos;s display name.</summary>
         public string TargetDisplayName {
-            get { return BackingStore?.Get<string>(nameof(TargetDisplayName)); }
-            set { BackingStore?.Set(nameof(TargetDisplayName), value); }
+            get { return BackingStore?.Get<string>("targetDisplayName"); }
+            set { BackingStore?.Set("targetDisplayName", value); }
         }
         /// <summary>The target mobile app&apos;s display version.</summary>
         public string TargetDisplayVersion {
-            get { return BackingStore?.Get<string>(nameof(TargetDisplayVersion)); }
-            set { BackingStore?.Set(nameof(TargetDisplayVersion), value); }
+            get { return BackingStore?.Get<string>("targetDisplayVersion"); }
+            set { BackingStore?.Set("targetDisplayVersion", value); }
         }
         /// <summary>The target mobile app&apos;s app id.</summary>
         public string TargetId {
-            get { return BackingStore?.Get<string>(nameof(TargetId)); }
-            set { BackingStore?.Set(nameof(TargetId), value); }
+            get { return BackingStore?.Get<string>("targetId"); }
+            set { BackingStore?.Set("targetId", value); }
         }
         /// <summary>The target mobile app&apos;s publisher.</summary>
         public string TargetPublisher {
-            get { return BackingStore?.Get<string>(nameof(TargetPublisher)); }
-            set { BackingStore?.Set(nameof(TargetPublisher), value); }
+            get { return BackingStore?.Get<string>("targetPublisher"); }
+            set { BackingStore?.Set("targetPublisher", value); }
         }
-        /// <summary>The type of relationship indicating whether the target is a parent or child. Possible values are: child, parent.</summary>
+        /// <summary>Indicates whether the target of a relationship is the parent or the child in the relationship.</summary>
         public MobileAppRelationshipType? TargetType {
-            get { return BackingStore?.Get<MobileAppRelationshipType?>(nameof(TargetType)); }
-            set { BackingStore?.Set(nameof(TargetType), value); }
+            get { return BackingStore?.Get<MobileAppRelationshipType?>("targetType"); }
+            set { BackingStore?.Set("targetType", value); }
+        }
+        /// <summary>
+        /// Instantiates a new mobileAppRelationship and sets the default values.
+        /// </summary>
+        public MobileAppRelationship() : base() {
+            Type = "#microsoft.graph.mobileAppRelationship";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,8 +9,14 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class ResourceConnection : Entity, IParsable {
         /// <summary>The state property</summary>
         public ResourceConnectionState? State {
-            get { return BackingStore?.Get<ResourceConnectionState?>(nameof(State)); }
-            set { BackingStore?.Set(nameof(State), value); }
+            get { return BackingStore?.Get<ResourceConnectionState?>("state"); }
+            set { BackingStore?.Set("state", value); }
+        }
+        /// <summary>
+        /// Instantiates a new resourceConnection and sets the default values.
+        /// </summary>
+        public ResourceConnection() : base() {
+            Type = "#microsoft.graph.windowsUpdates.resourceConnection";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

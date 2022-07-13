@@ -8,15 +8,15 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceHealth : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The last time the device was connected.</summary>
         public DateTimeOffset? LastConnectionTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastConnectionTime)); }
-            set { BackingStore?.Set(nameof(LastConnectionTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastConnectionTime"); }
+            set { BackingStore?.Set("lastConnectionTime", value); }
         }
         /// <summary>
         /// Instantiates a new deviceHealth and sets the default values.

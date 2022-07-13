@@ -4,32 +4,32 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AppConsentRequest : Entity, IParsable {
         /// <summary>The display name of the app for which consent is requested. Required. Supports $filter (eq only) and $orderby.</summary>
         public string AppDisplayName {
-            get { return BackingStore?.Get<string>(nameof(AppDisplayName)); }
-            set { BackingStore?.Set(nameof(AppDisplayName), value); }
+            get { return BackingStore?.Get<string>("appDisplayName"); }
+            set { BackingStore?.Set("appDisplayName", value); }
         }
         /// <summary>The identifier of the application. Required. Supports $filter (eq only) and $orderby.</summary>
         public string AppId {
-            get { return BackingStore?.Get<string>(nameof(AppId)); }
-            set { BackingStore?.Set(nameof(AppId), value); }
+            get { return BackingStore?.Get<string>("appId"); }
+            set { BackingStore?.Set("appId", value); }
         }
         /// <summary>The consent type of the request. Possible values are: Static and Dynamic. These represent static and dynamic permissions, respectively, requested in the consent workflow. Supports $filter (eq only) and $orderby. Required.</summary>
         public string ConsentType {
-            get { return BackingStore?.Get<string>(nameof(ConsentType)); }
-            set { BackingStore?.Set(nameof(ConsentType), value); }
+            get { return BackingStore?.Get<string>("consentType"); }
+            set { BackingStore?.Set("consentType", value); }
         }
         /// <summary>A list of pending scopes waiting for approval. This is empty if the consentType is Static. Required.</summary>
         public List<AppConsentRequestScope> PendingScopes {
-            get { return BackingStore?.Get<List<AppConsentRequestScope>>(nameof(PendingScopes)); }
-            set { BackingStore?.Set(nameof(PendingScopes), value); }
+            get { return BackingStore?.Get<List<AppConsentRequestScope>>("pendingScopes"); }
+            set { BackingStore?.Set("pendingScopes", value); }
         }
         /// <summary>A list of pending user consent requests.</summary>
         public List<UserConsentRequest> UserConsentRequests {
-            get { return BackingStore?.Get<List<UserConsentRequest>>(nameof(UserConsentRequests)); }
-            set { BackingStore?.Set(nameof(UserConsentRequests), value); }
+            get { return BackingStore?.Get<List<UserConsentRequest>>("userConsentRequests"); }
+            set { BackingStore?.Set("userConsentRequests", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

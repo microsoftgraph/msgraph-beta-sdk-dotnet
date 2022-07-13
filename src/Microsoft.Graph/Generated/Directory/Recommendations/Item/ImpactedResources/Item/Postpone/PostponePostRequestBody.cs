@@ -9,15 +9,15 @@ namespace Microsoft.Graph.Beta.Directory.Recommendations.Item.ImpactedResources.
     public class PostponePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The postponeUntilDateTime property</summary>
         public DateTimeOffset? PostponeUntilDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(PostponeUntilDateTime)); }
-            set { BackingStore?.Set(nameof(PostponeUntilDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("postponeUntilDateTime"); }
+            set { BackingStore?.Set("postponeUntilDateTime", value); }
         }
         /// <summary>
         /// Instantiates a new postponePostRequestBody and sets the default values.

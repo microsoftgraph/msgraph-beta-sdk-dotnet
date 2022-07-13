@@ -7,43 +7,43 @@ namespace Microsoft.Graph.Beta.Models {
     public class PlannerUser : PlannerDelta, IParsable {
         /// <summary>The all property</summary>
         public List<PlannerDelta> All {
-            get { return BackingStore?.Get<List<PlannerDelta>>(nameof(All)); }
-            set { BackingStore?.Set(nameof(All), value); }
+            get { return BackingStore?.Get<List<PlannerDelta>>("all"); }
+            set { BackingStore?.Set("all", value); }
         }
         /// <summary>A collection containing the references to the plans that the user has marked as favorites.</summary>
         public PlannerFavoritePlanReferenceCollection FavoritePlanReferences {
-            get { return BackingStore?.Get<PlannerFavoritePlanReferenceCollection>(nameof(FavoritePlanReferences)); }
-            set { BackingStore?.Set(nameof(FavoritePlanReferences), value); }
+            get { return BackingStore?.Get<PlannerFavoritePlanReferenceCollection>("favoritePlanReferences"); }
+            set { BackingStore?.Set("favoritePlanReferences", value); }
         }
         /// <summary>Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.</summary>
         public List<PlannerPlan> FavoritePlans {
-            get { return BackingStore?.Get<List<PlannerPlan>>(nameof(FavoritePlans)); }
-            set { BackingStore?.Set(nameof(FavoritePlans), value); }
+            get { return BackingStore?.Get<List<PlannerPlan>>("favoritePlans"); }
+            set { BackingStore?.Set("favoritePlans", value); }
         }
         /// <summary>Read-only. Nullable. Returns the plannerTasks assigned to the user.</summary>
         public List<PlannerPlan> Plans {
-            get { return BackingStore?.Get<List<PlannerPlan>>(nameof(Plans)); }
-            set { BackingStore?.Set(nameof(Plans), value); }
+            get { return BackingStore?.Get<List<PlannerPlan>>("plans"); }
+            set { BackingStore?.Set("plans", value); }
         }
         /// <summary>A collection containing references to the plans that were viewed recently by the user in apps that support recent plans.</summary>
         public PlannerRecentPlanReferenceCollection RecentPlanReferences {
-            get { return BackingStore?.Get<PlannerRecentPlanReferenceCollection>(nameof(RecentPlanReferences)); }
-            set { BackingStore?.Set(nameof(RecentPlanReferences), value); }
+            get { return BackingStore?.Get<PlannerRecentPlanReferenceCollection>("recentPlanReferences"); }
+            set { BackingStore?.Set("recentPlanReferences", value); }
         }
         /// <summary>Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.</summary>
         public List<PlannerPlan> RecentPlans {
-            get { return BackingStore?.Get<List<PlannerPlan>>(nameof(RecentPlans)); }
-            set { BackingStore?.Set(nameof(RecentPlans), value); }
+            get { return BackingStore?.Get<List<PlannerPlan>>("recentPlans"); }
+            set { BackingStore?.Set("recentPlans", value); }
         }
         /// <summary>Read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.</summary>
         public List<PlannerPlan> RosterPlans {
-            get { return BackingStore?.Get<List<PlannerPlan>>(nameof(RosterPlans)); }
-            set { BackingStore?.Set(nameof(RosterPlans), value); }
+            get { return BackingStore?.Get<List<PlannerPlan>>("rosterPlans"); }
+            set { BackingStore?.Set("rosterPlans", value); }
         }
         /// <summary>Read-only. Nullable. Returns the plannerTasks assigned to the user.</summary>
         public List<PlannerTask> Tasks {
-            get { return BackingStore?.Get<List<PlannerTask>>(nameof(Tasks)); }
-            set { BackingStore?.Set(nameof(Tasks), value); }
+            get { return BackingStore?.Get<List<PlannerTask>>("tasks"); }
+            set { BackingStore?.Set("tasks", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

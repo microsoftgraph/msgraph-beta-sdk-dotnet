@@ -8,23 +8,23 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementScriptUserState : Entity, IParsable {
         /// <summary>List of run states for this script across all devices of specific user.</summary>
         public List<DeviceManagementScriptDeviceState> DeviceRunStates {
-            get { return BackingStore?.Get<List<DeviceManagementScriptDeviceState>>(nameof(DeviceRunStates)); }
-            set { BackingStore?.Set(nameof(DeviceRunStates), value); }
+            get { return BackingStore?.Get<List<DeviceManagementScriptDeviceState>>("deviceRunStates"); }
+            set { BackingStore?.Set("deviceRunStates", value); }
         }
         /// <summary>Error device count for specific user.</summary>
         public int? ErrorDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(ErrorDeviceCount)); }
-            set { BackingStore?.Set(nameof(ErrorDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("errorDeviceCount"); }
+            set { BackingStore?.Set("errorDeviceCount", value); }
         }
         /// <summary>Success device count for specific user.</summary>
         public int? SuccessDeviceCount {
-            get { return BackingStore?.Get<int?>(nameof(SuccessDeviceCount)); }
-            set { BackingStore?.Set(nameof(SuccessDeviceCount), value); }
+            get { return BackingStore?.Get<int?>("successDeviceCount"); }
+            set { BackingStore?.Set("successDeviceCount", value); }
         }
         /// <summary>User principle name of specific user.</summary>
         public string UserPrincipalName {
-            get { return BackingStore?.Get<string>(nameof(UserPrincipalName)); }
-            set { BackingStore?.Set(nameof(UserPrincipalName), value); }
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

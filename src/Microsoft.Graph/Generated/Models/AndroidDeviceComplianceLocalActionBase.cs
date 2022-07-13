@@ -8,8 +8,14 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceComplianceLocalActionBase : Entity, IParsable {
         /// <summary>Number of minutes to wait till a local action is enforced. Valid values 0 to 2147483647</summary>
         public int? GracePeriodInMinutes {
-            get { return BackingStore?.Get<int?>(nameof(GracePeriodInMinutes)); }
-            set { BackingStore?.Set(nameof(GracePeriodInMinutes), value); }
+            get { return BackingStore?.Get<int?>("gracePeriodInMinutes"); }
+            set { BackingStore?.Set("gracePeriodInMinutes", value); }
+        }
+        /// <summary>
+        /// Instantiates a new AndroidDeviceComplianceLocalActionBase and sets the default values.
+        /// </summary>
+        public AndroidDeviceComplianceLocalActionBase() : base() {
+            Type = "#microsoft.graph.androidDeviceComplianceLocalActionBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

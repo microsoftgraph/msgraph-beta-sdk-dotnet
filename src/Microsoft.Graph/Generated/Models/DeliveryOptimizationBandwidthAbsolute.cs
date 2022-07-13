@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeliveryOptimizationBandwidthAbsolute : DeliveryOptimizationBandwidth, IParsable {
         /// <summary>Specifies the maximum download bandwidth in KiloBytes/second that the device can use across all concurrent download activities using Delivery Optimization. Valid values 0 to 4294967295</summary>
         public long? MaximumDownloadBandwidthInKilobytesPerSecond {
-            get { return BackingStore?.Get<long?>(nameof(MaximumDownloadBandwidthInKilobytesPerSecond)); }
-            set { BackingStore?.Set(nameof(MaximumDownloadBandwidthInKilobytesPerSecond), value); }
+            get { return BackingStore?.Get<long?>("maximumDownloadBandwidthInKilobytesPerSecond"); }
+            set { BackingStore?.Set("maximumDownloadBandwidthInKilobytesPerSecond", value); }
         }
         /// <summary>Specifies the maximum upload bandwidth in KiloBytes/second that a device will use across all concurrent upload activity using Delivery Optimization (0-4000000). Valid values 0 to 4000000</summary>
         public long? MaximumUploadBandwidthInKilobytesPerSecond {
-            get { return BackingStore?.Get<long?>(nameof(MaximumUploadBandwidthInKilobytesPerSecond)); }
-            set { BackingStore?.Set(nameof(MaximumUploadBandwidthInKilobytesPerSecond), value); }
+            get { return BackingStore?.Get<long?>("maximumUploadBandwidthInKilobytesPerSecond"); }
+            set { BackingStore?.Set("maximumUploadBandwidthInKilobytesPerSecond", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,20 +8,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class AttackSimulationRepeatOffender : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>User in an attack simulation and training campaign.</summary>
         public Microsoft.Graph.Beta.Models.AttackSimulationUser AttackSimulationUser {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttackSimulationUser>(nameof(AttackSimulationUser)); }
-            set { BackingStore?.Set(nameof(AttackSimulationUser), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttackSimulationUser>("attackSimulationUser"); }
+            set { BackingStore?.Set("attackSimulationUser", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Number of repeat offences of the user in attack simulation and training campaigns.</summary>
         public int? RepeatOffenceCount {
-            get { return BackingStore?.Get<int?>(nameof(RepeatOffenceCount)); }
-            set { BackingStore?.Set(nameof(RepeatOffenceCount), value); }
+            get { return BackingStore?.Get<int?>("repeatOffenceCount"); }
+            set { BackingStore?.Set("repeatOffenceCount", value); }
         }
         /// <summary>
         /// Instantiates a new attackSimulationRepeatOffender and sets the default values.

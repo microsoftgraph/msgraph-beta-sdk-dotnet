@@ -8,68 +8,68 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementCompliancePolicy : Entity, IParsable {
         /// <summary>Policy assignments</summary>
         public List<DeviceManagementConfigurationPolicyAssignment> Assignments {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationPolicyAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationPolicyAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>Policy creation date and time. This property is read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Policy creation source</summary>
         public string CreationSource {
-            get { return BackingStore?.Get<string>(nameof(CreationSource)); }
-            set { BackingStore?.Set(nameof(CreationSource), value); }
+            get { return BackingStore?.Get<string>("creationSource"); }
+            set { BackingStore?.Set("creationSource", value); }
         }
         /// <summary>Policy description</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Policy assignment status. This property is read-only.</summary>
         public bool? IsAssigned {
-            get { return BackingStore?.Get<bool?>(nameof(IsAssigned)); }
-            set { BackingStore?.Set(nameof(IsAssigned), value); }
+            get { return BackingStore?.Get<bool?>("isAssigned"); }
+            set { BackingStore?.Set("isAssigned", value); }
         }
         /// <summary>Policy last modification date and time. This property is read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Policy name</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
-        /// <summary>Platforms for this policy. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.</summary>
+        /// <summary>Supported platform types.</summary>
         public DeviceManagementConfigurationPlatforms? Platforms {
-            get { return BackingStore?.Get<DeviceManagementConfigurationPlatforms?>(nameof(Platforms)); }
-            set { BackingStore?.Set(nameof(Platforms), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationPlatforms?>("platforms"); }
+            set { BackingStore?.Set("platforms", value); }
         }
         /// <summary>List of Scope Tags for this Entity instance.</summary>
         public List<string> RoleScopeTagIds {
-            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTagIds)); }
-            set { BackingStore?.Set(nameof(RoleScopeTagIds), value); }
+            get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
         }
         /// <summary>The list of scheduled action for this rule</summary>
         public List<DeviceManagementComplianceScheduledActionForRule> ScheduledActionsForRule {
-            get { return BackingStore?.Get<List<DeviceManagementComplianceScheduledActionForRule>>(nameof(ScheduledActionsForRule)); }
-            set { BackingStore?.Set(nameof(ScheduledActionsForRule), value); }
+            get { return BackingStore?.Get<List<DeviceManagementComplianceScheduledActionForRule>>("scheduledActionsForRule"); }
+            set { BackingStore?.Set("scheduledActionsForRule", value); }
         }
         /// <summary>Number of settings. This property is read-only.</summary>
         public int? SettingCount {
-            get { return BackingStore?.Get<int?>(nameof(SettingCount)); }
-            set { BackingStore?.Set(nameof(SettingCount), value); }
+            get { return BackingStore?.Get<int?>("settingCount"); }
+            set { BackingStore?.Set("settingCount", value); }
         }
         /// <summary>Policy settings</summary>
         public List<DeviceManagementConfigurationSetting> Settings {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSetting>>(nameof(Settings)); }
-            set { BackingStore?.Set(nameof(Settings), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationSetting>>("settings"); }
+            set { BackingStore?.Set("settings", value); }
         }
-        /// <summary>Technologies for this policy. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.</summary>
+        /// <summary>Describes which technology this setting can be deployed with</summary>
         public DeviceManagementConfigurationTechnologies? Technologies {
-            get { return BackingStore?.Get<DeviceManagementConfigurationTechnologies?>(nameof(Technologies)); }
-            set { BackingStore?.Set(nameof(Technologies), value); }
+            get { return BackingStore?.Get<DeviceManagementConfigurationTechnologies?>("technologies"); }
+            set { BackingStore?.Set("technologies", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

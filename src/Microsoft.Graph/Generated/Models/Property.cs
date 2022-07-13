@@ -8,50 +8,50 @@ namespace Microsoft.Graph.Beta.Models {
     public class Property : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The aliases property</summary>
         public List<string> Aliases {
-            get { return BackingStore?.Get<List<string>>(nameof(Aliases)); }
-            set { BackingStore?.Set(nameof(Aliases), value); }
+            get { return BackingStore?.Get<List<string>>("aliases"); }
+            set { BackingStore?.Set("aliases", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The isQueryable property</summary>
         public bool? IsQueryable {
-            get { return BackingStore?.Get<bool?>(nameof(IsQueryable)); }
-            set { BackingStore?.Set(nameof(IsQueryable), value); }
+            get { return BackingStore?.Get<bool?>("isQueryable"); }
+            set { BackingStore?.Set("isQueryable", value); }
         }
         /// <summary>The isRefinable property</summary>
         public bool? IsRefinable {
-            get { return BackingStore?.Get<bool?>(nameof(IsRefinable)); }
-            set { BackingStore?.Set(nameof(IsRefinable), value); }
+            get { return BackingStore?.Get<bool?>("isRefinable"); }
+            set { BackingStore?.Set("isRefinable", value); }
         }
         /// <summary>The isRetrievable property</summary>
         public bool? IsRetrievable {
-            get { return BackingStore?.Get<bool?>(nameof(IsRetrievable)); }
-            set { BackingStore?.Set(nameof(IsRetrievable), value); }
+            get { return BackingStore?.Get<bool?>("isRetrievable"); }
+            set { BackingStore?.Set("isRetrievable", value); }
         }
         /// <summary>The isSearchable property</summary>
         public bool? IsSearchable {
-            get { return BackingStore?.Get<bool?>(nameof(IsSearchable)); }
-            set { BackingStore?.Set(nameof(IsSearchable), value); }
+            get { return BackingStore?.Get<bool?>("isSearchable"); }
+            set { BackingStore?.Set("isSearchable", value); }
         }
         /// <summary>The labels property</summary>
         public List<string> Labels {
-            get { return BackingStore?.Get<List<string>>(nameof(Labels)); }
-            set { BackingStore?.Set(nameof(Labels), value); }
+            get { return BackingStore?.Get<List<string>>("labels"); }
+            set { BackingStore?.Set("labels", value); }
         }
         /// <summary>The name property</summary>
         public string Name {
-            get { return BackingStore?.Get<string>(nameof(Name)); }
-            set { BackingStore?.Set(nameof(Name), value); }
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
         }
         /// <summary>The type property</summary>
         public PropertyType? Type {
-            get { return BackingStore?.Get<PropertyType?>(nameof(Type)); }
-            set { BackingStore?.Set(nameof(Type), value); }
+            get { return BackingStore?.Get<PropertyType?>("type"); }
+            set { BackingStore?.Set("type", value); }
         }
         /// <summary>
         /// Instantiates a new property and sets the default values.

@@ -8,83 +8,83 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceShellScript : Entity, IParsable {
         /// <summary>The list of group assignments for the device management script.</summary>
         public List<DeviceManagementScriptAssignment> Assignments {
-            get { return BackingStore?.Get<List<DeviceManagementScriptAssignment>>(nameof(Assignments)); }
-            set { BackingStore?.Set(nameof(Assignments), value); }
+            get { return BackingStore?.Get<List<DeviceManagementScriptAssignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
         }
         /// <summary>Does not notify the user a script is being executed</summary>
         public bool? BlockExecutionNotifications {
-            get { return BackingStore?.Get<bool?>(nameof(BlockExecutionNotifications)); }
-            set { BackingStore?.Set(nameof(BlockExecutionNotifications), value); }
+            get { return BackingStore?.Get<bool?>("blockExecutionNotifications"); }
+            set { BackingStore?.Set("blockExecutionNotifications", value); }
         }
         /// <summary>The date and time the device management script was created. This property is read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(CreatedDateTime)); }
-            set { BackingStore?.Set(nameof(CreatedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Optional description for the device management script.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>List of run states for this script across all devices.</summary>
         public List<DeviceManagementScriptDeviceState> DeviceRunStates {
-            get { return BackingStore?.Get<List<DeviceManagementScriptDeviceState>>(nameof(DeviceRunStates)); }
-            set { BackingStore?.Set(nameof(DeviceRunStates), value); }
+            get { return BackingStore?.Get<List<DeviceManagementScriptDeviceState>>("deviceRunStates"); }
+            set { BackingStore?.Set("deviceRunStates", value); }
         }
         /// <summary>Name of the device management script.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The interval for script to run. If not defined the script will run once</summary>
         public TimeSpan? ExecutionFrequency {
-            get { return BackingStore?.Get<TimeSpan?>(nameof(ExecutionFrequency)); }
-            set { BackingStore?.Set(nameof(ExecutionFrequency), value); }
+            get { return BackingStore?.Get<TimeSpan?>("executionFrequency"); }
+            set { BackingStore?.Set("executionFrequency", value); }
         }
         /// <summary>Script file name.</summary>
         public string FileName {
-            get { return BackingStore?.Get<string>(nameof(FileName)); }
-            set { BackingStore?.Set(nameof(FileName), value); }
+            get { return BackingStore?.Get<string>("fileName"); }
+            set { BackingStore?.Set("fileName", value); }
         }
         /// <summary>The list of group assignments for the device management script.</summary>
         public List<DeviceManagementScriptGroupAssignment> GroupAssignments {
-            get { return BackingStore?.Get<List<DeviceManagementScriptGroupAssignment>>(nameof(GroupAssignments)); }
-            set { BackingStore?.Set(nameof(GroupAssignments), value); }
+            get { return BackingStore?.Get<List<DeviceManagementScriptGroupAssignment>>("groupAssignments"); }
+            set { BackingStore?.Set("groupAssignments", value); }
         }
         /// <summary>The date and time the device management script was last modified. This property is read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(LastModifiedDateTime)); }
-            set { BackingStore?.Set(nameof(LastModifiedDateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Number of times for the script to be retried if it fails</summary>
         public int? RetryCount {
-            get { return BackingStore?.Get<int?>(nameof(RetryCount)); }
-            set { BackingStore?.Set(nameof(RetryCount), value); }
+            get { return BackingStore?.Get<int?>("retryCount"); }
+            set { BackingStore?.Set("retryCount", value); }
         }
         /// <summary>List of Scope Tag IDs for this PowerShellScript instance.</summary>
         public List<string> RoleScopeTagIds {
-            get { return BackingStore?.Get<List<string>>(nameof(RoleScopeTagIds)); }
-            set { BackingStore?.Set(nameof(RoleScopeTagIds), value); }
+            get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
         }
-        /// <summary>Indicates the type of execution context. Possible values are: system, user.</summary>
+        /// <summary>Indicates the type of execution context the app runs in.</summary>
         public RunAsAccountType? RunAsAccount {
-            get { return BackingStore?.Get<RunAsAccountType?>(nameof(RunAsAccount)); }
-            set { BackingStore?.Set(nameof(RunAsAccount), value); }
+            get { return BackingStore?.Get<RunAsAccountType?>("runAsAccount"); }
+            set { BackingStore?.Set("runAsAccount", value); }
         }
         /// <summary>Run summary for device management script.</summary>
         public DeviceManagementScriptRunSummary RunSummary {
-            get { return BackingStore?.Get<DeviceManagementScriptRunSummary>(nameof(RunSummary)); }
-            set { BackingStore?.Set(nameof(RunSummary), value); }
+            get { return BackingStore?.Get<DeviceManagementScriptRunSummary>("runSummary"); }
+            set { BackingStore?.Set("runSummary", value); }
         }
         /// <summary>The script content.</summary>
         public byte[] ScriptContent {
-            get { return BackingStore?.Get<byte[]>(nameof(ScriptContent)); }
-            set { BackingStore?.Set(nameof(ScriptContent), value); }
+            get { return BackingStore?.Get<byte[]>("scriptContent"); }
+            set { BackingStore?.Set("scriptContent", value); }
         }
         /// <summary>List of run states for this script across all users.</summary>
         public List<DeviceManagementScriptUserState> UserRunStates {
-            get { return BackingStore?.Get<List<DeviceManagementScriptUserState>>(nameof(UserRunStates)); }
-            set { BackingStore?.Set(nameof(UserRunStates), value); }
+            get { return BackingStore?.Get<List<DeviceManagementScriptUserState>>("userRunStates"); }
+            set { BackingStore?.Set("userRunStates", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

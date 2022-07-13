@@ -8,30 +8,30 @@ namespace Microsoft.Graph.Beta.Models {
     public class DiscoveredSensitiveType : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The classificationAttributes property</summary>
         public List<ClassificationAttribute> ClassificationAttributes {
-            get { return BackingStore?.Get<List<ClassificationAttribute>>(nameof(ClassificationAttributes)); }
-            set { BackingStore?.Set(nameof(ClassificationAttributes), value); }
+            get { return BackingStore?.Get<List<ClassificationAttribute>>("classificationAttributes"); }
+            set { BackingStore?.Set("classificationAttributes", value); }
         }
         /// <summary>The confidence property</summary>
         public int? Confidence {
-            get { return BackingStore?.Get<int?>(nameof(Confidence)); }
-            set { BackingStore?.Set(nameof(Confidence), value); }
+            get { return BackingStore?.Get<int?>("confidence"); }
+            set { BackingStore?.Set("confidence", value); }
         }
         /// <summary>The count property</summary>
         public int? Count {
-            get { return BackingStore?.Get<int?>(nameof(Count)); }
-            set { BackingStore?.Set(nameof(Count), value); }
+            get { return BackingStore?.Get<int?>("count"); }
+            set { BackingStore?.Set("count", value); }
         }
         /// <summary>The id property</summary>
         public string Id {
-            get { return BackingStore?.Get<string>(nameof(Id)); }
-            set { BackingStore?.Set(nameof(Id), value); }
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
         }
         /// <summary>
         /// Instantiates a new discoveredSensitiveType and sets the default values.

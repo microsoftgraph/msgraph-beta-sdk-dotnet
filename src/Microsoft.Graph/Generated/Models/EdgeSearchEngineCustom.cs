@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class EdgeSearchEngineCustom : EdgeSearchEngineBase, IParsable {
         /// <summary>Points to a https link containing the OpenSearch xml file that contains, at minimum, the short name and the URL to the search Engine.</summary>
         public string EdgeSearchEngineOpenSearchXmlUrl {
-            get { return BackingStore?.Get<string>(nameof(EdgeSearchEngineOpenSearchXmlUrl)); }
-            set { BackingStore?.Set(nameof(EdgeSearchEngineOpenSearchXmlUrl), value); }
+            get { return BackingStore?.Get<string>("edgeSearchEngineOpenSearchXmlUrl"); }
+            set { BackingStore?.Set("edgeSearchEngineOpenSearchXmlUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class RevokeAppleVppLicensesActionResult : DeviceActionResult, IParsable {
         /// <summary>Total number of Apple Vpp licenses that failed to revoke</summary>
         public int? FailedLicensesCount {
-            get { return BackingStore?.Get<int?>(nameof(FailedLicensesCount)); }
-            set { BackingStore?.Set(nameof(FailedLicensesCount), value); }
+            get { return BackingStore?.Get<int?>("failedLicensesCount"); }
+            set { BackingStore?.Set("failedLicensesCount", value); }
         }
         /// <summary>Total number of Apple Vpp licenses associated</summary>
         public int? TotalLicensesCount {
-            get { return BackingStore?.Get<int?>(nameof(TotalLicensesCount)); }
-            set { BackingStore?.Set(nameof(TotalLicensesCount), value); }
+            get { return BackingStore?.Get<int?>("totalLicensesCount"); }
+            set { BackingStore?.Set("totalLicensesCount", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

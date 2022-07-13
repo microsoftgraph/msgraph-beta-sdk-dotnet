@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementSettingDependency : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Collection of constraints for the dependency setting value</summary>
         public List<DeviceManagementConstraint> Constraints {
-            get { return BackingStore?.Get<List<DeviceManagementConstraint>>(nameof(Constraints)); }
-            set { BackingStore?.Set(nameof(Constraints), value); }
+            get { return BackingStore?.Get<List<DeviceManagementConstraint>>("constraints"); }
+            set { BackingStore?.Set("constraints", value); }
         }
         /// <summary>The setting definition ID of the setting depended on</summary>
         public string DefinitionId {
-            get { return BackingStore?.Get<string>(nameof(DefinitionId)); }
-            set { BackingStore?.Set(nameof(DefinitionId), value); }
+            get { return BackingStore?.Get<string>("definitionId"); }
+            set { BackingStore?.Set("definitionId", value); }
         }
         /// <summary>
         /// Instantiates a new deviceManagementSettingDependency and sets the default values.

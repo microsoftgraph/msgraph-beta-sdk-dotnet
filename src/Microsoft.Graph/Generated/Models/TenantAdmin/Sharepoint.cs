@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.TenantAdmin {
-    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class Sharepoint : Entity, IParsable {
         /// <summary>Represents the tenant-level settings for SharePoint and OneDrive.</summary>
         public Microsoft.Graph.Beta.Models.TenantAdmin.Settings Settings {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TenantAdmin.Settings>(nameof(Settings)); }
-            set { BackingStore?.Set(nameof(Settings), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TenantAdmin.Settings>("settings"); }
+            set { BackingStore?.Set("settings", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

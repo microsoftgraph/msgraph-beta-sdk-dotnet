@@ -7,18 +7,18 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamworkPeripheral : Entity, IParsable {
         /// <summary>Display name for the peripheral.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The product ID of the device. Each product from a vendor has its own ID.</summary>
         public string ProductId {
-            get { return BackingStore?.Get<string>(nameof(ProductId)); }
-            set { BackingStore?.Set(nameof(ProductId), value); }
+            get { return BackingStore?.Get<string>("productId"); }
+            set { BackingStore?.Set("productId", value); }
         }
         /// <summary>The unique identifier for the vendor of the device. Each vendor has a unique ID.</summary>
         public string VendorId {
-            get { return BackingStore?.Get<string>(nameof(VendorId)); }
-            set { BackingStore?.Set(nameof(VendorId), value); }
+            get { return BackingStore?.Get<string>("vendorId"); }
+            set { BackingStore?.Set("vendorId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

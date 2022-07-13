@@ -7,43 +7,43 @@ namespace Microsoft.Graph.Beta.Models {
     public class MobilityManagementPolicy : Entity, IParsable {
         /// <summary>Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.</summary>
         public PolicyScope? AppliesTo {
-            get { return BackingStore?.Get<PolicyScope?>(nameof(AppliesTo)); }
-            set { BackingStore?.Set(nameof(AppliesTo), value); }
+            get { return BackingStore?.Get<PolicyScope?>("appliesTo"); }
+            set { BackingStore?.Set("appliesTo", value); }
         }
         /// <summary>Compliance URL of the mobility management application.</summary>
         public string ComplianceUrl {
-            get { return BackingStore?.Get<string>(nameof(ComplianceUrl)); }
-            set { BackingStore?.Set(nameof(ComplianceUrl), value); }
+            get { return BackingStore?.Get<string>("complianceUrl"); }
+            set { BackingStore?.Set("complianceUrl", value); }
         }
         /// <summary>Description of the mobility management application.</summary>
         public string Description {
-            get { return BackingStore?.Get<string>(nameof(Description)); }
-            set { BackingStore?.Set(nameof(Description), value); }
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
         }
         /// <summary>Discovery URL of the mobility management application.</summary>
         public string DiscoveryUrl {
-            get { return BackingStore?.Get<string>(nameof(DiscoveryUrl)); }
-            set { BackingStore?.Set(nameof(DiscoveryUrl), value); }
+            get { return BackingStore?.Get<string>("discoveryUrl"); }
+            set { BackingStore?.Set("discoveryUrl", value); }
         }
         /// <summary>Display name of the mobility management application.</summary>
         public string DisplayName {
-            get { return BackingStore?.Get<string>(nameof(DisplayName)); }
-            set { BackingStore?.Set(nameof(DisplayName), value); }
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Azure AD groups under the scope of the mobility management application if appliesTo is selected</summary>
         public List<Group> IncludedGroups {
-            get { return BackingStore?.Get<List<Group>>(nameof(IncludedGroups)); }
-            set { BackingStore?.Set(nameof(IncludedGroups), value); }
+            get { return BackingStore?.Get<List<Group>>("includedGroups"); }
+            set { BackingStore?.Set("includedGroups", value); }
         }
         /// <summary>Whether policy is valid. Invalid policies may not be updated and should be deleted.</summary>
         public bool? IsValid {
-            get { return BackingStore?.Get<bool?>(nameof(IsValid)); }
-            set { BackingStore?.Set(nameof(IsValid), value); }
+            get { return BackingStore?.Get<bool?>("isValid"); }
+            set { BackingStore?.Set("isValid", value); }
         }
         /// <summary>Terms of Use URL of the mobility management application.</summary>
         public string TermsOfUseUrl {
-            get { return BackingStore?.Get<string>(nameof(TermsOfUseUrl)); }
-            set { BackingStore?.Set(nameof(TermsOfUseUrl), value); }
+            get { return BackingStore?.Get<string>("termsOfUseUrl"); }
+            set { BackingStore?.Set("termsOfUseUrl", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

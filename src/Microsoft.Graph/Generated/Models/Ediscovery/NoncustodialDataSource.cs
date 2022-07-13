@@ -4,17 +4,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class NoncustodialDataSource : DataSourceContainer, IParsable {
         /// <summary>Indicates if hold is applied to non-custodial data source (such as mailbox or site).</summary>
         public bool? ApplyHoldToSource {
-            get { return BackingStore?.Get<bool?>(nameof(ApplyHoldToSource)); }
-            set { BackingStore?.Set(nameof(ApplyHoldToSource), value); }
+            get { return BackingStore?.Get<bool?>("applyHoldToSource"); }
+            set { BackingStore?.Set("applyHoldToSource", value); }
         }
         /// <summary>User source or SharePoint site data source as non-custodial data source.</summary>
         public Microsoft.Graph.Beta.Models.Ediscovery.DataSource DataSource {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.DataSource>(nameof(DataSource)); }
-            set { BackingStore?.Set(nameof(DataSource), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.DataSource>("dataSource"); }
+            set { BackingStore?.Set("dataSource", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeliveryOptimizationBandwidthPercentage : DeliveryOptimizationBandwidth, IParsable {
         /// <summary>Specifies the maximum background download bandwidth that Delivery Optimization uses across all concurrent download activities as a percentage of available download bandwidth (0-100). Valid values 0 to 100</summary>
         public int? MaximumBackgroundBandwidthPercentage {
-            get { return BackingStore?.Get<int?>(nameof(MaximumBackgroundBandwidthPercentage)); }
-            set { BackingStore?.Set(nameof(MaximumBackgroundBandwidthPercentage), value); }
+            get { return BackingStore?.Get<int?>("maximumBackgroundBandwidthPercentage"); }
+            set { BackingStore?.Set("maximumBackgroundBandwidthPercentage", value); }
         }
         /// <summary>Specifies the maximum foreground download bandwidth that Delivery Optimization uses across all concurrent download activities as a percentage of available download bandwidth (0-100). Valid values 0 to 100</summary>
         public int? MaximumForegroundBandwidthPercentage {
-            get { return BackingStore?.Get<int?>(nameof(MaximumForegroundBandwidthPercentage)); }
-            set { BackingStore?.Set(nameof(MaximumForegroundBandwidthPercentage), value); }
+            get { return BackingStore?.Get<int?>("maximumForegroundBandwidthPercentage"); }
+            set { BackingStore?.Set("maximumForegroundBandwidthPercentage", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

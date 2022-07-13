@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class WindowsDeploymentSettings : DeploymentSettings, IParsable {
         /// <summary>Settings governing the user&apos;s update experience on a device.</summary>
         public UserExperienceSettings UserExperience {
-            get { return BackingStore?.Get<UserExperienceSettings>(nameof(UserExperience)); }
-            set { BackingStore?.Set(nameof(UserExperience), value); }
+            get { return BackingStore?.Get<UserExperienceSettings>("userExperience"); }
+            set { BackingStore?.Set("userExperience", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

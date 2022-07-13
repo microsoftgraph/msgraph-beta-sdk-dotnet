@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementCollectionSettingDefinition : DeviceManagementSettingDefinition, IParsable {
         /// <summary>The Setting Definition ID that describes what each element of the collection looks like</summary>
         public string ElementDefinitionId {
-            get { return BackingStore?.Get<string>(nameof(ElementDefinitionId)); }
-            set { BackingStore?.Set(nameof(ElementDefinitionId), value); }
+            get { return BackingStore?.Get<string>("elementDefinitionId"); }
+            set { BackingStore?.Set("elementDefinitionId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

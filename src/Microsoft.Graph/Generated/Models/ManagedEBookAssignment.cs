@@ -7,15 +7,21 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Contains properties used to assign a eBook to a group.</summary>
     public class ManagedEBookAssignment : Entity, IParsable {
-        /// <summary>The install intent for eBook. Possible values are: available, required, uninstall, availableWithoutEnrollment.</summary>
+        /// <summary>Possible values for the install intent chosen by the admin.</summary>
         public Microsoft.Graph.Beta.Models.InstallIntent? InstallIntent {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InstallIntent?>(nameof(InstallIntent)); }
-            set { BackingStore?.Set(nameof(InstallIntent), value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InstallIntent?>("installIntent"); }
+            set { BackingStore?.Set("installIntent", value); }
         }
         /// <summary>The assignment target for eBook.</summary>
         public DeviceAndAppManagementAssignmentTarget Target {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>(nameof(Target)); }
-            set { BackingStore?.Set(nameof(Target), value); }
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
+            set { BackingStore?.Set("target", value); }
+        }
+        /// <summary>
+        /// Instantiates a new managedEBookAssignment and sets the default values.
+        /// </summary>
+        public ManagedEBookAssignment() : base() {
+            Type = "#microsoft.graph.managedEBookAssignment";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

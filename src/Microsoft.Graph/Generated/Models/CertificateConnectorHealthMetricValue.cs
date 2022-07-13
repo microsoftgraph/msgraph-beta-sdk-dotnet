@@ -9,25 +9,25 @@ namespace Microsoft.Graph.Beta.Models {
     public class CertificateConnectorHealthMetricValue : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>(nameof(AdditionalData)); }
-            set { BackingStore?.Set(nameof(AdditionalData), value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Timestamp for this metric data-point.</summary>
         public DateTimeOffset? DateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>(nameof(DateTime)); }
-            set { BackingStore?.Set(nameof(DateTime), value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("dateTime"); }
+            set { BackingStore?.Set("dateTime", value); }
         }
         /// <summary>Count of failed requests/operations.</summary>
         public long? FailureCount {
-            get { return BackingStore?.Get<long?>(nameof(FailureCount)); }
-            set { BackingStore?.Set(nameof(FailureCount), value); }
+            get { return BackingStore?.Get<long?>("failureCount"); }
+            set { BackingStore?.Set("failureCount", value); }
         }
         /// <summary>Count of successful requests/operations.</summary>
         public long? SuccessCount {
-            get { return BackingStore?.Get<long?>(nameof(SuccessCount)); }
-            set { BackingStore?.Set(nameof(SuccessCount), value); }
+            get { return BackingStore?.Get<long?>("successCount"); }
+            set { BackingStore?.Set("successCount", value); }
         }
         /// <summary>
         /// Instantiates a new certificateConnectorHealthMetricValue and sets the default values.

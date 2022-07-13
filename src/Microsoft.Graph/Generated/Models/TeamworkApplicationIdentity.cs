@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamworkApplicationIdentity : Identity, IParsable {
         /// <summary>Type of application that is referenced. Possible values are: aadApplication, bot, tenantBot, office365Connector, and outgoingWebhook.</summary>
         public TeamworkApplicationIdentityType? ApplicationIdentityType {
-            get { return BackingStore?.Get<TeamworkApplicationIdentityType?>(nameof(ApplicationIdentityType)); }
-            set { BackingStore?.Set(nameof(ApplicationIdentityType), value); }
+            get { return BackingStore?.Get<TeamworkApplicationIdentityType?>("applicationIdentityType"); }
+            set { BackingStore?.Set("applicationIdentityType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

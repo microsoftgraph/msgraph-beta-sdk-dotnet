@@ -7,13 +7,13 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource : AccessReviewInstanceDecisionItemResource, IParsable {
         /// <summary>Display name of the access package to which access has been granted.</summary>
         public string AccessPackageDisplayName {
-            get { return BackingStore?.Get<string>(nameof(AccessPackageDisplayName)); }
-            set { BackingStore?.Set(nameof(AccessPackageDisplayName), value); }
+            get { return BackingStore?.Get<string>("accessPackageDisplayName"); }
+            set { BackingStore?.Set("accessPackageDisplayName", value); }
         }
         /// <summary>Identifier of the access package to which access has been granted.</summary>
         public string AccessPackageId {
-            get { return BackingStore?.Get<string>(nameof(AccessPackageId)); }
-            set { BackingStore?.Set(nameof(AccessPackageId), value); }
+            get { return BackingStore?.Get<string>("accessPackageId"); }
+            set { BackingStore?.Set("accessPackageId", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
