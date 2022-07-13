@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DirectoryRoleAccessReviewPolicy>("directoryRoleAccessReviewPolicy"); }
             set { BackingStore?.Set("directoryRoleAccessReviewPolicy", value); }
         }
-        /// <summary>The externalIdentitiesPolicy property</summary>
+        /// <summary>Represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.</summary>
         public Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy ExternalIdentitiesPolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy>("externalIdentitiesPolicy"); }
             set { BackingStore?.Set("externalIdentitiesPolicy", value); }

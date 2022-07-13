@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Booking entities that provide a display name.</summary>
     public class BookingNamedEntity : Entity, IParsable {
         /// <summary>A name for the derived entity, which interfaces with customers.</summary>
         public string DisplayName {
@@ -12,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>
-        /// Instantiates a new BookingNamedEntity and sets the default values.
+        /// Instantiates a new bookingNamedEntity and sets the default values.
         /// </summary>
         public BookingNamedEntity() : base() {
             Type = "#microsoft.graph.bookingNamedEntity";

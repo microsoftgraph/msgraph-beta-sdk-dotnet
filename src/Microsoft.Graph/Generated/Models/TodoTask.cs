@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class TodoTask : Entity, IParsable {
         /// <summary>A collection of file attachments for the task.</summary>
         public List<AttachmentBase> Attachments {
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeTimeZone>("reminderDateTime"); }
             set { BackingStore?.Set("reminderDateTime", value); }
         }
-        /// <summary>The startDateTime property</summary>
+        /// <summary>The date in the specified time zone at which the task is scheduled to start.</summary>
         public DateTimeTimeZone StartDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }

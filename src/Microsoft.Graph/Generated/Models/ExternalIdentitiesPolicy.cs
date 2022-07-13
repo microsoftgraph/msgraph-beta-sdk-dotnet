@@ -5,12 +5,12 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ExternalIdentitiesPolicy : PolicyBase, IParsable {
-        /// <summary>The allowDeletedIdentitiesDataRemoval property</summary>
+        /// <summary>Notifies Azure AD whether to clean up the user information about the external identity, from the guest tenant, when the user is deleted in their home tenant.</summary>
         public bool? AllowDeletedIdentitiesDataRemoval {
             get { return BackingStore?.Get<bool?>("allowDeletedIdentitiesDataRemoval"); }
             set { BackingStore?.Set("allowDeletedIdentitiesDataRemoval", value); }
         }
-        /// <summary>The allowExternalIdentitiesToLeave property</summary>
+        /// <summary>Defines whether external users can leave the guest tenant. If set to false, self-service controls are not enabled, and the admin of the guest tenant must manually remove the external user from the guest tenant.</summary>
         public bool? AllowExternalIdentitiesToLeave {
             get { return BackingStore?.Get<bool?>("allowExternalIdentitiesToLeave"); }
             set { BackingStore?.Set("allowExternalIdentitiesToLeave", value); }

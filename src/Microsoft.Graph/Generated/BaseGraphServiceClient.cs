@@ -107,6 +107,7 @@ using Microsoft.Graph.Beta.TeamsTemplates;
 using Microsoft.Graph.Beta.Teamwork;
 using Microsoft.Graph.Beta.TenantRelationships;
 using Microsoft.Graph.Beta.TermStore;
+using Microsoft.Graph.Beta.ThreatSubmission;
 using Microsoft.Graph.Beta.TrustFramework;
 using Microsoft.Graph.Beta.Users;
 using Microsoft.Graph.Beta.Workbooks;
@@ -561,6 +562,10 @@ namespace Microsoft.Graph.Beta {
         /// <summary>The termStore property</summary>
         public TermStoreRequestBuilder TermStore { get =>
             new TermStoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The threatSubmission property</summary>
+        public ThreatSubmissionRequestBuilder ThreatSubmission { get =>
+            new ThreatSubmissionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The trustFramework property</summary>
         public TrustFrameworkRequestBuilder TrustFramework { get =>

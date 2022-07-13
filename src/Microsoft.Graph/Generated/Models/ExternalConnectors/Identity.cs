@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
-    /// <summary>Provides operations to manage the collection of externalConnection entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class Identity : Entity, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

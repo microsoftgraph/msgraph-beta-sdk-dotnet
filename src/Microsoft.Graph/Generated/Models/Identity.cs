@@ -1,4 +1,5 @@
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -59,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.provisionedIdentity" => new ProvisionedIdentity(),
                 "#microsoft.graph.provisioningServicePrincipal" => new ProvisioningServicePrincipal(),
                 "#microsoft.graph.provisioningSystem" => new ProvisioningSystem(),
+                "#microsoft.graph.security.submissionUserIdentity" => new SubmissionUserIdentity(),
                 "#microsoft.graph.servicePrincipalIdentity" => new ServicePrincipalIdentity(),
                 "#microsoft.graph.sharePointIdentity" => new SharePointIdentity(),
                 "#microsoft.graph.teamworkApplicationIdentity" => new TeamworkApplicationIdentity(),

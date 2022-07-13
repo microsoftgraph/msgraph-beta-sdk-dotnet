@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class TeamworkDeviceOperation : Entity, IParsable {
         /// <summary>Time at which the operation reached a final state (for example, Successful, Failed, and Cancelled).</summary>
         public DateTimeOffset? CompletedDateTime {
