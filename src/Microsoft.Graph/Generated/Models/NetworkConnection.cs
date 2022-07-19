@@ -78,6 +78,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("natSourcePort"); }
             set { BackingStore?.Set("natSourcePort", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Network protocol. Possible values are: unknown, ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII.</summary>
         public SecurityNetworkProtocol? Protocol {
             get { return BackingStore?.Get<SecurityNetworkProtocol?>("protocol"); }
@@ -119,6 +124,7 @@ namespace Microsoft.Graph.Beta.Models {
         public NetworkConnection() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.networkConnection";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -146,6 +152,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"natDestinationPort", n => { NatDestinationPort = n.GetStringValue(); } },
                 {"natSourceAddress", n => { NatSourceAddress = n.GetStringValue(); } },
                 {"natSourcePort", n => { NatSourcePort = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"protocol", n => { Protocol = n.GetEnumValue<SecurityNetworkProtocol>(); } },
                 {"riskScore", n => { RiskScore = n.GetStringValue(); } },
                 {"sourceAddress", n => { SourceAddress = n.GetStringValue(); } },
@@ -174,6 +181,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("natDestinationPort", NatDestinationPort);
             writer.WriteStringValue("natSourceAddress", NatSourceAddress);
             writer.WriteStringValue("natSourcePort", NatSourcePort);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<SecurityNetworkProtocol>("protocol", Protocol);
             writer.WriteStringValue("riskScore", RiskScore);
             writer.WriteStringValue("sourceAddress", SourceAddress);

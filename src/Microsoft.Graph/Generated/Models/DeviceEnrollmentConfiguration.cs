@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The Base Class of Device Enrollment Configuration</summary>
     public class DeviceEnrollmentConfiguration : Entity, IParsable {
         /// <summary>The list of group assignments for the device configuration profile</summary>
         public List<EnrollmentConfigurationAssignment> Assignments {
@@ -53,10 +52,10 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("version", value); }
         }
         /// <summary>
-        /// Instantiates a new deviceEnrollmentConfiguration and sets the default values.
+        /// Instantiates a new DeviceEnrollmentConfiguration and sets the default values.
         /// </summary>
         public DeviceEnrollmentConfiguration() : base() {
-            Type = "#microsoft.graph.deviceEnrollmentConfiguration";
+            OdataType = "#microsoft.graph.deviceEnrollmentConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

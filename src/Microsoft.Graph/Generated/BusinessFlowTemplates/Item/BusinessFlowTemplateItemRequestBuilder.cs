@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.BusinessFlowTemplates.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new businessFlowTemplateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new BusinessFlowTemplateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public BusinessFlowTemplateItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.BusinessFlowTemplates.Item {
             /// <summary>Request query parameters</summary>
             public BusinessFlowTemplateItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new BusinessFlowTemplateItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new businessFlowTemplateItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new BusinessFlowTemplateItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public BusinessFlowTemplateItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.BusinessFlowTemplates.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new businessFlowTemplateItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new BusinessFlowTemplateItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public BusinessFlowTemplateItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

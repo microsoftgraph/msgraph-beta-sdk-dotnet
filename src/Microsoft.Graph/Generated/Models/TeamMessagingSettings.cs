@@ -38,12 +38,18 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new teamMessagingSettings and sets the default values.
         /// </summary>
         public TeamMessagingSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.teamMessagingSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -63,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"allowTeamMentions", n => { AllowTeamMentions = n.GetBoolValue(); } },
                 {"allowUserDeleteMessages", n => { AllowUserDeleteMessages = n.GetBoolValue(); } },
                 {"allowUserEditMessages", n => { AllowUserEditMessages = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,6 +83,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("allowTeamMentions", AllowTeamMentions);
             writer.WriteBoolValue("allowUserDeleteMessages", AllowUserDeleteMessages);
             writer.WriteBoolValue("allowUserEditMessages", AllowUserEditMessages);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -16,6 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("initiator", value); }
         }
         /// <summary>
+        /// Instantiates a new ChannelSetAsFavoriteByDefaultEventMessageDetail and sets the default values.
+        /// </summary>
+        public ChannelSetAsFavoriteByDefaultEventMessageDetail() : base() {
+            OdataType = "#microsoft.graph.channelSetAsFavoriteByDefaultEventMessageDetail";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

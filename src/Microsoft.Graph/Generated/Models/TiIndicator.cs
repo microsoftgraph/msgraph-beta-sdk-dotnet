@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class TiIndicator : Entity, IParsable {
         /// <summary>The action to apply if the indicator is matched from within the targetProduct security tool. Possible values are: unknown, allow, block, alert. Required.</summary>
         public TiAction? Action {
@@ -295,6 +294,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string UserAgent {
             get { return BackingStore?.Get<string>("userAgent"); }
             set { BackingStore?.Set("userAgent", value); }
+        }
+        /// <summary>
+        /// Instantiates a new TiIndicator and sets the default values.
+        /// </summary>
+        public TiIndicator() : base() {
+            OdataType = "#microsoft.graph.tiIndicator";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

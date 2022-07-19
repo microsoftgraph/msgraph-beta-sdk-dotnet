@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class DirectoryDefinition : Entity, IParsable {
         /// <summary>The discoverabilities property</summary>
         public DirectoryDefinitionDiscoverabilities? Discoverabilities {
@@ -35,6 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string Version {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
+        }
+        /// <summary>
+        /// Instantiates a new directoryDefinition and sets the default values.
+        /// </summary>
+        public DirectoryDefinition() : base() {
+            OdataType = "#microsoft.graph.directoryDefinition";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new userSourceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new UserSourceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public UserSourceItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.
             /// <summary>Request query parameters</summary>
             public UserSourceItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new UserSourceItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new userSourceItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new UserSourceItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public UserSourceItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new userSourceItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new UserSourceItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public UserSourceItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

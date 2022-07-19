@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Me.AppRoleAssignments.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new appRoleAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AppRoleAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AppRoleAssignmentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Me.AppRoleAssignments.Item {
             /// <summary>Request query parameters</summary>
             public AppRoleAssignmentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AppRoleAssignmentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new appRoleAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AppRoleAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AppRoleAssignmentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Me.AppRoleAssignments.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new appRoleAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AppRoleAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AppRoleAssignmentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

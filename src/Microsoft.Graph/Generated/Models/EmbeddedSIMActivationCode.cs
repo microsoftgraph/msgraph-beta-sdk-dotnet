@@ -24,6 +24,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("matchingIdentifier"); }
             set { BackingStore?.Set("matchingIdentifier", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The fully qualified domain name of the SM-DP+ server as specified in the GSM Association SPG .22 RSP Technical Specification.</summary>
         public string SmdpPlusServerAddress {
             get { return BackingStore?.Get<string>("smdpPlusServerAddress"); }
@@ -35,6 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         public EmbeddedSIMActivationCode() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.embeddedSIMActivationCode";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"integratedCircuitCardIdentifier", n => { IntegratedCircuitCardIdentifier = n.GetStringValue(); } },
                 {"matchingIdentifier", n => { MatchingIdentifier = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"smdpPlusServerAddress", n => { SmdpPlusServerAddress = n.GetStringValue(); } },
             };
         }
@@ -62,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("integratedCircuitCardIdentifier", IntegratedCircuitCardIdentifier);
             writer.WriteStringValue("matchingIdentifier", MatchingIdentifier);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("smdpPlusServerAddress", SmdpPlusServerAddress);
             writer.WriteAdditionalData(AdditionalData);
         }

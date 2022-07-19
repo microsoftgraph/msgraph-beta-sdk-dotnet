@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Admin.ReportSettings {
             return requestInfo;
         }
         /// <summary>
-        /// Get reportSettings from admin
+        /// A container for administrative resources to manage reports.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ReportSettingsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Admin.ReportSettings {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get reportSettings from admin
+        /// A container for administrative resources to manage reports.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.Admin.ReportSettings {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get reportSettings from admin</summary>
+        /// <summary>A container for administrative resources to manage reports.</summary>
         public class ReportSettingsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

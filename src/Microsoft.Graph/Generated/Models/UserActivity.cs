@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class UserActivity : Entity, IParsable {
         /// <summary>Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.</summary>
         public string ActivationUrl {
@@ -75,6 +74,12 @@ namespace Microsoft.Graph.Beta.Models {
         public VisualInfo VisualElements {
             get { return BackingStore?.Get<VisualInfo>("visualElements"); }
             set { BackingStore?.Set("visualElements", value); }
+        }
+        /// <summary>
+        /// Instantiates a new UserActivity and sets the default values.
+        /// </summary>
+        public UserActivity() : base() {
+            OdataType = "#microsoft.graph.userActivity";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

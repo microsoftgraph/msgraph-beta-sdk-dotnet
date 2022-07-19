@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new AndroidForWorkWiFiConfiguration and sets the default values.
         /// </summary>
         public AndroidForWorkWiFiConfiguration() : base() {
-            Type = "#microsoft.graph.androidForWorkWiFiConfiguration";
+            OdataType = "#microsoft.graph.androidForWorkWiFiConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
             /// <summary>Request query parameters</summary>
             public EdiscoveryNoncustodialDataSourceItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new EdiscoveryNoncustodialDataSourceItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new ediscoveryNoncustodialDataSourceItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new EdiscoveryNoncustodialDataSourceItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public EdiscoveryNoncustodialDataSourceItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Submissions
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new educationOutcomeItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new EducationOutcomeItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public EducationOutcomeItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Submissions
             /// <summary>Request query parameters</summary>
             public EducationOutcomeItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new EducationOutcomeItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new educationOutcomeItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new EducationOutcomeItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public EducationOutcomeItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Submissions
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new educationOutcomeItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new EducationOutcomeItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public EducationOutcomeItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

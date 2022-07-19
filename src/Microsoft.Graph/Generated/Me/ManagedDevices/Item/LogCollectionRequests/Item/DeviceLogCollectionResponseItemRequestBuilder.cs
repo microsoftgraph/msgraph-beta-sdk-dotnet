@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.LogCollectionRequests.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceLogCollectionResponseItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceLogCollectionResponseItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceLogCollectionResponseItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.LogCollectionRequests.Item
             /// <summary>Request query parameters</summary>
             public DeviceLogCollectionResponseItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceLogCollectionResponseItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceLogCollectionResponseItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceLogCollectionResponseItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceLogCollectionResponseItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.LogCollectionRequests.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceLogCollectionResponseItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceLogCollectionResponseItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceLogCollectionResponseItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

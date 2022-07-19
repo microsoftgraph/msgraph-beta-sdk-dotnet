@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Windows Information Protection Network learning Summary entity.</summary>
     public class WindowsInformationProtectionNetworkLearningSummary : Entity, IParsable {
         /// <summary>Device Count</summary>
         public int? DeviceCount {
@@ -15,6 +14,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string Url {
             get { return BackingStore?.Get<string>("url"); }
             set { BackingStore?.Set("url", value); }
+        }
+        /// <summary>
+        /// Instantiates a new WindowsInformationProtectionNetworkLearningSummary and sets the default values.
+        /// </summary>
+        public WindowsInformationProtectionNetworkLearningSummary() : base() {
+            OdataType = "#microsoft.graph.windowsInformationProtectionNetworkLearningSummary";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

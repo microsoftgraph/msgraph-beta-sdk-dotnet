@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new windowsDriverUpdateInventoryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsDriverUpdateInventoryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsDriverUpdateInventoryItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item
             /// <summary>Request query parameters</summary>
             public WindowsDriverUpdateInventoryItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new WindowsDriverUpdateInventoryItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new windowsDriverUpdateInventoryItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsDriverUpdateInventoryItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsDriverUpdateInventoryItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new windowsDriverUpdateInventoryItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsDriverUpdateInventoryItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsDriverUpdateInventoryItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

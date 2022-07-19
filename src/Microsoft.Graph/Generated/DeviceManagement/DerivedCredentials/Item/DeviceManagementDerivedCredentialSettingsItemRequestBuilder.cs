@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DerivedCredentials.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementDerivedCredentialSettingsItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementDerivedCredentialSettingsItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementDerivedCredentialSettingsItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DerivedCredentials.Item {
             /// <summary>Request query parameters</summary>
             public DeviceManagementDerivedCredentialSettingsItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceManagementDerivedCredentialSettingsItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceManagementDerivedCredentialSettingsItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementDerivedCredentialSettingsItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementDerivedCredentialSettingsItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DerivedCredentials.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementDerivedCredentialSettingsItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementDerivedCredentialSettingsItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementDerivedCredentialSettingsItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

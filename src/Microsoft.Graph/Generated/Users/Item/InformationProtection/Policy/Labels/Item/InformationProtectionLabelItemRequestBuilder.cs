@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new informationProtectionLabelItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new InformationProtectionLabelItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public InformationProtectionLabelItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels.It
             /// <summary>Request query parameters</summary>
             public InformationProtectionLabelItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new InformationProtectionLabelItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new informationProtectionLabelItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new InformationProtectionLabelItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public InformationProtectionLabelItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new informationProtectionLabelItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new InformationProtectionLabelItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public InformationProtectionLabelItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

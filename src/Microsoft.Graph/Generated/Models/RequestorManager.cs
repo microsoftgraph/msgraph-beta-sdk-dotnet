@@ -11,6 +11,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("managerLevel", value); }
         }
         /// <summary>
+        /// Instantiates a new RequestorManager and sets the default values.
+        /// </summary>
+        public RequestorManager() : base() {
+            OdataType = "#microsoft.graph.requestorManager";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

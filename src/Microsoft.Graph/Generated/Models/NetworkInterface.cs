@@ -38,12 +38,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("macAddress"); }
             set { BackingStore?.Set("macAddress", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new networkInterface and sets the default values.
         /// </summary>
         public NetworkInterface() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.networkInterface";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -63,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"ipV6Address", n => { IpV6Address = n.GetStringValue(); } },
                 {"localIpV6Address", n => { LocalIpV6Address = n.GetStringValue(); } },
                 {"macAddress", n => { MacAddress = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,6 +83,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("ipV6Address", IpV6Address);
             writer.WriteStringValue("localIpV6Address", LocalIpV6Address);
             writer.WriteStringValue("macAddress", MacAddress);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

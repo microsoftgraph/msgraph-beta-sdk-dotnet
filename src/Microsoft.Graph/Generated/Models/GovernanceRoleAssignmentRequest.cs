@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class GovernanceRoleAssignmentRequest : Entity, IParsable {
         /// <summary>Required. The state of the assignment. The possible values are: Eligible (for eligible assignment),  Active (if it is directly assigned), Active (by administrators, or activated on an eligible assignment by the users).</summary>
         public string AssignmentState {
@@ -66,6 +66,17 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("subjectId"); }
             set { BackingStore?.Set("subjectId", value); }
         }
+        /// <summary>Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+        /// <summary>
+        /// Instantiates a new governanceRoleAssignmentRequest and sets the default values.
+        /// </summary>
+        public GovernanceRoleAssignmentRequest() : base() {
+            OdataType = "#microsoft.graph.governanceRoleAssignmentRequest";
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -91,6 +102,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"status", n => { Status = n.GetObjectValue<GovernanceRoleAssignmentRequestStatus>(GovernanceRoleAssignmentRequestStatus.CreateFromDiscriminatorValue); } },
                 {"subject", n => { Subject = n.GetObjectValue<GovernanceSubject>(GovernanceSubject.CreateFromDiscriminatorValue); } },
                 {"subjectId", n => { SubjectId = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -112,6 +124,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<GovernanceRoleAssignmentRequestStatus>("status", Status);
             writer.WriteObjectValue<GovernanceSubject>("subject", Subject);
             writer.WriteStringValue("subjectId", SubjectId);
+            writer.WriteStringValue("type", Type);
         }
     }
 }

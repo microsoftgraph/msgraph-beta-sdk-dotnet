@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Calendars.Item.CalendarView.Item.Instances {
     /// <summary>Provides operations to manage the instances property of the microsoft.graph.event entity.</summary>
     public class InstancesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

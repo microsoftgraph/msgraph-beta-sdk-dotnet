@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.BaseTypes.Item
             /// <summary>Request query parameters</summary>
             public ContentTypeItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ContentTypeItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new contentTypeItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ContentTypeItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ContentTypeItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

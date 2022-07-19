@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.ManagedMobileLobApp {
     /// <summary>Casts the previous resource to managedMobileLobApp.</summary>
     public class ManagedMobileLobAppRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

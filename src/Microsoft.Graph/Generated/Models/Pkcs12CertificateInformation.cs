@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<long?>("notBefore"); }
             set { BackingStore?.Set("notBefore", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The certificate thumbprint.</summary>
         public string Thumbprint {
             get { return BackingStore?.Get<string>("thumbprint"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public Pkcs12CertificateInformation() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.pkcs12CertificateInformation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isActive", n => { IsActive = n.GetBoolValue(); } },
                 {"notAfter", n => { NotAfter = n.GetLongValue(); } },
                 {"notBefore", n => { NotBefore = n.GetLongValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"thumbprint", n => { Thumbprint = n.GetStringValue(); } },
             };
         }
@@ -68,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isActive", IsActive);
             writer.WriteLongValue("notAfter", NotAfter);
             writer.WriteLongValue("notBefore", NotBefore);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("thumbprint", Thumbprint);
             writer.WriteAdditionalData(AdditionalData);
         }

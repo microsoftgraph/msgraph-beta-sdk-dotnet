@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Issues {
     /// <summary>Provides operations to manage the issues property of the microsoft.graph.serviceAnnouncement entity.</summary>
     public class IssuesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

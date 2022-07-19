@@ -11,6 +11,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("members", value); }
         }
         /// <summary>
+        /// Instantiates a new UpdatableAssetGroup and sets the default values.
+        /// </summary>
+        public UpdatableAssetGroup() : base() {
+            OdataType = "#microsoft.graph.windowsUpdates.updatableAssetGroup";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

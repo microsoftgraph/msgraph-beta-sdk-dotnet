@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<byte[]>("key"); }
             set { BackingStore?.Set("key", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>For internal use only</summary>
         public int? Type {
             get { return BackingStore?.Get<int?>("type"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AlternativeSecurityId() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.alternativeSecurityId";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"identityProvider", n => { IdentityProvider = n.GetStringValue(); } },
                 {"key", n => { Key = n.GetByteArrayValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"type", n => { Type = n.GetIntValue(); } },
             };
         }
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("identityProvider", IdentityProvider);
             writer.WriteByteArrayValue("key", Key);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

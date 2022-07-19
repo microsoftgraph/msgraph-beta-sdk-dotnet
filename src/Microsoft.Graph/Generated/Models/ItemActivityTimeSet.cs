@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("observedDateTime"); }
             set { BackingStore?.Set("observedDateTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>When the observation was recorded on the service.</summary>
         public DateTimeOffset? RecordedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("recordedDateTime"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ItemActivityTimeSet() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.itemActivityTimeSet";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"lastRecordedDateTime", n => { LastRecordedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"observedDateTime", n => { ObservedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"recordedDateTime", n => { RecordedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("lastRecordedDateTime", LastRecordedDateTime);
             writer.WriteDateTimeOffsetValue("observedDateTime", ObservedDateTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateTimeOffsetValue("recordedDateTime", RecordedDateTime);
             writer.WriteAdditionalData(AdditionalData);
         }

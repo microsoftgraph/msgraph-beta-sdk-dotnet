@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests {
     /// <summary>Provides operations to manage the appConsentRequests property of the microsoft.graph.appConsentApprovalRoute entity.</summary>
     public class AppConsentRequestsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

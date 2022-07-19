@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class LegalHold : Entity, IParsable {
         /// <summary>KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.</summary>
         public string ContentQuery {
@@ -70,6 +70,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         public List<UserSource> UserSources {
             get { return BackingStore?.Get<List<UserSource>>("userSources"); }
             set { BackingStore?.Set("userSources", value); }
+        }
+        /// <summary>
+        /// Instantiates a new legalHold and sets the default values.
+        /// </summary>
+        public LegalHold() : base() {
+            OdataType = "#microsoft.graph.ediscovery.legalHold";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

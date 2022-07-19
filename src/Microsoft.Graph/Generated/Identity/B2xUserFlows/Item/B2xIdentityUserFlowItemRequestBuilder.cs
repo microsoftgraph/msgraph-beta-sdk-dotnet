@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new b2xIdentityUserFlowItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new B2xIdentityUserFlowItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public B2xIdentityUserFlowItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item {
             /// <summary>Request query parameters</summary>
             public B2xIdentityUserFlowItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new B2xIdentityUserFlowItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new b2xIdentityUserFlowItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new B2xIdentityUserFlowItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public B2xIdentityUserFlowItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -213,7 +213,7 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new b2xIdentityUserFlowItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new B2xIdentityUserFlowItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public B2xIdentityUserFlowItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

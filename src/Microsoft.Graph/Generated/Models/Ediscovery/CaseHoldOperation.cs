@@ -6,6 +6,12 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
     public class CaseHoldOperation : CaseOperation, IParsable {
         /// <summary>
+        /// Instantiates a new CaseHoldOperation and sets the default values.
+        /// </summary>
+        public CaseHoldOperation() : base() {
+            OdataType = "#microsoft.graph.ediscovery.caseHoldOperation";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

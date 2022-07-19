@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.TermStore {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class Relation : Entity, IParsable {
         /// <summary>The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].</summary>
         public Term FromTerm {
@@ -25,6 +25,12 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
         public Term ToTerm {
             get { return BackingStore?.Get<Term>("toTerm"); }
             set { BackingStore?.Set("toTerm", value); }
+        }
+        /// <summary>
+        /// Instantiates a new relation and sets the default values.
+        /// </summary>
+        public Relation() : base() {
+            OdataType = "#microsoft.graph.termStore.relation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

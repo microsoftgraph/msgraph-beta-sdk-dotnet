@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.ContactFolders {
     /// <summary>Provides operations to manage the contactFolders property of the microsoft.graph.user entity.</summary>
     public class ContactFoldersRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

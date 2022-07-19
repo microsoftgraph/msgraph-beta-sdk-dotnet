@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementAutopilotEventItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementAutopilotEventItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementAutopilotEventItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item {
             /// <summary>Request query parameters</summary>
             public DeviceManagementAutopilotEventItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceManagementAutopilotEventItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceManagementAutopilotEventItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementAutopilotEventItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementAutopilotEventItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementAutopilotEventItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementAutopilotEventItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementAutopilotEventItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

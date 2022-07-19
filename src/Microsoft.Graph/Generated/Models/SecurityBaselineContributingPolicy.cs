@@ -19,6 +19,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Unique identifier of the policy</summary>
         public string SourceId {
             get { return BackingStore?.Get<string>("sourceId"); }
@@ -35,6 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         public SecurityBaselineContributingPolicy() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.securityBaselineContributingPolicy";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"sourceId", n => { SourceId = n.GetStringValue(); } },
                 {"sourceType", n => { SourceType = n.GetEnumValue<SecurityBaselinePolicySourceType>(); } },
             };
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("sourceId", SourceId);
             writer.WriteEnumValue<SecurityBaselinePolicySourceType>("sourceType", SourceType);
             writer.WriteAdditionalData(AdditionalData);

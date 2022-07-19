@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new groupPolicyCategoryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new GroupPolicyCategoryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public GroupPolicyCategoryItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item {
             /// <summary>Request query parameters</summary>
             public GroupPolicyCategoryItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new GroupPolicyCategoryItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new groupPolicyCategoryItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new GroupPolicyCategoryItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public GroupPolicyCategoryItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -213,7 +213,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new groupPolicyCategoryItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new GroupPolicyCategoryItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public GroupPolicyCategoryItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

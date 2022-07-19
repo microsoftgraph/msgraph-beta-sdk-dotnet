@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class UnifiedRoleManagementPolicyRule : Entity, IParsable {
         /// <summary>Not implemented. Defines details of scope that&apos;s targeted by role management policy rule. The details can include the principal type, the role assignment type, and actions affecting a role. Supports $filter (eq, ne).</summary>
         public UnifiedRoleManagementPolicyRuleTarget Target {
@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new unifiedRoleManagementPolicyRule and sets the default values.
         /// </summary>
         public UnifiedRoleManagementPolicyRule() : base() {
-            Type = "#microsoft.graph.unifiedRoleManagementPolicyRule";
+            OdataType = "#microsoft.graph.unifiedRoleManagementPolicyRule";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

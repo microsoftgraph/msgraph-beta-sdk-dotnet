@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Owners.Item {
             /// <summary>Request query parameters</summary>
             public UserItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new UserItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new userItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new UserItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public UserItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

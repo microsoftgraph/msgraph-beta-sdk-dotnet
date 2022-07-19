@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
             /// <summary>Request query parameters</summary>
             public ManagementTemplateStepItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ManagementTemplateStepItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new managementTemplateStepItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagementTemplateStepItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ManagementTemplateStepItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -36,6 +36,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
             set { BackingStore?.Set("userSources", value); }
         }
         /// <summary>
+        /// Instantiates a new Custodian and sets the default values.
+        /// </summary>
+        public Custodian() : base() {
+            OdataType = "#microsoft.graph.ediscovery.custodian";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

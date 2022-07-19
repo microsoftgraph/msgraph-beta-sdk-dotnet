@@ -28,12 +28,18 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             get { return BackingStore?.Get<int?>("managementTemplateVersion"); }
             set { BackingStore?.Set("managementTemplateVersion", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new managementActionInfo and sets the default values.
         /// </summary>
         public ManagementActionInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.managedTenants.managementActionInfo";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
                 {"managementActionId", n => { ManagementActionId = n.GetStringValue(); } },
                 {"managementTemplateId", n => { ManagementTemplateId = n.GetStringValue(); } },
                 {"managementTemplateVersion", n => { ManagementTemplateVersion = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -62,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             writer.WriteStringValue("managementActionId", ManagementActionId);
             writer.WriteStringValue("managementTemplateId", ManagementTemplateId);
             writer.WriteIntValue("managementTemplateVersion", ManagementTemplateVersion);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

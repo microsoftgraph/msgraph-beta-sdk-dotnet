@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<TeamworkConnection>("exchangeConnection"); }
             set { BackingStore?.Set("exchangeConnection", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Information about the Skype for Business connection.</summary>
         public TeamworkConnection SkypeConnection {
             get { return BackingStore?.Get<TeamworkConnection>("skypeConnection"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public TeamworkLoginStatus() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.teamworkLoginStatus";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"exchangeConnection", n => { ExchangeConnection = n.GetObjectValue<TeamworkConnection>(TeamworkConnection.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"skypeConnection", n => { SkypeConnection = n.GetObjectValue<TeamworkConnection>(TeamworkConnection.CreateFromDiscriminatorValue); } },
                 {"teamsConnection", n => { TeamsConnection = n.GetObjectValue<TeamworkConnection>(TeamworkConnection.CreateFromDiscriminatorValue); } },
             };
@@ -60,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<TeamworkConnection>("exchangeConnection", ExchangeConnection);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<TeamworkConnection>("skypeConnection", SkypeConnection);
             writer.WriteObjectValue<TeamworkConnection>("teamsConnection", TeamsConnection);
             writer.WriteAdditionalData(AdditionalData);

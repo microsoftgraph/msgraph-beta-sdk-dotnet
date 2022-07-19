@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations {
     /// <summary>Provides operations to manage the clientConfigurations property of the microsoft.graph.officeConfiguration entity.</summary>
     public class ClientConfigurationsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

@@ -24,6 +24,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("minimumPinLength"); }
             set { BackingStore?.Set("minimumPinLength", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Enable pre-boot recovery message and Url. If requireStartupAuthentication is false, this value does not affect.</summary>
         public bool? PrebootRecoveryEnableMessageAndUrl {
             get { return BackingStore?.Get<bool?>("prebootRecoveryEnableMessageAndUrl"); }
@@ -80,6 +85,7 @@ namespace Microsoft.Graph.Beta.Models {
         public BitLockerSystemDrivePolicy() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.bitLockerSystemDrivePolicy";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -96,6 +102,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"encryptionMethod", n => { EncryptionMethod = n.GetEnumValue<BitLockerEncryptionMethod>(); } },
                 {"minimumPinLength", n => { MinimumPinLength = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"prebootRecoveryEnableMessageAndUrl", n => { PrebootRecoveryEnableMessageAndUrl = n.GetBoolValue(); } },
                 {"prebootRecoveryMessage", n => { PrebootRecoveryMessage = n.GetStringValue(); } },
                 {"prebootRecoveryUrl", n => { PrebootRecoveryUrl = n.GetStringValue(); } },
@@ -116,6 +123,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<BitLockerEncryptionMethod>("encryptionMethod", EncryptionMethod);
             writer.WriteIntValue("minimumPinLength", MinimumPinLength);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("prebootRecoveryEnableMessageAndUrl", PrebootRecoveryEnableMessageAndUrl);
             writer.WriteStringValue("prebootRecoveryMessage", PrebootRecoveryMessage);
             writer.WriteStringValue("prebootRecoveryUrl", PrebootRecoveryUrl);

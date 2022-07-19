@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item.ChecklistItems {
     /// <summary>Provides operations to manage the checklistItems property of the microsoft.graph.todoTask entity.</summary>
     public class ChecklistItemsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

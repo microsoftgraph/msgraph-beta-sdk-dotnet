@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups.I
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new tenantGroupItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new TenantGroupItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public TenantGroupItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups.I
             /// <summary>Request query parameters</summary>
             public TenantGroupItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TenantGroupItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new tenantGroupItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TenantGroupItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TenantGroupItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups.I
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new tenantGroupItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new TenantGroupItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public TenantGroupItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

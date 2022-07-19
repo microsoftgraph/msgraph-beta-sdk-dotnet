@@ -6,6 +6,12 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementSettingXmlConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>
+        /// Instantiates a new DeviceManagementSettingXmlConstraint and sets the default values.
+        /// </summary>
+        public DeviceManagementSettingXmlConstraint() : base() {
+            OdataType = "#microsoft.graph.deviceManagementSettingXmlConstraint";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

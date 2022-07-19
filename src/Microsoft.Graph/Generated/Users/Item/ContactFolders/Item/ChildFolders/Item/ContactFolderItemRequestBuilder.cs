@@ -169,7 +169,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders.Item 
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new contactFolderItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ContactFolderItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ContactFolderItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders.Item 
             /// <summary>Request query parameters</summary>
             public ContactFolderItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ContactFolderItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new contactFolderItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ContactFolderItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ContactFolderItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders.Item 
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new contactFolderItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ContactFolderItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ContactFolderItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

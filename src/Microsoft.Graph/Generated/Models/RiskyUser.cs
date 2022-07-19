@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new RiskyUser and sets the default values.
         /// </summary>
         public RiskyUser() : base() {
-            Type = "#microsoft.graph.riskyUser";
+            OdataType = "#microsoft.graph.riskyUser";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

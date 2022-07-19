@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.ServicePrincipals.Item.AppManagementPolicies {
     /// <summary>Provides operations to manage the appManagementPolicies property of the microsoft.graph.servicePrincipal entity.</summary>
     public class AppManagementPoliciesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

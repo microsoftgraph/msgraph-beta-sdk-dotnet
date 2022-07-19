@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new certificateConnectorDetailsItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CertificateConnectorDetailsItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CertificateConnectorDetailsItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item
             /// <summary>Request query parameters</summary>
             public CertificateConnectorDetailsItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CertificateConnectorDetailsItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new certificateConnectorDetailsItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CertificateConnectorDetailsItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CertificateConnectorDetailsItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new certificateConnectorDetailsItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CertificateConnectorDetailsItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CertificateConnectorDetailsItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

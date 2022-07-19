@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.App.Calls.Item.ContentSharingSessions {
     /// <summary>Provides operations to manage the contentSharingSessions property of the microsoft.graph.call entity.</summary>
     public class ContentSharingSessionsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

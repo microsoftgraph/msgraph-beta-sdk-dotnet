@@ -33,6 +33,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isAcquiredByPrinter"); }
             set { BackingStore?.Set("isAcquiredByPrinter", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The processingState property</summary>
         public PrintJobProcessingState? ProcessingState {
             get { return BackingStore?.Get<PrintJobProcessingState?>("processingState"); }
@@ -54,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         public PrintJobStatus() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.printJobStatus";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -72,6 +78,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"details", n => { Details = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"isAcquiredByPrinter", n => { IsAcquiredByPrinter = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"processingState", n => { ProcessingState = n.GetEnumValue<PrintJobProcessingState>(); } },
                 {"processingStateDescription", n => { ProcessingStateDescription = n.GetStringValue(); } },
                 {"state", n => { State = n.GetEnumValue<PrintJobProcessingState>(); } },
@@ -87,6 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfPrimitiveValues<string>("details", Details);
             writer.WriteBoolValue("isAcquiredByPrinter", IsAcquiredByPrinter);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<PrintJobProcessingState>("processingState", ProcessingState);
             writer.WriteStringValue("processingStateDescription", ProcessingStateDescription);
             writer.WriteEnumValue<PrintJobProcessingState>("state", State);

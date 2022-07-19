@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class DeviceCompliancePolicySettingStateSummary : Entity, IParsable {
         /// <summary>The number of devices in a conflict state. Optional. Read-only.</summary>
         public int? ConflictDeviceCount {
@@ -70,6 +70,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
+        }
+        /// <summary>
+        /// Instantiates a new deviceCompliancePolicySettingStateSummary and sets the default values.
+        /// </summary>
+        public DeviceCompliancePolicySettingStateSummary() : base() {
+            OdataType = "#microsoft.graph.managedTenants.deviceCompliancePolicySettingStateSummary";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

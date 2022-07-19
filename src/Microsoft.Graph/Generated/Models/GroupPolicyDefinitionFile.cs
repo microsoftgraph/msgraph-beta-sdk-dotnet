@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new groupPolicyDefinitionFile and sets the default values.
         /// </summary>
         public GroupPolicyDefinitionFile() : base() {
-            Type = "#microsoft.graph.groupPolicyDefinitionFile";
+            OdataType = "#microsoft.graph.groupPolicyDefinitionFile";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

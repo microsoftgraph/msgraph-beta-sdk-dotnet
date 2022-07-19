@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionW
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new windowsInformationProtectionWipeActionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsInformationProtectionWipeActionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsInformationProtectionWipeActionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionW
             /// <summary>Request query parameters</summary>
             public WindowsInformationProtectionWipeActionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new WindowsInformationProtectionWipeActionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new windowsInformationProtectionWipeActionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsInformationProtectionWipeActionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsInformationProtectionWipeActionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionW
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new windowsInformationProtectionWipeActionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsInformationProtectionWipeActionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsInformationProtectionWipeActionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

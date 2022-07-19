@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementCompliancePolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementCompliancePolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementCompliancePolicyItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item {
             /// <summary>Request query parameters</summary>
             public DeviceManagementCompliancePolicyItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceManagementCompliancePolicyItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceManagementCompliancePolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementCompliancePolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementCompliancePolicyItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementCompliancePolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementCompliancePolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementCompliancePolicyItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

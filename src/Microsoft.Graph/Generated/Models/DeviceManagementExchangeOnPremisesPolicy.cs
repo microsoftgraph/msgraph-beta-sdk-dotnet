@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Singleton entity which represents the Exchange OnPremises policy configured for a tenant.</summary>
     public class DeviceManagementExchangeOnPremisesPolicy : Entity, IParsable {
         /// <summary>The list of device access rules in Exchange. The access rules apply globally to the entire Exchange organization</summary>
         public List<DeviceManagementExchangeAccessRule> AccessRules {
@@ -30,6 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public byte[] NotificationContent {
             get { return BackingStore?.Get<byte[]>("notificationContent"); }
             set { BackingStore?.Set("notificationContent", value); }
+        }
+        /// <summary>
+        /// Instantiates a new DeviceManagementExchangeOnPremisesPolicy and sets the default values.
+        /// </summary>
+        public DeviceManagementExchangeOnPremisesPolicy() : base() {
+            OdataType = "#microsoft.graph.deviceManagementExchangeOnPremisesPolicy";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

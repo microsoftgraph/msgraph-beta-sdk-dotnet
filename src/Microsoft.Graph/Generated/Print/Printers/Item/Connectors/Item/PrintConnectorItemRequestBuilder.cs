@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.Connectors.Item {
             /// <summary>Request query parameters</summary>
             public PrintConnectorItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PrintConnectorItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new printConnectorItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PrintConnectorItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PrintConnectorItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

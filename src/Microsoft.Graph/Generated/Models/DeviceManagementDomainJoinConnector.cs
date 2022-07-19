@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>A Domain Join Connector is a connector that is responsible to allocate (and delete) machine account blobs</summary>
     public class DeviceManagementDomainJoinConnector : Entity, IParsable {
         /// <summary>The connector display name.</summary>
         public string DisplayName {
@@ -25,6 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string Version {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
+        }
+        /// <summary>
+        /// Instantiates a new DeviceManagementDomainJoinConnector and sets the default values.
+        /// </summary>
+        public DeviceManagementDomainJoinConnector() : base() {
+            OdataType = "#microsoft.graph.deviceManagementDomainJoinConnector";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

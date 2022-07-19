@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.SideLoadingKeys.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new sideLoadingKeyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new SideLoadingKeyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public SideLoadingKeyItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.SideLoadingKeys.Item {
             /// <summary>Request query parameters</summary>
             public SideLoadingKeyItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SideLoadingKeyItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new sideLoadingKeyItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SideLoadingKeyItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SideLoadingKeyItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.SideLoadingKeys.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new sideLoadingKeyItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SideLoadingKeyItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SideLoadingKeyItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

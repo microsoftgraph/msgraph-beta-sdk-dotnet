@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Time the action was initiated</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
-        }
-        /// <summary>The type property</summary>
-        public string Type {
-            get { return BackingStore?.Get<string>("@odata.type"); }
-            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new vppTokenActionResult and sets the default values.
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
         public VppTokenActionResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            Type = "#microsoft.graph.vppTokenActionResult";
+            OdataType = "#microsoft.graph.vppTokenActionResult";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -69,8 +69,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"actionName", n => { ActionName = n.GetStringValue(); } },
                 {"actionState", n => { ActionState = n.GetEnumValue<ActionState>(); } },
                 {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -82,8 +82,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("actionName", ActionName);
             writer.WriteEnumValue<ActionState>("actionState", ActionState);
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
-            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

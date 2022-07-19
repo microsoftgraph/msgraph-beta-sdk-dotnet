@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class FileObject : Entity, IParsable {
         /// <summary>The content property</summary>
         public byte[] Content {
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// Instantiates a new fileObject and sets the default values.
         /// </summary>
         public FileObject() : base() {
-            Type = "#microsoft.graph.security.file";
+            OdataType = "#microsoft.graph.security.file";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// Instantiates a new caseOperation and sets the default values.
         /// </summary>
         public CaseOperation() : base() {
-            Type = "#microsoft.graph.ediscovery.caseOperation";
+            OdataType = "#microsoft.graph.ediscovery.caseOperation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

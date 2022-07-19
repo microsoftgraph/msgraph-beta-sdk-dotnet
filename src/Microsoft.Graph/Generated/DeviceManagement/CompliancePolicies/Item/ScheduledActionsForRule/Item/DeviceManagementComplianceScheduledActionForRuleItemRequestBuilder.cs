@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.Schedule
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementComplianceScheduledActionForRuleItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementComplianceScheduledActionForRuleItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementComplianceScheduledActionForRuleItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.Schedule
             /// <summary>Request query parameters</summary>
             public DeviceManagementComplianceScheduledActionForRuleItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceManagementComplianceScheduledActionForRuleItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceManagementComplianceScheduledActionForRuleItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementComplianceScheduledActionForRuleItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementComplianceScheduledActionForRuleItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.Schedule
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementComplianceScheduledActionForRuleItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementComplianceScheduledActionForRuleItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementComplianceScheduledActionForRuleItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

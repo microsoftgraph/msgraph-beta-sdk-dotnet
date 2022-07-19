@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.Shares.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new sharedDriveItemItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new SharedDriveItemItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public SharedDriveItemItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -214,7 +214,7 @@ namespace Microsoft.Graph.Beta.Shares.Item {
             /// <summary>Request query parameters</summary>
             public SharedDriveItemItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SharedDriveItemItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new sharedDriveItemItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SharedDriveItemItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SharedDriveItemItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -228,7 +228,7 @@ namespace Microsoft.Graph.Beta.Shares.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new sharedDriveItemItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SharedDriveItemItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SharedDriveItemItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new MarkContent and sets the default values.
         /// </summary>
         public MarkContent() : base() {
-            Type = "#microsoft.graph.markContent";
+            OdataType = "#microsoft.graph.markContent";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

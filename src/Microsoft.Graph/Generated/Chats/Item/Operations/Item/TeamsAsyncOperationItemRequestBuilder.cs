@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.Operations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new teamsAsyncOperationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamsAsyncOperationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public TeamsAsyncOperationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.Operations.Item {
             /// <summary>Request query parameters</summary>
             public TeamsAsyncOperationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TeamsAsyncOperationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new teamsAsyncOperationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamsAsyncOperationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TeamsAsyncOperationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.Operations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new teamsAsyncOperationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamsAsyncOperationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public TeamsAsyncOperationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

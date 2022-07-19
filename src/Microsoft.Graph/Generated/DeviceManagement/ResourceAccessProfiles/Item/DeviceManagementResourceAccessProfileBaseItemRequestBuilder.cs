@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementResourceAccessProfileBaseItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementResourceAccessProfileBaseItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementResourceAccessProfileBaseItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.Item {
             /// <summary>Request query parameters</summary>
             public DeviceManagementResourceAccessProfileBaseItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceManagementResourceAccessProfileBaseItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceManagementResourceAccessProfileBaseItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementResourceAccessProfileBaseItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementResourceAccessProfileBaseItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementResourceAccessProfileBaseItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementResourceAccessProfileBaseItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementResourceAccessProfileBaseItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

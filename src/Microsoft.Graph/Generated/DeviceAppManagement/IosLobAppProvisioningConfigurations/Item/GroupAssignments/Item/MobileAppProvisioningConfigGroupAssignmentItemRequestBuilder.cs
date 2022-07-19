@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new mobileAppProvisioningConfigGroupAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
             /// <summary>Request query parameters</summary>
             public MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new mobileAppProvisioningConfigGroupAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new mobileAppProvisioningConfigGroupAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

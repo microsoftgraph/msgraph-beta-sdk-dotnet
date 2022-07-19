@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.AssignmentFilterEv
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new assignmentFilterEvaluationStatusDetailsItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AssignmentFilterEvaluationStatusDetailsItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AssignmentFilterEvaluationStatusDetailsItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.AssignmentFilterEv
             /// <summary>Request query parameters</summary>
             public AssignmentFilterEvaluationStatusDetailsItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AssignmentFilterEvaluationStatusDetailsItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new assignmentFilterEvaluationStatusDetailsItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AssignmentFilterEvaluationStatusDetailsItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AssignmentFilterEvaluationStatusDetailsItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.AssignmentFilterEv
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new assignmentFilterEvaluationStatusDetailsItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AssignmentFilterEvaluationStatusDetailsItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AssignmentFilterEvaluationStatusDetailsItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -58,6 +58,11 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallRecords.NetworkTransportProtocol?>("networkTransportProtocol"); }
             set { BackingStore?.Set("networkTransportProtocol", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Network port number used by media endpoint.</summary>
         public int? Port {
             get { return BackingStore?.Get<int?>("port"); }
@@ -149,6 +154,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         public NetworkInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.callRecords.networkInfo";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -172,6 +178,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
                 {"linkSpeed", n => { LinkSpeed = n.GetLongValue(); } },
                 {"macAddress", n => { MacAddress = n.GetStringValue(); } },
                 {"networkTransportProtocol", n => { NetworkTransportProtocol = n.GetEnumValue<NetworkTransportProtocol>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"port", n => { Port = n.GetIntValue(); } },
                 {"receivedQualityEventRatio", n => { ReceivedQualityEventRatio = n.GetFloatValue(); } },
                 {"reflexiveIPAddress", n => { ReflexiveIPAddress = n.GetStringValue(); } },
@@ -206,6 +213,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             writer.WriteLongValue("linkSpeed", LinkSpeed);
             writer.WriteStringValue("macAddress", MacAddress);
             writer.WriteEnumValue<NetworkTransportProtocol>("networkTransportProtocol", NetworkTransportProtocol);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("port", Port);
             writer.WriteFloatValue("receivedQualityEventRatio", ReceivedQualityEventRatio);
             writer.WriteStringValue("reflexiveIPAddress", ReflexiveIPAddress);

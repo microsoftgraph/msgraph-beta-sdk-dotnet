@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             get { return BackingStore?.Get<DateTimeOffset?>("lastDelegatedPrivilegeRefreshDateTime"); }
             set { BackingStore?.Set("lastDelegatedPrivilegeRefreshDateTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The identifier for the account that offboarded the managed tenant. Optional. Read-only.</summary>
         public string OffboardedByUserId {
             get { return BackingStore?.Get<string>("offboardedByUserId"); }
@@ -64,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public TenantStatusInformation() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.managedTenants.tenantStatusInformation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -80,6 +86,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             return new Dictionary<string, Action<IParseNode>> {
                 {"delegatedPrivilegeStatus", n => { DelegatedPrivilegeStatus = n.GetEnumValue<DelegatedPrivilegeStatus>(); } },
                 {"lastDelegatedPrivilegeRefreshDateTime", n => { LastDelegatedPrivilegeRefreshDateTime = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"offboardedByUserId", n => { OffboardedByUserId = n.GetStringValue(); } },
                 {"offboardedDateTime", n => { OffboardedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"onboardedByUserId", n => { OnboardedByUserId = n.GetStringValue(); } },
@@ -97,6 +104,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<DelegatedPrivilegeStatus>("delegatedPrivilegeStatus", DelegatedPrivilegeStatus);
             writer.WriteDateTimeOffsetValue("lastDelegatedPrivilegeRefreshDateTime", LastDelegatedPrivilegeRefreshDateTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("offboardedByUserId", OffboardedByUserId);
             writer.WriteDateTimeOffsetValue("offboardedDateTime", OffboardedDateTime);
             writer.WriteStringValue("onboardedByUserId", OnboardedByUserId);

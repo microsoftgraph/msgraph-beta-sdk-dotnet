@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Indicates who is allowed to reply to the teams channel. Possible values are: everyone, authorAndModerators, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.ReplyRestriction? ReplyRestriction {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ReplyRestriction?>("replyRestriction"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ChannelModerationSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.channelModerationSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"allowNewMessageFromBots", n => { AllowNewMessageFromBots = n.GetBoolValue(); } },
                 {"allowNewMessageFromConnectors", n => { AllowNewMessageFromConnectors = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"replyRestriction", n => { ReplyRestriction = n.GetEnumValue<ReplyRestriction>(); } },
                 {"userNewMessageRestriction", n => { UserNewMessageRestriction = n.GetEnumValue<UserNewMessageRestriction>(); } },
             };
@@ -67,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allowNewMessageFromBots", AllowNewMessageFromBots);
             writer.WriteBoolValue("allowNewMessageFromConnectors", AllowNewMessageFromConnectors);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<ReplyRestriction>("replyRestriction", ReplyRestriction);
             writer.WriteEnumValue<UserNewMessageRestriction>("userNewMessageRestriction", UserNewMessageRestriction);
             writer.WriteAdditionalData(AdditionalData);

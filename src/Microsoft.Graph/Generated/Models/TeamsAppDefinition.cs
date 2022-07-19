@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class TeamsAppDefinition : Entity, IParsable {
         /// <summary>A collection of scopes where the Teams app can be installed. Possible values are:team — Indicates that the Teams app can be installed within a team and is authorized to access that team&apos;s data. groupChat  — Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat&apos;s data.  personal — Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user&apos;s data.</summary>
         public TeamsAppInstallationScopes? AllowedInstallationScopes {
@@ -70,6 +70,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string Version {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
+        }
+        /// <summary>
+        /// Instantiates a new teamsAppDefinition and sets the default values.
+        /// </summary>
+        public TeamsAppDefinition() : base() {
+            OdataType = "#microsoft.graph.teamsAppDefinition";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

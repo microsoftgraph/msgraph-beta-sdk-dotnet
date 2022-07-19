@@ -169,7 +169,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfil
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new windowsAutopilotDeploymentProfileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsAutopilotDeploymentProfileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsAutopilotDeploymentProfileItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfil
             /// <summary>Request query parameters</summary>
             public WindowsAutopilotDeploymentProfileItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new WindowsAutopilotDeploymentProfileItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new windowsAutopilotDeploymentProfileItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsAutopilotDeploymentProfileItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsAutopilotDeploymentProfileItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfil
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new windowsAutopilotDeploymentProfileItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsAutopilotDeploymentProfileItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsAutopilotDeploymentProfileItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -11,6 +11,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("userExperience", value); }
         }
         /// <summary>
+        /// Instantiates a new WindowsDeploymentSettings and sets the default values.
+        /// </summary>
+        public WindowsDeploymentSettings() : base() {
+            OdataType = "#microsoft.graph.windowsUpdates.windowsDeploymentSettings";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

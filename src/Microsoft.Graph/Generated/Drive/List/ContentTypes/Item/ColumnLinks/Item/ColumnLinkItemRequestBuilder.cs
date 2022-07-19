@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Drive.List.ContentTypes.Item.ColumnLinks.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new columnLinkItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ColumnLinkItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ColumnLinkItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Drive.List.ContentTypes.Item.ColumnLinks.Item {
             /// <summary>Request query parameters</summary>
             public ColumnLinkItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ColumnLinkItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new columnLinkItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ColumnLinkItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ColumnLinkItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Drive.List.ContentTypes.Item.ColumnLinks.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new columnLinkItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ColumnLinkItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ColumnLinkItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

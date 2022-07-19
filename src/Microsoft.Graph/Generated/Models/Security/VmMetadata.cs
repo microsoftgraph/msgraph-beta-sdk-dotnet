@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<VmCloudProvider?>("cloudProvider"); }
             set { BackingStore?.Set("cloudProvider", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The resourceId property</summary>
         public string ResourceId {
             get { return BackingStore?.Get<string>("resourceId"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public VmMetadata() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.security.vmMetadata";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -54,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"cloudProvider", n => { CloudProvider = n.GetEnumValue<VmCloudProvider>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"resourceId", n => { ResourceId = n.GetStringValue(); } },
                 {"subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
                 {"vmId", n => { VmId = n.GetStringValue(); } },
@@ -66,6 +73,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<VmCloudProvider>("cloudProvider", CloudProvider);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("resourceId", ResourceId);
             writer.WriteStringValue("subscriptionId", SubscriptionId);
             writer.WriteStringValue("vmId", VmId);

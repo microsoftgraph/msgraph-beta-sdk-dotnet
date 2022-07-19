@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new mobilityManagementPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new MobilityManagementPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public MobilityManagementPolicyItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item {
             /// <summary>Request query parameters</summary>
             public MobilityManagementPolicyItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new MobilityManagementPolicyItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new mobilityManagementPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new MobilityManagementPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public MobilityManagementPolicyItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new mobilityManagementPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new MobilityManagementPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public MobilityManagementPolicyItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

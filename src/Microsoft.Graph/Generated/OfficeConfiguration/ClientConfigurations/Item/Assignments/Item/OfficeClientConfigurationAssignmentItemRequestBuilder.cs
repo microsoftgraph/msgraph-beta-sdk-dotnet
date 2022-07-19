@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item.Ass
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new officeClientConfigurationAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new OfficeClientConfigurationAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public OfficeClientConfigurationAssignmentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item.Ass
             /// <summary>Request query parameters</summary>
             public OfficeClientConfigurationAssignmentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new OfficeClientConfigurationAssignmentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new officeClientConfigurationAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new OfficeClientConfigurationAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public OfficeClientConfigurationAssignmentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item.Ass
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new officeClientConfigurationAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new OfficeClientConfigurationAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public OfficeClientConfigurationAssignmentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

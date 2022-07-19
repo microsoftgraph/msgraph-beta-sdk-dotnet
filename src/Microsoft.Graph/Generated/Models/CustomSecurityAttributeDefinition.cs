@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class CustomSecurityAttributeDefinition : Entity, IParsable {
         /// <summary>Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.</summary>
         public List<AllowedValue> AllowedValues {
@@ -41,10 +41,21 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+        /// <summary>Data type for the custom security attribute values. Supported types are Boolean, Integer, and String. Cannot be changed later.</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
         /// <summary>Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If type is set to Boolean, usePreDefinedValuesOnly cannot be set to true.</summary>
         public bool? UsePreDefinedValuesOnly {
             get { return BackingStore?.Get<bool?>("usePreDefinedValuesOnly"); }
             set { BackingStore?.Set("usePreDefinedValuesOnly", value); }
+        }
+        /// <summary>
+        /// Instantiates a new customSecurityAttributeDefinition and sets the default values.
+        /// </summary>
+        public CustomSecurityAttributeDefinition() : base() {
+            OdataType = "#microsoft.graph.customSecurityAttributeDefinition";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -66,6 +77,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isSearchable", n => { IsSearchable = n.GetBoolValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"status", n => { Status = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
                 {"usePreDefinedValuesOnly", n => { UsePreDefinedValuesOnly = n.GetBoolValue(); } },
             };
         }
@@ -83,6 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isSearchable", IsSearchable);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("status", Status);
+            writer.WriteStringValue("type", Type);
             writer.WriteBoolValue("usePreDefinedValuesOnly", UsePreDefinedValuesOnly);
         }
     }

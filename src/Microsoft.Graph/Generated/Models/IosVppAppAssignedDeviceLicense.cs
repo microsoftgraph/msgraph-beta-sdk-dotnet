@@ -16,6 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("managedDeviceId", value); }
         }
         /// <summary>
+        /// Instantiates a new IosVppAppAssignedDeviceLicense and sets the default values.
+        /// </summary>
+        public IosVppAppAssignedDeviceLicense() : base() {
+            OdataType = "#microsoft.graph.iosVppAppAssignedDeviceLicense";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

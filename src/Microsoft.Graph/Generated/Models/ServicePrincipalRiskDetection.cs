@@ -106,6 +106,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("tokenIssuerType", value); }
         }
         /// <summary>
+        /// Instantiates a new ServicePrincipalRiskDetection and sets the default values.
+        /// </summary>
+        public ServicePrincipalRiskDetection() : base() {
+            OdataType = "#microsoft.graph.servicePrincipalRiskDetection";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

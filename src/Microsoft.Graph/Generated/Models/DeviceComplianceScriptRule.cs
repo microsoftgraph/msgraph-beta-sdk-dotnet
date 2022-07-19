@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceComplianceScriptRulOperator?>("deviceComplianceScriptRulOperator"); }
             set { BackingStore?.Set("deviceComplianceScriptRulOperator", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Operand specified in the rule.</summary>
         public string Operand {
             get { return BackingStore?.Get<string>("operand"); }
@@ -49,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceComplianceScriptRule() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.deviceComplianceScriptRule";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -66,6 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"dataType", n => { DataType = n.GetEnumValue<DataType>(); } },
                 {"deviceComplianceScriptRuleDataType", n => { DeviceComplianceScriptRuleDataType = n.GetEnumValue<DeviceComplianceScriptRuleDataType>(); } },
                 {"deviceComplianceScriptRulOperator", n => { DeviceComplianceScriptRulOperator = n.GetEnumValue<DeviceComplianceScriptRulOperator>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"operand", n => { Operand = n.GetStringValue(); } },
                 {"operator", n => { Operator = n.GetEnumValue<Operator>(); } },
                 {"settingName", n => { SettingName = n.GetStringValue(); } },
@@ -80,6 +87,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<DataType>("dataType", DataType);
             writer.WriteEnumValue<DeviceComplianceScriptRuleDataType>("deviceComplianceScriptRuleDataType", DeviceComplianceScriptRuleDataType);
             writer.WriteEnumValue<DeviceComplianceScriptRulOperator>("deviceComplianceScriptRulOperator", DeviceComplianceScriptRulOperator);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("operand", Operand);
             writer.WriteEnumValue<Operator>("operator", Operator);
             writer.WriteStringValue("settingName", SettingName);

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class AccessPackageAssignmentPolicy : Entity, IParsable {
         /// <summary>The access package with this policy. Read-only. Nullable. Supports $expand.</summary>
         public Microsoft.Graph.Beta.Models.AccessPackage AccessPackage {
@@ -90,6 +90,12 @@ namespace Microsoft.Graph.Beta.Models {
         public Microsoft.Graph.Beta.Models.RequestorSettings RequestorSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RequestorSettings>("requestorSettings"); }
             set { BackingStore?.Set("requestorSettings", value); }
+        }
+        /// <summary>
+        /// Instantiates a new accessPackageAssignmentPolicy and sets the default values.
+        /// </summary>
+        public AccessPackageAssignmentPolicy() : base() {
+            OdataType = "#microsoft.graph.accessPackageAssignmentPolicy";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

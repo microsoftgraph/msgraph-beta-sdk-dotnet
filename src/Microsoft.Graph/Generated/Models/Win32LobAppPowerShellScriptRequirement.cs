@@ -36,6 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("scriptContent", value); }
         }
         /// <summary>
+        /// Instantiates a new Win32LobAppPowerShellScriptRequirement and sets the default values.
+        /// </summary>
+        public Win32LobAppPowerShellScriptRequirement() : base() {
+            OdataType = "#microsoft.graph.win32LobAppPowerShellScriptRequirement";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

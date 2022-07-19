@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ManagedDeviceCertificateState : Entity, IParsable {
         /// <summary>Extended key usage</summary>
         public string CertificateEnhancedKeyUsage {
@@ -125,6 +125,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string UserDisplayName {
             get { return BackingStore?.Get<string>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
+        }
+        /// <summary>
+        /// Instantiates a new managedDeviceCertificateState and sets the default values.
+        /// </summary>
+        public ManagedDeviceCertificateState() : base() {
+            OdataType = "#microsoft.graph.managedDeviceCertificateState";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

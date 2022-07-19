@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The sourceId property</summary>
         public string SourceId {
             get { return BackingStore?.Get<string>("sourceId"); }
@@ -49,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         public UriClickSecurityState() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.uriClickSecurityState";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -66,6 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"clickAction", n => { ClickAction = n.GetStringValue(); } },
                 {"clickDateTime", n => { ClickDateTime = n.GetDateTimeOffsetValue(); } },
                 {"id", n => { Id = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"sourceId", n => { SourceId = n.GetStringValue(); } },
                 {"uriDomain", n => { UriDomain = n.GetStringValue(); } },
                 {"verdict", n => { Verdict = n.GetStringValue(); } },
@@ -80,6 +87,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("clickAction", ClickAction);
             writer.WriteDateTimeOffsetValue("clickDateTime", ClickDateTime);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("sourceId", SourceId);
             writer.WriteStringValue("uriDomain", UriDomain);
             writer.WriteStringValue("verdict", Verdict);

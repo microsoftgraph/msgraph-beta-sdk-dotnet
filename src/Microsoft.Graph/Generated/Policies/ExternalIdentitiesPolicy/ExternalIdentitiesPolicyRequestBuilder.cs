@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Policies.ExternalIdentitiesPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Get externalIdentitiesPolicy from policies
+        /// Represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ExternalIdentitiesPolicyRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Policies.ExternalIdentitiesPolicy {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get externalIdentitiesPolicy from policies
+        /// Represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.Policies.ExternalIdentitiesPolicy {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get externalIdentitiesPolicy from policies</summary>
+        /// <summary>Represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.</summary>
         public class ExternalIdentitiesPolicyRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

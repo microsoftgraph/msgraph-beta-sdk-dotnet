@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new AndroidManagedStoreApp and sets the default values.
         /// </summary>
         public AndroidManagedStoreApp() : base() {
-            Type = "#microsoft.graph.androidManagedStoreApp";
+            OdataType = "#microsoft.graph.androidManagedStoreApp";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new synchronizationJobItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new SynchronizationJobItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public SynchronizationJobItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -214,7 +214,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item {
             /// <summary>Request query parameters</summary>
             public SynchronizationJobItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SynchronizationJobItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new synchronizationJobItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SynchronizationJobItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SynchronizationJobItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -228,7 +228,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new synchronizationJobItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SynchronizationJobItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SynchronizationJobItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

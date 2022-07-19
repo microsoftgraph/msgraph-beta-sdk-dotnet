@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new Windows10XCertificateProfile and sets the default values.
         /// </summary>
         public Windows10XCertificateProfile() : base() {
-            Type = "#microsoft.graph.windows10XCertificateProfile";
+            OdataType = "#microsoft.graph.windows10XCertificateProfile";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

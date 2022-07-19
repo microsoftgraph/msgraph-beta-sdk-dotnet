@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.Assignmen
             /// <summary>Request query parameters</summary>
             public PrivilegedRoleAssignmentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PrivilegedRoleAssignmentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new privilegedRoleAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PrivilegedRoleAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PrivilegedRoleAssignmentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

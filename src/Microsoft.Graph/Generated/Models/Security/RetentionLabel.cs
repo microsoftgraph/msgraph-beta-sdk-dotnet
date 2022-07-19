@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class RetentionLabel : Entity, IParsable {
         /// <summary>Specifies the action to take on a document with this label applied during the retention period. The possible values are: none, delete, startDispositionReview, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.Security.ActionAfterRetentionPeriod? ActionAfterRetentionPeriod {
@@ -85,6 +85,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public Microsoft.Graph.Beta.Models.Security.RetentionTrigger? RetentionTrigger {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.RetentionTrigger?>("retentionTrigger"); }
             set { BackingStore?.Set("retentionTrigger", value); }
+        }
+        /// <summary>
+        /// Instantiates a new retentionLabel and sets the default values.
+        /// </summary>
+        public RetentionLabel() : base() {
+            OdataType = "#microsoft.graph.security.retentionLabel";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

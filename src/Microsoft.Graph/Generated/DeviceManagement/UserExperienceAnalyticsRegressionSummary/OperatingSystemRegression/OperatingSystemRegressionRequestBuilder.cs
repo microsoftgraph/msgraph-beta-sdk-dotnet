@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRegressionSummary.OperatingSystemRegression {
     /// <summary>Provides operations to manage the operatingSystemRegression property of the microsoft.graph.userExperienceAnalyticsRegressionSummary entity.</summary>
     public class OperatingSystemRegressionRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

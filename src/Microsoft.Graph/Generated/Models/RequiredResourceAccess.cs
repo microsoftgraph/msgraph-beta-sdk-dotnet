@@ -13,6 +13,11 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The list of OAuth2.0 permission scopes and app roles that the application requires from the specified resource.</summary>
         public List<Microsoft.Graph.Beta.Models.ResourceAccess> ResourceAccess {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ResourceAccess>>("resourceAccess"); }
@@ -29,6 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         public RequiredResourceAccess() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.requiredResourceAccess";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -43,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"resourceAccess", n => { ResourceAccess = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ResourceAccess>(Microsoft.Graph.Beta.Models.ResourceAccess.CreateFromDiscriminatorValue).ToList(); } },
                 {"resourceAppId", n => { ResourceAppId = n.GetStringValue(); } },
             };
@@ -53,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ResourceAccess>("resourceAccess", ResourceAccess);
             writer.WriteStringValue("resourceAppId", ResourceAppId);
             writer.WriteAdditionalData(AdditionalData);

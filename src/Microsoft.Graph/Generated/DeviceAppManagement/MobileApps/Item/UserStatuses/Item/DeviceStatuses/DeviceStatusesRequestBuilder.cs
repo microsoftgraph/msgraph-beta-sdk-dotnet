@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.DeviceStatuses {
     /// <summary>Provides operations to manage the deviceStatuses property of the microsoft.graph.userAppInstallStatus entity.</summary>
     public class DeviceStatusesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

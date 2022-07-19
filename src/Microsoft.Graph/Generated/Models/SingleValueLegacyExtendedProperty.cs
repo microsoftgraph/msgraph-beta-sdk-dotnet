@@ -4,12 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class SingleValueLegacyExtendedProperty : Entity, IParsable {
         /// <summary>A property value.</summary>
         public string Value {
             get { return BackingStore?.Get<string>("value"); }
             set { BackingStore?.Set("value", value); }
+        }
+        /// <summary>
+        /// Instantiates a new singleValueLegacyExtendedProperty and sets the default values.
+        /// </summary>
+        public SingleValueLegacyExtendedProperty() : base() {
+            OdataType = "#microsoft.graph.singleValueLegacyExtendedProperty";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

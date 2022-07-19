@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.TrustFramework.KeySets {
     /// <summary>Provides operations to manage the keySets property of the microsoft.graph.trustFramework entity.</summary>
     public class KeySetsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

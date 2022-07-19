@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<byte[]>("encryptedBuffer"); }
             set { BackingStore?.Set("encryptedBuffer", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The publishingLicense property</summary>
         public byte[] PublishingLicense {
             get { return BackingStore?.Get<byte[]>("publishingLicense"); }
@@ -29,6 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         public BufferEncryptionResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.bufferEncryptionResult";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"encryptedBuffer", n => { EncryptedBuffer = n.GetByteArrayValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"publishingLicense", n => { PublishingLicense = n.GetByteArrayValue(); } },
             };
         }
@@ -54,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteByteArrayValue("encryptedBuffer", EncryptedBuffer);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteByteArrayValue("publishingLicense", PublishingLicense);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -34,6 +34,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("hidePrivacySettings"); }
             set { BackingStore?.Set("hidePrivacySettings", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>If set, then skip the keyboard selection page if Language and Region are set</summary>
         public bool? SkipKeyboardSelectionPage {
             get { return BackingStore?.Get<bool?>("skipKeyboardSelectionPage"); }
@@ -50,6 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
         public OutOfBoxExperienceSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.outOfBoxExperienceSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -68,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"hideEscapeLink", n => { HideEscapeLink = n.GetBoolValue(); } },
                 {"hideEULA", n => { HideEULA = n.GetBoolValue(); } },
                 {"hidePrivacySettings", n => { HidePrivacySettings = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"skipKeyboardSelectionPage", n => { SkipKeyboardSelectionPage = n.GetBoolValue(); } },
                 {"userType", n => { UserType = n.GetEnumValue<WindowsUserType>(); } },
             };
@@ -82,6 +89,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("hideEscapeLink", HideEscapeLink);
             writer.WriteBoolValue("hideEULA", HideEULA);
             writer.WriteBoolValue("hidePrivacySettings", HidePrivacySettings);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("skipKeyboardSelectionPage", SkipKeyboardSelectionPage);
             writer.WriteEnumValue<WindowsUserType>("userType", UserType);
             writer.WriteAdditionalData(AdditionalData);

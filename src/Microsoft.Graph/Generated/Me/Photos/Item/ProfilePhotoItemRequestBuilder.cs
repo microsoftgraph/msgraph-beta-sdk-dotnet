@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Me.Photos.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new profilePhotoItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ProfilePhotoItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ProfilePhotoItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.Me.Photos.Item {
             /// <summary>Request query parameters</summary>
             public ProfilePhotoItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ProfilePhotoItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new profilePhotoItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ProfilePhotoItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ProfilePhotoItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -195,7 +195,7 @@ namespace Microsoft.Graph.Beta.Me.Photos.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new profilePhotoItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ProfilePhotoItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ProfilePhotoItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class PolicyBase : Entity, IParsable {
         /// <summary>The createdBy property</summary>
         public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// Instantiates a new policyBase and sets the default values.
         /// </summary>
         public PolicyBase() : base() {
-            Type = "#microsoft.graph.security.policyBase";
+            OdataType = "#microsoft.graph.security.policyBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

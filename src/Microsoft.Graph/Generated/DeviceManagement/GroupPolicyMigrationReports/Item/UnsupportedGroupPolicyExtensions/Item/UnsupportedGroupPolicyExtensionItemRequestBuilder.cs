@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new unsupportedGroupPolicyExtensionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new UnsupportedGroupPolicyExtensionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public UnsupportedGroupPolicyExtensionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item
             /// <summary>Request query parameters</summary>
             public UnsupportedGroupPolicyExtensionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new UnsupportedGroupPolicyExtensionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new unsupportedGroupPolicyExtensionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new UnsupportedGroupPolicyExtensionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public UnsupportedGroupPolicyExtensionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new unsupportedGroupPolicyExtensionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new UnsupportedGroupPolicyExtensionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public UnsupportedGroupPolicyExtensionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

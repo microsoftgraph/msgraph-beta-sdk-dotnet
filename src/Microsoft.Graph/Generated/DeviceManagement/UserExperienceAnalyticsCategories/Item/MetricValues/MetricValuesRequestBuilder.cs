@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsCategories.Item.MetricValues {
     /// <summary>Provides operations to manage the metricValues property of the microsoft.graph.userExperienceAnalyticsCategory entity.</summary>
     public class MetricValuesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

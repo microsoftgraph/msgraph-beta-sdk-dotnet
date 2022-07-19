@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DataClassification.SensitiveTypes.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new sensitiveTypeItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new SensitiveTypeItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public SensitiveTypeItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DataClassification.SensitiveTypes.Item {
             /// <summary>Request query parameters</summary>
             public SensitiveTypeItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SensitiveTypeItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new sensitiveTypeItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SensitiveTypeItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SensitiveTypeItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DataClassification.SensitiveTypes.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new sensitiveTypeItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SensitiveTypeItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SensitiveTypeItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

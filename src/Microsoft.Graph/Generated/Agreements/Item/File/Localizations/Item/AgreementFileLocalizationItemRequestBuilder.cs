@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Agreements.Item.File.Localizations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new agreementFileLocalizationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AgreementFileLocalizationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AgreementFileLocalizationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Agreements.Item.File.Localizations.Item {
             /// <summary>Request query parameters</summary>
             public AgreementFileLocalizationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AgreementFileLocalizationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new agreementFileLocalizationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AgreementFileLocalizationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AgreementFileLocalizationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Agreements.Item.File.Localizations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new agreementFileLocalizationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AgreementFileLocalizationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AgreementFileLocalizationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

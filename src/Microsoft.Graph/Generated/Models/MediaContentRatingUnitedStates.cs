@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<RatingUnitedStatesMoviesType?>("movieRating"); }
             set { BackingStore?.Set("movieRating", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>TV content rating labels in United States</summary>
         public RatingUnitedStatesTelevisionType? TvRating {
             get { return BackingStore?.Get<RatingUnitedStatesTelevisionType?>("tvRating"); }
@@ -29,6 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         public MediaContentRatingUnitedStates() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.mediaContentRatingUnitedStates";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"movieRating", n => { MovieRating = n.GetEnumValue<RatingUnitedStatesMoviesType>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"tvRating", n => { TvRating = n.GetEnumValue<RatingUnitedStatesTelevisionType>(); } },
             };
         }
@@ -54,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<RatingUnitedStatesMoviesType>("movieRating", MovieRating);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<RatingUnitedStatesTelevisionType>("tvRating", TvRating);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("issuerName"); }
             set { BackingStore?.Set("issuerName", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The subject name of the custom domain certificate.</summary>
         public string SubjectName {
             get { return BackingStore?.Get<string>("subjectName"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public VerifiedCustomDomainCertificatesMetadata() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.verifiedCustomDomainCertificatesMetadata";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -61,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"expiryDate", n => { ExpiryDate = n.GetDateTimeOffsetValue(); } },
                 {"issueDate", n => { IssueDate = n.GetDateTimeOffsetValue(); } },
                 {"issuerName", n => { IssuerName = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"subjectName", n => { SubjectName = n.GetStringValue(); } },
                 {"thumbprint", n => { Thumbprint = n.GetStringValue(); } },
             };
@@ -74,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("expiryDate", ExpiryDate);
             writer.WriteDateTimeOffsetValue("issueDate", IssueDate);
             writer.WriteStringValue("issuerName", IssuerName);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("subjectName", SubjectName);
             writer.WriteStringValue("thumbprint", Thumbprint);
             writer.WriteAdditionalData(AdditionalData);

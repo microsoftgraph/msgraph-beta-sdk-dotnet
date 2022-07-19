@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Entity which represents a connection to Mobile threat defense partner.</summary>
     public class MobileThreatDefenseConnector : Entity, IParsable {
         /// <summary>For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about installed applications from Intune</summary>
         public bool? AllowPartnerToCollectIOSApplicationMetadata {
@@ -90,6 +89,12 @@ namespace Microsoft.Graph.Beta.Models {
         public bool? WindowsEnabled {
             get { return BackingStore?.Get<bool?>("windowsEnabled"); }
             set { BackingStore?.Set("windowsEnabled", value); }
+        }
+        /// <summary>
+        /// Instantiates a new MobileThreatDefenseConnector and sets the default values.
+        /// </summary>
+        public MobileThreatDefenseConnector() : base() {
+            OdataType = "#microsoft.graph.mobileThreatDefenseConnector";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

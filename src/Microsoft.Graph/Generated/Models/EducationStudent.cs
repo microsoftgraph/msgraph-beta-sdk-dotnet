@@ -39,6 +39,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("graduationYear"); }
             set { BackingStore?.Set("graduationYear", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Student Number.</summary>
         public string StudentNumber {
             get { return BackingStore?.Get<string>("studentNumber"); }
@@ -50,6 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
         public EducationStudent() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.educationStudent";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -69,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"gender", n => { Gender = n.GetEnumValue<EducationGender>(); } },
                 {"grade", n => { Grade = n.GetStringValue(); } },
                 {"graduationYear", n => { GraduationYear = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"studentNumber", n => { StudentNumber = n.GetStringValue(); } },
             };
         }
@@ -83,6 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<EducationGender>("gender", Gender);
             writer.WriteStringValue("grade", Grade);
             writer.WriteStringValue("graduationYear", GraduationYear);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("studentNumber", StudentNumber);
             writer.WriteAdditionalData(AdditionalData);
         }

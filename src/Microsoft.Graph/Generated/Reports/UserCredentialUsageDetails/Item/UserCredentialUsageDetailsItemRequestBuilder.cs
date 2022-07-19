@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new userCredentialUsageDetailsItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new UserCredentialUsageDetailsItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public UserCredentialUsageDetailsItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.Item {
             /// <summary>Request query parameters</summary>
             public UserCredentialUsageDetailsItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new UserCredentialUsageDetailsItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new userCredentialUsageDetailsItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new UserCredentialUsageDetailsItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public UserCredentialUsageDetailsItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new userCredentialUsageDetailsItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new UserCredentialUsageDetailsItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public UserCredentialUsageDetailsItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new connectedOrganizationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ConnectedOrganizationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ConnectedOrganizationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
             /// <summary>Request query parameters</summary>
             public ConnectedOrganizationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ConnectedOrganizationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new connectedOrganizationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ConnectedOrganizationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ConnectedOrganizationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new connectedOrganizationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ConnectedOrganizationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ConnectedOrganizationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

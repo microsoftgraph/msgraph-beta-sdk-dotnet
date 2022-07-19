@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Authentication.PasswordMethods {
     /// <summary>Provides operations to manage the passwordMethods property of the microsoft.graph.authentication entity.</summary>
     public class PasswordMethodsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

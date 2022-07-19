@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollecti
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new microsoftTunnelServerLogCollectionResponseItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new MicrosoftTunnelServerLogCollectionResponseItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public MicrosoftTunnelServerLogCollectionResponseItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollecti
             /// <summary>Request query parameters</summary>
             public MicrosoftTunnelServerLogCollectionResponseItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new MicrosoftTunnelServerLogCollectionResponseItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new microsoftTunnelServerLogCollectionResponseItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new MicrosoftTunnelServerLogCollectionResponseItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public MicrosoftTunnelServerLogCollectionResponseItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollecti
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new microsoftTunnelServerLogCollectionResponseItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new MicrosoftTunnelServerLogCollectionResponseItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public MicrosoftTunnelServerLogCollectionResponseItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

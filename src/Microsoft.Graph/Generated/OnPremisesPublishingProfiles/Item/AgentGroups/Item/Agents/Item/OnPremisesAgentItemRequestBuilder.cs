@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Ite
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new onPremisesAgentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new OnPremisesAgentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public OnPremisesAgentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Ite
             /// <summary>Request query parameters</summary>
             public OnPremisesAgentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new OnPremisesAgentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new onPremisesAgentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new OnPremisesAgentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public OnPremisesAgentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Ite
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new onPremisesAgentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new OnPremisesAgentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public OnPremisesAgentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

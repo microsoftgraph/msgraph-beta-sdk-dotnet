@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.AccessReviews.Item.Reviewers {
     /// <summary>Provides operations to manage the reviewers property of the microsoft.graph.accessReview entity.</summary>
     public class ReviewersRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

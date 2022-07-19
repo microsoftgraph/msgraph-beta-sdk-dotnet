@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Users.Item.JoinedTeams.Item {
             /// <summary>Request query parameters</summary>
             public TeamItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TeamItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new teamItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TeamItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

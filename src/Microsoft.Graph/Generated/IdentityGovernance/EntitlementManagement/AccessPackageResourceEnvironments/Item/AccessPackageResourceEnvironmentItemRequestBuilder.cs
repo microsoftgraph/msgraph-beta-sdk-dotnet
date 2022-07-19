@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new accessPackageResourceEnvironmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AccessPackageResourceEnvironmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AccessPackageResourceEnvironmentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             /// <summary>Request query parameters</summary>
             public AccessPackageResourceEnvironmentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AccessPackageResourceEnvironmentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new accessPackageResourceEnvironmentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AccessPackageResourceEnvironmentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AccessPackageResourceEnvironmentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new accessPackageResourceEnvironmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AccessPackageResourceEnvironmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AccessPackageResourceEnvironmentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

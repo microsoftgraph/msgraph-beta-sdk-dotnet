@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("nextAttempt"); }
             set { BackingStore?.Set("nextAttempt", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The reason property</summary>
         public QuarantineReason? Reason {
             get { return BackingStore?.Get<QuarantineReason?>("reason"); }
@@ -49,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         public SynchronizationQuarantine() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.synchronizationQuarantine";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -66,6 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"currentBegan", n => { CurrentBegan = n.GetDateTimeOffsetValue(); } },
                 {"error", n => { Error = n.GetObjectValue<SynchronizationError>(SynchronizationError.CreateFromDiscriminatorValue); } },
                 {"nextAttempt", n => { NextAttempt = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"reason", n => { Reason = n.GetEnumValue<QuarantineReason>(); } },
                 {"seriesBegan", n => { SeriesBegan = n.GetDateTimeOffsetValue(); } },
                 {"seriesCount", n => { SeriesCount = n.GetLongValue(); } },
@@ -80,6 +87,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("currentBegan", CurrentBegan);
             writer.WriteObjectValue<SynchronizationError>("error", Error);
             writer.WriteDateTimeOffsetValue("nextAttempt", NextAttempt);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<QuarantineReason>("reason", Reason);
             writer.WriteDateTimeOffsetValue("seriesBegan", SeriesBegan);
             writer.WriteLongValue("seriesCount", SeriesCount);

@@ -11,6 +11,7 @@ using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackag
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackages;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Settings;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Subjects;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -79,6 +80,10 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement {
         /// <summary>The settings property</summary>
         public SettingsRequestBuilder Settings { get =>
             new SettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The subjects property</summary>
+        public SubjectsRequestBuilder Subjects { get =>
+            new SubjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }

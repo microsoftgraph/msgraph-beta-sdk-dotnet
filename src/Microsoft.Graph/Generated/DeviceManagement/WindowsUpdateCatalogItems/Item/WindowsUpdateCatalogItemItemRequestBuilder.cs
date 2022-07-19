@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsUpdateCatalogItems.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new windowsUpdateCatalogItemItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsUpdateCatalogItemItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsUpdateCatalogItemItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsUpdateCatalogItems.Item {
             /// <summary>Request query parameters</summary>
             public WindowsUpdateCatalogItemItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new WindowsUpdateCatalogItemItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new windowsUpdateCatalogItemItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsUpdateCatalogItemItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsUpdateCatalogItemItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsUpdateCatalogItems.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new windowsUpdateCatalogItemItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsUpdateCatalogItemItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsUpdateCatalogItemItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

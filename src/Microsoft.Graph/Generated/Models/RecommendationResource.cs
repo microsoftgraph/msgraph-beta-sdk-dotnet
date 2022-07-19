@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class RecommendationResource : Entity, IParsable {
         /// <summary>The addedDateTime property</summary>
         public DateTimeOffset? AddedDateTime {
@@ -55,6 +55,12 @@ namespace Microsoft.Graph.Beta.Models {
         public RecommendationStatus? Status {
             get { return BackingStore?.Get<RecommendationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
+        }
+        /// <summary>
+        /// Instantiates a new recommendationResource and sets the default values.
+        /// </summary>
+        public RecommendationResource() : base() {
+            OdataType = "#microsoft.graph.recommendationResource";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("entityId"); }
             set { BackingStore?.Set("entityId", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Url called by Teams client when a Tab is removed using the Teams Client.</summary>
         public string RemoveUrl {
             get { return BackingStore?.Get<string>("removeUrl"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public TeamsTabConfiguration() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.teamsTabConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"contentUrl", n => { ContentUrl = n.GetStringValue(); } },
                 {"entityId", n => { EntityId = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"removeUrl", n => { RemoveUrl = n.GetStringValue(); } },
                 {"websiteUrl", n => { WebsiteUrl = n.GetStringValue(); } },
             };
@@ -67,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("contentUrl", ContentUrl);
             writer.WriteStringValue("entityId", EntityId);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("removeUrl", RemoveUrl);
             writer.WriteStringValue("websiteUrl", WebsiteUrl);
             writer.WriteAdditionalData(AdditionalData);

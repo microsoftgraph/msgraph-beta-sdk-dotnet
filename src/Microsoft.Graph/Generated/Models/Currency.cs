@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Currency : Entity, IParsable {
         /// <summary>The amountDecimalPlaces property</summary>
         public string AmountDecimalPlaces {
@@ -35,6 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string Symbol {
             get { return BackingStore?.Get<string>("symbol"); }
             set { BackingStore?.Set("symbol", value); }
+        }
+        /// <summary>
+        /// Instantiates a new currency and sets the default values.
+        /// </summary>
+        public Currency() : base() {
+            OdataType = "#microsoft.graph.currency";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

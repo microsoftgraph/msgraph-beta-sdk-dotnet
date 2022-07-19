@@ -11,6 +11,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("resolveAvailability", value); }
         }
         /// <summary>
+        /// Instantiates a new LocationConstraintItem and sets the default values.
+        /// </summary>
+        public LocationConstraintItem() : base() {
+            OdataType = "#microsoft.graph.locationConstraintItem";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

@@ -16,6 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isEnabledInOrganization", value); }
         }
         /// <summary>
+        /// Instantiates a new insightsSettings and sets the default values.
+        /// </summary>
+        public InsightsSettings() : base() {
+            OdataType = "#microsoft.graph.insightsSettings";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

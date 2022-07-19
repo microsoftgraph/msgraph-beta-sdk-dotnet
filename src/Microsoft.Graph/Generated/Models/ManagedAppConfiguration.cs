@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new ManagedAppConfiguration and sets the default values.
         /// </summary>
         public ManagedAppConfiguration() : base() {
-            Type = "#microsoft.graph.managedAppConfiguration";
+            OdataType = "#microsoft.graph.managedAppConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDe
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new managedAllDeviceCertificateStateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagedAllDeviceCertificateStateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ManagedAllDeviceCertificateStateItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDe
             /// <summary>Request query parameters</summary>
             public ManagedAllDeviceCertificateStateItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ManagedAllDeviceCertificateStateItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new managedAllDeviceCertificateStateItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagedAllDeviceCertificateStateItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ManagedAllDeviceCertificateStateItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDe
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new managedAllDeviceCertificateStateItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagedAllDeviceCertificateStateItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ManagedAllDeviceCertificateStateItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

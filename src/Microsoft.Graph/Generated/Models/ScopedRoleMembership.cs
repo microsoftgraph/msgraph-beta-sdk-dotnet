@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ScopedRoleMembership : Entity, IParsable {
         /// <summary>Unique identifier for the administrative unit that the directory role is scoped to</summary>
         public string AdministrativeUnitId {
@@ -20,6 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         public Identity RoleMemberInfo {
             get { return BackingStore?.Get<Identity>("roleMemberInfo"); }
             set { BackingStore?.Set("roleMemberInfo", value); }
+        }
+        /// <summary>
+        /// Instantiates a new scopedRoleMembership and sets the default values.
+        /// </summary>
+        public ScopedRoleMembership() : base() {
+            OdataType = "#microsoft.graph.scopedRoleMembership";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

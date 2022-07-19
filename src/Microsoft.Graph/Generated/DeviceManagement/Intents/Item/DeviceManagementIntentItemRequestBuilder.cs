@@ -223,7 +223,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementIntentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementIntentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementIntentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -248,7 +248,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item {
             /// <summary>Request query parameters</summary>
             public DeviceManagementIntentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceManagementIntentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceManagementIntentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementIntentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementIntentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -262,7 +262,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementIntentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementIntentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementIntentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class Trending : Entity, IParsable {
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
@@ -30,6 +30,12 @@ namespace Microsoft.Graph.Beta.Models {
         public double? Weight {
             get { return BackingStore?.Get<double?>("weight"); }
             set { BackingStore?.Set("weight", value); }
+        }
+        /// <summary>
+        /// Instantiates a new trending and sets the default values.
+        /// </summary>
+        public Trending() : base() {
+            OdataType = "#microsoft.graph.trending";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

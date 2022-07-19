@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ThumbnailSet : Entity, IParsable {
         /// <summary>A 1920x1920 scaled thumbnail.</summary>
         public Thumbnail Large {
@@ -25,6 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
         public Thumbnail Source {
             get { return BackingStore?.Get<Thumbnail>("source"); }
             set { BackingStore?.Set("source", value); }
+        }
+        /// <summary>
+        /// Instantiates a new thumbnailSet and sets the default values.
+        /// </summary>
+        public ThumbnailSet() : base() {
+            OdataType = "#microsoft.graph.thumbnailSet";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

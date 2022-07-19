@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Ite
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new windowsFeatureUpdateProfileAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsFeatureUpdateProfileAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsFeatureUpdateProfileAssignmentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Ite
             /// <summary>Request query parameters</summary>
             public WindowsFeatureUpdateProfileAssignmentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new WindowsFeatureUpdateProfileAssignmentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new windowsFeatureUpdateProfileAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsFeatureUpdateProfileAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsFeatureUpdateProfileAssignmentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Ite
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new windowsFeatureUpdateProfileAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsFeatureUpdateProfileAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsFeatureUpdateProfileAssignmentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -169,7 +169,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item.AppDefinitions.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new teamsAppDefinitionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamsAppDefinitionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public TeamsAppDefinitionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item.AppDefinitions.Item {
             /// <summary>Request query parameters</summary>
             public TeamsAppDefinitionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TeamsAppDefinitionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new teamsAppDefinitionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamsAppDefinitionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TeamsAppDefinitionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item.AppDefinitions.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new teamsAppDefinitionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamsAppDefinitionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public TeamsAppDefinitionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

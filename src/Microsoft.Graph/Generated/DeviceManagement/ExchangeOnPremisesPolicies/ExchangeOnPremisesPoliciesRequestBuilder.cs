@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies {
     /// <summary>Provides operations to manage the exchangeOnPremisesPolicies property of the microsoft.graph.deviceManagement entity.</summary>
     public class ExchangeOnPremisesPoliciesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

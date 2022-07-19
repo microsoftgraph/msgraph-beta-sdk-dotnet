@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new tiIndicatorItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new TiIndicatorItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public TiIndicatorItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.Item {
             /// <summary>Request query parameters</summary>
             public TiIndicatorItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TiIndicatorItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new tiIndicatorItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TiIndicatorItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TiIndicatorItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new tiIndicatorItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new TiIndicatorItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public TiIndicatorItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -19,6 +19,11 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Gets or sets the team identifier used to sign the system extension.</summary>
         public string TeamIdentifier {
             get { return BackingStore?.Get<string>("teamIdentifier"); }
@@ -30,6 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         public MacOSSystemExtensionTypeMapping() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.macOSSystemExtensionTypeMapping";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"allowedTypes", n => { AllowedTypes = n.GetEnumValue<MacOSSystemExtensionType>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"teamIdentifier", n => { TeamIdentifier = n.GetStringValue(); } },
             };
         }
@@ -55,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<MacOSSystemExtensionType>("allowedTypes", AllowedTypes);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("teamIdentifier", TeamIdentifier);
             writer.WriteAdditionalData(AdditionalData);
         }

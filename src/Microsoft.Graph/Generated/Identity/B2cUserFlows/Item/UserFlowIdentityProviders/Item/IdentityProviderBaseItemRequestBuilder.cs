@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserFlowIdentityProvid
             /// <summary>Request query parameters</summary>
             public IdentityProviderBaseItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new IdentityProviderBaseItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new identityProviderBaseItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new IdentityProviderBaseItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public IdentityProviderBaseItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

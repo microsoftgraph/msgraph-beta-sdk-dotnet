@@ -36,6 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("profileApplicability", value); }
         }
         /// <summary>
+        /// Instantiates a new AndroidManagedStoreAppConfiguration and sets the default values.
+        /// </summary>
+        public AndroidManagedStoreAppConfiguration() : base() {
+            OdataType = "#microsoft.graph.androidManagedStoreAppConfiguration";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

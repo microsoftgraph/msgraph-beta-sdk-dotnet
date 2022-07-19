@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get resourceConnections from admin
+        /// Service connections to external resources such as analytics workspaces.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ResourceConnectionItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get resourceConnections from admin
+        /// Service connections to external resources such as analytics workspaces.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -154,14 +154,14 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new resourceConnectionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ResourceConnectionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ResourceConnectionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get resourceConnections from admin</summary>
+        /// <summary>Service connections to external resources such as analytics workspaces.</summary>
         public class ResourceConnectionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Item {
             /// <summary>Request query parameters</summary>
             public ResourceConnectionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ResourceConnectionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new resourceConnectionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ResourceConnectionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ResourceConnectionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new resourceConnectionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ResourceConnectionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ResourceConnectionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

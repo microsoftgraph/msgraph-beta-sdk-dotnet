@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class SalesCreditMemoLine : Entity, IParsable {
         /// <summary>The account property</summary>
         public Microsoft.Graph.Beta.Models.Account Account {
@@ -126,6 +125,12 @@ namespace Microsoft.Graph.Beta.Models {
         public decimal? UnitPrice {
             get { return BackingStore?.Get<decimal?>("unitPrice"); }
             set { BackingStore?.Set("unitPrice", value); }
+        }
+        /// <summary>
+        /// Instantiates a new SalesCreditMemoLine and sets the default values.
+        /// </summary>
+        public SalesCreditMemoLine() : base() {
+            OdataType = "#microsoft.graph.salesCreditMemoLine";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

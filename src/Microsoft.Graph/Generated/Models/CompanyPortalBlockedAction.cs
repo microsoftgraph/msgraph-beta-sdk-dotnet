@@ -19,6 +19,11 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Owner type of device.</summary>
         public Microsoft.Graph.Beta.Models.OwnerType? OwnerType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OwnerType?>("ownerType"); }
@@ -35,6 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         public CompanyPortalBlockedAction() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.companyPortalBlockedAction";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"action", n => { Action = n.GetEnumValue<CompanyPortalAction>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"ownerType", n => { OwnerType = n.GetEnumValue<OwnerType>(); } },
                 {"platform", n => { Platform = n.GetEnumValue<DevicePlatformType>(); } },
             };
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<CompanyPortalAction>("action", Action);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<OwnerType>("ownerType", OwnerType);
             writer.WriteEnumValue<DevicePlatformType>("platform", Platform);
             writer.WriteAdditionalData(AdditionalData);

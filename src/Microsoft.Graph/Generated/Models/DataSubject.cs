@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("lastName"); }
             set { BackingStore?.Set("lastName", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The country/region of residency. The residency information is uesed only for internal reporting but not for the content search.</summary>
         public string Residency {
             get { return BackingStore?.Get<string>("residency"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DataSubject() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.dataSubject";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"email", n => { Email = n.GetStringValue(); } },
                 {"firstName", n => { FirstName = n.GetStringValue(); } },
                 {"lastName", n => { LastName = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"residency", n => { Residency = n.GetStringValue(); } },
             };
         }
@@ -68,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("firstName", FirstName);
             writer.WriteStringValue("lastName", LastName);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("residency", Residency);
             writer.WriteAdditionalData(AdditionalData);
         }

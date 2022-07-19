@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new authoredNoteItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AuthoredNoteItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AuthoredNoteItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes.Item {
             /// <summary>Request query parameters</summary>
             public AuthoredNoteItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AuthoredNoteItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new authoredNoteItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AuthoredNoteItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AuthoredNoteItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new authoredNoteItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AuthoredNoteItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AuthoredNoteItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

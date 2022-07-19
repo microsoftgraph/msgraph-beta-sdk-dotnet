@@ -481,7 +481,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("onPremisesSecurityIdentifier"); }
             set { BackingStore?.Set("onPremisesSecurityIdentifier", value); }
         }
-        /// <summary>true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).</summary>
+        /// <summary>true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn&apos;t being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).</summary>
         public bool? OnPremisesSyncEnabled {
             get { return BackingStore?.Get<bool?>("onPremisesSyncEnabled"); }
             set { BackingStore?.Set("onPremisesSyncEnabled", value); }
@@ -566,7 +566,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("preferredLanguage"); }
             set { BackingStore?.Set("preferredLanguage", value); }
         }
-        /// <summary>The preferred name for the user. Returned only on $select.</summary>
+        /// <summary>The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.</summary>
         public string PreferredName {
             get { return BackingStore?.Get<string>("preferredName"); }
             set { BackingStore?.Set("preferredName", value); }
@@ -720,6 +720,12 @@ namespace Microsoft.Graph.Beta.Models {
         public List<WindowsInformationProtectionDeviceRegistration> WindowsInformationProtectionDeviceRegistrations {
             get { return BackingStore?.Get<List<WindowsInformationProtectionDeviceRegistration>>("windowsInformationProtectionDeviceRegistrations"); }
             set { BackingStore?.Set("windowsInformationProtectionDeviceRegistrations", value); }
+        }
+        /// <summary>
+        /// Instantiates a new User and sets the default values.
+        /// </summary>
+        public User() : base() {
+            OdataType = "#microsoft.graph.user";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

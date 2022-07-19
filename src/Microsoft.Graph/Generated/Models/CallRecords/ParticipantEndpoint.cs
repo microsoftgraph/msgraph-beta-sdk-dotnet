@@ -16,6 +16,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("identity", value); }
         }
         /// <summary>
+        /// Instantiates a new ParticipantEndpoint and sets the default values.
+        /// </summary>
+        public ParticipantEndpoint() : base() {
+            OdataType = "#microsoft.graph.callRecords.participantEndpoint";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Operations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new commsOperationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CommsOperationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CommsOperationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Operations.Item {
             /// <summary>Request query parameters</summary>
             public CommsOperationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CommsOperationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new commsOperationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CommsOperationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CommsOperationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Operations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new commsOperationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CommsOperationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CommsOperationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

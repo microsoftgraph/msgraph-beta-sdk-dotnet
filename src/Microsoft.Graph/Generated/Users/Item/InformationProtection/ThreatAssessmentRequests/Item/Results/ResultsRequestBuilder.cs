@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.ThreatAssessmentRequests.Item.Results {
     /// <summary>Provides operations to manage the results property of the microsoft.graph.threatAssessmentRequest entity.</summary>
     public class ResultsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

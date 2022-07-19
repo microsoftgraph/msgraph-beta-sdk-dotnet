@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item.Includes.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new permissionGrantConditionSetItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PermissionGrantConditionSetItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PermissionGrantConditionSetItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item.Includes.It
             /// <summary>Request query parameters</summary>
             public PermissionGrantConditionSetItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PermissionGrantConditionSetItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new permissionGrantConditionSetItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PermissionGrantConditionSetItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PermissionGrantConditionSetItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item.Includes.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new permissionGrantConditionSetItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PermissionGrantConditionSetItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PermissionGrantConditionSetItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

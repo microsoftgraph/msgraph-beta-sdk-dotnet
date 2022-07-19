@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolici
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new dataLossPreventionPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DataLossPreventionPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DataLossPreventionPolicyItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolici
             /// <summary>Request query parameters</summary>
             public DataLossPreventionPolicyItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DataLossPreventionPolicyItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new dataLossPreventionPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DataLossPreventionPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DataLossPreventionPolicyItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolici
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new dataLossPreventionPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DataLossPreventionPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DataLossPreventionPolicyItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

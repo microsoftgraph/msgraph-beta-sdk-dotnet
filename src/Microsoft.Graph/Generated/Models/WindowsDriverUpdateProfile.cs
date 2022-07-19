@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Windows Driver Update Profile</summary>
     public class WindowsDriverUpdateProfile : Entity, IParsable {
         /// <summary>An enum type to represent approval type of a driver update profile.</summary>
         public DriverUpdateProfileApprovalType? ApprovalType {
@@ -65,6 +64,12 @@ namespace Microsoft.Graph.Beta.Models {
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
+        /// <summary>
+        /// Instantiates a new WindowsDriverUpdateProfile and sets the default values.
+        /// </summary>
+        public WindowsDriverUpdateProfile() : base() {
+            OdataType = "#microsoft.graph.windowsDriverUpdateProfile";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class RiskyServicePrincipalHistoryItem : RiskyServicePrincipal, IParsable {
         /// <summary>The activity related to service principal risk level change.</summary>
         public RiskServicePrincipalActivity Activity {
@@ -20,6 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string ServicePrincipalId {
             get { return BackingStore?.Get<string>("servicePrincipalId"); }
             set { BackingStore?.Set("servicePrincipalId", value); }
+        }
+        /// <summary>
+        /// Instantiates a new riskyServicePrincipalHistoryItem and sets the default values.
+        /// </summary>
+        public RiskyServicePrincipalHistoryItem() : base() {
+            OdataType = "#microsoft.graph.riskyServicePrincipalHistoryItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

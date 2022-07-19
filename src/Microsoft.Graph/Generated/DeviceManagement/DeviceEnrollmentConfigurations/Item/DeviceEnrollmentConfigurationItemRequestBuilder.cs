@@ -169,7 +169,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.I
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceEnrollmentConfigurationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceEnrollmentConfigurationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceEnrollmentConfigurationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.I
             /// <summary>Request query parameters</summary>
             public DeviceEnrollmentConfigurationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceEnrollmentConfigurationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceEnrollmentConfigurationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceEnrollmentConfigurationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceEnrollmentConfigurationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.I
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceEnrollmentConfigurationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceEnrollmentConfigurationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceEnrollmentConfigurationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

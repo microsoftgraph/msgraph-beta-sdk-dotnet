@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new delegatedAdminAccessAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DelegatedAdminAccessAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DelegatedAdminAccessAssignmentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
             /// <summary>Request query parameters</summary>
             public DelegatedAdminAccessAssignmentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DelegatedAdminAccessAssignmentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new delegatedAdminAccessAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DelegatedAdminAccessAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DelegatedAdminAccessAssignmentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new delegatedAdminAccessAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DelegatedAdminAccessAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DelegatedAdminAccessAssignmentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

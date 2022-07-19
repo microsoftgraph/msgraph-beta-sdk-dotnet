@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AdvancedThreatProtectionOnboardi
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new advancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AdvancedThreatProtectionOnboardi
             /// <summary>Request query parameters</summary>
             public AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new advancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AdvancedThreatProtectionOnboardi
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new advancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

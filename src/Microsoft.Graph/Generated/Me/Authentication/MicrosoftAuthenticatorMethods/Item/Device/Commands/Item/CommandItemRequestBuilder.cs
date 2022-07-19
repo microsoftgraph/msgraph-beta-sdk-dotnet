@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods.I
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new commandItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CommandItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CommandItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods.I
             /// <summary>Request query parameters</summary>
             public CommandItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CommandItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new commandItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CommandItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CommandItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods.I
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new commandItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CommandItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CommandItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

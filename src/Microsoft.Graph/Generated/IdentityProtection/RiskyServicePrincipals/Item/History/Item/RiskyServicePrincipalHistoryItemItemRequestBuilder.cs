@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Item.Hi
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new riskyServicePrincipalHistoryItemItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new RiskyServicePrincipalHistoryItemItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public RiskyServicePrincipalHistoryItemItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Item.Hi
             /// <summary>Request query parameters</summary>
             public RiskyServicePrincipalHistoryItemItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new RiskyServicePrincipalHistoryItemItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new riskyServicePrincipalHistoryItemItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new RiskyServicePrincipalHistoryItemItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public RiskyServicePrincipalHistoryItemItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Item.Hi
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new riskyServicePrincipalHistoryItemItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new RiskyServicePrincipalHistoryItemItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public RiskyServicePrincipalHistoryItemItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

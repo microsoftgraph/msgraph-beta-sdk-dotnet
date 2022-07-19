@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AppleUserInitiatedEnrollmentProf
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new appleEnrollmentProfileAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AppleEnrollmentProfileAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AppleEnrollmentProfileAssignmentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AppleUserInitiatedEnrollmentProf
             /// <summary>Request query parameters</summary>
             public AppleEnrollmentProfileAssignmentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AppleEnrollmentProfileAssignmentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new appleEnrollmentProfileAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AppleEnrollmentProfileAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AppleEnrollmentProfileAssignmentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AppleUserInitiatedEnrollmentProf
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new appleEnrollmentProfileAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AppleEnrollmentProfileAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AppleEnrollmentProfileAssignmentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

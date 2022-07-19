@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Search.Bookmarks {
     /// <summary>Provides operations to manage the bookmarks property of the microsoft.graph.searchEntity entity.</summary>
     public class BookmarksRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

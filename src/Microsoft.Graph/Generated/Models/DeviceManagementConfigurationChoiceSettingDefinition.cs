@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new DeviceManagementConfigurationChoiceSettingDefinition and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationChoiceSettingDefinition() : base() {
-            Type = "#microsoft.graph.deviceManagementConfigurationChoiceSettingDefinition";
+            OdataType = "#microsoft.graph.deviceManagementConfigurationChoiceSettingDefinition";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// Instantiates a new QualityUpdateReference and sets the default values.
         /// </summary>
         public QualityUpdateReference() : base() {
-            Type = "#microsoft.graph.windowsUpdates.qualityUpdateReference";
+            OdataType = "#microsoft.graph.windowsUpdates.qualityUpdateReference";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

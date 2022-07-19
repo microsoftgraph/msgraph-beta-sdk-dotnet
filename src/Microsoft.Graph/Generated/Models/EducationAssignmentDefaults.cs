@@ -27,6 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("notificationChannelUrl", value); }
         }
         /// <summary>
+        /// Instantiates a new EducationAssignmentDefaults and sets the default values.
+        /// </summary>
+        public EducationAssignmentDefaults() : base() {
+            OdataType = "#microsoft.graph.educationAssignmentDefaults";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

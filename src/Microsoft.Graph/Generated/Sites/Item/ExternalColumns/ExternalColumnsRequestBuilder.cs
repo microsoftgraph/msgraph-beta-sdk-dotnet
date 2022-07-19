@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Sites.Item.ExternalColumns {
     /// <summary>Provides operations to manage the externalColumns property of the microsoft.graph.site entity.</summary>
     public class ExternalColumnsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

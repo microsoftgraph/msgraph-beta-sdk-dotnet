@@ -6,6 +6,12 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TeamworkTagIdentity : Identity, IParsable {
         /// <summary>
+        /// Instantiates a new teamworkTagIdentity and sets the default values.
+        /// </summary>
+        public TeamworkTagIdentity() : base() {
+            OdataType = "#microsoft.graph.teamworkTagIdentity";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

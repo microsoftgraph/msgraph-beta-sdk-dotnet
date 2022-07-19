@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.AgreementAcceptances {
     /// <summary>Provides operations to manage the agreementAcceptances property of the microsoft.graph.user entity.</summary>
     public class AgreementAcceptancesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

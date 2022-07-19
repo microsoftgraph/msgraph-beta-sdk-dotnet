@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new exactMatchDataStoreItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ExactMatchDataStoreItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ExactMatchDataStoreItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item {
             /// <summary>Request query parameters</summary>
             public ExactMatchDataStoreItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ExactMatchDataStoreItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new exactMatchDataStoreItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ExactMatchDataStoreItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ExactMatchDataStoreItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new exactMatchDataStoreItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ExactMatchDataStoreItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ExactMatchDataStoreItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

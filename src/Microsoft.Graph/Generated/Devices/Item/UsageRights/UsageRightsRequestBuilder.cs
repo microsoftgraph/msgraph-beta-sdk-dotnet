@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Devices.Item.UsageRights {
     /// <summary>Provides operations to manage the usageRights property of the microsoft.graph.device entity.</summary>
     public class UsageRightsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

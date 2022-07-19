@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Customers.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new bookingCustomerItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new BookingCustomerItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public BookingCustomerItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Customers.Item {
             /// <summary>Request query parameters</summary>
             public BookingCustomerItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new BookingCustomerItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new bookingCustomerItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new BookingCustomerItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public BookingCustomerItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Customers.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new bookingCustomerItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new BookingCustomerItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public BookingCustomerItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

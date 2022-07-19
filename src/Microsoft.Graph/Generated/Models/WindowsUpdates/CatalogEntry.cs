@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// Instantiates a new catalogEntry and sets the default values.
         /// </summary>
         public CatalogEntry() : base() {
-            Type = "#microsoft.graph.windowsUpdates.catalogEntry";
+            OdataType = "#microsoft.graph.windowsUpdates.catalogEntry";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,6 +37,8 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
+                "#microsoft.graph.windowsUpdates.featureUpdateCatalogEntry" => new FeatureUpdateCatalogEntry(),
+                "#microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry" => new QualityUpdateCatalogEntry(),
                 "#microsoft.graph.windowsUpdates.softwareUpdateCatalogEntry" => new SoftwareUpdateCatalogEntry(),
                 _ => new CatalogEntry(),
             };

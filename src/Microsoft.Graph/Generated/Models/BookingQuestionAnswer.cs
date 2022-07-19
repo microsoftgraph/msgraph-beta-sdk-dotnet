@@ -33,6 +33,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isRequired"); }
             set { BackingStore?.Set("isRequired", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The question.</summary>
         public string Question {
             get { return BackingStore?.Get<string>("question"); }
@@ -54,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         public BookingQuestionAnswer() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.bookingQuestionAnswer";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -72,6 +78,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"answerInputType", n => { AnswerInputType = n.GetEnumValue<AnswerInputType>(); } },
                 {"answerOptions", n => { AnswerOptions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"isRequired", n => { IsRequired = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"question", n => { Question = n.GetStringValue(); } },
                 {"questionId", n => { QuestionId = n.GetStringValue(); } },
                 {"selectedOptions", n => { SelectedOptions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
@@ -87,6 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<AnswerInputType>("answerInputType", AnswerInputType);
             writer.WriteCollectionOfPrimitiveValues<string>("answerOptions", AnswerOptions);
             writer.WriteBoolValue("isRequired", IsRequired);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("question", Question);
             writer.WriteStringValue("questionId", QuestionId);
             writer.WriteCollectionOfPrimitiveValues<string>("selectedOptions", SelectedOptions);

@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Summarizes the status and describes why the status happened.</summary>
         public string Reason {
             get { return BackingStore?.Get<string>("reason"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ProvisioningErrorInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.provisioningErrorInfo";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -61,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"additionalDetails", n => { AdditionalDetails = n.GetStringValue(); } },
                 {"errorCategory", n => { ErrorCategory = n.GetEnumValue<ProvisioningStatusErrorCategory>(); } },
                 {"errorCode", n => { ErrorCode = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"reason", n => { Reason = n.GetStringValue(); } },
                 {"recommendedAction", n => { RecommendedAction = n.GetStringValue(); } },
             };
@@ -74,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("additionalDetails", AdditionalDetails);
             writer.WriteEnumValue<ProvisioningStatusErrorCategory>("errorCategory", ErrorCategory);
             writer.WriteStringValue("errorCode", ErrorCode);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("reason", Reason);
             writer.WriteStringValue("recommendedAction", RecommendedAction);
             writer.WriteAdditionalData(AdditionalData);

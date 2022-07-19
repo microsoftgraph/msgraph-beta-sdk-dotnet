@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ManagementTemplateCollection : Entity, IParsable {
         /// <summary>The createdByUserId property</summary>
         public string CreatedByUserId {
@@ -40,6 +40,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public List<ManagementTemplate> ManagementTemplates {
             get { return BackingStore?.Get<List<ManagementTemplate>>("managementTemplates"); }
             set { BackingStore?.Set("managementTemplates", value); }
+        }
+        /// <summary>
+        /// Instantiates a new managementTemplateCollection and sets the default values.
+        /// </summary>
+        public ManagementTemplateCollection() : base() {
+            OdataType = "#microsoft.graph.managedTenants.managementTemplateCollection";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

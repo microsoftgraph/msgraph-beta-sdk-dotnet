@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item.Includes {
     /// <summary>Provides operations to manage the includes property of the microsoft.graph.permissionGrantPolicy entity.</summary>
     public class IncludesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

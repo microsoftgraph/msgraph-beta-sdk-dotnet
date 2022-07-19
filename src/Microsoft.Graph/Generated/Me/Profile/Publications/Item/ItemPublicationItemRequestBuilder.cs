@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Publications.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new itemPublicationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ItemPublicationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ItemPublicationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Publications.Item {
             /// <summary>Request query parameters</summary>
             public ItemPublicationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ItemPublicationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new itemPublicationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ItemPublicationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ItemPublicationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Publications.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new itemPublicationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ItemPublicationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ItemPublicationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

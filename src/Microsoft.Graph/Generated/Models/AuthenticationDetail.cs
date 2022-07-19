@@ -38,6 +38,11 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Indicates the status of the authentication step. Possible values: succeeded, failed.</summary>
         public bool? Succeeded {
             get { return BackingStore?.Get<bool?>("succeeded"); }
@@ -49,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AuthenticationDetail() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.authenticationDetail";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -68,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"authenticationStepDateTime", n => { AuthenticationStepDateTime = n.GetDateTimeOffsetValue(); } },
                 {"authenticationStepRequirement", n => { AuthenticationStepRequirement = n.GetStringValue(); } },
                 {"authenticationStepResultDetail", n => { AuthenticationStepResultDetail = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"succeeded", n => { Succeeded = n.GetBoolValue(); } },
             };
         }
@@ -82,6 +89,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("authenticationStepDateTime", AuthenticationStepDateTime);
             writer.WriteStringValue("authenticationStepRequirement", AuthenticationStepRequirement);
             writer.WriteStringValue("authenticationStepResultDetail", AuthenticationStepResultDetail);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("succeeded", Succeeded);
             writer.WriteAdditionalData(AdditionalData);
         }

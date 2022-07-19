@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class AgreementAcceptance : Entity, IParsable {
         /// <summary>ID of the agreement file accepted by the user.</summary>
         public string AgreementFileId {
@@ -70,6 +70,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
+        }
+        /// <summary>
+        /// Instantiates a new agreementAcceptance and sets the default values.
+        /// </summary>
+        public AgreementAcceptance() : base() {
+            OdataType = "#microsoft.graph.agreementAcceptance";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

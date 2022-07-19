@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// Instantiates a new SoftwareUpdateReference and sets the default values.
         /// </summary>
         public SoftwareUpdateReference() : base() {
-            Type = "#microsoft.graph.windowsUpdates.softwareUpdateReference";
+            OdataType = "#microsoft.graph.windowsUpdates.softwareUpdateReference";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -21,6 +21,9 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
+                "#microsoft.graph.windowsUpdates.expeditedQualityUpdateReference" => new ExpeditedQualityUpdateReference(),
+                "#microsoft.graph.windowsUpdates.featureUpdateReference" => new FeatureUpdateReference(),
+                "#microsoft.graph.windowsUpdates.qualityUpdateReference" => new QualityUpdateReference(),
                 "#microsoft.graph.windowsUpdates.windowsUpdateReference" => new WindowsUpdateReference(),
                 _ => new SoftwareUpdateReference(),
             };

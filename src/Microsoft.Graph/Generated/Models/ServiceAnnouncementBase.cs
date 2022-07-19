@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new serviceAnnouncementBase and sets the default values.
         /// </summary>
         public ServiceAnnouncementBase() : base() {
-            Type = "#microsoft.graph.serviceAnnouncementBase";
+            OdataType = "#microsoft.graph.serviceAnnouncementBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

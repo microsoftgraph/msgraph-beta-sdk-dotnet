@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups {
     /// <summary>Provides operations to manage the connectorGroups property of the microsoft.graph.onPremisesPublishingProfile entity.</summary>
     public class ConnectorGroupsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

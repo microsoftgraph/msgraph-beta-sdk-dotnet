@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Emails.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new itemEmailItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ItemEmailItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ItemEmailItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Emails.Item {
             /// <summary>Request query parameters</summary>
             public ItemEmailItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ItemEmailItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new itemEmailItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ItemEmailItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ItemEmailItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Emails.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new itemEmailItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ItemEmailItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ItemEmailItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

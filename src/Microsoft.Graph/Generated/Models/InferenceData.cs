@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<double?>("confidenceScore"); }
             set { BackingStore?.Set("confidenceScore", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Records if the user has confirmed this inference as being True or False.</summary>
         public bool? UserHasVerifiedAccuracy {
             get { return BackingStore?.Get<bool?>("userHasVerifiedAccuracy"); }
@@ -29,6 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         public InferenceData() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.inferenceData";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"confidenceScore", n => { ConfidenceScore = n.GetDoubleValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"userHasVerifiedAccuracy", n => { UserHasVerifiedAccuracy = n.GetBoolValue(); } },
             };
         }
@@ -54,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("confidenceScore", ConfidenceScore);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("userHasVerifiedAccuracy", UserHasVerifiedAccuracy);
             writer.WriteAdditionalData(AdditionalData);
         }

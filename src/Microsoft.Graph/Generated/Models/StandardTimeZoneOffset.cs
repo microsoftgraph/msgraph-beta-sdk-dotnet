@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("month"); }
             set { BackingStore?.Set("month", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Represents the time of day when the transition from daylight saving time to standard time occurs.</summary>
         public Time? Time {
             get { return BackingStore?.Get<Time?>("time"); }
             set { BackingStore?.Set("time", value); }
-        }
-        /// <summary>The type property</summary>
-        public string Type {
-            get { return BackingStore?.Get<string>("@odata.type"); }
-            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>Represents how frequently in terms of years the change from daylight saving time to standard time occurs. For example, a value of 0 means every year.</summary>
         public int? Year {
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         public StandardTimeZoneOffset() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            Type = "#microsoft.graph.standardTimeZoneOffset";
+            OdataType = "#microsoft.graph.standardTimeZoneOffset";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -74,8 +74,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"dayOccurrence", n => { DayOccurrence = n.GetIntValue(); } },
                 {"dayOfWeek", n => { DayOfWeek = n.GetEnumValue<DayOfWeek>(); } },
                 {"month", n => { Month = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"time", n => { Time = n.GetTimeValue(); } },
-                {"@odata.type", n => { Type = n.GetStringValue(); } },
                 {"year", n => { Year = n.GetIntValue(); } },
             };
         }
@@ -88,8 +88,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteIntValue("dayOccurrence", DayOccurrence);
             writer.WriteEnumValue<DayOfWeek>("dayOfWeek", DayOfWeek);
             writer.WriteIntValue("month", Month);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteTimeValue("time", Time);
-            writer.WriteStringValue("@odata.type", Type);
             writer.WriteIntValue("year", Year);
             writer.WriteAdditionalData(AdditionalData);
         }

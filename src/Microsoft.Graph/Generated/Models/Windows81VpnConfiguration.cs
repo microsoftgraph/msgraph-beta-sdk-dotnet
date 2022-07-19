@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new Windows81VpnConfiguration and sets the default values.
         /// </summary>
         public Windows81VpnConfiguration() : base() {
-            Type = "#microsoft.graph.windows81VpnConfiguration";
+            OdataType = "#microsoft.graph.windows81VpnConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

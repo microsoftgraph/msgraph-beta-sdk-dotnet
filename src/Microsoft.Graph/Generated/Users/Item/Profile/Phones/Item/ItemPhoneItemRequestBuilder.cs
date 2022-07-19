@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Phones.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new itemPhoneItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ItemPhoneItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ItemPhoneItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Phones.Item {
             /// <summary>Request query parameters</summary>
             public ItemPhoneItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ItemPhoneItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new itemPhoneItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ItemPhoneItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ItemPhoneItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Phones.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new itemPhoneItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ItemPhoneItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ItemPhoneItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

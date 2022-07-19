@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new DetectedSensitiveContent and sets the default values.
         /// </summary>
         public DetectedSensitiveContent() : base() {
-            Type = "#microsoft.graph.detectedSensitiveContent";
+            OdataType = "#microsoft.graph.detectedSensitiveContent";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

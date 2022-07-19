@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.PermissionGrants.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new resourceSpecificPermissionGrantItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ResourceSpecificPermissionGrantItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ResourceSpecificPermissionGrantItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.PermissionGrants.Item {
             /// <summary>Request query parameters</summary>
             public ResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new resourceSpecificPermissionGrantItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ResourceSpecificPermissionGrantItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ResourceSpecificPermissionGrantItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.PermissionGrants.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new resourceSpecificPermissionGrantItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ResourceSpecificPermissionGrantItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ResourceSpecificPermissionGrantItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

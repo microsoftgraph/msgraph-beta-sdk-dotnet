@@ -24,6 +24,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Time?>("endTime"); }
             set { BackingStore?.Set("endTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The time of the day that the user starts working.</summary>
         public Time? StartTime {
             get { return BackingStore?.Get<Time?>("startTime"); }
@@ -40,6 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         public WorkingHours() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.workingHours";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"daysOfWeek", n => { DaysOfWeek = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"endTime", n => { EndTime = n.GetTimeValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"startTime", n => { StartTime = n.GetTimeValue(); } },
                 {"timeZone", n => { TimeZone = n.GetObjectValue<TimeZoneBase>(TimeZoneBase.CreateFromDiscriminatorValue); } },
             };
@@ -68,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("daysOfWeek", DaysOfWeek);
             writer.WriteTimeValue("endTime", EndTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteTimeValue("startTime", StartTime);
             writer.WriteObjectValue<TimeZoneBase>("timeZone", TimeZone);
             writer.WriteAdditionalData(AdditionalData);

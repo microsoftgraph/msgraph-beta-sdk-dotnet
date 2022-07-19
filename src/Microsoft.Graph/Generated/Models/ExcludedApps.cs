@@ -44,6 +44,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("lync"); }
             set { BackingStore?.Set("lync", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The value for if MS Office OneDrive should be excluded or not.</summary>
         public bool? OneDrive {
             get { return BackingStore?.Get<bool?>("oneDrive"); }
@@ -95,6 +100,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ExcludedApps() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.excludedApps";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -115,6 +121,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"groove", n => { Groove = n.GetBoolValue(); } },
                 {"infoPath", n => { InfoPath = n.GetBoolValue(); } },
                 {"lync", n => { Lync = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"oneDrive", n => { OneDrive = n.GetBoolValue(); } },
                 {"oneNote", n => { OneNote = n.GetBoolValue(); } },
                 {"outlook", n => { Outlook = n.GetBoolValue(); } },
@@ -138,6 +145,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("groove", Groove);
             writer.WriteBoolValue("infoPath", InfoPath);
             writer.WriteBoolValue("lync", Lync);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("oneDrive", OneDrive);
             writer.WriteBoolValue("oneNote", OneNote);
             writer.WriteBoolValue("outlook", Outlook);

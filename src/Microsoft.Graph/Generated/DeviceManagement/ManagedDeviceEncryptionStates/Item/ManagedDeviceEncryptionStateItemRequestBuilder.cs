@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDeviceEncryptionStates.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new managedDeviceEncryptionStateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagedDeviceEncryptionStateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ManagedDeviceEncryptionStateItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDeviceEncryptionStates.It
             /// <summary>Request query parameters</summary>
             public ManagedDeviceEncryptionStateItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ManagedDeviceEncryptionStateItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new managedDeviceEncryptionStateItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagedDeviceEncryptionStateItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ManagedDeviceEncryptionStateItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDeviceEncryptionStates.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new managedDeviceEncryptionStateItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagedDeviceEncryptionStateItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ManagedDeviceEncryptionStateItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

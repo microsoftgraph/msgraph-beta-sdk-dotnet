@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Security.HostSecurityProfiles.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new hostSecurityProfileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new HostSecurityProfileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public HostSecurityProfileItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Security.HostSecurityProfiles.Item {
             /// <summary>Request query parameters</summary>
             public HostSecurityProfileItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new HostSecurityProfileItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new hostSecurityProfileItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new HostSecurityProfileItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public HostSecurityProfileItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Security.HostSecurityProfiles.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new hostSecurityProfileItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new HostSecurityProfileItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public HostSecurityProfileItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

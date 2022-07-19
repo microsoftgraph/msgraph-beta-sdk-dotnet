@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments {
     /// <summary>Provides operations to manage the collection of privilegedRoleAssignment entities.</summary>
     public class PrivilegedRoleAssignmentsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

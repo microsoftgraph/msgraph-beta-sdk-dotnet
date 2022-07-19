@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new teamworkDeviceOperationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamworkDeviceOperationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public TeamworkDeviceOperationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations.Item {
             /// <summary>Request query parameters</summary>
             public TeamworkDeviceOperationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TeamworkDeviceOperationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new teamworkDeviceOperationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamworkDeviceOperationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TeamworkDeviceOperationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new teamworkDeviceOperationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamworkDeviceOperationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public TeamworkDeviceOperationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

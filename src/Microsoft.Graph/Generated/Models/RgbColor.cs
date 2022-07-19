@@ -24,6 +24,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<byte?>("g"); }
             set { BackingStore?.Set("g", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Red value</summary>
         public byte? R {
             get { return BackingStore?.Get<byte?>("r"); }
@@ -35,6 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         public RgbColor() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.rgbColor";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"b", n => { B = n.GetByteValue(); } },
                 {"g", n => { G = n.GetByteValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"r", n => { R = n.GetByteValue(); } },
             };
         }
@@ -62,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteByteValue("b", B);
             writer.WriteByteValue("g", G);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteByteValue("r", R);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Authentication.Fido2Methods {
     /// <summary>Provides operations to manage the fido2Methods property of the microsoft.graph.authentication entity.</summary>
     public class Fido2MethodsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

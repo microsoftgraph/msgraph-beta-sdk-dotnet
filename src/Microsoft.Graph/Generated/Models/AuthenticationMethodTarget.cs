@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class AuthenticationMethodTarget : Entity, IParsable {
         /// <summary>Determines if the user is enforced to register the authentication method.</summary>
         public bool? IsRegistrationRequired {
@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new authenticationMethodTarget and sets the default values.
         /// </summary>
         public AuthenticationMethodTarget() : base() {
-            Type = "#microsoft.graph.authenticationMethodTarget";
+            OdataType = "#microsoft.graph.authenticationMethodTarget";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

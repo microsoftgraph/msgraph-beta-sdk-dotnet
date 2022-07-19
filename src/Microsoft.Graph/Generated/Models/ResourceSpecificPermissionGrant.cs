@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ResourceSpecificPermissionGrant : DirectoryObject, IParsable {
         /// <summary>ID of the service principal of the Azure AD app that has been granted access. Read-only.</summary>
         public string ClientAppId {
@@ -30,6 +30,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string ResourceAppId {
             get { return BackingStore?.Get<string>("resourceAppId"); }
             set { BackingStore?.Set("resourceAppId", value); }
+        }
+        /// <summary>
+        /// Instantiates a new resourceSpecificPermissionGrant and sets the default values.
+        /// </summary>
+        public ResourceSpecificPermissionGrant() : base() {
+            OdataType = "#microsoft.graph.resourceSpecificPermissionGrant";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new iosLobAppProvisioningConfigurationAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
             /// <summary>Request query parameters</summary>
             public IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new iosLobAppProvisioningConfigurationAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new iosLobAppProvisioningConfigurationAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

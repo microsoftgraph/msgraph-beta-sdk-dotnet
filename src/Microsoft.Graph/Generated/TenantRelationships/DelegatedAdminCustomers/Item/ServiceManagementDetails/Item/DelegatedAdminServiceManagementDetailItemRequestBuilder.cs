@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.Item.
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new delegatedAdminServiceManagementDetailItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DelegatedAdminServiceManagementDetailItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DelegatedAdminServiceManagementDetailItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.Item.
             /// <summary>Request query parameters</summary>
             public DelegatedAdminServiceManagementDetailItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DelegatedAdminServiceManagementDetailItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new delegatedAdminServiceManagementDetailItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DelegatedAdminServiceManagementDetailItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DelegatedAdminServiceManagementDetailItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.Item.
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new delegatedAdminServiceManagementDetailItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DelegatedAdminServiceManagementDetailItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DelegatedAdminServiceManagementDetailItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

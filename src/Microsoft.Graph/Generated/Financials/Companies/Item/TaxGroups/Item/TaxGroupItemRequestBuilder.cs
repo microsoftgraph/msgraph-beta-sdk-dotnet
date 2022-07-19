@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.TaxGroups.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new taxGroupItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new TaxGroupItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public TaxGroupItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.TaxGroups.Item {
             /// <summary>Request query parameters</summary>
             public TaxGroupItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TaxGroupItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new taxGroupItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TaxGroupItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TaxGroupItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.TaxGroups.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new taxGroupItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new TaxGroupItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public TaxGroupItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

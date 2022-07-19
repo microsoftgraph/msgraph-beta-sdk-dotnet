@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeOffReasons {
     /// <summary>Provides operations to manage the timeOffReasons property of the microsoft.graph.schedule entity.</summary>
     public class TimeOffReasonsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

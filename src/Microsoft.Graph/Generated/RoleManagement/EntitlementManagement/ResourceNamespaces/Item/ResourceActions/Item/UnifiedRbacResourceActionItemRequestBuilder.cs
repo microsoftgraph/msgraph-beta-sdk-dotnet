@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceName
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new unifiedRbacResourceActionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new UnifiedRbacResourceActionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public UnifiedRbacResourceActionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceName
             /// <summary>Request query parameters</summary>
             public UnifiedRbacResourceActionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new UnifiedRbacResourceActionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new unifiedRbacResourceActionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new UnifiedRbacResourceActionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public UnifiedRbacResourceActionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceName
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new unifiedRbacResourceActionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new UnifiedRbacResourceActionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public UnifiedRbacResourceActionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

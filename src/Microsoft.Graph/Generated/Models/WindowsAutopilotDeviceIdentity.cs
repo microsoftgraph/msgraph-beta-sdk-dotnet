@@ -142,6 +142,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
+        /// Instantiates a new windowsAutopilotDeviceIdentity and sets the default values.
+        /// </summary>
+        public WindowsAutopilotDeviceIdentity() : base() {
+            OdataType = "#microsoft.graph.windowsAutopilotDeviceIdentity";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

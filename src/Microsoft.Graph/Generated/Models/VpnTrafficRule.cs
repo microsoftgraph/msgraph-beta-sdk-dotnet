@@ -44,6 +44,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Protocols (0-255). Valid values 0 to 255</summary>
         public int? Protocols {
             get { return BackingStore?.Get<int?>("protocols"); }
@@ -70,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
         public VpnTrafficRule() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.vpnTrafficRule";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -90,6 +96,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"localAddressRanges", n => { LocalAddressRanges = n.GetCollectionOfObjectValues<IPv4Range>(IPv4Range.CreateFromDiscriminatorValue).ToList(); } },
                 {"localPortRanges", n => { LocalPortRanges = n.GetCollectionOfObjectValues<NumberRange>(NumberRange.CreateFromDiscriminatorValue).ToList(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"protocols", n => { Protocols = n.GetIntValue(); } },
                 {"remoteAddressRanges", n => { RemoteAddressRanges = n.GetCollectionOfObjectValues<IPv4Range>(IPv4Range.CreateFromDiscriminatorValue).ToList(); } },
                 {"remotePortRanges", n => { RemotePortRanges = n.GetCollectionOfObjectValues<NumberRange>(NumberRange.CreateFromDiscriminatorValue).ToList(); } },
@@ -108,6 +115,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<IPv4Range>("localAddressRanges", LocalAddressRanges);
             writer.WriteCollectionOfObjectValues<NumberRange>("localPortRanges", LocalPortRanges);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("protocols", Protocols);
             writer.WriteCollectionOfObjectValues<IPv4Range>("remoteAddressRanges", RemoteAddressRanges);
             writer.WriteCollectionOfObjectValues<NumberRange>("remotePortRanges", RemotePortRanges);

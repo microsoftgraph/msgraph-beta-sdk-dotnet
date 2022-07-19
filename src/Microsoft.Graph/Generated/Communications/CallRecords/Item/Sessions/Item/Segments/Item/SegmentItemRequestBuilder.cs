@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item.Sessions.Item.Seg
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new segmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new SegmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public SegmentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item.Sessions.Item.Seg
             /// <summary>Request query parameters</summary>
             public SegmentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SegmentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new segmentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SegmentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SegmentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item.Sessions.Item.Seg
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new segmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SegmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SegmentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

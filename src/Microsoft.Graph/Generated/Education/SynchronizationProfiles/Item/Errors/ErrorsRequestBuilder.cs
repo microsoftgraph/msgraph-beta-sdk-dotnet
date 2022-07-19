@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Errors {
     /// <summary>Provides operations to manage the errors property of the microsoft.graph.educationSynchronizationProfile entity.</summary>
     public class ErrorsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

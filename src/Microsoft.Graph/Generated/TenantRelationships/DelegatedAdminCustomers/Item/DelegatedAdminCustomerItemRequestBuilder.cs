@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.Item 
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new delegatedAdminCustomerItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DelegatedAdminCustomerItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DelegatedAdminCustomerItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.Item 
             /// <summary>Request query parameters</summary>
             public DelegatedAdminCustomerItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DelegatedAdminCustomerItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new delegatedAdminCustomerItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DelegatedAdminCustomerItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DelegatedAdminCustomerItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.Item 
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new delegatedAdminCustomerItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DelegatedAdminCustomerItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DelegatedAdminCustomerItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

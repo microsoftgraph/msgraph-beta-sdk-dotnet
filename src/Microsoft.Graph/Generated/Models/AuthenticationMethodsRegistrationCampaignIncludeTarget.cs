@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.</summary>
         public string TargetedAuthenticationMethod {
             get { return BackingStore?.Get<string>("targetedAuthenticationMethod"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AuthenticationMethodsRegistrationCampaignIncludeTarget() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.authenticationMethodsRegistrationCampaignIncludeTarget";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"id", n => { Id = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"targetedAuthenticationMethod", n => { TargetedAuthenticationMethod = n.GetStringValue(); } },
                 {"targetType", n => { TargetType = n.GetEnumValue<AuthenticationMethodTargetType>(); } },
             };
@@ -60,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("targetedAuthenticationMethod", TargetedAuthenticationMethod);
             writer.WriteEnumValue<AuthenticationMethodTargetType>("targetType", TargetType);
             writer.WriteAdditionalData(AdditionalData);

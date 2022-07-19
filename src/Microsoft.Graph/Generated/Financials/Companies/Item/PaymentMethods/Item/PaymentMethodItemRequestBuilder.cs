@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.PaymentMethods.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new paymentMethodItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PaymentMethodItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PaymentMethodItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.PaymentMethods.Item {
             /// <summary>Request query parameters</summary>
             public PaymentMethodItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PaymentMethodItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new paymentMethodItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PaymentMethodItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PaymentMethodItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.PaymentMethods.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new paymentMethodItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PaymentMethodItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PaymentMethodItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

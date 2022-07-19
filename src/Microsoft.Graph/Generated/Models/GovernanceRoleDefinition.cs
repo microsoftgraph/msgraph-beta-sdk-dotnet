@@ -36,6 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("templateId", value); }
         }
         /// <summary>
+        /// Instantiates a new governanceRoleDefinition and sets the default values.
+        /// </summary>
+        public GovernanceRoleDefinition() : base() {
+            OdataType = "#microsoft.graph.governanceRoleDefinition";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

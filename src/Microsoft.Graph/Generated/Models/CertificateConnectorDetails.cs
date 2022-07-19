@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Entity used to retrieve information about Intune Certificate Connectors.</summary>
     public class CertificateConnectorDetails : Entity, IParsable {
         /// <summary>Connector name (set during enrollment).</summary>
         public string ConnectorName {
@@ -25,6 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string MachineName {
             get { return BackingStore?.Get<string>("machineName"); }
             set { BackingStore?.Set("machineName", value); }
+        }
+        /// <summary>
+        /// Instantiates a new CertificateConnectorDetails and sets the default values.
+        /// </summary>
+        public CertificateConnectorDetails() : base() {
+            OdataType = "#microsoft.graph.certificateConnectorDetails";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

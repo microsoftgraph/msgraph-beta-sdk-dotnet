@@ -28,12 +28,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("displayAs"); }
             set { BackingStore?.Set("displayAs", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new choiceColumn and sets the default values.
         /// </summary>
         public ChoiceColumn() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.choiceColumn";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"allowTextEntry", n => { AllowTextEntry = n.GetBoolValue(); } },
                 {"choices", n => { Choices = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"displayAs", n => { DisplayAs = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -62,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("allowTextEntry", AllowTextEntry);
             writer.WriteCollectionOfPrimitiveValues<string>("choices", Choices);
             writer.WriteStringValue("displayAs", DisplayAs);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

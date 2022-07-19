@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to application.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class PermissionGrantConditionSet : Entity, IParsable {
         /// <summary>Set to true to only match on client applications that are Microsoft 365 certified. Set to false to match on any other client app. Default is false.</summary>
         public bool? CertifiedClientApplicationsOnly {
@@ -50,6 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string ResourceApplication {
             get { return BackingStore?.Get<string>("resourceApplication"); }
             set { BackingStore?.Set("resourceApplication", value); }
+        }
+        /// <summary>
+        /// Instantiates a new permissionGrantConditionSet and sets the default values.
+        /// </summary>
+        public PermissionGrantConditionSet() : base() {
+            OdataType = "#microsoft.graph.permissionGrantConditionSet";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

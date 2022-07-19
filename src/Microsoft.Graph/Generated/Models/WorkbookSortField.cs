@@ -38,6 +38,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("key"); }
             set { BackingStore?.Set("key", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Represents the type of sorting of this condition. Possible values are: Value, CellColor, FontColor, Icon.</summary>
         public string SortOn {
             get { return BackingStore?.Get<string>("sortOn"); }
@@ -49,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         public WorkbookSortField() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.workbookSortField";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -68,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"dataOption", n => { DataOption = n.GetStringValue(); } },
                 {"icon", n => { Icon = n.GetObjectValue<WorkbookIcon>(WorkbookIcon.CreateFromDiscriminatorValue); } },
                 {"key", n => { Key = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"sortOn", n => { SortOn = n.GetStringValue(); } },
             };
         }
@@ -82,6 +89,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("dataOption", DataOption);
             writer.WriteObjectValue<WorkbookIcon>("icon", Icon);
             writer.WriteIntValue("key", Key);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("sortOn", SortOn);
             writer.WriteAdditionalData(AdditionalData);
         }

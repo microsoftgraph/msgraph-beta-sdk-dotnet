@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new MacOSWiFiConfiguration and sets the default values.
         /// </summary>
         public MacOSWiFiConfiguration() : base() {
-            Type = "#microsoft.graph.macOSWiFiConfiguration";
+            OdataType = "#microsoft.graph.macOSWiFiConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

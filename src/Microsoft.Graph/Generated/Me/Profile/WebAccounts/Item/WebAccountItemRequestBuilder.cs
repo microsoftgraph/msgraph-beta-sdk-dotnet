@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.WebAccounts.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new webAccountItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new WebAccountItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public WebAccountItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.WebAccounts.Item {
             /// <summary>Request query parameters</summary>
             public WebAccountItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new WebAccountItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new webAccountItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new WebAccountItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public WebAccountItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.WebAccounts.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new webAccountItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new WebAccountItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public WebAccountItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

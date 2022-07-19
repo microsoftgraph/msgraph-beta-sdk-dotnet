@@ -19,6 +19,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("dateFormat"); }
             set { BackingStore?.Set("dateFormat", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The time of the day when the device is turned off.</summary>
         public Time? OfficeHoursEndTime {
             get { return BackingStore?.Get<Time?>("officeHoursEndTime"); }
@@ -45,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public TeamworkDateTimeConfiguration() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.teamworkDateTimeConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -60,6 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"dateFormat", n => { DateFormat = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"officeHoursEndTime", n => { OfficeHoursEndTime = n.GetTimeValue(); } },
                 {"officeHoursStartTime", n => { OfficeHoursStartTime = n.GetTimeValue(); } },
                 {"timeFormat", n => { TimeFormat = n.GetStringValue(); } },
@@ -73,6 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("dateFormat", DateFormat);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteTimeValue("officeHoursEndTime", OfficeHoursEndTime);
             writer.WriteTimeValue("officeHoursStartTime", OfficeHoursStartTime);
             writer.WriteStringValue("timeFormat", TimeFormat);

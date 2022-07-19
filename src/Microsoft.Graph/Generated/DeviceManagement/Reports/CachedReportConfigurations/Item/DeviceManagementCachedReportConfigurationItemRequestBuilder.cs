@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.CachedReportConfiguratio
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementCachedReportConfigurationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementCachedReportConfigurationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementCachedReportConfigurationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.CachedReportConfiguratio
             /// <summary>Request query parameters</summary>
             public DeviceManagementCachedReportConfigurationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceManagementCachedReportConfigurationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceManagementCachedReportConfigurationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementCachedReportConfigurationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementCachedReportConfigurationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.CachedReportConfiguratio
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementCachedReportConfigurationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementCachedReportConfigurationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementCachedReportConfigurationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

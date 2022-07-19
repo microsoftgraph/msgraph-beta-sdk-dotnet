@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.ContactedRev
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new accessReviewReviewerItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AccessReviewReviewerItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AccessReviewReviewerItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.ContactedRev
             /// <summary>Request query parameters</summary>
             public AccessReviewReviewerItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AccessReviewReviewerItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new accessReviewReviewerItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AccessReviewReviewerItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AccessReviewReviewerItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.ContactedRev
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new accessReviewReviewerItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AccessReviewReviewerItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AccessReviewReviewerItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Security.TriggerTypes.RetentionEventTypes {
     /// <summary>Provides operations to manage the retentionEventTypes property of the microsoft.graph.security.triggerTypesRoot entity.</summary>
     public class RetentionEventTypesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

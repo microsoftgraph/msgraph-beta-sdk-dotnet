@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.SharedWithTeams {
     /// <summary>Provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.</summary>
     public class SharedWithTeamsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

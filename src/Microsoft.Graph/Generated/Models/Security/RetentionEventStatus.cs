@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PublicError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The status of the distribution. The possible values are: pending, error, success, notAvaliable.</summary>
         public EventStatusType? Status {
             get { return BackingStore?.Get<EventStatusType?>("status"); }
@@ -29,6 +34,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public RetentionEventStatus() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.security.retentionEventStatus";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"error", n => { Error = n.GetObjectValue<Microsoft.Graph.Beta.Models.PublicError>(Microsoft.Graph.Beta.Models.PublicError.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"status", n => { Status = n.GetEnumValue<EventStatusType>(); } },
             };
         }
@@ -54,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PublicError>("error", Error);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<EventStatusType>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }

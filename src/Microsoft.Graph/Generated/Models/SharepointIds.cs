@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("listItemUniqueId"); }
             set { BackingStore?.Set("listItemUniqueId", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The unique identifier (guid) for the item&apos;s site collection (SPSite).</summary>
         public string SiteId {
             get { return BackingStore?.Get<string>("siteId"); }
@@ -54,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         public SharepointIds() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.sharepointIds";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -71,6 +77,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"listId", n => { ListId = n.GetStringValue(); } },
                 {"listItemId", n => { ListItemId = n.GetStringValue(); } },
                 {"listItemUniqueId", n => { ListItemUniqueId = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"siteId", n => { SiteId = n.GetStringValue(); } },
                 {"siteUrl", n => { SiteUrl = n.GetStringValue(); } },
                 {"tenantId", n => { TenantId = n.GetStringValue(); } },
@@ -86,6 +93,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("listId", ListId);
             writer.WriteStringValue("listItemId", ListItemId);
             writer.WriteStringValue("listItemUniqueId", ListItemUniqueId);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("siteId", SiteId);
             writer.WriteStringValue("siteUrl", SiteUrl);
             writer.WriteStringValue("tenantId", TenantId);

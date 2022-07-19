@@ -33,6 +33,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("longTimeFormat"); }
             set { BackingStore?.Set("longTimeFormat", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The short date time format to be used for displaying dates.Returned by default.</summary>
         public string ShortDateFormat {
             get { return BackingStore?.Get<string>("shortDateFormat"); }
@@ -54,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         public RegionalFormatOverrides() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.regionalFormatOverrides";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -72,6 +78,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"firstDayOfWeek", n => { FirstDayOfWeek = n.GetStringValue(); } },
                 {"longDateFormat", n => { LongDateFormat = n.GetStringValue(); } },
                 {"longTimeFormat", n => { LongTimeFormat = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"shortDateFormat", n => { ShortDateFormat = n.GetStringValue(); } },
                 {"shortTimeFormat", n => { ShortTimeFormat = n.GetStringValue(); } },
                 {"timeZone", n => { TimeZone = n.GetStringValue(); } },
@@ -87,6 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("firstDayOfWeek", FirstDayOfWeek);
             writer.WriteStringValue("longDateFormat", LongDateFormat);
             writer.WriteStringValue("longTimeFormat", LongTimeFormat);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("shortDateFormat", ShortDateFormat);
             writer.WriteStringValue("shortTimeFormat", ShortTimeFormat);
             writer.WriteStringValue("timeZone", TimeZone);

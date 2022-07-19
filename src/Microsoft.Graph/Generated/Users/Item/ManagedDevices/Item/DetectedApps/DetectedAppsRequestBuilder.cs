@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps {
     /// <summary>Provides operations to manage the detectedApps property of the microsoft.graph.managedDevice entity.</summary>
     public class DetectedAppsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

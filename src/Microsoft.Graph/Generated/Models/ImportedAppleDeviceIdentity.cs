@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new importedAppleDeviceIdentity and sets the default values.
         /// </summary>
         public ImportedAppleDeviceIdentity() : base() {
-            Type = "#microsoft.graph.importedAppleDeviceIdentity";
+            OdataType = "#microsoft.graph.importedAppleDeviceIdentity";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

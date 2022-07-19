@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class CustomExtensionHandler : Entity, IParsable {
         /// <summary>Indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.</summary>
         public CustomAccessPackageWorkflowExtension CustomExtension {
@@ -15,6 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public AccessPackageCustomExtensionStage? Stage {
             get { return BackingStore?.Get<AccessPackageCustomExtensionStage?>("stage"); }
             set { BackingStore?.Set("stage", value); }
+        }
+        /// <summary>
+        /// Instantiates a new customExtensionHandler and sets the default values.
+        /// </summary>
+        public CustomExtensionHandler() : base() {
+            OdataType = "#microsoft.graph.customExtensionHandler";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

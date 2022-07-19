@@ -37,6 +37,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("osVersionAppHealthStatus", value); }
         }
         /// <summary>
+        /// Instantiates a new userExperienceAnalyticsAppHealthOSVersionPerformance and sets the default values.
+        /// </summary>
+        public UserExperienceAnalyticsAppHealthOSVersionPerformance() : base() {
+            OdataType = "#microsoft.graph.userExperienceAnalyticsAppHealthOSVersionPerformance";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

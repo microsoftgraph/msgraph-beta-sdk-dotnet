@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new governanceResourceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new GovernanceResourceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public GovernanceResourceItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item {
             /// <summary>Request query parameters</summary>
             public GovernanceResourceItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new GovernanceResourceItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new governanceResourceItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new GovernanceResourceItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public GovernanceResourceItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new governanceResourceItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new GovernanceResourceItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public GovernanceResourceItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

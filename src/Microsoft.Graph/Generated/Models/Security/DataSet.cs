@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// Instantiates a new dataSet and sets the default values.
         /// </summary>
         public DataSet() : base() {
-            Type = "#microsoft.graph.security.dataSet";
+            OdataType = "#microsoft.graph.security.dataSet";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -31,6 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("signIns", value); }
         }
         /// <summary>
+        /// Instantiates a new AuditLogRoot and sets the default values.
+        /// </summary>
+        public AuditLogRoot() : base() {
+            OdataType = "#microsoft.graph.auditLogRoot";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

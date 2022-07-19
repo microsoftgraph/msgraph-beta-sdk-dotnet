@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("feedbackDateTime"); }
             set { BackingStore?.Set("feedbackDateTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Feedback.</summary>
         public EducationItemBody Text {
             get { return BackingStore?.Get<EducationItemBody>("text"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public EducationFeedback() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.educationFeedback";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"feedbackBy", n => { FeedbackBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"feedbackDateTime", n => { FeedbackDateTime = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"text", n => { Text = n.GetObjectValue<EducationItemBody>(EducationItemBody.CreateFromDiscriminatorValue); } },
             };
         }
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<IdentitySet>("feedbackBy", FeedbackBy);
             writer.WriteDateTimeOffsetValue("feedbackDateTime", FeedbackDateTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<EducationItemBody>("text", Text);
             writer.WriteAdditionalData(AdditionalData);
         }

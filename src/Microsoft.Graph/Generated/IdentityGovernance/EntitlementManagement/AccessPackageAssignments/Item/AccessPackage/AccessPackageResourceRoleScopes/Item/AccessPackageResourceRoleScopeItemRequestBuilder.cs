@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new accessPackageResourceRoleScopeItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AccessPackageResourceRoleScopeItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AccessPackageResourceRoleScopeItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             /// <summary>Request query parameters</summary>
             public AccessPackageResourceRoleScopeItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AccessPackageResourceRoleScopeItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new accessPackageResourceRoleScopeItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AccessPackageResourceRoleScopeItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AccessPackageResourceRoleScopeItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new accessPackageResourceRoleScopeItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AccessPackageResourceRoleScopeItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AccessPackageResourceRoleScopeItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

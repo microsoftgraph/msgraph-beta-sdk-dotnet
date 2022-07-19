@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.ShipmentMethods.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new shipmentMethodItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ShipmentMethodItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ShipmentMethodItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.ShipmentMethods.Item {
             /// <summary>Request query parameters</summary>
             public ShipmentMethodItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ShipmentMethodItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new shipmentMethodItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ShipmentMethodItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ShipmentMethodItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.ShipmentMethods.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new shipmentMethodItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ShipmentMethodItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ShipmentMethodItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

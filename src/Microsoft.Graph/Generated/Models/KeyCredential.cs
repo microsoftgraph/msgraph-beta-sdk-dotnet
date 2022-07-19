@@ -38,6 +38,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("keyId"); }
             set { BackingStore?.Set("keyId", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
@@ -59,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
         public KeyCredential() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.keyCredential";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -78,6 +84,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 {"key", n => { Key = n.GetByteArrayValue(); } },
                 {"keyId", n => { KeyId = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"type", n => { Type = n.GetStringValue(); } },
                 {"usage", n => { Usage = n.GetStringValue(); } },
@@ -94,6 +101,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteByteArrayValue("key", Key);
             writer.WriteStringValue("keyId", KeyId);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("usage", Usage);

@@ -169,7 +169,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new managementTemplateStepItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagementTemplateStepItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ManagementTemplateStepItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
             /// <summary>Request query parameters</summary>
             public ManagementTemplateStepItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ManagementTemplateStepItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new managementTemplateStepItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagementTemplateStepItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ManagementTemplateStepItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new managementTemplateStepItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagementTemplateStepItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ManagementTemplateStepItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

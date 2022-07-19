@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.UserPfxCertificates {
     /// <summary>Provides operations to manage the userPfxCertificates property of the microsoft.graph.deviceManagement entity.</summary>
     public class UserPfxCertificatesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

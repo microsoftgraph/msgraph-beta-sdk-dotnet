@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class Approval : Entity, IParsable {
         /// <summary>The steps property</summary>
         public List<ApprovalStep> Steps {
             get { return BackingStore?.Get<List<ApprovalStep>>("steps"); }
             set { BackingStore?.Set("steps", value); }
+        }
+        /// <summary>
+        /// Instantiates a new approval and sets the default values.
+        /// </summary>
+        public Approval() : base() {
+            OdataType = "#microsoft.graph.approval";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

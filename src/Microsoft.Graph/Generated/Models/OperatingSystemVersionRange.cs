@@ -29,12 +29,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("lowestVersion"); }
             set { BackingStore?.Set("lowestVersion", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new operatingSystemVersionRange and sets the default values.
         /// </summary>
         public OperatingSystemVersionRange() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.operatingSystemVersionRange";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -52,6 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"highestVersion", n => { HighestVersion = n.GetStringValue(); } },
                 {"lowestVersion", n => { LowestVersion = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -63,6 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("highestVersion", HighestVersion);
             writer.WriteStringValue("lowestVersion", LowestVersion);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

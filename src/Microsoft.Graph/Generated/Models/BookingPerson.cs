@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new bookingPerson and sets the default values.
         /// </summary>
         public BookingPerson() : base() {
-            Type = "#microsoft.graph.bookingPerson";
+            OdataType = "#microsoft.graph.bookingPerson";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

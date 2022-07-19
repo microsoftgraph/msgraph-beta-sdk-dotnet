@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Notes.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new personAnnotationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PersonAnnotationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PersonAnnotationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Notes.Item {
             /// <summary>Request query parameters</summary>
             public PersonAnnotationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PersonAnnotationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new personAnnotationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PersonAnnotationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PersonAnnotationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Notes.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new personAnnotationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PersonAnnotationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PersonAnnotationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

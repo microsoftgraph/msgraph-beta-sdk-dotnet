@@ -94,6 +94,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<MimeContent>("lightBackgroundLogo"); }
             set { BackingStore?.Set("lightBackgroundLogo", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Display name of the company/organization’s IT helpdesk site.</summary>
         public string OnlineSupportSiteName {
             get { return BackingStore?.Get<string>("onlineSupportSiteName"); }
@@ -155,6 +160,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IntuneBrand() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.intuneBrand";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -185,6 +191,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isRemoveDeviceDisabled", n => { IsRemoveDeviceDisabled = n.GetBoolValue(); } },
                 {"landingPageCustomizedImage", n => { LandingPageCustomizedImage = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
                 {"lightBackgroundLogo", n => { LightBackgroundLogo = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"onlineSupportSiteName", n => { OnlineSupportSiteName = n.GetStringValue(); } },
                 {"onlineSupportSiteUrl", n => { OnlineSupportSiteUrl = n.GetStringValue(); } },
                 {"privacyUrl", n => { PrivacyUrl = n.GetStringValue(); } },
@@ -220,6 +227,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isRemoveDeviceDisabled", IsRemoveDeviceDisabled);
             writer.WriteObjectValue<MimeContent>("landingPageCustomizedImage", LandingPageCustomizedImage);
             writer.WriteObjectValue<MimeContent>("lightBackgroundLogo", LightBackgroundLogo);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("onlineSupportSiteName", OnlineSupportSiteName);
             writer.WriteStringValue("onlineSupportSiteUrl", OnlineSupportSiteUrl);
             writer.WriteStringValue("privacyUrl", PrivacyUrl);

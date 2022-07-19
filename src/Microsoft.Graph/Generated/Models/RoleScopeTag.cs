@@ -27,6 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isBuiltIn", value); }
         }
         /// <summary>
+        /// Instantiates a new roleScopeTag and sets the default values.
+        /// </summary>
+        public RoleScopeTag() : base() {
+            OdataType = "#microsoft.graph.roleScopeTag";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

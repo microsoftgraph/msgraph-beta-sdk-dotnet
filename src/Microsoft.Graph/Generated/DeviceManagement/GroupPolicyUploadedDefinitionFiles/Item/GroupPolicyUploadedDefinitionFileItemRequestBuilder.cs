@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFil
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new groupPolicyUploadedDefinitionFileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new GroupPolicyUploadedDefinitionFileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public GroupPolicyUploadedDefinitionFileItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -209,7 +209,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFil
             /// <summary>Request query parameters</summary>
             public GroupPolicyUploadedDefinitionFileItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new GroupPolicyUploadedDefinitionFileItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new groupPolicyUploadedDefinitionFileItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new GroupPolicyUploadedDefinitionFileItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public GroupPolicyUploadedDefinitionFileItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -223,7 +223,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFil
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new groupPolicyUploadedDefinitionFileItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new GroupPolicyUploadedDefinitionFileItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public GroupPolicyUploadedDefinitionFileItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

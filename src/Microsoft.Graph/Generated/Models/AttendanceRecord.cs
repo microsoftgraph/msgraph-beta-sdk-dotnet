@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class AttendanceRecord : Entity, IParsable {
         /// <summary>List of time periods between joining and leaving a meeting.</summary>
         public List<AttendanceInterval> AttendanceIntervals {
@@ -35,6 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
         public int? TotalAttendanceInSeconds {
             get { return BackingStore?.Get<int?>("totalAttendanceInSeconds"); }
             set { BackingStore?.Set("totalAttendanceInSeconds", value); }
+        }
+        /// <summary>
+        /// Instantiates a new attendanceRecord and sets the default values.
+        /// </summary>
+        public AttendanceRecord() : base() {
+            OdataType = "#microsoft.graph.attendanceRecord";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

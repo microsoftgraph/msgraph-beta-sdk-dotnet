@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
-    /// <summary>Provides operations to manage the collection of externalConnection entities.</summary>
     public class ExternalItem : Entity, IParsable {
         /// <summary>An array of access control entries. Each entry specifies the access granted to a user or group. Required.</summary>
         public List<Microsoft.Graph.Beta.Models.ExternalConnectors.Acl> Acl {
@@ -20,6 +19,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         public Microsoft.Graph.Beta.Models.ExternalConnectors.Properties Properties {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.Properties>("properties"); }
             set { BackingStore?.Set("properties", value); }
+        }
+        /// <summary>
+        /// Instantiates a new ExternalItem and sets the default values.
+        /// </summary>
+        public ExternalItem() : base() {
+            OdataType = "#microsoft.graph.externalConnectors.externalItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -61,6 +61,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("tags", value); }
         }
         /// <summary>
+        /// Instantiates a new EdiscoveryCase and sets the default values.
+        /// </summary>
+        public EdiscoveryCase() : base() {
+            OdataType = "#microsoft.graph.security.ediscoveryCase";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

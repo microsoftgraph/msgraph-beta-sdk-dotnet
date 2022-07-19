@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item.ChecklistItems.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new checklistItemItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ChecklistItemItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ChecklistItemItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item.ChecklistItems.Item
             /// <summary>Request query parameters</summary>
             public ChecklistItemItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ChecklistItemItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new checklistItemItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ChecklistItemItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ChecklistItemItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item.ChecklistItems.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new checklistItemItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ChecklistItemItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ChecklistItemItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

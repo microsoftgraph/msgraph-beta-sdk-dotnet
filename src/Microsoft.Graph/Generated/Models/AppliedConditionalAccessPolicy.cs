@@ -58,6 +58,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<ConditionalAccessRuleSatisfied>>("includeRulesSatisfied"); }
             set { BackingStore?.Set("includeRulesSatisfied", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn&apos;t applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue, reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted.</summary>
         public AppliedConditionalAccessPolicyResult? Result {
             get { return BackingStore?.Get<AppliedConditionalAccessPolicyResult?>("result"); }
@@ -74,6 +79,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AppliedConditionalAccessPolicy() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.appliedConditionalAccessPolicy";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -97,6 +103,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"excludeRulesSatisfied", n => { ExcludeRulesSatisfied = n.GetCollectionOfObjectValues<ConditionalAccessRuleSatisfied>(ConditionalAccessRuleSatisfied.CreateFromDiscriminatorValue).ToList(); } },
                 {"id", n => { Id = n.GetStringValue(); } },
                 {"includeRulesSatisfied", n => { IncludeRulesSatisfied = n.GetCollectionOfObjectValues<ConditionalAccessRuleSatisfied>(ConditionalAccessRuleSatisfied.CreateFromDiscriminatorValue).ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"result", n => { Result = n.GetEnumValue<AppliedConditionalAccessPolicyResult>(); } },
                 {"sessionControlsNotSatisfied", n => { SessionControlsNotSatisfied = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
@@ -116,6 +123,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<ConditionalAccessRuleSatisfied>("excludeRulesSatisfied", ExcludeRulesSatisfied);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<ConditionalAccessRuleSatisfied>("includeRulesSatisfied", IncludeRulesSatisfied);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<AppliedConditionalAccessPolicyResult>("result", Result);
             writer.WriteCollectionOfPrimitiveValues<string>("sessionControlsNotSatisfied", SessionControlsNotSatisfied);
             writer.WriteAdditionalData(AdditionalData);

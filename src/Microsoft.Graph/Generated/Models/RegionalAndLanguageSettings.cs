@@ -41,6 +41,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("translationPreferences", value); }
         }
         /// <summary>
+        /// Instantiates a new regionalAndLanguageSettings and sets the default values.
+        /// </summary>
+        public RegionalAndLanguageSettings() : base() {
+            OdataType = "#microsoft.graph.regionalAndLanguageSettings";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

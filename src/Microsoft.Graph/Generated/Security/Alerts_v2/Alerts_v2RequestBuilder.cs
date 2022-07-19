@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Security.Alerts_v2 {
     /// <summary>Provides operations to manage the alerts_v2 property of the microsoft.graph.security entity.</summary>
     public class Alerts_v2RequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

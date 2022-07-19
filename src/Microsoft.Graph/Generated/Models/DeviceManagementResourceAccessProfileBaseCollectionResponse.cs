@@ -13,8 +13,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The nextLink property</summary>
-        public string NextLink {
+        /// <summary>The OdataNextLink property</summary>
+        public string OdataNextLink {
             get { return BackingStore?.Get<string>("@odata.nextLink"); }
             set { BackingStore?.Set("@odata.nextLink", value); }
         }
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"@odata.nextLink", n => { NextLink = n.GetStringValue(); } },
+                {"@odata.nextLink", n => { OdataNextLink = n.GetStringValue(); } },
                 {"value", n => { Value = n.GetCollectionOfObjectValues<DeviceManagementResourceAccessProfileBase>(DeviceManagementResourceAccessProfileBase.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("@odata.nextLink", NextLink);
+            writer.WriteStringValue("@odata.nextLink", OdataNextLink);
             writer.WriteCollectionOfObjectValues<DeviceManagementResourceAccessProfileBase>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

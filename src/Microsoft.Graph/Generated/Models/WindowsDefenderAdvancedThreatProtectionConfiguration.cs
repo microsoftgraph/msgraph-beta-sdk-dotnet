@@ -41,6 +41,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("enableExpeditedTelemetryReporting", value); }
         }
         /// <summary>
+        /// Instantiates a new WindowsDefenderAdvancedThreatProtectionConfiguration and sets the default values.
+        /// </summary>
+        public WindowsDefenderAdvancedThreatProtectionConfiguration() : base() {
+            OdataType = "#microsoft.graph.windowsDefenderAdvancedThreatProtectionConfiguration";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

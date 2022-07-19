@@ -25,15 +25,15 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Port. Valid values 0 to 65535</summary>
         public int? Port {
             get { return BackingStore?.Get<int?>("port"); }
             set { BackingStore?.Set("port", value); }
-        }
-        /// <summary>The type property</summary>
-        public string Type {
-            get { return BackingStore?.Get<string>("@odata.type"); }
-            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new vpnProxyServer and sets the default values.
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
         public VpnProxyServer() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            Type = "#microsoft.graph.vpnProxyServer";
+            OdataType = "#microsoft.graph.vpnProxyServer";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -64,8 +64,8 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"address", n => { Address = n.GetStringValue(); } },
                 {"automaticConfigurationScriptUrl", n => { AutomaticConfigurationScriptUrl = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"port", n => { Port = n.GetIntValue(); } },
-                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,8 +76,8 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("address", Address);
             writer.WriteStringValue("automaticConfigurationScriptUrl", AutomaticConfigurationScriptUrl);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("port", Port);
-            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

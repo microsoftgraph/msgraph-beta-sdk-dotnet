@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.List.ContentTypes.Item.ColumnPosit
             /// <summary>Request query parameters</summary>
             public ColumnDefinitionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ColumnDefinitionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new columnDefinitionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ColumnDefinitionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ColumnDefinitionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

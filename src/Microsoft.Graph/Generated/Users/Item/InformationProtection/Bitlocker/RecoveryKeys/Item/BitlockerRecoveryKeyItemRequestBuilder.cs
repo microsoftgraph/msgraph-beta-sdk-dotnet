@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Bitlocker.Recove
             /// <summary>Request query parameters</summary>
             public BitlockerRecoveryKeyItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new BitlockerRecoveryKeyItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new bitlockerRecoveryKeyItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new BitlockerRecoveryKeyItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public BitlockerRecoveryKeyItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

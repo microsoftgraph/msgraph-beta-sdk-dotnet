@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Security.UserSecurityProfiles {
     /// <summary>Provides operations to manage the userSecurityProfiles property of the microsoft.graph.security entity.</summary>
     public class UserSecurityProfilesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

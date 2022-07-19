@@ -29,6 +29,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isRequired"); }
             set { BackingStore?.Set("isRequired", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Relative position of this question when displaying a list of questions to the requestor.</summary>
         public int? Sequence {
             get { return BackingStore?.Get<int?>("sequence"); }
@@ -39,18 +44,13 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<AccessPackageLocalizedContent>("text"); }
             set { BackingStore?.Set("text", value); }
         }
-        /// <summary>The type property</summary>
-        public string Type {
-            get { return BackingStore?.Get<string>("@odata.type"); }
-            set { BackingStore?.Set("@odata.type", value); }
-        }
         /// <summary>
         /// Instantiates a new accessPackageQuestion and sets the default values.
         /// </summary>
         public AccessPackageQuestion() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            Type = "#microsoft.graph.accessPackageQuestion";
+            OdataType = "#microsoft.graph.accessPackageQuestion";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -74,9 +74,9 @@ namespace Microsoft.Graph.Beta.Models {
                 {"id", n => { Id = n.GetStringValue(); } },
                 {"isAnswerEditable", n => { IsAnswerEditable = n.GetBoolValue(); } },
                 {"isRequired", n => { IsRequired = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"sequence", n => { Sequence = n.GetIntValue(); } },
                 {"text", n => { Text = n.GetObjectValue<AccessPackageLocalizedContent>(AccessPackageLocalizedContent.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -88,9 +88,9 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isAnswerEditable", IsAnswerEditable);
             writer.WriteBoolValue("isRequired", IsRequired);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("sequence", Sequence);
             writer.WriteObjectValue<AccessPackageLocalizedContent>("text", Text);
-            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

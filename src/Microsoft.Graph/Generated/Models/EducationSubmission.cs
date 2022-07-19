@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class EducationSubmission : Entity, IParsable {
         /// <summary>The outcomes property</summary>
         public List<EducationOutcome> Outcomes {
@@ -75,6 +75,12 @@ namespace Microsoft.Graph.Beta.Models {
         public DateTimeOffset? UnsubmittedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("unsubmittedDateTime"); }
             set { BackingStore?.Set("unsubmittedDateTime", value); }
+        }
+        /// <summary>
+        /// Instantiates a new educationSubmission and sets the default values.
+        /// </summary>
+        public EducationSubmission() : base() {
+            OdataType = "#microsoft.graph.educationSubmission";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

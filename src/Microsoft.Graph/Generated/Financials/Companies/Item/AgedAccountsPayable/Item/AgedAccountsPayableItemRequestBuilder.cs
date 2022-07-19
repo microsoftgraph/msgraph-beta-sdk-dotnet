@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.Ite
             /// <summary>Request query parameters</summary>
             public AgedAccountsPayableItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AgedAccountsPayableItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new agedAccountsPayableItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AgedAccountsPayableItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AgedAccountsPayableItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

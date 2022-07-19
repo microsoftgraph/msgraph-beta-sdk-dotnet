@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Employees.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new employeeItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new EmployeeItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public EmployeeItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Employees.Item {
             /// <summary>Request query parameters</summary>
             public EmployeeItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new EmployeeItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new employeeItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new EmployeeItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public EmployeeItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Employees.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new employeeItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new EmployeeItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public EmployeeItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBookCategories.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new managedEBookCategoryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagedEBookCategoryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ManagedEBookCategoryItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBookCategories.Item {
             /// <summary>Request query parameters</summary>
             public ManagedEBookCategoryItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ManagedEBookCategoryItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new managedEBookCategoryItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagedEBookCategoryItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ManagedEBookCategoryItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBookCategories.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new managedEBookCategoryItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagedEBookCategoryItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ManagedEBookCategoryItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

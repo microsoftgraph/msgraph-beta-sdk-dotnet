@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Alert : Entity, IParsable {
         /// <summary>Name or alias of the activity group (attacker) this alert is attributed to.</summary>
         public string ActivityGroupName {
@@ -200,6 +199,12 @@ namespace Microsoft.Graph.Beta.Models {
         public List<VulnerabilityState> VulnerabilityStates {
             get { return BackingStore?.Get<List<VulnerabilityState>>("vulnerabilityStates"); }
             set { BackingStore?.Set("vulnerabilityStates", value); }
+        }
+        /// <summary>
+        /// Instantiates a new Alert and sets the default values.
+        /// </summary>
+        public Alert() : base() {
+            OdataType = "#microsoft.graph.alert";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

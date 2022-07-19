@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new timeCardItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new TimeCardItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public TimeCardItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item {
             /// <summary>Request query parameters</summary>
             public TimeCardItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TimeCardItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new timeCardItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TimeCardItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TimeCardItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -213,7 +213,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new timeCardItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new TimeCardItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public TimeCardItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Security.TiIndicators {
     /// <summary>Provides operations to manage the tiIndicators property of the microsoft.graph.security entity.</summary>
     public class TiIndicatorsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

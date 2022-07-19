@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.ResourceNamespaces {
     /// <summary>Provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplicationMultiple entity.</summary>
     public class ResourceNamespacesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

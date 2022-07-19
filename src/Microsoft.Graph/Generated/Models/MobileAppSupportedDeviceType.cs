@@ -24,6 +24,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("minimumOperatingSystemVersion"); }
             set { BackingStore?.Set("minimumOperatingSystemVersion", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Device type.</summary>
         public DeviceType? Type {
             get { return BackingStore?.Get<DeviceType?>("type"); }
@@ -35,6 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         public MobileAppSupportedDeviceType() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.mobileAppSupportedDeviceType";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"maximumOperatingSystemVersion", n => { MaximumOperatingSystemVersion = n.GetStringValue(); } },
                 {"minimumOperatingSystemVersion", n => { MinimumOperatingSystemVersion = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"type", n => { Type = n.GetEnumValue<DeviceType>(); } },
             };
         }
@@ -62,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("maximumOperatingSystemVersion", MaximumOperatingSystemVersion);
             writer.WriteStringValue("minimumOperatingSystemVersion", MinimumOperatingSystemVersion);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<DeviceType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

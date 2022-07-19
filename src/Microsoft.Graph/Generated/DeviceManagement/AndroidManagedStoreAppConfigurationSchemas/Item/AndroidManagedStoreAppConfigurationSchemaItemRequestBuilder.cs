@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAppConfigurat
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new androidManagedStoreAppConfigurationSchemaItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAppConfigurat
             /// <summary>Request query parameters</summary>
             public AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new androidManagedStoreAppConfigurationSchemaItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAppConfigurat
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new androidManagedStoreAppConfigurationSchemaItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics metric history.</summary>
     public class UserExperienceAnalyticsMetricHistory : Entity, IParsable {
         /// <summary>The user experience analytics device id.</summary>
         public string DeviceId {
@@ -20,6 +19,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string MetricType {
             get { return BackingStore?.Get<string>("metricType"); }
             set { BackingStore?.Set("metricType", value); }
+        }
+        /// <summary>
+        /// Instantiates a new UserExperienceAnalyticsMetricHistory and sets the default values.
+        /// </summary>
+        public UserExperienceAnalyticsMetricHistory() : base() {
+            OdataType = "#microsoft.graph.userExperienceAnalyticsMetricHistory";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -39,6 +39,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The parent property</summary>
         public ParentLabelDetails Parent {
             get { return BackingStore?.Get<ParentLabelDetails>("parent"); }
@@ -54,18 +59,13 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("tooltip"); }
             set { BackingStore?.Set("tooltip", value); }
         }
-        /// <summary>The type property</summary>
-        public string Type {
-            get { return BackingStore?.Get<string>("@odata.type"); }
-            set { BackingStore?.Set("@odata.type", value); }
-        }
         /// <summary>
         /// Instantiates a new parentLabelDetails and sets the default values.
         /// </summary>
         public ParentLabelDetails() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            Type = "#microsoft.graph.parentLabelDetails";
+            OdataType = "#microsoft.graph.parentLabelDetails";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -90,10 +90,10 @@ namespace Microsoft.Graph.Beta.Models {
                 {"id", n => { Id = n.GetStringValue(); } },
                 {"isActive", n => { IsActive = n.GetBoolValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"parent", n => { Parent = n.GetObjectValue<ParentLabelDetails>(ParentLabelDetails.CreateFromDiscriminatorValue); } },
                 {"sensitivity", n => { Sensitivity = n.GetIntValue(); } },
                 {"tooltip", n => { Tooltip = n.GetStringValue(); } },
-                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -107,10 +107,10 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isActive", IsActive);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<ParentLabelDetails>("parent", Parent);
             writer.WriteIntValue("sensitivity", Sensitivity);
             writer.WriteStringValue("tooltip", Tooltip);
-            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -14,6 +14,11 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Whether the program supports the device licensing type.</summary>
         public bool? SupportDeviceLicensing {
             get { return BackingStore?.Get<bool?>("supportDeviceLicensing"); }
@@ -40,6 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         public VppLicensingType() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.vppLicensingType";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -54,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"supportDeviceLicensing", n => { SupportDeviceLicensing = n.GetBoolValue(); } },
                 {"supportsDeviceLicensing", n => { SupportsDeviceLicensing = n.GetBoolValue(); } },
                 {"supportsUserLicensing", n => { SupportsUserLicensing = n.GetBoolValue(); } },
@@ -66,6 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("supportDeviceLicensing", SupportDeviceLicensing);
             writer.WriteBoolValue("supportsDeviceLicensing", SupportsDeviceLicensing);
             writer.WriteBoolValue("supportsUserLicensing", SupportsUserLicensing);

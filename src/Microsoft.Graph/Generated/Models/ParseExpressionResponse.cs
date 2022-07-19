@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("evaluationSucceeded"); }
             set { BackingStore?.Set("evaluationSucceeded", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>An attributeMappingSource object representing the parsed expression.</summary>
         public AttributeMappingSource ParsedExpression {
             get { return BackingStore?.Get<AttributeMappingSource>("parsedExpression"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ParseExpressionResponse() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.parseExpressionResponse";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -61,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"error", n => { Error = n.GetObjectValue<PublicError>(PublicError.CreateFromDiscriminatorValue); } },
                 {"evaluationResult", n => { EvaluationResult = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"evaluationSucceeded", n => { EvaluationSucceeded = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"parsedExpression", n => { ParsedExpression = n.GetObjectValue<AttributeMappingSource>(AttributeMappingSource.CreateFromDiscriminatorValue); } },
                 {"parsingSucceeded", n => { ParsingSucceeded = n.GetBoolValue(); } },
             };
@@ -74,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<PublicError>("error", Error);
             writer.WriteCollectionOfPrimitiveValues<string>("evaluationResult", EvaluationResult);
             writer.WriteBoolValue("evaluationSucceeded", EvaluationSucceeded);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<AttributeMappingSource>("parsedExpression", ParsedExpression);
             writer.WriteBoolValue("parsingSucceeded", ParsingSucceeded);
             writer.WriteAdditionalData(AdditionalData);

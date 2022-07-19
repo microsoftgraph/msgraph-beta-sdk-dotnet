@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item.Posts.Item.Extensions {
     /// <summary>Provides operations to manage the extensions property of the microsoft.graph.post entity.</summary>
     public class ExtensionsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

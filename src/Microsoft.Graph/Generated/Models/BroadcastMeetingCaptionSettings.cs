@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isCaptionEnabled"); }
             set { BackingStore?.Set("isCaptionEnabled", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The spoken language.</summary>
         public string SpokenLanguage {
             get { return BackingStore?.Get<string>("spokenLanguage"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public BroadcastMeetingCaptionSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.broadcastMeetingCaptionSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"isCaptionEnabled", n => { IsCaptionEnabled = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"spokenLanguage", n => { SpokenLanguage = n.GetStringValue(); } },
                 {"translationLanguages", n => { TranslationLanguages = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
@@ -60,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("isCaptionEnabled", IsCaptionEnabled);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("spokenLanguage", SpokenLanguage);
             writer.WriteCollectionOfPrimitiveValues<string>("translationLanguages", TranslationLanguages);
             writer.WriteAdditionalData(AdditionalData);

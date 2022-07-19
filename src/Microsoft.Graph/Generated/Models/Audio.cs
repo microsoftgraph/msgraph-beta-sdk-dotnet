@@ -73,6 +73,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isVariableBitrate"); }
             set { BackingStore?.Set("isVariableBitrate", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The title of the audio file.</summary>
         public string Title {
             get { return BackingStore?.Get<string>("title"); }
@@ -99,6 +104,7 @@ namespace Microsoft.Graph.Beta.Models {
         public Audio() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.audio";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -125,6 +131,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"genre", n => { Genre = n.GetStringValue(); } },
                 {"hasDrm", n => { HasDrm = n.GetBoolValue(); } },
                 {"isVariableBitrate", n => { IsVariableBitrate = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"title", n => { Title = n.GetStringValue(); } },
                 {"track", n => { Track = n.GetIntValue(); } },
                 {"trackCount", n => { TrackCount = n.GetIntValue(); } },
@@ -149,6 +156,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("genre", Genre);
             writer.WriteBoolValue("hasDrm", HasDrm);
             writer.WriteBoolValue("isVariableBitrate", IsVariableBitrate);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("title", Title);
             writer.WriteIntValue("track", Track);
             writer.WriteIntValue("trackCount", TrackCount);

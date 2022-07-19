@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("durationInDays"); }
             set { BackingStore?.Set("durationInDays", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The count of recurrences, if the value of recurrenceEndType is occurrences, or 0 otherwise.</summary>
         public int? RecurrenceCount {
             get { return BackingStore?.Get<int?>("recurrenceCount"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AccessReviewRecurrenceSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.accessReviewRecurrenceSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -54,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"durationInDays", n => { DurationInDays = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"recurrenceCount", n => { RecurrenceCount = n.GetIntValue(); } },
                 {"recurrenceEndType", n => { RecurrenceEndType = n.GetStringValue(); } },
                 {"recurrenceType", n => { RecurrenceType = n.GetStringValue(); } },
@@ -66,6 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("durationInDays", DurationInDays);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("recurrenceCount", RecurrenceCount);
             writer.WriteStringValue("recurrenceEndType", RecurrenceEndType);
             writer.WriteStringValue("recurrenceType", RecurrenceType);

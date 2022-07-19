@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
             get { return BackingStore?.Get<int?>("minWords"); }
             set { BackingStore?.Set("minWords", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Specifies the similarity level for documents to be put in the same near duplicate set. To learn more, see Document and email similarity threshold.</summary>
         public int? SimilarityThreshold {
             get { return BackingStore?.Get<int?>("similarityThreshold"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         public RedundancyDetectionSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.ediscovery.redundancyDetectionSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
                 {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 {"maxWords", n => { MaxWords = n.GetIntValue(); } },
                 {"minWords", n => { MinWords = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"similarityThreshold", n => { SimilarityThreshold = n.GetIntValue(); } },
             };
         }
@@ -68,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
             writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteIntValue("maxWords", MaxWords);
             writer.WriteIntValue("minWords", MinWords);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("similarityThreshold", SimilarityThreshold);
             writer.WriteAdditionalData(AdditionalData);
         }

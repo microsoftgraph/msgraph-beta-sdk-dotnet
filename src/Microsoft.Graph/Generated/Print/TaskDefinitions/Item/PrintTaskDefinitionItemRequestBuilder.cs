@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new printTaskDefinitionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PrintTaskDefinitionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PrintTaskDefinitionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item {
             /// <summary>Request query parameters</summary>
             public PrintTaskDefinitionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PrintTaskDefinitionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new printTaskDefinitionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PrintTaskDefinitionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PrintTaskDefinitionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new printTaskDefinitionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PrintTaskDefinitionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PrintTaskDefinitionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

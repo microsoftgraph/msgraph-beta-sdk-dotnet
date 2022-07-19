@@ -39,6 +39,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("modernAppsCount"); }
             set { BackingStore?.Set("modernAppsCount", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Number of devices with OfficeApps swung-over. This property is read-only.</summary>
         public int? OfficeAppsCount {
             get { return BackingStore?.Get<int?>("officeAppsCount"); }
@@ -65,6 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ComanagedDevicesSummary() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.comanagedDevicesSummary";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -84,6 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"endpointProtectionCount", n => { EndpointProtectionCount = n.GetIntValue(); } },
                 {"inventoryCount", n => { InventoryCount = n.GetIntValue(); } },
                 {"modernAppsCount", n => { ModernAppsCount = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"officeAppsCount", n => { OfficeAppsCount = n.GetIntValue(); } },
                 {"resourceAccessCount", n => { ResourceAccessCount = n.GetIntValue(); } },
                 {"totalComanagedCount", n => { TotalComanagedCount = n.GetIntValue(); } },
@@ -101,6 +108,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteIntValue("endpointProtectionCount", EndpointProtectionCount);
             writer.WriteIntValue("inventoryCount", InventoryCount);
             writer.WriteIntValue("modernAppsCount", ModernAppsCount);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("officeAppsCount", OfficeAppsCount);
             writer.WriteIntValue("resourceAccessCount", ResourceAccessCount);
             writer.WriteIntValue("totalComanagedCount", TotalComanagedCount);

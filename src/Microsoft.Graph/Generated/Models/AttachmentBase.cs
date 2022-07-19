@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class AttachmentBase : Entity, IParsable {
         /// <summary>The MIME type.</summary>
         public string ContentType {
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new attachmentBase and sets the default values.
         /// </summary>
         public AttachmentBase() : base() {
-            Type = "#microsoft.graph.attachmentBase";
+            OdataType = "#microsoft.graph.attachmentBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

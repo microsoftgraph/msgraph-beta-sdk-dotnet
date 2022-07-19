@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new CustomCalloutExtension and sets the default values.
         /// </summary>
         public CustomCalloutExtension() : base() {
-            Type = "#microsoft.graph.customCalloutExtension";
+            OdataType = "#microsoft.graph.customCalloutExtension";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<TeamworkPeripheral>("microphone"); }
             set { BackingStore?.Set("microphone", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The roomCamera property</summary>
         public TeamworkPeripheral RoomCamera {
             get { return BackingStore?.Get<TeamworkPeripheral>("roomCamera"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public TeamworkActivePeripherals() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.teamworkActivePeripherals";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -61,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"communicationSpeaker", n => { CommunicationSpeaker = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
                 {"contentCamera", n => { ContentCamera = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
                 {"microphone", n => { Microphone = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"roomCamera", n => { RoomCamera = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
                 {"speaker", n => { Speaker = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
             };
@@ -74,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<TeamworkPeripheral>("communicationSpeaker", CommunicationSpeaker);
             writer.WriteObjectValue<TeamworkPeripheral>("contentCamera", ContentCamera);
             writer.WriteObjectValue<TeamworkPeripheral>("microphone", Microphone);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<TeamworkPeripheral>("roomCamera", RoomCamera);
             writer.WriteObjectValue<TeamworkPeripheral>("speaker", Speaker);
             writer.WriteAdditionalData(AdditionalData);

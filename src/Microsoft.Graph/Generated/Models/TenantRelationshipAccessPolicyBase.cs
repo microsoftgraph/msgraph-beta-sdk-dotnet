@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new TenantRelationshipAccessPolicyBase and sets the default values.
         /// </summary>
         public TenantRelationshipAccessPolicyBase() : base() {
-            Type = "#microsoft.graph.tenantRelationshipAccessPolicyBase";
+            OdataType = "#microsoft.graph.tenantRelationshipAccessPolicyBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

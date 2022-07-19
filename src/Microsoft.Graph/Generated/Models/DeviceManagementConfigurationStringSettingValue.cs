@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new DeviceManagementConfigurationStringSettingValue and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationStringSettingValue() : base() {
-            Type = "#microsoft.graph.deviceManagementConfigurationStringSettingValue";
+            OdataType = "#microsoft.graph.deviceManagementConfigurationStringSettingValue";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

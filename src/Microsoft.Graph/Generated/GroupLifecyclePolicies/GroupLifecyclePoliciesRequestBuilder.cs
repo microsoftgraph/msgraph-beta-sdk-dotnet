@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.GroupLifecyclePolicies {
     /// <summary>Provides operations to manage the collection of groupLifecyclePolicy entities.</summary>
     public class GroupLifecyclePoliciesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

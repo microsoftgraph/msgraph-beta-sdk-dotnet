@@ -38,6 +38,11 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             get { return BackingStore?.Get<string>("label"); }
             set { BackingStore?.Set("label", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Network streams associated with this media.</summary>
         public List<MediaStream> Streams {
             get { return BackingStore?.Get<List<MediaStream>>("streams"); }
@@ -49,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         public Media() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.callRecords.media";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -68,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
                 {"callerDevice", n => { CallerDevice = n.GetObjectValue<DeviceInfo>(DeviceInfo.CreateFromDiscriminatorValue); } },
                 {"callerNetwork", n => { CallerNetwork = n.GetObjectValue<NetworkInfo>(NetworkInfo.CreateFromDiscriminatorValue); } },
                 {"label", n => { Label = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"streams", n => { Streams = n.GetCollectionOfObjectValues<MediaStream>(MediaStream.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
@@ -82,6 +89,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             writer.WriteObjectValue<DeviceInfo>("callerDevice", CallerDevice);
             writer.WriteObjectValue<NetworkInfo>("callerNetwork", CallerNetwork);
             writer.WriteStringValue("label", Label);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<MediaStream>("streams", Streams);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Certifications.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new personCertificationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PersonCertificationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PersonCertificationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Certifications.Item {
             /// <summary>Request query parameters</summary>
             public PersonCertificationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PersonCertificationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new personCertificationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PersonCertificationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PersonCertificationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Certifications.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new personCertificationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PersonCertificationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PersonCertificationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

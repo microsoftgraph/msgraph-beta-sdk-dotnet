@@ -58,6 +58,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("maxMessageSize"); }
             set { BackingStore?.Set("maxMessageSize", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its &apos;partner&apos;. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It&apos;s also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone and content.</summary>
         public RecipientScopeType? RecipientScope {
             get { return BackingStore?.Get<RecipientScopeType?>("recipientScope"); }
@@ -79,6 +84,7 @@ namespace Microsoft.Graph.Beta.Models {
         public MailTips() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.mailTips";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -102,6 +108,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isModerated", n => { IsModerated = n.GetBoolValue(); } },
                 {"mailboxFull", n => { MailboxFull = n.GetBoolValue(); } },
                 {"maxMessageSize", n => { MaxMessageSize = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"recipientScope", n => { RecipientScope = n.GetEnumValue<RecipientScopeType>(); } },
                 {"recipientSuggestions", n => { RecipientSuggestions = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue).ToList(); } },
                 {"totalMemberCount", n => { TotalMemberCount = n.GetIntValue(); } },
@@ -122,6 +129,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isModerated", IsModerated);
             writer.WriteBoolValue("mailboxFull", MailboxFull);
             writer.WriteIntValue("maxMessageSize", MaxMessageSize);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<RecipientScopeType>("recipientScope", RecipientScope);
             writer.WriteCollectionOfObjectValues<Recipient>("recipientSuggestions", RecipientSuggestions);
             writer.WriteIntValue("totalMemberCount", TotalMemberCount);

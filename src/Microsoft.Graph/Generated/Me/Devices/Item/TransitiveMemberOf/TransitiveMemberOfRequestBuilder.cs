@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Me.Devices.Item.TransitiveMemberOf {
         public ApplicationRequestBuilder Application { get =>
             new ApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

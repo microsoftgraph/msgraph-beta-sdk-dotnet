@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DataSharingConsents.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new dataSharingConsentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DataSharingConsentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DataSharingConsentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DataSharingConsents.Item {
             /// <summary>Request query parameters</summary>
             public DataSharingConsentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DataSharingConsentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new dataSharingConsentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DataSharingConsentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DataSharingConsentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DataSharingConsents.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new dataSharingConsentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DataSharingConsentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DataSharingConsentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -14,8 +14,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List.Items.Item.Activities
     /// <summary>Provides operations to manage the activities property of the microsoft.graph.listItem entity.</summary>
     public class ItemActivityOLDItemRequestBuilder {
         /// <summary>The driveItem property</summary>
-        public Microsoft.Graph.Beta.Users.Item.Drives.Item.List.Items.Item.Activities.Item.DriveItem.DriveItemRequestBuilder DriveItem { get =>
-            new Microsoft.Graph.Beta.Users.Item.Drives.Item.List.Items.Item.Activities.Item.DriveItem.DriveItemRequestBuilder(PathParameters, RequestAdapter);
+        public DriveItemRequestBuilder DriveItem { get =>
+            new DriveItemRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The listItem property</summary>
         public ListItemRequestBuilder ListItem { get =>
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List.Items.Item.Activities
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new itemActivityOLDItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ItemActivityOLDItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ItemActivityOLDItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List.Items.Item.Activities
             /// <summary>Request query parameters</summary>
             public ItemActivityOLDItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ItemActivityOLDItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new itemActivityOLDItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ItemActivityOLDItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ItemActivityOLDItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List.Items.Item.Activities
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new itemActivityOLDItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ItemActivityOLDItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ItemActivityOLDItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

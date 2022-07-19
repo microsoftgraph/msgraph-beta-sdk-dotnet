@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Rubric.Ref 
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new refRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new RefRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public RefRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -167,7 +167,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Rubric.Ref 
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new refRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new RefRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public RefRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Rubric.Ref 
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new refRequestBuilderPutRequestConfiguration and sets the default values.
+            /// Instantiates a new RefRequestBuilderPutRequestConfiguration and sets the default values.
             /// </summary>
             public RefRequestBuilderPutRequestConfiguration() {
                 Options = new List<IRequestOption>();

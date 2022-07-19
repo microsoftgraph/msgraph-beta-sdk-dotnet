@@ -24,6 +24,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("blockedDeviceCount"); }
             set { BackingStore?.Set("blockedDeviceCount", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Total count of devices with Exchange Access State: Quarantined.</summary>
         public int? QuarantinedDeviceCount {
             get { return BackingStore?.Get<int?>("quarantinedDeviceCount"); }
@@ -45,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceExchangeAccessStateSummary() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.deviceExchangeAccessStateSummary";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -61,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"allowedDeviceCount", n => { AllowedDeviceCount = n.GetIntValue(); } },
                 {"blockedDeviceCount", n => { BlockedDeviceCount = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"quarantinedDeviceCount", n => { QuarantinedDeviceCount = n.GetIntValue(); } },
                 {"unavailableDeviceCount", n => { UnavailableDeviceCount = n.GetIntValue(); } },
                 {"unknownDeviceCount", n => { UnknownDeviceCount = n.GetIntValue(); } },
@@ -74,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("allowedDeviceCount", AllowedDeviceCount);
             writer.WriteIntValue("blockedDeviceCount", BlockedDeviceCount);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("quarantinedDeviceCount", QuarantinedDeviceCount);
             writer.WriteIntValue("unavailableDeviceCount", UnavailableDeviceCount);
             writer.WriteIntValue("unknownDeviceCount", UnknownDeviceCount);

@@ -39,6 +39,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<long?>("lastUploadVersion"); }
             set { BackingStore?.Set("lastUploadVersion", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Certificate connector status</summary>
         public int? Status {
             get { return BackingStore?.Get<int?>("status"); }
@@ -50,6 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
         public CertificateConnectorSetting() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.certificateConnectorSetting";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -69,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"enrollmentError", n => { EnrollmentError = n.GetStringValue(); } },
                 {"lastConnectorConnectionTime", n => { LastConnectorConnectionTime = n.GetDateTimeOffsetValue(); } },
                 {"lastUploadVersion", n => { LastUploadVersion = n.GetLongValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"status", n => { Status = n.GetIntValue(); } },
             };
         }
@@ -83,6 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("enrollmentError", EnrollmentError);
             writer.WriteDateTimeOffsetValue("lastConnectorConnectionTime", LastConnectorConnectionTime);
             writer.WriteLongValue("lastUploadVersion", LastUploadVersion);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }

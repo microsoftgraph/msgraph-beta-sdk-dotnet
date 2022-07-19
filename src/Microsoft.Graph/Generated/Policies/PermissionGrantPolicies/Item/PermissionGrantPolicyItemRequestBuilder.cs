@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new permissionGrantPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PermissionGrantPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PermissionGrantPolicyItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item {
             /// <summary>Request query parameters</summary>
             public PermissionGrantPolicyItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PermissionGrantPolicyItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new permissionGrantPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PermissionGrantPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PermissionGrantPolicyItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new permissionGrantPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PermissionGrantPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PermissionGrantPolicyItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

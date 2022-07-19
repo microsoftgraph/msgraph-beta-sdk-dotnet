@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources {
     /// <summary>Provides operations to manage the resources property of the microsoft.graph.privilegedAccess entity.</summary>
     public class ResourcesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

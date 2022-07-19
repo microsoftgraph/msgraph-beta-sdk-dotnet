@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class PrintDocument : Entity, IParsable {
         /// <summary>The configuration property</summary>
         public PrinterDocumentConfiguration Configuration {
@@ -25,6 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
         public long? Size {
             get { return BackingStore?.Get<long?>("size"); }
             set { BackingStore?.Set("size", value); }
+        }
+        /// <summary>
+        /// Instantiates a new printDocument and sets the default values.
+        /// </summary>
+        public PrintDocument() : base() {
+            OdataType = "#microsoft.graph.printDocument";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -22,6 +22,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("managedTenants", value); }
         }
         /// <summary>
+        /// Instantiates a new TenantRelationship and sets the default values.
+        /// </summary>
+        public TenantRelationship() : base() {
+            OdataType = "#microsoft.graph.tenantRelationship";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

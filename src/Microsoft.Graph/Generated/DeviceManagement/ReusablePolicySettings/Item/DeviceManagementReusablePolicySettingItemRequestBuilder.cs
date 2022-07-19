@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementReusablePolicySettingItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementReusablePolicySettingItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementReusablePolicySettingItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item {
             /// <summary>Request query parameters</summary>
             public DeviceManagementReusablePolicySettingItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceManagementReusablePolicySettingItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceManagementReusablePolicySettingItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementReusablePolicySettingItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementReusablePolicySettingItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementReusablePolicySettingItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementReusablePolicySettingItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementReusablePolicySettingItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

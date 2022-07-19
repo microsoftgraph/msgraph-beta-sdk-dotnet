@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ChecklistItem : Entity, IParsable {
         /// <summary>The date and time when the checklistItem was finished.</summary>
         public DateTimeOffset? CheckedDateTime {
@@ -25,6 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
         public bool? IsChecked {
             get { return BackingStore?.Get<bool?>("isChecked"); }
             set { BackingStore?.Set("isChecked", value); }
+        }
+        /// <summary>
+        /// Instantiates a new checklistItem and sets the default values.
+        /// </summary>
+        public ChecklistItem() : base() {
+            OdataType = "#microsoft.graph.checklistItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

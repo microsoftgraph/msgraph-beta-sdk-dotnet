@@ -14,7 +14,12 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The reportSettings property</summary>
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+        /// <summary>A container for administrative resources to manage reports.</summary>
         public Microsoft.Graph.Beta.Models.AdminReportSettings ReportSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdminReportSettings>("reportSettings"); }
             set { BackingStore?.Set("reportSettings", value); }
@@ -40,6 +45,7 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
         public Admin() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.admin";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -54,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"reportSettings", n => { ReportSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.AdminReportSettings>(Microsoft.Graph.Beta.Models.AdminReportSettings.CreateFromDiscriminatorValue); } },
                 {"serviceAnnouncement", n => { ServiceAnnouncement = n.GetObjectValue<Microsoft.Graph.Beta.Models.ServiceAnnouncement>(Microsoft.Graph.Beta.Models.ServiceAnnouncement.CreateFromDiscriminatorValue); } },
                 {"sharepoint", n => { Sharepoint = n.GetObjectValue<Microsoft.Graph.Beta.Models.TenantAdmin.Sharepoint>(Microsoft.Graph.Beta.Models.TenantAdmin.Sharepoint.CreateFromDiscriminatorValue); } },
@@ -66,6 +73,7 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AdminReportSettings>("reportSettings", ReportSettings);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ServiceAnnouncement>("serviceAnnouncement", ServiceAnnouncement);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TenantAdmin.Sharepoint>("sharepoint", Sharepoint);

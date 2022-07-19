@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The location to add the supplied content, relative to the target element. Possible values are: after (default) or before.</summary>
         public OnenotePatchInsertPosition? Position {
             get { return BackingStore?.Get<OnenotePatchInsertPosition?>("position"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public OnenotePatchContentCommand() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.onenotePatchContentCommand";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"action", n => { Action = n.GetEnumValue<OnenotePatchActionType>(); } },
                 {"content", n => { Content = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"position", n => { Position = n.GetEnumValue<OnenotePatchInsertPosition>(); } },
                 {"target", n => { Target = n.GetStringValue(); } },
             };
@@ -67,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<OnenotePatchActionType>("action", Action);
             writer.WriteStringValue("content", Content);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<OnenotePatchInsertPosition>("position", Position);
             writer.WriteStringValue("target", Target);
             writer.WriteAdditionalData(AdditionalData);

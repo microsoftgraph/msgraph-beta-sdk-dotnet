@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MobileAppIntentAndStates.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new mobileAppIntentAndStateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new MobileAppIntentAndStateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public MobileAppIntentAndStateItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MobileAppIntentAndStates.Item {
             /// <summary>Request query parameters</summary>
             public MobileAppIntentAndStateItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new MobileAppIntentAndStateItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new mobileAppIntentAndStateItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new MobileAppIntentAndStateItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public MobileAppIntentAndStateItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MobileAppIntentAndStates.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new mobileAppIntentAndStateItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new MobileAppIntentAndStateItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public MobileAppIntentAndStateItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

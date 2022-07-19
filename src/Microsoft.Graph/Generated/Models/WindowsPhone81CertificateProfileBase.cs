@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new windowsPhone81CertificateProfileBase and sets the default values.
         /// </summary>
         public WindowsPhone81CertificateProfileBase() : base() {
-            Type = "#microsoft.graph.windowsPhone81CertificateProfileBase";
+            OdataType = "#microsoft.graph.windowsPhone81CertificateProfileBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -49,6 +49,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Unique key the application uses to identify the item</summary>
         public string SchemaItemKey {
             get { return BackingStore?.Get<string>("schemaItemKey"); }
@@ -65,6 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AndroidForWorkAppConfigurationSchemaItem() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.androidForWorkAppConfigurationSchemaItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -86,6 +92,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"defaultStringValue", n => { DefaultStringValue = n.GetStringValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"schemaItemKey", n => { SchemaItemKey = n.GetStringValue(); } },
                 {"selections", n => { Selections = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
             };
@@ -103,6 +110,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("defaultStringValue", DefaultStringValue);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("schemaItemKey", SchemaItemKey);
             writer.WriteCollectionOfObjectValues<KeyValuePair>("selections", Selections);
             writer.WriteAdditionalData(AdditionalData);

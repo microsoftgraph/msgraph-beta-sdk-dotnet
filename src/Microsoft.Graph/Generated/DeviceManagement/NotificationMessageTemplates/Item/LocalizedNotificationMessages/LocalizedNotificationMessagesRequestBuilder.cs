@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.NotificationMessageTemplates.Item.LocalizedNotificationMessages {
     /// <summary>Provides operations to manage the localizedNotificationMessages property of the microsoft.graph.notificationMessageTemplate entity.</summary>
     public class LocalizedNotificationMessagesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

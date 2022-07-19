@@ -29,6 +29,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("failureDetails"); }
             set { BackingStore?.Set("failureDetails", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The detailed description of how to remediate this issue.</summary>
         public string Remediation {
             get { return BackingStore?.Get<string>("remediation"); }
@@ -45,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceManagementTroubleshootingErrorDetails() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.deviceManagementTroubleshootingErrorDetails";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"context", n => { Context = n.GetStringValue(); } },
                 {"failure", n => { Failure = n.GetStringValue(); } },
                 {"failureDetails", n => { FailureDetails = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"remediation", n => { Remediation = n.GetStringValue(); } },
                 {"resources", n => { Resources = n.GetCollectionOfObjectValues<DeviceManagementTroubleshootingErrorResource>(DeviceManagementTroubleshootingErrorResource.CreateFromDiscriminatorValue).ToList(); } },
             };
@@ -75,6 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("context", Context);
             writer.WriteStringValue("failure", Failure);
             writer.WriteStringValue("failureDetails", FailureDetails);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("remediation", Remediation);
             writer.WriteCollectionOfObjectValues<DeviceManagementTroubleshootingErrorResource>("resources", Resources);
             writer.WriteAdditionalData(AdditionalData);

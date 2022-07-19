@@ -29,6 +29,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Unique identifier for payload object.</summary>
         public string PayloadId {
             get { return BackingStore?.Get<string>("payloadId"); }
@@ -45,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AssignmentFilterStatusDetails() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.assignmentFilterStatusDetails";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"deviceProperties", n => { DeviceProperties = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
                 {"evalutionSummaries", n => { EvalutionSummaries = n.GetCollectionOfObjectValues<AssignmentFilterEvaluationSummary>(AssignmentFilterEvaluationSummary.CreateFromDiscriminatorValue).ToList(); } },
                 {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"payloadId", n => { PayloadId = n.GetStringValue(); } },
                 {"userId", n => { UserId = n.GetStringValue(); } },
             };
@@ -75,6 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<KeyValuePair>("deviceProperties", DeviceProperties);
             writer.WriteCollectionOfObjectValues<AssignmentFilterEvaluationSummary>("evalutionSummaries", EvalutionSummaries);
             writer.WriteStringValue("managedDeviceId", ManagedDeviceId);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("payloadId", PayloadId);
             writer.WriteStringValue("userId", UserId);
             writer.WriteAdditionalData(AdditionalData);

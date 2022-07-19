@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Tags.Item.Members.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new teamworkTagMemberItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamworkTagMemberItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public TeamworkTagMemberItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Tags.Item.Members.Item {
             /// <summary>Request query parameters</summary>
             public TeamworkTagMemberItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TeamworkTagMemberItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new teamworkTagMemberItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamworkTagMemberItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TeamworkTagMemberItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Tags.Item.Members.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new teamworkTagMemberItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamworkTagMemberItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public TeamworkTagMemberItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

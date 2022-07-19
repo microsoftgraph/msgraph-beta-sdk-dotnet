@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Calendars.Item.CalendarPermissions {
     /// <summary>Provides operations to manage the calendarPermissions property of the microsoft.graph.calendar entity.</summary>
     public class CalendarPermissionsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

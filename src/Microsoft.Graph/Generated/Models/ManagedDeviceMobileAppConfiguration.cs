@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new ManagedDeviceMobileAppConfiguration and sets the default values.
         /// </summary>
         public ManagedDeviceMobileAppConfiguration() : base() {
-            Type = "#microsoft.graph.managedDeviceMobileAppConfiguration";
+            OdataType = "#microsoft.graph.managedDeviceMobileAppConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

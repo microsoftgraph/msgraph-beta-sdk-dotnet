@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<ConditionalAccessConditions?>("conditionalAccessCondition"); }
             set { BackingStore?.Set("conditionalAccessCondition", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Refers to the conditional access policy conditions that were satisfied. The possible values are: allApps, firstPartyApps, office365, appId, acr, appFilter, allUsers, guest, groupId, roleId, userId, allDevicePlatforms, devicePlatform, allLocations, insideCorpnet, allTrustedLocations, locationId, allDevices, deviceFilter, deviceState, unknownFutureValue, deviceFilterIncludeRuleNotMatched, allDeviceStates, anonymizedIPAddress, unfamiliarFeatures, nationStateIPAddress, realTimeThreatIntelligence, internalGuest, b2bCollaborationGuest, b2bCollaborationMember, b2bDirectConnectUser, otherExternalUser, serviceProvider. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: deviceFilterIncludeRuleNotMatched, allDeviceStates.</summary>
         public ConditionalAccessRule? RuleSatisfied {
             get { return BackingStore?.Get<ConditionalAccessRule?>("ruleSatisfied"); }
@@ -29,6 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ConditionalAccessRuleSatisfied() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.conditionalAccessRuleSatisfied";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"conditionalAccessCondition", n => { ConditionalAccessCondition = n.GetEnumValue<ConditionalAccessConditions>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"ruleSatisfied", n => { RuleSatisfied = n.GetEnumValue<ConditionalAccessRule>(); } },
             };
         }
@@ -54,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<ConditionalAccessConditions>("conditionalAccessCondition", ConditionalAccessCondition);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<ConditionalAccessRule>("ruleSatisfied", RuleSatisfied);
             writer.WriteAdditionalData(AdditionalData);
         }

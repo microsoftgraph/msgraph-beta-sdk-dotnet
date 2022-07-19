@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class PrintServiceEndpoint : Entity, IParsable {
         /// <summary>A human-readable display name for the endpoint.</summary>
         public string DisplayName {
@@ -15,6 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string Uri {
             get { return BackingStore?.Get<string>("uri"); }
             set { BackingStore?.Set("uri", value); }
+        }
+        /// <summary>
+        /// Instantiates a new printServiceEndpoint and sets the default values.
+        /// </summary>
+        public PrintServiceEndpoint() : base() {
+            OdataType = "#microsoft.graph.printServiceEndpoint";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

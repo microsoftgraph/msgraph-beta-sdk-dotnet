@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// Instantiates a new SoftwareUpdateCatalogEntry and sets the default values.
         /// </summary>
         public SoftwareUpdateCatalogEntry() : base() {
-            Type = "#microsoft.graph.windowsUpdates.softwareUpdateCatalogEntry";
+            OdataType = "#microsoft.graph.windowsUpdates.softwareUpdateCatalogEntry";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

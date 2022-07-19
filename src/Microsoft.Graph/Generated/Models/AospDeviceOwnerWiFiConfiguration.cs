@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new AospDeviceOwnerWiFiConfiguration and sets the default values.
         /// </summary>
         public AospDeviceOwnerWiFiConfiguration() : base() {
-            Type = "#microsoft.graph.aospDeviceOwnerWiFiConfiguration";
+            OdataType = "#microsoft.graph.aospDeviceOwnerWiFiConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

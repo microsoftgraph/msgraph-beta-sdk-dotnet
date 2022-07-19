@@ -33,12 +33,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("iconUrl"); }
             set { BackingStore?.Set("iconUrl", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new imageInfo and sets the default values.
         /// </summary>
         public ImageInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.imageInfo";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"alternateText", n => { AlternateText = n.GetStringValue(); } },
                 {"alternativeText", n => { AlternativeText = n.GetStringValue(); } },
                 {"iconUrl", n => { IconUrl = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -69,6 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("alternateText", AlternateText);
             writer.WriteStringValue("alternativeText", AlternativeText);
             writer.WriteStringValue("iconUrl", IconUrl);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

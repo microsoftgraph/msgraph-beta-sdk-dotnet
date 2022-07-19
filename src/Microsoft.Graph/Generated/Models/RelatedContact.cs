@@ -38,6 +38,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("mobilePhone"); }
             set { BackingStore?.Set("mobilePhone", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The relationship property</summary>
         public ContactRelationship? Relationship {
             get { return BackingStore?.Get<ContactRelationship?>("relationship"); }
@@ -49,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         public RelatedContact() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.relatedContact";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -68,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"emailAddress", n => { EmailAddress = n.GetStringValue(); } },
                 {"id", n => { Id = n.GetStringValue(); } },
                 {"mobilePhone", n => { MobilePhone = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"relationship", n => { Relationship = n.GetEnumValue<ContactRelationship>(); } },
             };
         }
@@ -82,6 +89,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("emailAddress", EmailAddress);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("mobilePhone", MobilePhone);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<ContactRelationship>("relationship", Relationship);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<RecentNotebookLinks>("links"); }
             set { BackingStore?.Set("links", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The backend store where the Notebook resides, either OneDriveForBusiness or OneDrive.</summary>
         public OnenoteSourceService? SourceService {
             get { return BackingStore?.Get<OnenoteSourceService?>("sourceService"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public RecentNotebook() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.recentNotebook";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"lastAccessedTime", n => { LastAccessedTime = n.GetDateTimeOffsetValue(); } },
                 {"links", n => { Links = n.GetObjectValue<RecentNotebookLinks>(RecentNotebookLinks.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"sourceService", n => { SourceService = n.GetEnumValue<OnenoteSourceService>(); } },
             };
         }
@@ -68,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastAccessedTime", LastAccessedTime);
             writer.WriteObjectValue<RecentNotebookLinks>("links", Links);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<OnenoteSourceService>("sourceService", SourceService);
             writer.WriteAdditionalData(AdditionalData);
         }

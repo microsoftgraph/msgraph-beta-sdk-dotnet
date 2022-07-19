@@ -44,6 +44,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("certificationAuthorityName"); }
             set { BackingStore?.Set("certificationAuthorityName", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Certificate renewal threshold percentage. Valid values 1 to 99</summary>
         public int? RenewalThresholdPercentage {
             get { return BackingStore?.Get<int?>("renewalThresholdPercentage"); }
@@ -60,6 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IosEduCertificateSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.iosEduCertificateSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -80,6 +86,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"certificateValidityPeriodValue", n => { CertificateValidityPeriodValue = n.GetIntValue(); } },
                 {"certificationAuthority", n => { CertificationAuthority = n.GetStringValue(); } },
                 {"certificationAuthorityName", n => { CertificationAuthorityName = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"renewalThresholdPercentage", n => { RenewalThresholdPercentage = n.GetIntValue(); } },
                 {"trustedRootCertificate", n => { TrustedRootCertificate = n.GetByteArrayValue(); } },
             };
@@ -96,6 +103,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteIntValue("certificateValidityPeriodValue", CertificateValidityPeriodValue);
             writer.WriteStringValue("certificationAuthority", CertificationAuthority);
             writer.WriteStringValue("certificationAuthorityName", CertificationAuthorityName);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("renewalThresholdPercentage", RenewalThresholdPercentage);
             writer.WriteByteArrayValue("trustedRootCertificate", TrustedRootCertificate);
             writer.WriteAdditionalData(AdditionalData);

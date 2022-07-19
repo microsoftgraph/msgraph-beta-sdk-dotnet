@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new MacOSSingleSignOnExtension and sets the default values.
         /// </summary>
         public MacOSSingleSignOnExtension() : base() {
-            Type = "#microsoft.graph.macOSSingleSignOnExtension";
+            OdataType = "#microsoft.graph.macOSSingleSignOnExtension";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

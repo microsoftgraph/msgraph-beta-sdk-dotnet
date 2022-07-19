@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<LocationConstraintItem>>("locations"); }
             set { BackingStore?.Set("locations", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The client requests the service to suggest one or more meeting locations.</summary>
         public bool? SuggestLocation {
             get { return BackingStore?.Get<bool?>("suggestLocation"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public LocationConstraint() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.locationConstraint";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"isRequired", n => { IsRequired = n.GetBoolValue(); } },
                 {"locations", n => { Locations = n.GetCollectionOfObjectValues<LocationConstraintItem>(LocationConstraintItem.CreateFromDiscriminatorValue).ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"suggestLocation", n => { SuggestLocation = n.GetBoolValue(); } },
             };
         }
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("isRequired", IsRequired);
             writer.WriteCollectionOfObjectValues<LocationConstraintItem>("locations", Locations);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("suggestLocation", SuggestLocation);
             writer.WriteAdditionalData(AdditionalData);
         }

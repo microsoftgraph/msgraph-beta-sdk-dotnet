@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Contacts.Item.DirectReports {
     /// <summary>Provides operations to manage the directReports property of the microsoft.graph.orgContact entity.</summary>
     public class DirectReportsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DirectoryRoles.Item.ScopedMembers {
     /// <summary>Provides operations to manage the scopedMembers property of the microsoft.graph.directoryRole entity.</summary>
     public class ScopedMembersRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

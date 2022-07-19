@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Activities.Item.HistoryItems.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new activityHistoryItemItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ActivityHistoryItemItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ActivityHistoryItemItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Activities.Item.HistoryItems.Item {
             /// <summary>Request query parameters</summary>
             public ActivityHistoryItemItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ActivityHistoryItemItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new activityHistoryItemItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ActivityHistoryItemItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ActivityHistoryItemItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Activities.Item.HistoryItems.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new activityHistoryItemItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ActivityHistoryItemItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ActivityHistoryItemItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

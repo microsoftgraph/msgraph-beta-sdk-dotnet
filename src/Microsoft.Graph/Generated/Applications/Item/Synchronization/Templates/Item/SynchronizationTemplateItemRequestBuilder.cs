@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Templates.Item 
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new synchronizationTemplateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new SynchronizationTemplateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public SynchronizationTemplateItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Templates.Item 
             /// <summary>Request query parameters</summary>
             public SynchronizationTemplateItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SynchronizationTemplateItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new synchronizationTemplateItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SynchronizationTemplateItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SynchronizationTemplateItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Templates.Item 
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new synchronizationTemplateItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SynchronizationTemplateItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SynchronizationTemplateItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

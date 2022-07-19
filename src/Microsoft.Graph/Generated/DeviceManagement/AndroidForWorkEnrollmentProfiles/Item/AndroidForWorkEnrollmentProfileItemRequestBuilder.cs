@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkEnrollmentProfiles
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new androidForWorkEnrollmentProfileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AndroidForWorkEnrollmentProfileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AndroidForWorkEnrollmentProfileItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkEnrollmentProfiles
             /// <summary>Request query parameters</summary>
             public AndroidForWorkEnrollmentProfileItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AndroidForWorkEnrollmentProfileItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new androidForWorkEnrollmentProfileItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AndroidForWorkEnrollmentProfileItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AndroidForWorkEnrollmentProfileItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkEnrollmentProfiles
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new androidForWorkEnrollmentProfileItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AndroidForWorkEnrollmentProfileItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AndroidForWorkEnrollmentProfileItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

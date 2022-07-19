@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The Role Assignment resource. Role assignments tie together a role definition with members and scopes. There can be one or more role assignments per role. This applies to custom and built-in roles.</summary>
     public class RoleAssignment : Entity, IParsable {
         /// <summary>Description of the Role Assignment.</summary>
         public string Description {
@@ -38,10 +37,10 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("scopeType", value); }
         }
         /// <summary>
-        /// Instantiates a new roleAssignment and sets the default values.
+        /// Instantiates a new RoleAssignment and sets the default values.
         /// </summary>
         public RoleAssignment() : base() {
-            Type = "#microsoft.graph.roleAssignment";
+            OdataType = "#microsoft.graph.roleAssignment";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

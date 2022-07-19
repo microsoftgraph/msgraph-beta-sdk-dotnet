@@ -41,6 +41,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("systemExtensionsBlockOverride", value); }
         }
         /// <summary>
+        /// Instantiates a new MacOSExtensionsConfiguration and sets the default values.
+        /// </summary>
+        public MacOSExtensionsConfiguration() : base() {
+            OdataType = "#microsoft.graph.macOSExtensionsConfiguration";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

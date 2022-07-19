@@ -33,6 +33,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The unique identifier for the SKU. Read-Only.</summary>
         public string SkuId {
             get { return BackingStore?.Get<string>("skuId"); }
@@ -49,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         public LicenseAssignmentState() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.licenseAssignmentState";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -67,6 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"disabledPlans", n => { DisabledPlans = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"error", n => { Error = n.GetStringValue(); } },
                 {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"skuId", n => { SkuId = n.GetStringValue(); } },
                 {"state", n => { State = n.GetStringValue(); } },
             };
@@ -81,6 +88,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("disabledPlans", DisabledPlans);
             writer.WriteStringValue("error", Error);
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("skuId", SkuId);
             writer.WriteStringValue("state", State);
             writer.WriteAdditionalData(AdditionalData);

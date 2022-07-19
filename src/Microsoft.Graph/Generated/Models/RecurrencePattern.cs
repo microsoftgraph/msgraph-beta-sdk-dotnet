@@ -43,6 +43,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("month"); }
             set { BackingStore?.Set("month", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required. For more information, see values of type property.</summary>
         public RecurrencePatternType? Type {
             get { return BackingStore?.Get<RecurrencePatternType?>("type"); }
@@ -54,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         public RecurrencePattern() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.recurrencePattern";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -74,6 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"index", n => { Index = n.GetEnumValue<WeekIndex>(); } },
                 {"interval", n => { Interval = n.GetIntValue(); } },
                 {"month", n => { Month = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"type", n => { Type = n.GetEnumValue<RecurrencePatternType>(); } },
             };
         }
@@ -89,6 +96,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<WeekIndex>("index", Index);
             writer.WriteIntValue("interval", Interval);
             writer.WriteIntValue("month", Month);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<RecurrencePatternType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

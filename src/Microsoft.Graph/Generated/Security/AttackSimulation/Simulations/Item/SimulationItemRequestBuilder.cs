@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Simulations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new simulationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new SimulationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public SimulationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Simulations.Item {
             /// <summary>Request query parameters</summary>
             public SimulationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SimulationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new simulationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SimulationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SimulationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Simulations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new simulationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SimulationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SimulationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

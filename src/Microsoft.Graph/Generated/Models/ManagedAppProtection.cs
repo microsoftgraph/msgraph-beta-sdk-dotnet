@@ -235,7 +235,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new ManagedAppProtection and sets the default values.
         /// </summary>
         public ManagedAppProtection() : base() {
-            Type = "#microsoft.graph.managedAppProtection";
+            OdataType = "#microsoft.graph.managedAppProtection";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -246,7 +246,9 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
+                "#microsoft.graph.androidManagedAppProtection" => new AndroidManagedAppProtection(),
                 "#microsoft.graph.defaultManagedAppProtection" => new DefaultManagedAppProtection(),
+                "#microsoft.graph.iosManagedAppProtection" => new IosManagedAppProtection(),
                 "#microsoft.graph.targetedManagedAppProtection" => new TargetedManagedAppProtection(),
                 _ => new ManagedAppProtection(),
             };

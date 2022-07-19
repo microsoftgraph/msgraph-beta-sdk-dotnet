@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Contracts.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new contractItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ContractItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ContractItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.Contracts.Item {
             /// <summary>Request query parameters</summary>
             public ContractItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ContractItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new contractItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ContractItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ContractItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.Contracts.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new contractItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ContractItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ContractItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ConditionalAcc
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new conditionalAccessPolicyCoverageItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ConditionalAccessPolicyCoverageItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ConditionalAccessPolicyCoverageItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ConditionalAcc
             /// <summary>Request query parameters</summary>
             public ConditionalAccessPolicyCoverageItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ConditionalAccessPolicyCoverageItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new conditionalAccessPolicyCoverageItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ConditionalAccessPolicyCoverageItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ConditionalAccessPolicyCoverageItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ConditionalAcc
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new conditionalAccessPolicyCoverageItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ConditionalAccessPolicyCoverageItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ConditionalAccessPolicyCoverageItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

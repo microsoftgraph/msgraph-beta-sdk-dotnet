@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions.Item.GroupAss
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new termsAndConditionsGroupAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new TermsAndConditionsGroupAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public TermsAndConditionsGroupAssignmentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions.Item.GroupAss
             /// <summary>Request query parameters</summary>
             public TermsAndConditionsGroupAssignmentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TermsAndConditionsGroupAssignmentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new termsAndConditionsGroupAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TermsAndConditionsGroupAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TermsAndConditionsGroupAssignmentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions.Item.GroupAss
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new termsAndConditionsGroupAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new TermsAndConditionsGroupAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public TermsAndConditionsGroupAssignmentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

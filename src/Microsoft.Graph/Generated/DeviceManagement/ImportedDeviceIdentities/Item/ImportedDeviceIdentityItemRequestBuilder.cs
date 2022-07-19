@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new importedDeviceIdentityItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ImportedDeviceIdentityItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ImportedDeviceIdentityItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.Item {
             /// <summary>Request query parameters</summary>
             public ImportedDeviceIdentityItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ImportedDeviceIdentityItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new importedDeviceIdentityItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ImportedDeviceIdentityItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ImportedDeviceIdentityItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new importedDeviceIdentityItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ImportedDeviceIdentityItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ImportedDeviceIdentityItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

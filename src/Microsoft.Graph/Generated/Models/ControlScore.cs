@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Tenant achieved score for the control (it varies day by day depending on tenant operations on the control).</summary>
         public double? Score {
             get { return BackingStore?.Get<double?>("score"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ControlScore() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.controlScore";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"controlCategory", n => { ControlCategory = n.GetStringValue(); } },
                 {"controlName", n => { ControlName = n.GetStringValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"score", n => { Score = n.GetDoubleValue(); } },
             };
         }
@@ -68,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("controlCategory", ControlCategory);
             writer.WriteStringValue("controlName", ControlName);
             writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDoubleValue("score", Score);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -104,6 +104,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<long?>("networkLinkSpeedInBytes"); }
             set { BackingStore?.Set("networkLinkSpeedInBytes", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The total number of the outbound packets.</summary>
         public long? OutboundPackets {
             get { return BackingStore?.Get<long?>("outboundPackets"); }
@@ -119,18 +124,13 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("remotePort"); }
             set { BackingStore?.Set("remotePort", value); }
         }
-        /// <summary>The type property</summary>
-        public string Type {
-            get { return BackingStore?.Get<string>("@odata.type"); }
-            set { BackingStore?.Set("@odata.type", value); }
-        }
         /// <summary>
         /// Instantiates a new teleconferenceDeviceMediaQuality and sets the default values.
         /// </summary>
         public TeleconferenceDeviceMediaQuality() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            Type = "#microsoft.graph.teleconferenceDeviceMediaQuality";
+            OdataType = "#microsoft.graph.teleconferenceDeviceMediaQuality";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -142,6 +142,7 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.teleconferenceDeviceAudioQuality" => new TeleconferenceDeviceAudioQuality(),
+                "#microsoft.graph.teleconferenceDeviceScreenSharingQuality" => new TeleconferenceDeviceScreenSharingQuality(),
                 "#microsoft.graph.teleconferenceDeviceVideoQuality" => new TeleconferenceDeviceVideoQuality(),
                 _ => new TeleconferenceDeviceMediaQuality(),
             };
@@ -169,10 +170,10 @@ namespace Microsoft.Graph.Beta.Models {
                 {"maximumOutboundRoundTripDelay", n => { MaximumOutboundRoundTripDelay = n.GetTimeSpanValue(); } },
                 {"mediaDuration", n => { MediaDuration = n.GetTimeSpanValue(); } },
                 {"networkLinkSpeedInBytes", n => { NetworkLinkSpeedInBytes = n.GetLongValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"outboundPackets", n => { OutboundPackets = n.GetLongValue(); } },
                 {"remoteIPAddress", n => { RemoteIPAddress = n.GetStringValue(); } },
                 {"remotePort", n => { RemotePort = n.GetIntValue(); } },
-                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -199,10 +200,10 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteTimeSpanValue("maximumOutboundRoundTripDelay", MaximumOutboundRoundTripDelay);
             writer.WriteTimeSpanValue("mediaDuration", MediaDuration);
             writer.WriteLongValue("networkLinkSpeedInBytes", NetworkLinkSpeedInBytes);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteLongValue("outboundPackets", OutboundPackets);
             writer.WriteStringValue("remoteIPAddress", RemoteIPAddress);
             writer.WriteIntValue("remotePort", RemotePort);
-            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

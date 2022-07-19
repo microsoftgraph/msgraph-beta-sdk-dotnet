@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new mobileThreatDefenseConnectorItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new MobileThreatDefenseConnectorItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public MobileThreatDefenseConnectorItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors.It
             /// <summary>Request query parameters</summary>
             public MobileThreatDefenseConnectorItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new MobileThreatDefenseConnectorItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new mobileThreatDefenseConnectorItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new MobileThreatDefenseConnectorItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public MobileThreatDefenseConnectorItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new mobileThreatDefenseConnectorItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new MobileThreatDefenseConnectorItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public MobileThreatDefenseConnectorItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

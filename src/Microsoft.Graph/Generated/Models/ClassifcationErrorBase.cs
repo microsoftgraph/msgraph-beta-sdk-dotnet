@@ -29,15 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("message"); }
             set { BackingStore?.Set("message", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The target property</summary>
         public string Target {
             get { return BackingStore?.Get<string>("target"); }
             set { BackingStore?.Set("target", value); }
-        }
-        /// <summary>The type property</summary>
-        public string Type {
-            get { return BackingStore?.Get<string>("@odata.type"); }
-            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new classifcationErrorBase and sets the default values.
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ClassifcationErrorBase() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            Type = "#microsoft.graph.classifcationErrorBase";
+            OdataType = "#microsoft.graph.classifcationErrorBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -68,8 +68,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"code", n => { Code = n.GetStringValue(); } },
                 {"innerError", n => { InnerError = n.GetObjectValue<ClassificationInnerError>(ClassificationInnerError.CreateFromDiscriminatorValue); } },
                 {"message", n => { Message = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"target", n => { Target = n.GetStringValue(); } },
-                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -81,8 +81,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("code", Code);
             writer.WriteObjectValue<ClassificationInnerError>("innerError", InnerError);
             writer.WriteStringValue("message", Message);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("target", Target);
-            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

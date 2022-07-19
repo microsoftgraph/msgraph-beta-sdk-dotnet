@@ -17,6 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("schemaItems", value); }
         }
         /// <summary>
+        /// Instantiates a new androidForWorkAppConfigurationSchema and sets the default values.
+        /// </summary>
+        public AndroidForWorkAppConfigurationSchema() : base() {
+            OdataType = "#microsoft.graph.androidForWorkAppConfigurationSchema";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

@@ -25,15 +25,21 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isSecret"); }
             set { BackingStore?.Set("isSecret", value); }
         }
-        /// <summary>Maximum length of string. Valid values 0 to 87516</summary>
+        /// <summary>Maximum length of string</summary>
         public long? MaximumLength {
             get { return BackingStore?.Get<long?>("maximumLength"); }
             set { BackingStore?.Set("maximumLength", value); }
         }
-        /// <summary>Minimum length of string. Valid values 0 to 87516</summary>
+        /// <summary>Minimum length of string</summary>
         public long? MinimumLength {
             get { return BackingStore?.Get<long?>("minimumLength"); }
             set { BackingStore?.Set("minimumLength", value); }
+        }
+        /// <summary>
+        /// Instantiates a new DeviceManagementConfigurationStringSettingValueDefinition and sets the default values.
+        /// </summary>
+        public DeviceManagementConfigurationStringSettingValueDefinition() : base() {
+            OdataType = "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

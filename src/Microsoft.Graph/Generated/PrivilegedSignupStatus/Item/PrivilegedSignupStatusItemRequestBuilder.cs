@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new privilegedSignupStatusItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PrivilegedSignupStatusItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PrivilegedSignupStatusItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.Item {
             /// <summary>Request query parameters</summary>
             public PrivilegedSignupStatusItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PrivilegedSignupStatusItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new privilegedSignupStatusItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PrivilegedSignupStatusItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PrivilegedSignupStatusItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new privilegedSignupStatusItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PrivilegedSignupStatusItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PrivilegedSignupStatusItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

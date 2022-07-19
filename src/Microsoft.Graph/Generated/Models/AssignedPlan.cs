@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("capabilityStatus"); }
             set { BackingStore?.Set("capabilityStatus", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The name of the service; for example, exchange.</summary>
         public string Service {
             get { return BackingStore?.Get<string>("service"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AssignedPlan() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.assignedPlan";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"assignedDateTime", n => { AssignedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"capabilityStatus", n => { CapabilityStatus = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"service", n => { Service = n.GetStringValue(); } },
                 {"servicePlanId", n => { ServicePlanId = n.GetStringValue(); } },
             };
@@ -67,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("assignedDateTime", AssignedDateTime);
             writer.WriteStringValue("capabilityStatus", CapabilityStatus);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("service", Service);
             writer.WriteStringValue("servicePlanId", ServicePlanId);
             writer.WriteAdditionalData(AdditionalData);

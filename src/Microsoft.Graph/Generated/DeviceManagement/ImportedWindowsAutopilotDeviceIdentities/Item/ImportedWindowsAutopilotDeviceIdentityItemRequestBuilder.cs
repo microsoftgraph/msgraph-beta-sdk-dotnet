@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ImportedWindowsAutopilotDeviceId
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new importedWindowsAutopilotDeviceIdentityItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ImportedWindowsAutopilotDeviceIdentityItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ImportedWindowsAutopilotDeviceIdentityItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ImportedWindowsAutopilotDeviceId
             /// <summary>Request query parameters</summary>
             public ImportedWindowsAutopilotDeviceIdentityItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ImportedWindowsAutopilotDeviceIdentityItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new importedWindowsAutopilotDeviceIdentityItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ImportedWindowsAutopilotDeviceIdentityItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ImportedWindowsAutopilotDeviceIdentityItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ImportedWindowsAutopilotDeviceId
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new importedWindowsAutopilotDeviceIdentityItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ImportedWindowsAutopilotDeviceIdentityItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ImportedWindowsAutopilotDeviceIdentityItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

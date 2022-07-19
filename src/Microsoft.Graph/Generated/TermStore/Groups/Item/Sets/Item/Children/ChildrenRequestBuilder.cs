@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.TermStore.Groups.Item.Sets.Item.Children {
     /// <summary>Provides operations to manage the children property of the microsoft.graph.termStore.set entity.</summary>
     public class ChildrenRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

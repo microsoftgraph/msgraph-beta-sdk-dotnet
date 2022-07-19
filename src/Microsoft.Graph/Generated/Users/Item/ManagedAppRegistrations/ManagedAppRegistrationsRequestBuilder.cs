@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.ManagedAppRegistrations {
     /// <summary>Provides operations to manage the managedAppRegistrations property of the microsoft.graph.user entity.</summary>
     public class ManagedAppRegistrationsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

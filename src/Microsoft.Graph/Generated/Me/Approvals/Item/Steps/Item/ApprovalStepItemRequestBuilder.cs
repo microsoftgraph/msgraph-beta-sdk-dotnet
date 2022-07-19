@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Me.Approvals.Item.Steps.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new approvalStepItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ApprovalStepItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ApprovalStepItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Me.Approvals.Item.Steps.Item {
             /// <summary>Request query parameters</summary>
             public ApprovalStepItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ApprovalStepItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new approvalStepItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ApprovalStepItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ApprovalStepItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Me.Approvals.Item.Steps.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new approvalStepItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ApprovalStepItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ApprovalStepItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

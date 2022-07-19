@@ -63,6 +63,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LogonType?>("logonType"); }
             set { BackingStore?.Set("logonType", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Active Directory (on-premises) Security Identifier (SID) of the user.</summary>
         public string OnPremisesSecurityIdentifier {
             get { return BackingStore?.Get<string>("onPremisesSecurityIdentifier"); }
@@ -89,6 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
         public UserSecurityState() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.userSecurityState";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -113,6 +119,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"logonIp", n => { LogonIp = n.GetStringValue(); } },
                 {"logonLocation", n => { LogonLocation = n.GetStringValue(); } },
                 {"logonType", n => { LogonType = n.GetEnumValue<LogonType>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"onPremisesSecurityIdentifier", n => { OnPremisesSecurityIdentifier = n.GetStringValue(); } },
                 {"riskScore", n => { RiskScore = n.GetStringValue(); } },
                 {"userAccountType", n => { UserAccountType = n.GetEnumValue<UserAccountSecurityType>(); } },
@@ -135,6 +142,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("logonIp", LogonIp);
             writer.WriteStringValue("logonLocation", LogonLocation);
             writer.WriteEnumValue<LogonType>("logonType", LogonType);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("onPremisesSecurityIdentifier", OnPremisesSecurityIdentifier);
             writer.WriteStringValue("riskScore", RiskScore);
             writer.WriteEnumValue<UserAccountSecurityType>("userAccountType", UserAccountType);

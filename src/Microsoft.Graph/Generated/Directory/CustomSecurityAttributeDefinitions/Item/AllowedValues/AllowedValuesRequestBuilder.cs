@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Directory.CustomSecurityAttributeDefinitions.Item.AllowedValues {
     /// <summary>Provides operations to manage the allowedValues property of the microsoft.graph.customSecurityAttributeDefinition entity.</summary>
     public class AllowedValuesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

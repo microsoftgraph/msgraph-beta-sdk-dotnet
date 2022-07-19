@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Key of the entity.</summary>
         public string ProfileId {
             get { return BackingStore?.Get<string>("profileId"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public WindowsKioskProfile() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.windowsKioskProfile";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -54,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"appConfiguration", n => { AppConfiguration = n.GetObjectValue<WindowsKioskAppConfiguration>(WindowsKioskAppConfiguration.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"profileId", n => { ProfileId = n.GetStringValue(); } },
                 {"profileName", n => { ProfileName = n.GetStringValue(); } },
                 {"userAccountsConfiguration", n => { UserAccountsConfiguration = n.GetCollectionOfObjectValues<WindowsKioskUser>(WindowsKioskUser.CreateFromDiscriminatorValue).ToList(); } },
@@ -66,6 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<WindowsKioskAppConfiguration>("appConfiguration", AppConfiguration);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("profileId", ProfileId);
             writer.WriteStringValue("profileName", ProfileName);
             writer.WriteCollectionOfObjectValues<WindowsKioskUser>("userAccountsConfiguration", UserAccountsConfiguration);

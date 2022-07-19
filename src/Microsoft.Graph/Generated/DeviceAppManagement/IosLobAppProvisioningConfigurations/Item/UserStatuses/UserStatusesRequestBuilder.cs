@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.UserStatuses {
     /// <summary>Provides operations to manage the userStatuses property of the microsoft.graph.iosLobAppProvisioningConfiguration entity.</summary>
     public class UserStatusesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

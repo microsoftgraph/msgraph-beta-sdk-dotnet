@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.DispositionR
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new dispositionReviewStageItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DispositionReviewStageItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DispositionReviewStageItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.DispositionR
             /// <summary>Request query parameters</summary>
             public DispositionReviewStageItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DispositionReviewStageItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new dispositionReviewStageItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DispositionReviewStageItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DispositionReviewStageItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.DispositionR
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new dispositionReviewStageItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DispositionReviewStageItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DispositionReviewStageItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

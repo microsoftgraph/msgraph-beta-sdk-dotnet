@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("countryOrRegionCode"); }
             set { BackingStore?.Set("countryOrRegionCode", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The organization property</summary>
         public string Organization {
             get { return BackingStore?.Get<string>("organization"); }
@@ -49,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IpReferenceData() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.ipReferenceData";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -66,6 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"asn", n => { Asn = n.GetLongValue(); } },
                 {"city", n => { City = n.GetStringValue(); } },
                 {"countryOrRegionCode", n => { CountryOrRegionCode = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"organization", n => { Organization = n.GetStringValue(); } },
                 {"state", n => { State = n.GetStringValue(); } },
                 {"vendor", n => { Vendor = n.GetStringValue(); } },
@@ -80,6 +87,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteLongValue("asn", Asn);
             writer.WriteStringValue("city", City);
             writer.WriteStringValue("countryOrRegionCode", CountryOrRegionCode);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("organization", Organization);
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("vendor", Vendor);

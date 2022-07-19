@@ -63,6 +63,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<long?>("nbf"); }
             set { BackingStore?.Set("nbf", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>RSA Key - first prime. Field cannot be read back.</summary>
         public string P {
             get { return BackingStore?.Get<string>("p"); }
@@ -99,6 +104,7 @@ namespace Microsoft.Graph.Beta.Models {
         public TrustFrameworkKey() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.trustFrameworkKey";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -123,6 +129,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"kty", n => { Kty = n.GetStringValue(); } },
                 {"n", n => { N = n.GetStringValue(); } },
                 {"nbf", n => { Nbf = n.GetLongValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"p", n => { P = n.GetStringValue(); } },
                 {"q", n => { Q = n.GetStringValue(); } },
                 {"qi", n => { Qi = n.GetStringValue(); } },
@@ -147,6 +154,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("kty", Kty);
             writer.WriteStringValue("n", N);
             writer.WriteLongValue("nbf", Nbf);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("p", P);
             writer.WriteStringValue("q", Q);
             writer.WriteStringValue("qi", Qi);

@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new VpnConfiguration and sets the default values.
         /// </summary>
         public VpnConfiguration() : base() {
-            Type = "#microsoft.graph.vpnConfiguration";
+            OdataType = "#microsoft.graph.vpnConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

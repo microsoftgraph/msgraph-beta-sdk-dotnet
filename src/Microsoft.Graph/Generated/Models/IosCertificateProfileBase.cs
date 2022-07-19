@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new IosCertificateProfileBase and sets the default values.
         /// </summary>
         public IosCertificateProfileBase() : base() {
-            Type = "#microsoft.graph.iosCertificateProfileBase";
+            OdataType = "#microsoft.graph.iosCertificateProfileBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new trustFrameworkKeySetItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new TrustFrameworkKeySetItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public TrustFrameworkKeySetItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -206,7 +206,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
             /// <summary>Request query parameters</summary>
             public TrustFrameworkKeySetItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TrustFrameworkKeySetItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new trustFrameworkKeySetItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TrustFrameworkKeySetItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TrustFrameworkKeySetItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new trustFrameworkKeySetItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new TrustFrameworkKeySetItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public TrustFrameworkKeySetItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

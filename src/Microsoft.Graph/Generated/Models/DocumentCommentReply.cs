@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class DocumentCommentReply : Entity, IParsable {
         /// <summary>The content property</summary>
         public string Content {
@@ -15,6 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string Location {
             get { return BackingStore?.Get<string>("location"); }
             set { BackingStore?.Set("location", value); }
+        }
+        /// <summary>
+        /// Instantiates a new documentCommentReply and sets the default values.
+        /// </summary>
+        public DocumentCommentReply() : base() {
+            OdataType = "#microsoft.graph.documentCommentReply";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

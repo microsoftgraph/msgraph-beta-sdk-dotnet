@@ -19,6 +19,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Win32LobAppRestartBehavior?>("deviceRestartBehavior"); }
             set { BackingStore?.Set("deviceRestartBehavior", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Indicates the type of execution context the app runs in.</summary>
         public RunAsAccountType? RunAsAccount {
             get { return BackingStore?.Get<RunAsAccountType?>("runAsAccount"); }
@@ -30,6 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         public Win32LobAppInstallExperience() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.win32LobAppInstallExperience";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"deviceRestartBehavior", n => { DeviceRestartBehavior = n.GetEnumValue<Win32LobAppRestartBehavior>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"runAsAccount", n => { RunAsAccount = n.GetEnumValue<RunAsAccountType>(); } },
             };
         }
@@ -55,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<Win32LobAppRestartBehavior>("deviceRestartBehavior", DeviceRestartBehavior);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<RunAsAccountType>("runAsAccount", RunAsAccount);
             writer.WriteAdditionalData(AdditionalData);
         }

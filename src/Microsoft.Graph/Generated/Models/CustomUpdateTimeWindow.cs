@@ -25,6 +25,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Time?>("endTime"); }
             set { BackingStore?.Set("endTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The startDay property</summary>
         public DayOfWeek? StartDay {
             get { return BackingStore?.Get<DayOfWeek?>("startDay"); }
@@ -41,6 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
         public CustomUpdateTimeWindow() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.customUpdateTimeWindow";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"endDay", n => { EndDay = n.GetEnumValue<DayOfWeek>(); } },
                 {"endTime", n => { EndTime = n.GetTimeValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"startDay", n => { StartDay = n.GetEnumValue<DayOfWeek>(); } },
                 {"startTime", n => { StartTime = n.GetTimeValue(); } },
             };
@@ -69,6 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<DayOfWeek>("endDay", EndDay);
             writer.WriteTimeValue("endTime", EndTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<DayOfWeek>("startDay", StartDay);
             writer.WriteTimeValue("startTime", StartTime);
             writer.WriteAdditionalData(AdditionalData);

@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<ItemBody>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The post type of the service issue historical post. Possible values are: regular, quick, strategic, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.PostType? PostType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PostType?>("postType"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ServiceHealthIssuePost() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.serviceHealthIssuePost";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", n => { Description = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"postType", n => { PostType = n.GetEnumValue<PostType>(); } },
             };
         }
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<ItemBody>("description", Description);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<PostType>("postType", PostType);
             writer.WriteAdditionalData(AdditionalData);
         }

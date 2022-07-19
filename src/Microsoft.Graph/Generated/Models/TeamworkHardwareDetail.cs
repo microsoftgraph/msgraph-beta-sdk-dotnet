@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Device serial number.</summary>
         public string SerialNumber {
             get { return BackingStore?.Get<string>("serialNumber"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public TeamworkHardwareDetail() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.teamworkHardwareDetail";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -61,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"macAddresses", n => { MacAddresses = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
                 {"model", n => { Model = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"serialNumber", n => { SerialNumber = n.GetStringValue(); } },
                 {"uniqueId", n => { UniqueId = n.GetStringValue(); } },
             };
@@ -74,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("macAddresses", MacAddresses);
             writer.WriteStringValue("manufacturer", Manufacturer);
             writer.WriteStringValue("model", Model);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("serialNumber", SerialNumber);
             writer.WriteStringValue("uniqueId", UniqueId);
             writer.WriteAdditionalData(AdditionalData);

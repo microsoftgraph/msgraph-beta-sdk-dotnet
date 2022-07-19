@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserRegistrationDet
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new userRegistrationDetailsItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new UserRegistrationDetailsItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public UserRegistrationDetailsItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserRegistrationDet
             /// <summary>Request query parameters</summary>
             public UserRegistrationDetailsItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new UserRegistrationDetailsItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new userRegistrationDetailsItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new UserRegistrationDetailsItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public UserRegistrationDetailsItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserRegistrationDet
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new userRegistrationDetailsItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new UserRegistrationDetailsItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public UserRegistrationDetailsItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

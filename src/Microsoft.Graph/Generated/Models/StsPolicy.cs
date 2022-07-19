@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new StsPolicy and sets the default values.
         /// </summary>
         public StsPolicy() : base() {
-            Type = "#microsoft.graph.stsPolicy";
+            OdataType = "#microsoft.graph.stsPolicy";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

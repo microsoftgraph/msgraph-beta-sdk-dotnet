@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AggregatedPoli
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new aggregatedPolicyComplianceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AggregatedPolicyComplianceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AggregatedPolicyComplianceItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AggregatedPoli
             /// <summary>Request query parameters</summary>
             public AggregatedPolicyComplianceItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AggregatedPolicyComplianceItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new aggregatedPolicyComplianceItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AggregatedPolicyComplianceItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AggregatedPolicyComplianceItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AggregatedPoli
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new aggregatedPolicyComplianceItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AggregatedPolicyComplianceItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AggregatedPolicyComplianceItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

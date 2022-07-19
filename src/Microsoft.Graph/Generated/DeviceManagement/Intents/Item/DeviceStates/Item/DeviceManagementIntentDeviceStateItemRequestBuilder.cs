@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceStates.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementIntentDeviceStateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementIntentDeviceStateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementIntentDeviceStateItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceStates.Item {
             /// <summary>Request query parameters</summary>
             public DeviceManagementIntentDeviceStateItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceManagementIntentDeviceStateItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceManagementIntentDeviceStateItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementIntentDeviceStateItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementIntentDeviceStateItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceStates.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementIntentDeviceStateItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementIntentDeviceStateItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementIntentDeviceStateItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

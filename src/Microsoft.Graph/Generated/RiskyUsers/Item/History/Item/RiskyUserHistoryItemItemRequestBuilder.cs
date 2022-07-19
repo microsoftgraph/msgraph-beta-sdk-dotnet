@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.RiskyUsers.Item.History.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new riskyUserHistoryItemItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new RiskyUserHistoryItemItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public RiskyUserHistoryItemItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.RiskyUsers.Item.History.Item {
             /// <summary>Request query parameters</summary>
             public RiskyUserHistoryItemItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new RiskyUserHistoryItemItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new riskyUserHistoryItemItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new RiskyUserHistoryItemItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public RiskyUserHistoryItemItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.RiskyUsers.Item.History.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new riskyUserHistoryItemItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new RiskyUserHistoryItemItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public RiskyUserHistoryItemItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

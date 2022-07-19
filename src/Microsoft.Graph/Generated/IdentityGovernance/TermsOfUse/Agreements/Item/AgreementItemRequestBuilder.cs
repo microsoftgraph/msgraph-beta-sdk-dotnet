@@ -169,7 +169,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new agreementItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AgreementItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AgreementItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements.Item {
             /// <summary>Request query parameters</summary>
             public AgreementItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AgreementItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new agreementItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AgreementItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AgreementItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new agreementItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AgreementItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AgreementItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new authorizationPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AuthorizationPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AuthorizationPolicyItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy.Item {
             /// <summary>Request query parameters</summary>
             public AuthorizationPolicyItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AuthorizationPolicyItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new authorizationPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AuthorizationPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AuthorizationPolicyItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new authorizationPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AuthorizationPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AuthorizationPolicyItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

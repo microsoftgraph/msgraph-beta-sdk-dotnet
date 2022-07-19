@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations.Item.Runs {
     /// <summary>Provides operations to manage the runs property of the microsoft.graph.simulationAutomation entity.</summary>
     public class RunsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

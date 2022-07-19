@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidDeviceOwnerEnrollmentProf
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new androidDeviceOwnerEnrollmentProfileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AndroidDeviceOwnerEnrollmentProfileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AndroidDeviceOwnerEnrollmentProfileItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidDeviceOwnerEnrollmentProf
             /// <summary>Request query parameters</summary>
             public AndroidDeviceOwnerEnrollmentProfileItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AndroidDeviceOwnerEnrollmentProfileItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new androidDeviceOwnerEnrollmentProfileItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AndroidDeviceOwnerEnrollmentProfileItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AndroidDeviceOwnerEnrollmentProfileItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidDeviceOwnerEnrollmentProf
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new androidDeviceOwnerEnrollmentProfileItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AndroidDeviceOwnerEnrollmentProfileItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AndroidDeviceOwnerEnrollmentProfileItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

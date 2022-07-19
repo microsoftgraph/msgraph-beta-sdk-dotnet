@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item.Assignments.I
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new roleScopeTagAutoAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new RoleScopeTagAutoAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public RoleScopeTagAutoAssignmentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item.Assignments.I
             /// <summary>Request query parameters</summary>
             public RoleScopeTagAutoAssignmentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new RoleScopeTagAutoAssignmentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new roleScopeTagAutoAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new RoleScopeTagAutoAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public RoleScopeTagAutoAssignmentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item.Assignments.I
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new roleScopeTagAutoAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new RoleScopeTagAutoAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public RoleScopeTagAutoAssignmentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

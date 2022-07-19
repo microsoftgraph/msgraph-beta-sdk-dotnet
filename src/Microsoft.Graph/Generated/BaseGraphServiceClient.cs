@@ -43,6 +43,7 @@ using Microsoft.Graph.Beta.Domains;
 using Microsoft.Graph.Beta.Drive;
 using Microsoft.Graph.Beta.Drives;
 using Microsoft.Graph.Beta.Education;
+using Microsoft.Graph.Beta.EmployeeExperience;
 using Microsoft.Graph.Beta.External;
 using Microsoft.Graph.Beta.FilterOperators;
 using Microsoft.Graph.Beta.Financials;
@@ -107,6 +108,7 @@ using Microsoft.Graph.Beta.TeamsTemplates;
 using Microsoft.Graph.Beta.Teamwork;
 using Microsoft.Graph.Beta.TenantRelationships;
 using Microsoft.Graph.Beta.TermStore;
+using Microsoft.Graph.Beta.ThreatSubmission;
 using Microsoft.Graph.Beta.TrustFramework;
 using Microsoft.Graph.Beta.Users;
 using Microsoft.Graph.Beta.Workbooks;
@@ -301,6 +303,10 @@ namespace Microsoft.Graph.Beta {
         /// <summary>The education property</summary>
         public EducationRequestBuilder Education { get =>
             new EducationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The employeeExperience property</summary>
+        public EmployeeExperienceRequestBuilder EmployeeExperience { get =>
+            new EmployeeExperienceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The external property</summary>
         public ExternalRequestBuilder External { get =>
@@ -561,6 +567,10 @@ namespace Microsoft.Graph.Beta {
         /// <summary>The termStore property</summary>
         public TermStoreRequestBuilder TermStore { get =>
             new TermStoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The threatSubmission property</summary>
+        public ThreatSubmissionRequestBuilder ThreatSubmission { get =>
+            new ThreatSubmissionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The trustFramework property</summary>
         public TrustFrameworkRequestBuilder TrustFramework { get =>

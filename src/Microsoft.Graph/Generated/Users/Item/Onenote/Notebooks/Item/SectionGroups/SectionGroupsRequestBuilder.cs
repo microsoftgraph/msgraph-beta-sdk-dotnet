@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Onenote.Notebooks.Item.SectionGroups {
     /// <summary>Provides operations to manage the sectionGroups property of the microsoft.graph.notebook entity.</summary>
     public class SectionGroupsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

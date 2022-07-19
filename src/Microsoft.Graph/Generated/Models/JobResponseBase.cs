@@ -36,6 +36,17 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+        /// <summary>
+        /// Instantiates a new JobResponseBase and sets the default values.
+        /// </summary>
+        public JobResponseBase() : base() {
+            OdataType = "#microsoft.graph.jobResponseBase";
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -62,6 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"status", n => { Status = n.GetStringValue(); } },
                 {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -77,6 +89,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("tenantId", TenantId);
+            writer.WriteStringValue("type", Type);
         }
     }
 }

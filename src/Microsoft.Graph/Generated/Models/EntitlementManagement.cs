@@ -70,6 +70,17 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<EntitlementManagementSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+        /// <summary>The subjects property</summary>
+        public List<AccessPackageSubject> Subjects {
+            get { return BackingStore?.Get<List<AccessPackageSubject>>("subjects"); }
+            set { BackingStore?.Set("subjects", value); }
+        }
+        /// <summary>
+        /// Instantiates a new EntitlementManagement and sets the default values.
+        /// </summary>
+        public EntitlementManagement() : base() {
+            OdataType = "#microsoft.graph.entitlementManagement";
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -96,6 +107,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"accessPackages", n => { AccessPackages = n.GetCollectionOfObjectValues<AccessPackage>(AccessPackage.CreateFromDiscriminatorValue).ToList(); } },
                 {"connectedOrganizations", n => { ConnectedOrganizations = n.GetCollectionOfObjectValues<ConnectedOrganization>(ConnectedOrganization.CreateFromDiscriminatorValue).ToList(); } },
                 {"settings", n => { Settings = n.GetObjectValue<EntitlementManagementSettings>(EntitlementManagementSettings.CreateFromDiscriminatorValue); } },
+                {"subjects", n => { Subjects = n.GetCollectionOfObjectValues<AccessPackageSubject>(AccessPackageSubject.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>
@@ -118,6 +130,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<AccessPackage>("accessPackages", AccessPackages);
             writer.WriteCollectionOfObjectValues<ConnectedOrganization>("connectedOrganizations", ConnectedOrganizations);
             writer.WriteObjectValue<EntitlementManagementSettings>("settings", Settings);
+            writer.WriteCollectionOfObjectValues<AccessPackageSubject>("subjects", Subjects);
         }
     }
 }

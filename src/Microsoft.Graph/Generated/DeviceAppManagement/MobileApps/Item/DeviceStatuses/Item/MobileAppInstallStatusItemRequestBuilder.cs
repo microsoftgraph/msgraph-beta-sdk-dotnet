@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.DeviceStatuse
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new mobileAppInstallStatusItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new MobileAppInstallStatusItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public MobileAppInstallStatusItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.DeviceStatuse
             /// <summary>Request query parameters</summary>
             public MobileAppInstallStatusItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new MobileAppInstallStatusItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new mobileAppInstallStatusItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new MobileAppInstallStatusItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public MobileAppInstallStatusItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.DeviceStatuse
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new mobileAppInstallStatusItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new MobileAppInstallStatusItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public MobileAppInstallStatusItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

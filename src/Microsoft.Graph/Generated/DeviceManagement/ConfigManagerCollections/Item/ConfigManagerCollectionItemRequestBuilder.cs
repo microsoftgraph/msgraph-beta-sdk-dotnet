@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new configManagerCollectionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ConfigManagerCollectionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ConfigManagerCollectionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.Item {
             /// <summary>Request query parameters</summary>
             public ConfigManagerCollectionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ConfigManagerCollectionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new configManagerCollectionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ConfigManagerCollectionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ConfigManagerCollectionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new configManagerCollectionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ConfigManagerCollectionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ConfigManagerCollectionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

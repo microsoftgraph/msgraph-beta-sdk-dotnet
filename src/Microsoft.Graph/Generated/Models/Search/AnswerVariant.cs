@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models.Search {
             get { return BackingStore?.Get<string>("languageTag"); }
             set { BackingStore?.Set("languageTag", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The platform property</summary>
         public DevicePlatformType? Platform {
             get { return BackingStore?.Get<DevicePlatformType?>("platform"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models.Search {
         public AnswerVariant() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.search.answerVariant";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -61,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models.Search {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"languageTag", n => { LanguageTag = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"platform", n => { Platform = n.GetEnumValue<DevicePlatformType>(); } },
                 {"webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
@@ -74,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models.Search {
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("languageTag", LanguageTag);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<DevicePlatformType>("platform", Platform);
             writer.WriteStringValue("webUrl", WebUrl);
             writer.WriteAdditionalData(AdditionalData);

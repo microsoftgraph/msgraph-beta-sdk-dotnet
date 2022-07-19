@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new mobileContainedApp and sets the default values.
         /// </summary>
         public MobileContainedApp() : base() {
-            Type = "#microsoft.graph.mobileContainedApp";
+            OdataType = "#microsoft.graph.mobileContainedApp";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

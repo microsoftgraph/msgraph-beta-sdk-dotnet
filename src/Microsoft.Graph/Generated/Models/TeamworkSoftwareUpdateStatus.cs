@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("currentVersion"); }
             set { BackingStore?.Set("currentVersion", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The update status of the software. The possible values are: unknown, latest, updateAvailable, unknownFutureValue.</summary>
         public TeamworkSoftwareFreshness? SoftwareFreshness {
             get { return BackingStore?.Get<TeamworkSoftwareFreshness?>("softwareFreshness"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public TeamworkSoftwareUpdateStatus() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.teamworkSoftwareUpdateStatus";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"availableVersion", n => { AvailableVersion = n.GetStringValue(); } },
                 {"currentVersion", n => { CurrentVersion = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"softwareFreshness", n => { SoftwareFreshness = n.GetEnumValue<TeamworkSoftwareFreshness>(); } },
             };
         }
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("availableVersion", AvailableVersion);
             writer.WriteStringValue("currentVersion", CurrentVersion);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<TeamworkSoftwareFreshness>("softwareFreshness", SoftwareFreshness);
             writer.WriteAdditionalData(AdditionalData);
         }

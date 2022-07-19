@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Item.History {
     /// <summary>Provides operations to manage the history property of the microsoft.graph.riskyServicePrincipal entity.</summary>
     public class HistoryRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

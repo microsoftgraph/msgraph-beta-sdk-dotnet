@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class WorkbookOperation : Entity, IParsable {
         /// <summary>The error returned by the operation.</summary>
         public WorkbookOperationError Error {
@@ -20,6 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         public WorkbookOperationStatus? Status {
             get { return BackingStore?.Get<WorkbookOperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
+        }
+        /// <summary>
+        /// Instantiates a new workbookOperation and sets the default values.
+        /// </summary>
+        public WorkbookOperation() : base() {
+            OdataType = "#microsoft.graph.workbookOperation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

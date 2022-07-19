@@ -29,12 +29,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<string>>("domains"); }
             set { BackingStore?.Set("domains", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new macOSAssociatedDomainsItem and sets the default values.
         /// </summary>
         public MacOSAssociatedDomainsItem() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.macOSAssociatedDomainsItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -52,6 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"applicationIdentifier", n => { ApplicationIdentifier = n.GetStringValue(); } },
                 {"directDownloadsEnabled", n => { DirectDownloadsEnabled = n.GetBoolValue(); } },
                 {"domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -63,6 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("applicationIdentifier", ApplicationIdentifier);
             writer.WriteBoolValue("directDownloadsEnabled", DirectDownloadsEnabled);
             writer.WriteCollectionOfPrimitiveValues<string>("domains", Domains);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

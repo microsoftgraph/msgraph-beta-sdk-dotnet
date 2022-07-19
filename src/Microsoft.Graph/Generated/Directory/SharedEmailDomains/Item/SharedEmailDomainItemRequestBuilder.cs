@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Directory.SharedEmailDomains.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new sharedEmailDomainItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new SharedEmailDomainItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public SharedEmailDomainItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Directory.SharedEmailDomains.Item {
             /// <summary>Request query parameters</summary>
             public SharedEmailDomainItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SharedEmailDomainItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new sharedEmailDomainItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SharedEmailDomainItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SharedEmailDomainItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Directory.SharedEmailDomains.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new sharedEmailDomainItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SharedEmailDomainItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SharedEmailDomainItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

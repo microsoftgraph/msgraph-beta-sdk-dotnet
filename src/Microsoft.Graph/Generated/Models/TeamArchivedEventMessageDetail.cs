@@ -16,6 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("teamId", value); }
         }
         /// <summary>
+        /// Instantiates a new TeamArchivedEventMessageDetail and sets the default values.
+        /// </summary>
+        public TeamArchivedEventMessageDetail() : base() {
+            OdataType = "#microsoft.graph.teamArchivedEventMessageDetail";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

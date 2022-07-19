@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Organization.Item.Settings.ProfileCardProperties {
     /// <summary>Provides operations to manage the profileCardProperties property of the microsoft.graph.organizationSettings entity.</summary>
     public class ProfileCardPropertiesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

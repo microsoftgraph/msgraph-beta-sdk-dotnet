@@ -6,6 +6,12 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MdmWindowsInformationProtectionPolicyPolicySetItem : PolicySetItem, IParsable {
         /// <summary>
+        /// Instantiates a new MdmWindowsInformationProtectionPolicyPolicySetItem and sets the default values.
+        /// </summary>
+        public MdmWindowsInformationProtectionPolicyPolicySetItem() : base() {
+            OdataType = "#microsoft.graph.mdmWindowsInformationProtectionPolicyPolicySetItem";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<DocumentSetContent>>("defaultContents"); }
             set { BackingStore?.Set("defaultContents", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Indicates whether to add the name of the document set to each file name.</summary>
         public bool? PropagateWelcomePageChanges {
             get { return BackingStore?.Get<bool?>("propagateWelcomePageChanges"); }
@@ -54,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DocumentSet() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.documentSet";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -70,6 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"allowedContentTypes", n => { AllowedContentTypes = n.GetCollectionOfObjectValues<ContentTypeInfo>(ContentTypeInfo.CreateFromDiscriminatorValue).ToList(); } },
                 {"defaultContents", n => { DefaultContents = n.GetCollectionOfObjectValues<DocumentSetContent>(DocumentSetContent.CreateFromDiscriminatorValue).ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"propagateWelcomePageChanges", n => { PropagateWelcomePageChanges = n.GetBoolValue(); } },
                 {"sharedColumns", n => { SharedColumns = n.GetCollectionOfObjectValues<ColumnDefinition>(ColumnDefinition.CreateFromDiscriminatorValue).ToList(); } },
                 {"shouldPrefixNameToFile", n => { ShouldPrefixNameToFile = n.GetBoolValue(); } },
@@ -85,6 +92,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<ContentTypeInfo>("allowedContentTypes", AllowedContentTypes);
             writer.WriteCollectionOfObjectValues<DocumentSetContent>("defaultContents", DefaultContents);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("propagateWelcomePageChanges", PropagateWelcomePageChanges);
             writer.WriteCollectionOfObjectValues<ColumnDefinition>("sharedColumns", SharedColumns);
             writer.WriteBoolValue("shouldPrefixNameToFile", ShouldPrefixNameToFile);

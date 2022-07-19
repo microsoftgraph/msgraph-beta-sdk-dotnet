@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new ManagedApp and sets the default values.
         /// </summary>
         public ManagedApp() : base() {
-            Type = "#microsoft.graph.managedApp";
+            OdataType = "#microsoft.graph.managedApp";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,9 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
+                "#microsoft.graph.managedAndroidLobApp" => new ManagedAndroidLobApp(),
                 "#microsoft.graph.managedAndroidStoreApp" => new ManagedAndroidStoreApp(),
+                "#microsoft.graph.managedIOSLobApp" => new ManagedIOSLobApp(),
                 "#microsoft.graph.managedIOSStoreApp" => new ManagedIOSStoreApp(),
                 "#microsoft.graph.managedMobileLobApp" => new ManagedMobileLobApp(),
                 _ => new ManagedApp(),

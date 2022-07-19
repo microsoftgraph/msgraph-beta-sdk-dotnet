@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new ediscoveryReviewTagItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new EdiscoveryReviewTagItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public EdiscoveryReviewTagItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.Item {
             /// <summary>Request query parameters</summary>
             public EdiscoveryReviewTagItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new EdiscoveryReviewTagItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new ediscoveryReviewTagItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new EdiscoveryReviewTagItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public EdiscoveryReviewTagItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new ediscoveryReviewTagItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new EdiscoveryReviewTagItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public EdiscoveryReviewTagItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

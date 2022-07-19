@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignmen
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new identityUserFlowAttributeAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new IdentityUserFlowAttributeAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public IdentityUserFlowAttributeAssignmentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignmen
             /// <summary>Request query parameters</summary>
             public IdentityUserFlowAttributeAssignmentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new IdentityUserFlowAttributeAssignmentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new identityUserFlowAttributeAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new IdentityUserFlowAttributeAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public IdentityUserFlowAttributeAssignmentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignmen
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new identityUserFlowAttributeAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new IdentityUserFlowAttributeAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public IdentityUserFlowAttributeAssignmentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

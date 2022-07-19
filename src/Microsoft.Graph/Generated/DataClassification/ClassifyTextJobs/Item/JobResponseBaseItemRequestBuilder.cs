@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new jobResponseBaseItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new JobResponseBaseItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public JobResponseBaseItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs.Item {
             /// <summary>Request query parameters</summary>
             public JobResponseBaseItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new JobResponseBaseItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new jobResponseBaseItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new JobResponseBaseItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public JobResponseBaseItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new jobResponseBaseItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new JobResponseBaseItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public JobResponseBaseItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

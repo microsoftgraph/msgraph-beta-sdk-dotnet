@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Item : Entity, IParsable {
         /// <summary>The baseUnitOfMeasureId property</summary>
         public string BaseUnitOfMeasureId {
@@ -76,6 +75,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("taxGroupId"); }
             set { BackingStore?.Set("taxGroupId", value); }
         }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
         /// <summary>The unitCost property</summary>
         public decimal? UnitCost {
             get { return BackingStore?.Get<decimal?>("unitCost"); }
@@ -85,6 +89,12 @@ namespace Microsoft.Graph.Beta.Models {
         public decimal? UnitPrice {
             get { return BackingStore?.Get<decimal?>("unitPrice"); }
             set { BackingStore?.Set("unitPrice", value); }
+        }
+        /// <summary>
+        /// Instantiates a new Item and sets the default values.
+        /// </summary>
+        public Item() : base() {
+            OdataType = "#microsoft.graph.item";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -113,6 +123,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"priceIncludesTax", n => { PriceIncludesTax = n.GetBoolValue(); } },
                 {"taxGroupCode", n => { TaxGroupCode = n.GetStringValue(); } },
                 {"taxGroupId", n => { TaxGroupId = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
                 {"unitCost", n => { UnitCost = n.GetDecimalValue(); } },
                 {"unitPrice", n => { UnitPrice = n.GetDecimalValue(); } },
             };
@@ -138,6 +149,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("priceIncludesTax", PriceIncludesTax);
             writer.WriteStringValue("taxGroupCode", TaxGroupCode);
             writer.WriteStringValue("taxGroupId", TaxGroupId);
+            writer.WriteStringValue("type", Type);
             writer.WriteDecimalValue("unitCost", UnitCost);
             writer.WriteDecimalValue("unitPrice", UnitPrice);
         }

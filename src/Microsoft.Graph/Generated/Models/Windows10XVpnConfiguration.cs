@@ -21,6 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("customXmlFileName", value); }
         }
         /// <summary>
+        /// Instantiates a new Windows10XVpnConfiguration and sets the default values.
+        /// </summary>
+        public Windows10XVpnConfiguration() : base() {
+            OdataType = "#microsoft.graph.windows10XVpnConfiguration";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

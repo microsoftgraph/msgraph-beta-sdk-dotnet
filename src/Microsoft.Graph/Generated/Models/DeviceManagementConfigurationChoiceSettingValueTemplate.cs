@@ -19,6 +19,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueDefaultTemplate>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Recommended definition override.</summary>
         public DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate RecommendedValueDefinition {
             get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate>("recommendedValueDefinition"); }
@@ -40,6 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceManagementConfigurationChoiceSettingValueTemplate() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.deviceManagementConfigurationChoiceSettingValueTemplate";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"defaultValue", n => { DefaultValue = n.GetObjectValue<DeviceManagementConfigurationChoiceSettingValueDefaultTemplate>(DeviceManagementConfigurationChoiceSettingValueDefaultTemplate.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"recommendedValueDefinition", n => { RecommendedValueDefinition = n.GetObjectValue<DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate>(DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate.CreateFromDiscriminatorValue); } },
                 {"requiredValueDefinition", n => { RequiredValueDefinition = n.GetObjectValue<DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate>(DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate.CreateFromDiscriminatorValue); } },
                 {"settingValueTemplateId", n => { SettingValueTemplateId = n.GetStringValue(); } },
@@ -67,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<DeviceManagementConfigurationChoiceSettingValueDefaultTemplate>("defaultValue", DefaultValue);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate>("recommendedValueDefinition", RecommendedValueDefinition);
             writer.WriteObjectValue<DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate>("requiredValueDefinition", RequiredValueDefinition);
             writer.WriteStringValue("settingValueTemplateId", SettingValueTemplateId);

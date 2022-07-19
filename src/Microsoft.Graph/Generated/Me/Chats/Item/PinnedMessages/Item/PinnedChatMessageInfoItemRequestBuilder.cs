@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.PinnedMessages.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new pinnedChatMessageInfoItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PinnedChatMessageInfoItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PinnedChatMessageInfoItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.PinnedMessages.Item {
             /// <summary>Request query parameters</summary>
             public PinnedChatMessageInfoItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PinnedChatMessageInfoItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new pinnedChatMessageInfoItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PinnedChatMessageInfoItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PinnedChatMessageInfoItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.PinnedMessages.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new pinnedChatMessageInfoItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PinnedChatMessageInfoItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PinnedChatMessageInfoItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

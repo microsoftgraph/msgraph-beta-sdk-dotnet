@@ -13,6 +13,11 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Classification of why a call or portion of a call failed.</summary>
         public string Reason {
             get { return BackingStore?.Get<string>("reason"); }
@@ -29,6 +34,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         public FailureInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.callRecords.failureInfo";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -43,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"reason", n => { Reason = n.GetStringValue(); } },
                 {"stage", n => { Stage = n.GetEnumValue<FailureStage>(); } },
             };
@@ -53,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("reason", Reason);
             writer.WriteEnumValue<FailureStage>("stage", Stage);
             writer.WriteAdditionalData(AdditionalData);

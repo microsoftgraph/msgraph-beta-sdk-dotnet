@@ -38,6 +38,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Defines a filter to be used when deciding whether a given object should be provisioned. For example, you might want to only provision users that are located in the US.</summary>
         public Filter Scope {
             get { return BackingStore?.Get<Filter>("scope"); }
@@ -59,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ObjectMapping() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.objectMapping";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -78,6 +84,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"flowTypes", n => { FlowTypes = n.GetEnumValue<ObjectFlowTypes>(); } },
                 {"metadata", n => { Metadata = n.GetCollectionOfObjectValues<MetadataEntry>(MetadataEntry.CreateFromDiscriminatorValue).ToList(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"scope", n => { Scope = n.GetObjectValue<Filter>(Filter.CreateFromDiscriminatorValue); } },
                 {"sourceObjectName", n => { SourceObjectName = n.GetStringValue(); } },
                 {"targetObjectName", n => { TargetObjectName = n.GetStringValue(); } },
@@ -94,6 +101,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<ObjectFlowTypes>("flowTypes", FlowTypes);
             writer.WriteCollectionOfObjectValues<MetadataEntry>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<Filter>("scope", Scope);
             writer.WriteStringValue("sourceObjectName", SourceObjectName);
             writer.WriteStringValue("targetObjectName", TargetObjectName);

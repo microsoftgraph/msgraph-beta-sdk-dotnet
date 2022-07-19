@@ -83,6 +83,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<PrintMultipageLayout?>("multipageLayout"); }
             set { BackingStore?.Set("multipageLayout", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The default orientation to use when printing the document. Valid values are described in the following table.</summary>
         public PrintOrientation? Orientation {
             get { return BackingStore?.Get<PrintOrientation?>("orientation"); }
@@ -134,6 +139,7 @@ namespace Microsoft.Graph.Beta.Models {
         public PrinterDefaults() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.printerDefaults";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -162,6 +168,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"mediaSize", n => { MediaSize = n.GetStringValue(); } },
                 {"mediaType", n => { MediaType = n.GetStringValue(); } },
                 {"multipageLayout", n => { MultipageLayout = n.GetEnumValue<PrintMultipageLayout>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"orientation", n => { Orientation = n.GetEnumValue<PrintOrientation>(); } },
                 {"outputBin", n => { OutputBin = n.GetStringValue(); } },
                 {"pagesPerSheet", n => { PagesPerSheet = n.GetIntValue(); } },
@@ -193,6 +200,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("mediaSize", MediaSize);
             writer.WriteStringValue("mediaType", MediaType);
             writer.WriteEnumValue<PrintMultipageLayout>("multipageLayout", MultipageLayout);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<PrintOrientation>("orientation", Orientation);
             writer.WriteStringValue("outputBin", OutputBin);
             writer.WriteIntValue("pagesPerSheet", PagesPerSheet);

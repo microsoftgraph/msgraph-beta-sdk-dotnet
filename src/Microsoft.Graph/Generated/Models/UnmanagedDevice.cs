@@ -59,6 +59,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Operating system.</summary>
         public string Os {
             get { return BackingStore?.Get<string>("os"); }
@@ -75,6 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
         public UnmanagedDevice() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.unmanagedDevice";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -98,6 +104,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"macAddress", n => { MacAddress = n.GetStringValue(); } },
                 {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
                 {"model", n => { Model = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"os", n => { Os = n.GetStringValue(); } },
                 {"osVersion", n => { OsVersion = n.GetStringValue(); } },
             };
@@ -117,6 +124,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("macAddress", MacAddress);
             writer.WriteStringValue("manufacturer", Manufacturer);
             writer.WriteStringValue("model", Model);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("os", Os);
             writer.WriteStringValue("osVersion", OsVersion);
             writer.WriteAdditionalData(AdditionalData);

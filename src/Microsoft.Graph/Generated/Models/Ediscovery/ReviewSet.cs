@@ -26,6 +26,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
             set { BackingStore?.Set("queries", value); }
         }
         /// <summary>
+        /// Instantiates a new reviewSet and sets the default values.
+        /// </summary>
+        public ReviewSet() : base() {
+            OdataType = "#microsoft.graph.ediscovery.reviewSet";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

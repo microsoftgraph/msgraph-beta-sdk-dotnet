@@ -24,6 +24,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<string>>("notFoundDriverIds"); }
             set { BackingStore?.Set("notFoundDriverIds", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>List of driver Ids where the action is successful.</summary>
         public List<string> SuccessfulDriverIds {
             get { return BackingStore?.Get<List<string>>("successfulDriverIds"); }
@@ -35,6 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         public BulkDriverActionResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.bulkDriverActionResult";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"failedDriverIds", n => { FailedDriverIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"notFoundDriverIds", n => { NotFoundDriverIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"successfulDriverIds", n => { SuccessfulDriverIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
@@ -62,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("failedDriverIds", FailedDriverIds);
             writer.WriteCollectionOfPrimitiveValues<string>("notFoundDriverIds", NotFoundDriverIds);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfPrimitiveValues<string>("successfulDriverIds", SuccessfulDriverIds);
             writer.WriteAdditionalData(AdditionalData);
         }

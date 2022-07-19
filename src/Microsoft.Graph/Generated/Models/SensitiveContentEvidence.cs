@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("match"); }
             set { BackingStore?.Set("match", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The offset property</summary>
         public int? Offset {
             get { return BackingStore?.Get<int?>("offset"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public SensitiveContentEvidence() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.sensitiveContentEvidence";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"length", n => { Length = n.GetIntValue(); } },
                 {"match", n => { Match = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"offset", n => { Offset = n.GetIntValue(); } },
             };
         }
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("length", Length);
             writer.WriteStringValue("match", Match);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("offset", Offset);
             writer.WriteAdditionalData(AdditionalData);
         }

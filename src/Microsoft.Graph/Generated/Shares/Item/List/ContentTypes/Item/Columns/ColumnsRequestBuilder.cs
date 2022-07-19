@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.Columns {
     /// <summary>Provides operations to manage the columns property of the microsoft.graph.contentType entity.</summary>
     public class ColumnsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

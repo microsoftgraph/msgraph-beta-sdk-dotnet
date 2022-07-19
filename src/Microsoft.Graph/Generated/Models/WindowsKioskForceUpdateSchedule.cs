@@ -24,6 +24,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DayOfWeek?>("dayofWeek"); }
             set { BackingStore?.Set("dayofWeek", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Possible values for App update on Windows10 recurrence.</summary>
         public Windows10AppsUpdateRecurrence? Recurrence {
             get { return BackingStore?.Get<Windows10AppsUpdateRecurrence?>("recurrence"); }
@@ -45,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public WindowsKioskForceUpdateSchedule() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.windowsKioskForceUpdateSchedule";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -61,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"dayofMonth", n => { DayofMonth = n.GetIntValue(); } },
                 {"dayofWeek", n => { DayofWeek = n.GetEnumValue<DayOfWeek>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"recurrence", n => { Recurrence = n.GetEnumValue<Windows10AppsUpdateRecurrence>(); } },
                 {"runImmediatelyIfAfterStartDateTime", n => { RunImmediatelyIfAfterStartDateTime = n.GetBoolValue(); } },
                 {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
@@ -74,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("dayofMonth", DayofMonth);
             writer.WriteEnumValue<DayOfWeek>("dayofWeek", DayofWeek);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<Windows10AppsUpdateRecurrence>("recurrence", Recurrence);
             writer.WriteBoolValue("runImmediatelyIfAfterStartDateTime", RunImmediatelyIfAfterStartDateTime);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);

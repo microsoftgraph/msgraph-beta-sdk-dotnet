@@ -55,10 +55,21 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("ticketSystem"); }
             set { BackingStore?.Set("ticketSystem", value); }
         }
+        /// <summary>Representing the type of the operation on the role assignment. The value can be AdminAdd: Administrators add users to roles;UserAdd: Users add role assignments.</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
         /// <summary>The id of the user.</summary>
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
+        }
+        /// <summary>
+        /// Instantiates a new privilegedRoleAssignmentRequest and sets the default values.
+        /// </summary>
+        public PrivilegedRoleAssignmentRequest() : base() {
+            OdataType = "#microsoft.graph.privilegedRoleAssignmentRequest";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -83,6 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"status", n => { Status = n.GetStringValue(); } },
                 {"ticketNumber", n => { TicketNumber = n.GetStringValue(); } },
                 {"ticketSystem", n => { TicketSystem = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
                 {"userId", n => { UserId = n.GetStringValue(); } },
             };
         }
@@ -103,6 +115,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("ticketNumber", TicketNumber);
             writer.WriteStringValue("ticketSystem", TicketSystem);
+            writer.WriteStringValue("type", Type);
             writer.WriteStringValue("userId", UserId);
         }
     }

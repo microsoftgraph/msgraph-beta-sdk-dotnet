@@ -26,6 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("valueName", value); }
         }
         /// <summary>
+        /// Instantiates a new Win32LobAppRegistryRequirement and sets the default values.
+        /// </summary>
+        public Win32LobAppRegistryRequirement() : base() {
+            OdataType = "#microsoft.graph.win32LobAppRegistryRequirement";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

@@ -33,6 +33,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("maxLength"); }
             set { BackingStore?.Set("maxLength", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The type of text being stored. Must be one of plain or richText</summary>
         public string TextType {
             get { return BackingStore?.Get<string>("textType"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public TextColumn() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.textColumn";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"appendChangesToExistingText", n => { AppendChangesToExistingText = n.GetBoolValue(); } },
                 {"linesForEditing", n => { LinesForEditing = n.GetIntValue(); } },
                 {"maxLength", n => { MaxLength = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"textType", n => { TextType = n.GetStringValue(); } },
             };
         }
@@ -75,6 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("appendChangesToExistingText", AppendChangesToExistingText);
             writer.WriteIntValue("linesForEditing", LinesForEditing);
             writer.WriteIntValue("maxLength", MaxLength);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("textType", TextType);
             writer.WriteAdditionalData(AdditionalData);
         }

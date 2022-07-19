@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections {
     /// <summary>Provides operations to manage the resourceConnections property of the microsoft.graph.windowsUpdates.updates entity.</summary>
     public class ResourceConnectionsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get resourceConnections from admin
+        /// Service connections to external resources such as analytics workspaces.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ResourceConnectionsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections {
             return requestInfo;
         }
         /// <summary>
-        /// Get resourceConnections from admin
+        /// Service connections to external resources such as analytics workspaces.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections {
             };
             return await RequestAdapter.SendAsync<ResourceConnection>(requestInfo, ResourceConnection.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get resourceConnections from admin</summary>
+        /// <summary>Service connections to external resources such as analytics workspaces.</summary>
         public class ResourceConnectionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

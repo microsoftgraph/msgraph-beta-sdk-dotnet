@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Represents device registration records for Bring-Your-Own-Device(BYOD) Windows devices.</summary>
     public class WindowsInformationProtectionDeviceRegistration : Entity, IParsable {
         /// <summary>Device Mac address.</summary>
         public string DeviceMacAddress {
@@ -35,6 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
+        }
+        /// <summary>
+        /// Instantiates a new WindowsInformationProtectionDeviceRegistration and sets the default values.
+        /// </summary>
+        public WindowsInformationProtectionDeviceRegistration() : base() {
+            OdataType = "#microsoft.graph.windowsInformationProtectionDeviceRegistration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

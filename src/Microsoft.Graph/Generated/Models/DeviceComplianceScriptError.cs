@@ -29,8 +29,8 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("message"); }
             set { BackingStore?.Set("message", value); }
         }
-        /// <summary>The type property</summary>
-        public string Type {
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceComplianceScriptError() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            Type = "#microsoft.graph.deviceComplianceScriptError";
+            OdataType = "#microsoft.graph.deviceComplianceScriptError";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"code", n => { Code = n.GetEnumValue<Code>(); } },
                 {"deviceComplianceScriptRulesValidationError", n => { DeviceComplianceScriptRulesValidationError = n.GetEnumValue<DeviceComplianceScriptRulesValidationError>(); } },
                 {"message", n => { Message = n.GetStringValue(); } },
-                {"@odata.type", n => { Type = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<Code>("code", Code);
             writer.WriteEnumValue<DeviceComplianceScriptRulesValidationError>("deviceComplianceScriptRulesValidationError", DeviceComplianceScriptRulesValidationError);
             writer.WriteStringValue("message", Message);
-            writer.WriteStringValue("@odata.type", Type);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Search.Acronyms.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new acronymItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AcronymItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AcronymItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Search.Acronyms.Item {
             /// <summary>Request query parameters</summary>
             public AcronymItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AcronymItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new acronymItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AcronymItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AcronymItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Search.Acronyms.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new acronymItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AcronymItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AcronymItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

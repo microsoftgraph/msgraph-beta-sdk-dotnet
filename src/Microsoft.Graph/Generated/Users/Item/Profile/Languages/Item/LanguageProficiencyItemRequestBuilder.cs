@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Languages.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new languageProficiencyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new LanguageProficiencyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public LanguageProficiencyItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Languages.Item {
             /// <summary>Request query parameters</summary>
             public LanguageProficiencyItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new LanguageProficiencyItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new languageProficiencyItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new LanguageProficiencyItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public LanguageProficiencyItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Languages.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new languageProficiencyItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new LanguageProficiencyItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public LanguageProficiencyItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

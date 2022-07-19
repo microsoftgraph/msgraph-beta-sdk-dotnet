@@ -19,6 +19,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The posting date of the update.</summary>
         public DateTimeOffset? PostingDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("postingDateTime"); }
@@ -40,6 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IosAvailableUpdateVersion() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.iosAvailableUpdateVersion";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"postingDateTime", n => { PostingDateTime = n.GetDateTimeOffsetValue(); } },
                 {"productVersion", n => { ProductVersion = n.GetStringValue(); } },
                 {"supportedDevices", n => { SupportedDevices = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
@@ -67,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateTimeOffsetValue("postingDateTime", PostingDateTime);
             writer.WriteStringValue("productVersion", ProductVersion);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedDevices", SupportedDevices);

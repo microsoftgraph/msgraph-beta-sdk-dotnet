@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignments {
     /// <summary>Provides operations to manage the userAttributeAssignments property of the microsoft.graph.b2cIdentityUserFlow entity.</summary>
     public class UserAttributeAssignmentsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

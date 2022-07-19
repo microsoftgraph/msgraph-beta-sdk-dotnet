@@ -16,6 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("settings", value); }
         }
         /// <summary>
+        /// Instantiates a new MobileAppPolicySetItem and sets the default values.
+        /// </summary>
+        public MobileAppPolicySetItem() : base() {
+            OdataType = "#microsoft.graph.mobileAppPolicySetItem";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

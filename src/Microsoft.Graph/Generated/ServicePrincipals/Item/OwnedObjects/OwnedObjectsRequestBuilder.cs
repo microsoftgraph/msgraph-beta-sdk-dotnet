@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects {
         public ApplicationRequestBuilder Application { get =>
             new ApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

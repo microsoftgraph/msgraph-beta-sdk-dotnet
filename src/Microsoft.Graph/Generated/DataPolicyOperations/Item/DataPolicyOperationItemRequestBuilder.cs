@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DataPolicyOperations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new dataPolicyOperationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DataPolicyOperationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DataPolicyOperationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DataPolicyOperations.Item {
             /// <summary>Request query parameters</summary>
             public DataPolicyOperationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DataPolicyOperationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new dataPolicyOperationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DataPolicyOperationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DataPolicyOperationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DataPolicyOperations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new dataPolicyOperationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DataPolicyOperationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DataPolicyOperationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class SimulationAutomationRun : Entity, IParsable {
         /// <summary>Date and time when the run ends in an attack simulation automation.</summary>
         public DateTimeOffset? EndDateTime {
@@ -25,6 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
         public SimulationAutomationRunStatus? Status {
             get { return BackingStore?.Get<SimulationAutomationRunStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
+        }
+        /// <summary>
+        /// Instantiates a new simulationAutomationRun and sets the default values.
+        /// </summary>
+        public SimulationAutomationRun() : base() {
+            OdataType = "#microsoft.graph.simulationAutomationRun";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

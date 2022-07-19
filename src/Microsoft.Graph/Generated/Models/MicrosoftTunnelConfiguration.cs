@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Entity that represents a collection of Microsoft Tunnel settings</summary>
     public class MicrosoftTunnelConfiguration : Entity, IParsable {
         /// <summary>Additional settings that may be applied to the server</summary>
         public List<KeyValuePair> AdvancedSettings {
@@ -70,6 +69,12 @@ namespace Microsoft.Graph.Beta.Models {
         public List<string> SplitDNS {
             get { return BackingStore?.Get<List<string>>("splitDNS"); }
             set { BackingStore?.Set("splitDNS", value); }
+        }
+        /// <summary>
+        /// Instantiates a new MicrosoftTunnelConfiguration and sets the default values.
+        /// </summary>
+        public MicrosoftTunnelConfiguration() : base() {
+            OdataType = "#microsoft.graph.microsoftTunnelConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

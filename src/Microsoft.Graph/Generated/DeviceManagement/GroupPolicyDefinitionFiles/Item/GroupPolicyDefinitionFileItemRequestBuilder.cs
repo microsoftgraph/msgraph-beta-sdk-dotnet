@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitionFiles.Item 
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new groupPolicyDefinitionFileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new GroupPolicyDefinitionFileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public GroupPolicyDefinitionFileItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitionFiles.Item 
             /// <summary>Request query parameters</summary>
             public GroupPolicyDefinitionFileItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new GroupPolicyDefinitionFileItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new groupPolicyDefinitionFileItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new GroupPolicyDefinitionFileItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public GroupPolicyDefinitionFileItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitionFiles.Item 
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new groupPolicyDefinitionFileItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new GroupPolicyDefinitionFileItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public GroupPolicyDefinitionFileItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

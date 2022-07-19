@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlowAttributes.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new identityUserFlowAttributeItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new IdentityUserFlowAttributeItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public IdentityUserFlowAttributeItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlowAttributes.Item {
             /// <summary>Request query parameters</summary>
             public IdentityUserFlowAttributeItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new IdentityUserFlowAttributeItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new identityUserFlowAttributeItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new IdentityUserFlowAttributeItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public IdentityUserFlowAttributeItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlowAttributes.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new identityUserFlowAttributeItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new IdentityUserFlowAttributeItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public IdentityUserFlowAttributeItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

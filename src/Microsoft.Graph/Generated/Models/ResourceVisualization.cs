@@ -33,6 +33,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("mediaType"); }
             set { BackingStore?.Set("mediaType", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>A URL leading to the preview image for the item.</summary>
         public string PreviewImageUrl {
             get { return BackingStore?.Get<string>("previewImageUrl"); }
@@ -59,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ResourceVisualization() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.resourceVisualization";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -77,6 +83,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"containerType", n => { ContainerType = n.GetStringValue(); } },
                 {"containerWebUrl", n => { ContainerWebUrl = n.GetStringValue(); } },
                 {"mediaType", n => { MediaType = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"previewImageUrl", n => { PreviewImageUrl = n.GetStringValue(); } },
                 {"previewText", n => { PreviewText = n.GetStringValue(); } },
                 {"title", n => { Title = n.GetStringValue(); } },
@@ -93,6 +100,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("containerType", ContainerType);
             writer.WriteStringValue("containerWebUrl", ContainerWebUrl);
             writer.WriteStringValue("mediaType", MediaType);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("previewImageUrl", PreviewImageUrl);
             writer.WriteStringValue("previewText", PreviewText);
             writer.WriteStringValue("title", Title);

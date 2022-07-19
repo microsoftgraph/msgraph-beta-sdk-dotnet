@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MdmWindowsInformationProtecti
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new mdmWindowsInformationProtectionPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new MdmWindowsInformationProtectionPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public MdmWindowsInformationProtectionPolicyItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MdmWindowsInformationProtecti
             /// <summary>Request query parameters</summary>
             public MdmWindowsInformationProtectionPolicyItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new MdmWindowsInformationProtectionPolicyItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new mdmWindowsInformationProtectionPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new MdmWindowsInformationProtectionPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public MdmWindowsInformationProtectionPolicyItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MdmWindowsInformationProtecti
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new mdmWindowsInformationProtectionPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new MdmWindowsInformationProtectionPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public MdmWindowsInformationProtectionPolicyItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

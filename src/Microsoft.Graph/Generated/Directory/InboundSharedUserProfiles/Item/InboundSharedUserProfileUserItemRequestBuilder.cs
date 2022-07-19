@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.Directory.InboundSharedUserProfiles.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new inboundSharedUserProfileUserItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new InboundSharedUserProfileUserItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public InboundSharedUserProfileUserItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.Directory.InboundSharedUserProfiles.Item {
             /// <summary>Request query parameters</summary>
             public InboundSharedUserProfileUserItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new InboundSharedUserProfileUserItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new inboundSharedUserProfileUserItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new InboundSharedUserProfileUserItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public InboundSharedUserProfileUserItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.Directory.InboundSharedUserProfiles.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new inboundSharedUserProfileUserItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new InboundSharedUserProfileUserItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public InboundSharedUserProfileUserItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models.ODataErrors {
             get { return BackingStore?.Get<DateTimeOffset?>("date"); }
             set { BackingStore?.Set("date", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Request Id as tracked internally by the service</summary>
         public string RequestId {
             get { return BackingStore?.Get<string>("request-id"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models.ODataErrors {
         public InnerError() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.InnerError";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models.ODataErrors {
             return new Dictionary<string, Action<IParseNode>> {
                 {"client-request-id", n => { ClientRequestId = n.GetStringValue(); } },
                 {"date", n => { Date = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"request-id", n => { RequestId = n.GetStringValue(); } },
             };
         }
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models.ODataErrors {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("client-request-id", ClientRequestId);
             writer.WriteDateTimeOffsetValue("date", Date);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("request-id", RequestId);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -49,6 +49,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<double?>("longitude"); }
             set { BackingStore?.Set("longitude", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Speed the device is traveling in meters per second</summary>
         public double? Speed {
             get { return BackingStore?.Get<double?>("speed"); }
@@ -65,6 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceGeoLocation() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.deviceGeoLocation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -86,6 +92,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"lastCollectedDateTimeUtc", n => { LastCollectedDateTimeUtc = n.GetDateTimeOffsetValue(); } },
                 {"latitude", n => { Latitude = n.GetDoubleValue(); } },
                 {"longitude", n => { Longitude = n.GetDoubleValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"speed", n => { Speed = n.GetDoubleValue(); } },
                 {"verticalAccuracy", n => { VerticalAccuracy = n.GetDoubleValue(); } },
             };
@@ -103,6 +110,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("lastCollectedDateTimeUtc", LastCollectedDateTimeUtc);
             writer.WriteDoubleValue("latitude", Latitude);
             writer.WriteDoubleValue("longitude", Longitude);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDoubleValue("speed", Speed);
             writer.WriteDoubleValue("verticalAccuracy", VerticalAccuracy);
             writer.WriteAdditionalData(AdditionalData);

@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<long?>("dataUsed"); }
             set { BackingStore?.Set("dataUsed", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>User name</summary>
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public SharedAppleDeviceUser() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.sharedAppleDeviceUser";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"dataQuota", n => { DataQuota = n.GetLongValue(); } },
                 {"dataToSync", n => { DataToSync = n.GetBoolValue(); } },
                 {"dataUsed", n => { DataUsed = n.GetLongValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
@@ -68,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteLongValue("dataQuota", DataQuota);
             writer.WriteBoolValue("dataToSync", DataToSync);
             writer.WriteLongValue("dataUsed", DataUsed);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
             writer.WriteAdditionalData(AdditionalData);
         }

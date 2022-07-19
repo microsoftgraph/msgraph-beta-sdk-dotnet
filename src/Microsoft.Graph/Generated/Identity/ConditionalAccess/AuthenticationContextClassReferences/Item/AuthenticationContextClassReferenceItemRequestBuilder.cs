@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextC
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new authenticationContextClassReferenceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AuthenticationContextClassReferenceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AuthenticationContextClassReferenceItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextC
             /// <summary>Request query parameters</summary>
             public AuthenticationContextClassReferenceItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AuthenticationContextClassReferenceItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new authenticationContextClassReferenceItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AuthenticationContextClassReferenceItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AuthenticationContextClassReferenceItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextC
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new authenticationContextClassReferenceItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AuthenticationContextClassReferenceItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AuthenticationContextClassReferenceItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

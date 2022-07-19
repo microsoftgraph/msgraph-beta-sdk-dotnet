@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicies.Item.Rules {
     /// <summary>Provides operations to manage the rules property of the microsoft.graph.unifiedRoleManagementPolicy entity.</summary>
     public class RulesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

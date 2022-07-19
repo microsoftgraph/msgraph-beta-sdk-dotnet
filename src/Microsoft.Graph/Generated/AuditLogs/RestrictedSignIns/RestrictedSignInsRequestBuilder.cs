@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.AuditLogs.RestrictedSignIns {
     /// <summary>Provides operations to manage the restrictedSignIns property of the microsoft.graph.auditLogRoot entity.</summary>
     public class RestrictedSignInsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

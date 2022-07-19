@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new ExactMatchSessionBase and sets the default values.
         /// </summary>
         public ExactMatchSessionBase() : base() {
-            Type = "#microsoft.graph.exactMatchSessionBase";
+            OdataType = "#microsoft.graph.exactMatchSessionBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

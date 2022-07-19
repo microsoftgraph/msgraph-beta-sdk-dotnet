@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new groupPolicyPresentation and sets the default values.
         /// </summary>
         public GroupPolicyPresentation() : base() {
-            Type = "#microsoft.graph.groupPolicyPresentation";
+            OdataType = "#microsoft.graph.groupPolicyPresentation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

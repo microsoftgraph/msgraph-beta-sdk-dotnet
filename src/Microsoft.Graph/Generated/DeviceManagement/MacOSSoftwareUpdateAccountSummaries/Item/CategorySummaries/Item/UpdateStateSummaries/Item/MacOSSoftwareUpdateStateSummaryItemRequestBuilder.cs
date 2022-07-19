@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummar
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new macOSSoftwareUpdateStateSummaryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new MacOSSoftwareUpdateStateSummaryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public MacOSSoftwareUpdateStateSummaryItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummar
             /// <summary>Request query parameters</summary>
             public MacOSSoftwareUpdateStateSummaryItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new MacOSSoftwareUpdateStateSummaryItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new macOSSoftwareUpdateStateSummaryItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new MacOSSoftwareUpdateStateSummaryItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public MacOSSoftwareUpdateStateSummaryItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummar
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new macOSSoftwareUpdateStateSummaryItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new MacOSSoftwareUpdateStateSummaryItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public MacOSSoftwareUpdateStateSummaryItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

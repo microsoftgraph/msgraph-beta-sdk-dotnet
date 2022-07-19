@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders {
     /// <summary>Provides operations to manage the childFolders property of the microsoft.graph.mailFolder entity.</summary>
     public class ChildFoldersRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

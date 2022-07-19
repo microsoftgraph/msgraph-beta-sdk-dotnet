@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Employee : Entity, IParsable {
         /// <summary>The address property</summary>
         public PostalAddressType Address {
@@ -96,6 +95,12 @@ namespace Microsoft.Graph.Beta.Models {
         public Date? TerminationDate {
             get { return BackingStore?.Get<Date?>("terminationDate"); }
             set { BackingStore?.Set("terminationDate", value); }
+        }
+        /// <summary>
+        /// Instantiates a new Employee and sets the default values.
+        /// </summary>
+        public Employee() : base() {
+            OdataType = "#microsoft.graph.employee";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

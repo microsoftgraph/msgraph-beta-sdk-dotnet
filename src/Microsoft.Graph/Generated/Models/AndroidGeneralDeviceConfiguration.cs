@@ -256,6 +256,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("wiFiBlocked", value); }
         }
         /// <summary>
+        /// Instantiates a new AndroidGeneralDeviceConfiguration and sets the default values.
+        /// </summary>
+        public AndroidGeneralDeviceConfiguration() : base() {
+            OdataType = "#microsoft.graph.androidGeneralDeviceConfiguration";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

@@ -39,6 +39,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("enabled"); }
             set { BackingStore?.Set("enabled", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Determines when notification previews are visible on an iOS device. Previews can include things like text (from Messages and Mail) and invitation details (from Calendar). When configured, it will override the user&apos;s defined preview settings.</summary>
         public IosNotificationPreviewVisibility? PreviewVisibility {
             get { return BackingStore?.Get<IosNotificationPreviewVisibility?>("previewVisibility"); }
@@ -70,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IosNotificationSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.iosNotificationSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -89,6 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"badgesEnabled", n => { BadgesEnabled = n.GetBoolValue(); } },
                 {"bundleID", n => { BundleID = n.GetStringValue(); } },
                 {"enabled", n => { Enabled = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"previewVisibility", n => { PreviewVisibility = n.GetEnumValue<IosNotificationPreviewVisibility>(); } },
                 {"publisher", n => { Publisher = n.GetStringValue(); } },
                 {"showInNotificationCenter", n => { ShowInNotificationCenter = n.GetBoolValue(); } },
@@ -107,6 +114,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("badgesEnabled", BadgesEnabled);
             writer.WriteStringValue("bundleID", BundleID);
             writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<IosNotificationPreviewVisibility>("previewVisibility", PreviewVisibility);
             writer.WriteStringValue("publisher", Publisher);
             writer.WriteBoolValue("showInNotificationCenter", ShowInNotificationCenter);

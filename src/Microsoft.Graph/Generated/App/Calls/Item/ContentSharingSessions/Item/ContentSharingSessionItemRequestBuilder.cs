@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.ContentSharingSessions.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new contentSharingSessionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ContentSharingSessionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ContentSharingSessionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.ContentSharingSessions.Item {
             /// <summary>Request query parameters</summary>
             public ContentSharingSessionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ContentSharingSessionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new contentSharingSessionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ContentSharingSessionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ContentSharingSessionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.ContentSharingSessions.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new contentSharingSessionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ContentSharingSessionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ContentSharingSessionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

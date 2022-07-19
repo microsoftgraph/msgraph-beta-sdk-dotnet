@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Users.Item.WindowsInformationProtectionDeviceRegi
             /// <summary>Request query parameters</summary>
             public WindowsInformationProtectionDeviceRegistrationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new WindowsInformationProtectionDeviceRegistrationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new windowsInformationProtectionDeviceRegistrationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsInformationProtectionDeviceRegistrationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsInformationProtectionDeviceRegistrationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

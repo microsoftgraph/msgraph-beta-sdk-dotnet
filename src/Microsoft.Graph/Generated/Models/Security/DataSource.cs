@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class DataSource : Entity, IParsable {
         /// <summary>The user who created the dataSource.</summary>
         public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// Instantiates a new dataSource and sets the default values.
         /// </summary>
         public DataSource() : base() {
-            Type = "#microsoft.graph.security.dataSource";
+            OdataType = "#microsoft.graph.security.dataSource";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

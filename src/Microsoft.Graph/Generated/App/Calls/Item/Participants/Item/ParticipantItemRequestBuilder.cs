@@ -169,7 +169,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new participantItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ParticipantItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ParticipantItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.Item {
             /// <summary>Request query parameters</summary>
             public ParticipantItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ParticipantItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new participantItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ParticipantItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ParticipantItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new participantItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ParticipantItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ParticipantItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

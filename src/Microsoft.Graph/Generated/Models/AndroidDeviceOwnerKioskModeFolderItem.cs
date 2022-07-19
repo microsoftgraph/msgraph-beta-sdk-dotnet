@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new AndroidDeviceOwnerKioskModeFolderItem and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerKioskModeFolderItem() : base() {
-            Type = "#microsoft.graph.androidDeviceOwnerKioskModeFolderItem";
+            OdataType = "#microsoft.graph.androidDeviceOwnerKioskModeFolderItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

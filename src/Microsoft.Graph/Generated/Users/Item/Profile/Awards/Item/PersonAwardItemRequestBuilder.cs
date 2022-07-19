@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Awards.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new personAwardItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PersonAwardItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PersonAwardItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Awards.Item {
             /// <summary>Request query parameters</summary>
             public PersonAwardItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PersonAwardItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new personAwardItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PersonAwardItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PersonAwardItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Awards.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new personAwardItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PersonAwardItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PersonAwardItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

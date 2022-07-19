@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleDefinitions.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new roleDefinitionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new RoleDefinitionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public RoleDefinitionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleDefinitions.Item {
             /// <summary>Request query parameters</summary>
             public RoleDefinitionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new RoleDefinitionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new roleDefinitionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new RoleDefinitionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public RoleDefinitionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleDefinitions.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new roleDefinitionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new RoleDefinitionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public RoleDefinitionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

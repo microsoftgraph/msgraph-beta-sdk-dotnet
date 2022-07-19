@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomi
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new tenantCustomizedInformationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new TenantCustomizedInformationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public TenantCustomizedInformationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomi
             /// <summary>Request query parameters</summary>
             public TenantCustomizedInformationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TenantCustomizedInformationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new tenantCustomizedInformationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TenantCustomizedInformationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TenantCustomizedInformationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomi
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new tenantCustomizedInformationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new TenantCustomizedInformationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public TenantCustomizedInformationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

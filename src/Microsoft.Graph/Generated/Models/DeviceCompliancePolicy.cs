@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new deviceCompliancePolicy and sets the default values.
         /// </summary>
         public DeviceCompliancePolicy() : base() {
-            Type = "#microsoft.graph.deviceCompliancePolicy";
+            OdataType = "#microsoft.graph.deviceCompliancePolicy";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

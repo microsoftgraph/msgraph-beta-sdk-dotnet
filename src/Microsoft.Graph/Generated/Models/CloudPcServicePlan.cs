@@ -20,6 +20,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("storageInGB"); }
             set { BackingStore?.Set("storageInGB", value); }
         }
+        /// <summary>The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.</summary>
+        public CloudPcServicePlanType? Type {
+            get { return BackingStore?.Get<CloudPcServicePlanType?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
         /// <summary>The size of the user profile disk in GB. Read-only.</summary>
         public int? UserProfileInGB {
             get { return BackingStore?.Get<int?>("userProfileInGB"); }
@@ -29,6 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         public int? VCpuCount {
             get { return BackingStore?.Get<int?>("vCpuCount"); }
             set { BackingStore?.Set("vCpuCount", value); }
+        }
+        /// <summary>
+        /// Instantiates a new CloudPcServicePlan and sets the default values.
+        /// </summary>
+        public CloudPcServicePlan() : base() {
+            OdataType = "#microsoft.graph.cloudPcServicePlan";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -46,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"ramInGB", n => { RamInGB = n.GetIntValue(); } },
                 {"storageInGB", n => { StorageInGB = n.GetIntValue(); } },
+                {"type", n => { Type = n.GetEnumValue<CloudPcServicePlanType>(); } },
                 {"userProfileInGB", n => { UserProfileInGB = n.GetIntValue(); } },
                 {"vCpuCount", n => { VCpuCount = n.GetIntValue(); } },
             };
@@ -60,6 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteIntValue("ramInGB", RamInGB);
             writer.WriteIntValue("storageInGB", StorageInGB);
+            writer.WriteEnumValue<CloudPcServicePlanType>("type", Type);
             writer.WriteIntValue("userProfileInGB", UserProfileInGB);
             writer.WriteIntValue("vCpuCount", VCpuCount);
         }

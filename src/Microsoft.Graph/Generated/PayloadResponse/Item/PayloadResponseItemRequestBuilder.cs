@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.PayloadResponse.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new payloadResponseItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PayloadResponseItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PayloadResponseItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.PayloadResponse.Item {
             /// <summary>Request query parameters</summary>
             public PayloadResponseItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PayloadResponseItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new payloadResponseItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PayloadResponseItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PayloadResponseItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.PayloadResponse.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new payloadResponseItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PayloadResponseItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PayloadResponseItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -19,6 +19,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("ipAddressOrFQDN"); }
             set { BackingStore?.Set("ipAddressOrFQDN", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Proxy IP or FQDN</summary>
         public string Proxy {
             get { return BackingStore?.Get<string>("proxy"); }
@@ -30,6 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ProxiedDomain() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.proxiedDomain";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"ipAddressOrFQDN", n => { IpAddressOrFQDN = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"proxy", n => { Proxy = n.GetStringValue(); } },
             };
         }
@@ -55,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("ipAddressOrFQDN", IpAddressOrFQDN);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("proxy", Proxy);
             writer.WriteAdditionalData(AdditionalData);
         }

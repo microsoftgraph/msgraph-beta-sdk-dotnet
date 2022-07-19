@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnect
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPcConnectionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcConnectionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcConnectionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnect
             /// <summary>Request query parameters</summary>
             public CloudPcConnectionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CloudPcConnectionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new cloudPcConnectionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcConnectionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcConnectionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnect
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPcConnectionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcConnectionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcConnectionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Anniversaries.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new personAnnualEventItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PersonAnnualEventItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PersonAnnualEventItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Anniversaries.Item {
             /// <summary>Request query parameters</summary>
             public PersonAnnualEventItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PersonAnnualEventItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new personAnnualEventItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PersonAnnualEventItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PersonAnnualEventItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Anniversaries.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new personAnnualEventItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PersonAnnualEventItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PersonAnnualEventItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

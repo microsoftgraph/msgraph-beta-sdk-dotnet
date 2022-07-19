@@ -33,6 +33,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The operating system, platform, and device details from where the simulation event was initiated by a user in an attack simulation and training campaign.</summary>
         public string OsPlatformDeviceDetails {
             get { return BackingStore?.Get<string>("osPlatformDeviceDetails"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public UserSimulationEventInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.userSimulationEventInfo";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
                 {"eventName", n => { EventName = n.GetStringValue(); } },
                 {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"osPlatformDeviceDetails", n => { OsPlatformDeviceDetails = n.GetStringValue(); } },
             };
         }
@@ -75,6 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("eventDateTime", EventDateTime);
             writer.WriteStringValue("eventName", EventName);
             writer.WriteStringValue("ipAddress", IpAddress);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("osPlatformDeviceDetails", OsPlatformDeviceDetails);
             writer.WriteAdditionalData(AdditionalData);
         }

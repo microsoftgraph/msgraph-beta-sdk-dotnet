@@ -28,12 +28,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<CalendarSharingActionImportance?>("importance"); }
             set { BackingStore?.Set("importance", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new calendarSharingMessageAction and sets the default values.
         /// </summary>
         public CalendarSharingMessageAction() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.calendarSharingMessageAction";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"action", n => { Action = n.GetEnumValue<CalendarSharingAction>(); } },
                 {"actionType", n => { ActionType = n.GetEnumValue<CalendarSharingActionType>(); } },
                 {"importance", n => { Importance = n.GetEnumValue<CalendarSharingActionImportance>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -62,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<CalendarSharingAction>("action", Action);
             writer.WriteEnumValue<CalendarSharingActionType>("actionType", ActionType);
             writer.WriteEnumValue<CalendarSharingActionImportance>("importance", Importance);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

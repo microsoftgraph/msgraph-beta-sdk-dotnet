@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Directory.Recommendations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new recommendationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new RecommendationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public RecommendationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.Directory.Recommendations.Item {
             /// <summary>Request query parameters</summary>
             public RecommendationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new RecommendationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new recommendationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new RecommendationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public RecommendationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.Directory.Recommendations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new recommendationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new RecommendationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public RecommendationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

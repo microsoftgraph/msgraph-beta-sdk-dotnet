@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Names.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new personNameItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PersonNameItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PersonNameItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Names.Item {
             /// <summary>Request query parameters</summary>
             public PersonNameItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PersonNameItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new personNameItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PersonNameItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PersonNameItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Names.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new personNameItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PersonNameItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PersonNameItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

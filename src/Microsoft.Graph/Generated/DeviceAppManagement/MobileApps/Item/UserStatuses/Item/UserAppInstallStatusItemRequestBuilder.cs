@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UserStatuses.
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new userAppInstallStatusItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new UserAppInstallStatusItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public UserAppInstallStatusItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UserStatuses.
             /// <summary>Request query parameters</summary>
             public UserAppInstallStatusItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new UserAppInstallStatusItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new userAppInstallStatusItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new UserAppInstallStatusItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public UserAppInstallStatusItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UserStatuses.
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new userAppInstallStatusItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new UserAppInstallStatusItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public UserAppInstallStatusItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

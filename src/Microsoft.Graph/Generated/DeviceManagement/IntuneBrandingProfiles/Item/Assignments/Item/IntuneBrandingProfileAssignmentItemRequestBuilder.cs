@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.Item.Assi
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new intuneBrandingProfileAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new IntuneBrandingProfileAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public IntuneBrandingProfileAssignmentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.Item.Assi
             /// <summary>Request query parameters</summary>
             public IntuneBrandingProfileAssignmentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new IntuneBrandingProfileAssignmentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new intuneBrandingProfileAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new IntuneBrandingProfileAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public IntuneBrandingProfileAssignmentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.Item.Assi
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new intuneBrandingProfileAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new IntuneBrandingProfileAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public IntuneBrandingProfileAssignmentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

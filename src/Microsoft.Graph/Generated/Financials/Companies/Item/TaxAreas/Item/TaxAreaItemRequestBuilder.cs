@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new taxAreaItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new TaxAreaItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public TaxAreaItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.Item {
             /// <summary>Request query parameters</summary>
             public TaxAreaItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TaxAreaItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new taxAreaItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TaxAreaItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TaxAreaItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new taxAreaItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new TaxAreaItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public TaxAreaItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

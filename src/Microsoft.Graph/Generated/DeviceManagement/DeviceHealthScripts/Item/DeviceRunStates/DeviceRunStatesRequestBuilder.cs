@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.DeviceRunStates {
     /// <summary>Provides operations to manage the deviceRunStates property of the microsoft.graph.deviceHealthScript entity.</summary>
     public class DeviceRunStatesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

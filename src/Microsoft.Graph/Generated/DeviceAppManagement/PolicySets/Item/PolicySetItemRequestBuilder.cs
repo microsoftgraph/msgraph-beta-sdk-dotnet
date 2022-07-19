@@ -169,7 +169,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new policySetItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PolicySetItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PolicySetItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item {
             /// <summary>Request query parameters</summary>
             public PolicySetItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PolicySetItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new policySetItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PolicySetItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PolicySetItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new policySetItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PolicySetItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PolicySetItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

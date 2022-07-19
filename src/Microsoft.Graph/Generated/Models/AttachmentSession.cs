@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class AttachmentSession : Entity, IParsable {
         /// <summary>The content streams that are uploaded.</summary>
         public byte[] Content {
@@ -20,6 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         public List<string> NextExpectedRanges {
             get { return BackingStore?.Get<List<string>>("nextExpectedRanges"); }
             set { BackingStore?.Set("nextExpectedRanges", value); }
+        }
+        /// <summary>
+        /// Instantiates a new attachmentSession and sets the default values.
+        /// </summary>
+        public AttachmentSession() : base() {
+            OdataType = "#microsoft.graph.attachmentSession";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

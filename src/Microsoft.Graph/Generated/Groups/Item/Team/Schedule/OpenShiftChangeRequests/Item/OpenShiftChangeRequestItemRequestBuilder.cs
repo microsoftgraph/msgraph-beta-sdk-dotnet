@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.OpenShiftChangeRequests
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new openShiftChangeRequestItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new OpenShiftChangeRequestItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public OpenShiftChangeRequestItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.OpenShiftChangeRequests
             /// <summary>Request query parameters</summary>
             public OpenShiftChangeRequestItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new OpenShiftChangeRequestItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new openShiftChangeRequestItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new OpenShiftChangeRequestItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public OpenShiftChangeRequestItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.OpenShiftChangeRequests
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new openShiftChangeRequestItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new OpenShiftChangeRequestItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public OpenShiftChangeRequestItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

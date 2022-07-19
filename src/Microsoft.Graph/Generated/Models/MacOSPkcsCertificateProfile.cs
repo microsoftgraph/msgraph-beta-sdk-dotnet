@@ -51,6 +51,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("subjectNameFormatString", value); }
         }
         /// <summary>
+        /// Instantiates a new MacOSPkcsCertificateProfile and sets the default values.
+        /// </summary>
+        public MacOSPkcsCertificateProfile() : base() {
+            OdataType = "#microsoft.graph.macOSPkcsCertificateProfile";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

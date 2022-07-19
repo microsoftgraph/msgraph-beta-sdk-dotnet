@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The text identifier for the display template; for example, contosoTickets.</summary>
+        /// <summary>The text identifier for the display template; for example, contosoTickets. Maximum 16 characters. Only alphanumeric characters allowed.</summary>
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
@@ -23,7 +23,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("layout"); }
             set { BackingStore?.Set("layout", value); }
         }
-        /// <summary>Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported.</summary>
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+        /// <summary>Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported. Must be positive value.</summary>
         public int? Priority {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         public DisplayTemplate() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.externalConnectors.displayTemplate";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
             return new Dictionary<string, Action<IParseNode>> {
                 {"id", n => { Id = n.GetStringValue(); } },
                 {"layout", n => { Layout = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"priority", n => { Priority = n.GetIntValue(); } },
                 {"rules", n => { Rules = n.GetCollectionOfObjectValues<PropertyRule>(PropertyRule.CreateFromDiscriminatorValue).ToList(); } },
             };
@@ -67,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("layout", Layout);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("priority", Priority);
             writer.WriteCollectionOfObjectValues<PropertyRule>("rules", Rules);
             writer.WriteAdditionalData(AdditionalData);

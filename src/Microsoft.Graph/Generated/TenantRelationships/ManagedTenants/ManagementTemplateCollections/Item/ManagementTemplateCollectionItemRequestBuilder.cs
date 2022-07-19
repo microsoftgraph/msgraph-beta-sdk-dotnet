@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new managementTemplateCollectionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagementTemplateCollectionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ManagementTemplateCollectionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
             /// <summary>Request query parameters</summary>
             public ManagementTemplateCollectionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ManagementTemplateCollectionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new managementTemplateCollectionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagementTemplateCollectionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ManagementTemplateCollectionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new managementTemplateCollectionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagementTemplateCollectionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ManagementTemplateCollectionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

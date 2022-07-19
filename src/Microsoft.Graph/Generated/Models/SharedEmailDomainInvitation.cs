@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class SharedEmailDomainInvitation : Entity, IParsable {
         /// <summary>The expiryTime property</summary>
         public DateTimeOffset? ExpiryTime {
@@ -20,6 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string InvitationStatus {
             get { return BackingStore?.Get<string>("invitationStatus"); }
             set { BackingStore?.Set("invitationStatus", value); }
+        }
+        /// <summary>
+        /// Instantiates a new sharedEmailDomainInvitation and sets the default values.
+        /// </summary>
+        public SharedEmailDomainInvitation() : base() {
+            OdataType = "#microsoft.graph.sharedEmailDomainInvitation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

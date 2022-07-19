@@ -34,12 +34,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("bandwidthPercentageOutsideBusinessHours"); }
             set { BackingStore?.Set("bandwidthPercentageOutsideBusinessHours", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new deliveryOptimizationBandwidthBusinessHoursLimit and sets the default values.
         /// </summary>
         public DeliveryOptimizationBandwidthBusinessHoursLimit() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.deliveryOptimizationBandwidthBusinessHoursLimit";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -58,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"bandwidthEndBusinessHours", n => { BandwidthEndBusinessHours = n.GetIntValue(); } },
                 {"bandwidthPercentageDuringBusinessHours", n => { BandwidthPercentageDuringBusinessHours = n.GetIntValue(); } },
                 {"bandwidthPercentageOutsideBusinessHours", n => { BandwidthPercentageOutsideBusinessHours = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -70,6 +77,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteIntValue("bandwidthEndBusinessHours", BandwidthEndBusinessHours);
             writer.WriteIntValue("bandwidthPercentageDuringBusinessHours", BandwidthPercentageDuringBusinessHours);
             writer.WriteIntValue("bandwidthPercentageOutsideBusinessHours", BandwidthPercentageOutsideBusinessHours);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

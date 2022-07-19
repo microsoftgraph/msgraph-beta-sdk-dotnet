@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>MobileApp Intent and Install State for a given device.</summary>
     public class MobileAppIntentAndState : Entity, IParsable {
         /// <summary>Device identifier created or collected by Intune.</summary>
         public string ManagedDeviceIdentifier {
@@ -20,6 +19,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
+        }
+        /// <summary>
+        /// Instantiates a new MobileAppIntentAndState and sets the default values.
+        /// </summary>
+        public MobileAppIntentAndState() : base() {
+            OdataType = "#microsoft.graph.mobileAppIntentAndState";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

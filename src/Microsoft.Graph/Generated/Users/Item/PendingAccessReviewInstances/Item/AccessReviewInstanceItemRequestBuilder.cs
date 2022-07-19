@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new accessReviewInstanceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AccessReviewInstanceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AccessReviewInstanceItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -229,7 +229,7 @@ namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item {
             /// <summary>Request query parameters</summary>
             public AccessReviewInstanceItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AccessReviewInstanceItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new accessReviewInstanceItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AccessReviewInstanceItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AccessReviewInstanceItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -243,7 +243,7 @@ namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new accessReviewInstanceItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AccessReviewInstanceItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AccessReviewInstanceItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Print.Printers.Item.TaskTriggers {
     /// <summary>Provides operations to manage the taskTriggers property of the microsoft.graph.printer entity.</summary>
     public class TaskTriggersRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

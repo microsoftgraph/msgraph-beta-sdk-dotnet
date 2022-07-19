@@ -20,15 +20,21 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
-        /// <summary>The siteSources property</summary>
+        /// <summary>Data sources that represent SharePoint sites.</summary>
         public List<SiteSource> SiteSources {
             get { return BackingStore?.Get<List<SiteSource>>("siteSources"); }
             set { BackingStore?.Set("siteSources", value); }
         }
-        /// <summary>The userSources property</summary>
+        /// <summary>Data sources that represent Exchange mailboxes.</summary>
         public List<UserSource> UserSources {
             get { return BackingStore?.Get<List<UserSource>>("userSources"); }
             set { BackingStore?.Set("userSources", value); }
+        }
+        /// <summary>
+        /// Instantiates a new EdiscoveryHoldPolicy and sets the default values.
+        /// </summary>
+        public EdiscoveryHoldPolicy() : base() {
+            OdataType = "#microsoft.graph.security.ediscoveryHoldPolicy";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

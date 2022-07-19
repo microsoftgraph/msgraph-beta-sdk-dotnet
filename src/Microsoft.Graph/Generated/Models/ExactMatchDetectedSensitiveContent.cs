@@ -11,6 +11,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("matches", value); }
         }
         /// <summary>
+        /// Instantiates a new ExactMatchDetectedSensitiveContent and sets the default values.
+        /// </summary>
+        public ExactMatchDetectedSensitiveContent() : base() {
+            OdataType = "#microsoft.graph.exactMatchDetectedSensitiveContent";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

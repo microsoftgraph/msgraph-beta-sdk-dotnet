@@ -191,7 +191,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceHealthScriptItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceHealthScriptItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceHealthScriptItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -216,7 +216,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item {
             /// <summary>Request query parameters</summary>
             public DeviceHealthScriptItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceHealthScriptItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceHealthScriptItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceHealthScriptItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceHealthScriptItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -230,7 +230,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceHealthScriptItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceHealthScriptItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceHealthScriptItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

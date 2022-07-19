@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuoteLines.Item.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new pictureItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PictureItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PictureItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuoteLines.Item.It
             /// <summary>Request query parameters</summary>
             public PictureItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PictureItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new pictureItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PictureItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PictureItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuoteLines.Item.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new pictureItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PictureItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PictureItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

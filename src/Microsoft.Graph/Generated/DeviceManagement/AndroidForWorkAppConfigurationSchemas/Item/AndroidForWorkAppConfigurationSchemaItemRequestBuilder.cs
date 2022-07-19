@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkAppConfigurationSc
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new androidForWorkAppConfigurationSchemaItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AndroidForWorkAppConfigurationSchemaItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AndroidForWorkAppConfigurationSchemaItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkAppConfigurationSc
             /// <summary>Request query parameters</summary>
             public AndroidForWorkAppConfigurationSchemaItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AndroidForWorkAppConfigurationSchemaItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new androidForWorkAppConfigurationSchemaItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AndroidForWorkAppConfigurationSchemaItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AndroidForWorkAppConfigurationSchemaItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkAppConfigurationSc
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new androidForWorkAppConfigurationSchemaItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AndroidForWorkAppConfigurationSchemaItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AndroidForWorkAppConfigurationSchemaItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

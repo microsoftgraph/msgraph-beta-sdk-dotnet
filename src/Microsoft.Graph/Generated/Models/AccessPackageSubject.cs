@@ -45,6 +45,22 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("principalName"); }
             set { BackingStore?.Set("principalName", value); }
         }
+        /// <summary>The subjectLifecycle property</summary>
+        public AccessPackageSubjectLifecycle? SubjectLifecycle {
+            get { return BackingStore?.Get<AccessPackageSubjectLifecycle?>("subjectLifecycle"); }
+            set { BackingStore?.Set("subjectLifecycle", value); }
+        }
+        /// <summary>The resource type of the subject.</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+        /// <summary>
+        /// Instantiates a new accessPackageSubject and sets the default values.
+        /// </summary>
+        public AccessPackageSubject() : base() {
+            OdataType = "#microsoft.graph.accessPackageSubject";
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -66,6 +82,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"objectId", n => { ObjectId = n.GetStringValue(); } },
                 {"onPremisesSecurityIdentifier", n => { OnPremisesSecurityIdentifier = n.GetStringValue(); } },
                 {"principalName", n => { PrincipalName = n.GetStringValue(); } },
+                {"subjectLifecycle", n => { SubjectLifecycle = n.GetEnumValue<AccessPackageSubjectLifecycle>(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -83,6 +101,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("objectId", ObjectId);
             writer.WriteStringValue("onPremisesSecurityIdentifier", OnPremisesSecurityIdentifier);
             writer.WriteStringValue("principalName", PrincipalName);
+            writer.WriteEnumValue<AccessPackageSubjectLifecycle>("subjectLifecycle", SubjectLifecycle);
+            writer.WriteStringValue("type", Type);
         }
     }
 }

@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Reports.MonthlyPrintUsageSummariesByPrinter.Item 
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new printUsageByPrinterItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PrintUsageByPrinterItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PrintUsageByPrinterItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Reports.MonthlyPrintUsageSummariesByPrinter.Item 
             /// <summary>Request query parameters</summary>
             public PrintUsageByPrinterItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PrintUsageByPrinterItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new printUsageByPrinterItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PrintUsageByPrinterItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PrintUsageByPrinterItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Reports.MonthlyPrintUsageSummariesByPrinter.Item 
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new printUsageByPrinterItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PrintUsageByPrinterItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PrintUsageByPrinterItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

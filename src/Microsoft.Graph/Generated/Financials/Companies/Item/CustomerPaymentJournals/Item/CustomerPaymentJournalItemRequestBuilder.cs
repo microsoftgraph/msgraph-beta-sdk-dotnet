@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new customerPaymentJournalItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CustomerPaymentJournalItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CustomerPaymentJournalItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals
             /// <summary>Request query parameters</summary>
             public CustomerPaymentJournalItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CustomerPaymentJournalItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new customerPaymentJournalItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CustomerPaymentJournalItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CustomerPaymentJournalItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new customerPaymentJournalItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CustomerPaymentJournalItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CustomerPaymentJournalItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.BookingCurrencies.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new bookingCurrencyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new BookingCurrencyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public BookingCurrencyItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.BookingCurrencies.Item {
             /// <summary>Request query parameters</summary>
             public BookingCurrencyItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new BookingCurrencyItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new bookingCurrencyItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new BookingCurrencyItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public BookingCurrencyItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.BookingCurrencies.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new bookingCurrencyItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new BookingCurrencyItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public BookingCurrencyItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions.Item.Acceptan
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new termsAndConditionsAcceptanceStatusItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new TermsAndConditionsAcceptanceStatusItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public TermsAndConditionsAcceptanceStatusItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions.Item.Acceptan
             /// <summary>Request query parameters</summary>
             public TermsAndConditionsAcceptanceStatusItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TermsAndConditionsAcceptanceStatusItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new termsAndConditionsAcceptanceStatusItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TermsAndConditionsAcceptanceStatusItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TermsAndConditionsAcceptanceStatusItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions.Item.Acceptan
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new termsAndConditionsAcceptanceStatusItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new TermsAndConditionsAcceptanceStatusItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public TermsAndConditionsAcceptanceStatusItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

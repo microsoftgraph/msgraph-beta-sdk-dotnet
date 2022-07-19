@@ -15,15 +15,15 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Contains rule types for Win32 LOB apps.</summary>
         public Win32LobAppRuleType? RuleType {
             get { return BackingStore?.Get<Win32LobAppRuleType?>("ruleType"); }
             set { BackingStore?.Set("ruleType", value); }
-        }
-        /// <summary>The type property</summary>
-        public string Type {
-            get { return BackingStore?.Get<string>("@odata.type"); }
-            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new win32LobAppRule and sets the default values.
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
         public Win32LobAppRule() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            Type = "#microsoft.graph.win32LobAppRule";
+            OdataType = "#microsoft.graph.win32LobAppRule";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -54,8 +54,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"ruleType", n => { RuleType = n.GetEnumValue<Win32LobAppRuleType>(); } },
-                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -64,8 +64,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<Win32LobAppRuleType>("ruleType", RuleType);
-            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

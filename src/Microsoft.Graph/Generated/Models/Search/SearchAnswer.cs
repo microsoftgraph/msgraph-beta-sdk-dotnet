@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Search {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class SearchAnswer : Entity, IParsable {
         /// <summary>Search answer description shown on search results page.</summary>
         public string Description {
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models.Search {
         /// Instantiates a new searchAnswer and sets the default values.
         /// </summary>
         public SearchAnswer() : base() {
-            Type = "#microsoft.graph.search.searchAnswer";
+            OdataType = "#microsoft.graph.search.searchAnswer";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

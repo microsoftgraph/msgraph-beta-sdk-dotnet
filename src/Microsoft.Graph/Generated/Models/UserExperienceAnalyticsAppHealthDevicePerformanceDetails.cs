@@ -42,6 +42,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("eventType", value); }
         }
         /// <summary>
+        /// Instantiates a new userExperienceAnalyticsAppHealthDevicePerformanceDetails and sets the default values.
+        /// </summary>
+        public UserExperienceAnalyticsAppHealthDevicePerformanceDetails() : base() {
+            OdataType = "#microsoft.graph.userExperienceAnalyticsAppHealthDevicePerformanceDetails";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

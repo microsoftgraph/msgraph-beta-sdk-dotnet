@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Endpoint : DirectoryObject, IParsable {
         /// <summary>Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.) Not nullable. Read-only.</summary>
         public string Capability {
@@ -30,6 +30,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string Uri {
             get { return BackingStore?.Get<string>("uri"); }
             set { BackingStore?.Set("uri", value); }
+        }
+        /// <summary>
+        /// Instantiates a new endpoint and sets the default values.
+        /// </summary>
+        public Endpoint() : base() {
+            OdataType = "#microsoft.graph.endpoint";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

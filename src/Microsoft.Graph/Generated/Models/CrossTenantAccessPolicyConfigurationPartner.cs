@@ -43,6 +43,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isServiceProvider"); }
             set { BackingStore?.Set("isServiceProvider", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The tenant identifier for the partner Azure AD organization. Read-only. Key.</summary>
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
@@ -54,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         public CrossTenantAccessPolicyConfigurationPartner() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.crossTenantAccessPolicyConfigurationPartner";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -74,6 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"b2bDirectConnectOutbound", n => { B2bDirectConnectOutbound = n.GetObjectValue<CrossTenantAccessPolicyB2BSetting>(CrossTenantAccessPolicyB2BSetting.CreateFromDiscriminatorValue); } },
                 {"inboundTrust", n => { InboundTrust = n.GetObjectValue<CrossTenantAccessPolicyInboundTrust>(CrossTenantAccessPolicyInboundTrust.CreateFromDiscriminatorValue); } },
                 {"isServiceProvider", n => { IsServiceProvider = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
@@ -89,6 +96,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<CrossTenantAccessPolicyB2BSetting>("b2bDirectConnectOutbound", B2bDirectConnectOutbound);
             writer.WriteObjectValue<CrossTenantAccessPolicyInboundTrust>("inboundTrust", InboundTrust);
             writer.WriteBoolValue("isServiceProvider", IsServiceProvider);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("tenantId", TenantId);
             writer.WriteAdditionalData(AdditionalData);
         }

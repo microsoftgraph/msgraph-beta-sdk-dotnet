@@ -21,6 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("smsSignInState", value); }
         }
         /// <summary>
+        /// Instantiates a new PhoneAuthenticationMethod and sets the default values.
+        /// </summary>
+        public PhoneAuthenticationMethod() : base() {
+            OdataType = "#microsoft.graph.phoneAuthenticationMethod";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

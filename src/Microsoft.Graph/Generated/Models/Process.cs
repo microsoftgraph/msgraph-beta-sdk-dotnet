@@ -48,6 +48,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>DateTime at which the parent process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ParentProcessCreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("parentProcessCreatedDateTime"); }
@@ -79,6 +84,7 @@ namespace Microsoft.Graph.Beta.Models {
         public Process() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.process";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -100,6 +106,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"integrityLevel", n => { IntegrityLevel = n.GetEnumValue<ProcessIntegrityLevel>(); } },
                 {"isElevated", n => { IsElevated = n.GetBoolValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"parentProcessCreatedDateTime", n => { ParentProcessCreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"parentProcessId", n => { ParentProcessId = n.GetIntValue(); } },
                 {"parentProcessName", n => { ParentProcessName = n.GetStringValue(); } },
@@ -120,6 +127,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<ProcessIntegrityLevel>("integrityLevel", IntegrityLevel);
             writer.WriteBoolValue("isElevated", IsElevated);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateTimeOffsetValue("parentProcessCreatedDateTime", ParentProcessCreatedDateTime);
             writer.WriteIntValue("parentProcessId", ParentProcessId);
             writer.WriteStringValue("parentProcessName", ParentProcessName);

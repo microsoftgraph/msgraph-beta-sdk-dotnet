@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Oauth2PermissionGrants {
     /// <summary>Provides operations to manage the collection of oAuth2PermissionGrant entities.</summary>
     public class Oauth2PermissionGrantsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

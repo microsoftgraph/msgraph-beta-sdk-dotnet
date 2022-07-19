@@ -24,6 +24,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("gracePeriodInMinutes"); }
             set { BackingStore?.Set("gracePeriodInMinutes", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The number of minutes to snooze the restart notification dialog when the snooze button is selected.</summary>
         public int? RestartNotificationSnoozeDurationInMinutes {
             get { return BackingStore?.Get<int?>("restartNotificationSnoozeDurationInMinutes"); }
@@ -35,6 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         public Win32LobAppRestartSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.win32LobAppRestartSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"countdownDisplayBeforeRestartInMinutes", n => { CountdownDisplayBeforeRestartInMinutes = n.GetIntValue(); } },
                 {"gracePeriodInMinutes", n => { GracePeriodInMinutes = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"restartNotificationSnoozeDurationInMinutes", n => { RestartNotificationSnoozeDurationInMinutes = n.GetIntValue(); } },
             };
         }
@@ -62,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("countdownDisplayBeforeRestartInMinutes", CountdownDisplayBeforeRestartInMinutes);
             writer.WriteIntValue("gracePeriodInMinutes", GracePeriodInMinutes);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("restartNotificationSnoozeDurationInMinutes", RestartNotificationSnoozeDurationInMinutes);
             writer.WriteAdditionalData(AdditionalData);
         }

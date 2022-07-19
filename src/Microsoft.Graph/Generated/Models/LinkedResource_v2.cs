@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class LinkedResource_v2 : Entity, IParsable {
         /// <summary>Field indicating the app name of the source that is sending the linkedResource.</summary>
         public string ApplicationName {
@@ -25,6 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
+        }
+        /// <summary>
+        /// Instantiates a new linkedResource_v2 and sets the default values.
+        /// </summary>
+        public LinkedResource_v2() : base() {
+            OdataType = "#microsoft.graph.linkedResource_v2";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

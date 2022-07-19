@@ -26,6 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("objectType", value); }
         }
         /// <summary>
+        /// Instantiates a new DirectoryObjectPartnerReference and sets the default values.
+        /// </summary>
+        public DirectoryObjectPartnerReference() : base() {
+            OdataType = "#microsoft.graph.directoryObjectPartnerReference";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

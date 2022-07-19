@@ -33,6 +33,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<long?>("itemNeedReview"); }
             set { BackingStore?.Set("itemNeedReview", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Count of items per product, such as Exchange, SharePoint, OneDrive, and Teams.</summary>
         public List<KeyValuePair> ProductItemCounts {
             get { return BackingStore?.Get<List<KeyValuePair>>("productItemCounts"); }
@@ -54,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         public SubjectRightsRequestDetail() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.subjectRightsRequestDetail";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -72,6 +78,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"insightCounts", n => { InsightCounts = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
                 {"itemCount", n => { ItemCount = n.GetLongValue(); } },
                 {"itemNeedReview", n => { ItemNeedReview = n.GetLongValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"productItemCounts", n => { ProductItemCounts = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
                 {"signedOffItemCount", n => { SignedOffItemCount = n.GetLongValue(); } },
                 {"totalItemSize", n => { TotalItemSize = n.GetLongValue(); } },
@@ -87,6 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<KeyValuePair>("insightCounts", InsightCounts);
             writer.WriteLongValue("itemCount", ItemCount);
             writer.WriteLongValue("itemNeedReview", ItemNeedReview);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<KeyValuePair>("productItemCounts", ProductItemCounts);
             writer.WriteLongValue("signedOffItemCount", SignedOffItemCount);
             writer.WriteLongValue("totalItemSize", TotalItemSize);

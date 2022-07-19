@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Positions.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new workPositionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new WorkPositionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public WorkPositionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Positions.Item {
             /// <summary>Request query parameters</summary>
             public WorkPositionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new WorkPositionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new workPositionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new WorkPositionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public WorkPositionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Positions.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new workPositionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new WorkPositionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public WorkPositionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

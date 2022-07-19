@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new OfferShiftRequest and sets the default values.
         /// </summary>
         public OfferShiftRequest() : base() {
-            Type = "#microsoft.graph.offerShiftRequest";
+            OdataType = "#microsoft.graph.offerShiftRequest";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

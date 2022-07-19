@@ -15,6 +15,17 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+        /// <summary>The type property</summary>
+        public EmailType? Type {
+            get { return BackingStore?.Get<EmailType?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+        /// <summary>
+        /// Instantiates a new ItemEmail and sets the default values.
+        /// </summary>
+        public ItemEmail() : base() {
+            OdataType = "#microsoft.graph.itemEmail";
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -30,6 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"address", n => { Address = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetEnumValue<EmailType>(); } },
             };
         }
         /// <summary>
@@ -41,6 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteStringValue("address", Address);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteEnumValue<EmailType>("type", Type);
         }
     }
 }

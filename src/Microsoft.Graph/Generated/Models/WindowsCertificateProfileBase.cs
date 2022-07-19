@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new WindowsCertificateProfileBase and sets the default values.
         /// </summary>
         public WindowsCertificateProfileBase() : base() {
-            Type = "#microsoft.graph.windowsCertificateProfileBase";
+            OdataType = "#microsoft.graph.windowsCertificateProfileBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -53,7 +53,9 @@ namespace Microsoft.Graph.Beta.Models {
             return mappingValue switch {
                 "#microsoft.graph.windows10CertificateProfileBase" => new Windows10CertificateProfileBase(),
                 "#microsoft.graph.windows10ImportedPFXCertificateProfile" => new Windows10ImportedPFXCertificateProfile(),
+                "#microsoft.graph.windows10PkcsCertificateProfile" => new Windows10PkcsCertificateProfile(),
                 "#microsoft.graph.windows81CertificateProfileBase" => new Windows81CertificateProfileBase(),
+                "#microsoft.graph.windows81SCEPCertificateProfile" => new Windows81SCEPCertificateProfile(),
                 "#microsoft.graph.windowsPhone81ImportedPFXCertificateProfile" => new WindowsPhone81ImportedPFXCertificateProfile(),
                 _ => new WindowsCertificateProfileBase(),
             };

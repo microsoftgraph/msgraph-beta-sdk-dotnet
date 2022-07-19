@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             /// <summary>Request query parameters</summary>
             public AccessPackageItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AccessPackageItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new accessPackageItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AccessPackageItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AccessPackageItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

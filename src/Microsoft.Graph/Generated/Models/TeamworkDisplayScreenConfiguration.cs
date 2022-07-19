@@ -33,6 +33,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isScreensaverEnabled"); }
             set { BackingStore?.Set("isScreensaverEnabled", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Screensaver timeout from 30 to 3600 secs. Not applicable for Teams Rooms devices.</summary>
         public TimeSpan? ScreensaverTimeout {
             get { return BackingStore?.Get<TimeSpan?>("screensaverTimeout"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public TeamworkDisplayScreenConfiguration() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.teamworkDisplayScreenConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"backlightTimeout", n => { BacklightTimeout = n.GetTimeSpanValue(); } },
                 {"isHighContrastEnabled", n => { IsHighContrastEnabled = n.GetBoolValue(); } },
                 {"isScreensaverEnabled", n => { IsScreensaverEnabled = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"screensaverTimeout", n => { ScreensaverTimeout = n.GetTimeSpanValue(); } },
             };
         }
@@ -75,6 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteTimeSpanValue("backlightTimeout", BacklightTimeout);
             writer.WriteBoolValue("isHighContrastEnabled", IsHighContrastEnabled);
             writer.WriteBoolValue("isScreensaverEnabled", IsScreensaverEnabled);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteTimeSpanValue("screensaverTimeout", ScreensaverTimeout);
             writer.WriteAdditionalData(AdditionalData);
         }

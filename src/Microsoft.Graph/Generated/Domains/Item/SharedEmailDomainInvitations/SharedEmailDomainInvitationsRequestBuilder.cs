@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations {
     /// <summary>Provides operations to manage the sharedEmailDomainInvitations property of the microsoft.graph.domain entity.</summary>
     public class SharedEmailDomainInvitationsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

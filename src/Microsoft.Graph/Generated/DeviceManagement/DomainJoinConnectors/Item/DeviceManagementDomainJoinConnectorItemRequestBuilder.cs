@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DomainJoinConnectors.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementDomainJoinConnectorItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementDomainJoinConnectorItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementDomainJoinConnectorItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DomainJoinConnectors.Item {
             /// <summary>Request query parameters</summary>
             public DeviceManagementDomainJoinConnectorItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceManagementDomainJoinConnectorItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceManagementDomainJoinConnectorItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementDomainJoinConnectorItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementDomainJoinConnectorItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DomainJoinConnectors.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementDomainJoinConnectorItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementDomainJoinConnectorItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementDomainJoinConnectorItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

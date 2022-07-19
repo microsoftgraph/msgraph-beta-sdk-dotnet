@@ -34,12 +34,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("deviceWarrantyUrl"); }
             set { BackingStore?.Set("deviceWarrantyUrl", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new oemWarranty and sets the default values.
         /// </summary>
         public OemWarranty() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.oemWarranty";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -58,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"baseWarranties", n => { BaseWarranties = n.GetCollectionOfObjectValues<WarrantyOffer>(WarrantyOffer.CreateFromDiscriminatorValue).ToList(); } },
                 {"deviceConfigurationUrl", n => { DeviceConfigurationUrl = n.GetStringValue(); } },
                 {"deviceWarrantyUrl", n => { DeviceWarrantyUrl = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -70,6 +77,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<WarrantyOffer>("baseWarranties", BaseWarranties);
             writer.WriteStringValue("deviceConfigurationUrl", DeviceConfigurationUrl);
             writer.WriteStringValue("deviceWarrantyUrl", DeviceWarrantyUrl);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

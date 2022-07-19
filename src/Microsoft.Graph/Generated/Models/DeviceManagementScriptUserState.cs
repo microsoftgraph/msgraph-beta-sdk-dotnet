@@ -27,6 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
+        /// Instantiates a new deviceManagementScriptUserState and sets the default values.
+        /// </summary>
+        public DeviceManagementScriptUserState() : base() {
+            OdataType = "#microsoft.graph.deviceManagementScriptUserState";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

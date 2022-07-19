@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new OnenoteEntityHierarchyModel and sets the default values.
         /// </summary>
         public OnenoteEntityHierarchyModel() : base() {
-            Type = "#microsoft.graph.onenoteEntityHierarchyModel";
+            OdataType = "#microsoft.graph.onenoteEntityHierarchyModel";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

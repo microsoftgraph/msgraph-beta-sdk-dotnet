@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item.Refe
             /// <summary>Request query parameters</summary>
             public DeviceManagementConfigurationSettingDefinitionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceManagementConfigurationSettingDefinitionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceManagementConfigurationSettingDefinitionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementConfigurationSettingDefinitionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementConfigurationSettingDefinitionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

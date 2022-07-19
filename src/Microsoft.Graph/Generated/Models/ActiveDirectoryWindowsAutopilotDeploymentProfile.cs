@@ -16,6 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("hybridAzureADJoinSkipConnectivityCheck", value); }
         }
         /// <summary>
+        /// Instantiates a new ActiveDirectoryWindowsAutopilotDeploymentProfile and sets the default values.
+        /// </summary>
+        public ActiveDirectoryWindowsAutopilotDeploymentProfile() : base() {
+            OdataType = "#microsoft.graph.activeDirectoryWindowsAutopilotDeploymentProfile";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

@@ -24,6 +24,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("bundleId"); }
             set { BackingStore?.Set("bundleId", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The version number of MacOS Line of Business (LoB) app.</summary>
         public string VersionNumber {
             get { return BackingStore?.Get<string>("versionNumber"); }
@@ -35,6 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         public MacOSLobChildApp() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.macOSLobChildApp";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"buildNumber", n => { BuildNumber = n.GetStringValue(); } },
                 {"bundleId", n => { BundleId = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"versionNumber", n => { VersionNumber = n.GetStringValue(); } },
             };
         }
@@ -62,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("buildNumber", BuildNumber);
             writer.WriteStringValue("bundleId", BundleId);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("versionNumber", VersionNumber);
             writer.WriteAdditionalData(AdditionalData);
         }

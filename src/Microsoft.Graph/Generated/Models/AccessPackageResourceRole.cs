@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class AccessPackageResourceRole : Entity, IParsable {
         /// <summary>The accessPackageResource property</summary>
         public Microsoft.Graph.Beta.Models.AccessPackageResource AccessPackageResource {
@@ -30,6 +30,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string OriginSystem {
             get { return BackingStore?.Get<string>("originSystem"); }
             set { BackingStore?.Set("originSystem", value); }
+        }
+        /// <summary>
+        /// Instantiates a new accessPackageResourceRole and sets the default values.
+        /// </summary>
+        public AccessPackageResourceRole() : base() {
+            OdataType = "#microsoft.graph.accessPackageResourceRole";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

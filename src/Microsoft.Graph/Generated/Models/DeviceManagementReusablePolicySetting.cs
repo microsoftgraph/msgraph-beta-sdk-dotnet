@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Graph model for a reusable setting</summary>
     public class DeviceManagementReusablePolicySetting : Entity, IParsable {
         /// <summary>reusable setting creation date and time. This property is read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -50,6 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
         public int? Version {
             get { return BackingStore?.Get<int?>("version"); }
             set { BackingStore?.Set("version", value); }
+        }
+        /// <summary>
+        /// Instantiates a new DeviceManagementReusablePolicySetting and sets the default values.
+        /// </summary>
+        public DeviceManagementReusablePolicySetting() : base() {
+            OdataType = "#microsoft.graph.deviceManagementReusablePolicySetting";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

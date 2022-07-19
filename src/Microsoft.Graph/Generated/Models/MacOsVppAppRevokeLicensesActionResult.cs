@@ -44,6 +44,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Time the action was initiated</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
@@ -65,6 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
         public MacOsVppAppRevokeLicensesActionResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.macOsVppAppRevokeLicensesActionResult";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -85,6 +91,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"failedLicensesCount", n => { FailedLicensesCount = n.GetIntValue(); } },
                 {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"totalLicensesCount", n => { TotalLicensesCount = n.GetIntValue(); } },
                 {"userId", n => { UserId = n.GetStringValue(); } },
@@ -102,6 +109,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteIntValue("failedLicensesCount", FailedLicensesCount);
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
             writer.WriteStringValue("managedDeviceId", ManagedDeviceId);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteIntValue("totalLicensesCount", TotalLicensesCount);
             writer.WriteStringValue("userId", UserId);

@@ -79,6 +79,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("incomingTrafficRequired"); }
             set { BackingStore?.Set("incomingTrafficRequired", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Configures the firewall to block all outgoing connections by default. When OutboundConnectionsRequired and OutboundConnectionsBlocked are both true, OutboundConnectionsBlocked takes priority. This setting will get applied to Windows releases version 1809 and above.</summary>
         public bool? OutboundConnectionsBlocked {
             get { return BackingStore?.Get<bool?>("outboundConnectionsBlocked"); }
@@ -135,6 +140,7 @@ namespace Microsoft.Graph.Beta.Models {
         public WindowsFirewallNetworkProfile() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.windowsFirewallNetworkProfile";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -162,6 +168,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"inboundNotificationsRequired", n => { InboundNotificationsRequired = n.GetBoolValue(); } },
                 {"incomingTrafficBlocked", n => { IncomingTrafficBlocked = n.GetBoolValue(); } },
                 {"incomingTrafficRequired", n => { IncomingTrafficRequired = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"outboundConnectionsBlocked", n => { OutboundConnectionsBlocked = n.GetBoolValue(); } },
                 {"outboundConnectionsRequired", n => { OutboundConnectionsRequired = n.GetBoolValue(); } },
                 {"policyRulesFromGroupPolicyMerged", n => { PolicyRulesFromGroupPolicyMerged = n.GetBoolValue(); } },
@@ -193,6 +200,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("inboundNotificationsRequired", InboundNotificationsRequired);
             writer.WriteBoolValue("incomingTrafficBlocked", IncomingTrafficBlocked);
             writer.WriteBoolValue("incomingTrafficRequired", IncomingTrafficRequired);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("outboundConnectionsBlocked", OutboundConnectionsBlocked);
             writer.WriteBoolValue("outboundConnectionsRequired", OutboundConnectionsRequired);
             writer.WriteBoolValue("policyRulesFromGroupPolicyMerged", PolicyRulesFromGroupPolicyMerged);

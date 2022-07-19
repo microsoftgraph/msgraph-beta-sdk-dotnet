@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new managementActionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagementActionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ManagementActionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
             /// <summary>Request query parameters</summary>
             public ManagementActionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ManagementActionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new managementActionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagementActionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ManagementActionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new managementActionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagementActionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ManagementActionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Request : Entity, IParsable {
         /// <summary>The identifier of the approval of the request.</summary>
         public string ApprovalId {
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new request and sets the default values.
         /// </summary>
         public Request() : base() {
-            Type = "#microsoft.graph.request";
+            OdataType = "#microsoft.graph.request";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new tagItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new TagItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public TagItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item {
             /// <summary>Request query parameters</summary>
             public TagItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TagItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new tagItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TagItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TagItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new tagItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new TagItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public TagItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -48,6 +48,11 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The type property</summary>
         public PropertyType? Type {
             get { return BackingStore?.Get<PropertyType?>("type"); }
@@ -59,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         public Property() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.externalConnectors.property";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -80,6 +86,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
                 {"isSearchable", n => { IsSearchable = n.GetBoolValue(); } },
                 {"labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"type", n => { Type = n.GetEnumValue<PropertyType>(); } },
             };
         }
@@ -96,6 +103,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
             writer.WriteBoolValue("isSearchable", IsSearchable);
             writer.WriteCollectionOfPrimitiveValues<string>("labels", Labels);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<PropertyType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

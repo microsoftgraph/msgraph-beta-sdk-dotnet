@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class IdentityUserFlowAttributeAssignment : Entity, IParsable {
         /// <summary>The display name of the identityUserFlowAttribute within a user flow.</summary>
         public string DisplayName {
@@ -35,6 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IdentityUserFlowAttributeInputType? UserInputType {
             get { return BackingStore?.Get<IdentityUserFlowAttributeInputType?>("userInputType"); }
             set { BackingStore?.Set("userInputType", value); }
+        }
+        /// <summary>
+        /// Instantiates a new identityUserFlowAttributeAssignment and sets the default values.
+        /// </summary>
+        public IdentityUserFlowAttributeAssignment() : base() {
+            OdataType = "#microsoft.graph.identityUserFlowAttributeAssignment";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.PaymentTerms.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new paymentTermItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PaymentTermItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PaymentTermItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.PaymentTerms.Item {
             /// <summary>Request query parameters</summary>
             public PaymentTermItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PaymentTermItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new paymentTermItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PaymentTermItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PaymentTermItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.PaymentTerms.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new paymentTermItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PaymentTermItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PaymentTermItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

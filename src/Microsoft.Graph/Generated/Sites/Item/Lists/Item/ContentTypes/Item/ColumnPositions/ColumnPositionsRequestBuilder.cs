@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.ContentTypes.Item.ColumnPositions {
     /// <summary>Provides operations to manage the columnPositions property of the microsoft.graph.contentType entity.</summary>
     public class ColumnPositionsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

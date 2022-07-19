@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new governanceRoleAssignmentRequestItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new GovernanceRoleAssignmentRequestItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public GovernanceRoleAssignmentRequestItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item
             /// <summary>Request query parameters</summary>
             public GovernanceRoleAssignmentRequestItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new GovernanceRoleAssignmentRequestItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new governanceRoleAssignmentRequestItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new GovernanceRoleAssignmentRequestItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public GovernanceRoleAssignmentRequestItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new governanceRoleAssignmentRequestItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new GovernanceRoleAssignmentRequestItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public GovernanceRoleAssignmentRequestItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

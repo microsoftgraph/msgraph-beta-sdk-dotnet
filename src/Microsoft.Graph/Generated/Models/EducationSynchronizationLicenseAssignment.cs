@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Represents the SKU identifiers of the licenses to assign.</summary>
         public List<string> SkuIds {
             get { return BackingStore?.Get<List<string>>("skuIds"); }
@@ -29,6 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         public EducationSynchronizationLicenseAssignment() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.educationSynchronizationLicenseAssignment";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"appliesTo", n => { AppliesTo = n.GetEnumValue<EducationUserRole>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"skuIds", n => { SkuIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
@@ -54,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<EducationUserRole>("appliesTo", AppliesTo);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfPrimitiveValues<string>("skuIds", SkuIds);
             writer.WriteAdditionalData(AdditionalData);
         }

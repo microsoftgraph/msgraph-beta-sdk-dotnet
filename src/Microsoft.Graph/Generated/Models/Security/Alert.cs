@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Alert : Entity, IParsable {
         /// <summary>The actorDisplayName property</summary>
         public string ActorDisplayName {
@@ -145,6 +145,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public string Title {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
+        }
+        /// <summary>
+        /// Instantiates a new alert and sets the default values.
+        /// </summary>
+        public Alert() : base() {
+            OdataType = "#microsoft.graph.security.alert";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

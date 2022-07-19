@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Chats.Item.Messages.Item.HostedContents {
     /// <summary>Provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.</summary>
     public class HostedContentsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

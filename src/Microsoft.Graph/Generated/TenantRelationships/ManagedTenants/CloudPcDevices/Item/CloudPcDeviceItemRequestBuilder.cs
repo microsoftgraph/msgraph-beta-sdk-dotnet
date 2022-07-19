@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcDevices
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPcDeviceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcDeviceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcDeviceItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcDevices
             /// <summary>Request query parameters</summary>
             public CloudPcDeviceItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CloudPcDeviceItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new cloudPcDeviceItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcDeviceItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcDeviceItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcDevices
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPcDeviceItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcDeviceItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcDeviceItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

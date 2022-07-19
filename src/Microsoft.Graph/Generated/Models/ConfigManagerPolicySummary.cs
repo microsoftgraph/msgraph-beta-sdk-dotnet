@@ -34,6 +34,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("nonCompliantDeviceCount"); }
             set { BackingStore?.Set("nonCompliantDeviceCount", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The number of devices that have acknowledged the policy but are pending evaluation.</summary>
         public int? PendingDeviceCount {
             get { return BackingStore?.Get<int?>("pendingDeviceCount"); }
@@ -50,6 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ConfigManagerPolicySummary() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.configManagerPolicySummary";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -68,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"enforcedDeviceCount", n => { EnforcedDeviceCount = n.GetIntValue(); } },
                 {"failedDeviceCount", n => { FailedDeviceCount = n.GetIntValue(); } },
                 {"nonCompliantDeviceCount", n => { NonCompliantDeviceCount = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"pendingDeviceCount", n => { PendingDeviceCount = n.GetIntValue(); } },
                 {"targetedDeviceCount", n => { TargetedDeviceCount = n.GetIntValue(); } },
             };
@@ -82,6 +89,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteIntValue("enforcedDeviceCount", EnforcedDeviceCount);
             writer.WriteIntValue("failedDeviceCount", FailedDeviceCount);
             writer.WriteIntValue("nonCompliantDeviceCount", NonCompliantDeviceCount);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("pendingDeviceCount", PendingDeviceCount);
             writer.WriteIntValue("targetedDeviceCount", TargetedDeviceCount);
             writer.WriteAdditionalData(AdditionalData);

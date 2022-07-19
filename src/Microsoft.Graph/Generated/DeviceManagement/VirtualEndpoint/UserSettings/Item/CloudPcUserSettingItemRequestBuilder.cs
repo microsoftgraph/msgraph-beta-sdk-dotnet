@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings.Ite
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPcUserSettingItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcUserSettingItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcUserSettingItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings.Ite
             /// <summary>Request query parameters</summary>
             public CloudPcUserSettingItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CloudPcUserSettingItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new cloudPcUserSettingItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcUserSettingItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcUserSettingItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings.Ite
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPcUserSettingItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcUserSettingItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcUserSettingItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

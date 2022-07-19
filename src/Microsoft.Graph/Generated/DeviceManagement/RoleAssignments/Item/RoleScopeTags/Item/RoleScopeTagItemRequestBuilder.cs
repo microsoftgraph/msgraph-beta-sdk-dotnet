@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleAssignments.Item.RoleScopeTa
             /// <summary>Request query parameters</summary>
             public RoleScopeTagItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new RoleScopeTagItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new roleScopeTagItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new RoleScopeTagItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public RoleScopeTagItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

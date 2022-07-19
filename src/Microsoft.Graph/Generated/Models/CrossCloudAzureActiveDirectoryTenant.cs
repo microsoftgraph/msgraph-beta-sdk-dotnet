@@ -21,6 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>
+        /// Instantiates a new CrossCloudAzureActiveDirectoryTenant and sets the default values.
+        /// </summary>
+        public CrossCloudAzureActiveDirectoryTenant() : base() {
+            OdataType = "#microsoft.graph.crossCloudAzureActiveDirectoryTenant";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.CalendarGroups.Item.Calendars.Item.Events {
     /// <summary>Provides operations to manage the events property of the microsoft.graph.calendar entity.</summary>
     public class EventsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

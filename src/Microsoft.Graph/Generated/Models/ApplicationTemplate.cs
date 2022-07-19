@@ -40,6 +40,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
+        /// <summary>The supportedClaimConfiguration property</summary>
+        public Microsoft.Graph.Beta.Models.SupportedClaimConfiguration SupportedClaimConfiguration {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SupportedClaimConfiguration>("supportedClaimConfiguration"); }
+            set { BackingStore?.Set("supportedClaimConfiguration", value); }
+        }
         /// <summary>The list of provisioning modes supported by this application. The only valid value is sync.</summary>
         public List<string> SupportedProvisioningTypes {
             get { return BackingStore?.Get<List<string>>("supportedProvisioningTypes"); }
@@ -49,6 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
         public List<string> SupportedSingleSignOnModes {
             get { return BackingStore?.Get<List<string>>("supportedSingleSignOnModes"); }
             set { BackingStore?.Set("supportedSingleSignOnModes", value); }
+        }
+        /// <summary>
+        /// Instantiates a new ApplicationTemplate and sets the default values.
+        /// </summary>
+        public ApplicationTemplate() : base() {
+            OdataType = "#microsoft.graph.applicationTemplate";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -70,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"informationalUrls", n => { InformationalUrls = n.GetObjectValue<Microsoft.Graph.Beta.Models.InformationalUrls>(Microsoft.Graph.Beta.Models.InformationalUrls.CreateFromDiscriminatorValue); } },
                 {"logoUrl", n => { LogoUrl = n.GetStringValue(); } },
                 {"publisher", n => { Publisher = n.GetStringValue(); } },
+                {"supportedClaimConfiguration", n => { SupportedClaimConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.SupportedClaimConfiguration>(Microsoft.Graph.Beta.Models.SupportedClaimConfiguration.CreateFromDiscriminatorValue); } },
                 {"supportedProvisioningTypes", n => { SupportedProvisioningTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"supportedSingleSignOnModes", n => { SupportedSingleSignOnModes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
@@ -88,6 +100,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.InformationalUrls>("informationalUrls", InformationalUrls);
             writer.WriteStringValue("logoUrl", LogoUrl);
             writer.WriteStringValue("publisher", Publisher);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SupportedClaimConfiguration>("supportedClaimConfiguration", SupportedClaimConfiguration);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedProvisioningTypes", SupportedProvisioningTypes);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedSingleSignOnModes", SupportedSingleSignOnModes);
         }

@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("height"); }
             set { BackingStore?.Set("height", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The unique identifier of the item that provided the thumbnail. This is only available when a folder thumbnail is requested.</summary>
         public string SourceItemId {
             get { return BackingStore?.Get<string>("sourceItemId"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public Thumbnail() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.thumbnail";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -60,6 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"content", n => { Content = n.GetByteArrayValue(); } },
                 {"height", n => { Height = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"sourceItemId", n => { SourceItemId = n.GetStringValue(); } },
                 {"url", n => { Url = n.GetStringValue(); } },
                 {"width", n => { Width = n.GetIntValue(); } },
@@ -73,6 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteByteArrayValue("content", Content);
             writer.WriteIntValue("height", Height);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("sourceItemId", SourceItemId);
             writer.WriteStringValue("url", Url);
             writer.WriteIntValue("width", Width);

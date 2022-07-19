@@ -31,6 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("teamIdentifier", value); }
         }
         /// <summary>
+        /// Instantiates a new IosCredentialSingleSignOnExtension and sets the default values.
+        /// </summary>
+        public IosCredentialSingleSignOnExtension() : base() {
+            OdataType = "#microsoft.graph.iosCredentialSingleSignOnExtension";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

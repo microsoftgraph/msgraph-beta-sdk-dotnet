@@ -38,6 +38,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<LocaleInfo>("language"); }
             set { BackingStore?.Set("language", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The time format for the user&apos;s mailbox.</summary>
         public string TimeFormat {
             get { return BackingStore?.Get<string>("timeFormat"); }
@@ -69,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
         public MailboxSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.mailboxSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -88,6 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"dateFormat", n => { DateFormat = n.GetStringValue(); } },
                 {"delegateMeetingMessageDeliveryOptions", n => { DelegateMeetingMessageDeliveryOptions = n.GetEnumValue<DelegateMeetingMessageDeliveryOptions>(); } },
                 {"language", n => { Language = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"timeFormat", n => { TimeFormat = n.GetStringValue(); } },
                 {"timeZone", n => { TimeZone = n.GetStringValue(); } },
                 {"userPurpose", n => { UserPurpose = n.GetEnumValue<UserPurpose>(); } },
@@ -106,6 +113,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("dateFormat", DateFormat);
             writer.WriteEnumValue<DelegateMeetingMessageDeliveryOptions>("delegateMeetingMessageDeliveryOptions", DelegateMeetingMessageDeliveryOptions);
             writer.WriteObjectValue<LocaleInfo>("language", Language);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("timeFormat", TimeFormat);
             writer.WriteStringValue("timeZone", TimeZone);
             writer.WriteEnumValue<UserPurpose>("userPurpose", UserPurpose);

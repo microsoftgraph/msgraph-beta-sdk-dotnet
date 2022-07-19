@@ -46,6 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("site", value); }
         }
         /// <summary>
+        /// Instantiates a new SharedDriveItem and sets the default values.
+        /// </summary>
+        public SharedDriveItem() : base() {
+            OdataType = "#microsoft.graph.sharedDriveItem";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

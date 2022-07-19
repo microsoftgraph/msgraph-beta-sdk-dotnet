@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices {
         public BulkSetCloudPcReviewStatusRequestBuilder BulkSetCloudPcReviewStatus { get =>
             new BulkSetCloudPcReviewStatusRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

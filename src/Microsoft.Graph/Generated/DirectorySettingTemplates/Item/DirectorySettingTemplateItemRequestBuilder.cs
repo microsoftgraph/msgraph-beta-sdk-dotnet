@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new directorySettingTemplateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DirectorySettingTemplateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DirectorySettingTemplateItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates.Item {
             /// <summary>Request query parameters</summary>
             public DirectorySettingTemplateItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DirectorySettingTemplateItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new directorySettingTemplateItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DirectorySettingTemplateItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DirectorySettingTemplateItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new directorySettingTemplateItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DirectorySettingTemplateItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DirectorySettingTemplateItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

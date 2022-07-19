@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Windows Autopilot Deployment Profile</summary>
     public class WindowsAutopilotDeploymentProfile : Entity, IParsable {
         /// <summary>The list of assigned devices for the profile.</summary>
         public List<WindowsAutopilotDeviceIdentity> AssignedDevices {
@@ -83,10 +82,10 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
         /// <summary>
-        /// Instantiates a new windowsAutopilotDeploymentProfile and sets the default values.
+        /// Instantiates a new WindowsAutopilotDeploymentProfile and sets the default values.
         /// </summary>
         public WindowsAutopilotDeploymentProfile() : base() {
-            Type = "#microsoft.graph.windowsAutopilotDeploymentProfile";
+            OdataType = "#microsoft.graph.windowsAutopilotDeploymentProfile";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

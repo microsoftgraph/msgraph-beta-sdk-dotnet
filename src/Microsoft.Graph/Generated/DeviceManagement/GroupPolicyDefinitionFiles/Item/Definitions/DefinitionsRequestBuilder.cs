@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitionFiles.Item.Definitions {
     /// <summary>Provides operations to manage the definitions property of the microsoft.graph.groupPolicyDefinitionFile entity.</summary>
     public class DefinitionsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPayments.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new customerPaymentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CustomerPaymentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CustomerPaymentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPayments.Item {
             /// <summary>Request query parameters</summary>
             public CustomerPaymentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CustomerPaymentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new customerPaymentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CustomerPaymentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CustomerPaymentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPayments.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new customerPaymentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CustomerPaymentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CustomerPaymentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

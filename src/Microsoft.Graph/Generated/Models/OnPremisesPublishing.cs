@@ -83,6 +83,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isTranslateLinksInBodyEnabled"); }
             set { BackingStore?.Set("isTranslateLinksInBodyEnabled", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The onPremisesApplicationSegments property</summary>
         public List<OnPremisesApplicationSegment> OnPremisesApplicationSegments {
             get { return BackingStore?.Get<List<OnPremisesApplicationSegment>>("onPremisesApplicationSegments"); }
@@ -119,6 +124,7 @@ namespace Microsoft.Graph.Beta.Models {
         public OnPremisesPublishing() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.onPremisesPublishing";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -147,6 +153,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isStateSessionEnabled", n => { IsStateSessionEnabled = n.GetBoolValue(); } },
                 {"isTranslateHostHeaderEnabled", n => { IsTranslateHostHeaderEnabled = n.GetBoolValue(); } },
                 {"isTranslateLinksInBodyEnabled", n => { IsTranslateLinksInBodyEnabled = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"onPremisesApplicationSegments", n => { OnPremisesApplicationSegments = n.GetCollectionOfObjectValues<OnPremisesApplicationSegment>(OnPremisesApplicationSegment.CreateFromDiscriminatorValue).ToList(); } },
                 {"singleSignOnSettings", n => { SingleSignOnSettings = n.GetObjectValue<OnPremisesPublishingSingleSignOn>(OnPremisesPublishingSingleSignOn.CreateFromDiscriminatorValue); } },
                 {"useAlternateUrlForTranslationAndRedirect", n => { UseAlternateUrlForTranslationAndRedirect = n.GetBoolValue(); } },
@@ -175,6 +182,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isStateSessionEnabled", IsStateSessionEnabled);
             writer.WriteBoolValue("isTranslateHostHeaderEnabled", IsTranslateHostHeaderEnabled);
             writer.WriteBoolValue("isTranslateLinksInBodyEnabled", IsTranslateLinksInBodyEnabled);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<OnPremisesApplicationSegment>("onPremisesApplicationSegments", OnPremisesApplicationSegments);
             writer.WriteObjectValue<OnPremisesPublishingSingleSignOn>("singleSignOnSettings", SingleSignOnSettings);
             writer.WriteBoolValue("useAlternateUrlForTranslationAndRedirect", UseAlternateUrlForTranslationAndRedirect);

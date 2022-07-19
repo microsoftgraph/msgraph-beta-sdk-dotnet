@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new BookingNamedEntity and sets the default values.
         /// </summary>
         public BookingNamedEntity() : base() {
-            Type = "#microsoft.graph.bookingNamedEntity";
+            OdataType = "#microsoft.graph.bookingNamedEntity";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -27,8 +27,10 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.bookingBusiness" => new BookingBusiness(),
+                "#microsoft.graph.bookingCustomer" => new BookingCustomer(),
                 "#microsoft.graph.bookingPerson" => new BookingPerson(),
                 "#microsoft.graph.bookingService" => new BookingService(),
+                "#microsoft.graph.bookingStaffMember" => new BookingStaffMember(),
                 _ => new BookingNamedEntity(),
             };
         }

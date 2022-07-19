@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class SectionGroup : OnenoteEntityHierarchyModel, IParsable {
         /// <summary>The notebook that contains the section group. Read-only.</summary>
         public Notebook ParentNotebook {
@@ -35,6 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string SectionsUrl {
             get { return BackingStore?.Get<string>("sectionsUrl"); }
             set { BackingStore?.Set("sectionsUrl", value); }
+        }
+        /// <summary>
+        /// Instantiates a new sectionGroup and sets the default values.
+        /// </summary>
+        public SectionGroup() : base() {
+            OdataType = "#microsoft.graph.sectionGroup";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

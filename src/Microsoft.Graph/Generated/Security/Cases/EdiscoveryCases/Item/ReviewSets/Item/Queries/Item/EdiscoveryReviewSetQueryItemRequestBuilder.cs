@@ -171,7 +171,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new ediscoveryReviewSetQueryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new EdiscoveryReviewSetQueryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public EdiscoveryReviewSetQueryItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -196,7 +196,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
             /// <summary>Request query parameters</summary>
             public EdiscoveryReviewSetQueryItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new EdiscoveryReviewSetQueryItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new ediscoveryReviewSetQueryItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new EdiscoveryReviewSetQueryItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public EdiscoveryReviewSetQueryItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -210,7 +210,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new ediscoveryReviewSetQueryItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new EdiscoveryReviewSetQueryItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public EdiscoveryReviewSetQueryItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

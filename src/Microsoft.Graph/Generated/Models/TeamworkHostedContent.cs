@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class TeamworkHostedContent : Entity, IParsable {
         /// <summary>Write only. Bytes for the hosted content (such as images).</summary>
         public byte[] ContentBytes {
@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new teamworkHostedContent and sets the default values.
         /// </summary>
         public TeamworkHostedContent() : base() {
-            Type = "#microsoft.graph.teamworkHostedContent";
+            OdataType = "#microsoft.graph.teamworkHostedContent";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

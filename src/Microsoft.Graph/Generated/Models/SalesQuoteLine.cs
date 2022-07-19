@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class SalesQuoteLine : Entity, IParsable {
         /// <summary>The account property</summary>
         public Microsoft.Graph.Beta.Models.Account Account {
@@ -115,6 +114,12 @@ namespace Microsoft.Graph.Beta.Models {
         public decimal? UnitPrice {
             get { return BackingStore?.Get<decimal?>("unitPrice"); }
             set { BackingStore?.Set("unitPrice", value); }
+        }
+        /// <summary>
+        /// Instantiates a new SalesQuoteLine and sets the default values.
+        /// </summary>
+        public SalesQuoteLine() : base() {
+            OdataType = "#microsoft.graph.salesQuoteLine";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new ShiftItem and sets the default values.
         /// </summary>
         public ShiftItem() : base() {
-            Type = "#microsoft.graph.shiftItem";
+            OdataType = "#microsoft.graph.shiftItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

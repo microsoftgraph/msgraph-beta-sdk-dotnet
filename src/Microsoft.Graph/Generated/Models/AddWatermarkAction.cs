@@ -36,6 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("uiElementName", value); }
         }
         /// <summary>
+        /// Instantiates a new AddWatermarkAction and sets the default values.
+        /// </summary>
+        public AddWatermarkAction() : base() {
+            OdataType = "#microsoft.graph.addWatermarkAction";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

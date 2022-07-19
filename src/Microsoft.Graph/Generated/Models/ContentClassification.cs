@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<MatchLocation>>("matches"); }
             set { BackingStore?.Set("matches", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The sensitiveTypeId property</summary>
         public string SensitiveTypeId {
             get { return BackingStore?.Get<string>("sensitiveTypeId"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ContentClassification() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.contentClassification";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"confidence", n => { Confidence = n.GetIntValue(); } },
                 {"matches", n => { Matches = n.GetCollectionOfObjectValues<MatchLocation>(MatchLocation.CreateFromDiscriminatorValue).ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"sensitiveTypeId", n => { SensitiveTypeId = n.GetStringValue(); } },
                 {"uniqueCount", n => { UniqueCount = n.GetIntValue(); } },
             };
@@ -67,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("confidence", Confidence);
             writer.WriteCollectionOfObjectValues<MatchLocation>("matches", Matches);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("sensitiveTypeId", SensitiveTypeId);
             writer.WriteIntValue("uniqueCount", UniqueCount);
             writer.WriteAdditionalData(AdditionalData);

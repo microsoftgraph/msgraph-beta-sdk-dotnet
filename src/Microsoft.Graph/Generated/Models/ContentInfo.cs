@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<KeyValuePair>>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The state property</summary>
         public ContentState? State {
             get { return BackingStore?.Get<ContentState?>("state"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ContentInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.contentInfo";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"format", n => { Format = n.GetEnumValue<ContentFormat>(); } },
                 {"identifier", n => { Identifier = n.GetStringValue(); } },
                 {"metadata", n => { Metadata = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"state", n => { State = n.GetEnumValue<ContentState>(); } },
             };
         }
@@ -68,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<ContentFormat>("format", Format);
             writer.WriteStringValue("identifier", Identifier);
             writer.WriteCollectionOfObjectValues<KeyValuePair>("metadata", Metadata);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<ContentState>("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }

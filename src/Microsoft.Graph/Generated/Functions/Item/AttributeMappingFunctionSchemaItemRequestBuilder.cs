@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Functions.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new attributeMappingFunctionSchemaItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AttributeMappingFunctionSchemaItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AttributeMappingFunctionSchemaItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Functions.Item {
             /// <summary>Request query parameters</summary>
             public AttributeMappingFunctionSchemaItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AttributeMappingFunctionSchemaItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new attributeMappingFunctionSchemaItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AttributeMappingFunctionSchemaItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AttributeMappingFunctionSchemaItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Functions.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new attributeMappingFunctionSchemaItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AttributeMappingFunctionSchemaItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AttributeMappingFunctionSchemaItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

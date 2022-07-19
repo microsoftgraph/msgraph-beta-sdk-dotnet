@@ -43,6 +43,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isManaged"); }
             set { BackingStore?.Set("isManaged", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Indicates the OS name and version used for signing-in.</summary>
         public string OperatingSystem {
             get { return BackingStore?.Get<string>("operatingSystem"); }
@@ -59,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceDetail() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.deviceDetail";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -79,6 +85,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"isCompliant", n => { IsCompliant = n.GetBoolValue(); } },
                 {"isManaged", n => { IsManaged = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
                 {"trustType", n => { TrustType = n.GetStringValue(); } },
             };
@@ -95,6 +102,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("isCompliant", IsCompliant);
             writer.WriteBoolValue("isManaged", IsManaged);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("operatingSystem", OperatingSystem);
             writer.WriteStringValue("trustType", TrustType);
             writer.WriteAdditionalData(AdditionalData);

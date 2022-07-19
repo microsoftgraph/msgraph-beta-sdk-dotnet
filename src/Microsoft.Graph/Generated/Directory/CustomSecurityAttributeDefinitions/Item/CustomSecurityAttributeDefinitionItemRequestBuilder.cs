@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Directory.CustomSecurityAttributeDefinitions.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new customSecurityAttributeDefinitionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CustomSecurityAttributeDefinitionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CustomSecurityAttributeDefinitionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Directory.CustomSecurityAttributeDefinitions.Item
             /// <summary>Request query parameters</summary>
             public CustomSecurityAttributeDefinitionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CustomSecurityAttributeDefinitionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new customSecurityAttributeDefinitionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CustomSecurityAttributeDefinitionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CustomSecurityAttributeDefinitionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Directory.CustomSecurityAttributeDefinitions.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new customSecurityAttributeDefinitionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CustomSecurityAttributeDefinitionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CustomSecurityAttributeDefinitionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

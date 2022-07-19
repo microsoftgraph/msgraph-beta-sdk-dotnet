@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Search.Qnas.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new qnaItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new QnaItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public QnaItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Search.Qnas.Item {
             /// <summary>Request query parameters</summary>
             public QnaItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new QnaItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new qnaItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new QnaItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public QnaItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Search.Qnas.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new qnaItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new QnaItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public QnaItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

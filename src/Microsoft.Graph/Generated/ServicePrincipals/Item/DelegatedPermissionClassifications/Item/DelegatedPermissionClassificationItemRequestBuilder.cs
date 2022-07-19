@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.DelegatedPermissionClassif
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new delegatedPermissionClassificationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DelegatedPermissionClassificationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DelegatedPermissionClassificationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.DelegatedPermissionClassif
             /// <summary>Request query parameters</summary>
             public DelegatedPermissionClassificationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DelegatedPermissionClassificationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new delegatedPermissionClassificationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DelegatedPermissionClassificationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DelegatedPermissionClassificationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.DelegatedPermissionClassif
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new delegatedPermissionClassificationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DelegatedPermissionClassificationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DelegatedPermissionClassificationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

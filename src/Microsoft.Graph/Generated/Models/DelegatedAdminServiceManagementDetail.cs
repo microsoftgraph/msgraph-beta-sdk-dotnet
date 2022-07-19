@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class DelegatedAdminServiceManagementDetail : Entity, IParsable {
         /// <summary>The URL of the management portal for the managed service. Read-only.</summary>
         public string ServiceManagementUrl {
@@ -15,6 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string ServiceName {
             get { return BackingStore?.Get<string>("serviceName"); }
             set { BackingStore?.Set("serviceName", value); }
+        }
+        /// <summary>
+        /// Instantiates a new delegatedAdminServiceManagementDetail and sets the default values.
+        /// </summary>
+        public DelegatedAdminServiceManagementDetail() : base() {
+            OdataType = "#microsoft.graph.delegatedAdminServiceManagementDetail";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

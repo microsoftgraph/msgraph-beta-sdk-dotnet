@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("moreResultsAvailable"); }
             set { BackingStore?.Set("moreResultsAvailable", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.</summary>
         public int? Total {
             get { return BackingStore?.Get<int?>("total"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public SearchHitsContainer() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.searchHitsContainer";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"aggregations", n => { Aggregations = n.GetCollectionOfObjectValues<SearchAggregation>(SearchAggregation.CreateFromDiscriminatorValue).ToList(); } },
                 {"hits", n => { Hits = n.GetCollectionOfObjectValues<SearchHit>(SearchHit.CreateFromDiscriminatorValue).ToList(); } },
                 {"moreResultsAvailable", n => { MoreResultsAvailable = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"total", n => { Total = n.GetIntValue(); } },
             };
         }
@@ -68,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<SearchAggregation>("aggregations", Aggregations);
             writer.WriteCollectionOfObjectValues<SearchHit>("hits", Hits);
             writer.WriteBoolValue("moreResultsAvailable", MoreResultsAvailable);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("total", Total);
             writer.WriteAdditionalData(AdditionalData);
         }

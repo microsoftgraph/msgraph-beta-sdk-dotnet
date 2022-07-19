@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class IdentityProvider : Entity, IParsable {
         /// <summary>The client ID for the application obtained when registering the application with the identity provider. This is a required field.  Required. Not nullable.</summary>
         public string ClientId {
@@ -21,6 +21,17 @@ namespace Microsoft.Graph.Beta.Models {
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
+        }
+        /// <summary>The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo,QQ, WeChat, OpenIDConnect. Not nullable.</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+        /// <summary>
+        /// Instantiates a new identityProvider and sets the default values.
+        /// </summary>
+        public IdentityProvider() : base() {
+            OdataType = "#microsoft.graph.identityProvider";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -43,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"clientId", n => { ClientId = n.GetStringValue(); } },
                 {"clientSecret", n => { ClientSecret = n.GetStringValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -55,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("clientId", ClientId);
             writer.WriteStringValue("clientSecret", ClientSecret);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("type", Type);
         }
     }
 }

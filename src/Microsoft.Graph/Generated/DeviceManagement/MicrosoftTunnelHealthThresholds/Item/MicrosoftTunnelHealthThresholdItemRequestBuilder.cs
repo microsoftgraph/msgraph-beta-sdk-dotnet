@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelHealthThresholds.
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new microsoftTunnelHealthThresholdItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new MicrosoftTunnelHealthThresholdItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public MicrosoftTunnelHealthThresholdItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelHealthThresholds.
             /// <summary>Request query parameters</summary>
             public MicrosoftTunnelHealthThresholdItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new MicrosoftTunnelHealthThresholdItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new microsoftTunnelHealthThresholdItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new MicrosoftTunnelHealthThresholdItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public MicrosoftTunnelHealthThresholdItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelHealthThresholds.
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new microsoftTunnelHealthThresholdItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new MicrosoftTunnelHealthThresholdItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public MicrosoftTunnelHealthThresholdItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

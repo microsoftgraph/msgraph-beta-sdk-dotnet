@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.StaffMembers.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new bookingStaffMemberItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new BookingStaffMemberItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public BookingStaffMemberItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.StaffMembers.Item {
             /// <summary>Request query parameters</summary>
             public BookingStaffMemberItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new BookingStaffMemberItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new bookingStaffMemberItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new BookingStaffMemberItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public BookingStaffMemberItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.StaffMembers.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new bookingStaffMemberItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new BookingStaffMemberItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public BookingStaffMemberItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

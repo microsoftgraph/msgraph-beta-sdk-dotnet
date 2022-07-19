@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class LicenseDetails : Entity, IParsable {
         /// <summary>Information about the service plans assigned with the license. Read-only, Not nullable</summary>
         public List<ServicePlanInfo> ServicePlans {
@@ -20,6 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string SkuPartNumber {
             get { return BackingStore?.Get<string>("skuPartNumber"); }
             set { BackingStore?.Set("skuPartNumber", value); }
+        }
+        /// <summary>
+        /// Instantiates a new licenseDetails and sets the default values.
+        /// </summary>
+        public LicenseDetails() : base() {
+            OdataType = "#microsoft.graph.licenseDetails";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -30,6 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The product name.</summary>
         public string ProductName {
             get { return BackingStore?.Get<string>("productName"); }
@@ -40,18 +45,13 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("publisherName"); }
             set { BackingStore?.Set("publisherName", value); }
         }
-        /// <summary>The type property</summary>
-        public string Type {
-            get { return BackingStore?.Get<string>("@odata.type"); }
-            set { BackingStore?.Set("@odata.type", value); }
-        }
         /// <summary>
         /// Instantiates a new windowsInformationProtectionApp and sets the default values.
         /// </summary>
         public WindowsInformationProtectionApp() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            Type = "#microsoft.graph.windowsInformationProtectionApp";
+            OdataType = "#microsoft.graph.windowsInformationProtectionApp";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -75,9 +75,9 @@ namespace Microsoft.Graph.Beta.Models {
                 {"denied", n => { Denied = n.GetBoolValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"productName", n => { ProductName = n.GetStringValue(); } },
                 {"publisherName", n => { PublisherName = n.GetStringValue(); } },
-                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -89,9 +89,9 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("denied", Denied);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("productName", ProductName);
             writer.WriteStringValue("publisherName", PublisherName);
-            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

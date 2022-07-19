@@ -33,6 +33,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<TimeSlot>("meetingTimeSlot"); }
             set { BackingStore?.Set("meetingTimeSlot", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Order of meeting time suggestions sorted by their computed confidence value from high to low, then by chronology if there are suggestions with the same confidence.</summary>
         public int? Order {
             get { return BackingStore?.Get<int?>("order"); }
@@ -54,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         public MeetingTimeSuggestion() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.meetingTimeSuggestion";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -72,6 +78,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"confidence", n => { Confidence = n.GetDoubleValue(); } },
                 {"locations", n => { Locations = n.GetCollectionOfObjectValues<Location>(Location.CreateFromDiscriminatorValue).ToList(); } },
                 {"meetingTimeSlot", n => { MeetingTimeSlot = n.GetObjectValue<TimeSlot>(TimeSlot.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"order", n => { Order = n.GetIntValue(); } },
                 {"organizerAvailability", n => { OrganizerAvailability = n.GetEnumValue<FreeBusyStatus>(); } },
                 {"suggestionReason", n => { SuggestionReason = n.GetStringValue(); } },
@@ -87,6 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDoubleValue("confidence", Confidence);
             writer.WriteCollectionOfObjectValues<Location>("locations", Locations);
             writer.WriteObjectValue<TimeSlot>("meetingTimeSlot", MeetingTimeSlot);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("order", Order);
             writer.WriteEnumValue<FreeBusyStatus>("organizerAvailability", OrganizerAvailability);
             writer.WriteStringValue("suggestionReason", SuggestionReason);

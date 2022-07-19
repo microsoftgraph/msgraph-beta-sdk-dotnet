@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.Item
             /// <summary>Request query parameters</summary>
             public CompanyInformationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CompanyInformationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new companyInformationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CompanyInformationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CompanyInformationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new companyInformationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CompanyInformationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CompanyInformationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

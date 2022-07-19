@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class PrintJob : Entity, IParsable {
         /// <summary>A group of settings that a printer should use to print a job.</summary>
         public PrintJobConfiguration Configuration {
@@ -50,6 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
         public List<PrintTask> Tasks {
             get { return BackingStore?.Get<List<PrintTask>>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
+        }
+        /// <summary>
+        /// Instantiates a new printJob and sets the default values.
+        /// </summary>
+        public PrintJob() : base() {
+            OdataType = "#microsoft.graph.printJob";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

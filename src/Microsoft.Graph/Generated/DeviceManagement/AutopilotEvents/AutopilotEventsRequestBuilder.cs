@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents {
     /// <summary>Provides operations to manage the autopilotEvents property of the microsoft.graph.deviceManagement entity.</summary>
     public class AutopilotEventsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

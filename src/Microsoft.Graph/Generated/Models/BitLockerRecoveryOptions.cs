@@ -34,6 +34,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("hideRecoveryOptions"); }
             set { BackingStore?.Set("hideRecoveryOptions", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>BitLockerRecoveryInformationType types</summary>
         public BitLockerRecoveryInformationType? RecoveryInformationToStore {
             get { return BackingStore?.Get<BitLockerRecoveryInformationType?>("recoveryInformationToStore"); }
@@ -55,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
         public BitLockerRecoveryOptions() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.bitLockerRecoveryOptions";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -73,6 +79,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"enableBitLockerAfterRecoveryInformationToStore", n => { EnableBitLockerAfterRecoveryInformationToStore = n.GetBoolValue(); } },
                 {"enableRecoveryInformationSaveToStore", n => { EnableRecoveryInformationSaveToStore = n.GetBoolValue(); } },
                 {"hideRecoveryOptions", n => { HideRecoveryOptions = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"recoveryInformationToStore", n => { RecoveryInformationToStore = n.GetEnumValue<BitLockerRecoveryInformationType>(); } },
                 {"recoveryKeyUsage", n => { RecoveryKeyUsage = n.GetEnumValue<ConfigurationUsage>(); } },
                 {"recoveryPasswordUsage", n => { RecoveryPasswordUsage = n.GetEnumValue<ConfigurationUsage>(); } },
@@ -88,6 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("enableBitLockerAfterRecoveryInformationToStore", EnableBitLockerAfterRecoveryInformationToStore);
             writer.WriteBoolValue("enableRecoveryInformationSaveToStore", EnableRecoveryInformationSaveToStore);
             writer.WriteBoolValue("hideRecoveryOptions", HideRecoveryOptions);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<BitLockerRecoveryInformationType>("recoveryInformationToStore", RecoveryInformationToStore);
             writer.WriteEnumValue<ConfigurationUsage>("recoveryKeyUsage", RecoveryKeyUsage);
             writer.WriteEnumValue<ConfigurationUsage>("recoveryPasswordUsage", RecoveryPasswordUsage);

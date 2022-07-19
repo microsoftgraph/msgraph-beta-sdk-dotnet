@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class WindowsProtectionState : Entity, IParsable {
         /// <summary>The anti-malware version for the managed device. Optional. Read-only.</summary>
         public string AntiMalwareVersion {
@@ -130,6 +130,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
+        }
+        /// <summary>
+        /// Instantiates a new windowsProtectionState and sets the default values.
+        /// </summary>
+        public WindowsProtectionState() : base() {
+            OdataType = "#microsoft.graph.managedTenants.windowsProtectionState";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

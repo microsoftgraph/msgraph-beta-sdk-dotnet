@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsReceivable.
             /// <summary>Request query parameters</summary>
             public AgedAccountsReceivableItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AgedAccountsReceivableItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new agedAccountsReceivableItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AgedAccountsReceivableItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AgedAccountsReceivableItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

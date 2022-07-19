@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class TenantCustomizedInformation : Entity, IParsable {
         /// <summary>The collection of contacts for the managed tenant. Optional.</summary>
         public List<TenantContactInformation> Contacts {
@@ -25,6 +25,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public string Website {
             get { return BackingStore?.Get<string>("website"); }
             set { BackingStore?.Set("website", value); }
+        }
+        /// <summary>
+        /// Instantiates a new tenantCustomizedInformation and sets the default values.
+        /// </summary>
+        public TenantCustomizedInformation() : base() {
+            OdataType = "#microsoft.graph.managedTenants.tenantCustomizedInformation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

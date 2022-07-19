@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class DataSourceContainer : Entity, IParsable {
         /// <summary>Created date and time of the dataSourceContainer entity.</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// Instantiates a new dataSourceContainer and sets the default values.
         /// </summary>
         public DataSourceContainer() : base() {
-            Type = "#microsoft.graph.security.dataSourceContainer";
+            OdataType = "#microsoft.graph.security.dataSourceContainer";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

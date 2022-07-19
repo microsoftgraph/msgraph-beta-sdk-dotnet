@@ -19,6 +19,11 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The parentTerm property</summary>
         public Term ParentTerm {
             get { return BackingStore?.Get<Term>("parentTerm"); }
@@ -40,6 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         public TermColumn() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.termColumn";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"allowMultipleValues", n => { AllowMultipleValues = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"parentTerm", n => { ParentTerm = n.GetObjectValue<Term>(Term.CreateFromDiscriminatorValue); } },
                 {"showFullyQualifiedName", n => { ShowFullyQualifiedName = n.GetBoolValue(); } },
                 {"termSet", n => { TermSet = n.GetObjectValue<Microsoft.Graph.Beta.Models.TermStore.Set>(Microsoft.Graph.Beta.Models.TermStore.Set.CreateFromDiscriminatorValue); } },
@@ -67,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allowMultipleValues", AllowMultipleValues);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<Term>("parentTerm", ParentTerm);
             writer.WriteBoolValue("showFullyQualifiedName", ShowFullyQualifiedName);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TermStore.Set>("termSet", TermSet);

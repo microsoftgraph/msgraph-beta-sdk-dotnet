@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignIns.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new signInItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new SignInItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public SignInItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignIns.Item {
             /// <summary>Request query parameters</summary>
             public SignInItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SignInItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new signInItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SignInItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SignInItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignIns.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new signInItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SignInItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SignInItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

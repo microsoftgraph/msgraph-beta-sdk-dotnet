@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions.Item.Assignme
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new termsAndConditionsAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new TermsAndConditionsAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public TermsAndConditionsAssignmentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions.Item.Assignme
             /// <summary>Request query parameters</summary>
             public TermsAndConditionsAssignmentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TermsAndConditionsAssignmentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new termsAndConditionsAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TermsAndConditionsAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TermsAndConditionsAssignmentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions.Item.Assignme
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new termsAndConditionsAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new TermsAndConditionsAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public TermsAndConditionsAssignmentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

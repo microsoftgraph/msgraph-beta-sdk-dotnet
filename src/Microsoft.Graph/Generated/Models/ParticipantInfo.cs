@@ -38,6 +38,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IdentitySet>("nonAnonymizedIdentity"); }
             set { BackingStore?.Set("nonAnonymizedIdentity", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The participant ID of the participant. Read-only.</summary>
         public string ParticipantId {
             get { return BackingStore?.Get<string>("participantId"); }
@@ -59,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ParticipantInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.participantInfo";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -78,6 +84,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"identity", n => { Identity = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"languageId", n => { LanguageId = n.GetStringValue(); } },
                 {"nonAnonymizedIdentity", n => { NonAnonymizedIdentity = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"participantId", n => { ParticipantId = n.GetStringValue(); } },
                 {"platformId", n => { PlatformId = n.GetStringValue(); } },
                 {"region", n => { Region = n.GetStringValue(); } },
@@ -94,6 +101,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<IdentitySet>("identity", Identity);
             writer.WriteStringValue("languageId", LanguageId);
             writer.WriteObjectValue<IdentitySet>("nonAnonymizedIdentity", NonAnonymizedIdentity);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("participantId", ParticipantId);
             writer.WriteStringValue("platformId", PlatformId);
             writer.WriteStringValue("region", Region);

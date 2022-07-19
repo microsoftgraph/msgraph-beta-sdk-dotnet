@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new WindowsInformationProtection and sets the default values.
         /// </summary>
         public WindowsInformationProtection() : base() {
-            Type = "#microsoft.graph.windowsInformationProtection";
+            OdataType = "#microsoft.graph.windowsInformationProtection";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

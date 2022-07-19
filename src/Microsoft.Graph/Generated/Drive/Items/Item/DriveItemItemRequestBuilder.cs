@@ -297,7 +297,7 @@ namespace Microsoft.Graph.Beta.Drive.Items.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new driveItemItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DriveItemItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DriveItemItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -322,7 +322,7 @@ namespace Microsoft.Graph.Beta.Drive.Items.Item {
             /// <summary>Request query parameters</summary>
             public DriveItemItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DriveItemItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new driveItemItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DriveItemItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DriveItemItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -336,7 +336,7 @@ namespace Microsoft.Graph.Beta.Drive.Items.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new driveItemItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DriveItemItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DriveItemItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

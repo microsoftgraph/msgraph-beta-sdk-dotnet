@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceAppManagementTaskItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceAppManagementTaskItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceAppManagementTaskItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item
             /// <summary>Request query parameters</summary>
             public DeviceAppManagementTaskItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceAppManagementTaskItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceAppManagementTaskItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceAppManagementTaskItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceAppManagementTaskItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceAppManagementTaskItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceAppManagementTaskItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceAppManagementTaskItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

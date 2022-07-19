@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new OfficeClientConfiguration and sets the default values.
         /// </summary>
         public OfficeClientConfiguration() : base() {
-            Type = "#microsoft.graph.officeClientConfiguration";
+            OdataType = "#microsoft.graph.officeClientConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

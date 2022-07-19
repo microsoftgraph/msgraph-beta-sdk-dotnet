@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class CustomerPayment : Entity, IParsable {
         /// <summary>The amount property</summary>
         public decimal? Amount {
@@ -81,6 +81,12 @@ namespace Microsoft.Graph.Beta.Models {
         public Date? PostingDate {
             get { return BackingStore?.Get<Date?>("postingDate"); }
             set { BackingStore?.Set("postingDate", value); }
+        }
+        /// <summary>
+        /// Instantiates a new customerPayment and sets the default values.
+        /// </summary>
+        public CustomerPayment() : base() {
+            OdataType = "#microsoft.graph.customerPayment";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

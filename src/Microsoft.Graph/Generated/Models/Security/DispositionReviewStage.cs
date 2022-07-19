@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class DispositionReviewStage : Entity, IParsable {
         /// <summary>Name representing each stage within a collection.</summary>
         public string Name {
@@ -20,6 +20,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public int? StageNumber {
             get { return BackingStore?.Get<int?>("stageNumber"); }
             set { BackingStore?.Set("stageNumber", value); }
+        }
+        /// <summary>
+        /// Instantiates a new dispositionReviewStage and sets the default values.
+        /// </summary>
+        public DispositionReviewStage() : base() {
+            OdataType = "#microsoft.graph.security.dispositionReviewStage";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

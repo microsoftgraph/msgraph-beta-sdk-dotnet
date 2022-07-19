@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>true if the parameter is required; otherwise false.</summary>
         public bool? Required {
             get { return BackingStore?.Get<bool?>("required"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AttributeMappingParameterSchema() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.attributeMappingParameterSchema";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"allowMultipleOccurrences", n => { AllowMultipleOccurrences = n.GetBoolValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"required", n => { Required = n.GetBoolValue(); } },
                 {"type", n => { Type = n.GetEnumValue<AttributeType>(); } },
             };
@@ -67,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allowMultipleOccurrences", AllowMultipleOccurrences);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("required", Required);
             writer.WriteEnumValue<AttributeType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

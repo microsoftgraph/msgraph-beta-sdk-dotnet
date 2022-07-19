@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<PermissionScope>>("oauth2PermissionScopes"); }
             set { BackingStore?.Set("oauth2PermissionScopes", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Lists the client applications that are pre-authorized with the specified delegated permissions to access this application&apos;s APIs. Users are not required to consent to any pre-authorized application (for the permissions specified). However, any additional permissions not listed in preAuthorizedApplications (requested through incremental consent for example) will require user consent.</summary>
         public List<PreAuthorizedApplication> PreAuthorizedApplications {
             get { return BackingStore?.Get<List<PreAuthorizedApplication>>("preAuthorizedApplications"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ApiApplication() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.apiApplication";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -61,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"acceptMappedClaims", n => { AcceptMappedClaims = n.GetBoolValue(); } },
                 {"knownClientApplications", n => { KnownClientApplications = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"oauth2PermissionScopes", n => { Oauth2PermissionScopes = n.GetCollectionOfObjectValues<PermissionScope>(PermissionScope.CreateFromDiscriminatorValue).ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"preAuthorizedApplications", n => { PreAuthorizedApplications = n.GetCollectionOfObjectValues<PreAuthorizedApplication>(PreAuthorizedApplication.CreateFromDiscriminatorValue).ToList(); } },
                 {"requestedAccessTokenVersion", n => { RequestedAccessTokenVersion = n.GetIntValue(); } },
             };
@@ -74,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("acceptMappedClaims", AcceptMappedClaims);
             writer.WriteCollectionOfPrimitiveValues<string>("knownClientApplications", KnownClientApplications);
             writer.WriteCollectionOfObjectValues<PermissionScope>("oauth2PermissionScopes", Oauth2PermissionScopes);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<PreAuthorizedApplication>("preAuthorizedApplications", PreAuthorizedApplications);
             writer.WriteIntValue("requestedAccessTokenVersion", RequestedAccessTokenVersion);
             writer.WriteAdditionalData(AdditionalData);

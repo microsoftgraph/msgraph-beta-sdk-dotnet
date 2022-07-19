@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class WindowsDefenderApplicationControlSupplementalPolicy : Entity, IParsable {
         /// <summary>The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.</summary>
         public List<WindowsDefenderApplicationControlSupplementalPolicyAssignment> Assignments {
@@ -60,6 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string Version {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
+        }
+        /// <summary>
+        /// Instantiates a new windowsDefenderApplicationControlSupplementalPolicy and sets the default values.
+        /// </summary>
+        public WindowsDefenderApplicationControlSupplementalPolicy() : base() {
+            OdataType = "#microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings.Ite
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPcUserSettingAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcUserSettingAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcUserSettingAssignmentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings.Ite
             /// <summary>Request query parameters</summary>
             public CloudPcUserSettingAssignmentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CloudPcUserSettingAssignmentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new cloudPcUserSettingAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcUserSettingAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcUserSettingAssignmentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings.Ite
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPcUserSettingAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcUserSettingAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcUserSettingAssignmentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

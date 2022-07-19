@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items {
     /// <summary>Provides operations to manage the items property of the microsoft.graph.list entity.</summary>
     public class ItemsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

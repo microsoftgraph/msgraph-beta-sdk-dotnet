@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             get { return BackingStore?.Get<string>("jsonValue"); }
             set { BackingStore?.Set("jsonValue", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>A flag indicating whether the setting can be override existing configurations when applied. Required. Read-only.</summary>
         public bool? OverwriteAllowed {
             get { return BackingStore?.Get<bool?>("overwriteAllowed"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public Setting() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.managedTenants.setting";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -60,6 +66,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             return new Dictionary<string, Action<IParseNode>> {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"jsonValue", n => { JsonValue = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"overwriteAllowed", n => { OverwriteAllowed = n.GetBoolValue(); } },
                 {"settingId", n => { SettingId = n.GetStringValue(); } },
                 {"valueType", n => { ValueType = n.GetEnumValue<ManagementParameterValueType>(); } },
@@ -73,6 +80,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("jsonValue", JsonValue);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("overwriteAllowed", OverwriteAllowed);
             writer.WriteStringValue("settingId", SettingId);
             writer.WriteEnumValue<ManagementParameterValueType>("valueType", ValueType);

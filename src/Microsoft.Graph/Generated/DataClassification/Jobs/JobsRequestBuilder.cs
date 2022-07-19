@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DataClassification.Jobs {
     /// <summary>Provides operations to manage the jobs property of the microsoft.graph.dataClassificationService entity.</summary>
     public class JobsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

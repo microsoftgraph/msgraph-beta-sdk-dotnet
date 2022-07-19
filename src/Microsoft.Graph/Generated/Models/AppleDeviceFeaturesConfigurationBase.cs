@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new AppleDeviceFeaturesConfigurationBase and sets the default values.
         /// </summary>
         public AppleDeviceFeaturesConfigurationBase() : base() {
-            Type = "#microsoft.graph.appleDeviceFeaturesConfigurationBase";
+            OdataType = "#microsoft.graph.appleDeviceFeaturesConfigurationBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

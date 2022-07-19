@@ -24,6 +24,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<string>>("blockedSkus"); }
             set { BackingStore?.Set("blockedSkus", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Max OS version supported</summary>
         public string OsMaximumVersion {
             get { return BackingStore?.Get<string>("osMaximumVersion"); }
@@ -50,6 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceEnrollmentPlatformRestriction() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.deviceEnrollmentPlatformRestriction";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -66,6 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"blockedManufacturers", n => { BlockedManufacturers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"blockedSkus", n => { BlockedSkus = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"osMaximumVersion", n => { OsMaximumVersion = n.GetStringValue(); } },
                 {"osMinimumVersion", n => { OsMinimumVersion = n.GetStringValue(); } },
                 {"personalDeviceEnrollmentBlocked", n => { PersonalDeviceEnrollmentBlocked = n.GetBoolValue(); } },
@@ -80,6 +87,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("blockedManufacturers", BlockedManufacturers);
             writer.WriteCollectionOfPrimitiveValues<string>("blockedSkus", BlockedSkus);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("osMaximumVersion", OsMaximumVersion);
             writer.WriteStringValue("osMinimumVersion", OsMinimumVersion);
             writer.WriteBoolValue("personalDeviceEnrollmentBlocked", PersonalDeviceEnrollmentBlocked);

@@ -29,12 +29,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<AndroidDeviceOwnerKioskModeFolderItem>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new androidDeviceOwnerKioskModeManagedFolder and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerKioskModeManagedFolder() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.androidDeviceOwnerKioskModeManagedFolder";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -52,6 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"folderIdentifier", n => { FolderIdentifier = n.GetStringValue(); } },
                 {"folderName", n => { FolderName = n.GetStringValue(); } },
                 {"items", n => { Items = n.GetCollectionOfObjectValues<AndroidDeviceOwnerKioskModeFolderItem>(AndroidDeviceOwnerKioskModeFolderItem.CreateFromDiscriminatorValue).ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -63,6 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("folderIdentifier", FolderIdentifier);
             writer.WriteStringValue("folderName", FolderName);
             writer.WriteCollectionOfObjectValues<AndroidDeviceOwnerKioskModeFolderItem>("items", Items);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

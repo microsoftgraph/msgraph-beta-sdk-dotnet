@@ -16,6 +16,17 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+        /// <summary>The type property</summary>
+        public PersonAnnualEventType? Type {
+            get { return BackingStore?.Get<PersonAnnualEventType?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+        /// <summary>
+        /// Instantiates a new PersonAnnualEvent and sets the default values.
+        /// </summary>
+        public PersonAnnualEvent() : base() {
+            OdataType = "#microsoft.graph.personAnnualEvent";
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -31,6 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"date", n => { Date = n.GetDateValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetEnumValue<PersonAnnualEventType>(); } },
             };
         }
         /// <summary>
@@ -42,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteDateValue("date", Date);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteEnumValue<PersonAnnualEventType>("type", Type);
         }
     }
 }

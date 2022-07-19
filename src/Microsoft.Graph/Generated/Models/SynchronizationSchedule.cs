@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<TimeSpan?>("interval"); }
             set { BackingStore?.Set("interval", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The state property</summary>
         public SynchronizationScheduleState? State {
             get { return BackingStore?.Get<SynchronizationScheduleState?>("state"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public SynchronizationSchedule() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.synchronizationSchedule";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"expiration", n => { Expiration = n.GetDateTimeOffsetValue(); } },
                 {"interval", n => { Interval = n.GetTimeSpanValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"state", n => { State = n.GetEnumValue<SynchronizationScheduleState>(); } },
             };
         }
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("expiration", Expiration);
             writer.WriteTimeSpanValue("interval", Interval);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<SynchronizationScheduleState>("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }

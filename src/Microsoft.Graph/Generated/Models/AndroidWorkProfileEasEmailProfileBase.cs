@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new AndroidWorkProfileEasEmailProfileBase and sets the default values.
         /// </summary>
         public AndroidWorkProfileEasEmailProfileBase() : base() {
-            Type = "#microsoft.graph.androidWorkProfileEasEmailProfileBase";
+            OdataType = "#microsoft.graph.androidWorkProfileEasEmailProfileBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

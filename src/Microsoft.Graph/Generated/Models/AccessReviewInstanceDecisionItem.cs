@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class AccessReviewInstanceDecisionItem : Entity, IParsable {
         /// <summary>The identifier of the accessReviewInstance parent. Supports $select. Read-only.</summary>
         public string AccessReviewId {
@@ -90,6 +90,12 @@ namespace Microsoft.Graph.Beta.Models {
         public AccessReviewInstanceDecisionItemTarget Target {
             get { return BackingStore?.Get<AccessReviewInstanceDecisionItemTarget>("target"); }
             set { BackingStore?.Set("target", value); }
+        }
+        /// <summary>
+        /// Instantiates a new accessReviewInstanceDecisionItem and sets the default values.
+        /// </summary>
+        public AccessReviewInstanceDecisionItem() : base() {
+            OdataType = "#microsoft.graph.accessReviewInstanceDecisionItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

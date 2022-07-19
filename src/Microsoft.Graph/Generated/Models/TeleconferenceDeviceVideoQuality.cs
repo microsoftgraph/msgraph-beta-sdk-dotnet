@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new TeleconferenceDeviceVideoQuality and sets the default values.
         /// </summary>
         public TeleconferenceDeviceVideoQuality() : base() {
-            Type = "#microsoft.graph.teleconferenceDeviceVideoQuality";
+            OdataType = "#microsoft.graph.teleconferenceDeviceVideoQuality";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

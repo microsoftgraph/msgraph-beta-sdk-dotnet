@@ -36,6 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("path", value); }
         }
         /// <summary>
+        /// Instantiates a new Win32LobAppFileSystemDetection and sets the default values.
+        /// </summary>
+        public Win32LobAppFileSystemDetection() : base() {
+            OdataType = "#microsoft.graph.win32LobAppFileSystemDetection";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

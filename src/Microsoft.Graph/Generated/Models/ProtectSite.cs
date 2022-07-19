@@ -16,6 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("conditionalAccessProtectionLevelId", value); }
         }
         /// <summary>
+        /// Instantiates a new ProtectSite and sets the default values.
+        /// </summary>
+        public ProtectSite() : base() {
+            OdataType = "#microsoft.graph.protectSite";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

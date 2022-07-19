@@ -6,6 +6,12 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AzureADWindowsAutopilotDeploymentProfile : WindowsAutopilotDeploymentProfile, IParsable {
         /// <summary>
+        /// Instantiates a new AzureADWindowsAutopilotDeploymentProfile and sets the default values.
+        /// </summary>
+        public AzureADWindowsAutopilotDeploymentProfile() : base() {
+            OdataType = "#microsoft.graph.azureADWindowsAutopilotDeploymentProfile";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

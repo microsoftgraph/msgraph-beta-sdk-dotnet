@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("fieldId"); }
             set { BackingStore?.Set("fieldId", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Type of the credential. The values can be text, password.</summary>
         public string Type {
             get { return BackingStore?.Get<string>("type"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public PasswordSingleSignOnField() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.passwordSingleSignOnField";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"customizedLabel", n => { CustomizedLabel = n.GetStringValue(); } },
                 {"defaultLabel", n => { DefaultLabel = n.GetStringValue(); } },
                 {"fieldId", n => { FieldId = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -68,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("customizedLabel", CustomizedLabel);
             writer.WriteStringValue("defaultLabel", DefaultLabel);
             writer.WriteStringValue("fieldId", FieldId);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

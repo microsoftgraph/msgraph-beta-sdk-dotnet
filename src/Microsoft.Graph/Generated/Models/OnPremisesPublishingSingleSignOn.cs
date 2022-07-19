@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KerberosSignOnSettings>("kerberosSignOnSettings"); }
             set { BackingStore?.Set("kerberosSignOnSettings", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The preferred single-sign on mode for the application. Possible values are: none, onPremisesKerberos, aadHeaderBased,pingHeaderBased.</summary>
         public Microsoft.Graph.Beta.Models.SingleSignOnMode? SingleSignOnMode {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SingleSignOnMode?>("singleSignOnMode"); }
@@ -29,6 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         public OnPremisesPublishingSingleSignOn() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.onPremisesPublishingSingleSignOn";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"kerberosSignOnSettings", n => { KerberosSignOnSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.KerberosSignOnSettings>(Microsoft.Graph.Beta.Models.KerberosSignOnSettings.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"singleSignOnMode", n => { SingleSignOnMode = n.GetEnumValue<SingleSignOnMode>(); } },
             };
         }
@@ -54,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.KerberosSignOnSettings>("kerberosSignOnSettings", KerberosSignOnSettings);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<SingleSignOnMode>("singleSignOnMode", SingleSignOnMode);
             writer.WriteAdditionalData(AdditionalData);
         }

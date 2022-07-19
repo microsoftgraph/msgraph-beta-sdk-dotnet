@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IdentitySet>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The recordingStatus property</summary>
         public Microsoft.Graph.Beta.Models.RecordingStatus? RecordingStatus {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RecordingStatus?>("recordingStatus"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public RecordingInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.recordingInfo";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"initiatedBy", n => { InitiatedBy = n.GetObjectValue<ParticipantInfo>(ParticipantInfo.CreateFromDiscriminatorValue); } },
                 {"initiator", n => { Initiator = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"recordingStatus", n => { RecordingStatus = n.GetEnumValue<RecordingStatus>(); } },
             };
         }
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<ParticipantInfo>("initiatedBy", InitiatedBy);
             writer.WriteObjectValue<IdentitySet>("initiator", Initiator);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<RecordingStatus>("recordingStatus", RecordingStatus);
             writer.WriteAdditionalData(AdditionalData);
         }

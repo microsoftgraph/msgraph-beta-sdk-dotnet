@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("hidden"); }
             set { BackingStore?.Set("hidden", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.</summary>
         public string Template {
             get { return BackingStore?.Get<string>("template"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ListInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.listInfo";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"contentTypesEnabled", n => { ContentTypesEnabled = n.GetBoolValue(); } },
                 {"hidden", n => { Hidden = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"template", n => { Template = n.GetStringValue(); } },
             };
         }
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("contentTypesEnabled", ContentTypesEnabled);
             writer.WriteBoolValue("hidden", Hidden);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("template", Template);
             writer.WriteAdditionalData(AdditionalData);
         }

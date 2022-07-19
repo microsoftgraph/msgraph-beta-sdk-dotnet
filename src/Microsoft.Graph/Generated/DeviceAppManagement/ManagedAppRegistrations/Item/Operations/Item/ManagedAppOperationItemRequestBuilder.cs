@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new managedAppOperationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagedAppOperationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ManagedAppOperationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.
             /// <summary>Request query parameters</summary>
             public ManagedAppOperationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ManagedAppOperationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new managedAppOperationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagedAppOperationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ManagedAppOperationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new managedAppOperationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagedAppOperationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ManagedAppOperationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

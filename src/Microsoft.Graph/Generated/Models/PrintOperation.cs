@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new PrintOperation and sets the default values.
         /// </summary>
         public PrintOperation() : base() {
-            Type = "#microsoft.graph.printOperation";
+            OdataType = "#microsoft.graph.printOperation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new customAccessPackageWorkflowExtensionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CustomAccessPackageWorkflowExtensionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CustomAccessPackageWorkflowExtensionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             /// <summary>Request query parameters</summary>
             public CustomAccessPackageWorkflowExtensionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CustomAccessPackageWorkflowExtensionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new customAccessPackageWorkflowExtensionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CustomAccessPackageWorkflowExtensionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CustomAccessPackageWorkflowExtensionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new customAccessPackageWorkflowExtensionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CustomAccessPackageWorkflowExtensionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CustomAccessPackageWorkflowExtensionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

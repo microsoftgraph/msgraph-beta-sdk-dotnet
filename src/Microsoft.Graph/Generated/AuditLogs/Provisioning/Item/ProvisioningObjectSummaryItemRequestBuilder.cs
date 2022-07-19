@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.Provisioning.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new provisioningObjectSummaryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ProvisioningObjectSummaryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ProvisioningObjectSummaryItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.Provisioning.Item {
             /// <summary>Request query parameters</summary>
             public ProvisioningObjectSummaryItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ProvisioningObjectSummaryItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new provisioningObjectSummaryItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ProvisioningObjectSummaryItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ProvisioningObjectSummaryItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.Provisioning.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new provisioningObjectSummaryItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ProvisioningObjectSummaryItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ProvisioningObjectSummaryItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

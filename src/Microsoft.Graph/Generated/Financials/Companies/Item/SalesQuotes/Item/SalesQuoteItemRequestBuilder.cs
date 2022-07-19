@@ -168,7 +168,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item {
             /// <summary>Request query parameters</summary>
             public SalesQuoteItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SalesQuoteItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new salesQuoteItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SalesQuoteItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SalesQuoteItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new salesQuoteItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SalesQuoteItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SalesQuoteItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class UnifiedRbacResourceNamespace : Entity, IParsable {
         /// <summary>Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).</summary>
         public string Name {
@@ -15,6 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public List<UnifiedRbacResourceAction> ResourceActions {
             get { return BackingStore?.Get<List<UnifiedRbacResourceAction>>("resourceActions"); }
             set { BackingStore?.Set("resourceActions", value); }
+        }
+        /// <summary>
+        /// Instantiates a new unifiedRbacResourceNamespace and sets the default values.
+        /// </summary>
+        public UnifiedRbacResourceNamespace() : base() {
+            OdataType = "#microsoft.graph.unifiedRbacResourceNamespace";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

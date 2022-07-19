@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Tasks.Lists.Item.Tasks.Item.LinkedResources {
     /// <summary>Provides operations to manage the linkedResources property of the microsoft.graph.baseTask entity.</summary>
     public class LinkedResourcesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

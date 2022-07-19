@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcsOvervi
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPcOverviewTenantItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcOverviewTenantItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcOverviewTenantItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcsOvervi
             /// <summary>Request query parameters</summary>
             public CloudPcOverviewTenantItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CloudPcOverviewTenantItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new cloudPcOverviewTenantItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcOverviewTenantItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcOverviewTenantItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcsOvervi
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPcOverviewTenantItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcOverviewTenantItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcOverviewTenantItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

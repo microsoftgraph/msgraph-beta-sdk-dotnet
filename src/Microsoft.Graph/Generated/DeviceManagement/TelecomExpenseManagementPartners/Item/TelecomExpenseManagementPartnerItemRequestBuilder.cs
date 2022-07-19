@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TelecomExpenseManagementPartners
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new telecomExpenseManagementPartnerItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new TelecomExpenseManagementPartnerItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public TelecomExpenseManagementPartnerItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TelecomExpenseManagementPartners
             /// <summary>Request query parameters</summary>
             public TelecomExpenseManagementPartnerItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TelecomExpenseManagementPartnerItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new telecomExpenseManagementPartnerItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TelecomExpenseManagementPartnerItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TelecomExpenseManagementPartnerItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TelecomExpenseManagementPartners
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new telecomExpenseManagementPartnerItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new TelecomExpenseManagementPartnerItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public TelecomExpenseManagementPartnerItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

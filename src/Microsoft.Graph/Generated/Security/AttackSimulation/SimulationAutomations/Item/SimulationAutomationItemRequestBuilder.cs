@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations.I
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new simulationAutomationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new SimulationAutomationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public SimulationAutomationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations.I
             /// <summary>Request query parameters</summary>
             public SimulationAutomationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SimulationAutomationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new simulationAutomationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SimulationAutomationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SimulationAutomationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations.I
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new simulationAutomationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SimulationAutomationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SimulationAutomationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

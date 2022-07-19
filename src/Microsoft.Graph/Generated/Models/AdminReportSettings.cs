@@ -5,10 +5,16 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AdminReportSettings : Entity, IParsable {
-        /// <summary>The displayConcealedNames property</summary>
+        /// <summary>If set to true, all reports will conceal user information such as usernames, groups, and sites. If false, all reports will show identifiable information. This property represents a setting in the Microsoft 365 admin center. Required.</summary>
         public bool? DisplayConcealedNames {
             get { return BackingStore?.Get<bool?>("displayConcealedNames"); }
             set { BackingStore?.Set("displayConcealedNames", value); }
+        }
+        /// <summary>
+        /// Instantiates a new adminReportSettings and sets the default values.
+        /// </summary>
+        public AdminReportSettings() : base() {
+            OdataType = "#microsoft.graph.adminReportSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

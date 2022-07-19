@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new servicePrincipalCreationPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ServicePrincipalCreationPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ServicePrincipalCreationPolicyItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item {
             /// <summary>Request query parameters</summary>
             public ServicePrincipalCreationPolicyItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ServicePrincipalCreationPolicyItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new servicePrincipalCreationPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ServicePrincipalCreationPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ServicePrincipalCreationPolicyItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new servicePrincipalCreationPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ServicePrincipalCreationPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ServicePrincipalCreationPolicyItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

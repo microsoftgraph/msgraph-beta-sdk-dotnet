@@ -48,6 +48,11 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             get { return BackingStore?.Get<DateTimeOffset?>("lastDeploymentDateTime"); }
             set { BackingStore?.Set("lastDeploymentDateTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The status property</summary>
         public WorkloadActionStatus? Status {
             get { return BackingStore?.Get<WorkloadActionStatus?>("status"); }
@@ -59,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public WorkloadActionDeploymentStatus() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.managedTenants.workloadActionDeploymentStatus";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -80,6 +86,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
                 {"includeAllUsers", n => { IncludeAllUsers = n.GetBoolValue(); } },
                 {"includeGroups", n => { IncludeGroups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"lastDeploymentDateTime", n => { LastDeploymentDateTime = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"status", n => { Status = n.GetEnumValue<WorkloadActionStatus>(); } },
             };
         }
@@ -96,6 +103,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             writer.WriteBoolValue("includeAllUsers", IncludeAllUsers);
             writer.WriteCollectionOfPrimitiveValues<string>("includeGroups", IncludeGroups);
             writer.WriteDateTimeOffsetValue("lastDeploymentDateTime", LastDeploymentDateTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<WorkloadActionStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }

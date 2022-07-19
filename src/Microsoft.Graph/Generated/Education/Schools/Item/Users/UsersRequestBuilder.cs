@@ -14,13 +14,13 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Education.Schools.Item.Users {
     /// <summary>Provides operations to manage the users property of the microsoft.graph.educationSchool entity.</summary>
     public class UsersRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The ref property</summary>
+        /// <summary>The Ref property</summary>
         public RefRequestBuilder Ref { get =>
             new RefRequestBuilder(PathParameters, RequestAdapter);
         }

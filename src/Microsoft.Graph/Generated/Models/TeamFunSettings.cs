@@ -33,12 +33,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<GiphyRatingType?>("giphyContentRating"); }
             set { BackingStore?.Set("giphyContentRating", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new teamFunSettings and sets the default values.
         /// </summary>
         public TeamFunSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.teamFunSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"allowGiphy", n => { AllowGiphy = n.GetBoolValue(); } },
                 {"allowStickersAndMemes", n => { AllowStickersAndMemes = n.GetBoolValue(); } },
                 {"giphyContentRating", n => { GiphyContentRating = n.GetEnumValue<GiphyRatingType>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -69,6 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("allowGiphy", AllowGiphy);
             writer.WriteBoolValue("allowStickersAndMemes", AllowStickersAndMemes);
             writer.WriteEnumValue<GiphyRatingType>("giphyContentRating", GiphyContentRating);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

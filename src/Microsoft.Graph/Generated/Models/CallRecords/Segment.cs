@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.CallRecords {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class Segment : Entity, IParsable {
         /// <summary>Endpoint that answered this segment.</summary>
         public Endpoint Callee {
@@ -35,6 +35,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
+        }
+        /// <summary>
+        /// Instantiates a new segment and sets the default values.
+        /// </summary>
+        public Segment() : base() {
+            OdataType = "#microsoft.graph.callRecords.segment";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

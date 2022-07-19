@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionP
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new windowsInformationProtectionPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsInformationProtectionPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsInformationProtectionPolicyItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionP
             /// <summary>Request query parameters</summary>
             public WindowsInformationProtectionPolicyItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new WindowsInformationProtectionPolicyItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new windowsInformationProtectionPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsInformationProtectionPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsInformationProtectionPolicyItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionP
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new windowsInformationProtectionPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsInformationProtectionPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsInformationProtectionPolicyItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

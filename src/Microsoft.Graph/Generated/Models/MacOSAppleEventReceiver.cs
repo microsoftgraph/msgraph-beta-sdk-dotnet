@@ -34,12 +34,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<MacOSProcessIdentifierType?>("identifierType"); }
             set { BackingStore?.Set("identifierType", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new macOSAppleEventReceiver and sets the default values.
         /// </summary>
         public MacOSAppleEventReceiver() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.macOSAppleEventReceiver";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -58,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"codeRequirement", n => { CodeRequirement = n.GetStringValue(); } },
                 {"identifier", n => { Identifier = n.GetStringValue(); } },
                 {"identifierType", n => { IdentifierType = n.GetEnumValue<MacOSProcessIdentifierType>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -70,6 +77,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("codeRequirement", CodeRequirement);
             writer.WriteStringValue("identifier", Identifier);
             writer.WriteEnumValue<MacOSProcessIdentifierType>("identifierType", IdentifierType);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

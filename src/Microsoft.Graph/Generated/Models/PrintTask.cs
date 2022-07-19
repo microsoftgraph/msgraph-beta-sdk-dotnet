@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class PrintTask : Entity, IParsable {
         /// <summary>The definition property</summary>
         public PrintTaskDefinition Definition {
@@ -25,6 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
         public PrintTaskTrigger Trigger {
             get { return BackingStore?.Get<PrintTaskTrigger>("trigger"); }
             set { BackingStore?.Set("trigger", value); }
+        }
+        /// <summary>
+        /// Instantiates a new printTask and sets the default values.
+        /// </summary>
+        public PrintTask() : base() {
+            OdataType = "#microsoft.graph.printTask";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new directoryDefinitionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DirectoryDefinitionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DirectoryDefinitionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.
             /// <summary>Request query parameters</summary>
             public DirectoryDefinitionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DirectoryDefinitionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new directoryDefinitionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DirectoryDefinitionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DirectoryDefinitionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new directoryDefinitionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DirectoryDefinitionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DirectoryDefinitionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

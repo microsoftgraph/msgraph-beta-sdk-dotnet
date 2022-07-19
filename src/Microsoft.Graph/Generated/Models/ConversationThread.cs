@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ConversationThread : Entity, IParsable {
         /// <summary>The Cc: recipients for the thread. Returned only on $select.</summary>
         public List<Recipient> CcRecipients {
@@ -50,6 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
         public List<string> UniqueSenders {
             get { return BackingStore?.Get<List<string>>("uniqueSenders"); }
             set { BackingStore?.Set("uniqueSenders", value); }
+        }
+        /// <summary>
+        /// Instantiates a new conversationThread and sets the default values.
+        /// </summary>
+        public ConversationThread() : base() {
+            OdataType = "#microsoft.graph.conversationThread";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

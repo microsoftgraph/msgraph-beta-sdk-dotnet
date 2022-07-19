@@ -16,6 +16,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
             set { BackingStore?.Set("properties", value); }
         }
         /// <summary>
+        /// Instantiates a new schema and sets the default values.
+        /// </summary>
+        public Schema() : base() {
+            OdataType = "#microsoft.graph.externalConnectors.schema";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

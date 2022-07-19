@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AccessReview : Entity, IParsable {
         /// <summary>The business flow template identifier. Required on create.  This value is case sensitive.</summary>
         public string BusinessFlowTemplateId {
@@ -74,6 +75,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string Status {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
+        }
+        /// <summary>
+        /// Instantiates a new accessReview and sets the default values.
+        /// </summary>
+        public AccessReview() : base() {
+            OdataType = "#microsoft.graph.accessReview";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

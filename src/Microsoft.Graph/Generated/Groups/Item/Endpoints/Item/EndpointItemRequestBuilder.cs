@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Endpoints.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new endpointItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new EndpointItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public EndpointItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Endpoints.Item {
             /// <summary>Request query parameters</summary>
             public EndpointItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new EndpointItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new endpointItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new EndpointItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public EndpointItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Endpoints.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new endpointItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new EndpointItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public EndpointItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

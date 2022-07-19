@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<long?>("minimum"); }
             set { BackingStore?.Set("minimum", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The inclusive lower bound of the integer range.</summary>
         public long? Start {
             get { return BackingStore?.Get<long?>("start"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IntegerRange() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.integerRange";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"end", n => { End = n.GetLongValue(); } },
                 {"maximum", n => { Maximum = n.GetLongValue(); } },
                 {"minimum", n => { Minimum = n.GetLongValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"start", n => { Start = n.GetLongValue(); } },
             };
         }
@@ -68,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteLongValue("end", End);
             writer.WriteLongValue("maximum", Maximum);
             writer.WriteLongValue("minimum", Minimum);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteLongValue("start", Start);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls {
     /// <summary>Provides operations to manage the controls property of the microsoft.graph.program entity.</summary>
     public class ControlsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

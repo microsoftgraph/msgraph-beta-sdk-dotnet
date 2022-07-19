@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Entity which represents a connection to an Exchange environment.</summary>
     public class DeviceManagementExchangeConnector : Entity, IParsable {
         /// <summary>The name of the server hosting the Exchange Connector.</summary>
         public string ConnectorServerName {
@@ -50,6 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string Version {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
+        }
+        /// <summary>
+        /// Instantiates a new DeviceManagementExchangeConnector and sets the default values.
+        /// </summary>
+        public DeviceManagementExchangeConnector() : base() {
+            OdataType = "#microsoft.graph.deviceManagementExchangeConnector";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

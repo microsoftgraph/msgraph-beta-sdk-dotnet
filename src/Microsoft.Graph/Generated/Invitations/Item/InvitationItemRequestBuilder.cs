@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Invitations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new invitationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new InvitationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public InvitationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Invitations.Item {
             /// <summary>Request query parameters</summary>
             public InvitationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new InvitationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new invitationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new InvitationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public InvitationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Invitations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new invitationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new InvitationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public InvitationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

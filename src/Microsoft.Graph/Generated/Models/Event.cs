@@ -215,6 +215,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("transactionId"); }
             set { BackingStore?.Set("transactionId", value); }
         }
+        /// <summary>The type property</summary>
+        public EventType? Type {
+            get { return BackingStore?.Get<EventType?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
         /// <summary>The uid property</summary>
         public string Uid {
             get { return BackingStore?.Get<string>("uid"); }
@@ -224,6 +229,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string WebLink {
             get { return BackingStore?.Get<string>("webLink"); }
             set { BackingStore?.Set("webLink", value); }
+        }
+        /// <summary>
+        /// Instantiates a new Event and sets the default values.
+        /// </summary>
+        public Event() : base() {
+            OdataType = "#microsoft.graph.event";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -280,6 +291,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"start", n => { Start = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 {"subject", n => { Subject = n.GetStringValue(); } },
                 {"transactionId", n => { TransactionId = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetEnumValue<EventType>(); } },
                 {"uid", n => { Uid = n.GetStringValue(); } },
                 {"webLink", n => { WebLink = n.GetStringValue(); } },
             };
@@ -333,6 +345,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<DateTimeTimeZone>("start", Start);
             writer.WriteStringValue("subject", Subject);
             writer.WriteStringValue("transactionId", TransactionId);
+            writer.WriteEnumValue<EventType>("type", Type);
             writer.WriteStringValue("uid", Uid);
             writer.WriteStringValue("webLink", WebLink);
         }

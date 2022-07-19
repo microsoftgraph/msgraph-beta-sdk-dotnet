@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Security.Triggers.RetentionEvents.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new retentionEventItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new RetentionEventItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public RetentionEventItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Security.Triggers.RetentionEvents.Item {
             /// <summary>Request query parameters</summary>
             public RetentionEventItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new RetentionEventItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new retentionEventItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new RetentionEventItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public RetentionEventItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Security.Triggers.RetentionEvents.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new retentionEventItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new RetentionEventItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public RetentionEventItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

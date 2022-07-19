@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new AndroidCertificateProfileBase and sets the default values.
         /// </summary>
         public AndroidCertificateProfileBase() : base() {
-            Type = "#microsoft.graph.androidCertificateProfileBase";
+            OdataType = "#microsoft.graph.androidCertificateProfileBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

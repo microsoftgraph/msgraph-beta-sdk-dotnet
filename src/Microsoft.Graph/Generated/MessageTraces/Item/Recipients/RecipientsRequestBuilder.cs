@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.MessageTraces.Item.Recipients {
     /// <summary>Provides operations to manage the recipients property of the microsoft.graph.messageTrace entity.</summary>
     public class RecipientsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

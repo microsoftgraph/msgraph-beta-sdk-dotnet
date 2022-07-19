@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new callRecordItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CallRecordItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CallRecordItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item {
             /// <summary>Request query parameters</summary>
             public CallRecordItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CallRecordItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new callRecordItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CallRecordItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CallRecordItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new callRecordItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CallRecordItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CallRecordItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

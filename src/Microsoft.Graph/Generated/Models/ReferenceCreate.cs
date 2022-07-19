@@ -13,8 +13,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The id property</summary>
-        public string Id {
+        /// <summary>The OdataId property</summary>
+        public string OdataId {
             get { return BackingStore?.Get<string>("@odata.id"); }
             set { BackingStore?.Set("@odata.id", value); }
         }
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"@odata.id", n => { Id = n.GetStringValue(); } },
+                {"@odata.id", n => { OdataId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("@odata.id", Id);
+            writer.WriteStringValue("@odata.id", OdataId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

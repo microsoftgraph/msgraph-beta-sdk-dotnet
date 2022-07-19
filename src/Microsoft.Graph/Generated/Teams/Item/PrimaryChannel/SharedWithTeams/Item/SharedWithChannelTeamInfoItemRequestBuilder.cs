@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.SharedWithTeams.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new sharedWithChannelTeamInfoItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new SharedWithChannelTeamInfoItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public SharedWithChannelTeamInfoItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.SharedWithTeams.Item {
             /// <summary>Request query parameters</summary>
             public SharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new sharedWithChannelTeamInfoItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SharedWithChannelTeamInfoItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SharedWithChannelTeamInfoItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.SharedWithTeams.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new sharedWithChannelTeamInfoItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SharedWithChannelTeamInfoItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SharedWithChannelTeamInfoItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

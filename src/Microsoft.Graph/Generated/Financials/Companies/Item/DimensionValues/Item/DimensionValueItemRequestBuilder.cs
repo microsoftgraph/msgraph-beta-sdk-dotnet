@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.DimensionValues.Item {
             /// <summary>Request query parameters</summary>
             public DimensionValueItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DimensionValueItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new dimensionValueItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DimensionValueItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DimensionValueItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Groups.Item.Sets {
     /// <summary>Provides operations to manage the sets property of the microsoft.graph.termStore.group entity.</summary>
     public class SetsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

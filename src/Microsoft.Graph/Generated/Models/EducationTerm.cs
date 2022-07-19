@@ -29,6 +29,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Start of the term.</summary>
         public Date? StartDate {
             get { return BackingStore?.Get<Date?>("startDate"); }
@@ -40,6 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         public EducationTerm() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.educationTerm";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"endDate", n => { EndDate = n.GetDateValue(); } },
                 {"externalId", n => { ExternalId = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"startDate", n => { StartDate = n.GetDateValue(); } },
             };
         }
@@ -69,6 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateValue("endDate", EndDate);
             writer.WriteStringValue("externalId", ExternalId);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateValue("startDate", StartDate);
             writer.WriteAdditionalData(AdditionalData);
         }

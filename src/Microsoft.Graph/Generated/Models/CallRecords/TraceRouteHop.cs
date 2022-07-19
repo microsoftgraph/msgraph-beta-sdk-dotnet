@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             get { return BackingStore?.Get<string>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The time from when the trace route packet was sent from the client to this hop and back to the client, denoted in [ISO 8601][] format. For example, 1 second is denoted as PT1S, where P is the duration designator, T is the time designator, and S is the second designator.</summary>
         public TimeSpan? RoundTripTime {
             get { return BackingStore?.Get<TimeSpan?>("roundTripTime"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         public TraceRouteHop() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.callRecords.traceRouteHop";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             return new Dictionary<string, Action<IParseNode>> {
                 {"hopCount", n => { HopCount = n.GetIntValue(); } },
                 {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"roundTripTime", n => { RoundTripTime = n.GetTimeSpanValue(); } },
             };
         }
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("hopCount", HopCount);
             writer.WriteStringValue("ipAddress", IpAddress);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteTimeSpanValue("roundTripTime", RoundTripTime);
             writer.WriteAdditionalData(AdditionalData);
         }

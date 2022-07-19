@@ -38,6 +38,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isCompromised"); }
             set { BackingStore?.Set("isCompromised", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Date and time when user reported delivered payload as phish in the attack simulation and training campaign.</summary>
         public DateTimeOffset? ReportedPhishDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("reportedPhishDateTime"); }
@@ -64,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
         public UserSimulationDetails() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.userSimulationDetails";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -83,6 +89,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"compromisedDateTime", n => { CompromisedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"inProgressTrainingsCount", n => { InProgressTrainingsCount = n.GetIntValue(); } },
                 {"isCompromised", n => { IsCompromised = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"reportedPhishDateTime", n => { ReportedPhishDateTime = n.GetDateTimeOffsetValue(); } },
                 {"simulationEvents", n => { SimulationEvents = n.GetCollectionOfObjectValues<UserSimulationEventInfo>(UserSimulationEventInfo.CreateFromDiscriminatorValue).ToList(); } },
                 {"simulationUser", n => { SimulationUser = n.GetObjectValue<AttackSimulationUser>(AttackSimulationUser.CreateFromDiscriminatorValue); } },
@@ -100,6 +107,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("compromisedDateTime", CompromisedDateTime);
             writer.WriteIntValue("inProgressTrainingsCount", InProgressTrainingsCount);
             writer.WriteBoolValue("isCompromised", IsCompromised);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateTimeOffsetValue("reportedPhishDateTime", ReportedPhishDateTime);
             writer.WriteCollectionOfObjectValues<UserSimulationEventInfo>("simulationEvents", SimulationEvents);
             writer.WriteObjectValue<AttackSimulationUser>("simulationUser", SimulationUser);

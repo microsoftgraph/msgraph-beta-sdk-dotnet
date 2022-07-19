@@ -16,6 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("maximumDuration", value); }
         }
         /// <summary>
+        /// Instantiates a new UnifiedRoleManagementPolicyExpirationRule and sets the default values.
+        /// </summary>
+        public UnifiedRoleManagementPolicyExpirationRule() : base() {
+            OdataType = "#microsoft.graph.unifiedRoleManagementPolicyExpirationRule";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

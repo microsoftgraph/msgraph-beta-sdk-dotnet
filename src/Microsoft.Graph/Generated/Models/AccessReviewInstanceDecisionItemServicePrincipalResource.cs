@@ -11,6 +11,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appId", value); }
         }
         /// <summary>
+        /// Instantiates a new AccessReviewInstanceDecisionItemServicePrincipalResource and sets the default values.
+        /// </summary>
+        public AccessReviewInstanceDecisionItemServicePrincipalResource() : base() {
+            OdataType = "#microsoft.graph.accessReviewInstanceDecisionItemServicePrincipalResource";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

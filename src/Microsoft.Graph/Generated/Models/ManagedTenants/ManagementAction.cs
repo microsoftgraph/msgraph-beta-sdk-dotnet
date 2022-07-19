@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ManagementAction : Entity, IParsable {
         /// <summary>The category property</summary>
         public ManagementCategory? Category {
@@ -35,6 +35,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public List<WorkloadAction> WorkloadActions {
             get { return BackingStore?.Get<List<WorkloadAction>>("workloadActions"); }
             set { BackingStore?.Set("workloadActions", value); }
+        }
+        /// <summary>
+        /// Instantiates a new managementAction and sets the default values.
+        /// </summary>
+        public ManagementAction() : base() {
+            OdataType = "#microsoft.graph.managedTenants.managementAction";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

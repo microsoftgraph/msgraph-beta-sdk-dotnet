@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Programs.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new programItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ProgramItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ProgramItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Programs.Item {
             /// <summary>Request query parameters</summary>
             public ProgramItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ProgramItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new programItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ProgramItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ProgramItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Programs.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new programItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ProgramItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ProgramItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

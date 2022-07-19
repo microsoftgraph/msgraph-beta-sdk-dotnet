@@ -19,7 +19,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users {
     /// <summary>Provides operations to manage the collection of user entities.</summary>
     public class UsersRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

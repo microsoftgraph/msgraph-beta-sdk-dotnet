@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class SalesInvoice : Entity, IParsable {
         /// <summary>The billingPostalAddress property</summary>
         public PostalAddressType BillingPostalAddress {
@@ -196,6 +195,12 @@ namespace Microsoft.Graph.Beta.Models {
         public decimal? TotalTaxAmount {
             get { return BackingStore?.Get<decimal?>("totalTaxAmount"); }
             set { BackingStore?.Set("totalTaxAmount", value); }
+        }
+        /// <summary>
+        /// Instantiates a new SalesInvoice and sets the default values.
+        /// </summary>
+        public SalesInvoice() : base() {
+            OdataType = "#microsoft.graph.salesInvoice";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

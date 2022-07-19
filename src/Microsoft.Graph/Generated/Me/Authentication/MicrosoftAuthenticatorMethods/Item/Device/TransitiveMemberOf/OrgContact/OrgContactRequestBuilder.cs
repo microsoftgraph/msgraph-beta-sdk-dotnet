@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods.Item.Device.TransitiveMemberOf.OrgContact {
     /// <summary>Casts the previous resource to orgContact.</summary>
     public class OrgContactRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Ite
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new windowsFeatureUpdateProfileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsFeatureUpdateProfileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsFeatureUpdateProfileItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Ite
             /// <summary>Request query parameters</summary>
             public WindowsFeatureUpdateProfileItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new WindowsFeatureUpdateProfileItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new windowsFeatureUpdateProfileItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsFeatureUpdateProfileItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsFeatureUpdateProfileItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Ite
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new windowsFeatureUpdateProfileItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsFeatureUpdateProfileItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsFeatureUpdateProfileItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

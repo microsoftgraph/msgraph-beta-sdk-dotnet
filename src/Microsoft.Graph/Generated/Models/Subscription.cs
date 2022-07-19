@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Subscription : Entity, IParsable {
         /// <summary>Optional. Identifier of the application used to create the subscription. Read-only.</summary>
         public string ApplicationId {
@@ -80,6 +80,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string Resource {
             get { return BackingStore?.Get<string>("resource"); }
             set { BackingStore?.Set("resource", value); }
+        }
+        /// <summary>
+        /// Instantiates a new subscription and sets the default values.
+        /// </summary>
+        public Subscription() : base() {
+            OdataType = "#microsoft.graph.subscription";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

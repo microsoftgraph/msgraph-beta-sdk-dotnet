@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class TeamsTab : Entity, IParsable {
         /// <summary>Container for custom settings applied to a tab. The tab is considered configured only once this property is set.</summary>
         public TeamsTabConfiguration Configuration {
@@ -40,6 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
+        }
+        /// <summary>
+        /// Instantiates a new teamsTab and sets the default values.
+        /// </summary>
+        public TeamsTab() : base() {
+            OdataType = "#microsoft.graph.teamsTab";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

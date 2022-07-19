@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models.Search {
             get { return BackingStore?.Get<Identity>("device"); }
             set { BackingStore?.Set("device", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The user property</summary>
         public Identity User {
             get { return BackingStore?.Get<Identity>("user"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models.Search {
         public IdentitySet() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.search.identitySet";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models.Search {
             return new Dictionary<string, Action<IParseNode>> {
                 {"application", n => { Application = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
                 {"device", n => { Device = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"user", n => { User = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
             };
         }
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models.Search {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Identity>("application", Application);
             writer.WriteObjectValue<Identity>("device", Device);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<Identity>("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }

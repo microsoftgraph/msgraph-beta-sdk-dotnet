@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("key"); }
             set { BackingStore?.Set("key", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Previous (i.e. before changed) registry key (excludes HIVE).</summary>
         public string OldKey {
             get { return BackingStore?.Get<string>("oldKey"); }
@@ -69,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
         public RegistryKeyState() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.registryKeyState";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -85,6 +91,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"hive", n => { Hive = n.GetEnumValue<RegistryHive>(); } },
                 {"key", n => { Key = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"oldKey", n => { OldKey = n.GetStringValue(); } },
                 {"oldValueData", n => { OldValueData = n.GetStringValue(); } },
                 {"oldValueName", n => { OldValueName = n.GetStringValue(); } },
@@ -103,6 +110,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<RegistryHive>("hive", Hive);
             writer.WriteStringValue("key", Key);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("oldKey", OldKey);
             writer.WriteStringValue("oldValueData", OldValueData);
             writer.WriteStringValue("oldValueName", OldValueName);

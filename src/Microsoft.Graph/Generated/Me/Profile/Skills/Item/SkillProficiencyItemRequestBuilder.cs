@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Skills.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new skillProficiencyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new SkillProficiencyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public SkillProficiencyItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Skills.Item {
             /// <summary>Request query parameters</summary>
             public SkillProficiencyItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SkillProficiencyItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new skillProficiencyItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SkillProficiencyItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SkillProficiencyItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Skills.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new skillProficiencyItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SkillProficiencyItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SkillProficiencyItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

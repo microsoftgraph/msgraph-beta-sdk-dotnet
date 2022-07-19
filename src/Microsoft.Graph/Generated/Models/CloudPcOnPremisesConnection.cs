@@ -75,10 +75,21 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("subscriptionName"); }
             set { BackingStore?.Set("subscriptionName", value); }
         }
+        /// <summary>Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.</summary>
+        public CloudPcOnPremisesConnectionType? Type {
+            get { return BackingStore?.Get<CloudPcOnPremisesConnectionType?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
         /// <summary>The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.</summary>
         public string VirtualNetworkId {
             get { return BackingStore?.Get<string>("virtualNetworkId"); }
             set { BackingStore?.Set("virtualNetworkId", value); }
+        }
+        /// <summary>
+        /// Instantiates a new CloudPcOnPremisesConnection and sets the default values.
+        /// </summary>
+        public CloudPcOnPremisesConnection() : base() {
+            OdataType = "#microsoft.graph.cloudPcOnPremisesConnection";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -107,6 +118,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"subnetId", n => { SubnetId = n.GetStringValue(); } },
                 {"subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
                 {"subscriptionName", n => { SubscriptionName = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetEnumValue<CloudPcOnPremisesConnectionType>(); } },
                 {"virtualNetworkId", n => { VirtualNetworkId = n.GetStringValue(); } },
             };
         }
@@ -131,6 +143,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("subnetId", SubnetId);
             writer.WriteStringValue("subscriptionId", SubscriptionId);
             writer.WriteStringValue("subscriptionName", SubscriptionName);
+            writer.WriteEnumValue<CloudPcOnPremisesConnectionType>("type", Type);
             writer.WriteStringValue("virtualNetworkId", VirtualNetworkId);
         }
     }

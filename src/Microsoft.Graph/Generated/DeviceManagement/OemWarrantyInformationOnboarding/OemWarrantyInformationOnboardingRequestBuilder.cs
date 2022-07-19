@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.OemWarrantyInformationOnboarding {
     /// <summary>Provides operations to manage the oemWarrantyInformationOnboarding property of the microsoft.graph.deviceManagement entity.</summary>
     public class OemWarrantyInformationOnboardingRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

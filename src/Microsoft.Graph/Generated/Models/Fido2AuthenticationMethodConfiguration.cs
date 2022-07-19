@@ -26,6 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("keyRestrictions", value); }
         }
         /// <summary>
+        /// Instantiates a new Fido2AuthenticationMethodConfiguration and sets the default values.
+        /// </summary>
+        public Fido2AuthenticationMethodConfiguration() : base() {
+            OdataType = "#microsoft.graph.fido2AuthenticationMethodConfiguration";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

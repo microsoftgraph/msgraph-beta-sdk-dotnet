@@ -48,6 +48,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("iso"); }
             set { BackingStore?.Set("iso", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The orientation value from the camera. Writable on OneDrive Personal.</summary>
         public int? Orientation {
             get { return BackingStore?.Get<int?>("orientation"); }
@@ -64,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
         public Photo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.photo";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -85,6 +91,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"fNumber", n => { FNumber = n.GetDoubleValue(); } },
                 {"focalLength", n => { FocalLength = n.GetDoubleValue(); } },
                 {"iso", n => { Iso = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"orientation", n => { Orientation = n.GetIntValue(); } },
                 {"takenDateTime", n => { TakenDateTime = n.GetDateTimeOffsetValue(); } },
             };
@@ -102,6 +109,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDoubleValue("fNumber", FNumber);
             writer.WriteDoubleValue("focalLength", FocalLength);
             writer.WriteIntValue("iso", Iso);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("orientation", Orientation);
             writer.WriteDateTimeOffsetValue("takenDateTime", TakenDateTime);
             writer.WriteAdditionalData(AdditionalData);

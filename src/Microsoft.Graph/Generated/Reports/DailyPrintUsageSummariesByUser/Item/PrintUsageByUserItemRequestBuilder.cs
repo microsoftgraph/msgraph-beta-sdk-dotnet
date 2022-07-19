@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByUser.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new printUsageByUserItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PrintUsageByUserItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PrintUsageByUserItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByUser.Item {
             /// <summary>Request query parameters</summary>
             public PrintUsageByUserItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PrintUsageByUserItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new printUsageByUserItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PrintUsageByUserItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PrintUsageByUserItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByUser.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new printUsageByUserItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PrintUsageByUserItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PrintUsageByUserItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

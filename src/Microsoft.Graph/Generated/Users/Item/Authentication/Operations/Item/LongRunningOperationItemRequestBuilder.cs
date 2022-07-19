@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Operations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new longRunningOperationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new LongRunningOperationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public LongRunningOperationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Operations.Item {
             /// <summary>Request query parameters</summary>
             public LongRunningOperationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new LongRunningOperationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new longRunningOperationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new LongRunningOperationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public LongRunningOperationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Operations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new longRunningOperationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new LongRunningOperationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public LongRunningOperationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

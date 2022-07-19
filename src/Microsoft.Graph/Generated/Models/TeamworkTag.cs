@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class TeamworkTag : Entity, IParsable {
         /// <summary>Tag description as it will appear to the user in Microsoft Teams.</summary>
         public string Description {
@@ -35,6 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string TeamId {
             get { return BackingStore?.Get<string>("teamId"); }
             set { BackingStore?.Set("teamId", value); }
+        }
+        /// <summary>
+        /// Instantiates a new teamworkTag and sets the default values.
+        /// </summary>
+        public TeamworkTag() : base() {
+            OdataType = "#microsoft.graph.teamworkTag";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

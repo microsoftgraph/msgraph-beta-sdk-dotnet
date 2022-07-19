@@ -14,6 +14,11 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Windows version 10.0 or later.</summary>
         public bool? V10_0 {
             get { return BackingStore?.Get<bool?>("v10_0"); }
@@ -85,6 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
         public WindowsMinimumOperatingSystem() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.windowsMinimumOperatingSystem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -99,6 +105,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"v10_0", n => { V10_0 = n.GetBoolValue(); } },
                 {"v10_1607", n => { V10_1607 = n.GetBoolValue(); } },
                 {"v10_1703", n => { V10_1703 = n.GetBoolValue(); } },
@@ -120,6 +127,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("v10_0", V10_0);
             writer.WriteBoolValue("v10_1607", V10_1607);
             writer.WriteBoolValue("v10_1703", V10_1703);

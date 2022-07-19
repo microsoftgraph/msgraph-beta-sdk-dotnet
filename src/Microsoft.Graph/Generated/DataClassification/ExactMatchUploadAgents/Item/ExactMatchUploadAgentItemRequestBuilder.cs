@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchUploadAgents.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new exactMatchUploadAgentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ExactMatchUploadAgentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ExactMatchUploadAgentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchUploadAgents.Item {
             /// <summary>Request query parameters</summary>
             public ExactMatchUploadAgentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ExactMatchUploadAgentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new exactMatchUploadAgentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ExactMatchUploadAgentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ExactMatchUploadAgentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchUploadAgents.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new exactMatchUploadAgentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ExactMatchUploadAgentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ExactMatchUploadAgentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

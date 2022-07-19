@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AccessReviewDecision : Entity, IParsable {
         /// <summary>The feature- generated recommendation shown to the reviewer, one of Approve, Deny or NotAvailable.</summary>
         public string AccessRecommendation {
@@ -50,6 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string ReviewResult {
             get { return BackingStore?.Get<string>("reviewResult"); }
             set { BackingStore?.Set("reviewResult", value); }
+        }
+        /// <summary>
+        /// Instantiates a new accessReviewDecision and sets the default values.
+        /// </summary>
+        public AccessReviewDecision() : base() {
+            OdataType = "#microsoft.graph.accessReviewDecision";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

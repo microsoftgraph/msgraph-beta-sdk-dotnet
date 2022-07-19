@@ -59,6 +59,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("localUserAuthorizations"); }
             set { BackingStore?.Set("localUserAuthorizations", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The package family name of a Microsoft Store application that&apos;s affected by the firewall rule.</summary>
         public string PackageFamilyName {
             get { return BackingStore?.Get<string>("packageFamilyName"); }
@@ -100,6 +105,7 @@ namespace Microsoft.Graph.Beta.Models {
         public WindowsFirewallRule() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.windowsFirewallRule";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -123,6 +129,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"localAddressRanges", n => { LocalAddressRanges = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"localPortRanges", n => { LocalPortRanges = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"localUserAuthorizations", n => { LocalUserAuthorizations = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"packageFamilyName", n => { PackageFamilyName = n.GetStringValue(); } },
                 {"profileTypes", n => { ProfileTypes = n.GetEnumValue<WindowsFirewallRuleNetworkProfileTypes>(); } },
                 {"protocol", n => { Protocol = n.GetIntValue(); } },
@@ -147,6 +154,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("localAddressRanges", LocalAddressRanges);
             writer.WriteCollectionOfPrimitiveValues<string>("localPortRanges", LocalPortRanges);
             writer.WriteStringValue("localUserAuthorizations", LocalUserAuthorizations);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("packageFamilyName", PackageFamilyName);
             writer.WriteEnumValue<WindowsFirewallRuleNetworkProfileTypes>("profileTypes", ProfileTypes);
             writer.WriteIntValue("protocol", Protocol);

@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.ThreatAssessment
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new threatAssessmentResultItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ThreatAssessmentResultItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ThreatAssessmentResultItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.ThreatAssessment
             /// <summary>Request query parameters</summary>
             public ThreatAssessmentResultItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ThreatAssessmentResultItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new threatAssessmentResultItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ThreatAssessmentResultItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ThreatAssessmentResultItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.ThreatAssessment
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new threatAssessmentResultItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ThreatAssessmentResultItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ThreatAssessmentResultItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

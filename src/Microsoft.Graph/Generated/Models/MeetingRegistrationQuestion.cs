@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class MeetingRegistrationQuestion : Entity, IParsable {
         /// <summary>Answer input type of the custom registration question.</summary>
         public Microsoft.Graph.Beta.Models.AnswerInputType? AnswerInputType {
@@ -25,6 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
         public bool? IsRequired {
             get { return BackingStore?.Get<bool?>("isRequired"); }
             set { BackingStore?.Set("isRequired", value); }
+        }
+        /// <summary>
+        /// Instantiates a new meetingRegistrationQuestion and sets the default values.
+        /// </summary>
+        public MeetingRegistrationQuestion() : base() {
+            OdataType = "#microsoft.graph.meetingRegistrationQuestion";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

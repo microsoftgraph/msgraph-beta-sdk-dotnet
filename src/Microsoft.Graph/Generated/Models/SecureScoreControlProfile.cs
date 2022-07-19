@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class SecureScoreControlProfile : Entity, IParsable {
         /// <summary>Control action type (Config, Review, Behavior).</summary>
         public string ActionType {
@@ -100,6 +99,12 @@ namespace Microsoft.Graph.Beta.Models {
         public SecurityVendorInformation VendorInformation {
             get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
+        }
+        /// <summary>
+        /// Instantiates a new SecureScoreControlProfile and sets the default values.
+        /// </summary>
+        public SecureScoreControlProfile() : base() {
+            OdataType = "#microsoft.graph.secureScoreControlProfile";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

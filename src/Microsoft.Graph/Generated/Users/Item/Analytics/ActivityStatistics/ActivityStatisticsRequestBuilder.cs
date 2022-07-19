@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Analytics.ActivityStatistics {
     /// <summary>Provides operations to manage the activityStatistics property of the microsoft.graph.userAnalytics entity.</summary>
     public class ActivityStatisticsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

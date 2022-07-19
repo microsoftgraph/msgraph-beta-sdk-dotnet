@@ -11,6 +11,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("useDeviceContext", value); }
         }
         /// <summary>
+        /// Instantiates a new MicrosoftStoreForBusinessAppAssignmentSettings and sets the default values.
+        /// </summary>
+        public MicrosoftStoreForBusinessAppAssignmentSettings() : base() {
+            OdataType = "#microsoft.graph.microsoftStoreForBusinessAppAssignmentSettings";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

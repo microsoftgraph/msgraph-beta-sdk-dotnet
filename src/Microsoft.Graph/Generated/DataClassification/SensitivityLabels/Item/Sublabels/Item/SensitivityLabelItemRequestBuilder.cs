@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DataClassification.SensitivityLabels.Item.Sublabe
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new sensitivityLabelItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new SensitivityLabelItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public SensitivityLabelItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DataClassification.SensitivityLabels.Item.Sublabe
             /// <summary>Request query parameters</summary>
             public SensitivityLabelItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SensitivityLabelItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new sensitivityLabelItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SensitivityLabelItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SensitivityLabelItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DataClassification.SensitivityLabels.Item.Sublabe
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new sensitivityLabelItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SensitivityLabelItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SensitivityLabelItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

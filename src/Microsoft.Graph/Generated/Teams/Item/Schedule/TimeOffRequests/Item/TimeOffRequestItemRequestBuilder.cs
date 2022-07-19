@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeOffRequests.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new timeOffRequestItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new TimeOffRequestItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public TimeOffRequestItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -176,7 +176,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeOffRequests.Item {
             /// <summary>Request query parameters</summary>
             public TimeOffRequestItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TimeOffRequestItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new timeOffRequestItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TimeOffRequestItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TimeOffRequestItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -190,7 +190,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeOffRequests.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new timeOffRequestItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new TimeOffRequestItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public TimeOffRequestItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

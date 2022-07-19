@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new privilegedRoleAssignmentRequestItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PrivilegedRoleAssignmentRequestItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PrivilegedRoleAssignmentRequestItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.Item {
             /// <summary>Request query parameters</summary>
             public PrivilegedRoleAssignmentRequestItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PrivilegedRoleAssignmentRequestItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new privilegedRoleAssignmentRequestItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PrivilegedRoleAssignmentRequestItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PrivilegedRoleAssignmentRequestItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new privilegedRoleAssignmentRequestItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PrivilegedRoleAssignmentRequestItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PrivilegedRoleAssignmentRequestItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

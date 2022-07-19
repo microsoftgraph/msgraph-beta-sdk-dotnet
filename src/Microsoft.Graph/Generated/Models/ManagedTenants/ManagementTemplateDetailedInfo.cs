@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             get { return BackingStore?.Get<string>("managementTemplateId"); }
             set { BackingStore?.Set("managementTemplateId", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The version property</summary>
         public int? Version {
             get { return BackingStore?.Get<int?>("version"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public ManagementTemplateDetailedInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.managedTenants.managementTemplateDetailedInfo";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
                 {"category", n => { Category = n.GetEnumValue<ManagementCategory>(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"managementTemplateId", n => { ManagementTemplateId = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"version", n => { Version = n.GetIntValue(); } },
             };
         }
@@ -68,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             writer.WriteEnumValue<ManagementCategory>("category", Category);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("managementTemplateId", ManagementTemplateId);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -38,12 +38,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isSendLogsAndFeedbackEnabled"); }
             set { BackingStore?.Set("isSendLogsAndFeedbackEnabled", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new teamworkFeaturesConfiguration and sets the default values.
         /// </summary>
         public TeamworkFeaturesConfiguration() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.teamworkFeaturesConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -63,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isBluetoothBeaconingEnabled", n => { IsBluetoothBeaconingEnabled = n.GetBoolValue(); } },
                 {"isHideMeetingNamesEnabled", n => { IsHideMeetingNamesEnabled = n.GetBoolValue(); } },
                 {"isSendLogsAndFeedbackEnabled", n => { IsSendLogsAndFeedbackEnabled = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,6 +83,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isBluetoothBeaconingEnabled", IsBluetoothBeaconingEnabled);
             writer.WriteBoolValue("isHideMeetingNamesEnabled", IsHideMeetingNamesEnabled);
             writer.WriteBoolValue("isSendLogsAndFeedbackEnabled", IsSendLogsAndFeedbackEnabled);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

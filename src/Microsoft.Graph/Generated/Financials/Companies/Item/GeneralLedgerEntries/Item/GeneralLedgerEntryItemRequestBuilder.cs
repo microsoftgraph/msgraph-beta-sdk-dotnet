@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.It
             /// <summary>Request query parameters</summary>
             public GeneralLedgerEntryItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new GeneralLedgerEntryItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new generalLedgerEntryItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new GeneralLedgerEntryItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public GeneralLedgerEntryItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Items.Item.Activities {
     /// <summary>Provides operations to manage the activities property of the microsoft.graph.driveItem entity.</summary>
     public class ActivitiesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

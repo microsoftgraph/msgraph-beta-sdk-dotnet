@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class OnlineMeeting : Entity, IParsable {
         /// <summary>Indicates whether attendees can turn on their camera.</summary>
         public bool? AllowAttendeeToEnableCamera {
@@ -160,6 +159,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string VideoTeleconferenceId {
             get { return BackingStore?.Get<string>("videoTeleconferenceId"); }
             set { BackingStore?.Set("videoTeleconferenceId", value); }
+        }
+        /// <summary>
+        /// Instantiates a new OnlineMeeting and sets the default values.
+        /// </summary>
+        public OnlineMeeting() : base() {
+            OdataType = "#microsoft.graph.onlineMeeting";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

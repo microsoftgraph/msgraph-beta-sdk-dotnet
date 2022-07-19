@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<RatingIrelandMoviesType?>("movieRating"); }
             set { BackingStore?.Set("movieRating", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>TV content rating labels in Ireland</summary>
         public RatingIrelandTelevisionType? TvRating {
             get { return BackingStore?.Get<RatingIrelandTelevisionType?>("tvRating"); }
@@ -29,6 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         public MediaContentRatingIreland() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.mediaContentRatingIreland";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"movieRating", n => { MovieRating = n.GetEnumValue<RatingIrelandMoviesType>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"tvRating", n => { TvRating = n.GetEnumValue<RatingIrelandTelevisionType>(); } },
             };
         }
@@ -54,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<RatingIrelandMoviesType>("movieRating", MovieRating);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<RatingIrelandTelevisionType>("tvRating", TvRating);
             writer.WriteAdditionalData(AdditionalData);
         }

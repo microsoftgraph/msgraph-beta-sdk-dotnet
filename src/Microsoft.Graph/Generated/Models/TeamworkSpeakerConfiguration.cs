@@ -33,6 +33,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isSpeakerOptional"); }
             set { BackingStore?.Set("isSpeakerOptional", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The speakers property</summary>
         public List<TeamworkPeripheral> Speakers {
             get { return BackingStore?.Get<List<TeamworkPeripheral>>("speakers"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public TeamworkSpeakerConfiguration() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.teamworkSpeakerConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"defaultSpeaker", n => { DefaultSpeaker = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
                 {"isCommunicationSpeakerOptional", n => { IsCommunicationSpeakerOptional = n.GetBoolValue(); } },
                 {"isSpeakerOptional", n => { IsSpeakerOptional = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"speakers", n => { Speakers = n.GetCollectionOfObjectValues<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
@@ -75,6 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<TeamworkPeripheral>("defaultSpeaker", DefaultSpeaker);
             writer.WriteBoolValue("isCommunicationSpeakerOptional", IsCommunicationSpeakerOptional);
             writer.WriteBoolValue("isSpeakerOptional", IsSpeakerOptional);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<TeamworkPeripheral>("speakers", Speakers);
             writer.WriteAdditionalData(AdditionalData);
         }

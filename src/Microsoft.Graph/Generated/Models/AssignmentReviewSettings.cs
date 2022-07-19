@@ -38,6 +38,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The interval for recurrence, such as monthly or quarterly.</summary>
         public string RecurrenceType {
             get { return BackingStore?.Get<string>("recurrenceType"); }
@@ -64,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AssignmentReviewSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.assignmentReviewSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -83,6 +89,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isAccessRecommendationEnabled", n => { IsAccessRecommendationEnabled = n.GetBoolValue(); } },
                 {"isApprovalJustificationRequired", n => { IsApprovalJustificationRequired = n.GetBoolValue(); } },
                 {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"recurrenceType", n => { RecurrenceType = n.GetStringValue(); } },
                 {"reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<UserSet>(UserSet.CreateFromDiscriminatorValue).ToList(); } },
                 {"reviewerType", n => { ReviewerType = n.GetStringValue(); } },
@@ -100,6 +107,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isAccessRecommendationEnabled", IsAccessRecommendationEnabled);
             writer.WriteBoolValue("isApprovalJustificationRequired", IsApprovalJustificationRequired);
             writer.WriteBoolValue("isEnabled", IsEnabled);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("recurrenceType", RecurrenceType);
             writer.WriteCollectionOfObjectValues<UserSet>("reviewers", Reviewers);
             writer.WriteStringValue("reviewerType", ReviewerType);
