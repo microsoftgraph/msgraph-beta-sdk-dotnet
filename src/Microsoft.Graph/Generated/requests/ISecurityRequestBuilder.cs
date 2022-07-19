@@ -86,6 +86,12 @@ namespace Microsoft.Graph
         Microsoft.Graph.SecurityNamespace.ITriggerTypesRootRequestBuilder TriggerTypes { get; }
 
         /// <summary>
+        /// Gets the request builder for ThreatSubmission.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.SecurityNamespace.IThreatSubmissionRootRequestBuilder"/>.</returns>
+        Microsoft.Graph.SecurityNamespace.IThreatSubmissionRootRequestBuilder ThreatSubmission { get; }
+
+        /// <summary>
         /// Gets the request builder for Alerts.
         /// </summary>
         /// <returns>The <see cref="ISecurityAlertsCollectionRequestBuilder"/>.</returns>

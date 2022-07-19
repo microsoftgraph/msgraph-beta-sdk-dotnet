@@ -62,5 +62,22 @@ namespace Microsoft.Graph
             }
         }
     
+        /// <summary>
+        /// Gets the request builder for UnifiedRoleDefinitionAssignedPrincipals.
+        /// </summary>
+        /// <returns>The <see cref="IUnifiedRoleDefinitionAssignedPrincipalsRequestBuilder"/>.</returns>
+        public IUnifiedRoleDefinitionAssignedPrincipalsRequestBuilder AssignedPrincipals(
+            bool transitive,
+            string directoryScopeType,
+            string directoryScopeId)
+        {
+            return new UnifiedRoleDefinitionAssignedPrincipalsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.assignedPrincipals"),
+                this.Client,
+                transitive,
+                directoryScopeType,
+                directoryScopeId);
+        }
+    
     }
 }

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Access Package Subject.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AccessPackageSubject>))]
     public partial class AccessPackageSubject : Entity
     {
     
@@ -67,6 +68,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("principalName")]
         public string PrincipalName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subject lifecycle.
+        /// </summary>
+        [JsonPropertyName("subjectLifecycle")]
+        public AccessPackageSubjectLifecycle? SubjectLifecycle { get; set; }
     
         /// <summary>
         /// Gets or sets type.

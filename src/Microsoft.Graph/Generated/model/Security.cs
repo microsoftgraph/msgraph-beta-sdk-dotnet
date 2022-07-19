@@ -103,6 +103,13 @@ namespace Microsoft.Graph
         public Microsoft.Graph.SecurityNamespace.TriggerTypesRoot TriggerTypes { get; set; }
     
         /// <summary>
+        /// Gets or sets threat submission.
+        /// A threat submission sent to Microsoft; for example, a suspicious email threat, URL threat, or file threat.
+        /// </summary>
+        [JsonPropertyName("threatSubmission")]
+        public Microsoft.Graph.SecurityNamespace.ThreatSubmissionRoot ThreatSubmission { get; set; }
+    
+        /// <summary>
         /// Gets or sets alerts.
         /// Notifications for suspicious or potential security issues in a customer’s tenant.
         /// </summary>

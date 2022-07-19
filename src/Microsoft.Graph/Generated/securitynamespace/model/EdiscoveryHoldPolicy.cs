@@ -51,6 +51,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets site sources.
+        /// Data sources that represent SharePoint sites.
         /// </summary>
         [JsonPropertyName("siteSources")]
         public IEdiscoveryHoldPolicySiteSourcesCollectionPage SiteSources { get; set; }
@@ -64,6 +65,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets user sources.
+        /// Data sources that represent Exchange mailboxes.
         /// </summary>
         [JsonPropertyName("userSources")]
         public IEdiscoveryHoldPolicyUserSourcesCollectionPage UserSources { get; set; }

@@ -108,6 +108,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEntitlementManagementSettingsRequestBuilder"/>.</returns>
         IEntitlementManagementSettingsRequestBuilder Settings { get; }
+
+        /// <summary>
+        /// Gets the request builder for Subjects.
+        /// </summary>
+        /// <returns>The <see cref="IEntitlementManagementSubjectsCollectionRequestBuilder"/>.</returns>
+        IEntitlementManagementSubjectsCollectionRequestBuilder Subjects { get; }
     
     }
 }

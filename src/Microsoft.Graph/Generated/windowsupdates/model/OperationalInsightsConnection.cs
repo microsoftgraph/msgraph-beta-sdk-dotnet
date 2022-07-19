@@ -30,18 +30,21 @@ namespace Microsoft.Graph.WindowsUpdates
 
         /// <summary>
         /// Gets or sets azure resource group name.
+        /// The name of the Azure resource group that contains the Log Analytics workspace.
         /// </summary>
         [JsonPropertyName("azureResourceGroupName")]
         public string AzureResourceGroupName { get; set; }
     
         /// <summary>
         /// Gets or sets azure subscription id.
+        /// The Azure subscription ID that contains the Log Analytics workspace.
         /// </summary>
         [JsonPropertyName("azureSubscriptionId")]
         public string AzureSubscriptionId { get; set; }
     
         /// <summary>
         /// Gets or sets workspace name.
+        /// The name of the Log Analytics workspace.
         /// </summary>
         [JsonPropertyName("workspaceName")]
         public string WorkspaceName { get; set; }

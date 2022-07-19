@@ -148,13 +148,6 @@ namespace Microsoft.Graph
         public string MailNickname { get; set; }
     
         /// <summary>
-        /// Gets or sets mdm app id.
-        /// </summary>
-        [Obsolete("")]
-        [JsonPropertyName("mdmAppId")]
-        public string MdmAppId { get; set; }
-    
-        /// <summary>
         /// Gets or sets membership rule.
         /// The rule that determines members for this group if the group is a dynamic group (groupTypes contains DynamicMembership). For more information about the syntax of the membership rule, see Membership Rules syntax. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
         /// </summary>

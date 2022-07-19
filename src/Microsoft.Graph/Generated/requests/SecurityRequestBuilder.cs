@@ -159,6 +159,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ThreatSubmission.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.SecurityNamespace.IThreatSubmissionRootRequestBuilder"/>.</returns>
+        public Microsoft.Graph.SecurityNamespace.IThreatSubmissionRootRequestBuilder ThreatSubmission
+        {
+            get
+            {
+                return new Microsoft.Graph.SecurityNamespace.ThreatSubmissionRootRequestBuilder(this.AppendSegmentToRequestUrl("threatSubmission"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Alerts.
         /// </summary>
         /// <returns>The <see cref="ISecurityAlertsCollectionRequestBuilder"/>.</returns>

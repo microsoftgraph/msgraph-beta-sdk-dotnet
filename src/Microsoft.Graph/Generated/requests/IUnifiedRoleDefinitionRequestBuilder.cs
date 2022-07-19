@@ -37,5 +37,14 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IUnifiedRoleDefinitionInheritsPermissionsFromCollectionRequestBuilder"/>.</returns>
         IUnifiedRoleDefinitionInheritsPermissionsFromCollectionRequestBuilder InheritsPermissionsFrom { get; }
     
+        /// <summary>
+        /// Gets the request builder for UnifiedRoleDefinitionAssignedPrincipals.
+        /// </summary>
+        /// <returns>The <see cref="IUnifiedRoleDefinitionAssignedPrincipalsRequestBuilder"/>.</returns>
+        IUnifiedRoleDefinitionAssignedPrincipalsRequestBuilder AssignedPrincipals(
+            bool transitive,
+            string directoryScopeType,
+            string directoryScopeId);
+    
     }
 }

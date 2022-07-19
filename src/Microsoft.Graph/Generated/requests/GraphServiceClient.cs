@@ -1240,6 +1240,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceThreatSubmission request builder.
+        /// </summary>
+        public virtual Microsoft.Graph.SecurityNamespace.IThreatSubmissionRootRequestBuilder ThreatSubmission
+        {
+            get
+            {
+                return new Microsoft.Graph.SecurityNamespace.ThreatSubmissionRootRequestBuilder(this.BaseUrl + "/threatSubmission", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceApp request builder.
         /// </summary>
         public virtual ICommsApplicationRequestBuilder App
@@ -1291,6 +1302,17 @@ namespace Microsoft.Graph
             get
             {
                 return new StorageRequestBuilder(this.BaseUrl + "/storage", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceEmployeeExperience request builder.
+        /// </summary>
+        public virtual IEmployeeExperienceRequestBuilder EmployeeExperience
+        {
+            get
+            {
+                return new EmployeeExperienceRequestBuilder(this.BaseUrl + "/employeeExperience", this);
             }
         }
     
