@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets hitId.
-        /// The internal identifier for the item.
+        /// The internal identifier for the item. The format of the identifier varies based on the entity type. For details, see hitId format.
         /// </summary>
         [JsonPropertyName("hitId")]
         public string HitId { get; set; }

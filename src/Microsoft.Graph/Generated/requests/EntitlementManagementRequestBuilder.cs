@@ -205,6 +205,18 @@ namespace Microsoft.Graph
                 return new EntitlementManagementSettingsRequestBuilder(this.AppendSegmentToRequestUrl("settings"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Subjects.
+        /// </summary>
+        /// <returns>The <see cref="IEntitlementManagementSubjectsCollectionRequestBuilder"/>.</returns>
+        public IEntitlementManagementSubjectsCollectionRequestBuilder Subjects
+        {
+            get
+            {
+                return new EntitlementManagementSubjectsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("subjects"), this.Client);
+            }
+        }
     
     }
 }

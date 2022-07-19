@@ -38,7 +38,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets group.
-        /// Represent a group.
+        /// Represents a group.
         /// </summary>
         [JsonPropertyName("group")]
         public Microsoft.Graph.Group Group { get; set; }

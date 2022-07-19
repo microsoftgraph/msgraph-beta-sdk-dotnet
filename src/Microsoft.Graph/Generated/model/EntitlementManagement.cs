@@ -195,6 +195,19 @@ namespace Microsoft.Graph
         [JsonPropertyName("settings")]
         public EntitlementManagementSettings Settings { get; set; }
     
+        /// <summary>
+        /// Gets or sets subjects.
+        /// </summary>
+        [JsonPropertyName("subjects")]
+        public IEntitlementManagementSubjectsCollectionPage Subjects { get; set; }
+
+        /// <summary>
+        /// Gets or sets subjectsNextLink.
+        /// </summary>
+        [JsonPropertyName("subjects@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string SubjectsNextLink { get; set; }
+    
     }
 }
 

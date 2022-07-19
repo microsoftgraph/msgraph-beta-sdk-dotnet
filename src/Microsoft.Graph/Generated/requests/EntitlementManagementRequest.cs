@@ -318,6 +318,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.ConnectedOrganizations.AdditionalData = entitlementManagementToInitialize.AdditionalData;
                 }
+                if (entitlementManagementToInitialize.Subjects != null && entitlementManagementToInitialize.Subjects.CurrentPage != null)
+                {
+                    entitlementManagementToInitialize.Subjects.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.SubjectsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    entitlementManagementToInitialize.Subjects.AdditionalData = entitlementManagementToInitialize.AdditionalData;
+                }
 
             }
 

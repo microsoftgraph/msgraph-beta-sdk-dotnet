@@ -120,6 +120,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets external identities policy.
+        /// Represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.
         /// </summary>
         [JsonPropertyName("externalIdentitiesPolicy")]
         public ExternalIdentitiesPolicy ExternalIdentitiesPolicy { get; set; }

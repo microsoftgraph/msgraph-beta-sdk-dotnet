@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display concealed names.
+        /// If set to true, all reports will conceal user information such as usernames, groups, and sites. If false, all reports will show identifiable information. This property represents a setting in the Microsoft 365 admin center. Required.
         /// </summary>
         [JsonPropertyName("displayConcealedNames")]
         public bool? DisplayConcealedNames { get; set; }

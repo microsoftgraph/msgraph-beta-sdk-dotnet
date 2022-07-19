@@ -43,6 +43,7 @@ namespace Microsoft.Graph.WindowsUpdates
     
         /// <summary>
         /// Gets or sets resource connections.
+        /// Service connections to external resources such as analytics workspaces.
         /// </summary>
         [JsonPropertyName("resourceConnections")]
         public IUpdatesResourceConnectionsCollectionPage ResourceConnections { get; set; }

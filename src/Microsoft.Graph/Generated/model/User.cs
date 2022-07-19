@@ -349,7 +349,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises sync enabled.
-        /// true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
+        /// true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
         /// </summary>
         [JsonPropertyName("onPremisesSyncEnabled")]
         public bool? OnPremisesSyncEnabled { get; set; }
@@ -551,7 +551,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets preferred name.
-        /// The preferred name for the user. Returned only on $select.
+        /// The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
         /// </summary>
         [JsonPropertyName("preferredName")]
         public string PreferredName { get; set; }

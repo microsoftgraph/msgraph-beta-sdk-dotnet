@@ -37,7 +37,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets timeout.
-        /// The timeout duration for the OCR engine. A longer timeout may increase success of OCR, but may add to the total processing time.
+        /// The timeout duration for the OCR engine. A longer timeout might increase success of OCR, but might add to the total processing time.
         /// </summary>
         [JsonPropertyName("timeout")]
         public Microsoft.Graph.Duration Timeout { get; set; }

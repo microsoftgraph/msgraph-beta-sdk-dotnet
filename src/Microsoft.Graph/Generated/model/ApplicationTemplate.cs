@@ -69,6 +69,12 @@ namespace Microsoft.Graph
         public string Publisher { get; set; }
     
         /// <summary>
+        /// Gets or sets supported claim configuration.
+        /// </summary>
+        [JsonPropertyName("supportedClaimConfiguration")]
+        public SupportedClaimConfiguration SupportedClaimConfiguration { get; set; }
+    
+        /// <summary>
         /// Gets or sets supported provisioning types.
         /// The list of provisioning modes supported by this application. The only valid value is sync.
         /// </summary>

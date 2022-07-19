@@ -31,6 +31,7 @@ namespace Microsoft.Graph.WindowsUpdates
     
         /// <summary>
         /// Gets or sets state.
+        /// The state of the connection. The possible values are: connected, notAuthorized, notFound, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("state")]
         public ResourceConnectionState? State { get; set; }

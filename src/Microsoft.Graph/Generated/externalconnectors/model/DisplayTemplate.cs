@@ -23,7 +23,7 @@ namespace Microsoft.Graph.ExternalConnectors
 
         /// <summary>
         /// Gets or sets id.
-        /// The text identifier for the display template; for example, contosoTickets.
+        /// The text identifier for the display template; for example, contosoTickets. Maximum 16 characters. Only alphanumeric characters allowed.
         /// </summary>
         [JsonPropertyName("id")]
         public string Id { get; set; }
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.ExternalConnectors
     
         /// <summary>
         /// Gets or sets priority.
-        /// Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported.
+        /// Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported. Must be positive value.
         /// </summary>
         [JsonPropertyName("priority")]
         public Int32? Priority { get; set; }

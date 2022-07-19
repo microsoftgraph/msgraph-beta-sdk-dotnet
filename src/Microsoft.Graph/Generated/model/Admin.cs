@@ -37,6 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets report settings.
+        /// A container for administrative resources to manage reports.
         /// </summary>
         [JsonPropertyName("reportSettings")]
         public AdminReportSettings ReportSettings { get; set; }
