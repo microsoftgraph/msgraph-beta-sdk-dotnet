@@ -22,12 +22,11 @@
     <AssemblyOriginatorKeyFile>35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PackageReleaseNotes>
-- Latest metadata updates from 12th July 2022 snapshot
-- Fixed incorrect casing of some properties on serialization [#483]
-- Adds support for cancellation token support on large file uploads.
+- Latest metadata updates from 19th July 2022 snapshot
+- Fix for missing @odata.type properties in models
     </PackageReleaseNotes>
     <!-- edit this value to change the current major.minor.patch version -->
-    <VersionPrefix>5.9.0</VersionPrefix>
+    <VersionPrefix>5.10.0</VersionPrefix>
     <!-- adds a version suffix if the Prerelease environment variable is set. BUILD_BUILDID is an
     environment variable set by Azure pipelines from the build. We can use the buildid to correlate
     which commit was used to generate the preview build. -->
